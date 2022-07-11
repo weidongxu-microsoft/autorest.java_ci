@@ -50,8 +50,9 @@ public interface FrontDoor {
     Map<String, String> tags();
 
     /**
-     * Gets the resourceState property: Resource status of the Front Door or Front Door SubResource. Resource status of
-     * the Front Door.
+     * Gets the resourceState property: Resource status of the Front Door or Front Door SubResource.
+     *
+     * <p>Resource status of the Front Door.
      *
      * @return the resourceState value.
      */

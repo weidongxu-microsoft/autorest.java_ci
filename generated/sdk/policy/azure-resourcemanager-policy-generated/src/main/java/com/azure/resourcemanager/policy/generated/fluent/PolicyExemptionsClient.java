@@ -14,8 +14,10 @@ import com.azure.resourcemanager.policy.generated.fluent.models.PolicyExemptionI
 /** An instance of this class provides access to all the operations defined in PolicyExemptionsClient. */
 public interface PolicyExemptionsClient {
     /**
-     * This operation deletes a policy exemption, given its name and the scope it was created in. The scope of a policy
-     * exemption is the part of its ID preceding
+     * Deletes a policy exemption.
+     *
+     * <p>This operation deletes a policy exemption, given its name and the scope it was created in. The scope of a
+     * policy exemption is the part of its ID preceding
      * '/providers/Microsoft.Authorization/policyExemptions/{policyExemptionName}'.
      *
      * @param scope The scope of the policy exemption. Valid scopes are: management group (format:
@@ -32,8 +34,10 @@ public interface PolicyExemptionsClient {
     void delete(String scope, String policyExemptionName);
 
     /**
-     * This operation deletes a policy exemption, given its name and the scope it was created in. The scope of a policy
-     * exemption is the part of its ID preceding
+     * Deletes a policy exemption.
+     *
+     * <p>This operation deletes a policy exemption, given its name and the scope it was created in. The scope of a
+     * policy exemption is the part of its ID preceding
      * '/providers/Microsoft.Authorization/policyExemptions/{policyExemptionName}'.
      *
      * @param scope The scope of the policy exemption. Valid scopes are: management group (format:
@@ -52,7 +56,9 @@ public interface PolicyExemptionsClient {
     Response<Void> deleteWithResponse(String scope, String policyExemptionName, Context context);
 
     /**
-     * This operation creates or updates a policy exemption with the given scope and name. Policy exemptions apply to
+     * Creates or updates a policy exemption.
+     *
+     * <p>This operation creates or updates a policy exemption with the given scope and name. Policy exemptions apply to
      * all resources contained within their scope. For example, when you create a policy exemption at resource group
      * scope for a policy assignment at the same or above level, the exemption exempts to all applicable resources in
      * the resource group.
@@ -73,7 +79,9 @@ public interface PolicyExemptionsClient {
     PolicyExemptionInner createOrUpdate(String scope, String policyExemptionName, PolicyExemptionInner parameters);
 
     /**
-     * This operation creates or updates a policy exemption with the given scope and name. Policy exemptions apply to
+     * Creates or updates a policy exemption.
+     *
+     * <p>This operation creates or updates a policy exemption with the given scope and name. Policy exemptions apply to
      * all resources contained within their scope. For example, when you create a policy exemption at resource group
      * scope for a policy assignment at the same or above level, the exemption exempts to all applicable resources in
      * the resource group.
@@ -96,7 +104,9 @@ public interface PolicyExemptionsClient {
         String scope, String policyExemptionName, PolicyExemptionInner parameters, Context context);
 
     /**
-     * This operation retrieves a single policy exemption, given its name and the scope it was created at.
+     * Retrieves a policy exemption.
+     *
+     * <p>This operation retrieves a single policy exemption, given its name and the scope it was created at.
      *
      * @param scope The scope of the policy exemption. Valid scopes are: management group (format:
      *     '/providers/Microsoft.Management/managementGroups/{managementGroup}'), subscription (format:
@@ -113,7 +123,9 @@ public interface PolicyExemptionsClient {
     PolicyExemptionInner get(String scope, String policyExemptionName);
 
     /**
-     * This operation retrieves a single policy exemption, given its name and the scope it was created at.
+     * Retrieves a policy exemption.
+     *
+     * <p>This operation retrieves a single policy exemption, given its name and the scope it was created at.
      *
      * @param scope The scope of the policy exemption. Valid scopes are: management group (format:
      *     '/providers/Microsoft.Management/managementGroups/{managementGroup}'), subscription (format:
@@ -131,8 +143,10 @@ public interface PolicyExemptionsClient {
     Response<PolicyExemptionInner> getWithResponse(String scope, String policyExemptionName, Context context);
 
     /**
-     * This operation retrieves the list of all policy exemptions associated with the given subscription that match the
-     * optional given $filter. Valid values for $filter are: 'atScope()', 'atExactScope()', 'excludeExpired()' or
+     * Retrieves all policy exemptions that apply to a subscription.
+     *
+     * <p>This operation retrieves the list of all policy exemptions associated with the given subscription that match
+     * the optional given $filter. Valid values for $filter are: 'atScope()', 'atExactScope()', 'excludeExpired()' or
      * 'policyAssignmentId eq '{value}''. If $filter is not provided, the unfiltered list includes all policy exemptions
      * associated with the subscription, including those that apply directly or from management groups that contain the
      * given subscription, as well as any applied to objects contained within the subscription.
@@ -145,8 +159,10 @@ public interface PolicyExemptionsClient {
     PagedIterable<PolicyExemptionInner> list();
 
     /**
-     * This operation retrieves the list of all policy exemptions associated with the given subscription that match the
-     * optional given $filter. Valid values for $filter are: 'atScope()', 'atExactScope()', 'excludeExpired()' or
+     * Retrieves all policy exemptions that apply to a subscription.
+     *
+     * <p>This operation retrieves the list of all policy exemptions associated with the given subscription that match
+     * the optional given $filter. Valid values for $filter are: 'atScope()', 'atExactScope()', 'excludeExpired()' or
      * 'policyAssignmentId eq '{value}''. If $filter is not provided, the unfiltered list includes all policy exemptions
      * associated with the subscription, including those that apply directly or from management groups that contain the
      * given subscription, as well as any applied to objects contained within the subscription.
@@ -171,11 +187,14 @@ public interface PolicyExemptionsClient {
     PagedIterable<PolicyExemptionInner> list(String filter, Context context);
 
     /**
-     * This operation retrieves the list of all policy exemptions associated with the given resource group in the given
-     * subscription that match the optional given $filter. Valid values for $filter are: 'atScope()', 'atExactScope()',
-     * 'excludeExpired()' or 'policyAssignmentId eq '{value}''. If $filter is not provided, the unfiltered list includes
-     * all policy exemptions associated with the resource group, including those that apply directly or apply from
-     * containing scopes, as well as any applied to resources contained within the resource group.
+     * Retrieves all policy exemptions that apply to a resource group.
+     *
+     * <p>This operation retrieves the list of all policy exemptions associated with the given resource group in the
+     * given subscription that match the optional given $filter. Valid values for $filter are: 'atScope()',
+     * 'atExactScope()', 'excludeExpired()' or 'policyAssignmentId eq '{value}''. If $filter is not provided, the
+     * unfiltered list includes all policy exemptions associated with the resource group, including those that apply
+     * directly or apply from containing scopes, as well as any applied to resources contained within the resource
+     * group.
      *
      * @param resourceGroupName The name of the resource group containing the resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -187,11 +206,14 @@ public interface PolicyExemptionsClient {
     PagedIterable<PolicyExemptionInner> listByResourceGroup(String resourceGroupName);
 
     /**
-     * This operation retrieves the list of all policy exemptions associated with the given resource group in the given
-     * subscription that match the optional given $filter. Valid values for $filter are: 'atScope()', 'atExactScope()',
-     * 'excludeExpired()' or 'policyAssignmentId eq '{value}''. If $filter is not provided, the unfiltered list includes
-     * all policy exemptions associated with the resource group, including those that apply directly or apply from
-     * containing scopes, as well as any applied to resources contained within the resource group.
+     * Retrieves all policy exemptions that apply to a resource group.
+     *
+     * <p>This operation retrieves the list of all policy exemptions associated with the given resource group in the
+     * given subscription that match the optional given $filter. Valid values for $filter are: 'atScope()',
+     * 'atExactScope()', 'excludeExpired()' or 'policyAssignmentId eq '{value}''. If $filter is not provided, the
+     * unfiltered list includes all policy exemptions associated with the resource group, including those that apply
+     * directly or apply from containing scopes, as well as any applied to resources contained within the resource
+     * group.
      *
      * @param resourceGroupName The name of the resource group containing the resource.
      * @param filter The filter to apply on the operation. Valid values for $filter are: 'atScope()', 'atExactScope()',
@@ -214,7 +236,9 @@ public interface PolicyExemptionsClient {
     PagedIterable<PolicyExemptionInner> listByResourceGroup(String resourceGroupName, String filter, Context context);
 
     /**
-     * This operation retrieves the list of all policy exemptions associated with the specified resource in the given
+     * Retrieves all policy exemptions that apply to a resource.
+     *
+     * <p>This operation retrieves the list of all policy exemptions associated with the specified resource in the given
      * resource group and subscription that match the optional given $filter. Valid values for $filter are: 'atScope()',
      * 'atExactScope()', 'excludeExpired()' or 'policyAssignmentId eq '{value}''. If $filter is not provided, the
      * unfiltered list includes all policy exemptions associated with the resource, including those that apply directly
@@ -251,7 +275,9 @@ public interface PolicyExemptionsClient {
         String resourceName);
 
     /**
-     * This operation retrieves the list of all policy exemptions associated with the specified resource in the given
+     * Retrieves all policy exemptions that apply to a resource.
+     *
+     * <p>This operation retrieves the list of all policy exemptions associated with the specified resource in the given
      * resource group and subscription that match the optional given $filter. Valid values for $filter are: 'atScope()',
      * 'atExactScope()', 'excludeExpired()' or 'policyAssignmentId eq '{value}''. If $filter is not provided, the
      * unfiltered list includes all policy exemptions associated with the resource, including those that apply directly
@@ -301,7 +327,9 @@ public interface PolicyExemptionsClient {
         Context context);
 
     /**
-     * This operation retrieves the list of all policy exemptions applicable to the management group that match the
+     * Retrieves all policy exemptions that apply to a management group.
+     *
+     * <p>This operation retrieves the list of all policy exemptions applicable to the management group that match the
      * given $filter. Valid values for $filter are: 'atScope()', 'atExactScope()', 'excludeExpired()' or
      * 'policyAssignmentId eq '{value}''. If $filter=atScope() is provided, the returned list includes all policy
      * exemptions that are assigned to the management group or the management group's ancestors.
@@ -316,7 +344,9 @@ public interface PolicyExemptionsClient {
     PagedIterable<PolicyExemptionInner> listForManagementGroup(String managementGroupId);
 
     /**
-     * This operation retrieves the list of all policy exemptions applicable to the management group that match the
+     * Retrieves all policy exemptions that apply to a management group.
+     *
+     * <p>This operation retrieves the list of all policy exemptions applicable to the management group that match the
      * given $filter. Valid values for $filter are: 'atScope()', 'atExactScope()', 'excludeExpired()' or
      * 'policyAssignmentId eq '{value}''. If $filter=atScope() is provided, the returned list includes all policy
      * exemptions that are assigned to the management group or the management group's ancestors.

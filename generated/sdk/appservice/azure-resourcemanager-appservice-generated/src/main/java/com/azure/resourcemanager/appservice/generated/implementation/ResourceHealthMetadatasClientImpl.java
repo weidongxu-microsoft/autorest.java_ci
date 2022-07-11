@@ -186,7 +186,9 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * Description for List all ResourceHealthMetadata for all sites in the subscription.
+     * List all ResourceHealthMetadata for all sites in the subscription.
+     *
+     * <p>Description for List all ResourceHealthMetadata for all sites in the subscription.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -231,7 +233,9 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * Description for List all ResourceHealthMetadata for all sites in the subscription.
+     * List all ResourceHealthMetadata for all sites in the subscription.
+     *
+     * <p>Description for List all ResourceHealthMetadata for all sites in the subscription.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -275,7 +279,9 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * Description for List all ResourceHealthMetadata for all sites in the subscription.
+     * List all ResourceHealthMetadata for all sites in the subscription.
+     *
+     * <p>Description for List all ResourceHealthMetadata for all sites in the subscription.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -287,7 +293,9 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * Description for List all ResourceHealthMetadata for all sites in the subscription.
+     * List all ResourceHealthMetadata for all sites in the subscription.
+     *
+     * <p>Description for List all ResourceHealthMetadata for all sites in the subscription.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -302,7 +310,9 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * Description for List all ResourceHealthMetadata for all sites in the subscription.
+     * List all ResourceHealthMetadata for all sites in the subscription.
+     *
+     * <p>Description for List all ResourceHealthMetadata for all sites in the subscription.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -314,7 +324,9 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * Description for List all ResourceHealthMetadata for all sites in the subscription.
+     * List all ResourceHealthMetadata for all sites in the subscription.
+     *
+     * <p>Description for List all ResourceHealthMetadata for all sites in the subscription.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -328,7 +340,9 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * Description for List all ResourceHealthMetadata for all sites in the resource group in the subscription.
+     * List all ResourceHealthMetadata for all sites in the resource group in the subscription.
+     *
+     * <p>Description for List all ResourceHealthMetadata for all sites in the resource group in the subscription.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -381,7 +395,9 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * Description for List all ResourceHealthMetadata for all sites in the resource group in the subscription.
+     * List all ResourceHealthMetadata for all sites in the resource group in the subscription.
+     *
+     * <p>Description for List all ResourceHealthMetadata for all sites in the resource group in the subscription.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param context The context to associate with this operation.
@@ -432,7 +448,9 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * Description for List all ResourceHealthMetadata for all sites in the resource group in the subscription.
+     * List all ResourceHealthMetadata for all sites in the resource group in the subscription.
+     *
+     * <p>Description for List all ResourceHealthMetadata for all sites in the resource group in the subscription.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -448,7 +466,9 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * Description for List all ResourceHealthMetadata for all sites in the resource group in the subscription.
+     * List all ResourceHealthMetadata for all sites in the resource group in the subscription.
+     *
+     * <p>Description for List all ResourceHealthMetadata for all sites in the resource group in the subscription.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param context The context to associate with this operation.
@@ -465,7 +485,9 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * Description for List all ResourceHealthMetadata for all sites in the resource group in the subscription.
+     * List all ResourceHealthMetadata for all sites in the resource group in the subscription.
+     *
+     * <p>Description for List all ResourceHealthMetadata for all sites in the resource group in the subscription.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -479,7 +501,9 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * Description for List all ResourceHealthMetadata for all sites in the resource group in the subscription.
+     * List all ResourceHealthMetadata for all sites in the resource group in the subscription.
+     *
+     * <p>Description for List all ResourceHealthMetadata for all sites in the resource group in the subscription.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param context The context to associate with this operation.
@@ -494,7 +518,9 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * Description for Gets the category of ResourceHealthMetadata to use for the given site as a collection.
+     * Gets the category of ResourceHealthMetadata to use for the given site as a collection
+     *
+     * <p>Description for Gets the category of ResourceHealthMetadata to use for the given site as a collection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -552,7 +578,9 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * Description for Gets the category of ResourceHealthMetadata to use for the given site as a collection.
+     * Gets the category of ResourceHealthMetadata to use for the given site as a collection
+     *
+     * <p>Description for Gets the category of ResourceHealthMetadata to use for the given site as a collection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -608,7 +636,9 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * Description for Gets the category of ResourceHealthMetadata to use for the given site as a collection.
+     * Gets the category of ResourceHealthMetadata to use for the given site as a collection
+     *
+     * <p>Description for Gets the category of ResourceHealthMetadata to use for the given site as a collection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -625,7 +655,9 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * Description for Gets the category of ResourceHealthMetadata to use for the given site as a collection.
+     * Gets the category of ResourceHealthMetadata to use for the given site as a collection
+     *
+     * <p>Description for Gets the category of ResourceHealthMetadata to use for the given site as a collection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -644,7 +676,9 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * Description for Gets the category of ResourceHealthMetadata to use for the given site as a collection.
+     * Gets the category of ResourceHealthMetadata to use for the given site as a collection
+     *
+     * <p>Description for Gets the category of ResourceHealthMetadata to use for the given site as a collection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -659,7 +693,9 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * Description for Gets the category of ResourceHealthMetadata to use for the given site as a collection.
+     * Gets the category of ResourceHealthMetadata to use for the given site as a collection
+     *
+     * <p>Description for Gets the category of ResourceHealthMetadata to use for the given site as a collection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -676,7 +712,9 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * Description for Gets the category of ResourceHealthMetadata to use for the given site.
+     * Gets the category of ResourceHealthMetadata to use for the given site
+     *
+     * <p>Description for Gets the category of ResourceHealthMetadata to use for the given site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -725,7 +763,9 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * Description for Gets the category of ResourceHealthMetadata to use for the given site.
+     * Gets the category of ResourceHealthMetadata to use for the given site
+     *
+     * <p>Description for Gets the category of ResourceHealthMetadata to use for the given site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -772,7 +812,9 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * Description for Gets the category of ResourceHealthMetadata to use for the given site.
+     * Gets the category of ResourceHealthMetadata to use for the given site
+     *
+     * <p>Description for Gets the category of ResourceHealthMetadata to use for the given site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -787,7 +829,9 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * Description for Gets the category of ResourceHealthMetadata to use for the given site.
+     * Gets the category of ResourceHealthMetadata to use for the given site
+     *
+     * <p>Description for Gets the category of ResourceHealthMetadata to use for the given site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -802,7 +846,9 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * Description for Gets the category of ResourceHealthMetadata to use for the given site.
+     * Gets the category of ResourceHealthMetadata to use for the given site
+     *
+     * <p>Description for Gets the category of ResourceHealthMetadata to use for the given site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -819,7 +865,9 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * Description for Gets the category of ResourceHealthMetadata to use for the given site as a collection.
+     * Gets the category of ResourceHealthMetadata to use for the given site as a collection
+     *
+     * <p>Description for Gets the category of ResourceHealthMetadata to use for the given site as a collection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -882,7 +930,9 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * Description for Gets the category of ResourceHealthMetadata to use for the given site as a collection.
+     * Gets the category of ResourceHealthMetadata to use for the given site as a collection
+     *
+     * <p>Description for Gets the category of ResourceHealthMetadata to use for the given site as a collection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -943,7 +993,9 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * Description for Gets the category of ResourceHealthMetadata to use for the given site as a collection.
+     * Gets the category of ResourceHealthMetadata to use for the given site as a collection
+     *
+     * <p>Description for Gets the category of ResourceHealthMetadata to use for the given site as a collection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -962,7 +1014,9 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * Description for Gets the category of ResourceHealthMetadata to use for the given site as a collection.
+     * Gets the category of ResourceHealthMetadata to use for the given site as a collection
+     *
+     * <p>Description for Gets the category of ResourceHealthMetadata to use for the given site as a collection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -982,7 +1036,9 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * Description for Gets the category of ResourceHealthMetadata to use for the given site as a collection.
+     * Gets the category of ResourceHealthMetadata to use for the given site as a collection
+     *
+     * <p>Description for Gets the category of ResourceHealthMetadata to use for the given site as a collection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -999,7 +1055,9 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * Description for Gets the category of ResourceHealthMetadata to use for the given site as a collection.
+     * Gets the category of ResourceHealthMetadata to use for the given site as a collection
+     *
+     * <p>Description for Gets the category of ResourceHealthMetadata to use for the given site as a collection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -1017,7 +1075,9 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * Description for Gets the category of ResourceHealthMetadata to use for the given site.
+     * Gets the category of ResourceHealthMetadata to use for the given site
+     *
+     * <p>Description for Gets the category of ResourceHealthMetadata to use for the given site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -1071,7 +1131,9 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * Description for Gets the category of ResourceHealthMetadata to use for the given site.
+     * Gets the category of ResourceHealthMetadata to use for the given site
+     *
+     * <p>Description for Gets the category of ResourceHealthMetadata to use for the given site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -1123,7 +1185,9 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * Description for Gets the category of ResourceHealthMetadata to use for the given site.
+     * Gets the category of ResourceHealthMetadata to use for the given site
+     *
+     * <p>Description for Gets the category of ResourceHealthMetadata to use for the given site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -1140,7 +1204,9 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * Description for Gets the category of ResourceHealthMetadata to use for the given site.
+     * Gets the category of ResourceHealthMetadata to use for the given site
+     *
+     * <p>Description for Gets the category of ResourceHealthMetadata to use for the given site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -1156,7 +1222,9 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     }
 
     /**
-     * Description for Gets the category of ResourceHealthMetadata to use for the given site.
+     * Gets the category of ResourceHealthMetadata to use for the given site
+     *
+     * <p>Description for Gets the category of ResourceHealthMetadata to use for the given site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.

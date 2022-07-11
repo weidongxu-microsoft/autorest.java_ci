@@ -9,7 +9,11 @@ import com.azure.resourcemanager.mediaservices.generated.fluent.models.LiveEvent
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** LiveEventListResult The LiveEvent list result. */
+/**
+ * LiveEventListResult
+ *
+ * <p>The LiveEvent list result.
+ */
 @Fluent
 public final class LiveEventListResult {
     /*

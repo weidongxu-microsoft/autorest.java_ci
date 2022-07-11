@@ -217,7 +217,9 @@ public interface StaticSiteCustomDomainOverviewArmResource {
     StaticSiteCustomDomainOverviewArmResource refresh(Context context);
 
     /**
-     * Description for Validates a particular custom domain can be added to a static site.
+     * Validates a particular custom domain can be added to a static site.
+     *
+     * <p>Description for Validates a particular custom domain can be added to a static site.
      *
      * @param staticSiteCustomDomainRequestPropertiesEnvelope A JSON representation of the static site custom domain
      *     request properties. See example.
@@ -230,7 +232,9 @@ public interface StaticSiteCustomDomainOverviewArmResource {
         StaticSiteCustomDomainRequestPropertiesArmResource staticSiteCustomDomainRequestPropertiesEnvelope);
 
     /**
-     * Description for Validates a particular custom domain can be added to a static site.
+     * Validates a particular custom domain can be added to a static site.
+     *
+     * <p>Description for Validates a particular custom domain can be added to a static site.
      *
      * @param staticSiteCustomDomainRequestPropertiesEnvelope A JSON representation of the static site custom domain
      *     request properties. See example.

@@ -52,9 +52,11 @@ public interface Resources {
         String resourceGroupName, String filter, String expand, Integer top, Context context);
 
     /**
-     * The resources to move must be in the same source resource group. The target resource group may be in a different
-     * subscription. When moving resources, both the source group and the target group are locked for the duration of
-     * the operation. Write and delete operations are blocked on the groups until the move completes.
+     * Moves resources from one resource group to another resource group.
+     *
+     * <p>The resources to move must be in the same source resource group. The target resource group may be in a
+     * different subscription. When moving resources, both the source group and the target group are locked for the
+     * duration of the operation. Write and delete operations are blocked on the groups until the move completes.
      *
      * @param sourceResourceGroupName The name of the resource group containing the resources to move.
      * @param parameters Parameters for moving resources.
@@ -65,9 +67,11 @@ public interface Resources {
     void moveResources(String sourceResourceGroupName, ResourcesMoveInfo parameters);
 
     /**
-     * The resources to move must be in the same source resource group. The target resource group may be in a different
-     * subscription. When moving resources, both the source group and the target group are locked for the duration of
-     * the operation. Write and delete operations are blocked on the groups until the move completes.
+     * Moves resources from one resource group to another resource group.
+     *
+     * <p>The resources to move must be in the same source resource group. The target resource group may be in a
+     * different subscription. When moving resources, both the source group and the target group are locked for the
+     * duration of the operation. Write and delete operations are blocked on the groups until the move completes.
      *
      * @param sourceResourceGroupName The name of the resource group containing the resources to move.
      * @param parameters Parameters for moving resources.
@@ -79,8 +83,10 @@ public interface Resources {
     void moveResources(String sourceResourceGroupName, ResourcesMoveInfo parameters, Context context);
 
     /**
-     * This operation checks whether the specified resources can be moved to the target. The resources to move must be
-     * in the same source resource group. The target resource group may be in a different subscription. If validation
+     * Validates whether resources can be moved from one resource group to another resource group.
+     *
+     * <p>This operation checks whether the specified resources can be moved to the target. The resources to move must
+     * be in the same source resource group. The target resource group may be in a different subscription. If validation
      * succeeds, it returns HTTP response code 204 (no content). If validation fails, it returns HTTP response code 409
      * (Conflict) with an error message. Retrieve the URL in the Location header value to check the result of the
      * long-running operation.
@@ -94,8 +100,10 @@ public interface Resources {
     void validateMoveResources(String sourceResourceGroupName, ResourcesMoveInfo parameters);
 
     /**
-     * This operation checks whether the specified resources can be moved to the target. The resources to move must be
-     * in the same source resource group. The target resource group may be in a different subscription. If validation
+     * Validates whether resources can be moved from one resource group to another resource group.
+     *
+     * <p>This operation checks whether the specified resources can be moved to the target. The resources to move must
+     * be in the same source resource group. The target resource group may be in a different subscription. If validation
      * succeeds, it returns HTTP response code 204 (no content). If validation fails, it returns HTTP response code 409
      * (Conflict) with an error message. Retrieve the URL in the Location header value to check the result of the
      * long-running operation.

@@ -350,7 +350,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Check if a domain is available for registration.
+     * Check if a domain is available for registration.
+     *
+     * <p>Description for Check if a domain is available for registration.
      *
      * @param identifier Name of the domain.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -394,7 +396,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Check if a domain is available for registration.
+     * Check if a domain is available for registration.
+     *
+     * <p>Description for Check if a domain is available for registration.
      *
      * @param identifier Name of the domain.
      * @param context The context to associate with this operation.
@@ -436,7 +440,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Check if a domain is available for registration.
+     * Check if a domain is available for registration.
+     *
+     * <p>Description for Check if a domain is available for registration.
      *
      * @param identifier Name of the domain.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -450,7 +456,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Check if a domain is available for registration.
+     * Check if a domain is available for registration.
+     *
+     * <p>Description for Check if a domain is available for registration.
      *
      * @param identifier Name of the domain.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -464,7 +472,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Check if a domain is available for registration.
+     * Check if a domain is available for registration.
+     *
+     * <p>Description for Check if a domain is available for registration.
      *
      * @param identifier Name of the domain.
      * @param context The context to associate with this operation.
@@ -480,7 +490,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Get all domains in a subscription.
+     * Get all domains in a subscription.
+     *
+     * <p>Description for Get all domains in a subscription.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -524,7 +536,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Get all domains in a subscription.
+     * Get all domains in a subscription.
+     *
+     * <p>Description for Get all domains in a subscription.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -567,7 +581,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Get all domains in a subscription.
+     * Get all domains in a subscription.
+     *
+     * <p>Description for Get all domains in a subscription.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -579,7 +595,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Get all domains in a subscription.
+     * Get all domains in a subscription.
+     *
+     * <p>Description for Get all domains in a subscription.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -594,7 +612,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Get all domains in a subscription.
+     * Get all domains in a subscription.
+     *
+     * <p>Description for Get all domains in a subscription.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -606,7 +626,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Get all domains in a subscription.
+     * Get all domains in a subscription.
+     *
+     * <p>Description for Get all domains in a subscription.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -620,7 +642,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Generate a single sign-on request for the domain management portal.
+     * Generate a single sign-on request for the domain management portal.
+     *
+     * <p>Description for Generate a single sign-on request for the domain management portal.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -656,7 +680,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Generate a single sign-on request for the domain management portal.
+     * Generate a single sign-on request for the domain management portal.
+     *
+     * <p>Description for Generate a single sign-on request for the domain management portal.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -692,7 +718,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Generate a single sign-on request for the domain management portal.
+     * Generate a single sign-on request for the domain management portal.
+     *
+     * <p>Description for Generate a single sign-on request for the domain management portal.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -704,7 +732,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Generate a single sign-on request for the domain management portal.
+     * Generate a single sign-on request for the domain management portal.
+     *
+     * <p>Description for Generate a single sign-on request for the domain management portal.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -716,7 +746,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Generate a single sign-on request for the domain management portal.
+     * Generate a single sign-on request for the domain management portal.
+     *
+     * <p>Description for Generate a single sign-on request for the domain management portal.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -730,7 +762,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Get domain name recommendations based on keywords.
+     * Get domain name recommendations based on keywords.
+     *
+     * <p>Description for Get domain name recommendations based on keywords.
      *
      * @param parameters Search parameters for domain name recommendations.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -784,7 +818,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Get domain name recommendations based on keywords.
+     * Get domain name recommendations based on keywords.
+     *
+     * <p>Description for Get domain name recommendations based on keywords.
      *
      * @param parameters Search parameters for domain name recommendations.
      * @param context The context to associate with this operation.
@@ -836,7 +872,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Get domain name recommendations based on keywords.
+     * Get domain name recommendations based on keywords.
+     *
+     * <p>Description for Get domain name recommendations based on keywords.
      *
      * @param parameters Search parameters for domain name recommendations.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -852,7 +890,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Get domain name recommendations based on keywords.
+     * Get domain name recommendations based on keywords.
+     *
+     * <p>Description for Get domain name recommendations based on keywords.
      *
      * @param parameters Search parameters for domain name recommendations.
      * @param context The context to associate with this operation.
@@ -870,7 +910,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Get domain name recommendations based on keywords.
+     * Get domain name recommendations based on keywords.
+     *
+     * <p>Description for Get domain name recommendations based on keywords.
      *
      * @param parameters Search parameters for domain name recommendations.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -884,7 +926,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Get domain name recommendations based on keywords.
+     * Get domain name recommendations based on keywords.
+     *
+     * <p>Description for Get domain name recommendations based on keywords.
      *
      * @param parameters Search parameters for domain name recommendations.
      * @param context The context to associate with this operation.
@@ -900,7 +944,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Get all domains in a resource group.
+     * Get all domains in a resource group.
+     *
+     * <p>Description for Get all domains in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -951,7 +997,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Get all domains in a resource group.
+     * Get all domains in a resource group.
+     *
+     * <p>Description for Get all domains in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param context The context to associate with this operation.
@@ -1001,7 +1049,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Get all domains in a resource group.
+     * Get all domains in a resource group.
+     *
+     * <p>Description for Get all domains in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1017,7 +1067,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Get all domains in a resource group.
+     * Get all domains in a resource group.
+     *
+     * <p>Description for Get all domains in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param context The context to associate with this operation.
@@ -1034,7 +1086,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Get all domains in a resource group.
+     * Get all domains in a resource group.
+     *
+     * <p>Description for Get all domains in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1048,7 +1102,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Get all domains in a resource group.
+     * Get all domains in a resource group.
+     *
+     * <p>Description for Get all domains in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param context The context to associate with this operation.
@@ -1063,7 +1119,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Get a domain.
+     * Get a domain.
+     *
+     * <p>Description for Get a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -1111,7 +1169,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Get a domain.
+     * Get a domain.
+     *
+     * <p>Description for Get a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -1157,7 +1217,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Get a domain.
+     * Get a domain.
+     *
+     * <p>Description for Get a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -1173,7 +1235,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Get a domain.
+     * Get a domain.
+     *
+     * <p>Description for Get a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -1188,7 +1252,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Get a domain.
+     * Get a domain.
+     *
+     * <p>Description for Get a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -1205,7 +1271,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Creates or updates a domain.
+     * Creates or updates a domain.
+     *
+     * <p>Description for Creates or updates a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -1260,7 +1328,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Creates or updates a domain.
+     * Creates or updates a domain.
+     *
+     * <p>Description for Creates or updates a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -1313,7 +1383,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Creates or updates a domain.
+     * Creates or updates a domain.
+     *
+     * <p>Description for Creates or updates a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -1334,7 +1406,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Creates or updates a domain.
+     * Creates or updates a domain.
+     *
+     * <p>Description for Creates or updates a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -1358,7 +1432,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Creates or updates a domain.
+     * Creates or updates a domain.
+     *
+     * <p>Description for Creates or updates a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -1375,7 +1451,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Creates or updates a domain.
+     * Creates or updates a domain.
+     *
+     * <p>Description for Creates or updates a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -1393,7 +1471,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Creates or updates a domain.
+     * Creates or updates a domain.
+     *
+     * <p>Description for Creates or updates a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -1411,7 +1491,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Creates or updates a domain.
+     * Creates or updates a domain.
+     *
+     * <p>Description for Creates or updates a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -1431,7 +1513,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Creates or updates a domain.
+     * Creates or updates a domain.
+     *
+     * <p>Description for Creates or updates a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -1447,7 +1531,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Creates or updates a domain.
+     * Creates or updates a domain.
+     *
+     * <p>Description for Creates or updates a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -1465,7 +1551,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Delete a domain.
+     * Delete a domain.
+     *
+     * <p>Description for Delete a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -1516,7 +1604,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Delete a domain.
+     * Delete a domain.
+     *
+     * <p>Description for Delete a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -1565,7 +1655,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Delete a domain.
+     * Delete a domain.
+     *
+     * <p>Description for Delete a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -1583,7 +1675,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Delete a domain.
+     * Delete a domain.
+     *
+     * <p>Description for Delete a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -1600,7 +1694,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Delete a domain.
+     * Delete a domain.
+     *
+     * <p>Description for Delete a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -1615,7 +1711,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Delete a domain.
+     * Delete a domain.
+     *
+     * <p>Description for Delete a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -1634,7 +1732,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Creates or updates a domain.
+     * Creates or updates a domain.
+     *
+     * <p>Description for Creates or updates a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -1689,7 +1789,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Creates or updates a domain.
+     * Creates or updates a domain.
+     *
+     * <p>Description for Creates or updates a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -1742,7 +1844,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Creates or updates a domain.
+     * Creates or updates a domain.
+     *
+     * <p>Description for Creates or updates a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -1759,7 +1863,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Creates or updates a domain.
+     * Creates or updates a domain.
+     *
+     * <p>Description for Creates or updates a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -1775,7 +1881,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Creates or updates a domain.
+     * Creates or updates a domain.
+     *
+     * <p>Description for Creates or updates a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -1793,7 +1901,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Lists domain ownership identifiers.
+     * Lists domain ownership identifiers.
+     *
+     * <p>Description for Lists domain ownership identifiers.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
@@ -1851,7 +1961,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Lists domain ownership identifiers.
+     * Lists domain ownership identifiers.
+     *
+     * <p>Description for Lists domain ownership identifiers.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
@@ -1907,7 +2019,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Lists domain ownership identifiers.
+     * Lists domain ownership identifiers.
+     *
+     * <p>Description for Lists domain ownership identifiers.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
@@ -1925,7 +2039,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Lists domain ownership identifiers.
+     * Lists domain ownership identifiers.
+     *
+     * <p>Description for Lists domain ownership identifiers.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
@@ -1944,7 +2060,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Lists domain ownership identifiers.
+     * Lists domain ownership identifiers.
+     *
+     * <p>Description for Lists domain ownership identifiers.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
@@ -1960,7 +2078,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Lists domain ownership identifiers.
+     * Lists domain ownership identifiers.
+     *
+     * <p>Description for Lists domain ownership identifiers.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
@@ -1977,7 +2097,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Get ownership identifier for domain.
+     * Get ownership identifier for domain
+     *
+     * <p>Description for Get ownership identifier for domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
@@ -2030,7 +2152,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Get ownership identifier for domain.
+     * Get ownership identifier for domain
+     *
+     * <p>Description for Get ownership identifier for domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
@@ -2081,7 +2205,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Get ownership identifier for domain.
+     * Get ownership identifier for domain
+     *
+     * <p>Description for Get ownership identifier for domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
@@ -2099,7 +2225,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Get ownership identifier for domain.
+     * Get ownership identifier for domain
+     *
+     * <p>Description for Get ownership identifier for domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
@@ -2116,7 +2244,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Get ownership identifier for domain.
+     * Get ownership identifier for domain
+     *
+     * <p>Description for Get ownership identifier for domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
@@ -2134,7 +2264,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Creates an ownership identifier for a domain or updates identifier details for an existing
+     * Creates an ownership identifier for a domain or updates identifier details for an existing identifier
+     *
+     * <p>Description for Creates an ownership identifier for a domain or updates identifier details for an existing
      * identifier.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
@@ -2201,7 +2333,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Creates an ownership identifier for a domain or updates identifier details for an existing
+     * Creates an ownership identifier for a domain or updates identifier details for an existing identifier
+     *
+     * <p>Description for Creates an ownership identifier for a domain or updates identifier details for an existing
      * identifier.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
@@ -2267,7 +2401,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Creates an ownership identifier for a domain or updates identifier details for an existing
+     * Creates an ownership identifier for a domain or updates identifier details for an existing identifier
+     *
+     * <p>Description for Creates an ownership identifier for a domain or updates identifier details for an existing
      * identifier.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
@@ -2291,7 +2427,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Creates an ownership identifier for a domain or updates identifier details for an existing
+     * Creates an ownership identifier for a domain or updates identifier details for an existing identifier
+     *
+     * <p>Description for Creates an ownership identifier for a domain or updates identifier details for an existing
      * identifier.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
@@ -2314,7 +2452,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Creates an ownership identifier for a domain or updates identifier details for an existing
+     * Creates an ownership identifier for a domain or updates identifier details for an existing identifier
+     *
+     * <p>Description for Creates an ownership identifier for a domain or updates identifier details for an existing
      * identifier.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
@@ -2340,7 +2480,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Delete ownership identifier for domain.
+     * Delete ownership identifier for domain
+     *
+     * <p>Description for Delete ownership identifier for domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
@@ -2393,7 +2535,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Delete ownership identifier for domain.
+     * Delete ownership identifier for domain
+     *
+     * <p>Description for Delete ownership identifier for domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
@@ -2444,7 +2588,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Delete ownership identifier for domain.
+     * Delete ownership identifier for domain
+     *
+     * <p>Description for Delete ownership identifier for domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
@@ -2461,7 +2607,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Delete ownership identifier for domain.
+     * Delete ownership identifier for domain
+     *
+     * <p>Description for Delete ownership identifier for domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
@@ -2476,7 +2624,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Delete ownership identifier for domain.
+     * Delete ownership identifier for domain
+     *
+     * <p>Description for Delete ownership identifier for domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
@@ -2494,7 +2644,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Creates an ownership identifier for a domain or updates identifier details for an existing
+     * Creates an ownership identifier for a domain or updates identifier details for an existing identifier
+     *
+     * <p>Description for Creates an ownership identifier for a domain or updates identifier details for an existing
      * identifier.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
@@ -2561,7 +2713,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Creates an ownership identifier for a domain or updates identifier details for an existing
+     * Creates an ownership identifier for a domain or updates identifier details for an existing identifier
+     *
+     * <p>Description for Creates an ownership identifier for a domain or updates identifier details for an existing
      * identifier.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
@@ -2627,7 +2781,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Creates an ownership identifier for a domain or updates identifier details for an existing
+     * Creates an ownership identifier for a domain or updates identifier details for an existing identifier
+     *
+     * <p>Description for Creates an ownership identifier for a domain or updates identifier details for an existing
      * identifier.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
@@ -2651,7 +2807,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Creates an ownership identifier for a domain or updates identifier details for an existing
+     * Creates an ownership identifier for a domain or updates identifier details for an existing identifier
+     *
+     * <p>Description for Creates an ownership identifier for a domain or updates identifier details for an existing
      * identifier.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
@@ -2673,7 +2831,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Creates an ownership identifier for a domain or updates identifier details for an existing
+     * Creates an ownership identifier for a domain or updates identifier details for an existing identifier
+     *
+     * <p>Description for Creates an ownership identifier for a domain or updates identifier details for an existing
      * identifier.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
@@ -2699,7 +2859,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Renew a domain.
+     * Renew a domain.
+     *
+     * <p>Description for Renew a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -2746,7 +2908,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Renew a domain.
+     * Renew a domain.
+     *
+     * <p>Description for Renew a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -2791,7 +2955,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Renew a domain.
+     * Renew a domain.
+     *
+     * <p>Description for Renew a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -2806,7 +2972,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Renew a domain.
+     * Renew a domain.
+     *
+     * <p>Description for Renew a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -2820,7 +2988,9 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * Description for Renew a domain.
+     * Renew a domain.
+     *
+     * <p>Description for Renew a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.

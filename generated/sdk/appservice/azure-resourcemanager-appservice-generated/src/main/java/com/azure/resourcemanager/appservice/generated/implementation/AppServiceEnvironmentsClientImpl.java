@@ -1062,7 +1062,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get all App Service Environments for a subscription.
+     * Get all App Service Environments for a subscription.
+     *
+     * <p>Description for Get all App Service Environments for a subscription.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1107,7 +1109,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get all App Service Environments for a subscription.
+     * Get all App Service Environments for a subscription.
+     *
+     * <p>Description for Get all App Service Environments for a subscription.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1151,7 +1155,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get all App Service Environments for a subscription.
+     * Get all App Service Environments for a subscription.
+     *
+     * <p>Description for Get all App Service Environments for a subscription.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1163,7 +1169,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get all App Service Environments for a subscription.
+     * Get all App Service Environments for a subscription.
+     *
+     * <p>Description for Get all App Service Environments for a subscription.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1178,7 +1186,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get all App Service Environments for a subscription.
+     * Get all App Service Environments for a subscription.
+     *
+     * <p>Description for Get all App Service Environments for a subscription.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1190,7 +1200,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get all App Service Environments for a subscription.
+     * Get all App Service Environments for a subscription.
+     *
+     * <p>Description for Get all App Service Environments for a subscription.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1204,7 +1216,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get all App Service Environments in a resource group.
+     * Get all App Service Environments in a resource group.
+     *
+     * <p>Description for Get all App Service Environments in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1257,7 +1271,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get all App Service Environments in a resource group.
+     * Get all App Service Environments in a resource group.
+     *
+     * <p>Description for Get all App Service Environments in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param context The context to associate with this operation.
@@ -1308,7 +1324,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get all App Service Environments in a resource group.
+     * Get all App Service Environments in a resource group.
+     *
+     * <p>Description for Get all App Service Environments in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1324,7 +1342,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get all App Service Environments in a resource group.
+     * Get all App Service Environments in a resource group.
+     *
+     * <p>Description for Get all App Service Environments in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param context The context to associate with this operation.
@@ -1342,7 +1362,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get all App Service Environments in a resource group.
+     * Get all App Service Environments in a resource group.
+     *
+     * <p>Description for Get all App Service Environments in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1356,7 +1378,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get all App Service Environments in a resource group.
+     * Get all App Service Environments in a resource group.
+     *
+     * <p>Description for Get all App Service Environments in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param context The context to associate with this operation.
@@ -1372,7 +1396,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get the properties of an App Service Environment.
+     * Get the properties of an App Service Environment.
+     *
+     * <p>Description for Get the properties of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -1421,7 +1447,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get the properties of an App Service Environment.
+     * Get the properties of an App Service Environment.
+     *
+     * <p>Description for Get the properties of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -1468,7 +1496,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get the properties of an App Service Environment.
+     * Get the properties of an App Service Environment.
+     *
+     * <p>Description for Get the properties of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -1484,7 +1514,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get the properties of an App Service Environment.
+     * Get the properties of an App Service Environment.
+     *
+     * <p>Description for Get the properties of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -1499,7 +1531,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get the properties of an App Service Environment.
+     * Get the properties of an App Service Environment.
+     *
+     * <p>Description for Get the properties of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -1516,7 +1550,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Create or update an App Service Environment.
+     * Create or update an App Service Environment.
+     *
+     * <p>Description for Create or update an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -1575,7 +1611,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Create or update an App Service Environment.
+     * Create or update an App Service Environment.
+     *
+     * <p>Description for Create or update an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -1635,7 +1673,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Create or update an App Service Environment.
+     * Create or update an App Service Environment.
+     *
+     * <p>Description for Create or update an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -1662,7 +1702,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Create or update an App Service Environment.
+     * Create or update an App Service Environment.
+     *
+     * <p>Description for Create or update an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -1694,7 +1736,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Create or update an App Service Environment.
+     * Create or update an App Service Environment.
+     *
+     * <p>Description for Create or update an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -1712,7 +1756,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Create or update an App Service Environment.
+     * Create or update an App Service Environment.
+     *
+     * <p>Description for Create or update an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -1734,7 +1780,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Create or update an App Service Environment.
+     * Create or update an App Service Environment.
+     *
+     * <p>Description for Create or update an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -1753,7 +1801,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Create or update an App Service Environment.
+     * Create or update an App Service Environment.
+     *
+     * <p>Description for Create or update an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -1776,7 +1826,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Create or update an App Service Environment.
+     * Create or update an App Service Environment.
+     *
+     * <p>Description for Create or update an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -1793,7 +1845,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Create or update an App Service Environment.
+     * Create or update an App Service Environment.
+     *
+     * <p>Description for Create or update an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -1814,7 +1868,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Delete an App Service Environment.
+     * Delete an App Service Environment.
+     *
+     * <p>Description for Delete an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -1865,7 +1921,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Delete an App Service Environment.
+     * Delete an App Service Environment.
+     *
+     * <p>Description for Delete an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -1914,7 +1972,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Delete an App Service Environment.
+     * Delete an App Service Environment.
+     *
+     * <p>Description for Delete an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -1936,7 +1996,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Delete an App Service Environment.
+     * Delete an App Service Environment.
+     *
+     * <p>Description for Delete an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -1959,7 +2021,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Delete an App Service Environment.
+     * Delete an App Service Environment.
+     *
+     * <p>Description for Delete an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -1976,7 +2040,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Delete an App Service Environment.
+     * Delete an App Service Environment.
+     *
+     * <p>Description for Delete an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -1995,7 +2061,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Delete an App Service Environment.
+     * Delete an App Service Environment.
+     *
+     * <p>Description for Delete an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -2014,7 +2082,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Delete an App Service Environment.
+     * Delete an App Service Environment.
+     *
+     * <p>Description for Delete an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -2032,7 +2102,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Delete an App Service Environment.
+     * Delete an App Service Environment.
+     *
+     * <p>Description for Delete an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -2052,7 +2124,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Delete an App Service Environment.
+     * Delete an App Service Environment.
+     *
+     * <p>Description for Delete an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -2068,7 +2142,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Delete an App Service Environment.
+     * Delete an App Service Environment.
+     *
+     * <p>Description for Delete an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -2083,7 +2159,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Delete an App Service Environment.
+     * Delete an App Service Environment.
+     *
+     * <p>Description for Delete an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -2100,7 +2178,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Create or update an App Service Environment.
+     * Create or update an App Service Environment.
+     *
+     * <p>Description for Create or update an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -2159,7 +2239,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Create or update an App Service Environment.
+     * Create or update an App Service Environment.
+     *
+     * <p>Description for Create or update an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -2219,7 +2301,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Create or update an App Service Environment.
+     * Create or update an App Service Environment.
+     *
+     * <p>Description for Create or update an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -2237,7 +2321,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Create or update an App Service Environment.
+     * Create or update an App Service Environment.
+     *
+     * <p>Description for Create or update an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -2254,7 +2340,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Create or update an App Service Environment.
+     * Create or update an App Service Environment.
+     *
+     * <p>Description for Create or update an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -2275,7 +2363,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get the used, available, and total worker capacity an App Service Environment.
+     * Get the used, available, and total worker capacity an App Service Environment.
+     *
+     * <p>Description for Get the used, available, and total worker capacity an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -2332,7 +2422,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get the used, available, and total worker capacity an App Service Environment.
+     * Get the used, available, and total worker capacity an App Service Environment.
+     *
+     * <p>Description for Get the used, available, and total worker capacity an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -2387,7 +2479,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get the used, available, and total worker capacity an App Service Environment.
+     * Get the used, available, and total worker capacity an App Service Environment.
+     *
+     * <p>Description for Get the used, available, and total worker capacity an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -2404,7 +2498,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get the used, available, and total worker capacity an App Service Environment.
+     * Get the used, available, and total worker capacity an App Service Environment.
+     *
+     * <p>Description for Get the used, available, and total worker capacity an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -2422,7 +2518,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get the used, available, and total worker capacity an App Service Environment.
+     * Get the used, available, and total worker capacity an App Service Environment.
+     *
+     * <p>Description for Get the used, available, and total worker capacity an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -2437,7 +2535,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get the used, available, and total worker capacity an App Service Environment.
+     * Get the used, available, and total worker capacity an App Service Environment.
+     *
+     * <p>Description for Get the used, available, and total worker capacity an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -2453,7 +2553,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get IP addresses assigned to an App Service Environment.
+     * Get IP addresses assigned to an App Service Environment.
+     *
+     * <p>Description for Get IP addresses assigned to an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -2501,7 +2603,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get IP addresses assigned to an App Service Environment.
+     * Get IP addresses assigned to an App Service Environment.
+     *
+     * <p>Description for Get IP addresses assigned to an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -2548,7 +2652,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get IP addresses assigned to an App Service Environment.
+     * Get IP addresses assigned to an App Service Environment.
+     *
+     * <p>Description for Get IP addresses assigned to an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -2563,7 +2669,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get IP addresses assigned to an App Service Environment.
+     * Get IP addresses assigned to an App Service Environment.
+     *
+     * <p>Description for Get IP addresses assigned to an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -2578,7 +2686,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get IP addresses assigned to an App Service Environment.
+     * Get IP addresses assigned to an App Service Environment.
+     *
+     * <p>Description for Get IP addresses assigned to an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -2595,7 +2705,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Move an App Service Environment to a different VNET.
+     * Move an App Service Environment to a different VNET.
+     *
+     * <p>Description for Move an App Service Environment to a different VNET.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -2675,7 +2787,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Move an App Service Environment to a different VNET.
+     * Move an App Service Environment to a different VNET.
+     *
+     * <p>Description for Move an App Service Environment to a different VNET.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -2748,7 +2862,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Move an App Service Environment to a different VNET.
+     * Move an App Service Environment to a different VNET.
+     *
+     * <p>Description for Move an App Service Environment to a different VNET.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -2767,7 +2883,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Move an App Service Environment to a different VNET.
+     * Move an App Service Environment to a different VNET.
+     *
+     * <p>Description for Move an App Service Environment to a different VNET.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -2787,7 +2905,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Move an App Service Environment to a different VNET.
+     * Move an App Service Environment to a different VNET.
+     *
+     * <p>Description for Move an App Service Environment to a different VNET.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -2803,7 +2923,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Move an App Service Environment to a different VNET.
+     * Move an App Service Environment to a different VNET.
+     *
+     * <p>Description for Move an App Service Environment to a different VNET.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -3287,7 +3409,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get networking configuration of an App Service Environment.
+     * Get networking configuration of an App Service Environment
+     *
+     * <p>Description for Get networking configuration of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -3336,7 +3460,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get networking configuration of an App Service Environment.
+     * Get networking configuration of an App Service Environment
+     *
+     * <p>Description for Get networking configuration of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -3383,7 +3509,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get networking configuration of an App Service Environment.
+     * Get networking configuration of an App Service Environment
+     *
+     * <p>Description for Get networking configuration of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -3400,7 +3528,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get networking configuration of an App Service Environment.
+     * Get networking configuration of an App Service Environment
+     *
+     * <p>Description for Get networking configuration of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -3415,7 +3545,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get networking configuration of an App Service Environment.
+     * Get networking configuration of an App Service Environment
+     *
+     * <p>Description for Get networking configuration of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -3432,7 +3564,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Update networking configuration of an App Service Environment.
+     * Update networking configuration of an App Service Environment
+     *
+     * <p>Description for Update networking configuration of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -3491,7 +3625,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Update networking configuration of an App Service Environment.
+     * Update networking configuration of an App Service Environment
+     *
+     * <p>Description for Update networking configuration of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -3551,7 +3687,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Update networking configuration of an App Service Environment.
+     * Update networking configuration of an App Service Environment
+     *
+     * <p>Description for Update networking configuration of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -3569,7 +3707,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Update networking configuration of an App Service Environment.
+     * Update networking configuration of an App Service Environment
+     *
+     * <p>Description for Update networking configuration of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -3586,7 +3726,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Update networking configuration of an App Service Environment.
+     * Update networking configuration of an App Service Environment
+     *
+     * <p>Description for Update networking configuration of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -3609,7 +3751,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get diagnostic information for an App Service Environment.
+     * Get diagnostic information for an App Service Environment.
+     *
+     * <p>Description for Get diagnostic information for an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -3658,7 +3802,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get diagnostic information for an App Service Environment.
+     * Get diagnostic information for an App Service Environment.
+     *
+     * <p>Description for Get diagnostic information for an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -3705,7 +3851,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get diagnostic information for an App Service Environment.
+     * Get diagnostic information for an App Service Environment.
+     *
+     * <p>Description for Get diagnostic information for an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -3721,7 +3869,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get diagnostic information for an App Service Environment.
+     * Get diagnostic information for an App Service Environment.
+     *
+     * <p>Description for Get diagnostic information for an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -3736,7 +3886,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get diagnostic information for an App Service Environment.
+     * Get diagnostic information for an App Service Environment.
+     *
+     * <p>Description for Get diagnostic information for an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -3753,7 +3905,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get a diagnostics item for an App Service Environment.
+     * Get a diagnostics item for an App Service Environment.
+     *
+     * <p>Description for Get a diagnostics item for an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -3808,7 +3962,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get a diagnostics item for an App Service Environment.
+     * Get a diagnostics item for an App Service Environment.
+     *
+     * <p>Description for Get a diagnostics item for an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -3861,7 +4017,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get a diagnostics item for an App Service Environment.
+     * Get a diagnostics item for an App Service Environment.
+     *
+     * <p>Description for Get a diagnostics item for an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -3879,7 +4037,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get a diagnostics item for an App Service Environment.
+     * Get a diagnostics item for an App Service Environment.
+     *
+     * <p>Description for Get a diagnostics item for an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -3896,7 +4056,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get a diagnostics item for an App Service Environment.
+     * Get a diagnostics item for an App Service Environment.
+     *
+     * <p>Description for Get a diagnostics item for an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -3914,7 +4076,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get the network endpoints of all inbound dependencies of an App Service Environment.
+     * Get the network endpoints of all inbound dependencies of an App Service Environment.
+     *
+     * <p>Description for Get the network endpoints of all inbound dependencies of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -3972,7 +4136,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get the network endpoints of all inbound dependencies of an App Service Environment.
+     * Get the network endpoints of all inbound dependencies of an App Service Environment.
+     *
+     * <p>Description for Get the network endpoints of all inbound dependencies of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4028,7 +4194,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get the network endpoints of all inbound dependencies of an App Service Environment.
+     * Get the network endpoints of all inbound dependencies of an App Service Environment.
+     *
+     * <p>Description for Get the network endpoints of all inbound dependencies of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4046,7 +4214,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get the network endpoints of all inbound dependencies of an App Service Environment.
+     * Get the network endpoints of all inbound dependencies of an App Service Environment.
+     *
+     * <p>Description for Get the network endpoints of all inbound dependencies of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4065,7 +4235,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get the network endpoints of all inbound dependencies of an App Service Environment.
+     * Get the network endpoints of all inbound dependencies of an App Service Environment.
+     *
+     * <p>Description for Get the network endpoints of all inbound dependencies of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4081,7 +4253,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get the network endpoints of all inbound dependencies of an App Service Environment.
+     * Get the network endpoints of all inbound dependencies of an App Service Environment.
+     *
+     * <p>Description for Get the network endpoints of all inbound dependencies of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4098,7 +4272,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get all multi-role pools.
+     * Get all multi-role pools.
+     *
+     * <p>Description for Get all multi-role pools.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4155,7 +4331,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get all multi-role pools.
+     * Get all multi-role pools.
+     *
+     * <p>Description for Get all multi-role pools.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4210,7 +4388,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get all multi-role pools.
+     * Get all multi-role pools.
+     *
+     * <p>Description for Get all multi-role pools.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4227,7 +4407,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get all multi-role pools.
+     * Get all multi-role pools.
+     *
+     * <p>Description for Get all multi-role pools.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4246,7 +4428,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get all multi-role pools.
+     * Get all multi-role pools.
+     *
+     * <p>Description for Get all multi-role pools.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4261,7 +4445,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get all multi-role pools.
+     * Get all multi-role pools.
+     *
+     * <p>Description for Get all multi-role pools.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4278,7 +4464,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get properties of a multi-role pool.
+     * Get properties of a multi-role pool.
+     *
+     * <p>Description for Get properties of a multi-role pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4327,7 +4515,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get properties of a multi-role pool.
+     * Get properties of a multi-role pool.
+     *
+     * <p>Description for Get properties of a multi-role pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4374,7 +4564,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get properties of a multi-role pool.
+     * Get properties of a multi-role pool.
+     *
+     * <p>Description for Get properties of a multi-role pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4390,7 +4582,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get properties of a multi-role pool.
+     * Get properties of a multi-role pool.
+     *
+     * <p>Description for Get properties of a multi-role pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4405,7 +4599,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get properties of a multi-role pool.
+     * Get properties of a multi-role pool.
+     *
+     * <p>Description for Get properties of a multi-role pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4422,7 +4618,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Create or update a multi-role pool.
+     * Create or update a multi-role pool.
+     *
+     * <p>Description for Create or update a multi-role pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4479,7 +4677,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Create or update a multi-role pool.
+     * Create or update a multi-role pool.
+     *
+     * <p>Description for Create or update a multi-role pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4534,7 +4734,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Create or update a multi-role pool.
+     * Create or update a multi-role pool.
+     *
+     * <p>Description for Create or update a multi-role pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4561,7 +4763,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Create or update a multi-role pool.
+     * Create or update a multi-role pool.
+     *
+     * <p>Description for Create or update a multi-role pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4590,7 +4794,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Create or update a multi-role pool.
+     * Create or update a multi-role pool.
+     *
+     * <p>Description for Create or update a multi-role pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4607,7 +4813,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Create or update a multi-role pool.
+     * Create or update a multi-role pool.
+     *
+     * <p>Description for Create or update a multi-role pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4626,7 +4834,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Create or update a multi-role pool.
+     * Create or update a multi-role pool.
+     *
+     * <p>Description for Create or update a multi-role pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4645,7 +4855,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Create or update a multi-role pool.
+     * Create or update a multi-role pool.
+     *
+     * <p>Description for Create or update a multi-role pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4665,7 +4877,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Create or update a multi-role pool.
+     * Create or update a multi-role pool.
+     *
+     * <p>Description for Create or update a multi-role pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4682,7 +4896,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Create or update a multi-role pool.
+     * Create or update a multi-role pool.
+     *
+     * <p>Description for Create or update a multi-role pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4700,7 +4916,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Create or update a multi-role pool.
+     * Create or update a multi-role pool.
+     *
+     * <p>Description for Create or update a multi-role pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4757,7 +4975,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Create or update a multi-role pool.
+     * Create or update a multi-role pool.
+     *
+     * <p>Description for Create or update a multi-role pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4812,7 +5032,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Create or update a multi-role pool.
+     * Create or update a multi-role pool.
+     *
+     * <p>Description for Create or update a multi-role pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4830,7 +5052,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Create or update a multi-role pool.
+     * Create or update a multi-role pool.
+     *
+     * <p>Description for Create or update a multi-role pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4847,7 +5071,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Create or update a multi-role pool.
+     * Create or update a multi-role pool.
+     *
+     * <p>Description for Create or update a multi-role pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -4865,7 +5091,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get metric definitions for a specific instance of a multi-role pool of an App Service
+     * Get metric definitions for a specific instance of a multi-role pool of an App Service Environment.
+     *
+     * <p>Description for Get metric definitions for a specific instance of a multi-role pool of an App Service
      * Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
@@ -4930,7 +5158,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get metric definitions for a specific instance of a multi-role pool of an App Service
+     * Get metric definitions for a specific instance of a multi-role pool of an App Service Environment.
+     *
+     * <p>Description for Get metric definitions for a specific instance of a multi-role pool of an App Service
      * Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
@@ -4993,7 +5223,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get metric definitions for a specific instance of a multi-role pool of an App Service
+     * Get metric definitions for a specific instance of a multi-role pool of an App Service Environment.
+     *
+     * <p>Description for Get metric definitions for a specific instance of a multi-role pool of an App Service
      * Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
@@ -5013,7 +5245,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get metric definitions for a specific instance of a multi-role pool of an App Service
+     * Get metric definitions for a specific instance of a multi-role pool of an App Service Environment.
+     *
+     * <p>Description for Get metric definitions for a specific instance of a multi-role pool of an App Service
      * Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
@@ -5034,7 +5268,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get metric definitions for a specific instance of a multi-role pool of an App Service
+     * Get metric definitions for a specific instance of a multi-role pool of an App Service Environment.
+     *
+     * <p>Description for Get metric definitions for a specific instance of a multi-role pool of an App Service
      * Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
@@ -5052,7 +5288,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get metric definitions for a specific instance of a multi-role pool of an App Service
+     * Get metric definitions for a specific instance of a multi-role pool of an App Service Environment.
+     *
+     * <p>Description for Get metric definitions for a specific instance of a multi-role pool of an App Service
      * Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
@@ -5072,7 +5310,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get metric definitions for a multi-role pool of an App Service Environment.
+     * Get metric definitions for a multi-role pool of an App Service Environment.
+     *
+     * <p>Description for Get metric definitions for a multi-role pool of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -5130,7 +5370,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get metric definitions for a multi-role pool of an App Service Environment.
+     * Get metric definitions for a multi-role pool of an App Service Environment.
+     *
+     * <p>Description for Get metric definitions for a multi-role pool of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -5186,7 +5428,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get metric definitions for a multi-role pool of an App Service Environment.
+     * Get metric definitions for a multi-role pool of an App Service Environment.
+     *
+     * <p>Description for Get metric definitions for a multi-role pool of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -5204,7 +5448,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get metric definitions for a multi-role pool of an App Service Environment.
+     * Get metric definitions for a multi-role pool of an App Service Environment.
+     *
+     * <p>Description for Get metric definitions for a multi-role pool of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -5223,7 +5469,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get metric definitions for a multi-role pool of an App Service Environment.
+     * Get metric definitions for a multi-role pool of an App Service Environment.
+     *
+     * <p>Description for Get metric definitions for a multi-role pool of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -5239,7 +5487,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get metric definitions for a multi-role pool of an App Service Environment.
+     * Get metric definitions for a multi-role pool of an App Service Environment.
+     *
+     * <p>Description for Get metric definitions for a multi-role pool of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -5256,7 +5506,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get available SKUs for scaling a multi-role pool.
+     * Get available SKUs for scaling a multi-role pool.
+     *
+     * <p>Description for Get available SKUs for scaling a multi-role pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -5313,7 +5565,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get available SKUs for scaling a multi-role pool.
+     * Get available SKUs for scaling a multi-role pool.
+     *
+     * <p>Description for Get available SKUs for scaling a multi-role pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -5368,7 +5622,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get available SKUs for scaling a multi-role pool.
+     * Get available SKUs for scaling a multi-role pool.
+     *
+     * <p>Description for Get available SKUs for scaling a multi-role pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -5385,7 +5641,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get available SKUs for scaling a multi-role pool.
+     * Get available SKUs for scaling a multi-role pool.
+     *
+     * <p>Description for Get available SKUs for scaling a multi-role pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -5403,7 +5661,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get available SKUs for scaling a multi-role pool.
+     * Get available SKUs for scaling a multi-role pool.
+     *
+     * <p>Description for Get available SKUs for scaling a multi-role pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -5418,7 +5678,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get available SKUs for scaling a multi-role pool.
+     * Get available SKUs for scaling a multi-role pool.
+     *
+     * <p>Description for Get available SKUs for scaling a multi-role pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -5575,7 +5837,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Initiate an upgrade of an App Service Environment if one is available.
+     * Initiate an upgrade of an App Service Environment if one is available.
+     *
+     * <p>Description for Initiate an upgrade of an App Service Environment if one is available.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -5622,7 +5886,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Initiate an upgrade of an App Service Environment if one is available.
+     * Initiate an upgrade of an App Service Environment if one is available.
+     *
+     * <p>Description for Initiate an upgrade of an App Service Environment if one is available.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -5668,7 +5934,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Initiate an upgrade of an App Service Environment if one is available.
+     * Initiate an upgrade of an App Service Environment if one is available.
+     *
+     * <p>Description for Initiate an upgrade of an App Service Environment if one is available.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -5687,7 +5955,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Initiate an upgrade of an App Service Environment if one is available.
+     * Initiate an upgrade of an App Service Environment if one is available.
+     *
+     * <p>Description for Initiate an upgrade of an App Service Environment if one is available.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -5708,7 +5978,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Initiate an upgrade of an App Service Environment if one is available.
+     * Initiate an upgrade of an App Service Environment if one is available.
+     *
+     * <p>Description for Initiate an upgrade of an App Service Environment if one is available.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -5723,7 +5995,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Initiate an upgrade of an App Service Environment if one is available.
+     * Initiate an upgrade of an App Service Environment if one is available.
+     *
+     * <p>Description for Initiate an upgrade of an App Service Environment if one is available.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -5739,7 +6013,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Initiate an upgrade of an App Service Environment if one is available.
+     * Initiate an upgrade of an App Service Environment if one is available.
+     *
+     * <p>Description for Initiate an upgrade of an App Service Environment if one is available.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -5754,7 +6030,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Initiate an upgrade of an App Service Environment if one is available.
+     * Initiate an upgrade of an App Service Environment if one is available.
+     *
+     * <p>Description for Initiate an upgrade of an App Service Environment if one is available.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -5772,7 +6050,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Initiate an upgrade of an App Service Environment if one is available.
+     * Initiate an upgrade of an App Service Environment if one is available.
+     *
+     * <p>Description for Initiate an upgrade of an App Service Environment if one is available.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -5786,7 +6066,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Initiate an upgrade of an App Service Environment if one is available.
+     * Initiate an upgrade of an App Service Environment if one is available.
+     *
+     * <p>Description for Initiate an upgrade of an App Service Environment if one is available.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -5801,7 +6083,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get usage metrics for a multi-role pool of an App Service Environment.
+     * Get usage metrics for a multi-role pool of an App Service Environment.
+     *
+     * <p>Description for Get usage metrics for a multi-role pool of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -5857,7 +6141,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get usage metrics for a multi-role pool of an App Service Environment.
+     * Get usage metrics for a multi-role pool of an App Service Environment.
+     *
+     * <p>Description for Get usage metrics for a multi-role pool of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -5912,7 +6198,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get usage metrics for a multi-role pool of an App Service Environment.
+     * Get usage metrics for a multi-role pool of an App Service Environment.
+     *
+     * <p>Description for Get usage metrics for a multi-role pool of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -5929,7 +6217,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get usage metrics for a multi-role pool of an App Service Environment.
+     * Get usage metrics for a multi-role pool of an App Service Environment.
+     *
+     * <p>Description for Get usage metrics for a multi-role pool of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -5947,7 +6237,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get usage metrics for a multi-role pool of an App Service Environment.
+     * Get usage metrics for a multi-role pool of an App Service Environment.
+     *
+     * <p>Description for Get usage metrics for a multi-role pool of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -5962,7 +6254,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get usage metrics for a multi-role pool of an App Service Environment.
+     * Get usage metrics for a multi-role pool of an App Service Environment.
+     *
+     * <p>Description for Get usage metrics for a multi-role pool of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -5978,7 +6272,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for List all currently running operations on the App Service Environment.
+     * List all currently running operations on the App Service Environment.
+     *
+     * <p>Description for List all currently running operations on the App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -6026,7 +6322,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for List all currently running operations on the App Service Environment.
+     * List all currently running operations on the App Service Environment.
+     *
+     * <p>Description for List all currently running operations on the App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -6072,7 +6370,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for List all currently running operations on the App Service Environment.
+     * List all currently running operations on the App Service Environment.
+     *
+     * <p>Description for List all currently running operations on the App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -6088,7 +6388,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for List all currently running operations on the App Service Environment.
+     * List all currently running operations on the App Service Environment.
+     *
+     * <p>Description for List all currently running operations on the App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -6103,7 +6405,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for List all currently running operations on the App Service Environment.
+     * List all currently running operations on the App Service Environment.
+     *
+     * <p>Description for List all currently running operations on the App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -6120,7 +6424,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get the network endpoints of all outbound dependencies of an App Service Environment.
+     * Get the network endpoints of all outbound dependencies of an App Service Environment.
+     *
+     * <p>Description for Get the network endpoints of all outbound dependencies of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -6178,7 +6484,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get the network endpoints of all outbound dependencies of an App Service Environment.
+     * Get the network endpoints of all outbound dependencies of an App Service Environment.
+     *
+     * <p>Description for Get the network endpoints of all outbound dependencies of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -6234,7 +6542,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get the network endpoints of all outbound dependencies of an App Service Environment.
+     * Get the network endpoints of all outbound dependencies of an App Service Environment.
+     *
+     * <p>Description for Get the network endpoints of all outbound dependencies of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -6252,7 +6562,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get the network endpoints of all outbound dependencies of an App Service Environment.
+     * Get the network endpoints of all outbound dependencies of an App Service Environment.
+     *
+     * <p>Description for Get the network endpoints of all outbound dependencies of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -6271,7 +6583,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get the network endpoints of all outbound dependencies of an App Service Environment.
+     * Get the network endpoints of all outbound dependencies of an App Service Environment.
+     *
+     * <p>Description for Get the network endpoints of all outbound dependencies of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -6287,7 +6601,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get the network endpoints of all outbound dependencies of an App Service Environment.
+     * Get the network endpoints of all outbound dependencies of an App Service Environment.
+     *
+     * <p>Description for Get the network endpoints of all outbound dependencies of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -6304,7 +6620,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Gets the list of private endpoints associated with a hosting environment.
+     * Gets the list of private endpoints associated with a hosting environment
+     *
+     * <p>Description for Gets the list of private endpoints associated with a hosting environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -6361,7 +6679,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Gets the list of private endpoints associated with a hosting environment.
+     * Gets the list of private endpoints associated with a hosting environment
+     *
+     * <p>Description for Gets the list of private endpoints associated with a hosting environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -6416,7 +6736,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Gets the list of private endpoints associated with a hosting environment.
+     * Gets the list of private endpoints associated with a hosting environment
+     *
+     * <p>Description for Gets the list of private endpoints associated with a hosting environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -6434,7 +6756,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Gets the list of private endpoints associated with a hosting environment.
+     * Gets the list of private endpoints associated with a hosting environment
+     *
+     * <p>Description for Gets the list of private endpoints associated with a hosting environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -6453,7 +6777,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Gets the list of private endpoints associated with a hosting environment.
+     * Gets the list of private endpoints associated with a hosting environment
+     *
+     * <p>Description for Gets the list of private endpoints associated with a hosting environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -6469,7 +6795,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Gets the list of private endpoints associated with a hosting environment.
+     * Gets the list of private endpoints associated with a hosting environment
+     *
+     * <p>Description for Gets the list of private endpoints associated with a hosting environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -6486,7 +6814,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Gets a private endpoint connection.
+     * Gets a private endpoint connection
+     *
+     * <p>Description for Gets a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -6544,7 +6874,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Gets a private endpoint connection.
+     * Gets a private endpoint connection
+     *
+     * <p>Description for Gets a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -6600,7 +6932,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Gets a private endpoint connection.
+     * Gets a private endpoint connection
+     *
+     * <p>Description for Gets a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -6618,7 +6952,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Gets a private endpoint connection.
+     * Gets a private endpoint connection
+     *
+     * <p>Description for Gets a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -6635,7 +6971,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Gets a private endpoint connection.
+     * Gets a private endpoint connection
+     *
+     * <p>Description for Gets a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -6655,7 +6993,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Approves or rejects a private endpoint connection.
+     * Approves or rejects a private endpoint connection
+     *
+     * <p>Description for Approves or rejects a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -6724,7 +7064,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Approves or rejects a private endpoint connection.
+     * Approves or rejects a private endpoint connection
+     *
+     * <p>Description for Approves or rejects a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -6792,7 +7134,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Approves or rejects a private endpoint connection.
+     * Approves or rejects a private endpoint connection
+     *
+     * <p>Description for Approves or rejects a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -6827,7 +7171,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Approves or rejects a private endpoint connection.
+     * Approves or rejects a private endpoint connection
+     *
+     * <p>Description for Approves or rejects a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -6865,7 +7211,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Approves or rejects a private endpoint connection.
+     * Approves or rejects a private endpoint connection
+     *
+     * <p>Description for Approves or rejects a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -6891,7 +7239,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Approves or rejects a private endpoint connection.
+     * Approves or rejects a private endpoint connection
+     *
+     * <p>Description for Approves or rejects a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -6919,7 +7269,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Approves or rejects a private endpoint connection.
+     * Approves or rejects a private endpoint connection
+     *
+     * <p>Description for Approves or rejects a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -6943,7 +7295,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Approves or rejects a private endpoint connection.
+     * Approves or rejects a private endpoint connection
+     *
+     * <p>Description for Approves or rejects a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -6969,7 +7323,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Approves or rejects a private endpoint connection.
+     * Approves or rejects a private endpoint connection
+     *
+     * <p>Description for Approves or rejects a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -6992,7 +7348,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Approves or rejects a private endpoint connection.
+     * Approves or rejects a private endpoint connection
+     *
+     * <p>Description for Approves or rejects a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -7017,7 +7375,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Deletes a private endpoint connection.
+     * Deletes a private endpoint connection
+     *
+     * <p>Description for Deletes a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -7073,7 +7433,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Deletes a private endpoint connection.
+     * Deletes a private endpoint connection
+     *
+     * <p>Description for Deletes a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -7127,7 +7489,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Deletes a private endpoint connection.
+     * Deletes a private endpoint connection
+     *
+     * <p>Description for Deletes a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -7149,7 +7513,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Deletes a private endpoint connection.
+     * Deletes a private endpoint connection
+     *
+     * <p>Description for Deletes a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -7173,7 +7539,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Deletes a private endpoint connection.
+     * Deletes a private endpoint connection
+     *
+     * <p>Description for Deletes a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -7191,7 +7559,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Deletes a private endpoint connection.
+     * Deletes a private endpoint connection
+     *
+     * <p>Description for Deletes a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -7211,7 +7581,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Deletes a private endpoint connection.
+     * Deletes a private endpoint connection
+     *
+     * <p>Description for Deletes a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -7230,7 +7602,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Deletes a private endpoint connection.
+     * Deletes a private endpoint connection
+     *
+     * <p>Description for Deletes a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -7251,7 +7625,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Deletes a private endpoint connection.
+     * Deletes a private endpoint connection
+     *
+     * <p>Description for Deletes a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -7268,7 +7644,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Deletes a private endpoint connection.
+     * Deletes a private endpoint connection
+     *
+     * <p>Description for Deletes a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -7287,7 +7665,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Gets the private link resources.
+     * Gets the private link resources
+     *
+     * <p>Description for Gets the private link resources.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -7336,7 +7716,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Gets the private link resources.
+     * Gets the private link resources
+     *
+     * <p>Description for Gets the private link resources.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -7383,7 +7765,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Gets the private link resources.
+     * Gets the private link resources
+     *
+     * <p>Description for Gets the private link resources.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -7399,7 +7783,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Gets the private link resources.
+     * Gets the private link resources
+     *
+     * <p>Description for Gets the private link resources.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -7414,7 +7800,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Gets the private link resources.
+     * Gets the private link resources
+     *
+     * <p>Description for Gets the private link resources.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -7431,7 +7819,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Reboot all machines in an App Service Environment.
+     * Reboot all machines in an App Service Environment.
+     *
+     * <p>Description for Reboot all machines in an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -7478,7 +7868,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Reboot all machines in an App Service Environment.
+     * Reboot all machines in an App Service Environment.
+     *
+     * <p>Description for Reboot all machines in an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -7523,7 +7915,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Reboot all machines in an App Service Environment.
+     * Reboot all machines in an App Service Environment.
+     *
+     * <p>Description for Reboot all machines in an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -7538,7 +7932,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Reboot all machines in an App Service Environment.
+     * Reboot all machines in an App Service Environment.
+     *
+     * <p>Description for Reboot all machines in an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -7552,7 +7948,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Reboot all machines in an App Service Environment.
+     * Reboot all machines in an App Service Environment.
+     *
+     * <p>Description for Reboot all machines in an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -7568,7 +7966,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Resume an App Service Environment.
+     * Resume an App Service Environment.
+     *
+     * <p>Description for Resume an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -7640,7 +8040,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Resume an App Service Environment.
+     * Resume an App Service Environment.
+     *
+     * <p>Description for Resume an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -7706,7 +8108,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Resume an App Service Environment.
+     * Resume an App Service Environment.
+     *
+     * <p>Description for Resume an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -7722,7 +8126,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Resume an App Service Environment.
+     * Resume an App Service Environment.
+     *
+     * <p>Description for Resume an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -7740,7 +8146,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Resume an App Service Environment.
+     * Resume an App Service Environment.
+     *
+     * <p>Description for Resume an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -7755,7 +8163,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Resume an App Service Environment.
+     * Resume an App Service Environment.
+     *
+     * <p>Description for Resume an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -7771,7 +8181,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get all App Service plans in an App Service Environment.
+     * Get all App Service plans in an App Service Environment.
+     *
+     * <p>Description for Get all App Service plans in an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -7829,7 +8241,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get all App Service plans in an App Service Environment.
+     * Get all App Service plans in an App Service Environment.
+     *
+     * <p>Description for Get all App Service plans in an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -7885,7 +8299,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get all App Service plans in an App Service Environment.
+     * Get all App Service plans in an App Service Environment.
+     *
+     * <p>Description for Get all App Service plans in an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -7902,7 +8318,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get all App Service plans in an App Service Environment.
+     * Get all App Service plans in an App Service Environment.
+     *
+     * <p>Description for Get all App Service plans in an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -7921,7 +8339,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get all App Service plans in an App Service Environment.
+     * Get all App Service plans in an App Service Environment.
+     *
+     * <p>Description for Get all App Service plans in an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -7936,7 +8356,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get all App Service plans in an App Service Environment.
+     * Get all App Service plans in an App Service Environment.
+     *
+     * <p>Description for Get all App Service plans in an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -7953,7 +8375,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get all apps in an App Service Environment.
+     * Get all apps in an App Service Environment.
+     *
+     * <p>Description for Get all apps in an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8012,7 +8436,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get all apps in an App Service Environment.
+     * Get all apps in an App Service Environment.
+     *
+     * <p>Description for Get all apps in an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8069,7 +8495,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get all apps in an App Service Environment.
+     * Get all apps in an App Service Environment.
+     *
+     * <p>Description for Get all apps in an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8087,7 +8515,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get all apps in an App Service Environment.
+     * Get all apps in an App Service Environment.
+     *
+     * <p>Description for Get all apps in an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8105,7 +8535,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get all apps in an App Service Environment.
+     * Get all apps in an App Service Environment.
+     *
+     * <p>Description for Get all apps in an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8125,7 +8557,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get all apps in an App Service Environment.
+     * Get all apps in an App Service Environment.
+     *
+     * <p>Description for Get all apps in an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8141,7 +8575,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get all apps in an App Service Environment.
+     * Get all apps in an App Service Environment.
+     *
+     * <p>Description for Get all apps in an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8159,7 +8595,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Suspend an App Service Environment.
+     * Suspend an App Service Environment.
+     *
+     * <p>Description for Suspend an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8231,7 +8669,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Suspend an App Service Environment.
+     * Suspend an App Service Environment.
+     *
+     * <p>Description for Suspend an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8297,7 +8737,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Suspend an App Service Environment.
+     * Suspend an App Service Environment.
+     *
+     * <p>Description for Suspend an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8313,7 +8755,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Suspend an App Service Environment.
+     * Suspend an App Service Environment.
+     *
+     * <p>Description for Suspend an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8331,7 +8775,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Suspend an App Service Environment.
+     * Suspend an App Service Environment.
+     *
+     * <p>Description for Suspend an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8346,7 +8792,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Suspend an App Service Environment.
+     * Suspend an App Service Environment.
+     *
+     * <p>Description for Suspend an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8362,7 +8810,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get global usage metrics of an App Service Environment.
+     * Get global usage metrics of an App Service Environment.
+     *
+     * <p>Description for Get global usage metrics of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8423,7 +8873,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get global usage metrics of an App Service Environment.
+     * Get global usage metrics of an App Service Environment.
+     *
+     * <p>Description for Get global usage metrics of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8482,7 +8934,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get global usage metrics of an App Service Environment.
+     * Get global usage metrics of an App Service Environment.
+     *
+     * <p>Description for Get global usage metrics of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8502,7 +8956,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get global usage metrics of an App Service Environment.
+     * Get global usage metrics of an App Service Environment.
+     *
+     * <p>Description for Get global usage metrics of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8520,7 +8976,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get global usage metrics of an App Service Environment.
+     * Get global usage metrics of an App Service Environment.
+     *
+     * <p>Description for Get global usage metrics of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8542,7 +9000,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get global usage metrics of an App Service Environment.
+     * Get global usage metrics of an App Service Environment.
+     *
+     * <p>Description for Get global usage metrics of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8558,7 +9018,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get global usage metrics of an App Service Environment.
+     * Get global usage metrics of an App Service Environment.
+     *
+     * <p>Description for Get global usage metrics of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8578,7 +9040,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get all worker pools of an App Service Environment.
+     * Get all worker pools of an App Service Environment.
+     *
+     * <p>Description for Get all worker pools of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8635,7 +9099,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get all worker pools of an App Service Environment.
+     * Get all worker pools of an App Service Environment.
+     *
+     * <p>Description for Get all worker pools of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8690,7 +9156,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get all worker pools of an App Service Environment.
+     * Get all worker pools of an App Service Environment.
+     *
+     * <p>Description for Get all worker pools of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8707,7 +9175,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get all worker pools of an App Service Environment.
+     * Get all worker pools of an App Service Environment.
+     *
+     * <p>Description for Get all worker pools of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8726,7 +9196,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get all worker pools of an App Service Environment.
+     * Get all worker pools of an App Service Environment.
+     *
+     * <p>Description for Get all worker pools of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8741,7 +9213,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get all worker pools of an App Service Environment.
+     * Get all worker pools of an App Service Environment.
+     *
+     * <p>Description for Get all worker pools of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8758,7 +9232,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get properties of a worker pool.
+     * Get properties of a worker pool.
+     *
+     * <p>Description for Get properties of a worker pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8812,7 +9288,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get properties of a worker pool.
+     * Get properties of a worker pool.
+     *
+     * <p>Description for Get properties of a worker pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8864,7 +9342,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get properties of a worker pool.
+     * Get properties of a worker pool.
+     *
+     * <p>Description for Get properties of a worker pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8882,7 +9362,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get properties of a worker pool.
+     * Get properties of a worker pool.
+     *
+     * <p>Description for Get properties of a worker pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8898,7 +9380,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get properties of a worker pool.
+     * Get properties of a worker pool.
+     *
+     * <p>Description for Get properties of a worker pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8916,7 +9400,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Create or update a worker pool.
+     * Create or update a worker pool.
+     *
+     * <p>Description for Create or update a worker pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -8978,7 +9464,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Create or update a worker pool.
+     * Create or update a worker pool.
+     *
+     * <p>Description for Create or update a worker pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -9042,7 +9530,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Create or update a worker pool.
+     * Create or update a worker pool.
+     *
+     * <p>Description for Create or update a worker pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -9069,7 +9559,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Create or update a worker pool.
+     * Create or update a worker pool.
+     *
+     * <p>Description for Create or update a worker pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -9103,7 +9595,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Create or update a worker pool.
+     * Create or update a worker pool.
+     *
+     * <p>Description for Create or update a worker pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -9122,7 +9616,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Create or update a worker pool.
+     * Create or update a worker pool.
+     *
+     * <p>Description for Create or update a worker pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -9146,7 +9642,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Create or update a worker pool.
+     * Create or update a worker pool.
+     *
+     * <p>Description for Create or update a worker pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -9166,7 +9664,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Create or update a worker pool.
+     * Create or update a worker pool.
+     *
+     * <p>Description for Create or update a worker pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -9191,7 +9691,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Create or update a worker pool.
+     * Create or update a worker pool.
+     *
+     * <p>Description for Create or update a worker pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -9209,7 +9711,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Create or update a worker pool.
+     * Create or update a worker pool.
+     *
+     * <p>Description for Create or update a worker pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -9233,7 +9737,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Create or update a worker pool.
+     * Create or update a worker pool.
+     *
+     * <p>Description for Create or update a worker pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -9295,7 +9801,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Create or update a worker pool.
+     * Create or update a worker pool.
+     *
+     * <p>Description for Create or update a worker pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -9359,7 +9867,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Create or update a worker pool.
+     * Create or update a worker pool.
+     *
+     * <p>Description for Create or update a worker pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -9378,7 +9888,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Create or update a worker pool.
+     * Create or update a worker pool.
+     *
+     * <p>Description for Create or update a worker pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -9396,7 +9908,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Create or update a worker pool.
+     * Create or update a worker pool.
+     *
+     * <p>Description for Create or update a worker pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -9420,7 +9934,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get metric definitions for a specific instance of a worker pool of an App Service Environment.
+     * Get metric definitions for a specific instance of a worker pool of an App Service Environment.
+     *
+     * <p>Description for Get metric definitions for a specific instance of a worker pool of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -9488,7 +10004,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get metric definitions for a specific instance of a worker pool of an App Service Environment.
+     * Get metric definitions for a specific instance of a worker pool of an App Service Environment.
+     *
+     * <p>Description for Get metric definitions for a specific instance of a worker pool of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -9554,7 +10072,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get metric definitions for a specific instance of a worker pool of an App Service Environment.
+     * Get metric definitions for a specific instance of a worker pool of an App Service Environment.
+     *
+     * <p>Description for Get metric definitions for a specific instance of a worker pool of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -9576,7 +10096,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get metric definitions for a specific instance of a worker pool of an App Service Environment.
+     * Get metric definitions for a specific instance of a worker pool of an App Service Environment.
+     *
+     * <p>Description for Get metric definitions for a specific instance of a worker pool of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -9599,7 +10121,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get metric definitions for a specific instance of a worker pool of an App Service Environment.
+     * Get metric definitions for a specific instance of a worker pool of an App Service Environment.
+     *
+     * <p>Description for Get metric definitions for a specific instance of a worker pool of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -9618,7 +10142,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get metric definitions for a specific instance of a worker pool of an App Service Environment.
+     * Get metric definitions for a specific instance of a worker pool of an App Service Environment.
+     *
+     * <p>Description for Get metric definitions for a specific instance of a worker pool of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -9638,7 +10164,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get metric definitions for a worker pool of an App Service Environment.
+     * Get metric definitions for a worker pool of an App Service Environment.
+     *
+     * <p>Description for Get metric definitions for a worker pool of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -9701,7 +10229,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get metric definitions for a worker pool of an App Service Environment.
+     * Get metric definitions for a worker pool of an App Service Environment.
+     *
+     * <p>Description for Get metric definitions for a worker pool of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -9762,7 +10292,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get metric definitions for a worker pool of an App Service Environment.
+     * Get metric definitions for a worker pool of an App Service Environment.
+     *
+     * <p>Description for Get metric definitions for a worker pool of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -9781,7 +10313,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get metric definitions for a worker pool of an App Service Environment.
+     * Get metric definitions for a worker pool of an App Service Environment.
+     *
+     * <p>Description for Get metric definitions for a worker pool of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -9801,7 +10335,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get metric definitions for a worker pool of an App Service Environment.
+     * Get metric definitions for a worker pool of an App Service Environment.
+     *
+     * <p>Description for Get metric definitions for a worker pool of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -9818,7 +10354,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get metric definitions for a worker pool of an App Service Environment.
+     * Get metric definitions for a worker pool of an App Service Environment.
+     *
+     * <p>Description for Get metric definitions for a worker pool of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -9837,7 +10375,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get available SKUs for scaling a worker pool.
+     * Get available SKUs for scaling a worker pool.
+     *
+     * <p>Description for Get available SKUs for scaling a worker pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -9899,7 +10439,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get available SKUs for scaling a worker pool.
+     * Get available SKUs for scaling a worker pool.
+     *
+     * <p>Description for Get available SKUs for scaling a worker pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -9959,7 +10501,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get available SKUs for scaling a worker pool.
+     * Get available SKUs for scaling a worker pool.
+     *
+     * <p>Description for Get available SKUs for scaling a worker pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -9978,7 +10522,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get available SKUs for scaling a worker pool.
+     * Get available SKUs for scaling a worker pool.
+     *
+     * <p>Description for Get available SKUs for scaling a worker pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -9998,7 +10544,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get available SKUs for scaling a worker pool.
+     * Get available SKUs for scaling a worker pool.
+     *
+     * <p>Description for Get available SKUs for scaling a worker pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -10015,7 +10563,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get available SKUs for scaling a worker pool.
+     * Get available SKUs for scaling a worker pool.
+     *
+     * <p>Description for Get available SKUs for scaling a worker pool.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -10033,7 +10583,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get usage metrics for a worker pool of an App Service Environment.
+     * Get usage metrics for a worker pool of an App Service Environment.
+     *
+     * <p>Description for Get usage metrics for a worker pool of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -10095,7 +10647,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get usage metrics for a worker pool of an App Service Environment.
+     * Get usage metrics for a worker pool of an App Service Environment.
+     *
+     * <p>Description for Get usage metrics for a worker pool of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -10155,7 +10709,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get usage metrics for a worker pool of an App Service Environment.
+     * Get usage metrics for a worker pool of an App Service Environment.
+     *
+     * <p>Description for Get usage metrics for a worker pool of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -10174,7 +10730,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get usage metrics for a worker pool of an App Service Environment.
+     * Get usage metrics for a worker pool of an App Service Environment.
+     *
+     * <p>Description for Get usage metrics for a worker pool of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -10194,7 +10752,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get usage metrics for a worker pool of an App Service Environment.
+     * Get usage metrics for a worker pool of an App Service Environment.
+     *
+     * <p>Description for Get usage metrics for a worker pool of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
@@ -10210,7 +10770,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     }
 
     /**
-     * Description for Get usage metrics for a worker pool of an App Service Environment.
+     * Get usage metrics for a worker pool of an App Service Environment.
+     *
+     * <p>Description for Get usage metrics for a worker pool of an App Service Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.

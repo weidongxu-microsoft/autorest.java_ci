@@ -46,6 +46,8 @@ public interface SchemaRegistriesClient {
         String resourceGroupName, String namespaceName, Integer skip, Integer top, Context context);
 
     /**
+     * The createOrUpdate operation.
+     *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param schemaGroupName The Schema Group name.
@@ -60,6 +62,8 @@ public interface SchemaRegistriesClient {
         String resourceGroupName, String namespaceName, String schemaGroupName, SchemaGroupInner parameters);
 
     /**
+     * The createOrUpdate operation.
+     *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param schemaGroupName The Schema Group name.
@@ -79,6 +83,8 @@ public interface SchemaRegistriesClient {
         Context context);
 
     /**
+     * The delete operation.
+     *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param schemaGroupName The Schema Group name.
@@ -90,6 +96,8 @@ public interface SchemaRegistriesClient {
     void delete(String resourceGroupName, String namespaceName, String schemaGroupName);
 
     /**
+     * The delete operation.
+     *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param schemaGroupName The Schema Group name.
@@ -104,6 +112,8 @@ public interface SchemaRegistriesClient {
         String resourceGroupName, String namespaceName, String schemaGroupName, Context context);
 
     /**
+     * The get operation.
+     *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param schemaGroupName The Schema Group name.
@@ -116,6 +126,8 @@ public interface SchemaRegistriesClient {
     SchemaGroupInner get(String resourceGroupName, String namespaceName, String schemaGroupName);
 
     /**
+     * The get operation.
+     *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param schemaGroupName The Schema Group name.

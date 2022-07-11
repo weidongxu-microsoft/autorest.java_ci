@@ -298,6 +298,9 @@ public interface IotHubDescription {
 
     /**
      * Get the security metadata for an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security
+     *
+     * <p>Get the security metadata for an IoT hub. For more information, see:
      * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security.
      *
      * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected
@@ -309,6 +312,9 @@ public interface IotHubDescription {
 
     /**
      * Get the security metadata for an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security
+     *
+     * <p>Get the security metadata for an IoT hub. For more information, see:
      * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security.
      *
      * @param context The context to associate with this operation.
@@ -323,6 +329,10 @@ public interface IotHubDescription {
     /**
      * Exports all the device identities in the IoT hub identity registry to an Azure Storage blob container. For more
      * information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities
+     *
+     * <p>Exports all the device identities in the IoT hub identity registry to an Azure Storage blob container. For
+     * more information, see:
      * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities.
      *
      * @param exportDevicesParameters The parameters that specify the export devices operation.
@@ -337,6 +347,10 @@ public interface IotHubDescription {
     /**
      * Exports all the device identities in the IoT hub identity registry to an Azure Storage blob container. For more
      * information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities
+     *
+     * <p>Exports all the device identities in the IoT hub identity registry to an Azure Storage blob container. For
+     * more information, see:
      * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities.
      *
      * @param exportDevicesParameters The parameters that specify the export devices operation.
@@ -352,6 +366,10 @@ public interface IotHubDescription {
     /**
      * Import, update, or delete device identities in the IoT hub identity registry from a blob. For more information,
      * see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities
+     *
+     * <p>Import, update, or delete device identities in the IoT hub identity registry from a blob. For more
+     * information, see:
      * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities.
      *
      * @param importDevicesParameters The parameters that specify the import devices operation.
@@ -366,6 +384,10 @@ public interface IotHubDescription {
     /**
      * Import, update, or delete device identities in the IoT hub identity registry from a blob. For more information,
      * see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities
+     *
+     * <p>Import, update, or delete device identities in the IoT hub identity registry from a blob. For more
+     * information, see:
      * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities.
      *
      * @param importDevicesParameters The parameters that specify the import devices operation.

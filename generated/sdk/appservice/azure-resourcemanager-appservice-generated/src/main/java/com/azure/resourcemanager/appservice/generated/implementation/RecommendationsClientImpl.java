@@ -345,7 +345,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for List all recommendations for a subscription.
+     * List all recommendations for a subscription.
+     *
+     * <p>Description for List all recommendations for a subscription.
      *
      * @param featured Specify &lt;code&gt;true&lt;/code&gt; to return only the most critical recommendations. The
      *     default is &lt;code&gt;false&lt;/code&gt;, which returns all recommendations.
@@ -397,7 +399,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for List all recommendations for a subscription.
+     * List all recommendations for a subscription.
+     *
+     * <p>Description for List all recommendations for a subscription.
      *
      * @param featured Specify &lt;code&gt;true&lt;/code&gt; to return only the most critical recommendations. The
      *     default is &lt;code&gt;false&lt;/code&gt;, which returns all recommendations.
@@ -448,7 +452,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for List all recommendations for a subscription.
+     * List all recommendations for a subscription.
+     *
+     * <p>Description for List all recommendations for a subscription.
      *
      * @param featured Specify &lt;code&gt;true&lt;/code&gt; to return only the most critical recommendations. The
      *     default is &lt;code&gt;false&lt;/code&gt;, which returns all recommendations.
@@ -467,7 +473,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for List all recommendations for a subscription.
+     * List all recommendations for a subscription.
+     *
+     * <p>Description for List all recommendations for a subscription.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -482,7 +490,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for List all recommendations for a subscription.
+     * List all recommendations for a subscription.
+     *
+     * <p>Description for List all recommendations for a subscription.
      *
      * @param featured Specify &lt;code&gt;true&lt;/code&gt; to return only the most critical recommendations. The
      *     default is &lt;code&gt;false&lt;/code&gt;, which returns all recommendations.
@@ -503,7 +513,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for List all recommendations for a subscription.
+     * List all recommendations for a subscription.
+     *
+     * <p>Description for List all recommendations for a subscription.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -517,7 +529,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for List all recommendations for a subscription.
+     * List all recommendations for a subscription.
+     *
+     * <p>Description for List all recommendations for a subscription.
      *
      * @param featured Specify &lt;code&gt;true&lt;/code&gt; to return only the most critical recommendations. The
      *     default is &lt;code&gt;false&lt;/code&gt;, which returns all recommendations.
@@ -536,7 +550,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Reset all recommendation opt-out settings for a subscription.
+     * Reset all recommendation opt-out settings for a subscription.
+     *
+     * <p>Description for Reset all recommendation opt-out settings for a subscription.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -571,7 +587,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Reset all recommendation opt-out settings for a subscription.
+     * Reset all recommendation opt-out settings for a subscription.
+     *
+     * <p>Description for Reset all recommendation opt-out settings for a subscription.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -605,7 +623,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Reset all recommendation opt-out settings for a subscription.
+     * Reset all recommendation opt-out settings for a subscription.
+     *
+     * <p>Description for Reset all recommendation opt-out settings for a subscription.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -617,7 +637,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Reset all recommendation opt-out settings for a subscription.
+     * Reset all recommendation opt-out settings for a subscription.
+     *
+     * <p>Description for Reset all recommendation opt-out settings for a subscription.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -628,7 +650,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Reset all recommendation opt-out settings for a subscription.
+     * Reset all recommendation opt-out settings for a subscription.
+     *
+     * <p>Description for Reset all recommendation opt-out settings for a subscription.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -642,7 +666,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Disables the specified rule so it will not apply to a subscription in the future.
+     * Disables the specified rule so it will not apply to a subscription in the future.
+     *
+     * <p>Description for Disables the specified rule so it will not apply to a subscription in the future.
      *
      * @param name Rule name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -683,7 +709,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Disables the specified rule so it will not apply to a subscription in the future.
+     * Disables the specified rule so it will not apply to a subscription in the future.
+     *
+     * <p>Description for Disables the specified rule so it will not apply to a subscription in the future.
      *
      * @param name Rule name.
      * @param context The context to associate with this operation.
@@ -722,7 +750,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Disables the specified rule so it will not apply to a subscription in the future.
+     * Disables the specified rule so it will not apply to a subscription in the future.
+     *
+     * <p>Description for Disables the specified rule so it will not apply to a subscription in the future.
      *
      * @param name Rule name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -736,7 +766,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Disables the specified rule so it will not apply to a subscription in the future.
+     * Disables the specified rule so it will not apply to a subscription in the future.
+     *
+     * <p>Description for Disables the specified rule so it will not apply to a subscription in the future.
      *
      * @param name Rule name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -749,7 +781,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Disables the specified rule so it will not apply to a subscription in the future.
+     * Disables the specified rule so it will not apply to a subscription in the future.
+     *
+     * <p>Description for Disables the specified rule so it will not apply to a subscription in the future.
      *
      * @param name Rule name.
      * @param context The context to associate with this operation.
@@ -764,7 +798,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get past recommendations for an app, optionally specified by the time range.
+     * Get past recommendations for an app, optionally specified by the time range.
+     *
+     * <p>Description for Get past recommendations for an app, optionally specified by the time range.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param hostingEnvironmentName Name of the hosting environment.
@@ -830,7 +866,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get past recommendations for an app, optionally specified by the time range.
+     * Get past recommendations for an app, optionally specified by the time range.
+     *
+     * <p>Description for Get past recommendations for an app, optionally specified by the time range.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param hostingEnvironmentName Name of the hosting environment.
@@ -894,7 +932,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get past recommendations for an app, optionally specified by the time range.
+     * Get past recommendations for an app, optionally specified by the time range.
+     *
+     * <p>Description for Get past recommendations for an app, optionally specified by the time range.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param hostingEnvironmentName Name of the hosting environment.
@@ -919,7 +959,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get past recommendations for an app, optionally specified by the time range.
+     * Get past recommendations for an app, optionally specified by the time range.
+     *
+     * <p>Description for Get past recommendations for an app, optionally specified by the time range.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param hostingEnvironmentName Name of the hosting environment.
@@ -941,7 +983,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get past recommendations for an app, optionally specified by the time range.
+     * Get past recommendations for an app, optionally specified by the time range.
+     *
+     * <p>Description for Get past recommendations for an app, optionally specified by the time range.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param hostingEnvironmentName Name of the hosting environment.
@@ -967,7 +1011,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get past recommendations for an app, optionally specified by the time range.
+     * Get past recommendations for an app, optionally specified by the time range.
+     *
+     * <p>Description for Get past recommendations for an app, optionally specified by the time range.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param hostingEnvironmentName Name of the hosting environment.
@@ -986,7 +1032,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get past recommendations for an app, optionally specified by the time range.
+     * Get past recommendations for an app, optionally specified by the time range.
+     *
+     * <p>Description for Get past recommendations for an app, optionally specified by the time range.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param hostingEnvironmentName Name of the hosting environment.
@@ -1010,7 +1058,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get all recommendations for a hosting environment.
+     * Get all recommendations for a hosting environment.
+     *
+     * <p>Description for Get all recommendations for a hosting environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param hostingEnvironmentName Name of the app.
@@ -1075,7 +1125,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get all recommendations for a hosting environment.
+     * Get all recommendations for a hosting environment.
+     *
+     * <p>Description for Get all recommendations for a hosting environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param hostingEnvironmentName Name of the app.
@@ -1138,7 +1190,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get all recommendations for a hosting environment.
+     * Get all recommendations for a hosting environment.
+     *
+     * <p>Description for Get all recommendations for a hosting environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param hostingEnvironmentName Name of the app.
@@ -1162,7 +1216,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get all recommendations for a hosting environment.
+     * Get all recommendations for a hosting environment.
+     *
+     * <p>Description for Get all recommendations for a hosting environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param hostingEnvironmentName Name of the app.
@@ -1184,7 +1240,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get all recommendations for a hosting environment.
+     * Get all recommendations for a hosting environment.
+     *
+     * <p>Description for Get all recommendations for a hosting environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param hostingEnvironmentName Name of the app.
@@ -1209,7 +1267,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get all recommendations for a hosting environment.
+     * Get all recommendations for a hosting environment.
+     *
+     * <p>Description for Get all recommendations for a hosting environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param hostingEnvironmentName Name of the app.
@@ -1229,7 +1289,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get all recommendations for a hosting environment.
+     * Get all recommendations for a hosting environment.
+     *
+     * <p>Description for Get all recommendations for a hosting environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param hostingEnvironmentName Name of the app.
@@ -1252,7 +1314,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Disable all recommendations for an app.
+     * Disable all recommendations for an app.
+     *
+     * <p>Description for Disable all recommendations for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param environmentName Name of the app.
@@ -1308,7 +1372,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Disable all recommendations for an app.
+     * Disable all recommendations for an app.
+     *
+     * <p>Description for Disable all recommendations for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param environmentName Name of the app.
@@ -1362,7 +1428,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Disable all recommendations for an app.
+     * Disable all recommendations for an app.
+     *
+     * <p>Description for Disable all recommendations for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param environmentName Name of the app.
@@ -1381,7 +1449,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Disable all recommendations for an app.
+     * Disable all recommendations for an app.
+     *
+     * <p>Description for Disable all recommendations for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param environmentName Name of the app.
@@ -1397,7 +1467,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Disable all recommendations for an app.
+     * Disable all recommendations for an app.
+     *
+     * <p>Description for Disable all recommendations for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param environmentName Name of the app.
@@ -1417,7 +1489,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Reset all recommendation opt-out settings for an app.
+     * Reset all recommendation opt-out settings for an app.
+     *
+     * <p>Description for Reset all recommendation opt-out settings for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param environmentName Name of the app.
@@ -1473,7 +1547,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Reset all recommendation opt-out settings for an app.
+     * Reset all recommendation opt-out settings for an app.
+     *
+     * <p>Description for Reset all recommendation opt-out settings for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param environmentName Name of the app.
@@ -1527,7 +1603,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Reset all recommendation opt-out settings for an app.
+     * Reset all recommendation opt-out settings for an app.
+     *
+     * <p>Description for Reset all recommendation opt-out settings for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param environmentName Name of the app.
@@ -1546,7 +1624,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Reset all recommendation opt-out settings for an app.
+     * Reset all recommendation opt-out settings for an app.
+     *
+     * <p>Description for Reset all recommendation opt-out settings for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param environmentName Name of the app.
@@ -1562,7 +1642,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Reset all recommendation opt-out settings for an app.
+     * Reset all recommendation opt-out settings for an app.
+     *
+     * <p>Description for Reset all recommendation opt-out settings for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param environmentName Name of the app.
@@ -1582,7 +1664,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get a recommendation rule for an app.
+     * Get a recommendation rule for an app.
+     *
+     * <p>Description for Get a recommendation rule for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param hostingEnvironmentName Name of the hosting environment.
@@ -1648,7 +1732,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get a recommendation rule for an app.
+     * Get a recommendation rule for an app.
+     *
+     * <p>Description for Get a recommendation rule for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param hostingEnvironmentName Name of the hosting environment.
@@ -1713,7 +1799,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get a recommendation rule for an app.
+     * Get a recommendation rule for an app.
+     *
+     * <p>Description for Get a recommendation rule for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param hostingEnvironmentName Name of the hosting environment.
@@ -1741,7 +1829,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get a recommendation rule for an app.
+     * Get a recommendation rule for an app.
+     *
+     * <p>Description for Get a recommendation rule for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param hostingEnvironmentName Name of the hosting environment.
@@ -1763,7 +1853,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get a recommendation rule for an app.
+     * Get a recommendation rule for an app.
+     *
+     * <p>Description for Get a recommendation rule for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param hostingEnvironmentName Name of the hosting environment.
@@ -1784,7 +1876,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get a recommendation rule for an app.
+     * Get a recommendation rule for an app.
+     *
+     * <p>Description for Get a recommendation rule for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param hostingEnvironmentName Name of the hosting environment.
@@ -1813,7 +1907,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Disables the specific rule for a web site permanently.
+     * Disables the specific rule for a web site permanently.
+     *
+     * <p>Description for Disables the specific rule for a web site permanently.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param environmentName Site name.
@@ -1874,7 +1970,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Disables the specific rule for a web site permanently.
+     * Disables the specific rule for a web site permanently.
+     *
+     * <p>Description for Disables the specific rule for a web site permanently.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param environmentName Site name.
@@ -1933,7 +2031,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Disables the specific rule for a web site permanently.
+     * Disables the specific rule for a web site permanently.
+     *
+     * <p>Description for Disables the specific rule for a web site permanently.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param environmentName Site name.
@@ -1953,7 +2053,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Disables the specific rule for a web site permanently.
+     * Disables the specific rule for a web site permanently.
+     *
+     * <p>Description for Disables the specific rule for a web site permanently.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param environmentName Site name.
@@ -1972,7 +2074,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Disables the specific rule for a web site permanently.
+     * Disables the specific rule for a web site permanently.
+     *
+     * <p>Description for Disables the specific rule for a web site permanently.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param environmentName Site name.
@@ -1993,7 +2097,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get past recommendations for an app, optionally specified by the time range.
+     * Get past recommendations for an app, optionally specified by the time range.
+     *
+     * <p>Description for Get past recommendations for an app, optionally specified by the time range.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Name of the app.
@@ -2057,7 +2163,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get past recommendations for an app, optionally specified by the time range.
+     * Get past recommendations for an app, optionally specified by the time range.
+     *
+     * <p>Description for Get past recommendations for an app, optionally specified by the time range.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Name of the app.
@@ -2119,7 +2227,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get past recommendations for an app, optionally specified by the time range.
+     * Get past recommendations for an app, optionally specified by the time range.
+     *
+     * <p>Description for Get past recommendations for an app, optionally specified by the time range.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Name of the app.
@@ -2142,7 +2252,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get past recommendations for an app, optionally specified by the time range.
+     * Get past recommendations for an app, optionally specified by the time range.
+     *
+     * <p>Description for Get past recommendations for an app, optionally specified by the time range.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Name of the app.
@@ -2161,7 +2273,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get past recommendations for an app, optionally specified by the time range.
+     * Get past recommendations for an app, optionally specified by the time range.
+     *
+     * <p>Description for Get past recommendations for an app, optionally specified by the time range.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Name of the app.
@@ -2185,7 +2299,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get past recommendations for an app, optionally specified by the time range.
+     * Get past recommendations for an app, optionally specified by the time range.
+     *
+     * <p>Description for Get past recommendations for an app, optionally specified by the time range.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Name of the app.
@@ -2202,7 +2318,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get past recommendations for an app, optionally specified by the time range.
+     * Get past recommendations for an app, optionally specified by the time range.
+     *
+     * <p>Description for Get past recommendations for an app, optionally specified by the time range.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Name of the app.
@@ -2225,7 +2343,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get all recommendations for an app.
+     * Get all recommendations for an app.
+     *
+     * <p>Description for Get all recommendations for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Name of the app.
@@ -2288,7 +2408,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get all recommendations for an app.
+     * Get all recommendations for an app.
+     *
+     * <p>Description for Get all recommendations for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Name of the app.
@@ -2349,7 +2471,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get all recommendations for an app.
+     * Get all recommendations for an app.
+     *
+     * <p>Description for Get all recommendations for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Name of the app.
@@ -2371,7 +2495,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get all recommendations for an app.
+     * Get all recommendations for an app.
+     *
+     * <p>Description for Get all recommendations for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Name of the app.
@@ -2391,7 +2517,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get all recommendations for an app.
+     * Get all recommendations for an app.
+     *
+     * <p>Description for Get all recommendations for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Name of the app.
@@ -2414,7 +2542,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get all recommendations for an app.
+     * Get all recommendations for an app.
+     *
+     * <p>Description for Get all recommendations for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Name of the app.
@@ -2431,7 +2561,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get all recommendations for an app.
+     * Get all recommendations for an app.
+     *
+     * <p>Description for Get all recommendations for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Name of the app.
@@ -2453,7 +2585,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Disable all recommendations for an app.
+     * Disable all recommendations for an app.
+     *
+     * <p>Description for Disable all recommendations for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Name of the app.
@@ -2500,7 +2634,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Disable all recommendations for an app.
+     * Disable all recommendations for an app.
+     *
+     * <p>Description for Disable all recommendations for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Name of the app.
@@ -2546,7 +2682,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Disable all recommendations for an app.
+     * Disable all recommendations for an app.
+     *
+     * <p>Description for Disable all recommendations for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Name of the app.
@@ -2561,7 +2699,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Disable all recommendations for an app.
+     * Disable all recommendations for an app.
+     *
+     * <p>Description for Disable all recommendations for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Name of the app.
@@ -2575,7 +2715,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Disable all recommendations for an app.
+     * Disable all recommendations for an app.
+     *
+     * <p>Description for Disable all recommendations for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Name of the app.
@@ -2591,7 +2733,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Reset all recommendation opt-out settings for an app.
+     * Reset all recommendation opt-out settings for an app.
+     *
+     * <p>Description for Reset all recommendation opt-out settings for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Name of the app.
@@ -2638,7 +2782,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Reset all recommendation opt-out settings for an app.
+     * Reset all recommendation opt-out settings for an app.
+     *
+     * <p>Description for Reset all recommendation opt-out settings for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Name of the app.
@@ -2684,7 +2830,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Reset all recommendation opt-out settings for an app.
+     * Reset all recommendation opt-out settings for an app.
+     *
+     * <p>Description for Reset all recommendation opt-out settings for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Name of the app.
@@ -2699,7 +2847,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Reset all recommendation opt-out settings for an app.
+     * Reset all recommendation opt-out settings for an app.
+     *
+     * <p>Description for Reset all recommendation opt-out settings for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Name of the app.
@@ -2713,7 +2863,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Reset all recommendation opt-out settings for an app.
+     * Reset all recommendation opt-out settings for an app.
+     *
+     * <p>Description for Reset all recommendation opt-out settings for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Name of the app.
@@ -2730,7 +2882,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get a recommendation rule for an app.
+     * Get a recommendation rule for an app.
+     *
+     * <p>Description for Get a recommendation rule for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Name of the app.
@@ -2790,7 +2944,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get a recommendation rule for an app.
+     * Get a recommendation rule for an app.
+     *
+     * <p>Description for Get a recommendation rule for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Name of the app.
@@ -2853,7 +3009,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get a recommendation rule for an app.
+     * Get a recommendation rule for an app.
+     *
+     * <p>Description for Get a recommendation rule for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Name of the app.
@@ -2876,7 +3034,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get a recommendation rule for an app.
+     * Get a recommendation rule for an app.
+     *
+     * <p>Description for Get a recommendation rule for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Name of the app.
@@ -2897,7 +3057,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get a recommendation rule for an app.
+     * Get a recommendation rule for an app.
+     *
+     * <p>Description for Get a recommendation rule for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Name of the app.
@@ -2915,7 +3077,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get a recommendation rule for an app.
+     * Get a recommendation rule for an app.
+     *
+     * <p>Description for Get a recommendation rule for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Name of the app.
@@ -2944,7 +3108,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Disables the specific rule for a web site permanently.
+     * Disables the specific rule for a web site permanently.
+     *
+     * <p>Description for Disables the specific rule for a web site permanently.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site name.
@@ -2997,7 +3163,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Disables the specific rule for a web site permanently.
+     * Disables the specific rule for a web site permanently.
+     *
+     * <p>Description for Disables the specific rule for a web site permanently.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site name.
@@ -3048,7 +3216,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Disables the specific rule for a web site permanently.
+     * Disables the specific rule for a web site permanently.
+     *
+     * <p>Description for Disables the specific rule for a web site permanently.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site name.
@@ -3065,7 +3235,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Disables the specific rule for a web site permanently.
+     * Disables the specific rule for a web site permanently.
+     *
+     * <p>Description for Disables the specific rule for a web site permanently.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site name.
@@ -3080,7 +3252,9 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Disables the specific rule for a web site permanently.
+     * Disables the specific rule for a web site permanently.
+     *
+     * <p>Description for Disables the specific rule for a web site permanently.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site name.

@@ -458,8 +458,10 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
     }
 
     /**
-     * When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all of
-     * its template deployments and currently stored operations.
+     * Deletes a resource group.
+     *
+     * <p>When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all
+     * of its template deployments and currently stored operations.
      *
      * @param resourceGroupName The name of the resource group to delete. The name is case insensitive.
      * @param forceDeletionTypes The resource types you want to force delete. Currently, only the following is
@@ -505,8 +507,10 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
     }
 
     /**
-     * When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all of
-     * its template deployments and currently stored operations.
+     * Deletes a resource group.
+     *
+     * <p>When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all
+     * of its template deployments and currently stored operations.
      *
      * @param resourceGroupName The name of the resource group to delete. The name is case insensitive.
      * @param forceDeletionTypes The resource types you want to force delete. Currently, only the following is
@@ -550,8 +554,10 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
     }
 
     /**
-     * When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all of
-     * its template deployments and currently stored operations.
+     * Deletes a resource group.
+     *
+     * <p>When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all
+     * of its template deployments and currently stored operations.
      *
      * @param resourceGroupName The name of the resource group to delete. The name is case insensitive.
      * @param forceDeletionTypes The resource types you want to force delete. Currently, only the following is
@@ -571,8 +577,10 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
     }
 
     /**
-     * When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all of
-     * its template deployments and currently stored operations.
+     * Deletes a resource group.
+     *
+     * <p>When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all
+     * of its template deployments and currently stored operations.
      *
      * @param resourceGroupName The name of the resource group to delete. The name is case insensitive.
      * @param forceDeletionTypes The resource types you want to force delete. Currently, only the following is
@@ -594,8 +602,10 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
     }
 
     /**
-     * When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all of
-     * its template deployments and currently stored operations.
+     * Deletes a resource group.
+     *
+     * <p>When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all
+     * of its template deployments and currently stored operations.
      *
      * @param resourceGroupName The name of the resource group to delete. The name is case insensitive.
      * @param forceDeletionTypes The resource types you want to force delete. Currently, only the following is
@@ -611,8 +621,10 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
     }
 
     /**
-     * When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all of
-     * its template deployments and currently stored operations.
+     * Deletes a resource group.
+     *
+     * <p>When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all
+     * of its template deployments and currently stored operations.
      *
      * @param resourceGroupName The name of the resource group to delete. The name is case insensitive.
      * @param forceDeletionTypes The resource types you want to force delete. Currently, only the following is
@@ -630,8 +642,10 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
     }
 
     /**
-     * When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all of
-     * its template deployments and currently stored operations.
+     * Deletes a resource group.
+     *
+     * <p>When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all
+     * of its template deployments and currently stored operations.
      *
      * @param resourceGroupName The name of the resource group to delete. The name is case insensitive.
      * @param forceDeletionTypes The resource types you want to force delete. Currently, only the following is
@@ -649,8 +663,10 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
     }
 
     /**
-     * When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all of
-     * its template deployments and currently stored operations.
+     * Deletes a resource group.
+     *
+     * <p>When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all
+     * of its template deployments and currently stored operations.
      *
      * @param resourceGroupName The name of the resource group to delete. The name is case insensitive.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -667,8 +683,10 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
     }
 
     /**
-     * When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all of
-     * its template deployments and currently stored operations.
+     * Deletes a resource group.
+     *
+     * <p>When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all
+     * of its template deployments and currently stored operations.
      *
      * @param resourceGroupName The name of the resource group to delete. The name is case insensitive.
      * @param forceDeletionTypes The resource types you want to force delete. Currently, only the following is
@@ -687,8 +705,10 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
     }
 
     /**
-     * When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all of
-     * its template deployments and currently stored operations.
+     * Deletes a resource group.
+     *
+     * <p>When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all
+     * of its template deployments and currently stored operations.
      *
      * @param resourceGroupName The name of the resource group to delete. The name is case insensitive.
      * @param forceDeletionTypes The resource types you want to force delete. Currently, only the following is
@@ -703,8 +723,10 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
     }
 
     /**
-     * When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all of
-     * its template deployments and currently stored operations.
+     * Deletes a resource group.
+     *
+     * <p>When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all
+     * of its template deployments and currently stored operations.
      *
      * @param resourceGroupName The name of the resource group to delete. The name is case insensitive.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -718,8 +740,10 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
     }
 
     /**
-     * When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all of
-     * its template deployments and currently stored operations.
+     * Deletes a resource group.
+     *
+     * <p>When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all
+     * of its template deployments and currently stored operations.
      *
      * @param resourceGroupName The name of the resource group to delete. The name is case insensitive.
      * @param forceDeletionTypes The resource types you want to force delete. Currently, only the following is
@@ -860,8 +884,10 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
     }
 
     /**
-     * Resource groups can be updated through a simple PATCH operation to a group address. The format of the request is
-     * the same as that for creating a resource group. If a field is unspecified, the current value is retained.
+     * Updates a resource group.
+     *
+     * <p>Resource groups can be updated through a simple PATCH operation to a group address. The format of the request
+     * is the same as that for creating a resource group. If a field is unspecified, the current value is retained.
      *
      * @param resourceGroupName The name of the resource group to update. The name is case insensitive.
      * @param parameters Parameters supplied to update a resource group.
@@ -911,8 +937,10 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
     }
 
     /**
-     * Resource groups can be updated through a simple PATCH operation to a group address. The format of the request is
-     * the same as that for creating a resource group. If a field is unspecified, the current value is retained.
+     * Updates a resource group.
+     *
+     * <p>Resource groups can be updated through a simple PATCH operation to a group address. The format of the request
+     * is the same as that for creating a resource group. If a field is unspecified, the current value is retained.
      *
      * @param resourceGroupName The name of the resource group to update. The name is case insensitive.
      * @param parameters Parameters supplied to update a resource group.
@@ -960,8 +988,10 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
     }
 
     /**
-     * Resource groups can be updated through a simple PATCH operation to a group address. The format of the request is
-     * the same as that for creating a resource group. If a field is unspecified, the current value is retained.
+     * Updates a resource group.
+     *
+     * <p>Resource groups can be updated through a simple PATCH operation to a group address. The format of the request
+     * is the same as that for creating a resource group. If a field is unspecified, the current value is retained.
      *
      * @param resourceGroupName The name of the resource group to update. The name is case insensitive.
      * @param parameters Parameters supplied to update a resource group.
@@ -976,8 +1006,10 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
     }
 
     /**
-     * Resource groups can be updated through a simple PATCH operation to a group address. The format of the request is
-     * the same as that for creating a resource group. If a field is unspecified, the current value is retained.
+     * Updates a resource group.
+     *
+     * <p>Resource groups can be updated through a simple PATCH operation to a group address. The format of the request
+     * is the same as that for creating a resource group. If a field is unspecified, the current value is retained.
      *
      * @param resourceGroupName The name of the resource group to update. The name is case insensitive.
      * @param parameters Parameters supplied to update a resource group.
@@ -992,8 +1024,10 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
     }
 
     /**
-     * Resource groups can be updated through a simple PATCH operation to a group address. The format of the request is
-     * the same as that for creating a resource group. If a field is unspecified, the current value is retained.
+     * Updates a resource group.
+     *
+     * <p>Resource groups can be updated through a simple PATCH operation to a group address. The format of the request
+     * is the same as that for creating a resource group. If a field is unspecified, the current value is retained.
      *
      * @param resourceGroupName The name of the resource group to update. The name is case insensitive.
      * @param parameters Parameters supplied to update a resource group.

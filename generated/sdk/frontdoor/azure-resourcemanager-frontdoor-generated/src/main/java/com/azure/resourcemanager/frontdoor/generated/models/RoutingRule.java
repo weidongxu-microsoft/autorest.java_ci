@@ -80,7 +80,9 @@ public final class RoutingRule extends SubResource {
     }
 
     /**
-     * Get the resourceState property: Resource status of the Front Door or Front Door SubResource. Resource status.
+     * Get the resourceState property: Resource status of the Front Door or Front Door SubResource.
+     *
+     * <p>Resource status.
      *
      * @return the resourceState value.
      */

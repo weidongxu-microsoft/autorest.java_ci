@@ -365,6 +365,8 @@ public final class SchemaRegistriesClientImpl implements SchemaRegistriesClient 
     }
 
     /**
+     * The createOrUpdate operation.
+     *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param schemaGroupName The Schema Group name.
@@ -425,6 +427,8 @@ public final class SchemaRegistriesClientImpl implements SchemaRegistriesClient 
     }
 
     /**
+     * The createOrUpdate operation.
+     *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param schemaGroupName The Schema Group name.
@@ -487,6 +491,8 @@ public final class SchemaRegistriesClientImpl implements SchemaRegistriesClient 
     }
 
     /**
+     * The createOrUpdate operation.
+     *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param schemaGroupName The Schema Group name.
@@ -504,6 +510,8 @@ public final class SchemaRegistriesClientImpl implements SchemaRegistriesClient 
     }
 
     /**
+     * The createOrUpdate operation.
+     *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param schemaGroupName The Schema Group name.
@@ -520,6 +528,8 @@ public final class SchemaRegistriesClientImpl implements SchemaRegistriesClient 
     }
 
     /**
+     * The createOrUpdate operation.
+     *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param schemaGroupName The Schema Group name.
@@ -542,6 +552,8 @@ public final class SchemaRegistriesClientImpl implements SchemaRegistriesClient 
     }
 
     /**
+     * The delete operation.
+     *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param schemaGroupName The Schema Group name.
@@ -594,6 +606,8 @@ public final class SchemaRegistriesClientImpl implements SchemaRegistriesClient 
     }
 
     /**
+     * The delete operation.
+     *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param schemaGroupName The Schema Group name.
@@ -644,6 +658,8 @@ public final class SchemaRegistriesClientImpl implements SchemaRegistriesClient 
     }
 
     /**
+     * The delete operation.
+     *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param schemaGroupName The Schema Group name.
@@ -659,6 +675,8 @@ public final class SchemaRegistriesClientImpl implements SchemaRegistriesClient 
     }
 
     /**
+     * The delete operation.
+     *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param schemaGroupName The Schema Group name.
@@ -672,6 +690,8 @@ public final class SchemaRegistriesClientImpl implements SchemaRegistriesClient 
     }
 
     /**
+     * The delete operation.
+     *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param schemaGroupName The Schema Group name.
@@ -688,6 +708,8 @@ public final class SchemaRegistriesClientImpl implements SchemaRegistriesClient 
     }
 
     /**
+     * The get operation.
+     *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param schemaGroupName The Schema Group name.
@@ -741,6 +763,8 @@ public final class SchemaRegistriesClientImpl implements SchemaRegistriesClient 
     }
 
     /**
+     * The get operation.
+     *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param schemaGroupName The Schema Group name.
@@ -792,6 +816,8 @@ public final class SchemaRegistriesClientImpl implements SchemaRegistriesClient 
     }
 
     /**
+     * The get operation.
+     *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param schemaGroupName The Schema Group name.
@@ -807,6 +833,8 @@ public final class SchemaRegistriesClientImpl implements SchemaRegistriesClient 
     }
 
     /**
+     * The get operation.
+     *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param schemaGroupName The Schema Group name.
@@ -821,6 +849,8 @@ public final class SchemaRegistriesClientImpl implements SchemaRegistriesClient 
     }
 
     /**
+     * The get operation.
+     *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param schemaGroupName The Schema Group name.

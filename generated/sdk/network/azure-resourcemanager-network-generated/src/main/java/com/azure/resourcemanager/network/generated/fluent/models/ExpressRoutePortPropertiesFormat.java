@@ -11,7 +11,11 @@ import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** ExpressRoutePort Properties Properties specific to ExpressRoutePort resources. */
+/**
+ * ExpressRoutePort Properties
+ *
+ * <p>Properties specific to ExpressRoutePort resources.
+ */
 @Fluent
 public final class ExpressRoutePortPropertiesFormat {
     /*
@@ -59,8 +63,9 @@ public final class ExpressRoutePortPropertiesFormat {
     private String allocationDate;
 
     /*
-     * ExpressRouteLink Sub-Resources The set of physical links of the
-     * ExpressRoutePort resource.
+     * ExpressRouteLink Sub-Resources
+     *
+     * The set of physical links of the ExpressRoutePort resource.
      */
     @JsonProperty(value = "links")
     private List<ExpressRouteLinkInner> links;
@@ -183,8 +188,9 @@ public final class ExpressRoutePortPropertiesFormat {
     }
 
     /**
-     * Get the links property: ExpressRouteLink Sub-Resources The set of physical links of the ExpressRoutePort
-     * resource.
+     * Get the links property: ExpressRouteLink Sub-Resources
+     *
+     * <p>The set of physical links of the ExpressRoutePort resource.
      *
      * @return the links value.
      */
@@ -193,8 +199,9 @@ public final class ExpressRoutePortPropertiesFormat {
     }
 
     /**
-     * Set the links property: ExpressRouteLink Sub-Resources The set of physical links of the ExpressRoutePort
-     * resource.
+     * Set the links property: ExpressRouteLink Sub-Resources
+     *
+     * <p>The set of physical links of the ExpressRoutePort resource.
      *
      * @param links the links value to set.
      * @return the ExpressRoutePortPropertiesFormat object itself.

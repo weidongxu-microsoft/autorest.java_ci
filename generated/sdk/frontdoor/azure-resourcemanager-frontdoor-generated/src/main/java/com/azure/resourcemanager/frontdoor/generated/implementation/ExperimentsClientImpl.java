@@ -807,7 +807,9 @@ public final class ExperimentsClientImpl implements ExperimentsClient {
     }
 
     /**
-     * Updates an Experiment.
+     * Updates an Experiment by Experiment id
+     *
+     * <p>Updates an Experiment.
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param profileName The Profile identifier associated with the Tenant and Partner.
@@ -869,7 +871,9 @@ public final class ExperimentsClientImpl implements ExperimentsClient {
     }
 
     /**
-     * Updates an Experiment.
+     * Updates an Experiment by Experiment id
+     *
+     * <p>Updates an Experiment.
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param profileName The Profile identifier associated with the Tenant and Partner.
@@ -933,7 +937,9 @@ public final class ExperimentsClientImpl implements ExperimentsClient {
     }
 
     /**
-     * Updates an Experiment.
+     * Updates an Experiment by Experiment id
+     *
+     * <p>Updates an Experiment.
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param profileName The Profile identifier associated with the Tenant and Partner.
@@ -960,7 +966,9 @@ public final class ExperimentsClientImpl implements ExperimentsClient {
     }
 
     /**
-     * Updates an Experiment.
+     * Updates an Experiment by Experiment id
+     *
+     * <p>Updates an Experiment.
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param profileName The Profile identifier associated with the Tenant and Partner.
@@ -989,7 +997,9 @@ public final class ExperimentsClientImpl implements ExperimentsClient {
     }
 
     /**
-     * Updates an Experiment.
+     * Updates an Experiment by Experiment id
+     *
+     * <p>Updates an Experiment.
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param profileName The Profile identifier associated with the Tenant and Partner.
@@ -1007,7 +1017,9 @@ public final class ExperimentsClientImpl implements ExperimentsClient {
     }
 
     /**
-     * Updates an Experiment.
+     * Updates an Experiment by Experiment id
+     *
+     * <p>Updates an Experiment.
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param profileName The Profile identifier associated with the Tenant and Partner.
@@ -1030,7 +1042,9 @@ public final class ExperimentsClientImpl implements ExperimentsClient {
     }
 
     /**
-     * Updates an Experiment.
+     * Updates an Experiment by Experiment id
+     *
+     * <p>Updates an Experiment.
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param profileName The Profile identifier associated with the Tenant and Partner.
@@ -1050,7 +1064,9 @@ public final class ExperimentsClientImpl implements ExperimentsClient {
     }
 
     /**
-     * Updates an Experiment.
+     * Updates an Experiment by Experiment id
+     *
+     * <p>Updates an Experiment.
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param profileName The Profile identifier associated with the Tenant and Partner.
@@ -1075,7 +1091,9 @@ public final class ExperimentsClientImpl implements ExperimentsClient {
     }
 
     /**
-     * Updates an Experiment.
+     * Updates an Experiment by Experiment id
+     *
+     * <p>Updates an Experiment.
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param profileName The Profile identifier associated with the Tenant and Partner.
@@ -1093,7 +1111,9 @@ public final class ExperimentsClientImpl implements ExperimentsClient {
     }
 
     /**
-     * Updates an Experiment.
+     * Updates an Experiment by Experiment id
+     *
+     * <p>Updates an Experiment.
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param profileName The Profile identifier associated with the Tenant and Partner.

@@ -74,7 +74,9 @@ public final class IotHubsClientImpl implements IotHubsClient {
     }
 
     /**
-     * Manually initiate a failover for the IoT Hub to its secondary region. To learn more, see
+     * Manually initiate a failover for the IoT Hub to its secondary region
+     *
+     * <p>Manually initiate a failover for the IoT Hub to its secondary region. To learn more, see
      * https://aka.ms/manualfailover.
      *
      * @param iotHubName Name of the IoT hub to failover.
@@ -131,7 +133,9 @@ public final class IotHubsClientImpl implements IotHubsClient {
     }
 
     /**
-     * Manually initiate a failover for the IoT Hub to its secondary region. To learn more, see
+     * Manually initiate a failover for the IoT Hub to its secondary region
+     *
+     * <p>Manually initiate a failover for the IoT Hub to its secondary region. To learn more, see
      * https://aka.ms/manualfailover.
      *
      * @param iotHubName Name of the IoT hub to failover.
@@ -186,7 +190,9 @@ public final class IotHubsClientImpl implements IotHubsClient {
     }
 
     /**
-     * Manually initiate a failover for the IoT Hub to its secondary region. To learn more, see
+     * Manually initiate a failover for the IoT Hub to its secondary region
+     *
+     * <p>Manually initiate a failover for the IoT Hub to its secondary region. To learn more, see
      * https://aka.ms/manualfailover.
      *
      * @param iotHubName Name of the IoT hub to failover.
@@ -210,7 +216,9 @@ public final class IotHubsClientImpl implements IotHubsClient {
     }
 
     /**
-     * Manually initiate a failover for the IoT Hub to its secondary region. To learn more, see
+     * Manually initiate a failover for the IoT Hub to its secondary region
+     *
+     * <p>Manually initiate a failover for the IoT Hub to its secondary region. To learn more, see
      * https://aka.ms/manualfailover.
      *
      * @param iotHubName Name of the IoT hub to failover.
@@ -235,7 +243,9 @@ public final class IotHubsClientImpl implements IotHubsClient {
     }
 
     /**
-     * Manually initiate a failover for the IoT Hub to its secondary region. To learn more, see
+     * Manually initiate a failover for the IoT Hub to its secondary region
+     *
+     * <p>Manually initiate a failover for the IoT Hub to its secondary region. To learn more, see
      * https://aka.ms/manualfailover.
      *
      * @param iotHubName Name of the IoT hub to failover.
@@ -254,7 +264,9 @@ public final class IotHubsClientImpl implements IotHubsClient {
     }
 
     /**
-     * Manually initiate a failover for the IoT Hub to its secondary region. To learn more, see
+     * Manually initiate a failover for the IoT Hub to its secondary region
+     *
+     * <p>Manually initiate a failover for the IoT Hub to its secondary region. To learn more, see
      * https://aka.ms/manualfailover.
      *
      * @param iotHubName Name of the IoT hub to failover.
@@ -274,7 +286,9 @@ public final class IotHubsClientImpl implements IotHubsClient {
     }
 
     /**
-     * Manually initiate a failover for the IoT Hub to its secondary region. To learn more, see
+     * Manually initiate a failover for the IoT Hub to its secondary region
+     *
+     * <p>Manually initiate a failover for the IoT Hub to its secondary region. To learn more, see
      * https://aka.ms/manualfailover.
      *
      * @param iotHubName Name of the IoT hub to failover.
@@ -294,7 +308,9 @@ public final class IotHubsClientImpl implements IotHubsClient {
     }
 
     /**
-     * Manually initiate a failover for the IoT Hub to its secondary region. To learn more, see
+     * Manually initiate a failover for the IoT Hub to its secondary region
+     *
+     * <p>Manually initiate a failover for the IoT Hub to its secondary region. To learn more, see
      * https://aka.ms/manualfailover.
      *
      * @param iotHubName Name of the IoT hub to failover.
@@ -316,7 +332,9 @@ public final class IotHubsClientImpl implements IotHubsClient {
     }
 
     /**
-     * Manually initiate a failover for the IoT Hub to its secondary region. To learn more, see
+     * Manually initiate a failover for the IoT Hub to its secondary region
+     *
+     * <p>Manually initiate a failover for the IoT Hub to its secondary region. To learn more, see
      * https://aka.ms/manualfailover.
      *
      * @param iotHubName Name of the IoT hub to failover.
@@ -333,7 +351,9 @@ public final class IotHubsClientImpl implements IotHubsClient {
     }
 
     /**
-     * Manually initiate a failover for the IoT Hub to its secondary region. To learn more, see
+     * Manually initiate a failover for the IoT Hub to its secondary region
+     *
+     * <p>Manually initiate a failover for the IoT Hub to its secondary region. To learn more, see
      * https://aka.ms/manualfailover.
      *
      * @param iotHubName Name of the IoT hub to failover.

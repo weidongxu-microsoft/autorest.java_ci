@@ -720,7 +720,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
      * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
      * the status of the process. While the process is running, a call to the URI in the Location header returns a
@@ -764,7 +766,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
      * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
      * the status of the process. While the process is running, a call to the URI in the Location header returns a
@@ -802,7 +806,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
      * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
      * the status of the process. While the process is running, a call to the URI in the Location header returns a
@@ -826,7 +832,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
      * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
      * the status of the process. While the process is running, a call to the URI in the Location header returns a
@@ -852,7 +860,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
      * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
      * the status of the process. While the process is running, a call to the URI in the Location header returns a
@@ -872,7 +882,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
      * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
      * the status of the process. While the process is running, a call to the URI in the Location header returns a
@@ -893,7 +905,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
      * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
      * the status of the process. While the process is running, a call to the URI in the Location header returns a
@@ -913,7 +927,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
      * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
      * the status of the process. While the process is running, a call to the URI in the Location header returns a
@@ -936,7 +952,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
      * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
      * the status of the process. While the process is running, a call to the URI in the Location header returns a
@@ -955,7 +973,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
      * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
      * the status of the process. While the process is running, a call to the URI in the Location header returns a
@@ -1099,7 +1119,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources at a given scope.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param scope The resource scope.
      * @param deploymentName The name of the deployment.
@@ -1146,7 +1168,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources at a given scope.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param scope The resource scope.
      * @param deploymentName The name of the deployment.
@@ -1191,7 +1215,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources at a given scope.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param scope The resource scope.
      * @param deploymentName The name of the deployment.
@@ -1217,7 +1243,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources at a given scope.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param scope The resource scope.
      * @param deploymentName The name of the deployment.
@@ -1245,7 +1273,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources at a given scope.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param scope The resource scope.
      * @param deploymentName The name of the deployment.
@@ -1262,7 +1292,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources at a given scope.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param scope The resource scope.
      * @param deploymentName The name of the deployment.
@@ -1280,7 +1312,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources at a given scope.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param scope The resource scope.
      * @param deploymentName The name of the deployment.
@@ -1299,7 +1333,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources at a given scope.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param scope The resource scope.
      * @param deploymentName The name of the deployment.
@@ -1319,7 +1355,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources at a given scope.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param scope The resource scope.
      * @param deploymentName The name of the deployment.
@@ -1335,7 +1373,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources at a given scope.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param scope The resource scope.
      * @param deploymentName The name of the deployment.
@@ -1471,7 +1511,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
+     * Cancels a currently running template deployment.
+     *
+     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
      * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
      * template deployment and leaves the resources partially deployed.
      *
@@ -1512,7 +1554,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
+     * Cancels a currently running template deployment.
+     *
+     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
      * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
      * template deployment and leaves the resources partially deployed.
      *
@@ -1546,7 +1590,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
+     * Cancels a currently running template deployment.
+     *
+     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
      * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
      * template deployment and leaves the resources partially deployed.
      *
@@ -1563,7 +1609,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
+     * Cancels a currently running template deployment.
+     *
+     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
      * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
      * template deployment and leaves the resources partially deployed.
      *
@@ -1579,7 +1627,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
+     * Cancels a currently running template deployment.
+     *
+     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
      * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
      * template deployment and leaves the resources partially deployed.
      *
@@ -2165,7 +2215,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
      * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
      * the status of the process. While the process is running, a call to the URI in the Location header returns a
@@ -2200,7 +2252,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
      * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
      * the status of the process. While the process is running, a call to the URI in the Location header returns a
@@ -2234,7 +2288,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
      * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
      * the status of the process. While the process is running, a call to the URI in the Location header returns a
@@ -2257,7 +2313,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
      * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
      * the status of the process. While the process is running, a call to the URI in the Location header returns a
@@ -2281,7 +2339,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
      * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
      * the status of the process. While the process is running, a call to the URI in the Location header returns a
@@ -2300,7 +2360,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
      * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
      * the status of the process. While the process is running, a call to the URI in the Location header returns a
@@ -2320,7 +2382,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
      * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
      * the status of the process. While the process is running, a call to the URI in the Location header returns a
@@ -2339,7 +2403,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
      * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
      * the status of the process. While the process is running, a call to the URI in the Location header returns a
@@ -2361,7 +2427,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
      * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
      * the status of the process. While the process is running, a call to the URI in the Location header returns a
@@ -2379,7 +2447,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
      * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
      * the status of the process. While the process is running, a call to the URI in the Location header returns a
@@ -2506,7 +2576,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources at tenant scope.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param deploymentName The name of the deployment.
      * @param parameters Additional parameters supplied to the operation.
@@ -2548,7 +2620,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources at tenant scope.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param deploymentName The name of the deployment.
      * @param parameters Additional parameters supplied to the operation.
@@ -2583,7 +2657,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources at tenant scope.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param deploymentName The name of the deployment.
      * @param parameters Additional parameters supplied to the operation.
@@ -2608,7 +2684,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources at tenant scope.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param deploymentName The name of the deployment.
      * @param parameters Additional parameters supplied to the operation.
@@ -2635,7 +2713,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources at tenant scope.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param deploymentName The name of the deployment.
      * @param parameters Additional parameters supplied to the operation.
@@ -2651,7 +2731,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources at tenant scope.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param deploymentName The name of the deployment.
      * @param parameters Additional parameters supplied to the operation.
@@ -2668,7 +2750,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources at tenant scope.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param deploymentName The name of the deployment.
      * @param parameters Additional parameters supplied to the operation.
@@ -2686,7 +2770,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources at tenant scope.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param deploymentName The name of the deployment.
      * @param parameters Additional parameters supplied to the operation.
@@ -2705,7 +2791,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources at tenant scope.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param deploymentName The name of the deployment.
      * @param parameters Additional parameters supplied to the operation.
@@ -2720,7 +2808,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources at tenant scope.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param deploymentName The name of the deployment.
      * @param parameters Additional parameters supplied to the operation.
@@ -2838,7 +2928,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
+     * Cancels a currently running template deployment.
+     *
+     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
      * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
      * template deployment and leaves the resources partially deployed.
      *
@@ -2870,7 +2962,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
+     * Cancels a currently running template deployment.
+     *
+     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
      * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
      * template deployment and leaves the resources partially deployed.
      *
@@ -2900,7 +2994,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
+     * Cancels a currently running template deployment.
+     *
+     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
      * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
      * template deployment and leaves the resources partially deployed.
      *
@@ -2916,7 +3012,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
+     * Cancels a currently running template deployment.
+     *
+     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
      * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
      * template deployment and leaves the resources partially deployed.
      *
@@ -2931,7 +3029,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
+     * Cancels a currently running template deployment.
+     *
+     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
      * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
      * template deployment and leaves the resources partially deployed.
      *
@@ -3685,7 +3785,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
      * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
      * the status of the process. While the process is running, a call to the URI in the Location header returns a
@@ -3730,7 +3832,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
      * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
      * the status of the process. While the process is running, a call to the URI in the Location header returns a
@@ -3768,7 +3872,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
      * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
      * the status of the process. While the process is running, a call to the URI in the Location header returns a
@@ -3793,7 +3899,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
      * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
      * the status of the process. While the process is running, a call to the URI in the Location header returns a
@@ -3820,7 +3928,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
      * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
      * the status of the process. While the process is running, a call to the URI in the Location header returns a
@@ -3840,7 +3950,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
      * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
      * the status of the process. While the process is running, a call to the URI in the Location header returns a
@@ -3862,7 +3974,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
      * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
      * the status of the process. While the process is running, a call to the URI in the Location header returns a
@@ -3884,7 +3998,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
      * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
      * the status of the process. While the process is running, a call to the URI in the Location header returns a
@@ -3907,7 +4023,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
      * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
      * the status of the process. While the process is running, a call to the URI in the Location header returns a
@@ -3926,7 +4044,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
      * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
      * the status of the process. While the process is running, a call to the URI in the Location header returns a
@@ -4072,7 +4192,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources at management group scope.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param groupId The management group ID.
      * @param deploymentName The name of the deployment.
@@ -4119,7 +4241,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources at management group scope.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param groupId The management group ID.
      * @param deploymentName The name of the deployment.
@@ -4164,7 +4288,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources at management group scope.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param groupId The management group ID.
      * @param deploymentName The name of the deployment.
@@ -4191,7 +4317,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources at management group scope.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param groupId The management group ID.
      * @param deploymentName The name of the deployment.
@@ -4220,7 +4348,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources at management group scope.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param groupId The management group ID.
      * @param deploymentName The name of the deployment.
@@ -4237,7 +4367,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources at management group scope.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param groupId The management group ID.
      * @param deploymentName The name of the deployment.
@@ -4257,7 +4389,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources at management group scope.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param groupId The management group ID.
      * @param deploymentName The name of the deployment.
@@ -4276,7 +4410,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources at management group scope.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param groupId The management group ID.
      * @param deploymentName The name of the deployment.
@@ -4296,7 +4432,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources at management group scope.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param groupId The management group ID.
      * @param deploymentName The name of the deployment.
@@ -4313,7 +4451,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources at management group scope.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param groupId The management group ID.
      * @param deploymentName The name of the deployment.
@@ -4452,7 +4592,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
+     * Cancels a currently running template deployment.
+     *
+     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
      * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
      * template deployment and leaves the resources partially deployed.
      *
@@ -4493,7 +4635,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
+     * Cancels a currently running template deployment.
+     *
+     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
      * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
      * template deployment and leaves the resources partially deployed.
      *
@@ -4528,7 +4672,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
+     * Cancels a currently running template deployment.
+     *
+     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
      * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
      * template deployment and leaves the resources partially deployed.
      *
@@ -4545,7 +4691,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
+     * Cancels a currently running template deployment.
+     *
+     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
      * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
      * template deployment and leaves the resources partially deployed.
      *
@@ -4561,7 +4709,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
+     * Cancels a currently running template deployment.
+     *
+     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
      * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
      * template deployment and leaves the resources partially deployed.
      *
@@ -5415,7 +5565,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
      * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
      * the status of the process. While the process is running, a call to the URI in the Location header returns a
@@ -5461,7 +5613,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
      * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
      * the status of the process. While the process is running, a call to the URI in the Location header returns a
@@ -5506,7 +5660,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
      * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
      * the status of the process. While the process is running, a call to the URI in the Location header returns a
@@ -5529,7 +5685,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
      * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
      * the status of the process. While the process is running, a call to the URI in the Location header returns a
@@ -5554,7 +5712,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
      * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
      * the status of the process. While the process is running, a call to the URI in the Location header returns a
@@ -5573,7 +5733,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
      * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
      * the status of the process. While the process is running, a call to the URI in the Location header returns a
@@ -5593,7 +5755,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
      * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
      * the status of the process. While the process is running, a call to the URI in the Location header returns a
@@ -5614,7 +5778,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
      * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
      * the status of the process. While the process is running, a call to the URI in the Location header returns a
@@ -5636,7 +5802,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
      * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
      * the status of the process. While the process is running, a call to the URI in the Location header returns a
@@ -5654,7 +5822,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
      * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
      * the status of the process. While the process is running, a call to the URI in the Location header returns a
@@ -5803,7 +5973,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources at subscription scope.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param deploymentName The name of the deployment.
      * @param parameters Additional parameters supplied to the operation.
@@ -5852,7 +6024,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources at subscription scope.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param deploymentName The name of the deployment.
      * @param parameters Additional parameters supplied to the operation.
@@ -5899,7 +6073,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources at subscription scope.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param deploymentName The name of the deployment.
      * @param parameters Additional parameters supplied to the operation.
@@ -5924,7 +6100,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources at subscription scope.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param deploymentName The name of the deployment.
      * @param parameters Additional parameters supplied to the operation.
@@ -5951,7 +6129,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources at subscription scope.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param deploymentName The name of the deployment.
      * @param parameters Additional parameters supplied to the operation.
@@ -5967,7 +6147,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources at subscription scope.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param deploymentName The name of the deployment.
      * @param parameters Additional parameters supplied to the operation.
@@ -5984,7 +6166,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources at subscription scope.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param deploymentName The name of the deployment.
      * @param parameters Additional parameters supplied to the operation.
@@ -6002,7 +6186,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources at subscription scope.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param deploymentName The name of the deployment.
      * @param parameters Additional parameters supplied to the operation.
@@ -6021,7 +6207,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources at subscription scope.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param deploymentName The name of the deployment.
      * @param parameters Additional parameters supplied to the operation.
@@ -6036,7 +6224,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources at subscription scope.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param deploymentName The name of the deployment.
      * @param parameters Additional parameters supplied to the operation.
@@ -6178,7 +6368,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
+     * Cancels a currently running template deployment.
+     *
+     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
      * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
      * template deployment and leaves the resources partially deployed.
      *
@@ -6221,7 +6413,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
+     * Cancels a currently running template deployment.
+     *
+     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
      * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
      * template deployment and leaves the resources partially deployed.
      *
@@ -6262,7 +6456,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
+     * Cancels a currently running template deployment.
+     *
+     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
      * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
      * template deployment and leaves the resources partially deployed.
      *
@@ -6278,7 +6474,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
+     * Cancels a currently running template deployment.
+     *
+     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
      * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
      * template deployment and leaves the resources partially deployed.
      *
@@ -6293,7 +6491,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
+     * Cancels a currently running template deployment.
+     *
+     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
      * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
      * template deployment and leaves the resources partially deployed.
      *
@@ -7131,7 +7331,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. Deleting a template deployment does not affect the state of the resource group.
      * This is an asynchronous operation that returns a status of 202 until the template deployment is successfully
      * deleted. The Location response header contains the URI that is used to obtain the status of the process. While
@@ -7185,7 +7387,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. Deleting a template deployment does not affect the state of the resource group.
      * This is an asynchronous operation that returns a status of 202 until the template deployment is successfully
      * deleted. The Location response header contains the URI that is used to obtain the status of the process. While
@@ -7238,7 +7442,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. Deleting a template deployment does not affect the state of the resource group.
      * This is an asynchronous operation that returns a status of 202 until the template deployment is successfully
      * deleted. The Location response header contains the URI that is used to obtain the status of the process. While
@@ -7264,7 +7470,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. Deleting a template deployment does not affect the state of the resource group.
      * This is an asynchronous operation that returns a status of 202 until the template deployment is successfully
      * deleted. The Location response header contains the URI that is used to obtain the status of the process. While
@@ -7292,7 +7500,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. Deleting a template deployment does not affect the state of the resource group.
      * This is an asynchronous operation that returns a status of 202 until the template deployment is successfully
      * deleted. The Location response header contains the URI that is used to obtain the status of the process. While
@@ -7314,7 +7524,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. Deleting a template deployment does not affect the state of the resource group.
      * This is an asynchronous operation that returns a status of 202 until the template deployment is successfully
      * deleted. The Location response header contains the URI that is used to obtain the status of the process. While
@@ -7338,7 +7550,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. Deleting a template deployment does not affect the state of the resource group.
      * This is an asynchronous operation that returns a status of 202 until the template deployment is successfully
      * deleted. The Location response header contains the URI that is used to obtain the status of the process. While
@@ -7362,7 +7576,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. Deleting a template deployment does not affect the state of the resource group.
      * This is an asynchronous operation that returns a status of 202 until the template deployment is successfully
      * deleted. The Location response header contains the URI that is used to obtain the status of the process. While
@@ -7387,7 +7603,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. Deleting a template deployment does not affect the state of the resource group.
      * This is an asynchronous operation that returns a status of 202 until the template deployment is successfully
      * deleted. The Location response header contains the URI that is used to obtain the status of the process. While
@@ -7408,7 +7626,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. Deleting a template deployment does not affect the state of the resource group.
      * This is an asynchronous operation that returns a status of 202 until the template deployment is successfully
      * deleted. The Location response header contains the URI that is used to obtain the status of the process. While
@@ -7581,7 +7801,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources to a resource group.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param resourceGroupName The name of the resource group to deploy the resources to. The name is case insensitive.
      *     The resource group must already exist.
@@ -7637,7 +7859,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources to a resource group.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param resourceGroupName The name of the resource group to deploy the resources to. The name is case insensitive.
      *     The resource group must already exist.
@@ -7691,7 +7915,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources to a resource group.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param resourceGroupName The name of the resource group to deploy the resources to. The name is case insensitive.
      *     The resource group must already exist.
@@ -7718,7 +7944,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources to a resource group.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param resourceGroupName The name of the resource group to deploy the resources to. The name is case insensitive.
      *     The resource group must already exist.
@@ -7747,7 +7975,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources to a resource group.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param resourceGroupName The name of the resource group to deploy the resources to. The name is case insensitive.
      *     The resource group must already exist.
@@ -7765,7 +7995,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources to a resource group.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param resourceGroupName The name of the resource group to deploy the resources to. The name is case insensitive.
      *     The resource group must already exist.
@@ -7784,7 +8016,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources to a resource group.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param resourceGroupName The name of the resource group to deploy the resources to. The name is case insensitive.
      *     The resource group must already exist.
@@ -7804,7 +8038,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources to a resource group.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param resourceGroupName The name of the resource group to deploy the resources to. The name is case insensitive.
      *     The resource group must already exist.
@@ -7825,7 +8061,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources to a resource group.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param resourceGroupName The name of the resource group to deploy the resources to. The name is case insensitive.
      *     The resource group must already exist.
@@ -7843,7 +8081,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources to a resource group.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param resourceGroupName The name of the resource group to deploy the resources to. The name is case insensitive.
      *     The resource group must already exist.
@@ -8004,7 +8244,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
+     * Cancels a currently running template deployment.
+     *
+     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
      * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
      * template deployment and leaves the resource group partially deployed.
      *
@@ -8053,7 +8295,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
+     * Cancels a currently running template deployment.
+     *
+     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
      * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
      * template deployment and leaves the resource group partially deployed.
      *
@@ -8101,7 +8345,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
+     * Cancels a currently running template deployment.
+     *
+     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
      * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
      * template deployment and leaves the resource group partially deployed.
      *
@@ -8118,7 +8364,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
+     * Cancels a currently running template deployment.
+     *
+     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
      * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
      * template deployment and leaves the resource group partially deployed.
      *
@@ -8134,7 +8382,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     }
 
     /**
-     * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
+     * Cancels a currently running template deployment.
+     *
+     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
      * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
      * template deployment and leaves the resource group partially deployed.
      *

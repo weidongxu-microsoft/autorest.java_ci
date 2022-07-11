@@ -14,7 +14,9 @@ import com.azure.resourcemanager.policy.generated.fluent.models.PolicyDefinition
 /** An instance of this class provides access to all the operations defined in PolicyDefinitionsClient. */
 public interface PolicyDefinitionsClient {
     /**
-     * This operation creates or updates a policy definition in the given subscription with the given name.
+     * Creates or updates a policy definition in a subscription.
+     *
+     * <p>This operation creates or updates a policy definition in the given subscription with the given name.
      *
      * @param policyDefinitionName The name of the policy definition to create.
      * @param parameters The policy definition properties.
@@ -27,7 +29,9 @@ public interface PolicyDefinitionsClient {
     PolicyDefinitionInner createOrUpdate(String policyDefinitionName, PolicyDefinitionInner parameters);
 
     /**
-     * This operation creates or updates a policy definition in the given subscription with the given name.
+     * Creates or updates a policy definition in a subscription.
+     *
+     * <p>This operation creates or updates a policy definition in the given subscription with the given name.
      *
      * @param policyDefinitionName The name of the policy definition to create.
      * @param parameters The policy definition properties.
@@ -42,7 +46,9 @@ public interface PolicyDefinitionsClient {
         String policyDefinitionName, PolicyDefinitionInner parameters, Context context);
 
     /**
-     * This operation deletes the policy definition in the given subscription with the given name.
+     * Deletes a policy definition in a subscription.
+     *
+     * <p>This operation deletes the policy definition in the given subscription with the given name.
      *
      * @param policyDefinitionName The name of the policy definition to delete.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -53,7 +59,9 @@ public interface PolicyDefinitionsClient {
     void delete(String policyDefinitionName);
 
     /**
-     * This operation deletes the policy definition in the given subscription with the given name.
+     * Deletes a policy definition in a subscription.
+     *
+     * <p>This operation deletes the policy definition in the given subscription with the given name.
      *
      * @param policyDefinitionName The name of the policy definition to delete.
      * @param context The context to associate with this operation.
@@ -66,7 +74,9 @@ public interface PolicyDefinitionsClient {
     Response<Void> deleteWithResponse(String policyDefinitionName, Context context);
 
     /**
-     * This operation retrieves the policy definition in the given subscription with the given name.
+     * Retrieves a policy definition in a subscription.
+     *
+     * <p>This operation retrieves the policy definition in the given subscription with the given name.
      *
      * @param policyDefinitionName The name of the policy definition to get.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -78,7 +88,9 @@ public interface PolicyDefinitionsClient {
     PolicyDefinitionInner get(String policyDefinitionName);
 
     /**
-     * This operation retrieves the policy definition in the given subscription with the given name.
+     * Retrieves a policy definition in a subscription.
+     *
+     * <p>This operation retrieves the policy definition in the given subscription with the given name.
      *
      * @param policyDefinitionName The name of the policy definition to get.
      * @param context The context to associate with this operation.
@@ -91,7 +103,9 @@ public interface PolicyDefinitionsClient {
     Response<PolicyDefinitionInner> getWithResponse(String policyDefinitionName, Context context);
 
     /**
-     * This operation retrieves the built-in policy definition with the given name.
+     * Retrieves a built-in policy definition.
+     *
+     * <p>This operation retrieves the built-in policy definition with the given name.
      *
      * @param policyDefinitionName The name of the built-in policy definition to get.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -103,7 +117,9 @@ public interface PolicyDefinitionsClient {
     PolicyDefinitionInner getBuiltIn(String policyDefinitionName);
 
     /**
-     * This operation retrieves the built-in policy definition with the given name.
+     * Retrieves a built-in policy definition.
+     *
+     * <p>This operation retrieves the built-in policy definition with the given name.
      *
      * @param policyDefinitionName The name of the built-in policy definition to get.
      * @param context The context to associate with this operation.
@@ -116,7 +132,9 @@ public interface PolicyDefinitionsClient {
     Response<PolicyDefinitionInner> getBuiltInWithResponse(String policyDefinitionName, Context context);
 
     /**
-     * This operation creates or updates a policy definition in the given management group with the given name.
+     * Creates or updates a policy definition in a management group.
+     *
+     * <p>This operation creates or updates a policy definition in the given management group with the given name.
      *
      * @param policyDefinitionName The name of the policy definition to create.
      * @param managementGroupId The ID of the management group.
@@ -131,7 +149,9 @@ public interface PolicyDefinitionsClient {
         String policyDefinitionName, String managementGroupId, PolicyDefinitionInner parameters);
 
     /**
-     * This operation creates or updates a policy definition in the given management group with the given name.
+     * Creates or updates a policy definition in a management group.
+     *
+     * <p>This operation creates or updates a policy definition in the given management group with the given name.
      *
      * @param policyDefinitionName The name of the policy definition to create.
      * @param managementGroupId The ID of the management group.
@@ -147,7 +167,9 @@ public interface PolicyDefinitionsClient {
         String policyDefinitionName, String managementGroupId, PolicyDefinitionInner parameters, Context context);
 
     /**
-     * This operation deletes the policy definition in the given management group with the given name.
+     * Deletes a policy definition in a management group.
+     *
+     * <p>This operation deletes the policy definition in the given management group with the given name.
      *
      * @param policyDefinitionName The name of the policy definition to delete.
      * @param managementGroupId The ID of the management group.
@@ -159,7 +181,9 @@ public interface PolicyDefinitionsClient {
     void deleteAtManagementGroup(String policyDefinitionName, String managementGroupId);
 
     /**
-     * This operation deletes the policy definition in the given management group with the given name.
+     * Deletes a policy definition in a management group.
+     *
+     * <p>This operation deletes the policy definition in the given management group with the given name.
      *
      * @param policyDefinitionName The name of the policy definition to delete.
      * @param managementGroupId The ID of the management group.
@@ -174,7 +198,9 @@ public interface PolicyDefinitionsClient {
         String policyDefinitionName, String managementGroupId, Context context);
 
     /**
-     * This operation retrieves the policy definition in the given management group with the given name.
+     * Retrieve a policy definition in a management group.
+     *
+     * <p>This operation retrieves the policy definition in the given management group with the given name.
      *
      * @param policyDefinitionName The name of the policy definition to get.
      * @param managementGroupId The ID of the management group.
@@ -187,7 +213,9 @@ public interface PolicyDefinitionsClient {
     PolicyDefinitionInner getAtManagementGroup(String policyDefinitionName, String managementGroupId);
 
     /**
-     * This operation retrieves the policy definition in the given management group with the given name.
+     * Retrieve a policy definition in a management group.
+     *
+     * <p>This operation retrieves the policy definition in the given management group with the given name.
      *
      * @param policyDefinitionName The name of the policy definition to get.
      * @param managementGroupId The ID of the management group.
@@ -202,7 +230,9 @@ public interface PolicyDefinitionsClient {
         String policyDefinitionName, String managementGroupId, Context context);
 
     /**
-     * This operation retrieves a list of all the policy definitions in a given subscription that match the optional
+     * Retrieves policy definitions in a subscription
+     *
+     * <p>This operation retrieves a list of all the policy definitions in a given subscription that match the optional
      * given $filter. Valid values for $filter are: 'atExactScope()', 'policyType -eq {value}' or 'category eq
      * '{value}''. If $filter is not provided, the unfiltered list includes all policy definitions associated with the
      * subscription, including those that apply directly or from management groups that contain the given subscription.
@@ -220,7 +250,9 @@ public interface PolicyDefinitionsClient {
     PagedIterable<PolicyDefinitionInner> list();
 
     /**
-     * This operation retrieves a list of all the policy definitions in a given subscription that match the optional
+     * Retrieves policy definitions in a subscription
+     *
+     * <p>This operation retrieves a list of all the policy definitions in a given subscription that match the optional
      * given $filter. Valid values for $filter are: 'atExactScope()', 'policyType -eq {value}' or 'category eq
      * '{value}''. If $filter is not provided, the unfiltered list includes all policy definitions associated with the
      * subscription, including those that apply directly or from management groups that contain the given subscription.
@@ -248,8 +280,10 @@ public interface PolicyDefinitionsClient {
     PagedIterable<PolicyDefinitionInner> list(String filter, Integer top, Context context);
 
     /**
-     * This operation retrieves a list of all the built-in policy definitions that match the optional given $filter. If
-     * $filter='policyType -eq {value}' is provided, the returned list only includes all built-in policy definitions
+     * Retrieve built-in policy definitions
+     *
+     * <p>This operation retrieves a list of all the built-in policy definitions that match the optional given $filter.
+     * If $filter='policyType -eq {value}' is provided, the returned list only includes all built-in policy definitions
      * whose type match the {value}. Possible policyType values are NotSpecified, BuiltIn, Custom, and Static. If
      * $filter='category -eq {value}' is provided, the returned list only includes all built-in policy definitions whose
      * category match the {value}.
@@ -262,8 +296,10 @@ public interface PolicyDefinitionsClient {
     PagedIterable<PolicyDefinitionInner> listBuiltIn();
 
     /**
-     * This operation retrieves a list of all the built-in policy definitions that match the optional given $filter. If
-     * $filter='policyType -eq {value}' is provided, the returned list only includes all built-in policy definitions
+     * Retrieve built-in policy definitions
+     *
+     * <p>This operation retrieves a list of all the built-in policy definitions that match the optional given $filter.
+     * If $filter='policyType -eq {value}' is provided, the returned list only includes all built-in policy definitions
      * whose type match the {value}. Possible policyType values are NotSpecified, BuiltIn, Custom, and Static. If
      * $filter='category -eq {value}' is provided, the returned list only includes all built-in policy definitions whose
      * category match the {value}.
@@ -286,8 +322,10 @@ public interface PolicyDefinitionsClient {
     PagedIterable<PolicyDefinitionInner> listBuiltIn(String filter, Integer top, Context context);
 
     /**
-     * This operation retrieves a list of all the policy definitions in a given management group that match the optional
-     * given $filter. Valid values for $filter are: 'atExactScope()', 'policyType -eq {value}' or 'category eq
+     * Retrieve policy definitions in a management group
+     *
+     * <p>This operation retrieves a list of all the policy definitions in a given management group that match the
+     * optional given $filter. Valid values for $filter are: 'atExactScope()', 'policyType -eq {value}' or 'category eq
      * '{value}''. If $filter is not provided, the unfiltered list includes all policy definitions associated with the
      * management group, including those that apply directly or from management groups that contain the given management
      * group. If $filter=atExactScope() is provided, the returned list only includes all policy definitions that at the
@@ -306,8 +344,10 @@ public interface PolicyDefinitionsClient {
     PagedIterable<PolicyDefinitionInner> listByManagementGroup(String managementGroupId);
 
     /**
-     * This operation retrieves a list of all the policy definitions in a given management group that match the optional
-     * given $filter. Valid values for $filter are: 'atExactScope()', 'policyType -eq {value}' or 'category eq
+     * Retrieve policy definitions in a management group
+     *
+     * <p>This operation retrieves a list of all the policy definitions in a given management group that match the
+     * optional given $filter. Valid values for $filter are: 'atExactScope()', 'policyType -eq {value}' or 'category eq
      * '{value}''. If $filter is not provided, the unfiltered list includes all policy definitions associated with the
      * management group, including those that apply directly or from management groups that contain the given management
      * group. If $filter=atExactScope() is provided, the returned list only includes all policy definitions that at the

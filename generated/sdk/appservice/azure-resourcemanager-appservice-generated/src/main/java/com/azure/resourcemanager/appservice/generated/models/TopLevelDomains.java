@@ -11,7 +11,9 @@ import com.azure.core.util.Context;
 /** Resource collection API of TopLevelDomains. */
 public interface TopLevelDomains {
     /**
-     * Description for Get all top-level domains supported for registration.
+     * Get all top-level domains supported for registration.
+     *
+     * <p>Description for Get all top-level domains supported for registration.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -21,7 +23,9 @@ public interface TopLevelDomains {
     PagedIterable<TopLevelDomain> list();
 
     /**
-     * Description for Get all top-level domains supported for registration.
+     * Get all top-level domains supported for registration.
+     *
+     * <p>Description for Get all top-level domains supported for registration.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -33,7 +37,9 @@ public interface TopLevelDomains {
     PagedIterable<TopLevelDomain> list(Context context);
 
     /**
-     * Description for Get details of a top-level domain.
+     * Get details of a top-level domain.
+     *
+     * <p>Description for Get details of a top-level domain.
      *
      * @param name Name of the top-level domain.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -45,7 +51,9 @@ public interface TopLevelDomains {
     TopLevelDomain get(String name);
 
     /**
-     * Description for Get details of a top-level domain.
+     * Get details of a top-level domain.
+     *
+     * <p>Description for Get details of a top-level domain.
      *
      * @param name Name of the top-level domain.
      * @param context The context to associate with this operation.
@@ -58,7 +66,9 @@ public interface TopLevelDomains {
     Response<TopLevelDomain> getWithResponse(String name, Context context);
 
     /**
-     * Description for Gets all legal agreements that user needs to accept before purchasing a domain.
+     * Gets all legal agreements that user needs to accept before purchasing a domain.
+     *
+     * <p>Description for Gets all legal agreements that user needs to accept before purchasing a domain.
      *
      * @param name Name of the top-level domain.
      * @param agreementOption Domain agreement options.
@@ -71,7 +81,9 @@ public interface TopLevelDomains {
     PagedIterable<TldLegalAgreement> listAgreements(String name, TopLevelDomainAgreementOption agreementOption);
 
     /**
-     * Description for Gets all legal agreements that user needs to accept before purchasing a domain.
+     * Gets all legal agreements that user needs to accept before purchasing a domain.
+     *
+     * <p>Description for Gets all legal agreements that user needs to accept before purchasing a domain.
      *
      * @param name Name of the top-level domain.
      * @param agreementOption Domain agreement options.

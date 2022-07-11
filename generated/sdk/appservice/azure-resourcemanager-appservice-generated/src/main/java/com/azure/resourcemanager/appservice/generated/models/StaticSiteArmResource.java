@@ -625,7 +625,9 @@ public interface StaticSiteArmResource {
     StaticSiteArmResource refresh(Context context);
 
     /**
-     * Description for Creates an invitation link for a user with the role.
+     * Creates an invitation link for a user with the role
+     *
+     * <p>Description for Creates an invitation link for a user with the role.
      *
      * @param staticSiteUserRolesInvitationEnvelope Static sites user roles invitation resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -638,7 +640,9 @@ public interface StaticSiteArmResource {
         StaticSiteUserInvitationRequestResource staticSiteUserRolesInvitationEnvelope);
 
     /**
-     * Description for Creates an invitation link for a user with the role.
+     * Creates an invitation link for a user with the role
+     *
+     * <p>Description for Creates an invitation link for a user with the role.
      *
      * @param staticSiteUserRolesInvitationEnvelope Static sites user roles invitation resource.
      * @param context The context to associate with this operation.
@@ -652,7 +656,9 @@ public interface StaticSiteArmResource {
         StaticSiteUserInvitationRequestResource staticSiteUserRolesInvitationEnvelope, Context context);
 
     /**
-     * Description for Detaches a static site.
+     * Detaches a static site.
+     *
+     * <p>Description for Detaches a static site.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -661,7 +667,9 @@ public interface StaticSiteArmResource {
     void detachStaticSite();
 
     /**
-     * Description for Detaches a static site.
+     * Detaches a static site.
+     *
+     * <p>Description for Detaches a static site.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -672,7 +680,9 @@ public interface StaticSiteArmResource {
     void detachStaticSite(Context context);
 
     /**
-     * Description for Gets the application settings of a static site.
+     * Gets the application settings of a static site.
+     *
+     * <p>Description for Gets the application settings of a static site.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -682,7 +692,9 @@ public interface StaticSiteArmResource {
     StringDictionary listStaticSiteAppSettings();
 
     /**
-     * Description for Gets the application settings of a static site.
+     * Gets the application settings of a static site.
+     *
+     * <p>Description for Gets the application settings of a static site.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -694,7 +706,9 @@ public interface StaticSiteArmResource {
     Response<StringDictionary> listStaticSiteAppSettingsWithResponse(Context context);
 
     /**
-     * Description for Lists the roles configured for the static site.
+     * Lists the roles configured for the static site.
+     *
+     * <p>Description for Lists the roles configured for the static site.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -704,7 +718,9 @@ public interface StaticSiteArmResource {
     StringList listStaticSiteConfiguredRoles();
 
     /**
-     * Description for Lists the roles configured for the static site.
+     * Lists the roles configured for the static site.
+     *
+     * <p>Description for Lists the roles configured for the static site.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -716,7 +732,9 @@ public interface StaticSiteArmResource {
     Response<StringList> listStaticSiteConfiguredRolesWithResponse(Context context);
 
     /**
-     * Description for Gets the application settings of a static site.
+     * Gets the application settings of a static site.
+     *
+     * <p>Description for Gets the application settings of a static site.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -726,7 +744,9 @@ public interface StaticSiteArmResource {
     StringDictionary listStaticSiteFunctionAppSettings();
 
     /**
-     * Description for Gets the application settings of a static site.
+     * Gets the application settings of a static site.
+     *
+     * <p>Description for Gets the application settings of a static site.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -738,7 +758,9 @@ public interface StaticSiteArmResource {
     Response<StringDictionary> listStaticSiteFunctionAppSettingsWithResponse(Context context);
 
     /**
-     * Description for Lists the secrets for an existing static site.
+     * Lists the secrets for an existing static site.
+     *
+     * <p>Description for Lists the secrets for an existing static site.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -748,7 +770,9 @@ public interface StaticSiteArmResource {
     StringDictionary listStaticSiteSecrets();
 
     /**
-     * Description for Lists the secrets for an existing static site.
+     * Lists the secrets for an existing static site.
+     *
+     * <p>Description for Lists the secrets for an existing static site.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -760,7 +784,9 @@ public interface StaticSiteArmResource {
     Response<StringDictionary> listStaticSiteSecretsWithResponse(Context context);
 
     /**
-     * Description for Resets the api key for an existing static site.
+     * Resets the api key for an existing static site.
+     *
+     * <p>Description for Resets the api key for an existing static site.
      *
      * @param resetPropertiesEnvelope Static Site Reset Properties ARM resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -771,7 +797,9 @@ public interface StaticSiteArmResource {
     void resetStaticSiteApiKey(StaticSiteResetPropertiesArmResource resetPropertiesEnvelope);
 
     /**
-     * Description for Resets the api key for an existing static site.
+     * Resets the api key for an existing static site.
+     *
+     * <p>Description for Resets the api key for an existing static site.
      *
      * @param resetPropertiesEnvelope Static Site Reset Properties ARM resource.
      * @param context The context to associate with this operation.
@@ -785,7 +813,9 @@ public interface StaticSiteArmResource {
         StaticSiteResetPropertiesArmResource resetPropertiesEnvelope, Context context);
 
     /**
-     * Description for Deploys zipped content to a static site.
+     * Deploys zipped content to a static site.
+     *
+     * <p>Description for Deploys zipped content to a static site.
      *
      * @param staticSiteZipDeploymentEnvelope A JSON representation of the StaticSiteZipDeployment properties. See
      *     example.
@@ -797,7 +827,9 @@ public interface StaticSiteArmResource {
     void createZipDeploymentForStaticSite(StaticSiteZipDeploymentArmResource staticSiteZipDeploymentEnvelope);
 
     /**
-     * Description for Deploys zipped content to a static site.
+     * Deploys zipped content to a static site.
+     *
+     * <p>Description for Deploys zipped content to a static site.
      *
      * @param staticSiteZipDeploymentEnvelope A JSON representation of the StaticSiteZipDeployment properties. See
      *     example.

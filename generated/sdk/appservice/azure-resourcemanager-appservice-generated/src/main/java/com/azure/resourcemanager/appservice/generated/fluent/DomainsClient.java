@@ -22,7 +22,9 @@ import com.azure.resourcemanager.appservice.generated.models.DomainRecommendatio
 /** An instance of this class provides access to all the operations defined in DomainsClient. */
 public interface DomainsClient {
     /**
-     * Description for Check if a domain is available for registration.
+     * Check if a domain is available for registration.
+     *
+     * <p>Description for Check if a domain is available for registration.
      *
      * @param identifier Name of the domain.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -35,7 +37,9 @@ public interface DomainsClient {
     DomainAvailabilityCheckResultInner checkAvailability(NameIdentifierInner identifier);
 
     /**
-     * Description for Check if a domain is available for registration.
+     * Check if a domain is available for registration.
+     *
+     * <p>Description for Check if a domain is available for registration.
      *
      * @param identifier Name of the domain.
      * @param context The context to associate with this operation.
@@ -50,7 +54,9 @@ public interface DomainsClient {
         NameIdentifierInner identifier, Context context);
 
     /**
-     * Description for Get all domains in a subscription.
+     * Get all domains in a subscription.
+     *
+     * <p>Description for Get all domains in a subscription.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -61,7 +67,9 @@ public interface DomainsClient {
     PagedIterable<DomainInner> list();
 
     /**
-     * Description for Get all domains in a subscription.
+     * Get all domains in a subscription.
+     *
+     * <p>Description for Get all domains in a subscription.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -74,7 +82,9 @@ public interface DomainsClient {
     PagedIterable<DomainInner> list(Context context);
 
     /**
-     * Description for Generate a single sign-on request for the domain management portal.
+     * Generate a single sign-on request for the domain management portal.
+     *
+     * <p>Description for Generate a single sign-on request for the domain management portal.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -85,7 +95,9 @@ public interface DomainsClient {
     DomainControlCenterSsoRequestInner getControlCenterSsoRequest();
 
     /**
-     * Description for Generate a single sign-on request for the domain management portal.
+     * Generate a single sign-on request for the domain management portal.
+     *
+     * <p>Description for Generate a single sign-on request for the domain management portal.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -98,7 +110,9 @@ public interface DomainsClient {
     Response<DomainControlCenterSsoRequestInner> getControlCenterSsoRequestWithResponse(Context context);
 
     /**
-     * Description for Get domain name recommendations based on keywords.
+     * Get domain name recommendations based on keywords.
+     *
+     * <p>Description for Get domain name recommendations based on keywords.
      *
      * @param parameters Search parameters for domain name recommendations.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -111,7 +125,9 @@ public interface DomainsClient {
     PagedIterable<NameIdentifierInner> listRecommendations(DomainRecommendationSearchParameters parameters);
 
     /**
-     * Description for Get domain name recommendations based on keywords.
+     * Get domain name recommendations based on keywords.
+     *
+     * <p>Description for Get domain name recommendations based on keywords.
      *
      * @param parameters Search parameters for domain name recommendations.
      * @param context The context to associate with this operation.
@@ -126,7 +142,9 @@ public interface DomainsClient {
         DomainRecommendationSearchParameters parameters, Context context);
 
     /**
-     * Description for Get all domains in a resource group.
+     * Get all domains in a resource group.
+     *
+     * <p>Description for Get all domains in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -139,7 +157,9 @@ public interface DomainsClient {
     PagedIterable<DomainInner> listByResourceGroup(String resourceGroupName);
 
     /**
-     * Description for Get all domains in a resource group.
+     * Get all domains in a resource group.
+     *
+     * <p>Description for Get all domains in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param context The context to associate with this operation.
@@ -153,7 +173,9 @@ public interface DomainsClient {
     PagedIterable<DomainInner> listByResourceGroup(String resourceGroupName, Context context);
 
     /**
-     * Description for Get a domain.
+     * Get a domain.
+     *
+     * <p>Description for Get a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -167,7 +189,9 @@ public interface DomainsClient {
     DomainInner getByResourceGroup(String resourceGroupName, String domainName);
 
     /**
-     * Description for Get a domain.
+     * Get a domain.
+     *
+     * <p>Description for Get a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -182,7 +206,9 @@ public interface DomainsClient {
     Response<DomainInner> getByResourceGroupWithResponse(String resourceGroupName, String domainName, Context context);
 
     /**
-     * Description for Creates or updates a domain.
+     * Creates or updates a domain.
+     *
+     * <p>Description for Creates or updates a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -198,7 +224,9 @@ public interface DomainsClient {
         String resourceGroupName, String domainName, DomainInner domain);
 
     /**
-     * Description for Creates or updates a domain.
+     * Creates or updates a domain.
+     *
+     * <p>Description for Creates or updates a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -215,7 +243,9 @@ public interface DomainsClient {
         String resourceGroupName, String domainName, DomainInner domain, Context context);
 
     /**
-     * Description for Creates or updates a domain.
+     * Creates or updates a domain.
+     *
+     * <p>Description for Creates or updates a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -230,7 +260,9 @@ public interface DomainsClient {
     DomainInner createOrUpdate(String resourceGroupName, String domainName, DomainInner domain);
 
     /**
-     * Description for Creates or updates a domain.
+     * Creates or updates a domain.
+     *
+     * <p>Description for Creates or updates a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -246,7 +278,9 @@ public interface DomainsClient {
     DomainInner createOrUpdate(String resourceGroupName, String domainName, DomainInner domain, Context context);
 
     /**
-     * Description for Delete a domain.
+     * Delete a domain.
+     *
+     * <p>Description for Delete a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -259,7 +293,9 @@ public interface DomainsClient {
     void delete(String resourceGroupName, String domainName);
 
     /**
-     * Description for Delete a domain.
+     * Delete a domain.
+     *
+     * <p>Description for Delete a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -277,7 +313,9 @@ public interface DomainsClient {
         String resourceGroupName, String domainName, Boolean forceHardDeleteDomain, Context context);
 
     /**
-     * Description for Creates or updates a domain.
+     * Creates or updates a domain.
+     *
+     * <p>Description for Creates or updates a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -292,7 +330,9 @@ public interface DomainsClient {
     DomainInner update(String resourceGroupName, String domainName, DomainPatchResource domain);
 
     /**
-     * Description for Creates or updates a domain.
+     * Creates or updates a domain.
+     *
+     * <p>Description for Creates or updates a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -309,7 +349,9 @@ public interface DomainsClient {
         String resourceGroupName, String domainName, DomainPatchResource domain, Context context);
 
     /**
-     * Description for Lists domain ownership identifiers.
+     * Lists domain ownership identifiers.
+     *
+     * <p>Description for Lists domain ownership identifiers.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
@@ -323,7 +365,9 @@ public interface DomainsClient {
     PagedIterable<DomainOwnershipIdentifierInner> listOwnershipIdentifiers(String resourceGroupName, String domainName);
 
     /**
-     * Description for Lists domain ownership identifiers.
+     * Lists domain ownership identifiers.
+     *
+     * <p>Description for Lists domain ownership identifiers.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
@@ -339,7 +383,9 @@ public interface DomainsClient {
         String resourceGroupName, String domainName, Context context);
 
     /**
-     * Description for Get ownership identifier for domain.
+     * Get ownership identifier for domain
+     *
+     * <p>Description for Get ownership identifier for domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
@@ -354,7 +400,9 @@ public interface DomainsClient {
     DomainOwnershipIdentifierInner getOwnershipIdentifier(String resourceGroupName, String domainName, String name);
 
     /**
-     * Description for Get ownership identifier for domain.
+     * Get ownership identifier for domain
+     *
+     * <p>Description for Get ownership identifier for domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
@@ -371,7 +419,9 @@ public interface DomainsClient {
         String resourceGroupName, String domainName, String name, Context context);
 
     /**
-     * Description for Creates an ownership identifier for a domain or updates identifier details for an existing
+     * Creates an ownership identifier for a domain or updates identifier details for an existing identifier
+     *
+     * <p>Description for Creates an ownership identifier for a domain or updates identifier details for an existing
      * identifier.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
@@ -392,7 +442,9 @@ public interface DomainsClient {
         DomainOwnershipIdentifierInner domainOwnershipIdentifier);
 
     /**
-     * Description for Creates an ownership identifier for a domain or updates identifier details for an existing
+     * Creates an ownership identifier for a domain or updates identifier details for an existing identifier
+     *
+     * <p>Description for Creates an ownership identifier for a domain or updates identifier details for an existing
      * identifier.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
@@ -415,7 +467,9 @@ public interface DomainsClient {
         Context context);
 
     /**
-     * Description for Delete ownership identifier for domain.
+     * Delete ownership identifier for domain
+     *
+     * <p>Description for Delete ownership identifier for domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
@@ -429,7 +483,9 @@ public interface DomainsClient {
     void deleteOwnershipIdentifier(String resourceGroupName, String domainName, String name);
 
     /**
-     * Description for Delete ownership identifier for domain.
+     * Delete ownership identifier for domain
+     *
+     * <p>Description for Delete ownership identifier for domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
@@ -446,7 +502,9 @@ public interface DomainsClient {
         String resourceGroupName, String domainName, String name, Context context);
 
     /**
-     * Description for Creates an ownership identifier for a domain or updates identifier details for an existing
+     * Creates an ownership identifier for a domain or updates identifier details for an existing identifier
+     *
+     * <p>Description for Creates an ownership identifier for a domain or updates identifier details for an existing
      * identifier.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
@@ -467,7 +525,9 @@ public interface DomainsClient {
         DomainOwnershipIdentifierInner domainOwnershipIdentifier);
 
     /**
-     * Description for Creates an ownership identifier for a domain or updates identifier details for an existing
+     * Creates an ownership identifier for a domain or updates identifier details for an existing identifier
+     *
+     * <p>Description for Creates an ownership identifier for a domain or updates identifier details for an existing
      * identifier.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
@@ -490,7 +550,9 @@ public interface DomainsClient {
         Context context);
 
     /**
-     * Description for Renew a domain.
+     * Renew a domain.
+     *
+     * <p>Description for Renew a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
@@ -503,7 +565,9 @@ public interface DomainsClient {
     void renew(String resourceGroupName, String domainName);
 
     /**
-     * Description for Renew a domain.
+     * Renew a domain.
+     *
+     * <p>Description for Renew a domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.

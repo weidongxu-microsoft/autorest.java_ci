@@ -115,7 +115,9 @@ public final class DeletedWebAppsClientImpl implements DeletedWebAppsClient {
     }
 
     /**
-     * Description for Get all deleted apps for a subscription.
+     * Get all deleted apps for a subscription.
+     *
+     * <p>Description for Get all deleted apps for a subscription.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -159,7 +161,9 @@ public final class DeletedWebAppsClientImpl implements DeletedWebAppsClient {
     }
 
     /**
-     * Description for Get all deleted apps for a subscription.
+     * Get all deleted apps for a subscription.
+     *
+     * <p>Description for Get all deleted apps for a subscription.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -202,7 +206,9 @@ public final class DeletedWebAppsClientImpl implements DeletedWebAppsClient {
     }
 
     /**
-     * Description for Get all deleted apps for a subscription.
+     * Get all deleted apps for a subscription.
+     *
+     * <p>Description for Get all deleted apps for a subscription.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -214,7 +220,9 @@ public final class DeletedWebAppsClientImpl implements DeletedWebAppsClient {
     }
 
     /**
-     * Description for Get all deleted apps for a subscription.
+     * Get all deleted apps for a subscription.
+     *
+     * <p>Description for Get all deleted apps for a subscription.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -229,7 +237,9 @@ public final class DeletedWebAppsClientImpl implements DeletedWebAppsClient {
     }
 
     /**
-     * Description for Get all deleted apps for a subscription.
+     * Get all deleted apps for a subscription.
+     *
+     * <p>Description for Get all deleted apps for a subscription.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -241,7 +251,9 @@ public final class DeletedWebAppsClientImpl implements DeletedWebAppsClient {
     }
 
     /**
-     * Description for Get all deleted apps for a subscription.
+     * Get all deleted apps for a subscription.
+     *
+     * <p>Description for Get all deleted apps for a subscription.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -255,7 +267,9 @@ public final class DeletedWebAppsClientImpl implements DeletedWebAppsClient {
     }
 
     /**
-     * Description for Get all deleted apps for a subscription at location.
+     * Get all deleted apps for a subscription at location
+     *
+     * <p>Description for Get all deleted apps for a subscription at location.
      *
      * @param location The location parameter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -305,7 +319,9 @@ public final class DeletedWebAppsClientImpl implements DeletedWebAppsClient {
     }
 
     /**
-     * Description for Get all deleted apps for a subscription at location.
+     * Get all deleted apps for a subscription at location
+     *
+     * <p>Description for Get all deleted apps for a subscription at location.
      *
      * @param location The location parameter.
      * @param context The context to associate with this operation.
@@ -353,7 +369,9 @@ public final class DeletedWebAppsClientImpl implements DeletedWebAppsClient {
     }
 
     /**
-     * Description for Get all deleted apps for a subscription at location.
+     * Get all deleted apps for a subscription at location
+     *
+     * <p>Description for Get all deleted apps for a subscription at location.
      *
      * @param location The location parameter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -368,7 +386,9 @@ public final class DeletedWebAppsClientImpl implements DeletedWebAppsClient {
     }
 
     /**
-     * Description for Get all deleted apps for a subscription at location.
+     * Get all deleted apps for a subscription at location
+     *
+     * <p>Description for Get all deleted apps for a subscription at location.
      *
      * @param location The location parameter.
      * @param context The context to associate with this operation.
@@ -385,7 +405,9 @@ public final class DeletedWebAppsClientImpl implements DeletedWebAppsClient {
     }
 
     /**
-     * Description for Get all deleted apps for a subscription at location.
+     * Get all deleted apps for a subscription at location
+     *
+     * <p>Description for Get all deleted apps for a subscription at location.
      *
      * @param location The location parameter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -399,7 +421,9 @@ public final class DeletedWebAppsClientImpl implements DeletedWebAppsClient {
     }
 
     /**
-     * Description for Get all deleted apps for a subscription at location.
+     * Get all deleted apps for a subscription at location
+     *
+     * <p>Description for Get all deleted apps for a subscription at location.
      *
      * @param location The location parameter.
      * @param context The context to associate with this operation.
@@ -414,7 +438,9 @@ public final class DeletedWebAppsClientImpl implements DeletedWebAppsClient {
     }
 
     /**
-     * Description for Get deleted app for a subscription at location.
+     * Get deleted app for a subscription at location.
+     *
+     * <p>Description for Get deleted app for a subscription at location.
      *
      * @param location The location parameter.
      * @param deletedSiteId The numeric ID of the deleted app, e.g. 12345.
@@ -461,7 +487,9 @@ public final class DeletedWebAppsClientImpl implements DeletedWebAppsClient {
     }
 
     /**
-     * Description for Get deleted app for a subscription at location.
+     * Get deleted app for a subscription at location.
+     *
+     * <p>Description for Get deleted app for a subscription at location.
      *
      * @param location The location parameter.
      * @param deletedSiteId The numeric ID of the deleted app, e.g. 12345.
@@ -506,7 +534,9 @@ public final class DeletedWebAppsClientImpl implements DeletedWebAppsClient {
     }
 
     /**
-     * Description for Get deleted app for a subscription at location.
+     * Get deleted app for a subscription at location.
+     *
+     * <p>Description for Get deleted app for a subscription at location.
      *
      * @param location The location parameter.
      * @param deletedSiteId The numeric ID of the deleted app, e.g. 12345.
@@ -522,7 +552,9 @@ public final class DeletedWebAppsClientImpl implements DeletedWebAppsClient {
     }
 
     /**
-     * Description for Get deleted app for a subscription at location.
+     * Get deleted app for a subscription at location.
+     *
+     * <p>Description for Get deleted app for a subscription at location.
      *
      * @param location The location parameter.
      * @param deletedSiteId The numeric ID of the deleted app, e.g. 12345.
@@ -537,7 +569,9 @@ public final class DeletedWebAppsClientImpl implements DeletedWebAppsClient {
     }
 
     /**
-     * Description for Get deleted app for a subscription at location.
+     * Get deleted app for a subscription at location.
+     *
+     * <p>Description for Get deleted app for a subscription at location.
      *
      * @param location The location parameter.
      * @param deletedSiteId The numeric ID of the deleted app, e.g. 12345.

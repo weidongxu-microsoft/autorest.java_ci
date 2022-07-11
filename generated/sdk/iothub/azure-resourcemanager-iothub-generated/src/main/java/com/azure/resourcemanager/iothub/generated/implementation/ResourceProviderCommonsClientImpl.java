@@ -65,7 +65,9 @@ public final class ResourceProviderCommonsClientImpl implements ResourceProvider
     }
 
     /**
-     * Get the number of free and paid iot hubs in the subscription.
+     * Get the number of iot hubs in the subscription
+     *
+     * <p>Get the number of free and paid iot hubs in the subscription.
      *
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -101,7 +103,9 @@ public final class ResourceProviderCommonsClientImpl implements ResourceProvider
     }
 
     /**
-     * Get the number of free and paid iot hubs in the subscription.
+     * Get the number of iot hubs in the subscription
+     *
+     * <p>Get the number of free and paid iot hubs in the subscription.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -137,7 +141,9 @@ public final class ResourceProviderCommonsClientImpl implements ResourceProvider
     }
 
     /**
-     * Get the number of free and paid iot hubs in the subscription.
+     * Get the number of iot hubs in the subscription
+     *
+     * <p>Get the number of free and paid iot hubs in the subscription.
      *
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -149,7 +155,9 @@ public final class ResourceProviderCommonsClientImpl implements ResourceProvider
     }
 
     /**
-     * Get the number of free and paid iot hubs in the subscription.
+     * Get the number of iot hubs in the subscription
+     *
+     * <p>Get the number of free and paid iot hubs in the subscription.
      *
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -161,7 +169,9 @@ public final class ResourceProviderCommonsClientImpl implements ResourceProvider
     }
 
     /**
-     * Get the number of free and paid iot hubs in the subscription.
+     * Get the number of iot hubs in the subscription
+     *
+     * <p>Get the number of free and paid iot hubs in the subscription.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

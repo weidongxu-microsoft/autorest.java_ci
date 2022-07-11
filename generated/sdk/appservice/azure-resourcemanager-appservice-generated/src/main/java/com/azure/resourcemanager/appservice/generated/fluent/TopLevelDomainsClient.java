@@ -16,7 +16,9 @@ import com.azure.resourcemanager.appservice.generated.models.TopLevelDomainAgree
 /** An instance of this class provides access to all the operations defined in TopLevelDomainsClient. */
 public interface TopLevelDomainsClient {
     /**
-     * Description for Get all top-level domains supported for registration.
+     * Get all top-level domains supported for registration.
+     *
+     * <p>Description for Get all top-level domains supported for registration.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -27,7 +29,9 @@ public interface TopLevelDomainsClient {
     PagedIterable<TopLevelDomainInner> list();
 
     /**
-     * Description for Get all top-level domains supported for registration.
+     * Get all top-level domains supported for registration.
+     *
+     * <p>Description for Get all top-level domains supported for registration.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -40,7 +44,9 @@ public interface TopLevelDomainsClient {
     PagedIterable<TopLevelDomainInner> list(Context context);
 
     /**
-     * Description for Get details of a top-level domain.
+     * Get details of a top-level domain.
+     *
+     * <p>Description for Get details of a top-level domain.
      *
      * @param name Name of the top-level domain.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -53,7 +59,9 @@ public interface TopLevelDomainsClient {
     TopLevelDomainInner get(String name);
 
     /**
-     * Description for Get details of a top-level domain.
+     * Get details of a top-level domain.
+     *
+     * <p>Description for Get details of a top-level domain.
      *
      * @param name Name of the top-level domain.
      * @param context The context to associate with this operation.
@@ -67,7 +75,9 @@ public interface TopLevelDomainsClient {
     Response<TopLevelDomainInner> getWithResponse(String name, Context context);
 
     /**
-     * Description for Gets all legal agreements that user needs to accept before purchasing a domain.
+     * Gets all legal agreements that user needs to accept before purchasing a domain.
+     *
+     * <p>Description for Gets all legal agreements that user needs to accept before purchasing a domain.
      *
      * @param name Name of the top-level domain.
      * @param agreementOption Domain agreement options.
@@ -81,7 +91,9 @@ public interface TopLevelDomainsClient {
     PagedIterable<TldLegalAgreementInner> listAgreements(String name, TopLevelDomainAgreementOption agreementOption);
 
     /**
-     * Description for Gets all legal agreements that user needs to accept before purchasing a domain.
+     * Gets all legal agreements that user needs to accept before purchasing a domain.
+     *
+     * <p>Description for Gets all legal agreements that user needs to accept before purchasing a domain.
      *
      * @param name Name of the top-level domain.
      * @param agreementOption Domain agreement options.

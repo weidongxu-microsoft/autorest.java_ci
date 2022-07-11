@@ -18,7 +18,9 @@ public final class StatusMessage {
     private String status;
 
     /*
-     * Error Response The error reported by the operation.
+     * Error Response
+     *
+     * The error reported by the operation.
      */
     @JsonProperty(value = "error")
     private ManagementError error;
@@ -44,7 +46,9 @@ public final class StatusMessage {
     }
 
     /**
-     * Get the error property: Error Response The error reported by the operation.
+     * Get the error property: Error Response
+     *
+     * <p>The error reported by the operation.
      *
      * @return the error value.
      */
@@ -53,7 +57,9 @@ public final class StatusMessage {
     }
 
     /**
-     * Set the error property: Error Response The error reported by the operation.
+     * Set the error property: Error Response
+     *
+     * <p>The error reported by the operation.
      *
      * @param error the error value to set.
      * @return the StatusMessage object itself.

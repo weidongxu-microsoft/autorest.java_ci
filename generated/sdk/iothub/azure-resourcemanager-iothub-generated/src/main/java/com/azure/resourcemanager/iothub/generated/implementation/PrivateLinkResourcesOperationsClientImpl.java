@@ -89,7 +89,9 @@ public final class PrivateLinkResourcesOperationsClientImpl implements PrivateLi
     }
 
     /**
-     * List private link resources for the given IotHub.
+     * List private link resources
+     *
+     * <p>List private link resources for the given IotHub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -138,7 +140,9 @@ public final class PrivateLinkResourcesOperationsClientImpl implements PrivateLi
     }
 
     /**
-     * List private link resources for the given IotHub.
+     * List private link resources
+     *
+     * <p>List private link resources for the given IotHub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -185,7 +189,9 @@ public final class PrivateLinkResourcesOperationsClientImpl implements PrivateLi
     }
 
     /**
-     * List private link resources for the given IotHub.
+     * List private link resources
+     *
+     * <p>List private link resources for the given IotHub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -200,7 +206,9 @@ public final class PrivateLinkResourcesOperationsClientImpl implements PrivateLi
     }
 
     /**
-     * List private link resources for the given IotHub.
+     * List private link resources
+     *
+     * <p>List private link resources for the given IotHub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -215,7 +223,9 @@ public final class PrivateLinkResourcesOperationsClientImpl implements PrivateLi
     }
 
     /**
-     * List private link resources for the given IotHub.
+     * List private link resources
+     *
+     * <p>List private link resources for the given IotHub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -232,7 +242,9 @@ public final class PrivateLinkResourcesOperationsClientImpl implements PrivateLi
     }
 
     /**
-     * Get the specified private link resource for the given IotHub.
+     * Get the specified private link resource
+     *
+     * <p>Get the specified private link resource for the given IotHub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -286,7 +298,9 @@ public final class PrivateLinkResourcesOperationsClientImpl implements PrivateLi
     }
 
     /**
-     * Get the specified private link resource for the given IotHub.
+     * Get the specified private link resource
+     *
+     * <p>Get the specified private link resource for the given IotHub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -338,7 +352,9 @@ public final class PrivateLinkResourcesOperationsClientImpl implements PrivateLi
     }
 
     /**
-     * Get the specified private link resource for the given IotHub.
+     * Get the specified private link resource
+     *
+     * <p>Get the specified private link resource for the given IotHub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -355,7 +371,9 @@ public final class PrivateLinkResourcesOperationsClientImpl implements PrivateLi
     }
 
     /**
-     * Get the specified private link resource for the given IotHub.
+     * Get the specified private link resource
+     *
+     * <p>Get the specified private link resource for the given IotHub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -371,7 +389,9 @@ public final class PrivateLinkResourcesOperationsClientImpl implements PrivateLi
     }
 
     /**
-     * Get the specified private link resource for the given IotHub.
+     * Get the specified private link resource
+     *
+     * <p>Get the specified private link resource for the given IotHub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.

@@ -14,7 +14,9 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.DeletedSiteI
 /** An instance of this class provides access to all the operations defined in DeletedWebAppsClient. */
 public interface DeletedWebAppsClient {
     /**
-     * Description for Get all deleted apps for a subscription.
+     * Get all deleted apps for a subscription.
+     *
+     * <p>Description for Get all deleted apps for a subscription.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -25,7 +27,9 @@ public interface DeletedWebAppsClient {
     PagedIterable<DeletedSiteInner> list();
 
     /**
-     * Description for Get all deleted apps for a subscription.
+     * Get all deleted apps for a subscription.
+     *
+     * <p>Description for Get all deleted apps for a subscription.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -38,7 +42,9 @@ public interface DeletedWebAppsClient {
     PagedIterable<DeletedSiteInner> list(Context context);
 
     /**
-     * Description for Get all deleted apps for a subscription at location.
+     * Get all deleted apps for a subscription at location
+     *
+     * <p>Description for Get all deleted apps for a subscription at location.
      *
      * @param location The location parameter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -51,7 +57,9 @@ public interface DeletedWebAppsClient {
     PagedIterable<DeletedSiteInner> listByLocation(String location);
 
     /**
-     * Description for Get all deleted apps for a subscription at location.
+     * Get all deleted apps for a subscription at location
+     *
+     * <p>Description for Get all deleted apps for a subscription at location.
      *
      * @param location The location parameter.
      * @param context The context to associate with this operation.
@@ -65,7 +73,9 @@ public interface DeletedWebAppsClient {
     PagedIterable<DeletedSiteInner> listByLocation(String location, Context context);
 
     /**
-     * Description for Get deleted app for a subscription at location.
+     * Get deleted app for a subscription at location.
+     *
+     * <p>Description for Get deleted app for a subscription at location.
      *
      * @param location The location parameter.
      * @param deletedSiteId The numeric ID of the deleted app, e.g. 12345.
@@ -79,7 +89,9 @@ public interface DeletedWebAppsClient {
     DeletedSiteInner getDeletedWebAppByLocation(String location, String deletedSiteId);
 
     /**
-     * Description for Get deleted app for a subscription at location.
+     * Get deleted app for a subscription at location.
+     *
+     * <p>Description for Get deleted app for a subscription at location.
      *
      * @param location The location parameter.
      * @param deletedSiteId The numeric ID of the deleted app, e.g. 12345.

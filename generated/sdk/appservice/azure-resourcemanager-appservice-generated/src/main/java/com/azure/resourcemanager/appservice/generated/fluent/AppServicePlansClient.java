@@ -27,7 +27,9 @@ import java.util.List;
 /** An instance of this class provides access to all the operations defined in AppServicePlansClient. */
 public interface AppServicePlansClient {
     /**
-     * Description for Get all App Service plans for a subscription.
+     * Get all App Service plans for a subscription.
+     *
+     * <p>Description for Get all App Service plans for a subscription.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -38,7 +40,9 @@ public interface AppServicePlansClient {
     PagedIterable<AppServicePlanInner> list();
 
     /**
-     * Description for Get all App Service plans for a subscription.
+     * Get all App Service plans for a subscription.
+     *
+     * <p>Description for Get all App Service plans for a subscription.
      *
      * @param detailed Specify &lt;code&gt;true&lt;/code&gt; to return all App Service plan properties. The default is
      *     &lt;code&gt;false&lt;/code&gt;, which returns a subset of the properties. Retrieval of all properties may
@@ -54,7 +58,9 @@ public interface AppServicePlansClient {
     PagedIterable<AppServicePlanInner> list(Boolean detailed, Context context);
 
     /**
-     * Description for Get all App Service plans in a resource group.
+     * Get all App Service plans in a resource group.
+     *
+     * <p>Description for Get all App Service plans in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -67,7 +73,9 @@ public interface AppServicePlansClient {
     PagedIterable<AppServicePlanInner> listByResourceGroup(String resourceGroupName);
 
     /**
-     * Description for Get all App Service plans in a resource group.
+     * Get all App Service plans in a resource group.
+     *
+     * <p>Description for Get all App Service plans in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param context The context to associate with this operation.
@@ -81,7 +89,9 @@ public interface AppServicePlansClient {
     PagedIterable<AppServicePlanInner> listByResourceGroup(String resourceGroupName, Context context);
 
     /**
-     * Description for Get an App Service plan.
+     * Get an App Service plan.
+     *
+     * <p>Description for Get an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -94,7 +104,9 @@ public interface AppServicePlansClient {
     AppServicePlanInner getByResourceGroup(String resourceGroupName, String name);
 
     /**
-     * Description for Get an App Service plan.
+     * Get an App Service plan.
+     *
+     * <p>Description for Get an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -109,7 +121,9 @@ public interface AppServicePlansClient {
         String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Creates or updates an App Service Plan.
+     * Creates or updates an App Service Plan.
+     *
+     * <p>Description for Creates or updates an App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -125,7 +139,9 @@ public interface AppServicePlansClient {
         String resourceGroupName, String name, AppServicePlanInner appServicePlan);
 
     /**
-     * Description for Creates or updates an App Service Plan.
+     * Creates or updates an App Service Plan.
+     *
+     * <p>Description for Creates or updates an App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -142,7 +158,9 @@ public interface AppServicePlansClient {
         String resourceGroupName, String name, AppServicePlanInner appServicePlan, Context context);
 
     /**
-     * Description for Creates or updates an App Service Plan.
+     * Creates or updates an App Service Plan.
+     *
+     * <p>Description for Creates or updates an App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -157,7 +175,9 @@ public interface AppServicePlansClient {
     AppServicePlanInner createOrUpdate(String resourceGroupName, String name, AppServicePlanInner appServicePlan);
 
     /**
-     * Description for Creates or updates an App Service Plan.
+     * Creates or updates an App Service Plan.
+     *
+     * <p>Description for Creates or updates an App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -174,7 +194,9 @@ public interface AppServicePlansClient {
         String resourceGroupName, String name, AppServicePlanInner appServicePlan, Context context);
 
     /**
-     * Description for Delete an App Service plan.
+     * Delete an App Service plan.
+     *
+     * <p>Description for Delete an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -187,7 +209,9 @@ public interface AppServicePlansClient {
     void delete(String resourceGroupName, String name);
 
     /**
-     * Description for Delete an App Service plan.
+     * Delete an App Service plan.
+     *
+     * <p>Description for Delete an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -202,7 +226,9 @@ public interface AppServicePlansClient {
     Response<Void> deleteWithResponse(String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Creates or updates an App Service Plan.
+     * Creates or updates an App Service Plan.
+     *
+     * <p>Description for Creates or updates an App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -217,7 +243,9 @@ public interface AppServicePlansClient {
     AppServicePlanInner update(String resourceGroupName, String name, AppServicePlanPatchResource appServicePlan);
 
     /**
-     * Description for Creates or updates an App Service Plan.
+     * Creates or updates an App Service Plan.
+     *
+     * <p>Description for Creates or updates an App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -234,7 +262,9 @@ public interface AppServicePlansClient {
         String resourceGroupName, String name, AppServicePlanPatchResource appServicePlan, Context context);
 
     /**
-     * Description for List all capabilities of an App Service plan.
+     * List all capabilities of an App Service plan.
+     *
+     * <p>Description for List all capabilities of an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -248,7 +278,9 @@ public interface AppServicePlansClient {
     List<CapabilityInner> listCapabilities(String resourceGroupName, String name);
 
     /**
-     * Description for List all capabilities of an App Service plan.
+     * List all capabilities of an App Service plan.
+     *
+     * <p>Description for List all capabilities of an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -264,7 +296,9 @@ public interface AppServicePlansClient {
         String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Retrieve a Hybrid Connection in use in an App Service plan.
+     * Retrieve a Hybrid Connection in use in an App Service plan.
+     *
+     * <p>Description for Retrieve a Hybrid Connection in use in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -281,7 +315,9 @@ public interface AppServicePlansClient {
         String resourceGroupName, String name, String namespaceName, String relayName);
 
     /**
-     * Description for Retrieve a Hybrid Connection in use in an App Service plan.
+     * Retrieve a Hybrid Connection in use in an App Service plan.
+     *
+     * <p>Description for Retrieve a Hybrid Connection in use in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -299,7 +335,9 @@ public interface AppServicePlansClient {
         String resourceGroupName, String name, String namespaceName, String relayName, Context context);
 
     /**
-     * Description for Delete a Hybrid Connection in use in an App Service plan.
+     * Delete a Hybrid Connection in use in an App Service plan.
+     *
+     * <p>Description for Delete a Hybrid Connection in use in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -314,7 +352,9 @@ public interface AppServicePlansClient {
     void deleteHybridConnection(String resourceGroupName, String name, String namespaceName, String relayName);
 
     /**
-     * Description for Delete a Hybrid Connection in use in an App Service plan.
+     * Delete a Hybrid Connection in use in an App Service plan.
+     *
+     * <p>Description for Delete a Hybrid Connection in use in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -332,7 +372,9 @@ public interface AppServicePlansClient {
         String resourceGroupName, String name, String namespaceName, String relayName, Context context);
 
     /**
-     * Description for Get the send key name and value of a Hybrid Connection.
+     * Get the send key name and value of a Hybrid Connection.
+     *
+     * <p>Description for Get the send key name and value of a Hybrid Connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -349,7 +391,9 @@ public interface AppServicePlansClient {
         String resourceGroupName, String name, String namespaceName, String relayName);
 
     /**
-     * Description for Get the send key name and value of a Hybrid Connection.
+     * Get the send key name and value of a Hybrid Connection.
+     *
+     * <p>Description for Get the send key name and value of a Hybrid Connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -367,7 +411,9 @@ public interface AppServicePlansClient {
         String resourceGroupName, String name, String namespaceName, String relayName, Context context);
 
     /**
-     * Description for Get all apps that use a Hybrid Connection in an App Service Plan.
+     * Get all apps that use a Hybrid Connection in an App Service Plan.
+     *
+     * <p>Description for Get all apps that use a Hybrid Connection in an App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -384,7 +430,9 @@ public interface AppServicePlansClient {
         String resourceGroupName, String name, String namespaceName, String relayName);
 
     /**
-     * Description for Get all apps that use a Hybrid Connection in an App Service Plan.
+     * Get all apps that use a Hybrid Connection in an App Service Plan.
+     *
+     * <p>Description for Get all apps that use a Hybrid Connection in an App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -402,7 +450,9 @@ public interface AppServicePlansClient {
         String resourceGroupName, String name, String namespaceName, String relayName, Context context);
 
     /**
-     * Description for Get the maximum number of Hybrid Connections allowed in an App Service plan.
+     * Get the maximum number of Hybrid Connections allowed in an App Service plan.
+     *
+     * <p>Description for Get the maximum number of Hybrid Connections allowed in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -416,7 +466,9 @@ public interface AppServicePlansClient {
     HybridConnectionLimitsInner getHybridConnectionPlanLimit(String resourceGroupName, String name);
 
     /**
-     * Description for Get the maximum number of Hybrid Connections allowed in an App Service plan.
+     * Get the maximum number of Hybrid Connections allowed in an App Service plan.
+     *
+     * <p>Description for Get the maximum number of Hybrid Connections allowed in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -432,7 +484,9 @@ public interface AppServicePlansClient {
         String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Retrieve all Hybrid Connections in use in an App Service plan.
+     * Retrieve all Hybrid Connections in use in an App Service plan.
+     *
+     * <p>Description for Retrieve all Hybrid Connections in use in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -446,7 +500,9 @@ public interface AppServicePlansClient {
     PagedIterable<HybridConnectionInner> listHybridConnections(String resourceGroupName, String name);
 
     /**
-     * Description for Retrieve all Hybrid Connections in use in an App Service plan.
+     * Retrieve all Hybrid Connections in use in an App Service plan.
+     *
+     * <p>Description for Retrieve all Hybrid Connections in use in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -461,7 +517,9 @@ public interface AppServicePlansClient {
     PagedIterable<HybridConnectionInner> listHybridConnections(String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Restart all apps in an App Service plan.
+     * Restart all apps in an App Service plan.
+     *
+     * <p>Description for Restart all apps in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -474,7 +532,9 @@ public interface AppServicePlansClient {
     void restartWebApps(String resourceGroupName, String name);
 
     /**
-     * Description for Restart all apps in an App Service plan.
+     * Restart all apps in an App Service plan.
+     *
+     * <p>Description for Restart all apps in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -493,7 +553,9 @@ public interface AppServicePlansClient {
         String resourceGroupName, String name, Boolean softRestart, Context context);
 
     /**
-     * Description for Get all apps associated with an App Service plan.
+     * Get all apps associated with an App Service plan.
+     *
+     * <p>Description for Get all apps associated with an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -507,7 +569,9 @@ public interface AppServicePlansClient {
     PagedIterable<SiteInner> listWebApps(String resourceGroupName, String name);
 
     /**
-     * Description for Get all apps associated with an App Service plan.
+     * Get all apps associated with an App Service plan.
+     *
+     * <p>Description for Get all apps associated with an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -528,7 +592,9 @@ public interface AppServicePlansClient {
         String resourceGroupName, String name, String skipToken, String filter, String top, Context context);
 
     /**
-     * Description for Gets all selectable SKUs for a given App Service Plan.
+     * Gets all selectable SKUs for a given App Service Plan
+     *
+     * <p>Description for Gets all selectable SKUs for a given App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of App Service Plan.
@@ -542,7 +608,9 @@ public interface AppServicePlansClient {
     Object getServerFarmSkus(String resourceGroupName, String name);
 
     /**
-     * Description for Gets all selectable SKUs for a given App Service Plan.
+     * Gets all selectable SKUs for a given App Service Plan
+     *
+     * <p>Description for Gets all selectable SKUs for a given App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of App Service Plan.
@@ -557,7 +625,9 @@ public interface AppServicePlansClient {
     Response<Object> getServerFarmSkusWithResponse(String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Gets server farm usage information.
+     * Gets server farm usage information
+     *
+     * <p>Description for Gets server farm usage information.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of App Service Plan.
@@ -571,7 +641,9 @@ public interface AppServicePlansClient {
     PagedIterable<CsmUsageQuotaInner> listUsages(String resourceGroupName, String name);
 
     /**
-     * Description for Gets server farm usage information.
+     * Gets server farm usage information
+     *
+     * <p>Description for Gets server farm usage information.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of App Service Plan.
@@ -588,7 +660,9 @@ public interface AppServicePlansClient {
     PagedIterable<CsmUsageQuotaInner> listUsages(String resourceGroupName, String name, String filter, Context context);
 
     /**
-     * Description for Get all Virtual Networks associated with an App Service plan.
+     * Get all Virtual Networks associated with an App Service plan.
+     *
+     * <p>Description for Get all Virtual Networks associated with an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -602,7 +676,9 @@ public interface AppServicePlansClient {
     List<VnetInfoResourceInner> listVnets(String resourceGroupName, String name);
 
     /**
-     * Description for Get all Virtual Networks associated with an App Service plan.
+     * Get all Virtual Networks associated with an App Service plan.
+     *
+     * <p>Description for Get all Virtual Networks associated with an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -617,7 +693,9 @@ public interface AppServicePlansClient {
     Response<List<VnetInfoResourceInner>> listVnetsWithResponse(String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Get a Virtual Network associated with an App Service plan.
+     * Get a Virtual Network associated with an App Service plan.
+     *
+     * <p>Description for Get a Virtual Network associated with an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -631,7 +709,9 @@ public interface AppServicePlansClient {
     VnetInfoResourceInner getVnetFromServerFarm(String resourceGroupName, String name, String vnetName);
 
     /**
-     * Description for Get a Virtual Network associated with an App Service plan.
+     * Get a Virtual Network associated with an App Service plan.
+     *
+     * <p>Description for Get a Virtual Network associated with an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -647,7 +727,9 @@ public interface AppServicePlansClient {
         String resourceGroupName, String name, String vnetName, Context context);
 
     /**
-     * Description for Get a Virtual Network gateway.
+     * Get a Virtual Network gateway.
+     *
+     * <p>Description for Get a Virtual Network gateway.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -663,7 +745,9 @@ public interface AppServicePlansClient {
     VnetGatewayInner getVnetGateway(String resourceGroupName, String name, String vnetName, String gatewayName);
 
     /**
-     * Description for Get a Virtual Network gateway.
+     * Get a Virtual Network gateway.
+     *
+     * <p>Description for Get a Virtual Network gateway.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -681,7 +765,9 @@ public interface AppServicePlansClient {
         String resourceGroupName, String name, String vnetName, String gatewayName, Context context);
 
     /**
-     * Description for Update a Virtual Network gateway.
+     * Update a Virtual Network gateway.
+     *
+     * <p>Description for Update a Virtual Network gateway.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -703,7 +789,9 @@ public interface AppServicePlansClient {
         VnetGatewayInner connectionEnvelope);
 
     /**
-     * Description for Update a Virtual Network gateway.
+     * Update a Virtual Network gateway.
+     *
+     * <p>Description for Update a Virtual Network gateway.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -727,7 +815,9 @@ public interface AppServicePlansClient {
         Context context);
 
     /**
-     * Description for Get all routes that are associated with a Virtual Network in an App Service plan.
+     * Get all routes that are associated with a Virtual Network in an App Service plan.
+     *
+     * <p>Description for Get all routes that are associated with a Virtual Network in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -742,7 +832,9 @@ public interface AppServicePlansClient {
     List<VnetRouteInner> listRoutesForVnet(String resourceGroupName, String name, String vnetName);
 
     /**
-     * Description for Get all routes that are associated with a Virtual Network in an App Service plan.
+     * Get all routes that are associated with a Virtual Network in an App Service plan.
+     *
+     * <p>Description for Get all routes that are associated with a Virtual Network in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -759,7 +851,9 @@ public interface AppServicePlansClient {
         String resourceGroupName, String name, String vnetName, Context context);
 
     /**
-     * Description for Get a Virtual Network route in an App Service plan.
+     * Get a Virtual Network route in an App Service plan.
+     *
+     * <p>Description for Get a Virtual Network route in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -774,7 +868,9 @@ public interface AppServicePlansClient {
     List<VnetRouteInner> getRouteForVnet(String resourceGroupName, String name, String vnetName, String routeName);
 
     /**
-     * Description for Get a Virtual Network route in an App Service plan.
+     * Get a Virtual Network route in an App Service plan.
+     *
+     * <p>Description for Get a Virtual Network route in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -791,7 +887,9 @@ public interface AppServicePlansClient {
         String resourceGroupName, String name, String vnetName, String routeName, Context context);
 
     /**
-     * Description for Create or update a Virtual Network route in an App Service plan.
+     * Create or update a Virtual Network route in an App Service plan.
+     *
+     * <p>Description for Create or update a Virtual Network route in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -808,7 +906,9 @@ public interface AppServicePlansClient {
         String resourceGroupName, String name, String vnetName, String routeName, VnetRouteInner route);
 
     /**
-     * Description for Create or update a Virtual Network route in an App Service plan.
+     * Create or update a Virtual Network route in an App Service plan.
+     *
+     * <p>Description for Create or update a Virtual Network route in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -832,7 +932,9 @@ public interface AppServicePlansClient {
         Context context);
 
     /**
-     * Description for Delete a Virtual Network route in an App Service plan.
+     * Delete a Virtual Network route in an App Service plan.
+     *
+     * <p>Description for Delete a Virtual Network route in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -846,7 +948,9 @@ public interface AppServicePlansClient {
     void deleteVnetRoute(String resourceGroupName, String name, String vnetName, String routeName);
 
     /**
-     * Description for Delete a Virtual Network route in an App Service plan.
+     * Delete a Virtual Network route in an App Service plan.
+     *
+     * <p>Description for Delete a Virtual Network route in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -863,7 +967,9 @@ public interface AppServicePlansClient {
         String resourceGroupName, String name, String vnetName, String routeName, Context context);
 
     /**
-     * Description for Create or update a Virtual Network route in an App Service plan.
+     * Create or update a Virtual Network route in an App Service plan.
+     *
+     * <p>Description for Create or update a Virtual Network route in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -880,7 +986,9 @@ public interface AppServicePlansClient {
         String resourceGroupName, String name, String vnetName, String routeName, VnetRouteInner route);
 
     /**
-     * Description for Create or update a Virtual Network route in an App Service plan.
+     * Create or update a Virtual Network route in an App Service plan.
+     *
+     * <p>Description for Create or update a Virtual Network route in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -904,7 +1012,9 @@ public interface AppServicePlansClient {
         Context context);
 
     /**
-     * Description for Reboot a worker machine in an App Service plan.
+     * Reboot a worker machine in an App Service plan.
+     *
+     * <p>Description for Reboot a worker machine in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -918,7 +1028,9 @@ public interface AppServicePlansClient {
     void rebootWorker(String resourceGroupName, String name, String workerName);
 
     /**
-     * Description for Reboot a worker machine in an App Service plan.
+     * Reboot a worker machine in an App Service plan.
+     *
+     * <p>Description for Reboot a worker machine in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.

@@ -91,7 +91,9 @@ public final class GlobalsClientImpl implements GlobalsClient {
     }
 
     /**
-     * Description for Get deleted app for a subscription.
+     * Get deleted app for a subscription.
+     *
+     * <p>Description for Get deleted app for a subscription.
      *
      * @param deletedSiteId The numeric ID of the deleted app, e.g. 12345.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -132,7 +134,9 @@ public final class GlobalsClientImpl implements GlobalsClient {
     }
 
     /**
-     * Description for Get deleted app for a subscription.
+     * Get deleted app for a subscription.
+     *
+     * <p>Description for Get deleted app for a subscription.
      *
      * @param deletedSiteId The numeric ID of the deleted app, e.g. 12345.
      * @param context The context to associate with this operation.
@@ -171,7 +175,9 @@ public final class GlobalsClientImpl implements GlobalsClient {
     }
 
     /**
-     * Description for Get deleted app for a subscription.
+     * Get deleted app for a subscription.
+     *
+     * <p>Description for Get deleted app for a subscription.
      *
      * @param deletedSiteId The numeric ID of the deleted app, e.g. 12345.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -185,7 +191,9 @@ public final class GlobalsClientImpl implements GlobalsClient {
     }
 
     /**
-     * Description for Get deleted app for a subscription.
+     * Get deleted app for a subscription.
+     *
+     * <p>Description for Get deleted app for a subscription.
      *
      * @param deletedSiteId The numeric ID of the deleted app, e.g. 12345.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -199,7 +207,9 @@ public final class GlobalsClientImpl implements GlobalsClient {
     }
 
     /**
-     * Description for Get deleted app for a subscription.
+     * Get deleted app for a subscription.
+     *
+     * <p>Description for Get deleted app for a subscription.
      *
      * @param deletedSiteId The numeric ID of the deleted app, e.g. 12345.
      * @param context The context to associate with this operation.
@@ -214,7 +224,9 @@ public final class GlobalsClientImpl implements GlobalsClient {
     }
 
     /**
-     * Description for Get all deleted apps for a subscription.
+     * Get all deleted apps for a subscription.
+     *
+     * <p>Description for Get all deleted apps for a subscription.
      *
      * @param deletedSiteId The numeric ID of the deleted app, e.g. 12345.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -255,7 +267,9 @@ public final class GlobalsClientImpl implements GlobalsClient {
     }
 
     /**
-     * Description for Get all deleted apps for a subscription.
+     * Get all deleted apps for a subscription.
+     *
+     * <p>Description for Get all deleted apps for a subscription.
      *
      * @param deletedSiteId The numeric ID of the deleted app, e.g. 12345.
      * @param context The context to associate with this operation.
@@ -295,7 +309,9 @@ public final class GlobalsClientImpl implements GlobalsClient {
     }
 
     /**
-     * Description for Get all deleted apps for a subscription.
+     * Get all deleted apps for a subscription.
+     *
+     * <p>Description for Get all deleted apps for a subscription.
      *
      * @param deletedSiteId The numeric ID of the deleted app, e.g. 12345.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -310,7 +326,9 @@ public final class GlobalsClientImpl implements GlobalsClient {
     }
 
     /**
-     * Description for Get all deleted apps for a subscription.
+     * Get all deleted apps for a subscription.
+     *
+     * <p>Description for Get all deleted apps for a subscription.
      *
      * @param deletedSiteId The numeric ID of the deleted app, e.g. 12345.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -324,7 +342,9 @@ public final class GlobalsClientImpl implements GlobalsClient {
     }
 
     /**
-     * Description for Get all deleted apps for a subscription.
+     * Get all deleted apps for a subscription.
+     *
+     * <p>Description for Get all deleted apps for a subscription.
      *
      * @param deletedSiteId The numeric ID of the deleted app, e.g. 12345.
      * @param context The context to associate with this operation.
@@ -339,7 +359,9 @@ public final class GlobalsClientImpl implements GlobalsClient {
     }
 
     /**
-     * Description for Gets an operation in a subscription and given region.
+     * Gets an operation in a subscription and given region
+     *
+     * <p>Description for Gets an operation in a subscription and given region.
      *
      * @param location Location name.
      * @param operationId Operation Id.
@@ -386,7 +408,9 @@ public final class GlobalsClientImpl implements GlobalsClient {
     }
 
     /**
-     * Description for Gets an operation in a subscription and given region.
+     * Gets an operation in a subscription and given region
+     *
+     * <p>Description for Gets an operation in a subscription and given region.
      *
      * @param location Location name.
      * @param operationId Operation Id.
@@ -431,7 +455,9 @@ public final class GlobalsClientImpl implements GlobalsClient {
     }
 
     /**
-     * Description for Gets an operation in a subscription and given region.
+     * Gets an operation in a subscription and given region
+     *
+     * <p>Description for Gets an operation in a subscription and given region.
      *
      * @param location Location name.
      * @param operationId Operation Id.
@@ -447,7 +473,9 @@ public final class GlobalsClientImpl implements GlobalsClient {
     }
 
     /**
-     * Description for Gets an operation in a subscription and given region.
+     * Gets an operation in a subscription and given region
+     *
+     * <p>Description for Gets an operation in a subscription and given region.
      *
      * @param location Location name.
      * @param operationId Operation Id.
@@ -461,7 +489,9 @@ public final class GlobalsClientImpl implements GlobalsClient {
     }
 
     /**
-     * Description for Gets an operation in a subscription and given region.
+     * Gets an operation in a subscription and given region
+     *
+     * <p>Description for Gets an operation in a subscription and given region.
      *
      * @param location Location name.
      * @param operationId Operation Id.

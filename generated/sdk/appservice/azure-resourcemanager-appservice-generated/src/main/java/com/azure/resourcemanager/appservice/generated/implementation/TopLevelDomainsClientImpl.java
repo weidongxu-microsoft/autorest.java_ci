@@ -121,7 +121,9 @@ public final class TopLevelDomainsClientImpl implements TopLevelDomainsClient {
     }
 
     /**
-     * Description for Get all top-level domains supported for registration.
+     * Get all top-level domains supported for registration.
+     *
+     * <p>Description for Get all top-level domains supported for registration.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -166,7 +168,9 @@ public final class TopLevelDomainsClientImpl implements TopLevelDomainsClient {
     }
 
     /**
-     * Description for Get all top-level domains supported for registration.
+     * Get all top-level domains supported for registration.
+     *
+     * <p>Description for Get all top-level domains supported for registration.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -210,7 +214,9 @@ public final class TopLevelDomainsClientImpl implements TopLevelDomainsClient {
     }
 
     /**
-     * Description for Get all top-level domains supported for registration.
+     * Get all top-level domains supported for registration.
+     *
+     * <p>Description for Get all top-level domains supported for registration.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -222,7 +228,9 @@ public final class TopLevelDomainsClientImpl implements TopLevelDomainsClient {
     }
 
     /**
-     * Description for Get all top-level domains supported for registration.
+     * Get all top-level domains supported for registration.
+     *
+     * <p>Description for Get all top-level domains supported for registration.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -237,7 +245,9 @@ public final class TopLevelDomainsClientImpl implements TopLevelDomainsClient {
     }
 
     /**
-     * Description for Get all top-level domains supported for registration.
+     * Get all top-level domains supported for registration.
+     *
+     * <p>Description for Get all top-level domains supported for registration.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -249,7 +259,9 @@ public final class TopLevelDomainsClientImpl implements TopLevelDomainsClient {
     }
 
     /**
-     * Description for Get all top-level domains supported for registration.
+     * Get all top-level domains supported for registration.
+     *
+     * <p>Description for Get all top-level domains supported for registration.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -263,7 +275,9 @@ public final class TopLevelDomainsClientImpl implements TopLevelDomainsClient {
     }
 
     /**
-     * Description for Get details of a top-level domain.
+     * Get details of a top-level domain.
+     *
+     * <p>Description for Get details of a top-level domain.
      *
      * @param name Name of the top-level domain.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -304,7 +318,9 @@ public final class TopLevelDomainsClientImpl implements TopLevelDomainsClient {
     }
 
     /**
-     * Description for Get details of a top-level domain.
+     * Get details of a top-level domain.
+     *
+     * <p>Description for Get details of a top-level domain.
      *
      * @param name Name of the top-level domain.
      * @param context The context to associate with this operation.
@@ -343,7 +359,9 @@ public final class TopLevelDomainsClientImpl implements TopLevelDomainsClient {
     }
 
     /**
-     * Description for Get details of a top-level domain.
+     * Get details of a top-level domain.
+     *
+     * <p>Description for Get details of a top-level domain.
      *
      * @param name Name of the top-level domain.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -357,7 +375,9 @@ public final class TopLevelDomainsClientImpl implements TopLevelDomainsClient {
     }
 
     /**
-     * Description for Get details of a top-level domain.
+     * Get details of a top-level domain.
+     *
+     * <p>Description for Get details of a top-level domain.
      *
      * @param name Name of the top-level domain.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -371,7 +391,9 @@ public final class TopLevelDomainsClientImpl implements TopLevelDomainsClient {
     }
 
     /**
-     * Description for Get details of a top-level domain.
+     * Get details of a top-level domain.
+     *
+     * <p>Description for Get details of a top-level domain.
      *
      * @param name Name of the top-level domain.
      * @param context The context to associate with this operation.
@@ -386,7 +408,9 @@ public final class TopLevelDomainsClientImpl implements TopLevelDomainsClient {
     }
 
     /**
-     * Description for Gets all legal agreements that user needs to accept before purchasing a domain.
+     * Gets all legal agreements that user needs to accept before purchasing a domain.
+     *
+     * <p>Description for Gets all legal agreements that user needs to accept before purchasing a domain.
      *
      * @param name Name of the top-level domain.
      * @param agreementOption Domain agreement options.
@@ -446,7 +470,9 @@ public final class TopLevelDomainsClientImpl implements TopLevelDomainsClient {
     }
 
     /**
-     * Description for Gets all legal agreements that user needs to accept before purchasing a domain.
+     * Gets all legal agreements that user needs to accept before purchasing a domain.
+     *
+     * <p>Description for Gets all legal agreements that user needs to accept before purchasing a domain.
      *
      * @param name Name of the top-level domain.
      * @param agreementOption Domain agreement options.
@@ -504,7 +530,9 @@ public final class TopLevelDomainsClientImpl implements TopLevelDomainsClient {
     }
 
     /**
-     * Description for Gets all legal agreements that user needs to accept before purchasing a domain.
+     * Gets all legal agreements that user needs to accept before purchasing a domain.
+     *
+     * <p>Description for Gets all legal agreements that user needs to accept before purchasing a domain.
      *
      * @param name Name of the top-level domain.
      * @param agreementOption Domain agreement options.
@@ -522,7 +550,9 @@ public final class TopLevelDomainsClientImpl implements TopLevelDomainsClient {
     }
 
     /**
-     * Description for Gets all legal agreements that user needs to accept before purchasing a domain.
+     * Gets all legal agreements that user needs to accept before purchasing a domain.
+     *
+     * <p>Description for Gets all legal agreements that user needs to accept before purchasing a domain.
      *
      * @param name Name of the top-level domain.
      * @param agreementOption Domain agreement options.
@@ -541,7 +571,9 @@ public final class TopLevelDomainsClientImpl implements TopLevelDomainsClient {
     }
 
     /**
-     * Description for Gets all legal agreements that user needs to accept before purchasing a domain.
+     * Gets all legal agreements that user needs to accept before purchasing a domain.
+     *
+     * <p>Description for Gets all legal agreements that user needs to accept before purchasing a domain.
      *
      * @param name Name of the top-level domain.
      * @param agreementOption Domain agreement options.
@@ -557,7 +589,9 @@ public final class TopLevelDomainsClientImpl implements TopLevelDomainsClient {
     }
 
     /**
-     * Description for Gets all legal agreements that user needs to accept before purchasing a domain.
+     * Gets all legal agreements that user needs to accept before purchasing a domain.
+     *
+     * <p>Description for Gets all legal agreements that user needs to accept before purchasing a domain.
      *
      * @param name Name of the top-level domain.
      * @param agreementOption Domain agreement options.

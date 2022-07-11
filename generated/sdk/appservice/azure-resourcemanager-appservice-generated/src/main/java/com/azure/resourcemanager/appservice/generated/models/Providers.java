@@ -10,7 +10,9 @@ import com.azure.core.util.Context;
 /** Resource collection API of Providers. */
 public interface Providers {
     /**
-     * Description for Get available application frameworks and their versions.
+     * Get available application frameworks and their versions
+     *
+     * <p>Description for Get available application frameworks and their versions.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -20,7 +22,9 @@ public interface Providers {
     PagedIterable<ApplicationStackResource> getAvailableStacks();
 
     /**
-     * Description for Get available application frameworks and their versions.
+     * Get available application frameworks and their versions
+     *
+     * <p>Description for Get available application frameworks and their versions.
      *
      * @param osTypeSelected The osTypeSelected parameter.
      * @param context The context to associate with this operation.
@@ -33,7 +37,9 @@ public interface Providers {
     PagedIterable<ApplicationStackResource> getAvailableStacks(ProviderOsTypeSelected osTypeSelected, Context context);
 
     /**
-     * Description for Get available Function app frameworks and their versions.
+     * Get available Function app frameworks and their versions
+     *
+     * <p>Description for Get available Function app frameworks and their versions.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -43,7 +49,9 @@ public interface Providers {
     PagedIterable<FunctionAppStack> getFunctionAppStacks();
 
     /**
-     * Description for Get available Function app frameworks and their versions.
+     * Get available Function app frameworks and their versions
+     *
+     * <p>Description for Get available Function app frameworks and their versions.
      *
      * @param stackOsType Stack OS Type.
      * @param context The context to associate with this operation.
@@ -56,7 +64,9 @@ public interface Providers {
     PagedIterable<FunctionAppStack> getFunctionAppStacks(ProviderStackOsType stackOsType, Context context);
 
     /**
-     * Description for Get available Function app frameworks and their versions for location.
+     * Get available Function app frameworks and their versions for location
+     *
+     * <p>Description for Get available Function app frameworks and their versions for location.
      *
      * @param location Function App stack location.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -68,7 +78,9 @@ public interface Providers {
     PagedIterable<FunctionAppStack> getFunctionAppStacksForLocation(String location);
 
     /**
-     * Description for Get available Function app frameworks and their versions for location.
+     * Get available Function app frameworks and their versions for location
+     *
+     * <p>Description for Get available Function app frameworks and their versions for location.
      *
      * @param location Function App stack location.
      * @param stackOsType Stack OS Type.
@@ -83,7 +95,9 @@ public interface Providers {
         String location, ProviderStackOsType stackOsType, Context context);
 
     /**
-     * Description for Get available Web app frameworks and their versions for location.
+     * Get available Web app frameworks and their versions for location
+     *
+     * <p>Description for Get available Web app frameworks and their versions for location.
      *
      * @param location Web App stack location.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -95,7 +109,9 @@ public interface Providers {
     PagedIterable<WebAppStack> getWebAppStacksForLocation(String location);
 
     /**
-     * Description for Get available Web app frameworks and their versions for location.
+     * Get available Web app frameworks and their versions for location
+     *
+     * <p>Description for Get available Web app frameworks and their versions for location.
      *
      * @param location Web App stack location.
      * @param stackOsType Stack OS Type.
@@ -110,7 +126,9 @@ public interface Providers {
         String location, ProviderStackOsType stackOsType, Context context);
 
     /**
-     * Description for Gets all available operations for the Microsoft.Web resource provider. Also exposes resource
+     * Gets all available operations for the Microsoft.Web resource provider. Also exposes resource metric definitions
+     *
+     * <p>Description for Gets all available operations for the Microsoft.Web resource provider. Also exposes resource
      * metric definitions.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -121,7 +139,9 @@ public interface Providers {
     PagedIterable<CsmOperationDescription> listOperations();
 
     /**
-     * Description for Gets all available operations for the Microsoft.Web resource provider. Also exposes resource
+     * Gets all available operations for the Microsoft.Web resource provider. Also exposes resource metric definitions
+     *
+     * <p>Description for Gets all available operations for the Microsoft.Web resource provider. Also exposes resource
      * metric definitions.
      *
      * @param context The context to associate with this operation.
@@ -134,7 +154,9 @@ public interface Providers {
     PagedIterable<CsmOperationDescription> listOperations(Context context);
 
     /**
-     * Description for Get available Web app frameworks and their versions.
+     * Get available Web app frameworks and their versions
+     *
+     * <p>Description for Get available Web app frameworks and their versions.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -144,7 +166,9 @@ public interface Providers {
     PagedIterable<WebAppStack> getWebAppStacks();
 
     /**
-     * Description for Get available Web app frameworks and their versions.
+     * Get available Web app frameworks and their versions
+     *
+     * <p>Description for Get available Web app frameworks and their versions.
      *
      * @param stackOsType Stack OS Type.
      * @param context The context to associate with this operation.
@@ -157,7 +181,9 @@ public interface Providers {
     PagedIterable<WebAppStack> getWebAppStacks(ProviderStackOsType stackOsType, Context context);
 
     /**
-     * Description for Get available application frameworks and their versions.
+     * Get available application frameworks and their versions
+     *
+     * <p>Description for Get available application frameworks and their versions.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -167,7 +193,9 @@ public interface Providers {
     PagedIterable<ApplicationStackResource> list();
 
     /**
-     * Description for Get available application frameworks and their versions.
+     * Get available application frameworks and their versions
+     *
+     * <p>Description for Get available application frameworks and their versions.
      *
      * @param osTypeSelected The osTypeSelected parameter.
      * @param context The context to associate with this operation.

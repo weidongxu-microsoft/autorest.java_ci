@@ -576,7 +576,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get all App Service plans for a subscription.
+     * Get all App Service plans for a subscription.
+     *
+     * <p>Description for Get all App Service plans for a subscription.
      *
      * @param detailed Specify &lt;code&gt;true&lt;/code&gt; to return all App Service plan properties. The default is
      *     &lt;code&gt;false&lt;/code&gt;, which returns a subset of the properties. Retrieval of all properties may
@@ -626,7 +628,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get all App Service plans for a subscription.
+     * Get all App Service plans for a subscription.
+     *
+     * <p>Description for Get all App Service plans for a subscription.
      *
      * @param detailed Specify &lt;code&gt;true&lt;/code&gt; to return all App Service plan properties. The default is
      *     &lt;code&gt;false&lt;/code&gt;, which returns a subset of the properties. Retrieval of all properties may
@@ -674,7 +678,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get all App Service plans for a subscription.
+     * Get all App Service plans for a subscription.
+     *
+     * <p>Description for Get all App Service plans for a subscription.
      *
      * @param detailed Specify &lt;code&gt;true&lt;/code&gt; to return all App Service plan properties. The default is
      *     &lt;code&gt;false&lt;/code&gt;, which returns a subset of the properties. Retrieval of all properties may
@@ -690,7 +696,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get all App Service plans for a subscription.
+     * Get all App Service plans for a subscription.
+     *
+     * <p>Description for Get all App Service plans for a subscription.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -703,7 +711,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get all App Service plans for a subscription.
+     * Get all App Service plans for a subscription.
+     *
+     * <p>Description for Get all App Service plans for a subscription.
      *
      * @param detailed Specify &lt;code&gt;true&lt;/code&gt; to return all App Service plan properties. The default is
      *     &lt;code&gt;false&lt;/code&gt;, which returns a subset of the properties. Retrieval of all properties may
@@ -721,7 +731,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get all App Service plans for a subscription.
+     * Get all App Service plans for a subscription.
+     *
+     * <p>Description for Get all App Service plans for a subscription.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -734,7 +746,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get all App Service plans for a subscription.
+     * Get all App Service plans for a subscription.
+     *
+     * <p>Description for Get all App Service plans for a subscription.
      *
      * @param detailed Specify &lt;code&gt;true&lt;/code&gt; to return all App Service plan properties. The default is
      *     &lt;code&gt;false&lt;/code&gt;, which returns a subset of the properties. Retrieval of all properties may
@@ -751,7 +765,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get all App Service plans in a resource group.
+     * Get all App Service plans in a resource group.
+     *
+     * <p>Description for Get all App Service plans in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -803,7 +819,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get all App Service plans in a resource group.
+     * Get all App Service plans in a resource group.
+     *
+     * <p>Description for Get all App Service plans in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param context The context to associate with this operation.
@@ -854,7 +872,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get all App Service plans in a resource group.
+     * Get all App Service plans in a resource group.
+     *
+     * <p>Description for Get all App Service plans in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -870,7 +890,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get all App Service plans in a resource group.
+     * Get all App Service plans in a resource group.
+     *
+     * <p>Description for Get all App Service plans in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param context The context to associate with this operation.
@@ -887,7 +909,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get all App Service plans in a resource group.
+     * Get all App Service plans in a resource group.
+     *
+     * <p>Description for Get all App Service plans in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -901,7 +925,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get all App Service plans in a resource group.
+     * Get all App Service plans in a resource group.
+     *
+     * <p>Description for Get all App Service plans in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param context The context to associate with this operation.
@@ -916,7 +942,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get an App Service plan.
+     * Get an App Service plan.
+     *
+     * <p>Description for Get an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -964,7 +992,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get an App Service plan.
+     * Get an App Service plan.
+     *
+     * <p>Description for Get an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1010,7 +1040,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get an App Service plan.
+     * Get an App Service plan.
+     *
+     * <p>Description for Get an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1026,7 +1058,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get an App Service plan.
+     * Get an App Service plan.
+     *
+     * <p>Description for Get an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1041,7 +1075,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get an App Service plan.
+     * Get an App Service plan.
+     *
+     * <p>Description for Get an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1058,7 +1094,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Creates or updates an App Service Plan.
+     * Creates or updates an App Service Plan.
+     *
+     * <p>Description for Creates or updates an App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1113,7 +1151,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Creates or updates an App Service Plan.
+     * Creates or updates an App Service Plan.
+     *
+     * <p>Description for Creates or updates an App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1166,7 +1206,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Creates or updates an App Service Plan.
+     * Creates or updates an App Service Plan.
+     *
+     * <p>Description for Creates or updates an App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1192,7 +1234,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Creates or updates an App Service Plan.
+     * Creates or updates an App Service Plan.
+     *
+     * <p>Description for Creates or updates an App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1216,7 +1260,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Creates or updates an App Service Plan.
+     * Creates or updates an App Service Plan.
+     *
+     * <p>Description for Creates or updates an App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1233,7 +1279,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Creates or updates an App Service Plan.
+     * Creates or updates an App Service Plan.
+     *
+     * <p>Description for Creates or updates an App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1251,7 +1299,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Creates or updates an App Service Plan.
+     * Creates or updates an App Service Plan.
+     *
+     * <p>Description for Creates or updates an App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1270,7 +1320,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Creates or updates an App Service Plan.
+     * Creates or updates an App Service Plan.
+     *
+     * <p>Description for Creates or updates an App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1290,7 +1342,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Creates or updates an App Service Plan.
+     * Creates or updates an App Service Plan.
+     *
+     * <p>Description for Creates or updates an App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1307,7 +1361,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Creates or updates an App Service Plan.
+     * Creates or updates an App Service Plan.
+     *
+     * <p>Description for Creates or updates an App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1325,7 +1381,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Delete an App Service plan.
+     * Delete an App Service plan.
+     *
+     * <p>Description for Delete an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1372,7 +1430,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Delete an App Service plan.
+     * Delete an App Service plan.
+     *
+     * <p>Description for Delete an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1417,7 +1477,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Delete an App Service plan.
+     * Delete an App Service plan.
+     *
+     * <p>Description for Delete an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1432,7 +1494,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Delete an App Service plan.
+     * Delete an App Service plan.
+     *
+     * <p>Description for Delete an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1446,7 +1510,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Delete an App Service plan.
+     * Delete an App Service plan.
+     *
+     * <p>Description for Delete an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1462,7 +1528,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Creates or updates an App Service Plan.
+     * Creates or updates an App Service Plan.
+     *
+     * <p>Description for Creates or updates an App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1517,7 +1585,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Creates or updates an App Service Plan.
+     * Creates or updates an App Service Plan.
+     *
+     * <p>Description for Creates or updates an App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1570,7 +1640,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Creates or updates an App Service Plan.
+     * Creates or updates an App Service Plan.
+     *
+     * <p>Description for Creates or updates an App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1588,7 +1660,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Creates or updates an App Service Plan.
+     * Creates or updates an App Service Plan.
+     *
+     * <p>Description for Creates or updates an App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1605,7 +1679,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Creates or updates an App Service Plan.
+     * Creates or updates an App Service Plan.
+     *
+     * <p>Description for Creates or updates an App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1623,7 +1699,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for List all capabilities of an App Service plan.
+     * List all capabilities of an App Service plan.
+     *
+     * <p>Description for List all capabilities of an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1671,7 +1749,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for List all capabilities of an App Service plan.
+     * List all capabilities of an App Service plan.
+     *
+     * <p>Description for List all capabilities of an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1717,7 +1797,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for List all capabilities of an App Service plan.
+     * List all capabilities of an App Service plan.
+     *
+     * <p>Description for List all capabilities of an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1733,7 +1815,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for List all capabilities of an App Service plan.
+     * List all capabilities of an App Service plan.
+     *
+     * <p>Description for List all capabilities of an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1748,7 +1832,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for List all capabilities of an App Service plan.
+     * List all capabilities of an App Service plan.
+     *
+     * <p>Description for List all capabilities of an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1765,7 +1851,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Retrieve a Hybrid Connection in use in an App Service plan.
+     * Retrieve a Hybrid Connection in use in an App Service plan.
+     *
+     * <p>Description for Retrieve a Hybrid Connection in use in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1823,7 +1911,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Retrieve a Hybrid Connection in use in an App Service plan.
+     * Retrieve a Hybrid Connection in use in an App Service plan.
+     *
+     * <p>Description for Retrieve a Hybrid Connection in use in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1879,7 +1969,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Retrieve a Hybrid Connection in use in an App Service plan.
+     * Retrieve a Hybrid Connection in use in an App Service plan.
+     *
+     * <p>Description for Retrieve a Hybrid Connection in use in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1898,7 +1990,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Retrieve a Hybrid Connection in use in an App Service plan.
+     * Retrieve a Hybrid Connection in use in an App Service plan.
+     *
+     * <p>Description for Retrieve a Hybrid Connection in use in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1916,7 +2010,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Retrieve a Hybrid Connection in use in an App Service plan.
+     * Retrieve a Hybrid Connection in use in an App Service plan.
+     *
+     * <p>Description for Retrieve a Hybrid Connection in use in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1935,7 +2031,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Delete a Hybrid Connection in use in an App Service plan.
+     * Delete a Hybrid Connection in use in an App Service plan.
+     *
+     * <p>Description for Delete a Hybrid Connection in use in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -1993,7 +2091,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Delete a Hybrid Connection in use in an App Service plan.
+     * Delete a Hybrid Connection in use in an App Service plan.
+     *
+     * <p>Description for Delete a Hybrid Connection in use in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -2049,7 +2149,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Delete a Hybrid Connection in use in an App Service plan.
+     * Delete a Hybrid Connection in use in an App Service plan.
+     *
+     * <p>Description for Delete a Hybrid Connection in use in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -2068,7 +2170,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Delete a Hybrid Connection in use in an App Service plan.
+     * Delete a Hybrid Connection in use in an App Service plan.
+     *
+     * <p>Description for Delete a Hybrid Connection in use in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -2084,7 +2188,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Delete a Hybrid Connection in use in an App Service plan.
+     * Delete a Hybrid Connection in use in an App Service plan.
+     *
+     * <p>Description for Delete a Hybrid Connection in use in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -2104,7 +2210,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get the send key name and value of a Hybrid Connection.
+     * Get the send key name and value of a Hybrid Connection.
+     *
+     * <p>Description for Get the send key name and value of a Hybrid Connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -2162,7 +2270,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get the send key name and value of a Hybrid Connection.
+     * Get the send key name and value of a Hybrid Connection.
+     *
+     * <p>Description for Get the send key name and value of a Hybrid Connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -2218,7 +2328,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get the send key name and value of a Hybrid Connection.
+     * Get the send key name and value of a Hybrid Connection.
+     *
+     * <p>Description for Get the send key name and value of a Hybrid Connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -2237,7 +2349,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get the send key name and value of a Hybrid Connection.
+     * Get the send key name and value of a Hybrid Connection.
+     *
+     * <p>Description for Get the send key name and value of a Hybrid Connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -2255,7 +2369,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get the send key name and value of a Hybrid Connection.
+     * Get the send key name and value of a Hybrid Connection.
+     *
+     * <p>Description for Get the send key name and value of a Hybrid Connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -2275,7 +2391,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get all apps that use a Hybrid Connection in an App Service Plan.
+     * Get all apps that use a Hybrid Connection in an App Service Plan.
+     *
+     * <p>Description for Get all apps that use a Hybrid Connection in an App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -2342,7 +2460,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get all apps that use a Hybrid Connection in an App Service Plan.
+     * Get all apps that use a Hybrid Connection in an App Service Plan.
+     *
+     * <p>Description for Get all apps that use a Hybrid Connection in an App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -2407,7 +2527,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get all apps that use a Hybrid Connection in an App Service Plan.
+     * Get all apps that use a Hybrid Connection in an App Service Plan.
+     *
+     * <p>Description for Get all apps that use a Hybrid Connection in an App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -2427,7 +2549,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get all apps that use a Hybrid Connection in an App Service Plan.
+     * Get all apps that use a Hybrid Connection in an App Service Plan.
+     *
+     * <p>Description for Get all apps that use a Hybrid Connection in an App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -2450,7 +2574,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get all apps that use a Hybrid Connection in an App Service Plan.
+     * Get all apps that use a Hybrid Connection in an App Service Plan.
+     *
+     * <p>Description for Get all apps that use a Hybrid Connection in an App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -2469,7 +2595,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get all apps that use a Hybrid Connection in an App Service Plan.
+     * Get all apps that use a Hybrid Connection in an App Service Plan.
+     *
+     * <p>Description for Get all apps that use a Hybrid Connection in an App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -2489,7 +2617,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get the maximum number of Hybrid Connections allowed in an App Service plan.
+     * Get the maximum number of Hybrid Connections allowed in an App Service plan.
+     *
+     * <p>Description for Get the maximum number of Hybrid Connections allowed in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -2537,7 +2667,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get the maximum number of Hybrid Connections allowed in an App Service plan.
+     * Get the maximum number of Hybrid Connections allowed in an App Service plan.
+     *
+     * <p>Description for Get the maximum number of Hybrid Connections allowed in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -2583,7 +2715,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get the maximum number of Hybrid Connections allowed in an App Service plan.
+     * Get the maximum number of Hybrid Connections allowed in an App Service plan.
+     *
+     * <p>Description for Get the maximum number of Hybrid Connections allowed in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -2599,7 +2733,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get the maximum number of Hybrid Connections allowed in an App Service plan.
+     * Get the maximum number of Hybrid Connections allowed in an App Service plan.
+     *
+     * <p>Description for Get the maximum number of Hybrid Connections allowed in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -2614,7 +2750,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get the maximum number of Hybrid Connections allowed in an App Service plan.
+     * Get the maximum number of Hybrid Connections allowed in an App Service plan.
+     *
+     * <p>Description for Get the maximum number of Hybrid Connections allowed in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -2631,7 +2769,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Retrieve all Hybrid Connections in use in an App Service plan.
+     * Retrieve all Hybrid Connections in use in an App Service plan.
+     *
+     * <p>Description for Retrieve all Hybrid Connections in use in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -2689,7 +2829,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Retrieve all Hybrid Connections in use in an App Service plan.
+     * Retrieve all Hybrid Connections in use in an App Service plan.
+     *
+     * <p>Description for Retrieve all Hybrid Connections in use in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -2745,7 +2887,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Retrieve all Hybrid Connections in use in an App Service plan.
+     * Retrieve all Hybrid Connections in use in an App Service plan.
+     *
+     * <p>Description for Retrieve all Hybrid Connections in use in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -2762,7 +2906,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Retrieve all Hybrid Connections in use in an App Service plan.
+     * Retrieve all Hybrid Connections in use in an App Service plan.
+     *
+     * <p>Description for Retrieve all Hybrid Connections in use in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -2781,7 +2927,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Retrieve all Hybrid Connections in use in an App Service plan.
+     * Retrieve all Hybrid Connections in use in an App Service plan.
+     *
+     * <p>Description for Retrieve all Hybrid Connections in use in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -2796,7 +2944,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Retrieve all Hybrid Connections in use in an App Service plan.
+     * Retrieve all Hybrid Connections in use in an App Service plan.
+     *
+     * <p>Description for Retrieve all Hybrid Connections in use in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -2813,7 +2963,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Restart all apps in an App Service plan.
+     * Restart all apps in an App Service plan.
+     *
+     * <p>Description for Restart all apps in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -2865,7 +3017,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Restart all apps in an App Service plan.
+     * Restart all apps in an App Service plan.
+     *
+     * <p>Description for Restart all apps in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -2915,7 +3069,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Restart all apps in an App Service plan.
+     * Restart all apps in an App Service plan.
+     *
+     * <p>Description for Restart all apps in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -2933,7 +3089,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Restart all apps in an App Service plan.
+     * Restart all apps in an App Service plan.
+     *
+     * <p>Description for Restart all apps in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -2949,7 +3107,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Restart all apps in an App Service plan.
+     * Restart all apps in an App Service plan.
+     *
+     * <p>Description for Restart all apps in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -2964,7 +3124,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Restart all apps in an App Service plan.
+     * Restart all apps in an App Service plan.
+     *
+     * <p>Description for Restart all apps in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -2984,7 +3146,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get all apps associated with an App Service plan.
+     * Get all apps associated with an App Service plan.
+     *
+     * <p>Description for Get all apps associated with an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -3049,7 +3213,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get all apps associated with an App Service plan.
+     * Get all apps associated with an App Service plan.
+     *
+     * <p>Description for Get all apps associated with an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -3112,7 +3278,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get all apps associated with an App Service plan.
+     * Get all apps associated with an App Service plan.
+     *
+     * <p>Description for Get all apps associated with an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -3135,7 +3303,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get all apps associated with an App Service plan.
+     * Get all apps associated with an App Service plan.
+     *
+     * <p>Description for Get all apps associated with an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -3155,7 +3325,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get all apps associated with an App Service plan.
+     * Get all apps associated with an App Service plan.
+     *
+     * <p>Description for Get all apps associated with an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -3179,7 +3351,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get all apps associated with an App Service plan.
+     * Get all apps associated with an App Service plan.
+     *
+     * <p>Description for Get all apps associated with an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -3197,7 +3371,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get all apps associated with an App Service plan.
+     * Get all apps associated with an App Service plan.
+     *
+     * <p>Description for Get all apps associated with an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -3219,7 +3395,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Gets all selectable SKUs for a given App Service Plan.
+     * Gets all selectable SKUs for a given App Service Plan
+     *
+     * <p>Description for Gets all selectable SKUs for a given App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of App Service Plan.
@@ -3266,7 +3444,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Gets all selectable SKUs for a given App Service Plan.
+     * Gets all selectable SKUs for a given App Service Plan
+     *
+     * <p>Description for Gets all selectable SKUs for a given App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of App Service Plan.
@@ -3312,7 +3492,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Gets all selectable SKUs for a given App Service Plan.
+     * Gets all selectable SKUs for a given App Service Plan
+     *
+     * <p>Description for Gets all selectable SKUs for a given App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of App Service Plan.
@@ -3328,7 +3510,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Gets all selectable SKUs for a given App Service Plan.
+     * Gets all selectable SKUs for a given App Service Plan
+     *
+     * <p>Description for Gets all selectable SKUs for a given App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of App Service Plan.
@@ -3343,7 +3527,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Gets all selectable SKUs for a given App Service Plan.
+     * Gets all selectable SKUs for a given App Service Plan
+     *
+     * <p>Description for Gets all selectable SKUs for a given App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of App Service Plan.
@@ -3359,7 +3545,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Gets server farm usage information.
+     * Gets server farm usage information
+     *
+     * <p>Description for Gets server farm usage information.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of App Service Plan.
@@ -3419,7 +3607,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Gets server farm usage information.
+     * Gets server farm usage information
+     *
+     * <p>Description for Gets server farm usage information.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of App Service Plan.
@@ -3477,7 +3667,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Gets server farm usage information.
+     * Gets server farm usage information
+     *
+     * <p>Description for Gets server farm usage information.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of App Service Plan.
@@ -3496,7 +3688,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Gets server farm usage information.
+     * Gets server farm usage information
+     *
+     * <p>Description for Gets server farm usage information.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of App Service Plan.
@@ -3514,7 +3708,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Gets server farm usage information.
+     * Gets server farm usage information
+     *
+     * <p>Description for Gets server farm usage information.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of App Service Plan.
@@ -3535,7 +3731,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Gets server farm usage information.
+     * Gets server farm usage information
+     *
+     * <p>Description for Gets server farm usage information.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of App Service Plan.
@@ -3551,7 +3749,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Gets server farm usage information.
+     * Gets server farm usage information
+     *
+     * <p>Description for Gets server farm usage information.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of App Service Plan.
@@ -3570,7 +3770,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get all Virtual Networks associated with an App Service plan.
+     * Get all Virtual Networks associated with an App Service plan.
+     *
+     * <p>Description for Get all Virtual Networks associated with an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -3618,7 +3820,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get all Virtual Networks associated with an App Service plan.
+     * Get all Virtual Networks associated with an App Service plan.
+     *
+     * <p>Description for Get all Virtual Networks associated with an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -3664,7 +3868,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get all Virtual Networks associated with an App Service plan.
+     * Get all Virtual Networks associated with an App Service plan.
+     *
+     * <p>Description for Get all Virtual Networks associated with an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -3679,7 +3885,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get all Virtual Networks associated with an App Service plan.
+     * Get all Virtual Networks associated with an App Service plan.
+     *
+     * <p>Description for Get all Virtual Networks associated with an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -3694,7 +3902,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get all Virtual Networks associated with an App Service plan.
+     * Get all Virtual Networks associated with an App Service plan.
+     *
+     * <p>Description for Get all Virtual Networks associated with an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -3711,7 +3921,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get a Virtual Network associated with an App Service plan.
+     * Get a Virtual Network associated with an App Service plan.
+     *
+     * <p>Description for Get a Virtual Network associated with an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -3765,7 +3977,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get a Virtual Network associated with an App Service plan.
+     * Get a Virtual Network associated with an App Service plan.
+     *
+     * <p>Description for Get a Virtual Network associated with an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -3817,7 +4031,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get a Virtual Network associated with an App Service plan.
+     * Get a Virtual Network associated with an App Service plan.
+     *
+     * <p>Description for Get a Virtual Network associated with an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -3835,7 +4051,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get a Virtual Network associated with an App Service plan.
+     * Get a Virtual Network associated with an App Service plan.
+     *
+     * <p>Description for Get a Virtual Network associated with an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -3851,7 +4069,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get a Virtual Network associated with an App Service plan.
+     * Get a Virtual Network associated with an App Service plan.
+     *
+     * <p>Description for Get a Virtual Network associated with an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -3869,7 +4089,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get a Virtual Network gateway.
+     * Get a Virtual Network gateway.
+     *
+     * <p>Description for Get a Virtual Network gateway.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -3928,7 +4150,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get a Virtual Network gateway.
+     * Get a Virtual Network gateway.
+     *
+     * <p>Description for Get a Virtual Network gateway.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -3985,7 +4209,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get a Virtual Network gateway.
+     * Get a Virtual Network gateway.
+     *
+     * <p>Description for Get a Virtual Network gateway.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -4004,7 +4230,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get a Virtual Network gateway.
+     * Get a Virtual Network gateway.
+     *
+     * <p>Description for Get a Virtual Network gateway.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -4021,7 +4249,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get a Virtual Network gateway.
+     * Get a Virtual Network gateway.
+     *
+     * <p>Description for Get a Virtual Network gateway.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -4040,7 +4270,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Update a Virtual Network gateway.
+     * Update a Virtual Network gateway.
+     *
+     * <p>Description for Update a Virtual Network gateway.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -4111,7 +4343,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Update a Virtual Network gateway.
+     * Update a Virtual Network gateway.
+     *
+     * <p>Description for Update a Virtual Network gateway.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -4181,7 +4415,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Update a Virtual Network gateway.
+     * Update a Virtual Network gateway.
+     *
+     * <p>Description for Update a Virtual Network gateway.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -4205,7 +4441,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Update a Virtual Network gateway.
+     * Update a Virtual Network gateway.
+     *
+     * <p>Description for Update a Virtual Network gateway.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -4228,7 +4466,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Update a Virtual Network gateway.
+     * Update a Virtual Network gateway.
+     *
+     * <p>Description for Update a Virtual Network gateway.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -4255,7 +4495,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get all routes that are associated with a Virtual Network in an App Service plan.
+     * Get all routes that are associated with a Virtual Network in an App Service plan.
+     *
+     * <p>Description for Get all routes that are associated with a Virtual Network in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -4308,7 +4550,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get all routes that are associated with a Virtual Network in an App Service plan.
+     * Get all routes that are associated with a Virtual Network in an App Service plan.
+     *
+     * <p>Description for Get all routes that are associated with a Virtual Network in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -4359,7 +4603,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get all routes that are associated with a Virtual Network in an App Service plan.
+     * Get all routes that are associated with a Virtual Network in an App Service plan.
+     *
+     * <p>Description for Get all routes that are associated with a Virtual Network in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -4376,7 +4622,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get all routes that are associated with a Virtual Network in an App Service plan.
+     * Get all routes that are associated with a Virtual Network in an App Service plan.
+     *
+     * <p>Description for Get all routes that are associated with a Virtual Network in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -4392,7 +4640,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get all routes that are associated with a Virtual Network in an App Service plan.
+     * Get all routes that are associated with a Virtual Network in an App Service plan.
+     *
+     * <p>Description for Get all routes that are associated with a Virtual Network in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -4410,7 +4660,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get a Virtual Network route in an App Service plan.
+     * Get a Virtual Network route in an App Service plan.
+     *
+     * <p>Description for Get a Virtual Network route in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -4468,7 +4720,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get a Virtual Network route in an App Service plan.
+     * Get a Virtual Network route in an App Service plan.
+     *
+     * <p>Description for Get a Virtual Network route in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -4524,7 +4778,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get a Virtual Network route in an App Service plan.
+     * Get a Virtual Network route in an App Service plan.
+     *
+     * <p>Description for Get a Virtual Network route in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -4543,7 +4799,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get a Virtual Network route in an App Service plan.
+     * Get a Virtual Network route in an App Service plan.
+     *
+     * <p>Description for Get a Virtual Network route in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -4561,7 +4819,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Get a Virtual Network route in an App Service plan.
+     * Get a Virtual Network route in an App Service plan.
+     *
+     * <p>Description for Get a Virtual Network route in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -4580,7 +4840,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Create or update a Virtual Network route in an App Service plan.
+     * Create or update a Virtual Network route in an App Service plan.
+     *
+     * <p>Description for Create or update a Virtual Network route in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -4646,7 +4908,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Create or update a Virtual Network route in an App Service plan.
+     * Create or update a Virtual Network route in an App Service plan.
+     *
+     * <p>Description for Create or update a Virtual Network route in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -4715,7 +4979,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Create or update a Virtual Network route in an App Service plan.
+     * Create or update a Virtual Network route in an App Service plan.
+     *
+     * <p>Description for Create or update a Virtual Network route in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -4736,7 +5002,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Create or update a Virtual Network route in an App Service plan.
+     * Create or update a Virtual Network route in an App Service plan.
+     *
+     * <p>Description for Create or update a Virtual Network route in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -4755,7 +5023,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Create or update a Virtual Network route in an App Service plan.
+     * Create or update a Virtual Network route in an App Service plan.
+     *
+     * <p>Description for Create or update a Virtual Network route in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -4782,7 +5052,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Delete a Virtual Network route in an App Service plan.
+     * Delete a Virtual Network route in an App Service plan.
+     *
+     * <p>Description for Delete a Virtual Network route in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -4840,7 +5112,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Delete a Virtual Network route in an App Service plan.
+     * Delete a Virtual Network route in an App Service plan.
+     *
+     * <p>Description for Delete a Virtual Network route in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -4896,7 +5170,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Delete a Virtual Network route in an App Service plan.
+     * Delete a Virtual Network route in an App Service plan.
+     *
+     * <p>Description for Delete a Virtual Network route in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -4914,7 +5190,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Delete a Virtual Network route in an App Service plan.
+     * Delete a Virtual Network route in an App Service plan.
+     *
+     * <p>Description for Delete a Virtual Network route in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -4930,7 +5208,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Delete a Virtual Network route in an App Service plan.
+     * Delete a Virtual Network route in an App Service plan.
+     *
+     * <p>Description for Delete a Virtual Network route in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -4949,7 +5229,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Create or update a Virtual Network route in an App Service plan.
+     * Create or update a Virtual Network route in an App Service plan.
+     *
+     * <p>Description for Create or update a Virtual Network route in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -5015,7 +5297,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Create or update a Virtual Network route in an App Service plan.
+     * Create or update a Virtual Network route in an App Service plan.
+     *
+     * <p>Description for Create or update a Virtual Network route in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -5084,7 +5368,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Create or update a Virtual Network route in an App Service plan.
+     * Create or update a Virtual Network route in an App Service plan.
+     *
+     * <p>Description for Create or update a Virtual Network route in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -5105,7 +5391,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Create or update a Virtual Network route in an App Service plan.
+     * Create or update a Virtual Network route in an App Service plan.
+     *
+     * <p>Description for Create or update a Virtual Network route in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -5124,7 +5412,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Create or update a Virtual Network route in an App Service plan.
+     * Create or update a Virtual Network route in an App Service plan.
+     *
+     * <p>Description for Create or update a Virtual Network route in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -5150,7 +5440,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Reboot a worker machine in an App Service plan.
+     * Reboot a worker machine in an App Service plan.
+     *
+     * <p>Description for Reboot a worker machine in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -5203,7 +5495,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Reboot a worker machine in an App Service plan.
+     * Reboot a worker machine in an App Service plan.
+     *
+     * <p>Description for Reboot a worker machine in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -5254,7 +5548,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Reboot a worker machine in an App Service plan.
+     * Reboot a worker machine in an App Service plan.
+     *
+     * <p>Description for Reboot a worker machine in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -5270,7 +5566,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Reboot a worker machine in an App Service plan.
+     * Reboot a worker machine in an App Service plan.
+     *
+     * <p>Description for Reboot a worker machine in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -5285,7 +5583,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * Description for Reboot a worker machine in an App Service plan.
+     * Reboot a worker machine in an App Service plan.
+     *
+     * <p>Description for Reboot a worker machine in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.

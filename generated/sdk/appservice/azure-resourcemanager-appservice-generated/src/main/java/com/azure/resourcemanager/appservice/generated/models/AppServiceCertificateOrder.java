@@ -467,7 +467,9 @@ public interface AppServiceCertificateOrder {
     AppServiceCertificateOrder refresh(Context context);
 
     /**
-     * Description for Reissue an existing certificate order.
+     * Reissue an existing certificate order.
+     *
+     * <p>Description for Reissue an existing certificate order.
      *
      * @param reissueCertificateOrderRequest Parameters for the reissue.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -478,7 +480,9 @@ public interface AppServiceCertificateOrder {
     void reissue(ReissueCertificateOrderRequest reissueCertificateOrderRequest);
 
     /**
-     * Description for Reissue an existing certificate order.
+     * Reissue an existing certificate order.
+     *
+     * <p>Description for Reissue an existing certificate order.
      *
      * @param reissueCertificateOrderRequest Parameters for the reissue.
      * @param context The context to associate with this operation.
@@ -491,7 +495,9 @@ public interface AppServiceCertificateOrder {
     Response<Void> reissueWithResponse(ReissueCertificateOrderRequest reissueCertificateOrderRequest, Context context);
 
     /**
-     * Description for Renew an existing certificate order.
+     * Renew an existing certificate order.
+     *
+     * <p>Description for Renew an existing certificate order.
      *
      * @param renewCertificateOrderRequest Renew parameters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -502,7 +508,9 @@ public interface AppServiceCertificateOrder {
     void renew(RenewCertificateOrderRequest renewCertificateOrderRequest);
 
     /**
-     * Description for Renew an existing certificate order.
+     * Renew an existing certificate order.
+     *
+     * <p>Description for Renew an existing certificate order.
      *
      * @param renewCertificateOrderRequest Renew parameters.
      * @param context The context to associate with this operation.
@@ -515,7 +523,9 @@ public interface AppServiceCertificateOrder {
     Response<Void> renewWithResponse(RenewCertificateOrderRequest renewCertificateOrderRequest, Context context);
 
     /**
-     * Description for Resend certificate email.
+     * Resend certificate email.
+     *
+     * <p>Description for Resend certificate email.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -524,7 +534,9 @@ public interface AppServiceCertificateOrder {
     void resendEmail();
 
     /**
-     * Description for Resend certificate email.
+     * Resend certificate email.
+     *
+     * <p>Description for Resend certificate email.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -536,7 +548,9 @@ public interface AppServiceCertificateOrder {
     Response<Void> resendEmailWithResponse(Context context);
 
     /**
-     * Resend domain verification ownership email containing steps on how to verify a domain for a given certificate
+     * Resend domain verification email to customer for this certificate order
+     *
+     * <p>Resend domain verification ownership email containing steps on how to verify a domain for a given certificate
      * order.
      *
      * @param nameIdentifier Email address.
@@ -548,7 +562,9 @@ public interface AppServiceCertificateOrder {
     void resendRequestEmails(NameIdentifierInner nameIdentifier);
 
     /**
-     * Resend domain verification ownership email containing steps on how to verify a domain for a given certificate
+     * Resend domain verification email to customer for this certificate order
+     *
+     * <p>Resend domain verification ownership email containing steps on how to verify a domain for a given certificate
      * order.
      *
      * @param nameIdentifier Email address.
@@ -562,8 +578,10 @@ public interface AppServiceCertificateOrder {
     Response<Void> resendRequestEmailsWithResponse(NameIdentifierInner nameIdentifier, Context context);
 
     /**
-     * This method is used to obtain the site seal information for an issued certificate. A site seal is a graphic that
-     * the certificate purchaser can embed on their web site to show their visitors information about their SSL
+     * This method is used to obtain the site seal information for an issued certificate.
+     *
+     * <p>This method is used to obtain the site seal information for an issued certificate. A site seal is a graphic
+     * that the certificate purchaser can embed on their web site to show their visitors information about their SSL
      * certificate. If a web site visitor clicks on the site seal image, a pop-up page is displayed that contains
      * detailed information about the SSL certificate. The site seal token is used to link the site seal graphic image
      * to the appropriate certificate details pop-up page display when a user clicks on the site seal. The site seal
@@ -580,8 +598,10 @@ public interface AppServiceCertificateOrder {
     SiteSeal retrieveSiteSeal(SiteSealRequest siteSealRequest);
 
     /**
-     * This method is used to obtain the site seal information for an issued certificate. A site seal is a graphic that
-     * the certificate purchaser can embed on their web site to show their visitors information about their SSL
+     * This method is used to obtain the site seal information for an issued certificate.
+     *
+     * <p>This method is used to obtain the site seal information for an issued certificate. A site seal is a graphic
+     * that the certificate purchaser can embed on their web site to show their visitors information about their SSL
      * certificate. If a web site visitor clicks on the site seal image, a pop-up page is displayed that contains
      * detailed information about the SSL certificate. The site seal token is used to link the site seal graphic image
      * to the appropriate certificate details pop-up page display when a user clicks on the site seal. The site seal
@@ -599,7 +619,9 @@ public interface AppServiceCertificateOrder {
     Response<SiteSeal> retrieveSiteSealWithResponse(SiteSealRequest siteSealRequest, Context context);
 
     /**
-     * Description for Verify domain ownership for this certificate order.
+     * Verify domain ownership for this certificate order.
+     *
+     * <p>Description for Verify domain ownership for this certificate order.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -608,7 +630,9 @@ public interface AppServiceCertificateOrder {
     void verifyDomainOwnership();
 
     /**
-     * Description for Verify domain ownership for this certificate order.
+     * Verify domain ownership for this certificate order.
+     *
+     * <p>Description for Verify domain ownership for this certificate order.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

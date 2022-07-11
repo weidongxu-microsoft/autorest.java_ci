@@ -348,7 +348,9 @@ public interface FunctionEnvelope {
     FunctionEnvelope refresh(Context context);
 
     /**
-     * Description for Get function keys for a function in a web site, or a deployment slot.
+     * Get function keys for a function in a web site, or a deployment slot.
+     *
+     * <p>Description for Get function keys for a function in a web site, or a deployment slot.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -358,7 +360,9 @@ public interface FunctionEnvelope {
     StringDictionary listFunctionKeys();
 
     /**
-     * Description for Get function keys for a function in a web site, or a deployment slot.
+     * Get function keys for a function in a web site, or a deployment slot.
+     *
+     * <p>Description for Get function keys for a function in a web site, or a deployment slot.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -370,7 +374,9 @@ public interface FunctionEnvelope {
     Response<StringDictionary> listFunctionKeysWithResponse(Context context);
 
     /**
-     * Description for Get function secrets for a function in a web site, or a deployment slot.
+     * Get function secrets for a function in a web site, or a deployment slot.
+     *
+     * <p>Description for Get function secrets for a function in a web site, or a deployment slot.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -380,7 +386,9 @@ public interface FunctionEnvelope {
     FunctionSecrets listFunctionSecrets();
 
     /**
-     * Description for Get function secrets for a function in a web site, or a deployment slot.
+     * Get function secrets for a function in a web site, or a deployment slot.
+     *
+     * <p>Description for Get function secrets for a function in a web site, or a deployment slot.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

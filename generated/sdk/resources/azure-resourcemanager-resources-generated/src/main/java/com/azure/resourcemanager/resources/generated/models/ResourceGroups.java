@@ -34,8 +34,10 @@ public interface ResourceGroups {
     Response<Boolean> checkExistenceWithResponse(String resourceGroupName, Context context);
 
     /**
-     * When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all of
-     * its template deployments and currently stored operations.
+     * Deletes a resource group.
+     *
+     * <p>When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all
+     * of its template deployments and currently stored operations.
      *
      * @param resourceGroupName The name of the resource group to delete. The name is case insensitive.
      * @param forceDeletionTypes The resource types you want to force delete. Currently, only the following is
@@ -47,8 +49,10 @@ public interface ResourceGroups {
     void deleteByResourceGroup(String resourceGroupName, String forceDeletionTypes);
 
     /**
-     * When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all of
-     * its template deployments and currently stored operations.
+     * Deletes a resource group.
+     *
+     * <p>When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all
+     * of its template deployments and currently stored operations.
      *
      * @param resourceGroupName The name of the resource group to delete. The name is case insensitive.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -58,8 +62,10 @@ public interface ResourceGroups {
     void delete(String resourceGroupName);
 
     /**
-     * When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all of
-     * its template deployments and currently stored operations.
+     * Deletes a resource group.
+     *
+     * <p>When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all
+     * of its template deployments and currently stored operations.
      *
      * @param resourceGroupName The name of the resource group to delete. The name is case insensitive.
      * @param forceDeletionTypes The resource types you want to force delete. Currently, only the following is
@@ -167,8 +173,10 @@ public interface ResourceGroups {
     Response<ResourceGroup> getByIdWithResponse(String id, Context context);
 
     /**
-     * When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all of
-     * its template deployments and currently stored operations.
+     * Deletes a resource group.
+     *
+     * <p>When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all
+     * of its template deployments and currently stored operations.
      *
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -178,8 +186,10 @@ public interface ResourceGroups {
     void deleteById(String id);
 
     /**
-     * When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all of
-     * its template deployments and currently stored operations.
+     * Deletes a resource group.
+     *
+     * <p>When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all
+     * of its template deployments and currently stored operations.
      *
      * @param id the resource ID.
      * @param forceDeletionTypes The resource types you want to force delete. Currently, only the following is

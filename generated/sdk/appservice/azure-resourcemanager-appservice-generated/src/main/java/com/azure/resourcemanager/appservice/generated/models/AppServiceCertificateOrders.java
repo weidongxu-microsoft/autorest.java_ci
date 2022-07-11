@@ -14,7 +14,9 @@ import java.util.List;
 /** Resource collection API of AppServiceCertificateOrders. */
 public interface AppServiceCertificateOrders {
     /**
-     * Description for List all certificate orders in a subscription.
+     * List all certificate orders in a subscription.
+     *
+     * <p>Description for List all certificate orders in a subscription.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -24,7 +26,9 @@ public interface AppServiceCertificateOrders {
     PagedIterable<AppServiceCertificateOrder> list();
 
     /**
-     * Description for List all certificate orders in a subscription.
+     * List all certificate orders in a subscription.
+     *
+     * <p>Description for List all certificate orders in a subscription.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -36,7 +40,9 @@ public interface AppServiceCertificateOrders {
     PagedIterable<AppServiceCertificateOrder> list(Context context);
 
     /**
-     * Description for Validate information for a certificate order.
+     * Validate information for a certificate order.
+     *
+     * <p>Description for Validate information for a certificate order.
      *
      * @param appServiceCertificateOrder Information for a certificate order.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -47,7 +53,9 @@ public interface AppServiceCertificateOrders {
     void validatePurchaseInformation(AppServiceCertificateOrderInner appServiceCertificateOrder);
 
     /**
-     * Description for Validate information for a certificate order.
+     * Validate information for a certificate order.
+     *
+     * <p>Description for Validate information for a certificate order.
      *
      * @param appServiceCertificateOrder Information for a certificate order.
      * @param context The context to associate with this operation.
@@ -61,7 +69,9 @@ public interface AppServiceCertificateOrders {
         AppServiceCertificateOrderInner appServiceCertificateOrder, Context context);
 
     /**
-     * Description for Get certificate orders in a resource group.
+     * Get certificate orders in a resource group.
+     *
+     * <p>Description for Get certificate orders in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -73,7 +83,9 @@ public interface AppServiceCertificateOrders {
     PagedIterable<AppServiceCertificateOrder> listByResourceGroup(String resourceGroupName);
 
     /**
-     * Description for Get certificate orders in a resource group.
+     * Get certificate orders in a resource group.
+     *
+     * <p>Description for Get certificate orders in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param context The context to associate with this operation.
@@ -86,7 +98,9 @@ public interface AppServiceCertificateOrders {
     PagedIterable<AppServiceCertificateOrder> listByResourceGroup(String resourceGroupName, Context context);
 
     /**
-     * Description for Get a certificate order.
+     * Get a certificate order.
+     *
+     * <p>Description for Get a certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order..
@@ -99,7 +113,9 @@ public interface AppServiceCertificateOrders {
     AppServiceCertificateOrder getByResourceGroup(String resourceGroupName, String certificateOrderName);
 
     /**
-     * Description for Get a certificate order.
+     * Get a certificate order.
+     *
+     * <p>Description for Get a certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order..
@@ -114,7 +130,9 @@ public interface AppServiceCertificateOrders {
         String resourceGroupName, String certificateOrderName, Context context);
 
     /**
-     * Description for Delete an existing certificate order.
+     * Delete an existing certificate order.
+     *
+     * <p>Description for Delete an existing certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -126,7 +144,9 @@ public interface AppServiceCertificateOrders {
     void deleteByResourceGroup(String resourceGroupName, String certificateOrderName);
 
     /**
-     * Description for Delete an existing certificate order.
+     * Delete an existing certificate order.
+     *
+     * <p>Description for Delete an existing certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -140,7 +160,9 @@ public interface AppServiceCertificateOrders {
     Response<Void> deleteWithResponse(String resourceGroupName, String certificateOrderName, Context context);
 
     /**
-     * Description for List all certificates associated with a certificate order.
+     * List all certificates associated with a certificate order.
+     *
+     * <p>Description for List all certificates associated with a certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -154,7 +176,9 @@ public interface AppServiceCertificateOrders {
         String resourceGroupName, String certificateOrderName);
 
     /**
-     * Description for List all certificates associated with a certificate order.
+     * List all certificates associated with a certificate order.
+     *
+     * <p>Description for List all certificates associated with a certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -169,7 +193,9 @@ public interface AppServiceCertificateOrders {
         String resourceGroupName, String certificateOrderName, Context context);
 
     /**
-     * Description for Get the certificate associated with a certificate order.
+     * Get the certificate associated with a certificate order.
+     *
+     * <p>Description for Get the certificate associated with a certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -183,7 +209,9 @@ public interface AppServiceCertificateOrders {
     AppServiceCertificateResource getCertificate(String resourceGroupName, String certificateOrderName, String name);
 
     /**
-     * Description for Get the certificate associated with a certificate order.
+     * Get the certificate associated with a certificate order.
+     *
+     * <p>Description for Get the certificate associated with a certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -200,7 +228,9 @@ public interface AppServiceCertificateOrders {
         String resourceGroupName, String certificateOrderName, String name, Context context);
 
     /**
-     * Description for Delete the certificate associated with a certificate order.
+     * Delete the certificate associated with a certificate order.
+     *
+     * <p>Description for Delete the certificate associated with a certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -213,7 +243,9 @@ public interface AppServiceCertificateOrders {
     void deleteCertificate(String resourceGroupName, String certificateOrderName, String name);
 
     /**
-     * Description for Delete the certificate associated with a certificate order.
+     * Delete the certificate associated with a certificate order.
+     *
+     * <p>Description for Delete the certificate associated with a certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -229,7 +261,9 @@ public interface AppServiceCertificateOrders {
         String resourceGroupName, String certificateOrderName, String name, Context context);
 
     /**
-     * Description for Reissue an existing certificate order.
+     * Reissue an existing certificate order.
+     *
+     * <p>Description for Reissue an existing certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -245,7 +279,9 @@ public interface AppServiceCertificateOrders {
         ReissueCertificateOrderRequest reissueCertificateOrderRequest);
 
     /**
-     * Description for Reissue an existing certificate order.
+     * Reissue an existing certificate order.
+     *
+     * <p>Description for Reissue an existing certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -264,7 +300,9 @@ public interface AppServiceCertificateOrders {
         Context context);
 
     /**
-     * Description for Renew an existing certificate order.
+     * Renew an existing certificate order.
+     *
+     * <p>Description for Renew an existing certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -280,7 +318,9 @@ public interface AppServiceCertificateOrders {
         RenewCertificateOrderRequest renewCertificateOrderRequest);
 
     /**
-     * Description for Renew an existing certificate order.
+     * Renew an existing certificate order.
+     *
+     * <p>Description for Renew an existing certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -299,7 +339,9 @@ public interface AppServiceCertificateOrders {
         Context context);
 
     /**
-     * Description for Resend certificate email.
+     * Resend certificate email.
+     *
+     * <p>Description for Resend certificate email.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -311,7 +353,9 @@ public interface AppServiceCertificateOrders {
     void resendEmail(String resourceGroupName, String certificateOrderName);
 
     /**
-     * Description for Resend certificate email.
+     * Resend certificate email.
+     *
+     * <p>Description for Resend certificate email.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -325,7 +369,9 @@ public interface AppServiceCertificateOrders {
     Response<Void> resendEmailWithResponse(String resourceGroupName, String certificateOrderName, Context context);
 
     /**
-     * Resend domain verification ownership email containing steps on how to verify a domain for a given certificate
+     * Resend domain verification email to customer for this certificate order
+     *
+     * <p>Resend domain verification ownership email containing steps on how to verify a domain for a given certificate
      * order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
@@ -339,7 +385,9 @@ public interface AppServiceCertificateOrders {
     void resendRequestEmails(String resourceGroupName, String certificateOrderName, NameIdentifierInner nameIdentifier);
 
     /**
-     * Resend domain verification ownership email containing steps on how to verify a domain for a given certificate
+     * Resend domain verification email to customer for this certificate order
+     *
+     * <p>Resend domain verification ownership email containing steps on how to verify a domain for a given certificate
      * order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
@@ -356,8 +404,10 @@ public interface AppServiceCertificateOrders {
         String resourceGroupName, String certificateOrderName, NameIdentifierInner nameIdentifier, Context context);
 
     /**
-     * This method is used to obtain the site seal information for an issued certificate. A site seal is a graphic that
-     * the certificate purchaser can embed on their web site to show their visitors information about their SSL
+     * This method is used to obtain the site seal information for an issued certificate.
+     *
+     * <p>This method is used to obtain the site seal information for an issued certificate. A site seal is a graphic
+     * that the certificate purchaser can embed on their web site to show their visitors information about their SSL
      * certificate. If a web site visitor clicks on the site seal image, a pop-up page is displayed that contains
      * detailed information about the SSL certificate. The site seal token is used to link the site seal graphic image
      * to the appropriate certificate details pop-up page display when a user clicks on the site seal. The site seal
@@ -376,8 +426,10 @@ public interface AppServiceCertificateOrders {
     SiteSeal retrieveSiteSeal(String resourceGroupName, String certificateOrderName, SiteSealRequest siteSealRequest);
 
     /**
-     * This method is used to obtain the site seal information for an issued certificate. A site seal is a graphic that
-     * the certificate purchaser can embed on their web site to show their visitors information about their SSL
+     * This method is used to obtain the site seal information for an issued certificate.
+     *
+     * <p>This method is used to obtain the site seal information for an issued certificate. A site seal is a graphic
+     * that the certificate purchaser can embed on their web site to show their visitors information about their SSL
      * certificate. If a web site visitor clicks on the site seal image, a pop-up page is displayed that contains
      * detailed information about the SSL certificate. The site seal token is used to link the site seal graphic image
      * to the appropriate certificate details pop-up page display when a user clicks on the site seal. The site seal
@@ -398,7 +450,9 @@ public interface AppServiceCertificateOrders {
         String resourceGroupName, String certificateOrderName, SiteSealRequest siteSealRequest, Context context);
 
     /**
-     * Description for Verify domain ownership for this certificate order.
+     * Verify domain ownership for this certificate order.
+     *
+     * <p>Description for Verify domain ownership for this certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -410,7 +464,9 @@ public interface AppServiceCertificateOrders {
     void verifyDomainOwnership(String resourceGroupName, String certificateOrderName);
 
     /**
-     * Description for Verify domain ownership for this certificate order.
+     * Verify domain ownership for this certificate order.
+     *
+     * <p>Description for Verify domain ownership for this certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
@@ -425,7 +481,9 @@ public interface AppServiceCertificateOrders {
         String resourceGroupName, String certificateOrderName, Context context);
 
     /**
-     * Description for Retrieve the list of certificate actions.
+     * Retrieve the list of certificate actions.
+     *
+     * <p>Description for Retrieve the list of certificate actions.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate order.
@@ -438,7 +496,9 @@ public interface AppServiceCertificateOrders {
     List<CertificateOrderAction> retrieveCertificateActions(String resourceGroupName, String name);
 
     /**
-     * Description for Retrieve the list of certificate actions.
+     * Retrieve the list of certificate actions.
+     *
+     * <p>Description for Retrieve the list of certificate actions.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate order.
@@ -453,7 +513,9 @@ public interface AppServiceCertificateOrders {
         String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Retrieve email history.
+     * Retrieve email history.
+     *
+     * <p>Description for Retrieve email history.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate order.
@@ -466,7 +528,9 @@ public interface AppServiceCertificateOrders {
     List<CertificateEmail> retrieveCertificateEmailHistory(String resourceGroupName, String name);
 
     /**
-     * Description for Retrieve email history.
+     * Retrieve email history.
+     *
+     * <p>Description for Retrieve email history.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate order.
@@ -481,7 +545,9 @@ public interface AppServiceCertificateOrders {
         String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Get a certificate order.
+     * Get a certificate order.
+     *
+     * <p>Description for Get a certificate order.
      *
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -493,7 +559,9 @@ public interface AppServiceCertificateOrders {
     AppServiceCertificateOrder getById(String id);
 
     /**
-     * Description for Get a certificate order.
+     * Get a certificate order.
+     *
+     * <p>Description for Get a certificate order.
      *
      * @param id the resource ID.
      * @param context The context to associate with this operation.
@@ -506,7 +574,9 @@ public interface AppServiceCertificateOrders {
     Response<AppServiceCertificateOrder> getByIdWithResponse(String id, Context context);
 
     /**
-     * Description for Get the certificate associated with a certificate order.
+     * Get the certificate associated with a certificate order.
+     *
+     * <p>Description for Get the certificate associated with a certificate order.
      *
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -519,7 +589,9 @@ public interface AppServiceCertificateOrders {
     AppServiceCertificateResource getCertificateById(String id);
 
     /**
-     * Description for Get the certificate associated with a certificate order.
+     * Get the certificate associated with a certificate order.
+     *
+     * <p>Description for Get the certificate associated with a certificate order.
      *
      * @param id the resource ID.
      * @param context The context to associate with this operation.
@@ -533,7 +605,9 @@ public interface AppServiceCertificateOrders {
     Response<AppServiceCertificateResource> getCertificateByIdWithResponse(String id, Context context);
 
     /**
-     * Description for Delete an existing certificate order.
+     * Delete an existing certificate order.
+     *
+     * <p>Description for Delete an existing certificate order.
      *
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -544,7 +618,9 @@ public interface AppServiceCertificateOrders {
     void deleteById(String id);
 
     /**
-     * Description for Delete an existing certificate order.
+     * Delete an existing certificate order.
+     *
+     * <p>Description for Delete an existing certificate order.
      *
      * @param id the resource ID.
      * @param context The context to associate with this operation.
@@ -557,7 +633,9 @@ public interface AppServiceCertificateOrders {
     Response<Void> deleteByIdWithResponse(String id, Context context);
 
     /**
-     * Description for Delete the certificate associated with a certificate order.
+     * Delete the certificate associated with a certificate order.
+     *
+     * <p>Description for Delete the certificate associated with a certificate order.
      *
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -568,7 +646,9 @@ public interface AppServiceCertificateOrders {
     void deleteCertificateById(String id);
 
     /**
-     * Description for Delete the certificate associated with a certificate order.
+     * Delete the certificate associated with a certificate order.
+     *
+     * <p>Description for Delete the certificate associated with a certificate order.
      *
      * @param id the resource ID.
      * @param context The context to associate with this operation.

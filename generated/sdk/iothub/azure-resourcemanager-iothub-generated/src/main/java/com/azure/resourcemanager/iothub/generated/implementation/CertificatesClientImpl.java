@@ -161,7 +161,9 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Returns the list of certificates.
+     * Get the certificate list.
+     *
+     * <p>Returns the list of certificates.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -210,7 +212,9 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Returns the list of certificates.
+     * Get the certificate list.
+     *
+     * <p>Returns the list of certificates.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -257,7 +261,9 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Returns the list of certificates.
+     * Get the certificate list.
+     *
+     * <p>Returns the list of certificates.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -273,7 +279,9 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Returns the list of certificates.
+     * Get the certificate list.
+     *
+     * <p>Returns the list of certificates.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -288,7 +296,9 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Returns the list of certificates.
+     * Get the certificate list.
+     *
+     * <p>Returns the list of certificates.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -305,7 +315,9 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Returns the certificate.
+     * Get the certificate.
+     *
+     * <p>Returns the certificate.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -359,7 +371,9 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Returns the certificate.
+     * Get the certificate.
+     *
+     * <p>Returns the certificate.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -411,7 +425,9 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Returns the certificate.
+     * Get the certificate.
+     *
+     * <p>Returns the certificate.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -429,7 +445,9 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Returns the certificate.
+     * Get the certificate.
+     *
+     * <p>Returns the certificate.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -445,7 +463,9 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Returns the certificate.
+     * Get the certificate.
+     *
+     * <p>Returns the certificate.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -463,7 +483,9 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Adds new or replaces existing certificate.
+     * Upload the certificate to the IoT hub.
+     *
+     * <p>Adds new or replaces existing certificate.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -533,7 +555,9 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Adds new or replaces existing certificate.
+     * Upload the certificate to the IoT hub.
+     *
+     * <p>Adds new or replaces existing certificate.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -602,7 +626,9 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Adds new or replaces existing certificate.
+     * Upload the certificate to the IoT hub.
+     *
+     * <p>Adds new or replaces existing certificate.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -628,7 +654,9 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Adds new or replaces existing certificate.
+     * Upload the certificate to the IoT hub.
+     *
+     * <p>Adds new or replaces existing certificate.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -652,7 +680,9 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Adds new or replaces existing certificate.
+     * Upload the certificate to the IoT hub.
+     *
+     * <p>Adds new or replaces existing certificate.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -675,7 +705,9 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Adds new or replaces existing certificate.
+     * Upload the certificate to the IoT hub.
+     *
+     * <p>Adds new or replaces existing certificate.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -703,7 +735,9 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Deletes an existing X509 certificate or does nothing if it does not exist.
+     * Delete an X509 certificate.
+     *
+     * <p>Deletes an existing X509 certificate or does nothing if it does not exist.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -762,7 +796,9 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Deletes an existing X509 certificate or does nothing if it does not exist.
+     * Delete an X509 certificate.
+     *
+     * <p>Deletes an existing X509 certificate or does nothing if it does not exist.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -819,7 +855,9 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Deletes an existing X509 certificate or does nothing if it does not exist.
+     * Delete an X509 certificate.
+     *
+     * <p>Deletes an existing X509 certificate or does nothing if it does not exist.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -838,7 +876,9 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Deletes an existing X509 certificate or does nothing if it does not exist.
+     * Delete an X509 certificate.
+     *
+     * <p>Deletes an existing X509 certificate or does nothing if it does not exist.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -854,7 +894,9 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Deletes an existing X509 certificate or does nothing if it does not exist.
+     * Delete an X509 certificate.
+     *
+     * <p>Deletes an existing X509 certificate or does nothing if it does not exist.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -873,8 +915,10 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Generates verification code for proof of possession flow. The verification code will be used to generate a leaf
-     * certificate.
+     * Generate verification code for proof of possession flow.
+     *
+     * <p>Generates verification code for proof of possession flow. The verification code will be used to generate a
+     * leaf certificate.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -933,8 +977,10 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Generates verification code for proof of possession flow. The verification code will be used to generate a leaf
-     * certificate.
+     * Generate verification code for proof of possession flow.
+     *
+     * <p>Generates verification code for proof of possession flow. The verification code will be used to generate a
+     * leaf certificate.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -991,8 +1037,10 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Generates verification code for proof of possession flow. The verification code will be used to generate a leaf
-     * certificate.
+     * Generate verification code for proof of possession flow.
+     *
+     * <p>Generates verification code for proof of possession flow. The verification code will be used to generate a
+     * leaf certificate.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -1011,8 +1059,10 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Generates verification code for proof of possession flow. The verification code will be used to generate a leaf
-     * certificate.
+     * Generate verification code for proof of possession flow.
+     *
+     * <p>Generates verification code for proof of possession flow. The verification code will be used to generate a
+     * leaf certificate.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -1030,8 +1080,10 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Generates verification code for proof of possession flow. The verification code will be used to generate a leaf
-     * certificate.
+     * Generate verification code for proof of possession flow.
+     *
+     * <p>Generates verification code for proof of possession flow. The verification code will be used to generate a
+     * leaf certificate.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -1052,8 +1104,10 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Verifies the certificate's private key possession by providing the leaf cert issued by the verifying pre uploaded
-     * certificate.
+     * Verify certificate's private key possession.
+     *
+     * <p>Verifies the certificate's private key possession by providing the leaf cert issued by the verifying pre
+     * uploaded certificate.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -1126,8 +1180,10 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Verifies the certificate's private key possession by providing the leaf cert issued by the verifying pre uploaded
-     * certificate.
+     * Verify certificate's private key possession.
+     *
+     * <p>Verifies the certificate's private key possession by providing the leaf cert issued by the verifying pre
+     * uploaded certificate.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -1199,8 +1255,10 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Verifies the certificate's private key possession by providing the leaf cert issued by the verifying pre uploaded
-     * certificate.
+     * Verify certificate's private key possession.
+     *
+     * <p>Verifies the certificate's private key possession by providing the leaf cert issued by the verifying pre
+     * uploaded certificate.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -1225,8 +1283,10 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Verifies the certificate's private key possession by providing the leaf cert issued by the verifying pre uploaded
-     * certificate.
+     * Verify certificate's private key possession.
+     *
+     * <p>Verifies the certificate's private key possession by providing the leaf cert issued by the verifying pre
+     * uploaded certificate.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -1250,8 +1310,10 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Verifies the certificate's private key possession by providing the leaf cert issued by the verifying pre uploaded
-     * certificate.
+     * Verify certificate's private key possession.
+     *
+     * <p>Verifies the certificate's private key possession by providing the leaf cert issued by the verifying pre
+     * uploaded certificate.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.

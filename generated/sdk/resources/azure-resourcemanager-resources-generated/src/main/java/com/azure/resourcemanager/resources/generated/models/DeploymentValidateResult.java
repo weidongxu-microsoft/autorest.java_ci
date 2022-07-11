@@ -10,7 +10,9 @@ import com.azure.resourcemanager.resources.generated.fluent.models.DeploymentVal
 /** An immutable client-side representation of DeploymentValidateResult. */
 public interface DeploymentValidateResult {
     /**
-     * Gets the error property: Error Response The deployment validation error.
+     * Gets the error property: Error Response
+     *
+     * <p>The deployment validation error.
      *
      * @return the error value.
      */

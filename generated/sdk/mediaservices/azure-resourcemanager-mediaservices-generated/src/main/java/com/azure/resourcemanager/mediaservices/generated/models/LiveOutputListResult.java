@@ -9,7 +9,11 @@ import com.azure.resourcemanager.mediaservices.generated.fluent.models.LiveOutpu
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** LiveOutputListResult The LiveOutput list result. */
+/**
+ * LiveOutputListResult
+ *
+ * <p>The LiveOutput list result.
+ */
 @Fluent
 public final class LiveOutputListResult {
     /*

@@ -15,7 +15,9 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.ValidateRequ
 /** Resource collection API of ResourceProviders. */
 public interface ResourceProviders {
     /**
-     * Description for Gets publishing user.
+     * Gets publishing user
+     *
+     * <p>Description for Gets publishing user.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -25,7 +27,9 @@ public interface ResourceProviders {
     User getPublishingUser();
 
     /**
-     * Description for Gets publishing user.
+     * Gets publishing user
+     *
+     * <p>Description for Gets publishing user.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -37,7 +41,9 @@ public interface ResourceProviders {
     Response<User> getPublishingUserWithResponse(Context context);
 
     /**
-     * Description for Updates publishing user.
+     * Updates publishing user
+     *
+     * <p>Description for Updates publishing user.
      *
      * @param userDetails Details of publishing user.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -49,7 +55,9 @@ public interface ResourceProviders {
     User updatePublishingUser(UserInner userDetails);
 
     /**
-     * Description for Updates publishing user.
+     * Updates publishing user
+     *
+     * <p>Description for Updates publishing user.
      *
      * @param userDetails Details of publishing user.
      * @param context The context to associate with this operation.
@@ -62,7 +70,9 @@ public interface ResourceProviders {
     Response<User> updatePublishingUserWithResponse(UserInner userDetails, Context context);
 
     /**
-     * Description for Gets the source controls available for Azure websites.
+     * Gets the source controls available for Azure websites.
+     *
+     * <p>Description for Gets the source controls available for Azure websites.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -72,7 +82,9 @@ public interface ResourceProviders {
     PagedIterable<SourceControl> listSourceControls();
 
     /**
-     * Description for Gets the source controls available for Azure websites.
+     * Gets the source controls available for Azure websites.
+     *
+     * <p>Description for Gets the source controls available for Azure websites.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -84,7 +96,9 @@ public interface ResourceProviders {
     PagedIterable<SourceControl> listSourceControls(Context context);
 
     /**
-     * Description for Gets source control token.
+     * Gets source control token
+     *
+     * <p>Description for Gets source control token.
      *
      * @param sourceControlType Type of source control.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -96,7 +110,9 @@ public interface ResourceProviders {
     SourceControl getSourceControl(String sourceControlType);
 
     /**
-     * Description for Gets source control token.
+     * Gets source control token
+     *
+     * <p>Description for Gets source control token.
      *
      * @param sourceControlType Type of source control.
      * @param context The context to associate with this operation.
@@ -109,7 +125,9 @@ public interface ResourceProviders {
     Response<SourceControl> getSourceControlWithResponse(String sourceControlType, Context context);
 
     /**
-     * Description for Updates source control token.
+     * Updates source control token
+     *
+     * <p>Description for Updates source control token.
      *
      * @param sourceControlType Type of source control.
      * @param requestMessage Source control token information.
@@ -122,7 +140,9 @@ public interface ResourceProviders {
     SourceControl updateSourceControl(String sourceControlType, SourceControlInner requestMessage);
 
     /**
-     * Description for Updates source control token.
+     * Updates source control token
+     *
+     * <p>Description for Updates source control token.
      *
      * @param sourceControlType Type of source control.
      * @param requestMessage Source control token information.
@@ -137,7 +157,9 @@ public interface ResourceProviders {
         String sourceControlType, SourceControlInner requestMessage, Context context);
 
     /**
-     * Description for Gets a list of meters for a given location.
+     * Gets a list of meters for a given location.
+     *
+     * <p>Description for Gets a list of meters for a given location.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -147,7 +169,9 @@ public interface ResourceProviders {
     PagedIterable<BillingMeter> list();
 
     /**
-     * Description for Gets a list of meters for a given location.
+     * Gets a list of meters for a given location.
+     *
+     * <p>Description for Gets a list of meters for a given location.
      *
      * @param billingLocation Azure Location of billable resource.
      * @param osType App Service OS type meters used for.
@@ -161,7 +185,9 @@ public interface ResourceProviders {
     PagedIterable<BillingMeter> list(String billingLocation, String osType, Context context);
 
     /**
-     * Description for Check if a resource name is available.
+     * Check if a resource name is available.
+     *
+     * <p>Description for Check if a resource name is available.
      *
      * @param request Name availability request.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -173,7 +199,9 @@ public interface ResourceProviders {
     ResourceNameAvailability checkNameAvailability(ResourceNameAvailabilityRequest request);
 
     /**
-     * Description for Check if a resource name is available.
+     * Check if a resource name is available.
+     *
+     * <p>Description for Check if a resource name is available.
      *
      * @param request Name availability request.
      * @param context The context to associate with this operation.
@@ -210,7 +238,9 @@ public interface ResourceProviders {
     PagedIterable<CustomHostnameSites> listCustomHostnameSites(String hostname, Context context);
 
     /**
-     * Description for Gets list of available geo regions plus ministamps.
+     * Gets list of available geo regions plus ministamps
+     *
+     * <p>Description for Gets list of available geo regions plus ministamps.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -221,7 +251,9 @@ public interface ResourceProviders {
     DeploymentLocations getSubscriptionDeploymentLocations();
 
     /**
-     * Description for Gets list of available geo regions plus ministamps.
+     * Gets list of available geo regions plus ministamps
+     *
+     * <p>Description for Gets list of available geo regions plus ministamps.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -234,7 +266,9 @@ public interface ResourceProviders {
     Response<DeploymentLocations> getSubscriptionDeploymentLocationsWithResponse(Context context);
 
     /**
-     * Description for Get a list of available geographical regions.
+     * Get a list of available geographical regions.
+     *
+     * <p>Description for Get a list of available geographical regions.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -244,7 +278,9 @@ public interface ResourceProviders {
     PagedIterable<GeoRegion> listGeoRegions();
 
     /**
-     * Description for Get a list of available geographical regions.
+     * Get a list of available geographical regions.
+     *
+     * <p>Description for Get a list of available geographical regions.
      *
      * @param sku Name of SKU used to filter the regions.
      * @param linuxWorkersEnabled Specify &lt;code&gt;true&lt;/code&gt; if you want to filter to only regions that
@@ -268,7 +304,9 @@ public interface ResourceProviders {
         Context context);
 
     /**
-     * Description for List all apps that are assigned to a hostname.
+     * List all apps that are assigned to a hostname.
+     *
+     * <p>Description for List all apps that are assigned to a hostname.
      *
      * @param nameIdentifier Hostname information.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -280,7 +318,9 @@ public interface ResourceProviders {
     PagedIterable<Identifier> listSiteIdentifiersAssignedToHostname(NameIdentifierInner nameIdentifier);
 
     /**
-     * Description for List all apps that are assigned to a hostname.
+     * List all apps that are assigned to a hostname.
+     *
+     * <p>Description for List all apps that are assigned to a hostname.
      *
      * @param nameIdentifier Hostname information.
      * @param context The context to associate with this operation.
@@ -294,7 +334,9 @@ public interface ResourceProviders {
         NameIdentifierInner nameIdentifier, Context context);
 
     /**
-     * Description for List all premier add-on offers.
+     * List all premier add-on offers.
+     *
+     * <p>Description for List all premier add-on offers.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -304,7 +346,9 @@ public interface ResourceProviders {
     PagedIterable<PremierAddOnOffer> listPremierAddOnOffers();
 
     /**
-     * Description for List all premier add-on offers.
+     * List all premier add-on offers.
+     *
+     * <p>Description for List all premier add-on offers.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -316,7 +360,9 @@ public interface ResourceProviders {
     PagedIterable<PremierAddOnOffer> listPremierAddOnOffers(Context context);
 
     /**
-     * Description for List all SKUs.
+     * List all SKUs.
+     *
+     * <p>Description for List all SKUs.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -326,7 +372,9 @@ public interface ResourceProviders {
     SkuInfos listSkus();
 
     /**
-     * Description for List all SKUs.
+     * List all SKUs.
+     *
+     * <p>Description for List all SKUs.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -338,7 +386,10 @@ public interface ResourceProviders {
     Response<SkuInfos> listSkusWithResponse(Context context);
 
     /**
-     * Description for Verifies if this VNET is compatible with an App Service Environment by analyzing the Network
+     * Verifies if this VNET is compatible with an App Service Environment by analyzing the Network Security Group
+     * rules.
+     *
+     * <p>Description for Verifies if this VNET is compatible with an App Service Environment by analyzing the Network
      * Security Group rules.
      *
      * @param parameters VNET information.
@@ -351,7 +402,10 @@ public interface ResourceProviders {
     VnetValidationFailureDetails verifyHostingEnvironmentVnet(VnetParameters parameters);
 
     /**
-     * Description for Verifies if this VNET is compatible with an App Service Environment by analyzing the Network
+     * Verifies if this VNET is compatible with an App Service Environment by analyzing the Network Security Group
+     * rules.
+     *
+     * <p>Description for Verifies if this VNET is compatible with an App Service Environment by analyzing the Network
      * Security Group rules.
      *
      * @param parameters VNET information.
@@ -366,7 +420,9 @@ public interface ResourceProviders {
         VnetParameters parameters, Context context);
 
     /**
-     * Description for Move resources between resource groups.
+     * Move resources between resource groups.
+     *
+     * <p>Description for Move resources between resource groups.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param moveResourceEnvelope Object that represents the resource to move.
@@ -378,7 +434,9 @@ public interface ResourceProviders {
     void move(String resourceGroupName, CsmMoveResourceEnvelope moveResourceEnvelope);
 
     /**
-     * Description for Move resources between resource groups.
+     * Move resources between resource groups.
+     *
+     * <p>Description for Move resources between resource groups.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param moveResourceEnvelope Object that represents the resource to move.
@@ -393,7 +451,9 @@ public interface ResourceProviders {
         String resourceGroupName, CsmMoveResourceEnvelope moveResourceEnvelope, Context context);
 
     /**
-     * Description for Validate if a resource can be created.
+     * Validate if a resource can be created.
+     *
+     * <p>Description for Validate if a resource can be created.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param validateRequest Request with the resources to validate.
@@ -406,7 +466,9 @@ public interface ResourceProviders {
     ValidateResponse validate(String resourceGroupName, ValidateRequestInner validateRequest);
 
     /**
-     * Description for Validate if a resource can be created.
+     * Validate if a resource can be created.
+     *
+     * <p>Description for Validate if a resource can be created.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param validateRequest Request with the resources to validate.
@@ -421,7 +483,9 @@ public interface ResourceProviders {
         String resourceGroupName, ValidateRequestInner validateRequest, Context context);
 
     /**
-     * Description for Validate whether a resource can be moved.
+     * Validate whether a resource can be moved.
+     *
+     * <p>Description for Validate whether a resource can be moved.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param moveResourceEnvelope Object that represents the resource to move.
@@ -433,7 +497,9 @@ public interface ResourceProviders {
     void validateMove(String resourceGroupName, CsmMoveResourceEnvelope moveResourceEnvelope);
 
     /**
-     * Description for Validate whether a resource can be moved.
+     * Validate whether a resource can be moved.
+     *
+     * <p>Description for Validate whether a resource can be moved.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param moveResourceEnvelope Object that represents the resource to move.

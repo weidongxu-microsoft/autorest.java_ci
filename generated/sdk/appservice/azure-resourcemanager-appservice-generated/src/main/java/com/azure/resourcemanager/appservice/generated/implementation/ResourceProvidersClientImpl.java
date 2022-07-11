@@ -345,7 +345,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Gets publishing user.
+     * Gets publishing user
+     *
+     * <p>Description for Gets publishing user.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -369,7 +371,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Gets publishing user.
+     * Gets publishing user
+     *
+     * <p>Description for Gets publishing user.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -392,7 +396,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Gets publishing user.
+     * Gets publishing user
+     *
+     * <p>Description for Gets publishing user.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -404,7 +410,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Gets publishing user.
+     * Gets publishing user
+     *
+     * <p>Description for Gets publishing user.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -416,7 +424,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Gets publishing user.
+     * Gets publishing user
+     *
+     * <p>Description for Gets publishing user.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -430,7 +440,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Updates publishing user.
+     * Updates publishing user
+     *
+     * <p>Description for Updates publishing user.
      *
      * @param userDetails Details of publishing user.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -463,7 +475,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Updates publishing user.
+     * Updates publishing user
+     *
+     * <p>Description for Updates publishing user.
      *
      * @param userDetails Details of publishing user.
      * @param context The context to associate with this operation.
@@ -493,7 +507,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Updates publishing user.
+     * Updates publishing user
+     *
+     * <p>Description for Updates publishing user.
      *
      * @param userDetails Details of publishing user.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -507,7 +523,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Updates publishing user.
+     * Updates publishing user
+     *
+     * <p>Description for Updates publishing user.
      *
      * @param userDetails Details of publishing user.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -521,7 +539,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Updates publishing user.
+     * Updates publishing user
+     *
+     * <p>Description for Updates publishing user.
      *
      * @param userDetails Details of publishing user.
      * @param context The context to associate with this operation.
@@ -536,7 +556,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Gets the source controls available for Azure websites.
+     * Gets the source controls available for Azure websites.
+     *
+     * <p>Description for Gets the source controls available for Azure websites.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -568,7 +590,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Gets the source controls available for Azure websites.
+     * Gets the source controls available for Azure websites.
+     *
+     * <p>Description for Gets the source controls available for Azure websites.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -600,7 +624,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Gets the source controls available for Azure websites.
+     * Gets the source controls available for Azure websites.
+     *
+     * <p>Description for Gets the source controls available for Azure websites.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -613,7 +639,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Gets the source controls available for Azure websites.
+     * Gets the source controls available for Azure websites.
+     *
+     * <p>Description for Gets the source controls available for Azure websites.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -629,7 +657,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Gets the source controls available for Azure websites.
+     * Gets the source controls available for Azure websites.
+     *
+     * <p>Description for Gets the source controls available for Azure websites.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -641,7 +671,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Gets the source controls available for Azure websites.
+     * Gets the source controls available for Azure websites.
+     *
+     * <p>Description for Gets the source controls available for Azure websites.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -655,7 +687,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Gets source control token.
+     * Gets source control token
+     *
+     * <p>Description for Gets source control token.
      *
      * @param sourceControlType Type of source control.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -686,7 +720,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Gets source control token.
+     * Gets source control token
+     *
+     * <p>Description for Gets source control token.
      *
      * @param sourceControlType Type of source control.
      * @param context The context to associate with this operation.
@@ -716,7 +752,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Gets source control token.
+     * Gets source control token
+     *
+     * <p>Description for Gets source control token.
      *
      * @param sourceControlType Type of source control.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -730,7 +768,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Gets source control token.
+     * Gets source control token
+     *
+     * <p>Description for Gets source control token.
      *
      * @param sourceControlType Type of source control.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -744,7 +784,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Gets source control token.
+     * Gets source control token
+     *
+     * <p>Description for Gets source control token.
      *
      * @param sourceControlType Type of source control.
      * @param context The context to associate with this operation.
@@ -759,7 +801,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Updates source control token.
+     * Updates source control token
+     *
+     * <p>Description for Updates source control token.
      *
      * @param sourceControlType Type of source control.
      * @param requestMessage Source control token information.
@@ -802,7 +846,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Updates source control token.
+     * Updates source control token
+     *
+     * <p>Description for Updates source control token.
      *
      * @param sourceControlType Type of source control.
      * @param requestMessage Source control token information.
@@ -843,7 +889,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Updates source control token.
+     * Updates source control token
+     *
+     * <p>Description for Updates source control token.
      *
      * @param sourceControlType Type of source control.
      * @param requestMessage Source control token information.
@@ -860,7 +908,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Updates source control token.
+     * Updates source control token
+     *
+     * <p>Description for Updates source control token.
      *
      * @param sourceControlType Type of source control.
      * @param requestMessage Source control token information.
@@ -875,7 +925,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Updates source control token.
+     * Updates source control token
+     *
+     * <p>Description for Updates source control token.
      *
      * @param sourceControlType Type of source control.
      * @param requestMessage Source control token information.
@@ -892,7 +944,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Gets a list of meters for a given location.
+     * Gets a list of meters for a given location.
+     *
+     * <p>Description for Gets a list of meters for a given location.
      *
      * @param billingLocation Azure Location of billable resource.
      * @param osType App Service OS type meters used for.
@@ -941,7 +995,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Gets a list of meters for a given location.
+     * Gets a list of meters for a given location.
+     *
+     * <p>Description for Gets a list of meters for a given location.
      *
      * @param billingLocation Azure Location of billable resource.
      * @param osType App Service OS type meters used for.
@@ -989,7 +1045,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Gets a list of meters for a given location.
+     * Gets a list of meters for a given location.
+     *
+     * <p>Description for Gets a list of meters for a given location.
      *
      * @param billingLocation Azure Location of billable resource.
      * @param osType App Service OS type meters used for.
@@ -1006,7 +1064,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Gets a list of meters for a given location.
+     * Gets a list of meters for a given location.
+     *
+     * <p>Description for Gets a list of meters for a given location.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1022,7 +1082,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Gets a list of meters for a given location.
+     * Gets a list of meters for a given location.
+     *
+     * <p>Description for Gets a list of meters for a given location.
      *
      * @param billingLocation Azure Location of billable resource.
      * @param osType App Service OS type meters used for.
@@ -1040,7 +1102,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Gets a list of meters for a given location.
+     * Gets a list of meters for a given location.
+     *
+     * <p>Description for Gets a list of meters for a given location.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1054,7 +1118,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Gets a list of meters for a given location.
+     * Gets a list of meters for a given location.
+     *
+     * <p>Description for Gets a list of meters for a given location.
      *
      * @param billingLocation Azure Location of billable resource.
      * @param osType App Service OS type meters used for.
@@ -1070,7 +1136,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Check if a resource name is available.
+     * Check if a resource name is available.
+     *
+     * <p>Description for Check if a resource name is available.
      *
      * @param request Name availability request.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1115,7 +1183,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Check if a resource name is available.
+     * Check if a resource name is available.
+     *
+     * <p>Description for Check if a resource name is available.
      *
      * @param request Name availability request.
      * @param context The context to associate with this operation.
@@ -1158,7 +1228,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Check if a resource name is available.
+     * Check if a resource name is available.
+     *
+     * <p>Description for Check if a resource name is available.
      *
      * @param request Name availability request.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1172,7 +1244,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Check if a resource name is available.
+     * Check if a resource name is available.
+     *
+     * <p>Description for Check if a resource name is available.
      *
      * @param request Name availability request.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1186,7 +1260,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Check if a resource name is available.
+     * Check if a resource name is available.
+     *
+     * <p>Description for Check if a resource name is available.
      *
      * @param request Name availability request.
      * @param context The context to associate with this operation.
@@ -1373,7 +1449,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Gets list of available geo regions plus ministamps.
+     * Gets list of available geo regions plus ministamps
+     *
+     * <p>Description for Gets list of available geo regions plus ministamps.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1409,7 +1487,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Gets list of available geo regions plus ministamps.
+     * Gets list of available geo regions plus ministamps
+     *
+     * <p>Description for Gets list of available geo regions plus ministamps.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1445,7 +1525,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Gets list of available geo regions plus ministamps.
+     * Gets list of available geo regions plus ministamps
+     *
+     * <p>Description for Gets list of available geo regions plus ministamps.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1458,7 +1540,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Gets list of available geo regions plus ministamps.
+     * Gets list of available geo regions plus ministamps
+     *
+     * <p>Description for Gets list of available geo regions plus ministamps.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1471,7 +1555,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Gets list of available geo regions plus ministamps.
+     * Gets list of available geo regions plus ministamps
+     *
+     * <p>Description for Gets list of available geo regions plus ministamps.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1486,7 +1572,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Get a list of available geographical regions.
+     * Get a list of available geographical regions.
+     *
+     * <p>Description for Get a list of available geographical regions.
      *
      * @param sku Name of SKU used to filter the regions.
      * @param linuxWorkersEnabled Specify &lt;code&gt;true&lt;/code&gt; if you want to filter to only regions that
@@ -1544,7 +1632,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Get a list of available geographical regions.
+     * Get a list of available geographical regions.
+     *
+     * <p>Description for Get a list of available geographical regions.
      *
      * @param sku Name of SKU used to filter the regions.
      * @param linuxWorkersEnabled Specify &lt;code&gt;true&lt;/code&gt; if you want to filter to only regions that
@@ -1604,7 +1694,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Get a list of available geographical regions.
+     * Get a list of available geographical regions.
+     *
+     * <p>Description for Get a list of available geographical regions.
      *
      * @param sku Name of SKU used to filter the regions.
      * @param linuxWorkersEnabled Specify &lt;code&gt;true&lt;/code&gt; if you want to filter to only regions that
@@ -1629,7 +1721,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Get a list of available geographical regions.
+     * Get a list of available geographical regions.
+     *
+     * <p>Description for Get a list of available geographical regions.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1649,7 +1743,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Get a list of available geographical regions.
+     * Get a list of available geographical regions.
+     *
+     * <p>Description for Get a list of available geographical regions.
      *
      * @param sku Name of SKU used to filter the regions.
      * @param linuxWorkersEnabled Specify &lt;code&gt;true&lt;/code&gt; if you want to filter to only regions that
@@ -1679,7 +1775,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Get a list of available geographical regions.
+     * Get a list of available geographical regions.
+     *
+     * <p>Description for Get a list of available geographical regions.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1696,7 +1794,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Get a list of available geographical regions.
+     * Get a list of available geographical regions.
+     *
+     * <p>Description for Get a list of available geographical regions.
      *
      * @param sku Name of SKU used to filter the regions.
      * @param linuxWorkersEnabled Specify &lt;code&gt;true&lt;/code&gt; if you want to filter to only regions that
@@ -1723,7 +1823,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for List all apps that are assigned to a hostname.
+     * List all apps that are assigned to a hostname.
+     *
+     * <p>Description for List all apps that are assigned to a hostname.
      *
      * @param nameIdentifier Hostname information.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1776,7 +1878,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for List all apps that are assigned to a hostname.
+     * List all apps that are assigned to a hostname.
+     *
+     * <p>Description for List all apps that are assigned to a hostname.
      *
      * @param nameIdentifier Hostname information.
      * @param context The context to associate with this operation.
@@ -1827,7 +1931,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for List all apps that are assigned to a hostname.
+     * List all apps that are assigned to a hostname.
+     *
+     * <p>Description for List all apps that are assigned to a hostname.
      *
      * @param nameIdentifier Hostname information.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1843,7 +1949,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for List all apps that are assigned to a hostname.
+     * List all apps that are assigned to a hostname.
+     *
+     * <p>Description for List all apps that are assigned to a hostname.
      *
      * @param nameIdentifier Hostname information.
      * @param context The context to associate with this operation.
@@ -1861,7 +1969,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for List all apps that are assigned to a hostname.
+     * List all apps that are assigned to a hostname.
+     *
+     * <p>Description for List all apps that are assigned to a hostname.
      *
      * @param nameIdentifier Hostname information.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1875,7 +1985,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for List all apps that are assigned to a hostname.
+     * List all apps that are assigned to a hostname.
+     *
+     * <p>Description for List all apps that are assigned to a hostname.
      *
      * @param nameIdentifier Hostname information.
      * @param context The context to associate with this operation.
@@ -1891,7 +2003,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for List all premier add-on offers.
+     * List all premier add-on offers.
+     *
+     * <p>Description for List all premier add-on offers.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1936,7 +2050,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for List all premier add-on offers.
+     * List all premier add-on offers.
+     *
+     * <p>Description for List all premier add-on offers.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1980,7 +2096,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for List all premier add-on offers.
+     * List all premier add-on offers.
+     *
+     * <p>Description for List all premier add-on offers.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1994,7 +2112,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for List all premier add-on offers.
+     * List all premier add-on offers.
+     *
+     * <p>Description for List all premier add-on offers.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -2010,7 +2130,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for List all premier add-on offers.
+     * List all premier add-on offers.
+     *
+     * <p>Description for List all premier add-on offers.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2022,7 +2144,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for List all premier add-on offers.
+     * List all premier add-on offers.
+     *
+     * <p>Description for List all premier add-on offers.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -2036,7 +2160,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for List all SKUs.
+     * List all SKUs.
+     *
+     * <p>Description for List all SKUs.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2071,7 +2197,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for List all SKUs.
+     * List all SKUs.
+     *
+     * <p>Description for List all SKUs.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -2105,7 +2233,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for List all SKUs.
+     * List all SKUs.
+     *
+     * <p>Description for List all SKUs.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2117,7 +2247,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for List all SKUs.
+     * List all SKUs.
+     *
+     * <p>Description for List all SKUs.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2129,7 +2261,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for List all SKUs.
+     * List all SKUs.
+     *
+     * <p>Description for List all SKUs.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -2143,7 +2277,10 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Verifies if this VNET is compatible with an App Service Environment by analyzing the Network
+     * Verifies if this VNET is compatible with an App Service Environment by analyzing the Network Security Group
+     * rules.
+     *
+     * <p>Description for Verifies if this VNET is compatible with an App Service Environment by analyzing the Network
      * Security Group rules.
      *
      * @param parameters VNET information.
@@ -2189,7 +2326,10 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Verifies if this VNET is compatible with an App Service Environment by analyzing the Network
+     * Verifies if this VNET is compatible with an App Service Environment by analyzing the Network Security Group
+     * rules.
+     *
+     * <p>Description for Verifies if this VNET is compatible with an App Service Environment by analyzing the Network
      * Security Group rules.
      *
      * @param parameters VNET information.
@@ -2233,7 +2373,10 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Verifies if this VNET is compatible with an App Service Environment by analyzing the Network
+     * Verifies if this VNET is compatible with an App Service Environment by analyzing the Network Security Group
+     * rules.
+     *
+     * <p>Description for Verifies if this VNET is compatible with an App Service Environment by analyzing the Network
      * Security Group rules.
      *
      * @param parameters VNET information.
@@ -2249,7 +2392,10 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Verifies if this VNET is compatible with an App Service Environment by analyzing the Network
+     * Verifies if this VNET is compatible with an App Service Environment by analyzing the Network Security Group
+     * rules.
+     *
+     * <p>Description for Verifies if this VNET is compatible with an App Service Environment by analyzing the Network
      * Security Group rules.
      *
      * @param parameters VNET information.
@@ -2264,7 +2410,10 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Verifies if this VNET is compatible with an App Service Environment by analyzing the Network
+     * Verifies if this VNET is compatible with an App Service Environment by analyzing the Network Security Group
+     * rules.
+     *
+     * <p>Description for Verifies if this VNET is compatible with an App Service Environment by analyzing the Network
      * Security Group rules.
      *
      * @param parameters VNET information.
@@ -2281,7 +2430,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Move resources between resource groups.
+     * Move resources between resource groups.
+     *
+     * <p>Description for Move resources between resource groups.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param moveResourceEnvelope Object that represents the resource to move.
@@ -2332,7 +2483,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Move resources between resource groups.
+     * Move resources between resource groups.
+     *
+     * <p>Description for Move resources between resource groups.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param moveResourceEnvelope Object that represents the resource to move.
@@ -2381,7 +2534,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Move resources between resource groups.
+     * Move resources between resource groups.
+     *
+     * <p>Description for Move resources between resource groups.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param moveResourceEnvelope Object that represents the resource to move.
@@ -2396,7 +2551,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Move resources between resource groups.
+     * Move resources between resource groups.
+     *
+     * <p>Description for Move resources between resource groups.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param moveResourceEnvelope Object that represents the resource to move.
@@ -2410,7 +2567,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Move resources between resource groups.
+     * Move resources between resource groups.
+     *
+     * <p>Description for Move resources between resource groups.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param moveResourceEnvelope Object that represents the resource to move.
@@ -2427,7 +2586,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Validate if a resource can be created.
+     * Validate if a resource can be created.
+     *
+     * <p>Description for Validate if a resource can be created.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param validateRequest Request with the resources to validate.
@@ -2479,7 +2640,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Validate if a resource can be created.
+     * Validate if a resource can be created.
+     *
+     * <p>Description for Validate if a resource can be created.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param validateRequest Request with the resources to validate.
@@ -2529,7 +2692,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Validate if a resource can be created.
+     * Validate if a resource can be created.
+     *
+     * <p>Description for Validate if a resource can be created.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param validateRequest Request with the resources to validate.
@@ -2545,7 +2710,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Validate if a resource can be created.
+     * Validate if a resource can be created.
+     *
+     * <p>Description for Validate if a resource can be created.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param validateRequest Request with the resources to validate.
@@ -2560,7 +2727,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Validate if a resource can be created.
+     * Validate if a resource can be created.
+     *
+     * <p>Description for Validate if a resource can be created.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param validateRequest Request with the resources to validate.
@@ -2577,7 +2746,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Validate whether a resource can be moved.
+     * Validate whether a resource can be moved.
+     *
+     * <p>Description for Validate whether a resource can be moved.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param moveResourceEnvelope Object that represents the resource to move.
@@ -2628,7 +2799,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Validate whether a resource can be moved.
+     * Validate whether a resource can be moved.
+     *
+     * <p>Description for Validate whether a resource can be moved.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param moveResourceEnvelope Object that represents the resource to move.
@@ -2677,7 +2850,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Validate whether a resource can be moved.
+     * Validate whether a resource can be moved.
+     *
+     * <p>Description for Validate whether a resource can be moved.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param moveResourceEnvelope Object that represents the resource to move.
@@ -2692,7 +2867,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Validate whether a resource can be moved.
+     * Validate whether a resource can be moved.
+     *
+     * <p>Description for Validate whether a resource can be moved.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param moveResourceEnvelope Object that represents the resource to move.
@@ -2706,7 +2883,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Description for Validate whether a resource can be moved.
+     * Validate whether a resource can be moved.
+     *
+     * <p>Description for Validate whether a resource can be moved.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param moveResourceEnvelope Object that represents the resource to move.

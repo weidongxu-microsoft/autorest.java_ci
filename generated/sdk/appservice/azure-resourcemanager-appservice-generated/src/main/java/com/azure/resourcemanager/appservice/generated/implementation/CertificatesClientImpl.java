@@ -169,7 +169,9 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Description for Get all certificates for a subscription.
+     * Get all certificates for a subscription.
+     *
+     * <p>Description for Get all certificates for a subscription.
      *
      * @param filter Return only information specified in the filter (using OData syntax). For example:
      *     $filter=KeyVaultId eq 'KeyVaultId'.
@@ -217,7 +219,9 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Description for Get all certificates for a subscription.
+     * Get all certificates for a subscription.
+     *
+     * <p>Description for Get all certificates for a subscription.
      *
      * @param filter Return only information specified in the filter (using OData syntax). For example:
      *     $filter=KeyVaultId eq 'KeyVaultId'.
@@ -263,7 +267,9 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Description for Get all certificates for a subscription.
+     * Get all certificates for a subscription.
+     *
+     * <p>Description for Get all certificates for a subscription.
      *
      * @param filter Return only information specified in the filter (using OData syntax). For example:
      *     $filter=KeyVaultId eq 'KeyVaultId'.
@@ -278,7 +284,9 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Description for Get all certificates for a subscription.
+     * Get all certificates for a subscription.
+     *
+     * <p>Description for Get all certificates for a subscription.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -291,7 +299,9 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Description for Get all certificates for a subscription.
+     * Get all certificates for a subscription.
+     *
+     * <p>Description for Get all certificates for a subscription.
      *
      * @param filter Return only information specified in the filter (using OData syntax). For example:
      *     $filter=KeyVaultId eq 'KeyVaultId'.
@@ -308,7 +318,9 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Description for Get all certificates for a subscription.
+     * Get all certificates for a subscription.
+     *
+     * <p>Description for Get all certificates for a subscription.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -321,7 +333,9 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Description for Get all certificates for a subscription.
+     * Get all certificates for a subscription.
+     *
+     * <p>Description for Get all certificates for a subscription.
      *
      * @param filter Return only information specified in the filter (using OData syntax). For example:
      *     $filter=KeyVaultId eq 'KeyVaultId'.
@@ -337,7 +351,9 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Description for Get all certificates in a resource group.
+     * Get all certificates in a resource group.
+     *
+     * <p>Description for Get all certificates in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -388,7 +404,9 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Description for Get all certificates in a resource group.
+     * Get all certificates in a resource group.
+     *
+     * <p>Description for Get all certificates in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param context The context to associate with this operation.
@@ -438,7 +456,9 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Description for Get all certificates in a resource group.
+     * Get all certificates in a resource group.
+     *
+     * <p>Description for Get all certificates in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -454,7 +474,9 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Description for Get all certificates in a resource group.
+     * Get all certificates in a resource group.
+     *
+     * <p>Description for Get all certificates in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param context The context to associate with this operation.
@@ -471,7 +493,9 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Description for Get all certificates in a resource group.
+     * Get all certificates in a resource group.
+     *
+     * <p>Description for Get all certificates in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -485,7 +509,9 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Description for Get all certificates in a resource group.
+     * Get all certificates in a resource group.
+     *
+     * <p>Description for Get all certificates in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param context The context to associate with this operation.
@@ -500,7 +526,9 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Description for Get a certificate.
+     * Get a certificate.
+     *
+     * <p>Description for Get a certificate.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate.
@@ -548,7 +576,9 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Description for Get a certificate.
+     * Get a certificate.
+     *
+     * <p>Description for Get a certificate.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate.
@@ -594,7 +624,9 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Description for Get a certificate.
+     * Get a certificate.
+     *
+     * <p>Description for Get a certificate.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate.
@@ -610,7 +642,9 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Description for Get a certificate.
+     * Get a certificate.
+     *
+     * <p>Description for Get a certificate.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate.
@@ -625,7 +659,9 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Description for Get a certificate.
+     * Get a certificate.
+     *
+     * <p>Description for Get a certificate.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate.
@@ -642,7 +678,9 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Description for Create or update a certificate.
+     * Create or update a certificate.
+     *
+     * <p>Description for Create or update a certificate.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate.
@@ -698,7 +736,9 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Description for Create or update a certificate.
+     * Create or update a certificate.
+     *
+     * <p>Description for Create or update a certificate.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate.
@@ -752,7 +792,9 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Description for Create or update a certificate.
+     * Create or update a certificate.
+     *
+     * <p>Description for Create or update a certificate.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate.
@@ -770,7 +812,9 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Description for Create or update a certificate.
+     * Create or update a certificate.
+     *
+     * <p>Description for Create or update a certificate.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate.
@@ -787,7 +831,9 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Description for Create or update a certificate.
+     * Create or update a certificate.
+     *
+     * <p>Description for Create or update a certificate.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate.
@@ -805,7 +851,9 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Description for Delete a certificate.
+     * Delete a certificate.
+     *
+     * <p>Description for Delete a certificate.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate.
@@ -852,7 +900,9 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Description for Delete a certificate.
+     * Delete a certificate.
+     *
+     * <p>Description for Delete a certificate.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate.
@@ -897,7 +947,9 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Description for Delete a certificate.
+     * Delete a certificate.
+     *
+     * <p>Description for Delete a certificate.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate.
@@ -912,7 +964,9 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Description for Delete a certificate.
+     * Delete a certificate.
+     *
+     * <p>Description for Delete a certificate.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate.
@@ -926,7 +980,9 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Description for Delete a certificate.
+     * Delete a certificate.
+     *
+     * <p>Description for Delete a certificate.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate.
@@ -942,7 +998,9 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Description for Create or update a certificate.
+     * Create or update a certificate.
+     *
+     * <p>Description for Create or update a certificate.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate.
@@ -998,7 +1056,9 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Description for Create or update a certificate.
+     * Create or update a certificate.
+     *
+     * <p>Description for Create or update a certificate.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate.
@@ -1052,7 +1112,9 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Description for Create or update a certificate.
+     * Create or update a certificate.
+     *
+     * <p>Description for Create or update a certificate.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate.
@@ -1070,7 +1132,9 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Description for Create or update a certificate.
+     * Create or update a certificate.
+     *
+     * <p>Description for Create or update a certificate.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate.
@@ -1087,7 +1151,9 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * Description for Create or update a certificate.
+     * Create or update a certificate.
+     *
+     * <p>Description for Create or update a certificate.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate.

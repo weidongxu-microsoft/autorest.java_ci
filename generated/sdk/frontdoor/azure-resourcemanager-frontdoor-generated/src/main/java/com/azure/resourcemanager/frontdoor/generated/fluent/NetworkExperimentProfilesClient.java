@@ -156,7 +156,9 @@ public interface NetworkExperimentProfilesClient {
     ProfileInner createOrUpdate(String profileName, String resourceGroupName, ProfileInner parameters, Context context);
 
     /**
-     * Updates an NetworkExperimentProfiles.
+     * Updates an NetworkExperimentProfiles by NetworkExperimentProfile name
+     *
+     * <p>Updates an NetworkExperimentProfiles.
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param profileName The Profile identifier associated with the Tenant and Partner.
@@ -171,7 +173,9 @@ public interface NetworkExperimentProfilesClient {
         String resourceGroupName, String profileName, ProfileUpdateModel parameters);
 
     /**
-     * Updates an NetworkExperimentProfiles.
+     * Updates an NetworkExperimentProfiles by NetworkExperimentProfile name
+     *
+     * <p>Updates an NetworkExperimentProfiles.
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param profileName The Profile identifier associated with the Tenant and Partner.
@@ -187,7 +191,9 @@ public interface NetworkExperimentProfilesClient {
         String resourceGroupName, String profileName, ProfileUpdateModel parameters, Context context);
 
     /**
-     * Updates an NetworkExperimentProfiles.
+     * Updates an NetworkExperimentProfiles by NetworkExperimentProfile name
+     *
+     * <p>Updates an NetworkExperimentProfiles.
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param profileName The Profile identifier associated with the Tenant and Partner.
@@ -201,7 +207,9 @@ public interface NetworkExperimentProfilesClient {
     ProfileInner update(String resourceGroupName, String profileName, ProfileUpdateModel parameters);
 
     /**
-     * Updates an NetworkExperimentProfiles.
+     * Updates an NetworkExperimentProfiles by NetworkExperimentProfile name
+     *
+     * <p>Updates an NetworkExperimentProfiles.
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param profileName The Profile identifier associated with the Tenant and Partner.

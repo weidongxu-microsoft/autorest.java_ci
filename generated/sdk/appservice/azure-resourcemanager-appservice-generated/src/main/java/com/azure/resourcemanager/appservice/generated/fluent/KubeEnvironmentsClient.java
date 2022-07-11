@@ -17,7 +17,9 @@ import com.azure.resourcemanager.appservice.generated.models.KubeEnvironmentPatc
 /** An instance of this class provides access to all the operations defined in KubeEnvironmentsClient. */
 public interface KubeEnvironmentsClient {
     /**
-     * Description for Get all Kubernetes Environments for a subscription.
+     * Get all Kubernetes Environments for a subscription.
+     *
+     * <p>Description for Get all Kubernetes Environments for a subscription.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -28,7 +30,9 @@ public interface KubeEnvironmentsClient {
     PagedIterable<KubeEnvironmentInner> list();
 
     /**
-     * Description for Get all Kubernetes Environments for a subscription.
+     * Get all Kubernetes Environments for a subscription.
+     *
+     * <p>Description for Get all Kubernetes Environments for a subscription.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -41,7 +45,9 @@ public interface KubeEnvironmentsClient {
     PagedIterable<KubeEnvironmentInner> list(Context context);
 
     /**
-     * Description for Get all the Kubernetes Environments in a resource group.
+     * Get all the Kubernetes Environments in a resource group.
+     *
+     * <p>Description for Get all the Kubernetes Environments in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -54,7 +60,9 @@ public interface KubeEnvironmentsClient {
     PagedIterable<KubeEnvironmentInner> listByResourceGroup(String resourceGroupName);
 
     /**
-     * Description for Get all the Kubernetes Environments in a resource group.
+     * Get all the Kubernetes Environments in a resource group.
+     *
+     * <p>Description for Get all the Kubernetes Environments in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param context The context to associate with this operation.
@@ -68,7 +76,9 @@ public interface KubeEnvironmentsClient {
     PagedIterable<KubeEnvironmentInner> listByResourceGroup(String resourceGroupName, Context context);
 
     /**
-     * Description for Get the properties of a Kubernetes Environment.
+     * Get the properties of a Kubernetes Environment.
+     *
+     * <p>Description for Get the properties of a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -82,7 +92,9 @@ public interface KubeEnvironmentsClient {
     KubeEnvironmentInner getByResourceGroup(String resourceGroupName, String name);
 
     /**
-     * Description for Get the properties of a Kubernetes Environment.
+     * Get the properties of a Kubernetes Environment.
+     *
+     * <p>Description for Get the properties of a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -98,7 +110,9 @@ public interface KubeEnvironmentsClient {
         String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Creates or updates a Kubernetes Environment.
+     * Creates or updates a Kubernetes Environment.
+     *
+     * <p>Description for Creates or updates a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -115,7 +129,9 @@ public interface KubeEnvironmentsClient {
         String resourceGroupName, String name, KubeEnvironmentInner kubeEnvironmentEnvelope);
 
     /**
-     * Description for Creates or updates a Kubernetes Environment.
+     * Creates or updates a Kubernetes Environment.
+     *
+     * <p>Description for Creates or updates a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -133,7 +149,9 @@ public interface KubeEnvironmentsClient {
         String resourceGroupName, String name, KubeEnvironmentInner kubeEnvironmentEnvelope, Context context);
 
     /**
-     * Description for Creates or updates a Kubernetes Environment.
+     * Creates or updates a Kubernetes Environment.
+     *
+     * <p>Description for Creates or updates a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -149,7 +167,9 @@ public interface KubeEnvironmentsClient {
         String resourceGroupName, String name, KubeEnvironmentInner kubeEnvironmentEnvelope);
 
     /**
-     * Description for Creates or updates a Kubernetes Environment.
+     * Creates or updates a Kubernetes Environment.
+     *
+     * <p>Description for Creates or updates a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -166,7 +186,9 @@ public interface KubeEnvironmentsClient {
         String resourceGroupName, String name, KubeEnvironmentInner kubeEnvironmentEnvelope, Context context);
 
     /**
-     * Description for Delete a Kubernetes Environment.
+     * Delete a Kubernetes Environment.
+     *
+     * <p>Description for Delete a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -180,7 +202,9 @@ public interface KubeEnvironmentsClient {
     SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String name);
 
     /**
-     * Description for Delete a Kubernetes Environment.
+     * Delete a Kubernetes Environment.
+     *
+     * <p>Description for Delete a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -195,7 +219,9 @@ public interface KubeEnvironmentsClient {
     SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Delete a Kubernetes Environment.
+     * Delete a Kubernetes Environment.
+     *
+     * <p>Description for Delete a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -208,7 +234,9 @@ public interface KubeEnvironmentsClient {
     void delete(String resourceGroupName, String name);
 
     /**
-     * Description for Delete a Kubernetes Environment.
+     * Delete a Kubernetes Environment.
+     *
+     * <p>Description for Delete a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -222,7 +250,9 @@ public interface KubeEnvironmentsClient {
     void delete(String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Creates or updates a Kubernetes Environment.
+     * Creates or updates a Kubernetes Environment.
+     *
+     * <p>Description for Creates or updates a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -238,7 +268,9 @@ public interface KubeEnvironmentsClient {
         String resourceGroupName, String name, KubeEnvironmentPatchResource kubeEnvironmentEnvelope);
 
     /**
-     * Description for Creates or updates a Kubernetes Environment.
+     * Creates or updates a Kubernetes Environment.
+     *
+     * <p>Description for Creates or updates a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.

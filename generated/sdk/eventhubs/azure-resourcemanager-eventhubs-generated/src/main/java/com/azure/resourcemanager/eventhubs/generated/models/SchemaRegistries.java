@@ -41,6 +41,8 @@ public interface SchemaRegistries {
         String resourceGroupName, String namespaceName, Integer skip, Integer top, Context context);
 
     /**
+     * The delete operation.
+     *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param schemaGroupName The Schema Group name.
@@ -51,6 +53,8 @@ public interface SchemaRegistries {
     void delete(String resourceGroupName, String namespaceName, String schemaGroupName);
 
     /**
+     * The delete operation.
+     *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param schemaGroupName The Schema Group name.
@@ -64,6 +68,8 @@ public interface SchemaRegistries {
         String resourceGroupName, String namespaceName, String schemaGroupName, Context context);
 
     /**
+     * The get operation.
+     *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param schemaGroupName The Schema Group name.
@@ -75,6 +81,8 @@ public interface SchemaRegistries {
     SchemaGroup get(String resourceGroupName, String namespaceName, String schemaGroupName);
 
     /**
+     * The get operation.
+     *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param schemaGroupName The Schema Group name.
@@ -88,6 +96,8 @@ public interface SchemaRegistries {
         String resourceGroupName, String namespaceName, String schemaGroupName, Context context);
 
     /**
+     * The get operation.
+     *
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -97,6 +107,8 @@ public interface SchemaRegistries {
     SchemaGroup getById(String id);
 
     /**
+     * The get operation.
+     *
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -107,6 +119,8 @@ public interface SchemaRegistries {
     Response<SchemaGroup> getByIdWithResponse(String id, Context context);
 
     /**
+     * The delete operation.
+     *
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -115,6 +129,8 @@ public interface SchemaRegistries {
     void deleteById(String id);
 
     /**
+     * The delete operation.
+     *
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

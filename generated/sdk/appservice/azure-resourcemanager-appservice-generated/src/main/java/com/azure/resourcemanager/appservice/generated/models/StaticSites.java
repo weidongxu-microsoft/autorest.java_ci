@@ -15,7 +15,9 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.StringDictio
 /** Resource collection API of StaticSites. */
 public interface StaticSites {
     /**
-     * Description for Generates a preview workflow file for the static site.
+     * Generates a preview workflow file for the static site
+     *
+     * <p>Description for Generates a preview workflow file for the static site.
      *
      * @param location Location where you plan to create the static site.
      * @param staticSitesWorkflowPreviewRequest A JSON representation of the StaticSitesWorkflowPreviewRequest
@@ -30,7 +32,9 @@ public interface StaticSites {
         String location, StaticSitesWorkflowPreviewRequest staticSitesWorkflowPreviewRequest);
 
     /**
-     * Description for Generates a preview workflow file for the static site.
+     * Generates a preview workflow file for the static site
+     *
+     * <p>Description for Generates a preview workflow file for the static site.
      *
      * @param location Location where you plan to create the static site.
      * @param staticSitesWorkflowPreviewRequest A JSON representation of the StaticSitesWorkflowPreviewRequest
@@ -46,7 +50,9 @@ public interface StaticSites {
         String location, StaticSitesWorkflowPreviewRequest staticSitesWorkflowPreviewRequest, Context context);
 
     /**
-     * Description for Get all Static Sites for a subscription.
+     * Get all Static Sites for a subscription.
+     *
+     * <p>Description for Get all Static Sites for a subscription.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -56,7 +62,9 @@ public interface StaticSites {
     PagedIterable<StaticSiteArmResource> list();
 
     /**
-     * Description for Get all Static Sites for a subscription.
+     * Get all Static Sites for a subscription.
+     *
+     * <p>Description for Get all Static Sites for a subscription.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -68,7 +76,9 @@ public interface StaticSites {
     PagedIterable<StaticSiteArmResource> list(Context context);
 
     /**
-     * Description for Gets all static sites in the specified resource group.
+     * Gets all static sites in the specified resource group.
+     *
+     * <p>Description for Gets all static sites in the specified resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -80,7 +90,9 @@ public interface StaticSites {
     PagedIterable<StaticSiteArmResource> listByResourceGroup(String resourceGroupName);
 
     /**
-     * Description for Gets all static sites in the specified resource group.
+     * Gets all static sites in the specified resource group.
+     *
+     * <p>Description for Gets all static sites in the specified resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param context The context to associate with this operation.
@@ -93,7 +105,9 @@ public interface StaticSites {
     PagedIterable<StaticSiteArmResource> listByResourceGroup(String resourceGroupName, Context context);
 
     /**
-     * Description for Gets the details of a static site.
+     * Gets the details of a static site.
+     *
+     * <p>Description for Gets the details of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -106,7 +120,9 @@ public interface StaticSites {
     StaticSiteArmResource getByResourceGroup(String resourceGroupName, String name);
 
     /**
-     * Description for Gets the details of a static site.
+     * Gets the details of a static site.
+     *
+     * <p>Description for Gets the details of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -121,7 +137,9 @@ public interface StaticSites {
         String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Deletes a static site.
+     * Deletes a static site.
+     *
+     * <p>Description for Deletes a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to delete.
@@ -133,7 +151,9 @@ public interface StaticSites {
     void deleteByResourceGroup(String resourceGroupName, String name);
 
     /**
-     * Description for Deletes a static site.
+     * Deletes a static site.
+     *
+     * <p>Description for Deletes a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to delete.
@@ -146,7 +166,9 @@ public interface StaticSites {
     void delete(String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Gets the list of users of a static site.
+     * Gets the list of users of a static site.
+     *
+     * <p>Description for Gets the list of users of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -161,7 +183,9 @@ public interface StaticSites {
         String resourceGroupName, String name, String authprovider);
 
     /**
-     * Description for Gets the list of users of a static site.
+     * Gets the list of users of a static site.
+     *
+     * <p>Description for Gets the list of users of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -177,7 +201,9 @@ public interface StaticSites {
         String resourceGroupName, String name, String authprovider, Context context);
 
     /**
-     * Description for Deletes the user entry from the static site.
+     * Deletes the user entry from the static site.
+     *
+     * <p>Description for Deletes the user entry from the static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the staticsite.
@@ -191,7 +217,9 @@ public interface StaticSites {
     void deleteStaticSiteUser(String resourceGroupName, String name, String authprovider, String userid);
 
     /**
-     * Description for Deletes the user entry from the static site.
+     * Deletes the user entry from the static site.
+     *
+     * <p>Description for Deletes the user entry from the static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the staticsite.
@@ -208,7 +236,9 @@ public interface StaticSites {
         String resourceGroupName, String name, String authprovider, String userid, Context context);
 
     /**
-     * Description for Updates a user entry with the listed roles.
+     * Updates a user entry with the listed roles
+     *
+     * <p>Description for Updates a user entry with the listed roles.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -229,7 +259,9 @@ public interface StaticSites {
         StaticSiteUserArmResourceInner staticSiteUserEnvelope);
 
     /**
-     * Description for Updates a user entry with the listed roles.
+     * Updates a user entry with the listed roles
+     *
+     * <p>Description for Updates a user entry with the listed roles.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -252,7 +284,9 @@ public interface StaticSites {
         Context context);
 
     /**
-     * Description for Gets all static site builds for a particular static site.
+     * Gets all static site builds for a particular static site.
+     *
+     * <p>Description for Gets all static site builds for a particular static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -265,7 +299,9 @@ public interface StaticSites {
     PagedIterable<StaticSiteBuildArmResource> getStaticSiteBuilds(String resourceGroupName, String name);
 
     /**
-     * Description for Gets all static site builds for a particular static site.
+     * Gets all static site builds for a particular static site.
+     *
+     * <p>Description for Gets all static site builds for a particular static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -280,7 +316,9 @@ public interface StaticSites {
         String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Gets the details of a static site build.
+     * Gets the details of a static site build.
+     *
+     * <p>Description for Gets the details of a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -294,7 +332,9 @@ public interface StaticSites {
     StaticSiteBuildArmResource getStaticSiteBuild(String resourceGroupName, String name, String environmentName);
 
     /**
-     * Description for Gets the details of a static site build.
+     * Gets the details of a static site build.
+     *
+     * <p>Description for Gets the details of a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -310,7 +350,9 @@ public interface StaticSites {
         String resourceGroupName, String name, String environmentName, Context context);
 
     /**
-     * Description for Deletes a static site build.
+     * Deletes a static site build.
+     *
+     * <p>Description for Deletes a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -323,7 +365,9 @@ public interface StaticSites {
     void deleteStaticSiteBuild(String resourceGroupName, String name, String environmentName);
 
     /**
-     * Description for Deletes a static site build.
+     * Deletes a static site build.
+     *
+     * <p>Description for Deletes a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -337,7 +381,9 @@ public interface StaticSites {
     void deleteStaticSiteBuild(String resourceGroupName, String name, String environmentName, Context context);
 
     /**
-     * Description for Creates or updates the app settings of a static site build.
+     * Creates or updates the app settings of a static site build.
+     *
+     * <p>Description for Creates or updates the app settings of a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -353,7 +399,9 @@ public interface StaticSites {
         String resourceGroupName, String name, String environmentName, StringDictionaryInner appSettings);
 
     /**
-     * Description for Creates or updates the app settings of a static site build.
+     * Creates or updates the app settings of a static site build.
+     *
+     * <p>Description for Creates or updates the app settings of a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -374,7 +422,9 @@ public interface StaticSites {
         Context context);
 
     /**
-     * Description for Creates or updates the function app settings of a static site build.
+     * Creates or updates the function app settings of a static site build.
+     *
+     * <p>Description for Creates or updates the function app settings of a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -390,7 +440,9 @@ public interface StaticSites {
         String resourceGroupName, String name, String environmentName, StringDictionaryInner appSettings);
 
     /**
-     * Description for Creates or updates the function app settings of a static site build.
+     * Creates or updates the function app settings of a static site build.
+     *
+     * <p>Description for Creates or updates the function app settings of a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -411,7 +463,9 @@ public interface StaticSites {
         Context context);
 
     /**
-     * Description for Gets the functions of a particular static site build.
+     * Gets the functions of a particular static site build.
+     *
+     * <p>Description for Gets the functions of a particular static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -426,7 +480,9 @@ public interface StaticSites {
         String resourceGroupName, String name, String environmentName);
 
     /**
-     * Description for Gets the functions of a particular static site build.
+     * Gets the functions of a particular static site build.
+     *
+     * <p>Description for Gets the functions of a particular static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -442,7 +498,9 @@ public interface StaticSites {
         String resourceGroupName, String name, String environmentName, Context context);
 
     /**
-     * Description for Gets the application settings of a static site build.
+     * Gets the application settings of a static site build.
+     *
+     * <p>Description for Gets the application settings of a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -456,7 +514,9 @@ public interface StaticSites {
     StringDictionary listStaticSiteBuildAppSettings(String resourceGroupName, String name, String environmentName);
 
     /**
-     * Description for Gets the application settings of a static site build.
+     * Gets the application settings of a static site build.
+     *
+     * <p>Description for Gets the application settings of a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -472,7 +532,9 @@ public interface StaticSites {
         String resourceGroupName, String name, String environmentName, Context context);
 
     /**
-     * Description for Gets the application settings of a static site build.
+     * Gets the application settings of a static site build.
+     *
+     * <p>Description for Gets the application settings of a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -487,7 +549,9 @@ public interface StaticSites {
         String resourceGroupName, String name, String environmentName);
 
     /**
-     * Description for Gets the application settings of a static site build.
+     * Gets the application settings of a static site build.
+     *
+     * <p>Description for Gets the application settings of a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -503,7 +567,9 @@ public interface StaticSites {
         String resourceGroupName, String name, String environmentName, Context context);
 
     /**
-     * Description for Gets the details of the user provided function apps registered with a static site build.
+     * Gets the details of the user provided function apps registered with a static site build
+     *
+     * <p>Description for Gets the details of the user provided function apps registered with a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -518,7 +584,9 @@ public interface StaticSites {
         String resourceGroupName, String name, String environmentName);
 
     /**
-     * Description for Gets the details of the user provided function apps registered with a static site build.
+     * Gets the details of the user provided function apps registered with a static site build
+     *
+     * <p>Description for Gets the details of the user provided function apps registered with a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -534,7 +602,9 @@ public interface StaticSites {
         String resourceGroupName, String name, String environmentName, Context context);
 
     /**
-     * Description for Gets the details of the user provided function app registered with a static site build.
+     * Gets the details of the user provided function app registered with a static site build
+     *
+     * <p>Description for Gets the details of the user provided function app registered with a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -550,7 +620,9 @@ public interface StaticSites {
         String resourceGroupName, String name, String environmentName, String functionAppName);
 
     /**
-     * Description for Gets the details of the user provided function app registered with a static site build.
+     * Gets the details of the user provided function app registered with a static site build
+     *
+     * <p>Description for Gets the details of the user provided function app registered with a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -567,7 +639,9 @@ public interface StaticSites {
         String resourceGroupName, String name, String environmentName, String functionAppName, Context context);
 
     /**
-     * Description for Detach the user provided function app from the static site build.
+     * Detach the user provided function app from the static site build
+     *
+     * <p>Description for Detach the user provided function app from the static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -582,7 +656,9 @@ public interface StaticSites {
         String resourceGroupName, String name, String environmentName, String functionAppName);
 
     /**
-     * Description for Detach the user provided function app from the static site build.
+     * Detach the user provided function app from the static site build
+     *
+     * <p>Description for Detach the user provided function app from the static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -599,7 +675,9 @@ public interface StaticSites {
         String resourceGroupName, String name, String environmentName, String functionAppName, Context context);
 
     /**
-     * Description for Deploys zipped content to a specific environment of a static site.
+     * Deploys zipped content to a specific environment of a static site.
+     *
+     * <p>Description for Deploys zipped content to a specific environment of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -618,7 +696,9 @@ public interface StaticSites {
         StaticSiteZipDeploymentArmResource staticSiteZipDeploymentEnvelope);
 
     /**
-     * Description for Deploys zipped content to a specific environment of a static site.
+     * Deploys zipped content to a specific environment of a static site.
+     *
+     * <p>Description for Deploys zipped content to a specific environment of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -639,7 +719,9 @@ public interface StaticSites {
         Context context);
 
     /**
-     * Description for Creates or updates the app settings of a static site.
+     * Creates or updates the app settings of a static site.
+     *
+     * <p>Description for Creates or updates the app settings of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -654,7 +736,9 @@ public interface StaticSites {
         String resourceGroupName, String name, StringDictionaryInner appSettings);
 
     /**
-     * Description for Creates or updates the app settings of a static site.
+     * Creates or updates the app settings of a static site.
+     *
+     * <p>Description for Creates or updates the app settings of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -670,7 +754,9 @@ public interface StaticSites {
         String resourceGroupName, String name, StringDictionaryInner appSettings, Context context);
 
     /**
-     * Description for Creates or updates the function app settings of a static site.
+     * Creates or updates the function app settings of a static site.
+     *
+     * <p>Description for Creates or updates the function app settings of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -685,7 +771,9 @@ public interface StaticSites {
         String resourceGroupName, String name, StringDictionaryInner appSettings);
 
     /**
-     * Description for Creates or updates the function app settings of a static site.
+     * Creates or updates the function app settings of a static site.
+     *
+     * <p>Description for Creates or updates the function app settings of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -701,7 +789,9 @@ public interface StaticSites {
         String resourceGroupName, String name, StringDictionaryInner appSettings, Context context);
 
     /**
-     * Description for Creates an invitation link for a user with the role.
+     * Creates an invitation link for a user with the role
+     *
+     * <p>Description for Creates an invitation link for a user with the role.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -718,7 +808,9 @@ public interface StaticSites {
         StaticSiteUserInvitationRequestResource staticSiteUserRolesInvitationEnvelope);
 
     /**
-     * Description for Creates an invitation link for a user with the role.
+     * Creates an invitation link for a user with the role
+     *
+     * <p>Description for Creates an invitation link for a user with the role.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -737,7 +829,9 @@ public interface StaticSites {
         Context context);
 
     /**
-     * Description for Gets all static site custom domains for a particular static site.
+     * Gets all static site custom domains for a particular static site.
+     *
+     * <p>Description for Gets all static site custom domains for a particular static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site resource to search in.
@@ -751,7 +845,9 @@ public interface StaticSites {
         String resourceGroupName, String name);
 
     /**
-     * Description for Gets all static site custom domains for a particular static site.
+     * Gets all static site custom domains for a particular static site.
+     *
+     * <p>Description for Gets all static site custom domains for a particular static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site resource to search in.
@@ -766,7 +862,9 @@ public interface StaticSites {
         String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Gets an existing custom domain for a particular static site.
+     * Gets an existing custom domain for a particular static site.
+     *
+     * <p>Description for Gets an existing custom domain for a particular static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site resource to search in.
@@ -781,7 +879,9 @@ public interface StaticSites {
         String resourceGroupName, String name, String domainName);
 
     /**
-     * Description for Gets an existing custom domain for a particular static site.
+     * Gets an existing custom domain for a particular static site.
+     *
+     * <p>Description for Gets an existing custom domain for a particular static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site resource to search in.
@@ -797,7 +897,9 @@ public interface StaticSites {
         String resourceGroupName, String name, String domainName, Context context);
 
     /**
-     * Description for Deletes a custom domain.
+     * Deletes a custom domain.
+     *
+     * <p>Description for Deletes a custom domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -810,7 +912,9 @@ public interface StaticSites {
     void deleteStaticSiteCustomDomain(String resourceGroupName, String name, String domainName);
 
     /**
-     * Description for Deletes a custom domain.
+     * Deletes a custom domain.
+     *
+     * <p>Description for Deletes a custom domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -824,7 +928,9 @@ public interface StaticSites {
     void deleteStaticSiteCustomDomain(String resourceGroupName, String name, String domainName, Context context);
 
     /**
-     * Description for Validates a particular custom domain can be added to a static site.
+     * Validates a particular custom domain can be added to a static site.
+     *
+     * <p>Description for Validates a particular custom domain can be added to a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -843,7 +949,9 @@ public interface StaticSites {
         StaticSiteCustomDomainRequestPropertiesArmResource staticSiteCustomDomainRequestPropertiesEnvelope);
 
     /**
-     * Description for Validates a particular custom domain can be added to a static site.
+     * Validates a particular custom domain can be added to a static site.
+     *
+     * <p>Description for Validates a particular custom domain can be added to a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -864,7 +972,9 @@ public interface StaticSites {
         Context context);
 
     /**
-     * Description for Detaches a static site.
+     * Detaches a static site.
+     *
+     * <p>Description for Detaches a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to detach.
@@ -876,7 +986,9 @@ public interface StaticSites {
     void detachStaticSite(String resourceGroupName, String name);
 
     /**
-     * Description for Detaches a static site.
+     * Detaches a static site.
+     *
+     * <p>Description for Detaches a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to detach.
@@ -889,7 +1001,9 @@ public interface StaticSites {
     void detachStaticSite(String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Gets the functions of a static site.
+     * Gets the functions of a static site.
+     *
+     * <p>Description for Gets the functions of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -902,7 +1016,9 @@ public interface StaticSites {
     PagedIterable<StaticSiteFunctionOverviewArmResource> listStaticSiteFunctions(String resourceGroupName, String name);
 
     /**
-     * Description for Gets the functions of a static site.
+     * Gets the functions of a static site.
+     *
+     * <p>Description for Gets the functions of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -917,7 +1033,9 @@ public interface StaticSites {
         String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Gets the application settings of a static site.
+     * Gets the application settings of a static site.
+     *
+     * <p>Description for Gets the application settings of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -930,7 +1048,9 @@ public interface StaticSites {
     StringDictionary listStaticSiteAppSettings(String resourceGroupName, String name);
 
     /**
-     * Description for Gets the application settings of a static site.
+     * Gets the application settings of a static site.
+     *
+     * <p>Description for Gets the application settings of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -945,7 +1065,9 @@ public interface StaticSites {
         String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Lists the roles configured for the static site.
+     * Lists the roles configured for the static site.
+     *
+     * <p>Description for Lists the roles configured for the static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -958,7 +1080,9 @@ public interface StaticSites {
     StringList listStaticSiteConfiguredRoles(String resourceGroupName, String name);
 
     /**
-     * Description for Lists the roles configured for the static site.
+     * Lists the roles configured for the static site.
+     *
+     * <p>Description for Lists the roles configured for the static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -973,7 +1097,9 @@ public interface StaticSites {
         String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Gets the application settings of a static site.
+     * Gets the application settings of a static site.
+     *
+     * <p>Description for Gets the application settings of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -986,7 +1112,9 @@ public interface StaticSites {
     StringDictionary listStaticSiteFunctionAppSettings(String resourceGroupName, String name);
 
     /**
-     * Description for Gets the application settings of a static site.
+     * Gets the application settings of a static site.
+     *
+     * <p>Description for Gets the application settings of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -1001,7 +1129,9 @@ public interface StaticSites {
         String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Lists the secrets for an existing static site.
+     * Lists the secrets for an existing static site.
+     *
+     * <p>Description for Lists the secrets for an existing static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -1014,7 +1144,9 @@ public interface StaticSites {
     StringDictionary listStaticSiteSecrets(String resourceGroupName, String name);
 
     /**
-     * Description for Lists the secrets for an existing static site.
+     * Lists the secrets for an existing static site.
+     *
+     * <p>Description for Lists the secrets for an existing static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -1029,7 +1161,9 @@ public interface StaticSites {
         String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Gets the list of private endpoint connections associated with a static site.
+     * Gets the list of private endpoint connections associated with a static site
+     *
+     * <p>Description for Gets the list of private endpoint connections associated with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -1043,7 +1177,9 @@ public interface StaticSites {
         String resourceGroupName, String name);
 
     /**
-     * Description for Gets the list of private endpoint connections associated with a static site.
+     * Gets the list of private endpoint connections associated with a static site
+     *
+     * <p>Description for Gets the list of private endpoint connections associated with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -1058,7 +1194,9 @@ public interface StaticSites {
         String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Gets a private endpoint connection.
+     * Gets a private endpoint connection
+     *
+     * <p>Description for Gets a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -1073,7 +1211,9 @@ public interface StaticSites {
         String resourceGroupName, String name, String privateEndpointConnectionName);
 
     /**
-     * Description for Gets a private endpoint connection.
+     * Gets a private endpoint connection
+     *
+     * <p>Description for Gets a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -1089,7 +1229,9 @@ public interface StaticSites {
         String resourceGroupName, String name, String privateEndpointConnectionName, Context context);
 
     /**
-     * Description for Approves or rejects a private endpoint connection.
+     * Approves or rejects a private endpoint connection
+     *
+     * <p>Description for Approves or rejects a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -1108,7 +1250,9 @@ public interface StaticSites {
         PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper);
 
     /**
-     * Description for Approves or rejects a private endpoint connection.
+     * Approves or rejects a private endpoint connection
+     *
+     * <p>Description for Approves or rejects a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -1129,7 +1273,9 @@ public interface StaticSites {
         Context context);
 
     /**
-     * Description for Deletes a private endpoint connection.
+     * Deletes a private endpoint connection
+     *
+     * <p>Description for Deletes a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -1143,7 +1289,9 @@ public interface StaticSites {
     Object deletePrivateEndpointConnection(String resourceGroupName, String name, String privateEndpointConnectionName);
 
     /**
-     * Description for Deletes a private endpoint connection.
+     * Deletes a private endpoint connection
+     *
+     * <p>Description for Deletes a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -1159,7 +1307,9 @@ public interface StaticSites {
         String resourceGroupName, String name, String privateEndpointConnectionName, Context context);
 
     /**
-     * Description for Gets the private link resources.
+     * Gets the private link resources
+     *
+     * <p>Description for Gets the private link resources.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the site.
@@ -1172,7 +1322,9 @@ public interface StaticSites {
     PrivateLinkResourcesWrapper getPrivateLinkResources(String resourceGroupName, String name);
 
     /**
-     * Description for Gets the private link resources.
+     * Gets the private link resources
+     *
+     * <p>Description for Gets the private link resources.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the site.
@@ -1187,7 +1339,9 @@ public interface StaticSites {
         String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Resets the api key for an existing static site.
+     * Resets the api key for an existing static site.
+     *
+     * <p>Description for Resets the api key for an existing static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -1201,7 +1355,9 @@ public interface StaticSites {
         String resourceGroupName, String name, StaticSiteResetPropertiesArmResource resetPropertiesEnvelope);
 
     /**
-     * Description for Resets the api key for an existing static site.
+     * Resets the api key for an existing static site.
+     *
+     * <p>Description for Resets the api key for an existing static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -1220,7 +1376,9 @@ public interface StaticSites {
         Context context);
 
     /**
-     * Description for Gets the details of the user provided function apps registered with a static site.
+     * Gets the details of the user provided function apps registered with a static site
+     *
+     * <p>Description for Gets the details of the user provided function apps registered with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -1234,7 +1392,9 @@ public interface StaticSites {
         String resourceGroupName, String name);
 
     /**
-     * Description for Gets the details of the user provided function apps registered with a static site.
+     * Gets the details of the user provided function apps registered with a static site
+     *
+     * <p>Description for Gets the details of the user provided function apps registered with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -1249,7 +1409,9 @@ public interface StaticSites {
         String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Gets the details of the user provided function app registered with a static site.
+     * Gets the details of the user provided function app registered with a static site
+     *
+     * <p>Description for Gets the details of the user provided function app registered with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -1264,7 +1426,9 @@ public interface StaticSites {
         String resourceGroupName, String name, String functionAppName);
 
     /**
-     * Description for Gets the details of the user provided function app registered with a static site.
+     * Gets the details of the user provided function app registered with a static site
+     *
+     * <p>Description for Gets the details of the user provided function app registered with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -1280,7 +1444,9 @@ public interface StaticSites {
         String resourceGroupName, String name, String functionAppName, Context context);
 
     /**
-     * Description for Register a user provided function app with a static site.
+     * Register a user provided function app with a static site
+     *
+     * <p>Description for Register a user provided function app with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -1304,7 +1470,9 @@ public interface StaticSites {
         Boolean isForced);
 
     /**
-     * Description for Register a user provided function app with a static site.
+     * Register a user provided function app with a static site
+     *
+     * <p>Description for Register a user provided function app with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -1324,7 +1492,9 @@ public interface StaticSites {
         StaticSiteUserProvidedFunctionAppArmResourceInner staticSiteUserProvidedFunctionEnvelope);
 
     /**
-     * Description for Register a user provided function app with a static site.
+     * Register a user provided function app with a static site
+     *
+     * <p>Description for Register a user provided function app with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -1350,7 +1520,9 @@ public interface StaticSites {
         Context context);
 
     /**
-     * Description for Detach the user provided function app from the static site.
+     * Detach the user provided function app from the static site
+     *
+     * <p>Description for Detach the user provided function app from the static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -1363,7 +1535,9 @@ public interface StaticSites {
     void detachUserProvidedFunctionAppFromStaticSite(String resourceGroupName, String name, String functionAppName);
 
     /**
-     * Description for Detach the user provided function app from the static site.
+     * Detach the user provided function app from the static site
+     *
+     * <p>Description for Detach the user provided function app from the static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -1379,7 +1553,9 @@ public interface StaticSites {
         String resourceGroupName, String name, String functionAppName, Context context);
 
     /**
-     * Description for Deploys zipped content to a static site.
+     * Deploys zipped content to a static site.
+     *
+     * <p>Description for Deploys zipped content to a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -1394,7 +1570,9 @@ public interface StaticSites {
         String resourceGroupName, String name, StaticSiteZipDeploymentArmResource staticSiteZipDeploymentEnvelope);
 
     /**
-     * Description for Deploys zipped content to a static site.
+     * Deploys zipped content to a static site.
+     *
+     * <p>Description for Deploys zipped content to a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -1728,7 +1906,9 @@ public interface StaticSites {
         Context context);
 
     /**
-     * Description for Gets the details of a static site.
+     * Gets the details of a static site.
+     *
+     * <p>Description for Gets the details of a static site.
      *
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1740,7 +1920,9 @@ public interface StaticSites {
     StaticSiteArmResource getById(String id);
 
     /**
-     * Description for Gets the details of a static site.
+     * Gets the details of a static site.
+     *
+     * <p>Description for Gets the details of a static site.
      *
      * @param id the resource ID.
      * @param context The context to associate with this operation.
@@ -1753,7 +1935,9 @@ public interface StaticSites {
     Response<StaticSiteArmResource> getByIdWithResponse(String id, Context context);
 
     /**
-     * Description for Gets the details of the user provided function app registered with a static site build.
+     * Gets the details of the user provided function app registered with a static site build
+     *
+     * <p>Description for Gets the details of the user provided function app registered with a static site build.
      *
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1765,7 +1949,9 @@ public interface StaticSites {
     StaticSiteUserProvidedFunctionAppArmResource getUserProvidedFunctionAppForStaticSiteBuildById(String id);
 
     /**
-     * Description for Gets the details of the user provided function app registered with a static site build.
+     * Gets the details of the user provided function app registered with a static site build
+     *
+     * <p>Description for Gets the details of the user provided function app registered with a static site build.
      *
      * @param id the resource ID.
      * @param context The context to associate with this operation.
@@ -1779,7 +1965,9 @@ public interface StaticSites {
         String id, Context context);
 
     /**
-     * Description for Gets an existing custom domain for a particular static site.
+     * Gets an existing custom domain for a particular static site.
+     *
+     * <p>Description for Gets an existing custom domain for a particular static site.
      *
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1791,7 +1979,9 @@ public interface StaticSites {
     StaticSiteCustomDomainOverviewArmResource getStaticSiteCustomDomainById(String id);
 
     /**
-     * Description for Gets an existing custom domain for a particular static site.
+     * Gets an existing custom domain for a particular static site.
+     *
+     * <p>Description for Gets an existing custom domain for a particular static site.
      *
      * @param id the resource ID.
      * @param context The context to associate with this operation.
@@ -1830,7 +2020,9 @@ public interface StaticSites {
     Response<StaticSiteLinkedBackendArmResource> getLinkedBackendByIdWithResponse(String id, Context context);
 
     /**
-     * Description for Deletes a static site.
+     * Deletes a static site.
+     *
+     * <p>Description for Deletes a static site.
      *
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1841,7 +2033,9 @@ public interface StaticSites {
     void deleteById(String id);
 
     /**
-     * Description for Deletes a static site.
+     * Deletes a static site.
+     *
+     * <p>Description for Deletes a static site.
      *
      * @param id the resource ID.
      * @param context The context to associate with this operation.
@@ -1853,7 +2047,9 @@ public interface StaticSites {
     void deleteByIdWithResponse(String id, Context context);
 
     /**
-     * Description for Deletes a custom domain.
+     * Deletes a custom domain.
+     *
+     * <p>Description for Deletes a custom domain.
      *
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1864,7 +2060,9 @@ public interface StaticSites {
     void deleteStaticSiteCustomDomainById(String id);
 
     /**
-     * Description for Deletes a custom domain.
+     * Deletes a custom domain.
+     *
+     * <p>Description for Deletes a custom domain.
      *
      * @param id the resource ID.
      * @param context The context to associate with this operation.

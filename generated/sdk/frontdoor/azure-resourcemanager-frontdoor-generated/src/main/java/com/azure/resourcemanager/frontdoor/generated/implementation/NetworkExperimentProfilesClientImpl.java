@@ -896,7 +896,9 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
     }
 
     /**
-     * Updates an NetworkExperimentProfiles.
+     * Updates an NetworkExperimentProfiles by NetworkExperimentProfile name
+     *
+     * <p>Updates an NetworkExperimentProfiles.
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param profileName The Profile identifier associated with the Tenant and Partner.
@@ -953,7 +955,9 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
     }
 
     /**
-     * Updates an NetworkExperimentProfiles.
+     * Updates an NetworkExperimentProfiles by NetworkExperimentProfile name
+     *
+     * <p>Updates an NetworkExperimentProfiles.
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param profileName The Profile identifier associated with the Tenant and Partner.
@@ -1008,7 +1012,9 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
     }
 
     /**
-     * Updates an NetworkExperimentProfiles.
+     * Updates an NetworkExperimentProfiles by NetworkExperimentProfile name
+     *
+     * <p>Updates an NetworkExperimentProfiles.
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param profileName The Profile identifier associated with the Tenant and Partner.
@@ -1029,7 +1035,9 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
     }
 
     /**
-     * Updates an NetworkExperimentProfiles.
+     * Updates an NetworkExperimentProfiles by NetworkExperimentProfile name
+     *
+     * <p>Updates an NetworkExperimentProfiles.
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param profileName The Profile identifier associated with the Tenant and Partner.
@@ -1053,7 +1061,9 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
     }
 
     /**
-     * Updates an NetworkExperimentProfiles.
+     * Updates an NetworkExperimentProfiles by NetworkExperimentProfile name
+     *
+     * <p>Updates an NetworkExperimentProfiles.
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param profileName The Profile identifier associated with the Tenant and Partner.
@@ -1070,7 +1080,9 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
     }
 
     /**
-     * Updates an NetworkExperimentProfiles.
+     * Updates an NetworkExperimentProfiles by NetworkExperimentProfile name
+     *
+     * <p>Updates an NetworkExperimentProfiles.
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param profileName The Profile identifier associated with the Tenant and Partner.
@@ -1088,7 +1100,9 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
     }
 
     /**
-     * Updates an NetworkExperimentProfiles.
+     * Updates an NetworkExperimentProfiles by NetworkExperimentProfile name
+     *
+     * <p>Updates an NetworkExperimentProfiles.
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param profileName The Profile identifier associated with the Tenant and Partner.
@@ -1107,7 +1121,9 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
     }
 
     /**
-     * Updates an NetworkExperimentProfiles.
+     * Updates an NetworkExperimentProfiles by NetworkExperimentProfile name
+     *
+     * <p>Updates an NetworkExperimentProfiles.
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param profileName The Profile identifier associated with the Tenant and Partner.
@@ -1127,7 +1143,9 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
     }
 
     /**
-     * Updates an NetworkExperimentProfiles.
+     * Updates an NetworkExperimentProfiles by NetworkExperimentProfile name
+     *
+     * <p>Updates an NetworkExperimentProfiles.
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param profileName The Profile identifier associated with the Tenant and Partner.
@@ -1143,7 +1161,9 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
     }
 
     /**
-     * Updates an NetworkExperimentProfiles.
+     * Updates an NetworkExperimentProfiles by NetworkExperimentProfile name
+     *
+     * <p>Updates an NetworkExperimentProfiles.
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param profileName The Profile identifier associated with the Tenant and Partner.

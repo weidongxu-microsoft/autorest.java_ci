@@ -12,7 +12,9 @@ import java.time.OffsetDateTime;
 /** Resource collection API of Diagnostics. */
 public interface Diagnostics {
     /**
-     * Description for List Hosting Environment Detector Responses.
+     * List Hosting Environment Detector Responses
+     *
+     * <p>Description for List Hosting Environment Detector Responses.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site Name.
@@ -25,7 +27,9 @@ public interface Diagnostics {
     PagedIterable<DetectorResponse> listHostingEnvironmentDetectorResponses(String resourceGroupName, String name);
 
     /**
-     * Description for List Hosting Environment Detector Responses.
+     * List Hosting Environment Detector Responses
+     *
+     * <p>Description for List Hosting Environment Detector Responses.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site Name.
@@ -40,7 +44,9 @@ public interface Diagnostics {
         String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Get Hosting Environment Detector Response.
+     * Get Hosting Environment Detector Response
+     *
+     * <p>Description for Get Hosting Environment Detector Response.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name App Service Environment Name.
@@ -54,7 +60,9 @@ public interface Diagnostics {
     DetectorResponse getHostingEnvironmentDetectorResponse(String resourceGroupName, String name, String detectorName);
 
     /**
-     * Description for Get Hosting Environment Detector Response.
+     * Get Hosting Environment Detector Response
+     *
+     * <p>Description for Get Hosting Environment Detector Response.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name App Service Environment Name.
@@ -79,7 +87,9 @@ public interface Diagnostics {
         Context context);
 
     /**
-     * Description for List Site Detector Responses.
+     * List Site Detector Responses
+     *
+     * <p>Description for List Site Detector Responses.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -92,7 +102,9 @@ public interface Diagnostics {
     PagedIterable<DetectorResponse> listSiteDetectorResponses(String resourceGroupName, String siteName);
 
     /**
-     * Description for List Site Detector Responses.
+     * List Site Detector Responses
+     *
+     * <p>Description for List Site Detector Responses.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -107,7 +119,9 @@ public interface Diagnostics {
         String resourceGroupName, String siteName, Context context);
 
     /**
-     * Description for Get site detector response.
+     * Get site detector response
+     *
+     * <p>Description for Get site detector response.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -121,7 +135,9 @@ public interface Diagnostics {
     DetectorResponse getSiteDetectorResponse(String resourceGroupName, String siteName, String detectorName);
 
     /**
-     * Description for Get site detector response.
+     * Get site detector response
+     *
+     * <p>Description for Get site detector response.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -146,7 +162,9 @@ public interface Diagnostics {
         Context context);
 
     /**
-     * Description for Get Diagnostics Categories.
+     * Get Diagnostics Categories
+     *
+     * <p>Description for Get Diagnostics Categories.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -159,7 +177,9 @@ public interface Diagnostics {
     PagedIterable<DiagnosticCategory> listSiteDiagnosticCategories(String resourceGroupName, String siteName);
 
     /**
-     * Description for Get Diagnostics Categories.
+     * Get Diagnostics Categories
+     *
+     * <p>Description for Get Diagnostics Categories.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -174,7 +194,9 @@ public interface Diagnostics {
         String resourceGroupName, String siteName, Context context);
 
     /**
-     * Description for Get Diagnostics Category.
+     * Get Diagnostics Category
+     *
+     * <p>Description for Get Diagnostics Category.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -188,7 +210,9 @@ public interface Diagnostics {
     DiagnosticCategory getSiteDiagnosticCategory(String resourceGroupName, String siteName, String diagnosticCategory);
 
     /**
-     * Description for Get Diagnostics Category.
+     * Get Diagnostics Category
+     *
+     * <p>Description for Get Diagnostics Category.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -204,7 +228,9 @@ public interface Diagnostics {
         String resourceGroupName, String siteName, String diagnosticCategory, Context context);
 
     /**
-     * Description for Get Site Analyses.
+     * Get Site Analyses
+     *
+     * <p>Description for Get Site Analyses.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -219,7 +245,9 @@ public interface Diagnostics {
         String resourceGroupName, String siteName, String diagnosticCategory);
 
     /**
-     * Description for Get Site Analyses.
+     * Get Site Analyses
+     *
+     * <p>Description for Get Site Analyses.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -235,7 +263,9 @@ public interface Diagnostics {
         String resourceGroupName, String siteName, String diagnosticCategory, Context context);
 
     /**
-     * Description for Get Site Analysis.
+     * Get Site Analysis
+     *
+     * <p>Description for Get Site Analysis.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -251,7 +281,9 @@ public interface Diagnostics {
         String resourceGroupName, String siteName, String diagnosticCategory, String analysisName);
 
     /**
-     * Description for Get Site Analysis.
+     * Get Site Analysis
+     *
+     * <p>Description for Get Site Analysis.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -268,7 +300,9 @@ public interface Diagnostics {
         String resourceGroupName, String siteName, String diagnosticCategory, String analysisName, Context context);
 
     /**
-     * Description for Execute Analysis.
+     * Execute Analysis
+     *
+     * <p>Description for Execute Analysis.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -284,7 +318,9 @@ public interface Diagnostics {
         String resourceGroupName, String siteName, String diagnosticCategory, String analysisName);
 
     /**
-     * Description for Execute Analysis.
+     * Execute Analysis
+     *
+     * <p>Description for Execute Analysis.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -311,7 +347,9 @@ public interface Diagnostics {
         Context context);
 
     /**
-     * Description for Get Detectors.
+     * Get Detectors
+     *
+     * <p>Description for Get Detectors.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -326,7 +364,9 @@ public interface Diagnostics {
         String resourceGroupName, String siteName, String diagnosticCategory);
 
     /**
-     * Description for Get Detectors.
+     * Get Detectors
+     *
+     * <p>Description for Get Detectors.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -342,7 +382,9 @@ public interface Diagnostics {
         String resourceGroupName, String siteName, String diagnosticCategory, Context context);
 
     /**
-     * Description for Get Detector.
+     * Get Detector
+     *
+     * <p>Description for Get Detector.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -358,7 +400,9 @@ public interface Diagnostics {
         String resourceGroupName, String siteName, String diagnosticCategory, String detectorName);
 
     /**
-     * Description for Get Detector.
+     * Get Detector
+     *
+     * <p>Description for Get Detector.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -375,7 +419,9 @@ public interface Diagnostics {
         String resourceGroupName, String siteName, String diagnosticCategory, String detectorName, Context context);
 
     /**
-     * Description for Execute Detector.
+     * Execute Detector
+     *
+     * <p>Description for Execute Detector.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -391,7 +437,9 @@ public interface Diagnostics {
         String resourceGroupName, String siteName, String detectorName, String diagnosticCategory);
 
     /**
-     * Description for Execute Detector.
+     * Execute Detector
+     *
+     * <p>Description for Execute Detector.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -418,7 +466,9 @@ public interface Diagnostics {
         Context context);
 
     /**
-     * Description for List Site Detector Responses.
+     * List Site Detector Responses
+     *
+     * <p>Description for List Site Detector Responses.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -433,7 +483,9 @@ public interface Diagnostics {
         String resourceGroupName, String siteName, String slot);
 
     /**
-     * Description for List Site Detector Responses.
+     * List Site Detector Responses
+     *
+     * <p>Description for List Site Detector Responses.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -449,7 +501,9 @@ public interface Diagnostics {
         String resourceGroupName, String siteName, String slot, Context context);
 
     /**
-     * Description for Get site detector response.
+     * Get site detector response
+     *
+     * <p>Description for Get site detector response.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -465,7 +519,9 @@ public interface Diagnostics {
         String resourceGroupName, String siteName, String detectorName, String slot);
 
     /**
-     * Description for Get site detector response.
+     * Get site detector response
+     *
+     * <p>Description for Get site detector response.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -492,7 +548,9 @@ public interface Diagnostics {
         Context context);
 
     /**
-     * Description for Get Diagnostics Categories.
+     * Get Diagnostics Categories
+     *
+     * <p>Description for Get Diagnostics Categories.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -507,7 +565,9 @@ public interface Diagnostics {
         String resourceGroupName, String siteName, String slot);
 
     /**
-     * Description for Get Diagnostics Categories.
+     * Get Diagnostics Categories
+     *
+     * <p>Description for Get Diagnostics Categories.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -523,7 +583,9 @@ public interface Diagnostics {
         String resourceGroupName, String siteName, String slot, Context context);
 
     /**
-     * Description for Get Diagnostics Category.
+     * Get Diagnostics Category
+     *
+     * <p>Description for Get Diagnostics Category.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -539,7 +601,9 @@ public interface Diagnostics {
         String resourceGroupName, String siteName, String diagnosticCategory, String slot);
 
     /**
-     * Description for Get Diagnostics Category.
+     * Get Diagnostics Category
+     *
+     * <p>Description for Get Diagnostics Category.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -556,7 +620,9 @@ public interface Diagnostics {
         String resourceGroupName, String siteName, String diagnosticCategory, String slot, Context context);
 
     /**
-     * Description for Get Site Analyses.
+     * Get Site Analyses
+     *
+     * <p>Description for Get Site Analyses.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -572,7 +638,9 @@ public interface Diagnostics {
         String resourceGroupName, String siteName, String diagnosticCategory, String slot);
 
     /**
-     * Description for Get Site Analyses.
+     * Get Site Analyses
+     *
+     * <p>Description for Get Site Analyses.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -589,7 +657,9 @@ public interface Diagnostics {
         String resourceGroupName, String siteName, String diagnosticCategory, String slot, Context context);
 
     /**
-     * Description for Get Site Analysis.
+     * Get Site Analysis
+     *
+     * <p>Description for Get Site Analysis.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -606,7 +676,9 @@ public interface Diagnostics {
         String resourceGroupName, String siteName, String diagnosticCategory, String analysisName, String slot);
 
     /**
-     * Description for Get Site Analysis.
+     * Get Site Analysis
+     *
+     * <p>Description for Get Site Analysis.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -629,7 +701,9 @@ public interface Diagnostics {
         Context context);
 
     /**
-     * Description for Execute Analysis.
+     * Execute Analysis
+     *
+     * <p>Description for Execute Analysis.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -646,7 +720,9 @@ public interface Diagnostics {
         String resourceGroupName, String siteName, String diagnosticCategory, String analysisName, String slot);
 
     /**
-     * Description for Execute Analysis.
+     * Execute Analysis
+     *
+     * <p>Description for Execute Analysis.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -675,7 +751,9 @@ public interface Diagnostics {
         Context context);
 
     /**
-     * Description for Get Detectors.
+     * Get Detectors
+     *
+     * <p>Description for Get Detectors.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -691,7 +769,9 @@ public interface Diagnostics {
         String resourceGroupName, String siteName, String diagnosticCategory, String slot);
 
     /**
-     * Description for Get Detectors.
+     * Get Detectors
+     *
+     * <p>Description for Get Detectors.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -708,7 +788,9 @@ public interface Diagnostics {
         String resourceGroupName, String siteName, String diagnosticCategory, String slot, Context context);
 
     /**
-     * Description for Get Detector.
+     * Get Detector
+     *
+     * <p>Description for Get Detector.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -725,7 +807,9 @@ public interface Diagnostics {
         String resourceGroupName, String siteName, String diagnosticCategory, String detectorName, String slot);
 
     /**
-     * Description for Get Detector.
+     * Get Detector
+     *
+     * <p>Description for Get Detector.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -748,7 +832,9 @@ public interface Diagnostics {
         Context context);
 
     /**
-     * Description for Execute Detector.
+     * Execute Detector
+     *
+     * <p>Description for Execute Detector.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.
@@ -765,7 +851,9 @@ public interface Diagnostics {
         String resourceGroupName, String siteName, String detectorName, String diagnosticCategory, String slot);
 
     /**
-     * Description for Execute Detector.
+     * Execute Detector
+     *
+     * <p>Description for Execute Detector.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Site Name.

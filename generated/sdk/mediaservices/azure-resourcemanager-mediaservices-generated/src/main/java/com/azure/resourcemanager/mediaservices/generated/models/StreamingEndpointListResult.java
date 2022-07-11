@@ -9,7 +9,11 @@ import com.azure.resourcemanager.mediaservices.generated.fluent.models.Streaming
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** StreamingEndpointListResult The streaming endpoint list result. */
+/**
+ * StreamingEndpointListResult
+ *
+ * <p>The streaming endpoint list result.
+ */
 @Fluent
 public final class StreamingEndpointListResult {
     /*

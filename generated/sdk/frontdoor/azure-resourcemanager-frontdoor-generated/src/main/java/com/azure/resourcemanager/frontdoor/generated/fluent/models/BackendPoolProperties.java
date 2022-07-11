@@ -16,14 +16,17 @@ import java.util.List;
 @Fluent
 public final class BackendPoolProperties extends BackendPoolUpdateParameters {
     /*
-     * Resource status of the Front Door or Front Door SubResource. Resource
-     * status.
+     * Resource status of the Front Door or Front Door SubResource.
+     *
+     * Resource status.
      */
     @JsonProperty(value = "resourceState", access = JsonProperty.Access.WRITE_ONLY)
     private FrontDoorResourceState resourceState;
 
     /**
-     * Get the resourceState property: Resource status of the Front Door or Front Door SubResource. Resource status.
+     * Get the resourceState property: Resource status of the Front Door or Front Door SubResource.
+     *
+     * <p>Resource status.
      *
      * @return the resourceState value.
      */

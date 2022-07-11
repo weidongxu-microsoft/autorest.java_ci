@@ -11,7 +11,9 @@ import com.azure.core.util.Context;
 /** Resource collection API of KubeEnvironments. */
 public interface KubeEnvironments {
     /**
-     * Description for Get all Kubernetes Environments for a subscription.
+     * Get all Kubernetes Environments for a subscription.
+     *
+     * <p>Description for Get all Kubernetes Environments for a subscription.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -21,7 +23,9 @@ public interface KubeEnvironments {
     PagedIterable<KubeEnvironment> list();
 
     /**
-     * Description for Get all Kubernetes Environments for a subscription.
+     * Get all Kubernetes Environments for a subscription.
+     *
+     * <p>Description for Get all Kubernetes Environments for a subscription.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -33,7 +37,9 @@ public interface KubeEnvironments {
     PagedIterable<KubeEnvironment> list(Context context);
 
     /**
-     * Description for Get all the Kubernetes Environments in a resource group.
+     * Get all the Kubernetes Environments in a resource group.
+     *
+     * <p>Description for Get all the Kubernetes Environments in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -45,7 +51,9 @@ public interface KubeEnvironments {
     PagedIterable<KubeEnvironment> listByResourceGroup(String resourceGroupName);
 
     /**
-     * Description for Get all the Kubernetes Environments in a resource group.
+     * Get all the Kubernetes Environments in a resource group.
+     *
+     * <p>Description for Get all the Kubernetes Environments in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param context The context to associate with this operation.
@@ -58,7 +66,9 @@ public interface KubeEnvironments {
     PagedIterable<KubeEnvironment> listByResourceGroup(String resourceGroupName, Context context);
 
     /**
-     * Description for Get the properties of a Kubernetes Environment.
+     * Get the properties of a Kubernetes Environment.
+     *
+     * <p>Description for Get the properties of a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -71,7 +81,9 @@ public interface KubeEnvironments {
     KubeEnvironment getByResourceGroup(String resourceGroupName, String name);
 
     /**
-     * Description for Get the properties of a Kubernetes Environment.
+     * Get the properties of a Kubernetes Environment.
+     *
+     * <p>Description for Get the properties of a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -85,7 +97,9 @@ public interface KubeEnvironments {
     Response<KubeEnvironment> getByResourceGroupWithResponse(String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Delete a Kubernetes Environment.
+     * Delete a Kubernetes Environment.
+     *
+     * <p>Description for Delete a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -97,7 +111,9 @@ public interface KubeEnvironments {
     void deleteByResourceGroup(String resourceGroupName, String name);
 
     /**
-     * Description for Delete a Kubernetes Environment.
+     * Delete a Kubernetes Environment.
+     *
+     * <p>Description for Delete a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -110,7 +126,9 @@ public interface KubeEnvironments {
     void delete(String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Get the properties of a Kubernetes Environment.
+     * Get the properties of a Kubernetes Environment.
+     *
+     * <p>Description for Get the properties of a Kubernetes Environment.
      *
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -122,7 +140,9 @@ public interface KubeEnvironments {
     KubeEnvironment getById(String id);
 
     /**
-     * Description for Get the properties of a Kubernetes Environment.
+     * Get the properties of a Kubernetes Environment.
+     *
+     * <p>Description for Get the properties of a Kubernetes Environment.
      *
      * @param id the resource ID.
      * @param context The context to associate with this operation.
@@ -135,7 +155,9 @@ public interface KubeEnvironments {
     Response<KubeEnvironment> getByIdWithResponse(String id, Context context);
 
     /**
-     * Description for Delete a Kubernetes Environment.
+     * Delete a Kubernetes Environment.
+     *
+     * <p>Description for Delete a Kubernetes Environment.
      *
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -146,7 +168,9 @@ public interface KubeEnvironments {
     void deleteById(String id);
 
     /**
-     * Description for Delete a Kubernetes Environment.
+     * Delete a Kubernetes Environment.
+     *
+     * <p>Description for Delete a Kubernetes Environment.
      *
      * @param id the resource ID.
      * @param context The context to associate with this operation.

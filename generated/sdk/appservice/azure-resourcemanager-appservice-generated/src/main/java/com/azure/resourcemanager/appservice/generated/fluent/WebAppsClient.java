@@ -87,7 +87,9 @@ import java.util.List;
 /** An instance of this class provides access to all the operations defined in WebAppsClient. */
 public interface WebAppsClient {
     /**
-     * Description for Get all apps for a subscription.
+     * Get all apps for a subscription.
+     *
+     * <p>Description for Get all apps for a subscription.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -98,7 +100,9 @@ public interface WebAppsClient {
     PagedIterable<SiteInner> list();
 
     /**
-     * Description for Get all apps for a subscription.
+     * Get all apps for a subscription.
+     *
+     * <p>Description for Get all apps for a subscription.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -111,7 +115,9 @@ public interface WebAppsClient {
     PagedIterable<SiteInner> list(Context context);
 
     /**
-     * Description for Gets all web, mobile, and API apps in the specified resource group.
+     * Gets all web, mobile, and API apps in the specified resource group.
+     *
+     * <p>Description for Gets all web, mobile, and API apps in the specified resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -124,7 +130,9 @@ public interface WebAppsClient {
     PagedIterable<SiteInner> listByResourceGroup(String resourceGroupName);
 
     /**
-     * Description for Gets all web, mobile, and API apps in the specified resource group.
+     * Gets all web, mobile, and API apps in the specified resource group.
+     *
+     * <p>Description for Gets all web, mobile, and API apps in the specified resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param includeSlots Specify &lt;strong&gt;true&lt;/strong&gt; to include deployment slots in results. The default
@@ -140,7 +148,9 @@ public interface WebAppsClient {
     PagedIterable<SiteInner> listByResourceGroup(String resourceGroupName, Boolean includeSlots, Context context);
 
     /**
-     * Description for Gets the details of a web, mobile, or API app.
+     * Gets the details of a web, mobile, or API app.
+     *
+     * <p>Description for Gets the details of a web, mobile, or API app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -153,7 +163,9 @@ public interface WebAppsClient {
     SiteInner getByResourceGroup(String resourceGroupName, String name);
 
     /**
-     * Description for Gets the details of a web, mobile, or API app.
+     * Gets the details of a web, mobile, or API app.
+     *
+     * <p>Description for Gets the details of a web, mobile, or API app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -167,7 +179,10 @@ public interface WebAppsClient {
     Response<SiteInner> getByResourceGroupWithResponse(String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Creates a new web, mobile, or API app in an existing resource group, or updates an existing app.
+     * Creates a new web, mobile, or API app in an existing resource group, or updates an existing app.
+     *
+     * <p>Description for Creates a new web, mobile, or API app in an existing resource group, or updates an existing
+     * app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Unique name of the app to create or update. To create or update a deployment slot, use the {slot}
@@ -184,7 +199,10 @@ public interface WebAppsClient {
         String resourceGroupName, String name, SiteInner siteEnvelope);
 
     /**
-     * Description for Creates a new web, mobile, or API app in an existing resource group, or updates an existing app.
+     * Creates a new web, mobile, or API app in an existing resource group, or updates an existing app.
+     *
+     * <p>Description for Creates a new web, mobile, or API app in an existing resource group, or updates an existing
+     * app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Unique name of the app to create or update. To create or update a deployment slot, use the {slot}
@@ -202,7 +220,10 @@ public interface WebAppsClient {
         String resourceGroupName, String name, SiteInner siteEnvelope, Context context);
 
     /**
-     * Description for Creates a new web, mobile, or API app in an existing resource group, or updates an existing app.
+     * Creates a new web, mobile, or API app in an existing resource group, or updates an existing app.
+     *
+     * <p>Description for Creates a new web, mobile, or API app in an existing resource group, or updates an existing
+     * app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Unique name of the app to create or update. To create or update a deployment slot, use the {slot}
@@ -218,7 +239,10 @@ public interface WebAppsClient {
     SiteInner createOrUpdate(String resourceGroupName, String name, SiteInner siteEnvelope);
 
     /**
-     * Description for Creates a new web, mobile, or API app in an existing resource group, or updates an existing app.
+     * Creates a new web, mobile, or API app in an existing resource group, or updates an existing app.
+     *
+     * <p>Description for Creates a new web, mobile, or API app in an existing resource group, or updates an existing
+     * app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Unique name of the app to create or update. To create or update a deployment slot, use the {slot}
@@ -235,7 +259,9 @@ public interface WebAppsClient {
     SiteInner createOrUpdate(String resourceGroupName, String name, SiteInner siteEnvelope, Context context);
 
     /**
-     * Description for Deletes a web, mobile, or API app, or one of the deployment slots.
+     * Deletes a web, mobile, or API app, or one of the deployment slots.
+     *
+     * <p>Description for Deletes a web, mobile, or API app, or one of the deployment slots.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app to delete.
@@ -247,7 +273,9 @@ public interface WebAppsClient {
     void delete(String resourceGroupName, String name);
 
     /**
-     * Description for Deletes a web, mobile, or API app, or one of the deployment slots.
+     * Deletes a web, mobile, or API app, or one of the deployment slots.
+     *
+     * <p>Description for Deletes a web, mobile, or API app, or one of the deployment slots.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app to delete.
@@ -265,7 +293,10 @@ public interface WebAppsClient {
         String resourceGroupName, String name, Boolean deleteMetrics, Boolean deleteEmptyServerFarm, Context context);
 
     /**
-     * Description for Creates a new web, mobile, or API app in an existing resource group, or updates an existing app.
+     * Creates a new web, mobile, or API app in an existing resource group, or updates an existing app.
+     *
+     * <p>Description for Creates a new web, mobile, or API app in an existing resource group, or updates an existing
+     * app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Unique name of the app to create or update. To create or update a deployment slot, use the {slot}
@@ -281,7 +312,10 @@ public interface WebAppsClient {
     SiteInner update(String resourceGroupName, String name, SitePatchResourceInner siteEnvelope);
 
     /**
-     * Description for Creates a new web, mobile, or API app in an existing resource group, or updates an existing app.
+     * Creates a new web, mobile, or API app in an existing resource group, or updates an existing app.
+     *
+     * <p>Description for Creates a new web, mobile, or API app in an existing resource group, or updates an existing
+     * app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Unique name of the app to create or update. To create or update a deployment slot, use the {slot}
@@ -299,7 +333,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, SitePatchResourceInner siteEnvelope, Context context);
 
     /**
-     * Description for Analyze a custom hostname.
+     * Analyze a custom hostname.
+     *
+     * <p>Description for Analyze a custom hostname.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -313,7 +349,9 @@ public interface WebAppsClient {
     CustomHostnameAnalysisResultInner analyzeCustomHostname(String resourceGroupName, String name);
 
     /**
-     * Description for Analyze a custom hostname.
+     * Analyze a custom hostname.
+     *
+     * <p>Description for Analyze a custom hostname.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -330,7 +368,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String hostname, Context context);
 
     /**
-     * Description for Applies the configuration settings from the target slot onto the current slot.
+     * Applies the configuration settings from the target slot onto the current slot.
+     *
+     * <p>Description for Applies the configuration settings from the target slot onto the current slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -344,7 +384,9 @@ public interface WebAppsClient {
     void applySlotConfigToProduction(String resourceGroupName, String name, CsmSlotEntity slotSwapEntity);
 
     /**
-     * Description for Applies the configuration settings from the target slot onto the current slot.
+     * Applies the configuration settings from the target slot onto the current slot.
+     *
+     * <p>Description for Applies the configuration settings from the target slot onto the current slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -361,7 +403,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, CsmSlotEntity slotSwapEntity, Context context);
 
     /**
-     * Description for Creates a backup of an app.
+     * Creates a backup of an app.
+     *
+     * <p>Description for Creates a backup of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -376,7 +420,9 @@ public interface WebAppsClient {
     BackupItemInner backup(String resourceGroupName, String name, BackupRequestInner request);
 
     /**
-     * Description for Creates a backup of an app.
+     * Creates a backup of an app.
+     *
+     * <p>Description for Creates a backup of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -393,7 +439,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, BackupRequestInner request, Context context);
 
     /**
-     * Description for Gets existing backups of an app.
+     * Gets existing backups of an app.
+     *
+     * <p>Description for Gets existing backups of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -407,7 +455,9 @@ public interface WebAppsClient {
     PagedIterable<BackupItemInner> listBackups(String resourceGroupName, String name);
 
     /**
-     * Description for Gets existing backups of an app.
+     * Gets existing backups of an app.
+     *
+     * <p>Description for Gets existing backups of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -422,7 +472,9 @@ public interface WebAppsClient {
     PagedIterable<BackupItemInner> listBackups(String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Gets a backup of an app by its ID.
+     * Gets a backup of an app by its ID.
+     *
+     * <p>Description for Gets a backup of an app by its ID.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -437,7 +489,9 @@ public interface WebAppsClient {
     BackupItemInner getBackupStatus(String resourceGroupName, String name, String backupId);
 
     /**
-     * Description for Gets a backup of an app by its ID.
+     * Gets a backup of an app by its ID.
+     *
+     * <p>Description for Gets a backup of an app by its ID.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -454,7 +508,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String backupId, Context context);
 
     /**
-     * Description for Deletes a backup of an app by its ID.
+     * Deletes a backup of an app by its ID.
+     *
+     * <p>Description for Deletes a backup of an app by its ID.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -467,7 +523,9 @@ public interface WebAppsClient {
     void deleteBackup(String resourceGroupName, String name, String backupId);
 
     /**
-     * Description for Deletes a backup of an app by its ID.
+     * Deletes a backup of an app by its ID.
+     *
+     * <p>Description for Deletes a backup of an app by its ID.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -482,7 +540,11 @@ public interface WebAppsClient {
     Response<Void> deleteBackupWithResponse(String resourceGroupName, String name, String backupId, Context context);
 
     /**
-     * Description for Gets status of a web app backup that may be in progress, including secrets associated with the
+     * Gets status of a web app backup that may be in progress, including secrets associated with the backup, such as
+     * the Azure Storage SAS URL. Also can be used to update the SAS URL for the backup if a new URL is passed in the
+     * request body.
+     *
+     * <p>Description for Gets status of a web app backup that may be in progress, including secrets associated with the
      * backup, such as the Azure Storage SAS URL. Also can be used to update the SAS URL for the backup if a new URL is
      * passed in the request body.
      *
@@ -501,7 +563,11 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String backupId, BackupRequestInner request);
 
     /**
-     * Description for Gets status of a web app backup that may be in progress, including secrets associated with the
+     * Gets status of a web app backup that may be in progress, including secrets associated with the backup, such as
+     * the Azure Storage SAS URL. Also can be used to update the SAS URL for the backup if a new URL is passed in the
+     * request body.
+     *
+     * <p>Description for Gets status of a web app backup that may be in progress, including secrets associated with the
      * backup, such as the Azure Storage SAS URL. Also can be used to update the SAS URL for the backup if a new URL is
      * passed in the request body.
      *
@@ -521,7 +587,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String backupId, BackupRequestInner request, Context context);
 
     /**
-     * Description for Restores a specific backup to another app (or deployment slot, if specified).
+     * Restores a specific backup to another app (or deployment slot, if specified).
+     *
+     * <p>Description for Restores a specific backup to another app (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -538,7 +606,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String backupId, RestoreRequestInner request);
 
     /**
-     * Description for Restores a specific backup to another app (or deployment slot, if specified).
+     * Restores a specific backup to another app (or deployment slot, if specified).
+     *
+     * <p>Description for Restores a specific backup to another app (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -556,7 +626,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String backupId, RestoreRequestInner request, Context context);
 
     /**
-     * Description for Restores a specific backup to another app (or deployment slot, if specified).
+     * Restores a specific backup to another app (or deployment slot, if specified).
+     *
+     * <p>Description for Restores a specific backup to another app (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -571,7 +643,9 @@ public interface WebAppsClient {
     void restore(String resourceGroupName, String name, String backupId, RestoreRequestInner request);
 
     /**
-     * Description for Restores a specific backup to another app (or deployment slot, if specified).
+     * Restores a specific backup to another app (or deployment slot, if specified).
+     *
+     * <p>Description for Restores a specific backup to another app (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -587,7 +661,9 @@ public interface WebAppsClient {
     void restore(String resourceGroupName, String name, String backupId, RestoreRequestInner request, Context context);
 
     /**
-     * Description for Returns whether Scm basic auth is allowed and whether Ftp is allowed for a given site.
+     * Returns whether Scm basic auth is allowed and whether Ftp is allowed for a given site.
+     *
+     * <p>Description for Returns whether Scm basic auth is allowed and whether Ftp is allowed for a given site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -603,7 +679,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name);
 
     /**
-     * Description for Returns whether Scm basic auth is allowed and whether Ftp is allowed for a given site.
+     * Returns whether Scm basic auth is allowed and whether Ftp is allowed for a given site.
+     *
+     * <p>Description for Returns whether Scm basic auth is allowed and whether Ftp is allowed for a given site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -620,7 +698,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Returns whether FTP is allowed on the site or not.
+     * Returns whether FTP is allowed on the site or not.
+     *
+     * <p>Description for Returns whether FTP is allowed on the site or not.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -634,7 +714,9 @@ public interface WebAppsClient {
     CsmPublishingCredentialsPoliciesEntityInner getFtpAllowed(String resourceGroupName, String name);
 
     /**
-     * Description for Returns whether FTP is allowed on the site or not.
+     * Returns whether FTP is allowed on the site or not.
+     *
+     * <p>Description for Returns whether FTP is allowed on the site or not.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -650,7 +732,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Updates whether FTP is allowed on the site or not.
+     * Updates whether FTP is allowed on the site or not.
+     *
+     * <p>Description for Updates whether FTP is allowed on the site or not.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -668,7 +752,9 @@ public interface WebAppsClient {
         CsmPublishingCredentialsPoliciesEntityInner csmPublishingAccessPoliciesEntity);
 
     /**
-     * Description for Updates whether FTP is allowed on the site or not.
+     * Updates whether FTP is allowed on the site or not.
+     *
+     * <p>Description for Updates whether FTP is allowed on the site or not.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -688,7 +774,9 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for Returns whether Scm basic auth is allowed on the site or not.
+     * Returns whether Scm basic auth is allowed on the site or not.
+     *
+     * <p>Description for Returns whether Scm basic auth is allowed on the site or not.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -702,7 +790,9 @@ public interface WebAppsClient {
     CsmPublishingCredentialsPoliciesEntityInner getScmAllowed(String resourceGroupName, String name);
 
     /**
-     * Description for Returns whether Scm basic auth is allowed on the site or not.
+     * Returns whether Scm basic auth is allowed on the site or not.
+     *
+     * <p>Description for Returns whether Scm basic auth is allowed on the site or not.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -718,7 +808,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Updates whether user publishing credentials are allowed on the site or not.
+     * Updates whether user publishing credentials are allowed on the site or not.
+     *
+     * <p>Description for Updates whether user publishing credentials are allowed on the site or not.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -736,7 +828,9 @@ public interface WebAppsClient {
         CsmPublishingCredentialsPoliciesEntityInner csmPublishingAccessPoliciesEntity);
 
     /**
-     * Description for Updates whether user publishing credentials are allowed on the site or not.
+     * Updates whether user publishing credentials are allowed on the site or not.
+     *
+     * <p>Description for Updates whether user publishing credentials are allowed on the site or not.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -756,7 +850,9 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for List the configurations of an app.
+     * List the configurations of an app
+     *
+     * <p>Description for List the configurations of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -770,7 +866,9 @@ public interface WebAppsClient {
     PagedIterable<SiteConfigResourceInner> listConfigurations(String resourceGroupName, String name);
 
     /**
-     * Description for List the configurations of an app.
+     * List the configurations of an app
+     *
+     * <p>Description for List the configurations of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -785,7 +883,9 @@ public interface WebAppsClient {
     PagedIterable<SiteConfigResourceInner> listConfigurations(String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Replaces the application settings of an app.
+     * Replaces the application settings of an app.
+     *
+     * <p>Description for Replaces the application settings of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -801,7 +901,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, StringDictionaryInner appSettings);
 
     /**
-     * Description for Replaces the application settings of an app.
+     * Replaces the application settings of an app.
+     *
+     * <p>Description for Replaces the application settings of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -818,7 +920,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, StringDictionaryInner appSettings, Context context);
 
     /**
-     * Description for Gets the application settings of an app.
+     * Gets the application settings of an app.
+     *
+     * <p>Description for Gets the application settings of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -832,7 +936,9 @@ public interface WebAppsClient {
     StringDictionaryInner listApplicationSettings(String resourceGroupName, String name);
 
     /**
-     * Description for Gets the application settings of an app.
+     * Gets the application settings of an app.
+     *
+     * <p>Description for Gets the application settings of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -848,7 +954,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Updates the Authentication / Authorization settings associated with web app.
+     * Updates the Authentication / Authorization settings associated with web app.
+     *
+     * <p>Description for Updates the Authentication / Authorization settings associated with web app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -864,7 +972,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, SiteAuthSettingsInner siteAuthSettings);
 
     /**
-     * Description for Updates the Authentication / Authorization settings associated with web app.
+     * Updates the Authentication / Authorization settings associated with web app.
+     *
+     * <p>Description for Updates the Authentication / Authorization settings associated with web app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -882,7 +992,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, SiteAuthSettingsInner siteAuthSettings, Context context);
 
     /**
-     * Description for Gets the Authentication/Authorization settings of an app.
+     * Gets the Authentication/Authorization settings of an app.
+     *
+     * <p>Description for Gets the Authentication/Authorization settings of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -896,7 +1008,9 @@ public interface WebAppsClient {
     SiteAuthSettingsInner getAuthSettings(String resourceGroupName, String name);
 
     /**
-     * Description for Gets the Authentication/Authorization settings of an app.
+     * Gets the Authentication/Authorization settings of an app.
+     *
+     * <p>Description for Gets the Authentication/Authorization settings of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -912,7 +1026,9 @@ public interface WebAppsClient {
     Response<SiteAuthSettingsInner> getAuthSettingsWithResponse(String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Gets site's Authentication / Authorization settings for apps via the V2 format.
+     * Gets site's Authentication / Authorization settings for apps via the V2 format
+     *
+     * <p>Description for Gets site's Authentication / Authorization settings for apps via the V2 format.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -926,7 +1042,9 @@ public interface WebAppsClient {
     SiteAuthSettingsV2Inner getAuthSettingsV2WithoutSecrets(String resourceGroupName, String name);
 
     /**
-     * Description for Gets site's Authentication / Authorization settings for apps via the V2 format.
+     * Gets site's Authentication / Authorization settings for apps via the V2 format
+     *
+     * <p>Description for Gets site's Authentication / Authorization settings for apps via the V2 format.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -943,7 +1061,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Updates site's Authentication / Authorization settings for apps via the V2 format.
+     * Updates site's Authentication / Authorization settings for apps via the V2 format
+     *
+     * <p>Description for Updates site's Authentication / Authorization settings for apps via the V2 format.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -959,7 +1079,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, SiteAuthSettingsV2Inner siteAuthSettingsV2);
 
     /**
-     * Description for Updates site's Authentication / Authorization settings for apps via the V2 format.
+     * Updates site's Authentication / Authorization settings for apps via the V2 format
+     *
+     * <p>Description for Updates site's Authentication / Authorization settings for apps via the V2 format.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -977,7 +1099,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, SiteAuthSettingsV2Inner siteAuthSettingsV2, Context context);
 
     /**
-     * Description for Gets site's Authentication / Authorization settings for apps via the V2 format.
+     * Gets site's Authentication / Authorization settings for apps via the V2 format
+     *
+     * <p>Description for Gets site's Authentication / Authorization settings for apps via the V2 format.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -991,7 +1115,9 @@ public interface WebAppsClient {
     SiteAuthSettingsV2Inner getAuthSettingsV2(String resourceGroupName, String name);
 
     /**
-     * Description for Gets site's Authentication / Authorization settings for apps via the V2 format.
+     * Gets site's Authentication / Authorization settings for apps via the V2 format
+     *
+     * <p>Description for Gets site's Authentication / Authorization settings for apps via the V2 format.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -1008,7 +1134,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Updates the Azure storage account configurations of an app.
+     * Updates the Azure storage account configurations of an app.
+     *
+     * <p>Description for Updates the Azure storage account configurations of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -1024,7 +1152,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, AzureStoragePropertyDictionaryResourceInner azureStorageAccounts);
 
     /**
-     * Description for Updates the Azure storage account configurations of an app.
+     * Updates the Azure storage account configurations of an app.
+     *
+     * <p>Description for Updates the Azure storage account configurations of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -1044,7 +1174,9 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for Gets the Azure storage account configurations of an app.
+     * Gets the Azure storage account configurations of an app.
+     *
+     * <p>Description for Gets the Azure storage account configurations of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -1058,7 +1190,9 @@ public interface WebAppsClient {
     AzureStoragePropertyDictionaryResourceInner listAzureStorageAccounts(String resourceGroupName, String name);
 
     /**
-     * Description for Gets the Azure storage account configurations of an app.
+     * Gets the Azure storage account configurations of an app.
+     *
+     * <p>Description for Gets the Azure storage account configurations of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -1074,7 +1208,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Updates the backup configuration of an app.
+     * Updates the backup configuration of an app.
+     *
+     * <p>Description for Updates the backup configuration of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -1089,7 +1225,9 @@ public interface WebAppsClient {
     BackupRequestInner updateBackupConfiguration(String resourceGroupName, String name, BackupRequestInner request);
 
     /**
-     * Description for Updates the backup configuration of an app.
+     * Updates the backup configuration of an app.
+     *
+     * <p>Description for Updates the backup configuration of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -1106,7 +1244,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, BackupRequestInner request, Context context);
 
     /**
-     * Description for Deletes the backup configuration of an app.
+     * Deletes the backup configuration of an app.
+     *
+     * <p>Description for Deletes the backup configuration of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -1119,7 +1259,9 @@ public interface WebAppsClient {
     void deleteBackupConfiguration(String resourceGroupName, String name);
 
     /**
-     * Description for Deletes the backup configuration of an app.
+     * Deletes the backup configuration of an app.
+     *
+     * <p>Description for Deletes the backup configuration of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -1134,7 +1276,9 @@ public interface WebAppsClient {
     Response<Void> deleteBackupConfigurationWithResponse(String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Gets the backup configuration of an app.
+     * Gets the backup configuration of an app.
+     *
+     * <p>Description for Gets the backup configuration of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -1148,7 +1292,9 @@ public interface WebAppsClient {
     BackupRequestInner getBackupConfiguration(String resourceGroupName, String name);
 
     /**
-     * Description for Gets the backup configuration of an app.
+     * Gets the backup configuration of an app.
+     *
+     * <p>Description for Gets the backup configuration of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -1164,7 +1310,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Gets the config reference app settings and status of an app.
+     * Gets the config reference app settings and status of an app
+     *
+     * <p>Description for Gets the config reference app settings and status of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -1178,7 +1326,9 @@ public interface WebAppsClient {
     PagedIterable<ApiKVReferenceInner> getAppSettingsKeyVaultReferences(String resourceGroupName, String name);
 
     /**
-     * Description for Gets the config reference app settings and status of an app.
+     * Gets the config reference app settings and status of an app
+     *
+     * <p>Description for Gets the config reference app settings and status of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -1194,7 +1344,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Gets the config reference and status of an app.
+     * Gets the config reference and status of an app
+     *
+     * <p>Description for Gets the config reference and status of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -1209,7 +1361,9 @@ public interface WebAppsClient {
     ApiKVReferenceInner getAppSettingKeyVaultReference(String resourceGroupName, String name, String appSettingKey);
 
     /**
-     * Description for Gets the config reference and status of an app.
+     * Gets the config reference and status of an app
+     *
+     * <p>Description for Gets the config reference and status of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -1226,7 +1380,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String appSettingKey, Context context);
 
     /**
-     * Description for Gets the config reference app settings and status of an app.
+     * Gets the config reference app settings and status of an app
+     *
+     * <p>Description for Gets the config reference app settings and status of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -1240,7 +1396,9 @@ public interface WebAppsClient {
     PagedIterable<ApiKVReferenceInner> getSiteConnectionStringKeyVaultReferences(String resourceGroupName, String name);
 
     /**
-     * Description for Gets the config reference app settings and status of an app.
+     * Gets the config reference app settings and status of an app
+     *
+     * <p>Description for Gets the config reference app settings and status of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -1256,7 +1414,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Gets the config reference and status of an app.
+     * Gets the config reference and status of an app
+     *
+     * <p>Description for Gets the config reference and status of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -1272,7 +1432,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String connectionStringKey);
 
     /**
-     * Description for Gets the config reference and status of an app.
+     * Gets the config reference and status of an app
+     *
+     * <p>Description for Gets the config reference and status of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -1289,7 +1451,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String connectionStringKey, Context context);
 
     /**
-     * Description for Replaces the connection strings of an app.
+     * Replaces the connection strings of an app.
+     *
+     * <p>Description for Replaces the connection strings of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -1305,7 +1469,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, ConnectionStringDictionaryInner connectionStrings);
 
     /**
-     * Description for Replaces the connection strings of an app.
+     * Replaces the connection strings of an app.
+     *
+     * <p>Description for Replaces the connection strings of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -1322,7 +1488,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, ConnectionStringDictionaryInner connectionStrings, Context context);
 
     /**
-     * Description for Gets the connection strings of an app.
+     * Gets the connection strings of an app.
+     *
+     * <p>Description for Gets the connection strings of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -1336,7 +1504,9 @@ public interface WebAppsClient {
     ConnectionStringDictionaryInner listConnectionStrings(String resourceGroupName, String name);
 
     /**
-     * Description for Gets the connection strings of an app.
+     * Gets the connection strings of an app.
+     *
+     * <p>Description for Gets the connection strings of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -1352,7 +1522,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Gets the logging configuration of an app.
+     * Gets the logging configuration of an app.
+     *
+     * <p>Description for Gets the logging configuration of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -1366,7 +1538,9 @@ public interface WebAppsClient {
     SiteLogsConfigInner getDiagnosticLogsConfiguration(String resourceGroupName, String name);
 
     /**
-     * Description for Gets the logging configuration of an app.
+     * Gets the logging configuration of an app.
+     *
+     * <p>Description for Gets the logging configuration of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -1382,7 +1556,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Updates the logging configuration of an app.
+     * Updates the logging configuration of an app.
+     *
+     * <p>Description for Updates the logging configuration of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -1399,7 +1575,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, SiteLogsConfigInner siteLogsConfig);
 
     /**
-     * Description for Updates the logging configuration of an app.
+     * Updates the logging configuration of an app.
+     *
+     * <p>Description for Updates the logging configuration of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -1417,7 +1595,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, SiteLogsConfigInner siteLogsConfig, Context context);
 
     /**
-     * Description for Replaces the metadata of an app.
+     * Replaces the metadata of an app.
+     *
+     * <p>Description for Replaces the metadata of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -1432,7 +1612,9 @@ public interface WebAppsClient {
     StringDictionaryInner updateMetadata(String resourceGroupName, String name, StringDictionaryInner metadata);
 
     /**
-     * Description for Replaces the metadata of an app.
+     * Replaces the metadata of an app.
+     *
+     * <p>Description for Replaces the metadata of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -1449,7 +1631,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, StringDictionaryInner metadata, Context context);
 
     /**
-     * Description for Gets the metadata of an app.
+     * Gets the metadata of an app.
+     *
+     * <p>Description for Gets the metadata of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -1463,7 +1647,9 @@ public interface WebAppsClient {
     StringDictionaryInner listMetadata(String resourceGroupName, String name);
 
     /**
-     * Description for Gets the metadata of an app.
+     * Gets the metadata of an app.
+     *
+     * <p>Description for Gets the metadata of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -1478,7 +1664,9 @@ public interface WebAppsClient {
     Response<StringDictionaryInner> listMetadataWithResponse(String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Gets the Git/FTP publishing credentials of an app.
+     * Gets the Git/FTP publishing credentials of an app.
+     *
+     * <p>Description for Gets the Git/FTP publishing credentials of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -1492,7 +1680,9 @@ public interface WebAppsClient {
     SyncPoller<PollResult<UserInner>, UserInner> beginListPublishingCredentials(String resourceGroupName, String name);
 
     /**
-     * Description for Gets the Git/FTP publishing credentials of an app.
+     * Gets the Git/FTP publishing credentials of an app.
+     *
+     * <p>Description for Gets the Git/FTP publishing credentials of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -1508,7 +1698,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Gets the Git/FTP publishing credentials of an app.
+     * Gets the Git/FTP publishing credentials of an app.
+     *
+     * <p>Description for Gets the Git/FTP publishing credentials of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -1522,7 +1714,9 @@ public interface WebAppsClient {
     UserInner listPublishingCredentials(String resourceGroupName, String name);
 
     /**
-     * Description for Gets the Git/FTP publishing credentials of an app.
+     * Gets the Git/FTP publishing credentials of an app.
+     *
+     * <p>Description for Gets the Git/FTP publishing credentials of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -1537,7 +1731,9 @@ public interface WebAppsClient {
     UserInner listPublishingCredentials(String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Updates the Push settings associated with web app.
+     * Updates the Push settings associated with web app.
+     *
+     * <p>Description for Updates the Push settings associated with web app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -1552,7 +1748,9 @@ public interface WebAppsClient {
     PushSettingsInner updateSitePushSettings(String resourceGroupName, String name, PushSettingsInner pushSettings);
 
     /**
-     * Description for Updates the Push settings associated with web app.
+     * Updates the Push settings associated with web app.
+     *
+     * <p>Description for Updates the Push settings associated with web app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -1569,7 +1767,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, PushSettingsInner pushSettings, Context context);
 
     /**
-     * Description for Gets the Push settings associated with web app.
+     * Gets the Push settings associated with web app.
+     *
+     * <p>Description for Gets the Push settings associated with web app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -1583,7 +1783,9 @@ public interface WebAppsClient {
     PushSettingsInner listSitePushSettings(String resourceGroupName, String name);
 
     /**
-     * Description for Gets the Push settings associated with web app.
+     * Gets the Push settings associated with web app.
+     *
+     * <p>Description for Gets the Push settings associated with web app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -1599,7 +1801,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Gets the names of app settings and connection strings that stick to the slot (not swapped).
+     * Gets the names of app settings and connection strings that stick to the slot (not swapped).
+     *
+     * <p>Description for Gets the names of app settings and connection strings that stick to the slot (not swapped).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -1613,7 +1817,9 @@ public interface WebAppsClient {
     SlotConfigNamesResourceInner listSlotConfigurationNames(String resourceGroupName, String name);
 
     /**
-     * Description for Gets the names of app settings and connection strings that stick to the slot (not swapped).
+     * Gets the names of app settings and connection strings that stick to the slot (not swapped).
+     *
+     * <p>Description for Gets the names of app settings and connection strings that stick to the slot (not swapped).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -1629,8 +1835,10 @@ public interface WebAppsClient {
         String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Updates the names of application settings and connection string that remain with the slot during
-     * swap operation.
+     * Updates the names of application settings and connection string that remain with the slot during swap operation.
+     *
+     * <p>Description for Updates the names of application settings and connection string that remain with the slot
+     * during swap operation.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -1646,8 +1854,10 @@ public interface WebAppsClient {
         String resourceGroupName, String name, SlotConfigNamesResourceInner slotConfigNames);
 
     /**
-     * Description for Updates the names of application settings and connection string that remain with the slot during
-     * swap operation.
+     * Updates the names of application settings and connection string that remain with the slot during swap operation.
+     *
+     * <p>Description for Updates the names of application settings and connection string that remain with the slot
+     * during swap operation.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -1664,7 +1874,10 @@ public interface WebAppsClient {
         String resourceGroupName, String name, SlotConfigNamesResourceInner slotConfigNames, Context context);
 
     /**
-     * Description for Gets the configuration of an app, such as platform version and bitness, default documents,
+     * Gets the configuration of an app, such as platform version and bitness, default documents, virtual applications,
+     * Always On, etc.
+     *
+     * <p>Description for Gets the configuration of an app, such as platform version and bitness, default documents,
      * virtual applications, Always On, etc.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
@@ -1679,7 +1892,10 @@ public interface WebAppsClient {
     SiteConfigResourceInner getConfiguration(String resourceGroupName, String name);
 
     /**
-     * Description for Gets the configuration of an app, such as platform version and bitness, default documents,
+     * Gets the configuration of an app, such as platform version and bitness, default documents, virtual applications,
+     * Always On, etc.
+     *
+     * <p>Description for Gets the configuration of an app, such as platform version and bitness, default documents,
      * virtual applications, Always On, etc.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
@@ -1696,7 +1912,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Updates the configuration of an app.
+     * Updates the configuration of an app.
+     *
+     * <p>Description for Updates the configuration of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -1712,7 +1930,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, SiteConfigResourceInner siteConfig);
 
     /**
-     * Description for Updates the configuration of an app.
+     * Updates the configuration of an app.
+     *
+     * <p>Description for Updates the configuration of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -1729,7 +1949,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, SiteConfigResourceInner siteConfig, Context context);
 
     /**
-     * Description for Updates the configuration of an app.
+     * Updates the configuration of an app.
+     *
+     * <p>Description for Updates the configuration of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -1745,7 +1967,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, SiteConfigResourceInner siteConfig);
 
     /**
-     * Description for Updates the configuration of an app.
+     * Updates the configuration of an app.
+     *
+     * <p>Description for Updates the configuration of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -1762,8 +1986,11 @@ public interface WebAppsClient {
         String resourceGroupName, String name, SiteConfigResourceInner siteConfig, Context context);
 
     /**
-     * Description for Gets a list of web app configuration snapshots identifiers. Each element of the list contains a
-     * timestamp and the ID of the snapshot.
+     * Gets a list of web app configuration snapshots identifiers. Each element of the list contains a timestamp and the
+     * ID of the snapshot.
+     *
+     * <p>Description for Gets a list of web app configuration snapshots identifiers. Each element of the list contains
+     * a timestamp and the ID of the snapshot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -1779,8 +2006,11 @@ public interface WebAppsClient {
         String resourceGroupName, String name);
 
     /**
-     * Description for Gets a list of web app configuration snapshots identifiers. Each element of the list contains a
-     * timestamp and the ID of the snapshot.
+     * Gets a list of web app configuration snapshots identifiers. Each element of the list contains a timestamp and the
+     * ID of the snapshot.
+     *
+     * <p>Description for Gets a list of web app configuration snapshots identifiers. Each element of the list contains
+     * a timestamp and the ID of the snapshot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -1797,7 +2027,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Gets a snapshot of the configuration of an app at a previous point in time.
+     * Gets a snapshot of the configuration of an app at a previous point in time.
+     *
+     * <p>Description for Gets a snapshot of the configuration of an app at a previous point in time.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -1812,7 +2044,9 @@ public interface WebAppsClient {
     SiteConfigResourceInner getConfigurationSnapshot(String resourceGroupName, String name, String snapshotId);
 
     /**
-     * Description for Gets a snapshot of the configuration of an app at a previous point in time.
+     * Gets a snapshot of the configuration of an app at a previous point in time.
+     *
+     * <p>Description for Gets a snapshot of the configuration of an app at a previous point in time.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -1829,7 +2063,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String snapshotId, Context context);
 
     /**
-     * Description for Reverts the configuration of an app to a previous snapshot.
+     * Reverts the configuration of an app to a previous snapshot.
+     *
+     * <p>Description for Reverts the configuration of an app to a previous snapshot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -1843,7 +2079,9 @@ public interface WebAppsClient {
     void recoverSiteConfigurationSnapshot(String resourceGroupName, String name, String snapshotId);
 
     /**
-     * Description for Reverts the configuration of an app to a previous snapshot.
+     * Reverts the configuration of an app to a previous snapshot.
+     *
+     * <p>Description for Reverts the configuration of an app to a previous snapshot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -1860,7 +2098,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String snapshotId, Context context);
 
     /**
-     * Description for Gets the last lines of docker logs for the given site.
+     * Gets the last lines of docker logs for the given site
+     *
+     * <p>Description for Gets the last lines of docker logs for the given site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -1873,7 +2113,9 @@ public interface WebAppsClient {
     InputStream getWebSiteContainerLogs(String resourceGroupName, String name);
 
     /**
-     * Description for Gets the last lines of docker logs for the given site.
+     * Gets the last lines of docker logs for the given site
+     *
+     * <p>Description for Gets the last lines of docker logs for the given site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -1887,7 +2129,9 @@ public interface WebAppsClient {
     StreamResponse getWebSiteContainerLogsWithResponse(String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Gets the ZIP archived docker log files for the given site.
+     * Gets the ZIP archived docker log files for the given site
+     *
+     * <p>Description for Gets the ZIP archived docker log files for the given site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -1900,7 +2144,9 @@ public interface WebAppsClient {
     InputStream getContainerLogsZip(String resourceGroupName, String name);
 
     /**
-     * Description for Gets the ZIP archived docker log files for the given site.
+     * Gets the ZIP archived docker log files for the given site
+     *
+     * <p>Description for Gets the ZIP archived docker log files for the given site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -1914,7 +2160,9 @@ public interface WebAppsClient {
     StreamResponse getContainerLogsZipWithResponse(String resourceGroupName, String name, Context context);
 
     /**
-     * Description for List continuous web jobs for an app, or a deployment slot.
+     * List continuous web jobs for an app, or a deployment slot.
+     *
+     * <p>Description for List continuous web jobs for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -1929,7 +2177,9 @@ public interface WebAppsClient {
     PagedIterable<ContinuousWebJobInner> listContinuousWebJobs(String resourceGroupName, String name);
 
     /**
-     * Description for List continuous web jobs for an app, or a deployment slot.
+     * List continuous web jobs for an app, or a deployment slot.
+     *
+     * <p>Description for List continuous web jobs for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -1945,7 +2195,9 @@ public interface WebAppsClient {
     PagedIterable<ContinuousWebJobInner> listContinuousWebJobs(String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Gets a continuous web job by its ID for an app, or a deployment slot.
+     * Gets a continuous web job by its ID for an app, or a deployment slot.
+     *
+     * <p>Description for Gets a continuous web job by its ID for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -1959,7 +2211,9 @@ public interface WebAppsClient {
     ContinuousWebJobInner getContinuousWebJob(String resourceGroupName, String name, String webJobName);
 
     /**
-     * Description for Gets a continuous web job by its ID for an app, or a deployment slot.
+     * Gets a continuous web job by its ID for an app, or a deployment slot.
+     *
+     * <p>Description for Gets a continuous web job by its ID for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -1975,7 +2229,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String webJobName, Context context);
 
     /**
-     * Description for Delete a continuous web job by its ID for an app, or a deployment slot.
+     * Delete a continuous web job by its ID for an app, or a deployment slot.
+     *
+     * <p>Description for Delete a continuous web job by its ID for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -1989,7 +2245,9 @@ public interface WebAppsClient {
     void deleteContinuousWebJob(String resourceGroupName, String name, String webJobName);
 
     /**
-     * Description for Delete a continuous web job by its ID for an app, or a deployment slot.
+     * Delete a continuous web job by its ID for an app, or a deployment slot.
+     *
+     * <p>Description for Delete a continuous web job by its ID for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -2006,7 +2264,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String webJobName, Context context);
 
     /**
-     * Description for Start a continuous web job for an app, or a deployment slot.
+     * Start a continuous web job for an app, or a deployment slot.
+     *
+     * <p>Description for Start a continuous web job for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -2019,7 +2279,9 @@ public interface WebAppsClient {
     void startContinuousWebJob(String resourceGroupName, String name, String webJobName);
 
     /**
-     * Description for Start a continuous web job for an app, or a deployment slot.
+     * Start a continuous web job for an app, or a deployment slot.
+     *
+     * <p>Description for Start a continuous web job for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -2035,7 +2297,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String webJobName, Context context);
 
     /**
-     * Description for Stop a continuous web job for an app, or a deployment slot.
+     * Stop a continuous web job for an app, or a deployment slot.
+     *
+     * <p>Description for Stop a continuous web job for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -2048,7 +2312,9 @@ public interface WebAppsClient {
     void stopContinuousWebJob(String resourceGroupName, String name, String webJobName);
 
     /**
-     * Description for Stop a continuous web job for an app, or a deployment slot.
+     * Stop a continuous web job for an app, or a deployment slot.
+     *
+     * <p>Description for Stop a continuous web job for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -2162,7 +2428,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String deploymentStatusId, Context context);
 
     /**
-     * Description for List deployments for an app, or a deployment slot.
+     * List deployments for an app, or a deployment slot.
+     *
+     * <p>Description for List deployments for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -2176,7 +2444,9 @@ public interface WebAppsClient {
     PagedIterable<DeploymentInner> listDeployments(String resourceGroupName, String name);
 
     /**
-     * Description for List deployments for an app, or a deployment slot.
+     * List deployments for an app, or a deployment slot.
+     *
+     * <p>Description for List deployments for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -2191,7 +2461,9 @@ public interface WebAppsClient {
     PagedIterable<DeploymentInner> listDeployments(String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Get a deployment by its ID for an app, or a deployment slot.
+     * Get a deployment by its ID for an app, or a deployment slot.
+     *
+     * <p>Description for Get a deployment by its ID for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -2206,7 +2478,9 @@ public interface WebAppsClient {
     DeploymentInner getDeployment(String resourceGroupName, String name, String id);
 
     /**
-     * Description for Get a deployment by its ID for an app, or a deployment slot.
+     * Get a deployment by its ID for an app, or a deployment slot.
+     *
+     * <p>Description for Get a deployment by its ID for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -2223,7 +2497,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String id, Context context);
 
     /**
-     * Description for Create a deployment for an app, or a deployment slot.
+     * Create a deployment for an app, or a deployment slot.
+     *
+     * <p>Description for Create a deployment for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -2239,7 +2515,9 @@ public interface WebAppsClient {
     DeploymentInner createDeployment(String resourceGroupName, String name, String id, DeploymentInner deployment);
 
     /**
-     * Description for Create a deployment for an app, or a deployment slot.
+     * Create a deployment for an app, or a deployment slot.
+     *
+     * <p>Description for Create a deployment for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -2257,7 +2535,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String id, DeploymentInner deployment, Context context);
 
     /**
-     * Description for Delete a deployment by its ID for an app, or a deployment slot.
+     * Delete a deployment by its ID for an app, or a deployment slot.
+     *
+     * <p>Description for Delete a deployment by its ID for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -2271,7 +2551,9 @@ public interface WebAppsClient {
     void deleteDeployment(String resourceGroupName, String name, String id);
 
     /**
-     * Description for Delete a deployment by its ID for an app, or a deployment slot.
+     * Delete a deployment by its ID for an app, or a deployment slot.
+     *
+     * <p>Description for Delete a deployment by its ID for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -2287,7 +2569,9 @@ public interface WebAppsClient {
     Response<Void> deleteDeploymentWithResponse(String resourceGroupName, String name, String id, Context context);
 
     /**
-     * Description for List deployment log for specific deployment for an app, or a deployment slot.
+     * List deployment log for specific deployment for an app, or a deployment slot.
+     *
+     * <p>Description for List deployment log for specific deployment for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -2303,7 +2587,9 @@ public interface WebAppsClient {
     DeploymentInner listDeploymentLog(String resourceGroupName, String name, String id);
 
     /**
-     * Description for List deployment log for specific deployment for an app, or a deployment slot.
+     * List deployment log for specific deployment for an app, or a deployment slot.
+     *
+     * <p>Description for List deployment log for specific deployment for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -2321,8 +2607,11 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String id, Context context);
 
     /**
-     * Description for Discovers an existing app backup that can be restored from a blob in Azure storage. Use this to
-     * get information about the databases stored in a backup.
+     * Discovers an existing app backup that can be restored from a blob in Azure storage. Use this to get information
+     * about the databases stored in a backup.
+     *
+     * <p>Description for Discovers an existing app backup that can be restored from a blob in Azure storage. Use this
+     * to get information about the databases stored in a backup.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -2337,8 +2626,11 @@ public interface WebAppsClient {
     RestoreRequestInner discoverBackup(String resourceGroupName, String name, RestoreRequestInner request);
 
     /**
-     * Description for Discovers an existing app backup that can be restored from a blob in Azure storage. Use this to
-     * get information about the databases stored in a backup.
+     * Discovers an existing app backup that can be restored from a blob in Azure storage. Use this to get information
+     * about the databases stored in a backup.
+     *
+     * <p>Description for Discovers an existing app backup that can be restored from a blob in Azure storage. Use this
+     * to get information about the databases stored in a backup.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -2355,7 +2647,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, RestoreRequestInner request, Context context);
 
     /**
-     * Description for Lists ownership identifiers for domain associated with web app.
+     * Lists ownership identifiers for domain associated with web app.
+     *
+     * <p>Description for Lists ownership identifiers for domain associated with web app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -2369,7 +2663,9 @@ public interface WebAppsClient {
     PagedIterable<IdentifierInner> listDomainOwnershipIdentifiers(String resourceGroupName, String name);
 
     /**
-     * Description for Lists ownership identifiers for domain associated with web app.
+     * Lists ownership identifiers for domain associated with web app.
+     *
+     * <p>Description for Lists ownership identifiers for domain associated with web app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -2385,7 +2681,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Get domain ownership identifier for web app.
+     * Get domain ownership identifier for web app.
+     *
+     * <p>Description for Get domain ownership identifier for web app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -2401,7 +2699,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String domainOwnershipIdentifierName);
 
     /**
-     * Description for Get domain ownership identifier for web app.
+     * Get domain ownership identifier for web app.
+     *
+     * <p>Description for Get domain ownership identifier for web app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -2418,7 +2718,10 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String domainOwnershipIdentifierName, Context context);
 
     /**
-     * Description for Creates a domain ownership identifier for web app, or updates an existing ownership identifier.
+     * Creates a domain ownership identifier for web app, or updates an existing ownership identifier.
+     *
+     * <p>Description for Creates a domain ownership identifier for web app, or updates an existing ownership
+     * identifier.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -2438,7 +2741,10 @@ public interface WebAppsClient {
         IdentifierInner domainOwnershipIdentifier);
 
     /**
-     * Description for Creates a domain ownership identifier for web app, or updates an existing ownership identifier.
+     * Creates a domain ownership identifier for web app, or updates an existing ownership identifier.
+     *
+     * <p>Description for Creates a domain ownership identifier for web app, or updates an existing ownership
+     * identifier.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -2460,7 +2766,9 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for Deletes a domain ownership identifier for a web app.
+     * Deletes a domain ownership identifier for a web app.
+     *
+     * <p>Description for Deletes a domain ownership identifier for a web app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -2474,7 +2782,9 @@ public interface WebAppsClient {
     void deleteDomainOwnershipIdentifier(String resourceGroupName, String name, String domainOwnershipIdentifierName);
 
     /**
-     * Description for Deletes a domain ownership identifier for a web app.
+     * Deletes a domain ownership identifier for a web app.
+     *
+     * <p>Description for Deletes a domain ownership identifier for a web app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -2491,7 +2801,10 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String domainOwnershipIdentifierName, Context context);
 
     /**
-     * Description for Creates a domain ownership identifier for web app, or updates an existing ownership identifier.
+     * Creates a domain ownership identifier for web app, or updates an existing ownership identifier.
+     *
+     * <p>Description for Creates a domain ownership identifier for web app, or updates an existing ownership
+     * identifier.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -2511,7 +2824,10 @@ public interface WebAppsClient {
         IdentifierInner domainOwnershipIdentifier);
 
     /**
-     * Description for Creates a domain ownership identifier for web app, or updates an existing ownership identifier.
+     * Creates a domain ownership identifier for web app, or updates an existing ownership identifier.
+     *
+     * <p>Description for Creates a domain ownership identifier for web app, or updates an existing ownership
+     * identifier.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -2533,7 +2849,9 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for Get the status of the last MSDeploy operation.
+     * Get the status of the last MSDeploy operation.
+     *
+     * <p>Description for Get the status of the last MSDeploy operation.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -2547,7 +2865,9 @@ public interface WebAppsClient {
     MSDeployStatusInner getMSDeployStatus(String resourceGroupName, String name);
 
     /**
-     * Description for Get the status of the last MSDeploy operation.
+     * Get the status of the last MSDeploy operation.
+     *
+     * <p>Description for Get the status of the last MSDeploy operation.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -2562,7 +2882,9 @@ public interface WebAppsClient {
     Response<MSDeployStatusInner> getMSDeployStatusWithResponse(String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Invoke the MSDeploy web app extension.
+     * Invoke the MSDeploy web app extension.
+     *
+     * <p>Description for Invoke the MSDeploy web app extension.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -2577,7 +2899,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, MSDeploy mSDeploy);
 
     /**
-     * Description for Invoke the MSDeploy web app extension.
+     * Invoke the MSDeploy web app extension.
+     *
+     * <p>Description for Invoke the MSDeploy web app extension.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -2593,7 +2917,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, MSDeploy mSDeploy, Context context);
 
     /**
-     * Description for Invoke the MSDeploy web app extension.
+     * Invoke the MSDeploy web app extension.
+     *
+     * <p>Description for Invoke the MSDeploy web app extension.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -2607,7 +2933,9 @@ public interface WebAppsClient {
     MSDeployStatusInner createMSDeployOperation(String resourceGroupName, String name, MSDeploy mSDeploy);
 
     /**
-     * Description for Invoke the MSDeploy web app extension.
+     * Invoke the MSDeploy web app extension.
+     *
+     * <p>Description for Invoke the MSDeploy web app extension.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -2623,7 +2951,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, MSDeploy mSDeploy, Context context);
 
     /**
-     * Description for Get the MSDeploy Log for the last MSDeploy operation.
+     * Get the MSDeploy Log for the last MSDeploy operation.
+     *
+     * <p>Description for Get the MSDeploy Log for the last MSDeploy operation.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -2636,7 +2966,9 @@ public interface WebAppsClient {
     MSDeployLogInner getMSDeployLog(String resourceGroupName, String name);
 
     /**
-     * Description for Get the MSDeploy Log for the last MSDeploy operation.
+     * Get the MSDeploy Log for the last MSDeploy operation.
+     *
+     * <p>Description for Get the MSDeploy Log for the last MSDeploy operation.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -2650,7 +2982,9 @@ public interface WebAppsClient {
     Response<MSDeployLogInner> getMSDeployLogWithResponse(String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Invoke onedeploy status API /api/deployments and gets the deployment status for the site.
+     * Invoke onedeploy status API /api/deployments and gets the deployment status for the site
+     *
+     * <p>Description for Invoke onedeploy status API /api/deployments and gets the deployment status for the site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -2664,7 +2998,9 @@ public interface WebAppsClient {
     Object getOneDeployStatus(String resourceGroupName, String name);
 
     /**
-     * Description for Invoke onedeploy status API /api/deployments and gets the deployment status for the site.
+     * Invoke onedeploy status API /api/deployments and gets the deployment status for the site
+     *
+     * <p>Description for Invoke onedeploy status API /api/deployments and gets the deployment status for the site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -2679,7 +3015,9 @@ public interface WebAppsClient {
     Response<Object> getOneDeployStatusWithResponse(String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Invoke the OneDeploy publish web app extension.
+     * Invoke the OneDeploy publish web app extension.
+     *
+     * <p>Description for Invoke the OneDeploy publish web app extension.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -2693,7 +3031,9 @@ public interface WebAppsClient {
     Object createOneDeployOperation(String resourceGroupName, String name);
 
     /**
-     * Description for Invoke the OneDeploy publish web app extension.
+     * Invoke the OneDeploy publish web app extension.
+     *
+     * <p>Description for Invoke the OneDeploy publish web app extension.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -2708,7 +3048,9 @@ public interface WebAppsClient {
     Response<Object> createOneDeployOperationWithResponse(String resourceGroupName, String name, Context context);
 
     /**
-     * Description for List the functions for a web site, or a deployment slot.
+     * List the functions for a web site, or a deployment slot.
+     *
+     * <p>Description for List the functions for a web site, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -2721,7 +3063,9 @@ public interface WebAppsClient {
     PagedIterable<FunctionEnvelopeInner> listFunctions(String resourceGroupName, String name);
 
     /**
-     * Description for List the functions for a web site, or a deployment slot.
+     * List the functions for a web site, or a deployment slot.
+     *
+     * <p>Description for List the functions for a web site, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -2735,7 +3079,9 @@ public interface WebAppsClient {
     PagedIterable<FunctionEnvelopeInner> listFunctions(String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Fetch a short lived token that can be exchanged for a master key.
+     * Fetch a short lived token that can be exchanged for a master key.
+     *
+     * <p>Description for Fetch a short lived token that can be exchanged for a master key.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -2749,7 +3095,9 @@ public interface WebAppsClient {
     String getFunctionsAdminToken(String resourceGroupName, String name);
 
     /**
-     * Description for Fetch a short lived token that can be exchanged for a master key.
+     * Fetch a short lived token that can be exchanged for a master key.
+     *
+     * <p>Description for Fetch a short lived token that can be exchanged for a master key.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -2764,7 +3112,9 @@ public interface WebAppsClient {
     Response<String> getFunctionsAdminTokenWithResponse(String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Get function information by its ID for web site, or a deployment slot.
+     * Get function information by its ID for web site, or a deployment slot.
+     *
+     * <p>Description for Get function information by its ID for web site, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -2778,7 +3128,9 @@ public interface WebAppsClient {
     FunctionEnvelopeInner getFunction(String resourceGroupName, String name, String functionName);
 
     /**
-     * Description for Get function information by its ID for web site, or a deployment slot.
+     * Get function information by its ID for web site, or a deployment slot.
+     *
+     * <p>Description for Get function information by its ID for web site, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -2794,7 +3146,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String functionName, Context context);
 
     /**
-     * Description for Create function for web site, or a deployment slot.
+     * Create function for web site, or a deployment slot.
+     *
+     * <p>Description for Create function for web site, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -2811,7 +3165,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String functionName, FunctionEnvelopeInner functionEnvelope);
 
     /**
-     * Description for Create function for web site, or a deployment slot.
+     * Create function for web site, or a deployment slot.
+     *
+     * <p>Description for Create function for web site, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -2833,7 +3189,9 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for Create function for web site, or a deployment slot.
+     * Create function for web site, or a deployment slot.
+     *
+     * <p>Description for Create function for web site, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -2850,7 +3208,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String functionName, FunctionEnvelopeInner functionEnvelope);
 
     /**
-     * Description for Create function for web site, or a deployment slot.
+     * Create function for web site, or a deployment slot.
+     *
+     * <p>Description for Create function for web site, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -2872,7 +3232,9 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for Delete a function for web site, or a deployment slot.
+     * Delete a function for web site, or a deployment slot.
+     *
+     * <p>Description for Delete a function for web site, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -2885,7 +3247,9 @@ public interface WebAppsClient {
     void deleteFunction(String resourceGroupName, String name, String functionName);
 
     /**
-     * Description for Delete a function for web site, or a deployment slot.
+     * Delete a function for web site, or a deployment slot.
+     *
+     * <p>Description for Delete a function for web site, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -2901,7 +3265,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String functionName, Context context);
 
     /**
-     * Description for Add or update a function secret.
+     * Add or update a function secret.
+     *
+     * <p>Description for Add or update a function secret.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -2919,7 +3285,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String functionName, String keyName, KeyInfoInner key);
 
     /**
-     * Description for Add or update a function secret.
+     * Add or update a function secret.
+     *
+     * <p>Description for Add or update a function secret.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -2938,7 +3306,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String functionName, String keyName, KeyInfoInner key, Context context);
 
     /**
-     * Description for Delete a function secret.
+     * Delete a function secret.
+     *
+     * <p>Description for Delete a function secret.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -2952,7 +3322,9 @@ public interface WebAppsClient {
     void deleteFunctionSecret(String resourceGroupName, String name, String functionName, String keyName);
 
     /**
-     * Description for Delete a function secret.
+     * Delete a function secret.
+     *
+     * <p>Description for Delete a function secret.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -2969,7 +3341,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String functionName, String keyName, Context context);
 
     /**
-     * Description for Get function keys for a function in a web site, or a deployment slot.
+     * Get function keys for a function in a web site, or a deployment slot.
+     *
+     * <p>Description for Get function keys for a function in a web site, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -2984,7 +3358,9 @@ public interface WebAppsClient {
     StringDictionaryInner listFunctionKeys(String resourceGroupName, String name, String functionName);
 
     /**
-     * Description for Get function keys for a function in a web site, or a deployment slot.
+     * Get function keys for a function in a web site, or a deployment slot.
+     *
+     * <p>Description for Get function keys for a function in a web site, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -3001,7 +3377,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String functionName, Context context);
 
     /**
-     * Description for Get function secrets for a function in a web site, or a deployment slot.
+     * Get function secrets for a function in a web site, or a deployment slot.
+     *
+     * <p>Description for Get function secrets for a function in a web site, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -3016,7 +3394,9 @@ public interface WebAppsClient {
     FunctionSecretsInner listFunctionSecrets(String resourceGroupName, String name, String functionName);
 
     /**
-     * Description for Get function secrets for a function in a web site, or a deployment slot.
+     * Get function secrets for a function in a web site, or a deployment slot.
+     *
+     * <p>Description for Get function secrets for a function in a web site, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -3033,7 +3413,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String functionName, Context context);
 
     /**
-     * Description for Get host secrets for a function app.
+     * Get host secrets for a function app.
+     *
+     * <p>Description for Get host secrets for a function app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -3047,7 +3429,9 @@ public interface WebAppsClient {
     HostKeysInner listHostKeys(String resourceGroupName, String name);
 
     /**
-     * Description for Get host secrets for a function app.
+     * Get host secrets for a function app.
+     *
+     * <p>Description for Get host secrets for a function app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -3062,7 +3446,9 @@ public interface WebAppsClient {
     Response<HostKeysInner> listHostKeysWithResponse(String resourceGroupName, String name, Context context);
 
     /**
-     * Description for This is to allow calling via powershell and ARM template.
+     * This is to allow calling via powershell and ARM template.
+     *
+     * <p>Description for This is to allow calling via powershell and ARM template.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -3075,7 +3461,9 @@ public interface WebAppsClient {
     void listSyncStatus(String resourceGroupName, String name);
 
     /**
-     * Description for This is to allow calling via powershell and ARM template.
+     * This is to allow calling via powershell and ARM template.
+     *
+     * <p>Description for This is to allow calling via powershell and ARM template.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -3090,7 +3478,9 @@ public interface WebAppsClient {
     Response<Void> listSyncStatusWithResponse(String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Syncs function trigger metadata to the management database.
+     * Syncs function trigger metadata to the management database
+     *
+     * <p>Description for Syncs function trigger metadata to the management database.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -3103,7 +3493,9 @@ public interface WebAppsClient {
     void syncFunctions(String resourceGroupName, String name);
 
     /**
-     * Description for Syncs function trigger metadata to the management database.
+     * Syncs function trigger metadata to the management database
+     *
+     * <p>Description for Syncs function trigger metadata to the management database.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -3118,7 +3510,9 @@ public interface WebAppsClient {
     Response<Void> syncFunctionsWithResponse(String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Add or update a host level secret.
+     * Add or update a host level secret.
+     *
+     * <p>Description for Add or update a host level secret.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -3136,7 +3530,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String keyType, String keyName, KeyInfoInner key);
 
     /**
-     * Description for Add or update a host level secret.
+     * Add or update a host level secret.
+     *
+     * <p>Description for Add or update a host level secret.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -3155,7 +3551,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String keyType, String keyName, KeyInfoInner key, Context context);
 
     /**
-     * Description for Delete a host level secret.
+     * Delete a host level secret.
+     *
+     * <p>Description for Delete a host level secret.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -3169,7 +3567,9 @@ public interface WebAppsClient {
     void deleteHostSecret(String resourceGroupName, String name, String keyType, String keyName);
 
     /**
-     * Description for Delete a host level secret.
+     * Delete a host level secret.
+     *
+     * <p>Description for Delete a host level secret.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -3186,7 +3586,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String keyType, String keyName, Context context);
 
     /**
-     * Description for Get hostname bindings for an app or a deployment slot.
+     * Get hostname bindings for an app or a deployment slot.
+     *
+     * <p>Description for Get hostname bindings for an app or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -3200,7 +3602,9 @@ public interface WebAppsClient {
     PagedIterable<HostnameBindingInner> listHostnameBindings(String resourceGroupName, String name);
 
     /**
-     * Description for Get hostname bindings for an app or a deployment slot.
+     * Get hostname bindings for an app or a deployment slot.
+     *
+     * <p>Description for Get hostname bindings for an app or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -3215,7 +3619,9 @@ public interface WebAppsClient {
     PagedIterable<HostnameBindingInner> listHostnameBindings(String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Get the named hostname binding for an app (or deployment slot, if specified).
+     * Get the named hostname binding for an app (or deployment slot, if specified).
+     *
+     * <p>Description for Get the named hostname binding for an app (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -3230,7 +3636,9 @@ public interface WebAppsClient {
     HostnameBindingInner getHostnameBinding(String resourceGroupName, String name, String hostname);
 
     /**
-     * Description for Get the named hostname binding for an app (or deployment slot, if specified).
+     * Get the named hostname binding for an app (or deployment slot, if specified).
+     *
+     * <p>Description for Get the named hostname binding for an app (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -3247,7 +3655,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String hostname, Context context);
 
     /**
-     * Description for Creates a hostname binding for an app.
+     * Creates a hostname binding for an app.
+     *
+     * <p>Description for Creates a hostname binding for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -3264,7 +3674,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String hostname, HostnameBindingInner hostnameBinding);
 
     /**
-     * Description for Creates a hostname binding for an app.
+     * Creates a hostname binding for an app.
+     *
+     * <p>Description for Creates a hostname binding for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -3282,7 +3694,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String hostname, HostnameBindingInner hostnameBinding, Context context);
 
     /**
-     * Description for Deletes a hostname binding for an app.
+     * Deletes a hostname binding for an app.
+     *
+     * <p>Description for Deletes a hostname binding for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -3296,7 +3710,9 @@ public interface WebAppsClient {
     void deleteHostnameBinding(String resourceGroupName, String name, String hostname);
 
     /**
-     * Description for Deletes a hostname binding for an app.
+     * Deletes a hostname binding for an app.
+     *
+     * <p>Description for Deletes a hostname binding for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -3313,7 +3729,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String hostname, Context context);
 
     /**
-     * Description for Retrieves a specific Service Bus Hybrid Connection used by this Web App.
+     * Retrieves a specific Service Bus Hybrid Connection used by this Web App.
+     *
+     * <p>Description for Retrieves a specific Service Bus Hybrid Connection used by this Web App.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
@@ -3330,7 +3748,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String namespaceName, String relayName);
 
     /**
-     * Description for Retrieves a specific Service Bus Hybrid Connection used by this Web App.
+     * Retrieves a specific Service Bus Hybrid Connection used by this Web App.
+     *
+     * <p>Description for Retrieves a specific Service Bus Hybrid Connection used by this Web App.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
@@ -3348,7 +3768,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String namespaceName, String relayName, Context context);
 
     /**
-     * Description for Creates a new Hybrid Connection using a Service Bus relay.
+     * Creates a new Hybrid Connection using a Service Bus relay.
+     *
+     * <p>Description for Creates a new Hybrid Connection using a Service Bus relay.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
@@ -3370,7 +3792,9 @@ public interface WebAppsClient {
         HybridConnectionInner connectionEnvelope);
 
     /**
-     * Description for Creates a new Hybrid Connection using a Service Bus relay.
+     * Creates a new Hybrid Connection using a Service Bus relay.
+     *
+     * <p>Description for Creates a new Hybrid Connection using a Service Bus relay.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
@@ -3394,7 +3818,9 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for Removes a Hybrid Connection from this site.
+     * Removes a Hybrid Connection from this site.
+     *
+     * <p>Description for Removes a Hybrid Connection from this site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
@@ -3408,7 +3834,9 @@ public interface WebAppsClient {
     void deleteHybridConnection(String resourceGroupName, String name, String namespaceName, String relayName);
 
     /**
-     * Description for Removes a Hybrid Connection from this site.
+     * Removes a Hybrid Connection from this site.
+     *
+     * <p>Description for Removes a Hybrid Connection from this site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
@@ -3425,7 +3853,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String namespaceName, String relayName, Context context);
 
     /**
-     * Description for Creates a new Hybrid Connection using a Service Bus relay.
+     * Creates a new Hybrid Connection using a Service Bus relay.
+     *
+     * <p>Description for Creates a new Hybrid Connection using a Service Bus relay.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
@@ -3447,7 +3877,9 @@ public interface WebAppsClient {
         HybridConnectionInner connectionEnvelope);
 
     /**
-     * Description for Creates a new Hybrid Connection using a Service Bus relay.
+     * Creates a new Hybrid Connection using a Service Bus relay.
+     *
+     * <p>Description for Creates a new Hybrid Connection using a Service Bus relay.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
@@ -3471,7 +3903,9 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for Retrieves all Service Bus Hybrid Connections used by this Web App.
+     * Retrieves all Service Bus Hybrid Connections used by this Web App.
+     *
+     * <p>Description for Retrieves all Service Bus Hybrid Connections used by this Web App.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
@@ -3485,7 +3919,9 @@ public interface WebAppsClient {
     HybridConnectionInner listHybridConnections(String resourceGroupName, String name);
 
     /**
-     * Description for Retrieves all Service Bus Hybrid Connections used by this Web App.
+     * Retrieves all Service Bus Hybrid Connections used by this Web App.
+     *
+     * <p>Description for Retrieves all Service Bus Hybrid Connections used by this Web App.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
@@ -3501,7 +3937,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Gets hybrid connections configured for an app (or deployment slot, if specified).
+     * Gets hybrid connections configured for an app (or deployment slot, if specified).
+     *
+     * <p>Description for Gets hybrid connections configured for an app (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -3515,7 +3953,9 @@ public interface WebAppsClient {
     RelayServiceConnectionEntityInner listRelayServiceConnections(String resourceGroupName, String name);
 
     /**
-     * Description for Gets hybrid connections configured for an app (or deployment slot, if specified).
+     * Gets hybrid connections configured for an app (or deployment slot, if specified).
+     *
+     * <p>Description for Gets hybrid connections configured for an app (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -3531,7 +3971,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Gets a hybrid connection configuration by its name.
+     * Gets a hybrid connection configuration by its name.
+     *
+     * <p>Description for Gets a hybrid connection configuration by its name.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -3547,7 +3989,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String entityName);
 
     /**
-     * Description for Gets a hybrid connection configuration by its name.
+     * Gets a hybrid connection configuration by its name.
+     *
+     * <p>Description for Gets a hybrid connection configuration by its name.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -3564,7 +4008,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String entityName, Context context);
 
     /**
-     * Description for Creates a new hybrid connection configuration (PUT), or updates an existing one (PATCH).
+     * Creates a new hybrid connection configuration (PUT), or updates an existing one (PATCH).
+     *
+     * <p>Description for Creates a new hybrid connection configuration (PUT), or updates an existing one (PATCH).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -3581,7 +4027,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String entityName, RelayServiceConnectionEntityInner connectionEnvelope);
 
     /**
-     * Description for Creates a new hybrid connection configuration (PUT), or updates an existing one (PATCH).
+     * Creates a new hybrid connection configuration (PUT), or updates an existing one (PATCH).
+     *
+     * <p>Description for Creates a new hybrid connection configuration (PUT), or updates an existing one (PATCH).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -3603,7 +4051,9 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for Deletes a relay service connection by its name.
+     * Deletes a relay service connection by its name.
+     *
+     * <p>Description for Deletes a relay service connection by its name.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -3616,7 +4066,9 @@ public interface WebAppsClient {
     void deleteRelayServiceConnection(String resourceGroupName, String name, String entityName);
 
     /**
-     * Description for Deletes a relay service connection by its name.
+     * Deletes a relay service connection by its name.
+     *
+     * <p>Description for Deletes a relay service connection by its name.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -3632,7 +4084,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String entityName, Context context);
 
     /**
-     * Description for Creates a new hybrid connection configuration (PUT), or updates an existing one (PATCH).
+     * Creates a new hybrid connection configuration (PUT), or updates an existing one (PATCH).
+     *
+     * <p>Description for Creates a new hybrid connection configuration (PUT), or updates an existing one (PATCH).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -3649,7 +4103,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String entityName, RelayServiceConnectionEntityInner connectionEnvelope);
 
     /**
-     * Description for Creates a new hybrid connection configuration (PUT), or updates an existing one (PATCH).
+     * Creates a new hybrid connection configuration (PUT), or updates an existing one (PATCH).
+     *
+     * <p>Description for Creates a new hybrid connection configuration (PUT), or updates an existing one (PATCH).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -3671,7 +4127,9 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for Gets all scale-out instances of an app.
+     * Gets all scale-out instances of an app.
+     *
+     * <p>Description for Gets all scale-out instances of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -3685,7 +4143,9 @@ public interface WebAppsClient {
     PagedIterable<WebSiteInstanceStatusInner> listInstanceIdentifiers(String resourceGroupName, String name);
 
     /**
-     * Description for Gets all scale-out instances of an app.
+     * Gets all scale-out instances of an app.
+     *
+     * <p>Description for Gets all scale-out instances of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -3701,7 +4161,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Gets all scale-out instances of an app.
+     * Gets all scale-out instances of an app.
+     *
+     * <p>Description for Gets all scale-out instances of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -3716,7 +4178,9 @@ public interface WebAppsClient {
     WebSiteInstanceStatusInner getInstanceInfo(String resourceGroupName, String name, String instanceId);
 
     /**
-     * Description for Gets all scale-out instances of an app.
+     * Gets all scale-out instances of an app.
+     *
+     * <p>Description for Gets all scale-out instances of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -3733,7 +4197,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String instanceId, Context context);
 
     /**
-     * Description for Get the status of the last MSDeploy operation.
+     * Get the status of the last MSDeploy operation.
+     *
+     * <p>Description for Get the status of the last MSDeploy operation.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -3748,7 +4214,9 @@ public interface WebAppsClient {
     MSDeployStatusInner getInstanceMsDeployStatus(String resourceGroupName, String name, String instanceId);
 
     /**
-     * Description for Get the status of the last MSDeploy operation.
+     * Get the status of the last MSDeploy operation.
+     *
+     * <p>Description for Get the status of the last MSDeploy operation.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -3765,7 +4233,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String instanceId, Context context);
 
     /**
-     * Description for Invoke the MSDeploy web app extension.
+     * Invoke the MSDeploy web app extension.
+     *
+     * <p>Description for Invoke the MSDeploy web app extension.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -3781,7 +4251,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String instanceId, MSDeploy mSDeploy);
 
     /**
-     * Description for Invoke the MSDeploy web app extension.
+     * Invoke the MSDeploy web app extension.
+     *
+     * <p>Description for Invoke the MSDeploy web app extension.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -3798,7 +4270,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String instanceId, MSDeploy mSDeploy, Context context);
 
     /**
-     * Description for Invoke the MSDeploy web app extension.
+     * Invoke the MSDeploy web app extension.
+     *
+     * <p>Description for Invoke the MSDeploy web app extension.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -3814,7 +4288,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String instanceId, MSDeploy mSDeploy);
 
     /**
-     * Description for Invoke the MSDeploy web app extension.
+     * Invoke the MSDeploy web app extension.
+     *
+     * <p>Description for Invoke the MSDeploy web app extension.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -3831,7 +4307,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String instanceId, MSDeploy mSDeploy, Context context);
 
     /**
-     * Description for Get the MSDeploy Log for the last MSDeploy operation.
+     * Get the MSDeploy Log for the last MSDeploy operation.
+     *
+     * <p>Description for Get the MSDeploy Log for the last MSDeploy operation.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -3845,7 +4323,9 @@ public interface WebAppsClient {
     MSDeployLogInner getInstanceMSDeployLog(String resourceGroupName, String name, String instanceId);
 
     /**
-     * Description for Get the MSDeploy Log for the last MSDeploy operation.
+     * Get the MSDeploy Log for the last MSDeploy operation.
+     *
+     * <p>Description for Get the MSDeploy Log for the last MSDeploy operation.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -3861,8 +4341,10 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String instanceId, Context context);
 
     /**
-     * Description for Get list of processes for a web site, or a deployment slot, or for a specific scaled-out instance
-     * in a web site.
+     * Get list of processes for a web site, or a deployment slot, or for a specific scaled-out instance in a web site.
+     *
+     * <p>Description for Get list of processes for a web site, or a deployment slot, or for a specific scaled-out
+     * instance in a web site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -3877,8 +4359,10 @@ public interface WebAppsClient {
     PagedIterable<ProcessInfoInner> listInstanceProcesses(String resourceGroupName, String name, String instanceId);
 
     /**
-     * Description for Get list of processes for a web site, or a deployment slot, or for a specific scaled-out instance
-     * in a web site.
+     * Get list of processes for a web site, or a deployment slot, or for a specific scaled-out instance in a web site.
+     *
+     * <p>Description for Get list of processes for a web site, or a deployment slot, or for a specific scaled-out
+     * instance in a web site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -3895,7 +4379,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String instanceId, Context context);
 
     /**
-     * Description for Get process information by its ID for a specific scaled-out instance in a web site.
+     * Get process information by its ID for a specific scaled-out instance in a web site.
+     *
+     * <p>Description for Get process information by its ID for a specific scaled-out instance in a web site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -3911,7 +4397,9 @@ public interface WebAppsClient {
     ProcessInfoInner getInstanceProcess(String resourceGroupName, String name, String processId, String instanceId);
 
     /**
-     * Description for Get process information by its ID for a specific scaled-out instance in a web site.
+     * Get process information by its ID for a specific scaled-out instance in a web site.
+     *
+     * <p>Description for Get process information by its ID for a specific scaled-out instance in a web site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -3929,7 +4417,10 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String processId, String instanceId, Context context);
 
     /**
-     * Description for Terminate a process by its ID for a web site, or a deployment slot, or specific scaled-out
+     * Terminate a process by its ID for a web site, or a deployment slot, or specific scaled-out instance in a web
+     * site.
+     *
+     * <p>Description for Terminate a process by its ID for a web site, or a deployment slot, or specific scaled-out
      * instance in a web site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
@@ -3945,7 +4436,10 @@ public interface WebAppsClient {
     void deleteInstanceProcess(String resourceGroupName, String name, String processId, String instanceId);
 
     /**
-     * Description for Terminate a process by its ID for a web site, or a deployment slot, or specific scaled-out
+     * Terminate a process by its ID for a web site, or a deployment slot, or specific scaled-out instance in a web
+     * site.
+     *
+     * <p>Description for Terminate a process by its ID for a web site, or a deployment slot, or specific scaled-out
      * instance in a web site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
@@ -3964,7 +4458,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String processId, String instanceId, Context context);
 
     /**
-     * Description for Get a memory dump of a process by its ID for a specific scaled-out instance in a web site.
+     * Get a memory dump of a process by its ID for a specific scaled-out instance in a web site.
+     *
+     * <p>Description for Get a memory dump of a process by its ID for a specific scaled-out instance in a web site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -3980,7 +4476,9 @@ public interface WebAppsClient {
     InputStream getInstanceProcessDump(String resourceGroupName, String name, String processId, String instanceId);
 
     /**
-     * Description for Get a memory dump of a process by its ID for a specific scaled-out instance in a web site.
+     * Get a memory dump of a process by its ID for a specific scaled-out instance in a web site.
+     *
+     * <p>Description for Get a memory dump of a process by its ID for a specific scaled-out instance in a web site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -3998,7 +4496,10 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String processId, String instanceId, Context context);
 
     /**
-     * Description for List module information for a process by its ID for a specific scaled-out instance in a web site.
+     * List module information for a process by its ID for a specific scaled-out instance in a web site.
+     *
+     * <p>Description for List module information for a process by its ID for a specific scaled-out instance in a web
+     * site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -4015,7 +4516,10 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String processId, String instanceId);
 
     /**
-     * Description for List module information for a process by its ID for a specific scaled-out instance in a web site.
+     * List module information for a process by its ID for a specific scaled-out instance in a web site.
+     *
+     * <p>Description for List module information for a process by its ID for a specific scaled-out instance in a web
+     * site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -4033,7 +4537,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String processId, String instanceId, Context context);
 
     /**
-     * Description for Get process information by its ID for a specific scaled-out instance in a web site.
+     * Get process information by its ID for a specific scaled-out instance in a web site.
+     *
+     * <p>Description for Get process information by its ID for a specific scaled-out instance in a web site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -4051,7 +4557,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String processId, String baseAddress, String instanceId);
 
     /**
-     * Description for Get process information by its ID for a specific scaled-out instance in a web site.
+     * Get process information by its ID for a specific scaled-out instance in a web site.
+     *
+     * <p>Description for Get process information by its ID for a specific scaled-out instance in a web site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -4075,7 +4583,9 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for List the threads in a process by its ID for a specific scaled-out instance in a web site.
+     * List the threads in a process by its ID for a specific scaled-out instance in a web site.
+     *
+     * <p>Description for List the threads in a process by its ID for a specific scaled-out instance in a web site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -4092,7 +4602,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String processId, String instanceId);
 
     /**
-     * Description for List the threads in a process by its ID for a specific scaled-out instance in a web site.
+     * List the threads in a process by its ID for a specific scaled-out instance in a web site.
+     *
+     * <p>Description for List the threads in a process by its ID for a specific scaled-out instance in a web site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -4110,7 +4622,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String processId, String instanceId, Context context);
 
     /**
-     * Description for Shows whether an app can be cloned to another resource group or subscription.
+     * Shows whether an app can be cloned to another resource group or subscription.
+     *
+     * <p>Description for Shows whether an app can be cloned to another resource group or subscription.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -4124,7 +4638,9 @@ public interface WebAppsClient {
     SiteCloneabilityInner isCloneable(String resourceGroupName, String name);
 
     /**
-     * Description for Shows whether an app can be cloned to another resource group or subscription.
+     * Shows whether an app can be cloned to another resource group or subscription.
+     *
+     * <p>Description for Shows whether an app can be cloned to another resource group or subscription.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -4139,7 +4655,9 @@ public interface WebAppsClient {
     Response<SiteCloneabilityInner> isCloneableWithResponse(String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Gets existing backups of an app.
+     * Gets existing backups of an app.
+     *
+     * <p>Description for Gets existing backups of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -4153,7 +4671,9 @@ public interface WebAppsClient {
     PagedIterable<BackupItemInner> listSiteBackups(String resourceGroupName, String name);
 
     /**
-     * Description for Gets existing backups of an app.
+     * Gets existing backups of an app.
+     *
+     * <p>Description for Gets existing backups of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -4168,7 +4688,9 @@ public interface WebAppsClient {
     PagedIterable<BackupItemInner> listSiteBackups(String resourceGroupName, String name, Context context);
 
     /**
-     * Description for This is to allow calling via powershell and ARM template.
+     * This is to allow calling via powershell and ARM template.
+     *
+     * <p>Description for This is to allow calling via powershell and ARM template.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -4182,7 +4704,9 @@ public interface WebAppsClient {
     FunctionSecretsInner listSyncFunctionTriggers(String resourceGroupName, String name);
 
     /**
-     * Description for This is to allow calling via powershell and ARM template.
+     * This is to allow calling via powershell and ARM template.
+     *
+     * <p>Description for This is to allow calling via powershell and ARM template.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -4198,7 +4722,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Restores a web app.
+     * Restores a web app.
+     *
+     * <p>Description for Restores a web app.
      *
      * @param subscriptionName Azure subscription.
      * @param resourceGroupName Name of the resource group to which the resource belongs.
@@ -4215,7 +4741,9 @@ public interface WebAppsClient {
         String subscriptionName, String resourceGroupName, String name, StorageMigrationOptions migrationOptions);
 
     /**
-     * Description for Restores a web app.
+     * Restores a web app.
+     *
+     * <p>Description for Restores a web app.
      *
      * @param subscriptionName Azure subscription.
      * @param resourceGroupName Name of the resource group to which the resource belongs.
@@ -4237,7 +4765,9 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for Restores a web app.
+     * Restores a web app.
+     *
+     * <p>Description for Restores a web app.
      *
      * @param subscriptionName Azure subscription.
      * @param resourceGroupName Name of the resource group to which the resource belongs.
@@ -4254,7 +4784,9 @@ public interface WebAppsClient {
         String subscriptionName, String resourceGroupName, String name, StorageMigrationOptions migrationOptions);
 
     /**
-     * Description for Restores a web app.
+     * Restores a web app.
+     *
+     * <p>Description for Restores a web app.
      *
      * @param subscriptionName Azure subscription.
      * @param resourceGroupName Name of the resource group to which the resource belongs.
@@ -4276,7 +4808,9 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for Migrates a local (in-app) MySql database to a remote MySql database.
+     * Migrates a local (in-app) MySql database to a remote MySql database.
+     *
+     * <p>Description for Migrates a local (in-app) MySql database to a remote MySql database.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -4292,7 +4826,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, MigrateMySqlRequest migrationRequestEnvelope);
 
     /**
-     * Description for Migrates a local (in-app) MySql database to a remote MySql database.
+     * Migrates a local (in-app) MySql database to a remote MySql database.
+     *
+     * <p>Description for Migrates a local (in-app) MySql database to a remote MySql database.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -4309,7 +4845,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, MigrateMySqlRequest migrationRequestEnvelope, Context context);
 
     /**
-     * Description for Migrates a local (in-app) MySql database to a remote MySql database.
+     * Migrates a local (in-app) MySql database to a remote MySql database.
+     *
+     * <p>Description for Migrates a local (in-app) MySql database to a remote MySql database.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -4324,7 +4862,9 @@ public interface WebAppsClient {
     OperationInner migrateMySql(String resourceGroupName, String name, MigrateMySqlRequest migrationRequestEnvelope);
 
     /**
-     * Description for Migrates a local (in-app) MySql database to a remote MySql database.
+     * Migrates a local (in-app) MySql database to a remote MySql database.
+     *
+     * <p>Description for Migrates a local (in-app) MySql database to a remote MySql database.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -4341,8 +4881,10 @@ public interface WebAppsClient {
         String resourceGroupName, String name, MigrateMySqlRequest migrationRequestEnvelope, Context context);
 
     /**
-     * Description for Returns the status of MySql in app migration, if one is active, and whether or not MySql in app
-     * is enabled.
+     * Returns the status of MySql in app migration, if one is active, and whether or not MySql in app is enabled
+     *
+     * <p>Description for Returns the status of MySql in app migration, if one is active, and whether or not MySql in
+     * app is enabled.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -4356,8 +4898,10 @@ public interface WebAppsClient {
     MigrateMySqlStatusInner getMigrateMySqlStatus(String resourceGroupName, String name);
 
     /**
-     * Description for Returns the status of MySql in app migration, if one is active, and whether or not MySql in app
-     * is enabled.
+     * Returns the status of MySql in app migration, if one is active, and whether or not MySql in app is enabled
+     *
+     * <p>Description for Returns the status of MySql in app migration, if one is active, and whether or not MySql in
+     * app is enabled.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -4373,7 +4917,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Gets a Swift Virtual Network connection.
+     * Gets a Swift Virtual Network connection.
+     *
+     * <p>Description for Gets a Swift Virtual Network connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -4387,7 +4933,9 @@ public interface WebAppsClient {
     SwiftVirtualNetworkInner getSwiftVirtualNetworkConnection(String resourceGroupName, String name);
 
     /**
-     * Description for Gets a Swift Virtual Network connection.
+     * Gets a Swift Virtual Network connection.
+     *
+     * <p>Description for Gets a Swift Virtual Network connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -4403,7 +4951,11 @@ public interface WebAppsClient {
         String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Integrates this Web App with a Virtual Network. This requires that 1) "swiftSupported" is true
+     * Integrates this Web App with a Virtual Network. This requires that 1) "swiftSupported" is true when doing a GET
+     * against this resource, and 2) that the target Subnet has already been delegated, and is not in use by another App
+     * Service Plan other than the one this App is in.
+     *
+     * <p>Description for Integrates this Web App with a Virtual Network. This requires that 1) "swiftSupported" is true
      * when doing a GET against this resource, and 2) that the target Subnet has already been delegated, and is not in
      * use by another App Service Plan other than the one this App is in.
      *
@@ -4421,7 +4973,11 @@ public interface WebAppsClient {
         String resourceGroupName, String name, SwiftVirtualNetworkInner connectionEnvelope);
 
     /**
-     * Description for Integrates this Web App with a Virtual Network. This requires that 1) "swiftSupported" is true
+     * Integrates this Web App with a Virtual Network. This requires that 1) "swiftSupported" is true when doing a GET
+     * against this resource, and 2) that the target Subnet has already been delegated, and is not in use by another App
+     * Service Plan other than the one this App is in.
+     *
+     * <p>Description for Integrates this Web App with a Virtual Network. This requires that 1) "swiftSupported" is true
      * when doing a GET against this resource, and 2) that the target Subnet has already been delegated, and is not in
      * use by another App Service Plan other than the one this App is in.
      *
@@ -4440,7 +4996,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, SwiftVirtualNetworkInner connectionEnvelope, Context context);
 
     /**
-     * Description for Deletes a Swift Virtual Network connection from an app (or deployment slot).
+     * Deletes a Swift Virtual Network connection from an app (or deployment slot).
+     *
+     * <p>Description for Deletes a Swift Virtual Network connection from an app (or deployment slot).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -4452,7 +5010,9 @@ public interface WebAppsClient {
     void deleteSwiftVirtualNetwork(String resourceGroupName, String name);
 
     /**
-     * Description for Deletes a Swift Virtual Network connection from an app (or deployment slot).
+     * Deletes a Swift Virtual Network connection from an app (or deployment slot).
+     *
+     * <p>Description for Deletes a Swift Virtual Network connection from an app (or deployment slot).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -4466,7 +5026,11 @@ public interface WebAppsClient {
     Response<Void> deleteSwiftVirtualNetworkWithResponse(String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Integrates this Web App with a Virtual Network. This requires that 1) "swiftSupported" is true
+     * Integrates this Web App with a Virtual Network. This requires that 1) "swiftSupported" is true when doing a GET
+     * against this resource, and 2) that the target Subnet has already been delegated, and is not in use by another App
+     * Service Plan other than the one this App is in.
+     *
+     * <p>Description for Integrates this Web App with a Virtual Network. This requires that 1) "swiftSupported" is true
      * when doing a GET against this resource, and 2) that the target Subnet has already been delegated, and is not in
      * use by another App Service Plan other than the one this App is in.
      *
@@ -4484,7 +5048,11 @@ public interface WebAppsClient {
         String resourceGroupName, String name, SwiftVirtualNetworkInner connectionEnvelope);
 
     /**
-     * Description for Integrates this Web App with a Virtual Network. This requires that 1) "swiftSupported" is true
+     * Integrates this Web App with a Virtual Network. This requires that 1) "swiftSupported" is true when doing a GET
+     * against this resource, and 2) that the target Subnet has already been delegated, and is not in use by another App
+     * Service Plan other than the one this App is in.
+     *
+     * <p>Description for Integrates this Web App with a Virtual Network. This requires that 1) "swiftSupported" is true
      * when doing a GET against this resource, and 2) that the target Subnet has already been delegated, and is not in
      * use by another App Service Plan other than the one this App is in.
      *
@@ -4503,7 +5071,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, SwiftVirtualNetworkInner connectionEnvelope, Context context);
 
     /**
-     * Description for Gets all network features used by the app (or deployment slot, if specified).
+     * Gets all network features used by the app (or deployment slot, if specified).
+     *
+     * <p>Description for Gets all network features used by the app (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -4517,7 +5087,9 @@ public interface WebAppsClient {
     NetworkFeaturesInner listNetworkFeatures(String resourceGroupName, String name, String view);
 
     /**
-     * Description for Gets all network features used by the app (or deployment slot, if specified).
+     * Gets all network features used by the app (or deployment slot, if specified).
+     *
+     * <p>Description for Gets all network features used by the app (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -4534,7 +5106,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String view, Context context);
 
     /**
-     * Description for Gets a named operation for a network trace capturing (or deployment slot, if specified).
+     * Gets a named operation for a network trace capturing (or deployment slot, if specified).
+     *
+     * <p>Description for Gets a named operation for a network trace capturing (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -4549,7 +5123,9 @@ public interface WebAppsClient {
     Object getNetworkTraceOperation(String resourceGroupName, String name, String operationId);
 
     /**
-     * Description for Gets a named operation for a network trace capturing (or deployment slot, if specified).
+     * Gets a named operation for a network trace capturing (or deployment slot, if specified).
+     *
+     * <p>Description for Gets a named operation for a network trace capturing (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -4566,7 +5142,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String operationId, Context context);
 
     /**
-     * Description for Start capturing network packets for the site (To be deprecated).
+     * Start capturing network packets for the site (To be deprecated).
+     *
+     * <p>Description for Start capturing network packets for the site (To be deprecated).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
@@ -4580,7 +5158,9 @@ public interface WebAppsClient {
     String startWebSiteNetworkTrace(String resourceGroupName, String name);
 
     /**
-     * Description for Start capturing network packets for the site (To be deprecated).
+     * Start capturing network packets for the site (To be deprecated).
+     *
+     * <p>Description for Start capturing network packets for the site (To be deprecated).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
@@ -4604,7 +5184,9 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for Start capturing network packets for the site.
+     * Start capturing network packets for the site.
+     *
+     * <p>Description for Start capturing network packets for the site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
@@ -4622,7 +5204,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, Integer durationInSeconds, Integer maxFrameLength, String sasUrl);
 
     /**
-     * Description for Start capturing network packets for the site.
+     * Start capturing network packets for the site.
+     *
+     * <p>Description for Start capturing network packets for the site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
@@ -4646,7 +5230,9 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for Start capturing network packets for the site.
+     * Start capturing network packets for the site.
+     *
+     * <p>Description for Start capturing network packets for the site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
@@ -4664,7 +5250,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, Integer durationInSeconds, Integer maxFrameLength, String sasUrl);
 
     /**
-     * Description for Start capturing network packets for the site.
+     * Start capturing network packets for the site.
+     *
+     * <p>Description for Start capturing network packets for the site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
@@ -4678,7 +5266,9 @@ public interface WebAppsClient {
     Object startWebSiteNetworkTraceOperation(String resourceGroupName, String name);
 
     /**
-     * Description for Start capturing network packets for the site.
+     * Start capturing network packets for the site.
+     *
+     * <p>Description for Start capturing network packets for the site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
@@ -4702,7 +5292,9 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for Stop ongoing capturing network packets for the site.
+     * Stop ongoing capturing network packets for the site.
+     *
+     * <p>Description for Stop ongoing capturing network packets for the site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
@@ -4715,7 +5307,9 @@ public interface WebAppsClient {
     void stopWebSiteNetworkTrace(String resourceGroupName, String name);
 
     /**
-     * Description for Stop ongoing capturing network packets for the site.
+     * Stop ongoing capturing network packets for the site.
+     *
+     * <p>Description for Stop ongoing capturing network packets for the site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
@@ -4730,7 +5324,9 @@ public interface WebAppsClient {
     Response<Void> stopWebSiteNetworkTraceWithResponse(String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Gets a named operation for a network trace capturing (or deployment slot, if specified).
+     * Gets a named operation for a network trace capturing (or deployment slot, if specified).
+     *
+     * <p>Description for Gets a named operation for a network trace capturing (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -4745,7 +5341,9 @@ public interface WebAppsClient {
     List<NetworkTraceInner> getNetworkTraces(String resourceGroupName, String name, String operationId);
 
     /**
-     * Description for Gets a named operation for a network trace capturing (or deployment slot, if specified).
+     * Gets a named operation for a network trace capturing (or deployment slot, if specified).
+     *
+     * <p>Description for Gets a named operation for a network trace capturing (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -4762,7 +5360,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String operationId, Context context);
 
     /**
-     * Description for Gets a named operation for a network trace capturing (or deployment slot, if specified).
+     * Gets a named operation for a network trace capturing (or deployment slot, if specified).
+     *
+     * <p>Description for Gets a named operation for a network trace capturing (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -4777,7 +5377,9 @@ public interface WebAppsClient {
     Object getNetworkTraceOperationV2(String resourceGroupName, String name, String operationId);
 
     /**
-     * Description for Gets a named operation for a network trace capturing (or deployment slot, if specified).
+     * Gets a named operation for a network trace capturing (or deployment slot, if specified).
+     *
+     * <p>Description for Gets a named operation for a network trace capturing (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -4794,7 +5396,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String operationId, Context context);
 
     /**
-     * Description for Gets a named operation for a network trace capturing (or deployment slot, if specified).
+     * Gets a named operation for a network trace capturing (or deployment slot, if specified).
+     *
+     * <p>Description for Gets a named operation for a network trace capturing (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -4809,7 +5413,9 @@ public interface WebAppsClient {
     List<NetworkTraceInner> getNetworkTracesV2(String resourceGroupName, String name, String operationId);
 
     /**
-     * Description for Gets a named operation for a network trace capturing (or deployment slot, if specified).
+     * Gets a named operation for a network trace capturing (or deployment slot, if specified).
+     *
+     * <p>Description for Gets a named operation for a network trace capturing (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -4826,7 +5432,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String operationId, Context context);
 
     /**
-     * Description for Generates a new publishing password for an app (or deployment slot, if specified).
+     * Generates a new publishing password for an app (or deployment slot, if specified).
+     *
+     * <p>Description for Generates a new publishing password for an app (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -4839,7 +5447,9 @@ public interface WebAppsClient {
     void generateNewSitePublishingPassword(String resourceGroupName, String name);
 
     /**
-     * Description for Generates a new publishing password for an app (or deployment slot, if specified).
+     * Generates a new publishing password for an app (or deployment slot, if specified).
+     *
+     * <p>Description for Generates a new publishing password for an app (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -4855,7 +5465,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Gets perfmon counters for web app.
+     * Gets perfmon counters for web app.
+     *
+     * <p>Description for Gets perfmon counters for web app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -4869,7 +5481,9 @@ public interface WebAppsClient {
     PagedIterable<PerfMonResponseInner> listPerfMonCounters(String resourceGroupName, String name);
 
     /**
-     * Description for Gets perfmon counters for web app.
+     * Gets perfmon counters for web app.
+     *
+     * <p>Description for Gets perfmon counters for web app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -4888,7 +5502,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String filter, Context context);
 
     /**
-     * Description for Gets web app's event logs.
+     * Gets web app's event logs.
+     *
+     * <p>Description for Gets web app's event logs.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -4902,7 +5518,9 @@ public interface WebAppsClient {
     SitePhpErrorLogFlagInner getSitePhpErrorLogFlag(String resourceGroupName, String name);
 
     /**
-     * Description for Gets web app's event logs.
+     * Gets web app's event logs.
+     *
+     * <p>Description for Gets web app's event logs.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -4918,7 +5536,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Gets the premier add-ons of an app.
+     * Gets the premier add-ons of an app.
+     *
+     * <p>Description for Gets the premier add-ons of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -4932,7 +5552,9 @@ public interface WebAppsClient {
     PremierAddOnInner listPremierAddOns(String resourceGroupName, String name);
 
     /**
-     * Description for Gets the premier add-ons of an app.
+     * Gets the premier add-ons of an app.
+     *
+     * <p>Description for Gets the premier add-ons of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -4947,7 +5569,9 @@ public interface WebAppsClient {
     Response<PremierAddOnInner> listPremierAddOnsWithResponse(String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Gets a named add-on of an app.
+     * Gets a named add-on of an app.
+     *
+     * <p>Description for Gets a named add-on of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -4962,7 +5586,9 @@ public interface WebAppsClient {
     PremierAddOnInner getPremierAddOn(String resourceGroupName, String name, String premierAddOnName);
 
     /**
-     * Description for Gets a named add-on of an app.
+     * Gets a named add-on of an app.
+     *
+     * <p>Description for Gets a named add-on of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -4979,7 +5605,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String premierAddOnName, Context context);
 
     /**
-     * Description for Updates a named add-on of an app.
+     * Updates a named add-on of an app.
+     *
+     * <p>Description for Updates a named add-on of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -4996,7 +5624,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String premierAddOnName, PremierAddOnInner premierAddOn);
 
     /**
-     * Description for Updates a named add-on of an app.
+     * Updates a named add-on of an app.
+     *
+     * <p>Description for Updates a named add-on of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -5018,7 +5648,9 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for Delete a premier add-on from an app.
+     * Delete a premier add-on from an app.
+     *
+     * <p>Description for Delete a premier add-on from an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -5032,7 +5664,9 @@ public interface WebAppsClient {
     void deletePremierAddOn(String resourceGroupName, String name, String premierAddOnName);
 
     /**
-     * Description for Delete a premier add-on from an app.
+     * Delete a premier add-on from an app.
+     *
+     * <p>Description for Delete a premier add-on from an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -5049,7 +5683,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String premierAddOnName, Context context);
 
     /**
-     * Description for Updates a named add-on of an app.
+     * Updates a named add-on of an app.
+     *
+     * <p>Description for Updates a named add-on of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -5066,7 +5702,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String premierAddOnName, PremierAddOnPatchResource premierAddOn);
 
     /**
-     * Description for Updates a named add-on of an app.
+     * Updates a named add-on of an app.
+     *
+     * <p>Description for Updates a named add-on of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -5088,8 +5726,10 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for Gets data around private site access enablement and authorized Virtual Networks that can access
-     * the site.
+     * Gets data around private site access enablement and authorized Virtual Networks that can access the site.
+     *
+     * <p>Description for Gets data around private site access enablement and authorized Virtual Networks that can
+     * access the site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
@@ -5103,8 +5743,10 @@ public interface WebAppsClient {
     PrivateAccessInner getPrivateAccess(String resourceGroupName, String name);
 
     /**
-     * Description for Gets data around private site access enablement and authorized Virtual Networks that can access
-     * the site.
+     * Gets data around private site access enablement and authorized Virtual Networks that can access the site.
+     *
+     * <p>Description for Gets data around private site access enablement and authorized Virtual Networks that can
+     * access the site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
@@ -5119,8 +5761,10 @@ public interface WebAppsClient {
     Response<PrivateAccessInner> getPrivateAccessWithResponse(String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Sets data around private site access enablement and authorized Virtual Networks that can access
-     * the site.
+     * Sets data around private site access enablement and authorized Virtual Networks that can access the site.
+     *
+     * <p>Description for Sets data around private site access enablement and authorized Virtual Networks that can
+     * access the site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
@@ -5135,8 +5779,10 @@ public interface WebAppsClient {
     PrivateAccessInner putPrivateAccessVnet(String resourceGroupName, String name, PrivateAccessInner access);
 
     /**
-     * Description for Sets data around private site access enablement and authorized Virtual Networks that can access
-     * the site.
+     * Sets data around private site access enablement and authorized Virtual Networks that can access the site.
+     *
+     * <p>Description for Sets data around private site access enablement and authorized Virtual Networks that can
+     * access the site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
@@ -5153,7 +5799,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, PrivateAccessInner access, Context context);
 
     /**
-     * Description for Gets the list of private endpoint connections associated with a site.
+     * Gets the list of private endpoint connections associated with a site
+     *
+     * <p>Description for Gets the list of private endpoint connections associated with a site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the site.
@@ -5168,7 +5816,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name);
 
     /**
-     * Description for Gets the list of private endpoint connections associated with a site.
+     * Gets the list of private endpoint connections associated with a site
+     *
+     * <p>Description for Gets the list of private endpoint connections associated with a site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the site.
@@ -5184,7 +5834,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Gets a private endpoint connection.
+     * Gets a private endpoint connection
+     *
+     * <p>Description for Gets a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the site.
@@ -5200,7 +5852,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String privateEndpointConnectionName);
 
     /**
-     * Description for Gets a private endpoint connection.
+     * Gets a private endpoint connection
+     *
+     * <p>Description for Gets a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the site.
@@ -5217,7 +5871,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String privateEndpointConnectionName, Context context);
 
     /**
-     * Description for Approves or rejects a private endpoint connection.
+     * Approves or rejects a private endpoint connection
+     *
+     * <p>Description for Approves or rejects a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the site.
@@ -5240,7 +5896,9 @@ public interface WebAppsClient {
             PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper);
 
     /**
-     * Description for Approves or rejects a private endpoint connection.
+     * Approves or rejects a private endpoint connection
+     *
+     * <p>Description for Approves or rejects a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the site.
@@ -5265,7 +5923,9 @@ public interface WebAppsClient {
             Context context);
 
     /**
-     * Description for Approves or rejects a private endpoint connection.
+     * Approves or rejects a private endpoint connection
+     *
+     * <p>Description for Approves or rejects a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the site.
@@ -5285,7 +5945,9 @@ public interface WebAppsClient {
         PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper);
 
     /**
-     * Description for Approves or rejects a private endpoint connection.
+     * Approves or rejects a private endpoint connection
+     *
+     * <p>Description for Approves or rejects a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the site.
@@ -5307,7 +5969,9 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for Deletes a private endpoint connection.
+     * Deletes a private endpoint connection
+     *
+     * <p>Description for Deletes a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the site.
@@ -5323,7 +5987,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String privateEndpointConnectionName);
 
     /**
-     * Description for Deletes a private endpoint connection.
+     * Deletes a private endpoint connection
+     *
+     * <p>Description for Deletes a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the site.
@@ -5340,7 +6006,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String privateEndpointConnectionName, Context context);
 
     /**
-     * Description for Deletes a private endpoint connection.
+     * Deletes a private endpoint connection
+     *
+     * <p>Description for Deletes a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the site.
@@ -5355,7 +6023,9 @@ public interface WebAppsClient {
     Object deletePrivateEndpointConnection(String resourceGroupName, String name, String privateEndpointConnectionName);
 
     /**
-     * Description for Deletes a private endpoint connection.
+     * Deletes a private endpoint connection
+     *
+     * <p>Description for Deletes a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the site.
@@ -5372,7 +6042,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String privateEndpointConnectionName, Context context);
 
     /**
-     * Description for Gets the private link resources.
+     * Gets the private link resources
+     *
+     * <p>Description for Gets the private link resources.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the site.
@@ -5386,7 +6058,9 @@ public interface WebAppsClient {
     PrivateLinkResourcesWrapperInner getPrivateLinkResources(String resourceGroupName, String name);
 
     /**
-     * Description for Gets the private link resources.
+     * Gets the private link resources
+     *
+     * <p>Description for Gets the private link resources.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the site.
@@ -5402,8 +6076,10 @@ public interface WebAppsClient {
         String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Get list of processes for a web site, or a deployment slot, or for a specific scaled-out instance
-     * in a web site.
+     * Get list of processes for a web site, or a deployment slot, or for a specific scaled-out instance in a web site.
+     *
+     * <p>Description for Get list of processes for a web site, or a deployment slot, or for a specific scaled-out
+     * instance in a web site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -5416,8 +6092,10 @@ public interface WebAppsClient {
     PagedIterable<ProcessInfoInner> listProcesses(String resourceGroupName, String name);
 
     /**
-     * Description for Get list of processes for a web site, or a deployment slot, or for a specific scaled-out instance
-     * in a web site.
+     * Get list of processes for a web site, or a deployment slot, or for a specific scaled-out instance in a web site.
+     *
+     * <p>Description for Get list of processes for a web site, or a deployment slot, or for a specific scaled-out
+     * instance in a web site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -5431,7 +6109,9 @@ public interface WebAppsClient {
     PagedIterable<ProcessInfoInner> listProcesses(String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Get process information by its ID for a specific scaled-out instance in a web site.
+     * Get process information by its ID for a specific scaled-out instance in a web site.
+     *
+     * <p>Description for Get process information by its ID for a specific scaled-out instance in a web site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -5445,7 +6125,9 @@ public interface WebAppsClient {
     ProcessInfoInner getProcess(String resourceGroupName, String name, String processId);
 
     /**
-     * Description for Get process information by its ID for a specific scaled-out instance in a web site.
+     * Get process information by its ID for a specific scaled-out instance in a web site.
+     *
+     * <p>Description for Get process information by its ID for a specific scaled-out instance in a web site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -5461,7 +6143,10 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String processId, Context context);
 
     /**
-     * Description for Terminate a process by its ID for a web site, or a deployment slot, or specific scaled-out
+     * Terminate a process by its ID for a web site, or a deployment slot, or specific scaled-out instance in a web
+     * site.
+     *
+     * <p>Description for Terminate a process by its ID for a web site, or a deployment slot, or specific scaled-out
      * instance in a web site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
@@ -5475,7 +6160,10 @@ public interface WebAppsClient {
     void deleteProcess(String resourceGroupName, String name, String processId);
 
     /**
-     * Description for Terminate a process by its ID for a web site, or a deployment slot, or specific scaled-out
+     * Terminate a process by its ID for a web site, or a deployment slot, or specific scaled-out instance in a web
+     * site.
+     *
+     * <p>Description for Terminate a process by its ID for a web site, or a deployment slot, or specific scaled-out
      * instance in a web site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
@@ -5491,7 +6179,9 @@ public interface WebAppsClient {
     Response<Void> deleteProcessWithResponse(String resourceGroupName, String name, String processId, Context context);
 
     /**
-     * Description for Get a memory dump of a process by its ID for a specific scaled-out instance in a web site.
+     * Get a memory dump of a process by its ID for a specific scaled-out instance in a web site.
+     *
+     * <p>Description for Get a memory dump of a process by its ID for a specific scaled-out instance in a web site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -5505,7 +6195,9 @@ public interface WebAppsClient {
     InputStream getProcessDump(String resourceGroupName, String name, String processId);
 
     /**
-     * Description for Get a memory dump of a process by its ID for a specific scaled-out instance in a web site.
+     * Get a memory dump of a process by its ID for a specific scaled-out instance in a web site.
+     *
+     * <p>Description for Get a memory dump of a process by its ID for a specific scaled-out instance in a web site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -5520,7 +6212,10 @@ public interface WebAppsClient {
     StreamResponse getProcessDumpWithResponse(String resourceGroupName, String name, String processId, Context context);
 
     /**
-     * Description for List module information for a process by its ID for a specific scaled-out instance in a web site.
+     * List module information for a process by its ID for a specific scaled-out instance in a web site.
+     *
+     * <p>Description for List module information for a process by its ID for a specific scaled-out instance in a web
+     * site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -5534,7 +6229,10 @@ public interface WebAppsClient {
     PagedIterable<ProcessModuleInfoInner> listProcessModules(String resourceGroupName, String name, String processId);
 
     /**
-     * Description for List module information for a process by its ID for a specific scaled-out instance in a web site.
+     * List module information for a process by its ID for a specific scaled-out instance in a web site.
+     *
+     * <p>Description for List module information for a process by its ID for a specific scaled-out instance in a web
+     * site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -5550,7 +6248,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String processId, Context context);
 
     /**
-     * Description for Get process information by its ID for a specific scaled-out instance in a web site.
+     * Get process information by its ID for a specific scaled-out instance in a web site.
+     *
+     * <p>Description for Get process information by its ID for a specific scaled-out instance in a web site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -5566,7 +6266,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String processId, String baseAddress);
 
     /**
-     * Description for Get process information by its ID for a specific scaled-out instance in a web site.
+     * Get process information by its ID for a specific scaled-out instance in a web site.
+     *
+     * <p>Description for Get process information by its ID for a specific scaled-out instance in a web site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -5583,7 +6285,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String processId, String baseAddress, Context context);
 
     /**
-     * Description for List the threads in a process by its ID for a specific scaled-out instance in a web site.
+     * List the threads in a process by its ID for a specific scaled-out instance in a web site.
+     *
+     * <p>Description for List the threads in a process by its ID for a specific scaled-out instance in a web site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -5597,7 +6301,9 @@ public interface WebAppsClient {
     PagedIterable<ProcessThreadInfoInner> listProcessThreads(String resourceGroupName, String name, String processId);
 
     /**
-     * Description for List the threads in a process by its ID for a specific scaled-out instance in a web site.
+     * List the threads in a process by its ID for a specific scaled-out instance in a web site.
+     *
+     * <p>Description for List the threads in a process by its ID for a specific scaled-out instance in a web site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -5613,7 +6319,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String processId, Context context);
 
     /**
-     * Description for Get public certificates for an app or a deployment slot.
+     * Get public certificates for an app or a deployment slot.
+     *
+     * <p>Description for Get public certificates for an app or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -5627,7 +6335,9 @@ public interface WebAppsClient {
     PagedIterable<PublicCertificateInner> listPublicCertificates(String resourceGroupName, String name);
 
     /**
-     * Description for Get public certificates for an app or a deployment slot.
+     * Get public certificates for an app or a deployment slot.
+     *
+     * <p>Description for Get public certificates for an app or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -5643,7 +6353,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Get the named public certificate for an app (or deployment slot, if specified).
+     * Get the named public certificate for an app (or deployment slot, if specified).
+     *
+     * <p>Description for Get the named public certificate for an app (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -5658,7 +6370,9 @@ public interface WebAppsClient {
     PublicCertificateInner getPublicCertificate(String resourceGroupName, String name, String publicCertificateName);
 
     /**
-     * Description for Get the named public certificate for an app (or deployment slot, if specified).
+     * Get the named public certificate for an app (or deployment slot, if specified).
+     *
+     * <p>Description for Get the named public certificate for an app (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -5675,7 +6389,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String publicCertificateName, Context context);
 
     /**
-     * Description for Creates a hostname binding for an app.
+     * Creates a hostname binding for an app.
+     *
+     * <p>Description for Creates a hostname binding for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -5693,7 +6409,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String publicCertificateName, PublicCertificateInner publicCertificate);
 
     /**
-     * Description for Creates a hostname binding for an app.
+     * Creates a hostname binding for an app.
+     *
+     * <p>Description for Creates a hostname binding for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -5716,7 +6434,9 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for Deletes a hostname binding for an app.
+     * Deletes a hostname binding for an app.
+     *
+     * <p>Description for Deletes a hostname binding for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -5730,7 +6450,9 @@ public interface WebAppsClient {
     void deletePublicCertificate(String resourceGroupName, String name, String publicCertificateName);
 
     /**
-     * Description for Deletes a hostname binding for an app.
+     * Deletes a hostname binding for an app.
+     *
+     * <p>Description for Deletes a hostname binding for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -5747,7 +6469,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String publicCertificateName, Context context);
 
     /**
-     * Description for Gets the publishing profile for an app (or deployment slot, if specified).
+     * Gets the publishing profile for an app (or deployment slot, if specified).
+     *
+     * <p>Description for Gets the publishing profile for an app (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -5764,7 +6488,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, CsmPublishingProfileOptions publishingProfileOptions);
 
     /**
-     * Description for Gets the publishing profile for an app (or deployment slot, if specified).
+     * Gets the publishing profile for an app (or deployment slot, if specified).
+     *
+     * <p>Description for Gets the publishing profile for an app (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -5782,8 +6508,11 @@ public interface WebAppsClient {
         String resourceGroupName, String name, CsmPublishingProfileOptions publishingProfileOptions, Context context);
 
     /**
-     * Description for Resets the configuration settings of the current slot if they were previously modified by calling
-     * the API with POST.
+     * Resets the configuration settings of the current slot if they were previously modified by calling the API with
+     * POST.
+     *
+     * <p>Description for Resets the configuration settings of the current slot if they were previously modified by
+     * calling the API with POST.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -5796,8 +6525,11 @@ public interface WebAppsClient {
     void resetProductionSlotConfig(String resourceGroupName, String name);
 
     /**
-     * Description for Resets the configuration settings of the current slot if they were previously modified by calling
-     * the API with POST.
+     * Resets the configuration settings of the current slot if they were previously modified by calling the API with
+     * POST.
+     *
+     * <p>Description for Resets the configuration settings of the current slot if they were previously modified by
+     * calling the API with POST.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -5812,7 +6544,9 @@ public interface WebAppsClient {
     Response<Void> resetProductionSlotConfigWithResponse(String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Restarts an app (or deployment slot, if specified).
+     * Restarts an app (or deployment slot, if specified).
+     *
+     * <p>Description for Restarts an app (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -5825,7 +6559,9 @@ public interface WebAppsClient {
     void restart(String resourceGroupName, String name);
 
     /**
-     * Description for Restarts an app (or deployment slot, if specified).
+     * Restarts an app (or deployment slot, if specified).
+     *
+     * <p>Description for Restarts an app (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -5845,7 +6581,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, Boolean softRestart, Boolean synchronous, Context context);
 
     /**
-     * Description for Restores an app from a backup blob in Azure Storage.
+     * Restores an app from a backup blob in Azure Storage.
+     *
+     * <p>Description for Restores an app from a backup blob in Azure Storage.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -5861,7 +6599,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, RestoreRequestInner request);
 
     /**
-     * Description for Restores an app from a backup blob in Azure Storage.
+     * Restores an app from a backup blob in Azure Storage.
+     *
+     * <p>Description for Restores an app from a backup blob in Azure Storage.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -5878,7 +6618,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, RestoreRequestInner request, Context context);
 
     /**
-     * Description for Restores an app from a backup blob in Azure Storage.
+     * Restores an app from a backup blob in Azure Storage.
+     *
+     * <p>Description for Restores an app from a backup blob in Azure Storage.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -5892,7 +6634,9 @@ public interface WebAppsClient {
     void restoreFromBackupBlob(String resourceGroupName, String name, RestoreRequestInner request);
 
     /**
-     * Description for Restores an app from a backup blob in Azure Storage.
+     * Restores an app from a backup blob in Azure Storage.
+     *
+     * <p>Description for Restores an app from a backup blob in Azure Storage.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -5907,7 +6651,9 @@ public interface WebAppsClient {
     void restoreFromBackupBlob(String resourceGroupName, String name, RestoreRequestInner request, Context context);
 
     /**
-     * Description for Restores a deleted web app to this web app.
+     * Restores a deleted web app to this web app.
+     *
+     * <p>Description for Restores a deleted web app to this web app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -5923,7 +6669,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, DeletedAppRestoreRequest restoreRequest);
 
     /**
-     * Description for Restores a deleted web app to this web app.
+     * Restores a deleted web app to this web app.
+     *
+     * <p>Description for Restores a deleted web app to this web app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -5940,7 +6688,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, DeletedAppRestoreRequest restoreRequest, Context context);
 
     /**
-     * Description for Restores a deleted web app to this web app.
+     * Restores a deleted web app to this web app.
+     *
+     * <p>Description for Restores a deleted web app to this web app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -5954,7 +6704,9 @@ public interface WebAppsClient {
     void restoreFromDeletedApp(String resourceGroupName, String name, DeletedAppRestoreRequest restoreRequest);
 
     /**
-     * Description for Restores a deleted web app to this web app.
+     * Restores a deleted web app to this web app.
+     *
+     * <p>Description for Restores a deleted web app to this web app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -5970,7 +6722,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, DeletedAppRestoreRequest restoreRequest, Context context);
 
     /**
-     * Description for Restores a web app from a snapshot.
+     * Restores a web app from a snapshot.
+     *
+     * <p>Description for Restores a web app from a snapshot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -5987,7 +6741,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, SnapshotRestoreRequest restoreRequest);
 
     /**
-     * Description for Restores a web app from a snapshot.
+     * Restores a web app from a snapshot.
+     *
+     * <p>Description for Restores a web app from a snapshot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -6005,7 +6761,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, SnapshotRestoreRequest restoreRequest, Context context);
 
     /**
-     * Description for Restores a web app from a snapshot.
+     * Restores a web app from a snapshot.
+     *
+     * <p>Description for Restores a web app from a snapshot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -6020,7 +6778,9 @@ public interface WebAppsClient {
     void restoreSnapshot(String resourceGroupName, String name, SnapshotRestoreRequest restoreRequest);
 
     /**
-     * Description for Restores a web app from a snapshot.
+     * Restores a web app from a snapshot.
+     *
+     * <p>Description for Restores a web app from a snapshot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -6036,7 +6796,9 @@ public interface WebAppsClient {
     void restoreSnapshot(String resourceGroupName, String name, SnapshotRestoreRequest restoreRequest, Context context);
 
     /**
-     * Description for Get list of siteextensions for a web site, or a deployment slot.
+     * Get list of siteextensions for a web site, or a deployment slot.
+     *
+     * <p>Description for Get list of siteextensions for a web site, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -6049,7 +6811,9 @@ public interface WebAppsClient {
     PagedIterable<SiteExtensionInfoInner> listSiteExtensions(String resourceGroupName, String name);
 
     /**
-     * Description for Get list of siteextensions for a web site, or a deployment slot.
+     * Get list of siteextensions for a web site, or a deployment slot.
+     *
+     * <p>Description for Get list of siteextensions for a web site, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -6063,7 +6827,9 @@ public interface WebAppsClient {
     PagedIterable<SiteExtensionInfoInner> listSiteExtensions(String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Get site extension information by its ID for a web site, or a deployment slot.
+     * Get site extension information by its ID for a web site, or a deployment slot.
+     *
+     * <p>Description for Get site extension information by its ID for a web site, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -6077,7 +6843,9 @@ public interface WebAppsClient {
     SiteExtensionInfoInner getSiteExtension(String resourceGroupName, String name, String siteExtensionId);
 
     /**
-     * Description for Get site extension information by its ID for a web site, or a deployment slot.
+     * Get site extension information by its ID for a web site, or a deployment slot.
+     *
+     * <p>Description for Get site extension information by its ID for a web site, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -6093,7 +6861,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String siteExtensionId, Context context);
 
     /**
-     * Description for Install site extension on a web site, or a deployment slot.
+     * Install site extension on a web site, or a deployment slot.
+     *
+     * <p>Description for Install site extension on a web site, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -6108,7 +6878,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String siteExtensionId);
 
     /**
-     * Description for Install site extension on a web site, or a deployment slot.
+     * Install site extension on a web site, or a deployment slot.
+     *
+     * <p>Description for Install site extension on a web site, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -6124,7 +6896,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String siteExtensionId, Context context);
 
     /**
-     * Description for Install site extension on a web site, or a deployment slot.
+     * Install site extension on a web site, or a deployment slot.
+     *
+     * <p>Description for Install site extension on a web site, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -6138,7 +6912,9 @@ public interface WebAppsClient {
     SiteExtensionInfoInner installSiteExtension(String resourceGroupName, String name, String siteExtensionId);
 
     /**
-     * Description for Install site extension on a web site, or a deployment slot.
+     * Install site extension on a web site, or a deployment slot.
+     *
+     * <p>Description for Install site extension on a web site, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -6154,7 +6930,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String siteExtensionId, Context context);
 
     /**
-     * Description for Remove a site extension from a web site, or a deployment slot.
+     * Remove a site extension from a web site, or a deployment slot.
+     *
+     * <p>Description for Remove a site extension from a web site, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -6167,7 +6945,9 @@ public interface WebAppsClient {
     void deleteSiteExtension(String resourceGroupName, String name, String siteExtensionId);
 
     /**
-     * Description for Remove a site extension from a web site, or a deployment slot.
+     * Remove a site extension from a web site, or a deployment slot.
+     *
+     * <p>Description for Remove a site extension from a web site, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -6183,7 +6963,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String siteExtensionId, Context context);
 
     /**
-     * Description for Gets an app's deployment slots.
+     * Gets an app's deployment slots.
+     *
+     * <p>Description for Gets an app's deployment slots.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -6197,7 +6979,9 @@ public interface WebAppsClient {
     PagedIterable<SiteInner> listSlots(String resourceGroupName, String name);
 
     /**
-     * Description for Gets an app's deployment slots.
+     * Gets an app's deployment slots.
+     *
+     * <p>Description for Gets an app's deployment slots.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -6212,7 +6996,9 @@ public interface WebAppsClient {
     PagedIterable<SiteInner> listSlots(String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Gets the details of a web, mobile, or API app.
+     * Gets the details of a web, mobile, or API app.
+     *
+     * <p>Description for Gets the details of a web, mobile, or API app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -6226,7 +7012,9 @@ public interface WebAppsClient {
     SiteInner getSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Gets the details of a web, mobile, or API app.
+     * Gets the details of a web, mobile, or API app.
+     *
+     * <p>Description for Gets the details of a web, mobile, or API app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -6241,7 +7029,10 @@ public interface WebAppsClient {
     Response<SiteInner> getSlotWithResponse(String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Creates a new web, mobile, or API app in an existing resource group, or updates an existing app.
+     * Creates a new web, mobile, or API app in an existing resource group, or updates an existing app.
+     *
+     * <p>Description for Creates a new web, mobile, or API app in an existing resource group, or updates an existing
+     * app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Unique name of the app to create or update. To create or update a deployment slot, use the {slot}
@@ -6260,7 +7051,10 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, SiteInner siteEnvelope);
 
     /**
-     * Description for Creates a new web, mobile, or API app in an existing resource group, or updates an existing app.
+     * Creates a new web, mobile, or API app in an existing resource group, or updates an existing app.
+     *
+     * <p>Description for Creates a new web, mobile, or API app in an existing resource group, or updates an existing
+     * app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Unique name of the app to create or update. To create or update a deployment slot, use the {slot}
@@ -6280,7 +7074,10 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, SiteInner siteEnvelope, Context context);
 
     /**
-     * Description for Creates a new web, mobile, or API app in an existing resource group, or updates an existing app.
+     * Creates a new web, mobile, or API app in an existing resource group, or updates an existing app.
+     *
+     * <p>Description for Creates a new web, mobile, or API app in an existing resource group, or updates an existing
+     * app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Unique name of the app to create or update. To create or update a deployment slot, use the {slot}
@@ -6298,7 +7095,10 @@ public interface WebAppsClient {
     SiteInner createOrUpdateSlot(String resourceGroupName, String name, String slot, SiteInner siteEnvelope);
 
     /**
-     * Description for Creates a new web, mobile, or API app in an existing resource group, or updates an existing app.
+     * Creates a new web, mobile, or API app in an existing resource group, or updates an existing app.
+     *
+     * <p>Description for Creates a new web, mobile, or API app in an existing resource group, or updates an existing
+     * app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Unique name of the app to create or update. To create or update a deployment slot, use the {slot}
@@ -6318,7 +7118,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, SiteInner siteEnvelope, Context context);
 
     /**
-     * Description for Deletes a web, mobile, or API app, or one of the deployment slots.
+     * Deletes a web, mobile, or API app, or one of the deployment slots.
+     *
+     * <p>Description for Deletes a web, mobile, or API app, or one of the deployment slots.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app to delete.
@@ -6331,7 +7133,9 @@ public interface WebAppsClient {
     void deleteSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Deletes a web, mobile, or API app, or one of the deployment slots.
+     * Deletes a web, mobile, or API app, or one of the deployment slots.
+     *
+     * <p>Description for Deletes a web, mobile, or API app, or one of the deployment slots.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app to delete.
@@ -6355,7 +7159,10 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for Creates a new web, mobile, or API app in an existing resource group, or updates an existing app.
+     * Creates a new web, mobile, or API app in an existing resource group, or updates an existing app.
+     *
+     * <p>Description for Creates a new web, mobile, or API app in an existing resource group, or updates an existing
+     * app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Unique name of the app to create or update. To create or update a deployment slot, use the {slot}
@@ -6373,7 +7180,10 @@ public interface WebAppsClient {
     SiteInner updateSlot(String resourceGroupName, String name, String slot, SitePatchResourceInner siteEnvelope);
 
     /**
-     * Description for Creates a new web, mobile, or API app in an existing resource group, or updates an existing app.
+     * Creates a new web, mobile, or API app in an existing resource group, or updates an existing app.
+     *
+     * <p>Description for Creates a new web, mobile, or API app in an existing resource group, or updates an existing
+     * app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Unique name of the app to create or update. To create or update a deployment slot, use the {slot}
@@ -6393,7 +7203,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, SitePatchResourceInner siteEnvelope, Context context);
 
     /**
-     * Description for Analyze a custom hostname.
+     * Analyze a custom hostname.
+     *
+     * <p>Description for Analyze a custom hostname.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -6408,7 +7220,9 @@ public interface WebAppsClient {
     CustomHostnameAnalysisResultInner analyzeCustomHostnameSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Analyze a custom hostname.
+     * Analyze a custom hostname.
+     *
+     * <p>Description for Analyze a custom hostname.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -6426,7 +7240,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, String hostname, Context context);
 
     /**
-     * Description for Applies the configuration settings from the target slot onto the current slot.
+     * Applies the configuration settings from the target slot onto the current slot.
+     *
+     * <p>Description for Applies the configuration settings from the target slot onto the current slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -6441,7 +7257,9 @@ public interface WebAppsClient {
     void applySlotConfigurationSlot(String resourceGroupName, String name, String slot, CsmSlotEntity slotSwapEntity);
 
     /**
-     * Description for Applies the configuration settings from the target slot onto the current slot.
+     * Applies the configuration settings from the target slot onto the current slot.
+     *
+     * <p>Description for Applies the configuration settings from the target slot onto the current slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -6459,7 +7277,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, CsmSlotEntity slotSwapEntity, Context context);
 
     /**
-     * Description for Creates a backup of an app.
+     * Creates a backup of an app.
+     *
+     * <p>Description for Creates a backup of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -6476,7 +7296,9 @@ public interface WebAppsClient {
     BackupItemInner backupSlot(String resourceGroupName, String name, String slot, BackupRequestInner request);
 
     /**
-     * Description for Creates a backup of an app.
+     * Creates a backup of an app.
+     *
+     * <p>Description for Creates a backup of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -6495,7 +7317,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, BackupRequestInner request, Context context);
 
     /**
-     * Description for Gets existing backups of an app.
+     * Gets existing backups of an app.
+     *
+     * <p>Description for Gets existing backups of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -6511,7 +7335,9 @@ public interface WebAppsClient {
     PagedIterable<BackupItemInner> listBackupsSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Gets existing backups of an app.
+     * Gets existing backups of an app.
+     *
+     * <p>Description for Gets existing backups of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -6528,7 +7354,9 @@ public interface WebAppsClient {
     PagedIterable<BackupItemInner> listBackupsSlot(String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Gets a backup of an app by its ID.
+     * Gets a backup of an app by its ID.
+     *
+     * <p>Description for Gets a backup of an app by its ID.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -6545,7 +7373,9 @@ public interface WebAppsClient {
     BackupItemInner getBackupStatusSlot(String resourceGroupName, String name, String backupId, String slot);
 
     /**
-     * Description for Gets a backup of an app by its ID.
+     * Gets a backup of an app by its ID.
+     *
+     * <p>Description for Gets a backup of an app by its ID.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -6564,7 +7394,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String backupId, String slot, Context context);
 
     /**
-     * Description for Deletes a backup of an app by its ID.
+     * Deletes a backup of an app by its ID.
+     *
+     * <p>Description for Deletes a backup of an app by its ID.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -6579,7 +7411,9 @@ public interface WebAppsClient {
     void deleteBackupSlot(String resourceGroupName, String name, String backupId, String slot);
 
     /**
-     * Description for Deletes a backup of an app by its ID.
+     * Deletes a backup of an app by its ID.
+     *
+     * <p>Description for Deletes a backup of an app by its ID.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -6597,7 +7431,11 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String backupId, String slot, Context context);
 
     /**
-     * Description for Gets status of a web app backup that may be in progress, including secrets associated with the
+     * Gets status of a web app backup that may be in progress, including secrets associated with the backup, such as
+     * the Azure Storage SAS URL. Also can be used to update the SAS URL for the backup if a new URL is passed in the
+     * request body.
+     *
+     * <p>Description for Gets status of a web app backup that may be in progress, including secrets associated with the
      * backup, such as the Azure Storage SAS URL. Also can be used to update the SAS URL for the backup if a new URL is
      * passed in the request body.
      *
@@ -6617,7 +7455,11 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String backupId, String slot, BackupRequestInner request);
 
     /**
-     * Description for Gets status of a web app backup that may be in progress, including secrets associated with the
+     * Gets status of a web app backup that may be in progress, including secrets associated with the backup, such as
+     * the Azure Storage SAS URL. Also can be used to update the SAS URL for the backup if a new URL is passed in the
+     * request body.
+     *
+     * <p>Description for Gets status of a web app backup that may be in progress, including secrets associated with the
      * backup, such as the Azure Storage SAS URL. Also can be used to update the SAS URL for the backup if a new URL is
      * passed in the request body.
      *
@@ -6643,7 +7485,9 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for Restores a specific backup to another app (or deployment slot, if specified).
+     * Restores a specific backup to another app (or deployment slot, if specified).
+     *
+     * <p>Description for Restores a specific backup to another app (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -6662,7 +7506,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String backupId, String slot, RestoreRequestInner request);
 
     /**
-     * Description for Restores a specific backup to another app (or deployment slot, if specified).
+     * Restores a specific backup to another app (or deployment slot, if specified).
+     *
+     * <p>Description for Restores a specific backup to another app (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -6687,7 +7533,9 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for Restores a specific backup to another app (or deployment slot, if specified).
+     * Restores a specific backup to another app (or deployment slot, if specified).
+     *
+     * <p>Description for Restores a specific backup to another app (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -6704,7 +7552,9 @@ public interface WebAppsClient {
     void restoreSlot(String resourceGroupName, String name, String backupId, String slot, RestoreRequestInner request);
 
     /**
-     * Description for Restores a specific backup to another app (or deployment slot, if specified).
+     * Restores a specific backup to another app (or deployment slot, if specified).
+     *
+     * <p>Description for Restores a specific backup to another app (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -6728,7 +7578,9 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for Returns whether Scm basic auth is allowed and whether Ftp is allowed for a given site.
+     * Returns whether Scm basic auth is allowed and whether Ftp is allowed for a given site.
+     *
+     * <p>Description for Returns whether Scm basic auth is allowed and whether Ftp is allowed for a given site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -6745,7 +7597,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Returns whether Scm basic auth is allowed and whether Ftp is allowed for a given site.
+     * Returns whether Scm basic auth is allowed and whether Ftp is allowed for a given site.
+     *
+     * <p>Description for Returns whether Scm basic auth is allowed and whether Ftp is allowed for a given site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -6763,7 +7617,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Returns whether FTP is allowed on the site or not.
+     * Returns whether FTP is allowed on the site or not.
+     *
+     * <p>Description for Returns whether FTP is allowed on the site or not.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -6778,7 +7634,9 @@ public interface WebAppsClient {
     CsmPublishingCredentialsPoliciesEntityInner getFtpAllowedSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Returns whether FTP is allowed on the site or not.
+     * Returns whether FTP is allowed on the site or not.
+     *
+     * <p>Description for Returns whether FTP is allowed on the site or not.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -6795,7 +7653,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Updates whether FTP is allowed on the site or not.
+     * Updates whether FTP is allowed on the site or not.
+     *
+     * <p>Description for Updates whether FTP is allowed on the site or not.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -6815,7 +7675,9 @@ public interface WebAppsClient {
         CsmPublishingCredentialsPoliciesEntityInner csmPublishingAccessPoliciesEntity);
 
     /**
-     * Description for Updates whether FTP is allowed on the site or not.
+     * Updates whether FTP is allowed on the site or not.
+     *
+     * <p>Description for Updates whether FTP is allowed on the site or not.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -6837,7 +7699,9 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for Returns whether Scm basic auth is allowed on the site or not.
+     * Returns whether Scm basic auth is allowed on the site or not.
+     *
+     * <p>Description for Returns whether Scm basic auth is allowed on the site or not.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -6852,7 +7716,9 @@ public interface WebAppsClient {
     CsmPublishingCredentialsPoliciesEntityInner getScmAllowedSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Returns whether Scm basic auth is allowed on the site or not.
+     * Returns whether Scm basic auth is allowed on the site or not.
+     *
+     * <p>Description for Returns whether Scm basic auth is allowed on the site or not.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -6869,7 +7735,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Updates whether user publishing credentials are allowed on the site or not.
+     * Updates whether user publishing credentials are allowed on the site or not.
+     *
+     * <p>Description for Updates whether user publishing credentials are allowed on the site or not.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -6889,7 +7757,9 @@ public interface WebAppsClient {
         CsmPublishingCredentialsPoliciesEntityInner csmPublishingAccessPoliciesEntity);
 
     /**
-     * Description for Updates whether user publishing credentials are allowed on the site or not.
+     * Updates whether user publishing credentials are allowed on the site or not.
+     *
+     * <p>Description for Updates whether user publishing credentials are allowed on the site or not.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -6911,7 +7781,9 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for List the configurations of an app.
+     * List the configurations of an app
+     *
+     * <p>Description for List the configurations of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -6927,7 +7799,9 @@ public interface WebAppsClient {
     PagedIterable<SiteConfigResourceInner> listConfigurationsSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for List the configurations of an app.
+     * List the configurations of an app
+     *
+     * <p>Description for List the configurations of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -6945,7 +7819,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Replaces the application settings of an app.
+     * Replaces the application settings of an app.
+     *
+     * <p>Description for Replaces the application settings of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -6963,7 +7839,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, StringDictionaryInner appSettings);
 
     /**
-     * Description for Replaces the application settings of an app.
+     * Replaces the application settings of an app.
+     *
+     * <p>Description for Replaces the application settings of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -6982,7 +7860,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, StringDictionaryInner appSettings, Context context);
 
     /**
-     * Description for Gets the application settings of an app.
+     * Gets the application settings of an app.
+     *
+     * <p>Description for Gets the application settings of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -6998,7 +7878,9 @@ public interface WebAppsClient {
     StringDictionaryInner listApplicationSettingsSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Gets the application settings of an app.
+     * Gets the application settings of an app.
+     *
+     * <p>Description for Gets the application settings of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -7016,7 +7898,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Updates the Authentication / Authorization settings associated with web app.
+     * Updates the Authentication / Authorization settings associated with web app.
+     *
+     * <p>Description for Updates the Authentication / Authorization settings associated with web app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -7033,7 +7917,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, SiteAuthSettingsInner siteAuthSettings);
 
     /**
-     * Description for Updates the Authentication / Authorization settings associated with web app.
+     * Updates the Authentication / Authorization settings associated with web app.
+     *
+     * <p>Description for Updates the Authentication / Authorization settings associated with web app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -7052,7 +7938,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, SiteAuthSettingsInner siteAuthSettings, Context context);
 
     /**
-     * Description for Gets the Authentication/Authorization settings of an app.
+     * Gets the Authentication/Authorization settings of an app.
+     *
+     * <p>Description for Gets the Authentication/Authorization settings of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -7068,7 +7956,9 @@ public interface WebAppsClient {
     SiteAuthSettingsInner getAuthSettingsSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Gets the Authentication/Authorization settings of an app.
+     * Gets the Authentication/Authorization settings of an app.
+     *
+     * <p>Description for Gets the Authentication/Authorization settings of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -7121,7 +8011,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Updates site's Authentication / Authorization settings for apps via the V2 format.
+     * Updates site's Authentication / Authorization settings for apps via the V2 format
+     *
+     * <p>Description for Updates site's Authentication / Authorization settings for apps via the V2 format.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -7138,7 +8030,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, SiteAuthSettingsV2Inner siteAuthSettingsV2);
 
     /**
-     * Description for Updates site's Authentication / Authorization settings for apps via the V2 format.
+     * Updates site's Authentication / Authorization settings for apps via the V2 format
+     *
+     * <p>Description for Updates site's Authentication / Authorization settings for apps via the V2 format.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -7161,7 +8055,9 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for Gets site's Authentication / Authorization settings for apps via the V2 format.
+     * Gets site's Authentication / Authorization settings for apps via the V2 format
+     *
+     * <p>Description for Gets site's Authentication / Authorization settings for apps via the V2 format.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -7177,7 +8073,9 @@ public interface WebAppsClient {
     SiteAuthSettingsV2Inner getAuthSettingsV2Slot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Gets site's Authentication / Authorization settings for apps via the V2 format.
+     * Gets site's Authentication / Authorization settings for apps via the V2 format
+     *
+     * <p>Description for Gets site's Authentication / Authorization settings for apps via the V2 format.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -7196,7 +8094,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Updates the Azure storage account configurations of an app.
+     * Updates the Azure storage account configurations of an app.
+     *
+     * <p>Description for Updates the Azure storage account configurations of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -7217,7 +8117,9 @@ public interface WebAppsClient {
         AzureStoragePropertyDictionaryResourceInner azureStorageAccounts);
 
     /**
-     * Description for Updates the Azure storage account configurations of an app.
+     * Updates the Azure storage account configurations of an app.
+     *
+     * <p>Description for Updates the Azure storage account configurations of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -7240,7 +8142,9 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for Gets the Azure storage account configurations of an app.
+     * Gets the Azure storage account configurations of an app.
+     *
+     * <p>Description for Gets the Azure storage account configurations of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -7257,7 +8161,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Gets the Azure storage account configurations of an app.
+     * Gets the Azure storage account configurations of an app.
+     *
+     * <p>Description for Gets the Azure storage account configurations of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -7275,7 +8181,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Updates the backup configuration of an app.
+     * Updates the backup configuration of an app.
+     *
+     * <p>Description for Updates the backup configuration of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -7293,7 +8201,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, BackupRequestInner request);
 
     /**
-     * Description for Updates the backup configuration of an app.
+     * Updates the backup configuration of an app.
+     *
+     * <p>Description for Updates the backup configuration of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -7312,7 +8222,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, BackupRequestInner request, Context context);
 
     /**
-     * Description for Deletes the backup configuration of an app.
+     * Deletes the backup configuration of an app.
+     *
+     * <p>Description for Deletes the backup configuration of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -7327,7 +8239,9 @@ public interface WebAppsClient {
     void deleteBackupConfigurationSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Deletes the backup configuration of an app.
+     * Deletes the backup configuration of an app.
+     *
+     * <p>Description for Deletes the backup configuration of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -7345,7 +8259,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Gets the backup configuration of an app.
+     * Gets the backup configuration of an app.
+     *
+     * <p>Description for Gets the backup configuration of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -7361,7 +8277,9 @@ public interface WebAppsClient {
     BackupRequestInner getBackupConfigurationSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Gets the backup configuration of an app.
+     * Gets the backup configuration of an app.
+     *
+     * <p>Description for Gets the backup configuration of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -7379,7 +8297,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Gets the config reference app settings and status of an app.
+     * Gets the config reference app settings and status of an app
+     *
+     * <p>Description for Gets the config reference app settings and status of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -7395,7 +8315,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Gets the config reference app settings and status of an app.
+     * Gets the config reference app settings and status of an app
+     *
+     * <p>Description for Gets the config reference app settings and status of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -7412,7 +8334,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Gets the config reference and status of an app.
+     * Gets the config reference and status of an app
+     *
+     * <p>Description for Gets the config reference and status of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -7429,7 +8353,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String appSettingKey, String slot);
 
     /**
-     * Description for Gets the config reference and status of an app.
+     * Gets the config reference and status of an app
+     *
+     * <p>Description for Gets the config reference and status of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -7447,7 +8373,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String appSettingKey, String slot, Context context);
 
     /**
-     * Description for Gets the config reference app settings and status of an app.
+     * Gets the config reference app settings and status of an app
+     *
+     * <p>Description for Gets the config reference app settings and status of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -7463,7 +8391,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Gets the config reference app settings and status of an app.
+     * Gets the config reference app settings and status of an app
+     *
+     * <p>Description for Gets the config reference app settings and status of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -7480,7 +8410,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Gets the config reference and status of an app.
+     * Gets the config reference and status of an app
+     *
+     * <p>Description for Gets the config reference and status of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -7497,7 +8429,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String connectionStringKey, String slot);
 
     /**
-     * Description for Gets the config reference and status of an app.
+     * Gets the config reference and status of an app
+     *
+     * <p>Description for Gets the config reference and status of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -7515,7 +8449,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String connectionStringKey, String slot, Context context);
 
     /**
-     * Description for Replaces the connection strings of an app.
+     * Replaces the connection strings of an app.
+     *
+     * <p>Description for Replaces the connection strings of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -7533,7 +8469,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, ConnectionStringDictionaryInner connectionStrings);
 
     /**
-     * Description for Replaces the connection strings of an app.
+     * Replaces the connection strings of an app.
+     *
+     * <p>Description for Replaces the connection strings of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -7556,7 +8494,9 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for Gets the connection strings of an app.
+     * Gets the connection strings of an app.
+     *
+     * <p>Description for Gets the connection strings of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -7572,7 +8512,9 @@ public interface WebAppsClient {
     ConnectionStringDictionaryInner listConnectionStringsSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Gets the connection strings of an app.
+     * Gets the connection strings of an app.
+     *
+     * <p>Description for Gets the connection strings of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -7590,7 +8532,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Gets the logging configuration of an app.
+     * Gets the logging configuration of an app.
+     *
+     * <p>Description for Gets the logging configuration of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -7606,7 +8550,9 @@ public interface WebAppsClient {
     SiteLogsConfigInner getDiagnosticLogsConfigurationSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Gets the logging configuration of an app.
+     * Gets the logging configuration of an app.
+     *
+     * <p>Description for Gets the logging configuration of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -7624,7 +8570,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Updates the logging configuration of an app.
+     * Updates the logging configuration of an app.
+     *
+     * <p>Description for Updates the logging configuration of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -7643,7 +8591,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, SiteLogsConfigInner siteLogsConfig);
 
     /**
-     * Description for Updates the logging configuration of an app.
+     * Updates the logging configuration of an app.
+     *
+     * <p>Description for Updates the logging configuration of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -7663,7 +8613,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, SiteLogsConfigInner siteLogsConfig, Context context);
 
     /**
-     * Description for Replaces the metadata of an app.
+     * Replaces the metadata of an app.
+     *
+     * <p>Description for Replaces the metadata of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -7681,7 +8633,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, StringDictionaryInner metadata);
 
     /**
-     * Description for Replaces the metadata of an app.
+     * Replaces the metadata of an app.
+     *
+     * <p>Description for Replaces the metadata of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -7700,7 +8654,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, StringDictionaryInner metadata, Context context);
 
     /**
-     * Description for Gets the metadata of an app.
+     * Gets the metadata of an app.
+     *
+     * <p>Description for Gets the metadata of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -7716,7 +8672,9 @@ public interface WebAppsClient {
     StringDictionaryInner listMetadataSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Gets the metadata of an app.
+     * Gets the metadata of an app.
+     *
+     * <p>Description for Gets the metadata of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -7734,7 +8692,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Gets the Git/FTP publishing credentials of an app.
+     * Gets the Git/FTP publishing credentials of an app.
+     *
+     * <p>Description for Gets the Git/FTP publishing credentials of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -7751,7 +8711,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Gets the Git/FTP publishing credentials of an app.
+     * Gets the Git/FTP publishing credentials of an app.
+     *
+     * <p>Description for Gets the Git/FTP publishing credentials of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -7769,7 +8731,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Gets the Git/FTP publishing credentials of an app.
+     * Gets the Git/FTP publishing credentials of an app.
+     *
+     * <p>Description for Gets the Git/FTP publishing credentials of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -7785,7 +8749,9 @@ public interface WebAppsClient {
     UserInner listPublishingCredentialsSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Gets the Git/FTP publishing credentials of an app.
+     * Gets the Git/FTP publishing credentials of an app.
+     *
+     * <p>Description for Gets the Git/FTP publishing credentials of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -7802,7 +8768,9 @@ public interface WebAppsClient {
     UserInner listPublishingCredentialsSlot(String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Updates the Push settings associated with web app.
+     * Updates the Push settings associated with web app.
+     *
+     * <p>Description for Updates the Push settings associated with web app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -7819,7 +8787,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, PushSettingsInner pushSettings);
 
     /**
-     * Description for Updates the Push settings associated with web app.
+     * Updates the Push settings associated with web app.
+     *
+     * <p>Description for Updates the Push settings associated with web app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -7837,7 +8807,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, PushSettingsInner pushSettings, Context context);
 
     /**
-     * Description for Gets the Push settings associated with web app.
+     * Gets the Push settings associated with web app.
+     *
+     * <p>Description for Gets the Push settings associated with web app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -7852,7 +8824,9 @@ public interface WebAppsClient {
     PushSettingsInner listSitePushSettingsSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Gets the Push settings associated with web app.
+     * Gets the Push settings associated with web app.
+     *
+     * <p>Description for Gets the Push settings associated with web app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -7869,7 +8843,10 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Gets the configuration of an app, such as platform version and bitness, default documents,
+     * Gets the configuration of an app, such as platform version and bitness, default documents, virtual applications,
+     * Always On, etc.
+     *
+     * <p>Description for Gets the configuration of an app, such as platform version and bitness, default documents,
      * virtual applications, Always On, etc.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
@@ -7886,7 +8863,10 @@ public interface WebAppsClient {
     SiteConfigResourceInner getConfigurationSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Gets the configuration of an app, such as platform version and bitness, default documents,
+     * Gets the configuration of an app, such as platform version and bitness, default documents, virtual applications,
+     * Always On, etc.
+     *
+     * <p>Description for Gets the configuration of an app, such as platform version and bitness, default documents,
      * virtual applications, Always On, etc.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
@@ -7905,7 +8885,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Updates the configuration of an app.
+     * Updates the configuration of an app.
+     *
+     * <p>Description for Updates the configuration of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -7923,7 +8905,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, SiteConfigResourceInner siteConfig);
 
     /**
-     * Description for Updates the configuration of an app.
+     * Updates the configuration of an app.
+     *
+     * <p>Description for Updates the configuration of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -7942,7 +8926,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, SiteConfigResourceInner siteConfig, Context context);
 
     /**
-     * Description for Updates the configuration of an app.
+     * Updates the configuration of an app.
+     *
+     * <p>Description for Updates the configuration of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -7960,7 +8946,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, SiteConfigResourceInner siteConfig);
 
     /**
-     * Description for Updates the configuration of an app.
+     * Updates the configuration of an app.
+     *
+     * <p>Description for Updates the configuration of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -7979,8 +8967,11 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, SiteConfigResourceInner siteConfig, Context context);
 
     /**
-     * Description for Gets a list of web app configuration snapshots identifiers. Each element of the list contains a
-     * timestamp and the ID of the snapshot.
+     * Gets a list of web app configuration snapshots identifiers. Each element of the list contains a timestamp and the
+     * ID of the snapshot.
+     *
+     * <p>Description for Gets a list of web app configuration snapshots identifiers. Each element of the list contains
+     * a timestamp and the ID of the snapshot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -7998,8 +8989,11 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Gets a list of web app configuration snapshots identifiers. Each element of the list contains a
-     * timestamp and the ID of the snapshot.
+     * Gets a list of web app configuration snapshots identifiers. Each element of the list contains a timestamp and the
+     * ID of the snapshot.
+     *
+     * <p>Description for Gets a list of web app configuration snapshots identifiers. Each element of the list contains
+     * a timestamp and the ID of the snapshot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -8018,7 +9012,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Gets a snapshot of the configuration of an app at a previous point in time.
+     * Gets a snapshot of the configuration of an app at a previous point in time.
+     *
+     * <p>Description for Gets a snapshot of the configuration of an app at a previous point in time.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -8036,7 +9032,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String snapshotId, String slot);
 
     /**
-     * Description for Gets a snapshot of the configuration of an app at a previous point in time.
+     * Gets a snapshot of the configuration of an app at a previous point in time.
+     *
+     * <p>Description for Gets a snapshot of the configuration of an app at a previous point in time.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -8055,7 +9053,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String snapshotId, String slot, Context context);
 
     /**
-     * Description for Reverts the configuration of an app to a previous snapshot.
+     * Reverts the configuration of an app to a previous snapshot.
+     *
+     * <p>Description for Reverts the configuration of an app to a previous snapshot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -8071,7 +9071,9 @@ public interface WebAppsClient {
     void recoverSiteConfigurationSnapshotSlot(String resourceGroupName, String name, String snapshotId, String slot);
 
     /**
-     * Description for Reverts the configuration of an app to a previous snapshot.
+     * Reverts the configuration of an app to a previous snapshot.
+     *
+     * <p>Description for Reverts the configuration of an app to a previous snapshot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -8090,7 +9092,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String snapshotId, String slot, Context context);
 
     /**
-     * Description for Gets the last lines of docker logs for the given site.
+     * Gets the last lines of docker logs for the given site
+     *
+     * <p>Description for Gets the last lines of docker logs for the given site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -8104,7 +9108,9 @@ public interface WebAppsClient {
     InputStream getWebSiteContainerLogsSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Gets the last lines of docker logs for the given site.
+     * Gets the last lines of docker logs for the given site
+     *
+     * <p>Description for Gets the last lines of docker logs for the given site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -8120,7 +9126,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Gets the ZIP archived docker log files for the given site.
+     * Gets the ZIP archived docker log files for the given site
+     *
+     * <p>Description for Gets the ZIP archived docker log files for the given site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -8134,7 +9142,9 @@ public interface WebAppsClient {
     InputStream getContainerLogsZipSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Gets the ZIP archived docker log files for the given site.
+     * Gets the ZIP archived docker log files for the given site
+     *
+     * <p>Description for Gets the ZIP archived docker log files for the given site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -8150,7 +9160,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for List continuous web jobs for an app, or a deployment slot.
+     * List continuous web jobs for an app, or a deployment slot.
+     *
+     * <p>Description for List continuous web jobs for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -8167,7 +9179,9 @@ public interface WebAppsClient {
     PagedIterable<ContinuousWebJobInner> listContinuousWebJobsSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for List continuous web jobs for an app, or a deployment slot.
+     * List continuous web jobs for an app, or a deployment slot.
+     *
+     * <p>Description for List continuous web jobs for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -8186,7 +9200,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Gets a continuous web job by its ID for an app, or a deployment slot.
+     * Gets a continuous web job by its ID for an app, or a deployment slot.
+     *
+     * <p>Description for Gets a continuous web job by its ID for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -8203,7 +9219,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String webJobName, String slot);
 
     /**
-     * Description for Gets a continuous web job by its ID for an app, or a deployment slot.
+     * Gets a continuous web job by its ID for an app, or a deployment slot.
+     *
+     * <p>Description for Gets a continuous web job by its ID for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -8221,7 +9239,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String webJobName, String slot, Context context);
 
     /**
-     * Description for Delete a continuous web job by its ID for an app, or a deployment slot.
+     * Delete a continuous web job by its ID for an app, or a deployment slot.
+     *
+     * <p>Description for Delete a continuous web job by its ID for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -8237,7 +9257,9 @@ public interface WebAppsClient {
     void deleteContinuousWebJobSlot(String resourceGroupName, String name, String webJobName, String slot);
 
     /**
-     * Description for Delete a continuous web job by its ID for an app, or a deployment slot.
+     * Delete a continuous web job by its ID for an app, or a deployment slot.
+     *
+     * <p>Description for Delete a continuous web job by its ID for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -8256,7 +9278,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String webJobName, String slot, Context context);
 
     /**
-     * Description for Start a continuous web job for an app, or a deployment slot.
+     * Start a continuous web job for an app, or a deployment slot.
+     *
+     * <p>Description for Start a continuous web job for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -8271,7 +9295,9 @@ public interface WebAppsClient {
     void startContinuousWebJobSlot(String resourceGroupName, String name, String webJobName, String slot);
 
     /**
-     * Description for Start a continuous web job for an app, or a deployment slot.
+     * Start a continuous web job for an app, or a deployment slot.
+     *
+     * <p>Description for Start a continuous web job for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -8289,7 +9315,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String webJobName, String slot, Context context);
 
     /**
-     * Description for Stop a continuous web job for an app, or a deployment slot.
+     * Stop a continuous web job for an app, or a deployment slot.
+     *
+     * <p>Description for Stop a continuous web job for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -8304,7 +9332,9 @@ public interface WebAppsClient {
     void stopContinuousWebJobSlot(String resourceGroupName, String name, String webJobName, String slot);
 
     /**
-     * Description for Stop a continuous web job for an app, or a deployment slot.
+     * Stop a continuous web job for an app, or a deployment slot.
+     *
+     * <p>Description for Stop a continuous web job for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -8433,7 +9463,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, String deploymentStatusId, Context context);
 
     /**
-     * Description for List deployments for an app, or a deployment slot.
+     * List deployments for an app, or a deployment slot.
+     *
+     * <p>Description for List deployments for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -8449,7 +9481,9 @@ public interface WebAppsClient {
     PagedIterable<DeploymentInner> listDeploymentsSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for List deployments for an app, or a deployment slot.
+     * List deployments for an app, or a deployment slot.
+     *
+     * <p>Description for List deployments for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -8467,7 +9501,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Get a deployment by its ID for an app, or a deployment slot.
+     * Get a deployment by its ID for an app, or a deployment slot.
+     *
+     * <p>Description for Get a deployment by its ID for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -8484,7 +9520,9 @@ public interface WebAppsClient {
     DeploymentInner getDeploymentSlot(String resourceGroupName, String name, String id, String slot);
 
     /**
-     * Description for Get a deployment by its ID for an app, or a deployment slot.
+     * Get a deployment by its ID for an app, or a deployment slot.
+     *
+     * <p>Description for Get a deployment by its ID for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -8503,7 +9541,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String id, String slot, Context context);
 
     /**
-     * Description for Create a deployment for an app, or a deployment slot.
+     * Create a deployment for an app, or a deployment slot.
+     *
+     * <p>Description for Create a deployment for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -8522,7 +9562,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String id, String slot, DeploymentInner deployment);
 
     /**
-     * Description for Create a deployment for an app, or a deployment slot.
+     * Create a deployment for an app, or a deployment slot.
+     *
+     * <p>Description for Create a deployment for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -8542,7 +9584,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String id, String slot, DeploymentInner deployment, Context context);
 
     /**
-     * Description for Delete a deployment by its ID for an app, or a deployment slot.
+     * Delete a deployment by its ID for an app, or a deployment slot.
+     *
+     * <p>Description for Delete a deployment by its ID for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -8558,7 +9602,9 @@ public interface WebAppsClient {
     void deleteDeploymentSlot(String resourceGroupName, String name, String id, String slot);
 
     /**
-     * Description for Delete a deployment by its ID for an app, or a deployment slot.
+     * Delete a deployment by its ID for an app, or a deployment slot.
+     *
+     * <p>Description for Delete a deployment by its ID for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -8577,7 +9623,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String id, String slot, Context context);
 
     /**
-     * Description for List deployment log for specific deployment for an app, or a deployment slot.
+     * List deployment log for specific deployment for an app, or a deployment slot.
+     *
+     * <p>Description for List deployment log for specific deployment for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -8595,7 +9643,9 @@ public interface WebAppsClient {
     DeploymentInner listDeploymentLogSlot(String resourceGroupName, String name, String id, String slot);
 
     /**
-     * Description for List deployment log for specific deployment for an app, or a deployment slot.
+     * List deployment log for specific deployment for an app, or a deployment slot.
+     *
+     * <p>Description for List deployment log for specific deployment for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -8615,8 +9665,11 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String id, String slot, Context context);
 
     /**
-     * Description for Discovers an existing app backup that can be restored from a blob in Azure storage. Use this to
-     * get information about the databases stored in a backup.
+     * Discovers an existing app backup that can be restored from a blob in Azure storage. Use this to get information
+     * about the databases stored in a backup.
+     *
+     * <p>Description for Discovers an existing app backup that can be restored from a blob in Azure storage. Use this
+     * to get information about the databases stored in a backup.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -8634,8 +9687,11 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, RestoreRequestInner request);
 
     /**
-     * Description for Discovers an existing app backup that can be restored from a blob in Azure storage. Use this to
-     * get information about the databases stored in a backup.
+     * Discovers an existing app backup that can be restored from a blob in Azure storage. Use this to get information
+     * about the databases stored in a backup.
+     *
+     * <p>Description for Discovers an existing app backup that can be restored from a blob in Azure storage. Use this
+     * to get information about the databases stored in a backup.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -8654,7 +9710,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, RestoreRequestInner request, Context context);
 
     /**
-     * Description for Lists ownership identifiers for domain associated with web app.
+     * Lists ownership identifiers for domain associated with web app.
+     *
+     * <p>Description for Lists ownership identifiers for domain associated with web app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -8671,7 +9729,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Lists ownership identifiers for domain associated with web app.
+     * Lists ownership identifiers for domain associated with web app.
+     *
+     * <p>Description for Lists ownership identifiers for domain associated with web app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -8689,7 +9749,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Get domain ownership identifier for web app.
+     * Get domain ownership identifier for web app.
+     *
+     * <p>Description for Get domain ownership identifier for web app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -8707,7 +9769,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String domainOwnershipIdentifierName, String slot);
 
     /**
-     * Description for Get domain ownership identifier for web app.
+     * Get domain ownership identifier for web app.
+     *
+     * <p>Description for Get domain ownership identifier for web app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -8726,7 +9790,10 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String domainOwnershipIdentifierName, String slot, Context context);
 
     /**
-     * Description for Creates a domain ownership identifier for web app, or updates an existing ownership identifier.
+     * Creates a domain ownership identifier for web app, or updates an existing ownership identifier.
+     *
+     * <p>Description for Creates a domain ownership identifier for web app, or updates an existing ownership
+     * identifier.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -8749,7 +9816,10 @@ public interface WebAppsClient {
         IdentifierInner domainOwnershipIdentifier);
 
     /**
-     * Description for Creates a domain ownership identifier for web app, or updates an existing ownership identifier.
+     * Creates a domain ownership identifier for web app, or updates an existing ownership identifier.
+     *
+     * <p>Description for Creates a domain ownership identifier for web app, or updates an existing ownership
+     * identifier.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -8774,7 +9844,9 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for Deletes a domain ownership identifier for a web app.
+     * Deletes a domain ownership identifier for a web app.
+     *
+     * <p>Description for Deletes a domain ownership identifier for a web app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -8791,7 +9863,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String domainOwnershipIdentifierName, String slot);
 
     /**
-     * Description for Deletes a domain ownership identifier for a web app.
+     * Deletes a domain ownership identifier for a web app.
+     *
+     * <p>Description for Deletes a domain ownership identifier for a web app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -8810,7 +9884,10 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String domainOwnershipIdentifierName, String slot, Context context);
 
     /**
-     * Description for Creates a domain ownership identifier for web app, or updates an existing ownership identifier.
+     * Creates a domain ownership identifier for web app, or updates an existing ownership identifier.
+     *
+     * <p>Description for Creates a domain ownership identifier for web app, or updates an existing ownership
+     * identifier.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -8833,7 +9910,10 @@ public interface WebAppsClient {
         IdentifierInner domainOwnershipIdentifier);
 
     /**
-     * Description for Creates a domain ownership identifier for web app, or updates an existing ownership identifier.
+     * Creates a domain ownership identifier for web app, or updates an existing ownership identifier.
+     *
+     * <p>Description for Creates a domain ownership identifier for web app, or updates an existing ownership
+     * identifier.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -8858,7 +9938,9 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for Get the status of the last MSDeploy operation.
+     * Get the status of the last MSDeploy operation.
+     *
+     * <p>Description for Get the status of the last MSDeploy operation.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -8873,7 +9955,9 @@ public interface WebAppsClient {
     MSDeployStatusInner getMSDeployStatusSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Get the status of the last MSDeploy operation.
+     * Get the status of the last MSDeploy operation.
+     *
+     * <p>Description for Get the status of the last MSDeploy operation.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -8890,7 +9974,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Invoke the MSDeploy web app extension.
+     * Invoke the MSDeploy web app extension.
+     *
+     * <p>Description for Invoke the MSDeploy web app extension.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -8906,7 +9992,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, MSDeploy mSDeploy);
 
     /**
-     * Description for Invoke the MSDeploy web app extension.
+     * Invoke the MSDeploy web app extension.
+     *
+     * <p>Description for Invoke the MSDeploy web app extension.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -8923,7 +10011,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, MSDeploy mSDeploy, Context context);
 
     /**
-     * Description for Invoke the MSDeploy web app extension.
+     * Invoke the MSDeploy web app extension.
+     *
+     * <p>Description for Invoke the MSDeploy web app extension.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -8939,7 +10029,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, MSDeploy mSDeploy);
 
     /**
-     * Description for Invoke the MSDeploy web app extension.
+     * Invoke the MSDeploy web app extension.
+     *
+     * <p>Description for Invoke the MSDeploy web app extension.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -8956,7 +10048,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, MSDeploy mSDeploy, Context context);
 
     /**
-     * Description for Get the MSDeploy Log for the last MSDeploy operation.
+     * Get the MSDeploy Log for the last MSDeploy operation.
+     *
+     * <p>Description for Get the MSDeploy Log for the last MSDeploy operation.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -8970,7 +10064,9 @@ public interface WebAppsClient {
     MSDeployLogInner getMSDeployLogSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Get the MSDeploy Log for the last MSDeploy operation.
+     * Get the MSDeploy Log for the last MSDeploy operation.
+     *
+     * <p>Description for Get the MSDeploy Log for the last MSDeploy operation.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -8986,7 +10082,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for List the functions for a web site, or a deployment slot.
+     * List the functions for a web site, or a deployment slot.
+     *
+     * <p>Description for List the functions for a web site, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -9000,7 +10098,9 @@ public interface WebAppsClient {
     PagedIterable<FunctionEnvelopeInner> listInstanceFunctionsSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for List the functions for a web site, or a deployment slot.
+     * List the functions for a web site, or a deployment slot.
+     *
+     * <p>Description for List the functions for a web site, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -9016,7 +10116,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Fetch a short lived token that can be exchanged for a master key.
+     * Fetch a short lived token that can be exchanged for a master key.
+     *
+     * <p>Description for Fetch a short lived token that can be exchanged for a master key.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -9031,7 +10133,9 @@ public interface WebAppsClient {
     String getFunctionsAdminTokenSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Fetch a short lived token that can be exchanged for a master key.
+     * Fetch a short lived token that can be exchanged for a master key.
+     *
+     * <p>Description for Fetch a short lived token that can be exchanged for a master key.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -9048,7 +10152,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Get function information by its ID for web site, or a deployment slot.
+     * Get function information by its ID for web site, or a deployment slot.
+     *
+     * <p>Description for Get function information by its ID for web site, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -9064,7 +10170,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String functionName, String slot);
 
     /**
-     * Description for Get function information by its ID for web site, or a deployment slot.
+     * Get function information by its ID for web site, or a deployment slot.
+     *
+     * <p>Description for Get function information by its ID for web site, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -9081,7 +10189,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String functionName, String slot, Context context);
 
     /**
-     * Description for Create function for web site, or a deployment slot.
+     * Create function for web site, or a deployment slot.
+     *
+     * <p>Description for Create function for web site, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -9103,7 +10213,9 @@ public interface WebAppsClient {
         FunctionEnvelopeInner functionEnvelope);
 
     /**
-     * Description for Create function for web site, or a deployment slot.
+     * Create function for web site, or a deployment slot.
+     *
+     * <p>Description for Create function for web site, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -9127,7 +10239,9 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for Create function for web site, or a deployment slot.
+     * Create function for web site, or a deployment slot.
+     *
+     * <p>Description for Create function for web site, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -9149,7 +10263,9 @@ public interface WebAppsClient {
         FunctionEnvelopeInner functionEnvelope);
 
     /**
-     * Description for Create function for web site, or a deployment slot.
+     * Create function for web site, or a deployment slot.
+     *
+     * <p>Description for Create function for web site, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -9173,7 +10289,9 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for Delete a function for web site, or a deployment slot.
+     * Delete a function for web site, or a deployment slot.
+     *
+     * <p>Description for Delete a function for web site, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -9187,7 +10305,9 @@ public interface WebAppsClient {
     void deleteInstanceFunctionSlot(String resourceGroupName, String name, String functionName, String slot);
 
     /**
-     * Description for Delete a function for web site, or a deployment slot.
+     * Delete a function for web site, or a deployment slot.
+     *
+     * <p>Description for Delete a function for web site, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -9204,7 +10324,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String functionName, String slot, Context context);
 
     /**
-     * Description for Add or update a function secret.
+     * Add or update a function secret.
+     *
+     * <p>Description for Add or update a function secret.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -9223,7 +10345,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String functionName, String keyName, String slot, KeyInfoInner key);
 
     /**
-     * Description for Add or update a function secret.
+     * Add or update a function secret.
+     *
+     * <p>Description for Add or update a function secret.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -9249,7 +10373,9 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for Delete a function secret.
+     * Delete a function secret.
+     *
+     * <p>Description for Delete a function secret.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -9265,7 +10391,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String functionName, String keyName, String slot);
 
     /**
-     * Description for Delete a function secret.
+     * Delete a function secret.
+     *
+     * <p>Description for Delete a function secret.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -9283,7 +10411,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String functionName, String keyName, String slot, Context context);
 
     /**
-     * Description for Get function keys for a function in a web site, or a deployment slot.
+     * Get function keys for a function in a web site, or a deployment slot.
+     *
+     * <p>Description for Get function keys for a function in a web site, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -9299,7 +10429,9 @@ public interface WebAppsClient {
     StringDictionaryInner listFunctionKeysSlot(String resourceGroupName, String name, String functionName, String slot);
 
     /**
-     * Description for Get function keys for a function in a web site, or a deployment slot.
+     * Get function keys for a function in a web site, or a deployment slot.
+     *
+     * <p>Description for Get function keys for a function in a web site, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -9317,7 +10449,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String functionName, String slot, Context context);
 
     /**
-     * Description for Get function secrets for a function in a web site, or a deployment slot.
+     * Get function secrets for a function in a web site, or a deployment slot.
+     *
+     * <p>Description for Get function secrets for a function in a web site, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -9334,7 +10468,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String functionName, String slot);
 
     /**
-     * Description for Get function secrets for a function in a web site, or a deployment slot.
+     * Get function secrets for a function in a web site, or a deployment slot.
+     *
+     * <p>Description for Get function secrets for a function in a web site, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -9352,7 +10488,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String functionName, String slot, Context context);
 
     /**
-     * Description for Get host secrets for a function app.
+     * Get host secrets for a function app.
+     *
+     * <p>Description for Get host secrets for a function app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -9367,7 +10505,9 @@ public interface WebAppsClient {
     HostKeysInner listHostKeysSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Get host secrets for a function app.
+     * Get host secrets for a function app.
+     *
+     * <p>Description for Get host secrets for a function app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -9384,7 +10524,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for This is to allow calling via powershell and ARM template.
+     * This is to allow calling via powershell and ARM template.
+     *
+     * <p>Description for This is to allow calling via powershell and ARM template.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -9398,7 +10540,9 @@ public interface WebAppsClient {
     void listSyncStatusSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for This is to allow calling via powershell and ARM template.
+     * This is to allow calling via powershell and ARM template.
+     *
+     * <p>Description for This is to allow calling via powershell and ARM template.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -9414,7 +10558,9 @@ public interface WebAppsClient {
     Response<Void> listSyncStatusSlotWithResponse(String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Syncs function trigger metadata to the management database.
+     * Syncs function trigger metadata to the management database
+     *
+     * <p>Description for Syncs function trigger metadata to the management database.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -9428,7 +10574,9 @@ public interface WebAppsClient {
     void syncFunctionsSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Syncs function trigger metadata to the management database.
+     * Syncs function trigger metadata to the management database
+     *
+     * <p>Description for Syncs function trigger metadata to the management database.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -9444,7 +10592,9 @@ public interface WebAppsClient {
     Response<Void> syncFunctionsSlotWithResponse(String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Add or update a host level secret.
+     * Add or update a host level secret.
+     *
+     * <p>Description for Add or update a host level secret.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -9463,7 +10613,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String keyType, String keyName, String slot, KeyInfoInner key);
 
     /**
-     * Description for Add or update a host level secret.
+     * Add or update a host level secret.
+     *
+     * <p>Description for Add or update a host level secret.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -9489,7 +10641,9 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for Delete a host level secret.
+     * Delete a host level secret.
+     *
+     * <p>Description for Delete a host level secret.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -9504,7 +10658,9 @@ public interface WebAppsClient {
     void deleteHostSecretSlot(String resourceGroupName, String name, String keyType, String keyName, String slot);
 
     /**
-     * Description for Delete a host level secret.
+     * Delete a host level secret.
+     *
+     * <p>Description for Delete a host level secret.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -9522,7 +10678,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String keyType, String keyName, String slot, Context context);
 
     /**
-     * Description for Get hostname bindings for an app or a deployment slot.
+     * Get hostname bindings for an app or a deployment slot.
+     *
+     * <p>Description for Get hostname bindings for an app or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -9538,7 +10696,9 @@ public interface WebAppsClient {
     PagedIterable<HostnameBindingInner> listHostnameBindingsSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Get hostname bindings for an app or a deployment slot.
+     * Get hostname bindings for an app or a deployment slot.
+     *
+     * <p>Description for Get hostname bindings for an app or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -9556,7 +10716,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Get the named hostname binding for an app (or deployment slot, if specified).
+     * Get the named hostname binding for an app (or deployment slot, if specified).
+     *
+     * <p>Description for Get the named hostname binding for an app (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -9573,7 +10735,9 @@ public interface WebAppsClient {
     HostnameBindingInner getHostnameBindingSlot(String resourceGroupName, String name, String slot, String hostname);
 
     /**
-     * Description for Get the named hostname binding for an app (or deployment slot, if specified).
+     * Get the named hostname binding for an app (or deployment slot, if specified).
+     *
+     * <p>Description for Get the named hostname binding for an app (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -9592,7 +10756,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, String hostname, Context context);
 
     /**
-     * Description for Creates a hostname binding for an app.
+     * Creates a hostname binding for an app.
+     *
+     * <p>Description for Creates a hostname binding for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -9611,7 +10777,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String hostname, String slot, HostnameBindingInner hostnameBinding);
 
     /**
-     * Description for Creates a hostname binding for an app.
+     * Creates a hostname binding for an app.
+     *
+     * <p>Description for Creates a hostname binding for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -9636,7 +10804,9 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for Deletes a hostname binding for an app.
+     * Deletes a hostname binding for an app.
+     *
+     * <p>Description for Deletes a hostname binding for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -9652,7 +10822,9 @@ public interface WebAppsClient {
     void deleteHostnameBindingSlot(String resourceGroupName, String name, String slot, String hostname);
 
     /**
-     * Description for Deletes a hostname binding for an app.
+     * Deletes a hostname binding for an app.
+     *
+     * <p>Description for Deletes a hostname binding for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -9671,7 +10843,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, String hostname, Context context);
 
     /**
-     * Description for Retrieves a specific Service Bus Hybrid Connection used by this Web App.
+     * Retrieves a specific Service Bus Hybrid Connection used by this Web App.
+     *
+     * <p>Description for Retrieves a specific Service Bus Hybrid Connection used by this Web App.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
@@ -9689,7 +10863,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String namespaceName, String relayName, String slot);
 
     /**
-     * Description for Retrieves a specific Service Bus Hybrid Connection used by this Web App.
+     * Retrieves a specific Service Bus Hybrid Connection used by this Web App.
+     *
+     * <p>Description for Retrieves a specific Service Bus Hybrid Connection used by this Web App.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
@@ -9708,7 +10884,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String namespaceName, String relayName, String slot, Context context);
 
     /**
-     * Description for Creates a new Hybrid Connection using a Service Bus relay.
+     * Creates a new Hybrid Connection using a Service Bus relay.
+     *
+     * <p>Description for Creates a new Hybrid Connection using a Service Bus relay.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
@@ -9732,7 +10910,9 @@ public interface WebAppsClient {
         HybridConnectionInner connectionEnvelope);
 
     /**
-     * Description for Creates a new Hybrid Connection using a Service Bus relay.
+     * Creates a new Hybrid Connection using a Service Bus relay.
+     *
+     * <p>Description for Creates a new Hybrid Connection using a Service Bus relay.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
@@ -9758,7 +10938,9 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for Removes a Hybrid Connection from this site.
+     * Removes a Hybrid Connection from this site.
+     *
+     * <p>Description for Removes a Hybrid Connection from this site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
@@ -9774,7 +10956,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String namespaceName, String relayName, String slot);
 
     /**
-     * Description for Removes a Hybrid Connection from this site.
+     * Removes a Hybrid Connection from this site.
+     *
+     * <p>Description for Removes a Hybrid Connection from this site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
@@ -9792,7 +10976,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String namespaceName, String relayName, String slot, Context context);
 
     /**
-     * Description for Creates a new Hybrid Connection using a Service Bus relay.
+     * Creates a new Hybrid Connection using a Service Bus relay.
+     *
+     * <p>Description for Creates a new Hybrid Connection using a Service Bus relay.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
@@ -9816,7 +11002,9 @@ public interface WebAppsClient {
         HybridConnectionInner connectionEnvelope);
 
     /**
-     * Description for Creates a new Hybrid Connection using a Service Bus relay.
+     * Creates a new Hybrid Connection using a Service Bus relay.
+     *
+     * <p>Description for Creates a new Hybrid Connection using a Service Bus relay.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
@@ -9842,7 +11030,9 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for Retrieves all Service Bus Hybrid Connections used by this Web App.
+     * Retrieves all Service Bus Hybrid Connections used by this Web App.
+     *
+     * <p>Description for Retrieves all Service Bus Hybrid Connections used by this Web App.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
@@ -9857,7 +11047,9 @@ public interface WebAppsClient {
     HybridConnectionInner listHybridConnectionsSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Retrieves all Service Bus Hybrid Connections used by this Web App.
+     * Retrieves all Service Bus Hybrid Connections used by this Web App.
+     *
+     * <p>Description for Retrieves all Service Bus Hybrid Connections used by this Web App.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
@@ -9874,7 +11066,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Gets hybrid connections configured for an app (or deployment slot, if specified).
+     * Gets hybrid connections configured for an app (or deployment slot, if specified).
+     *
+     * <p>Description for Gets hybrid connections configured for an app (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -9891,7 +11085,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Gets hybrid connections configured for an app (or deployment slot, if specified).
+     * Gets hybrid connections configured for an app (or deployment slot, if specified).
+     *
+     * <p>Description for Gets hybrid connections configured for an app (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -9909,7 +11105,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Gets a hybrid connection configuration by its name.
+     * Gets a hybrid connection configuration by its name.
+     *
+     * <p>Description for Gets a hybrid connection configuration by its name.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -9927,7 +11125,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String entityName, String slot);
 
     /**
-     * Description for Gets a hybrid connection configuration by its name.
+     * Gets a hybrid connection configuration by its name.
+     *
+     * <p>Description for Gets a hybrid connection configuration by its name.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -9946,7 +11146,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String entityName, String slot, Context context);
 
     /**
-     * Description for Creates a new hybrid connection configuration (PUT), or updates an existing one (PATCH).
+     * Creates a new hybrid connection configuration (PUT), or updates an existing one (PATCH).
+     *
+     * <p>Description for Creates a new hybrid connection configuration (PUT), or updates an existing one (PATCH).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -9969,7 +11171,9 @@ public interface WebAppsClient {
         RelayServiceConnectionEntityInner connectionEnvelope);
 
     /**
-     * Description for Creates a new hybrid connection configuration (PUT), or updates an existing one (PATCH).
+     * Creates a new hybrid connection configuration (PUT), or updates an existing one (PATCH).
+     *
+     * <p>Description for Creates a new hybrid connection configuration (PUT), or updates an existing one (PATCH).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -9994,7 +11198,9 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for Deletes a relay service connection by its name.
+     * Deletes a relay service connection by its name.
+     *
+     * <p>Description for Deletes a relay service connection by its name.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -10009,7 +11215,9 @@ public interface WebAppsClient {
     void deleteRelayServiceConnectionSlot(String resourceGroupName, String name, String entityName, String slot);
 
     /**
-     * Description for Deletes a relay service connection by its name.
+     * Deletes a relay service connection by its name.
+     *
+     * <p>Description for Deletes a relay service connection by its name.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -10027,7 +11235,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String entityName, String slot, Context context);
 
     /**
-     * Description for Creates a new hybrid connection configuration (PUT), or updates an existing one (PATCH).
+     * Creates a new hybrid connection configuration (PUT), or updates an existing one (PATCH).
+     *
+     * <p>Description for Creates a new hybrid connection configuration (PUT), or updates an existing one (PATCH).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -10050,7 +11260,9 @@ public interface WebAppsClient {
         RelayServiceConnectionEntityInner connectionEnvelope);
 
     /**
-     * Description for Creates a new hybrid connection configuration (PUT), or updates an existing one (PATCH).
+     * Creates a new hybrid connection configuration (PUT), or updates an existing one (PATCH).
+     *
+     * <p>Description for Creates a new hybrid connection configuration (PUT), or updates an existing one (PATCH).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -10075,7 +11287,9 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for Gets all scale-out instances of an app.
+     * Gets all scale-out instances of an app.
+     *
+     * <p>Description for Gets all scale-out instances of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -10091,7 +11305,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Gets all scale-out instances of an app.
+     * Gets all scale-out instances of an app.
+     *
+     * <p>Description for Gets all scale-out instances of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -10108,7 +11324,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Gets all scale-out instances of an app.
+     * Gets all scale-out instances of an app.
+     *
+     * <p>Description for Gets all scale-out instances of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -10125,7 +11343,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String instanceId, String slot);
 
     /**
-     * Description for Gets all scale-out instances of an app.
+     * Gets all scale-out instances of an app.
+     *
+     * <p>Description for Gets all scale-out instances of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -10143,7 +11363,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String instanceId, String slot, Context context);
 
     /**
-     * Description for Get the status of the last MSDeploy operation.
+     * Get the status of the last MSDeploy operation.
+     *
+     * <p>Description for Get the status of the last MSDeploy operation.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -10160,7 +11382,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, String instanceId);
 
     /**
-     * Description for Get the status of the last MSDeploy operation.
+     * Get the status of the last MSDeploy operation.
+     *
+     * <p>Description for Get the status of the last MSDeploy operation.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -10178,7 +11402,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, String instanceId, Context context);
 
     /**
-     * Description for Invoke the MSDeploy web app extension.
+     * Invoke the MSDeploy web app extension.
+     *
+     * <p>Description for Invoke the MSDeploy web app extension.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -10195,7 +11421,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, String instanceId, MSDeploy mSDeploy);
 
     /**
-     * Description for Invoke the MSDeploy web app extension.
+     * Invoke the MSDeploy web app extension.
+     *
+     * <p>Description for Invoke the MSDeploy web app extension.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -10213,7 +11441,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, String instanceId, MSDeploy mSDeploy, Context context);
 
     /**
-     * Description for Invoke the MSDeploy web app extension.
+     * Invoke the MSDeploy web app extension.
+     *
+     * <p>Description for Invoke the MSDeploy web app extension.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -10230,7 +11460,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, String instanceId, MSDeploy mSDeploy);
 
     /**
-     * Description for Invoke the MSDeploy web app extension.
+     * Invoke the MSDeploy web app extension.
+     *
+     * <p>Description for Invoke the MSDeploy web app extension.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -10248,7 +11480,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, String instanceId, MSDeploy mSDeploy, Context context);
 
     /**
-     * Description for Get the MSDeploy Log for the last MSDeploy operation.
+     * Get the MSDeploy Log for the last MSDeploy operation.
+     *
+     * <p>Description for Get the MSDeploy Log for the last MSDeploy operation.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -10263,7 +11497,9 @@ public interface WebAppsClient {
     MSDeployLogInner getInstanceMSDeployLogSlot(String resourceGroupName, String name, String slot, String instanceId);
 
     /**
-     * Description for Get the MSDeploy Log for the last MSDeploy operation.
+     * Get the MSDeploy Log for the last MSDeploy operation.
+     *
+     * <p>Description for Get the MSDeploy Log for the last MSDeploy operation.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -10280,8 +11516,10 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, String instanceId, Context context);
 
     /**
-     * Description for Get list of processes for a web site, or a deployment slot, or for a specific scaled-out instance
-     * in a web site.
+     * Get list of processes for a web site, or a deployment slot, or for a specific scaled-out instance in a web site.
+     *
+     * <p>Description for Get list of processes for a web site, or a deployment slot, or for a specific scaled-out
+     * instance in a web site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -10299,8 +11537,10 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, String instanceId);
 
     /**
-     * Description for Get list of processes for a web site, or a deployment slot, or for a specific scaled-out instance
-     * in a web site.
+     * Get list of processes for a web site, or a deployment slot, or for a specific scaled-out instance in a web site.
+     *
+     * <p>Description for Get list of processes for a web site, or a deployment slot, or for a specific scaled-out
+     * instance in a web site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -10319,7 +11559,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, String instanceId, Context context);
 
     /**
-     * Description for Get process information by its ID for a specific scaled-out instance in a web site.
+     * Get process information by its ID for a specific scaled-out instance in a web site.
+     *
+     * <p>Description for Get process information by its ID for a specific scaled-out instance in a web site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -10338,7 +11580,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String processId, String slot, String instanceId);
 
     /**
-     * Description for Get process information by its ID for a specific scaled-out instance in a web site.
+     * Get process information by its ID for a specific scaled-out instance in a web site.
+     *
+     * <p>Description for Get process information by its ID for a specific scaled-out instance in a web site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -10358,7 +11602,10 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String processId, String slot, String instanceId, Context context);
 
     /**
-     * Description for Terminate a process by its ID for a web site, or a deployment slot, or specific scaled-out
+     * Terminate a process by its ID for a web site, or a deployment slot, or specific scaled-out instance in a web
+     * site.
+     *
+     * <p>Description for Terminate a process by its ID for a web site, or a deployment slot, or specific scaled-out
      * instance in a web site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
@@ -10377,7 +11624,10 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String processId, String slot, String instanceId);
 
     /**
-     * Description for Terminate a process by its ID for a web site, or a deployment slot, or specific scaled-out
+     * Terminate a process by its ID for a web site, or a deployment slot, or specific scaled-out instance in a web
+     * site.
+     *
+     * <p>Description for Terminate a process by its ID for a web site, or a deployment slot, or specific scaled-out
      * instance in a web site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
@@ -10398,7 +11648,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String processId, String slot, String instanceId, Context context);
 
     /**
-     * Description for Get a memory dump of a process by its ID for a specific scaled-out instance in a web site.
+     * Get a memory dump of a process by its ID for a specific scaled-out instance in a web site.
+     *
+     * <p>Description for Get a memory dump of a process by its ID for a specific scaled-out instance in a web site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -10417,7 +11669,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String processId, String slot, String instanceId);
 
     /**
-     * Description for Get a memory dump of a process by its ID for a specific scaled-out instance in a web site.
+     * Get a memory dump of a process by its ID for a specific scaled-out instance in a web site.
+     *
+     * <p>Description for Get a memory dump of a process by its ID for a specific scaled-out instance in a web site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -10437,7 +11691,10 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String processId, String slot, String instanceId, Context context);
 
     /**
-     * Description for List module information for a process by its ID for a specific scaled-out instance in a web site.
+     * List module information for a process by its ID for a specific scaled-out instance in a web site.
+     *
+     * <p>Description for List module information for a process by its ID for a specific scaled-out instance in a web
+     * site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -10456,7 +11713,10 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String processId, String slot, String instanceId);
 
     /**
-     * Description for List module information for a process by its ID for a specific scaled-out instance in a web site.
+     * List module information for a process by its ID for a specific scaled-out instance in a web site.
+     *
+     * <p>Description for List module information for a process by its ID for a specific scaled-out instance in a web
+     * site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -10476,7 +11736,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String processId, String slot, String instanceId, Context context);
 
     /**
-     * Description for Get process information by its ID for a specific scaled-out instance in a web site.
+     * Get process information by its ID for a specific scaled-out instance in a web site.
+     *
+     * <p>Description for Get process information by its ID for a specific scaled-out instance in a web site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -10496,7 +11758,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String processId, String baseAddress, String slot, String instanceId);
 
     /**
-     * Description for Get process information by its ID for a specific scaled-out instance in a web site.
+     * Get process information by its ID for a specific scaled-out instance in a web site.
+     *
+     * <p>Description for Get process information by its ID for a specific scaled-out instance in a web site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -10523,7 +11787,9 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for List the threads in a process by its ID for a specific scaled-out instance in a web site.
+     * List the threads in a process by its ID for a specific scaled-out instance in a web site.
+     *
+     * <p>Description for List the threads in a process by its ID for a specific scaled-out instance in a web site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -10542,7 +11808,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String processId, String slot, String instanceId);
 
     /**
-     * Description for List the threads in a process by its ID for a specific scaled-out instance in a web site.
+     * List the threads in a process by its ID for a specific scaled-out instance in a web site.
+     *
+     * <p>Description for List the threads in a process by its ID for a specific scaled-out instance in a web site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -10562,7 +11830,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String processId, String slot, String instanceId, Context context);
 
     /**
-     * Description for Shows whether an app can be cloned to another resource group or subscription.
+     * Shows whether an app can be cloned to another resource group or subscription.
+     *
+     * <p>Description for Shows whether an app can be cloned to another resource group or subscription.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -10577,7 +11847,9 @@ public interface WebAppsClient {
     SiteCloneabilityInner isCloneableSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Shows whether an app can be cloned to another resource group or subscription.
+     * Shows whether an app can be cloned to another resource group or subscription.
+     *
+     * <p>Description for Shows whether an app can be cloned to another resource group or subscription.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -10594,7 +11866,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Gets existing backups of an app.
+     * Gets existing backups of an app.
+     *
+     * <p>Description for Gets existing backups of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -10610,7 +11884,9 @@ public interface WebAppsClient {
     PagedIterable<BackupItemInner> listSiteBackupsSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Gets existing backups of an app.
+     * Gets existing backups of an app.
+     *
+     * <p>Description for Gets existing backups of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -10628,7 +11904,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for This is to allow calling via powershell and ARM template.
+     * This is to allow calling via powershell and ARM template.
+     *
+     * <p>Description for This is to allow calling via powershell and ARM template.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -10643,7 +11921,9 @@ public interface WebAppsClient {
     FunctionSecretsInner listSyncFunctionTriggersSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for This is to allow calling via powershell and ARM template.
+     * This is to allow calling via powershell and ARM template.
+     *
+     * <p>Description for This is to allow calling via powershell and ARM template.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -10660,8 +11940,10 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Returns the status of MySql in app migration, if one is active, and whether or not MySql in app
-     * is enabled.
+     * Returns the status of MySql in app migration, if one is active, and whether or not MySql in app is enabled
+     *
+     * <p>Description for Returns the status of MySql in app migration, if one is active, and whether or not MySql in
+     * app is enabled.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -10676,8 +11958,10 @@ public interface WebAppsClient {
     MigrateMySqlStatusInner getMigrateMySqlStatusSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Returns the status of MySql in app migration, if one is active, and whether or not MySql in app
-     * is enabled.
+     * Returns the status of MySql in app migration, if one is active, and whether or not MySql in app is enabled
+     *
+     * <p>Description for Returns the status of MySql in app migration, if one is active, and whether or not MySql in
+     * app is enabled.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -10694,7 +11978,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Gets a Swift Virtual Network connection.
+     * Gets a Swift Virtual Network connection.
+     *
+     * <p>Description for Gets a Swift Virtual Network connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -10710,7 +11996,9 @@ public interface WebAppsClient {
     SwiftVirtualNetworkInner getSwiftVirtualNetworkConnectionSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Gets a Swift Virtual Network connection.
+     * Gets a Swift Virtual Network connection.
+     *
+     * <p>Description for Gets a Swift Virtual Network connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -10728,7 +12016,11 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Integrates this Web App with a Virtual Network. This requires that 1) "swiftSupported" is true
+     * Integrates this Web App with a Virtual Network. This requires that 1) "swiftSupported" is true when doing a GET
+     * against this resource, and 2) that the target Subnet has already been delegated, and is not in use by another App
+     * Service Plan other than the one this App is in.
+     *
+     * <p>Description for Integrates this Web App with a Virtual Network. This requires that 1) "swiftSupported" is true
      * when doing a GET against this resource, and 2) that the target Subnet has already been delegated, and is not in
      * use by another App Service Plan other than the one this App is in.
      *
@@ -10748,7 +12040,11 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, SwiftVirtualNetworkInner connectionEnvelope);
 
     /**
-     * Description for Integrates this Web App with a Virtual Network. This requires that 1) "swiftSupported" is true
+     * Integrates this Web App with a Virtual Network. This requires that 1) "swiftSupported" is true when doing a GET
+     * against this resource, and 2) that the target Subnet has already been delegated, and is not in use by another App
+     * Service Plan other than the one this App is in.
+     *
+     * <p>Description for Integrates this Web App with a Virtual Network. This requires that 1) "swiftSupported" is true
      * when doing a GET against this resource, and 2) that the target Subnet has already been delegated, and is not in
      * use by another App Service Plan other than the one this App is in.
      *
@@ -10773,7 +12069,9 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for Deletes a Swift Virtual Network connection from an app (or deployment slot).
+     * Deletes a Swift Virtual Network connection from an app (or deployment slot).
+     *
+     * <p>Description for Deletes a Swift Virtual Network connection from an app (or deployment slot).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -10787,7 +12085,9 @@ public interface WebAppsClient {
     void deleteSwiftVirtualNetworkSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Deletes a Swift Virtual Network connection from an app (or deployment slot).
+     * Deletes a Swift Virtual Network connection from an app (or deployment slot).
+     *
+     * <p>Description for Deletes a Swift Virtual Network connection from an app (or deployment slot).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -10804,7 +12104,11 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Integrates this Web App with a Virtual Network. This requires that 1) "swiftSupported" is true
+     * Integrates this Web App with a Virtual Network. This requires that 1) "swiftSupported" is true when doing a GET
+     * against this resource, and 2) that the target Subnet has already been delegated, and is not in use by another App
+     * Service Plan other than the one this App is in.
+     *
+     * <p>Description for Integrates this Web App with a Virtual Network. This requires that 1) "swiftSupported" is true
      * when doing a GET against this resource, and 2) that the target Subnet has already been delegated, and is not in
      * use by another App Service Plan other than the one this App is in.
      *
@@ -10824,7 +12128,11 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, SwiftVirtualNetworkInner connectionEnvelope);
 
     /**
-     * Description for Integrates this Web App with a Virtual Network. This requires that 1) "swiftSupported" is true
+     * Integrates this Web App with a Virtual Network. This requires that 1) "swiftSupported" is true when doing a GET
+     * against this resource, and 2) that the target Subnet has already been delegated, and is not in use by another App
+     * Service Plan other than the one this App is in.
+     *
+     * <p>Description for Integrates this Web App with a Virtual Network. This requires that 1) "swiftSupported" is true
      * when doing a GET against this resource, and 2) that the target Subnet has already been delegated, and is not in
      * use by another App Service Plan other than the one this App is in.
      *
@@ -10849,7 +12157,9 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for Gets all network features used by the app (or deployment slot, if specified).
+     * Gets all network features used by the app (or deployment slot, if specified).
+     *
+     * <p>Description for Gets all network features used by the app (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -10865,7 +12175,9 @@ public interface WebAppsClient {
     NetworkFeaturesInner listNetworkFeaturesSlot(String resourceGroupName, String name, String view, String slot);
 
     /**
-     * Description for Gets all network features used by the app (or deployment slot, if specified).
+     * Gets all network features used by the app (or deployment slot, if specified).
+     *
+     * <p>Description for Gets all network features used by the app (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -10884,7 +12196,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String view, String slot, Context context);
 
     /**
-     * Description for Gets a named operation for a network trace capturing (or deployment slot, if specified).
+     * Gets a named operation for a network trace capturing (or deployment slot, if specified).
+     *
+     * <p>Description for Gets a named operation for a network trace capturing (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -10901,7 +12215,9 @@ public interface WebAppsClient {
     Object getNetworkTraceOperationSlot(String resourceGroupName, String name, String operationId, String slot);
 
     /**
-     * Description for Gets a named operation for a network trace capturing (or deployment slot, if specified).
+     * Gets a named operation for a network trace capturing (or deployment slot, if specified).
+     *
+     * <p>Description for Gets a named operation for a network trace capturing (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -10920,7 +12236,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String operationId, String slot, Context context);
 
     /**
-     * Description for Start capturing network packets for the site (To be deprecated).
+     * Start capturing network packets for the site (To be deprecated).
+     *
+     * <p>Description for Start capturing network packets for the site (To be deprecated).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
@@ -10935,7 +12253,9 @@ public interface WebAppsClient {
     String startWebSiteNetworkTraceSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Start capturing network packets for the site (To be deprecated).
+     * Start capturing network packets for the site (To be deprecated).
+     *
+     * <p>Description for Start capturing network packets for the site (To be deprecated).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
@@ -10961,7 +12281,9 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for Start capturing network packets for the site.
+     * Start capturing network packets for the site.
+     *
+     * <p>Description for Start capturing network packets for the site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
@@ -10985,7 +12307,9 @@ public interface WebAppsClient {
         String sasUrl);
 
     /**
-     * Description for Start capturing network packets for the site.
+     * Start capturing network packets for the site.
+     *
+     * <p>Description for Start capturing network packets for the site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
@@ -11011,7 +12335,9 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for Start capturing network packets for the site.
+     * Start capturing network packets for the site.
+     *
+     * <p>Description for Start capturing network packets for the site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
@@ -11035,7 +12361,9 @@ public interface WebAppsClient {
         String sasUrl);
 
     /**
-     * Description for Start capturing network packets for the site.
+     * Start capturing network packets for the site.
+     *
+     * <p>Description for Start capturing network packets for the site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
@@ -11050,7 +12378,9 @@ public interface WebAppsClient {
     Object startWebSiteNetworkTraceOperationSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Start capturing network packets for the site.
+     * Start capturing network packets for the site.
+     *
+     * <p>Description for Start capturing network packets for the site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
@@ -11076,7 +12406,9 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for Stop ongoing capturing network packets for the site.
+     * Stop ongoing capturing network packets for the site.
+     *
+     * <p>Description for Stop ongoing capturing network packets for the site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
@@ -11090,7 +12422,9 @@ public interface WebAppsClient {
     void stopWebSiteNetworkTraceSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Stop ongoing capturing network packets for the site.
+     * Stop ongoing capturing network packets for the site.
+     *
+     * <p>Description for Stop ongoing capturing network packets for the site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
@@ -11107,7 +12441,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Gets a named operation for a network trace capturing (or deployment slot, if specified).
+     * Gets a named operation for a network trace capturing (or deployment slot, if specified).
+     *
+     * <p>Description for Gets a named operation for a network trace capturing (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -11125,7 +12461,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String operationId, String slot);
 
     /**
-     * Description for Gets a named operation for a network trace capturing (or deployment slot, if specified).
+     * Gets a named operation for a network trace capturing (or deployment slot, if specified).
+     *
+     * <p>Description for Gets a named operation for a network trace capturing (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -11144,7 +12482,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String operationId, String slot, Context context);
 
     /**
-     * Description for Gets a named operation for a network trace capturing (or deployment slot, if specified).
+     * Gets a named operation for a network trace capturing (or deployment slot, if specified).
+     *
+     * <p>Description for Gets a named operation for a network trace capturing (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -11161,7 +12501,9 @@ public interface WebAppsClient {
     Object getNetworkTraceOperationSlotV2(String resourceGroupName, String name, String operationId, String slot);
 
     /**
-     * Description for Gets a named operation for a network trace capturing (or deployment slot, if specified).
+     * Gets a named operation for a network trace capturing (or deployment slot, if specified).
+     *
+     * <p>Description for Gets a named operation for a network trace capturing (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -11180,7 +12522,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String operationId, String slot, Context context);
 
     /**
-     * Description for Gets a named operation for a network trace capturing (or deployment slot, if specified).
+     * Gets a named operation for a network trace capturing (or deployment slot, if specified).
+     *
+     * <p>Description for Gets a named operation for a network trace capturing (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -11198,7 +12542,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String operationId, String slot);
 
     /**
-     * Description for Gets a named operation for a network trace capturing (or deployment slot, if specified).
+     * Gets a named operation for a network trace capturing (or deployment slot, if specified).
+     *
+     * <p>Description for Gets a named operation for a network trace capturing (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -11217,7 +12563,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String operationId, String slot, Context context);
 
     /**
-     * Description for Generates a new publishing password for an app (or deployment slot, if specified).
+     * Generates a new publishing password for an app (or deployment slot, if specified).
+     *
+     * <p>Description for Generates a new publishing password for an app (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -11232,7 +12580,9 @@ public interface WebAppsClient {
     void generateNewSitePublishingPasswordSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Generates a new publishing password for an app (or deployment slot, if specified).
+     * Generates a new publishing password for an app (or deployment slot, if specified).
+     *
+     * <p>Description for Generates a new publishing password for an app (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -11250,7 +12600,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Gets perfmon counters for web app.
+     * Gets perfmon counters for web app.
+     *
+     * <p>Description for Gets perfmon counters for web app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -11265,7 +12617,9 @@ public interface WebAppsClient {
     PagedIterable<PerfMonResponseInner> listPerfMonCountersSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Gets perfmon counters for web app.
+     * Gets perfmon counters for web app.
+     *
+     * <p>Description for Gets perfmon counters for web app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -11285,7 +12639,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, String filter, Context context);
 
     /**
-     * Description for Gets web app's event logs.
+     * Gets web app's event logs.
+     *
+     * <p>Description for Gets web app's event logs.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -11300,7 +12656,9 @@ public interface WebAppsClient {
     SitePhpErrorLogFlagInner getSitePhpErrorLogFlagSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Gets web app's event logs.
+     * Gets web app's event logs.
+     *
+     * <p>Description for Gets web app's event logs.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -11317,7 +12675,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Gets the premier add-ons of an app.
+     * Gets the premier add-ons of an app.
+     *
+     * <p>Description for Gets the premier add-ons of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -11333,7 +12693,9 @@ public interface WebAppsClient {
     PremierAddOnInner listPremierAddOnsSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Gets the premier add-ons of an app.
+     * Gets the premier add-ons of an app.
+     *
+     * <p>Description for Gets the premier add-ons of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -11351,7 +12713,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Gets a named add-on of an app.
+     * Gets a named add-on of an app.
+     *
+     * <p>Description for Gets a named add-on of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -11368,7 +12732,9 @@ public interface WebAppsClient {
     PremierAddOnInner getPremierAddOnSlot(String resourceGroupName, String name, String premierAddOnName, String slot);
 
     /**
-     * Description for Gets a named add-on of an app.
+     * Gets a named add-on of an app.
+     *
+     * <p>Description for Gets a named add-on of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -11387,7 +12753,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String premierAddOnName, String slot, Context context);
 
     /**
-     * Description for Updates a named add-on of an app.
+     * Updates a named add-on of an app.
+     *
+     * <p>Description for Updates a named add-on of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -11406,7 +12774,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String premierAddOnName, String slot, PremierAddOnInner premierAddOn);
 
     /**
-     * Description for Updates a named add-on of an app.
+     * Updates a named add-on of an app.
+     *
+     * <p>Description for Updates a named add-on of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -11431,7 +12801,9 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for Delete a premier add-on from an app.
+     * Delete a premier add-on from an app.
+     *
+     * <p>Description for Delete a premier add-on from an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -11447,7 +12819,9 @@ public interface WebAppsClient {
     void deletePremierAddOnSlot(String resourceGroupName, String name, String premierAddOnName, String slot);
 
     /**
-     * Description for Delete a premier add-on from an app.
+     * Delete a premier add-on from an app.
+     *
+     * <p>Description for Delete a premier add-on from an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -11466,7 +12840,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String premierAddOnName, String slot, Context context);
 
     /**
-     * Description for Updates a named add-on of an app.
+     * Updates a named add-on of an app.
+     *
+     * <p>Description for Updates a named add-on of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -11489,7 +12865,9 @@ public interface WebAppsClient {
         PremierAddOnPatchResource premierAddOn);
 
     /**
-     * Description for Updates a named add-on of an app.
+     * Updates a named add-on of an app.
+     *
+     * <p>Description for Updates a named add-on of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -11514,8 +12892,10 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for Gets data around private site access enablement and authorized Virtual Networks that can access
-     * the site.
+     * Gets data around private site access enablement and authorized Virtual Networks that can access the site.
+     *
+     * <p>Description for Gets data around private site access enablement and authorized Virtual Networks that can
+     * access the site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
@@ -11530,8 +12910,10 @@ public interface WebAppsClient {
     PrivateAccessInner getPrivateAccessSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Gets data around private site access enablement and authorized Virtual Networks that can access
-     * the site.
+     * Gets data around private site access enablement and authorized Virtual Networks that can access the site.
+     *
+     * <p>Description for Gets data around private site access enablement and authorized Virtual Networks that can
+     * access the site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
@@ -11548,8 +12930,10 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Sets data around private site access enablement and authorized Virtual Networks that can access
-     * the site.
+     * Sets data around private site access enablement and authorized Virtual Networks that can access the site.
+     *
+     * <p>Description for Sets data around private site access enablement and authorized Virtual Networks that can
+     * access the site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
@@ -11566,8 +12950,10 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, PrivateAccessInner access);
 
     /**
-     * Description for Sets data around private site access enablement and authorized Virtual Networks that can access
-     * the site.
+     * Sets data around private site access enablement and authorized Virtual Networks that can access the site.
+     *
+     * <p>Description for Sets data around private site access enablement and authorized Virtual Networks that can
+     * access the site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
@@ -11585,7 +12971,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, PrivateAccessInner access, Context context);
 
     /**
-     * Description for Gets the list of private endpoint connections associated with a site.
+     * Gets the list of private endpoint connections associated with a site
+     *
+     * <p>Description for Gets the list of private endpoint connections associated with a site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the site.
@@ -11601,7 +12989,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Gets the list of private endpoint connections associated with a site.
+     * Gets the list of private endpoint connections associated with a site
+     *
+     * <p>Description for Gets the list of private endpoint connections associated with a site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the site.
@@ -11618,7 +13008,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Gets a private endpoint connection.
+     * Gets a private endpoint connection
+     *
+     * <p>Description for Gets a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the site.
@@ -11635,7 +13027,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String privateEndpointConnectionName, String slot);
 
     /**
-     * Description for Gets a private endpoint connection.
+     * Gets a private endpoint connection
+     *
+     * <p>Description for Gets a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the site.
@@ -11653,7 +13047,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String privateEndpointConnectionName, String slot, Context context);
 
     /**
-     * Description for Approves or rejects a private endpoint connection.
+     * Approves or rejects a private endpoint connection
+     *
+     * <p>Description for Approves or rejects a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the site.
@@ -11678,7 +13074,9 @@ public interface WebAppsClient {
             PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper);
 
     /**
-     * Description for Approves or rejects a private endpoint connection.
+     * Approves or rejects a private endpoint connection
+     *
+     * <p>Description for Approves or rejects a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the site.
@@ -11705,7 +13103,9 @@ public interface WebAppsClient {
             Context context);
 
     /**
-     * Description for Approves or rejects a private endpoint connection.
+     * Approves or rejects a private endpoint connection
+     *
+     * <p>Description for Approves or rejects a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the site.
@@ -11727,7 +13127,9 @@ public interface WebAppsClient {
         PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper);
 
     /**
-     * Description for Approves or rejects a private endpoint connection.
+     * Approves or rejects a private endpoint connection
+     *
+     * <p>Description for Approves or rejects a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the site.
@@ -11751,7 +13153,9 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for Deletes a private endpoint connection.
+     * Deletes a private endpoint connection
+     *
+     * <p>Description for Deletes a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the site.
@@ -11768,7 +13172,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String privateEndpointConnectionName, String slot);
 
     /**
-     * Description for Deletes a private endpoint connection.
+     * Deletes a private endpoint connection
+     *
+     * <p>Description for Deletes a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the site.
@@ -11786,7 +13192,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String privateEndpointConnectionName, String slot, Context context);
 
     /**
-     * Description for Deletes a private endpoint connection.
+     * Deletes a private endpoint connection
+     *
+     * <p>Description for Deletes a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the site.
@@ -11803,7 +13211,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String privateEndpointConnectionName, String slot);
 
     /**
-     * Description for Deletes a private endpoint connection.
+     * Deletes a private endpoint connection
+     *
+     * <p>Description for Deletes a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the site.
@@ -11821,7 +13231,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String privateEndpointConnectionName, String slot, Context context);
 
     /**
-     * Description for Gets the private link resources.
+     * Gets the private link resources
+     *
+     * <p>Description for Gets the private link resources.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the site.
@@ -11836,7 +13248,9 @@ public interface WebAppsClient {
     PrivateLinkResourcesWrapperInner getPrivateLinkResourcesSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Gets the private link resources.
+     * Gets the private link resources
+     *
+     * <p>Description for Gets the private link resources.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the site.
@@ -11853,8 +13267,10 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Get list of processes for a web site, or a deployment slot, or for a specific scaled-out instance
-     * in a web site.
+     * Get list of processes for a web site, or a deployment slot, or for a specific scaled-out instance in a web site.
+     *
+     * <p>Description for Get list of processes for a web site, or a deployment slot, or for a specific scaled-out
+     * instance in a web site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -11869,8 +13285,10 @@ public interface WebAppsClient {
     PagedIterable<ProcessInfoInner> listProcessesSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Get list of processes for a web site, or a deployment slot, or for a specific scaled-out instance
-     * in a web site.
+     * Get list of processes for a web site, or a deployment slot, or for a specific scaled-out instance in a web site.
+     *
+     * <p>Description for Get list of processes for a web site, or a deployment slot, or for a specific scaled-out
+     * instance in a web site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -11887,7 +13305,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Get process information by its ID for a specific scaled-out instance in a web site.
+     * Get process information by its ID for a specific scaled-out instance in a web site.
+     *
+     * <p>Description for Get process information by its ID for a specific scaled-out instance in a web site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -11903,7 +13323,9 @@ public interface WebAppsClient {
     ProcessInfoInner getProcessSlot(String resourceGroupName, String name, String processId, String slot);
 
     /**
-     * Description for Get process information by its ID for a specific scaled-out instance in a web site.
+     * Get process information by its ID for a specific scaled-out instance in a web site.
+     *
+     * <p>Description for Get process information by its ID for a specific scaled-out instance in a web site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -11921,7 +13343,10 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String processId, String slot, Context context);
 
     /**
-     * Description for Terminate a process by its ID for a web site, or a deployment slot, or specific scaled-out
+     * Terminate a process by its ID for a web site, or a deployment slot, or specific scaled-out instance in a web
+     * site.
+     *
+     * <p>Description for Terminate a process by its ID for a web site, or a deployment slot, or specific scaled-out
      * instance in a web site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
@@ -11937,7 +13362,10 @@ public interface WebAppsClient {
     void deleteProcessSlot(String resourceGroupName, String name, String processId, String slot);
 
     /**
-     * Description for Terminate a process by its ID for a web site, or a deployment slot, or specific scaled-out
+     * Terminate a process by its ID for a web site, or a deployment slot, or specific scaled-out instance in a web
+     * site.
+     *
+     * <p>Description for Terminate a process by its ID for a web site, or a deployment slot, or specific scaled-out
      * instance in a web site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
@@ -11956,7 +13384,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String processId, String slot, Context context);
 
     /**
-     * Description for Get a memory dump of a process by its ID for a specific scaled-out instance in a web site.
+     * Get a memory dump of a process by its ID for a specific scaled-out instance in a web site.
+     *
+     * <p>Description for Get a memory dump of a process by its ID for a specific scaled-out instance in a web site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -11972,7 +13402,9 @@ public interface WebAppsClient {
     InputStream getProcessDumpSlot(String resourceGroupName, String name, String processId, String slot);
 
     /**
-     * Description for Get a memory dump of a process by its ID for a specific scaled-out instance in a web site.
+     * Get a memory dump of a process by its ID for a specific scaled-out instance in a web site.
+     *
+     * <p>Description for Get a memory dump of a process by its ID for a specific scaled-out instance in a web site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -11990,7 +13422,10 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String processId, String slot, Context context);
 
     /**
-     * Description for List module information for a process by its ID for a specific scaled-out instance in a web site.
+     * List module information for a process by its ID for a specific scaled-out instance in a web site.
+     *
+     * <p>Description for List module information for a process by its ID for a specific scaled-out instance in a web
+     * site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -12007,7 +13442,10 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String processId, String slot);
 
     /**
-     * Description for List module information for a process by its ID for a specific scaled-out instance in a web site.
+     * List module information for a process by its ID for a specific scaled-out instance in a web site.
+     *
+     * <p>Description for List module information for a process by its ID for a specific scaled-out instance in a web
+     * site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -12025,7 +13463,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String processId, String slot, Context context);
 
     /**
-     * Description for Get process information by its ID for a specific scaled-out instance in a web site.
+     * Get process information by its ID for a specific scaled-out instance in a web site.
+     *
+     * <p>Description for Get process information by its ID for a specific scaled-out instance in a web site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -12043,7 +13483,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String processId, String baseAddress, String slot);
 
     /**
-     * Description for Get process information by its ID for a specific scaled-out instance in a web site.
+     * Get process information by its ID for a specific scaled-out instance in a web site.
+     *
+     * <p>Description for Get process information by its ID for a specific scaled-out instance in a web site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -12062,7 +13504,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String processId, String baseAddress, String slot, Context context);
 
     /**
-     * Description for List the threads in a process by its ID for a specific scaled-out instance in a web site.
+     * List the threads in a process by its ID for a specific scaled-out instance in a web site.
+     *
+     * <p>Description for List the threads in a process by its ID for a specific scaled-out instance in a web site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -12079,7 +13523,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String processId, String slot);
 
     /**
-     * Description for List the threads in a process by its ID for a specific scaled-out instance in a web site.
+     * List the threads in a process by its ID for a specific scaled-out instance in a web site.
+     *
+     * <p>Description for List the threads in a process by its ID for a specific scaled-out instance in a web site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -12097,7 +13543,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String processId, String slot, Context context);
 
     /**
-     * Description for Get public certificates for an app or a deployment slot.
+     * Get public certificates for an app or a deployment slot.
+     *
+     * <p>Description for Get public certificates for an app or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -12114,7 +13562,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Get public certificates for an app or a deployment slot.
+     * Get public certificates for an app or a deployment slot.
+     *
+     * <p>Description for Get public certificates for an app or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -12132,7 +13582,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Get the named public certificate for an app (or deployment slot, if specified).
+     * Get the named public certificate for an app (or deployment slot, if specified).
+     *
+     * <p>Description for Get the named public certificate for an app (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -12150,7 +13602,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, String publicCertificateName);
 
     /**
-     * Description for Get the named public certificate for an app (or deployment slot, if specified).
+     * Get the named public certificate for an app (or deployment slot, if specified).
+     *
+     * <p>Description for Get the named public certificate for an app (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -12169,7 +13623,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, String publicCertificateName, Context context);
 
     /**
-     * Description for Creates a hostname binding for an app.
+     * Creates a hostname binding for an app.
+     *
+     * <p>Description for Creates a hostname binding for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -12193,7 +13649,9 @@ public interface WebAppsClient {
         PublicCertificateInner publicCertificate);
 
     /**
-     * Description for Creates a hostname binding for an app.
+     * Creates a hostname binding for an app.
+     *
+     * <p>Description for Creates a hostname binding for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -12219,7 +13677,9 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for Deletes a hostname binding for an app.
+     * Deletes a hostname binding for an app.
+     *
+     * <p>Description for Deletes a hostname binding for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -12235,7 +13695,9 @@ public interface WebAppsClient {
     void deletePublicCertificateSlot(String resourceGroupName, String name, String slot, String publicCertificateName);
 
     /**
-     * Description for Deletes a hostname binding for an app.
+     * Deletes a hostname binding for an app.
+     *
+     * <p>Description for Deletes a hostname binding for an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -12254,7 +13716,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, String publicCertificateName, Context context);
 
     /**
-     * Description for Gets the publishing profile for an app (or deployment slot, if specified).
+     * Gets the publishing profile for an app (or deployment slot, if specified).
+     *
+     * <p>Description for Gets the publishing profile for an app (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -12273,7 +13737,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, CsmPublishingProfileOptions publishingProfileOptions);
 
     /**
-     * Description for Gets the publishing profile for an app (or deployment slot, if specified).
+     * Gets the publishing profile for an app (or deployment slot, if specified).
+     *
+     * <p>Description for Gets the publishing profile for an app (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -12297,8 +13763,11 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for Resets the configuration settings of the current slot if they were previously modified by calling
-     * the API with POST.
+     * Resets the configuration settings of the current slot if they were previously modified by calling the API with
+     * POST.
+     *
+     * <p>Description for Resets the configuration settings of the current slot if they were previously modified by
+     * calling the API with POST.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -12313,8 +13782,11 @@ public interface WebAppsClient {
     void resetSlotConfigurationSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Resets the configuration settings of the current slot if they were previously modified by calling
-     * the API with POST.
+     * Resets the configuration settings of the current slot if they were previously modified by calling the API with
+     * POST.
+     *
+     * <p>Description for Resets the configuration settings of the current slot if they were previously modified by
+     * calling the API with POST.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -12332,7 +13804,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Restarts an app (or deployment slot, if specified).
+     * Restarts an app (or deployment slot, if specified).
+     *
+     * <p>Description for Restarts an app (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -12346,7 +13820,9 @@ public interface WebAppsClient {
     void restartSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Restarts an app (or deployment slot, if specified).
+     * Restarts an app (or deployment slot, if specified).
+     *
+     * <p>Description for Restarts an app (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -12367,7 +13843,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, Boolean softRestart, Boolean synchronous, Context context);
 
     /**
-     * Description for Restores an app from a backup blob in Azure Storage.
+     * Restores an app from a backup blob in Azure Storage.
+     *
+     * <p>Description for Restores an app from a backup blob in Azure Storage.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -12385,7 +13863,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, RestoreRequestInner request);
 
     /**
-     * Description for Restores an app from a backup blob in Azure Storage.
+     * Restores an app from a backup blob in Azure Storage.
+     *
+     * <p>Description for Restores an app from a backup blob in Azure Storage.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -12404,7 +13884,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, RestoreRequestInner request, Context context);
 
     /**
-     * Description for Restores an app from a backup blob in Azure Storage.
+     * Restores an app from a backup blob in Azure Storage.
+     *
+     * <p>Description for Restores an app from a backup blob in Azure Storage.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -12420,7 +13902,9 @@ public interface WebAppsClient {
     void restoreFromBackupBlobSlot(String resourceGroupName, String name, String slot, RestoreRequestInner request);
 
     /**
-     * Description for Restores an app from a backup blob in Azure Storage.
+     * Restores an app from a backup blob in Azure Storage.
+     *
+     * <p>Description for Restores an app from a backup blob in Azure Storage.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -12438,7 +13922,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, RestoreRequestInner request, Context context);
 
     /**
-     * Description for Restores a deleted web app to this web app.
+     * Restores a deleted web app to this web app.
+     *
+     * <p>Description for Restores a deleted web app to this web app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -12455,7 +13941,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, DeletedAppRestoreRequest restoreRequest);
 
     /**
-     * Description for Restores a deleted web app to this web app.
+     * Restores a deleted web app to this web app.
+     *
+     * <p>Description for Restores a deleted web app to this web app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -12473,7 +13961,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, DeletedAppRestoreRequest restoreRequest, Context context);
 
     /**
-     * Description for Restores a deleted web app to this web app.
+     * Restores a deleted web app to this web app.
+     *
+     * <p>Description for Restores a deleted web app to this web app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -12489,7 +13979,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, DeletedAppRestoreRequest restoreRequest);
 
     /**
-     * Description for Restores a deleted web app to this web app.
+     * Restores a deleted web app to this web app.
+     *
+     * <p>Description for Restores a deleted web app to this web app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -12506,7 +13998,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, DeletedAppRestoreRequest restoreRequest, Context context);
 
     /**
-     * Description for Restores a web app from a snapshot.
+     * Restores a web app from a snapshot.
+     *
+     * <p>Description for Restores a web app from a snapshot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -12524,7 +14018,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, SnapshotRestoreRequest restoreRequest);
 
     /**
-     * Description for Restores a web app from a snapshot.
+     * Restores a web app from a snapshot.
+     *
+     * <p>Description for Restores a web app from a snapshot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -12543,7 +14039,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, SnapshotRestoreRequest restoreRequest, Context context);
 
     /**
-     * Description for Restores a web app from a snapshot.
+     * Restores a web app from a snapshot.
+     *
+     * <p>Description for Restores a web app from a snapshot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -12559,7 +14057,9 @@ public interface WebAppsClient {
     void restoreSnapshotSlot(String resourceGroupName, String name, String slot, SnapshotRestoreRequest restoreRequest);
 
     /**
-     * Description for Restores a web app from a snapshot.
+     * Restores a web app from a snapshot.
+     *
+     * <p>Description for Restores a web app from a snapshot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -12577,7 +14077,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, SnapshotRestoreRequest restoreRequest, Context context);
 
     /**
-     * Description for Get list of siteextensions for a web site, or a deployment slot.
+     * Get list of siteextensions for a web site, or a deployment slot.
+     *
+     * <p>Description for Get list of siteextensions for a web site, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -12591,7 +14093,9 @@ public interface WebAppsClient {
     PagedIterable<SiteExtensionInfoInner> listSiteExtensionsSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Get list of siteextensions for a web site, or a deployment slot.
+     * Get list of siteextensions for a web site, or a deployment slot.
+     *
+     * <p>Description for Get list of siteextensions for a web site, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -12607,7 +14111,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Get site extension information by its ID for a web site, or a deployment slot.
+     * Get site extension information by its ID for a web site, or a deployment slot.
+     *
+     * <p>Description for Get site extension information by its ID for a web site, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -12623,7 +14129,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String siteExtensionId, String slot);
 
     /**
-     * Description for Get site extension information by its ID for a web site, or a deployment slot.
+     * Get site extension information by its ID for a web site, or a deployment slot.
+     *
+     * <p>Description for Get site extension information by its ID for a web site, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -12640,7 +14148,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String siteExtensionId, String slot, Context context);
 
     /**
-     * Description for Install site extension on a web site, or a deployment slot.
+     * Install site extension on a web site, or a deployment slot.
+     *
+     * <p>Description for Install site extension on a web site, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -12656,7 +14166,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String siteExtensionId, String slot);
 
     /**
-     * Description for Install site extension on a web site, or a deployment slot.
+     * Install site extension on a web site, or a deployment slot.
+     *
+     * <p>Description for Install site extension on a web site, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -12673,7 +14185,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String siteExtensionId, String slot, Context context);
 
     /**
-     * Description for Install site extension on a web site, or a deployment slot.
+     * Install site extension on a web site, or a deployment slot.
+     *
+     * <p>Description for Install site extension on a web site, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -12689,7 +14203,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String siteExtensionId, String slot);
 
     /**
-     * Description for Install site extension on a web site, or a deployment slot.
+     * Install site extension on a web site, or a deployment slot.
+     *
+     * <p>Description for Install site extension on a web site, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -12706,7 +14222,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String siteExtensionId, String slot, Context context);
 
     /**
-     * Description for Remove a site extension from a web site, or a deployment slot.
+     * Remove a site extension from a web site, or a deployment slot.
+     *
+     * <p>Description for Remove a site extension from a web site, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -12721,7 +14239,9 @@ public interface WebAppsClient {
     void deleteSiteExtensionSlot(String resourceGroupName, String name, String siteExtensionId, String slot);
 
     /**
-     * Description for Remove a site extension from a web site, or a deployment slot.
+     * Remove a site extension from a web site, or a deployment slot.
+     *
+     * <p>Description for Remove a site extension from a web site, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -12739,7 +14259,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String siteExtensionId, String slot, Context context);
 
     /**
-     * Description for Get the difference in configuration settings between two web app slots.
+     * Get the difference in configuration settings between two web app slots.
+     *
+     * <p>Description for Get the difference in configuration settings between two web app slots.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -12756,7 +14278,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, CsmSlotEntity slotSwapEntity);
 
     /**
-     * Description for Get the difference in configuration settings between two web app slots.
+     * Get the difference in configuration settings between two web app slots.
+     *
+     * <p>Description for Get the difference in configuration settings between two web app slots.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -12774,7 +14298,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, CsmSlotEntity slotSwapEntity, Context context);
 
     /**
-     * Description for Swaps two deployment slots of an app.
+     * Swaps two deployment slots of an app.
+     *
+     * <p>Description for Swaps two deployment slots of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -12791,7 +14317,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, CsmSlotEntity slotSwapEntity);
 
     /**
-     * Description for Swaps two deployment slots of an app.
+     * Swaps two deployment slots of an app.
+     *
+     * <p>Description for Swaps two deployment slots of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -12809,7 +14337,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, CsmSlotEntity slotSwapEntity, Context context);
 
     /**
-     * Description for Swaps two deployment slots of an app.
+     * Swaps two deployment slots of an app.
+     *
+     * <p>Description for Swaps two deployment slots of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -12824,7 +14354,9 @@ public interface WebAppsClient {
     void swapSlot(String resourceGroupName, String name, String slot, CsmSlotEntity slotSwapEntity);
 
     /**
-     * Description for Swaps two deployment slots of an app.
+     * Swaps two deployment slots of an app.
+     *
+     * <p>Description for Swaps two deployment slots of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -12840,7 +14372,9 @@ public interface WebAppsClient {
     void swapSlot(String resourceGroupName, String name, String slot, CsmSlotEntity slotSwapEntity, Context context);
 
     /**
-     * Description for Returns all Snapshots to the user.
+     * Returns all Snapshots to the user.
+     *
+     * <p>Description for Returns all Snapshots to the user.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Website Name.
@@ -12856,7 +14390,9 @@ public interface WebAppsClient {
     PagedIterable<SnapshotInner> listSnapshotsSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Returns all Snapshots to the user.
+     * Returns all Snapshots to the user.
+     *
+     * <p>Description for Returns all Snapshots to the user.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Website Name.
@@ -12873,7 +14409,9 @@ public interface WebAppsClient {
     PagedIterable<SnapshotInner> listSnapshotsSlot(String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Returns all Snapshots to the user from DRSecondary endpoint.
+     * Returns all Snapshots to the user from DRSecondary endpoint.
+     *
+     * <p>Description for Returns all Snapshots to the user from DRSecondary endpoint.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Website Name.
@@ -12889,7 +14427,9 @@ public interface WebAppsClient {
     PagedIterable<SnapshotInner> listSnapshotsFromDRSecondarySlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Returns all Snapshots to the user from DRSecondary endpoint.
+     * Returns all Snapshots to the user from DRSecondary endpoint.
+     *
+     * <p>Description for Returns all Snapshots to the user from DRSecondary endpoint.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Website Name.
@@ -12907,7 +14447,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Gets the source control configuration of an app.
+     * Gets the source control configuration of an app.
+     *
+     * <p>Description for Gets the source control configuration of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -12923,7 +14465,9 @@ public interface WebAppsClient {
     SiteSourceControlInner getSourceControlSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Gets the source control configuration of an app.
+     * Gets the source control configuration of an app.
+     *
+     * <p>Description for Gets the source control configuration of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -12941,7 +14485,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Updates the source control configuration of an app.
+     * Updates the source control configuration of an app.
+     *
+     * <p>Description for Updates the source control configuration of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -12959,7 +14505,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, SiteSourceControlInner siteSourceControl);
 
     /**
-     * Description for Updates the source control configuration of an app.
+     * Updates the source control configuration of an app.
+     *
+     * <p>Description for Updates the source control configuration of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -12978,7 +14526,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, SiteSourceControlInner siteSourceControl, Context context);
 
     /**
-     * Description for Updates the source control configuration of an app.
+     * Updates the source control configuration of an app.
+     *
+     * <p>Description for Updates the source control configuration of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -12996,7 +14546,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, SiteSourceControlInner siteSourceControl);
 
     /**
-     * Description for Updates the source control configuration of an app.
+     * Updates the source control configuration of an app.
+     *
+     * <p>Description for Updates the source control configuration of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -13015,7 +14567,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, SiteSourceControlInner siteSourceControl, Context context);
 
     /**
-     * Description for Deletes the source control configuration of an app.
+     * Deletes the source control configuration of an app.
+     *
+     * <p>Description for Deletes the source control configuration of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -13029,7 +14583,9 @@ public interface WebAppsClient {
     void deleteSourceControlSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Deletes the source control configuration of an app.
+     * Deletes the source control configuration of an app.
+     *
+     * <p>Description for Deletes the source control configuration of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -13047,7 +14603,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, String additionalFlags, Context context);
 
     /**
-     * Description for Updates the source control configuration of an app.
+     * Updates the source control configuration of an app.
+     *
+     * <p>Description for Updates the source control configuration of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -13065,7 +14623,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, SiteSourceControlInner siteSourceControl);
 
     /**
-     * Description for Updates the source control configuration of an app.
+     * Updates the source control configuration of an app.
+     *
+     * <p>Description for Updates the source control configuration of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -13084,7 +14644,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, SiteSourceControlInner siteSourceControl, Context context);
 
     /**
-     * Description for Starts an app (or deployment slot, if specified).
+     * Starts an app (or deployment slot, if specified).
+     *
+     * <p>Description for Starts an app (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -13098,7 +14660,9 @@ public interface WebAppsClient {
     void startSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Starts an app (or deployment slot, if specified).
+     * Starts an app (or deployment slot, if specified).
+     *
+     * <p>Description for Starts an app (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -13114,7 +14678,9 @@ public interface WebAppsClient {
     Response<Void> startSlotWithResponse(String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Start capturing network packets for the site.
+     * Start capturing network packets for the site.
+     *
+     * <p>Description for Start capturing network packets for the site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
@@ -13138,7 +14704,9 @@ public interface WebAppsClient {
         String sasUrl);
 
     /**
-     * Description for Start capturing network packets for the site.
+     * Start capturing network packets for the site.
+     *
+     * <p>Description for Start capturing network packets for the site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
@@ -13164,7 +14732,9 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for Start capturing network packets for the site.
+     * Start capturing network packets for the site.
+     *
+     * <p>Description for Start capturing network packets for the site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
@@ -13188,7 +14758,9 @@ public interface WebAppsClient {
         String sasUrl);
 
     /**
-     * Description for Start capturing network packets for the site.
+     * Start capturing network packets for the site.
+     *
+     * <p>Description for Start capturing network packets for the site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
@@ -13203,7 +14775,9 @@ public interface WebAppsClient {
     Object startNetworkTraceSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Start capturing network packets for the site.
+     * Start capturing network packets for the site.
+     *
+     * <p>Description for Start capturing network packets for the site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
@@ -13229,7 +14803,9 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for Stops an app (or deployment slot, if specified).
+     * Stops an app (or deployment slot, if specified).
+     *
+     * <p>Description for Stops an app (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -13243,7 +14819,9 @@ public interface WebAppsClient {
     void stopSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Stops an app (or deployment slot, if specified).
+     * Stops an app (or deployment slot, if specified).
+     *
+     * <p>Description for Stops an app (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -13259,7 +14837,9 @@ public interface WebAppsClient {
     Response<Void> stopSlotWithResponse(String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Stop ongoing capturing network packets for the site.
+     * Stop ongoing capturing network packets for the site.
+     *
+     * <p>Description for Stop ongoing capturing network packets for the site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
@@ -13273,7 +14853,9 @@ public interface WebAppsClient {
     void stopNetworkTraceSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Stop ongoing capturing network packets for the site.
+     * Stop ongoing capturing network packets for the site.
+     *
+     * <p>Description for Stop ongoing capturing network packets for the site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
@@ -13290,7 +14872,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Sync web app repository.
+     * Sync web app repository.
+     *
+     * <p>Description for Sync web app repository.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -13304,7 +14888,9 @@ public interface WebAppsClient {
     void syncRepositorySlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Sync web app repository.
+     * Sync web app repository.
+     *
+     * <p>Description for Sync web app repository.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -13320,7 +14906,9 @@ public interface WebAppsClient {
     Response<Void> syncRepositorySlotWithResponse(String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Syncs function trigger metadata to the management database.
+     * Syncs function trigger metadata to the management database
+     *
+     * <p>Description for Syncs function trigger metadata to the management database.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -13334,7 +14922,9 @@ public interface WebAppsClient {
     void syncFunctionTriggersSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Syncs function trigger metadata to the management database.
+     * Syncs function trigger metadata to the management database
+     *
+     * <p>Description for Syncs function trigger metadata to the management database.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -13351,7 +14941,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for List triggered web jobs for an app, or a deployment slot.
+     * List triggered web jobs for an app, or a deployment slot.
+     *
+     * <p>Description for List triggered web jobs for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -13368,7 +14960,9 @@ public interface WebAppsClient {
     PagedIterable<TriggeredWebJobInner> listTriggeredWebJobsSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for List triggered web jobs for an app, or a deployment slot.
+     * List triggered web jobs for an app, or a deployment slot.
+     *
+     * <p>Description for List triggered web jobs for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -13387,7 +14981,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Gets a triggered web job by its ID for an app, or a deployment slot.
+     * Gets a triggered web job by its ID for an app, or a deployment slot.
+     *
+     * <p>Description for Gets a triggered web job by its ID for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -13402,7 +14998,9 @@ public interface WebAppsClient {
     TriggeredWebJobInner getTriggeredWebJobSlot(String resourceGroupName, String name, String webJobName, String slot);
 
     /**
-     * Description for Gets a triggered web job by its ID for an app, or a deployment slot.
+     * Gets a triggered web job by its ID for an app, or a deployment slot.
+     *
+     * <p>Description for Gets a triggered web job by its ID for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -13419,7 +15017,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String webJobName, String slot, Context context);
 
     /**
-     * Description for Delete a triggered web job by its ID for an app, or a deployment slot.
+     * Delete a triggered web job by its ID for an app, or a deployment slot.
+     *
+     * <p>Description for Delete a triggered web job by its ID for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -13435,7 +15035,9 @@ public interface WebAppsClient {
     void deleteTriggeredWebJobSlot(String resourceGroupName, String name, String webJobName, String slot);
 
     /**
-     * Description for Delete a triggered web job by its ID for an app, or a deployment slot.
+     * Delete a triggered web job by its ID for an app, or a deployment slot.
+     *
+     * <p>Description for Delete a triggered web job by its ID for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -13454,7 +15056,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String webJobName, String slot, Context context);
 
     /**
-     * Description for List a triggered web job's history for an app, or a deployment slot.
+     * List a triggered web job's history for an app, or a deployment slot.
+     *
+     * <p>Description for List a triggered web job's history for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -13471,7 +15075,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String webJobName, String slot);
 
     /**
-     * Description for List a triggered web job's history for an app, or a deployment slot.
+     * List a triggered web job's history for an app, or a deployment slot.
+     *
+     * <p>Description for List a triggered web job's history for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -13489,7 +15095,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String webJobName, String slot, Context context);
 
     /**
-     * Description for Gets a triggered web job's history by its ID for an app, , or a deployment slot.
+     * Gets a triggered web job's history by its ID for an app, , or a deployment slot.
+     *
+     * <p>Description for Gets a triggered web job's history by its ID for an app, , or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -13506,7 +15114,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String webJobName, String id, String slot);
 
     /**
-     * Description for Gets a triggered web job's history by its ID for an app, , or a deployment slot.
+     * Gets a triggered web job's history by its ID for an app, , or a deployment slot.
+     *
+     * <p>Description for Gets a triggered web job's history by its ID for an app, , or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -13524,7 +15134,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String webJobName, String id, String slot, Context context);
 
     /**
-     * Description for Run a triggered web job for an app, or a deployment slot.
+     * Run a triggered web job for an app, or a deployment slot.
+     *
+     * <p>Description for Run a triggered web job for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -13538,7 +15150,9 @@ public interface WebAppsClient {
     void runTriggeredWebJobSlot(String resourceGroupName, String name, String webJobName, String slot);
 
     /**
-     * Description for Run a triggered web job for an app, or a deployment slot.
+     * Run a triggered web job for an app, or a deployment slot.
+     *
+     * <p>Description for Run a triggered web job for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -13555,7 +15169,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String webJobName, String slot, Context context);
 
     /**
-     * Description for Gets the quota usage information of an app (or deployment slot, if specified).
+     * Gets the quota usage information of an app (or deployment slot, if specified).
+     *
+     * <p>Description for Gets the quota usage information of an app (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -13571,7 +15187,9 @@ public interface WebAppsClient {
     PagedIterable<CsmUsageQuotaInner> listUsagesSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Gets the quota usage information of an app (or deployment slot, if specified).
+     * Gets the quota usage information of an app (or deployment slot, if specified).
+     *
+     * <p>Description for Gets the quota usage information of an app (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -13592,7 +15210,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, String filter, Context context);
 
     /**
-     * Description for Gets the virtual networks the app (or deployment slot) is connected to.
+     * Gets the virtual networks the app (or deployment slot) is connected to.
+     *
+     * <p>Description for Gets the virtual networks the app (or deployment slot) is connected to.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -13608,7 +15228,9 @@ public interface WebAppsClient {
     List<VnetInfoResourceInner> listVnetConnectionsSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for Gets the virtual networks the app (or deployment slot) is connected to.
+     * Gets the virtual networks the app (or deployment slot) is connected to.
+     *
+     * <p>Description for Gets the virtual networks the app (or deployment slot) is connected to.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -13626,7 +15248,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Gets a virtual network the app (or deployment slot) is connected to by name.
+     * Gets a virtual network the app (or deployment slot) is connected to by name.
+     *
+     * <p>Description for Gets a virtual network the app (or deployment slot) is connected to by name.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -13643,7 +15267,9 @@ public interface WebAppsClient {
     VnetInfoResourceInner getVnetConnectionSlot(String resourceGroupName, String name, String vnetName, String slot);
 
     /**
-     * Description for Gets a virtual network the app (or deployment slot) is connected to by name.
+     * Gets a virtual network the app (or deployment slot) is connected to by name.
+     *
+     * <p>Description for Gets a virtual network the app (or deployment slot) is connected to by name.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -13662,7 +15288,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String vnetName, String slot, Context context);
 
     /**
-     * Description for Adds a Virtual Network connection to an app or slot (PUT) or updates the connection properties
+     * Adds a Virtual Network connection to an app or slot (PUT) or updates the connection properties (PATCH).
+     *
+     * <p>Description for Adds a Virtual Network connection to an app or slot (PUT) or updates the connection properties
      * (PATCH).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
@@ -13682,7 +15310,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String vnetName, String slot, VnetInfoResourceInner connectionEnvelope);
 
     /**
-     * Description for Adds a Virtual Network connection to an app or slot (PUT) or updates the connection properties
+     * Adds a Virtual Network connection to an app or slot (PUT) or updates the connection properties (PATCH).
+     *
+     * <p>Description for Adds a Virtual Network connection to an app or slot (PUT) or updates the connection properties
      * (PATCH).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
@@ -13708,7 +15338,9 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for Deletes a connection from an app (or deployment slot to a named virtual network.
+     * Deletes a connection from an app (or deployment slot to a named virtual network.
+     *
+     * <p>Description for Deletes a connection from an app (or deployment slot to a named virtual network.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -13723,7 +15355,9 @@ public interface WebAppsClient {
     void deleteVnetConnectionSlot(String resourceGroupName, String name, String vnetName, String slot);
 
     /**
-     * Description for Deletes a connection from an app (or deployment slot to a named virtual network.
+     * Deletes a connection from an app (or deployment slot to a named virtual network.
+     *
+     * <p>Description for Deletes a connection from an app (or deployment slot to a named virtual network.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -13741,7 +15375,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String vnetName, String slot, Context context);
 
     /**
-     * Description for Adds a Virtual Network connection to an app or slot (PUT) or updates the connection properties
+     * Adds a Virtual Network connection to an app or slot (PUT) or updates the connection properties (PATCH).
+     *
+     * <p>Description for Adds a Virtual Network connection to an app or slot (PUT) or updates the connection properties
      * (PATCH).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
@@ -13761,7 +15397,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String vnetName, String slot, VnetInfoResourceInner connectionEnvelope);
 
     /**
-     * Description for Adds a Virtual Network connection to an app or slot (PUT) or updates the connection properties
+     * Adds a Virtual Network connection to an app or slot (PUT) or updates the connection properties (PATCH).
+     *
+     * <p>Description for Adds a Virtual Network connection to an app or slot (PUT) or updates the connection properties
      * (PATCH).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
@@ -13787,7 +15425,9 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for Gets an app's Virtual Network gateway.
+     * Gets an app's Virtual Network gateway.
+     *
+     * <p>Description for Gets an app's Virtual Network gateway.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -13805,7 +15445,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String vnetName, String gatewayName, String slot);
 
     /**
-     * Description for Gets an app's Virtual Network gateway.
+     * Gets an app's Virtual Network gateway.
+     *
+     * <p>Description for Gets an app's Virtual Network gateway.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -13824,7 +15466,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String vnetName, String gatewayName, String slot, Context context);
 
     /**
-     * Description for Adds a gateway to a connected Virtual Network (PUT) or updates it (PATCH).
+     * Adds a gateway to a connected Virtual Network (PUT) or updates it (PATCH).
+     *
+     * <p>Description for Adds a gateway to a connected Virtual Network (PUT) or updates it (PATCH).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -13849,7 +15493,9 @@ public interface WebAppsClient {
         VnetGatewayInner connectionEnvelope);
 
     /**
-     * Description for Adds a gateway to a connected Virtual Network (PUT) or updates it (PATCH).
+     * Adds a gateway to a connected Virtual Network (PUT) or updates it (PATCH).
+     *
+     * <p>Description for Adds a gateway to a connected Virtual Network (PUT) or updates it (PATCH).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -13876,7 +15522,9 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for Adds a gateway to a connected Virtual Network (PUT) or updates it (PATCH).
+     * Adds a gateway to a connected Virtual Network (PUT) or updates it (PATCH).
+     *
+     * <p>Description for Adds a gateway to a connected Virtual Network (PUT) or updates it (PATCH).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -13901,7 +15549,9 @@ public interface WebAppsClient {
         VnetGatewayInner connectionEnvelope);
 
     /**
-     * Description for Adds a gateway to a connected Virtual Network (PUT) or updates it (PATCH).
+     * Adds a gateway to a connected Virtual Network (PUT) or updates it (PATCH).
+     *
+     * <p>Description for Adds a gateway to a connected Virtual Network (PUT) or updates it (PATCH).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -13928,7 +15578,9 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for List webjobs for an app, or a deployment slot.
+     * List webjobs for an app, or a deployment slot.
+     *
+     * <p>Description for List webjobs for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -13944,7 +15596,9 @@ public interface WebAppsClient {
     PagedIterable<WebJobInner> listWebJobsSlot(String resourceGroupName, String name, String slot);
 
     /**
-     * Description for List webjobs for an app, or a deployment slot.
+     * List webjobs for an app, or a deployment slot.
+     *
+     * <p>Description for List webjobs for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -13961,7 +15615,9 @@ public interface WebAppsClient {
     PagedIterable<WebJobInner> listWebJobsSlot(String resourceGroupName, String name, String slot, Context context);
 
     /**
-     * Description for Get webjob information for an app, or a deployment slot.
+     * Get webjob information for an app, or a deployment slot.
+     *
+     * <p>Description for Get webjob information for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -13978,7 +15634,9 @@ public interface WebAppsClient {
     WebJobInner getWebJobSlot(String resourceGroupName, String name, String webJobName, String slot);
 
     /**
-     * Description for Get webjob information for an app, or a deployment slot.
+     * Get webjob information for an app, or a deployment slot.
+     *
+     * <p>Description for Get webjob information for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -13997,7 +15655,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String webJobName, String slot, Context context);
 
     /**
-     * Description for Get the difference in configuration settings between two web app slots.
+     * Get the difference in configuration settings between two web app slots.
+     *
+     * <p>Description for Get the difference in configuration settings between two web app slots.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -14013,7 +15673,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, CsmSlotEntity slotSwapEntity);
 
     /**
-     * Description for Get the difference in configuration settings between two web app slots.
+     * Get the difference in configuration settings between two web app slots.
+     *
+     * <p>Description for Get the difference in configuration settings between two web app slots.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -14030,7 +15692,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, CsmSlotEntity slotSwapEntity, Context context);
 
     /**
-     * Description for Swaps two deployment slots of an app.
+     * Swaps two deployment slots of an app.
+     *
+     * <p>Description for Swaps two deployment slots of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -14046,7 +15710,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, CsmSlotEntity slotSwapEntity);
 
     /**
-     * Description for Swaps two deployment slots of an app.
+     * Swaps two deployment slots of an app.
+     *
+     * <p>Description for Swaps two deployment slots of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -14063,7 +15729,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, CsmSlotEntity slotSwapEntity, Context context);
 
     /**
-     * Description for Swaps two deployment slots of an app.
+     * Swaps two deployment slots of an app.
+     *
+     * <p>Description for Swaps two deployment slots of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -14077,7 +15745,9 @@ public interface WebAppsClient {
     void swapSlotWithProduction(String resourceGroupName, String name, CsmSlotEntity slotSwapEntity);
 
     /**
-     * Description for Swaps two deployment slots of an app.
+     * Swaps two deployment slots of an app.
+     *
+     * <p>Description for Swaps two deployment slots of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -14092,7 +15762,9 @@ public interface WebAppsClient {
     void swapSlotWithProduction(String resourceGroupName, String name, CsmSlotEntity slotSwapEntity, Context context);
 
     /**
-     * Description for Returns all Snapshots to the user.
+     * Returns all Snapshots to the user.
+     *
+     * <p>Description for Returns all Snapshots to the user.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Website Name.
@@ -14107,7 +15779,9 @@ public interface WebAppsClient {
     PagedIterable<SnapshotInner> listSnapshots(String resourceGroupName, String name);
 
     /**
-     * Description for Returns all Snapshots to the user.
+     * Returns all Snapshots to the user.
+     *
+     * <p>Description for Returns all Snapshots to the user.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Website Name.
@@ -14123,7 +15797,9 @@ public interface WebAppsClient {
     PagedIterable<SnapshotInner> listSnapshots(String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Returns all Snapshots to the user from DRSecondary endpoint.
+     * Returns all Snapshots to the user from DRSecondary endpoint.
+     *
+     * <p>Description for Returns all Snapshots to the user from DRSecondary endpoint.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Website Name.
@@ -14138,7 +15814,9 @@ public interface WebAppsClient {
     PagedIterable<SnapshotInner> listSnapshotsFromDRSecondary(String resourceGroupName, String name);
 
     /**
-     * Description for Returns all Snapshots to the user from DRSecondary endpoint.
+     * Returns all Snapshots to the user from DRSecondary endpoint.
+     *
+     * <p>Description for Returns all Snapshots to the user from DRSecondary endpoint.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Website Name.
@@ -14154,7 +15832,9 @@ public interface WebAppsClient {
     PagedIterable<SnapshotInner> listSnapshotsFromDRSecondary(String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Gets the source control configuration of an app.
+     * Gets the source control configuration of an app.
+     *
+     * <p>Description for Gets the source control configuration of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -14168,7 +15848,9 @@ public interface WebAppsClient {
     SiteSourceControlInner getSourceControl(String resourceGroupName, String name);
 
     /**
-     * Description for Gets the source control configuration of an app.
+     * Gets the source control configuration of an app.
+     *
+     * <p>Description for Gets the source control configuration of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -14184,7 +15866,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Updates the source control configuration of an app.
+     * Updates the source control configuration of an app.
+     *
+     * <p>Description for Updates the source control configuration of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -14200,7 +15884,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, SiteSourceControlInner siteSourceControl);
 
     /**
-     * Description for Updates the source control configuration of an app.
+     * Updates the source control configuration of an app.
+     *
+     * <p>Description for Updates the source control configuration of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -14217,7 +15903,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, SiteSourceControlInner siteSourceControl, Context context);
 
     /**
-     * Description for Updates the source control configuration of an app.
+     * Updates the source control configuration of an app.
+     *
+     * <p>Description for Updates the source control configuration of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -14233,7 +15921,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, SiteSourceControlInner siteSourceControl);
 
     /**
-     * Description for Updates the source control configuration of an app.
+     * Updates the source control configuration of an app.
+     *
+     * <p>Description for Updates the source control configuration of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -14250,7 +15940,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, SiteSourceControlInner siteSourceControl, Context context);
 
     /**
-     * Description for Deletes the source control configuration of an app.
+     * Deletes the source control configuration of an app.
+     *
+     * <p>Description for Deletes the source control configuration of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -14262,7 +15954,9 @@ public interface WebAppsClient {
     void deleteSourceControl(String resourceGroupName, String name);
 
     /**
-     * Description for Deletes the source control configuration of an app.
+     * Deletes the source control configuration of an app.
+     *
+     * <p>Description for Deletes the source control configuration of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -14278,7 +15972,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String additionalFlags, Context context);
 
     /**
-     * Description for Updates the source control configuration of an app.
+     * Updates the source control configuration of an app.
+     *
+     * <p>Description for Updates the source control configuration of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -14294,7 +15990,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, SiteSourceControlInner siteSourceControl);
 
     /**
-     * Description for Updates the source control configuration of an app.
+     * Updates the source control configuration of an app.
+     *
+     * <p>Description for Updates the source control configuration of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -14311,7 +16009,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, SiteSourceControlInner siteSourceControl, Context context);
 
     /**
-     * Description for Starts an app (or deployment slot, if specified).
+     * Starts an app (or deployment slot, if specified).
+     *
+     * <p>Description for Starts an app (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -14324,7 +16024,9 @@ public interface WebAppsClient {
     void start(String resourceGroupName, String name);
 
     /**
-     * Description for Starts an app (or deployment slot, if specified).
+     * Starts an app (or deployment slot, if specified).
+     *
+     * <p>Description for Starts an app (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -14339,7 +16041,9 @@ public interface WebAppsClient {
     Response<Void> startWithResponse(String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Start capturing network packets for the site.
+     * Start capturing network packets for the site.
+     *
+     * <p>Description for Start capturing network packets for the site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
@@ -14357,7 +16061,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, Integer durationInSeconds, Integer maxFrameLength, String sasUrl);
 
     /**
-     * Description for Start capturing network packets for the site.
+     * Start capturing network packets for the site.
+     *
+     * <p>Description for Start capturing network packets for the site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
@@ -14381,7 +16087,9 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for Start capturing network packets for the site.
+     * Start capturing network packets for the site.
+     *
+     * <p>Description for Start capturing network packets for the site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
@@ -14399,7 +16107,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, Integer durationInSeconds, Integer maxFrameLength, String sasUrl);
 
     /**
-     * Description for Start capturing network packets for the site.
+     * Start capturing network packets for the site.
+     *
+     * <p>Description for Start capturing network packets for the site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
@@ -14413,7 +16123,9 @@ public interface WebAppsClient {
     Object startNetworkTrace(String resourceGroupName, String name);
 
     /**
-     * Description for Start capturing network packets for the site.
+     * Start capturing network packets for the site.
+     *
+     * <p>Description for Start capturing network packets for the site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
@@ -14437,7 +16149,9 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for Stops an app (or deployment slot, if specified).
+     * Stops an app (or deployment slot, if specified).
+     *
+     * <p>Description for Stops an app (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -14450,7 +16164,9 @@ public interface WebAppsClient {
     void stop(String resourceGroupName, String name);
 
     /**
-     * Description for Stops an app (or deployment slot, if specified).
+     * Stops an app (or deployment slot, if specified).
+     *
+     * <p>Description for Stops an app (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -14465,7 +16181,9 @@ public interface WebAppsClient {
     Response<Void> stopWithResponse(String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Stop ongoing capturing network packets for the site.
+     * Stop ongoing capturing network packets for the site.
+     *
+     * <p>Description for Stop ongoing capturing network packets for the site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
@@ -14478,7 +16196,9 @@ public interface WebAppsClient {
     void stopNetworkTrace(String resourceGroupName, String name);
 
     /**
-     * Description for Stop ongoing capturing network packets for the site.
+     * Stop ongoing capturing network packets for the site.
+     *
+     * <p>Description for Stop ongoing capturing network packets for the site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
@@ -14493,7 +16213,9 @@ public interface WebAppsClient {
     Response<Void> stopNetworkTraceWithResponse(String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Sync web app repository.
+     * Sync web app repository.
+     *
+     * <p>Description for Sync web app repository.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -14506,7 +16228,9 @@ public interface WebAppsClient {
     void syncRepository(String resourceGroupName, String name);
 
     /**
-     * Description for Sync web app repository.
+     * Sync web app repository.
+     *
+     * <p>Description for Sync web app repository.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
@@ -14521,7 +16245,9 @@ public interface WebAppsClient {
     Response<Void> syncRepositoryWithResponse(String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Syncs function trigger metadata to the management database.
+     * Syncs function trigger metadata to the management database
+     *
+     * <p>Description for Syncs function trigger metadata to the management database.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -14534,7 +16260,9 @@ public interface WebAppsClient {
     void syncFunctionTriggers(String resourceGroupName, String name);
 
     /**
-     * Description for Syncs function trigger metadata to the management database.
+     * Syncs function trigger metadata to the management database
+     *
+     * <p>Description for Syncs function trigger metadata to the management database.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -14549,7 +16277,9 @@ public interface WebAppsClient {
     Response<Void> syncFunctionTriggersWithResponse(String resourceGroupName, String name, Context context);
 
     /**
-     * Description for List triggered web jobs for an app, or a deployment slot.
+     * List triggered web jobs for an app, or a deployment slot.
+     *
+     * <p>Description for List triggered web jobs for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -14564,7 +16294,9 @@ public interface WebAppsClient {
     PagedIterable<TriggeredWebJobInner> listTriggeredWebJobs(String resourceGroupName, String name);
 
     /**
-     * Description for List triggered web jobs for an app, or a deployment slot.
+     * List triggered web jobs for an app, or a deployment slot.
+     *
+     * <p>Description for List triggered web jobs for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -14580,7 +16312,9 @@ public interface WebAppsClient {
     PagedIterable<TriggeredWebJobInner> listTriggeredWebJobs(String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Gets a triggered web job by its ID for an app, or a deployment slot.
+     * Gets a triggered web job by its ID for an app, or a deployment slot.
+     *
+     * <p>Description for Gets a triggered web job by its ID for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -14594,7 +16328,9 @@ public interface WebAppsClient {
     TriggeredWebJobInner getTriggeredWebJob(String resourceGroupName, String name, String webJobName);
 
     /**
-     * Description for Gets a triggered web job by its ID for an app, or a deployment slot.
+     * Gets a triggered web job by its ID for an app, or a deployment slot.
+     *
+     * <p>Description for Gets a triggered web job by its ID for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -14610,7 +16346,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String webJobName, Context context);
 
     /**
-     * Description for Delete a triggered web job by its ID for an app, or a deployment slot.
+     * Delete a triggered web job by its ID for an app, or a deployment slot.
+     *
+     * <p>Description for Delete a triggered web job by its ID for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -14624,7 +16362,9 @@ public interface WebAppsClient {
     void deleteTriggeredWebJob(String resourceGroupName, String name, String webJobName);
 
     /**
-     * Description for Delete a triggered web job by its ID for an app, or a deployment slot.
+     * Delete a triggered web job by its ID for an app, or a deployment slot.
+     *
+     * <p>Description for Delete a triggered web job by its ID for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -14641,7 +16381,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String webJobName, Context context);
 
     /**
-     * Description for List a triggered web job's history for an app, or a deployment slot.
+     * List a triggered web job's history for an app, or a deployment slot.
+     *
+     * <p>Description for List a triggered web job's history for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -14657,7 +16399,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String webJobName);
 
     /**
-     * Description for List a triggered web job's history for an app, or a deployment slot.
+     * List a triggered web job's history for an app, or a deployment slot.
+     *
+     * <p>Description for List a triggered web job's history for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -14674,7 +16418,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String webJobName, Context context);
 
     /**
-     * Description for Gets a triggered web job's history by its ID for an app, , or a deployment slot.
+     * Gets a triggered web job's history by its ID for an app, , or a deployment slot.
+     *
+     * <p>Description for Gets a triggered web job's history by its ID for an app, , or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -14690,7 +16436,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String webJobName, String id);
 
     /**
-     * Description for Gets a triggered web job's history by its ID for an app, , or a deployment slot.
+     * Gets a triggered web job's history by its ID for an app, , or a deployment slot.
+     *
+     * <p>Description for Gets a triggered web job's history by its ID for an app, , or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -14707,7 +16455,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String webJobName, String id, Context context);
 
     /**
-     * Description for Run a triggered web job for an app, or a deployment slot.
+     * Run a triggered web job for an app, or a deployment slot.
+     *
+     * <p>Description for Run a triggered web job for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -14720,7 +16470,9 @@ public interface WebAppsClient {
     void runTriggeredWebJob(String resourceGroupName, String name, String webJobName);
 
     /**
-     * Description for Run a triggered web job for an app, or a deployment slot.
+     * Run a triggered web job for an app, or a deployment slot.
+     *
+     * <p>Description for Run a triggered web job for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -14736,7 +16488,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String webJobName, Context context);
 
     /**
-     * Description for Gets the quota usage information of an app (or deployment slot, if specified).
+     * Gets the quota usage information of an app (or deployment slot, if specified).
+     *
+     * <p>Description for Gets the quota usage information of an app (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -14750,7 +16504,9 @@ public interface WebAppsClient {
     PagedIterable<CsmUsageQuotaInner> listUsages(String resourceGroupName, String name);
 
     /**
-     * Description for Gets the quota usage information of an app (or deployment slot, if specified).
+     * Gets the quota usage information of an app (or deployment slot, if specified).
+     *
+     * <p>Description for Gets the quota usage information of an app (or deployment slot, if specified).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -14768,7 +16524,9 @@ public interface WebAppsClient {
     PagedIterable<CsmUsageQuotaInner> listUsages(String resourceGroupName, String name, String filter, Context context);
 
     /**
-     * Description for Gets the virtual networks the app (or deployment slot) is connected to.
+     * Gets the virtual networks the app (or deployment slot) is connected to.
+     *
+     * <p>Description for Gets the virtual networks the app (or deployment slot) is connected to.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -14782,7 +16540,9 @@ public interface WebAppsClient {
     List<VnetInfoResourceInner> listVnetConnections(String resourceGroupName, String name);
 
     /**
-     * Description for Gets the virtual networks the app (or deployment slot) is connected to.
+     * Gets the virtual networks the app (or deployment slot) is connected to.
+     *
+     * <p>Description for Gets the virtual networks the app (or deployment slot) is connected to.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -14798,7 +16558,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Gets a virtual network the app (or deployment slot) is connected to by name.
+     * Gets a virtual network the app (or deployment slot) is connected to by name.
+     *
+     * <p>Description for Gets a virtual network the app (or deployment slot) is connected to by name.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -14813,7 +16575,9 @@ public interface WebAppsClient {
     VnetInfoResourceInner getVnetConnection(String resourceGroupName, String name, String vnetName);
 
     /**
-     * Description for Gets a virtual network the app (or deployment slot) is connected to by name.
+     * Gets a virtual network the app (or deployment slot) is connected to by name.
+     *
+     * <p>Description for Gets a virtual network the app (or deployment slot) is connected to by name.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -14830,7 +16594,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String vnetName, Context context);
 
     /**
-     * Description for Adds a Virtual Network connection to an app or slot (PUT) or updates the connection properties
+     * Adds a Virtual Network connection to an app or slot (PUT) or updates the connection properties (PATCH).
+     *
+     * <p>Description for Adds a Virtual Network connection to an app or slot (PUT) or updates the connection properties
      * (PATCH).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
@@ -14848,7 +16614,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String vnetName, VnetInfoResourceInner connectionEnvelope);
 
     /**
-     * Description for Adds a Virtual Network connection to an app or slot (PUT) or updates the connection properties
+     * Adds a Virtual Network connection to an app or slot (PUT) or updates the connection properties (PATCH).
+     *
+     * <p>Description for Adds a Virtual Network connection to an app or slot (PUT) or updates the connection properties
      * (PATCH).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
@@ -14871,7 +16639,9 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for Deletes a connection from an app (or deployment slot to a named virtual network.
+     * Deletes a connection from an app (or deployment slot to a named virtual network.
+     *
+     * <p>Description for Deletes a connection from an app (or deployment slot to a named virtual network.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -14884,7 +16654,9 @@ public interface WebAppsClient {
     void deleteVnetConnection(String resourceGroupName, String name, String vnetName);
 
     /**
-     * Description for Deletes a connection from an app (or deployment slot to a named virtual network.
+     * Deletes a connection from an app (or deployment slot to a named virtual network.
+     *
+     * <p>Description for Deletes a connection from an app (or deployment slot to a named virtual network.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -14900,7 +16672,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String vnetName, Context context);
 
     /**
-     * Description for Adds a Virtual Network connection to an app or slot (PUT) or updates the connection properties
+     * Adds a Virtual Network connection to an app or slot (PUT) or updates the connection properties (PATCH).
+     *
+     * <p>Description for Adds a Virtual Network connection to an app or slot (PUT) or updates the connection properties
      * (PATCH).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
@@ -14918,7 +16692,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String vnetName, VnetInfoResourceInner connectionEnvelope);
 
     /**
-     * Description for Adds a Virtual Network connection to an app or slot (PUT) or updates the connection properties
+     * Adds a Virtual Network connection to an app or slot (PUT) or updates the connection properties (PATCH).
+     *
+     * <p>Description for Adds a Virtual Network connection to an app or slot (PUT) or updates the connection properties
      * (PATCH).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
@@ -14941,7 +16717,9 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for Gets an app's Virtual Network gateway.
+     * Gets an app's Virtual Network gateway.
+     *
+     * <p>Description for Gets an app's Virtual Network gateway.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -14957,7 +16735,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String vnetName, String gatewayName);
 
     /**
-     * Description for Gets an app's Virtual Network gateway.
+     * Gets an app's Virtual Network gateway.
+     *
+     * <p>Description for Gets an app's Virtual Network gateway.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -14974,7 +16754,9 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String vnetName, String gatewayName, Context context);
 
     /**
-     * Description for Adds a gateway to a connected Virtual Network (PUT) or updates it (PATCH).
+     * Adds a gateway to a connected Virtual Network (PUT) or updates it (PATCH).
+     *
+     * <p>Description for Adds a gateway to a connected Virtual Network (PUT) or updates it (PATCH).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -14996,7 +16778,9 @@ public interface WebAppsClient {
         VnetGatewayInner connectionEnvelope);
 
     /**
-     * Description for Adds a gateway to a connected Virtual Network (PUT) or updates it (PATCH).
+     * Adds a gateway to a connected Virtual Network (PUT) or updates it (PATCH).
+     *
+     * <p>Description for Adds a gateway to a connected Virtual Network (PUT) or updates it (PATCH).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -15020,7 +16804,9 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for Adds a gateway to a connected Virtual Network (PUT) or updates it (PATCH).
+     * Adds a gateway to a connected Virtual Network (PUT) or updates it (PATCH).
+     *
+     * <p>Description for Adds a gateway to a connected Virtual Network (PUT) or updates it (PATCH).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -15042,7 +16828,9 @@ public interface WebAppsClient {
         VnetGatewayInner connectionEnvelope);
 
     /**
-     * Description for Adds a gateway to a connected Virtual Network (PUT) or updates it (PATCH).
+     * Adds a gateway to a connected Virtual Network (PUT) or updates it (PATCH).
+     *
+     * <p>Description for Adds a gateway to a connected Virtual Network (PUT) or updates it (PATCH).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
@@ -15066,7 +16854,9 @@ public interface WebAppsClient {
         Context context);
 
     /**
-     * Description for List webjobs for an app, or a deployment slot.
+     * List webjobs for an app, or a deployment slot.
+     *
+     * <p>Description for List webjobs for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -15080,7 +16870,9 @@ public interface WebAppsClient {
     PagedIterable<WebJobInner> listWebJobs(String resourceGroupName, String name);
 
     /**
-     * Description for List webjobs for an app, or a deployment slot.
+     * List webjobs for an app, or a deployment slot.
+     *
+     * <p>Description for List webjobs for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -15095,7 +16887,9 @@ public interface WebAppsClient {
     PagedIterable<WebJobInner> listWebJobs(String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Get webjob information for an app, or a deployment slot.
+     * Get webjob information for an app, or a deployment slot.
+     *
+     * <p>Description for Get webjob information for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -15110,7 +16904,9 @@ public interface WebAppsClient {
     WebJobInner getWebJob(String resourceGroupName, String name, String webJobName);
 
     /**
-     * Description for Get webjob information for an app, or a deployment slot.
+     * Get webjob information for an app, or a deployment slot.
+     *
+     * <p>Description for Get webjob information for an app, or a deployment slot.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.

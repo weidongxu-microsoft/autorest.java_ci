@@ -186,7 +186,9 @@ public interface PrivateEndpointConnectionsClient {
     void delete(String resourceGroupName, String serverName, String privateEndpointConnectionName, Context context);
 
     /**
-     * Updates private endpoint connection with the specified tags.
+     * Updates tags on private endpoint connection.
+     *
+     * <p>Updates private endpoint connection with the specified tags.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -202,7 +204,9 @@ public interface PrivateEndpointConnectionsClient {
         String resourceGroupName, String serverName, String privateEndpointConnectionName, TagsObject parameters);
 
     /**
-     * Updates private endpoint connection with the specified tags.
+     * Updates tags on private endpoint connection.
+     *
+     * <p>Updates private endpoint connection with the specified tags.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -223,7 +227,9 @@ public interface PrivateEndpointConnectionsClient {
         Context context);
 
     /**
-     * Updates private endpoint connection with the specified tags.
+     * Updates tags on private endpoint connection.
+     *
+     * <p>Updates private endpoint connection with the specified tags.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -239,7 +245,9 @@ public interface PrivateEndpointConnectionsClient {
         String resourceGroupName, String serverName, String privateEndpointConnectionName, TagsObject parameters);
 
     /**
-     * Updates private endpoint connection with the specified tags.
+     * Updates tags on private endpoint connection.
+     *
+     * <p>Updates private endpoint connection with the specified tags.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.

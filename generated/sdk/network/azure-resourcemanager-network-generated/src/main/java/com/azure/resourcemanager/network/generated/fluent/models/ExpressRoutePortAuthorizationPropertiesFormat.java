@@ -9,7 +9,11 @@ import com.azure.resourcemanager.network.generated.models.ExpressRoutePortAuthor
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** ExpressRoute Port Authorization Properties Properties of ExpressRoutePort Authorization. */
+/**
+ * ExpressRoute Port Authorization Properties
+ *
+ * <p>Properties of ExpressRoutePort Authorization.
+ */
 @Immutable
 public final class ExpressRoutePortAuthorizationPropertiesFormat {
     /*

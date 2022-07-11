@@ -524,7 +524,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get the non-security related metadata of an IoT hub.
+     * Get the non-security related metadata of an IoT hub
+     *
+     * <p>Get the non-security related metadata of an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -573,7 +575,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get the non-security related metadata of an IoT hub.
+     * Get the non-security related metadata of an IoT hub
+     *
+     * <p>Get the non-security related metadata of an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -620,7 +624,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get the non-security related metadata of an IoT hub.
+     * Get the non-security related metadata of an IoT hub
+     *
+     * <p>Get the non-security related metadata of an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -636,7 +642,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get the non-security related metadata of an IoT hub.
+     * Get the non-security related metadata of an IoT hub
+     *
+     * <p>Get the non-security related metadata of an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -651,7 +659,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get the non-security related metadata of an IoT hub.
+     * Get the non-security related metadata of an IoT hub
+     *
+     * <p>Get the non-security related metadata of an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -668,7 +678,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Create or update the metadata of an Iot hub. The usual pattern to modify a property is to retrieve the IoT hub
+     * Create or update the metadata of an IoT hub.
+     *
+     * <p>Create or update the metadata of an Iot hub. The usual pattern to modify a property is to retrieve the IoT hub
      * metadata and security metadata, and then combine them with the modified values in a new body to update the IoT
      * hub. If certain properties are missing in the JSON, updating IoT Hub may cause these values to fallback to
      * default, which may lead to unexpected behavior.
@@ -730,7 +742,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Create or update the metadata of an Iot hub. The usual pattern to modify a property is to retrieve the IoT hub
+     * Create or update the metadata of an IoT hub.
+     *
+     * <p>Create or update the metadata of an Iot hub. The usual pattern to modify a property is to retrieve the IoT hub
      * metadata and security metadata, and then combine them with the modified values in a new body to update the IoT
      * hub. If certain properties are missing in the JSON, updating IoT Hub may cause these values to fallback to
      * default, which may lead to unexpected behavior.
@@ -794,7 +808,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Create or update the metadata of an Iot hub. The usual pattern to modify a property is to retrieve the IoT hub
+     * Create or update the metadata of an IoT hub.
+     *
+     * <p>Create or update the metadata of an Iot hub. The usual pattern to modify a property is to retrieve the IoT hub
      * metadata and security metadata, and then combine them with the modified values in a new body to update the IoT
      * hub. If certain properties are missing in the JSON, updating IoT Hub may cause these values to fallback to
      * default, which may lead to unexpected behavior.
@@ -825,7 +841,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Create or update the metadata of an Iot hub. The usual pattern to modify a property is to retrieve the IoT hub
+     * Create or update the metadata of an IoT hub.
+     *
+     * <p>Create or update the metadata of an Iot hub. The usual pattern to modify a property is to retrieve the IoT hub
      * metadata and security metadata, and then combine them with the modified values in a new body to update the IoT
      * hub. If certain properties are missing in the JSON, updating IoT Hub may cause these values to fallback to
      * default, which may lead to unexpected behavior.
@@ -862,7 +880,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Create or update the metadata of an Iot hub. The usual pattern to modify a property is to retrieve the IoT hub
+     * Create or update the metadata of an IoT hub.
+     *
+     * <p>Create or update the metadata of an Iot hub. The usual pattern to modify a property is to retrieve the IoT hub
      * metadata and security metadata, and then combine them with the modified values in a new body to update the IoT
      * hub. If certain properties are missing in the JSON, updating IoT Hub may cause these values to fallback to
      * default, which may lead to unexpected behavior.
@@ -884,7 +904,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Create or update the metadata of an Iot hub. The usual pattern to modify a property is to retrieve the IoT hub
+     * Create or update the metadata of an IoT hub.
+     *
+     * <p>Create or update the metadata of an Iot hub. The usual pattern to modify a property is to retrieve the IoT hub
      * metadata and security metadata, and then combine them with the modified values in a new body to update the IoT
      * hub. If certain properties are missing in the JSON, updating IoT Hub may cause these values to fallback to
      * default, which may lead to unexpected behavior.
@@ -912,7 +934,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Create or update the metadata of an Iot hub. The usual pattern to modify a property is to retrieve the IoT hub
+     * Create or update the metadata of an IoT hub.
+     *
+     * <p>Create or update the metadata of an Iot hub. The usual pattern to modify a property is to retrieve the IoT hub
      * metadata and security metadata, and then combine them with the modified values in a new body to update the IoT
      * hub. If certain properties are missing in the JSON, updating IoT Hub may cause these values to fallback to
      * default, which may lead to unexpected behavior.
@@ -936,7 +960,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Create or update the metadata of an Iot hub. The usual pattern to modify a property is to retrieve the IoT hub
+     * Create or update the metadata of an IoT hub.
+     *
+     * <p>Create or update the metadata of an Iot hub. The usual pattern to modify a property is to retrieve the IoT hub
      * metadata and security metadata, and then combine them with the modified values in a new body to update the IoT
      * hub. If certain properties are missing in the JSON, updating IoT Hub may cause these values to fallback to
      * default, which may lead to unexpected behavior.
@@ -959,7 +985,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Create or update the metadata of an Iot hub. The usual pattern to modify a property is to retrieve the IoT hub
+     * Create or update the metadata of an IoT hub.
+     *
+     * <p>Create or update the metadata of an Iot hub. The usual pattern to modify a property is to retrieve the IoT hub
      * metadata and security metadata, and then combine them with the modified values in a new body to update the IoT
      * hub. If certain properties are missing in the JSON, updating IoT Hub may cause these values to fallback to
      * default, which may lead to unexpected behavior.
@@ -988,7 +1016,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Create or update the metadata of an Iot hub. The usual pattern to modify a property is to retrieve the IoT hub
+     * Create or update the metadata of an IoT hub.
+     *
+     * <p>Create or update the metadata of an Iot hub. The usual pattern to modify a property is to retrieve the IoT hub
      * metadata and security metadata, and then combine them with the modified values in a new body to update the IoT
      * hub. If certain properties are missing in the JSON, updating IoT Hub may cause these values to fallback to
      * default, which may lead to unexpected behavior.
@@ -1010,7 +1040,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Create or update the metadata of an Iot hub. The usual pattern to modify a property is to retrieve the IoT hub
+     * Create or update the metadata of an IoT hub.
+     *
+     * <p>Create or update the metadata of an Iot hub. The usual pattern to modify a property is to retrieve the IoT hub
      * metadata and security metadata, and then combine them with the modified values in a new body to update the IoT
      * hub. If certain properties are missing in the JSON, updating IoT Hub may cause these values to fallback to
      * default, which may lead to unexpected behavior.
@@ -1031,7 +1063,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Create or update the metadata of an Iot hub. The usual pattern to modify a property is to retrieve the IoT hub
+     * Create or update the metadata of an IoT hub.
+     *
+     * <p>Create or update the metadata of an Iot hub. The usual pattern to modify a property is to retrieve the IoT hub
      * metadata and security metadata, and then combine them with the modified values in a new body to update the IoT
      * hub. If certain properties are missing in the JSON, updating IoT Hub may cause these values to fallback to
      * default, which may lead to unexpected behavior.
@@ -1058,7 +1092,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Update an existing IoT Hub tags. to update other fields use the CreateOrUpdate method.
+     * Update an existing IoT Hubs tags.
+     *
+     * <p>Update an existing IoT Hub tags. to update other fields use the CreateOrUpdate method.
      *
      * @param resourceGroupName Resource group identifier.
      * @param resourceName Name of iot hub to update.
@@ -1113,7 +1149,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Update an existing IoT Hub tags. to update other fields use the CreateOrUpdate method.
+     * Update an existing IoT Hubs tags.
+     *
+     * <p>Update an existing IoT Hub tags. to update other fields use the CreateOrUpdate method.
      *
      * @param resourceGroupName Resource group identifier.
      * @param resourceName Name of iot hub to update.
@@ -1166,7 +1204,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Update an existing IoT Hub tags. to update other fields use the CreateOrUpdate method.
+     * Update an existing IoT Hubs tags.
+     *
+     * <p>Update an existing IoT Hub tags. to update other fields use the CreateOrUpdate method.
      *
      * @param resourceGroupName Resource group identifier.
      * @param resourceName Name of iot hub to update.
@@ -1191,7 +1231,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Update an existing IoT Hub tags. to update other fields use the CreateOrUpdate method.
+     * Update an existing IoT Hubs tags.
+     *
+     * <p>Update an existing IoT Hub tags. to update other fields use the CreateOrUpdate method.
      *
      * @param resourceGroupName Resource group identifier.
      * @param resourceName Name of iot hub to update.
@@ -1219,7 +1261,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Update an existing IoT Hub tags. to update other fields use the CreateOrUpdate method.
+     * Update an existing IoT Hubs tags.
+     *
+     * <p>Update an existing IoT Hub tags. to update other fields use the CreateOrUpdate method.
      *
      * @param resourceGroupName Resource group identifier.
      * @param resourceName Name of iot hub to update.
@@ -1236,7 +1280,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Update an existing IoT Hub tags. to update other fields use the CreateOrUpdate method.
+     * Update an existing IoT Hubs tags.
+     *
+     * <p>Update an existing IoT Hub tags. to update other fields use the CreateOrUpdate method.
      *
      * @param resourceGroupName Resource group identifier.
      * @param resourceName Name of iot hub to update.
@@ -1254,7 +1300,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Update an existing IoT Hub tags. to update other fields use the CreateOrUpdate method.
+     * Update an existing IoT Hubs tags.
+     *
+     * <p>Update an existing IoT Hub tags. to update other fields use the CreateOrUpdate method.
      *
      * @param resourceGroupName Resource group identifier.
      * @param resourceName Name of iot hub to update.
@@ -1273,7 +1321,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Update an existing IoT Hub tags. to update other fields use the CreateOrUpdate method.
+     * Update an existing IoT Hubs tags.
+     *
+     * <p>Update an existing IoT Hub tags. to update other fields use the CreateOrUpdate method.
      *
      * @param resourceGroupName Resource group identifier.
      * @param resourceName Name of iot hub to update.
@@ -1293,7 +1343,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Update an existing IoT Hub tags. to update other fields use the CreateOrUpdate method.
+     * Update an existing IoT Hubs tags.
+     *
+     * <p>Update an existing IoT Hub tags. to update other fields use the CreateOrUpdate method.
      *
      * @param resourceGroupName Resource group identifier.
      * @param resourceName Name of iot hub to update.
@@ -1309,7 +1361,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Update an existing IoT Hub tags. to update other fields use the CreateOrUpdate method.
+     * Update an existing IoT Hubs tags.
+     *
+     * <p>Update an existing IoT Hub tags. to update other fields use the CreateOrUpdate method.
      *
      * @param resourceGroupName Resource group identifier.
      * @param resourceName Name of iot hub to update.
@@ -1327,7 +1381,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Delete an IoT hub.
+     * Delete an IoT hub
+     *
+     * <p>Delete an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -1374,7 +1430,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Delete an IoT hub.
+     * Delete an IoT hub
+     *
+     * <p>Delete an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -1420,7 +1478,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Delete an IoT hub.
+     * Delete an IoT hub
+     *
+     * <p>Delete an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -1444,7 +1504,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Delete an IoT hub.
+     * Delete an IoT hub
+     *
+     * <p>Delete an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -1470,7 +1532,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Delete an IoT hub.
+     * Delete an IoT hub
+     *
+     * <p>Delete an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -1486,7 +1550,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Delete an IoT hub.
+     * Delete an IoT hub
+     *
+     * <p>Delete an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -1503,7 +1569,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Delete an IoT hub.
+     * Delete an IoT hub
+     *
+     * <p>Delete an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -1518,7 +1586,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Delete an IoT hub.
+     * Delete an IoT hub
+     *
+     * <p>Delete an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -1536,7 +1606,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Delete an IoT hub.
+     * Delete an IoT hub
+     *
+     * <p>Delete an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -1551,7 +1623,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Delete an IoT hub.
+     * Delete an IoT hub
+     *
+     * <p>Delete an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -1567,7 +1641,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get all the IoT hubs in a subscription.
+     * Get all the IoT hubs in a subscription
+     *
+     * <p>Get all the IoT hubs in a subscription.
      *
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1612,7 +1688,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get all the IoT hubs in a subscription.
+     * Get all the IoT hubs in a subscription
+     *
+     * <p>Get all the IoT hubs in a subscription.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1656,7 +1734,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get all the IoT hubs in a subscription.
+     * Get all the IoT hubs in a subscription
+     *
+     * <p>Get all the IoT hubs in a subscription.
      *
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1669,7 +1749,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get all the IoT hubs in a subscription.
+     * Get all the IoT hubs in a subscription
+     *
+     * <p>Get all the IoT hubs in a subscription.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1684,7 +1766,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get all the IoT hubs in a subscription.
+     * Get all the IoT hubs in a subscription
+     *
+     * <p>Get all the IoT hubs in a subscription.
      *
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1696,7 +1780,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get all the IoT hubs in a subscription.
+     * Get all the IoT hubs in a subscription
+     *
+     * <p>Get all the IoT hubs in a subscription.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1710,7 +1796,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get all the IoT hubs in a resource group.
+     * Get all the IoT hubs in a resource group
+     *
+     * <p>Get all the IoT hubs in a resource group.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1762,7 +1850,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get all the IoT hubs in a resource group.
+     * Get all the IoT hubs in a resource group
+     *
+     * <p>Get all the IoT hubs in a resource group.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param context The context to associate with this operation.
@@ -1813,7 +1903,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get all the IoT hubs in a resource group.
+     * Get all the IoT hubs in a resource group
+     *
+     * <p>Get all the IoT hubs in a resource group.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1829,7 +1921,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get all the IoT hubs in a resource group.
+     * Get all the IoT hubs in a resource group
+     *
+     * <p>Get all the IoT hubs in a resource group.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param context The context to associate with this operation.
@@ -1846,7 +1940,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get all the IoT hubs in a resource group.
+     * Get all the IoT hubs in a resource group
+     *
+     * <p>Get all the IoT hubs in a resource group.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1860,7 +1956,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get all the IoT hubs in a resource group.
+     * Get all the IoT hubs in a resource group
+     *
+     * <p>Get all the IoT hubs in a resource group.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param context The context to associate with this operation.
@@ -1875,7 +1973,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get the statistics from an IoT hub.
+     * Get the statistics from an IoT hub
+     *
+     * <p>Get the statistics from an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -1923,7 +2023,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get the statistics from an IoT hub.
+     * Get the statistics from an IoT hub
+     *
+     * <p>Get the statistics from an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -1969,7 +2071,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get the statistics from an IoT hub.
+     * Get the statistics from an IoT hub
+     *
+     * <p>Get the statistics from an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -1985,7 +2089,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get the statistics from an IoT hub.
+     * Get the statistics from an IoT hub
+     *
+     * <p>Get the statistics from an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -2000,7 +2106,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get the statistics from an IoT hub.
+     * Get the statistics from an IoT hub
+     *
+     * <p>Get the statistics from an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -2017,7 +2125,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get the list of valid SKUs for an IoT hub.
+     * Get the list of valid SKUs for an IoT hub
+     *
+     * <p>Get the list of valid SKUs for an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -2075,7 +2185,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get the list of valid SKUs for an IoT hub.
+     * Get the list of valid SKUs for an IoT hub
+     *
+     * <p>Get the list of valid SKUs for an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -2131,7 +2243,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get the list of valid SKUs for an IoT hub.
+     * Get the list of valid SKUs for an IoT hub
+     *
+     * <p>Get the list of valid SKUs for an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -2148,7 +2262,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get the list of valid SKUs for an IoT hub.
+     * Get the list of valid SKUs for an IoT hub
+     *
+     * <p>Get the list of valid SKUs for an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -2167,7 +2283,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get the list of valid SKUs for an IoT hub.
+     * Get the list of valid SKUs for an IoT hub
+     *
+     * <p>Get the list of valid SKUs for an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -2182,7 +2300,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get the list of valid SKUs for an IoT hub.
+     * Get the list of valid SKUs for an IoT hub
+     *
+     * <p>Get the list of valid SKUs for an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -2199,7 +2319,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get a list of the consumer groups in the Event Hub-compatible device-to-cloud endpoint in an IoT hub.
+     * Get a list of the consumer groups in the Event Hub-compatible device-to-cloud endpoint in an IoT hub
+     *
+     * <p>Get a list of the consumer groups in the Event Hub-compatible device-to-cloud endpoint in an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -2263,7 +2385,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get a list of the consumer groups in the Event Hub-compatible device-to-cloud endpoint in an IoT hub.
+     * Get a list of the consumer groups in the Event Hub-compatible device-to-cloud endpoint in an IoT hub
+     *
+     * <p>Get a list of the consumer groups in the Event Hub-compatible device-to-cloud endpoint in an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -2325,7 +2449,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get a list of the consumer groups in the Event Hub-compatible device-to-cloud endpoint in an IoT hub.
+     * Get a list of the consumer groups in the Event Hub-compatible device-to-cloud endpoint in an IoT hub
+     *
+     * <p>Get a list of the consumer groups in the Event Hub-compatible device-to-cloud endpoint in an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -2345,7 +2471,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get a list of the consumer groups in the Event Hub-compatible device-to-cloud endpoint in an IoT hub.
+     * Get a list of the consumer groups in the Event Hub-compatible device-to-cloud endpoint in an IoT hub
+     *
+     * <p>Get a list of the consumer groups in the Event Hub-compatible device-to-cloud endpoint in an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -2368,7 +2496,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get a list of the consumer groups in the Event Hub-compatible device-to-cloud endpoint in an IoT hub.
+     * Get a list of the consumer groups in the Event Hub-compatible device-to-cloud endpoint in an IoT hub
+     *
+     * <p>Get a list of the consumer groups in the Event Hub-compatible device-to-cloud endpoint in an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -2387,7 +2517,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get a list of the consumer groups in the Event Hub-compatible device-to-cloud endpoint in an IoT hub.
+     * Get a list of the consumer groups in the Event Hub-compatible device-to-cloud endpoint in an IoT hub
+     *
+     * <p>Get a list of the consumer groups in the Event Hub-compatible device-to-cloud endpoint in an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -2407,7 +2539,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get a consumer group from the Event Hub-compatible device-to-cloud endpoint for an IoT hub.
+     * Get a consumer group from the Event Hub-compatible device-to-cloud endpoint for an IoT hub
+     *
+     * <p>Get a consumer group from the Event Hub-compatible device-to-cloud endpoint for an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -2467,7 +2601,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get a consumer group from the Event Hub-compatible device-to-cloud endpoint for an IoT hub.
+     * Get a consumer group from the Event Hub-compatible device-to-cloud endpoint for an IoT hub
+     *
+     * <p>Get a consumer group from the Event Hub-compatible device-to-cloud endpoint for an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -2525,7 +2661,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get a consumer group from the Event Hub-compatible device-to-cloud endpoint for an IoT hub.
+     * Get a consumer group from the Event Hub-compatible device-to-cloud endpoint for an IoT hub
+     *
+     * <p>Get a consumer group from the Event Hub-compatible device-to-cloud endpoint for an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -2545,7 +2683,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get a consumer group from the Event Hub-compatible device-to-cloud endpoint for an IoT hub.
+     * Get a consumer group from the Event Hub-compatible device-to-cloud endpoint for an IoT hub
+     *
+     * <p>Get a consumer group from the Event Hub-compatible device-to-cloud endpoint for an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -2563,7 +2703,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get a consumer group from the Event Hub-compatible device-to-cloud endpoint for an IoT hub.
+     * Get a consumer group from the Event Hub-compatible device-to-cloud endpoint for an IoT hub
+     *
+     * <p>Get a consumer group from the Event Hub-compatible device-to-cloud endpoint for an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -2585,7 +2727,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Add a consumer group to an Event Hub-compatible endpoint in an IoT hub.
+     * Add a consumer group to an Event Hub-compatible endpoint in an IoT hub
+     *
+     * <p>Add a consumer group to an Event Hub-compatible endpoint in an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -2657,7 +2801,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Add a consumer group to an Event Hub-compatible endpoint in an IoT hub.
+     * Add a consumer group to an Event Hub-compatible endpoint in an IoT hub
+     *
+     * <p>Add a consumer group to an Event Hub-compatible endpoint in an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -2728,7 +2874,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Add a consumer group to an Event Hub-compatible endpoint in an IoT hub.
+     * Add a consumer group to an Event Hub-compatible endpoint in an IoT hub
+     *
+     * <p>Add a consumer group to an Event Hub-compatible endpoint in an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -2753,7 +2901,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Add a consumer group to an Event Hub-compatible endpoint in an IoT hub.
+     * Add a consumer group to an Event Hub-compatible endpoint in an IoT hub
+     *
+     * <p>Add a consumer group to an Event Hub-compatible endpoint in an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -2778,7 +2928,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Add a consumer group to an Event Hub-compatible endpoint in an IoT hub.
+     * Add a consumer group to an Event Hub-compatible endpoint in an IoT hub
+     *
+     * <p>Add a consumer group to an Event Hub-compatible endpoint in an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -2805,7 +2957,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Delete a consumer group from an Event Hub-compatible endpoint in an IoT hub.
+     * Delete a consumer group from an Event Hub-compatible endpoint in an IoT hub
+     *
+     * <p>Delete a consumer group from an Event Hub-compatible endpoint in an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -2864,7 +3018,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Delete a consumer group from an Event Hub-compatible endpoint in an IoT hub.
+     * Delete a consumer group from an Event Hub-compatible endpoint in an IoT hub
+     *
+     * <p>Delete a consumer group from an Event Hub-compatible endpoint in an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -2921,7 +3077,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Delete a consumer group from an Event Hub-compatible endpoint in an IoT hub.
+     * Delete a consumer group from an Event Hub-compatible endpoint in an IoT hub
+     *
+     * <p>Delete a consumer group from an Event Hub-compatible endpoint in an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -2940,7 +3098,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Delete a consumer group from an Event Hub-compatible endpoint in an IoT hub.
+     * Delete a consumer group from an Event Hub-compatible endpoint in an IoT hub
+     *
+     * <p>Delete a consumer group from an Event Hub-compatible endpoint in an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -2957,7 +3117,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Delete a consumer group from an Event Hub-compatible endpoint in an IoT hub.
+     * Delete a consumer group from an Event Hub-compatible endpoint in an IoT hub
+     *
+     * <p>Delete a consumer group from an Event Hub-compatible endpoint in an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -2979,6 +3141,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
 
     /**
      * Get a list of all the jobs in an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry
+     *
+     * <p>Get a list of all the jobs in an IoT hub. For more information, see:
      * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
@@ -3038,6 +3203,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
 
     /**
      * Get a list of all the jobs in an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry
+     *
+     * <p>Get a list of all the jobs in an IoT hub. For more information, see:
      * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
@@ -3095,6 +3263,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
 
     /**
      * Get a list of all the jobs in an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry
+     *
+     * <p>Get a list of all the jobs in an IoT hub. For more information, see:
      * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
@@ -3113,6 +3284,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
 
     /**
      * Get a list of all the jobs in an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry
+     *
+     * <p>Get a list of all the jobs in an IoT hub. For more information, see:
      * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
@@ -3132,6 +3306,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
 
     /**
      * Get a list of all the jobs in an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry
+     *
+     * <p>Get a list of all the jobs in an IoT hub. For more information, see:
      * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
@@ -3148,6 +3325,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
 
     /**
      * Get a list of all the jobs in an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry
+     *
+     * <p>Get a list of all the jobs in an IoT hub. For more information, see:
      * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
@@ -3165,6 +3345,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
 
     /**
      * Get the details of a job from an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry
+     *
+     * <p>Get the details of a job from an IoT hub. For more information, see:
      * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
@@ -3220,6 +3403,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
 
     /**
      * Get the details of a job from an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry
+     *
+     * <p>Get the details of a job from an IoT hub. For more information, see:
      * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
@@ -3273,6 +3459,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
 
     /**
      * Get the details of a job from an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry
+     *
+     * <p>Get the details of a job from an IoT hub. For more information, see:
      * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
@@ -3291,6 +3480,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
 
     /**
      * Get the details of a job from an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry
+     *
+     * <p>Get the details of a job from an IoT hub. For more information, see:
      * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
@@ -3308,6 +3500,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
 
     /**
      * Get the details of a job from an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry
+     *
+     * <p>Get the details of a job from an IoT hub. For more information, see:
      * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
@@ -3326,7 +3521,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get the quota metrics for an IoT hub.
+     * Get the quota metrics for an IoT hub
+     *
+     * <p>Get the quota metrics for an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -3384,7 +3581,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get the quota metrics for an IoT hub.
+     * Get the quota metrics for an IoT hub
+     *
+     * <p>Get the quota metrics for an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -3440,7 +3639,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get the quota metrics for an IoT hub.
+     * Get the quota metrics for an IoT hub
+     *
+     * <p>Get the quota metrics for an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -3457,7 +3658,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get the quota metrics for an IoT hub.
+     * Get the quota metrics for an IoT hub
+     *
+     * <p>Get the quota metrics for an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -3476,7 +3679,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get the quota metrics for an IoT hub.
+     * Get the quota metrics for an IoT hub
+     *
+     * <p>Get the quota metrics for an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -3491,7 +3696,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get the quota metrics for an IoT hub.
+     * Get the quota metrics for an IoT hub
+     *
+     * <p>Get the quota metrics for an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -3508,7 +3715,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get the health for routing endpoints.
+     * Get the health for routing endpoints
+     *
+     * <p>Get the health for routing endpoints.
      *
      * @param resourceGroupName The resourceGroupName parameter.
      * @param iotHubName The iotHubName parameter.
@@ -3566,7 +3775,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get the health for routing endpoints.
+     * Get the health for routing endpoints
+     *
+     * <p>Get the health for routing endpoints.
      *
      * @param resourceGroupName The resourceGroupName parameter.
      * @param iotHubName The iotHubName parameter.
@@ -3622,7 +3833,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get the health for routing endpoints.
+     * Get the health for routing endpoints
+     *
+     * <p>Get the health for routing endpoints.
      *
      * @param resourceGroupName The resourceGroupName parameter.
      * @param iotHubName The iotHubName parameter.
@@ -3639,7 +3852,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get the health for routing endpoints.
+     * Get the health for routing endpoints
+     *
+     * <p>Get the health for routing endpoints.
      *
      * @param resourceGroupName The resourceGroupName parameter.
      * @param iotHubName The iotHubName parameter.
@@ -3658,7 +3873,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get the health for routing endpoints.
+     * Get the health for routing endpoints
+     *
+     * <p>Get the health for routing endpoints.
      *
      * @param resourceGroupName The resourceGroupName parameter.
      * @param iotHubName The iotHubName parameter.
@@ -3673,7 +3890,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get the health for routing endpoints.
+     * Get the health for routing endpoints
+     *
+     * <p>Get the health for routing endpoints.
      *
      * @param resourceGroupName The resourceGroupName parameter.
      * @param iotHubName The iotHubName parameter.
@@ -3690,7 +3909,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Check if an IoT hub name is available.
+     * Check if an IoT hub name is available
+     *
+     * <p>Check if an IoT hub name is available.
      *
      * @param operationInputs Set the name parameter in the OperationInputs structure to the name of the IoT hub to
      *     check.
@@ -3737,7 +3958,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Check if an IoT hub name is available.
+     * Check if an IoT hub name is available
+     *
+     * <p>Check if an IoT hub name is available.
      *
      * @param operationInputs Set the name parameter in the OperationInputs structure to the name of the IoT hub to
      *     check.
@@ -3782,7 +4005,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Check if an IoT hub name is available.
+     * Check if an IoT hub name is available
+     *
+     * <p>Check if an IoT hub name is available.
      *
      * @param operationInputs Set the name parameter in the OperationInputs structure to the name of the IoT hub to
      *     check.
@@ -3798,7 +4023,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Check if an IoT hub name is available.
+     * Check if an IoT hub name is available
+     *
+     * <p>Check if an IoT hub name is available.
      *
      * @param operationInputs Set the name parameter in the OperationInputs structure to the name of the IoT hub to
      *     check.
@@ -3813,7 +4040,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Check if an IoT hub name is available.
+     * Check if an IoT hub name is available
+     *
+     * <p>Check if an IoT hub name is available.
      *
      * @param operationInputs Set the name parameter in the OperationInputs structure to the name of the IoT hub to
      *     check.
@@ -3830,7 +4059,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Test all routes configured in this Iot Hub.
+     * Test all routes
+     *
+     * <p>Test all routes configured in this Iot Hub.
      *
      * @param iotHubName IotHub to be tested.
      * @param resourceGroupName resource group which Iot Hub belongs to.
@@ -3885,7 +4116,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Test all routes configured in this Iot Hub.
+     * Test all routes
+     *
+     * <p>Test all routes configured in this Iot Hub.
      *
      * @param iotHubName IotHub to be tested.
      * @param resourceGroupName resource group which Iot Hub belongs to.
@@ -3938,7 +4171,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Test all routes configured in this Iot Hub.
+     * Test all routes
+     *
+     * <p>Test all routes configured in this Iot Hub.
      *
      * @param iotHubName IotHub to be tested.
      * @param resourceGroupName resource group which Iot Hub belongs to.
@@ -3956,7 +4191,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Test all routes configured in this Iot Hub.
+     * Test all routes
+     *
+     * <p>Test all routes configured in this Iot Hub.
      *
      * @param iotHubName IotHub to be tested.
      * @param resourceGroupName resource group which Iot Hub belongs to.
@@ -3973,7 +4210,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Test all routes configured in this Iot Hub.
+     * Test all routes
+     *
+     * <p>Test all routes configured in this Iot Hub.
      *
      * @param iotHubName IotHub to be tested.
      * @param resourceGroupName resource group which Iot Hub belongs to.
@@ -3991,7 +4230,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Test the new route for this Iot Hub.
+     * Test the new route
+     *
+     * <p>Test the new route for this Iot Hub.
      *
      * @param iotHubName IotHub to be tested.
      * @param resourceGroupName resource group which Iot Hub belongs to.
@@ -4046,7 +4287,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Test the new route for this Iot Hub.
+     * Test the new route
+     *
+     * <p>Test the new route for this Iot Hub.
      *
      * @param iotHubName IotHub to be tested.
      * @param resourceGroupName resource group which Iot Hub belongs to.
@@ -4099,7 +4342,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Test the new route for this Iot Hub.
+     * Test the new route
+     *
+     * <p>Test the new route for this Iot Hub.
      *
      * @param iotHubName IotHub to be tested.
      * @param resourceGroupName resource group which Iot Hub belongs to.
@@ -4117,7 +4362,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Test the new route for this Iot Hub.
+     * Test the new route
+     *
+     * <p>Test the new route for this Iot Hub.
      *
      * @param iotHubName IotHub to be tested.
      * @param resourceGroupName resource group which Iot Hub belongs to.
@@ -4133,7 +4380,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Test the new route for this Iot Hub.
+     * Test the new route
+     *
+     * <p>Test the new route for this Iot Hub.
      *
      * @param iotHubName IotHub to be tested.
      * @param resourceGroupName resource group which Iot Hub belongs to.
@@ -4152,6 +4401,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
 
     /**
      * Get the security metadata for an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security
+     *
+     * <p>Get the security metadata for an IoT hub. For more information, see:
      * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
@@ -4211,6 +4463,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
 
     /**
      * Get the security metadata for an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security
+     *
+     * <p>Get the security metadata for an IoT hub. For more information, see:
      * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
@@ -4268,6 +4523,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
 
     /**
      * Get the security metadata for an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security
+     *
+     * <p>Get the security metadata for an IoT hub. For more information, see:
      * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
@@ -4287,6 +4545,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
 
     /**
      * Get the security metadata for an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security
+     *
+     * <p>Get the security metadata for an IoT hub. For more information, see:
      * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
@@ -4307,6 +4568,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
 
     /**
      * Get the security metadata for an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security
+     *
+     * <p>Get the security metadata for an IoT hub. For more information, see:
      * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
@@ -4324,6 +4588,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
 
     /**
      * Get the security metadata for an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security
+     *
+     * <p>Get the security metadata for an IoT hub. For more information, see:
      * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
@@ -4342,6 +4609,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
 
     /**
      * Get a shared access policy by name from an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security
+     *
+     * <p>Get a shared access policy by name from an IoT hub. For more information, see:
      * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
@@ -4397,6 +4667,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
 
     /**
      * Get a shared access policy by name from an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security
+     *
+     * <p>Get a shared access policy by name from an IoT hub. For more information, see:
      * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
@@ -4450,6 +4723,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
 
     /**
      * Get a shared access policy by name from an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security
+     *
+     * <p>Get a shared access policy by name from an IoT hub. For more information, see:
      * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
@@ -4469,6 +4745,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
 
     /**
      * Get a shared access policy by name from an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security
+     *
+     * <p>Get a shared access policy by name from an IoT hub. For more information, see:
      * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
@@ -4487,6 +4766,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
 
     /**
      * Get a shared access policy by name from an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security
+     *
+     * <p>Get a shared access policy by name from an IoT hub. For more information, see:
      * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
@@ -4507,6 +4789,10 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     /**
      * Exports all the device identities in the IoT hub identity registry to an Azure Storage blob container. For more
      * information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities
+     *
+     * <p>Exports all the device identities in the IoT hub identity registry to an Azure Storage blob container. For
+     * more information, see:
      * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
@@ -4567,6 +4853,10 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     /**
      * Exports all the device identities in the IoT hub identity registry to an Azure Storage blob container. For more
      * information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities
+     *
+     * <p>Exports all the device identities in the IoT hub identity registry to an Azure Storage blob container. For
+     * more information, see:
      * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
@@ -4625,6 +4915,10 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     /**
      * Exports all the device identities in the IoT hub identity registry to an Azure Storage blob container. For more
      * information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities
+     *
+     * <p>Exports all the device identities in the IoT hub identity registry to an Azure Storage blob container. For
+     * more information, see:
      * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
@@ -4645,6 +4939,10 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     /**
      * Exports all the device identities in the IoT hub identity registry to an Azure Storage blob container. For more
      * information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities
+     *
+     * <p>Exports all the device identities in the IoT hub identity registry to an Azure Storage blob container. For
+     * more information, see:
      * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
@@ -4664,6 +4962,10 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     /**
      * Exports all the device identities in the IoT hub identity registry to an Azure Storage blob container. For more
      * information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities
+     *
+     * <p>Exports all the device identities in the IoT hub identity registry to an Azure Storage blob container. For
+     * more information, see:
      * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
@@ -4685,6 +4987,10 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     /**
      * Import, update, or delete device identities in the IoT hub identity registry from a blob. For more information,
      * see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities
+     *
+     * <p>Import, update, or delete device identities in the IoT hub identity registry from a blob. For more
+     * information, see:
      * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
@@ -4745,6 +5051,10 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     /**
      * Import, update, or delete device identities in the IoT hub identity registry from a blob. For more information,
      * see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities
+     *
+     * <p>Import, update, or delete device identities in the IoT hub identity registry from a blob. For more
+     * information, see:
      * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
@@ -4803,6 +5113,10 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     /**
      * Import, update, or delete device identities in the IoT hub identity registry from a blob. For more information,
      * see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities
+     *
+     * <p>Import, update, or delete device identities in the IoT hub identity registry from a blob. For more
+     * information, see:
      * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
@@ -4823,6 +5137,10 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     /**
      * Import, update, or delete device identities in the IoT hub identity registry from a blob. For more information,
      * see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities
+     *
+     * <p>Import, update, or delete device identities in the IoT hub identity registry from a blob. For more
+     * information, see:
      * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
@@ -4842,6 +5160,10 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     /**
      * Import, update, or delete device identities in the IoT hub identity registry from a blob. For more information,
      * see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities
+     *
+     * <p>Import, update, or delete device identities in the IoT hub identity registry from a blob. For more
+     * information, see:
      * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.

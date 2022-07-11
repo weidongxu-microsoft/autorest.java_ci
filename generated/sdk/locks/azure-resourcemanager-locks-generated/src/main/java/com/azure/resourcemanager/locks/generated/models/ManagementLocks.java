@@ -12,8 +12,11 @@ import com.azure.resourcemanager.locks.generated.fluent.models.ManagementLockObj
 /** Resource collection API of ManagementLocks. */
 public interface ManagementLocks {
     /**
-     * To delete management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/*
-     * actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
+     * Deletes a management lock at the resource group level.
+     *
+     * <p>To delete management locks, you must have access to Microsoft.Authorization/* or
+     * Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are
+     * granted those actions.
      *
      * @param resourceGroupName The name of the resource group containing the lock.
      * @param lockName The name of lock to delete.
@@ -24,8 +27,11 @@ public interface ManagementLocks {
     void deleteByResourceGroup(String resourceGroupName, String lockName);
 
     /**
-     * To delete management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/*
-     * actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
+     * Deletes a management lock at the resource group level.
+     *
+     * <p>To delete management locks, you must have access to Microsoft.Authorization/* or
+     * Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are
+     * granted those actions.
      *
      * @param resourceGroupName The name of the resource group containing the lock.
      * @param lockName The name of lock to delete.
@@ -149,9 +155,11 @@ public interface ManagementLocks {
     Response<ManagementLockObject> getByScopeWithResponse(String scope, String lockName, Context context);
 
     /**
-     * When you apply a lock at a parent scope, all child resources inherit the same lock. To create management locks,
-     * you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in
-     * roles, only Owner and User Access Administrator are granted those actions.
+     * Creates or updates a management lock at the resource level or any level below the resource.
+     *
+     * <p>When you apply a lock at a parent scope, all child resources inherit the same lock. To create management
+     * locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the
+     * built-in roles, only Owner and User Access Administrator are granted those actions.
      *
      * @param resourceGroupName The name of the resource group containing the resource to lock.
      * @param resourceProviderNamespace The resource provider namespace of the resource to lock.
@@ -176,9 +184,11 @@ public interface ManagementLocks {
         ManagementLockObjectInner parameters);
 
     /**
-     * When you apply a lock at a parent scope, all child resources inherit the same lock. To create management locks,
-     * you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in
-     * roles, only Owner and User Access Administrator are granted those actions.
+     * Creates or updates a management lock at the resource level or any level below the resource.
+     *
+     * <p>When you apply a lock at a parent scope, all child resources inherit the same lock. To create management
+     * locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the
+     * built-in roles, only Owner and User Access Administrator are granted those actions.
      *
      * @param resourceGroupName The name of the resource group containing the resource to lock.
      * @param resourceProviderNamespace The resource provider namespace of the resource to lock.
@@ -205,8 +215,11 @@ public interface ManagementLocks {
         Context context);
 
     /**
-     * To delete management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/*
-     * actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
+     * Deletes the management lock of a resource or any level below the resource.
+     *
+     * <p>To delete management locks, you must have access to Microsoft.Authorization/* or
+     * Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are
+     * granted those actions.
      *
      * @param resourceGroupName The name of the resource group containing the resource with the lock to delete.
      * @param resourceProviderNamespace The resource provider namespace of the resource with the lock to delete.
@@ -227,8 +240,11 @@ public interface ManagementLocks {
         String lockName);
 
     /**
-     * To delete management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/*
-     * actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
+     * Deletes the management lock of a resource or any level below the resource.
+     *
+     * <p>To delete management locks, you must have access to Microsoft.Authorization/* or
+     * Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are
+     * granted those actions.
      *
      * @param resourceGroupName The name of the resource group containing the resource with the lock to delete.
      * @param resourceProviderNamespace The resource provider namespace of the resource with the lock to delete.
@@ -298,9 +314,11 @@ public interface ManagementLocks {
         Context context);
 
     /**
-     * When you apply a lock at a parent scope, all child resources inherit the same lock. To create management locks,
-     * you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in
-     * roles, only Owner and User Access Administrator are granted those actions.
+     * Creates or updates a management lock at the subscription level.
+     *
+     * <p>When you apply a lock at a parent scope, all child resources inherit the same lock. To create management
+     * locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the
+     * built-in roles, only Owner and User Access Administrator are granted those actions.
      *
      * @param lockName The name of lock. The lock name can be a maximum of 260 characters. It cannot contain &lt;, &gt;
      *     %, &amp;, :, \, ?, /, or any control characters.
@@ -313,9 +331,11 @@ public interface ManagementLocks {
     ManagementLockObject createOrUpdateAtSubscriptionLevel(String lockName, ManagementLockObjectInner parameters);
 
     /**
-     * When you apply a lock at a parent scope, all child resources inherit the same lock. To create management locks,
-     * you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in
-     * roles, only Owner and User Access Administrator are granted those actions.
+     * Creates or updates a management lock at the subscription level.
+     *
+     * <p>When you apply a lock at a parent scope, all child resources inherit the same lock. To create management
+     * locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the
+     * built-in roles, only Owner and User Access Administrator are granted those actions.
      *
      * @param lockName The name of lock. The lock name can be a maximum of 260 characters. It cannot contain &lt;, &gt;
      *     %, &amp;, :, \, ?, /, or any control characters.
@@ -330,8 +350,11 @@ public interface ManagementLocks {
         String lockName, ManagementLockObjectInner parameters, Context context);
 
     /**
-     * To delete management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/*
-     * actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
+     * Deletes the management lock at the subscription level.
+     *
+     * <p>To delete management locks, you must have access to Microsoft.Authorization/* or
+     * Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are
+     * granted those actions.
      *
      * @param lockName The name of lock to delete.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -341,8 +364,11 @@ public interface ManagementLocks {
     void deleteAtSubscriptionLevel(String lockName);
 
     /**
-     * To delete management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/*
-     * actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
+     * Deletes the management lock at the subscription level.
+     *
+     * <p>To delete management locks, you must have access to Microsoft.Authorization/* or
+     * Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are
+     * granted those actions.
      *
      * @param lockName The name of lock to delete.
      * @param context The context to associate with this operation.
@@ -525,8 +551,11 @@ public interface ManagementLocks {
     Response<ManagementLockObject> getByIdWithResponse(String id, Context context);
 
     /**
-     * To delete management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/*
-     * actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
+     * Deletes a management lock at the resource group level.
+     *
+     * <p>To delete management locks, you must have access to Microsoft.Authorization/* or
+     * Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are
+     * granted those actions.
      *
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -536,8 +565,11 @@ public interface ManagementLocks {
     void deleteById(String id);
 
     /**
-     * To delete management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/*
-     * actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
+     * Deletes a management lock at the resource group level.
+     *
+     * <p>To delete management locks, you must have access to Microsoft.Authorization/* or
+     * Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are
+     * granted those actions.
      *
      * @param id the resource ID.
      * @param context The context to associate with this operation.

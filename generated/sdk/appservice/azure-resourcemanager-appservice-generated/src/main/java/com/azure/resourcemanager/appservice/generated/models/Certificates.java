@@ -11,7 +11,9 @@ import com.azure.core.util.Context;
 /** Resource collection API of Certificates. */
 public interface Certificates {
     /**
-     * Description for Get all certificates for a subscription.
+     * Get all certificates for a subscription.
+     *
+     * <p>Description for Get all certificates for a subscription.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -21,7 +23,9 @@ public interface Certificates {
     PagedIterable<Certificate> list();
 
     /**
-     * Description for Get all certificates for a subscription.
+     * Get all certificates for a subscription.
+     *
+     * <p>Description for Get all certificates for a subscription.
      *
      * @param filter Return only information specified in the filter (using OData syntax). For example:
      *     $filter=KeyVaultId eq 'KeyVaultId'.
@@ -35,7 +39,9 @@ public interface Certificates {
     PagedIterable<Certificate> list(String filter, Context context);
 
     /**
-     * Description for Get all certificates in a resource group.
+     * Get all certificates in a resource group.
+     *
+     * <p>Description for Get all certificates in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -47,7 +53,9 @@ public interface Certificates {
     PagedIterable<Certificate> listByResourceGroup(String resourceGroupName);
 
     /**
-     * Description for Get all certificates in a resource group.
+     * Get all certificates in a resource group.
+     *
+     * <p>Description for Get all certificates in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param context The context to associate with this operation.
@@ -60,7 +68,9 @@ public interface Certificates {
     PagedIterable<Certificate> listByResourceGroup(String resourceGroupName, Context context);
 
     /**
-     * Description for Get a certificate.
+     * Get a certificate.
+     *
+     * <p>Description for Get a certificate.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate.
@@ -73,7 +83,9 @@ public interface Certificates {
     Certificate getByResourceGroup(String resourceGroupName, String name);
 
     /**
-     * Description for Get a certificate.
+     * Get a certificate.
+     *
+     * <p>Description for Get a certificate.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate.
@@ -87,7 +99,9 @@ public interface Certificates {
     Response<Certificate> getByResourceGroupWithResponse(String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Delete a certificate.
+     * Delete a certificate.
+     *
+     * <p>Description for Delete a certificate.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate.
@@ -99,7 +113,9 @@ public interface Certificates {
     void deleteByResourceGroup(String resourceGroupName, String name);
 
     /**
-     * Description for Delete a certificate.
+     * Delete a certificate.
+     *
+     * <p>Description for Delete a certificate.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate.
@@ -113,7 +129,9 @@ public interface Certificates {
     Response<Void> deleteWithResponse(String resourceGroupName, String name, Context context);
 
     /**
-     * Description for Get a certificate.
+     * Get a certificate.
+     *
+     * <p>Description for Get a certificate.
      *
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -125,7 +143,9 @@ public interface Certificates {
     Certificate getById(String id);
 
     /**
-     * Description for Get a certificate.
+     * Get a certificate.
+     *
+     * <p>Description for Get a certificate.
      *
      * @param id the resource ID.
      * @param context The context to associate with this operation.
@@ -138,7 +158,9 @@ public interface Certificates {
     Response<Certificate> getByIdWithResponse(String id, Context context);
 
     /**
-     * Description for Delete a certificate.
+     * Delete a certificate.
+     *
+     * <p>Description for Delete a certificate.
      *
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -149,7 +171,9 @@ public interface Certificates {
     void deleteById(String id);
 
     /**
-     * Description for Delete a certificate.
+     * Delete a certificate.
+     *
+     * <p>Description for Delete a certificate.
      *
      * @param id the resource ID.
      * @param context The context to associate with this operation.

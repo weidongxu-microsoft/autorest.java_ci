@@ -1149,7 +1149,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Generates a preview workflow file for the static site.
+     * Generates a preview workflow file for the static site
+     *
+     * <p>Description for Generates a preview workflow file for the static site.
      *
      * @param location Location where you plan to create the static site.
      * @param staticSitesWorkflowPreviewRequest A JSON representation of the StaticSitesWorkflowPreviewRequest
@@ -1203,7 +1205,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Generates a preview workflow file for the static site.
+     * Generates a preview workflow file for the static site
+     *
+     * <p>Description for Generates a preview workflow file for the static site.
      *
      * @param location Location where you plan to create the static site.
      * @param staticSitesWorkflowPreviewRequest A JSON representation of the StaticSitesWorkflowPreviewRequest
@@ -1255,7 +1259,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Generates a preview workflow file for the static site.
+     * Generates a preview workflow file for the static site
+     *
+     * <p>Description for Generates a preview workflow file for the static site.
      *
      * @param location Location where you plan to create the static site.
      * @param staticSitesWorkflowPreviewRequest A JSON representation of the StaticSitesWorkflowPreviewRequest
@@ -1273,7 +1279,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Generates a preview workflow file for the static site.
+     * Generates a preview workflow file for the static site
+     *
+     * <p>Description for Generates a preview workflow file for the static site.
      *
      * @param location Location where you plan to create the static site.
      * @param staticSitesWorkflowPreviewRequest A JSON representation of the StaticSitesWorkflowPreviewRequest
@@ -1290,7 +1298,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Generates a preview workflow file for the static site.
+     * Generates a preview workflow file for the static site
+     *
+     * <p>Description for Generates a preview workflow file for the static site.
      *
      * @param location Location where you plan to create the static site.
      * @param staticSitesWorkflowPreviewRequest A JSON representation of the StaticSitesWorkflowPreviewRequest
@@ -1308,7 +1318,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Get all Static Sites for a subscription.
+     * Get all Static Sites for a subscription.
+     *
+     * <p>Description for Get all Static Sites for a subscription.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1352,7 +1364,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Get all Static Sites for a subscription.
+     * Get all Static Sites for a subscription.
+     *
+     * <p>Description for Get all Static Sites for a subscription.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1395,7 +1409,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Get all Static Sites for a subscription.
+     * Get all Static Sites for a subscription.
+     *
+     * <p>Description for Get all Static Sites for a subscription.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1407,7 +1423,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Get all Static Sites for a subscription.
+     * Get all Static Sites for a subscription.
+     *
+     * <p>Description for Get all Static Sites for a subscription.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1422,7 +1440,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Get all Static Sites for a subscription.
+     * Get all Static Sites for a subscription.
+     *
+     * <p>Description for Get all Static Sites for a subscription.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1434,7 +1454,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Get all Static Sites for a subscription.
+     * Get all Static Sites for a subscription.
+     *
+     * <p>Description for Get all Static Sites for a subscription.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1448,7 +1470,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets all static sites in the specified resource group.
+     * Gets all static sites in the specified resource group.
+     *
+     * <p>Description for Gets all static sites in the specified resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1500,7 +1524,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets all static sites in the specified resource group.
+     * Gets all static sites in the specified resource group.
+     *
+     * <p>Description for Gets all static sites in the specified resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param context The context to associate with this operation.
@@ -1550,7 +1576,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets all static sites in the specified resource group.
+     * Gets all static sites in the specified resource group.
+     *
+     * <p>Description for Gets all static sites in the specified resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1566,7 +1594,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets all static sites in the specified resource group.
+     * Gets all static sites in the specified resource group.
+     *
+     * <p>Description for Gets all static sites in the specified resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param context The context to associate with this operation.
@@ -1583,7 +1613,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets all static sites in the specified resource group.
+     * Gets all static sites in the specified resource group.
+     *
+     * <p>Description for Gets all static sites in the specified resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1597,7 +1629,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets all static sites in the specified resource group.
+     * Gets all static sites in the specified resource group.
+     *
+     * <p>Description for Gets all static sites in the specified resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param context The context to associate with this operation.
@@ -1612,7 +1646,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the details of a static site.
+     * Gets the details of a static site.
+     *
+     * <p>Description for Gets the details of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -1660,7 +1696,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the details of a static site.
+     * Gets the details of a static site.
+     *
+     * <p>Description for Gets the details of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -1706,7 +1744,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the details of a static site.
+     * Gets the details of a static site.
+     *
+     * <p>Description for Gets the details of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -1722,7 +1762,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the details of a static site.
+     * Gets the details of a static site.
+     *
+     * <p>Description for Gets the details of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -1737,7 +1779,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the details of a static site.
+     * Gets the details of a static site.
+     *
+     * <p>Description for Gets the details of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -1754,7 +1798,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates a new static site in an existing resource group, or updates an existing static site.
+     * Creates a new static site in an existing resource group, or updates an existing static site.
+     *
+     * <p>Description for Creates a new static site in an existing resource group, or updates an existing static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to create or update.
@@ -1810,7 +1856,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates a new static site in an existing resource group, or updates an existing static site.
+     * Creates a new static site in an existing resource group, or updates an existing static site.
+     *
+     * <p>Description for Creates a new static site in an existing resource group, or updates an existing static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to create or update.
@@ -1864,7 +1912,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates a new static site in an existing resource group, or updates an existing static site.
+     * Creates a new static site in an existing resource group, or updates an existing static site.
+     *
+     * <p>Description for Creates a new static site in an existing resource group, or updates an existing static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to create or update.
@@ -1891,7 +1941,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates a new static site in an existing resource group, or updates an existing static site.
+     * Creates a new static site in an existing resource group, or updates an existing static site.
+     *
+     * <p>Description for Creates a new static site in an existing resource group, or updates an existing static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to create or update.
@@ -1920,7 +1972,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates a new static site in an existing resource group, or updates an existing static site.
+     * Creates a new static site in an existing resource group, or updates an existing static site.
+     *
+     * <p>Description for Creates a new static site in an existing resource group, or updates an existing static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to create or update.
@@ -1937,7 +1991,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates a new static site in an existing resource group, or updates an existing static site.
+     * Creates a new static site in an existing resource group, or updates an existing static site.
+     *
+     * <p>Description for Creates a new static site in an existing resource group, or updates an existing static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to create or update.
@@ -1955,7 +2011,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates a new static site in an existing resource group, or updates an existing static site.
+     * Creates a new static site in an existing resource group, or updates an existing static site.
+     *
+     * <p>Description for Creates a new static site in an existing resource group, or updates an existing static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to create or update.
@@ -1974,7 +2032,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates a new static site in an existing resource group, or updates an existing static site.
+     * Creates a new static site in an existing resource group, or updates an existing static site.
+     *
+     * <p>Description for Creates a new static site in an existing resource group, or updates an existing static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to create or update.
@@ -1994,7 +2054,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates a new static site in an existing resource group, or updates an existing static site.
+     * Creates a new static site in an existing resource group, or updates an existing static site.
+     *
+     * <p>Description for Creates a new static site in an existing resource group, or updates an existing static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to create or update.
@@ -2011,7 +2073,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates a new static site in an existing resource group, or updates an existing static site.
+     * Creates a new static site in an existing resource group, or updates an existing static site.
+     *
+     * <p>Description for Creates a new static site in an existing resource group, or updates an existing static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to create or update.
@@ -2029,7 +2093,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a static site.
+     * Deletes a static site.
+     *
+     * <p>Description for Deletes a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to delete.
@@ -2076,7 +2142,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a static site.
+     * Deletes a static site.
+     *
+     * <p>Description for Deletes a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to delete.
@@ -2122,7 +2190,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a static site.
+     * Deletes a static site.
+     *
+     * <p>Description for Deletes a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to delete.
@@ -2141,7 +2211,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a static site.
+     * Deletes a static site.
+     *
+     * <p>Description for Deletes a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to delete.
@@ -2162,7 +2234,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a static site.
+     * Deletes a static site.
+     *
+     * <p>Description for Deletes a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to delete.
@@ -2177,7 +2251,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a static site.
+     * Deletes a static site.
+     *
+     * <p>Description for Deletes a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to delete.
@@ -2193,7 +2269,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a static site.
+     * Deletes a static site.
+     *
+     * <p>Description for Deletes a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to delete.
@@ -2208,7 +2286,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a static site.
+     * Deletes a static site.
+     *
+     * <p>Description for Deletes a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to delete.
@@ -2224,7 +2304,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a static site.
+     * Deletes a static site.
+     *
+     * <p>Description for Deletes a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to delete.
@@ -2238,7 +2320,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a static site.
+     * Deletes a static site.
+     *
+     * <p>Description for Deletes a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to delete.
@@ -2253,7 +2337,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates a new static site in an existing resource group, or updates an existing static site.
+     * Creates a new static site in an existing resource group, or updates an existing static site.
+     *
+     * <p>Description for Creates a new static site in an existing resource group, or updates an existing static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to create or update.
@@ -2309,7 +2395,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates a new static site in an existing resource group, or updates an existing static site.
+     * Creates a new static site in an existing resource group, or updates an existing static site.
+     *
+     * <p>Description for Creates a new static site in an existing resource group, or updates an existing static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to create or update.
@@ -2363,7 +2451,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates a new static site in an existing resource group, or updates an existing static site.
+     * Creates a new static site in an existing resource group, or updates an existing static site.
+     *
+     * <p>Description for Creates a new static site in an existing resource group, or updates an existing static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to create or update.
@@ -2381,7 +2471,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates a new static site in an existing resource group, or updates an existing static site.
+     * Creates a new static site in an existing resource group, or updates an existing static site.
+     *
+     * <p>Description for Creates a new static site in an existing resource group, or updates an existing static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to create or update.
@@ -2398,7 +2490,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates a new static site in an existing resource group, or updates an existing static site.
+     * Creates a new static site in an existing resource group, or updates an existing static site.
+     *
+     * <p>Description for Creates a new static site in an existing resource group, or updates an existing static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to create or update.
@@ -2416,7 +2510,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the list of users of a static site.
+     * Gets the list of users of a static site.
+     *
+     * <p>Description for Gets the list of users of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -2479,7 +2575,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the list of users of a static site.
+     * Gets the list of users of a static site.
+     *
+     * <p>Description for Gets the list of users of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -2540,7 +2638,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the list of users of a static site.
+     * Gets the list of users of a static site.
+     *
+     * <p>Description for Gets the list of users of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -2559,7 +2659,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the list of users of a static site.
+     * Gets the list of users of a static site.
+     *
+     * <p>Description for Gets the list of users of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -2579,7 +2681,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the list of users of a static site.
+     * Gets the list of users of a static site.
+     *
+     * <p>Description for Gets the list of users of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -2596,7 +2700,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the list of users of a static site.
+     * Gets the list of users of a static site.
+     *
+     * <p>Description for Gets the list of users of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -2614,7 +2720,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes the user entry from the static site.
+     * Deletes the user entry from the static site.
+     *
+     * <p>Description for Deletes the user entry from the static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the staticsite.
@@ -2672,7 +2780,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes the user entry from the static site.
+     * Deletes the user entry from the static site.
+     *
+     * <p>Description for Deletes the user entry from the static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the staticsite.
@@ -2728,7 +2838,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes the user entry from the static site.
+     * Deletes the user entry from the static site.
+     *
+     * <p>Description for Deletes the user entry from the static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the staticsite.
@@ -2747,7 +2859,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes the user entry from the static site.
+     * Deletes the user entry from the static site.
+     *
+     * <p>Description for Deletes the user entry from the static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the staticsite.
@@ -2763,7 +2877,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes the user entry from the static site.
+     * Deletes the user entry from the static site.
+     *
+     * <p>Description for Deletes the user entry from the static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the staticsite.
@@ -2782,7 +2898,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Updates a user entry with the listed roles.
+     * Updates a user entry with the listed roles
+     *
+     * <p>Description for Updates a user entry with the listed roles.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -2853,7 +2971,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Updates a user entry with the listed roles.
+     * Updates a user entry with the listed roles
+     *
+     * <p>Description for Updates a user entry with the listed roles.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -2923,7 +3043,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Updates a user entry with the listed roles.
+     * Updates a user entry with the listed roles
+     *
+     * <p>Description for Updates a user entry with the listed roles.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -2948,7 +3070,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Updates a user entry with the listed roles.
+     * Updates a user entry with the listed roles
+     *
+     * <p>Description for Updates a user entry with the listed roles.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -2971,7 +3095,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Updates a user entry with the listed roles.
+     * Updates a user entry with the listed roles
+     *
+     * <p>Description for Updates a user entry with the listed roles.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -2998,7 +3124,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets all static site builds for a particular static site.
+     * Gets all static site builds for a particular static site.
+     *
+     * <p>Description for Gets all static site builds for a particular static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -3056,7 +3184,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets all static site builds for a particular static site.
+     * Gets all static site builds for a particular static site.
+     *
+     * <p>Description for Gets all static site builds for a particular static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -3112,7 +3242,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets all static site builds for a particular static site.
+     * Gets all static site builds for a particular static site.
+     *
+     * <p>Description for Gets all static site builds for a particular static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -3129,7 +3261,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets all static site builds for a particular static site.
+     * Gets all static site builds for a particular static site.
+     *
+     * <p>Description for Gets all static site builds for a particular static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -3148,7 +3282,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets all static site builds for a particular static site.
+     * Gets all static site builds for a particular static site.
+     *
+     * <p>Description for Gets all static site builds for a particular static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -3163,7 +3299,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets all static site builds for a particular static site.
+     * Gets all static site builds for a particular static site.
+     *
+     * <p>Description for Gets all static site builds for a particular static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -3180,7 +3318,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the details of a static site build.
+     * Gets the details of a static site build.
+     *
+     * <p>Description for Gets the details of a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -3234,7 +3374,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the details of a static site build.
+     * Gets the details of a static site build.
+     *
+     * <p>Description for Gets the details of a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -3286,7 +3428,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the details of a static site build.
+     * Gets the details of a static site build.
+     *
+     * <p>Description for Gets the details of a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -3304,7 +3448,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the details of a static site build.
+     * Gets the details of a static site build.
+     *
+     * <p>Description for Gets the details of a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -3321,7 +3467,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the details of a static site build.
+     * Gets the details of a static site build.
+     *
+     * <p>Description for Gets the details of a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -3339,7 +3487,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a static site build.
+     * Deletes a static site build.
+     *
+     * <p>Description for Deletes a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -3393,7 +3543,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a static site build.
+     * Deletes a static site build.
+     *
+     * <p>Description for Deletes a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -3445,7 +3597,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a static site build.
+     * Deletes a static site build.
+     *
+     * <p>Description for Deletes a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -3467,7 +3621,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a static site build.
+     * Deletes a static site build.
+     *
+     * <p>Description for Deletes a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -3490,7 +3646,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a static site build.
+     * Deletes a static site build.
+     *
+     * <p>Description for Deletes a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -3507,7 +3665,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a static site build.
+     * Deletes a static site build.
+     *
+     * <p>Description for Deletes a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -3525,7 +3685,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a static site build.
+     * Deletes a static site build.
+     *
+     * <p>Description for Deletes a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -3543,7 +3705,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a static site build.
+     * Deletes a static site build.
+     *
+     * <p>Description for Deletes a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -3563,7 +3727,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a static site build.
+     * Deletes a static site build.
+     *
+     * <p>Description for Deletes a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -3578,7 +3744,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a static site build.
+     * Deletes a static site build.
+     *
+     * <p>Description for Deletes a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -3594,7 +3762,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates or updates the app settings of a static site build.
+     * Creates or updates the app settings of a static site build.
+     *
+     * <p>Description for Creates or updates the app settings of a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -3655,7 +3825,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates or updates the app settings of a static site build.
+     * Creates or updates the app settings of a static site build.
+     *
+     * <p>Description for Creates or updates the app settings of a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -3718,7 +3890,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates or updates the app settings of a static site build.
+     * Creates or updates the app settings of a static site build.
+     *
+     * <p>Description for Creates or updates the app settings of a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -3738,7 +3912,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates or updates the app settings of a static site build.
+     * Creates or updates the app settings of a static site build.
+     *
+     * <p>Description for Creates or updates the app settings of a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -3757,7 +3933,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates or updates the app settings of a static site build.
+     * Creates or updates the app settings of a static site build.
+     *
+     * <p>Description for Creates or updates the app settings of a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -3782,7 +3960,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates or updates the function app settings of a static site build.
+     * Creates or updates the function app settings of a static site build.
+     *
+     * <p>Description for Creates or updates the function app settings of a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -3843,7 +4023,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates or updates the function app settings of a static site build.
+     * Creates or updates the function app settings of a static site build.
+     *
+     * <p>Description for Creates or updates the function app settings of a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -3906,7 +4088,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates or updates the function app settings of a static site build.
+     * Creates or updates the function app settings of a static site build.
+     *
+     * <p>Description for Creates or updates the function app settings of a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -3926,7 +4110,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates or updates the function app settings of a static site build.
+     * Creates or updates the function app settings of a static site build.
+     *
+     * <p>Description for Creates or updates the function app settings of a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -3946,7 +4132,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates or updates the function app settings of a static site build.
+     * Creates or updates the function app settings of a static site build.
+     *
+     * <p>Description for Creates or updates the function app settings of a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -3971,7 +4159,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the functions of a particular static site build.
+     * Gets the functions of a particular static site build.
+     *
+     * <p>Description for Gets the functions of a particular static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -4035,7 +4225,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the functions of a particular static site build.
+     * Gets the functions of a particular static site build.
+     *
+     * <p>Description for Gets the functions of a particular static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -4097,7 +4289,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the functions of a particular static site build.
+     * Gets the functions of a particular static site build.
+     *
+     * <p>Description for Gets the functions of a particular static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -4116,7 +4310,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the functions of a particular static site build.
+     * Gets the functions of a particular static site build.
+     *
+     * <p>Description for Gets the functions of a particular static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -4136,7 +4332,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the functions of a particular static site build.
+     * Gets the functions of a particular static site build.
+     *
+     * <p>Description for Gets the functions of a particular static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -4153,7 +4351,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the functions of a particular static site build.
+     * Gets the functions of a particular static site build.
+     *
+     * <p>Description for Gets the functions of a particular static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -4172,7 +4372,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the application settings of a static site build.
+     * Gets the application settings of a static site build.
+     *
+     * <p>Description for Gets the application settings of a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -4226,7 +4428,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the application settings of a static site build.
+     * Gets the application settings of a static site build.
+     *
+     * <p>Description for Gets the application settings of a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -4278,7 +4482,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the application settings of a static site build.
+     * Gets the application settings of a static site build.
+     *
+     * <p>Description for Gets the application settings of a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -4296,7 +4502,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the application settings of a static site build.
+     * Gets the application settings of a static site build.
+     *
+     * <p>Description for Gets the application settings of a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -4313,7 +4521,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the application settings of a static site build.
+     * Gets the application settings of a static site build.
+     *
+     * <p>Description for Gets the application settings of a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -4332,7 +4542,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the application settings of a static site build.
+     * Gets the application settings of a static site build.
+     *
+     * <p>Description for Gets the application settings of a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -4386,7 +4598,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the application settings of a static site build.
+     * Gets the application settings of a static site build.
+     *
+     * <p>Description for Gets the application settings of a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -4438,7 +4652,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the application settings of a static site build.
+     * Gets the application settings of a static site build.
+     *
+     * <p>Description for Gets the application settings of a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -4456,7 +4672,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the application settings of a static site build.
+     * Gets the application settings of a static site build.
+     *
+     * <p>Description for Gets the application settings of a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -4473,7 +4691,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the application settings of a static site build.
+     * Gets the application settings of a static site build.
+     *
+     * <p>Description for Gets the application settings of a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -4493,7 +4713,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the details of the user provided function apps registered with a static site build.
+     * Gets the details of the user provided function apps registered with a static site build
+     *
+     * <p>Description for Gets the details of the user provided function apps registered with a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -4558,7 +4780,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the details of the user provided function apps registered with a static site build.
+     * Gets the details of the user provided function apps registered with a static site build
+     *
+     * <p>Description for Gets the details of the user provided function apps registered with a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -4621,7 +4845,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the details of the user provided function apps registered with a static site build.
+     * Gets the details of the user provided function apps registered with a static site build
+     *
+     * <p>Description for Gets the details of the user provided function apps registered with a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -4642,7 +4868,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the details of the user provided function apps registered with a static site build.
+     * Gets the details of the user provided function apps registered with a static site build
+     *
+     * <p>Description for Gets the details of the user provided function apps registered with a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -4665,7 +4893,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the details of the user provided function apps registered with a static site build.
+     * Gets the details of the user provided function apps registered with a static site build
+     *
+     * <p>Description for Gets the details of the user provided function apps registered with a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -4683,7 +4913,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the details of the user provided function apps registered with a static site build.
+     * Gets the details of the user provided function apps registered with a static site build
+     *
+     * <p>Description for Gets the details of the user provided function apps registered with a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -4703,7 +4935,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the details of the user provided function app registered with a static site build.
+     * Gets the details of the user provided function app registered with a static site build
+     *
+     * <p>Description for Gets the details of the user provided function app registered with a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -4765,7 +4999,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the details of the user provided function app registered with a static site build.
+     * Gets the details of the user provided function app registered with a static site build
+     *
+     * <p>Description for Gets the details of the user provided function app registered with a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -4825,7 +5061,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the details of the user provided function app registered with a static site build.
+     * Gets the details of the user provided function app registered with a static site build
+     *
+     * <p>Description for Gets the details of the user provided function app registered with a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -4845,7 +5083,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the details of the user provided function app registered with a static site build.
+     * Gets the details of the user provided function app registered with a static site build
+     *
+     * <p>Description for Gets the details of the user provided function app registered with a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -4865,7 +5105,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the details of the user provided function app registered with a static site build.
+     * Gets the details of the user provided function app registered with a static site build
+     *
+     * <p>Description for Gets the details of the user provided function app registered with a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -4887,7 +5129,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Register a user provided function app with a static site build.
+     * Register a user provided function app with a static site build
+     *
+     * <p>Description for Register a user provided function app with a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -4968,7 +5212,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Register a user provided function app with a static site build.
+     * Register a user provided function app with a static site build
+     *
+     * <p>Description for Register a user provided function app with a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -5048,7 +5294,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Register a user provided function app with a static site build.
+     * Register a user provided function app with a static site build
+     *
+     * <p>Description for Register a user provided function app with a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -5095,7 +5343,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Register a user provided function app with a static site build.
+     * Register a user provided function app with a static site build
+     *
+     * <p>Description for Register a user provided function app with a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -5146,7 +5396,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Register a user provided function app with a static site build.
+     * Register a user provided function app with a static site build
+     *
+     * <p>Description for Register a user provided function app with a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -5184,7 +5436,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Register a user provided function app with a static site build.
+     * Register a user provided function app with a static site build
+     *
+     * <p>Description for Register a user provided function app with a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -5225,7 +5479,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Register a user provided function app with a static site build.
+     * Register a user provided function app with a static site build
+     *
+     * <p>Description for Register a user provided function app with a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -5262,7 +5518,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Register a user provided function app with a static site build.
+     * Register a user provided function app with a static site build
+     *
+     * <p>Description for Register a user provided function app with a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -5296,7 +5554,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Register a user provided function app with a static site build.
+     * Register a user provided function app with a static site build
+     *
+     * <p>Description for Register a user provided function app with a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -5336,7 +5596,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Register a user provided function app with a static site build.
+     * Register a user provided function app with a static site build
+     *
+     * <p>Description for Register a user provided function app with a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -5371,7 +5633,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Register a user provided function app with a static site build.
+     * Register a user provided function app with a static site build
+     *
+     * <p>Description for Register a user provided function app with a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -5403,7 +5667,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Register a user provided function app with a static site build.
+     * Register a user provided function app with a static site build
+     *
+     * <p>Description for Register a user provided function app with a static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -5441,7 +5707,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Detach the user provided function app from the static site build.
+     * Detach the user provided function app from the static site build
+     *
+     * <p>Description for Detach the user provided function app from the static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -5501,7 +5769,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Detach the user provided function app from the static site build.
+     * Detach the user provided function app from the static site build
+     *
+     * <p>Description for Detach the user provided function app from the static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -5559,7 +5829,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Detach the user provided function app from the static site build.
+     * Detach the user provided function app from the static site build
+     *
+     * <p>Description for Detach the user provided function app from the static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -5579,7 +5851,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Detach the user provided function app from the static site build.
+     * Detach the user provided function app from the static site build
+     *
+     * <p>Description for Detach the user provided function app from the static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -5597,7 +5871,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Detach the user provided function app from the static site build.
+     * Detach the user provided function app from the static site build
+     *
+     * <p>Description for Detach the user provided function app from the static site build.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -5618,7 +5894,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deploys zipped content to a specific environment of a static site.
+     * Deploys zipped content to a specific environment of a static site.
+     *
+     * <p>Description for Deploys zipped content to a specific environment of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -5686,7 +5964,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deploys zipped content to a specific environment of a static site.
+     * Deploys zipped content to a specific environment of a static site.
+     *
+     * <p>Description for Deploys zipped content to a specific environment of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -5753,7 +6033,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deploys zipped content to a specific environment of a static site.
+     * Deploys zipped content to a specific environment of a static site.
+     *
+     * <p>Description for Deploys zipped content to a specific environment of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -5781,7 +6063,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deploys zipped content to a specific environment of a static site.
+     * Deploys zipped content to a specific environment of a static site.
+     *
+     * <p>Description for Deploys zipped content to a specific environment of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -5811,7 +6095,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deploys zipped content to a specific environment of a static site.
+     * Deploys zipped content to a specific environment of a static site.
+     *
+     * <p>Description for Deploys zipped content to a specific environment of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -5835,7 +6121,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deploys zipped content to a specific environment of a static site.
+     * Deploys zipped content to a specific environment of a static site.
+     *
+     * <p>Description for Deploys zipped content to a specific environment of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -5861,7 +6149,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deploys zipped content to a specific environment of a static site.
+     * Deploys zipped content to a specific environment of a static site.
+     *
+     * <p>Description for Deploys zipped content to a specific environment of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -5886,7 +6176,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deploys zipped content to a specific environment of a static site.
+     * Deploys zipped content to a specific environment of a static site.
+     *
+     * <p>Description for Deploys zipped content to a specific environment of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -5913,7 +6205,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deploys zipped content to a specific environment of a static site.
+     * Deploys zipped content to a specific environment of a static site.
+     *
+     * <p>Description for Deploys zipped content to a specific environment of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -5936,7 +6230,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deploys zipped content to a specific environment of a static site.
+     * Deploys zipped content to a specific environment of a static site.
+     *
+     * <p>Description for Deploys zipped content to a specific environment of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -5961,7 +6257,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates or updates the app settings of a static site.
+     * Creates or updates the app settings of a static site.
+     *
+     * <p>Description for Creates or updates the app settings of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -6016,7 +6314,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates or updates the app settings of a static site.
+     * Creates or updates the app settings of a static site.
+     *
+     * <p>Description for Creates or updates the app settings of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -6069,7 +6369,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates or updates the app settings of a static site.
+     * Creates or updates the app settings of a static site.
+     *
+     * <p>Description for Creates or updates the app settings of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -6087,7 +6389,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates or updates the app settings of a static site.
+     * Creates or updates the app settings of a static site.
+     *
+     * <p>Description for Creates or updates the app settings of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -6104,7 +6408,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates or updates the app settings of a static site.
+     * Creates or updates the app settings of a static site.
+     *
+     * <p>Description for Creates or updates the app settings of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -6123,7 +6429,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates or updates the function app settings of a static site.
+     * Creates or updates the function app settings of a static site.
+     *
+     * <p>Description for Creates or updates the function app settings of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -6178,7 +6486,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates or updates the function app settings of a static site.
+     * Creates or updates the function app settings of a static site.
+     *
+     * <p>Description for Creates or updates the function app settings of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -6231,7 +6541,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates or updates the function app settings of a static site.
+     * Creates or updates the function app settings of a static site.
+     *
+     * <p>Description for Creates or updates the function app settings of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -6249,7 +6561,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates or updates the function app settings of a static site.
+     * Creates or updates the function app settings of a static site.
+     *
+     * <p>Description for Creates or updates the function app settings of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -6266,7 +6580,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates or updates the function app settings of a static site.
+     * Creates or updates the function app settings of a static site.
+     *
+     * <p>Description for Creates or updates the function app settings of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -6286,7 +6602,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates an invitation link for a user with the role.
+     * Creates an invitation link for a user with the role
+     *
+     * <p>Description for Creates an invitation link for a user with the role.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -6348,7 +6666,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates an invitation link for a user with the role.
+     * Creates an invitation link for a user with the role
+     *
+     * <p>Description for Creates an invitation link for a user with the role.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -6409,7 +6729,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates an invitation link for a user with the role.
+     * Creates an invitation link for a user with the role
+     *
+     * <p>Description for Creates an invitation link for a user with the role.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -6430,7 +6752,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates an invitation link for a user with the role.
+     * Creates an invitation link for a user with the role
+     *
+     * <p>Description for Creates an invitation link for a user with the role.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -6450,7 +6774,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates an invitation link for a user with the role.
+     * Creates an invitation link for a user with the role
+     *
+     * <p>Description for Creates an invitation link for a user with the role.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -6473,7 +6799,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets all static site custom domains for a particular static site.
+     * Gets all static site custom domains for a particular static site.
+     *
+     * <p>Description for Gets all static site custom domains for a particular static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site resource to search in.
@@ -6531,7 +6859,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets all static site custom domains for a particular static site.
+     * Gets all static site custom domains for a particular static site.
+     *
+     * <p>Description for Gets all static site custom domains for a particular static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site resource to search in.
@@ -6587,7 +6917,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets all static site custom domains for a particular static site.
+     * Gets all static site custom domains for a particular static site.
+     *
+     * <p>Description for Gets all static site custom domains for a particular static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site resource to search in.
@@ -6605,7 +6937,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets all static site custom domains for a particular static site.
+     * Gets all static site custom domains for a particular static site.
+     *
+     * <p>Description for Gets all static site custom domains for a particular static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site resource to search in.
@@ -6624,7 +6958,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets all static site custom domains for a particular static site.
+     * Gets all static site custom domains for a particular static site.
+     *
+     * <p>Description for Gets all static site custom domains for a particular static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site resource to search in.
@@ -6640,7 +6976,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets all static site custom domains for a particular static site.
+     * Gets all static site custom domains for a particular static site.
+     *
+     * <p>Description for Gets all static site custom domains for a particular static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site resource to search in.
@@ -6657,7 +6995,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets an existing custom domain for a particular static site.
+     * Gets an existing custom domain for a particular static site.
+     *
+     * <p>Description for Gets an existing custom domain for a particular static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site resource to search in.
@@ -6711,7 +7051,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets an existing custom domain for a particular static site.
+     * Gets an existing custom domain for a particular static site.
+     *
+     * <p>Description for Gets an existing custom domain for a particular static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site resource to search in.
@@ -6763,7 +7105,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets an existing custom domain for a particular static site.
+     * Gets an existing custom domain for a particular static site.
+     *
+     * <p>Description for Gets an existing custom domain for a particular static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site resource to search in.
@@ -6781,7 +7125,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets an existing custom domain for a particular static site.
+     * Gets an existing custom domain for a particular static site.
+     *
+     * <p>Description for Gets an existing custom domain for a particular static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site resource to search in.
@@ -6798,7 +7144,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets an existing custom domain for a particular static site.
+     * Gets an existing custom domain for a particular static site.
+     *
+     * <p>Description for Gets an existing custom domain for a particular static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site resource to search in.
@@ -6816,7 +7164,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates a new static site custom domain in an existing resource group and static site.
+     * Creates a new static site custom domain in an existing resource group and static site.
+     *
+     * <p>Description for Creates a new static site custom domain in an existing resource group and static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -6884,7 +7234,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates a new static site custom domain in an existing resource group and static site.
+     * Creates a new static site custom domain in an existing resource group and static site.
+     *
+     * <p>Description for Creates a new static site custom domain in an existing resource group and static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -6951,7 +7303,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates a new static site custom domain in an existing resource group and static site.
+     * Creates a new static site custom domain in an existing resource group and static site.
+     *
+     * <p>Description for Creates a new static site custom domain in an existing resource group and static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -6986,7 +7340,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates a new static site custom domain in an existing resource group and static site.
+     * Creates a new static site custom domain in an existing resource group and static site.
+     *
+     * <p>Description for Creates a new static site custom domain in an existing resource group and static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -7024,7 +7380,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates a new static site custom domain in an existing resource group and static site.
+     * Creates a new static site custom domain in an existing resource group and static site.
+     *
+     * <p>Description for Creates a new static site custom domain in an existing resource group and static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -7050,7 +7408,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates a new static site custom domain in an existing resource group and static site.
+     * Creates a new static site custom domain in an existing resource group and static site.
+     *
+     * <p>Description for Creates a new static site custom domain in an existing resource group and static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -7078,7 +7438,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates a new static site custom domain in an existing resource group and static site.
+     * Creates a new static site custom domain in an existing resource group and static site.
+     *
+     * <p>Description for Creates a new static site custom domain in an existing resource group and static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -7103,7 +7465,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates a new static site custom domain in an existing resource group and static site.
+     * Creates a new static site custom domain in an existing resource group and static site.
+     *
+     * <p>Description for Creates a new static site custom domain in an existing resource group and static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -7130,7 +7494,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates a new static site custom domain in an existing resource group and static site.
+     * Creates a new static site custom domain in an existing resource group and static site.
+     *
+     * <p>Description for Creates a new static site custom domain in an existing resource group and static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -7154,7 +7520,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Creates a new static site custom domain in an existing resource group and static site.
+     * Creates a new static site custom domain in an existing resource group and static site.
+     *
+     * <p>Description for Creates a new static site custom domain in an existing resource group and static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -7180,7 +7548,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a custom domain.
+     * Deletes a custom domain.
+     *
+     * <p>Description for Deletes a custom domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -7233,7 +7603,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a custom domain.
+     * Deletes a custom domain.
+     *
+     * <p>Description for Deletes a custom domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -7284,7 +7656,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a custom domain.
+     * Deletes a custom domain.
+     *
+     * <p>Description for Deletes a custom domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -7306,7 +7680,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a custom domain.
+     * Deletes a custom domain.
+     *
+     * <p>Description for Deletes a custom domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -7329,7 +7705,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a custom domain.
+     * Deletes a custom domain.
+     *
+     * <p>Description for Deletes a custom domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -7346,7 +7724,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a custom domain.
+     * Deletes a custom domain.
+     *
+     * <p>Description for Deletes a custom domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -7364,7 +7744,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a custom domain.
+     * Deletes a custom domain.
+     *
+     * <p>Description for Deletes a custom domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -7382,7 +7764,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a custom domain.
+     * Deletes a custom domain.
+     *
+     * <p>Description for Deletes a custom domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -7402,7 +7786,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a custom domain.
+     * Deletes a custom domain.
+     *
+     * <p>Description for Deletes a custom domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -7417,7 +7803,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a custom domain.
+     * Deletes a custom domain.
+     *
+     * <p>Description for Deletes a custom domain.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -7434,7 +7822,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Validates a particular custom domain can be added to a static site.
+     * Validates a particular custom domain can be added to a static site.
+     *
+     * <p>Description for Validates a particular custom domain can be added to a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -7501,7 +7891,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Validates a particular custom domain can be added to a static site.
+     * Validates a particular custom domain can be added to a static site.
+     *
+     * <p>Description for Validates a particular custom domain can be added to a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -7567,7 +7959,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Validates a particular custom domain can be added to a static site.
+     * Validates a particular custom domain can be added to a static site.
+     *
+     * <p>Description for Validates a particular custom domain can be added to a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -7595,7 +7989,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Validates a particular custom domain can be added to a static site.
+     * Validates a particular custom domain can be added to a static site.
+     *
+     * <p>Description for Validates a particular custom domain can be added to a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -7625,7 +8021,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Validates a particular custom domain can be added to a static site.
+     * Validates a particular custom domain can be added to a static site.
+     *
+     * <p>Description for Validates a particular custom domain can be added to a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -7649,7 +8047,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Validates a particular custom domain can be added to a static site.
+     * Validates a particular custom domain can be added to a static site.
+     *
+     * <p>Description for Validates a particular custom domain can be added to a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -7675,7 +8075,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Validates a particular custom domain can be added to a static site.
+     * Validates a particular custom domain can be added to a static site.
+     *
+     * <p>Description for Validates a particular custom domain can be added to a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -7700,7 +8102,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Validates a particular custom domain can be added to a static site.
+     * Validates a particular custom domain can be added to a static site.
+     *
+     * <p>Description for Validates a particular custom domain can be added to a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -7727,7 +8131,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Validates a particular custom domain can be added to a static site.
+     * Validates a particular custom domain can be added to a static site.
+     *
+     * <p>Description for Validates a particular custom domain can be added to a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -7750,7 +8156,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Validates a particular custom domain can be added to a static site.
+     * Validates a particular custom domain can be added to a static site.
+     *
+     * <p>Description for Validates a particular custom domain can be added to a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -7775,7 +8183,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Detaches a static site.
+     * Detaches a static site.
+     *
+     * <p>Description for Detaches a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to detach.
@@ -7822,7 +8232,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Detaches a static site.
+     * Detaches a static site.
+     *
+     * <p>Description for Detaches a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to detach.
@@ -7868,7 +8280,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Detaches a static site.
+     * Detaches a static site.
+     *
+     * <p>Description for Detaches a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to detach.
@@ -7887,7 +8301,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Detaches a static site.
+     * Detaches a static site.
+     *
+     * <p>Description for Detaches a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to detach.
@@ -7908,7 +8324,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Detaches a static site.
+     * Detaches a static site.
+     *
+     * <p>Description for Detaches a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to detach.
@@ -7923,7 +8341,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Detaches a static site.
+     * Detaches a static site.
+     *
+     * <p>Description for Detaches a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to detach.
@@ -7940,7 +8360,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Detaches a static site.
+     * Detaches a static site.
+     *
+     * <p>Description for Detaches a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to detach.
@@ -7957,7 +8379,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Detaches a static site.
+     * Detaches a static site.
+     *
+     * <p>Description for Detaches a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to detach.
@@ -7975,7 +8399,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Detaches a static site.
+     * Detaches a static site.
+     *
+     * <p>Description for Detaches a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to detach.
@@ -7989,7 +8415,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Detaches a static site.
+     * Detaches a static site.
+     *
+     * <p>Description for Detaches a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to detach.
@@ -8004,7 +8432,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the functions of a static site.
+     * Gets the functions of a static site.
+     *
+     * <p>Description for Gets the functions of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -8062,7 +8492,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the functions of a static site.
+     * Gets the functions of a static site.
+     *
+     * <p>Description for Gets the functions of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -8118,7 +8550,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the functions of a static site.
+     * Gets the functions of a static site.
+     *
+     * <p>Description for Gets the functions of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -8136,7 +8570,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the functions of a static site.
+     * Gets the functions of a static site.
+     *
+     * <p>Description for Gets the functions of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -8155,7 +8591,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the functions of a static site.
+     * Gets the functions of a static site.
+     *
+     * <p>Description for Gets the functions of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -8171,7 +8609,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the functions of a static site.
+     * Gets the functions of a static site.
+     *
+     * <p>Description for Gets the functions of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -8188,7 +8628,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the application settings of a static site.
+     * Gets the application settings of a static site.
+     *
+     * <p>Description for Gets the application settings of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -8236,7 +8678,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the application settings of a static site.
+     * Gets the application settings of a static site.
+     *
+     * <p>Description for Gets the application settings of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -8282,7 +8726,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the application settings of a static site.
+     * Gets the application settings of a static site.
+     *
+     * <p>Description for Gets the application settings of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -8298,7 +8744,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the application settings of a static site.
+     * Gets the application settings of a static site.
+     *
+     * <p>Description for Gets the application settings of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -8313,7 +8761,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the application settings of a static site.
+     * Gets the application settings of a static site.
+     *
+     * <p>Description for Gets the application settings of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -8330,7 +8780,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Lists the roles configured for the static site.
+     * Lists the roles configured for the static site.
+     *
+     * <p>Description for Lists the roles configured for the static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -8378,7 +8830,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Lists the roles configured for the static site.
+     * Lists the roles configured for the static site.
+     *
+     * <p>Description for Lists the roles configured for the static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -8424,7 +8878,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Lists the roles configured for the static site.
+     * Lists the roles configured for the static site.
+     *
+     * <p>Description for Lists the roles configured for the static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -8440,7 +8896,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Lists the roles configured for the static site.
+     * Lists the roles configured for the static site.
+     *
+     * <p>Description for Lists the roles configured for the static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -8455,7 +8913,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Lists the roles configured for the static site.
+     * Lists the roles configured for the static site.
+     *
+     * <p>Description for Lists the roles configured for the static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -8472,7 +8932,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the application settings of a static site.
+     * Gets the application settings of a static site.
+     *
+     * <p>Description for Gets the application settings of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -8520,7 +8982,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the application settings of a static site.
+     * Gets the application settings of a static site.
+     *
+     * <p>Description for Gets the application settings of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -8566,7 +9030,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the application settings of a static site.
+     * Gets the application settings of a static site.
+     *
+     * <p>Description for Gets the application settings of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -8582,7 +9048,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the application settings of a static site.
+     * Gets the application settings of a static site.
+     *
+     * <p>Description for Gets the application settings of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -8597,7 +9065,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the application settings of a static site.
+     * Gets the application settings of a static site.
+     *
+     * <p>Description for Gets the application settings of a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -8614,7 +9084,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Lists the secrets for an existing static site.
+     * Lists the secrets for an existing static site.
+     *
+     * <p>Description for Lists the secrets for an existing static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -8662,7 +9134,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Lists the secrets for an existing static site.
+     * Lists the secrets for an existing static site.
+     *
+     * <p>Description for Lists the secrets for an existing static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -8708,7 +9182,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Lists the secrets for an existing static site.
+     * Lists the secrets for an existing static site.
+     *
+     * <p>Description for Lists the secrets for an existing static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -8724,7 +9200,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Lists the secrets for an existing static site.
+     * Lists the secrets for an existing static site.
+     *
+     * <p>Description for Lists the secrets for an existing static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -8739,7 +9217,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Lists the secrets for an existing static site.
+     * Lists the secrets for an existing static site.
+     *
+     * <p>Description for Lists the secrets for an existing static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -8756,7 +9236,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the list of private endpoint connections associated with a static site.
+     * Gets the list of private endpoint connections associated with a static site
+     *
+     * <p>Description for Gets the list of private endpoint connections associated with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -8813,7 +9295,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the list of private endpoint connections associated with a static site.
+     * Gets the list of private endpoint connections associated with a static site
+     *
+     * <p>Description for Gets the list of private endpoint connections associated with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -8868,7 +9352,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the list of private endpoint connections associated with a static site.
+     * Gets the list of private endpoint connections associated with a static site
+     *
+     * <p>Description for Gets the list of private endpoint connections associated with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -8886,7 +9372,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the list of private endpoint connections associated with a static site.
+     * Gets the list of private endpoint connections associated with a static site
+     *
+     * <p>Description for Gets the list of private endpoint connections associated with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -8905,7 +9393,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the list of private endpoint connections associated with a static site.
+     * Gets the list of private endpoint connections associated with a static site
+     *
+     * <p>Description for Gets the list of private endpoint connections associated with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -8921,7 +9411,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the list of private endpoint connections associated with a static site.
+     * Gets the list of private endpoint connections associated with a static site
+     *
+     * <p>Description for Gets the list of private endpoint connections associated with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -8938,7 +9430,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets a private endpoint connection.
+     * Gets a private endpoint connection
+     *
+     * <p>Description for Gets a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -8996,7 +9490,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets a private endpoint connection.
+     * Gets a private endpoint connection
+     *
+     * <p>Description for Gets a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -9052,7 +9548,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets a private endpoint connection.
+     * Gets a private endpoint connection
+     *
+     * <p>Description for Gets a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -9070,7 +9568,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets a private endpoint connection.
+     * Gets a private endpoint connection
+     *
+     * <p>Description for Gets a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -9087,7 +9587,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets a private endpoint connection.
+     * Gets a private endpoint connection
+     *
+     * <p>Description for Gets a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -9107,7 +9609,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Approves or rejects a private endpoint connection.
+     * Approves or rejects a private endpoint connection
+     *
+     * <p>Description for Approves or rejects a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -9176,7 +9680,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Approves or rejects a private endpoint connection.
+     * Approves or rejects a private endpoint connection
+     *
+     * <p>Description for Approves or rejects a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -9244,7 +9750,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Approves or rejects a private endpoint connection.
+     * Approves or rejects a private endpoint connection
+     *
+     * <p>Description for Approves or rejects a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -9279,7 +9787,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Approves or rejects a private endpoint connection.
+     * Approves or rejects a private endpoint connection
+     *
+     * <p>Description for Approves or rejects a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -9317,7 +9827,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Approves or rejects a private endpoint connection.
+     * Approves or rejects a private endpoint connection
+     *
+     * <p>Description for Approves or rejects a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -9343,7 +9855,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Approves or rejects a private endpoint connection.
+     * Approves or rejects a private endpoint connection
+     *
+     * <p>Description for Approves or rejects a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -9371,7 +9885,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Approves or rejects a private endpoint connection.
+     * Approves or rejects a private endpoint connection
+     *
+     * <p>Description for Approves or rejects a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -9395,7 +9911,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Approves or rejects a private endpoint connection.
+     * Approves or rejects a private endpoint connection
+     *
+     * <p>Description for Approves or rejects a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -9421,7 +9939,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Approves or rejects a private endpoint connection.
+     * Approves or rejects a private endpoint connection
+     *
+     * <p>Description for Approves or rejects a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -9444,7 +9964,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Approves or rejects a private endpoint connection.
+     * Approves or rejects a private endpoint connection
+     *
+     * <p>Description for Approves or rejects a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -9469,7 +9991,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a private endpoint connection.
+     * Deletes a private endpoint connection
+     *
+     * <p>Description for Deletes a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -9525,7 +10049,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a private endpoint connection.
+     * Deletes a private endpoint connection
+     *
+     * <p>Description for Deletes a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -9579,7 +10105,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a private endpoint connection.
+     * Deletes a private endpoint connection
+     *
+     * <p>Description for Deletes a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -9601,7 +10129,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a private endpoint connection.
+     * Deletes a private endpoint connection
+     *
+     * <p>Description for Deletes a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -9625,7 +10155,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a private endpoint connection.
+     * Deletes a private endpoint connection
+     *
+     * <p>Description for Deletes a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -9643,7 +10175,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a private endpoint connection.
+     * Deletes a private endpoint connection
+     *
+     * <p>Description for Deletes a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -9663,7 +10197,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a private endpoint connection.
+     * Deletes a private endpoint connection
+     *
+     * <p>Description for Deletes a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -9682,7 +10218,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a private endpoint connection.
+     * Deletes a private endpoint connection
+     *
+     * <p>Description for Deletes a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -9703,7 +10241,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a private endpoint connection.
+     * Deletes a private endpoint connection
+     *
+     * <p>Description for Deletes a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -9720,7 +10260,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deletes a private endpoint connection.
+     * Deletes a private endpoint connection
+     *
+     * <p>Description for Deletes a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -9739,7 +10281,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the private link resources.
+     * Gets the private link resources
+     *
+     * <p>Description for Gets the private link resources.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the site.
@@ -9788,7 +10332,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the private link resources.
+     * Gets the private link resources
+     *
+     * <p>Description for Gets the private link resources.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the site.
@@ -9835,7 +10381,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the private link resources.
+     * Gets the private link resources
+     *
+     * <p>Description for Gets the private link resources.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the site.
@@ -9851,7 +10399,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the private link resources.
+     * Gets the private link resources
+     *
+     * <p>Description for Gets the private link resources.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the site.
@@ -9866,7 +10416,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the private link resources.
+     * Gets the private link resources
+     *
+     * <p>Description for Gets the private link resources.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the site.
@@ -9883,7 +10435,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Resets the api key for an existing static site.
+     * Resets the api key for an existing static site.
+     *
+     * <p>Description for Resets the api key for an existing static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -9940,7 +10494,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Resets the api key for an existing static site.
+     * Resets the api key for an existing static site.
+     *
+     * <p>Description for Resets the api key for an existing static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -9998,7 +10554,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Resets the api key for an existing static site.
+     * Resets the api key for an existing static site.
+     *
+     * <p>Description for Resets the api key for an existing static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -10016,7 +10574,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Resets the api key for an existing static site.
+     * Resets the api key for an existing static site.
+     *
+     * <p>Description for Resets the api key for an existing static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -10032,7 +10592,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Resets the api key for an existing static site.
+     * Resets the api key for an existing static site.
+     *
+     * <p>Description for Resets the api key for an existing static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -10054,7 +10616,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the details of the user provided function apps registered with a static site.
+     * Gets the details of the user provided function apps registered with a static site
+     *
+     * <p>Description for Gets the details of the user provided function apps registered with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -10112,7 +10676,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the details of the user provided function apps registered with a static site.
+     * Gets the details of the user provided function apps registered with a static site
+     *
+     * <p>Description for Gets the details of the user provided function apps registered with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -10169,7 +10735,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the details of the user provided function apps registered with a static site.
+     * Gets the details of the user provided function apps registered with a static site
+     *
+     * <p>Description for Gets the details of the user provided function apps registered with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -10187,7 +10755,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the details of the user provided function apps registered with a static site.
+     * Gets the details of the user provided function apps registered with a static site
+     *
+     * <p>Description for Gets the details of the user provided function apps registered with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -10206,7 +10776,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the details of the user provided function apps registered with a static site.
+     * Gets the details of the user provided function apps registered with a static site
+     *
+     * <p>Description for Gets the details of the user provided function apps registered with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -10222,7 +10794,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the details of the user provided function apps registered with a static site.
+     * Gets the details of the user provided function apps registered with a static site
+     *
+     * <p>Description for Gets the details of the user provided function apps registered with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -10239,7 +10813,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the details of the user provided function app registered with a static site.
+     * Gets the details of the user provided function app registered with a static site
+     *
+     * <p>Description for Gets the details of the user provided function app registered with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -10295,7 +10871,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the details of the user provided function app registered with a static site.
+     * Gets the details of the user provided function app registered with a static site
+     *
+     * <p>Description for Gets the details of the user provided function app registered with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -10349,7 +10927,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the details of the user provided function app registered with a static site.
+     * Gets the details of the user provided function app registered with a static site
+     *
+     * <p>Description for Gets the details of the user provided function app registered with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -10367,7 +10947,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the details of the user provided function app registered with a static site.
+     * Gets the details of the user provided function app registered with a static site
+     *
+     * <p>Description for Gets the details of the user provided function app registered with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -10384,7 +10966,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Gets the details of the user provided function app registered with a static site.
+     * Gets the details of the user provided function app registered with a static site
+     *
+     * <p>Description for Gets the details of the user provided function app registered with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -10405,7 +10989,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Register a user provided function app with a static site.
+     * Register a user provided function app with a static site
+     *
+     * <p>Description for Register a user provided function app with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -10479,7 +11065,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Register a user provided function app with a static site.
+     * Register a user provided function app with a static site
+     *
+     * <p>Description for Register a user provided function app with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -10552,7 +11140,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Register a user provided function app with a static site.
+     * Register a user provided function app with a static site
+     *
+     * <p>Description for Register a user provided function app with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -10592,7 +11182,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Register a user provided function app with a static site.
+     * Register a user provided function app with a static site
+     *
+     * <p>Description for Register a user provided function app with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -10635,7 +11227,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Register a user provided function app with a static site.
+     * Register a user provided function app with a static site
+     *
+     * <p>Description for Register a user provided function app with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -10666,7 +11260,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Register a user provided function app with a static site.
+     * Register a user provided function app with a static site
+     *
+     * <p>Description for Register a user provided function app with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -10699,7 +11295,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Register a user provided function app with a static site.
+     * Register a user provided function app with a static site
+     *
+     * <p>Description for Register a user provided function app with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -10728,7 +11326,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Register a user provided function app with a static site.
+     * Register a user provided function app with a static site
+     *
+     * <p>Description for Register a user provided function app with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -10754,7 +11354,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Register a user provided function app with a static site.
+     * Register a user provided function app with a static site
+     *
+     * <p>Description for Register a user provided function app with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -10785,7 +11387,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Register a user provided function app with a static site.
+     * Register a user provided function app with a static site
+     *
+     * <p>Description for Register a user provided function app with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -10813,7 +11417,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Register a user provided function app with a static site.
+     * Register a user provided function app with a static site
+     *
+     * <p>Description for Register a user provided function app with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -10838,7 +11444,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Register a user provided function app with a static site.
+     * Register a user provided function app with a static site
+     *
+     * <p>Description for Register a user provided function app with a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -10868,7 +11476,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Detach the user provided function app from the static site.
+     * Detach the user provided function app from the static site
+     *
+     * <p>Description for Detach the user provided function app from the static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -10922,7 +11532,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Detach the user provided function app from the static site.
+     * Detach the user provided function app from the static site
+     *
+     * <p>Description for Detach the user provided function app from the static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -10974,7 +11586,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Detach the user provided function app from the static site.
+     * Detach the user provided function app from the static site
+     *
+     * <p>Description for Detach the user provided function app from the static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -10992,7 +11606,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Detach the user provided function app from the static site.
+     * Detach the user provided function app from the static site
+     *
+     * <p>Description for Detach the user provided function app from the static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -11008,7 +11624,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Detach the user provided function app from the static site.
+     * Detach the user provided function app from the static site
+     *
+     * <p>Description for Detach the user provided function app from the static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -11028,7 +11646,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deploys zipped content to a static site.
+     * Deploys zipped content to a static site.
+     *
+     * <p>Description for Deploys zipped content to a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -11087,7 +11707,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deploys zipped content to a static site.
+     * Deploys zipped content to a static site.
+     *
+     * <p>Description for Deploys zipped content to a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -11147,7 +11769,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deploys zipped content to a static site.
+     * Deploys zipped content to a static site.
+     *
+     * <p>Description for Deploys zipped content to a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -11170,7 +11794,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deploys zipped content to a static site.
+     * Deploys zipped content to a static site.
+     *
+     * <p>Description for Deploys zipped content to a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -11198,7 +11824,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deploys zipped content to a static site.
+     * Deploys zipped content to a static site.
+     *
+     * <p>Description for Deploys zipped content to a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -11217,7 +11845,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deploys zipped content to a static site.
+     * Deploys zipped content to a static site.
+     *
+     * <p>Description for Deploys zipped content to a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -11241,7 +11871,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deploys zipped content to a static site.
+     * Deploys zipped content to a static site.
+     *
+     * <p>Description for Deploys zipped content to a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -11261,7 +11893,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deploys zipped content to a static site.
+     * Deploys zipped content to a static site.
+     *
+     * <p>Description for Deploys zipped content to a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -11286,7 +11920,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deploys zipped content to a static site.
+     * Deploys zipped content to a static site.
+     *
+     * <p>Description for Deploys zipped content to a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
@@ -11303,7 +11939,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
-     * Description for Deploys zipped content to a static site.
+     * Deploys zipped content to a static site.
+     *
+     * <p>Description for Deploys zipped content to a static site.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.

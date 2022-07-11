@@ -128,7 +128,9 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     }
 
     /**
-     * List private endpoint connection properties.
+     * List private endpoint connections
+     *
+     * <p>List private endpoint connection properties.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -177,7 +179,9 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     }
 
     /**
-     * List private endpoint connection properties.
+     * List private endpoint connections
+     *
+     * <p>List private endpoint connection properties.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -224,7 +228,9 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     }
 
     /**
-     * List private endpoint connection properties.
+     * List private endpoint connections
+     *
+     * <p>List private endpoint connection properties.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -239,7 +245,9 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     }
 
     /**
-     * List private endpoint connection properties.
+     * List private endpoint connections
+     *
+     * <p>List private endpoint connection properties.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -254,7 +262,9 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     }
 
     /**
-     * List private endpoint connection properties.
+     * List private endpoint connections
+     *
+     * <p>List private endpoint connection properties.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -271,7 +281,9 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     }
 
     /**
-     * Get private endpoint connection properties.
+     * Get private endpoint connection
+     *
+     * <p>Get private endpoint connection properties.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -328,7 +340,9 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     }
 
     /**
-     * Get private endpoint connection properties.
+     * Get private endpoint connection
+     *
+     * <p>Get private endpoint connection properties.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -383,7 +397,9 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     }
 
     /**
-     * Get private endpoint connection properties.
+     * Get private endpoint connection
+     *
+     * <p>Get private endpoint connection properties.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -401,7 +417,9 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     }
 
     /**
-     * Get private endpoint connection properties.
+     * Get private endpoint connection
+     *
+     * <p>Get private endpoint connection properties.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -418,7 +436,9 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     }
 
     /**
-     * Get private endpoint connection properties.
+     * Get private endpoint connection
+     *
+     * <p>Get private endpoint connection properties.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -436,7 +456,9 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     }
 
     /**
-     * Update the status of a private endpoint connection with the specified name.
+     * Update private endpoint connection
+     *
+     * <p>Update the status of a private endpoint connection with the specified name.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -506,7 +528,9 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     }
 
     /**
-     * Update the status of a private endpoint connection with the specified name.
+     * Update private endpoint connection
+     *
+     * <p>Update the status of a private endpoint connection with the specified name.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -575,7 +599,9 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     }
 
     /**
-     * Update the status of a private endpoint connection with the specified name.
+     * Update private endpoint connection
+     *
+     * <p>Update the status of a private endpoint connection with the specified name.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -606,7 +632,9 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     }
 
     /**
-     * Update the status of a private endpoint connection with the specified name.
+     * Update private endpoint connection
+     *
+     * <p>Update the status of a private endpoint connection with the specified name.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -640,7 +668,9 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     }
 
     /**
-     * Update the status of a private endpoint connection with the specified name.
+     * Update private endpoint connection
+     *
+     * <p>Update the status of a private endpoint connection with the specified name.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -663,7 +693,9 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     }
 
     /**
-     * Update the status of a private endpoint connection with the specified name.
+     * Update private endpoint connection
+     *
+     * <p>Update the status of a private endpoint connection with the specified name.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -688,7 +720,9 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     }
 
     /**
-     * Update the status of a private endpoint connection with the specified name.
+     * Update private endpoint connection
+     *
+     * <p>Update the status of a private endpoint connection with the specified name.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -712,7 +746,9 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     }
 
     /**
-     * Update the status of a private endpoint connection with the specified name.
+     * Update private endpoint connection
+     *
+     * <p>Update the status of a private endpoint connection with the specified name.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -738,7 +774,9 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     }
 
     /**
-     * Update the status of a private endpoint connection with the specified name.
+     * Update private endpoint connection
+     *
+     * <p>Update the status of a private endpoint connection with the specified name.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -760,7 +798,9 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     }
 
     /**
-     * Update the status of a private endpoint connection with the specified name.
+     * Update private endpoint connection
+     *
+     * <p>Update the status of a private endpoint connection with the specified name.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -785,7 +825,9 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     }
 
     /**
-     * Delete private endpoint connection with the specified name.
+     * Delete private endpoint connection
+     *
+     * <p>Delete private endpoint connection with the specified name.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -842,7 +884,9 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     }
 
     /**
-     * Delete private endpoint connection with the specified name.
+     * Delete private endpoint connection
+     *
+     * <p>Delete private endpoint connection with the specified name.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -897,7 +941,9 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     }
 
     /**
-     * Delete private endpoint connection with the specified name.
+     * Delete private endpoint connection
+     *
+     * <p>Delete private endpoint connection with the specified name.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -923,7 +969,9 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     }
 
     /**
-     * Delete private endpoint connection with the specified name.
+     * Delete private endpoint connection
+     *
+     * <p>Delete private endpoint connection with the specified name.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -951,7 +999,9 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     }
 
     /**
-     * Delete private endpoint connection with the specified name.
+     * Delete private endpoint connection
+     *
+     * <p>Delete private endpoint connection with the specified name.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -968,7 +1018,9 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     }
 
     /**
-     * Delete private endpoint connection with the specified name.
+     * Delete private endpoint connection
+     *
+     * <p>Delete private endpoint connection with the specified name.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -987,7 +1039,9 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     }
 
     /**
-     * Delete private endpoint connection with the specified name.
+     * Delete private endpoint connection
+     *
+     * <p>Delete private endpoint connection with the specified name.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -1006,7 +1060,9 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     }
 
     /**
-     * Delete private endpoint connection with the specified name.
+     * Delete private endpoint connection
+     *
+     * <p>Delete private endpoint connection with the specified name.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -1026,7 +1082,9 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     }
 
     /**
-     * Delete private endpoint connection with the specified name.
+     * Delete private endpoint connection
+     *
+     * <p>Delete private endpoint connection with the specified name.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -1043,7 +1101,9 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     }
 
     /**
-     * Delete private endpoint connection with the specified name.
+     * Delete private endpoint connection
+     *
+     * <p>Delete private endpoint connection with the specified name.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.

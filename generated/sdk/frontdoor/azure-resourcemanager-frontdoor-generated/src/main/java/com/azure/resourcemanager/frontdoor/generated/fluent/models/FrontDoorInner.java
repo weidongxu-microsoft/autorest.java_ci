@@ -53,8 +53,9 @@ public final class FrontDoorInner extends Resource {
     }
 
     /**
-     * Get the resourceState property: Resource status of the Front Door or Front Door SubResource. Resource status of
-     * the Front Door.
+     * Get the resourceState property: Resource status of the Front Door or Front Door SubResource.
+     *
+     * <p>Resource status of the Front Door.
      *
      * @return the resourceState value.
      */

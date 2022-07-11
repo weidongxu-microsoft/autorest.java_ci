@@ -11,7 +11,9 @@ import com.azure.core.util.Context;
 /** Resource collection API of IotHubResources. */
 public interface IotHubResources {
     /**
-     * Get the non-security related metadata of an IoT hub.
+     * Get the non-security related metadata of an IoT hub
+     *
+     * <p>Get the non-security related metadata of an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -24,7 +26,9 @@ public interface IotHubResources {
     IotHubDescription getByResourceGroup(String resourceGroupName, String resourceName);
 
     /**
-     * Get the non-security related metadata of an IoT hub.
+     * Get the non-security related metadata of an IoT hub
+     *
+     * <p>Get the non-security related metadata of an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -39,7 +43,9 @@ public interface IotHubResources {
         String resourceGroupName, String resourceName, Context context);
 
     /**
-     * Delete an IoT hub.
+     * Delete an IoT hub
+     *
+     * <p>Delete an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -52,7 +58,9 @@ public interface IotHubResources {
     IotHubDescription deleteByResourceGroup(String resourceGroupName, String resourceName);
 
     /**
-     * Delete an IoT hub.
+     * Delete an IoT hub
+     *
+     * <p>Delete an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -66,7 +74,9 @@ public interface IotHubResources {
     IotHubDescription delete(String resourceGroupName, String resourceName, Context context);
 
     /**
-     * Get all the IoT hubs in a subscription.
+     * Get all the IoT hubs in a subscription
+     *
+     * <p>Get all the IoT hubs in a subscription.
      *
      * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected
      *     by server.
@@ -76,7 +86,9 @@ public interface IotHubResources {
     PagedIterable<IotHubDescription> list();
 
     /**
-     * Get all the IoT hubs in a subscription.
+     * Get all the IoT hubs in a subscription
+     *
+     * <p>Get all the IoT hubs in a subscription.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -88,7 +100,9 @@ public interface IotHubResources {
     PagedIterable<IotHubDescription> list(Context context);
 
     /**
-     * Get all the IoT hubs in a resource group.
+     * Get all the IoT hubs in a resource group
+     *
+     * <p>Get all the IoT hubs in a resource group.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -100,7 +114,9 @@ public interface IotHubResources {
     PagedIterable<IotHubDescription> listByResourceGroup(String resourceGroupName);
 
     /**
-     * Get all the IoT hubs in a resource group.
+     * Get all the IoT hubs in a resource group
+     *
+     * <p>Get all the IoT hubs in a resource group.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param context The context to associate with this operation.
@@ -113,7 +129,9 @@ public interface IotHubResources {
     PagedIterable<IotHubDescription> listByResourceGroup(String resourceGroupName, Context context);
 
     /**
-     * Get the statistics from an IoT hub.
+     * Get the statistics from an IoT hub
+     *
+     * <p>Get the statistics from an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -126,7 +144,9 @@ public interface IotHubResources {
     RegistryStatistics getStats(String resourceGroupName, String resourceName);
 
     /**
-     * Get the statistics from an IoT hub.
+     * Get the statistics from an IoT hub
+     *
+     * <p>Get the statistics from an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -140,7 +160,9 @@ public interface IotHubResources {
     Response<RegistryStatistics> getStatsWithResponse(String resourceGroupName, String resourceName, Context context);
 
     /**
-     * Get the list of valid SKUs for an IoT hub.
+     * Get the list of valid SKUs for an IoT hub
+     *
+     * <p>Get the list of valid SKUs for an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -153,7 +175,9 @@ public interface IotHubResources {
     PagedIterable<IotHubSkuDescription> getValidSkus(String resourceGroupName, String resourceName);
 
     /**
-     * Get the list of valid SKUs for an IoT hub.
+     * Get the list of valid SKUs for an IoT hub
+     *
+     * <p>Get the list of valid SKUs for an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -167,7 +191,9 @@ public interface IotHubResources {
     PagedIterable<IotHubSkuDescription> getValidSkus(String resourceGroupName, String resourceName, Context context);
 
     /**
-     * Get a list of the consumer groups in the Event Hub-compatible device-to-cloud endpoint in an IoT hub.
+     * Get a list of the consumer groups in the Event Hub-compatible device-to-cloud endpoint in an IoT hub
+     *
+     * <p>Get a list of the consumer groups in the Event Hub-compatible device-to-cloud endpoint in an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -183,7 +209,9 @@ public interface IotHubResources {
         String resourceGroupName, String resourceName, String eventHubEndpointName);
 
     /**
-     * Get a list of the consumer groups in the Event Hub-compatible device-to-cloud endpoint in an IoT hub.
+     * Get a list of the consumer groups in the Event Hub-compatible device-to-cloud endpoint in an IoT hub
+     *
+     * <p>Get a list of the consumer groups in the Event Hub-compatible device-to-cloud endpoint in an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -200,7 +228,9 @@ public interface IotHubResources {
         String resourceGroupName, String resourceName, String eventHubEndpointName, Context context);
 
     /**
-     * Get a consumer group from the Event Hub-compatible device-to-cloud endpoint for an IoT hub.
+     * Get a consumer group from the Event Hub-compatible device-to-cloud endpoint for an IoT hub
+     *
+     * <p>Get a consumer group from the Event Hub-compatible device-to-cloud endpoint for an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -216,7 +246,9 @@ public interface IotHubResources {
         String resourceGroupName, String resourceName, String eventHubEndpointName, String name);
 
     /**
-     * Get a consumer group from the Event Hub-compatible device-to-cloud endpoint for an IoT hub.
+     * Get a consumer group from the Event Hub-compatible device-to-cloud endpoint for an IoT hub
+     *
+     * <p>Get a consumer group from the Event Hub-compatible device-to-cloud endpoint for an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -234,7 +266,9 @@ public interface IotHubResources {
         String resourceGroupName, String resourceName, String eventHubEndpointName, String name, Context context);
 
     /**
-     * Delete a consumer group from an Event Hub-compatible endpoint in an IoT hub.
+     * Delete a consumer group from an Event Hub-compatible endpoint in an IoT hub
+     *
+     * <p>Delete a consumer group from an Event Hub-compatible endpoint in an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -249,7 +283,9 @@ public interface IotHubResources {
         String resourceGroupName, String resourceName, String eventHubEndpointName, String name);
 
     /**
-     * Delete a consumer group from an Event Hub-compatible endpoint in an IoT hub.
+     * Delete a consumer group from an Event Hub-compatible endpoint in an IoT hub
+     *
+     * <p>Delete a consumer group from an Event Hub-compatible endpoint in an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -267,6 +303,9 @@ public interface IotHubResources {
 
     /**
      * Get a list of all the jobs in an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry
+     *
+     * <p>Get a list of all the jobs in an IoT hub. For more information, see:
      * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
@@ -281,6 +320,9 @@ public interface IotHubResources {
 
     /**
      * Get a list of all the jobs in an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry
+     *
+     * <p>Get a list of all the jobs in an IoT hub. For more information, see:
      * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
@@ -296,6 +338,9 @@ public interface IotHubResources {
 
     /**
      * Get the details of a job from an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry
+     *
+     * <p>Get the details of a job from an IoT hub. For more information, see:
      * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
@@ -311,6 +356,9 @@ public interface IotHubResources {
 
     /**
      * Get the details of a job from an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry
+     *
+     * <p>Get the details of a job from an IoT hub. For more information, see:
      * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
@@ -327,7 +375,9 @@ public interface IotHubResources {
         String resourceGroupName, String resourceName, String jobId, Context context);
 
     /**
-     * Get the quota metrics for an IoT hub.
+     * Get the quota metrics for an IoT hub
+     *
+     * <p>Get the quota metrics for an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -340,7 +390,9 @@ public interface IotHubResources {
     PagedIterable<IotHubQuotaMetricInfo> getQuotaMetrics(String resourceGroupName, String resourceName);
 
     /**
-     * Get the quota metrics for an IoT hub.
+     * Get the quota metrics for an IoT hub
+     *
+     * <p>Get the quota metrics for an IoT hub.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -355,7 +407,9 @@ public interface IotHubResources {
         String resourceGroupName, String resourceName, Context context);
 
     /**
-     * Get the health for routing endpoints.
+     * Get the health for routing endpoints
+     *
+     * <p>Get the health for routing endpoints.
      *
      * @param resourceGroupName The resourceGroupName parameter.
      * @param iotHubName The iotHubName parameter.
@@ -368,7 +422,9 @@ public interface IotHubResources {
     PagedIterable<EndpointHealthData> getEndpointHealth(String resourceGroupName, String iotHubName);
 
     /**
-     * Get the health for routing endpoints.
+     * Get the health for routing endpoints
+     *
+     * <p>Get the health for routing endpoints.
      *
      * @param resourceGroupName The resourceGroupName parameter.
      * @param iotHubName The iotHubName parameter.
@@ -382,7 +438,9 @@ public interface IotHubResources {
     PagedIterable<EndpointHealthData> getEndpointHealth(String resourceGroupName, String iotHubName, Context context);
 
     /**
-     * Check if an IoT hub name is available.
+     * Check if an IoT hub name is available
+     *
+     * <p>Check if an IoT hub name is available.
      *
      * @param operationInputs Set the name parameter in the OperationInputs structure to the name of the IoT hub to
      *     check.
@@ -395,7 +453,9 @@ public interface IotHubResources {
     IotHubNameAvailabilityInfo checkNameAvailability(OperationInputs operationInputs);
 
     /**
-     * Check if an IoT hub name is available.
+     * Check if an IoT hub name is available
+     *
+     * <p>Check if an IoT hub name is available.
      *
      * @param operationInputs Set the name parameter in the OperationInputs structure to the name of the IoT hub to
      *     check.
@@ -410,7 +470,9 @@ public interface IotHubResources {
         OperationInputs operationInputs, Context context);
 
     /**
-     * Test all routes configured in this Iot Hub.
+     * Test all routes
+     *
+     * <p>Test all routes configured in this Iot Hub.
      *
      * @param iotHubName IotHub to be tested.
      * @param resourceGroupName resource group which Iot Hub belongs to.
@@ -424,7 +486,9 @@ public interface IotHubResources {
     TestAllRoutesResult testAllRoutes(String iotHubName, String resourceGroupName, TestAllRoutesInput input);
 
     /**
-     * Test all routes configured in this Iot Hub.
+     * Test all routes
+     *
+     * <p>Test all routes configured in this Iot Hub.
      *
      * @param iotHubName IotHub to be tested.
      * @param resourceGroupName resource group which Iot Hub belongs to.
@@ -440,7 +504,9 @@ public interface IotHubResources {
         String iotHubName, String resourceGroupName, TestAllRoutesInput input, Context context);
 
     /**
-     * Test the new route for this Iot Hub.
+     * Test the new route
+     *
+     * <p>Test the new route for this Iot Hub.
      *
      * @param iotHubName IotHub to be tested.
      * @param resourceGroupName resource group which Iot Hub belongs to.
@@ -454,7 +520,9 @@ public interface IotHubResources {
     TestRouteResult testRoute(String iotHubName, String resourceGroupName, TestRouteInput input);
 
     /**
-     * Test the new route for this Iot Hub.
+     * Test the new route
+     *
+     * <p>Test the new route for this Iot Hub.
      *
      * @param iotHubName IotHub to be tested.
      * @param resourceGroupName resource group which Iot Hub belongs to.
@@ -471,6 +539,9 @@ public interface IotHubResources {
 
     /**
      * Get the security metadata for an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security
+     *
+     * <p>Get the security metadata for an IoT hub. For more information, see:
      * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
@@ -485,6 +556,9 @@ public interface IotHubResources {
 
     /**
      * Get the security metadata for an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security
+     *
+     * <p>Get the security metadata for an IoT hub. For more information, see:
      * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
@@ -501,6 +575,9 @@ public interface IotHubResources {
 
     /**
      * Get a shared access policy by name from an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security
+     *
+     * <p>Get a shared access policy by name from an IoT hub. For more information, see:
      * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
@@ -517,6 +594,9 @@ public interface IotHubResources {
 
     /**
      * Get a shared access policy by name from an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security
+     *
+     * <p>Get a shared access policy by name from an IoT hub. For more information, see:
      * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
@@ -535,6 +615,10 @@ public interface IotHubResources {
     /**
      * Exports all the device identities in the IoT hub identity registry to an Azure Storage blob container. For more
      * information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities
+     *
+     * <p>Exports all the device identities in the IoT hub identity registry to an Azure Storage blob container. For
+     * more information, see:
      * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
@@ -552,6 +636,10 @@ public interface IotHubResources {
     /**
      * Exports all the device identities in the IoT hub identity registry to an Azure Storage blob container. For more
      * information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities
+     *
+     * <p>Exports all the device identities in the IoT hub identity registry to an Azure Storage blob container. For
+     * more information, see:
      * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
@@ -570,6 +658,10 @@ public interface IotHubResources {
     /**
      * Import, update, or delete device identities in the IoT hub identity registry from a blob. For more information,
      * see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities
+     *
+     * <p>Import, update, or delete device identities in the IoT hub identity registry from a blob. For more
+     * information, see:
      * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
@@ -587,6 +679,10 @@ public interface IotHubResources {
     /**
      * Import, update, or delete device identities in the IoT hub identity registry from a blob. For more information,
      * see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities
+     *
+     * <p>Import, update, or delete device identities in the IoT hub identity registry from a blob. For more
+     * information, see:
      * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities.
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
@@ -603,7 +699,9 @@ public interface IotHubResources {
         String resourceGroupName, String resourceName, ImportDevicesRequest importDevicesParameters, Context context);
 
     /**
-     * Get the non-security related metadata of an IoT hub.
+     * Get the non-security related metadata of an IoT hub
+     *
+     * <p>Get the non-security related metadata of an IoT hub.
      *
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -615,7 +713,9 @@ public interface IotHubResources {
     IotHubDescription getById(String id);
 
     /**
-     * Get the non-security related metadata of an IoT hub.
+     * Get the non-security related metadata of an IoT hub
+     *
+     * <p>Get the non-security related metadata of an IoT hub.
      *
      * @param id the resource ID.
      * @param context The context to associate with this operation.
@@ -628,7 +728,9 @@ public interface IotHubResources {
     Response<IotHubDescription> getByIdWithResponse(String id, Context context);
 
     /**
-     * Get a consumer group from the Event Hub-compatible device-to-cloud endpoint for an IoT hub.
+     * Get a consumer group from the Event Hub-compatible device-to-cloud endpoint for an IoT hub
+     *
+     * <p>Get a consumer group from the Event Hub-compatible device-to-cloud endpoint for an IoT hub.
      *
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -641,7 +743,9 @@ public interface IotHubResources {
     EventHubConsumerGroupInfo getEventHubConsumerGroupById(String id);
 
     /**
-     * Get a consumer group from the Event Hub-compatible device-to-cloud endpoint for an IoT hub.
+     * Get a consumer group from the Event Hub-compatible device-to-cloud endpoint for an IoT hub
+     *
+     * <p>Get a consumer group from the Event Hub-compatible device-to-cloud endpoint for an IoT hub.
      *
      * @param id the resource ID.
      * @param context The context to associate with this operation.
@@ -655,7 +759,9 @@ public interface IotHubResources {
     Response<EventHubConsumerGroupInfo> getEventHubConsumerGroupByIdWithResponse(String id, Context context);
 
     /**
-     * Delete an IoT hub.
+     * Delete an IoT hub
+     *
+     * <p>Delete an IoT hub.
      *
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -667,7 +773,9 @@ public interface IotHubResources {
     IotHubDescription deleteById(String id);
 
     /**
-     * Delete an IoT hub.
+     * Delete an IoT hub
+     *
+     * <p>Delete an IoT hub.
      *
      * @param id the resource ID.
      * @param context The context to associate with this operation.
@@ -680,7 +788,9 @@ public interface IotHubResources {
     IotHubDescription deleteByIdWithResponse(String id, Context context);
 
     /**
-     * Delete a consumer group from an Event Hub-compatible endpoint in an IoT hub.
+     * Delete a consumer group from an Event Hub-compatible endpoint in an IoT hub
+     *
+     * <p>Delete a consumer group from an Event Hub-compatible endpoint in an IoT hub.
      *
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -691,7 +801,9 @@ public interface IotHubResources {
     void deleteEventHubConsumerGroupById(String id);
 
     /**
-     * Delete a consumer group from an Event Hub-compatible endpoint in an IoT hub.
+     * Delete a consumer group from an Event Hub-compatible endpoint in an IoT hub
+     *
+     * <p>Delete a consumer group from an Event Hub-compatible endpoint in an IoT hub.
      *
      * @param id the resource ID.
      * @param context The context to associate with this operation.

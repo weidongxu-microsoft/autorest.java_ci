@@ -29,7 +29,9 @@ public final class WhatIfOperationResultInner {
     private WhatIfOperationProperties innerProperties;
 
     /*
-     * Error Response Error when What-If operation fails.
+     * Error Response
+     *
+     * Error when What-If operation fails.
      */
     @JsonProperty(value = "error")
     private ManagementError error;
@@ -64,7 +66,9 @@ public final class WhatIfOperationResultInner {
     }
 
     /**
-     * Get the error property: Error Response Error when What-If operation fails.
+     * Get the error property: Error Response
+     *
+     * <p>Error when What-If operation fails.
      *
      * @return the error value.
      */
@@ -73,7 +77,9 @@ public final class WhatIfOperationResultInner {
     }
 
     /**
-     * Set the error property: Error Response Error when What-If operation fails.
+     * Set the error property: Error Response
+     *
+     * <p>Error when What-If operation fails.
      *
      * @param error the error value to set.
      * @return the WhatIfOperationResultInner object itself.

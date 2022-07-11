@@ -175,7 +175,9 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Get all Kubernetes Environments for a subscription.
+     * Get all Kubernetes Environments for a subscription.
+     *
+     * <p>Description for Get all Kubernetes Environments for a subscription.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -220,7 +222,9 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Get all Kubernetes Environments for a subscription.
+     * Get all Kubernetes Environments for a subscription.
+     *
+     * <p>Description for Get all Kubernetes Environments for a subscription.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -264,7 +268,9 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Get all Kubernetes Environments for a subscription.
+     * Get all Kubernetes Environments for a subscription.
+     *
+     * <p>Description for Get all Kubernetes Environments for a subscription.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -277,7 +283,9 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Get all Kubernetes Environments for a subscription.
+     * Get all Kubernetes Environments for a subscription.
+     *
+     * <p>Description for Get all Kubernetes Environments for a subscription.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -292,7 +300,9 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Get all Kubernetes Environments for a subscription.
+     * Get all Kubernetes Environments for a subscription.
+     *
+     * <p>Description for Get all Kubernetes Environments for a subscription.
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -304,7 +314,9 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Get all Kubernetes Environments for a subscription.
+     * Get all Kubernetes Environments for a subscription.
+     *
+     * <p>Description for Get all Kubernetes Environments for a subscription.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -318,7 +330,9 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Get all the Kubernetes Environments in a resource group.
+     * Get all the Kubernetes Environments in a resource group.
+     *
+     * <p>Description for Get all the Kubernetes Environments in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -370,7 +384,9 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Get all the Kubernetes Environments in a resource group.
+     * Get all the Kubernetes Environments in a resource group.
+     *
+     * <p>Description for Get all the Kubernetes Environments in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param context The context to associate with this operation.
@@ -421,7 +437,9 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Get all the Kubernetes Environments in a resource group.
+     * Get all the Kubernetes Environments in a resource group.
+     *
+     * <p>Description for Get all the Kubernetes Environments in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -437,7 +455,9 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Get all the Kubernetes Environments in a resource group.
+     * Get all the Kubernetes Environments in a resource group.
+     *
+     * <p>Description for Get all the Kubernetes Environments in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param context The context to associate with this operation.
@@ -454,7 +474,9 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Get all the Kubernetes Environments in a resource group.
+     * Get all the Kubernetes Environments in a resource group.
+     *
+     * <p>Description for Get all the Kubernetes Environments in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -468,7 +490,9 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Get all the Kubernetes Environments in a resource group.
+     * Get all the Kubernetes Environments in a resource group.
+     *
+     * <p>Description for Get all the Kubernetes Environments in a resource group.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param context The context to associate with this operation.
@@ -483,7 +507,9 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Get the properties of a Kubernetes Environment.
+     * Get the properties of a Kubernetes Environment.
+     *
+     * <p>Description for Get the properties of a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -532,7 +558,9 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Get the properties of a Kubernetes Environment.
+     * Get the properties of a Kubernetes Environment.
+     *
+     * <p>Description for Get the properties of a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -579,7 +607,9 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Get the properties of a Kubernetes Environment.
+     * Get the properties of a Kubernetes Environment.
+     *
+     * <p>Description for Get the properties of a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -596,7 +626,9 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Get the properties of a Kubernetes Environment.
+     * Get the properties of a Kubernetes Environment.
+     *
+     * <p>Description for Get the properties of a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -611,7 +643,9 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Get the properties of a Kubernetes Environment.
+     * Get the properties of a Kubernetes Environment.
+     *
+     * <p>Description for Get the properties of a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -628,7 +662,9 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Creates or updates a Kubernetes Environment.
+     * Creates or updates a Kubernetes Environment.
+     *
+     * <p>Description for Creates or updates a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -686,7 +722,9 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Creates or updates a Kubernetes Environment.
+     * Creates or updates a Kubernetes Environment.
+     *
+     * <p>Description for Creates or updates a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -742,7 +780,9 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Creates or updates a Kubernetes Environment.
+     * Creates or updates a Kubernetes Environment.
+     *
+     * <p>Description for Creates or updates a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -769,7 +809,9 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Creates or updates a Kubernetes Environment.
+     * Creates or updates a Kubernetes Environment.
+     *
+     * <p>Description for Creates or updates a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -794,7 +836,9 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Creates or updates a Kubernetes Environment.
+     * Creates or updates a Kubernetes Environment.
+     *
+     * <p>Description for Creates or updates a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -812,7 +856,9 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Creates or updates a Kubernetes Environment.
+     * Creates or updates a Kubernetes Environment.
+     *
+     * <p>Description for Creates or updates a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -831,7 +877,9 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Creates or updates a Kubernetes Environment.
+     * Creates or updates a Kubernetes Environment.
+     *
+     * <p>Description for Creates or updates a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -851,7 +899,9 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Creates or updates a Kubernetes Environment.
+     * Creates or updates a Kubernetes Environment.
+     *
+     * <p>Description for Creates or updates a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -872,7 +922,9 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Creates or updates a Kubernetes Environment.
+     * Creates or updates a Kubernetes Environment.
+     *
+     * <p>Description for Creates or updates a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -889,7 +941,9 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Creates or updates a Kubernetes Environment.
+     * Creates or updates a Kubernetes Environment.
+     *
+     * <p>Description for Creates or updates a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -907,7 +961,9 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Delete a Kubernetes Environment.
+     * Delete a Kubernetes Environment.
+     *
+     * <p>Description for Delete a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -954,7 +1010,9 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Delete a Kubernetes Environment.
+     * Delete a Kubernetes Environment.
+     *
+     * <p>Description for Delete a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -1000,7 +1058,9 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Delete a Kubernetes Environment.
+     * Delete a Kubernetes Environment.
+     *
+     * <p>Description for Delete a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -1019,7 +1079,9 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Delete a Kubernetes Environment.
+     * Delete a Kubernetes Environment.
+     *
+     * <p>Description for Delete a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -1040,7 +1102,9 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Delete a Kubernetes Environment.
+     * Delete a Kubernetes Environment.
+     *
+     * <p>Description for Delete a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -1055,7 +1119,9 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Delete a Kubernetes Environment.
+     * Delete a Kubernetes Environment.
+     *
+     * <p>Description for Delete a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -1071,7 +1137,9 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Delete a Kubernetes Environment.
+     * Delete a Kubernetes Environment.
+     *
+     * <p>Description for Delete a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -1086,7 +1154,9 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Delete a Kubernetes Environment.
+     * Delete a Kubernetes Environment.
+     *
+     * <p>Description for Delete a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -1102,7 +1172,9 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Delete a Kubernetes Environment.
+     * Delete a Kubernetes Environment.
+     *
+     * <p>Description for Delete a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -1116,7 +1188,9 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Delete a Kubernetes Environment.
+     * Delete a Kubernetes Environment.
+     *
+     * <p>Description for Delete a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -1131,7 +1205,9 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Creates or updates a Kubernetes Environment.
+     * Creates or updates a Kubernetes Environment.
+     *
+     * <p>Description for Creates or updates a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -1189,7 +1265,9 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Creates or updates a Kubernetes Environment.
+     * Creates or updates a Kubernetes Environment.
+     *
+     * <p>Description for Creates or updates a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -1245,7 +1323,9 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Creates or updates a Kubernetes Environment.
+     * Creates or updates a Kubernetes Environment.
+     *
+     * <p>Description for Creates or updates a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -1264,7 +1344,9 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Creates or updates a Kubernetes Environment.
+     * Creates or updates a Kubernetes Environment.
+     *
+     * <p>Description for Creates or updates a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
@@ -1281,7 +1363,9 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * Description for Creates or updates a Kubernetes Environment.
+     * Creates or updates a Kubernetes Environment.
+     *
+     * <p>Description for Creates or updates a Kubernetes Environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.

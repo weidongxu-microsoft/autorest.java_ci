@@ -11,7 +11,9 @@ import java.util.List;
 /** Resource collection API of Globals. */
 public interface Globals {
     /**
-     * Description for Get deleted app for a subscription.
+     * Get deleted app for a subscription.
+     *
+     * <p>Description for Get deleted app for a subscription.
      *
      * @param deletedSiteId The numeric ID of the deleted app, e.g. 12345.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -23,7 +25,9 @@ public interface Globals {
     DeletedSite getDeletedWebApp(String deletedSiteId);
 
     /**
-     * Description for Get deleted app for a subscription.
+     * Get deleted app for a subscription.
+     *
+     * <p>Description for Get deleted app for a subscription.
      *
      * @param deletedSiteId The numeric ID of the deleted app, e.g. 12345.
      * @param context The context to associate with this operation.
@@ -36,7 +40,9 @@ public interface Globals {
     Response<DeletedSite> getDeletedWebAppWithResponse(String deletedSiteId, Context context);
 
     /**
-     * Description for Get all deleted apps for a subscription.
+     * Get all deleted apps for a subscription.
+     *
+     * <p>Description for Get all deleted apps for a subscription.
      *
      * @param deletedSiteId The numeric ID of the deleted app, e.g. 12345.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -48,7 +54,9 @@ public interface Globals {
     List<Snapshot> getDeletedWebAppSnapshots(String deletedSiteId);
 
     /**
-     * Description for Get all deleted apps for a subscription.
+     * Get all deleted apps for a subscription.
+     *
+     * <p>Description for Get all deleted apps for a subscription.
      *
      * @param deletedSiteId The numeric ID of the deleted app, e.g. 12345.
      * @param context The context to associate with this operation.
@@ -61,7 +69,9 @@ public interface Globals {
     Response<List<Snapshot>> getDeletedWebAppSnapshotsWithResponse(String deletedSiteId, Context context);
 
     /**
-     * Description for Gets an operation in a subscription and given region.
+     * Gets an operation in a subscription and given region
+     *
+     * <p>Description for Gets an operation in a subscription and given region.
      *
      * @param location Location name.
      * @param operationId Operation Id.
@@ -73,7 +83,9 @@ public interface Globals {
     void getSubscriptionOperationWithAsyncResponse(String location, String operationId);
 
     /**
-     * Description for Gets an operation in a subscription and given region.
+     * Gets an operation in a subscription and given region
+     *
+     * <p>Description for Gets an operation in a subscription and given region.
      *
      * @param location Location name.
      * @param operationId Operation Id.

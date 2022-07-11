@@ -24,7 +24,9 @@ import com.azure.resourcemanager.resources.generated.models.ScopedDeploymentWhat
 /** An instance of this class provides access to all the operations defined in DeploymentsClient. */
 public interface DeploymentsClient {
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
      * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
      * the status of the process. While the process is running, a call to the URI in the Location header returns a
@@ -42,7 +44,9 @@ public interface DeploymentsClient {
     SyncPoller<PollResult<Void>, Void> beginDeleteAtScope(String scope, String deploymentName);
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
      * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
      * the status of the process. While the process is running, a call to the URI in the Location header returns a
@@ -61,7 +65,9 @@ public interface DeploymentsClient {
     SyncPoller<PollResult<Void>, Void> beginDeleteAtScope(String scope, String deploymentName, Context context);
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
      * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
      * the status of the process. While the process is running, a call to the URI in the Location header returns a
@@ -78,7 +84,9 @@ public interface DeploymentsClient {
     void deleteAtScope(String scope, String deploymentName);
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
      * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
      * the status of the process. While the process is running, a call to the URI in the Location header returns a
@@ -123,7 +131,9 @@ public interface DeploymentsClient {
     Response<Boolean> checkExistenceAtScopeWithResponse(String scope, String deploymentName, Context context);
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources at a given scope.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param scope The resource scope.
      * @param deploymentName The name of the deployment.
@@ -138,7 +148,9 @@ public interface DeploymentsClient {
         String scope, String deploymentName, Deployment parameters);
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources at a given scope.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param scope The resource scope.
      * @param deploymentName The name of the deployment.
@@ -154,7 +166,9 @@ public interface DeploymentsClient {
         String scope, String deploymentName, Deployment parameters, Context context);
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources at a given scope.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param scope The resource scope.
      * @param deploymentName The name of the deployment.
@@ -168,7 +182,9 @@ public interface DeploymentsClient {
     DeploymentExtendedInner createOrUpdateAtScope(String scope, String deploymentName, Deployment parameters);
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources at a given scope.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param scope The resource scope.
      * @param deploymentName The name of the deployment.
@@ -211,7 +227,9 @@ public interface DeploymentsClient {
     Response<DeploymentExtendedInner> getAtScopeWithResponse(String scope, String deploymentName, Context context);
 
     /**
-     * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
+     * Cancels a currently running template deployment.
+     *
+     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
      * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
      * template deployment and leaves the resources partially deployed.
      *
@@ -225,7 +243,9 @@ public interface DeploymentsClient {
     void cancelAtScope(String scope, String deploymentName);
 
     /**
-     * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
+     * Cancels a currently running template deployment.
+     *
+     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
      * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
      * template deployment and leaves the resources partially deployed.
      *
@@ -362,7 +382,9 @@ public interface DeploymentsClient {
     PagedIterable<DeploymentExtendedInner> listAtScope(String scope, String filter, Integer top, Context context);
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
      * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
      * the status of the process. While the process is running, a call to the URI in the Location header returns a
@@ -379,7 +401,9 @@ public interface DeploymentsClient {
     SyncPoller<PollResult<Void>, Void> beginDeleteAtTenantScope(String deploymentName);
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
      * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
      * the status of the process. While the process is running, a call to the URI in the Location header returns a
@@ -397,7 +421,9 @@ public interface DeploymentsClient {
     SyncPoller<PollResult<Void>, Void> beginDeleteAtTenantScope(String deploymentName, Context context);
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
      * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
      * the status of the process. While the process is running, a call to the URI in the Location header returns a
@@ -413,7 +439,9 @@ public interface DeploymentsClient {
     void deleteAtTenantScope(String deploymentName);
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
      * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
      * the status of the process. While the process is running, a call to the URI in the Location header returns a
@@ -455,7 +483,9 @@ public interface DeploymentsClient {
     Response<Boolean> checkExistenceAtTenantScopeWithResponse(String deploymentName, Context context);
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources at tenant scope.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param deploymentName The name of the deployment.
      * @param parameters Additional parameters supplied to the operation.
@@ -469,7 +499,9 @@ public interface DeploymentsClient {
         String deploymentName, ScopedDeployment parameters);
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources at tenant scope.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param deploymentName The name of the deployment.
      * @param parameters Additional parameters supplied to the operation.
@@ -484,7 +516,9 @@ public interface DeploymentsClient {
         String deploymentName, ScopedDeployment parameters, Context context);
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources at tenant scope.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param deploymentName The name of the deployment.
      * @param parameters Additional parameters supplied to the operation.
@@ -497,7 +531,9 @@ public interface DeploymentsClient {
     DeploymentExtendedInner createOrUpdateAtTenantScope(String deploymentName, ScopedDeployment parameters);
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources at tenant scope.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param deploymentName The name of the deployment.
      * @param parameters Additional parameters supplied to the operation.
@@ -537,7 +573,9 @@ public interface DeploymentsClient {
     Response<DeploymentExtendedInner> getAtTenantScopeWithResponse(String deploymentName, Context context);
 
     /**
-     * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
+     * Cancels a currently running template deployment.
+     *
+     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
      * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
      * template deployment and leaves the resources partially deployed.
      *
@@ -550,7 +588,9 @@ public interface DeploymentsClient {
     void cancelAtTenantScope(String deploymentName);
 
     /**
-     * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
+     * Cancels a currently running template deployment.
+     *
+     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
      * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
      * template deployment and leaves the resources partially deployed.
      *
@@ -734,7 +774,9 @@ public interface DeploymentsClient {
     PagedIterable<DeploymentExtendedInner> listAtTenantScope(String filter, Integer top, Context context);
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
      * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
      * the status of the process. While the process is running, a call to the URI in the Location header returns a
@@ -752,7 +794,9 @@ public interface DeploymentsClient {
     SyncPoller<PollResult<Void>, Void> beginDeleteAtManagementGroupScope(String groupId, String deploymentName);
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
      * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
      * the status of the process. While the process is running, a call to the URI in the Location header returns a
@@ -772,7 +816,9 @@ public interface DeploymentsClient {
         String groupId, String deploymentName, Context context);
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
      * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
      * the status of the process. While the process is running, a call to the URI in the Location header returns a
@@ -789,7 +835,9 @@ public interface DeploymentsClient {
     void deleteAtManagementGroupScope(String groupId, String deploymentName);
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
      * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
      * the status of the process. While the process is running, a call to the URI in the Location header returns a
@@ -835,7 +883,9 @@ public interface DeploymentsClient {
         String groupId, String deploymentName, Context context);
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources at management group scope.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param groupId The management group ID.
      * @param deploymentName The name of the deployment.
@@ -850,7 +900,9 @@ public interface DeploymentsClient {
         String groupId, String deploymentName, ScopedDeployment parameters);
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources at management group scope.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param groupId The management group ID.
      * @param deploymentName The name of the deployment.
@@ -866,7 +918,9 @@ public interface DeploymentsClient {
         String groupId, String deploymentName, ScopedDeployment parameters, Context context);
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources at management group scope.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param groupId The management group ID.
      * @param deploymentName The name of the deployment.
@@ -881,7 +935,9 @@ public interface DeploymentsClient {
         String groupId, String deploymentName, ScopedDeployment parameters);
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources at management group scope.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param groupId The management group ID.
      * @param deploymentName The name of the deployment.
@@ -925,7 +981,9 @@ public interface DeploymentsClient {
         String groupId, String deploymentName, Context context);
 
     /**
-     * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
+     * Cancels a currently running template deployment.
+     *
+     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
      * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
      * template deployment and leaves the resources partially deployed.
      *
@@ -939,7 +997,9 @@ public interface DeploymentsClient {
     void cancelAtManagementGroupScope(String groupId, String deploymentName);
 
     /**
-     * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
+     * Cancels a currently running template deployment.
+     *
+     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
      * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
      * template deployment and leaves the resources partially deployed.
      *
@@ -1141,7 +1201,9 @@ public interface DeploymentsClient {
         String groupId, String filter, Integer top, Context context);
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
      * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
      * the status of the process. While the process is running, a call to the URI in the Location header returns a
@@ -1158,7 +1220,9 @@ public interface DeploymentsClient {
     SyncPoller<PollResult<Void>, Void> beginDeleteAtSubscriptionScope(String deploymentName);
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
      * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
      * the status of the process. While the process is running, a call to the URI in the Location header returns a
@@ -1176,7 +1240,9 @@ public interface DeploymentsClient {
     SyncPoller<PollResult<Void>, Void> beginDeleteAtSubscriptionScope(String deploymentName, Context context);
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
      * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
      * the status of the process. While the process is running, a call to the URI in the Location header returns a
@@ -1192,7 +1258,9 @@ public interface DeploymentsClient {
     void deleteAtSubscriptionScope(String deploymentName);
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. This is an asynchronous operation that returns a status of 202 until the
      * template deployment is successfully deleted. The Location response header contains the URI that is used to obtain
      * the status of the process. While the process is running, a call to the URI in the Location header returns a
@@ -1234,7 +1302,9 @@ public interface DeploymentsClient {
     Response<Boolean> checkExistenceAtSubscriptionScopeWithResponse(String deploymentName, Context context);
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources at subscription scope.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param deploymentName The name of the deployment.
      * @param parameters Additional parameters supplied to the operation.
@@ -1248,7 +1318,9 @@ public interface DeploymentsClient {
         String deploymentName, Deployment parameters);
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources at subscription scope.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param deploymentName The name of the deployment.
      * @param parameters Additional parameters supplied to the operation.
@@ -1263,7 +1335,9 @@ public interface DeploymentsClient {
         String deploymentName, Deployment parameters, Context context);
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources at subscription scope.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param deploymentName The name of the deployment.
      * @param parameters Additional parameters supplied to the operation.
@@ -1276,7 +1350,9 @@ public interface DeploymentsClient {
     DeploymentExtendedInner createOrUpdateAtSubscriptionScope(String deploymentName, Deployment parameters);
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources at subscription scope.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param deploymentName The name of the deployment.
      * @param parameters Additional parameters supplied to the operation.
@@ -1316,7 +1392,9 @@ public interface DeploymentsClient {
     Response<DeploymentExtendedInner> getAtSubscriptionScopeWithResponse(String deploymentName, Context context);
 
     /**
-     * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
+     * Cancels a currently running template deployment.
+     *
+     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
      * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
      * template deployment and leaves the resources partially deployed.
      *
@@ -1329,7 +1407,9 @@ public interface DeploymentsClient {
     void cancelAtSubscriptionScope(String deploymentName);
 
     /**
-     * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
+     * Cancels a currently running template deployment.
+     *
+     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
      * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
      * template deployment and leaves the resources partially deployed.
      *
@@ -1513,7 +1593,9 @@ public interface DeploymentsClient {
     PagedIterable<DeploymentExtendedInner> list(String filter, Integer top, Context context);
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. Deleting a template deployment does not affect the state of the resource group.
      * This is an asynchronous operation that returns a status of 202 until the template deployment is successfully
      * deleted. The Location response header contains the URI that is used to obtain the status of the process. While
@@ -1533,7 +1615,9 @@ public interface DeploymentsClient {
     SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String deploymentName);
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. Deleting a template deployment does not affect the state of the resource group.
      * This is an asynchronous operation that returns a status of 202 until the template deployment is successfully
      * deleted. The Location response header contains the URI that is used to obtain the status of the process. While
@@ -1554,7 +1638,9 @@ public interface DeploymentsClient {
     SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String deploymentName, Context context);
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. Deleting a template deployment does not affect the state of the resource group.
      * This is an asynchronous operation that returns a status of 202 until the template deployment is successfully
      * deleted. The Location response header contains the URI that is used to obtain the status of the process. While
@@ -1573,7 +1659,9 @@ public interface DeploymentsClient {
     void delete(String resourceGroupName, String deploymentName);
 
     /**
-     * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
+     * Deletes a deployment from the deployment history.
+     *
+     * <p>A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the
      * associated deployment operations. Deleting a template deployment does not affect the state of the resource group.
      * This is an asynchronous operation that returns a status of 202 until the template deployment is successfully
      * deleted. The Location response header contains the URI that is used to obtain the status of the process. While
@@ -1622,7 +1710,9 @@ public interface DeploymentsClient {
     Response<Boolean> checkExistenceWithResponse(String resourceGroupName, String deploymentName, Context context);
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources to a resource group.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param resourceGroupName The name of the resource group to deploy the resources to. The name is case insensitive.
      *     The resource group must already exist.
@@ -1638,7 +1728,9 @@ public interface DeploymentsClient {
         String resourceGroupName, String deploymentName, Deployment parameters);
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources to a resource group.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param resourceGroupName The name of the resource group to deploy the resources to. The name is case insensitive.
      *     The resource group must already exist.
@@ -1655,7 +1747,9 @@ public interface DeploymentsClient {
         String resourceGroupName, String deploymentName, Deployment parameters, Context context);
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources to a resource group.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param resourceGroupName The name of the resource group to deploy the resources to. The name is case insensitive.
      *     The resource group must already exist.
@@ -1670,7 +1764,9 @@ public interface DeploymentsClient {
     DeploymentExtendedInner createOrUpdate(String resourceGroupName, String deploymentName, Deployment parameters);
 
     /**
-     * You can provide the template and parameters directly in the request or link to JSON files.
+     * Deploys resources to a resource group.
+     *
+     * <p>You can provide the template and parameters directly in the request or link to JSON files.
      *
      * @param resourceGroupName The name of the resource group to deploy the resources to. The name is case insensitive.
      *     The resource group must already exist.
@@ -1715,7 +1811,9 @@ public interface DeploymentsClient {
         String resourceGroupName, String deploymentName, Context context);
 
     /**
-     * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
+     * Cancels a currently running template deployment.
+     *
+     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
      * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
      * template deployment and leaves the resource group partially deployed.
      *
@@ -1729,7 +1827,9 @@ public interface DeploymentsClient {
     void cancel(String resourceGroupName, String deploymentName);
 
     /**
-     * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
+     * Cancels a currently running template deployment.
+     *
+     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
      * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
      * template deployment and leaves the resource group partially deployed.
      *

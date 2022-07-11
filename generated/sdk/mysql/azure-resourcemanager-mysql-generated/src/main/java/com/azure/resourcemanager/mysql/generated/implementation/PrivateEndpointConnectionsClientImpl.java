@@ -928,7 +928,9 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     }
 
     /**
-     * Updates private endpoint connection with the specified tags.
+     * Updates tags on private endpoint connection.
+     *
+     * <p>Updates private endpoint connection with the specified tags.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -992,7 +994,9 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     }
 
     /**
-     * Updates private endpoint connection with the specified tags.
+     * Updates tags on private endpoint connection.
+     *
+     * <p>Updates private endpoint connection with the specified tags.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -1058,7 +1062,9 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     }
 
     /**
-     * Updates private endpoint connection with the specified tags.
+     * Updates tags on private endpoint connection.
+     *
+     * <p>Updates private endpoint connection with the specified tags.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -1085,7 +1091,9 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     }
 
     /**
-     * Updates private endpoint connection with the specified tags.
+     * Updates tags on private endpoint connection.
+     *
+     * <p>Updates private endpoint connection with the specified tags.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -1119,7 +1127,9 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     }
 
     /**
-     * Updates private endpoint connection with the specified tags.
+     * Updates tags on private endpoint connection.
+     *
+     * <p>Updates private endpoint connection with the specified tags.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -1138,7 +1148,9 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     }
 
     /**
-     * Updates private endpoint connection with the specified tags.
+     * Updates tags on private endpoint connection.
+     *
+     * <p>Updates private endpoint connection with the specified tags.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -1162,7 +1174,9 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     }
 
     /**
-     * Updates private endpoint connection with the specified tags.
+     * Updates tags on private endpoint connection.
+     *
+     * <p>Updates private endpoint connection with the specified tags.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -1182,7 +1196,9 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     }
 
     /**
-     * Updates private endpoint connection with the specified tags.
+     * Updates tags on private endpoint connection.
+     *
+     * <p>Updates private endpoint connection with the specified tags.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -1207,7 +1223,9 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     }
 
     /**
-     * Updates private endpoint connection with the specified tags.
+     * Updates tags on private endpoint connection.
+     *
+     * <p>Updates private endpoint connection with the specified tags.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -1225,7 +1243,9 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     }
 
     /**
-     * Updates private endpoint connection with the specified tags.
+     * Updates tags on private endpoint connection.
+     *
+     * <p>Updates private endpoint connection with the specified tags.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.

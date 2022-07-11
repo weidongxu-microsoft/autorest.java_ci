@@ -549,7 +549,9 @@ public interface Domain {
     Domain refresh(Context context);
 
     /**
-     * Description for Renew a domain.
+     * Renew a domain.
+     *
+     * <p>Description for Renew a domain.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -558,7 +560,9 @@ public interface Domain {
     void renew();
 
     /**
-     * Description for Renew a domain.
+     * Renew a domain.
+     *
+     * <p>Description for Renew a domain.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
