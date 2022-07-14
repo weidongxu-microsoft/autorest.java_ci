@@ -188,6 +188,30 @@ public interface ManagedHsms {
     void purgeDeleted(String name, String location, Context context);
 
     /**
+     * Checks that the managed hsm name is valid and is not already in use.
+     *
+     * @param mhsmName The name of the managed hsm.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the CheckMhsmNameAvailability operation response.
+     */
+    CheckMhsmNameAvailabilityResult checkMhsmNameAvailability(CheckMhsmNameAvailabilityParameters mhsmName);
+
+    /**
+     * Checks that the managed hsm name is valid and is not already in use.
+     *
+     * @param mhsmName The name of the managed hsm.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the CheckMhsmNameAvailability operation response along with {@link Response}.
+     */
+    Response<CheckMhsmNameAvailabilityResult> checkMhsmNameAvailabilityWithResponse(
+        CheckMhsmNameAvailabilityParameters mhsmName, Context context);
+
+    /**
      * Gets the specified managed HSM Pool.
      *
      * @param id the resource ID.

@@ -11,8 +11,10 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.management.polling.PollResult;
 import com.azure.core.util.Context;
 import com.azure.core.util.polling.SyncPoller;
+import com.azure.resourcemanager.keyvault.generated.fluent.models.CheckMhsmNameAvailabilityResultInner;
 import com.azure.resourcemanager.keyvault.generated.fluent.models.DeletedManagedHsmInner;
 import com.azure.resourcemanager.keyvault.generated.fluent.models.ManagedHsmInner;
+import com.azure.resourcemanager.keyvault.generated.models.CheckMhsmNameAvailabilityParameters;
 
 /** An instance of this class provides access to all the operations defined in ManagedHsmsClient. */
 public interface ManagedHsmsClient {
@@ -392,4 +394,30 @@ public interface ManagedHsmsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     void purgeDeleted(String name, String location, Context context);
+
+    /**
+     * Checks that the managed hsm name is valid and is not already in use.
+     *
+     * @param mhsmName The name of the managed hsm.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the CheckMhsmNameAvailability operation response.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    CheckMhsmNameAvailabilityResultInner checkMhsmNameAvailability(CheckMhsmNameAvailabilityParameters mhsmName);
+
+    /**
+     * Checks that the managed hsm name is valid and is not already in use.
+     *
+     * @param mhsmName The name of the managed hsm.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the CheckMhsmNameAvailability operation response along with {@link Response}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    Response<CheckMhsmNameAvailabilityResultInner> checkMhsmNameAvailabilityWithResponse(
+        CheckMhsmNameAvailabilityParameters mhsmName, Context context);
 }

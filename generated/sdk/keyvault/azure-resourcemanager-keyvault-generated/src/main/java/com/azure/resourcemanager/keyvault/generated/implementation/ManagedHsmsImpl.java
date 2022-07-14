@@ -10,8 +10,11 @@ import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.keyvault.generated.fluent.ManagedHsmsClient;
+import com.azure.resourcemanager.keyvault.generated.fluent.models.CheckMhsmNameAvailabilityResultInner;
 import com.azure.resourcemanager.keyvault.generated.fluent.models.DeletedManagedHsmInner;
 import com.azure.resourcemanager.keyvault.generated.fluent.models.ManagedHsmInner;
+import com.azure.resourcemanager.keyvault.generated.models.CheckMhsmNameAvailabilityParameters;
+import com.azure.resourcemanager.keyvault.generated.models.CheckMhsmNameAvailabilityResult;
 import com.azure.resourcemanager.keyvault.generated.models.DeletedManagedHsm;
 import com.azure.resourcemanager.keyvault.generated.models.ManagedHsm;
 import com.azure.resourcemanager.keyvault.generated.models.ManagedHsms;
@@ -119,6 +122,30 @@ public final class ManagedHsmsImpl implements ManagedHsms {
 
     public void purgeDeleted(String name, String location, Context context) {
         this.serviceClient().purgeDeleted(name, location, context);
+    }
+
+    public CheckMhsmNameAvailabilityResult checkMhsmNameAvailability(CheckMhsmNameAvailabilityParameters mhsmName) {
+        CheckMhsmNameAvailabilityResultInner inner = this.serviceClient().checkMhsmNameAvailability(mhsmName);
+        if (inner != null) {
+            return new CheckMhsmNameAvailabilityResultImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<CheckMhsmNameAvailabilityResult> checkMhsmNameAvailabilityWithResponse(
+        CheckMhsmNameAvailabilityParameters mhsmName, Context context) {
+        Response<CheckMhsmNameAvailabilityResultInner> inner =
+            this.serviceClient().checkMhsmNameAvailabilityWithResponse(mhsmName, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new CheckMhsmNameAvailabilityResultImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
     }
 
     public ManagedHsm getById(String id) {

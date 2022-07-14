@@ -27,14 +27,17 @@ import com.azure.core.http.rest.PagedResponse;
 import com.azure.core.http.rest.PagedResponseBase;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.RestProxy;
+import com.azure.core.management.exception.ManagementException;
 import com.azure.core.management.polling.PollResult;
 import com.azure.core.util.Context;
 import com.azure.core.util.FluxUtil;
 import com.azure.core.util.polling.PollerFlux;
 import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.keyvault.generated.fluent.ManagedHsmsClient;
+import com.azure.resourcemanager.keyvault.generated.fluent.models.CheckMhsmNameAvailabilityResultInner;
 import com.azure.resourcemanager.keyvault.generated.fluent.models.DeletedManagedHsmInner;
 import com.azure.resourcemanager.keyvault.generated.fluent.models.ManagedHsmInner;
+import com.azure.resourcemanager.keyvault.generated.models.CheckMhsmNameAvailabilityParameters;
 import com.azure.resourcemanager.keyvault.generated.models.DeletedManagedHsmListResult;
 import com.azure.resourcemanager.keyvault.generated.models.ErrorException;
 import com.azure.resourcemanager.keyvault.generated.models.ManagedHsmListResult;
@@ -119,7 +122,7 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.KeyVault"
                 + "/managedHSMs/{name}")
-        @ExpectedResponses({200, 202, 204})
+        @ExpectedResponses({200, 204})
         @UnexpectedResponseExceptionType(ErrorException.class)
         Mono<Response<ManagedHsmInner>> getByResourceGroup(
             @HostParam("$host") String endpoint,
@@ -195,6 +198,18 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
             @PathParam("location") String location,
             @QueryParam("api-version") String apiVersion,
             @PathParam("subscriptionId") String subscriptionId,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
+        @Headers({"Content-Type: application/json"})
+        @Post("/subscriptions/{subscriptionId}/providers/Microsoft.KeyVault/checkMhsmNameAvailability")
+        @ExpectedResponses({200})
+        @UnexpectedResponseExceptionType(ManagementException.class)
+        Mono<Response<CheckMhsmNameAvailabilityResultInner>> checkMhsmNameAvailability(
+            @HostParam("$host") String endpoint,
+            @QueryParam("api-version") String apiVersion,
+            @PathParam("subscriptionId") String subscriptionId,
+            @BodyParam("application/json") CheckMhsmNameAvailabilityParameters mhsmName,
             @HeaderParam("Accept") String accept,
             Context context);
 
@@ -1987,6 +2002,140 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public void purgeDeleted(String name, String location, Context context) {
         purgeDeletedAsync(name, location, context).block();
+    }
+
+    /**
+     * Checks that the managed hsm name is valid and is not already in use.
+     *
+     * @param mhsmName The name of the managed hsm.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the CheckMhsmNameAvailability operation response along with {@link Response} on successful completion of
+     *     {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<CheckMhsmNameAvailabilityResultInner>> checkMhsmNameAvailabilityWithResponseAsync(
+        CheckMhsmNameAvailabilityParameters mhsmName) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        if (mhsmName == null) {
+            return Mono.error(new IllegalArgumentException("Parameter mhsmName is required and cannot be null."));
+        } else {
+            mhsmName.validate();
+        }
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(
+                context ->
+                    service
+                        .checkMhsmNameAvailability(
+                            this.client.getEndpoint(),
+                            this.client.getApiVersion(),
+                            this.client.getSubscriptionId(),
+                            mhsmName,
+                            accept,
+                            context))
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
+    }
+
+    /**
+     * Checks that the managed hsm name is valid and is not already in use.
+     *
+     * @param mhsmName The name of the managed hsm.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the CheckMhsmNameAvailability operation response along with {@link Response} on successful completion of
+     *     {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<CheckMhsmNameAvailabilityResultInner>> checkMhsmNameAvailabilityWithResponseAsync(
+        CheckMhsmNameAvailabilityParameters mhsmName, Context context) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        if (mhsmName == null) {
+            return Mono.error(new IllegalArgumentException("Parameter mhsmName is required and cannot be null."));
+        } else {
+            mhsmName.validate();
+        }
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service
+            .checkMhsmNameAvailability(
+                this.client.getEndpoint(),
+                this.client.getApiVersion(),
+                this.client.getSubscriptionId(),
+                mhsmName,
+                accept,
+                context);
+    }
+
+    /**
+     * Checks that the managed hsm name is valid and is not already in use.
+     *
+     * @param mhsmName The name of the managed hsm.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the CheckMhsmNameAvailability operation response on successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<CheckMhsmNameAvailabilityResultInner> checkMhsmNameAvailabilityAsync(
+        CheckMhsmNameAvailabilityParameters mhsmName) {
+        return checkMhsmNameAvailabilityWithResponseAsync(mhsmName).flatMap(res -> Mono.justOrEmpty(res.getValue()));
+    }
+
+    /**
+     * Checks that the managed hsm name is valid and is not already in use.
+     *
+     * @param mhsmName The name of the managed hsm.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the CheckMhsmNameAvailability operation response.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public CheckMhsmNameAvailabilityResultInner checkMhsmNameAvailability(
+        CheckMhsmNameAvailabilityParameters mhsmName) {
+        return checkMhsmNameAvailabilityAsync(mhsmName).block();
+    }
+
+    /**
+     * Checks that the managed hsm name is valid and is not already in use.
+     *
+     * @param mhsmName The name of the managed hsm.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the CheckMhsmNameAvailability operation response along with {@link Response}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public Response<CheckMhsmNameAvailabilityResultInner> checkMhsmNameAvailabilityWithResponse(
+        CheckMhsmNameAvailabilityParameters mhsmName, Context context) {
+        return checkMhsmNameAvailabilityWithResponseAsync(mhsmName, context).block();
     }
 
     /**
