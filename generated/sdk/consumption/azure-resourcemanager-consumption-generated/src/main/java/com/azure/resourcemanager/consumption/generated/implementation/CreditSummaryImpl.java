@@ -9,8 +9,6 @@ import com.azure.resourcemanager.consumption.generated.models.Amount;
 import com.azure.resourcemanager.consumption.generated.models.CreditBalanceSummary;
 import com.azure.resourcemanager.consumption.generated.models.CreditSummary;
 import com.azure.resourcemanager.consumption.generated.models.Reseller;
-import java.util.Collections;
-import java.util.Map;
 
 public final class CreditSummaryImpl implements CreditSummary {
     private CreditSummaryInner innerObject;
@@ -38,15 +36,6 @@ public final class CreditSummaryImpl implements CreditSummary {
 
     public String etag() {
         return this.innerModel().etag();
-    }
-
-    public Map<String, String> tags() {
-        Map<String, String> inner = this.innerModel().tags();
-        if (inner != null) {
-            return Collections.unmodifiableMap(inner);
-        } else {
-            return Collections.emptyMap();
-        }
     }
 
     public CreditBalanceSummary balanceSummary() {
