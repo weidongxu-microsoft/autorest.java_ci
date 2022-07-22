@@ -64,7 +64,7 @@ public interface AutoscaleSettingResource {
 
     /**
      * Gets the enabled property: the enabled flag. Specifies whether automatic scaling is enabled for the resource. The
-     * default value is 'true'.
+     * default value is 'false'.
      *
      * @return the enabled value.
      */
@@ -224,10 +224,10 @@ public interface AutoscaleSettingResource {
         interface WithEnabled {
             /**
              * Specifies the enabled property: the enabled flag. Specifies whether automatic scaling is enabled for the
-             * resource. The default value is 'true'..
+             * resource. The default value is 'false'..
              *
              * @param enabled the enabled flag. Specifies whether automatic scaling is enabled for the resource. The
-             *     default value is 'true'.
+             *     default value is 'false'.
              * @return the next definition stage.
              */
             WithCreate withEnabled(Boolean enabled);
@@ -335,10 +335,10 @@ public interface AutoscaleSettingResource {
         interface WithEnabled {
             /**
              * Specifies the enabled property: the enabled flag. Specifies whether automatic scaling is enabled for the
-             * resource. The default value is 'true'..
+             * resource. The default value is 'false'..
              *
              * @param enabled the enabled flag. Specifies whether automatic scaling is enabled for the resource. The
-             *     default value is 'true'.
+             *     default value is 'false'.
              * @return the next definition stage.
              */
             Update withEnabled(Boolean enabled);

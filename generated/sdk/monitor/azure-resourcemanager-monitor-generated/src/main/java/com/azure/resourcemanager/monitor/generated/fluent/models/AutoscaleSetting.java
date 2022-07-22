@@ -30,7 +30,7 @@ public final class AutoscaleSetting {
 
     /*
      * the enabled flag. Specifies whether automatic scaling is enabled for the
-     * resource. The default value is 'true'.
+     * resource. The default value is 'false'.
      */
     @JsonProperty(value = "enabled")
     private Boolean enabled;
@@ -99,7 +99,7 @@ public final class AutoscaleSetting {
 
     /**
      * Get the enabled property: the enabled flag. Specifies whether automatic scaling is enabled for the resource. The
-     * default value is 'true'.
+     * default value is 'false'.
      *
      * @return the enabled value.
      */
@@ -109,7 +109,7 @@ public final class AutoscaleSetting {
 
     /**
      * Set the enabled property: the enabled flag. Specifies whether automatic scaling is enabled for the resource. The
-     * default value is 'true'.
+     * default value is 'false'.
      *
      * @param enabled the enabled value to set.
      * @return the AutoscaleSetting object itself.

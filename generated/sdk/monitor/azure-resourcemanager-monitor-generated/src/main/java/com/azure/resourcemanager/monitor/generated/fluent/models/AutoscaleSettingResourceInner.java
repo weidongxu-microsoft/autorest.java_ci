@@ -95,7 +95,7 @@ public final class AutoscaleSettingResourceInner extends Resource {
 
     /**
      * Get the enabled property: the enabled flag. Specifies whether automatic scaling is enabled for the resource. The
-     * default value is 'true'.
+     * default value is 'false'.
      *
      * @return the enabled value.
      */
@@ -105,7 +105,7 @@ public final class AutoscaleSettingResourceInner extends Resource {
 
     /**
      * Set the enabled property: the enabled flag. Specifies whether automatic scaling is enabled for the resource. The
-     * default value is 'true'.
+     * default value is 'false'.
      *
      * @param enabled the enabled value to set.
      * @return the AutoscaleSettingResourceInner object itself.
