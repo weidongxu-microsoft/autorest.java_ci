@@ -21,7 +21,7 @@ public final class ImageOSDisk extends ImageDisk {
     private OperatingSystemTypes osType;
 
     /*
-     * The OS State.
+     * The OS State. For managed images, use Generalized.
      */
     @JsonProperty(value = "osState", required = true)
     private OperatingSystemStateTypes osState;
@@ -51,7 +51,7 @@ public final class ImageOSDisk extends ImageDisk {
     }
 
     /**
-     * Get the osState property: The OS State.
+     * Get the osState property: The OS State. For managed images, use Generalized.
      *
      * @return the osState value.
      */
@@ -60,7 +60,7 @@ public final class ImageOSDisk extends ImageDisk {
     }
 
     /**
-     * Set the osState property: The OS State.
+     * Set the osState property: The OS State. For managed images, use Generalized.
      *
      * @param osState the osState value to set.
      * @return the ImageOSDisk object itself.

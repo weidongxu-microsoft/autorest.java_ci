@@ -196,7 +196,7 @@ public final class FrontDoorsClientImpl implements FrontDoorsClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2020-05-01";
+        final String apiVersion = "2021-06-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -239,7 +239,7 @@ public final class FrontDoorsClientImpl implements FrontDoorsClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2020-05-01";
+        final String apiVersion = "2021-06-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -336,7 +336,7 @@ public final class FrontDoorsClientImpl implements FrontDoorsClient {
             return Mono
                 .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
         }
-        final String apiVersion = "2020-05-01";
+        final String apiVersion = "2021-06-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -391,7 +391,7 @@ public final class FrontDoorsClientImpl implements FrontDoorsClient {
             return Mono
                 .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
         }
-        final String apiVersion = "2020-05-01";
+        final String apiVersion = "2021-06-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -508,7 +508,7 @@ public final class FrontDoorsClientImpl implements FrontDoorsClient {
         if (frontDoorName == null) {
             return Mono.error(new IllegalArgumentException("Parameter frontDoorName is required and cannot be null."));
         }
-        final String apiVersion = "2020-05-01";
+        final String apiVersion = "2021-06-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -559,7 +559,7 @@ public final class FrontDoorsClientImpl implements FrontDoorsClient {
         if (frontDoorName == null) {
             return Mono.error(new IllegalArgumentException("Parameter frontDoorName is required and cannot be null."));
         }
-        final String apiVersion = "2020-05-01";
+        final String apiVersion = "2021-06-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -663,7 +663,7 @@ public final class FrontDoorsClientImpl implements FrontDoorsClient {
         } else {
             frontDoorParameters.validate();
         }
-        final String apiVersion = "2020-05-01";
+        final String apiVersion = "2021-06-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -722,7 +722,7 @@ public final class FrontDoorsClientImpl implements FrontDoorsClient {
         } else {
             frontDoorParameters.validate();
         }
-        final String apiVersion = "2020-05-01";
+        final String apiVersion = "2021-06-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -935,7 +935,7 @@ public final class FrontDoorsClientImpl implements FrontDoorsClient {
         if (frontDoorName == null) {
             return Mono.error(new IllegalArgumentException("Parameter frontDoorName is required and cannot be null."));
         }
-        final String apiVersion = "2020-05-01";
+        final String apiVersion = "2021-06-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -985,7 +985,7 @@ public final class FrontDoorsClientImpl implements FrontDoorsClient {
         if (frontDoorName == null) {
             return Mono.error(new IllegalArgumentException("Parameter frontDoorName is required and cannot be null."));
         }
-        final String apiVersion = "2020-05-01";
+        final String apiVersion = "2021-06-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1173,7 +1173,7 @@ public final class FrontDoorsClientImpl implements FrontDoorsClient {
         } else {
             customDomainProperties.validate();
         }
-        final String apiVersion = "2020-05-01";
+        final String apiVersion = "2021-06-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1235,7 +1235,7 @@ public final class FrontDoorsClientImpl implements FrontDoorsClient {
         } else {
             customDomainProperties.validate();
         }
-        final String apiVersion = "2020-05-01";
+        final String apiVersion = "2021-06-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service

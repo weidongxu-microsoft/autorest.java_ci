@@ -172,7 +172,7 @@ public final class RulesEnginesClientImpl implements RulesEnginesClient {
         if (frontDoorName == null) {
             return Mono.error(new IllegalArgumentException("Parameter frontDoorName is required and cannot be null."));
         }
-        final String apiVersion = "2020-05-01";
+        final String apiVersion = "2021-06-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -232,7 +232,7 @@ public final class RulesEnginesClientImpl implements RulesEnginesClient {
         if (frontDoorName == null) {
             return Mono.error(new IllegalArgumentException("Parameter frontDoorName is required and cannot be null."));
         }
-        final String apiVersion = "2020-05-01";
+        final String apiVersion = "2021-06-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -363,7 +363,7 @@ public final class RulesEnginesClientImpl implements RulesEnginesClient {
             return Mono
                 .error(new IllegalArgumentException("Parameter rulesEngineName is required and cannot be null."));
         }
-        final String apiVersion = "2020-05-01";
+        final String apiVersion = "2021-06-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -420,7 +420,7 @@ public final class RulesEnginesClientImpl implements RulesEnginesClient {
             return Mono
                 .error(new IllegalArgumentException("Parameter rulesEngineName is required and cannot be null."));
         }
-        final String apiVersion = "2020-05-01";
+        final String apiVersion = "2021-06-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -537,7 +537,7 @@ public final class RulesEnginesClientImpl implements RulesEnginesClient {
         } else {
             rulesEngineParameters.validate();
         }
-        final String apiVersion = "2020-05-01";
+        final String apiVersion = "2021-06-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -607,7 +607,7 @@ public final class RulesEnginesClientImpl implements RulesEnginesClient {
         } else {
             rulesEngineParameters.validate();
         }
-        final String apiVersion = "2020-05-01";
+        final String apiVersion = "2021-06-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -877,7 +877,7 @@ public final class RulesEnginesClientImpl implements RulesEnginesClient {
             return Mono
                 .error(new IllegalArgumentException("Parameter rulesEngineName is required and cannot be null."));
         }
-        final String apiVersion = "2020-05-01";
+        final String apiVersion = "2021-06-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -933,7 +933,7 @@ public final class RulesEnginesClientImpl implements RulesEnginesClient {
             return Mono
                 .error(new IllegalArgumentException("Parameter rulesEngineName is required and cannot be null."));
         }
-        final String apiVersion = "2020-05-01";
+        final String apiVersion = "2021-06-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service

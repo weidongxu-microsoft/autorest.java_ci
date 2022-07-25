@@ -172,7 +172,7 @@ public final class FrontendEndpointsClientImpl implements FrontendEndpointsClien
         if (frontDoorName == null) {
             return Mono.error(new IllegalArgumentException("Parameter frontDoorName is required and cannot be null."));
         }
-        final String apiVersion = "2020-05-01";
+        final String apiVersion = "2021-06-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -232,7 +232,7 @@ public final class FrontendEndpointsClientImpl implements FrontendEndpointsClien
         if (frontDoorName == null) {
             return Mono.error(new IllegalArgumentException("Parameter frontDoorName is required and cannot be null."));
         }
-        final String apiVersion = "2020-05-01";
+        final String apiVersion = "2021-06-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -361,7 +361,7 @@ public final class FrontendEndpointsClientImpl implements FrontendEndpointsClien
             return Mono
                 .error(new IllegalArgumentException("Parameter frontendEndpointName is required and cannot be null."));
         }
-        final String apiVersion = "2020-05-01";
+        final String apiVersion = "2021-06-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -418,7 +418,7 @@ public final class FrontendEndpointsClientImpl implements FrontendEndpointsClien
             return Mono
                 .error(new IllegalArgumentException("Parameter frontendEndpointName is required and cannot be null."));
         }
-        final String apiVersion = "2020-05-01";
+        final String apiVersion = "2021-06-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -534,7 +534,7 @@ public final class FrontendEndpointsClientImpl implements FrontendEndpointsClien
         } else {
             customHttpsConfiguration.validate();
         }
-        final String apiVersion = "2020-05-01";
+        final String apiVersion = "2021-06-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -603,7 +603,7 @@ public final class FrontendEndpointsClientImpl implements FrontendEndpointsClien
         } else {
             customHttpsConfiguration.validate();
         }
-        final String apiVersion = "2020-05-01";
+        final String apiVersion = "2021-06-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -851,7 +851,7 @@ public final class FrontendEndpointsClientImpl implements FrontendEndpointsClien
             return Mono
                 .error(new IllegalArgumentException("Parameter frontendEndpointName is required and cannot be null."));
         }
-        final String apiVersion = "2020-05-01";
+        final String apiVersion = "2021-06-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -907,7 +907,7 @@ public final class FrontendEndpointsClientImpl implements FrontendEndpointsClien
             return Mono
                 .error(new IllegalArgumentException("Parameter frontendEndpointName is required and cannot be null."));
         }
-        final String apiVersion = "2020-05-01";
+        final String apiVersion = "2021-06-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service

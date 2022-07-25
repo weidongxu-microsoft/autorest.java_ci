@@ -12,10 +12,63 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class MhsmPrivateEndpointConnectionItem {
     /*
+     * Id of private endpoint connection.
+     */
+    @JsonProperty(value = "id")
+    private String id;
+
+    /*
+     * Modified whenever there is a change in the state of private endpoint
+     * connection.
+     */
+    @JsonProperty(value = "etag")
+    private String etag;
+
+    /*
      * Private endpoint connection properties.
      */
     @JsonProperty(value = "properties")
     private MhsmPrivateEndpointConnectionProperties innerProperties;
+
+    /**
+     * Get the id property: Id of private endpoint connection.
+     *
+     * @return the id value.
+     */
+    public String id() {
+        return this.id;
+    }
+
+    /**
+     * Set the id property: Id of private endpoint connection.
+     *
+     * @param id the id value to set.
+     * @return the MhsmPrivateEndpointConnectionItem object itself.
+     */
+    public MhsmPrivateEndpointConnectionItem withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * Get the etag property: Modified whenever there is a change in the state of private endpoint connection.
+     *
+     * @return the etag value.
+     */
+    public String etag() {
+        return this.etag;
+    }
+
+    /**
+     * Set the etag property: Modified whenever there is a change in the state of private endpoint connection.
+     *
+     * @param etag the etag value to set.
+     * @return the MhsmPrivateEndpointConnectionItem object itself.
+     */
+    public MhsmPrivateEndpointConnectionItem withEtag(String etag) {
+        this.etag = etag;
+        return this;
+    }
 
     /**
      * Get the innerProperties property: Private endpoint connection properties.
