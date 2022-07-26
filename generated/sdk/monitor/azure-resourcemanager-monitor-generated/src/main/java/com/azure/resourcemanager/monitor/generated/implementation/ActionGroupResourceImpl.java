@@ -56,14 +56,6 @@ public final class ActionGroupResourceImpl
         }
     }
 
-    public String kind() {
-        return this.innerModel().kind();
-    }
-
-    public String identity() {
-        return this.innerModel().identity();
-    }
-
     public String groupShortName() {
         return this.innerModel().groupShortName();
     }
