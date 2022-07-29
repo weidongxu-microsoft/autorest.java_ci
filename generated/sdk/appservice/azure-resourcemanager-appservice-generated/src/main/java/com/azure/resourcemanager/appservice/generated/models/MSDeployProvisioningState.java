@@ -39,6 +39,9 @@ public enum MSDeployProvisioningState {
      */
     @JsonCreator
     public static MSDeployProvisioningState fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         MSDeployProvisioningState[] items = MSDeployProvisioningState.values();
         for (MSDeployProvisioningState item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

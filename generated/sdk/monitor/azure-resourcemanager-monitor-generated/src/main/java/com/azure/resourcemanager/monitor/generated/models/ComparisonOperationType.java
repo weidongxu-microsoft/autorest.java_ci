@@ -42,6 +42,9 @@ public enum ComparisonOperationType {
      */
     @JsonCreator
     public static ComparisonOperationType fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         ComparisonOperationType[] items = ComparisonOperationType.values();
         for (ComparisonOperationType item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

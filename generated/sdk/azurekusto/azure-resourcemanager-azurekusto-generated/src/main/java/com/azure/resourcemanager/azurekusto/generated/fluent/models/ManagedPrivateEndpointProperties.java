@@ -13,15 +13,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class ManagedPrivateEndpointProperties {
     /*
-     * The ARM resource ID of the resource for which the managed private
-     * endpoint is created.
+     * The ARM resource ID of the resource for which the managed private endpoint is created.
      */
     @JsonProperty(value = "privateLinkResourceId", required = true)
     private String privateLinkResourceId;
 
     /*
-     * The region of the resource to which the managed private endpoint is
-     * created.
+     * The region of the resource to which the managed private endpoint is created.
      */
     @JsonProperty(value = "privateLinkResourceRegion")
     private String privateLinkResourceRegion;

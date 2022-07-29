@@ -42,6 +42,9 @@ public enum UnavailableReason {
      */
     @JsonCreator
     public static UnavailableReason fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         UnavailableReason[] items = UnavailableReason.values();
         for (UnavailableReason item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

@@ -27,32 +27,29 @@ public final class RedirectConfiguration extends RouteConfiguration {
     private FrontDoorRedirectProtocol redirectProtocol;
 
     /*
-     * Host to redirect. Leave empty to use the incoming host as the
-     * destination host.
+     * Host to redirect. Leave empty to use the incoming host as the destination host.
      */
     @JsonProperty(value = "customHost")
     private String customHost;
 
     /*
-     * The full path to redirect. Path cannot be empty and must start with /.
-     * Leave empty to use the incoming path as destination path.
+     * The full path to redirect. Path cannot be empty and must start with /. Leave empty to use the incoming path as
+     * destination path.
      */
     @JsonProperty(value = "customPath")
     private String customPath;
 
     /*
-     * Fragment to add to the redirect URL. Fragment is the part of the URL
-     * that comes after #. Do not include the #.
+     * Fragment to add to the redirect URL. Fragment is the part of the URL that comes after #. Do not include the #.
      */
     @JsonProperty(value = "customFragment")
     private String customFragment;
 
     /*
-     * The set of query strings to be placed in the redirect URL. Setting this
-     * value would replace any existing query string; leave empty to preserve
-     * the incoming query string. Query string must be in <key>=<value> format.
-     * The first ? and & will be added automatically so do not include them in
-     * the front, but do separate multiple query strings with &.
+     * The set of query strings to be placed in the redirect URL. Setting this value would replace any existing query
+     * string; leave empty to preserve the incoming query string. Query string must be in <key>=<value> format. The
+     * first ? and & will be added automatically so do not include them in the front, but do separate multiple query
+     * strings with &.
      */
     @JsonProperty(value = "customQueryString")
     private String customQueryString;

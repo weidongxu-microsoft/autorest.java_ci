@@ -28,15 +28,13 @@ public final class WebApplicationFirewallPolicyInner extends Resource {
     private WebApplicationFirewallPolicyProperties innerProperties;
 
     /*
-     * Gets a unique read-only string that changes whenever the resource is
-     * updated.
+     * Gets a unique read-only string that changes whenever the resource is updated.
      */
     @JsonProperty(value = "etag")
     private String etag;
 
     /*
-     * The pricing tier of web application firewall policy. Defaults to
-     * Classic_AzureFrontDoor if not specified.
+     * The pricing tier of web application firewall policy. Defaults to Classic_AzureFrontDoor if not specified.
      */
     @JsonProperty(value = "sku")
     private Sku sku;

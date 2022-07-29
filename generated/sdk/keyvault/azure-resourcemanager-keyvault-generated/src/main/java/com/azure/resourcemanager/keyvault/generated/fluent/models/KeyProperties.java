@@ -60,15 +60,13 @@ public final class KeyProperties {
     private String keyUriWithVersion;
 
     /*
-     * Key rotation policy in response. It will be used for both output and
-     * input. Omitted if empty
+     * Key rotation policy in response. It will be used for both output and input. Omitted if empty
      */
     @JsonProperty(value = "rotationPolicy")
     private RotationPolicy rotationPolicy;
 
     /*
-     * Key release policy in response. It will be used for both output and
-     * input. Omitted if empty
+     * Key release policy in response. It will be used for both output and input. Omitted if empty
      */
     @JsonProperty(value = "release_policy")
     private KeyReleasePolicy releasePolicy;

@@ -11,15 +11,15 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Immutable
 public final class ShareablePrivateLinkResourceType {
     /*
-     * The name of the resource type that has been onboarded to private link
-     * service, supported by Azure Cognitive Search.
+     * The name of the resource type that has been onboarded to private link service, supported by Azure Cognitive
+     * Search.
      */
     @JsonProperty(value = "name", access = JsonProperty.Access.WRITE_ONLY)
     private String name;
 
     /*
-     * Describes the properties of a resource type that has been onboarded to
-     * private link service, supported by Azure Cognitive Search.
+     * Describes the properties of a resource type that has been onboarded to private link service, supported by Azure
+     * Cognitive Search.
      */
     @JsonProperty(value = "properties", access = JsonProperty.Access.WRITE_ONLY)
     private ShareablePrivateLinkResourceProperties properties;

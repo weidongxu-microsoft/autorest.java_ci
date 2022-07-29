@@ -24,17 +24,16 @@ public final class SearchServiceUpdate extends ProxyResource {
     private SearchServiceProperties innerProperties;
 
     /*
-     * The SKU of the Search Service, which determines price tier and capacity
-     * limits. This property is required when creating a new Search Service.
+     * The SKU of the Search Service, which determines price tier and capacity limits. This property is required when
+     * creating a new Search Service.
      */
     @JsonProperty(value = "sku")
     private Sku sku;
 
     /*
-     * The geographic location of the resource. This must be one of the
-     * supported and registered Azure Geo Regions (for example, West US, East
-     * US, Southeast Asia, and so forth). This property is required when
-     * creating a new resource.
+     * The geographic location of the resource. This must be one of the supported and registered Azure Geo Regions (for
+     * example, West US, East US, Southeast Asia, and so forth). This property is required when creating a new
+     * resource.
      */
     @JsonProperty(value = "location")
     private String location;

@@ -22,8 +22,7 @@ public final class UserProperties {
     private AsymmetricEncryptedSecret encryptedPassword;
 
     /*
-     * List of shares that the user has rights on. This field should not be
-     * specified during user creation.
+     * List of shares that the user has rights on. This field should not be specified during user creation.
      */
     @JsonProperty(value = "shareAccessRights", access = JsonProperty.Access.WRITE_ONLY)
     private List<ShareAccessRight> shareAccessRights;

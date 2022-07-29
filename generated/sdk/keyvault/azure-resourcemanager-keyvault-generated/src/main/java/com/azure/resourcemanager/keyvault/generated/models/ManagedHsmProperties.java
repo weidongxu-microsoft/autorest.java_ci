@@ -14,8 +14,7 @@ import java.util.UUID;
 @Fluent
 public final class ManagedHsmProperties {
     /*
-     * The Azure Active Directory tenant ID that should be used for
-     * authenticating requests to the managed HSM pool.
+     * The Azure Active Directory tenant ID that should be used for authenticating requests to the managed HSM pool.
      */
     @JsonProperty(value = "tenantId")
     private UUID tenantId;
@@ -33,10 +32,9 @@ public final class ManagedHsmProperties {
     private String hsmUri;
 
     /*
-     * Property to specify whether the 'soft delete' functionality is enabled
-     * for this managed HSM pool. If it's not set to any value(true or false)
-     * when creating new managed HSM pool, it will be set to true by default.
-     * Once set to true, it cannot be reverted to false.
+     * Property to specify whether the 'soft delete' functionality is enabled for this managed HSM pool. If it's not
+     * set to any value(true or false) when creating new managed HSM pool, it will be set to true by default. Once set
+     * to true, it cannot be reverted to false.
      */
     @JsonProperty(value = "enableSoftDelete")
     private Boolean enableSoftDelete;
@@ -48,19 +46,16 @@ public final class ManagedHsmProperties {
     private Integer softDeleteRetentionInDays;
 
     /*
-     * Property specifying whether protection against purge is enabled for this
-     * managed HSM pool. Setting this property to true activates protection
-     * against purge for this managed HSM pool and its content - only the
-     * Managed HSM service may initiate a hard, irrecoverable deletion. The
-     * setting is effective only if soft delete is also enabled. Enabling this
-     * functionality is irreversible.
+     * Property specifying whether protection against purge is enabled for this managed HSM pool. Setting this property
+     * to true activates protection against purge for this managed HSM pool and its content - only the Managed HSM
+     * service may initiate a hard, irrecoverable deletion. The setting is effective only if soft delete is also
+     * enabled. Enabling this functionality is irreversible.
      */
     @JsonProperty(value = "enablePurgeProtection")
     private Boolean enablePurgeProtection;
 
     /*
-     * The create mode to indicate whether the resource is being created or is
-     * being recovered from a deleted resource.
+     * The create mode to indicate whether the resource is being created or is being recovered from a deleted resource.
      */
     @JsonProperty(value = "createMode")
     private CreateMode createMode;
@@ -78,22 +73,19 @@ public final class ManagedHsmProperties {
     private ProvisioningState provisioningState;
 
     /*
-     * Rules governing the accessibility of the key vault from specific network
-     * locations.
+     * Rules governing the accessibility of the key vault from specific network locations.
      */
     @JsonProperty(value = "networkAcls")
     private MhsmNetworkRuleSet networkAcls;
 
     /*
-     * List of private endpoint connections associated with the managed hsm
-     * pool.
+     * List of private endpoint connections associated with the managed hsm pool.
      */
     @JsonProperty(value = "privateEndpointConnections", access = JsonProperty.Access.WRITE_ONLY)
     private List<MhsmPrivateEndpointConnectionItem> privateEndpointConnections;
 
     /*
-     * Control permission for data plane traffic coming from public networks
-     * while private endpoint is enabled.
+     * Control permission for data plane traffic coming from public networks while private endpoint is enabled.
      */
     @JsonProperty(value = "publicNetworkAccess")
     private PublicNetworkAccess publicNetworkAccess;

@@ -23,8 +23,7 @@ public final class StaticSiteBuildProperties {
     private String apiLocation;
 
     /*
-     * Deprecated: The path of the app artifacts after building (deprecated in
-     * favor of OutputLocation)
+     * Deprecated: The path of the app artifacts after building (deprecated in favor of OutputLocation)
      */
     @JsonProperty(value = "appArtifactLocation")
     private String appArtifactLocation;
@@ -36,15 +35,13 @@ public final class StaticSiteBuildProperties {
     private String outputLocation;
 
     /*
-     * A custom command to run during deployment of the static content
-     * application.
+     * A custom command to run during deployment of the static content application.
      */
     @JsonProperty(value = "appBuildCommand")
     private String appBuildCommand;
 
     /*
-     * A custom command to run during deployment of the Azure Functions API
-     * application.
+     * A custom command to run during deployment of the Azure Functions API application.
      */
     @JsonProperty(value = "apiBuildCommand")
     private String apiBuildCommand;

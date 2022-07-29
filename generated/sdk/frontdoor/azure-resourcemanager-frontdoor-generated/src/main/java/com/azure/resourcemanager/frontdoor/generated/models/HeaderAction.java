@@ -24,8 +24,7 @@ public final class HeaderAction {
     private String headerName;
 
     /*
-     * The value to update the given header name with. This value is not used
-     * if the actionType is Delete.
+     * The value to update the given header name with. This value is not used if the actionType is Delete.
      */
     @JsonProperty(value = "value")
     private String value;

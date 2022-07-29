@@ -22,8 +22,7 @@ public final class BandwidthScheduleInner extends ArmBaseModel {
     private BandwidthScheduleProperties innerProperties = new BandwidthScheduleProperties();
 
     /*
-     * Metadata pertaining to creation and last modification of
-     * BandwidthSchedule
+     * Metadata pertaining to creation and last modification of BandwidthSchedule
      */
     @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;

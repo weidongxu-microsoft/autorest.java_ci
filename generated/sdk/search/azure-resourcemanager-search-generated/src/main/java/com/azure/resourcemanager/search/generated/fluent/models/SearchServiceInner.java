@@ -27,8 +27,8 @@ public final class SearchServiceInner extends Resource {
     private SearchServiceProperties innerProperties;
 
     /*
-     * The SKU of the Search Service, which determines price tier and capacity
-     * limits. This property is required when creating a new Search Service.
+     * The SKU of the Search Service, which determines price tier and capacity limits. This property is required when
+     * creating a new Search Service.
      */
     @JsonProperty(value = "sku")
     private Sku sku;

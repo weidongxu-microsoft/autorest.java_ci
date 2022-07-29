@@ -19,8 +19,7 @@ public final class EventHubProperties {
     private Long retentionTimeInDays;
 
     /*
-     * The number of partitions for receiving device-to-cloud messages in the
-     * Event Hub-compatible endpoint. See:
+     * The number of partitions for receiving device-to-cloud messages in the Event Hub-compatible endpoint. See:
      * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messaging#device-to-cloud-messages.
      */
     @JsonProperty(value = "partitionCount")

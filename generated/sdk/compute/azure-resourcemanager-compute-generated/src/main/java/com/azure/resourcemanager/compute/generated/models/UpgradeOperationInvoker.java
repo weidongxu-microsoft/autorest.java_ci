@@ -33,6 +33,9 @@ public enum UpgradeOperationInvoker {
      */
     @JsonCreator
     public static UpgradeOperationInvoker fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         UpgradeOperationInvoker[] items = UpgradeOperationInvoker.values();
         for (UpgradeOperationInvoker item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

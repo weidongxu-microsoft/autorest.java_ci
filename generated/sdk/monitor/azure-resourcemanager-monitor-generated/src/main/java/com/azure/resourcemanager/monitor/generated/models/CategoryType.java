@@ -30,6 +30,9 @@ public enum CategoryType {
      */
     @JsonCreator
     public static CategoryType fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         CategoryType[] items = CategoryType.values();
         for (CategoryType item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

@@ -25,8 +25,7 @@ public final class EnrichmentProperties {
     private String value;
 
     /*
-     * The list of endpoints for which the enrichment is applied to the
-     * message.
+     * The list of endpoints for which the enrichment is applied to the message.
      */
     @JsonProperty(value = "endpointNames", required = true)
     private List<String> endpointNames;

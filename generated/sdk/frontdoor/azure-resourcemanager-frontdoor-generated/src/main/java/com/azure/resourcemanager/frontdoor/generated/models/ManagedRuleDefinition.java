@@ -23,8 +23,7 @@ public final class ManagedRuleDefinition {
     private ManagedRuleEnabledState defaultState;
 
     /*
-     * Describes the default action to be applied when the managed rule
-     * matches.
+     * Describes the default action to be applied when the managed rule matches.
      */
     @JsonProperty(value = "defaultAction", access = JsonProperty.Access.WRITE_ONLY)
     private ActionType defaultAction;

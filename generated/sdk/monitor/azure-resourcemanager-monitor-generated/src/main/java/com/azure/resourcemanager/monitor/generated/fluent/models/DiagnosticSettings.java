@@ -14,15 +14,13 @@ import java.util.List;
 @Fluent
 public final class DiagnosticSettings {
     /*
-     * The resource ID of the storage account to which you would like to send
-     * Diagnostic Logs.
+     * The resource ID of the storage account to which you would like to send Diagnostic Logs.
      */
     @JsonProperty(value = "storageAccountId")
     private String storageAccountId;
 
     /*
-     * The service bus rule Id of the diagnostic setting. This is here to
-     * maintain backwards compatibility.
+     * The service bus rule Id of the diagnostic setting. This is here to maintain backwards compatibility.
      */
     @JsonProperty(value = "serviceBusRuleId")
     private String serviceBusRuleId;
@@ -34,8 +32,7 @@ public final class DiagnosticSettings {
     private String eventHubAuthorizationRuleId;
 
     /*
-     * The name of the event hub. If none is specified, the default event hub
-     * will be selected.
+     * The name of the event hub. If none is specified, the default event hub will be selected.
      */
     @JsonProperty(value = "eventHubName")
     private String eventHubName;
@@ -53,19 +50,17 @@ public final class DiagnosticSettings {
     private List<LogSettings> logs;
 
     /*
-     * The full ARM resource ID of the Log Analytics workspace to which you
-     * would like to send Diagnostic Logs. Example:
+     * The full ARM resource ID of the Log Analytics workspace to which you would like to send Diagnostic Logs.
+     * Example:
      * /subscriptions/4b9e8510-67ab-4e9a-95a9-e2f1e570ea9c/resourceGroups/insights-integration/providers/Microsoft.OperationalInsights/workspaces/viruela2
      */
     @JsonProperty(value = "workspaceId")
     private String workspaceId;
 
     /*
-     * A string indicating whether the export to Log Analytics should use the
-     * default destination type, i.e. AzureDiagnostics, or use a destination
-     * type constructed as follows: <normalized service identity>_<normalized
-     * category name>. Possible values are: Dedicated and null (null is
-     * default.)
+     * A string indicating whether the export to Log Analytics should use the default destination type, i.e.
+     * AzureDiagnostics, or use a destination type constructed as follows: <normalized service identity>_<normalized
+     * category name>. Possible values are: Dedicated and null (null is default.)
      */
     @JsonProperty(value = "logAnalyticsDestinationType")
     private String logAnalyticsDestinationType;

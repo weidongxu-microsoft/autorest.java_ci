@@ -15,15 +15,14 @@ import java.util.List;
 @Fluent
 public final class PrivateLinkConfigurationProperties {
     /*
-     * The HDInsight private linkable sub-resource name to apply the private
-     * link configuration to. For example, 'headnode', 'gateway', 'edgenode'.
+     * The HDInsight private linkable sub-resource name to apply the private link configuration to. For example,
+     * 'headnode', 'gateway', 'edgenode'.
      */
     @JsonProperty(value = "groupId", required = true)
     private String groupId;
 
     /*
-     * The private link configuration provisioning state, which only appears in
-     * the response.
+     * The private link configuration provisioning state, which only appears in the response.
      */
     @JsonProperty(value = "provisioningState", access = JsonProperty.Access.WRITE_ONLY)
     private PrivateLinkConfigurationProvisioningState provisioningState;

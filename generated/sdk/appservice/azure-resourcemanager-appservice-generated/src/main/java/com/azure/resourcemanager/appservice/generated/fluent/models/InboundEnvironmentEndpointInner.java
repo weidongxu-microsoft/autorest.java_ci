@@ -21,15 +21,13 @@ public final class InboundEnvironmentEndpointInner {
     private String description;
 
     /*
-     * The IP addresses that network traffic will originate from in cidr
-     * notation.
+     * The IP addresses that network traffic will originate from in cidr notation.
      */
     @JsonProperty(value = "endpoints")
     private List<String> endpoints;
 
     /*
-     * The ports that network traffic will arrive to the App Service
-     * Environment at.
+     * The ports that network traffic will arrive to the App Service Environment at.
      */
     @JsonProperty(value = "ports")
     private List<String> ports;

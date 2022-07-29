@@ -23,8 +23,7 @@ public final class DaprMetadata {
     private String value;
 
     /*
-     * Name of the Container App secret from which to pull the metadata
-     * property value.
+     * Name of the Container App secret from which to pull the metadata property value.
      */
     @JsonProperty(value = "secretRef")
     private String secretRef;

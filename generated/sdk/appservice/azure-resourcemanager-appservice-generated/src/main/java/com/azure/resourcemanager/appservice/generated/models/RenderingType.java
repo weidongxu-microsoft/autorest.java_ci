@@ -99,6 +99,9 @@ public enum RenderingType {
      */
     @JsonCreator
     public static RenderingType fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         RenderingType[] items = RenderingType.values();
         for (RenderingType item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

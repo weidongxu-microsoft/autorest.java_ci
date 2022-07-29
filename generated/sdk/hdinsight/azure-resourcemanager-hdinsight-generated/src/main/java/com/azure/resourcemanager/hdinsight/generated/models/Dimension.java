@@ -29,8 +29,7 @@ public final class Dimension {
     private String internalName;
 
     /*
-     * The flag indicates whether the metric will be exported for shoebox or
-     * not.
+     * The flag indicates whether the metric will be exported for shoebox or not.
      */
     @JsonProperty(value = "toBeExportedForShoebox")
     private Boolean toBeExportedForShoebox;

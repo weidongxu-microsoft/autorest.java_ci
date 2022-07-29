@@ -17,15 +17,14 @@ public final class Schedule {
     private Boolean enable;
 
     /*
-     * Number of weeks to schedule between 2 assessment runs. Takes value from
-     * 1-6
+     * Number of weeks to schedule between 2 assessment runs. Takes value from 1-6
      */
     @JsonProperty(value = "weeklyInterval")
     private Integer weeklyInterval;
 
     /*
-     * Occurrence of the DayOfWeek day within a month to schedule assessment.
-     * Takes values: 1,2,3,4 and -1. Use -1 for last DayOfWeek day of the month
+     * Occurrence of the DayOfWeek day within a month to schedule assessment. Takes values: 1,2,3,4 and -1. Use -1 for
+     * last DayOfWeek day of the month
      */
     @JsonProperty(value = "monthlyOccurrence")
     private Integer monthlyOccurrence;

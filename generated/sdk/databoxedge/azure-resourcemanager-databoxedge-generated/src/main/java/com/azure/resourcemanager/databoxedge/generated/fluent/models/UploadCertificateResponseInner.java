@@ -54,8 +54,7 @@ public final class UploadCertificateResponseInner {
     private String azureManagementEndpointAudience;
 
     /*
-     * Identifier of the target resource that is the recipient of the requested
-     * token.
+     * Identifier of the target resource that is the recipient of the requested token.
      */
     @JsonProperty(value = "aadAudience", access = JsonProperty.Access.WRITE_ONLY)
     private String aadAudience;

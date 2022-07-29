@@ -11,24 +11,22 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class AuthPlatform {
     /*
-     * <code>true</code> if the Authentication / Authorization feature is
-     * enabled for the current app; otherwise, <code>false</code>.
+     * <code>true</code> if the Authentication / Authorization feature is enabled for the current app; otherwise,
+     * <code>false</code>.
      */
     @JsonProperty(value = "enabled")
     private Boolean enabled;
 
     /*
-     * The RuntimeVersion of the Authentication / Authorization feature in use
-     * for the current app.
-     * The setting in this value can control the behavior of certain features
-     * in the Authentication / Authorization module.
+     * The RuntimeVersion of the Authentication / Authorization feature in use for the current app.
+     * The setting in this value can control the behavior of certain features in the Authentication / Authorization
+     * module.
      */
     @JsonProperty(value = "runtimeVersion")
     private String runtimeVersion;
 
     /*
-     * The path of the config file containing auth settings if they come from a
-     * file.
+     * The path of the config file containing auth settings if they come from a file.
      * If the path is relative, base will the site's root directory.
      */
     @JsonProperty(value = "configFilePath")

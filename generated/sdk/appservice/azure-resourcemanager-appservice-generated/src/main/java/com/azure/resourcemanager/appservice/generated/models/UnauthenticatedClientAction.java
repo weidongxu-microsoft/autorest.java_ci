@@ -30,6 +30,9 @@ public enum UnauthenticatedClientAction {
      */
     @JsonCreator
     public static UnauthenticatedClientAction fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         UnauthenticatedClientAction[] items = UnauthenticatedClientAction.values();
         for (UnauthenticatedClientAction item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

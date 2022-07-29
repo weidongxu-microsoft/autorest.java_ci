@@ -17,15 +17,13 @@ public final class NetworkTraceInner {
     private String path;
 
     /*
-     * Current status of the network trace operation, same as Operation.Status
-     * (InProgress/Succeeded/Failed).
+     * Current status of the network trace operation, same as Operation.Status (InProgress/Succeeded/Failed).
      */
     @JsonProperty(value = "status")
     private String status;
 
     /*
-     * Detailed message of a network trace operation, e.g. error message in
-     * case of failure.
+     * Detailed message of a network trace operation, e.g. error message in case of failure.
      */
     @JsonProperty(value = "message")
     private String message;

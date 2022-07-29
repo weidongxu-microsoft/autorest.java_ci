@@ -26,8 +26,7 @@ public final class UsageSample {
     private String meterId;
 
     /*
-     * UTC start time for the usage bucket to which this usage aggregate
-     * belongs.
+     * UTC start time for the usage bucket to which this usage aggregate belongs.
      */
     @JsonProperty(value = "usageStartTime")
     private OffsetDateTime usageStartTime;
@@ -45,8 +44,7 @@ public final class UsageSample {
     private Float quantity;
 
     /*
-     * The unit in which the usage for this resource is being counted, e.g.
-     * Hours, GB.
+     * The unit in which the usage for this resource is being counted, e.g. Hours, GB.
      */
     @JsonProperty(value = "unit")
     private String unit;

@@ -33,6 +33,9 @@ public enum StatusLevelTypes {
      */
     @JsonCreator
     public static StatusLevelTypes fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         StatusLevelTypes[] items = StatusLevelTypes.values();
         for (StatusLevelTypes item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

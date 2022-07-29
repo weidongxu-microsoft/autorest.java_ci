@@ -13,8 +13,7 @@ import java.util.Map;
 @Fluent
 public final class ClusterConfigurationsInner {
     /*
-     * The configuration object for the specified configuration for the
-     * specified cluster.
+     * The configuration object for the specified configuration for the specified cluster.
      */
     @JsonProperty(value = "configurations")
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)

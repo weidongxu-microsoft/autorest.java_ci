@@ -66,6 +66,9 @@ public enum CertificateOrderActionType {
      */
     @JsonCreator
     public static CertificateOrderActionType fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         CertificateOrderActionType[] items = CertificateOrderActionType.values();
         for (CertificateOrderActionType item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

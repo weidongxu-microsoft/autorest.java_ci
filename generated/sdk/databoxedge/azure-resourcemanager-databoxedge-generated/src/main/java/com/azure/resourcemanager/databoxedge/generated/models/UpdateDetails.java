@@ -47,8 +47,7 @@ public final class UpdateDetails {
     private Integer estimatedInstallTimeInMins;
 
     /*
-     * Indicates if updates are available and at least one of the updates needs
-     * a reboot.
+     * Indicates if updates are available and at least one of the updates needs a reboot.
      */
     @JsonProperty(value = "rebootBehavior")
     private InstallRebootBehavior rebootBehavior;

@@ -24,16 +24,14 @@ public final class ExportDevicesRequest {
     private boolean excludeKeys;
 
     /*
-     * The name of the blob that will be created in the provided output blob
-     * container. This blob will contain the exported device registry
-     * information for the IoT Hub.
+     * The name of the blob that will be created in the provided output blob container. This blob will contain the
+     * exported device registry information for the IoT Hub.
      */
     @JsonProperty(value = "exportBlobName")
     private String exportBlobName;
 
     /*
-     * Specifies authentication type being used for connecting to the storage
-     * account.
+     * Specifies authentication type being used for connecting to the storage account.
      */
     @JsonProperty(value = "authenticationType")
     private AuthenticationType authenticationType;
@@ -51,9 +49,8 @@ public final class ExportDevicesRequest {
     private Boolean includeConfigurations;
 
     /*
-     * The name of the blob that will be created in the provided output blob
-     * container. This blob will contain the exported configurations for the
-     * Iot Hub.
+     * The name of the blob that will be created in the provided output blob container. This blob will contain the
+     * exported configurations for the Iot Hub.
      */
     @JsonProperty(value = "configurationsBlobName")
     private String configurationsBlobName;

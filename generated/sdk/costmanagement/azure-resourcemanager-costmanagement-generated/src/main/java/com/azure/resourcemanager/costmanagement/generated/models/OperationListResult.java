@@ -16,8 +16,7 @@ import java.util.List;
 @Immutable
 public final class OperationListResult {
     /*
-     * List of cost management operations supported by the
-     * Microsoft.CostManagement resource provider.
+     * List of cost management operations supported by the Microsoft.CostManagement resource provider.
      */
     @JsonProperty(value = "value", access = JsonProperty.Access.WRITE_ONLY)
     private List<OperationInner> value;

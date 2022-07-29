@@ -100,8 +100,7 @@ public final class CertificatePatchResourceProperties {
     private String publicKeyHash;
 
     /*
-     * Specification for the App Service Environment to use for the
-     * certificate.
+     * Specification for the App Service Environment to use for the certificate.
      */
     @JsonProperty(value = "hostingEnvironmentProfile", access = JsonProperty.Access.WRITE_ONLY)
     private HostingEnvironmentProfile hostingEnvironmentProfile;

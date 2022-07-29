@@ -19,15 +19,14 @@ import java.util.List;
 @Fluent
 public final class RuleEmailAction extends RuleAction {
     /*
-     * Whether the administrators (service and co-administrators) of the
-     * service should be notified when the alert is activated.
+     * Whether the administrators (service and co-administrators) of the service should be notified when the alert is
+     * activated.
      */
     @JsonProperty(value = "sendToServiceOwners")
     private Boolean sendToServiceOwners;
 
     /*
-     * the list of administrator's custom email addresses to notify of the
-     * activation of the alert.
+     * the list of administrator's custom email addresses to notify of the activation of the alert.
      */
     @JsonProperty(value = "customEmails")
     private List<String> customEmails;

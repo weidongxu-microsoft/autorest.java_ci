@@ -69,8 +69,7 @@ public final class SubnetPropertiesFormatInner {
     private List<PrivateEndpointInner> privateEndpoints;
 
     /*
-     * An array of references to the network interface IP configurations using
-     * subnet.
+     * An array of references to the network interface IP configurations using subnet.
      */
     @JsonProperty(value = "ipConfigurations", access = JsonProperty.Access.WRITE_ONLY)
     private List<IpConfigurationInner> ipConfigurations;
@@ -106,8 +105,8 @@ public final class SubnetPropertiesFormatInner {
     private List<Delegation> delegations;
 
     /*
-     * A read-only string identifying the intention of use for this subnet
-     * based on delegations and other user-defined properties.
+     * A read-only string identifying the intention of use for this subnet based on delegations and other user-defined
+     * properties.
      */
     @JsonProperty(value = "purpose", access = JsonProperty.Access.WRITE_ONLY)
     private String purpose;
@@ -119,15 +118,13 @@ public final class SubnetPropertiesFormatInner {
     private ProvisioningState provisioningState;
 
     /*
-     * Enable or Disable apply network policies on private end point in the
-     * subnet.
+     * Enable or Disable apply network policies on private end point in the subnet.
      */
     @JsonProperty(value = "privateEndpointNetworkPolicies")
     private VirtualNetworkPrivateEndpointNetworkPolicies privateEndpointNetworkPolicies;
 
     /*
-     * Enable or Disable apply network policies on private link service in the
-     * subnet.
+     * Enable or Disable apply network policies on private link service in the subnet.
      */
     @JsonProperty(value = "privateLinkServiceNetworkPolicies")
     private VirtualNetworkPrivateLinkServiceNetworkPolicies privateLinkServiceNetworkPolicies;

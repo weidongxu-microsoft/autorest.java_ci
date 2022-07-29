@@ -30,6 +30,9 @@ public enum AzureStorageType {
      */
     @JsonCreator
     public static AzureStorageType fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         AzureStorageType[] items = AzureStorageType.values();
         for (AzureStorageType item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

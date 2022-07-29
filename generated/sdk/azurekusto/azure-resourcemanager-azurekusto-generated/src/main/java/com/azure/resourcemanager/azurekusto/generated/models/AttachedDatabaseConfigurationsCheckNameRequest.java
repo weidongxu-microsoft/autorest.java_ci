@@ -18,8 +18,7 @@ public final class AttachedDatabaseConfigurationsCheckNameRequest {
     private String name;
 
     /*
-     * The type of resource, for instance
-     * Microsoft.Kusto/clusters/attachedDatabaseConfigurations.
+     * The type of resource, for instance Microsoft.Kusto/clusters/attachedDatabaseConfigurations.
      */
     @JsonProperty(value = "type", required = true)
     private String type = "Microsoft.Kusto/clusters/attachedDatabaseConfigurations";

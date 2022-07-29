@@ -42,6 +42,9 @@ public enum SiteLoadBalancing {
      */
     @JsonCreator
     public static SiteLoadBalancing fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         SiteLoadBalancing[] items = SiteLoadBalancing.values();
         for (SiteLoadBalancing item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

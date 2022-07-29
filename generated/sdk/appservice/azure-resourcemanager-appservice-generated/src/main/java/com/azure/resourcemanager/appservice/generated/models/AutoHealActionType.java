@@ -33,6 +33,9 @@ public enum AutoHealActionType {
      */
     @JsonCreator
     public static AutoHealActionType fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         AutoHealActionType[] items = AutoHealActionType.values();
         for (AutoHealActionType item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

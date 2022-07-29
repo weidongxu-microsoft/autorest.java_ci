@@ -38,8 +38,7 @@ public final class DenyAssignmentProperties {
     private String scope;
 
     /*
-     * Determines if the deny assignment applies to child scopes. Default value
-     * is false.
+     * Determines if the deny assignment applies to child scopes. Default value is false.
      */
     @JsonProperty(value = "doNotApplyToChildScopes")
     private Boolean doNotApplyToChildScopes;
@@ -57,8 +56,7 @@ public final class DenyAssignmentProperties {
     private List<Principal> excludePrincipals;
 
     /*
-     * Specifies whether this deny assignment was created by Azure and cannot
-     * be edited or deleted.
+     * Specifies whether this deny assignment was created by Azure and cannot be edited or deleted.
      */
     @JsonProperty(value = "isSystemProtected")
     private Boolean isSystemProtected;

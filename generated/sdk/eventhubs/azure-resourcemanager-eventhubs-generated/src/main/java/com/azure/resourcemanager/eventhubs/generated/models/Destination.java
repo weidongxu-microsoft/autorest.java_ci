@@ -19,8 +19,7 @@ public final class Destination {
     private String name;
 
     /*
-     * Properties describing the storage account, blob container and archive
-     * name format for capture destination
+     * Properties describing the storage account, blob container and archive name format for capture destination
      */
     @JsonProperty(value = "properties")
     private DestinationProperties innerProperties;

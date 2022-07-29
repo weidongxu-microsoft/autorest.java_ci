@@ -30,6 +30,9 @@ public enum ProtocolTypes {
      */
     @JsonCreator
     public static ProtocolTypes fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         ProtocolTypes[] items = ProtocolTypes.values();
         for (ProtocolTypes item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

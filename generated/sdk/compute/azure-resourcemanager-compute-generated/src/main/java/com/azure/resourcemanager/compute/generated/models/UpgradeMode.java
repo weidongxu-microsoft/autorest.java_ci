@@ -33,6 +33,9 @@ public enum UpgradeMode {
      */
     @JsonCreator
     public static UpgradeMode fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         UpgradeMode[] items = UpgradeMode.values();
         for (UpgradeMode item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

@@ -33,6 +33,9 @@ public enum DedicatedHostLicenseTypes {
      */
     @JsonCreator
     public static DedicatedHostLicenseTypes fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         DedicatedHostLicenseTypes[] items = DedicatedHostLicenseTypes.values();
         for (DedicatedHostLicenseTypes item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

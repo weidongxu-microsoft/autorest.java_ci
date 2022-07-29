@@ -49,8 +49,7 @@ public final class CertificatePropertiesWithNonce {
     private DateTimeRfc1123 updated;
 
     /*
-     * The certificate's verification code that will be used for proof of
-     * possession.
+     * The certificate's verification code that will be used for proof of possession.
      */
     @JsonProperty(value = "verificationCode", access = JsonProperty.Access.WRITE_ONLY)
     private String verificationCode;

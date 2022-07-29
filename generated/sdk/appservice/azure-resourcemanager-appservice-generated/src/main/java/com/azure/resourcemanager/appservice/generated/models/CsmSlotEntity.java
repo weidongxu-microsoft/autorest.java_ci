@@ -18,8 +18,7 @@ public final class CsmSlotEntity {
     private String targetSlot;
 
     /*
-     * <code>true</code> to preserve Virtual Network to the slot during swap;
-     * otherwise, <code>false</code>.
+     * <code>true</code> to preserve Virtual Network to the slot during swap; otherwise, <code>false</code>.
      */
     @JsonProperty(value = "preserveVnet", required = true)
     private boolean preserveVnet;

@@ -22,8 +22,7 @@ public final class DataBoxEdgeDeviceExtendedInfoProperties {
     private String encryptionKeyThumbprint;
 
     /*
-     * The public part of the encryption certificate. Client uses this to
-     * encrypt any secret.
+     * The public part of the encryption certificate. Client uses this to encrypt any secret.
      */
     @JsonProperty(value = "encryptionKey")
     private String encryptionKey;
@@ -65,8 +64,7 @@ public final class DataBoxEdgeDeviceExtendedInfoProperties {
     private KeyVaultSyncStatus keyVaultSyncStatus;
 
     /*
-     * Device secrets, will be returned only with ODataFilter
-     * $expand=deviceSecrets
+     * Device secrets, will be returned only with ODataFilter $expand=deviceSecrets
      */
     @JsonProperty(value = "deviceSecrets", access = JsonProperty.Access.WRITE_ONLY)
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)

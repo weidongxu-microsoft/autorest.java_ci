@@ -11,16 +11,15 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class SnapshotRecoverySource {
     /*
-     * Geographical location of the source web app, e.g. SouthEastAsia,
-     * SouthCentralUS
+     * Geographical location of the source web app, e.g. SouthEastAsia, SouthCentralUS
      */
     @JsonProperty(value = "location")
     private String location;
 
     /*
      * ARM resource ID of the source app.
-     * /subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}
-     * for production slots and
+     * /subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName} for
+     * production slots and
      * /subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/slots/{slotName}
      * for other slots.
      */

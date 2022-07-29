@@ -24,8 +24,7 @@ public final class VirtualApplication {
     private String physicalPath;
 
     /*
-     * <code>true</code> if preloading is enabled; otherwise,
-     * <code>false</code>.
+     * <code>true</code> if preloading is enabled; otherwise, <code>false</code>.
      */
     @JsonProperty(value = "preloadEnabled")
     private Boolean preloadEnabled;

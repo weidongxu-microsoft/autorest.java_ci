@@ -33,8 +33,7 @@ public final class RecommendationRuleProperties {
     private String message;
 
     /*
-     * Recommendation ID of an associated recommendation object tied to the
-     * rule, if exists.
+     * Recommendation ID of an associated recommendation object tied to the rule, if exists.
      * If such an object doesn't exist, it is set to null.
      */
     @JsonProperty(value = "recommendationId")
@@ -89,8 +88,7 @@ public final class RecommendationRuleProperties {
     private String bladeName;
 
     /*
-     * Forward link to an external document associated with the rule.
-     * Applicable to dynamic rule only.
+     * Forward link to an external document associated with the rule. Applicable to dynamic rule only.
      */
     @JsonProperty(value = "forwardLink")
     private String forwardLink;

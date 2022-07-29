@@ -18,8 +18,7 @@ public final class ForecastDefinition {
     private ForecastType type;
 
     /*
-     * The time frame for pulling data for the forecast. If custom, then a
-     * specific time period must be provided.
+     * The time frame for pulling data for the forecast. If custom, then a specific time period must be provided.
      */
     @JsonProperty(value = "timeframe", required = true)
     private ForecastTimeframeType timeframe;

@@ -60,6 +60,9 @@ public enum WorkerSizeOptions {
      */
     @JsonCreator
     public static WorkerSizeOptions fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         WorkerSizeOptions[] items = WorkerSizeOptions.values();
         for (WorkerSizeOptions item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

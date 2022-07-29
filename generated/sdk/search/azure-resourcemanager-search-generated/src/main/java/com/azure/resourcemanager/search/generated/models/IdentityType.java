@@ -30,6 +30,9 @@ public enum IdentityType {
      */
     @JsonCreator
     public static IdentityType fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         IdentityType[] items = IdentityType.values();
         for (IdentityType item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

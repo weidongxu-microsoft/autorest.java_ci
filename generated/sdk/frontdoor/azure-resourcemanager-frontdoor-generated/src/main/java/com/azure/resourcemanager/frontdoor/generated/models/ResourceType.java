@@ -30,6 +30,9 @@ public enum ResourceType {
      */
     @JsonCreator
     public static ResourceType fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         ResourceType[] items = ResourceType.values();
         for (ResourceType item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

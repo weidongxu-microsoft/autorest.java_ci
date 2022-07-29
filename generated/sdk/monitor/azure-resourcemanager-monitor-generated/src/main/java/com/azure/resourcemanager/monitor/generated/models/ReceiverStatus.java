@@ -33,6 +33,9 @@ public enum ReceiverStatus {
      */
     @JsonCreator
     public static ReceiverStatus fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         ReceiverStatus[] items = ReceiverStatus.values();
         for (ReceiverStatus item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

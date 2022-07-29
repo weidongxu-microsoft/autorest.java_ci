@@ -35,8 +35,7 @@ public final class DetectorResponseProperties {
     private Status status;
 
     /*
-     * Additional configuration for different data providers to be used by the
-     * UI
+     * Additional configuration for different data providers to be used by the UI
      */
     @JsonProperty(value = "dataProvidersMetadata")
     private List<DataProviderMetadata> dataProvidersMetadata;

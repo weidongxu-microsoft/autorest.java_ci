@@ -19,8 +19,7 @@ public final class EHNamespaceListResult {
     private List<EHNamespaceInner> value;
 
     /*
-     * Link to the next set of results. Not empty if Value contains incomplete
-     * list of namespaces.
+     * Link to the next set of results. Not empty if Value contains incomplete list of namespaces.
      */
     @JsonProperty(value = "nextLink")
     private String nextLink;

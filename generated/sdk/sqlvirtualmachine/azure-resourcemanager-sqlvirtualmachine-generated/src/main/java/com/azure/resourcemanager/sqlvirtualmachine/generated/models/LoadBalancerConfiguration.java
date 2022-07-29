@@ -36,8 +36,7 @@ public final class LoadBalancerConfiguration {
     private Integer probePort;
 
     /*
-     * List of the SQL virtual machine instance resource id's that are enrolled
-     * into the availability group listener.
+     * List of the SQL virtual machine instance resource id's that are enrolled into the availability group listener.
      */
     @JsonProperty(value = "sqlVirtualMachineInstances")
     private List<String> sqlVirtualMachineInstances;

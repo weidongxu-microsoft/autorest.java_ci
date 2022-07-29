@@ -18,8 +18,7 @@ public final class ClusterSku {
     private ClusterSkuName name;
 
     /*
-     * The quantity of Event Hubs Cluster Capacity Units contained in this
-     * cluster.
+     * The quantity of Event Hubs Cluster Capacity Units contained in this cluster.
      */
     @JsonProperty(value = "capacity")
     private Integer capacity;

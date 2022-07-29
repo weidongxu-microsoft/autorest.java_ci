@@ -35,8 +35,7 @@ public final class DeviceCapacityInfoProperties {
     private ClusterCapacityViewData clusterComputeCapacityInfo;
 
     /*
-     * The dictionary of individual node names and node capacities in the
-     * cluster.
+     * The dictionary of individual node names and node capacities in the cluster.
      */
     @JsonProperty(value = "nodeCapacityInfos")
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)

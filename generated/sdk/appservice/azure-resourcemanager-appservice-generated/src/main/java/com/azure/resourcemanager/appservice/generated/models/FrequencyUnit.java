@@ -30,6 +30,9 @@ public enum FrequencyUnit {
      */
     @JsonCreator
     public static FrequencyUnit fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         FrequencyUnit[] items = FrequencyUnit.values();
         for (FrequencyUnit item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

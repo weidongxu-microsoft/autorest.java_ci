@@ -15,16 +15,15 @@ import java.util.List;
 @Fluent
 public final class ActivityLogAlert {
     /*
-     * A list of resourceIds that will be used as prefixes. The alert will only
-     * apply to activityLogs with resourceIds that fall under one of these
-     * prefixes. This list must include at least one item.
+     * A list of resourceIds that will be used as prefixes. The alert will only apply to activityLogs with resourceIds
+     * that fall under one of these prefixes. This list must include at least one item.
      */
     @JsonProperty(value = "scopes", required = true)
     private List<String> scopes;
 
     /*
-     * Indicates whether this activity log alert is enabled. If an activity log
-     * alert is not enabled, then none of its actions will be activated.
+     * Indicates whether this activity log alert is enabled. If an activity log alert is not enabled, then none of its
+     * actions will be activated.
      */
     @JsonProperty(value = "enabled")
     private Boolean enabled;

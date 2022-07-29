@@ -33,6 +33,9 @@ public enum OfferTermInfo {
      */
     @JsonCreator
     public static OfferTermInfo fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         OfferTermInfo[] items = OfferTermInfo.values();
         for (OfferTermInfo item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

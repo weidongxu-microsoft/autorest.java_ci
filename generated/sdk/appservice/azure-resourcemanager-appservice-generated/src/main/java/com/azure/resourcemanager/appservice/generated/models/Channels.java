@@ -39,6 +39,9 @@ public enum Channels {
      */
     @JsonCreator
     public static Channels fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         Channels[] items = Channels.values();
         for (Channels item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

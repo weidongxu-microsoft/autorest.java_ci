@@ -33,6 +33,9 @@ public enum CloneAbilityResult {
      */
     @JsonCreator
     public static CloneAbilityResult fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         CloneAbilityResult[] items = CloneAbilityResult.values();
         for (CloneAbilityResult item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

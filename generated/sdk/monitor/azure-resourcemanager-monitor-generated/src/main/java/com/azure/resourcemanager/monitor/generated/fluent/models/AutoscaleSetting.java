@@ -15,9 +15,8 @@ import java.util.List;
 @Fluent
 public final class AutoscaleSetting {
     /*
-     * the collection of automatic scaling profiles that specify different
-     * scaling parameters for different time periods. A maximum of 20 profiles
-     * can be specified.
+     * the collection of automatic scaling profiles that specify different scaling parameters for different time
+     * periods. A maximum of 20 profiles can be specified.
      */
     @JsonProperty(value = "profiles", required = true)
     private List<AutoscaleProfile> profiles;
@@ -29,8 +28,7 @@ public final class AutoscaleSetting {
     private List<AutoscaleNotification> notifications;
 
     /*
-     * the enabled flag. Specifies whether automatic scaling is enabled for the
-     * resource. The default value is 'false'.
+     * the enabled flag. Specifies whether automatic scaling is enabled for the resource. The default value is 'false'.
      */
     @JsonProperty(value = "enabled")
     private Boolean enabled;
@@ -42,15 +40,13 @@ public final class AutoscaleSetting {
     private String name;
 
     /*
-     * the resource identifier of the resource that the autoscale setting
-     * should be added to.
+     * the resource identifier of the resource that the autoscale setting should be added to.
      */
     @JsonProperty(value = "targetResourceUri")
     private String targetResourceUri;
 
     /*
-     * the location of the resource that the autoscale setting should be added
-     * to.
+     * the location of the resource that the autoscale setting should be added to.
      */
     @JsonProperty(value = "targetResourceLocation")
     private String targetResourceLocation;

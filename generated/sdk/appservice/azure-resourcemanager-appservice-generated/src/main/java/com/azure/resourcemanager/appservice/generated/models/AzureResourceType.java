@@ -30,6 +30,9 @@ public enum AzureResourceType {
      */
     @JsonCreator
     public static AzureResourceType fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         AzureResourceType[] items = AzureResourceType.values();
         for (AzureResourceType item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

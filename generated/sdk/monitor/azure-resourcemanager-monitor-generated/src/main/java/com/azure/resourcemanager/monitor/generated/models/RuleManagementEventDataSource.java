@@ -35,8 +35,7 @@ public final class RuleManagementEventDataSource extends RuleDataSource {
     private String level;
 
     /*
-     * The name of the operation that should be checked for. If no name is
-     * provided, any operation will match.
+     * The name of the operation that should be checked for. If no name is provided, any operation will match.
      */
     @JsonProperty(value = "operationName")
     private String operationName;
@@ -54,8 +53,7 @@ public final class RuleManagementEventDataSource extends RuleDataSource {
     private String resourceProviderName;
 
     /*
-     * The status of the operation that should be checked for. If no status is
-     * provided, any status will match.
+     * The status of the operation that should be checked for. If no status is provided, any status will match.
      */
     @JsonProperty(value = "status")
     private String status;

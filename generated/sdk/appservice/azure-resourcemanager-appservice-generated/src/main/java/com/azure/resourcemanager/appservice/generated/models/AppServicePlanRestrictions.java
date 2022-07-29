@@ -42,6 +42,9 @@ public enum AppServicePlanRestrictions {
      */
     @JsonCreator
     public static AppServicePlanRestrictions fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         AppServicePlanRestrictions[] items = AppServicePlanRestrictions.values();
         for (AppServicePlanRestrictions item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

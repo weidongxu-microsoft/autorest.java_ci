@@ -17,8 +17,7 @@ public final class PrivateEndpointConnectionProperties {
     private PrivateEndpointConnectionPropertiesPrivateEndpoint privateEndpoint;
 
     /*
-     * Describes the current state of an existing Private Link Service
-     * connection to the Azure Private Endpoint.
+     * Describes the current state of an existing Private Link Service connection to the Azure Private Endpoint.
      */
     @JsonProperty(value = "privateLinkServiceConnectionState")
     private PrivateEndpointConnectionPropertiesPrivateLinkServiceConnectionState privateLinkServiceConnectionState;

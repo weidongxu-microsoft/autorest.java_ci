@@ -12,8 +12,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class FrontDoorCertificateSourceParameters {
     /*
-     * Defines the type of the certificate used for secure connections to a
-     * frontendEndpoint
+     * Defines the type of the certificate used for secure connections to a frontendEndpoint
      */
     @JsonProperty(value = "certificateType")
     private FrontDoorCertificateType certificateType;

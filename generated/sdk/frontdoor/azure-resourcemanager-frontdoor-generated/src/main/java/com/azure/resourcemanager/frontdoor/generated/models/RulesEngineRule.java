@@ -29,23 +29,21 @@ public final class RulesEngineRule {
     private int priority;
 
     /*
-     * Actions to perform on the request and response if all of the match
-     * conditions are met.
+     * Actions to perform on the request and response if all of the match conditions are met.
      */
     @JsonProperty(value = "action", required = true)
     private RulesEngineAction action;
 
     /*
-     * A list of match conditions that must meet in order for the actions of
-     * this rule to run. Having no match conditions means the actions will
-     * always run.
+     * A list of match conditions that must meet in order for the actions of this rule to run. Having no match
+     * conditions means the actions will always run.
      */
     @JsonProperty(value = "matchConditions")
     private List<RulesEngineMatchCondition> matchConditions;
 
     /*
-     * If this rule is a match should the rules engine continue running the
-     * remaining rules or stop. If not present, defaults to Continue.
+     * If this rule is a match should the rules engine continue running the remaining rules or stop. If not present,
+     * defaults to Continue.
      */
     @JsonProperty(value = "matchProcessingBehavior")
     private MatchProcessingBehavior matchProcessingBehavior;

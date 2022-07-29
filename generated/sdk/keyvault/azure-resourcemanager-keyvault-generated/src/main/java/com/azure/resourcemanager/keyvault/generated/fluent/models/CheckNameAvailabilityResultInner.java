@@ -12,16 +12,14 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Immutable
 public final class CheckNameAvailabilityResultInner {
     /*
-     * A boolean value that indicates whether the name is available for you to
-     * use. If true, the name is available. If false, the name has already been
-     * taken or is invalid and cannot be used.
+     * A boolean value that indicates whether the name is available for you to use. If true, the name is available. If
+     * false, the name has already been taken or is invalid and cannot be used.
      */
     @JsonProperty(value = "nameAvailable", access = JsonProperty.Access.WRITE_ONLY)
     private Boolean nameAvailable;
 
     /*
-     * The reason that a vault name could not be used. The Reason element is
-     * only returned if NameAvailable is false.
+     * The reason that a vault name could not be used. The Reason element is only returned if NameAvailable is false.
      */
     @JsonProperty(value = "reason", access = JsonProperty.Access.WRITE_ONLY)
     private Reason reason;

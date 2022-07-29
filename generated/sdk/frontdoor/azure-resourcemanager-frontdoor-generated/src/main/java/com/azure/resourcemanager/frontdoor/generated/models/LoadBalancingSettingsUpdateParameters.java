@@ -23,8 +23,7 @@ public class LoadBalancingSettingsUpdateParameters {
     private Integer successfulSamplesRequired;
 
     /*
-     * The additional latency in milliseconds for probes to fall into the
-     * lowest latency bucket
+     * The additional latency in milliseconds for probes to fall into the lowest latency bucket
      */
     @JsonProperty(value = "additionalLatencyMilliseconds")
     private Integer additionalLatencyMilliseconds;

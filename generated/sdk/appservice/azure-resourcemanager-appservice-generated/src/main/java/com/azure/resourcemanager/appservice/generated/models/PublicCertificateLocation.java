@@ -33,6 +33,9 @@ public enum PublicCertificateLocation {
      */
     @JsonCreator
     public static PublicCertificateLocation fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         PublicCertificateLocation[] items = PublicCertificateLocation.values();
         for (PublicCertificateLocation item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

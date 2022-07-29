@@ -35,8 +35,7 @@ public final class UpdateSummaryProperties {
     private OffsetDateTime deviceLastScannedDateTime;
 
     /*
-     * The time when the last scan job was completed (success/cancelled/failed)
-     * on the appliance.
+     * The time when the last scan job was completed (success/cancelled/failed) on the appliance.
      */
     @JsonProperty(value = "lastCompletedScanJobDateTime")
     private OffsetDateTime lastCompletedScanJobDateTime;
@@ -48,8 +47,7 @@ public final class UpdateSummaryProperties {
     private OffsetDateTime lastSuccessfulScanJobTime;
 
     /*
-     * The time when the last Download job was completed
-     * (success/cancelled/failed) on the appliance.
+     * The time when the last Download job was completed (success/cancelled/failed) on the appliance.
      */
     @JsonProperty(value = "lastCompletedDownloadJobDateTime", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime lastCompletedDownloadJobDateTime;
@@ -67,15 +65,13 @@ public final class UpdateSummaryProperties {
     private JobStatus lastDownloadJobStatus;
 
     /*
-     * The time when the Last Install job was completed successfully on the
-     * appliance
+     * The time when the Last Install job was completed successfully on the appliance
      */
     @JsonProperty(value = "lastSuccessfulInstallJobDateTime")
     private OffsetDateTime lastSuccessfulInstallJobDateTime;
 
     /*
-     * The time when the last Install job was completed
-     * (success/cancelled/failed) on the appliance.
+     * The time when the last Install job was completed (success/cancelled/failed) on the appliance.
      */
     @JsonProperty(value = "lastCompletedInstallJobDateTime", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime lastCompletedInstallJobDateTime;
@@ -93,8 +89,7 @@ public final class UpdateSummaryProperties {
     private JobStatus lastInstallJobStatus;
 
     /*
-     * The number of updates available for the current device version as per
-     * the last device scan.
+     * The number of updates available for the current device version as per the last device scan.
      */
     @JsonProperty(value = "totalNumberOfUpdatesAvailable", access = JsonProperty.Access.WRITE_ONLY)
     private Integer totalNumberOfUpdatesAvailable;
@@ -112,8 +107,7 @@ public final class UpdateSummaryProperties {
     private Integer totalNumberOfUpdatesPendingInstall;
 
     /*
-     * Indicates if updates are available and at least one of the updates needs
-     * a reboot.
+     * Indicates if updates are available and at least one of the updates needs a reboot.
      */
     @JsonProperty(value = "rebootBehavior", access = JsonProperty.Access.WRITE_ONLY)
     private InstallRebootBehavior rebootBehavior;

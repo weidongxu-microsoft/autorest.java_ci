@@ -12,9 +12,8 @@ import java.math.BigDecimal;
 @Immutable
 public final class ForecastSpend {
     /*
-     * The forecasted cost for the total time period which is being tracked by
-     * the budget. This value is only provided if the budget contains a
-     * forecast alert type.
+     * The forecasted cost for the total time period which is being tracked by the budget. This value is only provided
+     * if the budget contains a forecast alert type.
      */
     @JsonProperty(value = "amount", access = JsonProperty.Access.WRITE_ONLY)
     private BigDecimal amount;

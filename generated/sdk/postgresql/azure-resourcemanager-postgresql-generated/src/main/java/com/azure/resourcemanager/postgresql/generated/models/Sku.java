@@ -12,8 +12,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class Sku {
     /*
-     * The name of the sku, typically, tier + family + cores, e.g. B_Gen4_1,
-     * GP_Gen5_8.
+     * The name of the sku, typically, tier + family + cores, e.g. B_Gen4_1, GP_Gen5_8.
      */
     @JsonProperty(value = "name", required = true)
     private String name;

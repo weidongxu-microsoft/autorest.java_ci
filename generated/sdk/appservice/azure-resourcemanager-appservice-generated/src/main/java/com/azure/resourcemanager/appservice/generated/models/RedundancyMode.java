@@ -39,6 +39,9 @@ public enum RedundancyMode {
      */
     @JsonCreator
     public static RedundancyMode fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         RedundancyMode[] items = RedundancyMode.values();
         for (RedundancyMode item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

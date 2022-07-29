@@ -36,6 +36,9 @@ public enum UpgradeState {
      */
     @JsonCreator
     public static UpgradeState fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         UpgradeState[] items = UpgradeState.values();
         for (UpgradeState item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

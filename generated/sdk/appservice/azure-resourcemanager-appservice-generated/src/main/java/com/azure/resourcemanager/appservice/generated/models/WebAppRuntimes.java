@@ -23,15 +23,13 @@ public final class WebAppRuntimes {
     private WebAppRuntimeSettings windowsRuntimeSettings;
 
     /*
-     * Linux-specific settings associated with the Java container minor
-     * version.
+     * Linux-specific settings associated with the Java container minor version.
      */
     @JsonProperty(value = "linuxContainerSettings", access = JsonProperty.Access.WRITE_ONLY)
     private LinuxJavaContainerSettings linuxContainerSettings;
 
     /*
-     * Windows-specific settings associated with the Java container minor
-     * version.
+     * Windows-specific settings associated with the Java container minor version.
      */
     @JsonProperty(value = "windowsContainerSettings", access = JsonProperty.Access.WRITE_ONLY)
     private WindowsJavaContainerSettings windowsContainerSettings;

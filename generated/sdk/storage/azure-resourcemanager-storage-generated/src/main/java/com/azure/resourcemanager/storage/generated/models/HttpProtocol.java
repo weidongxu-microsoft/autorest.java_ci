@@ -30,6 +30,9 @@ public enum HttpProtocol {
      */
     @JsonCreator
     public static HttpProtocol fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         HttpProtocol[] items = HttpProtocol.values();
         for (HttpProtocol item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

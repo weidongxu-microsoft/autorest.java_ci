@@ -19,8 +19,7 @@ public final class ApplicationGroupListResult {
     private List<ApplicationGroupInner> value;
 
     /*
-     * Link to the next set of results. Not empty if Value contains an
-     * incomplete list of Authorization Rules
+     * Link to the next set of results. Not empty if Value contains an incomplete list of Authorization Rules
      */
     @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;

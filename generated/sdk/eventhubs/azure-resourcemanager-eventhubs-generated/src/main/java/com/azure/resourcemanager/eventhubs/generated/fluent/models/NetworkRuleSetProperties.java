@@ -40,9 +40,8 @@ public final class NetworkRuleSetProperties {
     private List<NWRuleSetIpRules> ipRules;
 
     /*
-     * This determines if traffic is allowed over public network. By default it
-     * is enabled. If value is SecuredByPerimeter then Inbound and Outbound
-     * communication is controlled by the network security perimeter and
+     * This determines if traffic is allowed over public network. By default it is enabled. If value is
+     * SecuredByPerimeter then Inbound and Outbound communication is controlled by the network security perimeter and
      * profile's access rules.
      */
     @JsonProperty(value = "publicNetworkAccess")

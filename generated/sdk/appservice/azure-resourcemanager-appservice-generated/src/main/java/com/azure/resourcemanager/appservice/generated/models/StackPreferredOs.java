@@ -30,6 +30,9 @@ public enum StackPreferredOs {
      */
     @JsonCreator
     public static StackPreferredOs fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         StackPreferredOs[] items = StackPreferredOs.values();
         for (StackPreferredOs item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

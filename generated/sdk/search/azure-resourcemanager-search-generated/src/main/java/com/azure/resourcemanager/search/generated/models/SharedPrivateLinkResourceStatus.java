@@ -36,6 +36,9 @@ public enum SharedPrivateLinkResourceStatus {
      */
     @JsonCreator
     public static SharedPrivateLinkResourceStatus fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         SharedPrivateLinkResourceStatus[] items = SharedPrivateLinkResourceStatus.values();
         for (SharedPrivateLinkResourceStatus item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

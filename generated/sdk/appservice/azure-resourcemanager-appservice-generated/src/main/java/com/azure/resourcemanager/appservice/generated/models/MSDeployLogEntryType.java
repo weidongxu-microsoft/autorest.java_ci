@@ -33,6 +33,9 @@ public enum MSDeployLogEntryType {
      */
     @JsonCreator
     public static MSDeployLogEntryType fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         MSDeployLogEntryType[] items = MSDeployLogEntryType.values();
         for (MSDeployLogEntryType item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

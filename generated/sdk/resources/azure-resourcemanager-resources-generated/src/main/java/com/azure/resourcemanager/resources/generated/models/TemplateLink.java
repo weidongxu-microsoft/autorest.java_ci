@@ -11,23 +11,20 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class TemplateLink {
     /*
-     * The URI of the template to deploy. Use either the uri or id property,
-     * but not both.
+     * The URI of the template to deploy. Use either the uri or id property, but not both.
      */
     @JsonProperty(value = "uri")
     private String uri;
 
     /*
-     * The resource id of a Template Spec. Use either the id or uri property,
-     * but not both.
+     * The resource id of a Template Spec. Use either the id or uri property, but not both.
      */
     @JsonProperty(value = "id")
     private String id;
 
     /*
-     * Applicable only if this template link references a Template Spec. This
-     * relativePath property can optionally be used to reference a Template
-     * Spec artifact by path.
+     * Applicable only if this template link references a Template Spec. This relativePath property can optionally be
+     * used to reference a Template Spec artifact by path.
      */
     @JsonProperty(value = "relativePath")
     private String relativePath;

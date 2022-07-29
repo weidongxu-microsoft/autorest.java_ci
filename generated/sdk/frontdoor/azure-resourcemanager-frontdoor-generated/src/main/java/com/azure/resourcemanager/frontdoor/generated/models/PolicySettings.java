@@ -11,8 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class PolicySettings {
     /*
-     * Describes if the policy is in enabled or disabled state. Defaults to
-     * Enabled if not specified.
+     * Describes if the policy is in enabled or disabled state. Defaults to Enabled if not specified.
      */
     @JsonProperty(value = "enabledState")
     private PolicyEnabledState enabledState;
@@ -24,22 +23,20 @@ public final class PolicySettings {
     private PolicyMode mode;
 
     /*
-     * If action type is redirect, this field represents redirect URL for the
-     * client.
+     * If action type is redirect, this field represents redirect URL for the client.
      */
     @JsonProperty(value = "redirectUrl")
     private String redirectUrl;
 
     /*
-     * If the action type is block, customer can override the response status
-     * code.
+     * If the action type is block, customer can override the response status code.
      */
     @JsonProperty(value = "customBlockResponseStatusCode")
     private Integer customBlockResponseStatusCode;
 
     /*
-     * If the action type is block, customer can override the response body.
-     * The body must be specified in base64 encoding.
+     * If the action type is block, customer can override the response body. The body must be specified in base64
+     * encoding.
      */
     @JsonProperty(value = "customBlockResponseBody")
     private String customBlockResponseBody;

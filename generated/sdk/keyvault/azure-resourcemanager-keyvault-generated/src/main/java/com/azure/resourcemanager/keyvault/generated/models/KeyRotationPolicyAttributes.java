@@ -23,8 +23,7 @@ public final class KeyRotationPolicyAttributes {
     private Long updated;
 
     /*
-     * The expiration time for the new key version. It should be in ISO8601
-     * format. Eg: 'P90D', 'P1Y'.
+     * The expiration time for the new key version. It should be in ISO8601 format. Eg: 'P90D', 'P1Y'.
      */
     @JsonProperty(value = "expiryTime")
     private String expiryTime;

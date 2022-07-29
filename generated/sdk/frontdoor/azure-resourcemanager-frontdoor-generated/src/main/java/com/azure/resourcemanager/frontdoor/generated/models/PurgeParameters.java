@@ -13,8 +13,7 @@ import java.util.List;
 @Fluent
 public final class PurgeParameters {
     /*
-     * The path to the content to be purged. Can describe a file path or a wild
-     * card directory.
+     * The path to the content to be purged. Can describe a file path or a wild card directory.
      */
     @JsonProperty(value = "contentPaths", required = true)
     private List<String> contentPaths;

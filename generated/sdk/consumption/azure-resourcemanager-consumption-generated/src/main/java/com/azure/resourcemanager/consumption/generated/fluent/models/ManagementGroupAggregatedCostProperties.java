@@ -14,8 +14,7 @@ import java.util.List;
 @Fluent
 public final class ManagementGroupAggregatedCostProperties {
     /*
-     * The id of the billing period resource that the aggregated cost belongs
-     * to.
+     * The id of the billing period resource that the aggregated cost belongs to.
      */
     @JsonProperty(value = "billingPeriodId", access = JsonProperty.Access.WRITE_ONLY)
     private String billingPeriodId;
@@ -63,15 +62,13 @@ public final class ManagementGroupAggregatedCostProperties {
     private List<ManagementGroupAggregatedCostResultInner> children;
 
     /*
-     * List of subscription Guids included in the calculation of aggregated
-     * cost
+     * List of subscription Guids included in the calculation of aggregated cost
      */
     @JsonProperty(value = "includedSubscriptions")
     private List<String> includedSubscriptions;
 
     /*
-     * List of subscription Guids excluded from the calculation of aggregated
-     * cost
+     * List of subscription Guids excluded from the calculation of aggregated cost
      */
     @JsonProperty(value = "excludedSubscriptions")
     private List<String> excludedSubscriptions;

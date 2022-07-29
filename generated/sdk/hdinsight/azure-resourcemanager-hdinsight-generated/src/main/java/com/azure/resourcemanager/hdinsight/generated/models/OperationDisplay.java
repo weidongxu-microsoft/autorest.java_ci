@@ -17,8 +17,7 @@ public final class OperationDisplay {
     private String provider;
 
     /*
-     * The resource on which the operation is performed: Cluster, Applications,
-     * etc.
+     * The resource on which the operation is performed: Cluster, Applications, etc.
      */
     @JsonProperty(value = "resource")
     private String resource;

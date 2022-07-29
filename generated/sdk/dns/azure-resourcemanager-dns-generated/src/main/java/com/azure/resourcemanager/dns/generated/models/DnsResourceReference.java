@@ -19,8 +19,7 @@ public final class DnsResourceReference {
     private List<SubResource> dnsResources;
 
     /*
-     * A reference to an azure resource from where the dns resource value is
-     * taken.
+     * A reference to an azure resource from where the dns resource value is taken.
      */
     @JsonProperty(value = "targetResource")
     private SubResource targetResource;

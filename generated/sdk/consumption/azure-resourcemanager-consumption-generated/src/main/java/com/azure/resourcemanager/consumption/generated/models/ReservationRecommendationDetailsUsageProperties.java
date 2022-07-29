@@ -12,15 +12,13 @@ import java.util.List;
 @Immutable
 public final class ReservationRecommendationDetailsUsageProperties {
     /*
-     * The first usage date used for looking back for computing the
-     * recommendation.
+     * The first usage date used for looking back for computing the recommendation.
      */
     @JsonProperty(value = "firstConsumptionDate", access = JsonProperty.Access.WRITE_ONLY)
     private String firstConsumptionDate;
 
     /*
-     * The last usage date used for looking back for computing the
-     * recommendation.
+     * The last usage date used for looking back for computing the recommendation.
      */
     @JsonProperty(value = "lastConsumptionDate", access = JsonProperty.Access.WRITE_ONLY)
     private String lastConsumptionDate;
@@ -32,8 +30,8 @@ public final class ReservationRecommendationDetailsUsageProperties {
     private String lookBackUnitType;
 
     /*
-     * The breakdown of historical resource usage.  The values are in the order
-     * of usage between the firstConsumptionDate and the lastConsumptionDate.
+     * The breakdown of historical resource usage.  The values are in the order of usage between the
+     * firstConsumptionDate and the lastConsumptionDate.
      */
     @JsonProperty(value = "usageData", access = JsonProperty.Access.WRITE_ONLY)
     private List<Float> usageData;

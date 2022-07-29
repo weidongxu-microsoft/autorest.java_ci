@@ -12,9 +12,8 @@ import java.util.List;
 @Fluent
 public final class ReportConfigDatasetConfiguration {
     /*
-     * Array of column names to be included in the report. Any valid report
-     * column name is allowed. If not provided, then report includes all
-     * columns.
+     * Array of column names to be included in the report. Any valid report column name is allowed. If not provided,
+     * then report includes all columns.
      */
     @JsonProperty(value = "columns")
     private List<String> columns;

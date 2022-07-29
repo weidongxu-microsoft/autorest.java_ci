@@ -56,8 +56,7 @@ public final class RelayNamespaceProperties {
     private List<PrivateEndpointConnectionInner> privateEndpointConnections;
 
     /*
-     * This determines if traffic is allowed over public network. By default it
-     * is enabled.
+     * This determines if traffic is allowed over public network. By default it is enabled.
      */
     @JsonProperty(value = "publicNetworkAccess")
     private PublicNetworkAccess publicNetworkAccess;

@@ -30,6 +30,9 @@ public enum CertificateProductType {
      */
     @JsonCreator
     public static CertificateProductType fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         CertificateProductType[] items = CertificateProductType.values();
         for (CertificateProductType item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

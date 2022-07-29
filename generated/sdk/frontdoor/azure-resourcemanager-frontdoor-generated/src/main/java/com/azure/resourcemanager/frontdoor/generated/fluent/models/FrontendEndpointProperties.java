@@ -32,8 +32,7 @@ public final class FrontendEndpointProperties extends FrontendEndpointUpdatePara
     private CustomHttpsProvisioningState customHttpsProvisioningState;
 
     /*
-     * Provisioning substate shows the progress of custom HTTPS
-     * enabling/disabling process step by step.
+     * Provisioning substate shows the progress of custom HTTPS enabling/disabling process step by step.
      */
     @JsonProperty(value = "customHttpsProvisioningSubstate", access = JsonProperty.Access.WRITE_ONLY)
     private CustomHttpsProvisioningSubstate customHttpsProvisioningSubstate;

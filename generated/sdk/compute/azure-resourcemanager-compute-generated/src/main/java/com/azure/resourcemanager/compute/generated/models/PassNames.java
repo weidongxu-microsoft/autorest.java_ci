@@ -27,6 +27,9 @@ public enum PassNames {
      */
     @JsonCreator
     public static PassNames fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         PassNames[] items = PassNames.values();
         for (PassNames item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

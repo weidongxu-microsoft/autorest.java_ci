@@ -21,8 +21,7 @@ public final class ProfileInner extends Resource {
     private ProfileProperties innerProperties;
 
     /*
-     * Gets a unique read-only string that changes whenever the resource is
-     * updated.
+     * Gets a unique read-only string that changes whenever the resource is updated.
      */
     @JsonProperty(value = "etag")
     private String etag;

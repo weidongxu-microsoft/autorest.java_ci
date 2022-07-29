@@ -14,31 +14,29 @@ import java.util.List;
 @Fluent
 public final class ZoneProperties {
     /*
-     * The maximum number of record sets that can be created in this DNS zone.
-     * This is a read-only property and any attempt to set this value will be
-     * ignored.
+     * The maximum number of record sets that can be created in this DNS zone.  This is a read-only property and any
+     * attempt to set this value will be ignored.
      */
     @JsonProperty(value = "maxNumberOfRecordSets", access = JsonProperty.Access.WRITE_ONLY)
     private Long maxNumberOfRecordSets;
 
     /*
-     * The maximum number of records per record set that can be created in this
-     * DNS zone.  This is a read-only property and any attempt to set this
-     * value will be ignored.
+     * The maximum number of records per record set that can be created in this DNS zone.  This is a read-only property
+     * and any attempt to set this value will be ignored.
      */
     @JsonProperty(value = "maxNumberOfRecordsPerRecordSet", access = JsonProperty.Access.WRITE_ONLY)
     private Long maxNumberOfRecordsPerRecordSet;
 
     /*
-     * The current number of record sets in this DNS zone.  This is a read-only
-     * property and any attempt to set this value will be ignored.
+     * The current number of record sets in this DNS zone.  This is a read-only property and any attempt to set this
+     * value will be ignored.
      */
     @JsonProperty(value = "numberOfRecordSets", access = JsonProperty.Access.WRITE_ONLY)
     private Long numberOfRecordSets;
 
     /*
-     * The name servers for this DNS zone. This is a read-only property and any
-     * attempt to set this value will be ignored.
+     * The name servers for this DNS zone. This is a read-only property and any attempt to set this value will be
+     * ignored.
      */
     @JsonProperty(value = "nameServers", access = JsonProperty.Access.WRITE_ONLY)
     private List<String> nameServers;
@@ -50,15 +48,15 @@ public final class ZoneProperties {
     private ZoneType zoneType;
 
     /*
-     * A list of references to virtual networks that register hostnames in this
-     * DNS zone. This is a only when ZoneType is Private.
+     * A list of references to virtual networks that register hostnames in this DNS zone. This is a only when ZoneType
+     * is Private.
      */
     @JsonProperty(value = "registrationVirtualNetworks")
     private List<SubResource> registrationVirtualNetworks;
 
     /*
-     * A list of references to virtual networks that resolve records in this
-     * DNS zone. This is a only when ZoneType is Private.
+     * A list of references to virtual networks that resolve records in this DNS zone. This is a only when ZoneType is
+     * Private.
      */
     @JsonProperty(value = "resolutionVirtualNetworks")
     private List<SubResource> resolutionVirtualNetworks;

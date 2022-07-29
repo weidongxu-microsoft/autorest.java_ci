@@ -17,8 +17,7 @@ public final class StaticSiteResetPropertiesArmResourceProperties {
     private String repositoryToken;
 
     /*
-     * Determines whether the repository should be updated with the new
-     * properties.
+     * Determines whether the repository should be updated with the new properties.
      */
     @JsonProperty(value = "shouldUpdateRepository")
     private Boolean shouldUpdateRepository;

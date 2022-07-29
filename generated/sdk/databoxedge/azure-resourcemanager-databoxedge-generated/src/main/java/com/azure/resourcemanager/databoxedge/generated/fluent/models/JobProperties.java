@@ -45,8 +45,7 @@ public final class JobProperties {
     private Integer totalRefreshErrors;
 
     /*
-     * Local share/remote container relative path to the error manifest file of
-     * the refresh.
+     * Local share/remote container relative path to the error manifest file of the refresh.
      */
     @JsonProperty(value = "errorManifestFile", access = JsonProperty.Access.WRITE_ONLY)
     private String errorManifestFile;
@@ -58,8 +57,8 @@ public final class JobProperties {
     private String refreshedEntityId;
 
     /*
-     * If only subfolders need to be refreshed, then the subfolder path inside
-     * the share or container. (The path is empty if there are no subfolders.)
+     * If only subfolders need to be refreshed, then the subfolder path inside the share or container. (The path is
+     * empty if there are no subfolders.)
      */
     @JsonProperty(value = "folder")
     private String folder;

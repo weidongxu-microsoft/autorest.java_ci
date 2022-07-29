@@ -29,8 +29,7 @@ public final class StreamingEndpointListResult {
     private Integer odataCount;
 
     /*
-     * The link to the next set of results. Not empty if value contains
-     * incomplete list of streaming endpoints.
+     * The link to the next set of results. Not empty if value contains incomplete list of streaming endpoints.
      */
     @JsonProperty(value = "@odata.nextLink")
     private String odataNextLink;

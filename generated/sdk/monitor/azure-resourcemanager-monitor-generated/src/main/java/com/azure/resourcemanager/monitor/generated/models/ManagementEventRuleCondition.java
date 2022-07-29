@@ -15,9 +15,8 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @Fluent
 public final class ManagementEventRuleCondition extends RuleCondition {
     /*
-     * How the data that is collected should be combined over time and when the
-     * alert is activated. Note that for management event alerts aggregation is
-     * optional – if it is not provided then any event will cause the alert to
+     * How the data that is collected should be combined over time and when the alert is activated. Note that for
+     * management event alerts aggregation is optional – if it is not provided then any event will cause the alert to
      * activate.
      */
     @JsonProperty(value = "aggregation")

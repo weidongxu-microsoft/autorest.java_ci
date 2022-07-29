@@ -55,8 +55,7 @@ public final class AlertPropertiesDetails {
     private Object tagFilter;
 
     /*
-     * notification threshold percentage as a decimal which activated this
-     * alert
+     * notification threshold percentage as a decimal which activated this alert
      */
     @JsonProperty(value = "threshold")
     private BigDecimal threshold;

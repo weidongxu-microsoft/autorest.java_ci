@@ -42,15 +42,13 @@ public final class LogSearchRule {
     private String displayName;
 
     /*
-     * The flag that indicates whether the alert should be automatically
-     * resolved or not. The default is false.
+     * The flag that indicates whether the alert should be automatically resolved or not. The default is false.
      */
     @JsonProperty(value = "autoMitigate")
     private Boolean autoMitigate;
 
     /*
-     * The flag which indicates whether the Log Search rule is enabled. Value
-     * should be true or false
+     * The flag which indicates whether the Log Search rule is enabled. Value should be true or false
      */
     @JsonProperty(value = "enabled")
     private Enabled enabled;
@@ -74,8 +72,7 @@ public final class LogSearchRule {
     private Source source;
 
     /*
-     * Schedule (Frequency, Time Window) for rule. Required for action type -
-     * AlertingAction
+     * Schedule (Frequency, Time Window) for rule. Required for action type - AlertingAction
      */
     @JsonProperty(value = "schedule")
     private Schedule schedule;

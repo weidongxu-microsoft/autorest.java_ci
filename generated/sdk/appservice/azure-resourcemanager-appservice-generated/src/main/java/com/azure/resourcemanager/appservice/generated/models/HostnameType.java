@@ -30,6 +30,9 @@ public enum HostnameType {
      */
     @JsonCreator
     public static HostnameType fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         HostnameType[] items = HostnameType.values();
         for (HostnameType item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

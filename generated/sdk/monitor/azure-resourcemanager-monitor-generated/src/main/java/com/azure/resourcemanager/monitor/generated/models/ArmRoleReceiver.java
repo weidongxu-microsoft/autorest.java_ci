@@ -12,8 +12,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class ArmRoleReceiver {
     /*
-     * The name of the arm role receiver. Names must be unique across all
-     * receivers within an action group.
+     * The name of the arm role receiver. Names must be unique across all receivers within an action group.
      */
     @JsonProperty(value = "name", required = true)
     private String name;

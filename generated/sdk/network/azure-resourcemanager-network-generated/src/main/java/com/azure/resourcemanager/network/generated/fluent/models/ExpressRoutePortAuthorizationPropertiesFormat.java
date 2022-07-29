@@ -29,8 +29,7 @@ public final class ExpressRoutePortAuthorizationPropertiesFormat {
     private ExpressRoutePortAuthorizationUseStatus authorizationUseStatus;
 
     /*
-     * The reference to the ExpressRoute circuit resource using the
-     * authorization.
+     * The reference to the ExpressRoute circuit resource using the authorization.
      */
     @JsonProperty(value = "circuitResourceUri", access = JsonProperty.Access.WRITE_ONLY)
     private String circuitResourceUri;

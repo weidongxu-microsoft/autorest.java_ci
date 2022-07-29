@@ -27,8 +27,7 @@ public final class DataPolicyManifestProperties {
     private String policyMode;
 
     /*
-     * A value indicating whether policy mode is allowed only in built-in
-     * definitions.
+     * A value indicating whether policy mode is allowed only in built-in definitions.
      */
     @JsonProperty(value = "isBuiltInOnly")
     private Boolean isBuiltInOnly;

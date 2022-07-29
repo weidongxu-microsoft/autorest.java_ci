@@ -11,8 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Immutable
 public final class SiteConfigPropertiesDictionary {
     /*
-     * <code>true</code> if use32BitWorkerProcess should be set to true for the
-     * stack; otherwise, <code>false</code>.
+     * <code>true</code> if use32BitWorkerProcess should be set to true for the stack; otherwise, <code>false</code>.
      */
     @JsonProperty(value = "use32BitWorkerProcess", access = JsonProperty.Access.WRITE_ONLY)
     private Boolean use32BitWorkerProcess;

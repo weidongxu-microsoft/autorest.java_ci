@@ -33,6 +33,9 @@ public enum SslState {
      */
     @JsonCreator
     public static SslState fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         SslState[] items = SslState.values();
         for (SslState item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

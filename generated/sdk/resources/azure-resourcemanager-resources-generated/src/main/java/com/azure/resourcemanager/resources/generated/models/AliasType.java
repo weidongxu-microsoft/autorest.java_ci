@@ -33,6 +33,9 @@ public enum AliasType {
      */
     @JsonCreator
     public static AliasType fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         AliasType[] items = AliasType.values();
         for (AliasType item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

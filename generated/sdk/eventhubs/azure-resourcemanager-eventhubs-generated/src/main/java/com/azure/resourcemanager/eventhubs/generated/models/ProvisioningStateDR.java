@@ -33,6 +33,9 @@ public enum ProvisioningStateDR {
      */
     @JsonCreator
     public static ProvisioningStateDR fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         ProvisioningStateDR[] items = ProvisioningStateDR.values();
         for (ProvisioningStateDR item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

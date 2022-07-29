@@ -18,8 +18,7 @@ public final class ReportConfigGrouping {
     private ReportConfigColumnType type;
 
     /*
-     * The name of the column to group. This version supports subscription
-     * lowest possible grain.
+     * The name of the column to group. This version supports subscription lowest possible grain.
      */
     @JsonProperty(value = "name", required = true)
     private String name;

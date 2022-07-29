@@ -13,8 +13,7 @@ import java.util.List;
 @Fluent
 public final class DnsResourceReferenceRequestProperties {
     /*
-     * A list of references to azure resources for which referencing dns
-     * records need to be queried.
+     * A list of references to azure resources for which referencing dns records need to be queried.
      */
     @JsonProperty(value = "targetResources")
     private List<SubResource> targetResources;

@@ -57,6 +57,9 @@ public enum KeyVaultSecretStatus {
      */
     @JsonCreator
     public static KeyVaultSecretStatus fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         KeyVaultSecretStatus[] items = KeyVaultSecretStatus.values();
         for (KeyVaultSecretStatus item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

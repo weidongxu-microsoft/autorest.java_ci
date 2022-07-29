@@ -30,6 +30,9 @@ public enum AccountStatus {
      */
     @JsonCreator
     public static AccountStatus fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         AccountStatus[] items = AccountStatus.values();
         for (AccountStatus item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

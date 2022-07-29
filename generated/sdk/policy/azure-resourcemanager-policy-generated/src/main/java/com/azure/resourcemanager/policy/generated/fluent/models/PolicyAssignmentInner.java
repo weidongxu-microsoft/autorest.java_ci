@@ -24,8 +24,7 @@ public final class PolicyAssignmentInner extends ProxyResource {
     private PolicyAssignmentProperties innerProperties;
 
     /*
-     * The location of the policy assignment. Only required when utilizing
-     * managed identity.
+     * The location of the policy assignment. Only required when utilizing managed identity.
      */
     @JsonProperty(value = "location")
     private String location;

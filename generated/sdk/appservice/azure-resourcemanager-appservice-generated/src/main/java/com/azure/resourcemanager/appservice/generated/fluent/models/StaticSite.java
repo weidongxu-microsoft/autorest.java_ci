@@ -43,8 +43,7 @@ public final class StaticSite {
     private List<String> customDomains;
 
     /*
-     * A user's github repository token. This is used to setup the Github
-     * Actions workflow file and API secrets.
+     * A user's github repository token. This is used to setup the Github Actions workflow file and API secrets.
      */
     @JsonProperty(value = "repositoryToken")
     private String repositoryToken;
@@ -62,15 +61,13 @@ public final class StaticSite {
     private List<ResponseMessageEnvelopeRemotePrivateEndpointConnection> privateEndpointConnections;
 
     /*
-     * State indicating whether staging environments are allowed or not allowed
-     * for a static web app.
+     * State indicating whether staging environments are allowed or not allowed for a static web app.
      */
     @JsonProperty(value = "stagingEnvironmentPolicy")
     private StagingEnvironmentPolicy stagingEnvironmentPolicy;
 
     /*
-     * <code>false</code> if config file is locked for this static web app;
-     * otherwise, <code>true</code>.
+     * <code>false</code> if config file is locked for this static web app; otherwise, <code>true</code>.
      */
     @JsonProperty(value = "allowConfigFileUpdates")
     private Boolean allowConfigFileUpdates;
@@ -106,22 +103,20 @@ public final class StaticSite {
     private List<StaticSiteLinkedBackend> linkedBackends;
 
     /*
-     * The provider that submitted the last deployment to the primary
-     * environment of the static site.
+     * The provider that submitted the last deployment to the primary environment of the static site.
      */
     @JsonProperty(value = "provider")
     private String provider;
 
     /*
-     * State indicating the status of the enterprise grade CDN serving traffic
-     * to the static web app.
+     * State indicating the status of the enterprise grade CDN serving traffic to the static web app.
      */
     @JsonProperty(value = "enterpriseGradeCdnStatus")
     private EnterpriseGradeCdnStatus enterpriseGradeCdnStatus;
 
     /*
-     * State indicating whether public traffic are allowed or not for a static
-     * web app. Allowed Values: 'Enabled', 'Disabled' or an empty string.
+     * State indicating whether public traffic are allowed or not for a static web app. Allowed Values: 'Enabled',
+     * 'Disabled' or an empty string.
      */
     @JsonProperty(value = "publicNetworkAccess")
     private String publicNetworkAccess;

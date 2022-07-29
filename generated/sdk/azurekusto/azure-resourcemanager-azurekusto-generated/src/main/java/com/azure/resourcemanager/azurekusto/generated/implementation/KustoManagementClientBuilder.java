@@ -18,9 +18,8 @@ import java.time.Duration;
 @ServiceClientBuilder(serviceClients = {KustoManagementClientImpl.class})
 public final class KustoManagementClientBuilder {
     /*
-     * Gets subscription credentials which uniquely identify Microsoft Azure
-     * subscription. The subscription ID forms part of the URI for every
-     * service call.
+     * Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms
+     * part of the URI for every service call.
      */
     private String subscriptionId;
 

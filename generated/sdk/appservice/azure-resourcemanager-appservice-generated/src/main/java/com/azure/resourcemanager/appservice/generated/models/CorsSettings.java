@@ -12,8 +12,7 @@ import java.util.List;
 @Fluent
 public final class CorsSettings {
     /*
-     * Gets or sets the list of origins that should be allowed to make
-     * cross-origin
+     * Gets or sets the list of origins that should be allowed to make cross-origin
      * calls (for example: http://example.com:12345). Use "*" to allow all.
      */
     @JsonProperty(value = "allowedOrigins")

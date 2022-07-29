@@ -16,8 +16,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @Fluent
 public final class ForwardingConfiguration extends RouteConfiguration {
     /*
-     * A custom path used to rewrite resource paths matched by this rule. Leave
-     * empty to use incoming path.
+     * A custom path used to rewrite resource paths matched by this rule. Leave empty to use incoming path.
      */
     @JsonProperty(value = "customForwardingPath")
     private String customForwardingPath;

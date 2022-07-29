@@ -13,30 +13,27 @@ import java.util.Map;
 @Fluent
 public class ClusterIdentity {
     /*
-     * The principal id of cluster identity. This property will only be
-     * provided for a system assigned identity.
+     * The principal id of cluster identity. This property will only be provided for a system assigned identity.
      */
     @JsonProperty(value = "principalId", access = JsonProperty.Access.WRITE_ONLY)
     private String principalId;
 
     /*
-     * The tenant id associated with the cluster. This property will only be
-     * provided for a system assigned identity.
+     * The tenant id associated with the cluster. This property will only be provided for a system assigned identity.
      */
     @JsonProperty(value = "tenantId", access = JsonProperty.Access.WRITE_ONLY)
     private String tenantId;
 
     /*
-     * The type of identity used for the cluster. The type 'SystemAssigned,
-     * UserAssigned' includes both an implicitly created identity and a set of
-     * user assigned identities.
+     * The type of identity used for the cluster. The type 'SystemAssigned, UserAssigned' includes both an implicitly
+     * created identity and a set of user assigned identities.
      */
     @JsonProperty(value = "type")
     private ResourceIdentityType type;
 
     /*
-     * The list of user identities associated with the cluster. The user
-     * identity dictionary key references will be ARM resource ids in the form:
+     * The list of user identities associated with the cluster. The user identity dictionary key references will be ARM
+     * resource ids in the form:
      * '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}'.
      */
     @JsonProperty(value = "userAssignedIdentities")

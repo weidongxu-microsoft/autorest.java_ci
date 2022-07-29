@@ -28,15 +28,15 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @Fluent
 public class RuleDataSource {
     /*
-     * the resource identifier of the resource the rule monitors. **NOTE**:
-     * this property cannot be updated for an existing rule.
+     * the resource identifier of the resource the rule monitors. **NOTE**: this property cannot be updated for an
+     * existing rule.
      */
     @JsonProperty(value = "resourceUri")
     private String resourceUri;
 
     /*
-     * the legacy resource identifier of the resource the rule monitors.
-     * **NOTE**: this property cannot be updated for an existing rule.
+     * the legacy resource identifier of the resource the rule monitors. **NOTE**: this property cannot be updated for
+     * an existing rule.
      */
     @JsonProperty(value = "legacyResourceId")
     private String legacyResourceId;

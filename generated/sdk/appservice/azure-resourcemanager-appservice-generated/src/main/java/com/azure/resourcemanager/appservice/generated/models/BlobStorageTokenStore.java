@@ -11,8 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class BlobStorageTokenStore {
     /*
-     * The name of the app setting containing the SAS URL of the blob storage
-     * containing the tokens.
+     * The name of the app setting containing the SAS URL of the blob storage containing the tokens.
      */
     @JsonProperty(value = "sasUrlSettingName")
     private String sasUrlSettingName;

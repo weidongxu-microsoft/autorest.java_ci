@@ -19,8 +19,7 @@ public final class EventHubListResult {
     private List<EventhubInner> value;
 
     /*
-     * Link to the next set of results. Not empty if Value contains incomplete
-     * list of EventHubs.
+     * Link to the next set of results. Not empty if Value contains incomplete list of EventHubs.
      */
     @JsonProperty(value = "nextLink")
     private String nextLink;

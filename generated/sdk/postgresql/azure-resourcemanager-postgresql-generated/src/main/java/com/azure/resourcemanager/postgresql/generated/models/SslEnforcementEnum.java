@@ -30,6 +30,9 @@ public enum SslEnforcementEnum {
      */
     @JsonCreator
     public static SslEnforcementEnum fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         SslEnforcementEnum[] items = SslEnforcementEnum.values();
         for (SslEnforcementEnum item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

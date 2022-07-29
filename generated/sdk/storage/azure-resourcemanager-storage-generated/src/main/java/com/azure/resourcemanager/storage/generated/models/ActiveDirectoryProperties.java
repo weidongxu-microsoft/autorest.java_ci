@@ -12,8 +12,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class ActiveDirectoryProperties {
     /*
-     * Specifies the primary domain that the AD DNS server is authoritative
-     * for.
+     * Specifies the primary domain that the AD DNS server is authoritative for.
      */
     @JsonProperty(value = "domainName", required = true)
     private String domainName;

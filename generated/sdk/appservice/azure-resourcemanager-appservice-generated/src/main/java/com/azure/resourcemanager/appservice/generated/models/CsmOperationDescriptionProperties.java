@@ -11,8 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class CsmOperationDescriptionProperties {
     /*
-     * Resource metrics service provided by Microsoft.Insights resource
-     * provider.
+     * Resource metrics service provided by Microsoft.Insights resource provider.
      */
     @JsonProperty(value = "serviceSpecification")
     private ServiceSpecification serviceSpecification;

@@ -18,8 +18,7 @@ public final class ExportDefinition {
     private ExportType type;
 
     /*
-     * The time frame for pulling data for the query. If custom, then a
-     * specific time period must be provided.
+     * The time frame for pulling data for the query. If custom, then a specific time period must be provided.
      */
     @JsonProperty(value = "timeframe", required = true)
     private TimeframeType timeframe;

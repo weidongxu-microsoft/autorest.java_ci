@@ -54,6 +54,9 @@ public enum ProvisioningOperation {
      */
     @JsonCreator
     public static ProvisioningOperation fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         ProvisioningOperation[] items = ProvisioningOperation.values();
         for (ProvisioningOperation item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

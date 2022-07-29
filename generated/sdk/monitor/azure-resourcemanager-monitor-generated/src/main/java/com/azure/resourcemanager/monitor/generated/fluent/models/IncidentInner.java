@@ -36,8 +36,7 @@ public final class IncidentInner {
     private OffsetDateTime activatedTime;
 
     /*
-     * The time at which the incident was resolved in ISO8601 format. If null,
-     * it means the incident is still active.
+     * The time at which the incident was resolved in ISO8601 format. If null, it means the incident is still active.
      */
     @JsonProperty(value = "resolvedTime", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime resolvedTime;

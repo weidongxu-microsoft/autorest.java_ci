@@ -36,6 +36,9 @@ public enum IntervalInMins {
      */
     @JsonCreator
     public static IntervalInMins fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         IntervalInMins[] items = IntervalInMins.values();
         for (IntervalInMins item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

@@ -11,16 +11,14 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class DynamicThresholdFailingPeriods {
     /*
-     * The number of aggregated lookback points. The lookback time window is
-     * calculated based on the aggregation granularity (windowSize) and the
-     * selected number of aggregated points.
+     * The number of aggregated lookback points. The lookback time window is calculated based on the aggregation
+     * granularity (windowSize) and the selected number of aggregated points.
      */
     @JsonProperty(value = "numberOfEvaluationPeriods", required = true)
     private float numberOfEvaluationPeriods;
 
     /*
-     * The number of violations to trigger an alert. Should be smaller or equal
-     * to numberOfEvaluationPeriods.
+     * The number of violations to trigger an alert. Should be smaller or equal to numberOfEvaluationPeriods.
      */
     @JsonProperty(value = "minFailingPeriodsToAlert", required = true)
     private float minFailingPeriodsToAlert;

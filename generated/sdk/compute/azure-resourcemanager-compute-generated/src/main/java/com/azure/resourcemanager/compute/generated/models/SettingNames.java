@@ -30,6 +30,9 @@ public enum SettingNames {
      */
     @JsonCreator
     public static SettingNames fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         SettingNames[] items = SettingNames.values();
         for (SettingNames item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

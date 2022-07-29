@@ -87,8 +87,7 @@ public final class SiteConfigInner {
     private String windowsFxVersion;
 
     /*
-     * <code>true</code> if request tracing is enabled; otherwise,
-     * <code>false</code>.
+     * <code>true</code> if request tracing is enabled; otherwise, <code>false</code>.
      */
     @JsonProperty(value = "requestTracingEnabled")
     private Boolean requestTracingEnabled;
@@ -100,8 +99,7 @@ public final class SiteConfigInner {
     private OffsetDateTime requestTracingExpirationTime;
 
     /*
-     * <code>true</code> if remote debugging is enabled; otherwise,
-     * <code>false</code>.
+     * <code>true</code> if remote debugging is enabled; otherwise, <code>false</code>.
      */
     @JsonProperty(value = "remoteDebuggingEnabled")
     private Boolean remoteDebuggingEnabled;
@@ -113,8 +111,7 @@ public final class SiteConfigInner {
     private String remoteDebuggingVersion;
 
     /*
-     * <code>true</code> if HTTP logging is enabled; otherwise,
-     * <code>false</code>.
+     * <code>true</code> if HTTP logging is enabled; otherwise, <code>false</code>.
      */
     @JsonProperty(value = "httpLoggingEnabled")
     private Boolean httpLoggingEnabled;
@@ -138,8 +135,7 @@ public final class SiteConfigInner {
     private Integer logsDirectorySizeLimit;
 
     /*
-     * <code>true</code> if detailed error logging is enabled; otherwise,
-     * <code>false</code>.
+     * <code>true</code> if detailed error logging is enabled; otherwise, <code>false</code>.
      */
     @JsonProperty(value = "detailedErrorLoggingEnabled")
     private Boolean detailedErrorLoggingEnabled;
@@ -187,22 +183,19 @@ public final class SiteConfigInner {
     private ScmType scmType;
 
     /*
-     * <code>true</code> to use 32-bit worker process; otherwise,
-     * <code>false</code>.
+     * <code>true</code> to use 32-bit worker process; otherwise, <code>false</code>.
      */
     @JsonProperty(value = "use32BitWorkerProcess")
     private Boolean use32BitWorkerProcess;
 
     /*
-     * <code>true</code> if WebSocket is enabled; otherwise,
-     * <code>false</code>.
+     * <code>true</code> if WebSocket is enabled; otherwise, <code>false</code>.
      */
     @JsonProperty(value = "webSocketsEnabled")
     private Boolean webSocketsEnabled;
 
     /*
-     * <code>true</code> if Always On is enabled; otherwise,
-     * <code>false</code>.
+     * <code>true</code> if Always On is enabled; otherwise, <code>false</code>.
      */
     @JsonProperty(value = "alwaysOn")
     private Boolean alwaysOn;
@@ -262,8 +255,7 @@ public final class SiteConfigInner {
     private SiteLimits limits;
 
     /*
-     * <code>true</code> if Auto Heal is enabled; otherwise,
-     * <code>false</code>.
+     * <code>true</code> if Auto Heal is enabled; otherwise, <code>false</code>.
      */
     @JsonProperty(value = "autoHealEnabled")
     private Boolean autoHealEnabled;
@@ -287,15 +279,14 @@ public final class SiteConfigInner {
     private String vnetName;
 
     /*
-     * Virtual Network Route All enabled. This causes all outbound traffic to
-     * have Virtual Network Security Groups and User Defined Routes applied.
+     * Virtual Network Route All enabled. This causes all outbound traffic to have Virtual Network Security Groups and
+     * User Defined Routes applied.
      */
     @JsonProperty(value = "vnetRouteAllEnabled")
     private Boolean vnetRouteAllEnabled;
 
     /*
-     * The number of private ports assigned to this app. These will be assigned
-     * dynamically on runtime.
+     * The number of private ports assigned to this app. These will be assigned dynamically on runtime.
      */
     @JsonProperty(value = "vnetPrivatePortsCount")
     private Integer vnetPrivatePortsCount;
@@ -373,22 +364,19 @@ public final class SiteConfigInner {
     private Boolean scmIpSecurityRestrictionsUseMain;
 
     /*
-     * Http20Enabled: configures a web site to allow clients to connect over
-     * http2.0
+     * Http20Enabled: configures a web site to allow clients to connect over http2.0
      */
     @JsonProperty(value = "http20Enabled")
     private Boolean http20Enabled;
 
     /*
-     * MinTlsVersion: configures the minimum version of TLS required for SSL
-     * requests
+     * MinTlsVersion: configures the minimum version of TLS required for SSL requests
      */
     @JsonProperty(value = "minTlsVersion")
     private SupportedTlsVersions minTlsVersion;
 
     /*
-     * ScmMinTlsVersion: configures the minimum version of TLS required for SSL
-     * requests for SCM site
+     * ScmMinTlsVersion: configures the minimum version of TLS required for SSL requests for SCM site
      */
     @JsonProperty(value = "scmMinTlsVersion")
     private SupportedTlsVersions scmMinTlsVersion;
@@ -420,24 +408,19 @@ public final class SiteConfigInner {
     private String healthCheckPath;
 
     /*
-     * Gets or sets a value indicating whether functions runtime scale
-     * monitoring is enabled. When enabled,
-     * the ScaleController will not monitor event sources directly, but will
-     * instead call to the
+     * Gets or sets a value indicating whether functions runtime scale monitoring is enabled. When enabled,
+     * the ScaleController will not monitor event sources directly, but will instead call to the
      * runtime to get scale status.
      */
     @JsonProperty(value = "functionsRuntimeScaleMonitoringEnabled")
     private Boolean functionsRuntimeScaleMonitoringEnabled;
 
     /*
-     * Sets the time zone a site uses for generating timestamps. Compatible
-     * with Linux and Windows App Service. Setting the WEBSITE_TIME_ZONE app
-     * setting takes precedence over this config. For Linux, expects tz
-     * database values https://www.iana.org/time-zones (for a quick reference
-     * see https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). For
-     * Windows, expects one of the time zones listed under
-     * HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Time
-     * Zones
+     * Sets the time zone a site uses for generating timestamps. Compatible with Linux and Windows App Service. Setting
+     * the WEBSITE_TIME_ZONE app setting takes precedence over this config. For Linux, expects tz database values
+     * https://www.iana.org/time-zones (for a quick reference see
+     * https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). For Windows, expects one of the time zones listed
+     * under HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Time Zones
      */
     @JsonProperty(value = "websiteTimeZone")
     private String websiteTimeZone;

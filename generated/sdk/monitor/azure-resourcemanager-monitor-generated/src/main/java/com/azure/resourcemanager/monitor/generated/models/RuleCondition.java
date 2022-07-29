@@ -31,8 +31,8 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @Fluent
 public class RuleCondition {
     /*
-     * the resource from which the rule collects its data. For this type
-     * dataSource will always be of type RuleMetricDataSource.
+     * the resource from which the rule collects its data. For this type dataSource will always be of type
+     * RuleMetricDataSource.
      */
     @JsonProperty(value = "dataSource")
     private RuleDataSource dataSource;

@@ -19,8 +19,7 @@ public final class WcfRelaysListResult {
     private List<WcfRelayInner> value;
 
     /*
-     * Link to the next set of results. Not empty if value contains incomplete
-     * list of WCF relays.
+     * Link to the next set of results. Not empty if value contains incomplete list of WCF relays.
      */
     @JsonProperty(value = "nextLink")
     private String nextLink;

@@ -17,56 +17,46 @@ import java.util.List;
 @Fluent
 public final class SearchServiceProperties {
     /*
-     * The number of replicas in the search service. If specified, it must be a
-     * value between 1 and 12 inclusive for standard SKUs or between 1 and 3
-     * inclusive for basic SKU.
+     * The number of replicas in the search service. If specified, it must be a value between 1 and 12 inclusive for
+     * standard SKUs or between 1 and 3 inclusive for basic SKU.
      */
     @JsonProperty(value = "replicaCount")
     private Integer replicaCount;
 
     /*
-     * The number of partitions in the search service; if specified, it can be
-     * 1, 2, 3, 4, 6, or 12. Values greater than 1 are only valid for standard
-     * SKUs. For 'standard3' services with hostingMode set to 'highDensity',
-     * the allowed values are between 1 and 3.
+     * The number of partitions in the search service; if specified, it can be 1, 2, 3, 4, 6, or 12. Values greater
+     * than 1 are only valid for standard SKUs. For 'standard3' services with hostingMode set to 'highDensity', the
+     * allowed values are between 1 and 3.
      */
     @JsonProperty(value = "partitionCount")
     private Integer partitionCount;
 
     /*
-     * Applicable only for the standard3 SKU. You can set this property to
-     * enable up to 3 high density partitions that allow up to 1000 indexes,
-     * which is much higher than the maximum indexes allowed for any other SKU.
-     * For the standard3 SKU, the value is either 'default' or 'highDensity'.
-     * For all other SKUs, this value must be 'default'.
+     * Applicable only for the standard3 SKU. You can set this property to enable up to 3 high density partitions that
+     * allow up to 1000 indexes, which is much higher than the maximum indexes allowed for any other SKU. For the
+     * standard3 SKU, the value is either 'default' or 'highDensity'. For all other SKUs, this value must be 'default'.
      */
     @JsonProperty(value = "hostingMode")
     private HostingMode hostingMode;
 
     /*
-     * This value can be set to 'enabled' to avoid breaking changes on existing
-     * customer resources and templates. If set to 'disabled', traffic over
-     * public interface is not allowed, and private endpoint connections would
-     * be the exclusive access method.
+     * This value can be set to 'enabled' to avoid breaking changes on existing customer resources and templates. If
+     * set to 'disabled', traffic over public interface is not allowed, and private endpoint connections would be the
+     * exclusive access method.
      */
     @JsonProperty(value = "publicNetworkAccess")
     private PublicNetworkAccess publicNetworkAccess;
 
     /*
-     * The status of the search service. Possible values include: 'running':
-     * The search service is running and no provisioning operations are
-     * underway. 'provisioning': The search service is being provisioned or
-     * scaled up or down. 'deleting': The search service is being deleted.
-     * 'degraded': The search service is degraded. This can occur when the
-     * underlying search units are not healthy. The search service is most
-     * likely operational, but performance might be slow and some requests
-     * might be dropped. 'disabled': The search service is disabled. In this
-     * state, the service will reject all API requests. 'error': The search
-     * service is in an error state. If your service is in the degraded,
-     * disabled, or error states, it means the Azure Cognitive Search team is
-     * actively investigating the underlying issue. Dedicated services in these
-     * states are still chargeable based on the number of search units
-     * provisioned.
+     * The status of the search service. Possible values include: 'running': The search service is running and no
+     * provisioning operations are underway. 'provisioning': The search service is being provisioned or scaled up or
+     * down. 'deleting': The search service is being deleted. 'degraded': The search service is degraded. This can
+     * occur when the underlying search units are not healthy. The search service is most likely operational, but
+     * performance might be slow and some requests might be dropped. 'disabled': The search service is disabled. In
+     * this state, the service will reject all API requests. 'error': The search service is in an error state. If your
+     * service is in the degraded, disabled, or error states, it means the Azure Cognitive Search team is actively
+     * investigating the underlying issue. Dedicated services in these states are still chargeable based on the number
+     * of search units provisioned.
      */
     @JsonProperty(value = "status", access = JsonProperty.Access.WRITE_ONLY)
     private SearchServiceStatus status;
@@ -78,37 +68,30 @@ public final class SearchServiceProperties {
     private String statusDetails;
 
     /*
-     * The state of the last provisioning operation performed on the search
-     * service. Provisioning is an intermediate state that occurs while service
-     * capacity is being established. After capacity is set up,
-     * provisioningState changes to either 'succeeded' or 'failed'. Client
-     * applications can poll provisioning status (the recommended polling
-     * interval is from 30 seconds to one minute) by using the Get Search
-     * Service operation to see when an operation is completed. If you are
-     * using the free service, this value tends to come back as 'succeeded'
-     * directly in the call to Create search service. This is because the free
-     * service uses capacity that is already set up.
+     * The state of the last provisioning operation performed on the search service. Provisioning is an intermediate
+     * state that occurs while service capacity is being established. After capacity is set up, provisioningState
+     * changes to either 'succeeded' or 'failed'. Client applications can poll provisioning status (the recommended
+     * polling interval is from 30 seconds to one minute) by using the Get Search Service operation to see when an
+     * operation is completed. If you are using the free service, this value tends to come back as 'succeeded' directly
+     * in the call to Create search service. This is because the free service uses capacity that is already set up.
      */
     @JsonProperty(value = "provisioningState", access = JsonProperty.Access.WRITE_ONLY)
     private ProvisioningState provisioningState;
 
     /*
-     * Network specific rules that determine how the Azure Cognitive Search
-     * service may be reached.
+     * Network specific rules that determine how the Azure Cognitive Search service may be reached.
      */
     @JsonProperty(value = "networkRuleSet")
     private NetworkRuleSet networkRuleSet;
 
     /*
-     * The list of private endpoint connections to the Azure Cognitive Search
-     * service.
+     * The list of private endpoint connections to the Azure Cognitive Search service.
      */
     @JsonProperty(value = "privateEndpointConnections", access = JsonProperty.Access.WRITE_ONLY)
     private List<PrivateEndpointConnectionInner> privateEndpointConnections;
 
     /*
-     * The list of shared private link resources managed by the Azure Cognitive
-     * Search service.
+     * The list of shared private link resources managed by the Azure Cognitive Search service.
      */
     @JsonProperty(value = "sharedPrivateLinkResources", access = JsonProperty.Access.WRITE_ONLY)
     private List<SharedPrivateLinkResourceInner> sharedPrivateLinkResources;

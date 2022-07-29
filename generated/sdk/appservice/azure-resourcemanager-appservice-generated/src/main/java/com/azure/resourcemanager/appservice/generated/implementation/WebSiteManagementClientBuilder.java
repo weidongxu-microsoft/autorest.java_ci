@@ -18,8 +18,7 @@ import java.time.Duration;
 @ServiceClientBuilder(serviceClients = {WebSiteManagementClientImpl.class})
 public final class WebSiteManagementClientBuilder {
     /*
-     * Your Azure subscription ID. This is a GUID-formatted string (e.g.
-     * 00000000-0000-0000-0000-000000000000).
+     * Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
      */
     private String subscriptionId;
 

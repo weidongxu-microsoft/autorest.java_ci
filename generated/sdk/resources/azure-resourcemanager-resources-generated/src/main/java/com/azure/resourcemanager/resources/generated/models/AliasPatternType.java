@@ -30,6 +30,9 @@ public enum AliasPatternType {
      */
     @JsonCreator
     public static AliasPatternType fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         AliasPatternType[] items = AliasPatternType.values();
         for (AliasPatternType item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

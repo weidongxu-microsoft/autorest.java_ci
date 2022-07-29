@@ -23,8 +23,7 @@ public class Identity {
     private String tenantId;
 
     /*
-     * The identity type. This is the only required field when adding a system
-     * assigned identity to a resource.
+     * The identity type. This is the only required field when adding a system assigned identity to a resource.
      */
     @JsonProperty(value = "type")
     private ResourceIdentityType type;

@@ -18,22 +18,19 @@ public final class MeterDetails {
     private String meterName;
 
     /*
-     * The category of the meter, for example, 'Cloud services', 'Networking',
-     * etc..
+     * The category of the meter, for example, 'Cloud services', 'Networking', etc..
      */
     @JsonProperty(value = "meterCategory", access = JsonProperty.Access.WRITE_ONLY)
     private String meterCategory;
 
     /*
-     * The subcategory of the meter, for example, 'A6 Cloud services',
-     * 'ExpressRoute (IXP)', etc..
+     * The subcategory of the meter, for example, 'A6 Cloud services', 'ExpressRoute (IXP)', etc..
      */
     @JsonProperty(value = "meterSubCategory", access = JsonProperty.Access.WRITE_ONLY)
     private String meterSubCategory;
 
     /*
-     * The unit in which the meter consumption is charged, for example,
-     * 'Hours', 'GB', etc.
+     * The unit in which the meter consumption is charged, for example, 'Hours', 'GB', etc.
      */
     @JsonProperty(value = "unit", access = JsonProperty.Access.WRITE_ONLY)
     private String unit;

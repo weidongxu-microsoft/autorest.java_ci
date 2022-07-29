@@ -15,22 +15,19 @@ import java.util.List;
 @Fluent
 public final class SettingsProperties {
     /*
-     * Sets the default scope the current user will see when they sign into
-     * Azure Cost Management in the Azure portal.
+     * Sets the default scope the current user will see when they sign into Azure Cost Management in the Azure portal.
      */
     @JsonProperty(value = "scope", required = true)
     private String scope;
 
     /*
-     * Indicates what scope Cost Management in the Azure portal should default
-     * to. Allowed values: LastUsed.
+     * Indicates what scope Cost Management in the Azure portal should default to. Allowed values: LastUsed.
      */
     @JsonProperty(value = "startOn")
     private SettingsPropertiesStartOn startOn;
 
     /*
-     * Array of scopes with additional details used by Cost Management in the
-     * Azure portal.
+     * Array of scopes with additional details used by Cost Management in the Azure portal.
      */
     @JsonProperty(value = "cache")
     private List<CacheItem> cache;

@@ -19,8 +19,7 @@ public final class NetworkRuleSetProperties {
     private DefaultAction defaultAction;
 
     /*
-     * If True, then Network Rule Set is also applied to BuiltIn EventHub
-     * EndPoint of IotHub
+     * If True, then Network Rule Set is also applied to BuiltIn EventHub EndPoint of IotHub
      */
     @JsonProperty(value = "applyToBuiltInEventHubEndpoint", required = true)
     private boolean applyToBuiltInEventHubEndpoint;

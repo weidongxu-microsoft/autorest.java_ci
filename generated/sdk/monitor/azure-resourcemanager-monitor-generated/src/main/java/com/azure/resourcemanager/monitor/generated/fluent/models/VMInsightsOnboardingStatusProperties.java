@@ -16,31 +16,27 @@ import java.util.List;
 @Fluent
 public final class VMInsightsOnboardingStatusProperties {
     /*
-     * Azure Resource Manager identifier of the resource whose onboarding
-     * status is being represented.
+     * Azure Resource Manager identifier of the resource whose onboarding status is being represented.
      */
     @JsonProperty(value = "resourceId", required = true)
     private String resourceId;
 
     /*
-     * The onboarding status for the resource. Note that, a higher level scope,
-     * e.g., resource group or subscription, is considered onboarded if at
-     * least one resource under it is onboarded.
+     * The onboarding status for the resource. Note that, a higher level scope, e.g., resource group or subscription,
+     * is considered onboarded if at least one resource under it is onboarded.
      */
     @JsonProperty(value = "onboardingStatus", required = true)
     private OnboardingStatus onboardingStatus;
 
     /*
-     * The status of VM Insights data from the resource. When reported as
-     * `present` the data array will contain information about the data
-     * containers to which data for the specified resource is being routed.
+     * The status of VM Insights data from the resource. When reported as `present` the data array will contain
+     * information about the data containers to which data for the specified resource is being routed.
      */
     @JsonProperty(value = "dataStatus", required = true)
     private DataStatus dataStatus;
 
     /*
-     * Containers that currently store VM Insights data for the specified
-     * resource.
+     * Containers that currently store VM Insights data for the specified resource.
      */
     @JsonProperty(value = "data")
     private List<DataContainer> data;

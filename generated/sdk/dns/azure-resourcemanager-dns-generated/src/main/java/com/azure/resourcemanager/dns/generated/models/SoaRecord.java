@@ -47,8 +47,7 @@ public final class SoaRecord {
     private Long expireTime;
 
     /*
-     * The minimum value for this SOA record. By convention this is used to
-     * determine the negative caching duration.
+     * The minimum value for this SOA record. By convention this is used to determine the negative caching duration.
      */
     @JsonProperty(value = "minimumTTL")
     private Long minimumTtl;

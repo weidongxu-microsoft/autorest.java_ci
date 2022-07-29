@@ -24,8 +24,7 @@ public final class SecurityProfile {
     private String domain;
 
     /*
-     * The organizational unit within the Active Directory to place the cluster
-     * and service accounts.
+     * The organizational unit within the Active Directory to place the cluster and service accounts.
      */
     @JsonProperty(value = "organizationalUnitDN")
     private String organizationalUnitDN;
@@ -61,8 +60,7 @@ public final class SecurityProfile {
     private String aaddsResourceId;
 
     /*
-     * User assigned identity that has permissions to read and create
-     * cluster-related artifacts in the user's AADDS.
+     * User assigned identity that has permissions to read and create cluster-related artifacts in the user's AADDS.
      */
     @JsonProperty(value = "msiResourceId")
     private String msiResourceId;

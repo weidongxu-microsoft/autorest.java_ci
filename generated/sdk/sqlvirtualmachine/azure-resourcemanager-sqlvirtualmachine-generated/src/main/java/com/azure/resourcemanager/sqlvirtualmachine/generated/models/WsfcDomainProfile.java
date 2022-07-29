@@ -23,23 +23,20 @@ public final class WsfcDomainProfile {
     private String ouPath;
 
     /*
-     * Account name used for creating cluster (at minimum needs permissions to
-     * 'Create Computer Objects' in domain).
+     * Account name used for creating cluster (at minimum needs permissions to 'Create Computer Objects' in domain).
      */
     @JsonProperty(value = "clusterBootstrapAccount")
     private String clusterBootstrapAccount;
 
     /*
-     * Account name used for operating cluster i.e. will be part of
-     * administrators group on all the participating virtual machines in the
-     * cluster.
+     * Account name used for operating cluster i.e. will be part of administrators group on all the participating
+     * virtual machines in the cluster.
      */
     @JsonProperty(value = "clusterOperatorAccount")
     private String clusterOperatorAccount;
 
     /*
-     * Account name under which SQL service will run on all participating SQL
-     * virtual machines in the cluster.
+     * Account name under which SQL service will run on all participating SQL virtual machines in the cluster.
      */
     @JsonProperty(value = "sqlServiceAccount")
     private String sqlServiceAccount;

@@ -16,16 +16,14 @@ import java.util.UUID;
 @Fluent
 public final class AccessPolicyEntry {
     /*
-     * The Azure Active Directory tenant ID that should be used for
-     * authenticating requests to the key vault.
+     * The Azure Active Directory tenant ID that should be used for authenticating requests to the key vault.
      */
     @JsonProperty(value = "tenantId", required = true)
     private UUID tenantId;
 
     /*
-     * The object ID of a user, service principal or security group in the
-     * Azure Active Directory tenant for the vault. The object ID must be
-     * unique for the list of access policies.
+     * The object ID of a user, service principal or security group in the Azure Active Directory tenant for the vault.
+     * The object ID must be unique for the list of access policies.
      */
     @JsonProperty(value = "objectId", required = true)
     private String objectId;

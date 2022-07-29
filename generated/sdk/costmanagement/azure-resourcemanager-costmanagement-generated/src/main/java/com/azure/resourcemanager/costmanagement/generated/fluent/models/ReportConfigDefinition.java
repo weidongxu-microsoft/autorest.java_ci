@@ -16,17 +16,15 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class ReportConfigDefinition {
     /*
-     * The type of the report. Usage represents actual usage, forecast
-     * represents forecasted data and UsageAndForecast represents both usage
-     * and forecasted data. Actual usage and forecasted data can be
-     * differentiated based on dates.
+     * The type of the report. Usage represents actual usage, forecast represents forecasted data and UsageAndForecast
+     * represents both usage and forecasted data. Actual usage and forecasted data can be differentiated based on
+     * dates.
      */
     @JsonProperty(value = "type", required = true)
     private ReportType type;
 
     /*
-     * The time frame for pulling data for the report. If custom, then a
-     * specific time period must be provided.
+     * The time frame for pulling data for the report. If custom, then a specific time period must be provided.
      */
     @JsonProperty(value = "timeframe", required = true)
     private ReportTimeframeType timeframe;

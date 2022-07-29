@@ -35,15 +35,13 @@ public final class AccessKeysInner {
     private String aliasSecondaryConnectionString;
 
     /*
-     * A base64-encoded 256-bit primary key for signing and validating the SAS
-     * token.
+     * A base64-encoded 256-bit primary key for signing and validating the SAS token.
      */
     @JsonProperty(value = "primaryKey", access = JsonProperty.Access.WRITE_ONLY)
     private String primaryKey;
 
     /*
-     * A base64-encoded 256-bit primary key for signing and validating the SAS
-     * token.
+     * A base64-encoded 256-bit primary key for signing and validating the SAS token.
      */
     @JsonProperty(value = "secondaryKey", access = JsonProperty.Access.WRITE_ONLY)
     private String secondaryKey;

@@ -16,8 +16,8 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @Fluent
 public final class ServerPropertiesForDefaultCreate extends ServerPropertiesForCreate {
     /*
-     * The administrator's login name of a server. Can only be specified when
-     * the server is being created (and is required for creation).
+     * The administrator's login name of a server. Can only be specified when the server is being created (and is
+     * required for creation).
      */
     @JsonProperty(value = "administratorLogin", required = true)
     private String administratorLogin;

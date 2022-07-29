@@ -33,6 +33,9 @@ public enum StatusOptions {
      */
     @JsonCreator
     public static StatusOptions fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         StatusOptions[] items = StatusOptions.values();
         for (StatusOptions item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

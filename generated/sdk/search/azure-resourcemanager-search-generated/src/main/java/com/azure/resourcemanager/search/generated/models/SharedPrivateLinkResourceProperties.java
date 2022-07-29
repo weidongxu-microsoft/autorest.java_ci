@@ -19,38 +19,34 @@ public final class SharedPrivateLinkResourceProperties {
     private String privateLinkResourceId;
 
     /*
-     * The group id from the provider of resource the shared private link
-     * resource is for.
+     * The group id from the provider of resource the shared private link resource is for.
      */
     @JsonProperty(value = "groupId")
     private String groupId;
 
     /*
-     * The request message for requesting approval of the shared private link
-     * resource.
+     * The request message for requesting approval of the shared private link resource.
      */
     @JsonProperty(value = "requestMessage")
     private String requestMessage;
 
     /*
-     * Optional. Can be used to specify the Azure Resource Manager location of
-     * the resource to which a shared private link is to be created. This is
-     * only required for those resources whose DNS configuration are regional
-     * (such as Azure Kubernetes Service).
+     * Optional. Can be used to specify the Azure Resource Manager location of the resource to which a shared private
+     * link is to be created. This is only required for those resources whose DNS configuration are regional (such as
+     * Azure Kubernetes Service).
      */
     @JsonProperty(value = "resourceRegion")
     private String resourceRegion;
 
     /*
-     * Status of the shared private link resource. Can be Pending, Approved,
-     * Rejected or Disconnected.
+     * Status of the shared private link resource. Can be Pending, Approved, Rejected or Disconnected.
      */
     @JsonProperty(value = "status")
     private SharedPrivateLinkResourceStatus status;
 
     /*
-     * The provisioning state of the shared private link resource. Can be
-     * Updating, Deleting, Failed, Succeeded or Incomplete.
+     * The provisioning state of the shared private link resource. Can be Updating, Deleting, Failed, Succeeded or
+     * Incomplete.
      */
     @JsonProperty(value = "provisioningState")
     private SharedPrivateLinkResourceProvisioningState provisioningState;

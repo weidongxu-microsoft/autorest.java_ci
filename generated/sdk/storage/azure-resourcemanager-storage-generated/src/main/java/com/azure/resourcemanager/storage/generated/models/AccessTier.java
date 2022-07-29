@@ -33,6 +33,9 @@ public enum AccessTier {
      */
     @JsonCreator
     public static AccessTier fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         AccessTier[] items = AccessTier.values();
         for (AccessTier item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

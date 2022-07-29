@@ -27,6 +27,9 @@ public enum ComponentNames {
      */
     @JsonCreator
     public static ComponentNames fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         ComponentNames[] items = ComponentNames.values();
         for (ComponentNames item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

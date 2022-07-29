@@ -38,31 +38,28 @@ public final class MetricTrigger {
     private String metricResourceLocation;
 
     /*
-     * the granularity of metrics the rule monitors. Must be one of the
-     * predefined values returned from metric definitions for the metric. Must
-     * be between 12 hours and 1 minute.
+     * the granularity of metrics the rule monitors. Must be one of the predefined values returned from metric
+     * definitions for the metric. Must be between 12 hours and 1 minute.
      */
     @JsonProperty(value = "timeGrain", required = true)
     private Duration timeGrain;
 
     /*
-     * the metric statistic type. How the metrics from multiple instances are
-     * combined.
+     * the metric statistic type. How the metrics from multiple instances are combined.
      */
     @JsonProperty(value = "statistic", required = true)
     private MetricStatisticType statistic;
 
     /*
-     * the range of time in which instance data is collected. This value must
-     * be greater than the delay in metric collection, which can vary from
-     * resource-to-resource. Must be between 12 hours and 5 minutes.
+     * the range of time in which instance data is collected. This value must be greater than the delay in metric
+     * collection, which can vary from resource-to-resource. Must be between 12 hours and 5 minutes.
      */
     @JsonProperty(value = "timeWindow", required = true)
     private Duration timeWindow;
 
     /*
-     * time aggregation type. How the data that is collected should be combined
-     * over time. The default value is Average.
+     * time aggregation type. How the data that is collected should be combined over time. The default value is
+     * Average.
      */
     @JsonProperty(value = "timeAggregation", required = true)
     private TimeAggregationType timeAggregation;

@@ -30,8 +30,7 @@ public final class DenyAssignmentPermission {
     private List<String> dataActions;
 
     /*
-     * Data actions to exclude from that the deny assignment does not grant
-     * access.
+     * Data actions to exclude from that the deny assignment does not grant access.
      */
     @JsonProperty(value = "notDataActions")
     private List<String> notDataActions;

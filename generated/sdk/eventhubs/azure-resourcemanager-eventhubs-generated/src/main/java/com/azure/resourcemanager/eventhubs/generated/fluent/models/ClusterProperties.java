@@ -23,8 +23,7 @@ public final class ClusterProperties {
     private String updatedAt;
 
     /*
-     * The metric ID of the cluster resource. Provided by the service and not
-     * modifiable by the user.
+     * The metric ID of the cluster resource. Provided by the service and not modifiable by the user.
      */
     @JsonProperty(value = "metricId", access = JsonProperty.Access.WRITE_ONLY)
     private String metricId;

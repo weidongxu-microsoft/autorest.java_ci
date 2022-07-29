@@ -39,6 +39,9 @@ public enum LogLevel {
      */
     @JsonCreator
     public static LogLevel fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         LogLevel[] items = LogLevel.values();
         for (LogLevel item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

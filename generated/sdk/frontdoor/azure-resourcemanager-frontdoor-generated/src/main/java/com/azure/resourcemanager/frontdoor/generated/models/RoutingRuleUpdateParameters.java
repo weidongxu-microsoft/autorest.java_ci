@@ -31,8 +31,7 @@ public class RoutingRuleUpdateParameters {
     private List<String> patternsToMatch;
 
     /*
-     * Whether to enable use of this rule. Permitted values are 'Enabled' or
-     * 'Disabled'
+     * Whether to enable use of this rule. Permitted values are 'Enabled' or 'Disabled'
      */
     @JsonProperty(value = "enabledState")
     private RoutingRuleEnabledState enabledState;
@@ -44,15 +43,13 @@ public class RoutingRuleUpdateParameters {
     private RouteConfiguration routeConfiguration;
 
     /*
-     * A reference to a specific Rules Engine Configuration to apply to this
-     * route.
+     * A reference to a specific Rules Engine Configuration to apply to this route.
      */
     @JsonProperty(value = "rulesEngine")
     private SubResource rulesEngine;
 
     /*
-     * Defines the Web Application Firewall policy for each routing rule (if
-     * applicable)
+     * Defines the Web Application Firewall policy for each routing rule (if applicable)
      */
     @JsonProperty(value = "webApplicationFirewallPolicyLink")
     private RoutingRuleUpdateParametersWebApplicationFirewallPolicyLink webApplicationFirewallPolicyLink;

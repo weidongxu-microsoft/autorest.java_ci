@@ -33,6 +33,9 @@ public enum PublicAccess {
      */
     @JsonCreator
     public static PublicAccess fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         PublicAccess[] items = PublicAccess.values();
         for (PublicAccess item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

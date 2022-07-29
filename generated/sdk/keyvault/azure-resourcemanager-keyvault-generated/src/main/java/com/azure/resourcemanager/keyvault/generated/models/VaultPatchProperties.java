@@ -13,8 +13,7 @@ import java.util.UUID;
 @Fluent
 public final class VaultPatchProperties {
     /*
-     * The Azure Active Directory tenant ID that should be used for
-     * authenticating requests to the key vault.
+     * The Azure Active Directory tenant ID that should be used for authenticating requests to the key vault.
      */
     @JsonProperty(value = "tenantId")
     private UUID tenantId;
@@ -26,49 +25,45 @@ public final class VaultPatchProperties {
     private Sku sku;
 
     /*
-     * An array of 0 to 16 identities that have access to the key vault. All
-     * identities in the array must use the same tenant ID as the key vault's
-     * tenant ID.
+     * An array of 0 to 16 identities that have access to the key vault. All identities in the array must use the same
+     * tenant ID as the key vault's tenant ID.
      */
     @JsonProperty(value = "accessPolicies")
     private List<AccessPolicyEntry> accessPolicies;
 
     /*
-     * Property to specify whether Azure Virtual Machines are permitted to
-     * retrieve certificates stored as secrets from the key vault.
+     * Property to specify whether Azure Virtual Machines are permitted to retrieve certificates stored as secrets from
+     * the key vault.
      */
     @JsonProperty(value = "enabledForDeployment")
     private Boolean enabledForDeployment;
 
     /*
-     * Property to specify whether Azure Disk Encryption is permitted to
-     * retrieve secrets from the vault and unwrap keys.
+     * Property to specify whether Azure Disk Encryption is permitted to retrieve secrets from the vault and unwrap
+     * keys.
      */
     @JsonProperty(value = "enabledForDiskEncryption")
     private Boolean enabledForDiskEncryption;
 
     /*
-     * Property to specify whether Azure Resource Manager is permitted to
-     * retrieve secrets from the key vault.
+     * Property to specify whether Azure Resource Manager is permitted to retrieve secrets from the key vault.
      */
     @JsonProperty(value = "enabledForTemplateDeployment")
     private Boolean enabledForTemplateDeployment;
 
     /*
-     * Property to specify whether the 'soft delete' functionality is enabled
-     * for this key vault. Once set to true, it cannot be reverted to false.
+     * Property to specify whether the 'soft delete' functionality is enabled for this key vault. Once set to true, it
+     * cannot be reverted to false.
      */
     @JsonProperty(value = "enableSoftDelete")
     private Boolean enableSoftDelete;
 
     /*
-     * Property that controls how data actions are authorized. When true, the
-     * key vault will use Role Based Access Control (RBAC) for authorization of
-     * data actions, and the access policies specified in vault properties will
-     * be  ignored. When false, the key vault will use the access policies
-     * specified in vault properties, and any policy stored on Azure Resource
-     * Manager will be ignored. If null or not specified, the value of this
-     * property will not change.
+     * Property that controls how data actions are authorized. When true, the key vault will use Role Based Access
+     * Control (RBAC) for authorization of data actions, and the access policies specified in vault properties will be
+     * ignored. When false, the key vault will use the access policies specified in vault properties, and any policy
+     * stored on Azure Resource Manager will be ignored. If null or not specified, the value of this property will not
+     * change.
      */
     @JsonProperty(value = "enableRbacAuthorization")
     private Boolean enableRbacAuthorization;
@@ -80,36 +75,31 @@ public final class VaultPatchProperties {
     private Integer softDeleteRetentionInDays;
 
     /*
-     * The vault's create mode to indicate whether the vault need to be
-     * recovered or not.
+     * The vault's create mode to indicate whether the vault need to be recovered or not.
      */
     @JsonProperty(value = "createMode")
     private CreateMode createMode;
 
     /*
-     * Property specifying whether protection against purge is enabled for this
-     * vault. Setting this property to true activates protection against purge
-     * for this vault and its content - only the Key Vault service may initiate
-     * a hard, irrecoverable deletion. The setting is effective only if soft
-     * delete is also enabled. Enabling this functionality is irreversible -
-     * that is, the property does not accept false as its value.
+     * Property specifying whether protection against purge is enabled for this vault. Setting this property to true
+     * activates protection against purge for this vault and its content - only the Key Vault service may initiate a
+     * hard, irrecoverable deletion. The setting is effective only if soft delete is also enabled. Enabling this
+     * functionality is irreversible - that is, the property does not accept false as its value.
      */
     @JsonProperty(value = "enablePurgeProtection")
     private Boolean enablePurgeProtection;
 
     /*
-     * A collection of rules governing the accessibility of the vault from
-     * specific network locations.
+     * A collection of rules governing the accessibility of the vault from specific network locations.
      */
     @JsonProperty(value = "networkAcls")
     private NetworkRuleSet networkAcls;
 
     /*
-     * Property to specify whether the vault will accept traffic from public
-     * internet. If set to 'disabled' all traffic except private endpoint
-     * traffic and that that originates from trusted services will be blocked.
-     * This will override the set firewall rules, meaning that even if the
-     * firewall rules are present we will not honor the rules.
+     * Property to specify whether the vault will accept traffic from public internet. If set to 'disabled' all traffic
+     * except private endpoint traffic and that that originates from trusted services will be blocked. This will
+     * override the set firewall rules, meaning that even if the firewall rules are present we will not honor the
+     * rules.
      */
     @JsonProperty(value = "publicNetworkAccess")
     private String publicNetworkAccess;

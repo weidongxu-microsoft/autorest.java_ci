@@ -17,16 +17,14 @@ import java.util.List;
 @Fluent
 public class PacketCaptureParameters {
     /*
-     * The ID of the targeted resource, only AzureVM and AzureVMSS as target
-     * type are currently supported.
+     * The ID of the targeted resource, only AzureVM and AzureVMSS as target type are currently supported.
      */
     @JsonProperty(value = "target", required = true)
     private String target;
 
     /*
-     * A list of AzureVMSS instances which can be included or excluded to run
-     * packet capture. If both included and excluded are empty, then the packet
-     * capture will run on all instances of AzureVMSS.
+     * A list of AzureVMSS instances which can be included or excluded to run packet capture. If both included and
+     * excluded are empty, then the packet capture will run on all instances of AzureVMSS.
      */
     @JsonProperty(value = "scope")
     private PacketCaptureMachineScope scope;

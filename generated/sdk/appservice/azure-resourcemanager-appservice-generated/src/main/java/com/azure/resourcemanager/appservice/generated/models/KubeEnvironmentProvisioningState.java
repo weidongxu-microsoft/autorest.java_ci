@@ -54,6 +54,9 @@ public enum KubeEnvironmentProvisioningState {
      */
     @JsonCreator
     public static KubeEnvironmentProvisioningState fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         KubeEnvironmentProvisioningState[] items = KubeEnvironmentProvisioningState.values();
         for (KubeEnvironmentProvisioningState item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

@@ -13,8 +13,7 @@ import java.util.List;
 @Fluent
 public final class AvailableClustersListInner {
     /*
-     * The count of readily available and pre-provisioned Event Hubs Clusters
-     * per region.
+     * The count of readily available and pre-provisioned Event Hubs Clusters per region.
      */
     @JsonProperty(value = "value")
     private List<AvailableCluster> value;

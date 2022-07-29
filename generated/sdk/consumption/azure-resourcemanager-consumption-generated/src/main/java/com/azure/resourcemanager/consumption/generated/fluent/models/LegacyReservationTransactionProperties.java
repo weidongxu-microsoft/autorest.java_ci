@@ -20,10 +20,9 @@ public final class LegacyReservationTransactionProperties {
     private OffsetDateTime eventDate;
 
     /*
-     * The reservation order ID is the identifier for a reservation purchase.
-     * Each reservation order ID represents a single purchase transaction. A
-     * reservation order contains reservations. The reservation order specifies
-     * the VM size and region for the reservations.
+     * The reservation order ID is the identifier for a reservation purchase. Each reservation order ID represents a
+     * single purchase transaction. A reservation order contains reservations. The reservation order specifies the VM
+     * size and region for the reservations.
      */
     @JsonProperty(value = "reservationOrderId", access = JsonProperty.Access.WRITE_ONLY)
     private String reservationOrderId;
@@ -83,8 +82,7 @@ public final class LegacyReservationTransactionProperties {
     private String purchasingSubscriptionName;
 
     /*
-     * This is the ARM Sku name. It can be used to join with the serviceType
-     * field in additional info in usage records.
+     * This is the ARM Sku name. It can be used to join with the serviceType field in additional info in usage records.
      */
     @JsonProperty(value = "armSkuName", access = JsonProperty.Access.WRITE_ONLY)
     private String armSkuName;
@@ -120,8 +118,7 @@ public final class LegacyReservationTransactionProperties {
     private String departmentName;
 
     /*
-     * The cost center of this department if it is a department and a cost
-     * center is provided.
+     * The cost center of this department if it is a department and a cost center is provided.
      */
     @JsonProperty(value = "costCenter", access = JsonProperty.Access.WRITE_ONLY)
     private String costCenter;

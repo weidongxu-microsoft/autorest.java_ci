@@ -30,6 +30,9 @@ public enum KeyRotationPolicyActionType {
      */
     @JsonCreator
     public static KeyRotationPolicyActionType fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         KeyRotationPolicyActionType[] items = KeyRotationPolicyActionType.values();
         for (KeyRotationPolicyActionType item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

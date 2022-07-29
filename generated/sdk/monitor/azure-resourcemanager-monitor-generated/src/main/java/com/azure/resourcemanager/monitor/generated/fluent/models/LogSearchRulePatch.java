@@ -12,8 +12,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class LogSearchRulePatch {
     /*
-     * The flag which indicates whether the Log Search rule is enabled. Value
-     * should be true or false
+     * The flag which indicates whether the Log Search rule is enabled. Value should be true or false
      */
     @JsonProperty(value = "enabled")
     private Enabled enabled;

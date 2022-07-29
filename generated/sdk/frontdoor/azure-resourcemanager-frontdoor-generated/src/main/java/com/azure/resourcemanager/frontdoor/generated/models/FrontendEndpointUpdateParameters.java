@@ -17,22 +17,19 @@ public class FrontendEndpointUpdateParameters {
     private String hostname;
 
     /*
-     * Whether to allow session affinity on this host. Valid options are
-     * 'Enabled' or 'Disabled'
+     * Whether to allow session affinity on this host. Valid options are 'Enabled' or 'Disabled'
      */
     @JsonProperty(value = "sessionAffinityEnabledState")
     private SessionAffinityEnabledState sessionAffinityEnabledState;
 
     /*
-     * UNUSED. This field will be ignored. The TTL to use in seconds for
-     * session affinity, if applicable.
+     * UNUSED. This field will be ignored. The TTL to use in seconds for session affinity, if applicable.
      */
     @JsonProperty(value = "sessionAffinityTtlSeconds")
     private Integer sessionAffinityTtlSeconds;
 
     /*
-     * Defines the Web Application Firewall policy for each host (if
-     * applicable)
+     * Defines the Web Application Firewall policy for each host (if applicable)
      */
     @JsonProperty(value = "webApplicationFirewallPolicyLink")
     private FrontendEndpointUpdateParametersWebApplicationFirewallPolicyLink webApplicationFirewallPolicyLink;

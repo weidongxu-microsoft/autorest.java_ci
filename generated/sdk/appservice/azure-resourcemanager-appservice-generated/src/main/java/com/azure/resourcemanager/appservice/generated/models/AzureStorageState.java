@@ -36,6 +36,9 @@ public enum AzureStorageState {
      */
     @JsonCreator
     public static AzureStorageState fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         AzureStorageState[] items = AzureStorageState.values();
         for (AzureStorageState item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

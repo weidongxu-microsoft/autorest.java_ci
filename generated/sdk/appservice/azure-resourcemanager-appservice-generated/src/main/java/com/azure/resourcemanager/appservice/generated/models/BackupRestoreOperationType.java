@@ -39,6 +39,9 @@ public enum BackupRestoreOperationType {
      */
     @JsonCreator
     public static BackupRestoreOperationType fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         BackupRestoreOperationType[] items = BackupRestoreOperationType.values();
         for (BackupRestoreOperationType item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

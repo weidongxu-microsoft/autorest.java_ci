@@ -87,8 +87,7 @@ public final class BackupItemProperties {
     private OffsetDateTime finishedTimestamp;
 
     /*
-     * Unique correlation identifier. Please use this along with the timestamp
-     * while communicating with Azure support.
+     * Unique correlation identifier. Please use this along with the timestamp while communicating with Azure support.
      */
     @JsonProperty(value = "correlationId", access = JsonProperty.Access.WRITE_ONLY)
     private String correlationId;

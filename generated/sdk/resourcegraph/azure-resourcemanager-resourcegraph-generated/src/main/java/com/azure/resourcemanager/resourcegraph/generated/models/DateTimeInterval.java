@@ -13,17 +13,15 @@ import java.time.OffsetDateTime;
 @Fluent
 public final class DateTimeInterval {
     /*
-     * A datetime indicating the inclusive/closed start of the time interval,
-     * i.e. `[`**`start`**`, end)`. Specifying a `start` that occurs
-     * chronologically after `end` will result in an error.
+     * A datetime indicating the inclusive/closed start of the time interval, i.e. `[`**`start`**`, end)`. Specifying a
+     * `start` that occurs chronologically after `end` will result in an error.
      */
     @JsonProperty(value = "start", required = true)
     private OffsetDateTime start;
 
     /*
-     * A datetime indicating the exclusive/open end of the time interval, i.e.
-     * `[start, `**`end`**`)`. Specifying an `end` that occurs chronologically
-     * before `start` will result in an error.
+     * A datetime indicating the exclusive/open end of the time interval, i.e. `[start, `**`end`**`)`. Specifying an
+     * `end` that occurs chronologically before `start` will result in an error.
      */
     @JsonProperty(value = "end", required = true)
     private OffsetDateTime end;

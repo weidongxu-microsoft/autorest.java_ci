@@ -11,8 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class DiskEncryptionProperties {
     /*
-     * Base key vault URI where the customers key is located eg.
-     * https://myvault.vault.azure.net
+     * Base key vault URI where the customers key is located eg. https://myvault.vault.azure.net
      */
     @JsonProperty(value = "vaultUri")
     private String vaultUri;

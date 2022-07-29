@@ -13,9 +13,8 @@ import java.util.Map;
 @Fluent
 public final class ClusterQuotaConfigurationPropertiesInner {
     /*
-     * All possible Cluster settings - a collection of key/value paired
-     * settings which apply to quotas and configurations imposed on the
-     * cluster.
+     * All possible Cluster settings - a collection of key/value paired settings which apply to quotas and
+     * configurations imposed on the cluster.
      */
     @JsonProperty(value = "settings")
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)

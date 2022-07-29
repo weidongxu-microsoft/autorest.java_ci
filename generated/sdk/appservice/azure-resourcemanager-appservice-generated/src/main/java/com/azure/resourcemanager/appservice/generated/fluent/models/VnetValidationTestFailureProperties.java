@@ -17,8 +17,7 @@ public final class VnetValidationTestFailureProperties {
     private String testName;
 
     /*
-     * The details of what caused the failure, e.g. the blocking rule name,
-     * etc.
+     * The details of what caused the failure, e.g. the blocking rule name, etc.
      */
     @JsonProperty(value = "details")
     private String details;

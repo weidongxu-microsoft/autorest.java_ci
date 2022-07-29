@@ -24,30 +24,27 @@ public final class CacheItem {
     private String name;
 
     /*
-     * Indicates the account type. Allowed values include: EA, PAYG, Modern,
-     * Internal, Unknown.
+     * Indicates the account type. Allowed values include: EA, PAYG, Modern, Internal, Unknown.
      */
     @JsonProperty(value = "channel", required = true)
     private String channel;
 
     /*
-     * Indicates the type of modern account. Allowed values include:
-     * Individual, Enterprise, Partner, Indirect, NotApplicable
+     * Indicates the type of modern account. Allowed values include: Individual, Enterprise, Partner, Indirect,
+     * NotApplicable
      */
     @JsonProperty(value = "subchannel", required = true)
     private String subchannel;
 
     /*
-     * Resource ID of the parent scope. For instance, subscription's resource
-     * ID for a resource group or a management group resource ID for a
-     * subscription.
+     * Resource ID of the parent scope. For instance, subscription's resource ID for a resource group or a management
+     * group resource ID for a subscription.
      */
     @JsonProperty(value = "parent")
     private String parent;
 
     /*
-     * Indicates the status of the scope. Status only applies to subscriptions
-     * and billing accounts.
+     * Indicates the status of the scope. Status only applies to subscriptions and billing accounts.
      */
     @JsonProperty(value = "status")
     private String status;

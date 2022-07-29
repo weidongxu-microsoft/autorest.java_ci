@@ -19,18 +19,15 @@ public final class DiagnosticMetricSample {
 
     /*
      * Role Instance. Null if this counter is not per instance
-     * This is returned and should be whichever instance name we desire to be
-     * returned
+     * This is returned and should be whichever instance name we desire to be returned
      * i.e. CPU and Memory return RDWORKERNAME (LargeDed..._IN_0)
-     * where RDWORKERNAME is Machine name below and RoleInstance name in
-     * parenthesis
+     * where RDWORKERNAME is Machine name below and RoleInstance name in parenthesis
      */
     @JsonProperty(value = "roleInstance")
     private String roleInstance;
 
     /*
-     * Total value of the metric. If multiple measurements are made this will
-     * have sum of all.
+     * Total value of the metric. If multiple measurements are made this will have sum of all.
      */
     @JsonProperty(value = "total")
     private Double total;

@@ -13,10 +13,9 @@ import java.time.OffsetDateTime;
 @Immutable
 public final class ReservationDetailProperties {
     /*
-     * The reservation order ID is the identifier for a reservation purchase.
-     * Each reservation order ID represents a single purchase transaction. A
-     * reservation order contains reservations. The reservation order specifies
-     * the VM size and region for the reservations.
+     * The reservation order ID is the identifier for a reservation purchase. Each reservation order ID represents a
+     * single purchase transaction. A reservation order contains reservations. The reservation order specifies the VM
+     * size and region for the reservations.
      */
     @JsonProperty(value = "reservationOrderId", access = JsonProperty.Access.WRITE_ONLY)
     private String reservationOrderId;
@@ -34,25 +33,22 @@ public final class ReservationDetailProperties {
     private String instanceFlexibilityGroup;
 
     /*
-     * The reservation ID is the identifier of a reservation within a
-     * reservation order. Each reservation is the grouping for applying the
-     * benefit scope and also specifies the number of instances to which the
-     * reservation benefit can be applied to.
+     * The reservation ID is the identifier of a reservation within a reservation order. Each reservation is the
+     * grouping for applying the benefit scope and also specifies the number of instances to which the reservation
+     * benefit can be applied to.
      */
     @JsonProperty(value = "reservationId", access = JsonProperty.Access.WRITE_ONLY)
     private String reservationId;
 
     /*
-     * This is the ARM Sku name. It can be used to join with the serviceType
-     * field in additional info in usage records.
+     * This is the ARM Sku name. It can be used to join with the serviceType field in additional info in usage records.
      */
     @JsonProperty(value = "skuName", access = JsonProperty.Access.WRITE_ONLY)
     private String skuName;
 
     /*
-     * This is the total hours reserved for the day. E.g. if reservation for 1
-     * instance was made on 1 PM, this will be 11 hours for that day and 24
-     * hours from subsequent days.
+     * This is the total hours reserved for the day. E.g. if reservation for 1 instance was made on 1 PM, this will be
+     * 11 hours for that day and 24 hours from subsequent days.
      */
     @JsonProperty(value = "reservedHours", access = JsonProperty.Access.WRITE_ONLY)
     private BigDecimal reservedHours;
@@ -70,15 +66,13 @@ public final class ReservationDetailProperties {
     private BigDecimal usedHours;
 
     /*
-     * This identifier is the name of the resource or the fully qualified
-     * Resource ID.
+     * This identifier is the name of the resource or the fully qualified Resource ID.
      */
     @JsonProperty(value = "instanceId", access = JsonProperty.Access.WRITE_ONLY)
     private String instanceId;
 
     /*
-     * This is the total count of instances that are reserved for the
-     * reservationId.
+     * This is the total count of instances that are reserved for the reservationId.
      */
     @JsonProperty(value = "totalReservedQuantity", access = JsonProperty.Access.WRITE_ONLY)
     private BigDecimal totalReservedQuantity;

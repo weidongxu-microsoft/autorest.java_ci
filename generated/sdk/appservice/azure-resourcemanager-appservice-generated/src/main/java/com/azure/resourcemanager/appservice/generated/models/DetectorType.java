@@ -33,6 +33,9 @@ public enum DetectorType {
      */
     @JsonCreator
     public static DetectorType fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         DetectorType[] items = DetectorType.values();
         for (DetectorType item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

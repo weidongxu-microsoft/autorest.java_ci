@@ -14,15 +14,13 @@ import java.util.List;
 @Fluent
 public final class DeviceCapacityRequestInfoProperties {
     /*
-     * Array containing the sizes of the VMs for checking if its feasible to
-     * create them on the appliance.
+     * Array containing the sizes of the VMs for checking if its feasible to create them on the appliance.
      */
     @JsonProperty(value = "vmPlacementQuery", required = true)
     private List<List<String>> vmPlacementQuery;
 
     /*
-     * Array of the VMs of the sizes in VmSizes can be provisioned on the
-     * appliance.
+     * Array of the VMs of the sizes in VmSizes can be provisioned on the appliance.
      */
     @JsonProperty(value = "vmPlacementResults")
     private List<VmPlacementRequestResult> vmPlacementResults;

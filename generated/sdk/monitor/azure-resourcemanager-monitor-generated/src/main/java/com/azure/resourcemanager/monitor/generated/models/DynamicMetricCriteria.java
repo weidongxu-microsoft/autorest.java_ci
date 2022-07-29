@@ -24,22 +24,21 @@ public final class DynamicMetricCriteria extends MultiMetricCriteria {
     private DynamicThresholdOperator operator;
 
     /*
-     * The extent of deviation required to trigger an alert. This will affect
-     * how tight the threshold is to the metric series pattern.
+     * The extent of deviation required to trigger an alert. This will affect how tight the threshold is to the metric
+     * series pattern.
      */
     @JsonProperty(value = "alertSensitivity", required = true)
     private DynamicThresholdSensitivity alertSensitivity;
 
     /*
-     * The minimum number of violations required within the selected lookback
-     * time window required to raise an alert.
+     * The minimum number of violations required within the selected lookback time window required to raise an alert.
      */
     @JsonProperty(value = "failingPeriods", required = true)
     private DynamicThresholdFailingPeriods failingPeriods;
 
     /*
-     * Use this option to set the date from which to start learning the metric
-     * historical data and calculate the dynamic thresholds (in ISO8601 format)
+     * Use this option to set the date from which to start learning the metric historical data and calculate the
+     * dynamic thresholds (in ISO8601 format)
      */
     @JsonProperty(value = "ignoreDataBefore")
     private OffsetDateTime ignoreDataBefore;

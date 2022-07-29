@@ -50,8 +50,7 @@ public final class RecordSetProperties {
     private String provisioningState;
 
     /*
-     * A reference to an azure resource from where the dns resource value is
-     * taken.
+     * A reference to an azure resource from where the dns resource value is taken.
      */
     @JsonProperty(value = "targetResource")
     private SubResource targetResource;

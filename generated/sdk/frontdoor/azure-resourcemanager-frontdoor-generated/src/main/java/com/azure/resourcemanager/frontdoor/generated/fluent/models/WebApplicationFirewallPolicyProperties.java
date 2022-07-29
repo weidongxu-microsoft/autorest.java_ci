@@ -37,22 +37,19 @@ public final class WebApplicationFirewallPolicyProperties {
     private ManagedRuleSetList managedRules;
 
     /*
-     * Describes Frontend Endpoints associated with this Web Application
-     * Firewall policy.
+     * Describes Frontend Endpoints associated with this Web Application Firewall policy.
      */
     @JsonProperty(value = "frontendEndpointLinks", access = JsonProperty.Access.WRITE_ONLY)
     private List<FrontendEndpointLink> frontendEndpointLinks;
 
     /*
-     * Describes Routing Rules associated with this Web Application Firewall
-     * policy.
+     * Describes Routing Rules associated with this Web Application Firewall policy.
      */
     @JsonProperty(value = "routingRuleLinks", access = JsonProperty.Access.WRITE_ONLY)
     private List<RoutingRuleLink> routingRuleLinks;
 
     /*
-     * Describes Security Policy associated with this Web Application Firewall
-     * policy.
+     * Describes Security Policy associated with this Web Application Firewall policy.
      */
     @JsonProperty(value = "securityPolicyLinks", access = JsonProperty.Access.WRITE_ONLY)
     private List<SecurityPolicyLink> securityPolicyLinks;

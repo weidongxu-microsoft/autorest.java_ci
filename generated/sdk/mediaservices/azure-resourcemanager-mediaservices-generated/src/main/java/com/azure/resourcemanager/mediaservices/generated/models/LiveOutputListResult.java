@@ -29,8 +29,7 @@ public final class LiveOutputListResult {
     private Integer odataCount;
 
     /*
-     * The link to the next set of results. Not empty if value contains
-     * incomplete list of live outputs.
+     * The link to the next set of results. Not empty if value contains incomplete list of live outputs.
      */
     @JsonProperty(value = "@odata.nextLink")
     private String odataNextLink;

@@ -12,16 +12,15 @@ import java.util.List;
 @Fluent
 public final class MhsmNetworkRuleSet {
     /*
-     * Tells what traffic can bypass network rules. This can be 'AzureServices'
-     * or 'None'.  If not specified the default is 'AzureServices'.
+     * Tells what traffic can bypass network rules. This can be 'AzureServices' or 'None'.  If not specified the
+     * default is 'AzureServices'.
      */
     @JsonProperty(value = "bypass")
     private NetworkRuleBypassOptions bypass;
 
     /*
-     * The default action when no rule from ipRules and from
-     * virtualNetworkRules match. This is only used after the bypass property
-     * has been evaluated.
+     * The default action when no rule from ipRules and from virtualNetworkRules match. This is only used after the
+     * bypass property has been evaluated.
      */
     @JsonProperty(value = "defaultAction")
     private NetworkRuleAction defaultAction;

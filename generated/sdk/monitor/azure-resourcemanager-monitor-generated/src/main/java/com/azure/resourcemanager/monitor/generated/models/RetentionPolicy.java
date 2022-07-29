@@ -17,8 +17,7 @@ public final class RetentionPolicy {
     private boolean enabled;
 
     /*
-     * the number of days for the retention in days. A value of 0 will retain
-     * the events indefinitely.
+     * the number of days for the retention in days. A value of 0 will retain the events indefinitely.
      */
     @JsonProperty(value = "days", required = true)
     private int days;

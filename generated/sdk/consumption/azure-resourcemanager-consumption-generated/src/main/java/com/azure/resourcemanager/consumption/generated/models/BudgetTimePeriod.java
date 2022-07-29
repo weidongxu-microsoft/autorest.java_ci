@@ -19,8 +19,7 @@ public final class BudgetTimePeriod {
     private OffsetDateTime startDate;
 
     /*
-     * The end date for the budget. If not provided, we default this to 10
-     * years from the start date.
+     * The end date for the budget. If not provided, we default this to 10 years from the start date.
      */
     @JsonProperty(value = "endDate")
     private OffsetDateTime endDate;

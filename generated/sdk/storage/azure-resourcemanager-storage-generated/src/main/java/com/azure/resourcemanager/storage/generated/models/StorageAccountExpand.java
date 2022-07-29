@@ -30,6 +30,9 @@ public enum StorageAccountExpand {
      */
     @JsonCreator
     public static StorageAccountExpand fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         StorageAccountExpand[] items = StorageAccountExpand.values();
         for (StorageAccountExpand item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

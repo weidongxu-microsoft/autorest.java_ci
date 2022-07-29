@@ -60,56 +60,49 @@ public final class ApplicationGatewayPropertiesFormat {
     private ApplicationGatewayOperationalState operationalState;
 
     /*
-     * Subnets of the application gateway resource. For default limits, see
-     * [Application Gateway
+     * Subnets of the application gateway resource. For default limits, see [Application Gateway
      * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      */
     @JsonProperty(value = "gatewayIPConfigurations")
     private List<ApplicationGatewayIpConfiguration> gatewayIpConfigurations;
 
     /*
-     * Authentication certificates of the application gateway resource. For
-     * default limits, see [Application Gateway
+     * Authentication certificates of the application gateway resource. For default limits, see [Application Gateway
      * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      */
     @JsonProperty(value = "authenticationCertificates")
     private List<ApplicationGatewayAuthenticationCertificate> authenticationCertificates;
 
     /*
-     * Trusted Root certificates of the application gateway resource. For
-     * default limits, see [Application Gateway
+     * Trusted Root certificates of the application gateway resource. For default limits, see [Application Gateway
      * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      */
     @JsonProperty(value = "trustedRootCertificates")
     private List<ApplicationGatewayTrustedRootCertificate> trustedRootCertificates;
 
     /*
-     * Trusted client certificates of the application gateway resource. For
-     * default limits, see [Application Gateway
+     * Trusted client certificates of the application gateway resource. For default limits, see [Application Gateway
      * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      */
     @JsonProperty(value = "trustedClientCertificates")
     private List<ApplicationGatewayTrustedClientCertificate> trustedClientCertificates;
 
     /*
-     * SSL certificates of the application gateway resource. For default
-     * limits, see [Application Gateway
+     * SSL certificates of the application gateway resource. For default limits, see [Application Gateway
      * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      */
     @JsonProperty(value = "sslCertificates")
     private List<ApplicationGatewaySslCertificate> sslCertificates;
 
     /*
-     * Frontend IP addresses of the application gateway resource. For default
-     * limits, see [Application Gateway
+     * Frontend IP addresses of the application gateway resource. For default limits, see [Application Gateway
      * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      */
     @JsonProperty(value = "frontendIPConfigurations")
     private List<ApplicationGatewayFrontendIpConfiguration> frontendIpConfigurations;
 
     /*
-     * Frontend ports of the application gateway resource. For default limits,
-     * see [Application Gateway
+     * Frontend ports of the application gateway resource. For default limits, see [Application Gateway
      * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      */
     @JsonProperty(value = "frontendPorts")
@@ -122,56 +115,49 @@ public final class ApplicationGatewayPropertiesFormat {
     private List<ApplicationGatewayProbe> probes;
 
     /*
-     * Backend address pool of the application gateway resource. For default
-     * limits, see [Application Gateway
+     * Backend address pool of the application gateway resource. For default limits, see [Application Gateway
      * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      */
     @JsonProperty(value = "backendAddressPools")
     private List<ApplicationGatewayBackendAddressPool> backendAddressPools;
 
     /*
-     * Backend http settings of the application gateway resource. For default
-     * limits, see [Application Gateway
+     * Backend http settings of the application gateway resource. For default limits, see [Application Gateway
      * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      */
     @JsonProperty(value = "backendHttpSettingsCollection")
     private List<ApplicationGatewayBackendHttpSettings> backendHttpSettingsCollection;
 
     /*
-     * Backend settings of the application gateway resource. For default
-     * limits, see [Application Gateway
+     * Backend settings of the application gateway resource. For default limits, see [Application Gateway
      * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      */
     @JsonProperty(value = "backendSettingsCollection")
     private List<ApplicationGatewayBackendSettings> backendSettingsCollection;
 
     /*
-     * Http listeners of the application gateway resource. For default limits,
-     * see [Application Gateway
+     * Http listeners of the application gateway resource. For default limits, see [Application Gateway
      * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      */
     @JsonProperty(value = "httpListeners")
     private List<ApplicationGatewayHttpListener> httpListeners;
 
     /*
-     * Listeners of the application gateway resource. For default limits, see
-     * [Application Gateway
+     * Listeners of the application gateway resource. For default limits, see [Application Gateway
      * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      */
     @JsonProperty(value = "listeners")
     private List<ApplicationGatewayListener> listeners;
 
     /*
-     * SSL profiles of the application gateway resource. For default limits,
-     * see [Application Gateway
+     * SSL profiles of the application gateway resource. For default limits, see [Application Gateway
      * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      */
     @JsonProperty(value = "sslProfiles")
     private List<ApplicationGatewaySslProfile> sslProfiles;
 
     /*
-     * URL path map of the application gateway resource. For default limits,
-     * see [Application Gateway
+     * URL path map of the application gateway resource. For default limits, see [Application Gateway
      * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      */
     @JsonProperty(value = "urlPathMaps")
@@ -196,8 +182,7 @@ public final class ApplicationGatewayPropertiesFormat {
     private List<ApplicationGatewayRewriteRuleSet> rewriteRuleSets;
 
     /*
-     * Redirect configurations of the application gateway resource. For default
-     * limits, see [Application Gateway
+     * Redirect configurations of the application gateway resource. For default limits, see [Application Gateway
      * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      */
     @JsonProperty(value = "redirectConfigurations")
@@ -264,8 +249,8 @@ public final class ApplicationGatewayPropertiesFormat {
     private List<ApplicationGatewayCustomError> customErrorConfigurations;
 
     /*
-     * If true, associates a firewall policy with an application gateway
-     * regardless whether the policy differs from the WAF Config.
+     * If true, associates a firewall policy with an application gateway regardless whether the policy differs from the
+     * WAF Config.
      */
     @JsonProperty(value = "forceFirewallPolicyAssociation")
     private Boolean forceFirewallPolicyAssociation;

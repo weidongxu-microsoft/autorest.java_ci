@@ -17,15 +17,13 @@ public final class ExplicitProxy {
     private Boolean enableExplicitProxy;
 
     /*
-     * Port number for explicit proxy http protocol, cannot be greater than
-     * 64000.
+     * Port number for explicit proxy http protocol, cannot be greater than 64000.
      */
     @JsonProperty(value = "httpPort")
     private Integer httpPort;
 
     /*
-     * Port number for explicit proxy https protocol, cannot be greater than
-     * 64000.
+     * Port number for explicit proxy https protocol, cannot be greater than 64000.
      */
     @JsonProperty(value = "httpsPort")
     private Integer httpsPort;

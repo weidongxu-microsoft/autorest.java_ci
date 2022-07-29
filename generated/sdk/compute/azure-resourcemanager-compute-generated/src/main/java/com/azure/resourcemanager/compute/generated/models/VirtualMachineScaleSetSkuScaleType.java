@@ -30,6 +30,9 @@ public enum VirtualMachineScaleSetSkuScaleType {
      */
     @JsonCreator
     public static VirtualMachineScaleSetSkuScaleType fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         VirtualMachineScaleSetSkuScaleType[] items = VirtualMachineScaleSetSkuScaleType.values();
         for (VirtualMachineScaleSetSkuScaleType item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

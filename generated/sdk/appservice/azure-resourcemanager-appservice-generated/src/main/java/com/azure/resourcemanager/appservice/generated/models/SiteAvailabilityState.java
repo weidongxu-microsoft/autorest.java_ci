@@ -33,6 +33,9 @@ public enum SiteAvailabilityState {
      */
     @JsonCreator
     public static SiteAvailabilityState fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         SiteAvailabilityState[] items = SiteAvailabilityState.values();
         for (SiteAvailabilityState item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

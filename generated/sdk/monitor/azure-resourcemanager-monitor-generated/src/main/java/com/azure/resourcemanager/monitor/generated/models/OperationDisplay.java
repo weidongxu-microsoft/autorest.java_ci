@@ -17,8 +17,7 @@ public final class OperationDisplay {
     private String provider;
 
     /*
-     * Resource on which the operation is performed: AlertRules, Autoscale,
-     * etc.
+     * Resource on which the operation is performed: AlertRules, Autoscale, etc.
      */
     @JsonProperty(value = "resource")
     private String resource;

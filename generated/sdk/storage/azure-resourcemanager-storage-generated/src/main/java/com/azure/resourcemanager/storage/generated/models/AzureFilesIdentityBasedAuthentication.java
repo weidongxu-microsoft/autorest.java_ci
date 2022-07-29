@@ -24,8 +24,7 @@ public final class AzureFilesIdentityBasedAuthentication {
     private ActiveDirectoryProperties activeDirectoryProperties;
 
     /*
-     * Default share permission for users using Kerberos authentication if RBAC
-     * role is not assigned.
+     * Default share permission for users using Kerberos authentication if RBAC role is not assigned.
      */
     @JsonProperty(value = "defaultSharePermission")
     private DefaultSharePermission defaultSharePermission;

@@ -30,6 +30,9 @@ public enum CustomHostnameDnsRecordType {
      */
     @JsonCreator
     public static CustomHostnameDnsRecordType fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         CustomHostnameDnsRecordType[] items = CustomHostnameDnsRecordType.values();
         for (CustomHostnameDnsRecordType item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

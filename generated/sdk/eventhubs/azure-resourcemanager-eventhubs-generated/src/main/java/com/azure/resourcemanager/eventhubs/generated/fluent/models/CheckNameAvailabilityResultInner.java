@@ -18,8 +18,7 @@ public final class CheckNameAvailabilityResultInner {
     private String message;
 
     /*
-     * Value indicating Namespace is availability, true if the Namespace is
-     * available; otherwise, false.
+     * Value indicating Namespace is availability, true if the Namespace is available; otherwise, false.
      */
     @JsonProperty(value = "nameAvailable")
     private Boolean nameAvailable;

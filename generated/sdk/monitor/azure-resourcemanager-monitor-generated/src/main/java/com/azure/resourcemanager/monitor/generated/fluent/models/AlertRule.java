@@ -22,8 +22,7 @@ public final class AlertRule {
     private String name;
 
     /*
-     * the description of the alert rule that will be included in the alert
-     * email.
+     * the description of the alert rule that will be included in the alert email.
      */
     @JsonProperty(value = "description")
     private String description;
@@ -47,15 +46,14 @@ public final class AlertRule {
     private RuleCondition condition;
 
     /*
-     * action that is performed when the alert rule becomes active, and when an
-     * alert condition is resolved.
+     * action that is performed when the alert rule becomes active, and when an alert condition is resolved.
      */
     @JsonProperty(value = "action")
     private RuleAction action;
 
     /*
-     * the array of actions that are performed when the alert rule becomes
-     * active, and when an alert condition is resolved.
+     * the array of actions that are performed when the alert rule becomes active, and when an alert condition is
+     * resolved.
      */
     @JsonProperty(value = "actions")
     private List<RuleAction> actions;

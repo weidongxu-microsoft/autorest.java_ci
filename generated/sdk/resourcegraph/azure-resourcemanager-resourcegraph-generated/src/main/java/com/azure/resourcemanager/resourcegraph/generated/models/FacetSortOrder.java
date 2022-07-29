@@ -30,6 +30,9 @@ public enum FacetSortOrder {
      */
     @JsonCreator
     public static FacetSortOrder fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         FacetSortOrder[] items = FacetSortOrder.values();
         for (FacetSortOrder item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

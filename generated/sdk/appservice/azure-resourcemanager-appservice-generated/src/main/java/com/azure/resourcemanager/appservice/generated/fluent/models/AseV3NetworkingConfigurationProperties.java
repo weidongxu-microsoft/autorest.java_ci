@@ -36,8 +36,7 @@ public final class AseV3NetworkingConfigurationProperties {
     private List<String> internalInboundIpAddresses;
 
     /*
-     * Property to enable and disable new private endpoint connection creation
-     * on ASE
+     * Property to enable and disable new private endpoint connection creation on ASE
      */
     @JsonProperty(value = "allowNewPrivateEndpointConnections")
     private Boolean allowNewPrivateEndpointConnections;

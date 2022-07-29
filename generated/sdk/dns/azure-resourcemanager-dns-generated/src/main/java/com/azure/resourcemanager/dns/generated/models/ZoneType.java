@@ -30,6 +30,9 @@ public enum ZoneType {
      */
     @JsonCreator
     public static ZoneType fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         ZoneType[] items = ZoneType.values();
         for (ZoneType item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

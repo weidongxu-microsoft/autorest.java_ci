@@ -48,6 +48,9 @@ public enum IssueType {
      */
     @JsonCreator
     public static IssueType fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         IssueType[] items = IssueType.values();
         for (IssueType item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

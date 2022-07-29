@@ -108,8 +108,8 @@ public final class ClusterProperties {
     private Boolean enableDoubleEncryption;
 
     /*
-     * Public network access to the cluster is enabled by default. When
-     * disabled, only private endpoint connection to the cluster is allowed
+     * Public network access to the cluster is enabled by default. When disabled, only private endpoint connection to
+     * the cluster is allowed
      */
     @JsonProperty(value = "publicNetworkAccess")
     private PublicNetworkAccess publicNetworkAccess;
@@ -133,29 +133,27 @@ public final class ClusterProperties {
     private List<AcceptedAudiences> acceptedAudiences;
 
     /*
-     * A boolean value that indicates if the cluster could be automatically
-     * stopped (due to lack of data or no activity for many days).
+     * A boolean value that indicates if the cluster could be automatically stopped (due to lack of data or no activity
+     * for many days).
      */
     @JsonProperty(value = "enableAutoStop")
     private Boolean enableAutoStop;
 
     /*
-     * Whether or not to restrict outbound network access.  Value is optional
-     * but if passed in, must be 'Enabled' or 'Disabled'
+     * Whether or not to restrict outbound network access.  Value is optional but if passed in, must be 'Enabled' or
+     * 'Disabled'
      */
     @JsonProperty(value = "restrictOutboundNetworkAccess")
     private ClusterNetworkAccessFlag restrictOutboundNetworkAccess;
 
     /*
-     * List of allowed FQDNs(Fully Qualified Domain Name) for egress from
-     * Cluster.
+     * List of allowed FQDNs(Fully Qualified Domain Name) for egress from Cluster.
      */
     @JsonProperty(value = "allowedFqdnList")
     private List<String> allowedFqdnList;
 
     /*
-     * Indicates what public IP type to create - IPv4 (default), or DualStack
-     * (both IPv4 and IPv6)
+     * Indicates what public IP type to create - IPv4 (default), or DualStack (both IPv4 and IPv6)
      */
     @JsonProperty(value = "publicIPType")
     private PublicIpType publicIpType;

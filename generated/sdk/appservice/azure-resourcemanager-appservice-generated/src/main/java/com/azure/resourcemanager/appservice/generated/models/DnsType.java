@@ -30,6 +30,9 @@ public enum DnsType {
      */
     @JsonCreator
     public static DnsType fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         DnsType[] items = DnsType.values();
         for (DnsType item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

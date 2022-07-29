@@ -16,8 +16,7 @@ import java.util.List;
 @Immutable
 public final class OperationListResult {
     /*
-     * List of consumption operations supported by the Microsoft.Consumption
-     * resource provider.
+     * List of consumption operations supported by the Microsoft.Consumption resource provider.
      */
     @JsonProperty(value = "value", access = JsonProperty.Access.WRITE_ONLY)
     private List<OperationInner> value;

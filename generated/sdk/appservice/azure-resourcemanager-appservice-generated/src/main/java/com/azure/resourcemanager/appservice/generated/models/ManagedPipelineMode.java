@@ -30,6 +30,9 @@ public enum ManagedPipelineMode {
      */
     @JsonCreator
     public static ManagedPipelineMode fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         ManagedPipelineMode[] items = ManagedPipelineMode.values();
         for (ManagedPipelineMode item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

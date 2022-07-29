@@ -66,29 +66,25 @@ public final class AutoBackupSettings {
     private BackupScheduleType backupScheduleType;
 
     /*
-     * Frequency of full backups. In both cases, full backups begin during the
-     * next scheduled time window.
+     * Frequency of full backups. In both cases, full backups begin during the next scheduled time window.
      */
     @JsonProperty(value = "fullBackupFrequency")
     private FullBackupFrequencyType fullBackupFrequency;
 
     /*
-     * Days of the week for the backups when FullBackupFrequency is set to
-     * Weekly.
+     * Days of the week for the backups when FullBackupFrequency is set to Weekly.
      */
     @JsonProperty(value = "daysOfWeek")
     private List<AutoBackupDaysOfWeek> daysOfWeek;
 
     /*
-     * Start time of a given day during which full backups can take place. 0-23
-     * hours.
+     * Start time of a given day during which full backups can take place. 0-23 hours.
      */
     @JsonProperty(value = "fullBackupStartTime")
     private Integer fullBackupStartTime;
 
     /*
-     * Duration of the time window of a given day during which full backups can
-     * take place. 1-23 hours.
+     * Duration of the time window of a given day during which full backups can take place. 1-23 hours.
      */
     @JsonProperty(value = "fullBackupWindowHours")
     private Integer fullBackupWindowHours;

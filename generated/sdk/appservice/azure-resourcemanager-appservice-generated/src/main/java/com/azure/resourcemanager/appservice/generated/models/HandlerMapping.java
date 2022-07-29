@@ -14,8 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class HandlerMapping {
     /*
-     * Requests with this extension will be handled using the specified FastCGI
-     * application.
+     * Requests with this extension will be handled using the specified FastCGI application.
      */
     @JsonProperty(value = "extension")
     private String extension;

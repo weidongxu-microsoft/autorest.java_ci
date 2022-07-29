@@ -19,8 +19,7 @@ public final class AuthorizationRuleListResult {
     private List<AuthorizationRuleInner> value;
 
     /*
-     * Link to the next set of results. Not empty if Value contains an
-     * incomplete list of Authorization Rules
+     * Link to the next set of results. Not empty if Value contains an incomplete list of Authorization Rules
      */
     @JsonProperty(value = "nextLink")
     private String nextLink;

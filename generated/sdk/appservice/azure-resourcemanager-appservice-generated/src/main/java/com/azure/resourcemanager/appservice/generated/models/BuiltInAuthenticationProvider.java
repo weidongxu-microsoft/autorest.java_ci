@@ -42,6 +42,9 @@ public enum BuiltInAuthenticationProvider {
      */
     @JsonCreator
     public static BuiltInAuthenticationProvider fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         BuiltInAuthenticationProvider[] items = BuiltInAuthenticationProvider.values();
         for (BuiltInAuthenticationProvider item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

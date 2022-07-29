@@ -18,8 +18,7 @@ public final class DataConnectionCheckNameRequest {
     private String name;
 
     /*
-     * The type of resource,
-     * Microsoft.Kusto/clusters/databases/dataConnections.
+     * The type of resource, Microsoft.Kusto/clusters/databases/dataConnections.
      */
     @JsonProperty(value = "type", required = true)
     private String type = "Microsoft.Kusto/clusters/databases/dataConnections";

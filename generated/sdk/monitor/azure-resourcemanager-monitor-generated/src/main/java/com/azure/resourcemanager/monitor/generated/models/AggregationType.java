@@ -42,6 +42,9 @@ public enum AggregationType {
      */
     @JsonCreator
     public static AggregationType fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         AggregationType[] items = AggregationType.values();
         for (AggregationType item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

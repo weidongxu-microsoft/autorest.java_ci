@@ -33,6 +33,9 @@ public enum TriggeredWebJobStatus {
      */
     @JsonCreator
     public static TriggeredWebJobStatus fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         TriggeredWebJobStatus[] items = TriggeredWebJobStatus.values();
         for (TriggeredWebJobStatus item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

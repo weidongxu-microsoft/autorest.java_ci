@@ -39,6 +39,9 @@ public enum InsightStatus {
      */
     @JsonCreator
     public static InsightStatus fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         InsightStatus[] items = InsightStatus.values();
         for (InsightStatus item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

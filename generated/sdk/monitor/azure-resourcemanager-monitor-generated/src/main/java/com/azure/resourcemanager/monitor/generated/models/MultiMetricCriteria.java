@@ -61,8 +61,8 @@ public class MultiMetricCriteria {
     private List<MetricDimension> dimensions;
 
     /*
-     * Allows creating an alert rule on a custom metric that isn't yet emitted,
-     * by causing the metric validation to be skipped.
+     * Allows creating an alert rule on a custom metric that isn't yet emitted, by causing the metric validation to be
+     * skipped.
      */
     @JsonProperty(value = "skipMetricValidation")
     private Boolean skipMetricValidation;

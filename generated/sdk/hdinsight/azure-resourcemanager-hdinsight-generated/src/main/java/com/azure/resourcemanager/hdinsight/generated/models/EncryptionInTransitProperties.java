@@ -11,8 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class EncryptionInTransitProperties {
     /*
-     * Indicates whether or not inter cluster node communication is encrypted
-     * in transit.
+     * Indicates whether or not inter cluster node communication is encrypted in transit.
      */
     @JsonProperty(value = "isEncryptionInTransitEnabled")
     private Boolean isEncryptionInTransitEnabled;

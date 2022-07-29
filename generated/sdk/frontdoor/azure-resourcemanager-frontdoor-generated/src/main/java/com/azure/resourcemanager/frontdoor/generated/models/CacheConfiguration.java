@@ -30,9 +30,8 @@ public final class CacheConfiguration {
     private DynamicCompressionEnabled dynamicCompression;
 
     /*
-     * The duration for which the content needs to be cached. Allowed format is
-     * in ISO 8601 format (http://en.wikipedia.org/wiki/ISO_8601#Durations).
-     * HTTP requires the value to be no more than a year
+     * The duration for which the content needs to be cached. Allowed format is in ISO 8601 format
+     * (http://en.wikipedia.org/wiki/ISO_8601#Durations). HTTP requires the value to be no more than a year
      */
     @JsonProperty(value = "cacheDuration")
     private Duration cacheDuration;

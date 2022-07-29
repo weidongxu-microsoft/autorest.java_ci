@@ -33,6 +33,9 @@ public enum ResourceSkuCapacityScaleType {
      */
     @JsonCreator
     public static ResourceSkuCapacityScaleType fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         ResourceSkuCapacityScaleType[] items = ResourceSkuCapacityScaleType.values();
         for (ResourceSkuCapacityScaleType item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

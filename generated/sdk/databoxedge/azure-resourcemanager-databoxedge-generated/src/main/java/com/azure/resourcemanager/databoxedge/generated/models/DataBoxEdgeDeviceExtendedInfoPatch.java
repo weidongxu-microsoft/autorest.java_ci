@@ -35,8 +35,8 @@ public final class DataBoxEdgeDeviceExtendedInfoPatch {
     private String channelIntegrityKeyVersion;
 
     /*
-     * For changing or to initiate the resync to key-vault set the status to
-     * KeyVaultSyncPending, rest of the status will not be applicable.
+     * For changing or to initiate the resync to key-vault set the status to KeyVaultSyncPending, rest of the status
+     * will not be applicable.
      */
     @JsonProperty(value = "syncStatus")
     private KeyVaultSyncStatus syncStatus;

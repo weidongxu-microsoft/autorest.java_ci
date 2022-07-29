@@ -51,6 +51,9 @@ public enum EntityStatus {
      */
     @JsonCreator
     public static EntityStatus fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         EntityStatus[] items = EntityStatus.values();
         for (EntityStatus item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

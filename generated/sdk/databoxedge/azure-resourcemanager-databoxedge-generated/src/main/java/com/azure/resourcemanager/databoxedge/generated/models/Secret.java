@@ -17,8 +17,7 @@ public final class Secret {
     private AsymmetricEncryptedSecret encryptedSecret;
 
     /*
-     * Id of the Key-Vault where secret is stored (ex:
-     * secrets/AuthClientSecret/82ef4346187a4033a10d629cde07d740).
+     * Id of the Key-Vault where secret is stored (ex: secrets/AuthClientSecret/82ef4346187a4033a10d629cde07d740).
      */
     @JsonProperty(value = "keyVaultId")
     private String keyVaultId;

@@ -30,6 +30,9 @@ public enum OperatingSystemStateTypes {
      */
     @JsonCreator
     public static OperatingSystemStateTypes fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         OperatingSystemStateTypes[] items = OperatingSystemStateTypes.values();
         for (OperatingSystemStateTypes item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

@@ -13,8 +13,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class SharedPrivateLinkResourceInner extends ProxyResource {
     /*
-     * Describes the properties of a Shared Private Link Resource managed by
-     * the Azure Cognitive Search service.
+     * Describes the properties of a Shared Private Link Resource managed by the Azure Cognitive Search service.
      */
     @JsonProperty(value = "properties")
     private SharedPrivateLinkResourceProperties properties;

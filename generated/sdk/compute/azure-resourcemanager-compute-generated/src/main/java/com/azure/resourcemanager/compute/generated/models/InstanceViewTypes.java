@@ -30,6 +30,9 @@ public enum InstanceViewTypes {
      */
     @JsonCreator
     public static InstanceViewTypes fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         InstanceViewTypes[] items = InstanceViewTypes.values();
         for (InstanceViewTypes item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

@@ -36,6 +36,9 @@ public enum NotificationLevel {
      */
     @JsonCreator
     public static NotificationLevel fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         NotificationLevel[] items = NotificationLevel.values();
         for (NotificationLevel item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

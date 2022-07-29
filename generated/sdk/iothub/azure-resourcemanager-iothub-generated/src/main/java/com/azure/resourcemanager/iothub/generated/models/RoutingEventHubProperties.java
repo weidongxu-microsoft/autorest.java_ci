@@ -48,11 +48,9 @@ public final class RoutingEventHubProperties {
     private ManagedIdentity identity;
 
     /*
-     * The name that identifies this endpoint. The name can only include
-     * alphanumeric characters, periods, underscores, hyphens and has a maximum
-     * length of 64 characters. The following names are reserved:  events,
-     * fileNotifications, $default. Endpoint names must be unique across
-     * endpoint types.
+     * The name that identifies this endpoint. The name can only include alphanumeric characters, periods, underscores,
+     * hyphens and has a maximum length of 64 characters. The following names are reserved:  events, fileNotifications,
+     * $default. Endpoint names must be unique across endpoint types.
      */
     @JsonProperty(value = "name", required = true)
     private String name;

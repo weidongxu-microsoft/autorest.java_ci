@@ -11,8 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class CsmPublishingCredentialsPoliciesEntityProperties {
     /*
-     * <code>true</code> to allow access to a publishing method; otherwise,
-     * <code>false</code>.
+     * <code>true</code> to allow access to a publishing method; otherwise, <code>false</code>.
      */
     @JsonProperty(value = "allow", required = true)
     private boolean allow;

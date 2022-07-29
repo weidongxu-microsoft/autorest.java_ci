@@ -21,8 +21,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class SqlVirtualMachineProperties {
     /*
-     * ARM Resource id of underlying virtual machine created from SQL
-     * marketplace image.
+     * ARM Resource id of underlying virtual machine created from SQL marketplace image.
      */
     @JsonProperty(value = "virtualMachineResourceId")
     private String virtualMachineResourceId;
@@ -58,29 +57,25 @@ public final class SqlVirtualMachineProperties {
     private SqlImageSku sqlImageSku;
 
     /*
-     * ARM resource id of the SQL virtual machine group this SQL virtual
-     * machine is or will be part of.
+     * ARM resource id of the SQL virtual machine group this SQL virtual machine is or will be part of.
      */
     @JsonProperty(value = "sqlVirtualMachineGroupResourceId")
     private String sqlVirtualMachineGroupResourceId;
 
     /*
-     * Domain credentials for setting up Windows Server Failover Cluster for
-     * SQL availability group.
+     * Domain credentials for setting up Windows Server Failover Cluster for SQL availability group.
      */
     @JsonProperty(value = "wsfcDomainCredentials")
     private WsfcDomainCredentials wsfcDomainCredentials;
 
     /*
-     * Domain credentials for setting up Windows Server Failover Cluster for
-     * SQL availability group.
+     * Domain credentials for setting up Windows Server Failover Cluster for SQL availability group.
      */
     @JsonProperty(value = "wsfcStaticIp")
     private String wsfcStaticIp;
 
     /*
-     * Auto patching settings for applying critical security updates to SQL
-     * virtual machine.
+     * Auto patching settings for applying critical security updates to SQL virtual machine.
      */
     @JsonProperty(value = "autoPatchingSettings")
     private AutoPatchingSettings autoPatchingSettings;

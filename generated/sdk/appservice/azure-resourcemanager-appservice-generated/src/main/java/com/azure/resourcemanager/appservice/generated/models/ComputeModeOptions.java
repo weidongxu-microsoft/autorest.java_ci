@@ -33,6 +33,9 @@ public enum ComputeModeOptions {
      */
     @JsonCreator
     public static ComputeModeOptions fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         ComputeModeOptions[] items = ComputeModeOptions.values();
         for (ComputeModeOptions item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

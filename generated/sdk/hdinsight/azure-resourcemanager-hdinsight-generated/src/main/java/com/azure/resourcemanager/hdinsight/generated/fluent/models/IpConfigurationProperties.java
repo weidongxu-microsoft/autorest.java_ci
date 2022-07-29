@@ -14,15 +14,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class IpConfigurationProperties {
     /*
-     * The private link configuration provisioning state, which only appears in
-     * the response.
+     * The private link configuration provisioning state, which only appears in the response.
      */
     @JsonProperty(value = "provisioningState", access = JsonProperty.Access.WRITE_ONLY)
     private PrivateLinkConfigurationProvisioningState provisioningState;
 
     /*
-     * Indicates whether this IP configuration is primary for the corresponding
-     * NIC.
+     * Indicates whether this IP configuration is primary for the corresponding NIC.
      */
     @JsonProperty(value = "primary")
     private Boolean primary;

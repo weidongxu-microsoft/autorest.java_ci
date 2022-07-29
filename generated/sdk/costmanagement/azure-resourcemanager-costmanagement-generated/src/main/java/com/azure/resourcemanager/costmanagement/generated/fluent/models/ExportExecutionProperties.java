@@ -27,9 +27,8 @@ public final class ExportExecutionProperties {
     private ExecutionStatus status;
 
     /*
-     * The identifier for the entity that executed the export. For OnDemand
-     * executions, it is the email id. For Scheduled executions, it is the
-     * constant value - System.
+     * The identifier for the entity that executed the export. For OnDemand executions, it is the email id. For
+     * Scheduled executions, it is the constant value - System.
      */
     @JsonProperty(value = "submittedBy")
     private String submittedBy;

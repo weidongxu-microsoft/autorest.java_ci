@@ -36,6 +36,9 @@ public enum HostingEnvironmentStatus {
      */
     @JsonCreator
     public static HostingEnvironmentStatus fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         HostingEnvironmentStatus[] items = HostingEnvironmentStatus.values();
         for (HostingEnvironmentStatus item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

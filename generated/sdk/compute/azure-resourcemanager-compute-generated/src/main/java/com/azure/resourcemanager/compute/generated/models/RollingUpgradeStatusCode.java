@@ -36,6 +36,9 @@ public enum RollingUpgradeStatusCode {
      */
     @JsonCreator
     public static RollingUpgradeStatusCode fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         RollingUpgradeStatusCode[] items = RollingUpgradeStatusCode.values();
         for (RollingUpgradeStatusCode item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

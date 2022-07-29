@@ -36,6 +36,9 @@ public enum MaintenanceOperationResultCodeTypes {
      */
     @JsonCreator
     public static MaintenanceOperationResultCodeTypes fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         MaintenanceOperationResultCodeTypes[] items = MaintenanceOperationResultCodeTypes.values();
         for (MaintenanceOperationResultCodeTypes item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

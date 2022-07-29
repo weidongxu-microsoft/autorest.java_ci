@@ -11,8 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class EnabledConfig {
     /*
-     * True if configuration is enabled, false if it is disabled and null if
-     * configuration is not set.
+     * True if configuration is enabled, false if it is disabled and null if configuration is not set.
      */
     @JsonProperty(value = "enabled")
     private Boolean enabled;

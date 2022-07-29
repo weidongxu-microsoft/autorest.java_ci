@@ -24,8 +24,7 @@ public final class ImportDevicesRequest {
     private String outputBlobContainerUri;
 
     /*
-     * The blob name to be used when importing from the provided input blob
-     * container.
+     * The blob name to be used when importing from the provided input blob container.
      */
     @JsonProperty(value = "inputBlobName")
     private String inputBlobName;
@@ -37,8 +36,7 @@ public final class ImportDevicesRequest {
     private String outputBlobName;
 
     /*
-     * Specifies authentication type being used for connecting to the storage
-     * account.
+     * Specifies authentication type being used for connecting to the storage account.
      */
     @JsonProperty(value = "authenticationType")
     private AuthenticationType authenticationType;
@@ -56,8 +54,7 @@ public final class ImportDevicesRequest {
     private Boolean includeConfigurations;
 
     /*
-     * The blob name to be used when importing configurations from the provided
-     * input blob container.
+     * The blob name to be used when importing configurations from the provided input blob container.
      */
     @JsonProperty(value = "configurationsBlobName")
     private String configurationsBlobName;

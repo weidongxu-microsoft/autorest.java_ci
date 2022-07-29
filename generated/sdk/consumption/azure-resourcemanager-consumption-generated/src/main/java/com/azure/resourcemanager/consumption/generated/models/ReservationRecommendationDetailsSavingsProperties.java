@@ -18,8 +18,7 @@ public final class ReservationRecommendationDetailsSavingsProperties {
     private List<ReservationRecommendationDetailsCalculatedSavingsProperties> calculatedSavings;
 
     /*
-     * Number of days of usage to look back used for computing the
-     * recommendation.
+     * Number of days of usage to look back used for computing the recommendation.
      */
     @JsonProperty(value = "lookBackPeriod", access = JsonProperty.Access.WRITE_ONLY)
     private Integer lookBackPeriod;

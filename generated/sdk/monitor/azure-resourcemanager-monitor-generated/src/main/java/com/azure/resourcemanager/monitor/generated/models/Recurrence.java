@@ -12,11 +12,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class Recurrence {
     /*
-     * the recurrence frequency. How often the schedule profile should take
-     * effect. This value must be Week, meaning each week will have the same
-     * set of profiles. For example, to set a daily schedule, set **schedule**
-     * to every day of the week. The frequency property specifies that the
-     * schedule is repeated weekly.
+     * the recurrence frequency. How often the schedule profile should take effect. This value must be Week, meaning
+     * each week will have the same set of profiles. For example, to set a daily schedule, set **schedule** to every
+     * day of the week. The frequency property specifies that the schedule is repeated weekly.
      */
     @JsonProperty(value = "frequency", required = true)
     private RecurrenceFrequency frequency;

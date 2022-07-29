@@ -17,8 +17,8 @@ public final class Schedule {
     private int frequencyInMinutes;
 
     /*
-     * Time window for which data needs to be fetched for query (should be
-     * greater than or equal to frequencyInMinutes).
+     * Time window for which data needs to be fetched for query (should be greater than or equal to
+     * frequencyInMinutes).
      */
     @JsonProperty(value = "timeWindowInMinutes", required = true)
     private int timeWindowInMinutes;

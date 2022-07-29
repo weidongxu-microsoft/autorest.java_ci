@@ -65,8 +65,7 @@ public final class StampCapacityInner {
     private Boolean excludeFromCapacityAllocation;
 
     /*
-     * <code>true</code> if capacity is applicable for all apps; otherwise,
-     * <code>false</code>.
+     * <code>true</code> if capacity is applicable for all apps; otherwise, <code>false</code>.
      */
     @JsonProperty(value = "isApplicableForAllComputeModes")
     private Boolean isApplicableForAllComputeModes;

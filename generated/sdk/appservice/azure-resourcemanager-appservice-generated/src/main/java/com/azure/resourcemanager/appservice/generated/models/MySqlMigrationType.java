@@ -30,6 +30,9 @@ public enum MySqlMigrationType {
      */
     @JsonCreator
     public static MySqlMigrationType fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         MySqlMigrationType[] items = MySqlMigrationType.values();
         for (MySqlMigrationType item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

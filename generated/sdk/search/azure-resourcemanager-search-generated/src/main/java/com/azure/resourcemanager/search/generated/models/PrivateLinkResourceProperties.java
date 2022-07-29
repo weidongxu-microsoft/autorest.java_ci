@@ -33,8 +33,7 @@ public final class PrivateLinkResourceProperties {
     private List<String> requiredZoneNames;
 
     /*
-     * The list of resources that are onboarded to private link service, that
-     * are supported by Azure Cognitive Search.
+     * The list of resources that are onboarded to private link service, that are supported by Azure Cognitive Search.
      */
     @JsonProperty(value = "shareablePrivateLinkResourceTypes", access = JsonProperty.Access.WRITE_ONLY)
     private List<ShareablePrivateLinkResourceType> shareablePrivateLinkResourceTypes;

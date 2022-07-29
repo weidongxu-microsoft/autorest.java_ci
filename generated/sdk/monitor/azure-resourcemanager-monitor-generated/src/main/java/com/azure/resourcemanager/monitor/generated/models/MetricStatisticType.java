@@ -39,6 +39,9 @@ public enum MetricStatisticType {
      */
     @JsonCreator
     public static MetricStatisticType fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         MetricStatisticType[] items = MetricStatisticType.values();
         for (MetricStatisticType item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

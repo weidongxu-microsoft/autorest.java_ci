@@ -33,6 +33,9 @@ public enum HostCaching {
      */
     @JsonCreator
     public static HostCaching fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         HostCaching[] items = HostCaching.values();
         for (HostCaching item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

@@ -25,8 +25,7 @@ public final class MetricConfiguration {
     private String mdmAccount;
 
     /*
-     * The MDM namespace to which the counters should be pushed. This is
-     * required if MDMAccount is specified
+     * The MDM namespace to which the counters should be pushed. This is required if MDMAccount is specified
      */
     @JsonProperty(value = "metricNameSpace")
     private String metricNameSpace;

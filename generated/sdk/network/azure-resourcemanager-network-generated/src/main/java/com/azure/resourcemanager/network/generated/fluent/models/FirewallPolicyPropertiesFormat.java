@@ -42,8 +42,7 @@ public final class FirewallPolicyPropertiesFormat {
     private SubResource basePolicy;
 
     /*
-     * List of references to Azure Firewalls that this Firewall Policy is
-     * associated with.
+     * List of references to Azure Firewalls that this Firewall Policy is associated with.
      */
     @JsonProperty(value = "firewalls", access = JsonProperty.Access.WRITE_ONLY)
     private List<SubResource> firewalls;

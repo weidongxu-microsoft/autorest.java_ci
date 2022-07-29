@@ -57,6 +57,9 @@ public enum ResolveStatus {
      */
     @JsonCreator
     public static ResolveStatus fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         ResolveStatus[] items = ResolveStatus.values();
         for (ResolveStatus item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

@@ -33,6 +33,9 @@ public enum RoleDisasterRecovery {
      */
     @JsonCreator
     public static RoleDisasterRecovery fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         RoleDisasterRecovery[] items = RoleDisasterRecovery.values();
         for (RoleDisasterRecovery item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

@@ -28,8 +28,7 @@ public final class ExpressRouteLinkInner extends SubResource {
     private ExpressRouteLinkPropertiesFormat innerProperties;
 
     /*
-     * Name of child port resource that is unique among child port resources of
-     * the parent.
+     * Name of child port resource that is unique among child port resources of the parent.
      */
     @JsonProperty(value = "name")
     private String name;

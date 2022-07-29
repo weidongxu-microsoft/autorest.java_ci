@@ -20,15 +20,14 @@ public final class WorkbookProperties {
     private String name;
 
     /*
-     * Configuration of this particular workbook. Configuration data is a
-     * string containing valid JSON
+     * Configuration of this particular workbook. Configuration data is a string containing valid JSON
      */
     @JsonProperty(value = "serializedData", required = true)
     private String serializedData;
 
     /*
-     * This instance's version of the data model. This can change as new
-     * features are added that can be marked workbook.
+     * This instance's version of the data model. This can change as new features are added that can be marked
+     * workbook.
      */
     @JsonProperty(value = "version")
     private String version;
@@ -40,16 +39,14 @@ public final class WorkbookProperties {
     private String workbookId;
 
     /*
-     * Enum indicating if this workbook definition is owned by a specific user
-     * or is shared between all users with access to the Application Insights
-     * component.
+     * Enum indicating if this workbook definition is owned by a specific user or is shared between all users with
+     * access to the Application Insights component.
      */
     @JsonProperty(value = "kind", required = true)
     private SharedTypeKind sharedTypeKind;
 
     /*
-     * Date and time in UTC of the last modification that was made to this
-     * workbook definition.
+     * Date and time in UTC of the last modification that was made to this workbook definition.
      */
     @JsonProperty(value = "timeModified", access = JsonProperty.Access.WRITE_ONLY)
     private String timeModified;
@@ -61,8 +58,7 @@ public final class WorkbookProperties {
     private String category;
 
     /*
-     * A list of 0 or more tags that are associated with this workbook
-     * definition
+     * A list of 0 or more tags that are associated with this workbook definition
      */
     @JsonProperty(value = "tags")
     private List<String> tags;

@@ -19,9 +19,8 @@ public final class ScaleRuleMetricDimension {
     private String dimensionName;
 
     /*
-     * the dimension operator. Only 'Equals' and 'NotEquals' are supported.
-     * 'Equals' being equal to any of the values. 'NotEquals' being not equal
-     * to all of the values
+     * the dimension operator. Only 'Equals' and 'NotEquals' are supported. 'Equals' being equal to any of the values.
+     * 'NotEquals' being not equal to all of the values
      */
     @JsonProperty(value = "Operator", required = true)
     private ScaleRuleMetricDimensionOperationType operator;

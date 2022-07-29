@@ -30,6 +30,9 @@ public enum SiteExtensionType {
      */
     @JsonCreator
     public static SiteExtensionType fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         SiteExtensionType[] items = SiteExtensionType.values();
         for (SiteExtensionType item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

@@ -33,8 +33,7 @@ public final class StorageAccountCredentialProperties {
     private AsymmetricEncryptedSecret accountKey;
 
     /*
-     * Connection string for the storage account. Use this string if username
-     * and account key are not specified.
+     * Connection string for the storage account. Use this string if username and account key are not specified.
      */
     @JsonProperty(value = "connectionString")
     private String connectionString;

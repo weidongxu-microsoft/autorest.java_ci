@@ -34,22 +34,19 @@ public final class MeterInfo {
     private String meterCategory;
 
     /*
-     * The subcategory of the meter, e.g., 'A6 Cloud services', 'ExpressRoute
-     * (IXP)', etc..
+     * The subcategory of the meter, e.g., 'A6 Cloud services', 'ExpressRoute (IXP)', etc..
      */
     @JsonProperty(value = "MeterSubCategory")
     private String meterSubCategory;
 
     /*
-     * The unit in which the meter consumption is charged, e.g., 'Hours', 'GB',
-     * etc.
+     * The unit in which the meter consumption is charged, e.g., 'Hours', 'GB', etc.
      */
     @JsonProperty(value = "Unit")
     private String unit;
 
     /*
-     * Provides additional meter data. 'Third Party' indicates a meter with no
-     * discount. Blanks indicate First Party.
+     * Provides additional meter data. 'Third Party' indicates a meter with no discount. Blanks indicate First Party.
      */
     @JsonProperty(value = "MeterTags")
     private List<String> meterTags;
@@ -61,9 +58,8 @@ public final class MeterInfo {
     private String meterRegion;
 
     /*
-     * The list of key/value pairs for the meter rates, in the format
-     * 'key':'value' where key = the meter quantity, and value = the
-     * corresponding price
+     * The list of key/value pairs for the meter rates, in the format 'key':'value' where key = the meter quantity, and
+     * value = the corresponding price
      */
     @JsonProperty(value = "MeterRates")
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
@@ -76,8 +72,8 @@ public final class MeterInfo {
     private OffsetDateTime effectiveDate;
 
     /*
-     * The resource quantity that is included in the offer at no cost.
-     * Consumption beyond this quantity will be charged.
+     * The resource quantity that is included in the offer at no cost. Consumption beyond this quantity will be
+     * charged.
      */
     @JsonProperty(value = "IncludedQuantity")
     private Float includedQuantity;

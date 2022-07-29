@@ -12,8 +12,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class StaticSiteCustomDomainRequestPropertiesArmResource extends ProxyOnlyResource {
     /*
-     * StaticSiteCustomDomainRequestPropertiesARMResource resource specific
-     * properties
+     * StaticSiteCustomDomainRequestPropertiesARMResource resource specific properties
      */
     @JsonProperty(value = "properties")
     private StaticSiteCustomDomainRequestPropertiesArmResourceProperties innerProperties;

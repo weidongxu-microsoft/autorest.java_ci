@@ -16,8 +16,7 @@ import java.util.List;
 @Immutable
 public final class OperationListResult {
     /*
-     * List of IoT Hub operations supported by the Microsoft.Devices resource
-     * provider.
+     * List of IoT Hub operations supported by the Microsoft.Devices resource provider.
      */
     @JsonProperty(value = "value", access = JsonProperty.Access.WRITE_ONLY)
     private List<OperationInner> value;

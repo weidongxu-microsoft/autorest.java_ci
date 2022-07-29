@@ -30,6 +30,9 @@ public enum ResourceSkuRestrictionsReasonCode {
      */
     @JsonCreator
     public static ResourceSkuRestrictionsReasonCode fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         ResourceSkuRestrictionsReasonCode[] items = ResourceSkuRestrictionsReasonCode.values();
         for (ResourceSkuRestrictionsReasonCode item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

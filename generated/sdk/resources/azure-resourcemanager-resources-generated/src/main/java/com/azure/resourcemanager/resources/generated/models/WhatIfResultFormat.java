@@ -30,6 +30,9 @@ public enum WhatIfResultFormat {
      */
     @JsonCreator
     public static WhatIfResultFormat fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         WhatIfResultFormat[] items = WhatIfResultFormat.values();
         for (WhatIfResultFormat item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

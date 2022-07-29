@@ -22,8 +22,7 @@ public final class MonitoringMetricConfigurationInner extends ArmBaseModel {
     private MonitoringMetricConfigurationProperties innerProperties = new MonitoringMetricConfigurationProperties();
 
     /*
-     * Metadata pertaining to creation and last modification of
-     * MonitoringConfiguration
+     * Metadata pertaining to creation and last modification of MonitoringConfiguration
      */
     @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;

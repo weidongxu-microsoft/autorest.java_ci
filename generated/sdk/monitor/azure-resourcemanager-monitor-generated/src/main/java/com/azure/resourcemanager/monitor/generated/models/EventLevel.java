@@ -39,6 +39,9 @@ public enum EventLevel {
      */
     @JsonCreator
     public static EventLevel fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         EventLevel[] items = EventLevel.values();
         for (EventLevel item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

@@ -65,16 +65,14 @@ public final class DefaultAdminPropertiesFormat {
     private SecurityConfigurationRuleAccess access;
 
     /*
-     * The priority of the rule. The value can be between 1 and 4096. The
-     * priority number must be unique for each rule in the collection. The
-     * lower the priority number, the higher the priority of the rule.
+     * The priority of the rule. The value can be between 1 and 4096. The priority number must be unique for each rule
+     * in the collection. The lower the priority number, the higher the priority of the rule.
      */
     @JsonProperty(value = "priority", access = JsonProperty.Access.WRITE_ONLY)
     private Integer priority;
 
     /*
-     * Indicates if the traffic matched against the rule in inbound or
-     * outbound.
+     * Indicates if the traffic matched against the rule in inbound or outbound.
      */
     @JsonProperty(value = "direction", access = JsonProperty.Access.WRITE_ONLY)
     private SecurityConfigurationRuleDirection direction;

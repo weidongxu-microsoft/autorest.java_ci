@@ -18,8 +18,8 @@ import java.time.Duration;
 @ServiceClientBuilder(serviceClients = {SearchManagementClientImpl.class})
 public final class SearchManagementClientBuilder {
     /*
-     * The unique identifier for a Microsoft Azure subscription. You can obtain
-     * this value from the Azure Resource Manager API or the portal.
+     * The unique identifier for a Microsoft Azure subscription. You can obtain this value from the Azure Resource
+     * Manager API or the portal.
      */
     private String subscriptionId;
 

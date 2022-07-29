@@ -42,6 +42,9 @@ public enum ChangeType {
      */
     @JsonCreator
     public static ChangeType fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         ChangeType[] items = ChangeType.values();
         for (ChangeType item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

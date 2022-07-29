@@ -13,8 +13,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class PrivateEndpointConnectionInner extends ProxyResource {
     /*
-     * Describes the properties of an existing Private Endpoint connection to
-     * the Azure Cognitive Search service.
+     * Describes the properties of an existing Private Endpoint connection to the Azure Cognitive Search service.
      */
     @JsonProperty(value = "properties")
     private PrivateEndpointConnectionProperties properties;

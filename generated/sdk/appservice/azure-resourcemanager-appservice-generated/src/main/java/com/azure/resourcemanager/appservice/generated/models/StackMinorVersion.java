@@ -23,15 +23,13 @@ public final class StackMinorVersion {
     private String runtimeVersion;
 
     /*
-     * <code>true</code> if this is the default minor version; otherwise,
-     * <code>false</code>.
+     * <code>true</code> if this is the default minor version; otherwise, <code>false</code>.
      */
     @JsonProperty(value = "isDefault")
     private Boolean isDefault;
 
     /*
-     * <code>true</code> if this supports Remote Debugging, otherwise
-     * <code>false</code>.
+     * <code>true</code> if this supports Remote Debugging, otherwise <code>false</code>.
      */
     @JsonProperty(value = "isRemoteDebuggingEnabled")
     private Boolean isRemoteDebuggingEnabled;

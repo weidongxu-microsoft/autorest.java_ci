@@ -24,8 +24,7 @@ public final class StaticSiteUserProvidedFunctionAppProperties {
     private String functionAppRegion;
 
     /*
-     * The date and time on which the function app was registered with the
-     * static site.
+     * The date and time on which the function app was registered with the static site.
      */
     @JsonProperty(value = "createdOn", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime createdOn;

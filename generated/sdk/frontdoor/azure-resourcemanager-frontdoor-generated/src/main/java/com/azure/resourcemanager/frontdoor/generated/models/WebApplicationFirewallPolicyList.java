@@ -22,8 +22,7 @@ public final class WebApplicationFirewallPolicyList {
     private List<WebApplicationFirewallPolicyInner> value;
 
     /*
-     * URL to get the next set of WebApplicationFirewallPolicy objects if there
-     * are any.
+     * URL to get the next set of WebApplicationFirewallPolicy objects if there are any.
      */
     @JsonProperty(value = "nextLink")
     private String nextLink;

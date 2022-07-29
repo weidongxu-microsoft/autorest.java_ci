@@ -30,6 +30,9 @@ public enum ResultTruncated {
      */
     @JsonCreator
     public static ResultTruncated fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         ResultTruncated[] items = ResultTruncated.values();
         for (ResultTruncated item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

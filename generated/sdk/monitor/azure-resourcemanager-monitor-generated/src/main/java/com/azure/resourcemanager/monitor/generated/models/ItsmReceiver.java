@@ -12,8 +12,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class ItsmReceiver {
     /*
-     * The name of the Itsm receiver. Names must be unique across all receivers
-     * within an action group.
+     * The name of the Itsm receiver. Names must be unique across all receivers within an action group.
      */
     @JsonProperty(value = "name", required = true)
     private String name;
@@ -25,15 +24,14 @@ public final class ItsmReceiver {
     private String workspaceId;
 
     /*
-     * Unique identification of ITSM connection among multiple defined in above
-     * workspace.
+     * Unique identification of ITSM connection among multiple defined in above workspace.
      */
     @JsonProperty(value = "connectionId", required = true)
     private String connectionId;
 
     /*
-     * JSON blob for the configurations of the ITSM action.
-     * CreateMultipleWorkItems option will be part of this blob as well.
+     * JSON blob for the configurations of the ITSM action. CreateMultipleWorkItems option will be part of this blob as
+     * well.
      */
     @JsonProperty(value = "ticketConfiguration", required = true)
     private String ticketConfiguration;

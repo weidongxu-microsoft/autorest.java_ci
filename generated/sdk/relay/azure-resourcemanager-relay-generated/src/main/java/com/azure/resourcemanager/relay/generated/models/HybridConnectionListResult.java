@@ -19,8 +19,7 @@ public final class HybridConnectionListResult {
     private List<HybridConnectionInner> value;
 
     /*
-     * Link to the next set of results. Not empty if value contains incomplete
-     * list hybrid connection operation.
+     * Link to the next set of results. Not empty if value contains incomplete list hybrid connection operation.
      */
     @JsonProperty(value = "nextLink")
     private String nextLink;

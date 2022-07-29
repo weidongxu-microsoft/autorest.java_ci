@@ -17,22 +17,21 @@ public final class ResourcesHistoryRequestOptions {
     private DateTimeInterval interval;
 
     /*
-     * The maximum number of rows that the query should return. Overrides the
-     * page size when ```$skipToken``` property is present.
+     * The maximum number of rows that the query should return. Overrides the page size when ```$skipToken``` property
+     * is present.
      */
     @JsonProperty(value = "$top")
     private Integer top;
 
     /*
-     * The number of rows to skip from the beginning of the results. Overrides
-     * the next page offset when ```$skipToken``` property is present.
+     * The number of rows to skip from the beginning of the results. Overrides the next page offset when
+     * ```$skipToken``` property is present.
      */
     @JsonProperty(value = "$skip")
     private Integer skip;
 
     /*
-     * Continuation token for pagination, capturing the next page size and
-     * offset, as well as the context of the query.
+     * Continuation token for pagination, capturing the next page size and offset, as well as the context of the query.
      */
     @JsonProperty(value = "$skipToken")
     private String skipToken;

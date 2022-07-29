@@ -15,8 +15,7 @@ import java.util.List;
 @Fluent
 public final class CustomIpPrefixPropertiesFormat {
     /*
-     * The prefix range in CIDR notation. Should include the start address and
-     * the prefix length.
+     * The prefix range in CIDR notation. Should include the start address and the prefix length.
      */
     @JsonProperty(value = "cidr")
     private String cidr;

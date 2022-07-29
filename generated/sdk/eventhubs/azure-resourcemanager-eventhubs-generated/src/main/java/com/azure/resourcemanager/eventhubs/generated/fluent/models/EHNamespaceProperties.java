@@ -64,23 +64,20 @@ public final class EHNamespaceProperties {
     private String metricId;
 
     /*
-     * Value that indicates whether AutoInflate is enabled for eventhub
-     * namespace.
+     * Value that indicates whether AutoInflate is enabled for eventhub namespace.
      */
     @JsonProperty(value = "isAutoInflateEnabled")
     private Boolean isAutoInflateEnabled;
 
     /*
-     * This determines if traffic is allowed over public network. By default it
-     * is enabled.
+     * This determines if traffic is allowed over public network. By default it is enabled.
      */
     @JsonProperty(value = "publicNetworkAccess")
     private PublicNetworkAccess publicNetworkAccess;
 
     /*
-     * Upper limit of throughput units when AutoInflate is enabled, value
-     * should be within 0 to 20 throughput units. ( '0' if AutoInflateEnabled =
-     * true)
+     * Upper limit of throughput units when AutoInflate is enabled, value should be within 0 to 20 throughput units. (
+     * '0' if AutoInflateEnabled = true)
      */
     @JsonProperty(value = "maximumThroughputUnits")
     private Integer maximumThroughputUnits;
@@ -92,8 +89,7 @@ public final class EHNamespaceProperties {
     private Boolean kafkaEnabled;
 
     /*
-     * Enabling this property creates a Standard Event Hubs Namespace in
-     * regions supported availability zones.
+     * Enabling this property creates a Standard Event Hubs Namespace in regions supported availability zones.
      */
     @JsonProperty(value = "zoneRedundant")
     private Boolean zoneRedundant;

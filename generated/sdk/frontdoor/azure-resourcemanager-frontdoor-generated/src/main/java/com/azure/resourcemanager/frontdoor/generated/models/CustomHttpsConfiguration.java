@@ -26,22 +26,19 @@ public final class CustomHttpsConfiguration {
     private FrontDoorTlsProtocolType protocolType;
 
     /*
-     * The minimum TLS version required from the clients to establish an SSL
-     * handshake with Front Door.
+     * The minimum TLS version required from the clients to establish an SSL handshake with Front Door.
      */
     @JsonProperty(value = "minimumTlsVersion", required = true)
     private MinimumTlsVersion minimumTlsVersion;
 
     /*
-     * KeyVault certificate source parameters (if
-     * certificateSource=AzureKeyVault)
+     * KeyVault certificate source parameters (if certificateSource=AzureKeyVault)
      */
     @JsonProperty(value = "keyVaultCertificateSourceParameters")
     private KeyVaultCertificateSourceParameters innerKeyVaultCertificateSourceParameters;
 
     /*
-     * Parameters required for enabling SSL with Front Door-managed
-     * certificates (if certificateSource=FrontDoor)
+     * Parameters required for enabling SSL with Front Door-managed certificates (if certificateSource=FrontDoor)
      */
     @JsonProperty(value = "frontDoorCertificateSourceParameters")
     private FrontDoorCertificateSourceParameters innerFrontDoorCertificateSourceParameters;

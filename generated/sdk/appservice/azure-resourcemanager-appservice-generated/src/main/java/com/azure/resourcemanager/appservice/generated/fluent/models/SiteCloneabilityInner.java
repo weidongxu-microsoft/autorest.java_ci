@@ -26,8 +26,7 @@ public final class SiteCloneabilityInner {
     private List<SiteCloneabilityCriterion> blockingFeatures;
 
     /*
-     * List of features enabled on app that are non-blocking but cannot be
-     * cloned. The app can still be cloned
+     * List of features enabled on app that are non-blocking but cannot be cloned. The app can still be cloned
      * but the features in this list will not be set up on cloned app.
      */
     @JsonProperty(value = "unsupportedFeatures")

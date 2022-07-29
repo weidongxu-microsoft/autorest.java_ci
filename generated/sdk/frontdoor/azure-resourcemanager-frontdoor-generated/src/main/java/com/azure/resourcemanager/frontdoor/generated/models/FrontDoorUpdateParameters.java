@@ -55,8 +55,7 @@ public class FrontDoorUpdateParameters {
     private BackendPoolsSettings backendPoolsSettings;
 
     /*
-     * Operational status of the Front Door load balancer. Permitted values are
-     * 'Enabled' or 'Disabled'
+     * Operational status of the Front Door load balancer. Permitted values are 'Enabled' or 'Disabled'
      */
     @JsonProperty(value = "enabledState")
     private FrontDoorEnabledState enabledState;

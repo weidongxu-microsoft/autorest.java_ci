@@ -20,15 +20,13 @@ public final class HostCapacity {
     private String hostname;
 
     /*
-     * The available memory on the host accounting for VM placement size and
-     * any host VM reservations.
+     * The available memory on the host accounting for VM placement size and any host VM reservations.
      */
     @JsonProperty(value = "effectiveAvailableMemoryMbOnHost")
     private Long effectiveAvailableMemoryMbOnHost;
 
     /*
-     * The available amount of GPUs on the host to use after accounting for
-     * GPUS used by reservations on the host.
+     * The available amount of GPUs on the host to use after accounting for GPUS used by reservations on the host.
      */
     @JsonProperty(value = "availableGpuCount")
     private Integer availableGpuCount;

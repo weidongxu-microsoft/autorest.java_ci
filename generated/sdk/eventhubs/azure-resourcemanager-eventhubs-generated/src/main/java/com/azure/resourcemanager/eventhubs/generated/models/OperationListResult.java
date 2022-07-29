@@ -16,8 +16,7 @@ import java.util.List;
 @Immutable
 public final class OperationListResult {
     /*
-     * List of Event Hub operations supported by the Microsoft.EventHub
-     * resource provider.
+     * List of Event Hub operations supported by the Microsoft.EventHub resource provider.
      */
     @JsonProperty(value = "value", access = JsonProperty.Access.WRITE_ONLY)
     private List<OperationInner> value;

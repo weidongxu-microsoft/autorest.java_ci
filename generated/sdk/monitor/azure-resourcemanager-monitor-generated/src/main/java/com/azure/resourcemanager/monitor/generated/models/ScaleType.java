@@ -36,6 +36,9 @@ public enum ScaleType {
      */
     @JsonCreator
     public static ScaleType fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         ScaleType[] items = ScaleType.values();
         for (ScaleType item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

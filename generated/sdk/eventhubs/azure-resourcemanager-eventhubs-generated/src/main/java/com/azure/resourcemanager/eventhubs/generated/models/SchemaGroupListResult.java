@@ -19,8 +19,7 @@ public final class SchemaGroupListResult {
     private List<SchemaGroupInner> value;
 
     /*
-     * Link to the next set of results. Not empty if Value contains incomplete
-     * list of Schema Groups.
+     * Link to the next set of results. Not empty if Value contains incomplete list of Schema Groups.
      */
     @JsonProperty(value = "nextLink")
     private String nextLink;

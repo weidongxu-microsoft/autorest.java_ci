@@ -54,6 +54,9 @@ public enum CertificateOrderStatus {
      */
     @JsonCreator
     public static CertificateOrderStatus fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         CertificateOrderStatus[] items = CertificateOrderStatus.values();
         for (CertificateOrderStatus item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

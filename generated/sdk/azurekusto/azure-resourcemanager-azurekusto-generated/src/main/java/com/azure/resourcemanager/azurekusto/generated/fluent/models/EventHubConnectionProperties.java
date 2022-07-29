@@ -29,22 +29,19 @@ public final class EventHubConnectionProperties {
     private String consumerGroup;
 
     /*
-     * The table where the data should be ingested. Optionally the table
-     * information can be added to each message.
+     * The table where the data should be ingested. Optionally the table information can be added to each message.
      */
     @JsonProperty(value = "tableName")
     private String tableName;
 
     /*
-     * The mapping rule to be used to ingest the data. Optionally the mapping
-     * information can be added to each message.
+     * The mapping rule to be used to ingest the data. Optionally the mapping information can be added to each message.
      */
     @JsonProperty(value = "mappingRuleName")
     private String mappingRuleName;
 
     /*
-     * The data format of the message. Optionally the data format can be added
-     * to each message.
+     * The data format of the message. Optionally the data format can be added to each message.
      */
     @JsonProperty(value = "dataFormat")
     private EventHubDataFormat dataFormat;
@@ -68,9 +65,8 @@ public final class EventHubConnectionProperties {
     private ProvisioningState provisioningState;
 
     /*
-     * Empty for non-managed identity based data connection. For system
-     * assigned identity, provide cluster resource Id.  For user assigned
-     * identity (UAI) provide the UAI resource Id.
+     * Empty for non-managed identity based data connection. For system assigned identity, provide cluster resource Id.
+     * For user assigned identity (UAI) provide the UAI resource Id.
      */
     @JsonProperty(value = "managedIdentityResourceId")
     private String managedIdentityResourceId;
@@ -82,8 +78,8 @@ public final class EventHubConnectionProperties {
     private String managedIdentityObjectId;
 
     /*
-     * Indication for database routing information from the data connection, by
-     * default only database routing information is allowed
+     * Indication for database routing information from the data connection, by default only database routing
+     * information is allowed
      */
     @JsonProperty(value = "databaseRouting")
     private DatabaseRouting databaseRouting;

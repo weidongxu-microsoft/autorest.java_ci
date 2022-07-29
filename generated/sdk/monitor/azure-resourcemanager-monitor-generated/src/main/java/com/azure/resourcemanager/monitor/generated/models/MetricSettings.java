@@ -18,9 +18,8 @@ public final class MetricSettings {
     private Duration timeGrain;
 
     /*
-     * Name of a Diagnostic Metric category for a resource type this setting is
-     * applied to. To obtain the list of Diagnostic metric categories for a
-     * resource, first perform a GET diagnostic settings operation.
+     * Name of a Diagnostic Metric category for a resource type this setting is applied to. To obtain the list of
+     * Diagnostic metric categories for a resource, first perform a GET diagnostic settings operation.
      */
     @JsonProperty(value = "category")
     private String category;

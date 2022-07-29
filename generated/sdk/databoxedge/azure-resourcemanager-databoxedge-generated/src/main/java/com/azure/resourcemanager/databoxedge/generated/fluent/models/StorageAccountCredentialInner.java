@@ -23,8 +23,7 @@ public final class StorageAccountCredentialInner extends ArmBaseModel {
     private StorageAccountCredentialProperties innerProperties = new StorageAccountCredentialProperties();
 
     /*
-     * Metadata pertaining to creation and last modification of
-     * StorageAccountCredential
+     * Metadata pertaining to creation and last modification of StorageAccountCredential
      */
     @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;

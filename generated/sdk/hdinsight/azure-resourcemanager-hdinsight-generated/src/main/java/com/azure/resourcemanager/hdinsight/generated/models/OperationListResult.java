@@ -16,8 +16,7 @@ import java.util.List;
 @Fluent
 public final class OperationListResult {
     /*
-     * The list of HDInsight operations supported by the HDInsight resource
-     * provider.
+     * The list of HDInsight operations supported by the HDInsight resource provider.
      */
     @JsonProperty(value = "value")
     private List<OperationInner> value;

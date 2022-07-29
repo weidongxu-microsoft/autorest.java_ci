@@ -25,8 +25,7 @@ public final class PriceSheetProperties {
     private UUID meterId;
 
     /*
-     * The details about the meter. By default this is not populated, unless
-     * it's specified in $expand.
+     * The details about the meter. By default this is not populated, unless it's specified in $expand.
      */
     @JsonProperty(value = "meterDetails", access = JsonProperty.Access.WRITE_ONLY)
     private MeterDetails meterDetails;

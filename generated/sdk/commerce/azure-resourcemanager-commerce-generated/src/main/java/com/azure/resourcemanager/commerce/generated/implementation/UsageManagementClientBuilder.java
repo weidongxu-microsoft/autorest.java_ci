@@ -18,8 +18,8 @@ import java.time.Duration;
 @ServiceClientBuilder(serviceClients = {UsageManagementClientImpl.class})
 public final class UsageManagementClientBuilder {
     /*
-     * It uniquely identifies Microsoft Azure subscription. The subscription ID
-     * forms part of the URI for every service call.
+     * It uniquely identifies Microsoft Azure subscription. The subscription ID forms part of the URI for every service
+     * call.
      */
     private String subscriptionId;
 

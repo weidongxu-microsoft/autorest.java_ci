@@ -16,8 +16,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class GalleryProperties {
     /*
-     * The description of this Shared Image Gallery resource. This property is
-     * updatable.
+     * The description of this Shared Image Gallery resource. This property is updatable.
      */
     @JsonProperty(value = "description")
     private String description;

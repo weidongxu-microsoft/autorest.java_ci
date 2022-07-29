@@ -13,8 +13,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Immutable
 public final class PrivateLinkResourceInner extends ProxyResource {
     /*
-     * Describes the properties of a supported private link resource for the
-     * Azure Cognitive Search service.
+     * Describes the properties of a supported private link resource for the Azure Cognitive Search service.
      */
     @JsonProperty(value = "properties", access = JsonProperty.Access.WRITE_ONLY)
     private PrivateLinkResourceProperties properties;

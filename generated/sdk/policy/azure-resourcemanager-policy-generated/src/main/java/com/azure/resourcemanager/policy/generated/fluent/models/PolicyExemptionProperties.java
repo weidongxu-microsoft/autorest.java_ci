@@ -21,8 +21,8 @@ public final class PolicyExemptionProperties {
     private String policyAssignmentId;
 
     /*
-     * The policy definition reference ID list when the associated policy
-     * assignment is an assignment of a policy set definition.
+     * The policy definition reference ID list when the associated policy assignment is an assignment of a policy set
+     * definition.
      */
     @JsonProperty(value = "policyDefinitionReferenceIds")
     private List<String> policyDefinitionReferenceIds;
@@ -34,8 +34,7 @@ public final class PolicyExemptionProperties {
     private ExemptionCategory exemptionCategory;
 
     /*
-     * The expiration date and time (in UTC ISO 8601 format
-     * yyyy-MM-ddTHH:mm:ssZ) of the policy exemption.
+     * The expiration date and time (in UTC ISO 8601 format yyyy-MM-ddTHH:mm:ssZ) of the policy exemption.
      */
     @JsonProperty(value = "expiresOn")
     private OffsetDateTime expiresOn;
@@ -53,8 +52,8 @@ public final class PolicyExemptionProperties {
     private String description;
 
     /*
-     * The policy exemption metadata. Metadata is an open ended object and is
-     * typically a collection of key value pairs.
+     * The policy exemption metadata. Metadata is an open ended object and is typically a collection of key value
+     * pairs.
      */
     @JsonProperty(value = "metadata")
     private Object metadata;

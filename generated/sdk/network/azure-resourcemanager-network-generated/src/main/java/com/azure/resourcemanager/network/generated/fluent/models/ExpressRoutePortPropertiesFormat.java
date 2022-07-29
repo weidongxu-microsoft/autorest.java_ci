@@ -19,8 +19,7 @@ import java.util.List;
 @Fluent
 public final class ExpressRoutePortPropertiesFormat {
     /*
-     * The name of the peering location that the ExpressRoutePort is mapped to
-     * physically.
+     * The name of the peering location that the ExpressRoutePort is mapped to physically.
      */
     @JsonProperty(value = "peeringLocation")
     private String peeringLocation;
@@ -56,8 +55,7 @@ public final class ExpressRoutePortPropertiesFormat {
     private String etherType;
 
     /*
-     * Date of the physical port allocation to be used in Letter of
-     * Authorization.
+     * Date of the physical port allocation to be used in Letter of Authorization.
      */
     @JsonProperty(value = "allocationDate", access = JsonProperty.Access.WRITE_ONLY)
     private String allocationDate;
@@ -71,8 +69,7 @@ public final class ExpressRoutePortPropertiesFormat {
     private List<ExpressRouteLinkInner> links;
 
     /*
-     * Reference the ExpressRoute circuit(s) that are provisioned on this
-     * ExpressRoutePort resource.
+     * Reference the ExpressRoute circuit(s) that are provisioned on this ExpressRoutePort resource.
      */
     @JsonProperty(value = "circuits", access = JsonProperty.Access.WRITE_ONLY)
     private List<SubResource> circuits;

@@ -18,8 +18,7 @@ public final class FirewallPolicySnat {
     private List<String> privateRanges;
 
     /*
-     * The operation mode for automatically learning private ranges to not be
-     * SNAT
+     * The operation mode for automatically learning private ranges to not be SNAT
      */
     @JsonProperty(value = "autoLearnPrivateRanges")
     private AutoLearnPrivateRangesMode autoLearnPrivateRanges;

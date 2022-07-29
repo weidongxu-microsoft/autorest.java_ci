@@ -87,6 +87,9 @@ public enum DomainStatus {
      */
     @JsonCreator
     public static DomainStatus fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         DomainStatus[] items = DomainStatus.values();
         for (DomainStatus item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

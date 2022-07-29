@@ -20,9 +20,8 @@ public final class AzureMonitorPrivateLinkScopeListResult {
     private List<AzureMonitorPrivateLinkScopeInner> value;
 
     /*
-     * The URI to get the next set of Azure Monitor PrivateLinkScope
-     * definitions if too many PrivateLinkScopes where returned in the result
-     * set.
+     * The URI to get the next set of Azure Monitor PrivateLinkScope definitions if too many PrivateLinkScopes where
+     * returned in the result set.
      */
     @JsonProperty(value = "nextLink")
     private String nextLink;

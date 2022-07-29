@@ -18,8 +18,7 @@ public final class ManagedPrivateEndpointsCheckNameRequest {
     private String name;
 
     /*
-     * The type of resource, for instance
-     * Microsoft.Kusto/clusters/managedPrivateEndpoints.
+     * The type of resource, for instance Microsoft.Kusto/clusters/managedPrivateEndpoints.
      */
     @JsonProperty(value = "type", required = true)
     private String type = "Microsoft.Kusto/clusters/managedPrivateEndpoints";

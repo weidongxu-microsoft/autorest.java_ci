@@ -30,6 +30,9 @@ public enum OnErrorDeploymentType {
      */
     @JsonCreator
     public static OnErrorDeploymentType fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         OnErrorDeploymentType[] items = OnErrorDeploymentType.values();
         for (OnErrorDeploymentType item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

@@ -16,8 +16,7 @@ import java.util.List;
 @Fluent
 public final class SecurityAdminConfigurationInner extends ChildResource {
     /*
-     * Indicates the properties for the network manager security admin
-     * configuration.
+     * Indicates the properties for the network manager security admin configuration.
      */
     @JsonProperty(value = "properties")
     private SecurityAdminConfigurationPropertiesFormat innerProperties;

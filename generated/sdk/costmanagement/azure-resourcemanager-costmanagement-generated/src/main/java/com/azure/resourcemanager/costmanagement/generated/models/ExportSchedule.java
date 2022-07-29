@@ -12,8 +12,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class ExportSchedule {
     /*
-     * The status of the schedule. Whether active or not. If inactive, the
-     * export's scheduled execution is paused.
+     * The status of the schedule. Whether active or not. If inactive, the export's scheduled execution is paused.
      */
     @JsonProperty(value = "status")
     private StatusType status;
@@ -25,8 +24,8 @@ public final class ExportSchedule {
     private RecurrenceType recurrence;
 
     /*
-     * Has start and end date of the recurrence. The start date must be in
-     * future. If present, the end date must be greater than start date.
+     * Has start and end date of the recurrence. The start date must be in future. If present, the end date must be
+     * greater than start date.
      */
     @JsonProperty(value = "recurrencePeriod")
     private ExportRecurrencePeriod recurrencePeriod;

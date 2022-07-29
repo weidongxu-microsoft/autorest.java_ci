@@ -12,8 +12,7 @@ import java.util.List;
 @Fluent
 public final class AutoscaleNotification {
     /*
-     * the operation associated with the notification and its value must be
-     * "scale"
+     * the operation associated with the notification and its value must be "scale"
      */
     @JsonProperty(value = "operation", required = true)
     private String operation = "Scale";

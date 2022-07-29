@@ -30,6 +30,9 @@ public enum ResultFormat {
      */
     @JsonCreator
     public static ResultFormat fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         ResultFormat[] items = ResultFormat.values();
         for (ResultFormat item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

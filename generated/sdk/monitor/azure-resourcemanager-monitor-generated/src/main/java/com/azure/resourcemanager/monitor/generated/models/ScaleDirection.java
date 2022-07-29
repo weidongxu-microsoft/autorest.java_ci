@@ -33,6 +33,9 @@ public enum ScaleDirection {
      */
     @JsonCreator
     public static ScaleDirection fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         ScaleDirection[] items = ScaleDirection.values();
         for (ScaleDirection item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

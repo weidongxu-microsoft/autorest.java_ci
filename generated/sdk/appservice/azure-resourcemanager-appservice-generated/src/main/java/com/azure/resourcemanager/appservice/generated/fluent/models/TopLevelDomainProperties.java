@@ -11,8 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class TopLevelDomainProperties {
     /*
-     * If <code>true</code>, then the top level domain supports domain privacy;
-     * otherwise, <code>false</code>.
+     * If <code>true</code>, then the top level domain supports domain privacy; otherwise, <code>false</code>.
      */
     @JsonProperty(value = "privacy")
     private Boolean privacy;

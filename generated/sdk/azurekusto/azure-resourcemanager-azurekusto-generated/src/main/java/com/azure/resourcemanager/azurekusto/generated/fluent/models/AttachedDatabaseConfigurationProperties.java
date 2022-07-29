@@ -22,22 +22,20 @@ public final class AttachedDatabaseConfigurationProperties {
     private ProvisioningState provisioningState;
 
     /*
-     * The name of the database which you would like to attach, use * if you
-     * want to follow all current and future databases.
+     * The name of the database which you would like to attach, use * if you want to follow all current and future
+     * databases.
      */
     @JsonProperty(value = "databaseName", required = true)
     private String databaseName;
 
     /*
-     * The resource id of the cluster where the databases you would like to
-     * attach reside.
+     * The resource id of the cluster where the databases you would like to attach reside.
      */
     @JsonProperty(value = "clusterResourceId", required = true)
     private String clusterResourceId;
 
     /*
-     * The list of databases from the clusterResourceId which are currently
-     * attached to the cluster.
+     * The list of databases from the clusterResourceId which are currently attached to the cluster.
      */
     @JsonProperty(value = "attachedDatabaseNames", access = JsonProperty.Access.WRITE_ONLY)
     private List<String> attachedDatabaseNames;

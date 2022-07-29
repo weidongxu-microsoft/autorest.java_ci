@@ -27,6 +27,9 @@ public enum AdministratorType {
      */
     @JsonCreator
     public static AdministratorType fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         AdministratorType[] items = AdministratorType.values();
         for (AdministratorType item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

@@ -23,8 +23,7 @@ public final class DimensionProperties {
     private String displayName;
 
     /*
-     * Property to specify whether the dimension should be exported for
-     * Shoebox.
+     * Property to specify whether the dimension should be exported for Shoebox.
      */
     @JsonProperty(value = "toBeExportedForShoebox")
     private Boolean toBeExportedForShoebox;

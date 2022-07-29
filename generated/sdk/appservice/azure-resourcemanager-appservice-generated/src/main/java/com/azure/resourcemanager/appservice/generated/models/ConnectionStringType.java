@@ -57,6 +57,9 @@ public enum ConnectionStringType {
      */
     @JsonCreator
     public static ConnectionStringType fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         ConnectionStringType[] items = ConnectionStringType.values();
         for (ConnectionStringType item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

@@ -27,8 +27,7 @@ public final class MetricInner {
     private String type;
 
     /*
-     * the name and the display name of the metric, i.e. it is localizable
-     * string.
+     * the name and the display name of the metric, i.e. it is localizable string.
      */
     @JsonProperty(value = "name", required = true)
     private LocalizableStringInner name;

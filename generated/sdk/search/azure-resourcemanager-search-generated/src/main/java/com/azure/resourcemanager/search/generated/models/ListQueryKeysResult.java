@@ -19,8 +19,8 @@ public final class ListQueryKeysResult {
     private List<QueryKeyInner> value;
 
     /*
-     * Request URL that can be used to query next page of query keys. Returned
-     * when the total number of requested query keys exceed maximum page size.
+     * Request URL that can be used to query next page of query keys. Returned when the total number of requested query
+     * keys exceed maximum page size.
      */
     @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;

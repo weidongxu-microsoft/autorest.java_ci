@@ -27,8 +27,7 @@ public final class ClusterInner extends Resource {
     private SystemData systemData;
 
     /*
-     * Event Hubs Cluster properties supplied in responses in List or Get
-     * operations.
+     * Event Hubs Cluster properties supplied in responses in List or Get operations.
      */
     @JsonProperty(value = "properties")
     private ClusterProperties innerProperties;

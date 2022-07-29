@@ -13,8 +13,7 @@ import java.time.OffsetDateTime;
 @Fluent
 public final class StaticSiteUserProvidedFunctionAppArmResourceInner extends ProxyOnlyResource {
     /*
-     * StaticSiteUserProvidedFunctionAppARMResource resource specific
-     * properties
+     * StaticSiteUserProvidedFunctionAppARMResource resource specific properties
      */
     @JsonProperty(value = "properties")
     private StaticSiteUserProvidedFunctionAppArmResourceProperties innerProperties;

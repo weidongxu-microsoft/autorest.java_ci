@@ -39,6 +39,9 @@ public enum TimeAggregationOperator {
      */
     @JsonCreator
     public static TimeAggregationOperator fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         TimeAggregationOperator[] items = TimeAggregationOperator.values();
         for (TimeAggregationOperator item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

@@ -33,15 +33,13 @@ public final class EventhubProperties {
     private OffsetDateTime updatedAt;
 
     /*
-     * Number of days to retain the events for this Event Hub, value should be
-     * 1 to 7 days
+     * Number of days to retain the events for this Event Hub, value should be 1 to 7 days
      */
     @JsonProperty(value = "messageRetentionInDays")
     private Long messageRetentionInDays;
 
     /*
-     * Number of partitions created for the Event Hub, allowed values are from
-     * 1 to 32 partitions.
+     * Number of partitions created for the Event Hub, allowed values are from 1 to 32 partitions.
      */
     @JsonProperty(value = "partitionCount")
     private Long partitionCount;

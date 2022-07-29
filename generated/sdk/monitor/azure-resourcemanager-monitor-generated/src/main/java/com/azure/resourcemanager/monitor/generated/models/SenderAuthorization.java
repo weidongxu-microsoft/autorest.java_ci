@@ -14,8 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class SenderAuthorization {
     /*
-     * the permissible actions. For instance:
-     * microsoft.support/supporttickets/write
+     * the permissible actions. For instance: microsoft.support/supporttickets/write
      */
     @JsonProperty(value = "action")
     private String action;

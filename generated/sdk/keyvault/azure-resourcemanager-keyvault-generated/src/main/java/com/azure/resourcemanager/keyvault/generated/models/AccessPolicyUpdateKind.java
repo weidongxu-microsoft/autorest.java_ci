@@ -33,6 +33,9 @@ public enum AccessPolicyUpdateKind {
      */
     @JsonCreator
     public static AccessPolicyUpdateKind fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         AccessPolicyUpdateKind[] items = AccessPolicyUpdateKind.values();
         for (AccessPolicyUpdateKind item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

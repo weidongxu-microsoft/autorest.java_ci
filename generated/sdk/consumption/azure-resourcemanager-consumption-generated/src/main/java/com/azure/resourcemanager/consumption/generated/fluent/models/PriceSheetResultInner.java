@@ -17,8 +17,7 @@ import java.util.Map;
 @Fluent
 public final class PriceSheetResultInner extends ProxyResource {
     /*
-     * price sheet result. It contains the pricesheet associated with billing
-     * period
+     * price sheet result. It contains the pricesheet associated with billing period
      */
     @JsonProperty(value = "properties")
     private PriceSheetModel innerProperties;

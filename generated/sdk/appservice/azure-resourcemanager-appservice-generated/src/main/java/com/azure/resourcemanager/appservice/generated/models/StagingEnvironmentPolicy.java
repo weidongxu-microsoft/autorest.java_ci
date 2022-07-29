@@ -30,6 +30,9 @@ public enum StagingEnvironmentPolicy {
      */
     @JsonCreator
     public static StagingEnvironmentPolicy fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         StagingEnvironmentPolicy[] items = StagingEnvironmentPolicy.values();
         for (StagingEnvironmentPolicy item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

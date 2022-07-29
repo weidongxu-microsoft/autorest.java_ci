@@ -12,15 +12,13 @@ import java.util.List;
 @Fluent
 public final class RulesEngineAction {
     /*
-     * A list of header actions to apply from the request from AFD to the
-     * origin.
+     * A list of header actions to apply from the request from AFD to the origin.
      */
     @JsonProperty(value = "requestHeaderActions")
     private List<HeaderAction> requestHeaderActions;
 
     /*
-     * A list of header actions to apply from the response from AFD to the
-     * client.
+     * A list of header actions to apply from the response from AFD to the client.
      */
     @JsonProperty(value = "responseHeaderActions")
     private List<HeaderAction> responseHeaderActions;

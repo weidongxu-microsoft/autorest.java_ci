@@ -29,16 +29,14 @@ public class HealthProbeSettingsUpdateParameters {
     private Integer intervalInSeconds;
 
     /*
-     * Configures which HTTP method to use to probe the backends defined under
-     * backendPools.
+     * Configures which HTTP method to use to probe the backends defined under backendPools.
      */
     @JsonProperty(value = "healthProbeMethod")
     private FrontDoorHealthProbeMethod healthProbeMethod;
 
     /*
-     * Whether to enable health probes to be made against backends defined
-     * under backendPools. Health probes can only be disabled if there is a
-     * single enabled backend in single enabled backend pool.
+     * Whether to enable health probes to be made against backends defined under backendPools. Health probes can only
+     * be disabled if there is a single enabled backend in single enabled backend pool.
      */
     @JsonProperty(value = "enabledState")
     private HealthProbeEnabled enabledState;

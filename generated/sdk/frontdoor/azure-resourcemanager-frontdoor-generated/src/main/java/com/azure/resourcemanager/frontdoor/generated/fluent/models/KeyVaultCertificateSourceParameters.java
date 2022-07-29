@@ -24,8 +24,7 @@ public final class KeyVaultCertificateSourceParameters {
     private String secretName;
 
     /*
-     * The version of the Key Vault secret representing the full certificate
-     * PFX
+     * The version of the Key Vault secret representing the full certificate PFX
      */
     @JsonProperty(value = "secretVersion")
     private String secretVersion;

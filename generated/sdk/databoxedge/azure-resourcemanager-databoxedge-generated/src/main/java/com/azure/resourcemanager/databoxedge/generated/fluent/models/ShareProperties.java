@@ -52,15 +52,13 @@ public final class ShareProperties {
     private ShareAccessProtocol accessProtocol;
 
     /*
-     * Mapping of users and corresponding access rights on the share (required
-     * for SMB protocol).
+     * Mapping of users and corresponding access rights on the share (required for SMB protocol).
      */
     @JsonProperty(value = "userAccessRights")
     private List<UserAccessRight> userAccessRights;
 
     /*
-     * List of IP addresses and corresponding access rights on the
-     * share(required for NFS protocol).
+     * List of IP addresses and corresponding access rights on the share(required for NFS protocol).
      */
     @JsonProperty(value = "clientAccessRights")
     private List<ClientAccessRight> clientAccessRights;

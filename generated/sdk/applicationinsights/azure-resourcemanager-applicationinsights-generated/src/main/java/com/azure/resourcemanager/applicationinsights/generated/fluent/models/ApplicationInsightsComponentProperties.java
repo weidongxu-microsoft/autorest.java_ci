@@ -20,8 +20,7 @@ import java.util.List;
 @Fluent
 public final class ApplicationInsightsComponentProperties {
     /*
-     * The unique ID of your application. This field mirrors the 'Name' field
-     * and cannot be changed.
+     * The unique ID of your application. This field mirrors the 'Name' field and cannot be changed.
      */
     @JsonProperty(value = "ApplicationId", access = JsonProperty.Access.WRITE_ONLY)
     private String applicationId;
@@ -39,32 +38,29 @@ public final class ApplicationInsightsComponentProperties {
     private ApplicationType applicationType;
 
     /*
-     * Used by the Application Insights system to determine what kind of flow
-     * this component was created by. This is to be set to 'Bluefield' when
-     * creating/updating a component via the REST API.
+     * Used by the Application Insights system to determine what kind of flow this component was created by. This is to
+     * be set to 'Bluefield' when creating/updating a component via the REST API.
      */
     @JsonProperty(value = "Flow_Type")
     private FlowType flowType;
 
     /*
-     * Describes what tool created this Application Insights component.
-     * Customers using this API should set this to the default 'rest'.
+     * Describes what tool created this Application Insights component. Customers using this API should set this to the
+     * default 'rest'.
      */
     @JsonProperty(value = "Request_Source")
     private RequestSource requestSource;
 
     /*
-     * Application Insights Instrumentation key. A read-only value that
-     * applications can use to identify the destination for all telemetry sent
-     * to Azure Application Insights. This value will be supplied upon
-     * construction of each new Application Insights component.
+     * Application Insights Instrumentation key. A read-only value that applications can use to identify the
+     * destination for all telemetry sent to Azure Application Insights. This value will be supplied upon construction
+     * of each new Application Insights component.
      */
     @JsonProperty(value = "InstrumentationKey", access = JsonProperty.Access.WRITE_ONLY)
     private String instrumentationKey;
 
     /*
-     * Creation Date for the Application Insights component, in ISO 8601
-     * format.
+     * Creation Date for the Application Insights component, in ISO 8601 format.
      */
     @JsonProperty(value = "CreationDate", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime creationDate;
@@ -76,31 +72,29 @@ public final class ApplicationInsightsComponentProperties {
     private String tenantId;
 
     /*
-     * The unique application ID created when a new application is added to
-     * HockeyApp, used for communications with HockeyApp.
+     * The unique application ID created when a new application is added to HockeyApp, used for communications with
+     * HockeyApp.
      */
     @JsonProperty(value = "HockeyAppId")
     private String hockeyAppId;
 
     /*
-     * Token used to authenticate communications with between Application
-     * Insights and HockeyApp.
+     * Token used to authenticate communications with between Application Insights and HockeyApp.
      */
     @JsonProperty(value = "HockeyAppToken", access = JsonProperty.Access.WRITE_ONLY)
     private String hockeyAppToken;
 
     /*
-     * Current state of this component: whether or not is has been provisioned
-     * within the resource group it is defined. Users cannot change this value
-     * but are able to read from it. Values will include Succeeded, Deploying,
-     * Canceled, and Failed.
+     * Current state of this component: whether or not is has been provisioned within the resource group it is defined.
+     * Users cannot change this value but are able to read from it. Values will include Succeeded, Deploying, Canceled,
+     * and Failed.
      */
     @JsonProperty(value = "provisioningState", access = JsonProperty.Access.WRITE_ONLY)
     private String provisioningState;
 
     /*
-     * Percentage of the data produced by the application being monitored that
-     * is being sampled for Application Insights telemetry.
+     * Percentage of the data produced by the application being monitored that is being sampled for Application
+     * Insights telemetry.
      */
     @JsonProperty(value = "SamplingPercentage")
     private Double samplingPercentage;

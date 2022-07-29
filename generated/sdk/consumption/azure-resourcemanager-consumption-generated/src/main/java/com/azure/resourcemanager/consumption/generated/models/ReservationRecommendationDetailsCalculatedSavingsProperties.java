@@ -41,8 +41,7 @@ public final class ReservationRecommendationDetailsCalculatedSavingsProperties {
     private Float totalReservationCost;
 
     /*
-     * The number of reserved units used to calculate savings. Always 1 for
-     * virtual machines.
+     * The number of reserved units used to calculate savings. Always 1 for virtual machines.
      */
     @JsonProperty(value = "reservedUnitCount")
     private Float reservedUnitCount;

@@ -34,8 +34,7 @@ public final class MetricDefinitionInner {
     private String namespace;
 
     /*
-     * the name and the display name of the metric, i.e. it is a localizable
-     * string.
+     * the name and the display name of the metric, i.e. it is a localizable string.
      */
     @JsonProperty(value = "name")
     private LocalizableStringInner name;
@@ -65,8 +64,7 @@ public final class MetricDefinitionInner {
     private MetricUnit unit;
 
     /*
-     * the primary aggregation type value defining how to use the values for
-     * display.
+     * the primary aggregation type value defining how to use the values for display.
      */
     @JsonProperty(value = "primaryAggregationType")
     private AggregationType primaryAggregationType;
@@ -78,8 +76,7 @@ public final class MetricDefinitionInner {
     private List<AggregationType> supportedAggregationTypes;
 
     /*
-     * the collection of what aggregation intervals are available to be
-     * queried.
+     * the collection of what aggregation intervals are available to be queried.
      */
     @JsonProperty(value = "metricAvailabilities")
     private List<MetricAvailability> metricAvailabilities;
@@ -91,8 +88,7 @@ public final class MetricDefinitionInner {
     private String id;
 
     /*
-     * the name and the display name of the dimension, i.e. it is a localizable
-     * string.
+     * the name and the display name of the dimension, i.e. it is a localizable string.
      */
     @JsonProperty(value = "dimensions")
     private List<LocalizableStringInner> dimensions;

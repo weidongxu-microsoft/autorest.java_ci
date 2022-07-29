@@ -30,6 +30,9 @@ public enum KeyPermission {
      */
     @JsonCreator
     public static KeyPermission fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         KeyPermission[] items = KeyPermission.values();
         for (KeyPermission item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

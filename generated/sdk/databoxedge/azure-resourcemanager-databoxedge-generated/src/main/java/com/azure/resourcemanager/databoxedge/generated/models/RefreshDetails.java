@@ -12,32 +12,29 @@ import java.time.OffsetDateTime;
 @Fluent
 public final class RefreshDetails {
     /*
-     * If a refresh job is currently in progress on this share or container,
-     * this field indicates the ARM resource ID of that job. The field is empty
-     * if no job is in progress.
+     * If a refresh job is currently in progress on this share or container, this field indicates the ARM resource ID
+     * of that job. The field is empty if no job is in progress.
      */
     @JsonProperty(value = "inProgressRefreshJobId")
     private String inProgressRefreshJobId;
 
     /*
-     * Indicates the completed time for the last refresh job on this particular
-     * share or container, if any.This could be a failed job or a successful
-     * job.
+     * Indicates the completed time for the last refresh job on this particular share or container, if any.This could
+     * be a failed job or a successful job.
      */
     @JsonProperty(value = "lastCompletedRefreshJobTimeInUTC")
     private OffsetDateTime lastCompletedRefreshJobTimeInUtc;
 
     /*
-     * Indicates the relative path of the error xml for the last refresh job on
-     * this particular share or container, if any. This could be a failed job
-     * or a successful job.
+     * Indicates the relative path of the error xml for the last refresh job on this particular share or container, if
+     * any. This could be a failed job or a successful job.
      */
     @JsonProperty(value = "errorManifestFile")
     private String errorManifestFile;
 
     /*
-     * Indicates the id of the last refresh job on this particular share or
-     * container,if any. This could be a failed job or a successful job.
+     * Indicates the id of the last refresh job on this particular share or container,if any. This could be a failed
+     * job or a successful job.
      */
     @JsonProperty(value = "lastJob")
     private String lastJob;

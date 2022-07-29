@@ -19,15 +19,13 @@ public final class CustomRule {
     private String name;
 
     /*
-     * Describes priority of the rule. Rules with a lower value will be
-     * evaluated before rules with a higher value.
+     * Describes priority of the rule. Rules with a lower value will be evaluated before rules with a higher value.
      */
     @JsonProperty(value = "priority", required = true)
     private int priority;
 
     /*
-     * Describes if the custom rule is in enabled or disabled state. Defaults
-     * to Enabled if not specified.
+     * Describes if the custom rule is in enabled or disabled state. Defaults to Enabled if not specified.
      */
     @JsonProperty(value = "enabledState")
     private CustomRuleEnabledState enabledState;

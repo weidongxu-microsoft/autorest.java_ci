@@ -19,8 +19,7 @@ public final class Operation {
     private String name;
 
     /*
-     * The localized display information for this particular operation or
-     * action.
+     * The localized display information for this particular operation or action.
      */
     @JsonProperty(value = "display", access = JsonProperty.Access.WRITE_ONLY)
     private OperationDisplay display;

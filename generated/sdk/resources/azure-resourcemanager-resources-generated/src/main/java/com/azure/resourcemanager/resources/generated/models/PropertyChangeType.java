@@ -36,6 +36,9 @@ public enum PropertyChangeType {
      */
     @JsonCreator
     public static PropertyChangeType fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         PropertyChangeType[] items = PropertyChangeType.values();
         for (PropertyChangeType item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

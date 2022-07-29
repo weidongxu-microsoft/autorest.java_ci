@@ -11,8 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class OnErrorDeployment {
     /*
-     * The deployment on error behavior type. Possible values are
-     * LastSuccessful and SpecificDeployment.
+     * The deployment on error behavior type. Possible values are LastSuccessful and SpecificDeployment.
      */
     @JsonProperty(value = "type")
     private OnErrorDeploymentType type;

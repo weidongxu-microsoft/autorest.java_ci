@@ -30,6 +30,9 @@ public enum Relaytype {
      */
     @JsonCreator
     public static Relaytype fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         Relaytype[] items = Relaytype.values();
         for (Relaytype item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

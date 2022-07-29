@@ -18,8 +18,7 @@ public final class AsymmetricEncryptedSecret {
     private String value;
 
     /*
-     * Thumbprint certificate used to encrypt \"Value\". If the value is
-     * unencrypted, it will be null.
+     * Thumbprint certificate used to encrypt \"Value\". If the value is unencrypted, it will be null.
      */
     @JsonProperty(value = "encryptionCertThumbprint")
     private String encryptionCertThumbprint;

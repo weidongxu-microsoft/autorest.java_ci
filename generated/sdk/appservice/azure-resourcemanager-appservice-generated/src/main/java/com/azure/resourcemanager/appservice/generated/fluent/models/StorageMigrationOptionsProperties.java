@@ -24,15 +24,13 @@ public final class StorageMigrationOptionsProperties {
     private String azurefilesShare;
 
     /*
-     * <code>true</code>if the app should be switched over; otherwise,
-     * <code>false</code>.
+     * <code>true</code>if the app should be switched over; otherwise, <code>false</code>.
      */
     @JsonProperty(value = "switchSiteAfterMigration")
     private Boolean switchSiteAfterMigration;
 
     /*
-     * <code>true</code> if the app should be read only during copy operation;
-     * otherwise, <code>false</code>.
+     * <code>true</code> if the app should be read only during copy operation; otherwise, <code>false</code>.
      */
     @JsonProperty(value = "blockWriteAccessToSite")
     private Boolean blockWriteAccessToSite;

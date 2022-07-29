@@ -11,8 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class EdgeProfileSubscriptionPatch {
     /*
-     * The path ID that uniquely identifies the subscription of the edge
-     * profile.
+     * The path ID that uniquely identifies the subscription of the edge profile.
      */
     @JsonProperty(value = "id")
     private String id;

@@ -17,8 +17,8 @@ import java.util.Map;
 @Fluent
 public final class ResponseMessageEnvelopeRemotePrivateEndpointConnection {
     /*
-     * Resource Id. Typically ID is populated only for responses to GET
-     * requests. Caller is responsible for passing in this
+     * Resource Id. Typically ID is populated only for responses to GET requests. Caller is responsible for passing in
+     * this
      * value for GET requests only.
      * For example:
      * /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupId}/providers/Microsoft.Web/sites/{sitename}
@@ -39,8 +39,7 @@ public final class ResponseMessageEnvelopeRemotePrivateEndpointConnection {
     private String type;
 
     /*
-     * Geographical region resource belongs to e.g. SouthCentralUS,
-     * SouthEastAsia.
+     * Geographical region resource belongs to e.g. SouthCentralUS, SouthEastAsia.
      */
     @JsonProperty(value = "location")
     private String location;

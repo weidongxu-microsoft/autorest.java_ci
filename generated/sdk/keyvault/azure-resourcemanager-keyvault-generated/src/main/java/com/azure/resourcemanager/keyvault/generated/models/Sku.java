@@ -18,8 +18,7 @@ public final class Sku {
     private SkuFamily family = SkuFamily.A;
 
     /*
-     * SKU name to specify whether the key vault is a standard vault or a
-     * premium vault.
+     * SKU name to specify whether the key vault is a standard vault or a premium vault.
      */
     @JsonProperty(value = "name", required = true)
     private SkuName name;

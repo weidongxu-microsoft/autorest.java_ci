@@ -29,13 +29,13 @@ import com.azure.core.http.rest.RestProxy;
 import com.azure.core.management.exception.ManagementException;
 import com.azure.core.util.Context;
 import com.azure.core.util.FluxUtil;
-import com.azure.core.util.serializer.CollectionFormat;
-import com.azure.core.util.serializer.JacksonAdapter;
 import com.azure.resourcemanager.applicationinsights.generated.fluent.WorkbooksClient;
 import com.azure.resourcemanager.applicationinsights.generated.fluent.models.WorkbookInner;
 import com.azure.resourcemanager.applicationinsights.generated.models.CategoryType;
 import com.azure.resourcemanager.applicationinsights.generated.models.WorkbooksListResult;
 import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
 import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in WorkbooksClient. */
@@ -182,7 +182,9 @@ public final class WorkbooksClientImpl implements WorkbooksClient {
         final String apiVersion = "2015-05-01";
         final String accept = "application/json";
         String tagsConverted =
-            JacksonAdapter.createDefaultSerializerAdapter().serializeList(tags, CollectionFormat.CSV);
+            (tags == null)
+                ? null
+                : tags.stream().map(value -> Objects.toString(value, "")).collect(Collectors.joining(","));
         return FluxUtil
             .withContext(
                 context ->
@@ -244,7 +246,9 @@ public final class WorkbooksClientImpl implements WorkbooksClient {
         final String apiVersion = "2015-05-01";
         final String accept = "application/json";
         String tagsConverted =
-            JacksonAdapter.createDefaultSerializerAdapter().serializeList(tags, CollectionFormat.CSV);
+            (tags == null)
+                ? null
+                : tags.stream().map(value -> Objects.toString(value, "")).collect(Collectors.joining(","));
         context = this.client.mergeContext(context);
         return service
             .listByResourceGroup(

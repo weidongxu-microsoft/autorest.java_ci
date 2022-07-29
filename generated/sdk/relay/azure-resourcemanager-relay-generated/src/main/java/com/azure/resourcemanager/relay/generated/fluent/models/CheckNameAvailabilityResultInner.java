@@ -18,8 +18,7 @@ public final class CheckNameAvailabilityResultInner {
     private String message;
 
     /*
-     * Value indicating namespace is available. Returns true if the namespace
-     * is available; otherwise, false.
+     * Value indicating namespace is available. Returns true if the namespace is available; otherwise, false.
      */
     @JsonProperty(value = "nameAvailable")
     private Boolean nameAvailable;

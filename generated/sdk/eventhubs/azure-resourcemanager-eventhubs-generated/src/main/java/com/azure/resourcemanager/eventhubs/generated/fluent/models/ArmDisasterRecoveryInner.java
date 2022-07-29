@@ -15,8 +15,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class ArmDisasterRecoveryInner extends ProxyResource {
     /*
-     * Properties required to the Create Or Update Alias(Disaster Recovery
-     * configurations)
+     * Properties required to the Create Or Update Alias(Disaster Recovery configurations)
      */
     @JsonProperty(value = "properties")
     private ArmDisasterRecoveryProperties innerProperties;

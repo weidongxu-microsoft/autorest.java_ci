@@ -18,8 +18,7 @@ public final class NetworkRuleSetListResultInner {
     private List<NetworkRuleSetInner> value;
 
     /*
-     * Link to the next set of results. Not empty if Value contains incomplete
-     * list of NetworkRuleSet.
+     * Link to the next set of results. Not empty if Value contains incomplete list of NetworkRuleSet.
      */
     @JsonProperty(value = "nextLink")
     private String nextLink;

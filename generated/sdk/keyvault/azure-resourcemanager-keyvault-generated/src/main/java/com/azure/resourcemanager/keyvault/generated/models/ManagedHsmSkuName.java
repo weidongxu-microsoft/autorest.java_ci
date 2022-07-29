@@ -30,6 +30,9 @@ public enum ManagedHsmSkuName {
      */
     @JsonCreator
     public static ManagedHsmSkuName fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         ManagedHsmSkuName[] items = ManagedHsmSkuName.values();
         for (ManagedHsmSkuName item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

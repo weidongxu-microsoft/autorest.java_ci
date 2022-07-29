@@ -18,8 +18,7 @@ public final class MultiSubnetIpConfiguration {
     private PrivateIpAddress privateIpAddress;
 
     /*
-     * SQL virtual machine instance resource id that are enrolled into the
-     * availability group listener.
+     * SQL virtual machine instance resource id that are enrolled into the availability group listener.
      */
     @JsonProperty(value = "sqlVirtualMachineInstance", required = true)
     private String sqlVirtualMachineInstance;

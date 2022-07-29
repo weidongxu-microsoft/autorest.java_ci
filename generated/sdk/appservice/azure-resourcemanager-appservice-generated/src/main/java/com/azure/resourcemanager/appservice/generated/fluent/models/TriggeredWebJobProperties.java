@@ -69,8 +69,7 @@ public final class TriggeredWebJobProperties {
     private Boolean usingSdk;
 
     /*
-     * Property to allow or block all public traffic. Allowed Values:
-     * 'Enabled', 'Disabled' or an empty string.
+     * Property to allow or block all public traffic. Allowed Values: 'Enabled', 'Disabled' or an empty string.
      */
     @JsonProperty(value = "publicNetworkAccess")
     private String publicNetworkAccess;

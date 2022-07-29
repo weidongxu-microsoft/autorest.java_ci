@@ -22,8 +22,7 @@ public final class PrivateEndpointConnectionInner extends Resource {
     private PrivateEndpointConnectionProperties innerProperties;
 
     /*
-     * Modified whenever there is a change in the state of private endpoint
-     * connection.
+     * Modified whenever there is a change in the state of private endpoint connection.
      */
     @JsonProperty(value = "etag")
     private String etag;

@@ -19,8 +19,7 @@ public final class StaticSiteCustomDomainOverviewArmResourceProperties {
     private String domainName;
 
     /*
-     * The date and time on which the custom domain was created for the static
-     * site.
+     * The date and time on which the custom domain was created for the static site.
      */
     @JsonProperty(value = "createdOn", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime createdOn;

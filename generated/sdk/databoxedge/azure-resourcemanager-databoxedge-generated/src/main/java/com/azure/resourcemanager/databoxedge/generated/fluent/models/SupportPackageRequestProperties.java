@@ -25,8 +25,7 @@ public final class SupportPackageRequestProperties {
 
     /*
      * Type of files, which need to be included in the logs
-     * This will contain the type of logs
-     * (Default/DefaultWithDumps/None/All/DefaultWithArchived)
+     * This will contain the type of logs (Default/DefaultWithDumps/None/All/DefaultWithArchived)
      * or a comma separated list of log types that are required
      */
     @JsonProperty(value = "include")

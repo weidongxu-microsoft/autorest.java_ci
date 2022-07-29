@@ -30,6 +30,9 @@ public enum EncodingCaptureDescription {
      */
     @JsonCreator
     public static EncodingCaptureDescription fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         EncodingCaptureDescription[] items = EncodingCaptureDescription.values();
         for (EncodingCaptureDescription item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

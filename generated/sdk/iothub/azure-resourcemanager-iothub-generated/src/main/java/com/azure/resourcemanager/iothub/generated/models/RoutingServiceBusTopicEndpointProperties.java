@@ -24,8 +24,7 @@ public final class RoutingServiceBusTopicEndpointProperties {
     private String connectionString;
 
     /*
-     * The url of the service bus topic endpoint. It must include the protocol
-     * sb://
+     * The url of the service bus topic endpoint. It must include the protocol sb://
      */
     @JsonProperty(value = "endpointUri")
     private String endpointUri;
@@ -49,11 +48,10 @@ public final class RoutingServiceBusTopicEndpointProperties {
     private ManagedIdentity identity;
 
     /*
-     * The name that identifies this endpoint. The name can only include
-     * alphanumeric characters, periods, underscores, hyphens and has a maximum
-     * length of 64 characters. The following names are reserved:  events,
-     * fileNotifications, $default. Endpoint names must be unique across
-     * endpoint types.  The name need not be the same as the actual topic name.
+     * The name that identifies this endpoint. The name can only include alphanumeric characters, periods, underscores,
+     * hyphens and has a maximum length of 64 characters. The following names are reserved:  events, fileNotifications,
+     * $default. Endpoint names must be unique across endpoint types.  The name need not be the same as the actual
+     * topic name.
      */
     @JsonProperty(value = "name", required = true)
     private String name;

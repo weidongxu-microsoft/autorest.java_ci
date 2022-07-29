@@ -42,6 +42,9 @@ public enum SearchServiceStatus {
      */
     @JsonCreator
     public static SearchServiceStatus fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         SearchServiceStatus[] items = SearchServiceStatus.values();
         for (SearchServiceStatus item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

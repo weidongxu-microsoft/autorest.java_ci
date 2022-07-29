@@ -39,6 +39,9 @@ public enum ContinuousWebJobStatus {
      */
     @JsonCreator
     public static ContinuousWebJobStatus fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         ContinuousWebJobStatus[] items = ContinuousWebJobStatus.values();
         for (ContinuousWebJobStatus item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

@@ -18,8 +18,7 @@ public final class DatabasePrincipalAssignmentCheckNameRequest {
     private String name;
 
     /*
-     * The type of resource,
-     * Microsoft.Kusto/clusters/databases/principalAssignments.
+     * The type of resource, Microsoft.Kusto/clusters/databases/principalAssignments.
      */
     @JsonProperty(value = "type", required = true)
     private String type = "Microsoft.Kusto/clusters/databases/principalAssignments";

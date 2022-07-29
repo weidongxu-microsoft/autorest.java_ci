@@ -16,30 +16,26 @@ import java.util.List;
 @Fluent
 public final class RoutingEndpoints {
     /*
-     * The list of Service Bus queue endpoints that IoT hub routes the messages
-     * to, based on the routing rules.
+     * The list of Service Bus queue endpoints that IoT hub routes the messages to, based on the routing rules.
      */
     @JsonProperty(value = "serviceBusQueues")
     private List<RoutingServiceBusQueueEndpointProperties> serviceBusQueues;
 
     /*
-     * The list of Service Bus topic endpoints that the IoT hub routes the
-     * messages to, based on the routing rules.
+     * The list of Service Bus topic endpoints that the IoT hub routes the messages to, based on the routing rules.
      */
     @JsonProperty(value = "serviceBusTopics")
     private List<RoutingServiceBusTopicEndpointProperties> serviceBusTopics;
 
     /*
-     * The list of Event Hubs endpoints that IoT hub routes messages to, based
-     * on the routing rules. This list does not include the built-in Event Hubs
-     * endpoint.
+     * The list of Event Hubs endpoints that IoT hub routes messages to, based on the routing rules. This list does not
+     * include the built-in Event Hubs endpoint.
      */
     @JsonProperty(value = "eventHubs")
     private List<RoutingEventHubProperties> eventHubs;
 
     /*
-     * The list of storage container endpoints that IoT hub routes messages to,
-     * based on the routing rules.
+     * The list of storage container endpoints that IoT hub routes messages to, based on the routing rules.
      */
     @JsonProperty(value = "storageContainers")
     private List<RoutingStorageContainerProperties> storageContainers;

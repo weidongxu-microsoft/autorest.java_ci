@@ -23,8 +23,7 @@ public final class DataBoxEdgeDeviceExtendedInfoInner extends ArmBaseModel {
     private DataBoxEdgeDeviceExtendedInfoProperties innerProperties;
 
     /*
-     * Metadata pertaining to creation and last modification of
-     * DataBoxEdgeDevice
+     * Metadata pertaining to creation and last modification of DataBoxEdgeDevice
      */
     @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;

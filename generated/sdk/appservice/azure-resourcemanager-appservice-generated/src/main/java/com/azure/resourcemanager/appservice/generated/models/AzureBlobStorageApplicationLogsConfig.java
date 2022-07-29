@@ -17,8 +17,7 @@ public final class AzureBlobStorageApplicationLogsConfig {
     private LogLevel level;
 
     /*
-     * SAS url to a azure blob container with read/write/list/delete
-     * permissions.
+     * SAS url to a azure blob container with read/write/list/delete permissions.
      */
     @JsonProperty(value = "sasUrl")
     private String sasUrl;

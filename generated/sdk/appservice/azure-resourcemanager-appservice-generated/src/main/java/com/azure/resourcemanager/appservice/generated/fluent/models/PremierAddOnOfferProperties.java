@@ -30,8 +30,7 @@ public final class PremierAddOnOfferProperties {
     private String vendor;
 
     /*
-     * <code>true</code> if promotion code is required; otherwise,
-     * <code>false</code>.
+     * <code>true</code> if promotion code is required; otherwise, <code>false</code>.
      */
     @JsonProperty(value = "promoCodeRequired")
     private Boolean promoCodeRequired;

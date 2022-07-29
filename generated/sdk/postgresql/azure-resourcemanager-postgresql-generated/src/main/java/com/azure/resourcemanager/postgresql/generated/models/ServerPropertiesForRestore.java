@@ -23,8 +23,7 @@ public final class ServerPropertiesForRestore extends ServerPropertiesForCreate 
     private String sourceServerId;
 
     /*
-     * Restore point creation time (ISO8601 format), specifying the time to
-     * restore from.
+     * Restore point creation time (ISO8601 format), specifying the time to restore from.
      */
     @JsonProperty(value = "restorePointInTime", required = true)
     private OffsetDateTime restorePointInTime;

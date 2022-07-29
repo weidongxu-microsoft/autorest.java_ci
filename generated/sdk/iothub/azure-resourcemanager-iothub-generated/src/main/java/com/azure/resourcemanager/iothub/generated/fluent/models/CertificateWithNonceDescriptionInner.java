@@ -13,8 +13,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class CertificateWithNonceDescriptionInner extends ProxyResource {
     /*
-     * The description of an X509 CA Certificate including the challenge nonce
-     * issued for the Proof-Of-Possession flow.
+     * The description of an X509 CA Certificate including the challenge nonce issued for the Proof-Of-Possession flow.
      */
     @JsonProperty(value = "properties")
     private CertificatePropertiesWithNonce properties;

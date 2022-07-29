@@ -17,8 +17,7 @@ import java.util.List;
 @Fluent
 public final class MetricAlertProperties {
     /*
-     * the description of the metric alert that will be included in the alert
-     * email.
+     * the description of the metric alert that will be included in the alert email.
      */
     @JsonProperty(value = "description")
     private String description;
@@ -42,31 +41,27 @@ public final class MetricAlertProperties {
     private List<String> scopes;
 
     /*
-     * how often the metric alert is evaluated represented in ISO 8601 duration
-     * format.
+     * how often the metric alert is evaluated represented in ISO 8601 duration format.
      */
     @JsonProperty(value = "evaluationFrequency", required = true)
     private Duration evaluationFrequency;
 
     /*
-     * the period of time (in ISO 8601 duration format) that is used to monitor
-     * alert activity based on the threshold.
+     * the period of time (in ISO 8601 duration format) that is used to monitor alert activity based on the threshold.
      */
     @JsonProperty(value = "windowSize", required = true)
     private Duration windowSize;
 
     /*
-     * the resource type of the target resource(s) on which the alert is
-     * created/updated. Mandatory if the scope contains a subscription,
-     * resource group, or more than one resource.
+     * the resource type of the target resource(s) on which the alert is created/updated. Mandatory if the scope
+     * contains a subscription, resource group, or more than one resource.
      */
     @JsonProperty(value = "targetResourceType")
     private String targetResourceType;
 
     /*
-     * the region of the target resource(s) on which the alert is
-     * created/updated. Mandatory if the scope contains a subscription,
-     * resource group, or more than one resource.
+     * the region of the target resource(s) on which the alert is created/updated. Mandatory if the scope contains a
+     * subscription, resource group, or more than one resource.
      */
     @JsonProperty(value = "targetResourceRegion")
     private String targetResourceRegion;
@@ -78,15 +73,14 @@ public final class MetricAlertProperties {
     private MetricAlertCriteria criteria;
 
     /*
-     * the flag that indicates whether the alert should be auto resolved or
-     * not. The default is true.
+     * the flag that indicates whether the alert should be auto resolved or not. The default is true.
      */
     @JsonProperty(value = "autoMitigate")
     private Boolean autoMitigate;
 
     /*
-     * the array of actions that are performed when the alert rule becomes
-     * active, and when an alert condition is resolved.
+     * the array of actions that are performed when the alert rule becomes active, and when an alert condition is
+     * resolved.
      */
     @JsonProperty(value = "actions")
     private List<MetricAlertAction> actions;

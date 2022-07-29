@@ -36,6 +36,9 @@ public enum AuthorizationScopeFilter {
      */
     @JsonCreator
     public static AuthorizationScopeFilter fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         AuthorizationScopeFilter[] items = AuthorizationScopeFilter.values();
         for (AuthorizationScopeFilter item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

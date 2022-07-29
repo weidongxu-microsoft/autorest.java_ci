@@ -11,8 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Immutable
 public final class GatewaySettingsInner {
     /*
-     * Indicates whether or not the gateway settings based authorization is
-     * enabled.
+     * Indicates whether or not the gateway settings based authorization is enabled.
      */
     @JsonProperty(value = "restAuthCredential.isEnabled", access = JsonProperty.Access.WRITE_ONLY)
     private String isCredentialEnabled;

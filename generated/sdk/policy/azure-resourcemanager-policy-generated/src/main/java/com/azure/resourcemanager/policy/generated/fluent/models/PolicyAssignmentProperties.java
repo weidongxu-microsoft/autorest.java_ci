@@ -41,8 +41,7 @@ public final class PolicyAssignmentProperties {
     private List<String> notScopes;
 
     /*
-     * The parameter values for the assigned policy rule. The keys are the
-     * parameter names.
+     * The parameter values for the assigned policy rule. The keys are the parameter names.
      */
     @JsonProperty(value = "parameters")
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
@@ -55,22 +54,20 @@ public final class PolicyAssignmentProperties {
     private String description;
 
     /*
-     * The policy assignment metadata. Metadata is an open ended object and is
-     * typically a collection of key value pairs.
+     * The policy assignment metadata. Metadata is an open ended object and is typically a collection of key value
+     * pairs.
      */
     @JsonProperty(value = "metadata")
     private Object metadata;
 
     /*
-     * The policy assignment enforcement mode. Possible values are Default and
-     * DoNotEnforce.
+     * The policy assignment enforcement mode. Possible values are Default and DoNotEnforce.
      */
     @JsonProperty(value = "enforcementMode")
     private EnforcementMode enforcementMode;
 
     /*
-     * The messages that describe why a resource is non-compliant with the
-     * policy.
+     * The messages that describe why a resource is non-compliant with the policy.
      */
     @JsonProperty(value = "nonComplianceMessages")
     private List<NonComplianceMessage> nonComplianceMessages;

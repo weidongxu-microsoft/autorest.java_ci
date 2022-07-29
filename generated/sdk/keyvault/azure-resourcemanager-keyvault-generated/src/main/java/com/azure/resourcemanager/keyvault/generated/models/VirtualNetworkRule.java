@@ -19,8 +19,7 @@ public final class VirtualNetworkRule {
     private String id;
 
     /*
-     * Property to specify whether NRP will ignore the check if parent subnet
-     * has serviceEndpoints configured.
+     * Property to specify whether NRP will ignore the check if parent subnet has serviceEndpoints configured.
      */
     @JsonProperty(value = "ignoreMissingVnetServiceEndpoint")
     private Boolean ignoreMissingVnetServiceEndpoint;

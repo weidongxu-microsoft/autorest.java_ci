@@ -50,8 +50,8 @@ public class ServerPropertiesForCreate {
     private InfrastructureEncryption infrastructureEncryption;
 
     /*
-     * Whether or not public network access is allowed for this server. Value
-     * is optional but if passed in, must be 'Enabled' or 'Disabled'
+     * Whether or not public network access is allowed for this server. Value is optional but if passed in, must be
+     * 'Enabled' or 'Disabled'
      */
     @JsonProperty(value = "publicNetworkAccess")
     private PublicNetworkAccessEnum publicNetworkAccess;

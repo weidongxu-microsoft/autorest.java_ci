@@ -20,8 +20,7 @@ public class ManagedHsmResource extends Resource {
     private ManagedHsmSku sku;
 
     /*
-     * Metadata pertaining to creation and last modification of the key vault
-     * resource.
+     * Metadata pertaining to creation and last modification of the key vault resource.
      */
     @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;

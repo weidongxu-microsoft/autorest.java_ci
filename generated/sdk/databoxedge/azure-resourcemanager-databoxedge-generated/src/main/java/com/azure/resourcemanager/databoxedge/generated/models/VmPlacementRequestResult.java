@@ -30,8 +30,7 @@ public final class VmPlacementRequestResult {
     private String messageCode;
 
     /*
-     * Localized
-     * message to be displayed to the user to explain the check result.
+     * Localized message to be displayed to the user to explain the check result.
      */
     @JsonProperty(value = "message")
     private String message;

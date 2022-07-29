@@ -11,8 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class UpdateGatewaySettingsParameters {
     /*
-     * Indicates whether or not the gateway settings based authorization is
-     * enabled.
+     * Indicates whether or not the gateway settings based authorization is enabled.
      */
     @JsonProperty(value = "restAuthCredential.isEnabled")
     private Boolean isCredentialEnabled;

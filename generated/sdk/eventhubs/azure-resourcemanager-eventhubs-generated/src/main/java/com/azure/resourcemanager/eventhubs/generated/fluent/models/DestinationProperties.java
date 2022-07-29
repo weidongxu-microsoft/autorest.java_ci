@@ -25,9 +25,8 @@ public final class DestinationProperties {
 
     /*
      * Blob naming convention for archive, e.g.
-     * {Namespace}/{EventHub}/{PartitionId}/{Year}/{Month}/{Day}/{Hour}/{Minute}/{Second}.
-     * Here all the parameters (Namespace,EventHub .. etc) are mandatory
-     * irrespective of order
+     * {Namespace}/{EventHub}/{PartitionId}/{Year}/{Month}/{Day}/{Hour}/{Minute}/{Second}. Here all the parameters
+     * (Namespace,EventHub .. etc) are mandatory irrespective of order
      */
     @JsonProperty(value = "archiveNameFormat")
     private String archiveNameFormat;

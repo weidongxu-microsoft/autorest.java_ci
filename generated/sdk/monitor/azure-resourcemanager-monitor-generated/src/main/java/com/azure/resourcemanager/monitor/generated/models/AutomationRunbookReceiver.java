@@ -12,8 +12,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class AutomationRunbookReceiver {
     /*
-     * The Azure automation account Id which holds this runbook and
-     * authenticate to Azure resource.
+     * The Azure automation account Id which holds this runbook and authenticate to Azure resource.
      */
     @JsonProperty(value = "automationAccountId", required = true)
     private String automationAccountId;

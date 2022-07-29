@@ -13,8 +13,8 @@ import java.util.List;
 @Fluent
 public final class DnsResourceReferenceResultInner {
     /*
-     * The result of dns resource reference request. Returns a list of dns
-     * resource references for each of the azure resource in the request.
+     * The result of dns resource reference request. Returns a list of dns resource references for each of the azure
+     * resource in the request.
      */
     @JsonProperty(value = "properties")
     private DnsResourceReferenceResultProperties innerProperties;

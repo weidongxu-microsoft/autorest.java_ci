@@ -44,8 +44,7 @@ public final class StorageAccountProperties {
     private String blobEndpoint;
 
     /*
-     * The Container Count. Present only for Storage Accounts with DataPolicy
-     * set to Cloud.
+     * The Container Count. Present only for Storage Accounts with DataPolicy set to Cloud.
      */
     @JsonProperty(value = "containerCount", access = JsonProperty.Access.WRITE_ONLY)
     private Integer containerCount;

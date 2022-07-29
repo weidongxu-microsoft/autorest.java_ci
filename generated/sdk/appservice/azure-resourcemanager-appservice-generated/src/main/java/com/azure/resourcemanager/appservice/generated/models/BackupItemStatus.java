@@ -54,6 +54,9 @@ public enum BackupItemStatus {
      */
     @JsonCreator
     public static BackupItemStatus fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         BackupItemStatus[] items = BackupItemStatus.values();
         for (BackupItemStatus item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

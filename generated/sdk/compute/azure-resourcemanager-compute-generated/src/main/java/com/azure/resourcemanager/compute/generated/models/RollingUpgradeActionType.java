@@ -30,6 +30,9 @@ public enum RollingUpgradeActionType {
      */
     @JsonCreator
     public static RollingUpgradeActionType fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         RollingUpgradeActionType[] items = RollingUpgradeActionType.values();
         for (RollingUpgradeActionType item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

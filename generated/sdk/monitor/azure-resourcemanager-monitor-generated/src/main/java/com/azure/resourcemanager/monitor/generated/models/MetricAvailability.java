@@ -15,15 +15,13 @@ import java.time.Duration;
 @Fluent
 public final class MetricAvailability {
     /*
-     * the time grain specifies the aggregation interval for the metric.
-     * Expressed as a duration 'PT1M', 'P1D', etc.
+     * the time grain specifies the aggregation interval for the metric. Expressed as a duration 'PT1M', 'P1D', etc.
      */
     @JsonProperty(value = "timeGrain")
     private Duration timeGrain;
 
     /*
-     * the retention period for the metric at the specified timegrain.
-     * Expressed as a duration 'PT1M', 'P1D', etc.
+     * the retention period for the metric at the specified timegrain.  Expressed as a duration 'PT1M', 'P1D', etc.
      */
     @JsonProperty(value = "retention")
     private Duration retention;

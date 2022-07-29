@@ -30,6 +30,9 @@ public enum DefaultAction {
      */
     @JsonCreator
     public static DefaultAction fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         DefaultAction[] items = DefaultAction.values();
         for (DefaultAction item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

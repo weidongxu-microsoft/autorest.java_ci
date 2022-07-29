@@ -21,8 +21,7 @@ public final class DiagnosticProactiveLogCollectionSettingsInner extends ArmBase
     private ProactiveLogCollectionSettingsProperties innerProperties = new ProactiveLogCollectionSettingsProperties();
 
     /*
-     * Metadata pertaining to creation and last modification of
-     * DiagnosticProactiveLogCollectionSettings
+     * Metadata pertaining to creation and last modification of DiagnosticProactiveLogCollectionSettings
      */
     @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;

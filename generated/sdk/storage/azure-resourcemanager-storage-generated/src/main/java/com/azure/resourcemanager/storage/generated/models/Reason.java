@@ -30,6 +30,9 @@ public enum Reason {
      */
     @JsonCreator
     public static Reason fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         Reason[] items = Reason.values();
         for (Reason item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

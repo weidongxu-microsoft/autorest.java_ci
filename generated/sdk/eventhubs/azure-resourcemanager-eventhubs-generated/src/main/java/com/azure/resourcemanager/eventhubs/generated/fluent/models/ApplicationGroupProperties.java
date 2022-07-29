@@ -14,25 +14,21 @@ import java.util.List;
 @Fluent
 public final class ApplicationGroupProperties {
     /*
-     * Determines if Application Group is allowed to create connection with
-     * namespace or not. Once the isEnabled is set to false, all the existing
-     * connections of application group gets dropped and no new connections
-     * will be allowed
+     * Determines if Application Group is allowed to create connection with namespace or not. Once the isEnabled is set
+     * to false, all the existing connections of application group gets dropped and no new connections will be allowed
      */
     @JsonProperty(value = "isEnabled")
     private Boolean isEnabled;
 
     /*
-     * The Unique identifier for application group.Supports
-     * SAS(SASKeyName=KeyName) or AAD(AADAppID=Guid)
+     * The Unique identifier for application group.Supports SAS(SASKeyName=KeyName) or AAD(AADAppID=Guid)
      */
     @JsonProperty(value = "clientAppGroupIdentifier", required = true)
     private String clientAppGroupIdentifier;
 
     /*
-     * List of group policies that define the behavior of application group.
-     * The policies can support resource governance scenarios such as limiting
-     * ingress or egress traffic.
+     * List of group policies that define the behavior of application group. The policies can support resource
+     * governance scenarios such as limiting ingress or egress traffic.
      */
     @JsonProperty(value = "policies")
     private List<ApplicationGroupPolicy> policies;

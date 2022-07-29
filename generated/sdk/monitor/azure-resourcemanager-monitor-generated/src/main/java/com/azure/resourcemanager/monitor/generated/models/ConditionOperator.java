@@ -36,6 +36,9 @@ public enum ConditionOperator {
      */
     @JsonCreator
     public static ConditionOperator fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         ConditionOperator[] items = ConditionOperator.values();
         for (ConditionOperator item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

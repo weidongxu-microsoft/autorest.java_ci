@@ -30,6 +30,9 @@ public enum HostingMode {
      */
     @JsonCreator
     public static HostingMode fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         HostingMode[] items = HostingMode.values();
         for (HostingMode item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

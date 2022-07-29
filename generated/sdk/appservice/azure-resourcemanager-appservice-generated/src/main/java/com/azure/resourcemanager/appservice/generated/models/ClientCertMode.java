@@ -33,6 +33,9 @@ public enum ClientCertMode {
      */
     @JsonCreator
     public static ClientCertMode fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         ClientCertMode[] items = ClientCertMode.values();
         for (ClientCertMode item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

@@ -27,6 +27,9 @@ public enum ListKeyExpand {
      */
     @JsonCreator
     public static ListKeyExpand fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         ListKeyExpand[] items = ListKeyExpand.values();
         for (ListKeyExpand item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

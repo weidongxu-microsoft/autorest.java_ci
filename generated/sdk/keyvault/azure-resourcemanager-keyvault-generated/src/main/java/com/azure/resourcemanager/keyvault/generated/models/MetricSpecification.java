@@ -30,15 +30,13 @@ public final class MetricSpecification {
     private String displayDescription;
 
     /*
-     * The metric unit. Possible values include: 'Bytes', 'Count',
-     * 'Milliseconds'.
+     * The metric unit. Possible values include: 'Bytes', 'Count', 'Milliseconds'.
      */
     @JsonProperty(value = "unit")
     private String unit;
 
     /*
-     * The metric aggregation type. Possible values include: 'Average',
-     * 'Count', 'Total'.
+     * The metric aggregation type. Possible values include: 'Average', 'Count', 'Total'.
      */
     @JsonProperty(value = "aggregationType")
     private String aggregationType;

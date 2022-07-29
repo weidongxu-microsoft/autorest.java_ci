@@ -30,6 +30,9 @@ public enum WebJobType {
      */
     @JsonCreator
     public static WebJobType fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         WebJobType[] items = WebJobType.values();
         for (WebJobType item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

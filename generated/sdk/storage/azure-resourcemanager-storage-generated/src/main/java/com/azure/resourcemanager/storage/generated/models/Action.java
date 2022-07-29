@@ -27,6 +27,9 @@ public enum Action {
      */
     @JsonCreator
     public static Action fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         Action[] items = Action.values();
         for (Action item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

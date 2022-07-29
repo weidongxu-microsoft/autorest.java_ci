@@ -36,8 +36,7 @@ public final class PolicyDefinitionGroup {
     private String description;
 
     /*
-     * A resource ID of a resource that contains additional metadata about the
-     * group.
+     * A resource ID of a resource that contains additional metadata about the group.
      */
     @JsonProperty(value = "additionalMetadataId")
     private String additionalMetadataId;

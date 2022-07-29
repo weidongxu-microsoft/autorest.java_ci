@@ -30,6 +30,9 @@ public enum PacketCaptureTargetType {
      */
     @JsonCreator
     public static PacketCaptureTargetType fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         PacketCaptureTargetType[] items = PacketCaptureTargetType.values();
         for (PacketCaptureTargetType item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

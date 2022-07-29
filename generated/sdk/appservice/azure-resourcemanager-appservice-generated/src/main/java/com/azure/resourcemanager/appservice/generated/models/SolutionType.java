@@ -33,6 +33,9 @@ public enum SolutionType {
      */
     @JsonCreator
     public static SolutionType fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         SolutionType[] items = SolutionType.values();
         for (SolutionType item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

@@ -42,6 +42,9 @@ public enum TimeAggregationType {
      */
     @JsonCreator
     public static TimeAggregationType fromString(String value) {
+        if (value == null) {
+            return null;
+        }
         TimeAggregationType[] items = TimeAggregationType.values();
         for (TimeAggregationType item : items) {
             if (item.toString().equalsIgnoreCase(value)) {

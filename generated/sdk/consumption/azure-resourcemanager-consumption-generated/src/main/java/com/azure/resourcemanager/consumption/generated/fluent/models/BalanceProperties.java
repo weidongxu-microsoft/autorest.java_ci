@@ -28,8 +28,7 @@ public final class BalanceProperties {
     private BigDecimal beginningBalance;
 
     /*
-     * The ending balance for the billing period (for open periods this will be
-     * updated daily).
+     * The ending balance for the billing period (for open periods this will be updated daily).
      */
     @JsonProperty(value = "endingBalance", access = JsonProperty.Access.WRITE_ONLY)
     private BigDecimal endingBalance;

@@ -19,8 +19,7 @@ public final class ConsumerGroupListResult {
     private List<ConsumerGroupInner> value;
 
     /*
-     * Link to the next set of results. Not empty if Value contains incomplete
-     * list of Consumer Group
+     * Link to the next set of results. Not empty if Value contains incomplete list of Consumer Group
      */
     @JsonProperty(value = "nextLink")
     private String nextLink;

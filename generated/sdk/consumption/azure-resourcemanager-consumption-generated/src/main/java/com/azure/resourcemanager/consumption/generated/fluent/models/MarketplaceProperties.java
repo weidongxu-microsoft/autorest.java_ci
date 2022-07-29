@@ -140,15 +140,13 @@ public final class MarketplaceProperties {
     private String consumedService;
 
     /*
-     * The cost center of this department if it is a department and a
-     * costcenter exists
+     * The cost center of this department if it is a department and a costcenter exists
      */
     @JsonProperty(value = "costCenter", access = JsonProperty.Access.WRITE_ONLY)
     private String costCenter;
 
     /*
-     * Additional details of this usage item. By default this is not populated,
-     * unless it's specified in $expand.
+     * Additional details of this usage item. By default this is not populated, unless it's specified in $expand.
      */
     @JsonProperty(value = "additionalProperties", access = JsonProperty.Access.WRITE_ONLY)
     private String additionalProperties;
