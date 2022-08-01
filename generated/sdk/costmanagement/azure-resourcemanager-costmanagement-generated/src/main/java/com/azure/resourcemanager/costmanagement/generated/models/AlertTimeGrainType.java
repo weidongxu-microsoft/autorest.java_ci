@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for AlertTimeGrainType. */
+/** Type of timegrain cadence. */
 public final class AlertTimeGrainType extends ExpandableStringEnum<AlertTimeGrainType> {
     /** Static value None for AlertTimeGrainType. */
     public static final AlertTimeGrainType NONE = fromString("None");

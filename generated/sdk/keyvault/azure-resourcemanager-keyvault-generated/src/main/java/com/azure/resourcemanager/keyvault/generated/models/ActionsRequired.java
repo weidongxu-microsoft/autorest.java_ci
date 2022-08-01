@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for ActionsRequired. */
+/** A message indicating if changes on the service provider require any updates on the consumer. */
 public final class ActionsRequired extends ExpandableStringEnum<ActionsRequired> {
     /** Static value None for ActionsRequired. */
     public static final ActionsRequired NONE = fromString("None");

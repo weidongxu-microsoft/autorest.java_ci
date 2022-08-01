@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for ExportType. */
+/** The type of the query. */
 public final class ExportType extends ExpandableStringEnum<ExportType> {
     /** Static value Usage for ExportType. */
     public static final ExportType USAGE = fromString("Usage");

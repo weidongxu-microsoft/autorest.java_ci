@@ -7,7 +7,7 @@ package com.azure.resourcemanager.monitor.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for TimeAggregationOperator. */
+/** Aggregation operators allowed in a rule. */
 public enum TimeAggregationOperator {
     /** Enum value Average. */
     AVERAGE("Average"),
@@ -51,6 +51,7 @@ public enum TimeAggregationOperator {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

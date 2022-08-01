@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for EndpointType. */
+/** The type of endpoint. */
 public final class EndpointType extends ExpandableStringEnum<EndpointType> {
     /** Static value AFD for EndpointType. */
     public static final EndpointType AFD = fromString("AFD");

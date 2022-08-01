@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for OperatorType. */
+/** The comparison operator. */
 public final class OperatorType extends ExpandableStringEnum<OperatorType> {
     /** Static value EqualTo for OperatorType. */
     public static final OperatorType EQUAL_TO = fromString("EqualTo");

@@ -39,6 +39,7 @@ public enum ListKeyExpand {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

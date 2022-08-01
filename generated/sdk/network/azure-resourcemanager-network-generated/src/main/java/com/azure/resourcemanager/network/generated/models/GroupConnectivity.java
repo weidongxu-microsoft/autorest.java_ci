@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for GroupConnectivity. */
+/** Group connectivity type. */
 public final class GroupConnectivity extends ExpandableStringEnum<GroupConnectivity> {
     /** Static value None for GroupConnectivity. */
     public static final GroupConnectivity NONE = fromString("None");

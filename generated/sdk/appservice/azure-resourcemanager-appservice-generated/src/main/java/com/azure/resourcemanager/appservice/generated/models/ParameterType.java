@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for ParameterType. */
+/** The parameter type. */
 public final class ParameterType extends ExpandableStringEnum<ParameterType> {
     /** Static value NotSpecified for ParameterType. */
     public static final ParameterType NOT_SPECIFIED = fromString("NotSpecified");

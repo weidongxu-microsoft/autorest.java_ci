@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for UnavailableReason. */
+/** Specifies the reason for the unavailability of the service. */
 public final class UnavailableReason extends ExpandableStringEnum<UnavailableReason> {
     /** Static value None for UnavailableReason. */
     public static final UnavailableReason NONE = fromString("None");

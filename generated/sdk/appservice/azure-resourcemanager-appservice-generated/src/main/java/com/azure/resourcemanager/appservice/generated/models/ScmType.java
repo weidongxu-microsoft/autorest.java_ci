@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for ScmType. */
+/** SCM type. */
 public final class ScmType extends ExpandableStringEnum<ScmType> {
     /** Static value None for ScmType. */
     public static final ScmType NONE = fromString("None");

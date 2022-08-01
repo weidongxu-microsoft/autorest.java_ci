@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for AddonState. */
+/** Addon Provisioning State. */
 public final class AddonState extends ExpandableStringEnum<AddonState> {
     /** Static value Invalid for AddonState. */
     public static final AddonState INVALID = fromString("Invalid");

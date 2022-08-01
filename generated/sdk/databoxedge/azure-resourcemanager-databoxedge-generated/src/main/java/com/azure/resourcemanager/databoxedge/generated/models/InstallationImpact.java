@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for InstallationImpact. */
+/** Impact of Installing an updateType. */
 public final class InstallationImpact extends ExpandableStringEnum<InstallationImpact> {
     /** Static value None for InstallationImpact. */
     public static final InstallationImpact NONE = fromString("None");

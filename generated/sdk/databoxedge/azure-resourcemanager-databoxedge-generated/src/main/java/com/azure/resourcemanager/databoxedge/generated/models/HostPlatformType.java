@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for HostPlatformType. */
+/** Platform where the runtime is hosted. */
 public final class HostPlatformType extends ExpandableStringEnum<HostPlatformType> {
     /** Static value KubernetesCluster for HostPlatformType. */
     public static final HostPlatformType KUBERNETES_CLUSTER = fromString("KubernetesCluster");

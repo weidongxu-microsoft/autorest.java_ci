@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for ActionType. */
+/** Defines the action to take on rule match. */
 public final class ActionType extends ExpandableStringEnum<ActionType> {
     /** Static value Allow for ActionType. */
     public static final ActionType ALLOW = fromString("Allow");

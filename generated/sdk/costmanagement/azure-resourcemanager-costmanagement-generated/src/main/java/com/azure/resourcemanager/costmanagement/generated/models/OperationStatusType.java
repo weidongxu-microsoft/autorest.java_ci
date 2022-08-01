@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for OperationStatusType. */
+/** The status of the long running operation. */
 public final class OperationStatusType extends ExpandableStringEnum<OperationStatusType> {
     /** Static value Running for OperationStatusType. */
     public static final OperationStatusType RUNNING = fromString("Running");

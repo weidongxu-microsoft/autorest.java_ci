@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for InstallRebootBehavior. */
+/** Indicates if updates are available and at least one of the updates needs a reboot. */
 public final class InstallRebootBehavior extends ExpandableStringEnum<InstallRebootBehavior> {
     /** Static value NeverReboots for InstallRebootBehavior. */
     public static final InstallRebootBehavior NEVER_REBOOTS = fromString("NeverReboots");

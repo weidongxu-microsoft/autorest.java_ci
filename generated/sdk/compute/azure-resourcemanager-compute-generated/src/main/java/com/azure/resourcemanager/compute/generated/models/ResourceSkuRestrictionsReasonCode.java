@@ -7,7 +7,7 @@ package com.azure.resourcemanager.compute.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for ResourceSkuRestrictionsReasonCode. */
+/** The reason for restriction. */
 public enum ResourceSkuRestrictionsReasonCode {
     /** Enum value QuotaId. */
     QUOTA_ID("QuotaId"),
@@ -42,6 +42,7 @@ public enum ResourceSkuRestrictionsReasonCode {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

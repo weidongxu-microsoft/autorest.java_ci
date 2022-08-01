@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for NetworkGroup. */
+/** The network group. */
 public final class NetworkGroup extends ExpandableStringEnum<NetworkGroup> {
     /** Static value None for NetworkGroup. */
     public static final NetworkGroup NONE = fromString("None");

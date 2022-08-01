@@ -7,7 +7,7 @@ package com.azure.resourcemanager.compute.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for StatusLevelTypes. */
+/** The level code. */
 public enum StatusLevelTypes {
     /** Enum value Info. */
     INFO("Info"),
@@ -45,6 +45,7 @@ public enum StatusLevelTypes {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

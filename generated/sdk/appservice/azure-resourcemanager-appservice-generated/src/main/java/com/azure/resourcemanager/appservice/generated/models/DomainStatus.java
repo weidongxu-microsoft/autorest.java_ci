@@ -7,7 +7,7 @@ package com.azure.resourcemanager.appservice.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for DomainStatus. */
+/** Domain registration status. */
 public enum DomainStatus {
     /** Enum value Active. */
     ACTIVE("Active"),
@@ -99,6 +99,7 @@ public enum DomainStatus {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

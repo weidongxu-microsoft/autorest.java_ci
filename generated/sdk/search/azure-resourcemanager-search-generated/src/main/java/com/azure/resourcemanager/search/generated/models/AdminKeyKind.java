@@ -42,6 +42,7 @@ public enum AdminKeyKind {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

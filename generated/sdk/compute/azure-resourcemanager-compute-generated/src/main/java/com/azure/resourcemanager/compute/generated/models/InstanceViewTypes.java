@@ -42,6 +42,7 @@ public enum InstanceViewTypes {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

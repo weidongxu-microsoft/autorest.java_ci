@@ -8,7 +8,11 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for LockLevel. */
+/**
+ * The level of the lock. Possible values are: NotSpecified, CanNotDelete, ReadOnly. CanNotDelete means authorized users
+ * are able to read and modify the resources, but not delete. ReadOnly means authorized users can only read from a
+ * resource, but they can't modify or delete it.
+ */
 public final class LockLevel extends ExpandableStringEnum<LockLevel> {
     /** Static value NotSpecified for LockLevel. */
     public static final LockLevel NOT_SPECIFIED = fromString("NotSpecified");

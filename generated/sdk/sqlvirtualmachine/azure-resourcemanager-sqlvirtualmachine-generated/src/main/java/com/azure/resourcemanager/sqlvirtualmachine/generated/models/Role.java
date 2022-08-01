@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for Role. */
+/** Replica Role in availability group. */
 public final class Role extends ExpandableStringEnum<Role> {
     /** Static value PRIMARY for Role. */
     public static final Role PRIMARY = fromString("PRIMARY");

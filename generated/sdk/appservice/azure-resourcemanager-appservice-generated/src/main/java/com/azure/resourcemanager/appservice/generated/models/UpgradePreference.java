@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for UpgradePreference. */
+/** Upgrade Preference. */
 public final class UpgradePreference extends ExpandableStringEnum<UpgradePreference> {
     /** Static value None for UpgradePreference. */
     public static final UpgradePreference NONE = fromString("None");

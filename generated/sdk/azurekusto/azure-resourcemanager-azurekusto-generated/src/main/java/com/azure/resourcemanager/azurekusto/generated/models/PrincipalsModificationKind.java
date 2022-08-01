@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for PrincipalsModificationKind. */
+/** The principals modification kind of the database. */
 public final class PrincipalsModificationKind extends ExpandableStringEnum<PrincipalsModificationKind> {
     /** Static value Union for PrincipalsModificationKind. */
     public static final PrincipalsModificationKind UNION = fromString("Union");

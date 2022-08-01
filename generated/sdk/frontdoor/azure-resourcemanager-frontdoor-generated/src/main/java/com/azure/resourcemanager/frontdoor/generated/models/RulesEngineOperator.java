@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for RulesEngineOperator. */
+/** Describes operator to apply to the match condition. */
 public final class RulesEngineOperator extends ExpandableStringEnum<RulesEngineOperator> {
     /** Static value Any for RulesEngineOperator. */
     public static final RulesEngineOperator ANY = fromString("Any");

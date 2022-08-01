@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for ForecastTimeframeType. */
+/** The time frame for pulling data for the forecast. If custom, then a specific time period must be provided. */
 public final class ForecastTimeframeType extends ExpandableStringEnum<ForecastTimeframeType> {
     /** Static value MonthToDate for ForecastTimeframeType. */
     public static final ForecastTimeframeType MONTH_TO_DATE = fromString("MonthToDate");

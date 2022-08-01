@@ -7,7 +7,7 @@ package com.azure.resourcemanager.keyvault.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for Reason. */
+/** The reason that a vault name could not be used. The Reason element is only returned if NameAvailable is false. */
 public enum Reason {
     /** Enum value AccountNameInvalid. */
     ACCOUNT_NAME_INVALID("AccountNameInvalid"),
@@ -42,6 +42,7 @@ public enum Reason {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

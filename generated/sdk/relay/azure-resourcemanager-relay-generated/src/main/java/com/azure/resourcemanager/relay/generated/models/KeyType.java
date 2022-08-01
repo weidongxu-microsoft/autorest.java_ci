@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for KeyType. */
+/** The access key to regenerate. */
 public final class KeyType extends ExpandableStringEnum<KeyType> {
     /** Static value PrimaryKey for KeyType. */
     public static final KeyType PRIMARY_KEY = fromString("PrimaryKey");

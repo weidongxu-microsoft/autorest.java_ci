@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for EncryptionAlgorithm. */
+/** The algorithm used to encrypt "Value". */
 public final class EncryptionAlgorithm extends ExpandableStringEnum<EncryptionAlgorithm> {
     /** Static value None for EncryptionAlgorithm. */
     public static final EncryptionAlgorithm NONE = fromString("None");

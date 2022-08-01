@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for MountType. */
+/** Mounting type. */
 public final class MountType extends ExpandableStringEnum<MountType> {
     /** Static value Volume for MountType. */
     public static final MountType VOLUME = fromString("Volume");

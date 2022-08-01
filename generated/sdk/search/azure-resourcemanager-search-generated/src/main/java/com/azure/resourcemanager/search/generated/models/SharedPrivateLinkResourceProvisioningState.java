@@ -7,7 +7,10 @@ package com.azure.resourcemanager.search.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for SharedPrivateLinkResourceProvisioningState. */
+/**
+ * The provisioning state of the shared private link resource. Can be Updating, Deleting, Failed, Succeeded or
+ * Incomplete.
+ */
 public enum SharedPrivateLinkResourceProvisioningState {
     /** Enum value Updating. */
     UPDATING("Updating"),
@@ -51,6 +54,7 @@ public enum SharedPrivateLinkResourceProvisioningState {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

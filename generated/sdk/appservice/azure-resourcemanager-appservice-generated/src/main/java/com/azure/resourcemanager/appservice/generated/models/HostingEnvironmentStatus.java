@@ -7,7 +7,7 @@ package com.azure.resourcemanager.appservice.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for HostingEnvironmentStatus. */
+/** Current status of the App Service Environment. */
 public enum HostingEnvironmentStatus {
     /** Enum value Preparing. */
     PREPARING("Preparing"),
@@ -48,6 +48,7 @@ public enum HostingEnvironmentStatus {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

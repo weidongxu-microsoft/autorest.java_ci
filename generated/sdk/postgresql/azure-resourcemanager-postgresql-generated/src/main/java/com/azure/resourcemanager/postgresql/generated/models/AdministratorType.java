@@ -7,7 +7,7 @@ package com.azure.resourcemanager.postgresql.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for AdministratorType. */
+/** The type of administrator. */
 public enum AdministratorType {
     /** Enum value ActiveDirectory. */
     ACTIVE_DIRECTORY("ActiveDirectory");
@@ -39,6 +39,7 @@ public enum AdministratorType {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

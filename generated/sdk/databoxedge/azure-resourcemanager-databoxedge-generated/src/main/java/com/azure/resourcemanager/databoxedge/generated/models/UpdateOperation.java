@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for UpdateOperation. */
+/** The current update operation. */
 public final class UpdateOperation extends ExpandableStringEnum<UpdateOperation> {
     /** Static value None for UpdateOperation. */
     public static final UpdateOperation NONE = fromString("None");

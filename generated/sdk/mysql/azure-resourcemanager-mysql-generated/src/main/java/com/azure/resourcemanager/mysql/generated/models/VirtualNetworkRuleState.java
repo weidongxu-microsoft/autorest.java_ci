@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for VirtualNetworkRuleState. */
+/** Virtual Network Rule State. */
 public final class VirtualNetworkRuleState extends ExpandableStringEnum<VirtualNetworkRuleState> {
     /** Static value Initializing for VirtualNetworkRuleState. */
     public static final VirtualNetworkRuleState INITIALIZING = fromString("Initializing");

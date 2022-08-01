@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for JsonWebKeyType. */
+/** The type of the key. For valid values, see JsonWebKeyType. */
 public final class JsonWebKeyType extends ExpandableStringEnum<JsonWebKeyType> {
     /** Static value EC for JsonWebKeyType. */
     public static final JsonWebKeyType EC = fromString("EC");

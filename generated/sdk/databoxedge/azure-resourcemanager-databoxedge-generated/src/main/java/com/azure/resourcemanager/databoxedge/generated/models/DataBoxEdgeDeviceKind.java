@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for DataBoxEdgeDeviceKind. */
+/** The kind of the device. */
 public final class DataBoxEdgeDeviceKind extends ExpandableStringEnum<DataBoxEdgeDeviceKind> {
     /** Static value AzureDataBoxGateway for DataBoxEdgeDeviceKind. */
     public static final DataBoxEdgeDeviceKind AZURE_DATA_BOX_GATEWAY = fromString("AzureDataBoxGateway");

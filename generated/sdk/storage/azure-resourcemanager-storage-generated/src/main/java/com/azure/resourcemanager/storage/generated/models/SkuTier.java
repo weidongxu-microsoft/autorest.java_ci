@@ -7,7 +7,7 @@ package com.azure.resourcemanager.storage.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for SkuTier. */
+/** The SKU tier. This is based on the SKU name. */
 public enum SkuTier {
     /** Enum value Standard. */
     STANDARD("Standard"),
@@ -42,6 +42,7 @@ public enum SkuTier {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

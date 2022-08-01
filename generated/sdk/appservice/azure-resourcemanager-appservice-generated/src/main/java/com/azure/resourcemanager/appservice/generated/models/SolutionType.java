@@ -7,7 +7,7 @@ package com.azure.resourcemanager.appservice.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for SolutionType. */
+/** Type of Solution. */
 public enum SolutionType {
     /** Enum value QuickSolution. */
     QUICK_SOLUTION("QuickSolution"),
@@ -45,6 +45,7 @@ public enum SolutionType {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

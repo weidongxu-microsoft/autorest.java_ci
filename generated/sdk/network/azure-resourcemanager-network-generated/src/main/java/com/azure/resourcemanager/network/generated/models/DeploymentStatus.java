@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for DeploymentStatus. */
+/** Deployment Status. */
 public final class DeploymentStatus extends ExpandableStringEnum<DeploymentStatus> {
     /** Static value NotStarted for DeploymentStatus. */
     public static final DeploymentStatus NOT_STARTED = fromString("NotStarted");

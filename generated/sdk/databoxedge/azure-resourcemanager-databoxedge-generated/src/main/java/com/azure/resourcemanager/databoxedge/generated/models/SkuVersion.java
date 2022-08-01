@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for SkuVersion. */
+/** Availability of the Sku as preview/stable. */
 public final class SkuVersion extends ExpandableStringEnum<SkuVersion> {
     /** Static value Stable for SkuVersion. */
     public static final SkuVersion STABLE = fromString("Stable");

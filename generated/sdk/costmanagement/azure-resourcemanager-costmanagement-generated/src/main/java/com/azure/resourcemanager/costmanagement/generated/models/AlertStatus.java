@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for AlertStatus. */
+/** alert status. */
 public final class AlertStatus extends ExpandableStringEnum<AlertStatus> {
     /** Static value None for AlertStatus. */
     public static final AlertStatus NONE = fromString("None");

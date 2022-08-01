@@ -8,7 +8,10 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for InfrastructureEncryption. */
+/**
+ * Add a second layer of encryption for your data using new encryption algorithm which gives additional data protection.
+ * Value is optional but if passed in, must be 'Disabled' or 'Enabled'.
+ */
 public final class InfrastructureEncryption extends ExpandableStringEnum<InfrastructureEncryption> {
     /** Static value Enabled for InfrastructureEncryption. */
     public static final InfrastructureEncryption ENABLED = fromString("Enabled");

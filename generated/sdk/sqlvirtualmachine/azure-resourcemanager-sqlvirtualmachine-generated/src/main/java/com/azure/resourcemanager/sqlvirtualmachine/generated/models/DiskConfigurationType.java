@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for DiskConfigurationType. */
+/** Disk configuration to apply to SQL Server. */
 public final class DiskConfigurationType extends ExpandableStringEnum<DiskConfigurationType> {
     /** Static value NEW for DiskConfigurationType. */
     public static final DiskConfigurationType NEW = fromString("NEW");

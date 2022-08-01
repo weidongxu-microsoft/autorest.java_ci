@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for FrontDoorEnabledState. */
+/** Operational status of the Front Door load balancer. Permitted values are 'Enabled' or 'Disabled'. */
 public final class FrontDoorEnabledState extends ExpandableStringEnum<FrontDoorEnabledState> {
     /** Static value Enabled for FrontDoorEnabledState. */
     public static final FrontDoorEnabledState ENABLED = fromString("Enabled");

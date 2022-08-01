@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for AlertSource. */
+/** Source of alert. */
 public final class AlertSource extends ExpandableStringEnum<AlertSource> {
     /** Static value Preset for AlertSource. */
     public static final AlertSource PRESET = fromString("Preset");

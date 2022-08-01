@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for UpgradeAvailability. */
+/** Whether an upgrade is available for this App Service Environment. */
 public final class UpgradeAvailability extends ExpandableStringEnum<UpgradeAvailability> {
     /** Static value None for UpgradeAvailability. */
     public static final UpgradeAvailability NONE = fromString("None");

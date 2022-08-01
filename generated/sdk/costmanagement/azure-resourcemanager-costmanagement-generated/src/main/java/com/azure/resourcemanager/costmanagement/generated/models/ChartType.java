@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for ChartType. */
+/** Chart type of the main view in Cost Analysis. Required. */
 public final class ChartType extends ExpandableStringEnum<ChartType> {
     /** Static value Area for ChartType. */
     public static final ChartType AREA = fromString("Area");

@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for AuthenticationType. */
+/** Specifies authentication type being used for connecting to the storage account. */
 public final class AuthenticationType extends ExpandableStringEnum<AuthenticationType> {
     /** Static value keyBased for AuthenticationType. */
     public static final AuthenticationType KEY_BASED = fromString("keyBased");

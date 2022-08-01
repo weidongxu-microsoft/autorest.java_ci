@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for DefaultAction. */
+/** Default Action for Network Rule Set. */
 public final class DefaultAction extends ExpandableStringEnum<DefaultAction> {
     /** Static value Allow for DefaultAction. */
     public static final DefaultAction ALLOW = fromString("Allow");

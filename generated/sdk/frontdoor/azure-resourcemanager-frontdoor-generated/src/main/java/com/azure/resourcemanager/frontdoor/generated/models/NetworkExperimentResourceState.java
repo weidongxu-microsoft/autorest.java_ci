@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for NetworkExperimentResourceState. */
+/** Defines the server side resource status. */
 public final class NetworkExperimentResourceState extends ExpandableStringEnum<NetworkExperimentResourceState> {
     /** Static value Creating for NetworkExperimentResourceState. */
     public static final NetworkExperimentResourceState CREATING = fromString("Creating");

@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for SqlVmGroupImageSku. */
+/** SQL image sku. */
 public final class SqlVmGroupImageSku extends ExpandableStringEnum<SqlVmGroupImageSku> {
     /** Static value Developer for SqlVmGroupImageSku. */
     public static final SqlVmGroupImageSku DEVELOPER = fromString("Developer");

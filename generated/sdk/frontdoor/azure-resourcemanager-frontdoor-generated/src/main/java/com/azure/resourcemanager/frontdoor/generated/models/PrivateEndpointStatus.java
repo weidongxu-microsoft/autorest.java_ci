@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for PrivateEndpointStatus. */
+/** The Approval status for the connection to the Private Link. */
 public final class PrivateEndpointStatus extends ExpandableStringEnum<PrivateEndpointStatus> {
     /** Static value Pending for PrivateEndpointStatus. */
     public static final PrivateEndpointStatus PENDING = fromString("Pending");

@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for TagsPatchOperation. */
+/** The operation type for the patch API. */
 public final class TagsPatchOperation extends ExpandableStringEnum<TagsPatchOperation> {
     /** Static value Replace for TagsPatchOperation. */
     public static final TagsPatchOperation REPLACE = fromString("Replace");

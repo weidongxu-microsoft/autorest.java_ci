@@ -7,7 +7,7 @@ package com.azure.resourcemanager.policy.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for ResourceIdentityType. */
+/** The identity type. This is the only required field when adding a system assigned identity to a resource. */
 public enum ResourceIdentityType {
     /** Enum value SystemAssigned. */
     SYSTEM_ASSIGNED("SystemAssigned"),
@@ -42,6 +42,7 @@ public enum ResourceIdentityType {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

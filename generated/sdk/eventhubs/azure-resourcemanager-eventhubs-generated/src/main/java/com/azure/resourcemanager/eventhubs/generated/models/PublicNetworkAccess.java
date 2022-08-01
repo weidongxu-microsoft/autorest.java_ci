@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for PublicNetworkAccess. */
+/** This determines if traffic is allowed over public network. By default it is enabled. */
 public final class PublicNetworkAccess extends ExpandableStringEnum<PublicNetworkAccess> {
     /** Static value Enabled for PublicNetworkAccess. */
     public static final PublicNetworkAccess ENABLED = fromString("Enabled");

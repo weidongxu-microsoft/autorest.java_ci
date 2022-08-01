@@ -7,7 +7,7 @@ package com.azure.resourcemanager.dns.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for ZoneType. */
+/** The type of this DNS zone (Public or Private). */
 public enum ZoneType {
     /** Enum value Public. */
     PUBLIC("Public"),
@@ -42,6 +42,7 @@ public enum ZoneType {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

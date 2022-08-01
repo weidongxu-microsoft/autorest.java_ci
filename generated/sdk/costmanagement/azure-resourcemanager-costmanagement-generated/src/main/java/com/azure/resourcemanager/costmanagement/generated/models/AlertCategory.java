@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for AlertCategory. */
+/** Alert category. */
 public final class AlertCategory extends ExpandableStringEnum<AlertCategory> {
     /** Static value Cost for AlertCategory. */
     public static final AlertCategory COST = fromString("Cost");

@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for AlertOperator. */
+/** operator used to compare currentSpend with amount. */
 public final class AlertOperator extends ExpandableStringEnum<AlertOperator> {
     /** Static value None for AlertOperator. */
     public static final AlertOperator NONE = fromString("None");

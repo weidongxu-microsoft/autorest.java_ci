@@ -7,7 +7,7 @@ package com.azure.resourcemanager.appservice.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for ComputeModeOptions. */
+/** Shared/dedicated workers. */
 public enum ComputeModeOptions {
     /** Enum value Shared. */
     SHARED("Shared"),
@@ -45,6 +45,7 @@ public enum ComputeModeOptions {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

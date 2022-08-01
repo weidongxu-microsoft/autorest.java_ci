@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for PrivateLinkConnectionStatus. */
+/** Status of the connection. */
 public final class PrivateLinkConnectionStatus extends ExpandableStringEnum<PrivateLinkConnectionStatus> {
     /** Static value Pending for PrivateLinkConnectionStatus. */
     public static final PrivateLinkConnectionStatus PENDING = fromString("Pending");

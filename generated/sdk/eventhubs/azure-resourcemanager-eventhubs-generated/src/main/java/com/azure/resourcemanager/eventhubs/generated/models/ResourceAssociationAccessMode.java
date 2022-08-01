@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for ResourceAssociationAccessMode. */
+/** Access Mode of the resource association. */
 public final class ResourceAssociationAccessMode extends ExpandableStringEnum<ResourceAssociationAccessMode> {
     /** Static value NoAssociationMode for ResourceAssociationAccessMode. */
     public static final ResourceAssociationAccessMode NO_ASSOCIATION_MODE = fromString("NoAssociationMode");

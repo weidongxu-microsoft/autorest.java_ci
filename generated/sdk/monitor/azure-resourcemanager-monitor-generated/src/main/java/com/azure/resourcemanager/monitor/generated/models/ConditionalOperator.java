@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for ConditionalOperator. */
+/** Result Condition Evaluation criteria. */
 public final class ConditionalOperator extends ExpandableStringEnum<ConditionalOperator> {
     /** Static value GreaterThanOrEqual for ConditionalOperator. */
     public static final ConditionalOperator GREATER_THAN_OR_EQUAL = fromString("GreaterThanOrEqual");

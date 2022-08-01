@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for IpFilterTag. */
+/** Defines what this IP filter will be used for. This is to support IP filtering on proxies. */
 public final class IpFilterTag extends ExpandableStringEnum<IpFilterTag> {
     /** Static value Default for IpFilterTag. */
     public static final IpFilterTag DEFAULT = fromString("Default");

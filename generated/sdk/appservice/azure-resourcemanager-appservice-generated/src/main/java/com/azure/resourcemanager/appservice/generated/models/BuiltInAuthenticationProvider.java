@@ -7,7 +7,10 @@ package com.azure.resourcemanager.appservice.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for BuiltInAuthenticationProvider. */
+/**
+ * The default authentication provider to use when multiple providers are configured. This setting is only needed if
+ * multiple providers are configured and the unauthenticated client action is set to "RedirectToLoginPage".
+ */
 public enum BuiltInAuthenticationProvider {
     /** Enum value AzureActiveDirectory. */
     AZURE_ACTIVE_DIRECTORY("AzureActiveDirectory"),
@@ -54,6 +57,7 @@ public enum BuiltInAuthenticationProvider {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

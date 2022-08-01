@@ -7,7 +7,7 @@ package com.azure.resourcemanager.operationalinsights.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for DataSourceType. */
+/** Linked storage accounts type. */
 public enum DataSourceType {
     /** Enum value CustomLogs. */
     CUSTOM_LOGS("CustomLogs"),
@@ -51,6 +51,7 @@ public enum DataSourceType {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

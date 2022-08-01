@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for ClusterSubnetType. */
+/** Cluster subnet type. */
 public final class ClusterSubnetType extends ExpandableStringEnum<ClusterSubnetType> {
     /** Static value SingleSubnet for ClusterSubnetType. */
     public static final ClusterSubnetType SINGLE_SUBNET = fromString("SingleSubnet");

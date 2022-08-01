@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for MatchVariable. */
+/** Request variable to compare with. */
 public final class MatchVariable extends ExpandableStringEnum<MatchVariable> {
     /** Static value RemoteAddr for MatchVariable. */
     public static final MatchVariable REMOTE_ADDR = fromString("RemoteAddr");

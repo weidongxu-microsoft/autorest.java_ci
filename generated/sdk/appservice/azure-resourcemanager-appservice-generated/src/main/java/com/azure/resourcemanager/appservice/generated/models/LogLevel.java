@@ -7,7 +7,7 @@ package com.azure.resourcemanager.appservice.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for LogLevel. */
+/** Log level. */
 public enum LogLevel {
     /** Enum value Off. */
     OFF("Off"),
@@ -51,6 +51,7 @@ public enum LogLevel {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for ConnectivityType. */
+/** SQL Server connectivity option. */
 public final class ConnectivityType extends ExpandableStringEnum<ConnectivityType> {
     /** Static value LOCAL for ConnectivityType. */
     public static final ConnectivityType LOCAL = fromString("LOCAL");

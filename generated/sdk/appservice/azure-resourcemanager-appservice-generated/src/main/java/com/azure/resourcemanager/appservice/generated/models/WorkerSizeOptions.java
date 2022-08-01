@@ -7,7 +7,7 @@ package com.azure.resourcemanager.appservice.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for WorkerSizeOptions. */
+/** Size of the machines. */
 public enum WorkerSizeOptions {
     /** Enum value Small. */
     SMALL("Small"),
@@ -72,6 +72,7 @@ public enum WorkerSizeOptions {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

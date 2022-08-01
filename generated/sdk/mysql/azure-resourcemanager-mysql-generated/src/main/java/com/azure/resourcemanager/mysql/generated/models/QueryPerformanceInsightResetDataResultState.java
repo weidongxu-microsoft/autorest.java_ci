@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for QueryPerformanceInsightResetDataResultState. */
+/** Indicates result of the operation. */
 public final class QueryPerformanceInsightResetDataResultState
     extends ExpandableStringEnum<QueryPerformanceInsightResetDataResultState> {
     /** Static value Succeeded for QueryPerformanceInsightResetDataResultState. */

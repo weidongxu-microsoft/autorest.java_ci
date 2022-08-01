@@ -7,7 +7,7 @@ package com.azure.resourcemanager.monitor.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for EventLevel. */
+/** the event level. */
 public enum EventLevel {
     /** Enum value Critical. */
     CRITICAL("Critical"),
@@ -51,6 +51,7 @@ public enum EventLevel {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

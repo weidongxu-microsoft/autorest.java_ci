@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for SqlServerLicenseType. */
+/** SQL Server license type. */
 public final class SqlServerLicenseType extends ExpandableStringEnum<SqlServerLicenseType> {
     /** Static value PAYG for SqlServerLicenseType. */
     public static final SqlServerLicenseType PAYG = fromString("PAYG");

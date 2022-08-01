@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for RuleType. */
+/** Describes type of rule. */
 public final class RuleType extends ExpandableStringEnum<RuleType> {
     /** Static value MatchRule for RuleType. */
     public static final RuleType MATCH_RULE = fromString("MatchRule");

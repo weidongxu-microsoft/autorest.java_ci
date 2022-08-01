@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for ConnectivityTopology. */
+/** Connectivity topology type. */
 public final class ConnectivityTopology extends ExpandableStringEnum<ConnectivityTopology> {
     /** Static value HubAndSpoke for ConnectivityTopology. */
     public static final ConnectivityTopology HUB_AND_SPOKE = fromString("HubAndSpoke");

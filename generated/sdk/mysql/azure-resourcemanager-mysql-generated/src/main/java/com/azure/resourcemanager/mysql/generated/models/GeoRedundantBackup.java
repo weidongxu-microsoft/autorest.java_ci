@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for GeoRedundantBackup. */
+/** Enable Geo-redundant or not for server backup. */
 public final class GeoRedundantBackup extends ExpandableStringEnum<GeoRedundantBackup> {
     /** Static value Enabled for GeoRedundantBackup. */
     public static final GeoRedundantBackup ENABLED = fromString("Enabled");

@@ -7,7 +7,7 @@ package com.azure.resourcemanager.appservice.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for ConnectionStringType. */
+/** Type of database. */
 public enum ConnectionStringType {
     /** Enum value MySql. */
     MY_SQL("MySql"),
@@ -69,6 +69,7 @@ public enum ConnectionStringType {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

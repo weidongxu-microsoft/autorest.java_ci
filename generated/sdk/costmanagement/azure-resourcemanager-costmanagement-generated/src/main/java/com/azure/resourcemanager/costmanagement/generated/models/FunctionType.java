@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for FunctionType. */
+/** The name of the aggregation function to use. */
 public final class FunctionType extends ExpandableStringEnum<FunctionType> {
     /** Static value Avg for FunctionType. */
     public static final FunctionType AVG = fromString("Avg");

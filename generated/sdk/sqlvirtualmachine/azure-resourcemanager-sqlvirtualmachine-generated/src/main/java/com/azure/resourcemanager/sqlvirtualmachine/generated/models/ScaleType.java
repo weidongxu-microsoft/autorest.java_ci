@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for ScaleType. */
+/** Scale type. */
 public final class ScaleType extends ExpandableStringEnum<ScaleType> {
     /** Static value HA for ScaleType. */
     public static final ScaleType HA = fromString("HA");

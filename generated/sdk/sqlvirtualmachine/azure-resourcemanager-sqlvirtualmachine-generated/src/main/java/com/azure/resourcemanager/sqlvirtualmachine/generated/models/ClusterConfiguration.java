@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for ClusterConfiguration. */
+/** Cluster type. */
 public final class ClusterConfiguration extends ExpandableStringEnum<ClusterConfiguration> {
     /** Static value Domainful for ClusterConfiguration. */
     public static final ClusterConfiguration DOMAINFUL = fromString("Domainful");

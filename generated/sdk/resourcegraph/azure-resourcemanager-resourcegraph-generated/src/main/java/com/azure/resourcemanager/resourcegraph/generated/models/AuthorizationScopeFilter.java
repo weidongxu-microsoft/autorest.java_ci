@@ -7,7 +7,10 @@ package com.azure.resourcemanager.resourcegraph.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for AuthorizationScopeFilter. */
+/**
+ * Defines what level of authorization resources should be returned based on the which subscriptions and management
+ * groups are passed as scopes.
+ */
 public enum AuthorizationScopeFilter {
     /** Enum value AtScopeAndBelow. */
     AT_SCOPE_AND_BELOW("AtScopeAndBelow"),
@@ -48,6 +51,7 @@ public enum AuthorizationScopeFilter {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

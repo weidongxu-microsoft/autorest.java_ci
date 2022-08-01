@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for DataBoxEdgeDeviceStatus. */
+/** The status of the Data Box Edge/Gateway device. */
 public final class DataBoxEdgeDeviceStatus extends ExpandableStringEnum<DataBoxEdgeDeviceStatus> {
     /** Static value ReadyToSetup for DataBoxEdgeDeviceStatus. */
     public static final DataBoxEdgeDeviceStatus READY_TO_SETUP = fromString("ReadyToSetup");

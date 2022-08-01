@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for OrderState. */
+/** Status of the order as per the allowed status types. */
 public final class OrderState extends ExpandableStringEnum<OrderState> {
     /** Static value Untracked for OrderState. */
     public static final OrderState UNTRACKED = fromString("Untracked");

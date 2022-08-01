@@ -8,7 +8,10 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for ReportType. */
+/**
+ * The type of the report. Usage represents actual usage, forecast represents forecasted data and UsageAndForecast
+ * represents both usage and forecasted data. Actual usage and forecasted data can be differentiated based on dates.
+ */
 public final class ReportType extends ExpandableStringEnum<ReportType> {
     /** Static value Usage for ReportType. */
     public static final ReportType USAGE = fromString("Usage");

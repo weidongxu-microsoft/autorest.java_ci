@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for ManagedHsmSkuFamily. */
+/** SKU Family of the managed HSM Pool. */
 public final class ManagedHsmSkuFamily extends ExpandableStringEnum<ManagedHsmSkuFamily> {
     /** Static value B for ManagedHsmSkuFamily. */
     public static final ManagedHsmSkuFamily B = fromString("B");

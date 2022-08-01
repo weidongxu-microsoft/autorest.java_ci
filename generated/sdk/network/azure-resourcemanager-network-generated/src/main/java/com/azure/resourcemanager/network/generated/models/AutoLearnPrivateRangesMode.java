@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for AutoLearnPrivateRangesMode. */
+/** The operation mode for automatically learning private ranges to not be SNAT. */
 public final class AutoLearnPrivateRangesMode extends ExpandableStringEnum<AutoLearnPrivateRangesMode> {
     /** Static value Enabled for AutoLearnPrivateRangesMode. */
     public static final AutoLearnPrivateRangesMode ENABLED = fromString("Enabled");

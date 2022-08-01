@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for VaultProvisioningState. */
+/** Provisioning state of the vault. */
 public final class VaultProvisioningState extends ExpandableStringEnum<VaultProvisioningState> {
     /** Static value Succeeded for VaultProvisioningState. */
     public static final VaultProvisioningState SUCCEEDED = fromString("Succeeded");

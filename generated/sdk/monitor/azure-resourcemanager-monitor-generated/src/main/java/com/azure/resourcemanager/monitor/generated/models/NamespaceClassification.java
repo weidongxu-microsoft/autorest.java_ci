@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for NamespaceClassification. */
+/** Kind of namespace. */
 public final class NamespaceClassification extends ExpandableStringEnum<NamespaceClassification> {
     /** Static value Platform for NamespaceClassification. */
     public static final NamespaceClassification PLATFORM = fromString("Platform");

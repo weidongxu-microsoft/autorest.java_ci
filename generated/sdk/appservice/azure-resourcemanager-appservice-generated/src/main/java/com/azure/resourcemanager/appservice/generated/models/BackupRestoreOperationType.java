@@ -7,7 +7,7 @@ package com.azure.resourcemanager.appservice.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for BackupRestoreOperationType. */
+/** Operation type. */
 public enum BackupRestoreOperationType {
     /** Enum value Default. */
     DEFAULT("Default"),
@@ -51,6 +51,7 @@ public enum BackupRestoreOperationType {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

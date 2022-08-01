@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for Compression. */
+/** The compression type. */
 public final class Compression extends ExpandableStringEnum<Compression> {
     /** Static value None for Compression. */
     public static final Compression NONE = fromString("None");

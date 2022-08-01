@@ -7,7 +7,7 @@ package com.azure.resourcemanager.mysql.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for SslEnforcementEnum. */
+/** Enable ssl enforcement or not when connect to server. */
 public enum SslEnforcementEnum {
     /** Enum value Enabled. */
     ENABLED("Enabled"),
@@ -42,6 +42,7 @@ public enum SslEnforcementEnum {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

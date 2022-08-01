@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for CheckNameResourceTypes. */
+/** Resource type used for verification. */
 public final class CheckNameResourceTypes extends ExpandableStringEnum<CheckNameResourceTypes> {
     /** Static value Site for CheckNameResourceTypes. */
     public static final CheckNameResourceTypes SITE = fromString("Site");

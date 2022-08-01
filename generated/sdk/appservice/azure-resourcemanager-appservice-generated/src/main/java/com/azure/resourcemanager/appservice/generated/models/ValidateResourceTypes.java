@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for ValidateResourceTypes. */
+/** Resource type used for verification. */
 public final class ValidateResourceTypes extends ExpandableStringEnum<ValidateResourceTypes> {
     /** Static value ServerFarm for ValidateResourceTypes. */
     public static final ValidateResourceTypes SERVER_FARM = fromString("ServerFarm");

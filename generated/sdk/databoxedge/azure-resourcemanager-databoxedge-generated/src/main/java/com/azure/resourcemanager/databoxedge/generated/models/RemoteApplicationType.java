@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for RemoteApplicationType. */
+/** Remote application type. */
 public final class RemoteApplicationType extends ExpandableStringEnum<RemoteApplicationType> {
     /** Static value Powershell for RemoteApplicationType. */
     public static final RemoteApplicationType POWERSHELL = fromString("Powershell");

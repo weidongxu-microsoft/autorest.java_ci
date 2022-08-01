@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for Kind. */
+/** Kind of the database. */
 public final class Kind extends ExpandableStringEnum<Kind> {
     /** Static value ReadWrite for Kind. */
     public static final Kind READ_WRITE = fromString("ReadWrite");

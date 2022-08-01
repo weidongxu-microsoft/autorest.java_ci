@@ -7,7 +7,11 @@ package com.azure.resourcemanager.appservice.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for ClientCertMode. */
+/**
+ * This composes with ClientCertEnabled setting. - ClientCertEnabled: false means ClientCert is ignored. -
+ * ClientCertEnabled: true and ClientCertMode: Required means ClientCert is required. - ClientCertEnabled: true and
+ * ClientCertMode: Optional means ClientCert is optional or accepted.
+ */
 public enum ClientCertMode {
     /** Enum value Required. */
     REQUIRED("Required"),
@@ -45,6 +49,7 @@ public enum ClientCertMode {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

@@ -7,7 +7,7 @@ package com.azure.resourcemanager.network.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for PacketCaptureTargetType. */
+/** Target type of the resource provided. */
 public enum PacketCaptureTargetType {
     /** Enum value AzureVM. */
     AZURE_VM("AzureVM"),
@@ -42,6 +42,7 @@ public enum PacketCaptureTargetType {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

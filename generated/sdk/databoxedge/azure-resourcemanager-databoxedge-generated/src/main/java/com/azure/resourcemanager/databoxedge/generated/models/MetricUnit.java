@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for MetricUnit. */
+/** Metric units. */
 public final class MetricUnit extends ExpandableStringEnum<MetricUnit> {
     /** Static value NotSpecified for MetricUnit. */
     public static final MetricUnit NOT_SPECIFIED = fromString("NotSpecified");

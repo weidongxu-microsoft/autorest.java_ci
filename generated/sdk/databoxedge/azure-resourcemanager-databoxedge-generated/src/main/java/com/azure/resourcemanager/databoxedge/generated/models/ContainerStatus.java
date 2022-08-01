@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for ContainerStatus. */
+/** Current status of the container. */
 public final class ContainerStatus extends ExpandableStringEnum<ContainerStatus> {
     /** Static value OK for ContainerStatus. */
     public static final ContainerStatus OK = fromString("OK");

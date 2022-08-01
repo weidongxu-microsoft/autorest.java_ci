@@ -7,7 +7,7 @@ package com.azure.resourcemanager.compute.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for RollingUpgradeActionType. */
+/** The last action performed on the rolling upgrade. */
 public enum RollingUpgradeActionType {
     /** Enum value Start. */
     START("Start"),
@@ -42,6 +42,7 @@ public enum RollingUpgradeActionType {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

@@ -7,7 +7,7 @@ package com.azure.resourcemanager.appservice.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for ContinuousWebJobStatus. */
+/** Job status. */
 public enum ContinuousWebJobStatus {
     /** Enum value Initializing. */
     INITIALIZING("Initializing"),
@@ -51,6 +51,7 @@ public enum ContinuousWebJobStatus {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for KeyType. */
+/** The key type. */
 public final class KeyType extends ExpandableStringEnum<KeyType> {
     /** Static value NotSpecified for KeyType. */
     public static final KeyType NOT_SPECIFIED = fromString("NotSpecified");

@@ -7,7 +7,7 @@ package com.azure.resourcemanager.compute.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for IntervalInMins. */
+/** Interval value in minutes used to create LogAnalytics call rate logs. */
 public enum IntervalInMins {
     /** Enum value ThreeMins. */
     THREE_MINS("ThreeMins"),
@@ -48,6 +48,7 @@ public enum IntervalInMins {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

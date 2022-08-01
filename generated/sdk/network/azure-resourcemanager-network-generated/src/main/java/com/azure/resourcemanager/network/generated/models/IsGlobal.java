@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for IsGlobal. */
+/** Flag if global mesh is supported. */
 public final class IsGlobal extends ExpandableStringEnum<IsGlobal> {
     /** Static value False for IsGlobal. */
     public static final IsGlobal FALSE = fromString("False");

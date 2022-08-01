@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for SkuName. */
+/** Name of the pricing tier. */
 public final class SkuName extends ExpandableStringEnum<SkuName> {
     /** Static value Classic_AzureFrontDoor for SkuName. */
     public static final SkuName CLASSIC_AZURE_FRONT_DOOR = fromString("Classic_AzureFrontDoor");

@@ -8,7 +8,11 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for IotHubReplicaRoleType. */
+/**
+ * The role of the region, can be either primary or secondary. The primary region is where the IoT hub is currently
+ * provisioned. The secondary region is the Azure disaster recovery (DR) paired region and also the region where the IoT
+ * hub can failover to.
+ */
 public final class IotHubReplicaRoleType extends ExpandableStringEnum<IotHubReplicaRoleType> {
     /** Static value primary for IotHubReplicaRoleType. */
     public static final IotHubReplicaRoleType PRIMARY = fromString("primary");

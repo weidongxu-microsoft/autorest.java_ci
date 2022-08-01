@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for ExemptionCategory. */
+/** The policy exemption category. Possible values are Waiver and Mitigated. */
 public final class ExemptionCategory extends ExpandableStringEnum<ExemptionCategory> {
     /** Static value Waiver for ExemptionCategory. */
     public static final ExemptionCategory WAIVER = fromString("Waiver");

@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for PivotType. */
+/** Data type to show in view. */
 public final class PivotType extends ExpandableStringEnum<PivotType> {
     /** Static value Dimension for PivotType. */
     public static final PivotType DIMENSION = fromString("Dimension");

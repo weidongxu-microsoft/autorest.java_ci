@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for AlertType. */
+/** type of alert. */
 public final class AlertType extends ExpandableStringEnum<AlertType> {
     /** Static value Budget for AlertType. */
     public static final AlertType BUDGET = fromString("Budget");

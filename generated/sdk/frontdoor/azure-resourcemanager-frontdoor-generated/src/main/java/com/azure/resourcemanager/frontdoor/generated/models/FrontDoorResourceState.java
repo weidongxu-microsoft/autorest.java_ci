@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for FrontDoorResourceState. */
+/** Resource status of the Front Door or Front Door SubResource. */
 public final class FrontDoorResourceState extends ExpandableStringEnum<FrontDoorResourceState> {
     /** Static value Creating for FrontDoorResourceState. */
     public static final FrontDoorResourceState CREATING = fromString("Creating");

@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for ShareStatus. */
+/** Current status of the share. */
 public final class ShareStatus extends ExpandableStringEnum<ShareStatus> {
     /** Static value Offline for ShareStatus. */
     public static final ShareStatus OFFLINE = fromString("Offline");

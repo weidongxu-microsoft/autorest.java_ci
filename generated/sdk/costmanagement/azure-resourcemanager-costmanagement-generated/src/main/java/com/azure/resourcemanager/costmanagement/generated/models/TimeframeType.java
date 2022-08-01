@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for TimeframeType. */
+/** The time frame for pulling data for the query. If custom, then a specific time period must be provided. */
 public final class TimeframeType extends ExpandableStringEnum<TimeframeType> {
     /** Static value MonthToDate for TimeframeType. */
     public static final TimeframeType MONTH_TO_DATE = fromString("MonthToDate");

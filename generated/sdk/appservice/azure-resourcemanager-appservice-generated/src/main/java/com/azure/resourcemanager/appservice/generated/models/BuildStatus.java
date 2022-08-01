@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for BuildStatus. */
+/** The status of the static site build. */
 public final class BuildStatus extends ExpandableStringEnum<BuildStatus> {
     /** Static value WaitingForDeployment for BuildStatus. */
     public static final BuildStatus WAITING_FOR_DEPLOYMENT = fromString("WaitingForDeployment");

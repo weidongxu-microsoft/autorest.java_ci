@@ -8,7 +8,10 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for OnboardingStatus. */
+/**
+ * The onboarding status for the resource. Note that, a higher level scope, e.g., resource group or subscription, is
+ * considered onboarded if at least one resource under it is onboarded.
+ */
 public final class OnboardingStatus extends ExpandableStringEnum<OnboardingStatus> {
     /** Static value onboarded for OnboardingStatus. */
     public static final OnboardingStatus ONBOARDED = fromString("onboarded");

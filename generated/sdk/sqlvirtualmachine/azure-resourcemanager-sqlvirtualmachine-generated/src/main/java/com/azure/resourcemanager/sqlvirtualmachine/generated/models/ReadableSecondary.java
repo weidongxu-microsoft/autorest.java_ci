@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for ReadableSecondary. */
+/** Replica readable secondary mode in availability group. */
 public final class ReadableSecondary extends ExpandableStringEnum<ReadableSecondary> {
     /** Static value NO for ReadableSecondary. */
     public static final ReadableSecondary NO = fromString("NO");

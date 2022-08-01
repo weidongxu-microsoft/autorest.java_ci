@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for DataConnectionKind. */
+/** Kind of the endpoint for the data connection. */
 public final class DataConnectionKind extends ExpandableStringEnum<DataConnectionKind> {
     /** Static value EventHub for DataConnectionKind. */
     public static final DataConnectionKind EVENT_HUB = fromString("EventHub");

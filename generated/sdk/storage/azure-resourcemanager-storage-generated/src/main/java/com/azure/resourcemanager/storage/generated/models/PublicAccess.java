@@ -7,7 +7,7 @@ package com.azure.resourcemanager.storage.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for PublicAccess. */
+/** Specifies whether data in the container may be accessed publicly and the level of access. */
 public enum PublicAccess {
     /** Enum value Container. */
     CONTAINER("Container"),
@@ -45,6 +45,7 @@ public enum PublicAccess {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

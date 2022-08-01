@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for ProactiveDiagnosticsConsent. */
+/** Proactive diagnostic collection consent flag. */
 public final class ProactiveDiagnosticsConsent extends ExpandableStringEnum<ProactiveDiagnosticsConsent> {
     /** Static value Enabled for ProactiveDiagnosticsConsent. */
     public static final ProactiveDiagnosticsConsent ENABLED = fromString("Enabled");

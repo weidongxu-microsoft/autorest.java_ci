@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for MsiIdentityType. */
+/** Identity type. */
 public final class MsiIdentityType extends ExpandableStringEnum<MsiIdentityType> {
     /** Static value None for MsiIdentityType. */
     public static final MsiIdentityType NONE = fromString("None");

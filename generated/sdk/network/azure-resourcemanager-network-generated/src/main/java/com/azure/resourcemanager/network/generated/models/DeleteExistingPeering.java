@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for DeleteExistingPeering. */
+/** Flag if need to remove current existing peerings. */
 public final class DeleteExistingPeering extends ExpandableStringEnum<DeleteExistingPeering> {
     /** Static value False for DeleteExistingPeering. */
     public static final DeleteExistingPeering FALSE = fromString("False");

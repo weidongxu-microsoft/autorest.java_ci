@@ -42,6 +42,7 @@ public enum StorageAccountExpand {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

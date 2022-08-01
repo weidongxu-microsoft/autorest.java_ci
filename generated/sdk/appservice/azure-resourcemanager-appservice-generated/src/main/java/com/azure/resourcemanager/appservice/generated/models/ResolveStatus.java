@@ -69,6 +69,7 @@ public enum ResolveStatus {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

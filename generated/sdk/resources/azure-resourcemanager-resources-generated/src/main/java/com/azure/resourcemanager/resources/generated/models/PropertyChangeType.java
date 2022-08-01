@@ -7,7 +7,7 @@ package com.azure.resourcemanager.resources.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for PropertyChangeType. */
+/** The type of property change. */
 public enum PropertyChangeType {
     /** Enum value Create. */
     CREATE("Create"),
@@ -48,6 +48,7 @@ public enum PropertyChangeType {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

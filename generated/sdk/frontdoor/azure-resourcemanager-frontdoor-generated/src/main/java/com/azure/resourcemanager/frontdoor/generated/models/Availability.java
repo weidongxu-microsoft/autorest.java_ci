@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for Availability. */
+/** Indicates whether the name is available. */
 public final class Availability extends ExpandableStringEnum<Availability> {
     /** Static value Available for Availability. */
     public static final Availability AVAILABLE = fromString("Available");

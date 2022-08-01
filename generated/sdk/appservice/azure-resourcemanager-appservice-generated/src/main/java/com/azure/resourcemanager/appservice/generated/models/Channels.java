@@ -7,7 +7,7 @@ package com.azure.resourcemanager.appservice.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for Channels. */
+/** List of channels that this recommendation can apply. */
 public enum Channels {
     /** Enum value Notification. */
     NOTIFICATION("Notification"),
@@ -51,6 +51,7 @@ public enum Channels {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

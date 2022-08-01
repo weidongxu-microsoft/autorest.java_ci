@@ -7,7 +7,7 @@ package com.azure.resourcemanager.appservice.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for DayOfWeek. */
+/** The day of the week. */
 public enum DayOfWeek {
     /** Enum value Sunday. */
     SUNDAY("Sunday"),
@@ -57,6 +57,7 @@ public enum DayOfWeek {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

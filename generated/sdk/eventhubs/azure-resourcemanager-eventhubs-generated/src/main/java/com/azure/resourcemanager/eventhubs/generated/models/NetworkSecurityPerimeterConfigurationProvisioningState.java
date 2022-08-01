@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for NetworkSecurityPerimeterConfigurationProvisioningState. */
+/** Provisioning state of NetworkSecurityPerimeter configuration propagation. */
 public final class NetworkSecurityPerimeterConfigurationProvisioningState
     extends ExpandableStringEnum<NetworkSecurityPerimeterConfigurationProvisioningState> {
     /** Static value Unknown for NetworkSecurityPerimeterConfigurationProvisioningState. */

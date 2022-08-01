@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for FormatType. */
+/** The format of the export being delivered. */
 public final class FormatType extends ExpandableStringEnum<FormatType> {
     /** Static value Csv for FormatType. */
     public static final FormatType CSV = fromString("Csv");

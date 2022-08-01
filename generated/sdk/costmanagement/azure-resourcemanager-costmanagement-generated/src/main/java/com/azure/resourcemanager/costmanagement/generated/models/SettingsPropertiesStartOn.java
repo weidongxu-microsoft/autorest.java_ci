@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for SettingsPropertiesStartOn. */
+/** Indicates what scope Cost Management in the Azure portal should default to. Allowed values: LastUsed. */
 public final class SettingsPropertiesStartOn extends ExpandableStringEnum<SettingsPropertiesStartOn> {
     /** Static value LastUsed for SettingsPropertiesStartOn. */
     public static final SettingsPropertiesStartOn LAST_USED = fromString("LastUsed");

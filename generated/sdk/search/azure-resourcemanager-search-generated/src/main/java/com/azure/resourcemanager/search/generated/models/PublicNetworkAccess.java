@@ -7,7 +7,11 @@ package com.azure.resourcemanager.search.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for PublicNetworkAccess. */
+/**
+ * This value can be set to 'enabled' to avoid breaking changes on existing customer resources and templates. If set to
+ * 'disabled', traffic over public interface is not allowed, and private endpoint connections would be the exclusive
+ * access method.
+ */
 public enum PublicNetworkAccess {
     /** Enum value enabled. */
     ENABLED("enabled"),
@@ -42,6 +46,7 @@ public enum PublicNetworkAccess {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

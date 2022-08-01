@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for Capabilities. */
+/** The capabilities and features enabled for the IoT hub. */
 public final class Capabilities extends ExpandableStringEnum<Capabilities> {
     /** Static value None for Capabilities. */
     public static final Capabilities NONE = fromString("None");

@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for WorkflowSkuName. */
+/** The sku name. */
 public final class WorkflowSkuName extends ExpandableStringEnum<WorkflowSkuName> {
     /** Static value NotSpecified for WorkflowSkuName. */
     public static final WorkflowSkuName NOT_SPECIFIED = fromString("NotSpecified");

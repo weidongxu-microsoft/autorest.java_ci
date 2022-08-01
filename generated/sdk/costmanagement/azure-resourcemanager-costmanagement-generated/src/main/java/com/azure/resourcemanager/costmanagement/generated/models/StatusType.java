@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for StatusType. */
+/** The status of the schedule. Whether active or not. If inactive, the export's scheduled execution is paused. */
 public final class StatusType extends ExpandableStringEnum<StatusType> {
     /** Static value Active for StatusType. */
     public static final StatusType ACTIVE = fromString("Active");

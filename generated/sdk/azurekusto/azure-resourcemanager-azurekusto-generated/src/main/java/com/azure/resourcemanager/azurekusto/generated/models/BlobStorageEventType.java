@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for BlobStorageEventType. */
+/** The name of blob storage event type to process. */
 public final class BlobStorageEventType extends ExpandableStringEnum<BlobStorageEventType> {
     /** Static value Microsoft.Storage.BlobCreated for BlobStorageEventType. */
     public static final BlobStorageEventType MICROSOFT_STORAGE_BLOB_CREATED =

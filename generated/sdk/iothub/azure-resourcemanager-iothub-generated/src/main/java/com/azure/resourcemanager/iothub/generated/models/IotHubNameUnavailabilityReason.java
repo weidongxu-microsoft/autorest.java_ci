@@ -7,7 +7,7 @@ package com.azure.resourcemanager.iothub.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for IotHubNameUnavailabilityReason. */
+/** The reason for unavailability. */
 public enum IotHubNameUnavailabilityReason {
     /** Enum value Invalid. */
     INVALID("Invalid"),
@@ -42,6 +42,7 @@ public enum IotHubNameUnavailabilityReason {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

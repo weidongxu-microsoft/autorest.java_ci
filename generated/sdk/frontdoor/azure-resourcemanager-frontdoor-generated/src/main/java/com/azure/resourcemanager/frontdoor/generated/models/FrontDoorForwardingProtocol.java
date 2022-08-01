@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for FrontDoorForwardingProtocol. */
+/** Protocol this rule will use when forwarding traffic to backends. */
 public final class FrontDoorForwardingProtocol extends ExpandableStringEnum<FrontDoorForwardingProtocol> {
     /** Static value HttpOnly for FrontDoorForwardingProtocol. */
     public static final FrontDoorForwardingProtocol HTTP_ONLY = fromString("HttpOnly");

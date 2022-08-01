@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for MetricUnit. */
+/** The unit of the metric. */
 public final class MetricUnit extends ExpandableStringEnum<MetricUnit> {
     /** Static value Count for MetricUnit. */
     public static final MetricUnit COUNT = fromString("Count");

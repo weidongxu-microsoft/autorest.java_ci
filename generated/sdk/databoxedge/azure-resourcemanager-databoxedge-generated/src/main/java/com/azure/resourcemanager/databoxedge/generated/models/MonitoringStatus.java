@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for MonitoringStatus. */
+/** Current monitoring status of the share. */
 public final class MonitoringStatus extends ExpandableStringEnum<MonitoringStatus> {
     /** Static value Enabled for MonitoringStatus. */
     public static final MonitoringStatus ENABLED = fromString("Enabled");

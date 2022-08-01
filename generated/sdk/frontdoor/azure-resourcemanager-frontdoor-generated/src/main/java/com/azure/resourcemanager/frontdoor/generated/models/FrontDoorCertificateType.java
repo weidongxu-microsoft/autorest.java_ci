@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for FrontDoorCertificateType. */
+/** Defines the type of the certificate used for secure connections to a frontendEndpoint. */
 public final class FrontDoorCertificateType extends ExpandableStringEnum<FrontDoorCertificateType> {
     /** Static value Dedicated for FrontDoorCertificateType. */
     public static final FrontDoorCertificateType DEDICATED = fromString("Dedicated");

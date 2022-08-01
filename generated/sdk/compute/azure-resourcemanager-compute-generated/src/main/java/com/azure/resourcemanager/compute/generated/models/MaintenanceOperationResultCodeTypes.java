@@ -7,7 +7,7 @@ package com.azure.resourcemanager.compute.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for MaintenanceOperationResultCodeTypes. */
+/** The Last Maintenance Operation Result Code. */
 public enum MaintenanceOperationResultCodeTypes {
     /** Enum value None. */
     NONE("None"),
@@ -48,6 +48,7 @@ public enum MaintenanceOperationResultCodeTypes {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

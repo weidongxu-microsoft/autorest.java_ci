@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for DatabasePrincipalType. */
+/** Database principal type. */
 public final class DatabasePrincipalType extends ExpandableStringEnum<DatabasePrincipalType> {
     /** Static value App for DatabasePrincipalType. */
     public static final DatabasePrincipalType APP = fromString("App");

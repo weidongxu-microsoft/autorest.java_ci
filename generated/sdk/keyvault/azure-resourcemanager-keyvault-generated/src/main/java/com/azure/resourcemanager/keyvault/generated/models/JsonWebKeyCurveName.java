@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for JsonWebKeyCurveName. */
+/** The elliptic curve name. For valid values, see JsonWebKeyCurveName. */
 public final class JsonWebKeyCurveName extends ExpandableStringEnum<JsonWebKeyCurveName> {
     /** Static value P-256 for JsonWebKeyCurveName. */
     public static final JsonWebKeyCurveName P_256 = fromString("P-256");

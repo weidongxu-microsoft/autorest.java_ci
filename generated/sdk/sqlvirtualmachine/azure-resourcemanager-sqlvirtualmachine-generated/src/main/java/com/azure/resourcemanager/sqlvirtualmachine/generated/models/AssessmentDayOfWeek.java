@@ -7,7 +7,7 @@ package com.azure.resourcemanager.sqlvirtualmachine.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for AssessmentDayOfWeek. */
+/** Day of the week to run assessment. */
 public enum AssessmentDayOfWeek {
     /** Enum value Monday. */
     MONDAY("Monday"),
@@ -57,6 +57,7 @@ public enum AssessmentDayOfWeek {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

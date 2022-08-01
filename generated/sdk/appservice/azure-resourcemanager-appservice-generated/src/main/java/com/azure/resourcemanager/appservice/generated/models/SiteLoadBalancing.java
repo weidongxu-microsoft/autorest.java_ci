@@ -7,7 +7,7 @@ package com.azure.resourcemanager.appservice.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for SiteLoadBalancing. */
+/** Site load balancing. */
 public enum SiteLoadBalancing {
     /** Enum value WeightedRoundRobin. */
     WEIGHTED_ROUND_ROBIN("WeightedRoundRobin"),
@@ -54,6 +54,7 @@ public enum SiteLoadBalancing {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

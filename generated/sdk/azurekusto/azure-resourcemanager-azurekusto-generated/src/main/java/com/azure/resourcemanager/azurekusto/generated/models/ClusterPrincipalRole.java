@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for ClusterPrincipalRole. */
+/** Cluster principal role. */
 public final class ClusterPrincipalRole extends ExpandableStringEnum<ClusterPrincipalRole> {
     /** Static value AllDatabasesAdmin for ClusterPrincipalRole. */
     public static final ClusterPrincipalRole ALL_DATABASES_ADMIN = fromString("AllDatabasesAdmin");

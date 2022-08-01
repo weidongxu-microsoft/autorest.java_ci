@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for FrontDoorCertificateSource. */
+/** Defines the source of the SSL certificate. */
 public final class FrontDoorCertificateSource extends ExpandableStringEnum<FrontDoorCertificateSource> {
     /** Static value AzureKeyVault for FrontDoorCertificateSource. */
     public static final FrontDoorCertificateSource AZURE_KEY_VAULT = fromString("AzureKeyVault");

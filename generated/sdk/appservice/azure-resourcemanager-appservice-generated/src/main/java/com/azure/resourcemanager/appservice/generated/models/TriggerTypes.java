@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for TriggerTypes. */
+/** The trigger type of the function. */
 public final class TriggerTypes extends ExpandableStringEnum<TriggerTypes> {
     /** Static value HttpTrigger for TriggerTypes. */
     public static final TriggerTypes HTTP_TRIGGER = fromString("HttpTrigger");

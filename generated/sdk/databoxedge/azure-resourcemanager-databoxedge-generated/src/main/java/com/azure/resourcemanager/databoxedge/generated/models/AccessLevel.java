@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for AccessLevel. */
+/** Access level allowed for this remote application type. */
 public final class AccessLevel extends ExpandableStringEnum<AccessLevel> {
     /** Static value None for AccessLevel. */
     public static final AccessLevel NONE = fromString("None");

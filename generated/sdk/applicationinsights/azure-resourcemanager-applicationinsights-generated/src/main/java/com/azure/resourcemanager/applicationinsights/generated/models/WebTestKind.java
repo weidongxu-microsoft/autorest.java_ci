@@ -7,7 +7,7 @@ package com.azure.resourcemanager.applicationinsights.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for WebTestKind. */
+/** The kind of web test that this web test watches. Choices are ping and multistep. */
 public enum WebTestKind {
     /** Enum value ping. */
     PING("ping"),
@@ -42,6 +42,7 @@ public enum WebTestKind {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

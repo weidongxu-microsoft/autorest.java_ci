@@ -7,7 +7,7 @@ package com.azure.resourcemanager.monitor.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for ReceiverStatus. */
+/** Indicates the status of the receiver. Receivers that are not Enabled will not receive any communications. */
 public enum ReceiverStatus {
     /** Enum value NotSpecified. */
     NOT_SPECIFIED("NotSpecified"),
@@ -45,6 +45,7 @@ public enum ReceiverStatus {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

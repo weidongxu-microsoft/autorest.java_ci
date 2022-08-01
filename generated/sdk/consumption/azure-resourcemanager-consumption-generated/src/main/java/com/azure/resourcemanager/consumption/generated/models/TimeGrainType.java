@@ -8,7 +8,10 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for TimeGrainType. */
+/**
+ * The time covered by a budget. Tracking of the amount will be reset based on the time grain. BillingMonth,
+ * BillingQuarter, and BillingAnnual are only supported by WD customers.
+ */
 public final class TimeGrainType extends ExpandableStringEnum<TimeGrainType> {
     /** Static value Monthly for TimeGrainType. */
     public static final TimeGrainType MONTHLY = fromString("Monthly");

@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for FrontDoorRedirectProtocol. */
+/** The protocol of the destination to where the traffic is redirected. */
 public final class FrontDoorRedirectProtocol extends ExpandableStringEnum<FrontDoorRedirectProtocol> {
     /** Static value HttpOnly for FrontDoorRedirectProtocol. */
     public static final FrontDoorRedirectProtocol HTTP_ONLY = fromString("HttpOnly");

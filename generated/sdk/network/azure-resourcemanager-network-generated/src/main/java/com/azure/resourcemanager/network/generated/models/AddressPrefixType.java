@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for AddressPrefixType. */
+/** Address prefix type. */
 public final class AddressPrefixType extends ExpandableStringEnum<AddressPrefixType> {
     /** Static value IPPrefix for AddressPrefixType. */
     public static final AddressPrefixType IPPREFIX = fromString("IPPrefix");

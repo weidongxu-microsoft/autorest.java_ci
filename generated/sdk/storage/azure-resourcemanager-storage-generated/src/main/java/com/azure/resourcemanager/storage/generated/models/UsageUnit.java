@@ -7,7 +7,7 @@ package com.azure.resourcemanager.storage.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for UsageUnit. */
+/** Gets the unit of measurement. */
 public enum UsageUnit {
     /** Enum value Count. */
     COUNT("Count"),
@@ -54,6 +54,7 @@ public enum UsageUnit {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

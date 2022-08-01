@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for EnforcementMode. */
+/** The policy assignment enforcement mode. Possible values are Default and DoNotEnforce. */
 public final class EnforcementMode extends ExpandableStringEnum<EnforcementMode> {
     /** Static value Default for EnforcementMode. */
     public static final EnforcementMode DEFAULT = fromString("Default");

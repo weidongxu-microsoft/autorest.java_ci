@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for NspAccessRuleDirection. */
+/** Direction of Access Rule. */
 public final class NspAccessRuleDirection extends ExpandableStringEnum<NspAccessRuleDirection> {
     /** Static value Inbound for NspAccessRuleDirection. */
     public static final NspAccessRuleDirection INBOUND = fromString("Inbound");

@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for AliasPathTokenType. */
+/** The type of the token that the alias path is referring to. */
 public final class AliasPathTokenType extends ExpandableStringEnum<AliasPathTokenType> {
     /** Static value NotSpecified for AliasPathTokenType. */
     public static final AliasPathTokenType NOT_SPECIFIED = fromString("NotSpecified");

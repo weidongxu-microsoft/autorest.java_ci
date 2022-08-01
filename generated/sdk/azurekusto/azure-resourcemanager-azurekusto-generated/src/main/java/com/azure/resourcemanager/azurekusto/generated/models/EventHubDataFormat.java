@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for EventHubDataFormat. */
+/** The data format of the message. Optionally the data format can be added to each message. */
 public final class EventHubDataFormat extends ExpandableStringEnum<EventHubDataFormat> {
     /** Static value MULTIJSON for EventHubDataFormat. */
     public static final EventHubDataFormat MULTIJSON = fromString("MULTIJSON");

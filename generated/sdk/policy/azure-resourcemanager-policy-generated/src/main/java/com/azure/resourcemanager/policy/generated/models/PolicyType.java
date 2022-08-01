@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for PolicyType. */
+/** The type of policy definition. Possible values are NotSpecified, BuiltIn, Custom, and Static. */
 public final class PolicyType extends ExpandableStringEnum<PolicyType> {
     /** Static value NotSpecified for PolicyType. */
     public static final PolicyType NOT_SPECIFIED = fromString("NotSpecified");

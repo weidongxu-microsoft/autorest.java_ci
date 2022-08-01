@@ -7,7 +7,7 @@ package com.azure.resourcemanager.monitor.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for ConditionOperator. */
+/** Operators allowed in the rule condition. */
 public enum ConditionOperator {
     /** Enum value GreaterThan. */
     GREATER_THAN("GreaterThan"),
@@ -48,6 +48,7 @@ public enum ConditionOperator {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

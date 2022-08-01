@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for TransformType. */
+/** Describes what transforms applied before matching. */
 public final class TransformType extends ExpandableStringEnum<TransformType> {
     /** Static value Lowercase for TransformType. */
     public static final TransformType LOWERCASE = fromString("Lowercase");

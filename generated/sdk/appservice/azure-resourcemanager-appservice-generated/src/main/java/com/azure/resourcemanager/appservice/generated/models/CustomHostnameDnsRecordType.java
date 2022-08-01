@@ -7,7 +7,7 @@ package com.azure.resourcemanager.appservice.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for CustomHostnameDnsRecordType. */
+/** Type of the DNS record. */
 public enum CustomHostnameDnsRecordType {
     /** Enum value CName. */
     CNAME("CName"),
@@ -42,6 +42,7 @@ public enum CustomHostnameDnsRecordType {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

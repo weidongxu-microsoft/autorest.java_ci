@@ -39,6 +39,7 @@ public enum ConfigReferenceSource {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

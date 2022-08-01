@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for ServerKeyType. */
+/** The key type like 'AzureKeyVault'. */
 public final class ServerKeyType extends ExpandableStringEnum<ServerKeyType> {
     /** Static value AzureKeyVault for ServerKeyType. */
     public static final ServerKeyType AZURE_KEY_VAULT = fromString("AzureKeyVault");

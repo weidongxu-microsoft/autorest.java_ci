@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for CategoryType. */
+/** The category of the budget, whether the budget tracks cost or usage. */
 public final class CategoryType extends ExpandableStringEnum<CategoryType> {
     /** Static value Cost for CategoryType. */
     public static final CategoryType COST = fromString("Cost");

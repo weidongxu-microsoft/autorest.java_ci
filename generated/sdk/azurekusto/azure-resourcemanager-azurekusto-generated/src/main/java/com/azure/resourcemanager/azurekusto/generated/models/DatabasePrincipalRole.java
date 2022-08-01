@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for DatabasePrincipalRole. */
+/** Database principal role. */
 public final class DatabasePrincipalRole extends ExpandableStringEnum<DatabasePrincipalRole> {
     /** Static value Admin for DatabasePrincipalRole. */
     public static final DatabasePrincipalRole ADMIN = fromString("Admin");

@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for WorkflowTriggerProvisioningState. */
+/** The workflow trigger provisioning state. */
 public final class WorkflowTriggerProvisioningState extends ExpandableStringEnum<WorkflowTriggerProvisioningState> {
     /** Static value NotSpecified for WorkflowTriggerProvisioningState. */
     public static final WorkflowTriggerProvisioningState NOT_SPECIFIED = fromString("NotSpecified");

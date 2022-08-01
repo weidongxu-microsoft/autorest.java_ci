@@ -7,7 +7,7 @@ package com.azure.resourcemanager.policy.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for AliasType. */
+/** The type of the alias. */
 public enum AliasType {
     /** Enum value NotSpecified. */
     NOT_SPECIFIED("NotSpecified"),
@@ -45,6 +45,7 @@ public enum AliasType {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

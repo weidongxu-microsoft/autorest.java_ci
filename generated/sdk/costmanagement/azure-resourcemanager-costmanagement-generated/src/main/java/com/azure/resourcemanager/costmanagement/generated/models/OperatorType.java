@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for OperatorType. */
+/** The operator to use for comparison. */
 public final class OperatorType extends ExpandableStringEnum<OperatorType> {
     /** Static value In for OperatorType. */
     public static final OperatorType IN = fromString("In");

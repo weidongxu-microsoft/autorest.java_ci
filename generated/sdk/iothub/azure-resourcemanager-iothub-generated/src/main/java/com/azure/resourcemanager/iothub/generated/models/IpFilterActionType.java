@@ -7,7 +7,7 @@ package com.azure.resourcemanager.iothub.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for IpFilterActionType. */
+/** The desired action for requests captured by this rule. */
 public enum IpFilterActionType {
     /** Enum value Accept. */
     ACCEPT("Accept"),
@@ -42,6 +42,7 @@ public enum IpFilterActionType {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

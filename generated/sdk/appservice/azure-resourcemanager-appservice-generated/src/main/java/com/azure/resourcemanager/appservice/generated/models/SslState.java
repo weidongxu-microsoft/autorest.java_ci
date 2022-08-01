@@ -7,7 +7,7 @@ package com.azure.resourcemanager.appservice.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for SslState. */
+/** SSL type. */
 public enum SslState {
     /** Enum value Disabled. */
     DISABLED("Disabled"),
@@ -45,6 +45,7 @@ public enum SslState {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

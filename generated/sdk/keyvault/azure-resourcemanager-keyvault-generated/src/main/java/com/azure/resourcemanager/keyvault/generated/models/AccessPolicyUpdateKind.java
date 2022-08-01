@@ -45,6 +45,7 @@ public enum AccessPolicyUpdateKind {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

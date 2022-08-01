@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for ForecastType. */
+/** The type of the forecast. */
 public final class ForecastType extends ExpandableStringEnum<ForecastType> {
     /** Static value Usage for ForecastType. */
     public static final ForecastType USAGE = fromString("Usage");

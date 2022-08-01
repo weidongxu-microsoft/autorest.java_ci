@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for FrontDoorProtocol. */
+/** Accepted protocol schemes. */
 public final class FrontDoorProtocol extends ExpandableStringEnum<FrontDoorProtocol> {
     /** Static value Http for FrontDoorProtocol. */
     public static final FrontDoorProtocol HTTP = fromString("Http");

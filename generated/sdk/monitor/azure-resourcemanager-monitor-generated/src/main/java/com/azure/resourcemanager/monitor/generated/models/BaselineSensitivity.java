@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for BaselineSensitivity. */
+/** the sensitivity of the baseline. */
 public final class BaselineSensitivity extends ExpandableStringEnum<BaselineSensitivity> {
     /** Static value Low for BaselineSensitivity. */
     public static final BaselineSensitivity LOW = fromString("Low");

@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for ThresholdType. */
+/** The type of threshold. */
 public final class ThresholdType extends ExpandableStringEnum<ThresholdType> {
     /** Static value Actual for ThresholdType. */
     public static final ThresholdType ACTUAL = fromString("Actual");

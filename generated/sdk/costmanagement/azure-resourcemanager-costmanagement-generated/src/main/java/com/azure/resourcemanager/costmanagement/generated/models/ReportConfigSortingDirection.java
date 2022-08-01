@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for ReportConfigSortingDirection. */
+/** Direction of sort. */
 public final class ReportConfigSortingDirection extends ExpandableStringEnum<ReportConfigSortingDirection> {
     /** Static value Ascending for ReportConfigSortingDirection. */
     public static final ReportConfigSortingDirection ASCENDING = fromString("Ascending");

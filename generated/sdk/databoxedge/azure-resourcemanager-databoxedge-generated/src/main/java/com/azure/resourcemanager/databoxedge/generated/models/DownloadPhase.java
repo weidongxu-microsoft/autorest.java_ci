@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for DownloadPhase. */
+/** The download phase. */
 public final class DownloadPhase extends ExpandableStringEnum<DownloadPhase> {
     /** Static value Unknown for DownloadPhase. */
     public static final DownloadPhase UNKNOWN = fromString("Unknown");

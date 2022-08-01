@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for KubernetesState. */
+/** State of Kubernetes deployment. */
 public final class KubernetesState extends ExpandableStringEnum<KubernetesState> {
     /** Static value Invalid for KubernetesState. */
     public static final KubernetesState INVALID = fromString("Invalid");

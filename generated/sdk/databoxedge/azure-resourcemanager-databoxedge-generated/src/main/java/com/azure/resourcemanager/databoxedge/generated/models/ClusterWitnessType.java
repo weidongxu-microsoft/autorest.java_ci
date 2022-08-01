@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for ClusterWitnessType. */
+/** Cluster Witness Type. */
 public final class ClusterWitnessType extends ExpandableStringEnum<ClusterWitnessType> {
     /** Static value None for ClusterWitnessType. */
     public static final ClusterWitnessType NONE = fromString("None");

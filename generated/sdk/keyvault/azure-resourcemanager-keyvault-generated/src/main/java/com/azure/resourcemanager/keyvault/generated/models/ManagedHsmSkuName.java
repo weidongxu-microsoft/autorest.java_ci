@@ -7,7 +7,7 @@ package com.azure.resourcemanager.keyvault.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for ManagedHsmSkuName. */
+/** SKU of the managed HSM Pool. */
 public enum ManagedHsmSkuName {
     /** Enum value Standard_B1. */
     STANDARD_B1("Standard_B1"),
@@ -42,6 +42,7 @@ public enum ManagedHsmSkuName {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

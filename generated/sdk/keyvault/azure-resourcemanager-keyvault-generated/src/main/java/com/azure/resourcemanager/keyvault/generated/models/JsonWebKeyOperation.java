@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for JsonWebKeyOperation. */
+/** The permitted JSON web key operations of the key. For more information, see JsonWebKeyOperation. */
 public final class JsonWebKeyOperation extends ExpandableStringEnum<JsonWebKeyOperation> {
     /** Static value encrypt for JsonWebKeyOperation. */
     public static final JsonWebKeyOperation ENCRYPT = fromString("encrypt");

@@ -45,6 +45,7 @@ public enum SiteRuntimeState {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

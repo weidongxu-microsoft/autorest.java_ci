@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for ResourceMoveStatus. */
+/** Denotes whether move operation is in progress. */
 public final class ResourceMoveStatus extends ExpandableStringEnum<ResourceMoveStatus> {
     /** Static value None for ResourceMoveStatus. */
     public static final ResourceMoveStatus NONE = fromString("None");

@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for AuthenticationType. */
+/** The authentication type. */
 public final class AuthenticationType extends ExpandableStringEnum<AuthenticationType> {
     /** Static value Invalid for AuthenticationType. */
     public static final AuthenticationType INVALID = fromString("Invalid");

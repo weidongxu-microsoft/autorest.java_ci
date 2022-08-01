@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for DeploymentBuildStatus. */
+/** Deployment build status. */
 public final class DeploymentBuildStatus extends ExpandableStringEnum<DeploymentBuildStatus> {
     /** Static value TimedOut for DeploymentBuildStatus. */
     public static final DeploymentBuildStatus TIMED_OUT = fromString("TimedOut");

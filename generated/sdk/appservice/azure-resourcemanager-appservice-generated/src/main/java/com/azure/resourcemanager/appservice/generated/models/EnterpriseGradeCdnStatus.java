@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for EnterpriseGradeCdnStatus. */
+/** State indicating the status of the enterprise grade CDN serving traffic to the static web app. */
 public final class EnterpriseGradeCdnStatus extends ExpandableStringEnum<EnterpriseGradeCdnStatus> {
     /** Static value Enabled for EnterpriseGradeCdnStatus. */
     public static final EnterpriseGradeCdnStatus ENABLED = fromString("Enabled");

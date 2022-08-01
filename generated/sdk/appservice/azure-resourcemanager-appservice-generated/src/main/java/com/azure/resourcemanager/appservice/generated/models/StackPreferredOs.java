@@ -7,7 +7,7 @@ package com.azure.resourcemanager.appservice.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for StackPreferredOs. */
+/** Function App stack preferred OS. */
 public enum StackPreferredOs {
     /** Enum value Windows. */
     WINDOWS("Windows"),
@@ -42,6 +42,7 @@ public enum StackPreferredOs {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

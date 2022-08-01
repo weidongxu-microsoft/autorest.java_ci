@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for AzureSkuTier. */
+/** SKU tier. */
 public final class AzureSkuTier extends ExpandableStringEnum<AzureSkuTier> {
     /** Static value Basic for AzureSkuTier. */
     public static final AzureSkuTier BASIC = fromString("Basic");

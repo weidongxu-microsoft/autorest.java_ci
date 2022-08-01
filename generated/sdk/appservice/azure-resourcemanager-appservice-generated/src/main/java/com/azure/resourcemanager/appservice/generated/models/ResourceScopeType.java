@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for ResourceScopeType. */
+/** Name of a resource type this recommendation applies, e.g. Subscription, ServerFarm, Site. */
 public final class ResourceScopeType extends ExpandableStringEnum<ResourceScopeType> {
     /** Static value ServerFarm for ResourceScopeType. */
     public static final ResourceScopeType SERVER_FARM = fromString("ServerFarm");

@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for BillingFrequency. */
+/** The billing frequency. */
 public final class BillingFrequency extends ExpandableStringEnum<BillingFrequency> {
     /** Static value Month for BillingFrequency. */
     public static final BillingFrequency MONTH = fromString("Month");

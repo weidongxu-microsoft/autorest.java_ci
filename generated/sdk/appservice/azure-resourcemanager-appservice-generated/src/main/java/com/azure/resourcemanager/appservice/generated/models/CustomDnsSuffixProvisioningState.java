@@ -48,6 +48,7 @@ public enum CustomDnsSuffixProvisioningState {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

@@ -8,7 +8,10 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for ClusterManagerType. */
+/**
+ * Type of cluster manager: Windows Server Failover Cluster (WSFC), implied by the scale type of the group and the OS
+ * type.
+ */
 public final class ClusterManagerType extends ExpandableStringEnum<ClusterManagerType> {
     /** Static value WSFC for ClusterManagerType. */
     public static final ClusterManagerType WSFC = fromString("WSFC");

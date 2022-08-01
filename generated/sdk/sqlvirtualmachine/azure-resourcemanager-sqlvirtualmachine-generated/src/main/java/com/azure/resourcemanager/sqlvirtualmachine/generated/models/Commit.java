@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for Commit. */
+/** Replica commit mode in availability group. */
 public final class Commit extends ExpandableStringEnum<Commit> {
     /** Static value SYNCHRONOUS_COMMIT for Commit. */
     public static final Commit SYNCHRONOUS_COMMIT = fromString("SYNCHRONOUS_COMMIT");

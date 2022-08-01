@@ -57,6 +57,7 @@ public enum DaysOfWeek {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

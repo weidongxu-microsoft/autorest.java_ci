@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for ReportConfigColumnType. */
+/** The type of the column in the report. */
 public final class ReportConfigColumnType extends ExpandableStringEnum<ReportConfigColumnType> {
     /** Static value Tag for ReportConfigColumnType. */
     public static final ReportConfigColumnType TAG = fromString("Tag");

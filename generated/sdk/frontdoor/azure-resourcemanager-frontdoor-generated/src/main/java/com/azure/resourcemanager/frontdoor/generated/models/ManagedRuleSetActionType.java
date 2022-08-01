@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for ManagedRuleSetActionType. */
+/** Defines the action to take when a managed rule set score threshold is met. */
 public final class ManagedRuleSetActionType extends ExpandableStringEnum<ManagedRuleSetActionType> {
     /** Static value Block for ManagedRuleSetActionType. */
     public static final ManagedRuleSetActionType BLOCK = fromString("Block");

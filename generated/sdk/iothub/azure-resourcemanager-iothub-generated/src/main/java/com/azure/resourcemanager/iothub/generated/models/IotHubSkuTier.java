@@ -7,7 +7,7 @@ package com.azure.resourcemanager.iothub.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for IotHubSkuTier. */
+/** The billing tier for the IoT hub. */
 public enum IotHubSkuTier {
     /** Enum value Free. */
     FREE("Free"),
@@ -45,6 +45,7 @@ public enum IotHubSkuTier {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

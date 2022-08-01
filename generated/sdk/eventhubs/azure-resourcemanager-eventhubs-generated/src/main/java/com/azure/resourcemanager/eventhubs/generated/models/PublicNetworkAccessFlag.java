@@ -8,7 +8,10 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for PublicNetworkAccessFlag. */
+/**
+ * This determines if traffic is allowed over public network. By default it is enabled. If value is SecuredByPerimeter
+ * then Inbound and Outbound communication is controlled by the network security perimeter and profile's access rules.
+ */
 public final class PublicNetworkAccessFlag extends ExpandableStringEnum<PublicNetworkAccessFlag> {
     /** Static value Enabled for PublicNetworkAccessFlag. */
     public static final PublicNetworkAccessFlag ENABLED = fromString("Enabled");

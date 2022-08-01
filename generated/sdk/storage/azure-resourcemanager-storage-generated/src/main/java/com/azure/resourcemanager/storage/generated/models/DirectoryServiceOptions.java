@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for DirectoryServiceOptions. */
+/** Indicates the directory service used. */
 public final class DirectoryServiceOptions extends ExpandableStringEnum<DirectoryServiceOptions> {
     /** Static value None for DirectoryServiceOptions. */
     public static final DirectoryServiceOptions NONE = fromString("None");

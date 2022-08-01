@@ -7,7 +7,7 @@ package com.azure.resourcemanager.storage.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for DefaultAction. */
+/** Specifies the default action of allow or deny when no other rules match. */
 public enum DefaultAction {
     /** Enum value Allow. */
     ALLOW("Allow"),
@@ -42,6 +42,7 @@ public enum DefaultAction {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

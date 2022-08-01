@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for SkuSignupOption. */
+/** Sku can be signed up by customer or not. */
 public final class SkuSignupOption extends ExpandableStringEnum<SkuSignupOption> {
     /** Static value None for SkuSignupOption. */
     public static final SkuSignupOption NONE = fromString("None");

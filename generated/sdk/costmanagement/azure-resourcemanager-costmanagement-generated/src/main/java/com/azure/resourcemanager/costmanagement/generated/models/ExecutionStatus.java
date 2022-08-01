@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for ExecutionStatus. */
+/** The status of the export execution. */
 public final class ExecutionStatus extends ExpandableStringEnum<ExecutionStatus> {
     /** Static value Queued for ExecutionStatus. */
     public static final ExecutionStatus QUEUED = fromString("Queued");

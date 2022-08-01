@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for Status. */
+/** The status of the lot. */
 public final class Status extends ExpandableStringEnum<Status> {
     /** Static value None for Status. */
     public static final Status NONE = fromString("None");

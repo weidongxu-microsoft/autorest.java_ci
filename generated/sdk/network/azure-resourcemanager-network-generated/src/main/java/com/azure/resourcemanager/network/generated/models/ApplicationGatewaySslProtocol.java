@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for ApplicationGatewaySslProtocol. */
+/** Ssl protocol enums. */
 public final class ApplicationGatewaySslProtocol extends ExpandableStringEnum<ApplicationGatewaySslProtocol> {
     /** Static value TLSv1_0 for ApplicationGatewaySslProtocol. */
     public static final ApplicationGatewaySslProtocol TLSV1_0 = fromString("TLSv1_0");

@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for LotSource. */
+/** The source of the lot. */
 public final class LotSource extends ExpandableStringEnum<LotSource> {
     /** Static value PurchasedCredit for LotSource. */
     public static final LotSource PURCHASED_CREDIT = fromString("PurchasedCredit");

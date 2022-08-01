@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for AddonType. */
+/** Addon type. */
 public final class AddonType extends ExpandableStringEnum<AddonType> {
     /** Static value IotEdge for AddonType. */
     public static final AddonType IOT_EDGE = fromString("IotEdge");

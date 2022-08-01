@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for RoutingRuleEnabledState. */
+/** Whether to enable use of this rule. Permitted values are 'Enabled' or 'Disabled'. */
 public final class RoutingRuleEnabledState extends ExpandableStringEnum<RoutingRuleEnabledState> {
     /** Static value Enabled for RoutingRuleEnabledState. */
     public static final RoutingRuleEnabledState ENABLED = fromString("Enabled");

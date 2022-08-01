@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for UpdateType. */
+/** Type of the Update. */
 public final class UpdateType extends ExpandableStringEnum<UpdateType> {
     /** Static value Software for UpdateType. */
     public static final UpdateType SOFTWARE = fromString("Software");

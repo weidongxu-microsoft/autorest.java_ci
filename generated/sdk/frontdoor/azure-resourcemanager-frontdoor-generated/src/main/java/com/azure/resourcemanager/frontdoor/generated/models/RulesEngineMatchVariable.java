@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for RulesEngineMatchVariable. */
+/** Match Variable. */
 public final class RulesEngineMatchVariable extends ExpandableStringEnum<RulesEngineMatchVariable> {
     /** Static value IsMobile for RulesEngineMatchVariable. */
     public static final RulesEngineMatchVariable IS_MOBILE = fromString("IsMobile");

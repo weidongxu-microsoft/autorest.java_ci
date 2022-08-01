@@ -7,7 +7,7 @@ package com.azure.resourcemanager.search.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for SharedPrivateLinkResourceStatus. */
+/** Status of the shared private link resource. Can be Pending, Approved, Rejected or Disconnected. */
 public enum SharedPrivateLinkResourceStatus {
     /** Enum value Pending. */
     PENDING("Pending"),
@@ -48,6 +48,7 @@ public enum SharedPrivateLinkResourceStatus {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

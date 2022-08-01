@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for SharedTypeKind. */
+/** The kind of workbook. Choices are user and shared. */
 public final class SharedTypeKind extends ExpandableStringEnum<SharedTypeKind> {
     /** Static value user for SharedTypeKind. */
     public static final SharedTypeKind USER = fromString("user");

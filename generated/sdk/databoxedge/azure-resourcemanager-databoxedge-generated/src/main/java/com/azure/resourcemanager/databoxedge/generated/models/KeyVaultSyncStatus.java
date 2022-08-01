@@ -8,7 +8,10 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for KeyVaultSyncStatus. */
+/**
+ * For changing or to initiate the resync to key-vault set the status to KeyVaultSyncPending, rest of the status will
+ * not be applicable.
+ */
 public final class KeyVaultSyncStatus extends ExpandableStringEnum<KeyVaultSyncStatus> {
     /** Static value KeyVaultSynced for KeyVaultSyncStatus. */
     public static final KeyVaultSyncStatus KEY_VAULT_SYNCED = fromString("KeyVaultSynced");

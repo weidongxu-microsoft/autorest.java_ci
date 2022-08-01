@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for FrontDoorQuery. */
+/** Treatment of URL query terms when forming the cache key. */
 public final class FrontDoorQuery extends ExpandableStringEnum<FrontDoorQuery> {
     /** Static value StripNone for FrontDoorQuery. */
     public static final FrontDoorQuery STRIP_NONE = fromString("StripNone");

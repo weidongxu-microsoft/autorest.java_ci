@@ -7,7 +7,7 @@ package com.azure.resourcemanager.monitor.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for MetricStatisticType. */
+/** the metric statistic type. How the metrics from multiple instances are combined. */
 public enum MetricStatisticType {
     /** Enum value Average. */
     AVERAGE("Average"),
@@ -51,6 +51,7 @@ public enum MetricStatisticType {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

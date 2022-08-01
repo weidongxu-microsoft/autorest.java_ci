@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for FrontDoorTlsProtocolType. */
+/** Defines the TLS extension protocol that is used for secure delivery. */
 public final class FrontDoorTlsProtocolType extends ExpandableStringEnum<FrontDoorTlsProtocolType> {
     /** Static value ServerNameIndication for FrontDoorTlsProtocolType. */
     public static final FrontDoorTlsProtocolType SERVER_NAME_INDICATION = fromString("ServerNameIndication");

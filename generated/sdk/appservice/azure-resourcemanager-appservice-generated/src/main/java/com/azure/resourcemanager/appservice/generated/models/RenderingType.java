@@ -7,7 +7,7 @@ package com.azure.resourcemanager.appservice.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for RenderingType. */
+/** Rendering Type. */
 public enum RenderingType {
     /** Enum value NoGraph. */
     NO_GRAPH("NoGraph"),
@@ -111,6 +111,7 @@ public enum RenderingType {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

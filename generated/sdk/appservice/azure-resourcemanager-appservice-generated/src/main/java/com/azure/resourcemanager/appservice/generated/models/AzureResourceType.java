@@ -7,7 +7,7 @@ package com.azure.resourcemanager.appservice.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for AzureResourceType. */
+/** Type of the Azure resource the hostname is assigned to. */
 public enum AzureResourceType {
     /** Enum value Website. */
     WEBSITE("Website"),
@@ -42,6 +42,7 @@ public enum AzureResourceType {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

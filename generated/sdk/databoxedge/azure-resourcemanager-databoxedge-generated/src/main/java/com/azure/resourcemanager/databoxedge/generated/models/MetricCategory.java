@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for MetricCategory. */
+/** Metric category. */
 public final class MetricCategory extends ExpandableStringEnum<MetricCategory> {
     /** Static value Capacity for MetricCategory. */
     public static final MetricCategory CAPACITY = fromString("Capacity");

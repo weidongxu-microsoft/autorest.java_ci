@@ -7,7 +7,7 @@ package com.azure.resourcemanager.monitor.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for CategoryType. */
+/** The type of the diagnostic settings category. */
 public enum CategoryType {
     /** Enum value Metrics. */
     METRICS("Metrics"),
@@ -42,6 +42,7 @@ public enum CategoryType {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

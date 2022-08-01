@@ -7,7 +7,7 @@ package com.azure.resourcemanager.appservice.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for DetectorType. */
+/** Whether this detector is an Analysis Detector or not. */
 public enum DetectorType {
     /** Enum value Detector. */
     DETECTOR("Detector"),
@@ -45,6 +45,7 @@ public enum DetectorType {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

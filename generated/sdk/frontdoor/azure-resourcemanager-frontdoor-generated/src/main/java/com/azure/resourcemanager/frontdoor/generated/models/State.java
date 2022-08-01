@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for State. */
+/** The state of the Experiment. */
 public final class State extends ExpandableStringEnum<State> {
     /** Static value Enabled for State. */
     public static final State ENABLED = fromString("Enabled");

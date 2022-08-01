@@ -7,7 +7,11 @@ package com.azure.resourcemanager.storage.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for AccessTier. */
+/**
+ * Required for storage accounts where kind = BlobStorage. The access tier is used for billing. The 'Premium' access
+ * tier is the default value for premium block blobs storage account type and it cannot be changed for the premium block
+ * blobs storage account type.
+ */
 public enum AccessTier {
     /** Enum value Hot. */
     HOT("Hot"),
@@ -45,6 +49,7 @@ public enum AccessTier {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

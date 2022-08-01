@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for UpdateStatus. */
+/** Status of the update. */
 public final class UpdateStatus extends ExpandableStringEnum<UpdateStatus> {
     /** Static value DownloadPending for UpdateStatus. */
     public static final UpdateStatus DOWNLOAD_PENDING = fromString("DownloadPending");

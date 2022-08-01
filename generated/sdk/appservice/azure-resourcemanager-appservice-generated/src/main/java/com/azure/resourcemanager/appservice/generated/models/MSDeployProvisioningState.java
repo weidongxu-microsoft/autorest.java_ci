@@ -7,7 +7,7 @@ package com.azure.resourcemanager.appservice.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for MSDeployProvisioningState. */
+/** Provisioning state. */
 public enum MSDeployProvisioningState {
     /** Enum value accepted. */
     ACCEPTED("accepted"),
@@ -51,6 +51,7 @@ public enum MSDeployProvisioningState {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

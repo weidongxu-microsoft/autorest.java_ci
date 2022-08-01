@@ -7,7 +7,7 @@ package com.azure.resourcemanager.appservice.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for CertificateProductType. */
+/** Certificate product type. */
 public enum CertificateProductType {
     /** Enum value StandardDomainValidatedSsl. */
     STANDARD_DOMAIN_VALIDATED_SSL("StandardDomainValidatedSsl"),
@@ -42,6 +42,7 @@ public enum CertificateProductType {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

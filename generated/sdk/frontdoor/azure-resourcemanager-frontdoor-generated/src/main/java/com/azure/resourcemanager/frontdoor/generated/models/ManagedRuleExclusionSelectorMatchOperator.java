@@ -8,7 +8,10 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for ManagedRuleExclusionSelectorMatchOperator. */
+/**
+ * Comparison operator to apply to the selector when specifying which elements in the collection this exclusion applies
+ * to.
+ */
 public final class ManagedRuleExclusionSelectorMatchOperator
     extends ExpandableStringEnum<ManagedRuleExclusionSelectorMatchOperator> {
     /** Static value Equals for ManagedRuleExclusionSelectorMatchOperator. */

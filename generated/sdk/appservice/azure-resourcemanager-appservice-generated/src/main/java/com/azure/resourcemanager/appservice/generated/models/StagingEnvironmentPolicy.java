@@ -7,7 +7,7 @@ package com.azure.resourcemanager.appservice.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for StagingEnvironmentPolicy. */
+/** State indicating whether staging environments are allowed or not allowed for a static web app. */
 public enum StagingEnvironmentPolicy {
     /** Enum value Enabled. */
     ENABLED("Enabled"),
@@ -42,6 +42,7 @@ public enum StagingEnvironmentPolicy {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

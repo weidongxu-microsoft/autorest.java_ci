@@ -8,7 +8,10 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for RoutingStorageContainerPropertiesEncoding. */
+/**
+ * Encoding that is used to serialize messages to blobs. Supported values are 'avro', 'avrodeflate', and 'JSON'. Default
+ * value is 'avro'.
+ */
 public final class RoutingStorageContainerPropertiesEncoding
     extends ExpandableStringEnum<RoutingStorageContainerPropertiesEncoding> {
     /** Static value Avro for RoutingStorageContainerPropertiesEncoding. */

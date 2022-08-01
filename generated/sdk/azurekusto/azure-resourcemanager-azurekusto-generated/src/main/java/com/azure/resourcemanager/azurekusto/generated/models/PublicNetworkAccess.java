@@ -8,7 +8,10 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for PublicNetworkAccess. */
+/**
+ * Public network access to the cluster is enabled by default. When disabled, only private endpoint connection to the
+ * cluster is allowed.
+ */
 public final class PublicNetworkAccess extends ExpandableStringEnum<PublicNetworkAccess> {
     /** Static value Enabled for PublicNetworkAccess. */
     public static final PublicNetworkAccess ENABLED = fromString("Enabled");

@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for MetricType. */
+/** Metric to use when displaying costs. */
 public final class MetricType extends ExpandableStringEnum<MetricType> {
     /** Static value ActualCost for MetricType. */
     public static final MetricType ACTUAL_COST = fromString("ActualCost");

@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for AlertCriteria. */
+/** Criteria that triggered alert. */
 public final class AlertCriteria extends ExpandableStringEnum<AlertCriteria> {
     /** Static value CostThresholdExceeded for AlertCriteria. */
     public static final AlertCriteria COST_THRESHOLD_EXCEEDED = fromString("CostThresholdExceeded");

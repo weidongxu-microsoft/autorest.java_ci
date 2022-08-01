@@ -7,7 +7,7 @@ package com.azure.resourcemanager.appservice.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for CookieExpirationConvention. */
+/** The convention used when determining the session cookie's expiration. */
 public enum CookieExpirationConvention {
     /** Enum value FixedTime. */
     FIXED_TIME("FixedTime"),
@@ -42,6 +42,7 @@ public enum CookieExpirationConvention {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

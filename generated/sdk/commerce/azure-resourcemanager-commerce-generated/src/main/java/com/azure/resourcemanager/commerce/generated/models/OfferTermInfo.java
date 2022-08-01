@@ -7,7 +7,7 @@ package com.azure.resourcemanager.commerce.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for OfferTermInfo. */
+/** Name of the offer term. */
 public enum OfferTermInfo {
     /** Enum value Recurring Charge. */
     RECURRING_CHARGE("Recurring Charge"),
@@ -45,6 +45,7 @@ public enum OfferTermInfo {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

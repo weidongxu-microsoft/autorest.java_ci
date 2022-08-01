@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for WorkflowState. */
+/** The workflow state. */
 public final class WorkflowState extends ExpandableStringEnum<WorkflowState> {
     /** Static value NotSpecified for WorkflowState. */
     public static final WorkflowState NOT_SPECIFIED = fromString("NotSpecified");

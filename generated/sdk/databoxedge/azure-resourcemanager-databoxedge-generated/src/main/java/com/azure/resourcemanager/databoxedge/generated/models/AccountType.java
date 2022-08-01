@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for AccountType. */
+/** Type of storage accessed on the storage account. */
 public final class AccountType extends ExpandableStringEnum<AccountType> {
     /** Static value GeneralPurposeStorage for AccountType. */
     public static final AccountType GENERAL_PURPOSE_STORAGE = fromString("GeneralPurposeStorage");

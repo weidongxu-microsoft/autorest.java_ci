@@ -7,7 +7,7 @@ package com.azure.resourcemanager.resources.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for ChangeType. */
+/** Type of change that will be made to the resource when the deployment is executed. */
 public enum ChangeType {
     /** Enum value Create. */
     CREATE("Create"),
@@ -54,6 +54,7 @@ public enum ChangeType {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

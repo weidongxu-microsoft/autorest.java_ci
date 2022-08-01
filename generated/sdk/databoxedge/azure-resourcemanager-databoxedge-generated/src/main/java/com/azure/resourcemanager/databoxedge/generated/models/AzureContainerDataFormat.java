@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for AzureContainerDataFormat. */
+/** Storage format used for the file represented by the share. */
 public final class AzureContainerDataFormat extends ExpandableStringEnum<AzureContainerDataFormat> {
     /** Static value BlockBlob for AzureContainerDataFormat. */
     public static final AzureContainerDataFormat BLOCK_BLOB = fromString("BlockBlob");

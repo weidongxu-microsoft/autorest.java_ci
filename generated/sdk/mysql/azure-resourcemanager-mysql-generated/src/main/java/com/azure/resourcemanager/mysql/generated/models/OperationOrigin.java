@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for OperationOrigin. */
+/** The intended executor of the operation. */
 public final class OperationOrigin extends ExpandableStringEnum<OperationOrigin> {
     /** Static value NotSpecified for OperationOrigin. */
     public static final OperationOrigin NOT_SPECIFIED = fromString("NotSpecified");

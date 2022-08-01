@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for KpiType. */
+/** KPI type (Forecast, Budget). */
 public final class KpiType extends ExpandableStringEnum<KpiType> {
     /** Static value Forecast for KpiType. */
     public static final KpiType FORECAST = fromString("Forecast");

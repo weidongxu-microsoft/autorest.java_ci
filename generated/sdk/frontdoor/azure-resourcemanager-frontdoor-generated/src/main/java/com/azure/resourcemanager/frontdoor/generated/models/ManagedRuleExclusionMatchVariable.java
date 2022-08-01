@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for ManagedRuleExclusionMatchVariable. */
+/** The variable type to be excluded. */
 public final class ManagedRuleExclusionMatchVariable extends ExpandableStringEnum<ManagedRuleExclusionMatchVariable> {
     /** Static value RequestHeaderNames for ManagedRuleExclusionMatchVariable. */
     public static final ManagedRuleExclusionMatchVariable REQUEST_HEADER_NAMES = fromString("RequestHeaderNames");

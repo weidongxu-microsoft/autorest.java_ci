@@ -8,7 +8,11 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for DeletionRecoveryLevel. */
+/**
+ * The deletion recovery level currently in effect for the object. If it contains 'Purgeable', then the object can be
+ * permanently deleted by a privileged user; otherwise, only the system can purge the object at the end of the retention
+ * interval.
+ */
 public final class DeletionRecoveryLevel extends ExpandableStringEnum<DeletionRecoveryLevel> {
     /** Static value Purgeable for DeletionRecoveryLevel. */
     public static final DeletionRecoveryLevel PURGEABLE = fromString("Purgeable");

@@ -42,6 +42,7 @@ public enum ResultType {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

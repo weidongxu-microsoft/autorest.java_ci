@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for SessionAffinityEnabledState. */
+/** Whether to allow session affinity on this host. Valid options are 'Enabled' or 'Disabled'. */
 public final class SessionAffinityEnabledState extends ExpandableStringEnum<SessionAffinityEnabledState> {
     /** Static value Enabled for SessionAffinityEnabledState. */
     public static final SessionAffinityEnabledState ENABLED = fromString("Enabled");

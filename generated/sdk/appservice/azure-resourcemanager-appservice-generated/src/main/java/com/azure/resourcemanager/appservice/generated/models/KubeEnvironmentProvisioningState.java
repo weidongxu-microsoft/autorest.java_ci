@@ -7,7 +7,7 @@ package com.azure.resourcemanager.appservice.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for KubeEnvironmentProvisioningState. */
+/** Provisioning state of the Kubernetes Environment. */
 public enum KubeEnvironmentProvisioningState {
     /** Enum value Succeeded. */
     SUCCEEDED("Succeeded"),
@@ -66,6 +66,7 @@ public enum KubeEnvironmentProvisioningState {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

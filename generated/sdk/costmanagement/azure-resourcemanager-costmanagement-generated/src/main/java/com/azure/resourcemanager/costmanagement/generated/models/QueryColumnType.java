@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for QueryColumnType. */
+/** The type of the column in the export. */
 public final class QueryColumnType extends ExpandableStringEnum<QueryColumnType> {
     /** Static value Tag for QueryColumnType. */
     public static final QueryColumnType TAG = fromString("Tag");

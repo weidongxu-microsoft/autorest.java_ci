@@ -7,7 +7,7 @@ package com.azure.resourcemanager.compute.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for UpgradeState. */
+/** Code indicating the current status of the upgrade. */
 public enum UpgradeState {
     /** Enum value RollingForward. */
     ROLLING_FORWARD("RollingForward"),
@@ -48,6 +48,7 @@ public enum UpgradeState {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

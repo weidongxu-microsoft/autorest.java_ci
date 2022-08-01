@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for HDInsightClusterProvisioningState. */
+/** The provisioning state, which only appears in the response. */
 public final class HDInsightClusterProvisioningState extends ExpandableStringEnum<HDInsightClusterProvisioningState> {
     /** Static value InProgress for HDInsightClusterProvisioningState. */
     public static final HDInsightClusterProvisioningState IN_PROGRESS = fromString("InProgress");

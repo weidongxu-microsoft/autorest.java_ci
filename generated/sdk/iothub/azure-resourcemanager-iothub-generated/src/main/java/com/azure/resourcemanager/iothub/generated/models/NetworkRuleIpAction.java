@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for NetworkRuleIpAction. */
+/** IP Filter Action. */
 public final class NetworkRuleIpAction extends ExpandableStringEnum<NetworkRuleIpAction> {
     /** Static value Allow for NetworkRuleIpAction. */
     public static final NetworkRuleIpAction ALLOW = fromString("Allow");

@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for CreateMode. */
+/** The mode to create a new server. */
 public final class CreateMode extends ExpandableStringEnum<CreateMode> {
     /** Static value Default for CreateMode. */
     public static final CreateMode DEFAULT = fromString("Default");

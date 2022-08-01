@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for ExpressionEvaluationOptionsScopeType. */
+/** The scope to be used for evaluation of parameters, variables and functions in a nested template. */
 public final class ExpressionEvaluationOptionsScopeType
     extends ExpandableStringEnum<ExpressionEvaluationOptionsScopeType> {
     /** Static value NotSpecified for ExpressionEvaluationOptionsScopeType. */

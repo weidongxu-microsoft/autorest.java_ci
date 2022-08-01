@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for CustomDomainStatus. */
+/** The status of the custom domain. */
 public final class CustomDomainStatus extends ExpandableStringEnum<CustomDomainStatus> {
     /** Static value RetrievingValidationToken for CustomDomainStatus. */
     public static final CustomDomainStatus RETRIEVING_VALIDATION_TOKEN = fromString("RetrievingValidationToken");

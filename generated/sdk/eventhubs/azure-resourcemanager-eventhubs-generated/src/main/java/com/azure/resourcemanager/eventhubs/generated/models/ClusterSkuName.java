@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for ClusterSkuName. */
+/** Name of this SKU. */
 public final class ClusterSkuName extends ExpandableStringEnum<ClusterSkuName> {
     /** Static value Dedicated for ClusterSkuName. */
     public static final ClusterSkuName DEDICATED = fromString("Dedicated");

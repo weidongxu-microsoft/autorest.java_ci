@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for KubernetesNodeType. */
+/** Node type - Master/Worker. */
 public final class KubernetesNodeType extends ExpandableStringEnum<KubernetesNodeType> {
     /** Static value Invalid for KubernetesNodeType. */
     public static final KubernetesNodeType INVALID = fromString("Invalid");

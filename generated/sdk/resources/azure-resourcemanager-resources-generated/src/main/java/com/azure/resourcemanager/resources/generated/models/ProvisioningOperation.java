@@ -7,7 +7,7 @@ package com.azure.resourcemanager.resources.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for ProvisioningOperation. */
+/** The name of the current provisioning operation. */
 public enum ProvisioningOperation {
     /** Enum value NotSpecified. */
     NOT_SPECIFIED("NotSpecified"),
@@ -66,6 +66,7 @@ public enum ProvisioningOperation {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

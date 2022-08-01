@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for BackendEnabledState. */
+/** Whether to enable use of this backend. Permitted values are 'Enabled' or 'Disabled'. */
 public final class BackendEnabledState extends ExpandableStringEnum<BackendEnabledState> {
     /** Static value Enabled for BackendEnabledState. */
     public static final BackendEnabledState ENABLED = fromString("Enabled");

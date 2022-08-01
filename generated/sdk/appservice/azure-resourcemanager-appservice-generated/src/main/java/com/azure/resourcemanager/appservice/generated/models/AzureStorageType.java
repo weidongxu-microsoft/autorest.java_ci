@@ -7,7 +7,7 @@ package com.azure.resourcemanager.appservice.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for AzureStorageType. */
+/** Type of storage. */
 public enum AzureStorageType {
     /** Enum value AzureFiles. */
     AZURE_FILES("AzureFiles"),
@@ -42,6 +42,7 @@ public enum AzureStorageType {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

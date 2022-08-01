@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for MinimumTlsVersion. */
+/** The minimum TLS version required from the clients to establish an SSL handshake with Front Door. */
 public final class MinimumTlsVersion extends ExpandableStringEnum<MinimumTlsVersion> {
     /** Static value 1.0 for MinimumTlsVersion. */
     public static final MinimumTlsVersion ONE_ZERO = fromString("1.0");

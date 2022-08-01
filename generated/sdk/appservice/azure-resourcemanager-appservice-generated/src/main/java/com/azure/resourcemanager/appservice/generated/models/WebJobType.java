@@ -7,7 +7,7 @@ package com.azure.resourcemanager.appservice.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for WebJobType. */
+/** Job type. */
 public enum WebJobType {
     /** Enum value Continuous. */
     CONTINUOUS("Continuous"),
@@ -42,6 +42,7 @@ public enum WebJobType {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

@@ -7,7 +7,7 @@ package com.azure.resourcemanager.storage.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for AccountStatus. */
+/** Gets the status indicating whether the primary location of the storage account is available or unavailable. */
 public enum AccountStatus {
     /** Enum value available. */
     AVAILABLE("available"),
@@ -42,6 +42,7 @@ public enum AccountStatus {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

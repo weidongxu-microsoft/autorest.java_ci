@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for SkuAvailability. */
+/** Links to the next set of results. */
 public final class SkuAvailability extends ExpandableStringEnum<SkuAvailability> {
     /** Static value Available for SkuAvailability. */
     public static final SkuAvailability AVAILABLE = fromString("Available");

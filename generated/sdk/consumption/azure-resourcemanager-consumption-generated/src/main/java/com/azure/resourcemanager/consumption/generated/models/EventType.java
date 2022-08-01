@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for EventType. */
+/** Identifies the type of the event. */
 public final class EventType extends ExpandableStringEnum<EventType> {
     /** Static value SettledCharges for EventType. */
     public static final EventType SETTLED_CHARGES = fromString("SettledCharges");

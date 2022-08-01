@@ -8,7 +8,9 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for EnforceCertificateNameCheckEnabledState. */
+/**
+ * Whether to enforce certificate name check on HTTPS requests to all backend pools. No effect on non-HTTPS requests.
+ */
 public final class EnforceCertificateNameCheckEnabledState
     extends ExpandableStringEnum<EnforceCertificateNameCheckEnabledState> {
     /** Static value Enabled for EnforceCertificateNameCheckEnabledState. */

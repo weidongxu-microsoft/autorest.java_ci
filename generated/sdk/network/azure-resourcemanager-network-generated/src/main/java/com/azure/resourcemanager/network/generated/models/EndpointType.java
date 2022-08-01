@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for EndpointType. */
+/** The endpoint type. */
 public final class EndpointType extends ExpandableStringEnum<EndpointType> {
     /** Static value AzureVM for EndpointType. */
     public static final EndpointType AZURE_VM = fromString("AzureVM");

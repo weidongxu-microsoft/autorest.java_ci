@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for HeaderActionType. */
+/** Which type of manipulation to apply to the header. */
 public final class HeaderActionType extends ExpandableStringEnum<HeaderActionType> {
     /** Static value Append for HeaderActionType. */
     public static final HeaderActionType APPEND = fromString("Append");

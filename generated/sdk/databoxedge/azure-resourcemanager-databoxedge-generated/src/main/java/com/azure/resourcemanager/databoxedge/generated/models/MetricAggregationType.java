@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for MetricAggregationType. */
+/** Metric aggregation type. */
 public final class MetricAggregationType extends ExpandableStringEnum<MetricAggregationType> {
     /** Static value NotSpecified for MetricAggregationType. */
     public static final MetricAggregationType NOT_SPECIFIED = fromString("NotSpecified");

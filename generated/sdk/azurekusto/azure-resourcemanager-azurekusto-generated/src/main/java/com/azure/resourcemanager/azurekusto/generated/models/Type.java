@@ -7,7 +7,7 @@ package com.azure.resourcemanager.azurekusto.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for Type. */
+/** The type of resource, for instance Microsoft.Kusto/clusters/databases. */
 public enum Type {
     /** Enum value Microsoft.Kusto/clusters/databases. */
     MICROSOFT_KUSTO_CLUSTERS_DATABASES("Microsoft.Kusto/clusters/databases"),
@@ -43,6 +43,7 @@ public enum Type {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for RouteErrorSeverity. */
+/** Severity of the route error. */
 public final class RouteErrorSeverity extends ExpandableStringEnum<RouteErrorSeverity> {
     /** Static value error for RouteErrorSeverity. */
     public static final RouteErrorSeverity ERROR = fromString("error");

@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for DataResidencyType. */
+/** DataResidencyType enum. */
 public final class DataResidencyType extends ExpandableStringEnum<DataResidencyType> {
     /** Static value GeoZoneReplication for DataResidencyType. */
     public static final DataResidencyType GEO_ZONE_REPLICATION = fromString("GeoZoneReplication");

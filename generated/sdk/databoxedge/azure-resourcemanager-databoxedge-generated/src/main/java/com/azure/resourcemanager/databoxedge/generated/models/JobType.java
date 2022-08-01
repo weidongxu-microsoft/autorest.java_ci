@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for JobType. */
+/** The type of the job. */
 public final class JobType extends ExpandableStringEnum<JobType> {
     /** Static value Invalid for JobType. */
     public static final JobType INVALID = fromString("Invalid");

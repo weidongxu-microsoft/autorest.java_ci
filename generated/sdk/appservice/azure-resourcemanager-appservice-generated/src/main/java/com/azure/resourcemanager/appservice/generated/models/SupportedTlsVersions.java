@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for SupportedTlsVersions. */
+/** MinTlsVersion: configures the minimum version of TLS required for SSL requests. */
 public final class SupportedTlsVersions extends ExpandableStringEnum<SupportedTlsVersions> {
     /** Static value 1.0 for SupportedTlsVersions. */
     public static final SupportedTlsVersions ONE_ZERO = fromString("1.0");

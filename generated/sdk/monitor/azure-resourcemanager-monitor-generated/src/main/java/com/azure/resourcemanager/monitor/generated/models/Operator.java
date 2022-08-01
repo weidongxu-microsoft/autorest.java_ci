@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for Operator. */
+/** the criteria operator. */
 public final class Operator extends ExpandableStringEnum<Operator> {
     /** Static value Equals for Operator. */
     public static final Operator EQUALS = fromString("Equals");

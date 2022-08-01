@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for ConfigurationType. */
+/** Configuration Deployment Type. */
 public final class ConfigurationType extends ExpandableStringEnum<ConfigurationType> {
     /** Static value SecurityAdmin for ConfigurationType. */
     public static final ConfigurationType SECURITY_ADMIN = fromString("SecurityAdmin");

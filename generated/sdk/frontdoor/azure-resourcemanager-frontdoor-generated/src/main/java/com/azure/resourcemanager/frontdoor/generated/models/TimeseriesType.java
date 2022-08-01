@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for TimeseriesType. */
+/** The type of Timeseries. */
 public final class TimeseriesType extends ExpandableStringEnum<TimeseriesType> {
     /** Static value MeasurementCounts for TimeseriesType. */
     public static final TimeseriesType MEASUREMENT_COUNTS = fromString("MeasurementCounts");

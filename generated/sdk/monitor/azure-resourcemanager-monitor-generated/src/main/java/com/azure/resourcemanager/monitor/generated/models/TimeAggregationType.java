@@ -7,7 +7,7 @@ package com.azure.resourcemanager.monitor.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for TimeAggregationType. */
+/** time aggregation type. How the data that is collected should be combined over time. The default value is Average. */
 public enum TimeAggregationType {
     /** Enum value Average. */
     AVERAGE("Average"),
@@ -54,6 +54,7 @@ public enum TimeAggregationType {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

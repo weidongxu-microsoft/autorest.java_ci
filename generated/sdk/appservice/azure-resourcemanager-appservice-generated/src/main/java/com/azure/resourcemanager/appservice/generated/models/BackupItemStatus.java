@@ -7,7 +7,7 @@ package com.azure.resourcemanager.appservice.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for BackupItemStatus. */
+/** Backup status. */
 public enum BackupItemStatus {
     /** Enum value InProgress. */
     IN_PROGRESS("InProgress"),
@@ -66,6 +66,7 @@ public enum BackupItemStatus {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {

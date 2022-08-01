@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for NetworkAdapterRdmaStatus. */
+/** Value indicating whether this adapter is RDMA capable. */
 public final class NetworkAdapterRdmaStatus extends ExpandableStringEnum<NetworkAdapterRdmaStatus> {
     /** Static value Incapable for NetworkAdapterRdmaStatus. */
     public static final NetworkAdapterRdmaStatus INCAPABLE = fromString("Incapable");

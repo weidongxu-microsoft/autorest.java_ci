@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for ReportGranularityType. */
+/** The granularity of rows in the report. */
 public final class ReportGranularityType extends ExpandableStringEnum<ReportGranularityType> {
     /** Static value Daily for ReportGranularityType. */
     public static final ReportGranularityType DAILY = fromString("Daily");

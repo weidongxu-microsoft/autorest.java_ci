@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for FrontDoorRedirectType. */
+/** The redirect type the rule will use when redirecting traffic. */
 public final class FrontDoorRedirectType extends ExpandableStringEnum<FrontDoorRedirectType> {
     /** Static value Moved for FrontDoorRedirectType. */
     public static final FrontDoorRedirectType MOVED = fromString("Moved");

@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for ServerVersion. */
+/** The version of a server. */
 public final class ServerVersion extends ExpandableStringEnum<ServerVersion> {
     /** Static value 9.5 for ServerVersion. */
     public static final ServerVersion NINE_FIVE = fromString("9.5");

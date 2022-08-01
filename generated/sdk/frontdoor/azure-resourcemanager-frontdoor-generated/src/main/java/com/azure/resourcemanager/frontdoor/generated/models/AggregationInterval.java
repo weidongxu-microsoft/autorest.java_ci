@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for AggregationInterval. */
+/** The aggregation interval of the Timeseries. */
 public final class AggregationInterval extends ExpandableStringEnum<AggregationInterval> {
     /** Static value Hourly for AggregationInterval. */
     public static final AggregationInterval HOURLY = fromString("Hourly");

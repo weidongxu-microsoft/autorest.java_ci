@@ -7,7 +7,7 @@ package com.azure.resourcemanager.storage.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for ProvisioningState. */
+/** Gets the status of the storage account at the time the operation was called. */
 public enum ProvisioningState {
     /** Enum value Creating. */
     CREATING("Creating"),
@@ -45,6 +45,7 @@ public enum ProvisioningState {
         return null;
     }
 
+    /** {@inheritDoc} */
     @JsonValue
     @Override
     public String toString() {
