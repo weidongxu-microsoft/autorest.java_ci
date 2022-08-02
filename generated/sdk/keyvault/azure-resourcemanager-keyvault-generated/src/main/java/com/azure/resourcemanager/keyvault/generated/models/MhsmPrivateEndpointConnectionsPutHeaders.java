@@ -5,6 +5,7 @@
 package com.azure.resourcemanager.keyvault.generated.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.core.http.HttpHeaders;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** The MhsmPrivateEndpointConnectionsPutHeaders model. */
@@ -21,6 +22,17 @@ public final class MhsmPrivateEndpointConnectionsPutHeaders {
      */
     @JsonProperty(value = "Azure-AsyncOperation")
     private String azureAsyncOperation;
+
+    // HttpHeaders containing the raw property values.
+    /**
+     * Creates an instance of MhsmPrivateEndpointConnectionsPutHeaders class.
+     *
+     * @param rawHeaders The raw HttpHeaders that will be used to create the property values.
+     */
+    public MhsmPrivateEndpointConnectionsPutHeaders(HttpHeaders rawHeaders) {
+        this.retryAfter = Integer.parseInt(rawHeaders.getValue("Retry-After"));
+        this.azureAsyncOperation = rawHeaders.getValue("Azure-AsyncOperation");
+    }
 
     /**
      * Get the retryAfter property: The Retry-After property.
