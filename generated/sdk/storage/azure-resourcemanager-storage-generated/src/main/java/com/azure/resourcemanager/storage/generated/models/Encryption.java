@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.storage.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** The encryption settings on the storage account. */
@@ -20,7 +19,7 @@ public final class Encryption {
     /*
      * The encryption keySource (provider). Possible values (case-insensitive):  Microsoft.Storage, Microsoft.Keyvault
      */
-    @JsonProperty(value = "keySource", required = true)
+    @JsonProperty(value = "keySource")
     private KeySource keySource;
 
     /*
@@ -155,11 +154,6 @@ public final class Encryption {
         if (services() != null) {
             services().validate();
         }
-        if (keySource() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property keySource in model Encryption"));
-        }
         if (keyVaultProperties() != null) {
             keyVaultProperties().validate();
         }
@@ -167,6 +161,4 @@ public final class Encryption {
             encryptionIdentity().validate();
         }
     }
-
-    private static final ClientLogger LOGGER = new ClientLogger(Encryption.class);
 }

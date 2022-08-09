@@ -4,163 +4,44 @@
 
 package com.azure.resourcemanager.storage.generated.models;
 
-import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.core.util.ExpandableStringEnum;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import java.util.Collection;
 
-/** Lease Container request schema. */
-@Fluent
-public final class LeaseContainerRequest {
-    /*
-     * Specifies the lease action. Can be one of the available actions.
-     */
-    @JsonProperty(value = "action", required = true)
-    private LeaseContainerRequestAction action;
+/** Specifies the lease action. Can be one of the available actions. */
+public final class LeaseContainerRequest extends ExpandableStringEnum<LeaseContainerRequest> {
+    /** Static value Acquire for LeaseContainerRequest. */
+    public static final LeaseContainerRequest ACQUIRE = fromString("Acquire");
 
-    /*
-     * Identifies the lease. Can be specified in any valid GUID string format.
-     */
-    @JsonProperty(value = "leaseId")
-    private String leaseId;
+    /** Static value Renew for LeaseContainerRequest. */
+    public static final LeaseContainerRequest RENEW = fromString("Renew");
 
-    /*
-     * Optional. For a break action, proposed duration the lease should continue before it is broken, in seconds,
-     * between 0 and 60.
-     */
-    @JsonProperty(value = "breakPeriod")
-    private Integer breakPeriod;
+    /** Static value Change for LeaseContainerRequest. */
+    public static final LeaseContainerRequest CHANGE = fromString("Change");
 
-    /*
-     * Required for acquire. Specifies the duration of the lease, in seconds, or negative one (-1) for a lease that
-     * never expires.
-     */
-    @JsonProperty(value = "leaseDuration")
-    private Integer leaseDuration;
+    /** Static value Release for LeaseContainerRequest. */
+    public static final LeaseContainerRequest RELEASE = fromString("Release");
 
-    /*
-     * Optional for acquire, required for change. Proposed lease ID, in a GUID string format.
-     */
-    @JsonProperty(value = "proposedLeaseId")
-    private String proposedLeaseId;
+    /** Static value Break for LeaseContainerRequest. */
+    public static final LeaseContainerRequest BREAK = fromString("Break");
 
     /**
-     * Get the action property: Specifies the lease action. Can be one of the available actions.
+     * Creates or finds a LeaseContainerRequest from its string representation.
      *
-     * @return the action value.
+     * @param name a name to look for.
+     * @return the corresponding LeaseContainerRequest.
      */
-    public LeaseContainerRequestAction action() {
-        return this.action;
+    @JsonCreator
+    public static LeaseContainerRequest fromString(String name) {
+        return fromString(name, LeaseContainerRequest.class);
     }
 
     /**
-     * Set the action property: Specifies the lease action. Can be one of the available actions.
+     * Gets known LeaseContainerRequest values.
      *
-     * @param action the action value to set.
-     * @return the LeaseContainerRequest object itself.
+     * @return known LeaseContainerRequest values.
      */
-    public LeaseContainerRequest withAction(LeaseContainerRequestAction action) {
-        this.action = action;
-        return this;
+    public static Collection<LeaseContainerRequest> values() {
+        return values(LeaseContainerRequest.class);
     }
-
-    /**
-     * Get the leaseId property: Identifies the lease. Can be specified in any valid GUID string format.
-     *
-     * @return the leaseId value.
-     */
-    public String leaseId() {
-        return this.leaseId;
-    }
-
-    /**
-     * Set the leaseId property: Identifies the lease. Can be specified in any valid GUID string format.
-     *
-     * @param leaseId the leaseId value to set.
-     * @return the LeaseContainerRequest object itself.
-     */
-    public LeaseContainerRequest withLeaseId(String leaseId) {
-        this.leaseId = leaseId;
-        return this;
-    }
-
-    /**
-     * Get the breakPeriod property: Optional. For a break action, proposed duration the lease should continue before it
-     * is broken, in seconds, between 0 and 60.
-     *
-     * @return the breakPeriod value.
-     */
-    public Integer breakPeriod() {
-        return this.breakPeriod;
-    }
-
-    /**
-     * Set the breakPeriod property: Optional. For a break action, proposed duration the lease should continue before it
-     * is broken, in seconds, between 0 and 60.
-     *
-     * @param breakPeriod the breakPeriod value to set.
-     * @return the LeaseContainerRequest object itself.
-     */
-    public LeaseContainerRequest withBreakPeriod(Integer breakPeriod) {
-        this.breakPeriod = breakPeriod;
-        return this;
-    }
-
-    /**
-     * Get the leaseDuration property: Required for acquire. Specifies the duration of the lease, in seconds, or
-     * negative one (-1) for a lease that never expires.
-     *
-     * @return the leaseDuration value.
-     */
-    public Integer leaseDuration() {
-        return this.leaseDuration;
-    }
-
-    /**
-     * Set the leaseDuration property: Required for acquire. Specifies the duration of the lease, in seconds, or
-     * negative one (-1) for a lease that never expires.
-     *
-     * @param leaseDuration the leaseDuration value to set.
-     * @return the LeaseContainerRequest object itself.
-     */
-    public LeaseContainerRequest withLeaseDuration(Integer leaseDuration) {
-        this.leaseDuration = leaseDuration;
-        return this;
-    }
-
-    /**
-     * Get the proposedLeaseId property: Optional for acquire, required for change. Proposed lease ID, in a GUID string
-     * format.
-     *
-     * @return the proposedLeaseId value.
-     */
-    public String proposedLeaseId() {
-        return this.proposedLeaseId;
-    }
-
-    /**
-     * Set the proposedLeaseId property: Optional for acquire, required for change. Proposed lease ID, in a GUID string
-     * format.
-     *
-     * @param proposedLeaseId the proposedLeaseId value to set.
-     * @return the LeaseContainerRequest object itself.
-     */
-    public LeaseContainerRequest withProposedLeaseId(String proposedLeaseId) {
-        this.proposedLeaseId = proposedLeaseId;
-        return this;
-    }
-
-    /**
-     * Validates the instance.
-     *
-     * @throws IllegalArgumentException thrown if the instance is not valid.
-     */
-    public void validate() {
-        if (action() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property action in model LeaseContainerRequest"));
-        }
-    }
-
-    private static final ClientLogger LOGGER = new ClientLogger(LeaseContainerRequest.class);
 }

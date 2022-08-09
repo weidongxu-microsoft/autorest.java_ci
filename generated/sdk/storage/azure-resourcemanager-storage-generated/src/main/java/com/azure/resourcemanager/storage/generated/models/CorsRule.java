@@ -23,7 +23,7 @@ public final class CorsRule {
      * Required if CorsRule element is present. A list of HTTP methods that are allowed to be executed by the origin.
      */
     @JsonProperty(value = "allowedMethods", required = true)
-    private List<CorsRuleAllowedMethodsItem> allowedMethods;
+    private List<AllowedMethods> allowedMethods;
 
     /*
      * Required if CorsRule element is present. The number of seconds that the client/browser should cache a preflight
@@ -72,7 +72,7 @@ public final class CorsRule {
      *
      * @return the allowedMethods value.
      */
-    public List<CorsRuleAllowedMethodsItem> allowedMethods() {
+    public List<AllowedMethods> allowedMethods() {
         return this.allowedMethods;
     }
 
@@ -83,7 +83,7 @@ public final class CorsRule {
      * @param allowedMethods the allowedMethods value to set.
      * @return the CorsRule object itself.
      */
-    public CorsRule withAllowedMethods(List<CorsRuleAllowedMethodsItem> allowedMethods) {
+    public CorsRule withAllowedMethods(List<AllowedMethods> allowedMethods) {
         this.allowedMethods = allowedMethods;
         return this;
     }
