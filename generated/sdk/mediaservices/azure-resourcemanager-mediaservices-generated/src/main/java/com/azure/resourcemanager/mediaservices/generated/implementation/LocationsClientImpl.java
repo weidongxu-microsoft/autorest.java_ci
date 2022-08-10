@@ -104,6 +104,7 @@ public final class LocationsClientImpl implements LocationsClient {
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2021-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -113,7 +114,7 @@ public final class LocationsClientImpl implements LocationsClient {
                             this.client.getEndpoint(),
                             this.client.getSubscriptionId(),
                             locationName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             parameters,
                             accept,
                             context))
@@ -157,6 +158,7 @@ public final class LocationsClientImpl implements LocationsClient {
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2021-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -164,7 +166,7 @@ public final class LocationsClientImpl implements LocationsClient {
                 this.client.getEndpoint(),
                 this.client.getSubscriptionId(),
                 locationName,
-                this.client.getApiVersion(),
+                apiVersion,
                 parameters,
                 accept,
                 context);

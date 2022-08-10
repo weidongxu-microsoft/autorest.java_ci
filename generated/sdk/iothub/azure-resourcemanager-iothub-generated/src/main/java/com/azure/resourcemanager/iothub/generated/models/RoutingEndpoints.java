@@ -40,6 +40,12 @@ public final class RoutingEndpoints {
     @JsonProperty(value = "storageContainers")
     private List<RoutingStorageContainerProperties> storageContainers;
 
+    /*
+     * The list of Cosmos DB collection endpoints that IoT hub routes messages to, based on the routing rules.
+     */
+    @JsonProperty(value = "cosmosDBSqlCollections")
+    private List<RoutingCosmosDBSqlApiProperties> cosmosDBSqlCollections;
+
     /**
      * Get the serviceBusQueues property: The list of Service Bus queue endpoints that IoT hub routes the messages to,
      * based on the routing rules.
@@ -129,6 +135,28 @@ public final class RoutingEndpoints {
     }
 
     /**
+     * Get the cosmosDBSqlCollections property: The list of Cosmos DB collection endpoints that IoT hub routes messages
+     * to, based on the routing rules.
+     *
+     * @return the cosmosDBSqlCollections value.
+     */
+    public List<RoutingCosmosDBSqlApiProperties> cosmosDBSqlCollections() {
+        return this.cosmosDBSqlCollections;
+    }
+
+    /**
+     * Set the cosmosDBSqlCollections property: The list of Cosmos DB collection endpoints that IoT hub routes messages
+     * to, based on the routing rules.
+     *
+     * @param cosmosDBSqlCollections the cosmosDBSqlCollections value to set.
+     * @return the RoutingEndpoints object itself.
+     */
+    public RoutingEndpoints withCosmosDBSqlCollections(List<RoutingCosmosDBSqlApiProperties> cosmosDBSqlCollections) {
+        this.cosmosDBSqlCollections = cosmosDBSqlCollections;
+        return this;
+    }
+
+    /**
      * Validates the instance.
      *
      * @throws IllegalArgumentException thrown if the instance is not valid.
@@ -145,6 +173,9 @@ public final class RoutingEndpoints {
         }
         if (storageContainers() != null) {
             storageContainers().forEach(e -> e.validate());
+        }
+        if (cosmosDBSqlCollections() != null) {
+            cosmosDBSqlCollections().forEach(e -> e.validate());
         }
     }
 }
