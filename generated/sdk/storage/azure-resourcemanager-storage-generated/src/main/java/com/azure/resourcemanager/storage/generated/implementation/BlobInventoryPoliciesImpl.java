@@ -100,9 +100,8 @@ public final class BlobInventoryPoliciesImpl implements BlobInventoryPolicies {
                         String
                             .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
         }
-        BlobInventoryPolicyName blobInventoryPolicyName =
-            BlobInventoryPolicyName.fromString(Utils.getValueFromIdByName(id, "inventoryPolicies"));
-        if (blobInventoryPolicyName == null) {
+        String blobInventoryPolicyNameLocal = Utils.getValueFromIdByName(id, "inventoryPolicies");
+        if (blobInventoryPolicyNameLocal == null) {
             throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
@@ -110,6 +109,8 @@ public final class BlobInventoryPoliciesImpl implements BlobInventoryPolicies {
                             .format(
                                 "The resource ID '%s' is not valid. Missing path segment 'inventoryPolicies'.", id)));
         }
+        BlobInventoryPolicyName blobInventoryPolicyName =
+            BlobInventoryPolicyName.fromString(blobInventoryPolicyNameLocal);
         return this.getWithResponse(resourceGroupName, accountName, blobInventoryPolicyName, Context.NONE).getValue();
     }
 
@@ -130,9 +131,8 @@ public final class BlobInventoryPoliciesImpl implements BlobInventoryPolicies {
                         String
                             .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
         }
-        BlobInventoryPolicyName blobInventoryPolicyName =
-            BlobInventoryPolicyName.fromString(Utils.getValueFromIdByName(id, "inventoryPolicies"));
-        if (blobInventoryPolicyName == null) {
+        String blobInventoryPolicyNameLocal = Utils.getValueFromIdByName(id, "inventoryPolicies");
+        if (blobInventoryPolicyNameLocal == null) {
             throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
@@ -140,6 +140,8 @@ public final class BlobInventoryPoliciesImpl implements BlobInventoryPolicies {
                             .format(
                                 "The resource ID '%s' is not valid. Missing path segment 'inventoryPolicies'.", id)));
         }
+        BlobInventoryPolicyName blobInventoryPolicyName =
+            BlobInventoryPolicyName.fromString(blobInventoryPolicyNameLocal);
         return this.getWithResponse(resourceGroupName, accountName, blobInventoryPolicyName, context);
     }
 
@@ -160,9 +162,8 @@ public final class BlobInventoryPoliciesImpl implements BlobInventoryPolicies {
                         String
                             .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
         }
-        BlobInventoryPolicyName blobInventoryPolicyName =
-            BlobInventoryPolicyName.fromString(Utils.getValueFromIdByName(id, "inventoryPolicies"));
-        if (blobInventoryPolicyName == null) {
+        String blobInventoryPolicyNameLocal = Utils.getValueFromIdByName(id, "inventoryPolicies");
+        if (blobInventoryPolicyNameLocal == null) {
             throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
@@ -170,6 +171,8 @@ public final class BlobInventoryPoliciesImpl implements BlobInventoryPolicies {
                             .format(
                                 "The resource ID '%s' is not valid. Missing path segment 'inventoryPolicies'.", id)));
         }
+        BlobInventoryPolicyName blobInventoryPolicyName =
+            BlobInventoryPolicyName.fromString(blobInventoryPolicyNameLocal);
         this.deleteWithResponse(resourceGroupName, accountName, blobInventoryPolicyName, Context.NONE);
     }
 
@@ -190,9 +193,8 @@ public final class BlobInventoryPoliciesImpl implements BlobInventoryPolicies {
                         String
                             .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
         }
-        BlobInventoryPolicyName blobInventoryPolicyName =
-            BlobInventoryPolicyName.fromString(Utils.getValueFromIdByName(id, "inventoryPolicies"));
-        if (blobInventoryPolicyName == null) {
+        String blobInventoryPolicyNameLocal = Utils.getValueFromIdByName(id, "inventoryPolicies");
+        if (blobInventoryPolicyNameLocal == null) {
             throw LOGGER
                 .logExceptionAsError(
                     new IllegalArgumentException(
@@ -200,6 +202,8 @@ public final class BlobInventoryPoliciesImpl implements BlobInventoryPolicies {
                             .format(
                                 "The resource ID '%s' is not valid. Missing path segment 'inventoryPolicies'.", id)));
         }
+        BlobInventoryPolicyName blobInventoryPolicyName =
+            BlobInventoryPolicyName.fromString(blobInventoryPolicyNameLocal);
         return this.deleteWithResponse(resourceGroupName, accountName, blobInventoryPolicyName, context);
     }
 

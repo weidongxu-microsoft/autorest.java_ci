@@ -32,7 +32,7 @@ public interface Metrics {
      *     has a comma in it then use %2 to indicate it. Eg: 'Metric,Name1' should be **'Metric%2Name1'**.
      * @param aggregation The list of aggregation types (comma separated) to retrieve.
      * @param top The maximum number of records to retrieve. Valid only if $filter is specified. Defaults to 10.
-     * @param orderby The aggregation to use for sorting results and the direction of the sort. Only one order can be
+     * @param orderBy The aggregation to use for sorting results and the direction of the sort. Only one order can be
      *     specified. Examples: sum asc.
      * @param filter The **$filter** is used to reduce the set of metric data returned. Example: Metric contains
      *     metadata A, B and C. - Return all time series of C where A = a1 and B = b1 or b2 **$filter=A eq 'a1' and B eq
@@ -60,7 +60,7 @@ public interface Metrics {
         String metricnames,
         String aggregation,
         Integer top,
-        String orderby,
+        String orderBy,
         String filter,
         ResultType resultType,
         String metricnamespace,
