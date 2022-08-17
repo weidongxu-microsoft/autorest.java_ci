@@ -8,7 +8,7 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** The SqlTempDbSettings model. */
+/** Set tempDb storage settings for SQL Server. */
 @Fluent
 public final class SqlTempDbSettings {
     /*

@@ -9,6 +9,7 @@ import com.azure.resourcemanager.sqlvirtualmachine.generated.models.AssessmentSe
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.AutoBackupSettings;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.AutoPatchingSettings;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.KeyVaultCredentialSettings;
+import com.azure.resourcemanager.sqlvirtualmachine.generated.models.LeastPrivilegeMode;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.ServerConfigurationsManagementSettings;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.SqlImageSku;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.SqlManagementMode;
@@ -49,6 +50,12 @@ public final class SqlVirtualMachineProperties {
      */
     @JsonProperty(value = "sqlManagement")
     private SqlManagementMode sqlManagement;
+
+    /*
+     * SQL IaaS Agent least privilege mode.
+     */
+    @JsonProperty(value = "leastPrivilegeMode")
+    private LeastPrivilegeMode leastPrivilegeMode;
 
     /*
      * SQL Server edition type.
@@ -109,6 +116,12 @@ public final class SqlVirtualMachineProperties {
      */
     @JsonProperty(value = "assessmentSettings")
     private AssessmentSettings assessmentSettings;
+
+    /*
+     * Enable automatic upgrade of Sql IaaS extension Agent.
+     */
+    @JsonProperty(value = "enableAutomaticUpgrade")
+    private Boolean enableAutomaticUpgrade;
 
     /**
      * Get the virtualMachineResourceId property: ARM Resource id of underlying virtual machine created from SQL
@@ -198,6 +211,26 @@ public final class SqlVirtualMachineProperties {
      */
     public SqlVirtualMachineProperties withSqlManagement(SqlManagementMode sqlManagement) {
         this.sqlManagement = sqlManagement;
+        return this;
+    }
+
+    /**
+     * Get the leastPrivilegeMode property: SQL IaaS Agent least privilege mode.
+     *
+     * @return the leastPrivilegeMode value.
+     */
+    public LeastPrivilegeMode leastPrivilegeMode() {
+        return this.leastPrivilegeMode;
+    }
+
+    /**
+     * Set the leastPrivilegeMode property: SQL IaaS Agent least privilege mode.
+     *
+     * @param leastPrivilegeMode the leastPrivilegeMode value to set.
+     * @return the SqlVirtualMachineProperties object itself.
+     */
+    public SqlVirtualMachineProperties withLeastPrivilegeMode(LeastPrivilegeMode leastPrivilegeMode) {
+        this.leastPrivilegeMode = leastPrivilegeMode;
         return this;
     }
 
@@ -409,6 +442,26 @@ public final class SqlVirtualMachineProperties {
      */
     public SqlVirtualMachineProperties withAssessmentSettings(AssessmentSettings assessmentSettings) {
         this.assessmentSettings = assessmentSettings;
+        return this;
+    }
+
+    /**
+     * Get the enableAutomaticUpgrade property: Enable automatic upgrade of Sql IaaS extension Agent.
+     *
+     * @return the enableAutomaticUpgrade value.
+     */
+    public Boolean enableAutomaticUpgrade() {
+        return this.enableAutomaticUpgrade;
+    }
+
+    /**
+     * Set the enableAutomaticUpgrade property: Enable automatic upgrade of Sql IaaS extension Agent.
+     *
+     * @param enableAutomaticUpgrade the enableAutomaticUpgrade value to set.
+     * @return the SqlVirtualMachineProperties object itself.
+     */
+    public SqlVirtualMachineProperties withEnableAutomaticUpgrade(Boolean enableAutomaticUpgrade) {
+        this.enableAutomaticUpgrade = enableAutomaticUpgrade;
         return this;
     }
 

@@ -98,6 +98,13 @@ public interface SqlVirtualMachine {
     SqlManagementMode sqlManagement();
 
     /**
+     * Gets the leastPrivilegeMode property: SQL IaaS Agent least privilege mode.
+     *
+     * @return the leastPrivilegeMode value.
+     */
+    LeastPrivilegeMode leastPrivilegeMode();
+
+    /**
      * Gets the sqlImageSku property: SQL Server edition type.
      *
      * @return the sqlImageSku value.
@@ -170,6 +177,13 @@ public interface SqlVirtualMachine {
      * @return the assessmentSettings value.
      */
     AssessmentSettings assessmentSettings();
+
+    /**
+     * Gets the enableAutomaticUpgrade property: Enable automatic upgrade of Sql IaaS extension Agent.
+     *
+     * @return the enableAutomaticUpgrade value.
+     */
+    Boolean enableAutomaticUpgrade();
 
     /**
      * Gets the region of the resource.
@@ -251,6 +265,7 @@ public interface SqlVirtualMachine {
                 DefinitionStages.WithSqlImageOffer,
                 DefinitionStages.WithSqlServerLicenseType,
                 DefinitionStages.WithSqlManagement,
+                DefinitionStages.WithLeastPrivilegeMode,
                 DefinitionStages.WithSqlImageSku,
                 DefinitionStages.WithWsfcDomainCredentials,
                 DefinitionStages.WithWsfcStaticIp,
@@ -259,7 +274,8 @@ public interface SqlVirtualMachine {
                 DefinitionStages.WithKeyVaultCredentialSettings,
                 DefinitionStages.WithServerConfigurationsManagementSettings,
                 DefinitionStages.WithStorageConfigurationSettings,
-                DefinitionStages.WithAssessmentSettings {
+                DefinitionStages.WithAssessmentSettings,
+                DefinitionStages.WithEnableAutomaticUpgrade {
             /**
              * Executes the create request.
              *
@@ -336,6 +352,16 @@ public interface SqlVirtualMachine {
              * @return the next definition stage.
              */
             WithCreate withSqlManagement(SqlManagementMode sqlManagement);
+        }
+        /** The stage of the SqlVirtualMachine definition allowing to specify leastPrivilegeMode. */
+        interface WithLeastPrivilegeMode {
+            /**
+             * Specifies the leastPrivilegeMode property: SQL IaaS Agent least privilege mode..
+             *
+             * @param leastPrivilegeMode SQL IaaS Agent least privilege mode.
+             * @return the next definition stage.
+             */
+            WithCreate withLeastPrivilegeMode(LeastPrivilegeMode leastPrivilegeMode);
         }
         /** The stage of the SqlVirtualMachine definition allowing to specify sqlImageSku. */
         interface WithSqlImageSku {
@@ -435,6 +461,16 @@ public interface SqlVirtualMachine {
              */
             WithCreate withAssessmentSettings(AssessmentSettings assessmentSettings);
         }
+        /** The stage of the SqlVirtualMachine definition allowing to specify enableAutomaticUpgrade. */
+        interface WithEnableAutomaticUpgrade {
+            /**
+             * Specifies the enableAutomaticUpgrade property: Enable automatic upgrade of Sql IaaS extension Agent..
+             *
+             * @param enableAutomaticUpgrade Enable automatic upgrade of Sql IaaS extension Agent.
+             * @return the next definition stage.
+             */
+            WithCreate withEnableAutomaticUpgrade(Boolean enableAutomaticUpgrade);
+        }
     }
     /**
      * Begins update for the SqlVirtualMachine resource.
@@ -489,24 +525,6 @@ public interface SqlVirtualMachine {
     SqlVirtualMachine refresh(Context context);
 
     /**
-     * Uninstalls and reinstalls the SQL Iaas Extension.
-     *
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void redeploy();
-
-    /**
-     * Uninstalls and reinstalls the SQL Iaas Extension.
-     *
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void redeploy(Context context);
-
-    /**
      * Starts Assessment on SQL virtual machine.
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -523,4 +541,22 @@ public interface SqlVirtualMachine {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void startAssessment(Context context);
+
+    /**
+     * Uninstalls and reinstalls the SQL Iaas Extension.
+     *
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void redeploy();
+
+    /**
+     * Uninstalls and reinstalls the SQL Iaas Extension.
+     *
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void redeploy(Context context);
 }

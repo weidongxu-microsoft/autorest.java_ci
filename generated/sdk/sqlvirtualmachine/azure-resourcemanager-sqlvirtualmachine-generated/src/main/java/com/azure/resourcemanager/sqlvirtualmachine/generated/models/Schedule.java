@@ -7,7 +7,7 @@ package com.azure.resourcemanager.sqlvirtualmachine.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The Schedule model. */
+/** Set assessment schedule for SQL Server. */
 @Fluent
 public final class Schedule {
     /*

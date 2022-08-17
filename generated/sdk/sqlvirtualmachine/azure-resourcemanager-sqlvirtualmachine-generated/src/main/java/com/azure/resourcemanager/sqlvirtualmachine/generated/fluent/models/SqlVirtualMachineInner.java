@@ -11,6 +11,7 @@ import com.azure.resourcemanager.sqlvirtualmachine.generated.models.AssessmentSe
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.AutoBackupSettings;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.AutoPatchingSettings;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.KeyVaultCredentialSettings;
+import com.azure.resourcemanager.sqlvirtualmachine.generated.models.LeastPrivilegeMode;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.ResourceIdentity;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.ServerConfigurationsManagementSettings;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.SqlImageSku;
@@ -194,6 +195,29 @@ public final class SqlVirtualMachineInner extends Resource {
             this.innerProperties = new SqlVirtualMachineProperties();
         }
         this.innerProperties().withSqlManagement(sqlManagement);
+        return this;
+    }
+
+    /**
+     * Get the leastPrivilegeMode property: SQL IaaS Agent least privilege mode.
+     *
+     * @return the leastPrivilegeMode value.
+     */
+    public LeastPrivilegeMode leastPrivilegeMode() {
+        return this.innerProperties() == null ? null : this.innerProperties().leastPrivilegeMode();
+    }
+
+    /**
+     * Set the leastPrivilegeMode property: SQL IaaS Agent least privilege mode.
+     *
+     * @param leastPrivilegeMode the leastPrivilegeMode value to set.
+     * @return the SqlVirtualMachineInner object itself.
+     */
+    public SqlVirtualMachineInner withLeastPrivilegeMode(LeastPrivilegeMode leastPrivilegeMode) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new SqlVirtualMachineProperties();
+        }
+        this.innerProperties().withLeastPrivilegeMode(leastPrivilegeMode);
         return this;
     }
 
@@ -435,6 +459,29 @@ public final class SqlVirtualMachineInner extends Resource {
             this.innerProperties = new SqlVirtualMachineProperties();
         }
         this.innerProperties().withAssessmentSettings(assessmentSettings);
+        return this;
+    }
+
+    /**
+     * Get the enableAutomaticUpgrade property: Enable automatic upgrade of Sql IaaS extension Agent.
+     *
+     * @return the enableAutomaticUpgrade value.
+     */
+    public Boolean enableAutomaticUpgrade() {
+        return this.innerProperties() == null ? null : this.innerProperties().enableAutomaticUpgrade();
+    }
+
+    /**
+     * Set the enableAutomaticUpgrade property: Enable automatic upgrade of Sql IaaS extension Agent.
+     *
+     * @param enableAutomaticUpgrade the enableAutomaticUpgrade value to set.
+     * @return the SqlVirtualMachineInner object itself.
+     */
+    public SqlVirtualMachineInner withEnableAutomaticUpgrade(Boolean enableAutomaticUpgrade) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new SqlVirtualMachineProperties();
+        }
+        this.innerProperties().withEnableAutomaticUpgrade(enableAutomaticUpgrade);
         return this;
     }
 
