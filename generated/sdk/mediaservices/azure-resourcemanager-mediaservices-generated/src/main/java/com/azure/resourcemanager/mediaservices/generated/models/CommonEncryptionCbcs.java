@@ -35,6 +35,12 @@ public final class CommonEncryptionCbcs {
     @JsonProperty(value = "drm")
     private CbcsDrmConfiguration drm;
 
+    /*
+     * Optional configuration supporting ClearKey in CommonEncryptionCbcs encryption scheme.
+     */
+    @JsonProperty(value = "clearKeyEncryptionConfiguration")
+    private ClearKeyEncryptionConfiguration clearKeyEncryptionConfiguration;
+
     /**
      * Get the enabledProtocols property: Representing supported protocols.
      *
@@ -118,6 +124,29 @@ public final class CommonEncryptionCbcs {
     }
 
     /**
+     * Get the clearKeyEncryptionConfiguration property: Optional configuration supporting ClearKey in
+     * CommonEncryptionCbcs encryption scheme.
+     *
+     * @return the clearKeyEncryptionConfiguration value.
+     */
+    public ClearKeyEncryptionConfiguration clearKeyEncryptionConfiguration() {
+        return this.clearKeyEncryptionConfiguration;
+    }
+
+    /**
+     * Set the clearKeyEncryptionConfiguration property: Optional configuration supporting ClearKey in
+     * CommonEncryptionCbcs encryption scheme.
+     *
+     * @param clearKeyEncryptionConfiguration the clearKeyEncryptionConfiguration value to set.
+     * @return the CommonEncryptionCbcs object itself.
+     */
+    public CommonEncryptionCbcs withClearKeyEncryptionConfiguration(
+        ClearKeyEncryptionConfiguration clearKeyEncryptionConfiguration) {
+        this.clearKeyEncryptionConfiguration = clearKeyEncryptionConfiguration;
+        return this;
+    }
+
+    /**
      * Validates the instance.
      *
      * @throws IllegalArgumentException thrown if the instance is not valid.
@@ -134,6 +163,9 @@ public final class CommonEncryptionCbcs {
         }
         if (drm() != null) {
             drm().validate();
+        }
+        if (clearKeyEncryptionConfiguration() != null) {
+            clearKeyEncryptionConfiguration().validate();
         }
     }
 }
