@@ -4,7 +4,7 @@
 
 package com.azure.resourcemanager.consumption.generated.fluent.models;
 
-import com.azure.core.annotation.Fluent;
+import com.azure.core.annotation.Immutable;
 import com.azure.core.management.ProxyResource;
 import com.azure.resourcemanager.consumption.generated.models.MeterDetails;
 import com.azure.resourcemanager.consumption.generated.models.PriceSheetProperties;
@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Map;
 
 /** An pricesheet resource. */
-@Fluent
+@Immutable
 public final class PriceSheetResultInner extends ProxyResource {
     /*
      * price sheet result. It contains the pricesheet associated with billing period

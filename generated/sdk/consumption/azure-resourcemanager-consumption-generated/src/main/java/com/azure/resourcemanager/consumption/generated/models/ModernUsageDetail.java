@@ -4,7 +4,7 @@
 
 package com.azure.resourcemanager.consumption.generated.models;
 
-import com.azure.core.annotation.Fluent;
+import com.azure.core.annotation.Immutable;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.consumption.generated.fluent.models.ModernUsageDetailProperties;
 import com.azure.resourcemanager.consumption.generated.fluent.models.UsageDetailInner;
@@ -18,7 +18,7 @@ import java.util.UUID;
 /** Modern usage detail. */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "kind")
 @JsonTypeName("modern")
-@Fluent
+@Immutable
 public final class ModernUsageDetail extends UsageDetailInner {
     /*
      * Properties for modern usage details

@@ -4,7 +4,7 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Fluent;
+import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.network.generated.fluent.models.HopLinkProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Map;
 
 /** Hop link. */
-@Fluent
+@Immutable
 public final class HopLink {
     /*
      * The ID of the next hop.

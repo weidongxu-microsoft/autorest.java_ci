@@ -4,7 +4,7 @@
 
 package com.azure.resourcemanager.consumption.generated.fluent.models;
 
-import com.azure.core.annotation.Fluent;
+import com.azure.core.annotation.Immutable;
 import com.azure.core.management.ProxyResource;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -13,7 +13,7 @@ import java.time.OffsetDateTime;
 import java.util.Map;
 
 /** reservation detail resource. */
-@Fluent
+@Immutable
 public final class ReservationDetailInner extends ProxyResource {
     /*
      * The properties of the reservation detail.

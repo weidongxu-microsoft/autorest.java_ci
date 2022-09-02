@@ -4,7 +4,7 @@
 
 package com.azure.resourcemanager.consumption.generated.models;
 
-import com.azure.core.annotation.Fluent;
+import com.azure.core.annotation.Immutable;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.consumption.generated.fluent.models.LegacyReservationRecommendationProperties;
 import com.azure.resourcemanager.consumption.generated.fluent.models.ReservationRecommendationInner;
@@ -19,7 +19,7 @@ import java.util.UUID;
 /** Legacy reservation recommendation. */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "kind")
 @JsonTypeName("legacy")
-@Fluent
+@Immutable
 public final class LegacyReservationRecommendation extends ReservationRecommendationInner {
     /*
      * Properties for legacy reservation recommendation

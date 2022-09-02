@@ -4,7 +4,7 @@
 
 package com.azure.resourcemanager.consumption.generated.models;
 
-import com.azure.core.annotation.Fluent;
+import com.azure.core.annotation.Immutable;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.consumption.generated.fluent.models.ModernReservationRecommendationProperties;
 import com.azure.resourcemanager.consumption.generated.fluent.models.ReservationRecommendationInner;
@@ -19,7 +19,7 @@ import java.util.UUID;
 /** Modern reservation recommendation. */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "kind")
 @JsonTypeName("modern")
-@Fluent
+@Immutable
 public final class ModernReservationRecommendation extends ReservationRecommendationInner {
     /*
      * Properties for modern reservation recommendation

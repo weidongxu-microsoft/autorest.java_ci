@@ -4,7 +4,7 @@
 
 package com.azure.resourcemanager.consumption.generated.fluent.models;
 
-import com.azure.core.annotation.Fluent;
+import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.consumption.generated.models.ReservationTransactionResource;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.math.BigDecimal;
@@ -12,7 +12,7 @@ import java.time.OffsetDateTime;
 import java.util.UUID;
 
 /** Reservation transaction resource. */
-@Fluent
+@Immutable
 public class ReservationTransactionInner extends ReservationTransactionResource {
     /*
      * The properties of a legacy reservation transaction.

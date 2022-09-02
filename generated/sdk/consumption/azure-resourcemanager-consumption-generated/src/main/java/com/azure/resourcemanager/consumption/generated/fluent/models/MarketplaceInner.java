@@ -4,7 +4,7 @@
 
 package com.azure.resourcemanager.consumption.generated.fluent.models;
 
-import com.azure.core.annotation.Fluent;
+import com.azure.core.annotation.Immutable;
 import com.azure.core.management.ProxyResource;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -14,7 +14,7 @@ import java.util.Map;
 import java.util.UUID;
 
 /** A marketplace resource. */
-@Fluent
+@Immutable
 public final class MarketplaceInner extends ProxyResource {
     /*
      * The properties of the marketplace usage detail.

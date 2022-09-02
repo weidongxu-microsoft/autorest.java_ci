@@ -4,12 +4,12 @@
 
 package com.azure.resourcemanager.mysql.generated.fluent.models;
 
-import com.azure.core.annotation.Fluent;
+import com.azure.core.annotation.Immutable;
 import com.azure.core.management.ProxyResource;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** A recoverable server resource. */
-@Fluent
+@Immutable
 public final class RecoverableServerResourceInner extends ProxyResource {
     /*
      * Resource properties.

@@ -4,13 +4,13 @@
 
 package com.azure.resourcemanager.monitor.generated.fluent.models;
 
-import com.azure.core.annotation.Fluent;
+import com.azure.core.annotation.Immutable;
 import com.azure.core.management.ProxyResource;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** A private link resource. */
-@Fluent
+@Immutable
 public final class PrivateLinkResourceInner extends ProxyResource {
     /*
      * Resource properties.
