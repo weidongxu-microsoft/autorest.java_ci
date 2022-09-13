@@ -174,6 +174,56 @@ public final class AttachedDatabaseConfigurationInner extends ProxyResource {
     }
 
     /**
+     * Get the databaseNameOverride property: Overrides the original database name. Relevant only when attaching to a
+     * specific database.
+     *
+     * @return the databaseNameOverride value.
+     */
+    public String databaseNameOverride() {
+        return this.innerProperties() == null ? null : this.innerProperties().databaseNameOverride();
+    }
+
+    /**
+     * Set the databaseNameOverride property: Overrides the original database name. Relevant only when attaching to a
+     * specific database.
+     *
+     * @param databaseNameOverride the databaseNameOverride value to set.
+     * @return the AttachedDatabaseConfigurationInner object itself.
+     */
+    public AttachedDatabaseConfigurationInner withDatabaseNameOverride(String databaseNameOverride) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new AttachedDatabaseConfigurationProperties();
+        }
+        this.innerProperties().withDatabaseNameOverride(databaseNameOverride);
+        return this;
+    }
+
+    /**
+     * Get the databaseNamePrefix property: Adds a prefix to the attached databases name. When following an entire
+     * cluster, that prefix would be added to all of the databases original names from leader cluster.
+     *
+     * @return the databaseNamePrefix value.
+     */
+    public String databaseNamePrefix() {
+        return this.innerProperties() == null ? null : this.innerProperties().databaseNamePrefix();
+    }
+
+    /**
+     * Set the databaseNamePrefix property: Adds a prefix to the attached databases name. When following an entire
+     * cluster, that prefix would be added to all of the databases original names from leader cluster.
+     *
+     * @param databaseNamePrefix the databaseNamePrefix value to set.
+     * @return the AttachedDatabaseConfigurationInner object itself.
+     */
+    public AttachedDatabaseConfigurationInner withDatabaseNamePrefix(String databaseNamePrefix) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new AttachedDatabaseConfigurationProperties();
+        }
+        this.innerProperties().withDatabaseNamePrefix(databaseNamePrefix);
+        return this;
+    }
+
+    /**
      * Validates the instance.
      *
      * @throws IllegalArgumentException thrown if the instance is not valid.

@@ -70,8 +70,8 @@ public final class EventGridConnectionProperties {
     private BlobStorageEventType blobStorageEventType;
 
     /*
-     * Empty for non-managed identity based data connection. For system assigned identity, provide cluster resource Id.
-     * For user assigned identity (UAI) provide the UAI resource Id.
+     * The resource ID of a managed identity (system or user assigned) to be used to authenticate with event hub and
+     * storage account.
      */
     @JsonProperty(value = "managedIdentityResourceId")
     private String managedIdentityResourceId;
@@ -286,8 +286,8 @@ public final class EventGridConnectionProperties {
     }
 
     /**
-     * Get the managedIdentityResourceId property: Empty for non-managed identity based data connection. For system
-     * assigned identity, provide cluster resource Id. For user assigned identity (UAI) provide the UAI resource Id.
+     * Get the managedIdentityResourceId property: The resource ID of a managed identity (system or user assigned) to be
+     * used to authenticate with event hub and storage account.
      *
      * @return the managedIdentityResourceId value.
      */
@@ -296,8 +296,8 @@ public final class EventGridConnectionProperties {
     }
 
     /**
-     * Set the managedIdentityResourceId property: Empty for non-managed identity based data connection. For system
-     * assigned identity, provide cluster resource Id. For user assigned identity (UAI) provide the UAI resource Id.
+     * Set the managedIdentityResourceId property: The resource ID of a managed identity (system or user assigned) to be
+     * used to authenticate with event hub and storage account.
      *
      * @param managedIdentityResourceId the managedIdentityResourceId value to set.
      * @return the EventGridConnectionProperties object itself.

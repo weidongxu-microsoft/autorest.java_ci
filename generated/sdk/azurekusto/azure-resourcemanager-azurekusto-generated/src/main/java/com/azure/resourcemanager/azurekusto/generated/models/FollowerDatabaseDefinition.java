@@ -32,6 +32,20 @@ public interface FollowerDatabaseDefinition {
     String databaseName();
 
     /**
+     * Gets the tableLevelSharingProperties property: Table level sharing specifications.
+     *
+     * @return the tableLevelSharingProperties value.
+     */
+    TableLevelSharingProperties tableLevelSharingProperties();
+
+    /**
+     * Gets the databaseShareOrigin property: The origin of the following setup.
+     *
+     * @return the databaseShareOrigin value.
+     */
+    DatabaseShareOrigin databaseShareOrigin();
+
+    /**
      * Gets the inner com.azure.resourcemanager.azurekusto.generated.fluent.models.FollowerDatabaseDefinitionInner
      * object.
      *

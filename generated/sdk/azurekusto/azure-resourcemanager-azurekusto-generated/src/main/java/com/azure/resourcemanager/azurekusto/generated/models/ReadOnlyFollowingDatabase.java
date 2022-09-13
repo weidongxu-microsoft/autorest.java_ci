@@ -118,6 +118,34 @@ public final class ReadOnlyFollowingDatabase extends DatabaseInner {
     }
 
     /**
+     * Get the tableLevelSharingProperties property: Table level sharing specifications.
+     *
+     * @return the tableLevelSharingProperties value.
+     */
+    public TableLevelSharingProperties tableLevelSharingProperties() {
+        return this.innerProperties() == null ? null : this.innerProperties().tableLevelSharingProperties();
+    }
+
+    /**
+     * Get the originalDatabaseName property: The original database name, before databaseNameOverride or
+     * databaseNamePrefix where applied.
+     *
+     * @return the originalDatabaseName value.
+     */
+    public String originalDatabaseName() {
+        return this.innerProperties() == null ? null : this.innerProperties().originalDatabaseName();
+    }
+
+    /**
+     * Get the databaseShareOrigin property: The origin of the following setup.
+     *
+     * @return the databaseShareOrigin value.
+     */
+    public DatabaseShareOrigin databaseShareOrigin() {
+        return this.innerProperties() == null ? null : this.innerProperties().databaseShareOrigin();
+    }
+
+    /**
      * Validates the instance.
      *
      * @throws IllegalArgumentException thrown if the instance is not valid.

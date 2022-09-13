@@ -67,6 +67,14 @@ public final class AttachedDatabaseConfigurationImpl
         return this.innerModel().tableLevelSharingProperties();
     }
 
+    public String databaseNameOverride() {
+        return this.innerModel().databaseNameOverride();
+    }
+
+    public String databaseNamePrefix() {
+        return this.innerModel().databaseNamePrefix();
+    }
+
     public Region region() {
         return Region.fromName(this.regionName());
     }
@@ -210,6 +218,16 @@ public final class AttachedDatabaseConfigurationImpl
     public AttachedDatabaseConfigurationImpl withTableLevelSharingProperties(
         TableLevelSharingProperties tableLevelSharingProperties) {
         this.innerModel().withTableLevelSharingProperties(tableLevelSharingProperties);
+        return this;
+    }
+
+    public AttachedDatabaseConfigurationImpl withDatabaseNameOverride(String databaseNameOverride) {
+        this.innerModel().withDatabaseNameOverride(databaseNameOverride);
+        return this;
+    }
+
+    public AttachedDatabaseConfigurationImpl withDatabaseNamePrefix(String databaseNamePrefix) {
+        this.innerModel().withDatabaseNamePrefix(databaseNamePrefix);
         return this;
     }
 }

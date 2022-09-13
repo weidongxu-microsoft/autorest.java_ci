@@ -52,6 +52,19 @@ public final class AttachedDatabaseConfigurationProperties {
     @JsonProperty(value = "tableLevelSharingProperties")
     private TableLevelSharingProperties tableLevelSharingProperties;
 
+    /*
+     * Overrides the original database name. Relevant only when attaching to a specific database.
+     */
+    @JsonProperty(value = "databaseNameOverride")
+    private String databaseNameOverride;
+
+    /*
+     * Adds a prefix to the attached databases name. When following an entire cluster, that prefix would be added to
+     * all of the databases original names from leader cluster.
+     */
+    @JsonProperty(value = "databaseNamePrefix")
+    private String databaseNamePrefix;
+
     /**
      * Get the provisioningState property: The provisioned state of the resource.
      *
@@ -154,6 +167,50 @@ public final class AttachedDatabaseConfigurationProperties {
     public AttachedDatabaseConfigurationProperties withTableLevelSharingProperties(
         TableLevelSharingProperties tableLevelSharingProperties) {
         this.tableLevelSharingProperties = tableLevelSharingProperties;
+        return this;
+    }
+
+    /**
+     * Get the databaseNameOverride property: Overrides the original database name. Relevant only when attaching to a
+     * specific database.
+     *
+     * @return the databaseNameOverride value.
+     */
+    public String databaseNameOverride() {
+        return this.databaseNameOverride;
+    }
+
+    /**
+     * Set the databaseNameOverride property: Overrides the original database name. Relevant only when attaching to a
+     * specific database.
+     *
+     * @param databaseNameOverride the databaseNameOverride value to set.
+     * @return the AttachedDatabaseConfigurationProperties object itself.
+     */
+    public AttachedDatabaseConfigurationProperties withDatabaseNameOverride(String databaseNameOverride) {
+        this.databaseNameOverride = databaseNameOverride;
+        return this;
+    }
+
+    /**
+     * Get the databaseNamePrefix property: Adds a prefix to the attached databases name. When following an entire
+     * cluster, that prefix would be added to all of the databases original names from leader cluster.
+     *
+     * @return the databaseNamePrefix value.
+     */
+    public String databaseNamePrefix() {
+        return this.databaseNamePrefix;
+    }
+
+    /**
+     * Set the databaseNamePrefix property: Adds a prefix to the attached databases name. When following an entire
+     * cluster, that prefix would be added to all of the databases original names from leader cluster.
+     *
+     * @param databaseNamePrefix the databaseNamePrefix value to set.
+     * @return the AttachedDatabaseConfigurationProperties object itself.
+     */
+    public AttachedDatabaseConfigurationProperties withDatabaseNamePrefix(String databaseNamePrefix) {
+        this.databaseNamePrefix = databaseNamePrefix;
         return this;
     }
 

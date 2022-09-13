@@ -6,6 +6,8 @@ package com.azure.resourcemanager.azurekusto.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.resourcemanager.azurekusto.generated.models.DatabaseShareOrigin;
+import com.azure.resourcemanager.azurekusto.generated.models.TableLevelSharingProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** A class representing follower database request. */
@@ -28,6 +30,18 @@ public final class FollowerDatabaseDefinitionInner {
      */
     @JsonProperty(value = "databaseName", access = JsonProperty.Access.WRITE_ONLY)
     private String databaseName;
+
+    /*
+     * Table level sharing specifications
+     */
+    @JsonProperty(value = "tableLevelSharingProperties", access = JsonProperty.Access.WRITE_ONLY)
+    private TableLevelSharingProperties tableLevelSharingProperties;
+
+    /*
+     * The origin of the following setup.
+     */
+    @JsonProperty(value = "databaseShareOrigin", access = JsonProperty.Access.WRITE_ONLY)
+    private DatabaseShareOrigin databaseShareOrigin;
 
     /**
      * Get the clusterResourceId property: Resource id of the cluster that follows a database owned by this cluster.
@@ -83,6 +97,24 @@ public final class FollowerDatabaseDefinitionInner {
     }
 
     /**
+     * Get the tableLevelSharingProperties property: Table level sharing specifications.
+     *
+     * @return the tableLevelSharingProperties value.
+     */
+    public TableLevelSharingProperties tableLevelSharingProperties() {
+        return this.tableLevelSharingProperties;
+    }
+
+    /**
+     * Get the databaseShareOrigin property: The origin of the following setup.
+     *
+     * @return the databaseShareOrigin value.
+     */
+    public DatabaseShareOrigin databaseShareOrigin() {
+        return this.databaseShareOrigin;
+    }
+
+    /**
      * Validates the instance.
      *
      * @throws IllegalArgumentException thrown if the instance is not valid.
@@ -100,6 +132,9 @@ public final class FollowerDatabaseDefinitionInner {
                     new IllegalArgumentException(
                         "Missing required property attachedDatabaseConfigurationName in model"
                             + " FollowerDatabaseDefinitionInner"));
+        }
+        if (tableLevelSharingProperties() != null) {
+            tableLevelSharingProperties().validate();
         }
     }
 

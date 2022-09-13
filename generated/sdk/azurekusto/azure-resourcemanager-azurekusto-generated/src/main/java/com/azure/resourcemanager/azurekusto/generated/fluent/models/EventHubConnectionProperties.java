@@ -11,6 +11,7 @@ import com.azure.resourcemanager.azurekusto.generated.models.DatabaseRouting;
 import com.azure.resourcemanager.azurekusto.generated.models.EventHubDataFormat;
 import com.azure.resourcemanager.azurekusto.generated.models.ProvisioningState;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.time.OffsetDateTime;
 import java.util.List;
 
 /** Class representing the Kusto event hub connection properties. */
@@ -65,8 +66,7 @@ public final class EventHubConnectionProperties {
     private ProvisioningState provisioningState;
 
     /*
-     * Empty for non-managed identity based data connection. For system assigned identity, provide cluster resource Id.
-     * For user assigned identity (UAI) provide the UAI resource Id.
+     * The resource ID of a managed identity (system or user assigned) to be used to authenticate with event hub.
      */
     @JsonProperty(value = "managedIdentityResourceId")
     private String managedIdentityResourceId;
@@ -83,6 +83,13 @@ public final class EventHubConnectionProperties {
      */
     @JsonProperty(value = "databaseRouting")
     private DatabaseRouting databaseRouting;
+
+    /*
+     * When defined, the data connection retrieves existing Event hub events created since the Retrieval start date. It
+     * can only retrieve events retained by the Event hub, based on its retention period.
+     */
+    @JsonProperty(value = "retrievalStartDate")
+    private OffsetDateTime retrievalStartDate;
 
     /**
      * Get the eventHubResourceId property: The resource ID of the event hub to be used to create a data connection.
@@ -240,8 +247,8 @@ public final class EventHubConnectionProperties {
     }
 
     /**
-     * Get the managedIdentityResourceId property: Empty for non-managed identity based data connection. For system
-     * assigned identity, provide cluster resource Id. For user assigned identity (UAI) provide the UAI resource Id.
+     * Get the managedIdentityResourceId property: The resource ID of a managed identity (system or user assigned) to be
+     * used to authenticate with event hub.
      *
      * @return the managedIdentityResourceId value.
      */
@@ -250,8 +257,8 @@ public final class EventHubConnectionProperties {
     }
 
     /**
-     * Set the managedIdentityResourceId property: Empty for non-managed identity based data connection. For system
-     * assigned identity, provide cluster resource Id. For user assigned identity (UAI) provide the UAI resource Id.
+     * Set the managedIdentityResourceId property: The resource ID of a managed identity (system or user assigned) to be
+     * used to authenticate with event hub.
      *
      * @param managedIdentityResourceId the managedIdentityResourceId value to set.
      * @return the EventHubConnectionProperties object itself.
@@ -289,6 +296,30 @@ public final class EventHubConnectionProperties {
      */
     public EventHubConnectionProperties withDatabaseRouting(DatabaseRouting databaseRouting) {
         this.databaseRouting = databaseRouting;
+        return this;
+    }
+
+    /**
+     * Get the retrievalStartDate property: When defined, the data connection retrieves existing Event hub events
+     * created since the Retrieval start date. It can only retrieve events retained by the Event hub, based on its
+     * retention period.
+     *
+     * @return the retrievalStartDate value.
+     */
+    public OffsetDateTime retrievalStartDate() {
+        return this.retrievalStartDate;
+    }
+
+    /**
+     * Set the retrievalStartDate property: When defined, the data connection retrieves existing Event hub events
+     * created since the Retrieval start date. It can only retrieve events retained by the Event hub, based on its
+     * retention period.
+     *
+     * @param retrievalStartDate the retrievalStartDate value to set.
+     * @return the EventHubConnectionProperties object itself.
+     */
+    public EventHubConnectionProperties withRetrievalStartDate(OffsetDateTime retrievalStartDate) {
+        this.retrievalStartDate = retrievalStartDate;
         return this;
     }
 

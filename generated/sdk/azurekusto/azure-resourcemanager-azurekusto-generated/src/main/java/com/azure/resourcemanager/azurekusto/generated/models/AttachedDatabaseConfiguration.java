@@ -85,6 +85,22 @@ public interface AttachedDatabaseConfiguration {
     TableLevelSharingProperties tableLevelSharingProperties();
 
     /**
+     * Gets the databaseNameOverride property: Overrides the original database name. Relevant only when attaching to a
+     * specific database.
+     *
+     * @return the databaseNameOverride value.
+     */
+    String databaseNameOverride();
+
+    /**
+     * Gets the databaseNamePrefix property: Adds a prefix to the attached databases name. When following an entire
+     * cluster, that prefix would be added to all of the databases original names from leader cluster.
+     *
+     * @return the databaseNamePrefix value.
+     */
+    String databaseNamePrefix();
+
+    /**
      * Gets the region of the resource.
      *
      * @return the region of the resource.
@@ -142,7 +158,9 @@ public interface AttachedDatabaseConfiguration {
                 DefinitionStages.WithDatabaseName,
                 DefinitionStages.WithClusterResourceId,
                 DefinitionStages.WithDefaultPrincipalsModificationKind,
-                DefinitionStages.WithTableLevelSharingProperties {
+                DefinitionStages.WithTableLevelSharingProperties,
+                DefinitionStages.WithDatabaseNameOverride,
+                DefinitionStages.WithDatabaseNamePrefix {
             /**
              * Executes the create request.
              *
@@ -226,6 +244,31 @@ public interface AttachedDatabaseConfiguration {
              */
             WithCreate withTableLevelSharingProperties(TableLevelSharingProperties tableLevelSharingProperties);
         }
+        /** The stage of the AttachedDatabaseConfiguration definition allowing to specify databaseNameOverride. */
+        interface WithDatabaseNameOverride {
+            /**
+             * Specifies the databaseNameOverride property: Overrides the original database name. Relevant only when
+             * attaching to a specific database..
+             *
+             * @param databaseNameOverride Overrides the original database name. Relevant only when attaching to a
+             *     specific database.
+             * @return the next definition stage.
+             */
+            WithCreate withDatabaseNameOverride(String databaseNameOverride);
+        }
+        /** The stage of the AttachedDatabaseConfiguration definition allowing to specify databaseNamePrefix. */
+        interface WithDatabaseNamePrefix {
+            /**
+             * Specifies the databaseNamePrefix property: Adds a prefix to the attached databases name. When following
+             * an entire cluster, that prefix would be added to all of the databases original names from leader
+             * cluster..
+             *
+             * @param databaseNamePrefix Adds a prefix to the attached databases name. When following an entire cluster,
+             *     that prefix would be added to all of the databases original names from leader cluster.
+             * @return the next definition stage.
+             */
+            WithCreate withDatabaseNamePrefix(String databaseNamePrefix);
+        }
     }
     /**
      * Begins update for the AttachedDatabaseConfiguration resource.
@@ -239,7 +282,9 @@ public interface AttachedDatabaseConfiguration {
         extends UpdateStages.WithDatabaseName,
             UpdateStages.WithClusterResourceId,
             UpdateStages.WithDefaultPrincipalsModificationKind,
-            UpdateStages.WithTableLevelSharingProperties {
+            UpdateStages.WithTableLevelSharingProperties,
+            UpdateStages.WithDatabaseNameOverride,
+            UpdateStages.WithDatabaseNamePrefix {
         /**
          * Executes the update request.
          *
@@ -303,6 +348,31 @@ public interface AttachedDatabaseConfiguration {
              * @return the next definition stage.
              */
             Update withTableLevelSharingProperties(TableLevelSharingProperties tableLevelSharingProperties);
+        }
+        /** The stage of the AttachedDatabaseConfiguration update allowing to specify databaseNameOverride. */
+        interface WithDatabaseNameOverride {
+            /**
+             * Specifies the databaseNameOverride property: Overrides the original database name. Relevant only when
+             * attaching to a specific database..
+             *
+             * @param databaseNameOverride Overrides the original database name. Relevant only when attaching to a
+             *     specific database.
+             * @return the next definition stage.
+             */
+            Update withDatabaseNameOverride(String databaseNameOverride);
+        }
+        /** The stage of the AttachedDatabaseConfiguration update allowing to specify databaseNamePrefix. */
+        interface WithDatabaseNamePrefix {
+            /**
+             * Specifies the databaseNamePrefix property: Adds a prefix to the attached databases name. When following
+             * an entire cluster, that prefix would be added to all of the databases original names from leader
+             * cluster..
+             *
+             * @param databaseNamePrefix Adds a prefix to the attached databases name. When following an entire cluster,
+             *     that prefix would be added to all of the databases original names from leader cluster.
+             * @return the next definition stage.
+             */
+            Update withDatabaseNamePrefix(String databaseNamePrefix);
         }
     }
     /**

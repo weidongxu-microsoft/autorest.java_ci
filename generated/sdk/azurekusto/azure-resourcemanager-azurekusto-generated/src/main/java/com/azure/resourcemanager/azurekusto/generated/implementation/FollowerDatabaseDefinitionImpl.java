@@ -5,7 +5,9 @@
 package com.azure.resourcemanager.azurekusto.generated.implementation;
 
 import com.azure.resourcemanager.azurekusto.generated.fluent.models.FollowerDatabaseDefinitionInner;
+import com.azure.resourcemanager.azurekusto.generated.models.DatabaseShareOrigin;
 import com.azure.resourcemanager.azurekusto.generated.models.FollowerDatabaseDefinition;
+import com.azure.resourcemanager.azurekusto.generated.models.TableLevelSharingProperties;
 
 public final class FollowerDatabaseDefinitionImpl implements FollowerDatabaseDefinition {
     private FollowerDatabaseDefinitionInner innerObject;
@@ -29,6 +31,14 @@ public final class FollowerDatabaseDefinitionImpl implements FollowerDatabaseDef
 
     public String databaseName() {
         return this.innerModel().databaseName();
+    }
+
+    public TableLevelSharingProperties tableLevelSharingProperties() {
+        return this.innerModel().tableLevelSharingProperties();
+    }
+
+    public DatabaseShareOrigin databaseShareOrigin() {
+        return this.innerModel().databaseShareOrigin();
     }
 
     public FollowerDatabaseDefinitionInner innerModel() {

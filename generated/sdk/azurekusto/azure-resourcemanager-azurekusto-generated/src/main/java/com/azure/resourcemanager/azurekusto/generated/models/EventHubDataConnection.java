@@ -10,6 +10,7 @@ import com.azure.resourcemanager.azurekusto.generated.fluent.models.EventHubConn
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import java.time.OffsetDateTime;
 import java.util.List;
 
 /** Class representing an event hub data connection. */
@@ -216,8 +217,8 @@ public final class EventHubDataConnection extends DataConnectionInner {
     }
 
     /**
-     * Get the managedIdentityResourceId property: Empty for non-managed identity based data connection. For system
-     * assigned identity, provide cluster resource Id. For user assigned identity (UAI) provide the UAI resource Id.
+     * Get the managedIdentityResourceId property: The resource ID of a managed identity (system or user assigned) to be
+     * used to authenticate with event hub.
      *
      * @return the managedIdentityResourceId value.
      */
@@ -226,8 +227,8 @@ public final class EventHubDataConnection extends DataConnectionInner {
     }
 
     /**
-     * Set the managedIdentityResourceId property: Empty for non-managed identity based data connection. For system
-     * assigned identity, provide cluster resource Id. For user assigned identity (UAI) provide the UAI resource Id.
+     * Set the managedIdentityResourceId property: The resource ID of a managed identity (system or user assigned) to be
+     * used to authenticate with event hub.
      *
      * @param managedIdentityResourceId the managedIdentityResourceId value to set.
      * @return the EventHubDataConnection object itself.
@@ -271,6 +272,33 @@ public final class EventHubDataConnection extends DataConnectionInner {
             this.innerProperties = new EventHubConnectionProperties();
         }
         this.innerProperties().withDatabaseRouting(databaseRouting);
+        return this;
+    }
+
+    /**
+     * Get the retrievalStartDate property: When defined, the data connection retrieves existing Event hub events
+     * created since the Retrieval start date. It can only retrieve events retained by the Event hub, based on its
+     * retention period.
+     *
+     * @return the retrievalStartDate value.
+     */
+    public OffsetDateTime retrievalStartDate() {
+        return this.innerProperties() == null ? null : this.innerProperties().retrievalStartDate();
+    }
+
+    /**
+     * Set the retrievalStartDate property: When defined, the data connection retrieves existing Event hub events
+     * created since the Retrieval start date. It can only retrieve events retained by the Event hub, based on its
+     * retention period.
+     *
+     * @param retrievalStartDate the retrievalStartDate value to set.
+     * @return the EventHubDataConnection object itself.
+     */
+    public EventHubDataConnection withRetrievalStartDate(OffsetDateTime retrievalStartDate) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new EventHubConnectionProperties();
+        }
+        this.innerProperties().withRetrievalStartDate(retrievalStartDate);
         return this;
     }
 

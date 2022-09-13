@@ -10,6 +10,7 @@ import com.azure.resourcemanager.azurekusto.generated.models.DatabaseRouting;
 import com.azure.resourcemanager.azurekusto.generated.models.IotHubDataFormat;
 import com.azure.resourcemanager.azurekusto.generated.models.ProvisioningState;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.time.OffsetDateTime;
 import java.util.List;
 
 /** Class representing the Kusto Iot hub connection properties. */
@@ -63,6 +64,13 @@ public final class IotHubConnectionProperties {
      */
     @JsonProperty(value = "databaseRouting")
     private DatabaseRouting databaseRouting;
+
+    /*
+     * When defined, the data connection retrieves existing Event hub events created since the Retrieval start date. It
+     * can only retrieve events retained by the Event hub, based on its retention period.
+     */
+    @JsonProperty(value = "retrievalStartDate")
+    private OffsetDateTime retrievalStartDate;
 
     /*
      * The provisioned state of the resource.
@@ -235,6 +243,30 @@ public final class IotHubConnectionProperties {
      */
     public IotHubConnectionProperties withDatabaseRouting(DatabaseRouting databaseRouting) {
         this.databaseRouting = databaseRouting;
+        return this;
+    }
+
+    /**
+     * Get the retrievalStartDate property: When defined, the data connection retrieves existing Event hub events
+     * created since the Retrieval start date. It can only retrieve events retained by the Event hub, based on its
+     * retention period.
+     *
+     * @return the retrievalStartDate value.
+     */
+    public OffsetDateTime retrievalStartDate() {
+        return this.retrievalStartDate;
+    }
+
+    /**
+     * Set the retrievalStartDate property: When defined, the data connection retrieves existing Event hub events
+     * created since the Retrieval start date. It can only retrieve events retained by the Event hub, based on its
+     * retention period.
+     *
+     * @param retrievalStartDate the retrievalStartDate value to set.
+     * @return the IotHubConnectionProperties object itself.
+     */
+    public IotHubConnectionProperties withRetrievalStartDate(OffsetDateTime retrievalStartDate) {
+        this.retrievalStartDate = retrievalStartDate;
         return this;
     }
 
