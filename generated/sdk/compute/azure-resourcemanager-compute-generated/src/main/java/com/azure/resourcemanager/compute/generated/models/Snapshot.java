@@ -172,6 +172,14 @@ public interface Snapshot {
     Boolean incremental();
 
     /**
+     * Gets the incrementalSnapshotFamilyId property: Incremental snapshots for a disk share an incremental snapshot
+     * family id. The Get Page Range Diff API can only be called on incremental snapshots with the same family id.
+     *
+     * @return the incrementalSnapshotFamilyId value.
+     */
+    String incrementalSnapshotFamilyId();
+
+    /**
      * Gets the encryption property: Encryption property can be used to encrypt data at rest with customer managed keys
      * or platform managed keys.
      *

@@ -244,7 +244,7 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
         } else {
             snapshot.validate();
         }
-        final String apiVersion = "2022-03-02";
+        final String apiVersion = "2022-07-02";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -303,7 +303,7 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
         } else {
             snapshot.validate();
         }
-        final String apiVersion = "2022-03-02";
+        final String apiVersion = "2022-07-02";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -532,7 +532,7 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
         } else {
             snapshot.validate();
         }
-        final String apiVersion = "2022-03-02";
+        final String apiVersion = "2022-07-02";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -591,7 +591,7 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
         } else {
             snapshot.validate();
         }
-        final String apiVersion = "2022-03-02";
+        final String apiVersion = "2022-07-02";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -812,7 +812,7 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
         if (snapshotName == null) {
             return Mono.error(new IllegalArgumentException("Parameter snapshotName is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-02";
+        final String apiVersion = "2022-07-02";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -864,7 +864,7 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
         if (snapshotName == null) {
             return Mono.error(new IllegalArgumentException("Parameter snapshotName is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-02";
+        final String apiVersion = "2022-07-02";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -965,7 +965,7 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
         if (snapshotName == null) {
             return Mono.error(new IllegalArgumentException("Parameter snapshotName is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-02";
+        final String apiVersion = "2022-07-02";
         return FluxUtil
             .withContext(
                 context ->
@@ -1015,7 +1015,7 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
         if (snapshotName == null) {
             return Mono.error(new IllegalArgumentException("Parameter snapshotName is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-02";
+        final String apiVersion = "2022-07-02";
         context = this.client.mergeContext(context);
         return service
             .delete(
@@ -1205,7 +1205,7 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
             return Mono
                 .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-02";
+        final String apiVersion = "2022-07-02";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1260,7 +1260,7 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
             return Mono
                 .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-02";
+        final String apiVersion = "2022-07-02";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1366,7 +1366,7 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-02";
+        final String apiVersion = "2022-07-02";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1409,7 +1409,7 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-02";
+        final String apiVersion = "2022-07-02";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1519,7 +1519,7 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
         } else {
             grantAccessData.validate();
         }
-        final String apiVersion = "2022-03-02";
+        final String apiVersion = "2022-07-02";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1579,7 +1579,7 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
         } else {
             grantAccessData.validate();
         }
-        final String apiVersion = "2022-03-02";
+        final String apiVersion = "2022-07-02";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1802,7 +1802,7 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
         if (snapshotName == null) {
             return Mono.error(new IllegalArgumentException("Parameter snapshotName is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-02";
+        final String apiVersion = "2022-07-02";
         return FluxUtil
             .withContext(
                 context ->
@@ -1852,7 +1852,7 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
         if (snapshotName == null) {
             return Mono.error(new IllegalArgumentException("Parameter snapshotName is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-02";
+        final String apiVersion = "2022-07-02";
         context = this.client.mergeContext(context);
         return service
             .revokeAccess(

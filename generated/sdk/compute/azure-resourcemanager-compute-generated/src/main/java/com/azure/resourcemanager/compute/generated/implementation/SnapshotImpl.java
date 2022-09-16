@@ -124,6 +124,10 @@ public final class SnapshotImpl implements Snapshot, Snapshot.Definition, Snapsh
         return this.innerModel().incremental();
     }
 
+    public String incrementalSnapshotFamilyId() {
+        return this.innerModel().incrementalSnapshotFamilyId();
+    }
+
     public Encryption encryption() {
         return this.innerModel().encryption();
     }

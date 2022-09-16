@@ -181,6 +181,10 @@ public final class DiskImpl implements Disk, Disk.Definition, Disk.Update {
         return this.innerModel().diskAccessId();
     }
 
+    public OffsetDateTime burstingEnabledTime() {
+        return this.innerModel().burstingEnabledTime();
+    }
+
     public String tier() {
         return this.innerModel().tier();
     }
@@ -211,6 +215,10 @@ public final class DiskImpl implements Disk, Disk.Definition, Disk.Update {
 
     public DataAccessAuthMode dataAccessAuthMode() {
         return this.innerModel().dataAccessAuthMode();
+    }
+
+    public Boolean optimizedForFrequentAttach() {
+        return this.innerModel().optimizedForFrequentAttach();
     }
 
     public Region region() {
@@ -564,6 +572,16 @@ public final class DiskImpl implements Disk, Disk.Definition, Disk.Update {
             return this;
         } else {
             this.updateDisk.withDataAccessAuthMode(dataAccessAuthMode);
+            return this;
+        }
+    }
+
+    public DiskImpl withOptimizedForFrequentAttach(Boolean optimizedForFrequentAttach) {
+        if (isInCreateMode()) {
+            this.innerModel().withOptimizedForFrequentAttach(optimizedForFrequentAttach);
+            return this;
+        } else {
+            this.updateDisk.withOptimizedForFrequentAttach(optimizedForFrequentAttach);
             return this;
         }
     }

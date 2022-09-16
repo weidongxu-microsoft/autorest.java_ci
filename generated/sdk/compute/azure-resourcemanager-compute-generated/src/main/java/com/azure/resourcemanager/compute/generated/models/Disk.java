@@ -250,6 +250,13 @@ public interface Disk {
     String diskAccessId();
 
     /**
+     * Gets the burstingEnabledTime property: Latest time when bursting was last enabled on a disk.
+     *
+     * @return the burstingEnabledTime value.
+     */
+    OffsetDateTime burstingEnabledTime();
+
+    /**
      * Gets the tier property: Performance tier of the disk (e.g, P4, S10) as described here:
      * https://azure.microsoft.com/en-us/pricing/details/managed-disks/. Does not apply to Ultra disks.
      *
@@ -308,6 +315,16 @@ public interface Disk {
      * @return the dataAccessAuthMode value.
      */
     DataAccessAuthMode dataAccessAuthMode();
+
+    /**
+     * Gets the optimizedForFrequentAttach property: Setting this property to true improves reliability and performance
+     * of data disks that are frequently (more than 5 times a day) by detached from one virtual machine and attached to
+     * another. This property should not be set for disks that are not detached and attached frequently as it causes the
+     * disks to not align with the fault domain of the virtual machine.
+     *
+     * @return the optimizedForFrequentAttach value.
+     */
+    Boolean optimizedForFrequentAttach();
 
     /**
      * Gets the region of the resource.
@@ -407,7 +424,8 @@ public interface Disk {
                 DefinitionStages.WithSecurityProfile,
                 DefinitionStages.WithCompletionPercent,
                 DefinitionStages.WithPublicNetworkAccess,
-                DefinitionStages.WithDataAccessAuthMode {
+                DefinitionStages.WithDataAccessAuthMode,
+                DefinitionStages.WithOptimizedForFrequentAttach {
             /**
              * Executes the create request.
              *
@@ -725,6 +743,22 @@ public interface Disk {
              */
             WithCreate withDataAccessAuthMode(DataAccessAuthMode dataAccessAuthMode);
         }
+        /** The stage of the Disk definition allowing to specify optimizedForFrequentAttach. */
+        interface WithOptimizedForFrequentAttach {
+            /**
+             * Specifies the optimizedForFrequentAttach property: Setting this property to true improves reliability and
+             * performance of data disks that are frequently (more than 5 times a day) by detached from one virtual
+             * machine and attached to another. This property should not be set for disks that are not detached and
+             * attached frequently as it causes the disks to not align with the fault domain of the virtual machine..
+             *
+             * @param optimizedForFrequentAttach Setting this property to true improves reliability and performance of
+             *     data disks that are frequently (more than 5 times a day) by detached from one virtual machine and
+             *     attached to another. This property should not be set for disks that are not detached and attached
+             *     frequently as it causes the disks to not align with the fault domain of the virtual machine.
+             * @return the next definition stage.
+             */
+            WithCreate withOptimizedForFrequentAttach(Boolean optimizedForFrequentAttach);
+        }
     }
     /**
      * Begins update for the Disk resource.
@@ -754,7 +788,8 @@ public interface Disk {
             UpdateStages.WithSupportedCapabilities,
             UpdateStages.WithSupportsHibernation,
             UpdateStages.WithPublicNetworkAccess,
-            UpdateStages.WithDataAccessAuthMode {
+            UpdateStages.WithDataAccessAuthMode,
+            UpdateStages.WithOptimizedForFrequentAttach {
         /**
          * Executes the update request.
          *
@@ -1002,6 +1037,22 @@ public interface Disk {
              * @return the next definition stage.
              */
             Update withDataAccessAuthMode(DataAccessAuthMode dataAccessAuthMode);
+        }
+        /** The stage of the Disk update allowing to specify optimizedForFrequentAttach. */
+        interface WithOptimizedForFrequentAttach {
+            /**
+             * Specifies the optimizedForFrequentAttach property: Setting this property to true improves reliability and
+             * performance of data disks that are frequently (more than 5 times a day) by detached from one virtual
+             * machine and attached to another. This property should not be set for disks that are not detached and
+             * attached frequently as it causes the disks to not align with the fault domain of the virtual machine..
+             *
+             * @param optimizedForFrequentAttach Setting this property to true improves reliability and performance of
+             *     data disks that are frequently (more than 5 times a day) by detached from one virtual machine and
+             *     attached to another. This property should not be set for disks that are not detached and attached
+             *     frequently as it causes the disks to not align with the fault domain of the virtual machine.
+             * @return the next definition stage.
+             */
+            Update withOptimizedForFrequentAttach(Boolean optimizedForFrequentAttach);
         }
     }
     /**
