@@ -29,15 +29,6 @@ public final class ExpressRouteGatewaysImpl implements ExpressRouteGateways {
         this.serviceManager = serviceManager;
     }
 
-    public ExpressRouteGatewayList listBySubscription() {
-        ExpressRouteGatewayListInner inner = this.serviceClient().listBySubscription();
-        if (inner != null) {
-            return new ExpressRouteGatewayListImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<ExpressRouteGatewayList> listBySubscriptionWithResponse(Context context) {
         Response<ExpressRouteGatewayListInner> inner = this.serviceClient().listBySubscriptionWithResponse(context);
         if (inner != null) {
@@ -51,8 +42,8 @@ public final class ExpressRouteGatewaysImpl implements ExpressRouteGateways {
         }
     }
 
-    public ExpressRouteGatewayList listByResourceGroup(String resourceGroupName) {
-        ExpressRouteGatewayListInner inner = this.serviceClient().listByResourceGroup(resourceGroupName);
+    public ExpressRouteGatewayList listBySubscription() {
+        ExpressRouteGatewayListInner inner = this.serviceClient().listBySubscription();
         if (inner != null) {
             return new ExpressRouteGatewayListImpl(inner, this.manager());
         } else {
@@ -75,11 +66,10 @@ public final class ExpressRouteGatewaysImpl implements ExpressRouteGateways {
         }
     }
 
-    public ExpressRouteGateway getByResourceGroup(String resourceGroupName, String expressRouteGatewayName) {
-        ExpressRouteGatewayInner inner =
-            this.serviceClient().getByResourceGroup(resourceGroupName, expressRouteGatewayName);
+    public ExpressRouteGatewayList listByResourceGroup(String resourceGroupName) {
+        ExpressRouteGatewayListInner inner = this.serviceClient().listByResourceGroup(resourceGroupName);
         if (inner != null) {
-            return new ExpressRouteGatewayImpl(inner, this.manager());
+            return new ExpressRouteGatewayListImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -95,6 +85,16 @@ public final class ExpressRouteGatewaysImpl implements ExpressRouteGateways {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new ExpressRouteGatewayImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public ExpressRouteGateway getByResourceGroup(String resourceGroupName, String expressRouteGatewayName) {
+        ExpressRouteGatewayInner inner =
+            this.serviceClient().getByResourceGroup(resourceGroupName, expressRouteGatewayName);
+        if (inner != null) {
+            return new ExpressRouteGatewayImpl(inner, this.manager());
         } else {
             return null;
         }

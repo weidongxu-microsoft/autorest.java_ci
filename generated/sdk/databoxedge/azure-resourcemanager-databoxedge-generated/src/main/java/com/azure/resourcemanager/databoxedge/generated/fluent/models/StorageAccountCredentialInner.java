@@ -28,6 +28,10 @@ public final class StorageAccountCredentialInner extends ArmBaseModel {
     @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;
 
+    /** Creates an instance of StorageAccountCredentialInner class. */
+    public StorageAccountCredentialInner() {
+    }
+
     /**
      * Get the innerProperties property: The storage account credential properties.
      *

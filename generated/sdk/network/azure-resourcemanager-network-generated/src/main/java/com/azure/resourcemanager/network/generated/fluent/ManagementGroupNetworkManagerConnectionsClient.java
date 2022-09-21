@@ -22,21 +22,6 @@ public interface ManagementGroupNetworkManagerConnectionsClient {
      * @param managementGroupId The management group Id which uniquely identify the Microsoft Azure management group.
      * @param networkManagerConnectionName Name for the network manager connection.
      * @param parameters Network manager connection to be created/updated.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Network Manager Connection resource.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    NetworkManagerConnectionInner createOrUpdate(
-        String managementGroupId, String networkManagerConnectionName, NetworkManagerConnectionInner parameters);
-
-    /**
-     * Create a network manager connection on this management group.
-     *
-     * @param managementGroupId The management group Id which uniquely identify the Microsoft Azure management group.
-     * @param networkManagerConnectionName Name for the network manager connection.
-     * @param parameters Network manager connection to be created/updated.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -51,17 +36,19 @@ public interface ManagementGroupNetworkManagerConnectionsClient {
         Context context);
 
     /**
-     * Get a specified connection created by this management group.
+     * Create a network manager connection on this management group.
      *
      * @param managementGroupId The management group Id which uniquely identify the Microsoft Azure management group.
      * @param networkManagerConnectionName Name for the network manager connection.
+     * @param parameters Network manager connection to be created/updated.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a specified connection created by this management group.
+     * @return the Network Manager Connection resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    NetworkManagerConnectionInner get(String managementGroupId, String networkManagerConnectionName);
+    NetworkManagerConnectionInner createOrUpdate(
+        String managementGroupId, String networkManagerConnectionName, NetworkManagerConnectionInner parameters);
 
     /**
      * Get a specified connection created by this management group.
@@ -79,16 +66,17 @@ public interface ManagementGroupNetworkManagerConnectionsClient {
         String managementGroupId, String networkManagerConnectionName, Context context);
 
     /**
-     * Delete specified pending connection created by this management group.
+     * Get a specified connection created by this management group.
      *
      * @param managementGroupId The management group Id which uniquely identify the Microsoft Azure management group.
      * @param networkManagerConnectionName Name for the network manager connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a specified connection created by this management group.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    void delete(String managementGroupId, String networkManagerConnectionName);
+    NetworkManagerConnectionInner get(String managementGroupId, String networkManagerConnectionName);
 
     /**
      * Delete specified pending connection created by this management group.
@@ -103,6 +91,18 @@ public interface ManagementGroupNetworkManagerConnectionsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> deleteWithResponse(String managementGroupId, String networkManagerConnectionName, Context context);
+
+    /**
+     * Delete specified pending connection created by this management group.
+     *
+     * @param managementGroupId The management group Id which uniquely identify the Microsoft Azure management group.
+     * @param networkManagerConnectionName Name for the network manager connection.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    void delete(String managementGroupId, String networkManagerConnectionName);
 
     /**
      * List all network manager connections created by this management group.

@@ -35,6 +35,10 @@ public final class RoleDefinitionInner {
     @JsonProperty(value = "properties")
     private RoleDefinitionProperties innerProperties;
 
+    /** Creates an instance of RoleDefinitionInner class. */
+    public RoleDefinitionInner() {
+    }
+
     /**
      * Get the id property: The role definition ID.
      *

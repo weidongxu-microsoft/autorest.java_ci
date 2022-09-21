@@ -51,6 +51,10 @@ public class GenericResourceInner extends Resource {
     @JsonProperty(value = "identity")
     private Identity identity;
 
+    /** Creates an instance of GenericResourceInner class. */
+    public GenericResourceInner() {
+    }
+
     /**
      * Get the plan property: The plan of the resource.
      *

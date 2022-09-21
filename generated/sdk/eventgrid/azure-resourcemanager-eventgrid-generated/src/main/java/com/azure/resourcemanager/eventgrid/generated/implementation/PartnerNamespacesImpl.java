@@ -31,15 +31,6 @@ public final class PartnerNamespacesImpl implements PartnerNamespaces {
         this.serviceManager = serviceManager;
     }
 
-    public PartnerNamespace getByResourceGroup(String resourceGroupName, String partnerNamespaceName) {
-        PartnerNamespaceInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, partnerNamespaceName);
-        if (inner != null) {
-            return new PartnerNamespaceImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<PartnerNamespace> getByResourceGroupWithResponse(
         String resourceGroupName, String partnerNamespaceName, Context context) {
         Response<PartnerNamespaceInner> inner =
@@ -50,6 +41,15 @@ public final class PartnerNamespacesImpl implements PartnerNamespaces {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new PartnerNamespaceImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public PartnerNamespace getByResourceGroup(String resourceGroupName, String partnerNamespaceName) {
+        PartnerNamespaceInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, partnerNamespaceName);
+        if (inner != null) {
+            return new PartnerNamespaceImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -85,17 +85,6 @@ public final class PartnerNamespacesImpl implements PartnerNamespaces {
         return Utils.mapPage(inner, inner1 -> new PartnerNamespaceImpl(inner1, this.manager()));
     }
 
-    public PartnerNamespaceSharedAccessKeys listSharedAccessKeys(
-        String resourceGroupName, String partnerNamespaceName) {
-        PartnerNamespaceSharedAccessKeysInner inner =
-            this.serviceClient().listSharedAccessKeys(resourceGroupName, partnerNamespaceName);
-        if (inner != null) {
-            return new PartnerNamespaceSharedAccessKeysImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<PartnerNamespaceSharedAccessKeys> listSharedAccessKeysWithResponse(
         String resourceGroupName, String partnerNamespaceName, Context context) {
         Response<PartnerNamespaceSharedAccessKeysInner> inner =
@@ -111,12 +100,10 @@ public final class PartnerNamespacesImpl implements PartnerNamespaces {
         }
     }
 
-    public PartnerNamespaceSharedAccessKeys regenerateKey(
-        String resourceGroupName,
-        String partnerNamespaceName,
-        PartnerNamespaceRegenerateKeyRequest regenerateKeyRequest) {
+    public PartnerNamespaceSharedAccessKeys listSharedAccessKeys(
+        String resourceGroupName, String partnerNamespaceName) {
         PartnerNamespaceSharedAccessKeysInner inner =
-            this.serviceClient().regenerateKey(resourceGroupName, partnerNamespaceName, regenerateKeyRequest);
+            this.serviceClient().listSharedAccessKeys(resourceGroupName, partnerNamespaceName);
         if (inner != null) {
             return new PartnerNamespaceSharedAccessKeysImpl(inner, this.manager());
         } else {
@@ -139,6 +126,19 @@ public final class PartnerNamespacesImpl implements PartnerNamespaces {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new PartnerNamespaceSharedAccessKeysImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public PartnerNamespaceSharedAccessKeys regenerateKey(
+        String resourceGroupName,
+        String partnerNamespaceName,
+        PartnerNamespaceRegenerateKeyRequest regenerateKeyRequest) {
+        PartnerNamespaceSharedAccessKeysInner inner =
+            this.serviceClient().regenerateKey(resourceGroupName, partnerNamespaceName, regenerateKeyRequest);
+        if (inner != null) {
+            return new PartnerNamespaceSharedAccessKeysImpl(inner, this.manager());
         } else {
             return null;
         }

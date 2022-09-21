@@ -50,15 +50,6 @@ public final class FrontDoorsImpl implements FrontDoors {
         return Utils.mapPage(inner, inner1 -> new FrontDoorImpl(inner1, this.manager()));
     }
 
-    public FrontDoor getByResourceGroup(String resourceGroupName, String frontDoorName) {
-        FrontDoorInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, frontDoorName);
-        if (inner != null) {
-            return new FrontDoorImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<FrontDoor> getByResourceGroupWithResponse(
         String resourceGroupName, String frontDoorName, Context context) {
         Response<FrontDoorInner> inner =
@@ -74,23 +65,21 @@ public final class FrontDoorsImpl implements FrontDoors {
         }
     }
 
+    public FrontDoor getByResourceGroup(String resourceGroupName, String frontDoorName) {
+        FrontDoorInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, frontDoorName);
+        if (inner != null) {
+            return new FrontDoorImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
     public void deleteByResourceGroup(String resourceGroupName, String frontDoorName) {
         this.serviceClient().delete(resourceGroupName, frontDoorName);
     }
 
     public void delete(String resourceGroupName, String frontDoorName, Context context) {
         this.serviceClient().delete(resourceGroupName, frontDoorName, context);
-    }
-
-    public ValidateCustomDomainOutput validateCustomDomain(
-        String resourceGroupName, String frontDoorName, ValidateCustomDomainInput customDomainProperties) {
-        ValidateCustomDomainOutputInner inner =
-            this.serviceClient().validateCustomDomain(resourceGroupName, frontDoorName, customDomainProperties);
-        if (inner != null) {
-            return new ValidateCustomDomainOutputImpl(inner, this.manager());
-        } else {
-            return null;
-        }
     }
 
     public Response<ValidateCustomDomainOutput> validateCustomDomainWithResponse(
@@ -108,6 +97,17 @@ public final class FrontDoorsImpl implements FrontDoors {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new ValidateCustomDomainOutputImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public ValidateCustomDomainOutput validateCustomDomain(
+        String resourceGroupName, String frontDoorName, ValidateCustomDomainInput customDomainProperties) {
+        ValidateCustomDomainOutputInner inner =
+            this.serviceClient().validateCustomDomain(resourceGroupName, frontDoorName, customDomainProperties);
+        if (inner != null) {
+            return new ValidateCustomDomainOutputImpl(inner, this.manager());
         } else {
             return null;
         }

@@ -16,18 +16,6 @@ public interface ServerAdministrators {
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a AAD server administrator.
-     */
-    ServerAdministratorResource get(String resourceGroupName, String serverName);
-
-    /**
-     * Gets information about a AAD server administrator.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param serverName The name of the server.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -35,6 +23,18 @@ public interface ServerAdministrators {
      * @return information about a AAD server administrator along with {@link Response}.
      */
     Response<ServerAdministratorResource> getWithResponse(String resourceGroupName, String serverName, Context context);
+
+    /**
+     * Gets information about a AAD server administrator.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param serverName The name of the server.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return information about a AAD server administrator.
+     */
+    ServerAdministratorResource get(String resourceGroupName, String serverName);
 
     /**
      * Creates or update active directory administrator on an existing server. The update action will overwrite the

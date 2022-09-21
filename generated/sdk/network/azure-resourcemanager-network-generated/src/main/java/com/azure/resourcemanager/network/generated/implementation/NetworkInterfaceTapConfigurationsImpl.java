@@ -37,17 +37,6 @@ public final class NetworkInterfaceTapConfigurationsImpl implements NetworkInter
         this.serviceClient().delete(resourceGroupName, networkInterfaceName, tapConfigurationName, context);
     }
 
-    public NetworkInterfaceTapConfiguration get(
-        String resourceGroupName, String networkInterfaceName, String tapConfigurationName) {
-        NetworkInterfaceTapConfigurationInner inner =
-            this.serviceClient().get(resourceGroupName, networkInterfaceName, tapConfigurationName);
-        if (inner != null) {
-            return new NetworkInterfaceTapConfigurationImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<NetworkInterfaceTapConfiguration> getWithResponse(
         String resourceGroupName, String networkInterfaceName, String tapConfigurationName, Context context) {
         Response<NetworkInterfaceTapConfigurationInner> inner =
@@ -60,6 +49,17 @@ public final class NetworkInterfaceTapConfigurationsImpl implements NetworkInter
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new NetworkInterfaceTapConfigurationImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public NetworkInterfaceTapConfiguration get(
+        String resourceGroupName, String networkInterfaceName, String tapConfigurationName) {
+        NetworkInterfaceTapConfigurationInner inner =
+            this.serviceClient().get(resourceGroupName, networkInterfaceName, tapConfigurationName);
+        if (inner != null) {
+            return new NetworkInterfaceTapConfigurationImpl(inner, this.manager());
         } else {
             return null;
         }

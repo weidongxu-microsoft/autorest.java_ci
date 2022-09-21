@@ -53,18 +53,6 @@ public interface Zones {
      *
      * @param resourceGroupName The name of the resource group.
      * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a DNS zone.
-     */
-    Zone getByResourceGroup(String resourceGroupName, String zoneName);
-
-    /**
-     * Gets a DNS zone. Retrieves the zone properties, but not the record sets within the zone.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -72,6 +60,18 @@ public interface Zones {
      * @return a DNS zone along with {@link Response}.
      */
     Response<Zone> getByResourceGroupWithResponse(String resourceGroupName, String zoneName, Context context);
+
+    /**
+     * Gets a DNS zone. Retrieves the zone properties, but not the record sets within the zone.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param zoneName The name of the DNS zone (without a terminating dot).
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a DNS zone.
+     */
+    Zone getByResourceGroup(String resourceGroupName, String zoneName);
 
     /**
      * Lists the DNS zones within a resource group.

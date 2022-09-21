@@ -15,19 +15,6 @@ public interface PrivateLinkResources {
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param namespaceName The namespace name.
      * @param privateLinkResourceName The PrivateLinkResource name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a description for the specified Private Endpoint Connection name.
-     */
-    PrivateLinkResource get(String resourceGroupName, String namespaceName, String privateLinkResourceName);
-
-    /**
-     * Gets a description for the specified Private Endpoint Connection name.
-     *
-     * @param resourceGroupName Name of the Resource group within the Azure subscription.
-     * @param namespaceName The namespace name.
-     * @param privateLinkResourceName The PrivateLinkResource name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -38,16 +25,17 @@ public interface PrivateLinkResources {
         String resourceGroupName, String namespaceName, String privateLinkResourceName, Context context);
 
     /**
-     * Gets lists of resources that supports Privatelinks.
+     * Gets a description for the specified Private Endpoint Connection name.
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param namespaceName The namespace name.
+     * @param privateLinkResourceName The PrivateLinkResource name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return lists of resources that supports Privatelinks.
+     * @return a description for the specified Private Endpoint Connection name.
      */
-    PrivateLinkResourcesListResult list(String resourceGroupName, String namespaceName);
+    PrivateLinkResource get(String resourceGroupName, String namespaceName, String privateLinkResourceName);
 
     /**
      * Gets lists of resources that supports Privatelinks.
@@ -62,4 +50,16 @@ public interface PrivateLinkResources {
      */
     Response<PrivateLinkResourcesListResult> listWithResponse(
         String resourceGroupName, String namespaceName, Context context);
+
+    /**
+     * Gets lists of resources that supports Privatelinks.
+     *
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param namespaceName The namespace name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return lists of resources that supports Privatelinks.
+     */
+    PrivateLinkResourcesListResult list(String resourceGroupName, String namespaceName);
 }

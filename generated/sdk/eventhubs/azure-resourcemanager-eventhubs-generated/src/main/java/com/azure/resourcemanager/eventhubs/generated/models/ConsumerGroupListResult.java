@@ -24,6 +24,10 @@ public final class ConsumerGroupListResult {
     @JsonProperty(value = "nextLink")
     private String nextLink;
 
+    /** Creates an instance of ConsumerGroupListResult class. */
+    public ConsumerGroupListResult() {
+    }
+
     /**
      * Get the value property: Result of the List Consumer Group operation.
      *

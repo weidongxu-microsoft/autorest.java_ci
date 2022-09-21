@@ -12,6 +12,8 @@ import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.fluent.VirtualHubsClient;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualHubInner;
 import com.azure.resourcemanager.network.generated.models.EffectiveRoutesParameters;
+import com.azure.resourcemanager.network.generated.models.GetInboundRoutesParameters;
+import com.azure.resourcemanager.network.generated.models.GetOutboundRoutesParameters;
 import com.azure.resourcemanager.network.generated.models.VirtualHub;
 import com.azure.resourcemanager.network.generated.models.VirtualHubs;
 
@@ -28,15 +30,6 @@ public final class VirtualHubsImpl implements VirtualHubs {
         this.serviceManager = serviceManager;
     }
 
-    public VirtualHub getByResourceGroup(String resourceGroupName, String virtualHubName) {
-        VirtualHubInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, virtualHubName);
-        if (inner != null) {
-            return new VirtualHubImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<VirtualHub> getByResourceGroupWithResponse(
         String resourceGroupName, String virtualHubName, Context context) {
         Response<VirtualHubInner> inner =
@@ -47,6 +40,15 @@ public final class VirtualHubsImpl implements VirtualHubs {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new VirtualHubImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public VirtualHub getByResourceGroup(String resourceGroupName, String virtualHubName) {
+        VirtualHubInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, virtualHubName);
+        if (inner != null) {
+            return new VirtualHubImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -97,6 +99,32 @@ public final class VirtualHubsImpl implements VirtualHubs {
         this
             .serviceClient()
             .getEffectiveVirtualHubRoutes(resourceGroupName, virtualHubName, effectiveRoutesParameters, context);
+    }
+
+    public void getInboundRoutes(
+        String resourceGroupName, String virtualHubName, GetInboundRoutesParameters getInboundRoutesParameters) {
+        this.serviceClient().getInboundRoutes(resourceGroupName, virtualHubName, getInboundRoutesParameters);
+    }
+
+    public void getInboundRoutes(
+        String resourceGroupName,
+        String virtualHubName,
+        GetInboundRoutesParameters getInboundRoutesParameters,
+        Context context) {
+        this.serviceClient().getInboundRoutes(resourceGroupName, virtualHubName, getInboundRoutesParameters, context);
+    }
+
+    public void getOutboundRoutes(
+        String resourceGroupName, String virtualHubName, GetOutboundRoutesParameters getOutboundRoutesParameters) {
+        this.serviceClient().getOutboundRoutes(resourceGroupName, virtualHubName, getOutboundRoutesParameters);
+    }
+
+    public void getOutboundRoutes(
+        String resourceGroupName,
+        String virtualHubName,
+        GetOutboundRoutesParameters getOutboundRoutesParameters,
+        Context context) {
+        this.serviceClient().getOutboundRoutes(resourceGroupName, virtualHubName, getOutboundRoutesParameters, context);
     }
 
     public VirtualHub getById(String id) {

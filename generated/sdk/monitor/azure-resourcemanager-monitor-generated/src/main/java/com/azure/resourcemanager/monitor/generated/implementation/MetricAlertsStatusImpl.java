@@ -27,15 +27,6 @@ public final class MetricAlertsStatusImpl implements MetricAlertsStatus {
         this.serviceManager = serviceManager;
     }
 
-    public MetricAlertStatusCollection list(String resourceGroupName, String ruleName) {
-        MetricAlertStatusCollectionInner inner = this.serviceClient().list(resourceGroupName, ruleName);
-        if (inner != null) {
-            return new MetricAlertStatusCollectionImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<MetricAlertStatusCollection> listWithResponse(
         String resourceGroupName, String ruleName, Context context) {
         Response<MetricAlertStatusCollectionInner> inner =
@@ -51,9 +42,8 @@ public final class MetricAlertsStatusImpl implements MetricAlertsStatus {
         }
     }
 
-    public MetricAlertStatusCollection listByName(String resourceGroupName, String ruleName, String statusName) {
-        MetricAlertStatusCollectionInner inner =
-            this.serviceClient().listByName(resourceGroupName, ruleName, statusName);
+    public MetricAlertStatusCollection list(String resourceGroupName, String ruleName) {
+        MetricAlertStatusCollectionInner inner = this.serviceClient().list(resourceGroupName, ruleName);
         if (inner != null) {
             return new MetricAlertStatusCollectionImpl(inner, this.manager());
         } else {
@@ -71,6 +61,16 @@ public final class MetricAlertsStatusImpl implements MetricAlertsStatus {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new MetricAlertStatusCollectionImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public MetricAlertStatusCollection listByName(String resourceGroupName, String ruleName, String statusName) {
+        MetricAlertStatusCollectionInner inner =
+            this.serviceClient().listByName(resourceGroupName, ruleName, statusName);
+        if (inner != null) {
+            return new MetricAlertStatusCollectionImpl(inner, this.manager());
         } else {
             return null;
         }

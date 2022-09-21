@@ -56,6 +56,10 @@ public final class DataPolicyManifestProperties {
     @JsonProperty(value = "resourceFunctions")
     private DataManifestResourceFunctionsDefinition innerResourceFunctions;
 
+    /** Creates an instance of DataPolicyManifestProperties class. */
+    public DataPolicyManifestProperties() {
+    }
+
     /**
      * Get the namespaces property: The list of namespaces for the data policy manifest.
      *

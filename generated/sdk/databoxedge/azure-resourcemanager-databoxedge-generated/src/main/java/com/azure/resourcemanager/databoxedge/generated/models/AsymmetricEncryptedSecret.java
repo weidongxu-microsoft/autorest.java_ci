@@ -29,6 +29,10 @@ public final class AsymmetricEncryptedSecret {
     @JsonProperty(value = "encryptionAlgorithm", required = true)
     private EncryptionAlgorithm encryptionAlgorithm;
 
+    /** Creates an instance of AsymmetricEncryptedSecret class. */
+    public AsymmetricEncryptedSecret() {
+    }
+
     /**
      * Get the value property: The value of the secret.
      *

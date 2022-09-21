@@ -166,26 +166,26 @@ public final class AuthorizationRuleImpl
         return this;
     }
 
-    public AccessKeys listKeys() {
-        return serviceManager.namespaces().listKeys(resourceGroupName, namespaceName, authorizationRuleName);
-    }
-
     public Response<AccessKeys> listKeysWithResponse(Context context) {
         return serviceManager
             .namespaces()
             .listKeysWithResponse(resourceGroupName, namespaceName, authorizationRuleName, context);
     }
 
-    public AccessKeys regenerateKeys(RegenerateAccessKeyParameters parameters) {
-        return serviceManager
-            .namespaces()
-            .regenerateKeys(resourceGroupName, namespaceName, authorizationRuleName, parameters);
+    public AccessKeys listKeys() {
+        return serviceManager.namespaces().listKeys(resourceGroupName, namespaceName, authorizationRuleName);
     }
 
     public Response<AccessKeys> regenerateKeysWithResponse(RegenerateAccessKeyParameters parameters, Context context) {
         return serviceManager
             .namespaces()
             .regenerateKeysWithResponse(resourceGroupName, namespaceName, authorizationRuleName, parameters, context);
+    }
+
+    public AccessKeys regenerateKeys(RegenerateAccessKeyParameters parameters) {
+        return serviceManager
+            .namespaces()
+            .regenerateKeys(resourceGroupName, namespaceName, authorizationRuleName, parameters);
     }
 
     public AuthorizationRuleImpl withRights(List<AccessRights> rights) {

@@ -60,6 +60,10 @@ public final class FrontDoorProperties extends FrontDoorUpdateParameters {
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, String> extendedProperties;
 
+    /** Creates an instance of FrontDoorProperties class. */
+    public FrontDoorProperties() {
+    }
+
     /**
      * Get the resourceState property: Resource status of the Front Door or Front Door SubResource.
      *

@@ -520,7 +520,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -573,7 +573,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -695,7 +695,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -754,7 +754,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -979,7 +979,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1037,7 +1037,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1255,7 +1255,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1312,7 +1312,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1516,7 +1516,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1568,7 +1568,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1799,7 +1799,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1854,7 +1854,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1867,27 +1867,6 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                 this.client.getSubscriptionId(),
                 accept,
                 context);
-    }
-
-    /**
-     * Retrieves information about the model view or the instance view of a virtual machine.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param vmName The name of the virtual machine.
-     * @param expand The expand expression to apply on the operation. 'InstanceView' retrieves a snapshot of the runtime
-     *     properties of the virtual machine that is managed by the platform and can change outside of control plane
-     *     operations. 'UserData' retrieves the UserData property as part of the VM model view that was provided by the
-     *     user during the VM Create/Update operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ApiErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Virtual Machine on successful completion of {@link Mono}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<VirtualMachineInner> getByResourceGroupAsync(
-        String resourceGroupName, String vmName, InstanceViewTypes expand) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, vmName, expand)
-            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1912,15 +1891,19 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
+     * @param expand The expand expression to apply on the operation. 'InstanceView' retrieves a snapshot of the runtime
+     *     properties of the virtual machine that is managed by the platform and can change outside of control plane
+     *     operations. 'UserData' retrieves the UserData property as part of the VM model view that was provided by the
+     *     user during the VM Create/Update operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Virtual Machine.
+     * @return describes a Virtual Machine along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public VirtualMachineInner getByResourceGroup(String resourceGroupName, String vmName) {
-        final InstanceViewTypes expand = null;
-        return getByResourceGroupAsync(resourceGroupName, vmName, expand).block();
+    public Response<VirtualMachineInner> getByResourceGroupWithResponse(
+        String resourceGroupName, String vmName, InstanceViewTypes expand) {
+        return getByResourceGroupWithResponseAsync(resourceGroupName, vmName, expand).block();
     }
 
     /**
@@ -1942,6 +1925,22 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
     public Response<VirtualMachineInner> getByResourceGroupWithResponse(
         String resourceGroupName, String vmName, InstanceViewTypes expand, Context context) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, vmName, expand, context).block();
+    }
+
+    /**
+     * Retrieves information about the model view or the instance view of a virtual machine.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param vmName The name of the virtual machine.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ApiErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return describes a Virtual Machine.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public VirtualMachineInner getByResourceGroup(String resourceGroupName, String vmName) {
+        final InstanceViewTypes expand = null;
+        return getByResourceGroupWithResponse(resourceGroupName, vmName, expand, Context.NONE).getValue();
     }
 
     /**
@@ -1977,7 +1976,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -2028,7 +2027,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -2066,11 +2065,11 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the instance view of a virtual machine.
+     * @return the instance view of a virtual machine along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public VirtualMachineInstanceViewInner instanceView(String resourceGroupName, String vmName) {
-        return instanceViewAsync(resourceGroupName, vmName).block();
+    public Response<VirtualMachineInstanceViewInner> instanceViewWithResponse(String resourceGroupName, String vmName) {
+        return instanceViewWithResponseAsync(resourceGroupName, vmName).block();
     }
 
     /**
@@ -2088,6 +2087,21 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
     public Response<VirtualMachineInstanceViewInner> instanceViewWithResponse(
         String resourceGroupName, String vmName, Context context) {
         return instanceViewWithResponseAsync(resourceGroupName, vmName, context).block();
+    }
+
+    /**
+     * Retrieves information about the run-time state of a virtual machine.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param vmName The name of the virtual machine.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ApiErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the instance view of a virtual machine.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public VirtualMachineInstanceViewInner instanceView(String resourceGroupName, String vmName) {
+        return instanceViewWithResponse(resourceGroupName, vmName, Context.NONE).getValue();
     }
 
     /**
@@ -2123,7 +2137,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -2174,7 +2188,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -2368,7 +2382,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -2421,7 +2435,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -2661,7 +2675,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -2714,7 +2728,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -2759,10 +2773,11 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public void generalize(String resourceGroupName, String vmName) {
-        generalizeAsync(resourceGroupName, vmName).block();
+    public Response<Void> generalizeWithResponse(String resourceGroupName, String vmName) {
+        return generalizeWithResponseAsync(resourceGroupName, vmName).block();
     }
 
     /**
@@ -2783,6 +2798,24 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> generalizeWithResponse(String resourceGroupName, String vmName, Context context) {
         return generalizeWithResponseAsync(resourceGroupName, vmName, context).block();
+    }
+
+    /**
+     * Sets the OS state of the virtual machine to generalized. It is recommended to sysprep the virtual machine before
+     * performing this operation. &lt;br&gt;For Windows, please refer to [Create a managed image of a generalized VM in
+     * Azure](https://docs.microsoft.com/azure/virtual-machines/windows/capture-image-resource).&lt;br&gt;For Linux,
+     * please refer to [How to create an image of a virtual machine or
+     * VHD](https://docs.microsoft.com/azure/virtual-machines/linux/capture-image).
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param vmName The name of the virtual machine.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ApiErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public void generalize(String resourceGroupName, String vmName) {
+        generalizeWithResponse(resourceGroupName, vmName, Context.NONE);
     }
 
     /**
@@ -2818,7 +2851,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -2878,7 +2911,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -3025,7 +3058,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -3081,7 +3114,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -3227,7 +3260,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -3282,7 +3315,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -3400,7 +3433,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -3455,7 +3488,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -3707,7 +3740,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -3757,7 +3790,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -3935,7 +3968,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -3985,7 +4018,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -4163,7 +4196,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -4213,7 +4246,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -4391,7 +4424,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -4441,7 +4474,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -4624,7 +4657,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
         if (parameters != null) {
             parameters.validate();
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -4679,7 +4712,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
         if (parameters != null) {
             parameters.validate();
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -4913,7 +4946,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -4968,7 +5001,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -4981,26 +5014,6 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                 this.client.getSubscriptionId(),
                 accept,
                 context);
-    }
-
-    /**
-     * The operation to retrieve SAS URIs for a virtual machine's boot diagnostic logs.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param vmName The name of the virtual machine.
-     * @param sasUriExpirationTimeInMinutes Expiration duration in minutes for the SAS URIs with a value between 1 to
-     *     1440 minutes. &lt;br&gt;&lt;br&gt;NOTE: If not specified, SAS URIs will be generated with a default
-     *     expiration duration of 120 minutes.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ApiErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the SAS URIs of the console screenshot and serial log blobs on successful completion of {@link Mono}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<RetrieveBootDiagnosticsDataResultInner> retrieveBootDiagnosticsDataAsync(
-        String resourceGroupName, String vmName, Integer sasUriExpirationTimeInMinutes) {
-        return retrieveBootDiagnosticsDataWithResponseAsync(resourceGroupName, vmName, sasUriExpirationTimeInMinutes)
-            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -5026,15 +5039,19 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
+     * @param sasUriExpirationTimeInMinutes Expiration duration in minutes for the SAS URIs with a value between 1 to
+     *     1440 minutes. &lt;br&gt;&lt;br&gt;NOTE: If not specified, SAS URIs will be generated with a default
+     *     expiration duration of 120 minutes.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the SAS URIs of the console screenshot and serial log blobs.
+     * @return the SAS URIs of the console screenshot and serial log blobs along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public RetrieveBootDiagnosticsDataResultInner retrieveBootDiagnosticsData(String resourceGroupName, String vmName) {
-        final Integer sasUriExpirationTimeInMinutes = null;
-        return retrieveBootDiagnosticsDataAsync(resourceGroupName, vmName, sasUriExpirationTimeInMinutes).block();
+    public Response<RetrieveBootDiagnosticsDataResultInner> retrieveBootDiagnosticsDataWithResponse(
+        String resourceGroupName, String vmName, Integer sasUriExpirationTimeInMinutes) {
+        return retrieveBootDiagnosticsDataWithResponseAsync(resourceGroupName, vmName, sasUriExpirationTimeInMinutes)
+            .block();
     }
 
     /**
@@ -5057,6 +5074,24 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
         return retrieveBootDiagnosticsDataWithResponseAsync(
                 resourceGroupName, vmName, sasUriExpirationTimeInMinutes, context)
             .block();
+    }
+
+    /**
+     * The operation to retrieve SAS URIs for a virtual machine's boot diagnostic logs.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param vmName The name of the virtual machine.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ApiErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the SAS URIs of the console screenshot and serial log blobs.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public RetrieveBootDiagnosticsDataResultInner retrieveBootDiagnosticsData(String resourceGroupName, String vmName) {
+        final Integer sasUriExpirationTimeInMinutes = null;
+        return retrieveBootDiagnosticsDataWithResponse(
+                resourceGroupName, vmName, sasUriExpirationTimeInMinutes, Context.NONE)
+            .getValue();
     }
 
     /**
@@ -5091,7 +5126,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -5141,7 +5176,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -5322,7 +5357,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -5372,7 +5407,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -5409,10 +5444,11 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public void simulateEviction(String resourceGroupName, String vmName) {
-        simulateEvictionAsync(resourceGroupName, vmName).block();
+    public Response<Void> simulateEvictionWithResponse(String resourceGroupName, String vmName) {
+        return simulateEvictionWithResponseAsync(resourceGroupName, vmName).block();
     }
 
     /**
@@ -5429,6 +5465,20 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> simulateEvictionWithResponse(String resourceGroupName, String vmName, Context context) {
         return simulateEvictionWithResponseAsync(resourceGroupName, vmName, context).block();
+    }
+
+    /**
+     * The operation to simulate the eviction of spot virtual machine.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param vmName The name of the virtual machine.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ApiErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public void simulateEviction(String resourceGroupName, String vmName) {
+        simulateEvictionWithResponse(resourceGroupName, vmName, Context.NONE);
     }
 
     /**
@@ -5463,7 +5513,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -5514,7 +5564,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -5717,7 +5767,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
         } else {
             installPatchesInput.validate();
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -5779,7 +5829,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
         } else {
             installPatchesInput.validate();
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -6011,7 +6061,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json, text/json";
         return FluxUtil
             .withContext(
@@ -6068,7 +6118,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json, text/json";
         context = this.client.mergeContext(context);
         return service

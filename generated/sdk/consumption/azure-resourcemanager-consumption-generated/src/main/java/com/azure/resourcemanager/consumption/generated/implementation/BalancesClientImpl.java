@@ -164,11 +164,11 @@ public final class BalancesClientImpl implements BalancesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the balances for a scope by billingAccountId.
+     * @return the balances for a scope by billingAccountId along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public BalanceInner getByBillingAccount(String billingAccountId) {
-        return getByBillingAccountAsync(billingAccountId).block();
+    public Response<BalanceInner> getByBillingAccountWithResponse(String billingAccountId) {
+        return getByBillingAccountWithResponseAsync(billingAccountId).block();
     }
 
     /**
@@ -185,6 +185,21 @@ public final class BalancesClientImpl implements BalancesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<BalanceInner> getByBillingAccountWithResponse(String billingAccountId, Context context) {
         return getByBillingAccountWithResponseAsync(billingAccountId, context).block();
+    }
+
+    /**
+     * Gets the balances for a scope by billingAccountId. Balances are available via this API only for May 1, 2014 or
+     * later.
+     *
+     * @param billingAccountId BillingAccount ID.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the balances for a scope by billingAccountId.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public BalanceInner getByBillingAccount(String billingAccountId) {
+        return getByBillingAccountWithResponse(billingAccountId, Context.NONE).getValue();
     }
 
     /**
@@ -300,11 +315,12 @@ public final class BalancesClientImpl implements BalancesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the balances for a scope by billing period and billingAccountId.
+     * @return the balances for a scope by billing period and billingAccountId along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public BalanceInner getForBillingPeriodByBillingAccount(String billingAccountId, String billingPeriodName) {
-        return getForBillingPeriodByBillingAccountAsync(billingAccountId, billingPeriodName).block();
+    public Response<BalanceInner> getForBillingPeriodByBillingAccountWithResponse(
+        String billingAccountId, String billingPeriodName) {
+        return getForBillingPeriodByBillingAccountWithResponseAsync(billingAccountId, billingPeriodName).block();
     }
 
     /**
@@ -324,5 +340,22 @@ public final class BalancesClientImpl implements BalancesClient {
         String billingAccountId, String billingPeriodName, Context context) {
         return getForBillingPeriodByBillingAccountWithResponseAsync(billingAccountId, billingPeriodName, context)
             .block();
+    }
+
+    /**
+     * Gets the balances for a scope by billing period and billingAccountId. Balances are available via this API only
+     * for May 1, 2014 or later.
+     *
+     * @param billingAccountId BillingAccount ID.
+     * @param billingPeriodName Billing Period Name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the balances for a scope by billing period and billingAccountId.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public BalanceInner getForBillingPeriodByBillingAccount(String billingAccountId, String billingPeriodName) {
+        return getForBillingPeriodByBillingAccountWithResponse(billingAccountId, billingPeriodName, Context.NONE)
+            .getValue();
     }
 }

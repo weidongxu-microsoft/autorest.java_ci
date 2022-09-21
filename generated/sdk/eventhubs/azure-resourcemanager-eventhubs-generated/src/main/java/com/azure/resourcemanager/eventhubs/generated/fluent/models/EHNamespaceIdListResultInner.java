@@ -18,6 +18,10 @@ public final class EHNamespaceIdListResultInner {
     @JsonProperty(value = "value")
     private List<EHNamespaceIdContainer> value;
 
+    /** Creates an instance of EHNamespaceIdListResultInner class. */
+    public EHNamespaceIdListResultInner() {
+    }
+
     /**
      * Get the value property: Result of the List Namespace IDs operation.
      *

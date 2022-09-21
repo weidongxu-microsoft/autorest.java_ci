@@ -29,15 +29,6 @@ public final class ForecastsImpl implements Forecasts {
         this.serviceManager = serviceManager;
     }
 
-    public QueryResult usage(String scope, ForecastDefinition parameters) {
-        QueryResultInner inner = this.serviceClient().usage(scope, parameters);
-        if (inner != null) {
-            return new QueryResultImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<QueryResult> usageWithResponse(
         String scope, ForecastDefinition parameters, String filter, Context context) {
         Response<QueryResultInner> inner = this.serviceClient().usageWithResponse(scope, parameters, filter, context);
@@ -52,14 +43,8 @@ public final class ForecastsImpl implements Forecasts {
         }
     }
 
-    public QueryResult externalCloudProviderUsage(
-        ExternalCloudProviderType externalCloudProviderType,
-        String externalCloudProviderId,
-        ForecastDefinition parameters) {
-        QueryResultInner inner =
-            this
-                .serviceClient()
-                .externalCloudProviderUsage(externalCloudProviderType, externalCloudProviderId, parameters);
+    public QueryResult usage(String scope, ForecastDefinition parameters) {
+        QueryResultInner inner = this.serviceClient().usage(scope, parameters);
         if (inner != null) {
             return new QueryResultImpl(inner, this.manager());
         } else {
@@ -84,6 +69,21 @@ public final class ForecastsImpl implements Forecasts {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new QueryResultImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public QueryResult externalCloudProviderUsage(
+        ExternalCloudProviderType externalCloudProviderType,
+        String externalCloudProviderId,
+        ForecastDefinition parameters) {
+        QueryResultInner inner =
+            this
+                .serviceClient()
+                .externalCloudProviderUsage(externalCloudProviderType, externalCloudProviderId, parameters);
+        if (inner != null) {
+            return new QueryResultImpl(inner, this.manager());
         } else {
             return null;
         }

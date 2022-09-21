@@ -24,6 +24,10 @@ public final class PreconfiguredEndpointList {
     @JsonProperty(value = "nextLink")
     private String nextLink;
 
+    /** Creates an instance of PreconfiguredEndpointList class. */
+    public PreconfiguredEndpointList() {
+    }
+
     /**
      * Get the value property: List of PreconfiguredEndpoints supported by NetworkExperiment.
      *

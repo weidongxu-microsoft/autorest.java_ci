@@ -101,6 +101,10 @@ public final class NetworkAdapter {
     @JsonProperty(value = "dnsServers", access = JsonProperty.Access.WRITE_ONLY)
     private List<String> dnsServers;
 
+    /** Creates an instance of NetworkAdapter class. */
+    public NetworkAdapter() {
+    }
+
     /**
      * Get the adapterId property: Instance ID of network adapter.
      *

@@ -29,6 +29,10 @@ public final class KubernetesRoleCompute {
     @JsonProperty(value = "processorCount", access = JsonProperty.Access.WRITE_ONLY)
     private Integer processorCount;
 
+    /** Creates an instance of KubernetesRoleCompute class. */
+    public KubernetesRoleCompute() {
+    }
+
     /**
      * Get the vmProfile property: VM profile.
      *

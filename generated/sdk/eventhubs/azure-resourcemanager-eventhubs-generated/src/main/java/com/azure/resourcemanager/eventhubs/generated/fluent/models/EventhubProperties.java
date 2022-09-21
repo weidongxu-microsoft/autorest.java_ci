@@ -56,6 +56,10 @@ public final class EventhubProperties {
     @JsonProperty(value = "captureDescription")
     private CaptureDescription captureDescription;
 
+    /** Creates an instance of EventhubProperties class. */
+    public EventhubProperties() {
+    }
+
     /**
      * Get the partitionIds property: Current number of shards on the Event Hub.
      *

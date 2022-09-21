@@ -22,6 +22,10 @@ public final class QueryTextProperties {
     @JsonProperty(value = "queryText")
     private String queryText;
 
+    /** Creates an instance of QueryTextProperties class. */
+    public QueryTextProperties() {
+    }
+
     /**
      * Get the queryId property: Query identifier unique to the server.
      *

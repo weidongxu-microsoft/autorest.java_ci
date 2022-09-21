@@ -186,7 +186,7 @@ public final class StaticMembersClientImpl implements StaticMembersClient {
             return Mono
                 .error(new IllegalArgumentException("Parameter staticMemberName is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -253,7 +253,7 @@ public final class StaticMembersClientImpl implements StaticMembersClient {
             return Mono
                 .error(new IllegalArgumentException("Parameter staticMemberName is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -298,12 +298,12 @@ public final class StaticMembersClientImpl implements StaticMembersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified static member.
+     * @return the specified static member along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public StaticMemberInner get(
+    public Response<StaticMemberInner> getWithResponse(
         String resourceGroupName, String networkManagerName, String networkGroupName, String staticMemberName) {
-        return getAsync(resourceGroupName, networkManagerName, networkGroupName, staticMemberName).block();
+        return getWithResponseAsync(resourceGroupName, networkManagerName, networkGroupName, staticMemberName).block();
     }
 
     /**
@@ -328,6 +328,25 @@ public final class StaticMembersClientImpl implements StaticMembersClient {
         Context context) {
         return getWithResponseAsync(resourceGroupName, networkManagerName, networkGroupName, staticMemberName, context)
             .block();
+    }
+
+    /**
+     * Gets the specified static member.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param networkManagerName The name of the network manager.
+     * @param networkGroupName The name of the network group.
+     * @param staticMemberName The name of the static member.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified static member.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public StaticMemberInner get(
+        String resourceGroupName, String networkManagerName, String networkGroupName, String staticMemberName) {
+        return getWithResponse(resourceGroupName, networkManagerName, networkGroupName, staticMemberName, Context.NONE)
+            .getValue();
     }
 
     /**
@@ -383,7 +402,7 @@ public final class StaticMembersClientImpl implements StaticMembersClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -458,7 +477,7 @@ public final class StaticMembersClientImpl implements StaticMembersClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -511,16 +530,16 @@ public final class StaticMembersClientImpl implements StaticMembersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return staticMember Item.
+     * @return staticMember Item along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public StaticMemberInner createOrUpdate(
+    public Response<StaticMemberInner> createOrUpdateWithResponse(
         String resourceGroupName,
         String networkManagerName,
         String networkGroupName,
         String staticMemberName,
         StaticMemberInner parameters) {
-        return createOrUpdateAsync(
+        return createOrUpdateWithResponseAsync(
                 resourceGroupName, networkManagerName, networkGroupName, staticMemberName, parameters)
             .block();
     }
@@ -550,6 +569,31 @@ public final class StaticMembersClientImpl implements StaticMembersClient {
         return createOrUpdateWithResponseAsync(
                 resourceGroupName, networkManagerName, networkGroupName, staticMemberName, parameters, context)
             .block();
+    }
+
+    /**
+     * Creates or updates a static member.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param networkManagerName The name of the network manager.
+     * @param networkGroupName The name of the network group.
+     * @param staticMemberName The name of the static member.
+     * @param parameters Parameters supplied to the specify the static member to create.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return staticMember Item.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public StaticMemberInner createOrUpdate(
+        String resourceGroupName,
+        String networkManagerName,
+        String networkGroupName,
+        String staticMemberName,
+        StaticMemberInner parameters) {
+        return createOrUpdateWithResponse(
+                resourceGroupName, networkManagerName, networkGroupName, staticMemberName, parameters, Context.NONE)
+            .getValue();
     }
 
     /**
@@ -595,7 +639,7 @@ public final class StaticMembersClientImpl implements StaticMembersClient {
             return Mono
                 .error(new IllegalArgumentException("Parameter staticMemberName is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -662,7 +706,7 @@ public final class StaticMembersClientImpl implements StaticMembersClient {
             return Mono
                 .error(new IllegalArgumentException("Parameter staticMemberName is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -707,11 +751,13 @@ public final class StaticMembersClientImpl implements StaticMembersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public void delete(
+    public Response<Void> deleteWithResponse(
         String resourceGroupName, String networkManagerName, String networkGroupName, String staticMemberName) {
-        deleteAsync(resourceGroupName, networkManagerName, networkGroupName, staticMemberName).block();
+        return deleteWithResponseAsync(resourceGroupName, networkManagerName, networkGroupName, staticMemberName)
+            .block();
     }
 
     /**
@@ -737,6 +783,23 @@ public final class StaticMembersClientImpl implements StaticMembersClient {
         return deleteWithResponseAsync(
                 resourceGroupName, networkManagerName, networkGroupName, staticMemberName, context)
             .block();
+    }
+
+    /**
+     * Deletes a static member.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param networkManagerName The name of the network manager.
+     * @param networkGroupName The name of the network group.
+     * @param staticMemberName The name of the static member.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public void delete(
+        String resourceGroupName, String networkManagerName, String networkGroupName, String staticMemberName) {
+        deleteWithResponse(resourceGroupName, networkManagerName, networkGroupName, staticMemberName, Context.NONE);
     }
 
     /**
@@ -783,7 +846,7 @@ public final class StaticMembersClientImpl implements StaticMembersClient {
             return Mono
                 .error(new IllegalArgumentException("Parameter networkGroupName is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -862,7 +925,7 @@ public final class StaticMembersClientImpl implements StaticMembersClient {
             return Mono
                 .error(new IllegalArgumentException("Parameter networkGroupName is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service

@@ -29,6 +29,10 @@ public final class SkuLocationInfo {
     @JsonProperty(value = "sites", access = JsonProperty.Access.WRITE_ONLY)
     private List<String> sites;
 
+    /** Creates an instance of SkuLocationInfo class. */
+    public SkuLocationInfo() {
+    }
+
     /**
      * Get the location property: The location.
      *

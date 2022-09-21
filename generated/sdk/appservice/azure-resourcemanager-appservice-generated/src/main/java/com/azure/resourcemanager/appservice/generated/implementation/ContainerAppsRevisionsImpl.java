@@ -39,15 +39,6 @@ public final class ContainerAppsRevisionsImpl implements ContainerAppsRevisions 
         return Utils.mapPage(inner, inner1 -> new RevisionImpl(inner1, this.manager()));
     }
 
-    public Revision getRevision(String resourceGroupName, String containerAppName, String name) {
-        RevisionInner inner = this.serviceClient().getRevision(resourceGroupName, containerAppName, name);
-        if (inner != null) {
-            return new RevisionImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<Revision> getRevisionWithResponse(
         String resourceGroupName, String containerAppName, String name, Context context) {
         Response<RevisionInner> inner =
@@ -63,8 +54,13 @@ public final class ContainerAppsRevisionsImpl implements ContainerAppsRevisions 
         }
     }
 
-    public void activateRevision(String resourceGroupName, String containerAppName, String name) {
-        this.serviceClient().activateRevision(resourceGroupName, containerAppName, name);
+    public Revision getRevision(String resourceGroupName, String containerAppName, String name) {
+        RevisionInner inner = this.serviceClient().getRevision(resourceGroupName, containerAppName, name);
+        if (inner != null) {
+            return new RevisionImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> activateRevisionWithResponse(
@@ -72,8 +68,8 @@ public final class ContainerAppsRevisionsImpl implements ContainerAppsRevisions 
         return this.serviceClient().activateRevisionWithResponse(resourceGroupName, containerAppName, name, context);
     }
 
-    public void deactivateRevision(String resourceGroupName, String containerAppName, String name) {
-        this.serviceClient().deactivateRevision(resourceGroupName, containerAppName, name);
+    public void activateRevision(String resourceGroupName, String containerAppName, String name) {
+        this.serviceClient().activateRevision(resourceGroupName, containerAppName, name);
     }
 
     public Response<Void> deactivateRevisionWithResponse(
@@ -81,13 +77,17 @@ public final class ContainerAppsRevisionsImpl implements ContainerAppsRevisions 
         return this.serviceClient().deactivateRevisionWithResponse(resourceGroupName, containerAppName, name, context);
     }
 
-    public void restartRevision(String resourceGroupName, String containerAppName, String name) {
-        this.serviceClient().restartRevision(resourceGroupName, containerAppName, name);
+    public void deactivateRevision(String resourceGroupName, String containerAppName, String name) {
+        this.serviceClient().deactivateRevision(resourceGroupName, containerAppName, name);
     }
 
     public Response<Void> restartRevisionWithResponse(
         String resourceGroupName, String containerAppName, String name, Context context) {
         return this.serviceClient().restartRevisionWithResponse(resourceGroupName, containerAppName, name, context);
+    }
+
+    public void restartRevision(String resourceGroupName, String containerAppName, String name) {
+        this.serviceClient().restartRevision(resourceGroupName, containerAppName, name);
     }
 
     private ContainerAppsRevisionsClient serviceClient() {

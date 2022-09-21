@@ -38,6 +38,10 @@ public final class Configuration {
     @JsonProperty(value = "registries")
     private List<RegistryCredentials> registries;
 
+    /** Creates an instance of Configuration class. */
+    public Configuration() {
+    }
+
     /**
      * Get the secrets property: Collection of secrets used by a Container app.
      *

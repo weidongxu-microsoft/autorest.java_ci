@@ -43,19 +43,6 @@ public interface Shares {
      * @param deviceName The device name.
      * @param name The share name.
      * @param resourceGroupName The resource group name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a share by name.
-     */
-    Share get(String deviceName, String name, String resourceGroupName);
-
-    /**
-     * Gets a share by name.
-     *
-     * @param deviceName The device name.
-     * @param name The share name.
-     * @param resourceGroupName The resource group name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -63,6 +50,19 @@ public interface Shares {
      * @return a share by name along with {@link Response}.
      */
     Response<Share> getWithResponse(String deviceName, String name, String resourceGroupName, Context context);
+
+    /**
+     * Gets a share by name.
+     *
+     * @param deviceName The device name.
+     * @param name The share name.
+     * @param resourceGroupName The resource group name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a share by name.
+     */
+    Share get(String deviceName, String name, String resourceGroupName);
 
     /**
      * Deletes the share on the Data Box Edge/Data Box Gateway device.

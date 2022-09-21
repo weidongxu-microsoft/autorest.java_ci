@@ -35,15 +35,6 @@ public final class RoutesImpl implements Routes {
         this.serviceClient().delete(resourceGroupName, routeTableName, routeName, context);
     }
 
-    public Route get(String resourceGroupName, String routeTableName, String routeName) {
-        RouteInner inner = this.serviceClient().get(resourceGroupName, routeTableName, routeName);
-        if (inner != null) {
-            return new RouteImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<Route> getWithResponse(
         String resourceGroupName, String routeTableName, String routeName, Context context) {
         Response<RouteInner> inner =
@@ -54,6 +45,15 @@ public final class RoutesImpl implements Routes {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new RouteImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public Route get(String resourceGroupName, String routeTableName, String routeName) {
+        RouteInner inner = this.serviceClient().get(resourceGroupName, routeTableName, routeName);
+        if (inner != null) {
+            return new RouteImpl(inner, this.manager());
         } else {
             return null;
         }

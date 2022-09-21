@@ -512,12 +512,12 @@ public final class ContainersClientImpl implements ContainersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a container by name.
+     * @return a container by name along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ContainerInner get(
+    public Response<ContainerInner> getWithResponse(
         String deviceName, String storageAccountName, String containerName, String resourceGroupName) {
-        return getAsync(deviceName, storageAccountName, containerName, resourceGroupName).block();
+        return getWithResponseAsync(deviceName, storageAccountName, containerName, resourceGroupName).block();
     }
 
     /**
@@ -537,6 +537,25 @@ public final class ContainersClientImpl implements ContainersClient {
     public Response<ContainerInner> getWithResponse(
         String deviceName, String storageAccountName, String containerName, String resourceGroupName, Context context) {
         return getWithResponseAsync(deviceName, storageAccountName, containerName, resourceGroupName, context).block();
+    }
+
+    /**
+     * Gets a container by name.
+     *
+     * @param deviceName The device name.
+     * @param storageAccountName The Storage Account Name.
+     * @param containerName The container Name.
+     * @param resourceGroupName The resource group name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a container by name.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ContainerInner get(
+        String deviceName, String storageAccountName, String containerName, String resourceGroupName) {
+        return getWithResponse(deviceName, storageAccountName, containerName, resourceGroupName, Context.NONE)
+            .getValue();
     }
 
     /**

@@ -27,6 +27,10 @@ public final class RelayUpdateParameters extends ResourceNamespacePatch {
     @JsonProperty(value = "properties")
     private RelayNamespaceProperties innerProperties;
 
+    /** Creates an instance of RelayUpdateParameters class. */
+    public RelayUpdateParameters() {
+    }
+
     /**
      * Get the sku property: SKU of the namespace.
      *

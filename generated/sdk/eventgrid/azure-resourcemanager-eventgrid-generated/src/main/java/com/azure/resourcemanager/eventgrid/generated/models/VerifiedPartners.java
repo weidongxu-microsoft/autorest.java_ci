@@ -16,19 +16,6 @@ public interface VerifiedPartners {
      * <p>Get properties of a verified partner.
      *
      * @param verifiedPartnerName Name of the verified partner.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of a verified partner.
-     */
-    VerifiedPartner get(String verifiedPartnerName);
-
-    /**
-     * Get a verified partner.
-     *
-     * <p>Get properties of a verified partner.
-     *
-     * @param verifiedPartnerName Name of the verified partner.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -36,6 +23,19 @@ public interface VerifiedPartners {
      * @return properties of a verified partner along with {@link Response}.
      */
     Response<VerifiedPartner> getWithResponse(String verifiedPartnerName, Context context);
+
+    /**
+     * Get a verified partner.
+     *
+     * <p>Get properties of a verified partner.
+     *
+     * @param verifiedPartnerName Name of the verified partner.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return properties of a verified partner.
+     */
+    VerifiedPartner get(String verifiedPartnerName);
 
     /**
      * List all verified partners.

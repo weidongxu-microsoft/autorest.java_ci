@@ -27,16 +27,8 @@ public final class PolicyAssignmentsImpl implements PolicyAssignments {
         this.serviceManager = serviceManager;
     }
 
-    public PolicyAssignment deleteByResourceGroup(String scope, String policyAssignmentName) {
-        PolicyAssignmentInner inner = this.serviceClient().delete(scope, policyAssignmentName);
-        if (inner != null) {
-            return new PolicyAssignmentImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
-    public Response<PolicyAssignment> deleteWithResponse(String scope, String policyAssignmentName, Context context) {
+    public Response<PolicyAssignment> deleteByResourceGroupWithResponse(
+        String scope, String policyAssignmentName, Context context) {
         Response<PolicyAssignmentInner> inner =
             this.serviceClient().deleteWithResponse(scope, policyAssignmentName, context);
         if (inner != null) {
@@ -50,8 +42,8 @@ public final class PolicyAssignmentsImpl implements PolicyAssignments {
         }
     }
 
-    public PolicyAssignment get(String scope, String policyAssignmentName) {
-        PolicyAssignmentInner inner = this.serviceClient().get(scope, policyAssignmentName);
+    public PolicyAssignment deleteByResourceGroup(String scope, String policyAssignmentName) {
+        PolicyAssignmentInner inner = this.serviceClient().delete(scope, policyAssignmentName);
         if (inner != null) {
             return new PolicyAssignmentImpl(inner, this.manager());
         } else {
@@ -68,6 +60,15 @@ public final class PolicyAssignmentsImpl implements PolicyAssignments {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new PolicyAssignmentImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public PolicyAssignment get(String scope, String policyAssignmentName) {
+        PolicyAssignmentInner inner = this.serviceClient().get(scope, policyAssignmentName);
+        if (inner != null) {
+            return new PolicyAssignmentImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -145,15 +146,6 @@ public final class PolicyAssignmentsImpl implements PolicyAssignments {
         return Utils.mapPage(inner, inner1 -> new PolicyAssignmentImpl(inner1, this.manager()));
     }
 
-    public PolicyAssignment deleteById(String policyAssignmentId) {
-        PolicyAssignmentInner inner = this.serviceClient().deleteById(policyAssignmentId);
-        if (inner != null) {
-            return new PolicyAssignmentImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<PolicyAssignment> deleteByIdWithResponse(String policyAssignmentId, Context context) {
         Response<PolicyAssignmentInner> inner =
             this.serviceClient().deleteByIdWithResponse(policyAssignmentId, context);
@@ -168,8 +160,8 @@ public final class PolicyAssignmentsImpl implements PolicyAssignments {
         }
     }
 
-    public PolicyAssignment createById(String policyAssignmentId, PolicyAssignmentInner parameters) {
-        PolicyAssignmentInner inner = this.serviceClient().createById(policyAssignmentId, parameters);
+    public PolicyAssignment deleteById(String policyAssignmentId) {
+        PolicyAssignmentInner inner = this.serviceClient().deleteById(policyAssignmentId);
         if (inner != null) {
             return new PolicyAssignmentImpl(inner, this.manager());
         } else {
@@ -192,8 +184,8 @@ public final class PolicyAssignmentsImpl implements PolicyAssignments {
         }
     }
 
-    public PolicyAssignment getById(String policyAssignmentId) {
-        PolicyAssignmentInner inner = this.serviceClient().getById(policyAssignmentId);
+    public PolicyAssignment createById(String policyAssignmentId, PolicyAssignmentInner parameters) {
+        PolicyAssignmentInner inner = this.serviceClient().createById(policyAssignmentId, parameters);
         if (inner != null) {
             return new PolicyAssignmentImpl(inner, this.manager());
         } else {
@@ -209,6 +201,15 @@ public final class PolicyAssignmentsImpl implements PolicyAssignments {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new PolicyAssignmentImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public PolicyAssignment getById(String policyAssignmentId) {
+        PolicyAssignmentInner inner = this.serviceClient().getById(policyAssignmentId);
+        if (inner != null) {
+            return new PolicyAssignmentImpl(inner, this.manager());
         } else {
             return null;
         }

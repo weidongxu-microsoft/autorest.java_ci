@@ -39,6 +39,10 @@ public final class ContainerProperties {
     @JsonProperty(value = "createdDateTime", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime createdDateTime;
 
+    /** Creates an instance of ContainerProperties class. */
+    public ContainerProperties() {
+    }
+
     /**
      * Get the containerStatus property: Current status of the container.
      *

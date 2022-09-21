@@ -33,6 +33,10 @@ public class TriggerInner extends ArmBaseModel {
     @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;
 
+    /** Creates an instance of TriggerInner class. */
+    public TriggerInner() {
+    }
+
     /**
      * Get the systemData property: Metadata pertaining to creation and last modification of Trigger.
      *

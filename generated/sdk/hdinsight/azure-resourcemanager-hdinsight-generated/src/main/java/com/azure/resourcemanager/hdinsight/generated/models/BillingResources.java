@@ -29,6 +29,10 @@ public final class BillingResources {
     @JsonProperty(value = "diskBillingMeters")
     private List<DiskBillingMeters> diskBillingMeters;
 
+    /** Creates an instance of BillingResources class. */
+    public BillingResources() {
+    }
+
     /**
      * Get the region property: The region or location.
      *

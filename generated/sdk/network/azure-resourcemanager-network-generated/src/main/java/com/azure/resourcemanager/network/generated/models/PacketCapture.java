@@ -19,6 +19,10 @@ public final class PacketCapture {
     @JsonProperty(value = "properties", required = true)
     private PacketCaptureParameters innerProperties = new PacketCaptureParameters();
 
+    /** Creates an instance of PacketCapture class. */
+    public PacketCapture() {
+    }
+
     /**
      * Get the innerProperties property: Properties of the packet capture.
      *

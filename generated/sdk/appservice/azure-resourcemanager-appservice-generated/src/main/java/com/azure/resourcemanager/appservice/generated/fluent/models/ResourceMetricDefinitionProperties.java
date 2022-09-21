@@ -45,6 +45,10 @@ public final class ResourceMetricDefinitionProperties {
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, String> properties;
 
+    /** Creates an instance of ResourceMetricDefinitionProperties class. */
+    public ResourceMetricDefinitionProperties() {
+    }
+
     /**
      * Get the unit property: Unit of the metric.
      *

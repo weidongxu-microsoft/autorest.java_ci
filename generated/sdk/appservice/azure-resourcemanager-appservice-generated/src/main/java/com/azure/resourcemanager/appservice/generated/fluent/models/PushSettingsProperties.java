@@ -40,6 +40,10 @@ public final class PushSettingsProperties {
     @JsonProperty(value = "dynamicTagsJson")
     private String dynamicTagsJson;
 
+    /** Creates an instance of PushSettingsProperties class. */
+    public PushSettingsProperties() {
+    }
+
     /**
      * Get the isPushEnabled property: Gets or sets a flag indicating whether the Push endpoint is enabled.
      *

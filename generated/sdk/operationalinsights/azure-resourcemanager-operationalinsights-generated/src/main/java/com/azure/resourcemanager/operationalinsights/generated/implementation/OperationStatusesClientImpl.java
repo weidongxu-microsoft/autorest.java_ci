@@ -187,11 +187,11 @@ public final class OperationStatusesClientImpl implements OperationStatusesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the status of a long running azure asynchronous operation.
+     * @return the status of a long running azure asynchronous operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public OperationStatusInner get(String location, String asyncOperationId) {
-        return getAsync(location, asyncOperationId).block();
+    public Response<OperationStatusInner> getWithResponse(String location, String asyncOperationId) {
+        return getWithResponseAsync(location, asyncOperationId).block();
     }
 
     /**
@@ -208,5 +208,20 @@ public final class OperationStatusesClientImpl implements OperationStatusesClien
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<OperationStatusInner> getWithResponse(String location, String asyncOperationId, Context context) {
         return getWithResponseAsync(location, asyncOperationId, context).block();
+    }
+
+    /**
+     * Get the status of a long running azure asynchronous operation.
+     *
+     * @param location The region name of operation.
+     * @param asyncOperationId The operation Id.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the status of a long running azure asynchronous operation.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public OperationStatusInner get(String location, String asyncOperationId) {
+        return getWithResponse(location, asyncOperationId, Context.NONE).getValue();
     }
 }

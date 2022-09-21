@@ -30,6 +30,10 @@ public final class WaitStatisticsInputProperties {
     @JsonProperty(value = "aggregationWindow", required = true)
     private String aggregationWindow;
 
+    /** Creates an instance of WaitStatisticsInputProperties class. */
+    public WaitStatisticsInputProperties() {
+    }
+
     /**
      * Get the observationStartTime property: Observation start time.
      *

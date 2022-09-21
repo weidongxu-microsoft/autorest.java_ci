@@ -10,6 +10,7 @@ import com.azure.resourcemanager.network.generated.models.AddressSpace;
 import com.azure.resourcemanager.network.generated.models.BgpSettings;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkGatewayIpConfiguration;
+import com.azure.resourcemanager.network.generated.models.VirtualNetworkGatewayPolicyGroup;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkGatewaySku;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkGatewayType;
 import com.azure.resourcemanager.network.generated.models.VpnClientConfiguration;
@@ -90,6 +91,13 @@ public final class VirtualNetworkGatewayPropertiesFormat {
     private VpnClientConfiguration vpnClientConfiguration;
 
     /*
+     * The reference to the VirtualNetworkGatewayPolicyGroup resource which represents the available
+     * VirtualNetworkGatewayPolicyGroup for the gateway.
+     */
+    @JsonProperty(value = "virtualNetworkGatewayPolicyGroups")
+    private List<VirtualNetworkGatewayPolicyGroup> virtualNetworkGatewayPolicyGroups;
+
+    /*
      * Virtual network gateway's BGP speaker settings.
      */
     @JsonProperty(value = "bgpSettings")
@@ -143,6 +151,10 @@ public final class VirtualNetworkGatewayPropertiesFormat {
      */
     @JsonProperty(value = "enableBgpRouteTranslationForNat")
     private Boolean enableBgpRouteTranslationForNat;
+
+    /** Creates an instance of VirtualNetworkGatewayPropertiesFormat class. */
+    public VirtualNetworkGatewayPropertiesFormat() {
+    }
 
     /**
      * Get the ipConfigurations property: IP configurations for virtual network gateway.
@@ -378,6 +390,29 @@ public final class VirtualNetworkGatewayPropertiesFormat {
     }
 
     /**
+     * Get the virtualNetworkGatewayPolicyGroups property: The reference to the VirtualNetworkGatewayPolicyGroup
+     * resource which represents the available VirtualNetworkGatewayPolicyGroup for the gateway.
+     *
+     * @return the virtualNetworkGatewayPolicyGroups value.
+     */
+    public List<VirtualNetworkGatewayPolicyGroup> virtualNetworkGatewayPolicyGroups() {
+        return this.virtualNetworkGatewayPolicyGroups;
+    }
+
+    /**
+     * Set the virtualNetworkGatewayPolicyGroups property: The reference to the VirtualNetworkGatewayPolicyGroup
+     * resource which represents the available VirtualNetworkGatewayPolicyGroup for the gateway.
+     *
+     * @param virtualNetworkGatewayPolicyGroups the virtualNetworkGatewayPolicyGroups value to set.
+     * @return the VirtualNetworkGatewayPropertiesFormat object itself.
+     */
+    public VirtualNetworkGatewayPropertiesFormat withVirtualNetworkGatewayPolicyGroups(
+        List<VirtualNetworkGatewayPolicyGroup> virtualNetworkGatewayPolicyGroups) {
+        this.virtualNetworkGatewayPolicyGroups = virtualNetworkGatewayPolicyGroups;
+        return this;
+    }
+
+    /**
      * Get the bgpSettings property: Virtual network gateway's BGP speaker settings.
      *
      * @return the bgpSettings value.
@@ -545,6 +580,9 @@ public final class VirtualNetworkGatewayPropertiesFormat {
         }
         if (vpnClientConfiguration() != null) {
             vpnClientConfiguration().validate();
+        }
+        if (virtualNetworkGatewayPolicyGroups() != null) {
+            virtualNetworkGatewayPolicyGroups().forEach(e -> e.validate());
         }
         if (bgpSettings() != null) {
             bgpSettings().validate();

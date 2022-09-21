@@ -53,6 +53,10 @@ public final class LegacyChargeSummaryProperties {
     @JsonProperty(value = "currency", access = JsonProperty.Access.WRITE_ONLY)
     private String currency;
 
+    /** Creates an instance of LegacyChargeSummaryProperties class. */
+    public LegacyChargeSummaryProperties() {
+    }
+
     /**
      * Get the billingPeriodId property: The id of the billing period resource that the charge belongs to.
      *

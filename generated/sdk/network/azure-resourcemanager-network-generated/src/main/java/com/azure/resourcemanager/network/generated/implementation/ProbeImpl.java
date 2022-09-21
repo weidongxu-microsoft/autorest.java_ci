@@ -63,6 +63,10 @@ public final class ProbeImpl implements Probe {
         return this.innerModel().numberOfProbes();
     }
 
+    public Integer probeThreshold() {
+        return this.innerModel().probeThreshold();
+    }
+
     public String requestPath() {
         return this.innerModel().requestPath();
     }

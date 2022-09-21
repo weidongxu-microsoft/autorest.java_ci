@@ -29,6 +29,10 @@ public final class RecommendedActionSessionsOperationStatusInner {
     @JsonProperty(value = "status")
     private String status;
 
+    /** Creates an instance of RecommendedActionSessionsOperationStatusInner class. */
+    public RecommendedActionSessionsOperationStatusInner() {
+    }
+
     /**
      * Get the name property: Operation identifier.
      *

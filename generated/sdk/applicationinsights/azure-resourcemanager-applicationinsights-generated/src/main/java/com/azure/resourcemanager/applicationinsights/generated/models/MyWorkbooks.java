@@ -75,18 +75,6 @@ public interface MyWorkbooks {
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceName The name of the Application Insights component resource.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a single private workbook by its resourceName.
-     */
-    MyWorkbook getByResourceGroup(String resourceGroupName, String resourceName);
-
-    /**
-     * Get a single private workbook by its resourceName.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param resourceName The name of the Application Insights component resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -96,15 +84,16 @@ public interface MyWorkbooks {
     Response<MyWorkbook> getByResourceGroupWithResponse(String resourceGroupName, String resourceName, Context context);
 
     /**
-     * Delete a private workbook.
+     * Get a single private workbook by its resourceName.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceName The name of the Application Insights component resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a single private workbook by its resourceName.
      */
-    void deleteByResourceGroup(String resourceGroupName, String resourceName);
+    MyWorkbook getByResourceGroup(String resourceGroupName, String resourceName);
 
     /**
      * Delete a private workbook.
@@ -117,7 +106,18 @@ public interface MyWorkbooks {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
-    Response<Void> deleteWithResponse(String resourceGroupName, String resourceName, Context context);
+    Response<Void> deleteByResourceGroupWithResponse(String resourceGroupName, String resourceName, Context context);
+
+    /**
+     * Delete a private workbook.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceName The name of the Application Insights component resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deleteByResourceGroup(String resourceGroupName, String resourceName);
 
     /**
      * Get a single private workbook by its resourceName.

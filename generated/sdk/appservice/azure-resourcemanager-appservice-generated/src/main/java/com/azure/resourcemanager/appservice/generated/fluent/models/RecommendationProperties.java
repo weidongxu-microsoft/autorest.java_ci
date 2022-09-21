@@ -155,6 +155,10 @@ public final class RecommendationProperties {
     @JsonProperty(value = "forwardLink")
     private String forwardLink;
 
+    /** Creates an instance of RecommendationProperties class. */
+    public RecommendationProperties() {
+    }
+
     /**
      * Get the creationTime property: Timestamp when this instance was created.
      *

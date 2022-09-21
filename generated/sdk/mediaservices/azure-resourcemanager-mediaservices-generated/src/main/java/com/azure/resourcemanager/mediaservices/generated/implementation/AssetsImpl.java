@@ -47,15 +47,6 @@ public final class AssetsImpl implements Assets {
         return Utils.mapPage(inner, inner1 -> new AssetImpl(inner1, this.manager()));
     }
 
-    public Asset get(String resourceGroupName, String accountName, String assetName) {
-        AssetInner inner = this.serviceClient().get(resourceGroupName, accountName, assetName);
-        if (inner != null) {
-            return new AssetImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<Asset> getWithResponse(
         String resourceGroupName, String accountName, String assetName, Context context) {
         Response<AssetInner> inner =
@@ -71,8 +62,13 @@ public final class AssetsImpl implements Assets {
         }
     }
 
-    public void delete(String resourceGroupName, String accountName, String assetName) {
-        this.serviceClient().delete(resourceGroupName, accountName, assetName);
+    public Asset get(String resourceGroupName, String accountName, String assetName) {
+        AssetInner inner = this.serviceClient().get(resourceGroupName, accountName, assetName);
+        if (inner != null) {
+            return new AssetImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> deleteWithResponse(
@@ -80,15 +76,8 @@ public final class AssetsImpl implements Assets {
         return this.serviceClient().deleteWithResponse(resourceGroupName, accountName, assetName, context);
     }
 
-    public AssetContainerSas listContainerSas(
-        String resourceGroupName, String accountName, String assetName, ListContainerSasInput parameters) {
-        AssetContainerSasInner inner =
-            this.serviceClient().listContainerSas(resourceGroupName, accountName, assetName, parameters);
-        if (inner != null) {
-            return new AssetContainerSasImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void delete(String resourceGroupName, String accountName, String assetName) {
+        this.serviceClient().delete(resourceGroupName, accountName, assetName);
     }
 
     public Response<AssetContainerSas> listContainerSasWithResponse(
@@ -112,12 +101,12 @@ public final class AssetsImpl implements Assets {
         }
     }
 
-    public StorageEncryptedAssetDecryptionData getEncryptionKey(
-        String resourceGroupName, String accountName, String assetName) {
-        StorageEncryptedAssetDecryptionDataInner inner =
-            this.serviceClient().getEncryptionKey(resourceGroupName, accountName, assetName);
+    public AssetContainerSas listContainerSas(
+        String resourceGroupName, String accountName, String assetName, ListContainerSasInput parameters) {
+        AssetContainerSasInner inner =
+            this.serviceClient().listContainerSas(resourceGroupName, accountName, assetName, parameters);
         if (inner != null) {
-            return new StorageEncryptedAssetDecryptionDataImpl(inner, this.manager());
+            return new AssetContainerSasImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -138,12 +127,12 @@ public final class AssetsImpl implements Assets {
         }
     }
 
-    public ListStreamingLocatorsResponse listStreamingLocators(
+    public StorageEncryptedAssetDecryptionData getEncryptionKey(
         String resourceGroupName, String accountName, String assetName) {
-        ListStreamingLocatorsResponseInner inner =
-            this.serviceClient().listStreamingLocators(resourceGroupName, accountName, assetName);
+        StorageEncryptedAssetDecryptionDataInner inner =
+            this.serviceClient().getEncryptionKey(resourceGroupName, accountName, assetName);
         if (inner != null) {
-            return new ListStreamingLocatorsResponseImpl(inner, this.manager());
+            return new StorageEncryptedAssetDecryptionDataImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -159,6 +148,17 @@ public final class AssetsImpl implements Assets {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new ListStreamingLocatorsResponseImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public ListStreamingLocatorsResponse listStreamingLocators(
+        String resourceGroupName, String accountName, String assetName) {
+        ListStreamingLocatorsResponseInner inner =
+            this.serviceClient().listStreamingLocators(resourceGroupName, accountName, assetName);
+        if (inner != null) {
+            return new ListStreamingLocatorsResponseImpl(inner, this.manager());
         } else {
             return null;
         }

@@ -24,6 +24,10 @@ public final class ScriptActionsList {
     @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
 
+    /** Creates an instance of ScriptActionsList class. */
+    public ScriptActionsList() {
+    }
+
     /**
      * Get the value property: The list of persisted script action details for the cluster.
      *

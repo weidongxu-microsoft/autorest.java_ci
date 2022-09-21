@@ -26,6 +26,10 @@ public final class SnapshotRecoverySource {
     @JsonProperty(value = "id")
     private String id;
 
+    /** Creates an instance of SnapshotRecoverySource class. */
+    public SnapshotRecoverySource() {
+    }
+
     /**
      * Get the location property: Geographical location of the source web app, e.g. SouthEastAsia, SouthCentralUS.
      *

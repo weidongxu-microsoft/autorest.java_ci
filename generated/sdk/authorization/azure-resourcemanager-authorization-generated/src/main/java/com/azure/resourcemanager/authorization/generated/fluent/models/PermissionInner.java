@@ -35,6 +35,10 @@ public final class PermissionInner {
     @JsonProperty(value = "notDataActions")
     private List<String> notDataActions;
 
+    /** Creates an instance of PermissionInner class. */
+    public PermissionInner() {
+    }
+
     /**
      * Get the actions property: Allowed actions.
      *

@@ -29,6 +29,10 @@ public final class JobErrorItem {
     @JsonProperty(value = "message", access = JsonProperty.Access.WRITE_ONLY)
     private String message;
 
+    /** Creates an instance of JobErrorItem class. */
+    public JobErrorItem() {
+    }
+
     /**
      * Get the recommendations property: The recommended actions.
      *

@@ -32,6 +32,10 @@ public final class AuthorizationRuleInner extends ProxyResource {
     @JsonProperty(value = "location", access = JsonProperty.Access.WRITE_ONLY)
     private String location;
 
+    /** Creates an instance of AuthorizationRuleInner class. */
+    public AuthorizationRuleInner() {
+    }
+
     /**
      * Get the innerProperties property: Properties supplied to create or update AuthorizationRule.
      *

@@ -72,6 +72,10 @@ public final class PartnerNamespaceProperties {
     @JsonProperty(value = "partnerTopicRoutingMode")
     private PartnerTopicRoutingMode partnerTopicRoutingMode;
 
+    /** Creates an instance of PartnerNamespaceProperties class. */
+    public PartnerNamespaceProperties() {
+    }
+
     /**
      * Get the privateEndpointConnections property: The privateEndpointConnections property.
      *

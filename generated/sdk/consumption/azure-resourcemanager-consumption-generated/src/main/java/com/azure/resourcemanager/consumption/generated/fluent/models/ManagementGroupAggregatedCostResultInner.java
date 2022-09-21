@@ -35,6 +35,10 @@ public final class ManagementGroupAggregatedCostResultInner extends ProxyResourc
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, String> tags;
 
+    /** Creates an instance of ManagementGroupAggregatedCostResultInner class. */
+    public ManagementGroupAggregatedCostResultInner() {
+    }
+
     /**
      * Get the innerProperties property: The properties of the Management Group Aggregated Cost.
      *

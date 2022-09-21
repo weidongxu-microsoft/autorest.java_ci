@@ -28,15 +28,6 @@ public final class DeploymentOperationsImpl implements DeploymentOperations {
         this.serviceManager = serviceManager;
     }
 
-    public DeploymentOperation getAtScope(String scope, String deploymentName, String operationId) {
-        DeploymentOperationInner inner = this.serviceClient().getAtScope(scope, deploymentName, operationId);
-        if (inner != null) {
-            return new DeploymentOperationImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<DeploymentOperation> getAtScopeWithResponse(
         String scope, String deploymentName, String operationId, Context context) {
         Response<DeploymentOperationInner> inner =
@@ -47,6 +38,15 @@ public final class DeploymentOperationsImpl implements DeploymentOperations {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new DeploymentOperationImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public DeploymentOperation getAtScope(String scope, String deploymentName, String operationId) {
+        DeploymentOperationInner inner = this.serviceClient().getAtScope(scope, deploymentName, operationId);
+        if (inner != null) {
+            return new DeploymentOperationImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -64,15 +64,6 @@ public final class DeploymentOperationsImpl implements DeploymentOperations {
         return Utils.mapPage(inner, inner1 -> new DeploymentOperationImpl(inner1, this.manager()));
     }
 
-    public DeploymentOperation getAtTenantScope(String deploymentName, String operationId) {
-        DeploymentOperationInner inner = this.serviceClient().getAtTenantScope(deploymentName, operationId);
-        if (inner != null) {
-            return new DeploymentOperationImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<DeploymentOperation> getAtTenantScopeWithResponse(
         String deploymentName, String operationId, Context context) {
         Response<DeploymentOperationInner> inner =
@@ -83,6 +74,15 @@ public final class DeploymentOperationsImpl implements DeploymentOperations {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new DeploymentOperationImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public DeploymentOperation getAtTenantScope(String deploymentName, String operationId) {
+        DeploymentOperationInner inner = this.serviceClient().getAtTenantScope(deploymentName, operationId);
+        if (inner != null) {
+            return new DeploymentOperationImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -99,16 +99,6 @@ public final class DeploymentOperationsImpl implements DeploymentOperations {
         return Utils.mapPage(inner, inner1 -> new DeploymentOperationImpl(inner1, this.manager()));
     }
 
-    public DeploymentOperation getAtManagementGroupScope(String groupId, String deploymentName, String operationId) {
-        DeploymentOperationInner inner =
-            this.serviceClient().getAtManagementGroupScope(groupId, deploymentName, operationId);
-        if (inner != null) {
-            return new DeploymentOperationImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<DeploymentOperation> getAtManagementGroupScopeWithResponse(
         String groupId, String deploymentName, String operationId, Context context) {
         Response<DeploymentOperationInner> inner =
@@ -119,6 +109,16 @@ public final class DeploymentOperationsImpl implements DeploymentOperations {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new DeploymentOperationImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public DeploymentOperation getAtManagementGroupScope(String groupId, String deploymentName, String operationId) {
+        DeploymentOperationInner inner =
+            this.serviceClient().getAtManagementGroupScope(groupId, deploymentName, operationId);
+        if (inner != null) {
+            return new DeploymentOperationImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -137,15 +137,6 @@ public final class DeploymentOperationsImpl implements DeploymentOperations {
         return Utils.mapPage(inner, inner1 -> new DeploymentOperationImpl(inner1, this.manager()));
     }
 
-    public DeploymentOperation getAtSubscriptionScope(String deploymentName, String operationId) {
-        DeploymentOperationInner inner = this.serviceClient().getAtSubscriptionScope(deploymentName, operationId);
-        if (inner != null) {
-            return new DeploymentOperationImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<DeploymentOperation> getAtSubscriptionScopeWithResponse(
         String deploymentName, String operationId, Context context) {
         Response<DeploymentOperationInner> inner =
@@ -156,6 +147,15 @@ public final class DeploymentOperationsImpl implements DeploymentOperations {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new DeploymentOperationImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public DeploymentOperation getAtSubscriptionScope(String deploymentName, String operationId) {
+        DeploymentOperationInner inner = this.serviceClient().getAtSubscriptionScope(deploymentName, operationId);
+        if (inner != null) {
+            return new DeploymentOperationImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -173,15 +173,6 @@ public final class DeploymentOperationsImpl implements DeploymentOperations {
         return Utils.mapPage(inner, inner1 -> new DeploymentOperationImpl(inner1, this.manager()));
     }
 
-    public DeploymentOperation get(String resourceGroupName, String deploymentName, String operationId) {
-        DeploymentOperationInner inner = this.serviceClient().get(resourceGroupName, deploymentName, operationId);
-        if (inner != null) {
-            return new DeploymentOperationImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<DeploymentOperation> getWithResponse(
         String resourceGroupName, String deploymentName, String operationId, Context context) {
         Response<DeploymentOperationInner> inner =
@@ -192,6 +183,15 @@ public final class DeploymentOperationsImpl implements DeploymentOperations {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new DeploymentOperationImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public DeploymentOperation get(String resourceGroupName, String deploymentName, String operationId) {
+        DeploymentOperationInner inner = this.serviceClient().get(resourceGroupName, deploymentName, operationId);
+        if (inner != null) {
+            return new DeploymentOperationImpl(inner, this.manager());
         } else {
             return null;
         }

@@ -147,6 +147,10 @@ public final class ApplicationInsightsComponentProperties {
     @JsonProperty(value = "IngestionMode")
     private IngestionMode ingestionMode;
 
+    /** Creates an instance of ApplicationInsightsComponentProperties class. */
+    public ApplicationInsightsComponentProperties() {
+    }
+
     /**
      * Get the applicationId property: The unique ID of your application. This field mirrors the 'Name' field and cannot
      * be changed.

@@ -24,6 +24,10 @@ public final class Criteria {
     @JsonProperty(value = "dimensions")
     private List<Dimension> dimensions;
 
+    /** Creates an instance of Criteria class. */
+    public Criteria() {
+    }
+
     /**
      * Get the metricName property: Name of the metric.
      *

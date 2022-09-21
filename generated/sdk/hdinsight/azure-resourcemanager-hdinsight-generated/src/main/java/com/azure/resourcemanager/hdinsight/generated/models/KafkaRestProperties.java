@@ -25,6 +25,10 @@ public final class KafkaRestProperties {
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, String> configurationOverride;
 
+    /** Creates an instance of KafkaRestProperties class. */
+    public KafkaRestProperties() {
+    }
+
     /**
      * Get the clientGroupInfo property: The information of AAD security group.
      *

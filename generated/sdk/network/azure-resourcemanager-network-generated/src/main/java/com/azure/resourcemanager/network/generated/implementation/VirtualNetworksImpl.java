@@ -11,9 +11,11 @@ import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.fluent.VirtualNetworksClient;
 import com.azure.resourcemanager.network.generated.fluent.models.IpAddressAvailabilityResultInner;
+import com.azure.resourcemanager.network.generated.fluent.models.PublicIpDdosProtectionStatusResultInner;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualNetworkInner;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualNetworkUsageInner;
 import com.azure.resourcemanager.network.generated.models.IpAddressAvailabilityResult;
+import com.azure.resourcemanager.network.generated.models.PublicIpDdosProtectionStatusResult;
 import com.azure.resourcemanager.network.generated.models.VirtualNetwork;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkUsage;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworks;
@@ -39,15 +41,6 @@ public final class VirtualNetworksImpl implements VirtualNetworks {
         this.serviceClient().delete(resourceGroupName, virtualNetworkName, context);
     }
 
-    public VirtualNetwork getByResourceGroup(String resourceGroupName, String virtualNetworkName) {
-        VirtualNetworkInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, virtualNetworkName);
-        if (inner != null) {
-            return new VirtualNetworkImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<VirtualNetwork> getByResourceGroupWithResponse(
         String resourceGroupName, String virtualNetworkName, String expand, Context context) {
         Response<VirtualNetworkInner> inner =
@@ -58,6 +51,15 @@ public final class VirtualNetworksImpl implements VirtualNetworks {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new VirtualNetworkImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public VirtualNetwork getByResourceGroup(String resourceGroupName, String virtualNetworkName) {
+        VirtualNetworkInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, virtualNetworkName);
+        if (inner != null) {
+            return new VirtualNetworkImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -83,17 +85,6 @@ public final class VirtualNetworksImpl implements VirtualNetworks {
         return Utils.mapPage(inner, inner1 -> new VirtualNetworkImpl(inner1, this.manager()));
     }
 
-    public IpAddressAvailabilityResult checkIpAddressAvailability(
-        String resourceGroupName, String virtualNetworkName, String ipAddress) {
-        IpAddressAvailabilityResultInner inner =
-            this.serviceClient().checkIpAddressAvailability(resourceGroupName, virtualNetworkName, ipAddress);
-        if (inner != null) {
-            return new IpAddressAvailabilityResultImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<IpAddressAvailabilityResult> checkIpAddressAvailabilityWithResponse(
         String resourceGroupName, String virtualNetworkName, String ipAddress, Context context) {
         Response<IpAddressAvailabilityResultInner> inner =
@@ -111,6 +102,17 @@ public final class VirtualNetworksImpl implements VirtualNetworks {
         }
     }
 
+    public IpAddressAvailabilityResult checkIpAddressAvailability(
+        String resourceGroupName, String virtualNetworkName, String ipAddress) {
+        IpAddressAvailabilityResultInner inner =
+            this.serviceClient().checkIpAddressAvailability(resourceGroupName, virtualNetworkName, ipAddress);
+        if (inner != null) {
+            return new IpAddressAvailabilityResultImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
     public PagedIterable<VirtualNetworkUsage> listUsage(String resourceGroupName, String virtualNetworkName) {
         PagedIterable<VirtualNetworkUsageInner> inner =
             this.serviceClient().listUsage(resourceGroupName, virtualNetworkName);
@@ -122,6 +124,22 @@ public final class VirtualNetworksImpl implements VirtualNetworks {
         PagedIterable<VirtualNetworkUsageInner> inner =
             this.serviceClient().listUsage(resourceGroupName, virtualNetworkName, context);
         return Utils.mapPage(inner, inner1 -> new VirtualNetworkUsageImpl(inner1, this.manager()));
+    }
+
+    public PagedIterable<PublicIpDdosProtectionStatusResult> listDdosProtectionStatus(
+        String resourceGroupName, String virtualNetworkName) {
+        PagedIterable<PublicIpDdosProtectionStatusResultInner> inner =
+            this.serviceClient().listDdosProtectionStatus(resourceGroupName, virtualNetworkName);
+        return Utils.mapPage(inner, inner1 -> new PublicIpDdosProtectionStatusResultImpl(inner1, this.manager()));
+    }
+
+    public PagedIterable<PublicIpDdosProtectionStatusResult> listDdosProtectionStatus(
+        String resourceGroupName, String virtualNetworkName, Integer top, String skipToken, Context context) {
+        PagedIterable<PublicIpDdosProtectionStatusResultInner> inner =
+            this
+                .serviceClient()
+                .listDdosProtectionStatus(resourceGroupName, virtualNetworkName, top, skipToken, context);
+        return Utils.mapPage(inner, inner1 -> new PublicIpDdosProtectionStatusResultImpl(inner1, this.manager()));
     }
 
     public VirtualNetwork getById(String id) {

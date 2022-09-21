@@ -35,6 +35,10 @@ public final class PolicyAssignmentInner extends ProxyResource {
     @JsonProperty(value = "identity")
     private Identity identity;
 
+    /** Creates an instance of PolicyAssignmentInner class. */
+    public PolicyAssignmentInner() {
+    }
+
     /**
      * Get the innerProperties property: Properties for the policy assignment.
      *

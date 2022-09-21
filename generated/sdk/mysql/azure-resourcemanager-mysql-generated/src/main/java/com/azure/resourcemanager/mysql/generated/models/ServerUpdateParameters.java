@@ -38,6 +38,10 @@ public final class ServerUpdateParameters {
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, String> tags;
 
+    /** Creates an instance of ServerUpdateParameters class. */
+    public ServerUpdateParameters() {
+    }
+
     /**
      * Get the identity property: The Azure Active Directory identity of the server.
      *

@@ -17,6 +17,10 @@ public final class VersionsCapability {
     @JsonProperty(value = "available")
     private List<VersionSpec> available;
 
+    /** Creates an instance of VersionsCapability class. */
+    public VersionsCapability() {
+    }
+
     /**
      * Get the available property: The list of version capabilities.
      *

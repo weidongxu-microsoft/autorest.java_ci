@@ -36,6 +36,10 @@ public final class TargetRegion {
     @JsonProperty(value = "encryption")
     private EncryptionImages encryption;
 
+    /** Creates an instance of TargetRegion class. */
+    public TargetRegion() {
+    }
+
     /**
      * Get the name property: The name of the region.
      *

@@ -319,15 +319,16 @@ public final class DatabasePrincipalAssignmentsClientImpl implements DatabasePri
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the result returned from a check name availability request.
+     * @return the result returned from a check name availability request along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public CheckNameResultInner checkNameAvailability(
+    public Response<CheckNameResultInner> checkNameAvailabilityWithResponse(
         String resourceGroupName,
         String clusterName,
         String databaseName,
         DatabasePrincipalAssignmentCheckNameRequest principalAssignmentName) {
-        return checkNameAvailabilityAsync(resourceGroupName, clusterName, databaseName, principalAssignmentName)
+        return checkNameAvailabilityWithResponseAsync(
+                resourceGroupName, clusterName, databaseName, principalAssignmentName)
             .block();
     }
 
@@ -354,6 +355,29 @@ public final class DatabasePrincipalAssignmentsClientImpl implements DatabasePri
         return checkNameAvailabilityWithResponseAsync(
                 resourceGroupName, clusterName, databaseName, principalAssignmentName, context)
             .block();
+    }
+
+    /**
+     * Checks that the database principal assignment is valid and is not already in use.
+     *
+     * @param resourceGroupName The name of the resource group containing the Kusto cluster.
+     * @param clusterName The name of the Kusto cluster.
+     * @param databaseName The name of the database in the Kusto cluster.
+     * @param principalAssignmentName The name of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the result returned from a check name availability request.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public CheckNameResultInner checkNameAvailability(
+        String resourceGroupName,
+        String clusterName,
+        String databaseName,
+        DatabasePrincipalAssignmentCheckNameRequest principalAssignmentName) {
+        return checkNameAvailabilityWithResponse(
+                resourceGroupName, clusterName, databaseName, principalAssignmentName, Context.NONE)
+            .getValue();
     }
 
     /**
@@ -509,12 +533,12 @@ public final class DatabasePrincipalAssignmentsClientImpl implements DatabasePri
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Kusto cluster database principalAssignment.
+     * @return a Kusto cluster database principalAssignment along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public DatabasePrincipalAssignmentInner get(
+    public Response<DatabasePrincipalAssignmentInner> getWithResponse(
         String resourceGroupName, String clusterName, String databaseName, String principalAssignmentName) {
-        return getAsync(resourceGroupName, clusterName, databaseName, principalAssignmentName).block();
+        return getWithResponseAsync(resourceGroupName, clusterName, databaseName, principalAssignmentName).block();
     }
 
     /**
@@ -539,6 +563,25 @@ public final class DatabasePrincipalAssignmentsClientImpl implements DatabasePri
         Context context) {
         return getWithResponseAsync(resourceGroupName, clusterName, databaseName, principalAssignmentName, context)
             .block();
+    }
+
+    /**
+     * Gets a Kusto cluster database principalAssignment.
+     *
+     * @param resourceGroupName The name of the resource group containing the Kusto cluster.
+     * @param clusterName The name of the Kusto cluster.
+     * @param databaseName The name of the database in the Kusto cluster.
+     * @param principalAssignmentName The name of the Kusto principalAssignment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a Kusto cluster database principalAssignment.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public DatabasePrincipalAssignmentInner get(
+        String resourceGroupName, String clusterName, String databaseName, String principalAssignmentName) {
+        return getWithResponse(resourceGroupName, clusterName, databaseName, principalAssignmentName, Context.NONE)
+            .getValue();
     }
 
     /**

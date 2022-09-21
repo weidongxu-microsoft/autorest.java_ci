@@ -153,6 +153,10 @@ public final class LegacyReservationTransactionProperties {
     @JsonProperty(value = "overage", access = JsonProperty.Access.WRITE_ONLY)
     private BigDecimal overage;
 
+    /** Creates an instance of LegacyReservationTransactionProperties class. */
+    public LegacyReservationTransactionProperties() {
+    }
+
     /**
      * Get the eventDate property: The date of the transaction.
      *

@@ -29,6 +29,10 @@ public final class EventTypeInfo {
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, InlineEventProperties> inlineEventTypes;
 
+    /** Creates an instance of EventTypeInfo class. */
+    public EventTypeInfo() {
+    }
+
     /**
      * Get the kind property: The kind of event type used.
      *

@@ -461,11 +461,12 @@ public final class StorageAccountCredentialsClientImpl implements StorageAccount
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the properties of the specified storage account credential.
+     * @return the properties of the specified storage account credential along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public StorageAccountCredentialInner get(String deviceName, String name, String resourceGroupName) {
-        return getAsync(deviceName, name, resourceGroupName).block();
+    public Response<StorageAccountCredentialInner> getWithResponse(
+        String deviceName, String name, String resourceGroupName) {
+        return getWithResponseAsync(deviceName, name, resourceGroupName).block();
     }
 
     /**
@@ -484,6 +485,22 @@ public final class StorageAccountCredentialsClientImpl implements StorageAccount
     public Response<StorageAccountCredentialInner> getWithResponse(
         String deviceName, String name, String resourceGroupName, Context context) {
         return getWithResponseAsync(deviceName, name, resourceGroupName, context).block();
+    }
+
+    /**
+     * Gets the properties of the specified storage account credential.
+     *
+     * @param deviceName The device name.
+     * @param name The storage account credential name.
+     * @param resourceGroupName The resource group name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the properties of the specified storage account credential.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public StorageAccountCredentialInner get(String deviceName, String name, String resourceGroupName) {
+        return getWithResponse(deviceName, name, resourceGroupName, Context.NONE).getValue();
     }
 
     /**

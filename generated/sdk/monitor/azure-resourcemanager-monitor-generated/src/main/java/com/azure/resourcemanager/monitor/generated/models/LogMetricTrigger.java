@@ -34,6 +34,10 @@ public final class LogMetricTrigger {
     @JsonProperty(value = "metricColumn")
     private String metricColumn;
 
+    /** Creates an instance of LogMetricTrigger class. */
+    public LogMetricTrigger() {
+    }
+
     /**
      * Get the thresholdOperator property: Evaluation operation for Metric -'GreaterThan' or 'LessThan' or 'Equal'.
      *

@@ -28,15 +28,6 @@ public final class PrivateLinkScopedResourcesImpl implements PrivateLinkScopedRe
         this.serviceManager = serviceManager;
     }
 
-    public ScopedResource get(String resourceGroupName, String scopeName, String name) {
-        ScopedResourceInner inner = this.serviceClient().get(resourceGroupName, scopeName, name);
-        if (inner != null) {
-            return new ScopedResourceImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<ScopedResource> getWithResponse(
         String resourceGroupName, String scopeName, String name, Context context) {
         Response<ScopedResourceInner> inner =
@@ -47,6 +38,15 @@ public final class PrivateLinkScopedResourcesImpl implements PrivateLinkScopedRe
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new ScopedResourceImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public ScopedResource get(String resourceGroupName, String scopeName, String name) {
+        ScopedResourceInner inner = this.serviceClient().get(resourceGroupName, scopeName, name);
+        if (inner != null) {
+            return new ScopedResourceImpl(inner, this.manager());
         } else {
             return null;
         }

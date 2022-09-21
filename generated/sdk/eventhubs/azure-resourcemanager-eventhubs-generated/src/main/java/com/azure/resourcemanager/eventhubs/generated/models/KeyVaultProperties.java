@@ -34,6 +34,10 @@ public final class KeyVaultProperties {
     @JsonProperty(value = "identity")
     private UserAssignedIdentityProperties identity;
 
+    /** Creates an instance of KeyVaultProperties class. */
+    public KeyVaultProperties() {
+    }
+
     /**
      * Get the keyName property: Name of the Key from KeyVault.
      *

@@ -22,6 +22,10 @@ public final class QueryKeyInner {
     @JsonProperty(value = "key", access = JsonProperty.Access.WRITE_ONLY)
     private String key;
 
+    /** Creates an instance of QueryKeyInner class. */
+    public QueryKeyInner() {
+    }
+
     /**
      * Get the name property: The name of the query API key; may be empty.
      *

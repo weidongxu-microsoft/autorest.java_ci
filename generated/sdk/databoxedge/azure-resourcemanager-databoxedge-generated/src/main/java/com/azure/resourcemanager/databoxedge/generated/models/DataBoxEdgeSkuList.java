@@ -24,6 +24,10 @@ public final class DataBoxEdgeSkuList {
     @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
 
+    /** Creates an instance of DataBoxEdgeSkuList class. */
+    public DataBoxEdgeSkuList() {
+    }
+
     /**
      * Get the value property: List of ResourceType Sku.
      *

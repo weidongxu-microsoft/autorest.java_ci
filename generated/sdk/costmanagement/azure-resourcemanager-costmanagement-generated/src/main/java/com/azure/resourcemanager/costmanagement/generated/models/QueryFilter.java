@@ -35,6 +35,10 @@ public final class QueryFilter {
     @JsonProperty(value = "tags")
     private QueryComparisonExpression tags;
 
+    /** Creates an instance of QueryFilter class. */
+    public QueryFilter() {
+    }
+
     /**
      * Get the and property: The logical "AND" expression. Must have at least 2 items.
      *

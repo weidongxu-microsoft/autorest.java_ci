@@ -33,6 +33,10 @@ public final class PrivateLinkConfigurationProperties {
     @JsonProperty(value = "ipConfigurations", required = true)
     private List<IpConfiguration> ipConfigurations;
 
+    /** Creates an instance of PrivateLinkConfigurationProperties class. */
+    public PrivateLinkConfigurationProperties() {
+    }
+
     /**
      * Get the groupId property: The HDInsight private linkable sub-resource name to apply the private link
      * configuration to. For example, 'headnode', 'gateway', 'edgenode'.

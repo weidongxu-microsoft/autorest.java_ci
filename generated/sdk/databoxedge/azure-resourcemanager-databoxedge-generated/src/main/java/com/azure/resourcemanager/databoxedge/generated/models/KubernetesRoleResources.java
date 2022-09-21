@@ -29,6 +29,10 @@ public final class KubernetesRoleResources {
     @JsonProperty(value = "network", access = JsonProperty.Access.WRITE_ONLY)
     private KubernetesRoleNetwork network;
 
+    /** Creates an instance of KubernetesRoleResources class. */
+    public KubernetesRoleResources() {
+    }
+
     /**
      * Get the storage property: Kubernetes role storage resource.
      *

@@ -23,6 +23,10 @@ public final class IoTAddon extends AddonInner {
     @JsonProperty(value = "properties", required = true)
     private IoTAddonProperties innerProperties = new IoTAddonProperties();
 
+    /** Creates an instance of IoTAddon class. */
+    public IoTAddon() {
+    }
+
     /**
      * Get the innerProperties property: Properties specific to IOT addon.
      *

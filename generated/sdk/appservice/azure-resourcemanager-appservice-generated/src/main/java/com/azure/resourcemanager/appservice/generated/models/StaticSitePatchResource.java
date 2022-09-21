@@ -18,6 +18,10 @@ public final class StaticSitePatchResource extends ProxyOnlyResource {
     @JsonProperty(value = "properties")
     private StaticSite innerProperties;
 
+    /** Creates an instance of StaticSitePatchResource class. */
+    public StaticSitePatchResource() {
+    }
+
     /**
      * Get the innerProperties property: Core resource properties.
      *

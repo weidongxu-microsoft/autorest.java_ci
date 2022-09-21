@@ -538,17 +538,17 @@ public final class WorkflowRunActionScopeRepetitionsClientImpl implements Workfl
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a workflow run action scoped repetition.
+     * @return a workflow run action scoped repetition along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public WorkflowRunActionRepetitionDefinitionInner get(
+    public Response<WorkflowRunActionRepetitionDefinitionInner> getWithResponse(
         String resourceGroupName,
         String name,
         String workflowName,
         String runName,
         String actionName,
         String repetitionName) {
-        return getAsync(resourceGroupName, name, workflowName, runName, actionName, repetitionName).block();
+        return getWithResponseAsync(resourceGroupName, name, workflowName, runName, actionName, repetitionName).block();
     }
 
     /**
@@ -577,6 +577,32 @@ public final class WorkflowRunActionScopeRepetitionsClientImpl implements Workfl
         Context context) {
         return getWithResponseAsync(resourceGroupName, name, workflowName, runName, actionName, repetitionName, context)
             .block();
+    }
+
+    /**
+     * Get a workflow run action scoped repetition.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Site name.
+     * @param workflowName The workflow name.
+     * @param runName The workflow run name.
+     * @param actionName The workflow action name.
+     * @param repetitionName The workflow repetition.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a workflow run action scoped repetition.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public WorkflowRunActionRepetitionDefinitionInner get(
+        String resourceGroupName,
+        String name,
+        String workflowName,
+        String runName,
+        String actionName,
+        String repetitionName) {
+        return getWithResponse(resourceGroupName, name, workflowName, runName, actionName, repetitionName, Context.NONE)
+            .getValue();
     }
 
     /**

@@ -461,11 +461,12 @@ public final class FrontendEndpointsClientImpl implements FrontendEndpointsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Frontend endpoint with the specified name within the specified Front Door.
+     * @return a Frontend endpoint with the specified name within the specified Front Door along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public FrontendEndpointInner get(String resourceGroupName, String frontDoorName, String frontendEndpointName) {
-        return getAsync(resourceGroupName, frontDoorName, frontendEndpointName).block();
+    public Response<FrontendEndpointInner> getWithResponse(
+        String resourceGroupName, String frontDoorName, String frontendEndpointName) {
+        return getWithResponseAsync(resourceGroupName, frontDoorName, frontendEndpointName).block();
     }
 
     /**
@@ -484,6 +485,22 @@ public final class FrontendEndpointsClientImpl implements FrontendEndpointsClien
     public Response<FrontendEndpointInner> getWithResponse(
         String resourceGroupName, String frontDoorName, String frontendEndpointName, Context context) {
         return getWithResponseAsync(resourceGroupName, frontDoorName, frontendEndpointName, context).block();
+    }
+
+    /**
+     * Gets a Frontend endpoint with the specified name within the specified Front Door.
+     *
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param frontDoorName Name of the Front Door which is globally unique.
+     * @param frontendEndpointName Name of the Frontend endpoint which is unique within the Front Door.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a Frontend endpoint with the specified name within the specified Front Door.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public FrontendEndpointInner get(String resourceGroupName, String frontDoorName, String frontendEndpointName) {
+        return getWithResponse(resourceGroupName, frontDoorName, frontendEndpointName, Context.NONE).getValue();
     }
 
     /**

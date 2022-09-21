@@ -24,6 +24,10 @@ public final class DnsResourceReference {
     @JsonProperty(value = "targetResource")
     private SubResource targetResource;
 
+    /** Creates an instance of DnsResourceReference class. */
+    public DnsResourceReference() {
+    }
+
     /**
      * Get the dnsResources property: A list of dns Records.
      *

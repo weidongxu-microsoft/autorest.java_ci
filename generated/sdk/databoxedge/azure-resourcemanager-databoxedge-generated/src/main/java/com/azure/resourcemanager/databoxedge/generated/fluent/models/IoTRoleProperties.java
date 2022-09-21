@@ -67,6 +67,10 @@ public final class IoTRoleProperties {
     @JsonProperty(value = "roleStatus", required = true)
     private RoleStatus roleStatus;
 
+    /** Creates an instance of IoTRoleProperties class. */
+    public IoTRoleProperties() {
+    }
+
     /**
      * Get the hostPlatform property: Host OS supported by the IoT role.
      *

@@ -23,6 +23,10 @@ public final class AutoscaleSchedule {
     @JsonProperty(value = "timeAndCapacity")
     private AutoscaleTimeAndCapacity timeAndCapacity;
 
+    /** Creates an instance of AutoscaleSchedule class. */
+    public AutoscaleSchedule() {
+    }
+
     /**
      * Get the days property: Days of the week for a schedule-based autoscale rule.
      *

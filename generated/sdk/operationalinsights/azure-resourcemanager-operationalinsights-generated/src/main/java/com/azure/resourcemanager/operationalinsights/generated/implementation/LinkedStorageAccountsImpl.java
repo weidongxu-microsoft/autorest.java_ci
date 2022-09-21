@@ -29,24 +29,13 @@ public final class LinkedStorageAccountsImpl implements LinkedStorageAccounts {
         this.serviceManager = serviceManager;
     }
 
-    public void delete(String resourceGroupName, String workspaceName, DataSourceType dataSourceType) {
-        this.serviceClient().delete(resourceGroupName, workspaceName, dataSourceType);
-    }
-
     public Response<Void> deleteWithResponse(
         String resourceGroupName, String workspaceName, DataSourceType dataSourceType, Context context) {
         return this.serviceClient().deleteWithResponse(resourceGroupName, workspaceName, dataSourceType, context);
     }
 
-    public LinkedStorageAccountsResource get(
-        String resourceGroupName, String workspaceName, DataSourceType dataSourceType) {
-        LinkedStorageAccountsResourceInner inner =
-            this.serviceClient().get(resourceGroupName, workspaceName, dataSourceType);
-        if (inner != null) {
-            return new LinkedStorageAccountsResourceImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void delete(String resourceGroupName, String workspaceName, DataSourceType dataSourceType) {
+        this.serviceClient().delete(resourceGroupName, workspaceName, dataSourceType);
     }
 
     public Response<LinkedStorageAccountsResource> getWithResponse(
@@ -59,6 +48,17 @@ public final class LinkedStorageAccountsImpl implements LinkedStorageAccounts {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new LinkedStorageAccountsResourceImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public LinkedStorageAccountsResource get(
+        String resourceGroupName, String workspaceName, DataSourceType dataSourceType) {
+        LinkedStorageAccountsResourceInner inner =
+            this.serviceClient().get(resourceGroupName, workspaceName, dataSourceType);
+        if (inner != null) {
+            return new LinkedStorageAccountsResourceImpl(inner, this.manager());
         } else {
             return null;
         }

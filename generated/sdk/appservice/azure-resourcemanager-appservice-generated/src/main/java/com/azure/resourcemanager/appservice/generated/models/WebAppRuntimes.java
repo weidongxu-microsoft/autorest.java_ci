@@ -34,6 +34,10 @@ public final class WebAppRuntimes {
     @JsonProperty(value = "windowsContainerSettings", access = JsonProperty.Access.WRITE_ONLY)
     private WindowsJavaContainerSettings windowsContainerSettings;
 
+    /** Creates an instance of WebAppRuntimes class. */
+    public WebAppRuntimes() {
+    }
+
     /**
      * Get the linuxRuntimeSettings property: Linux-specific settings associated with the minor version.
      *

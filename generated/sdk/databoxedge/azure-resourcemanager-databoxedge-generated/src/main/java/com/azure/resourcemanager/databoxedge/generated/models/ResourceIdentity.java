@@ -28,6 +28,10 @@ public class ResourceIdentity {
     @JsonProperty(value = "tenantId", access = JsonProperty.Access.WRITE_ONLY)
     private String tenantId;
 
+    /** Creates an instance of ResourceIdentity class. */
+    public ResourceIdentity() {
+    }
+
     /**
      * Get the type property: Identity type.
      *

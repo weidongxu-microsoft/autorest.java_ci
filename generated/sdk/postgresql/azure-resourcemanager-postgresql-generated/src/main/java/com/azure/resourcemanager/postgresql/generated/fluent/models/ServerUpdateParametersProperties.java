@@ -58,6 +58,10 @@ public final class ServerUpdateParametersProperties {
     @JsonProperty(value = "replicationRole")
     private String replicationRole;
 
+    /** Creates an instance of ServerUpdateParametersProperties class. */
+    public ServerUpdateParametersProperties() {
+    }
+
     /**
      * Get the storageProfile property: Storage profile of a server.
      *

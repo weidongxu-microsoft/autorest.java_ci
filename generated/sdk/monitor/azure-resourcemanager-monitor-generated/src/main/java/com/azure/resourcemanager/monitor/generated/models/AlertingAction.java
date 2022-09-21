@@ -41,6 +41,10 @@ public final class AlertingAction extends Action {
     @JsonProperty(value = "trigger", required = true)
     private TriggerCondition trigger;
 
+    /** Creates an instance of AlertingAction class. */
+    public AlertingAction() {
+    }
+
     /**
      * Get the severity property: Severity of the alert.
      *

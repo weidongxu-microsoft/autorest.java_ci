@@ -33,6 +33,10 @@ public final class FileTriggerProperties {
     @JsonProperty(value = "customContextTag")
     private String customContextTag;
 
+    /** Creates an instance of FileTriggerProperties class. */
+    public FileTriggerProperties() {
+    }
+
     /**
      * Get the sourceInfo property: File event source details.
      *

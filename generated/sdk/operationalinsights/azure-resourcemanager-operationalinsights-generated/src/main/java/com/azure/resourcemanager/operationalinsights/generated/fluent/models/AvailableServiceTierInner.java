@@ -53,6 +53,10 @@ public final class AvailableServiceTierInner {
     @JsonProperty(value = "lastSkuUpdate", access = JsonProperty.Access.WRITE_ONLY)
     private String lastSkuUpdate;
 
+    /** Creates an instance of AvailableServiceTierInner class. */
+    public AvailableServiceTierInner() {
+    }
+
     /**
      * Get the serviceTier property: The name of the Service Tier.
      *

@@ -420,11 +420,12 @@ public final class PrivateLinkResourcesOperationsClientImpl implements PrivateLi
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information of the private link resource.
+     * @return information of the private link resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public PrivateLinkResourceInner get(String resourceGroupName, String vaultName, String privateLinkResourceName) {
-        return getAsync(resourceGroupName, vaultName, privateLinkResourceName).block();
+    public Response<PrivateLinkResourceInner> getWithResponse(
+        String resourceGroupName, String vaultName, String privateLinkResourceName) {
+        return getWithResponseAsync(resourceGroupName, vaultName, privateLinkResourceName).block();
     }
 
     /**
@@ -443,6 +444,22 @@ public final class PrivateLinkResourcesOperationsClientImpl implements PrivateLi
     public Response<PrivateLinkResourceInner> getWithResponse(
         String resourceGroupName, String vaultName, String privateLinkResourceName, Context context) {
         return getWithResponseAsync(resourceGroupName, vaultName, privateLinkResourceName, context).block();
+    }
+
+    /**
+     * Returns a specified private link resource that need to be created for Backup and SiteRecovery.
+     *
+     * @param resourceGroupName The name of the resource group where the recovery services vault is present.
+     * @param vaultName The name of the recovery services vault.
+     * @param privateLinkResourceName The privateLinkResourceName parameter.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return information of the private link resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public PrivateLinkResourceInner get(String resourceGroupName, String vaultName, String privateLinkResourceName) {
+        return getWithResponse(resourceGroupName, vaultName, privateLinkResourceName, Context.NONE).getValue();
     }
 
     /**

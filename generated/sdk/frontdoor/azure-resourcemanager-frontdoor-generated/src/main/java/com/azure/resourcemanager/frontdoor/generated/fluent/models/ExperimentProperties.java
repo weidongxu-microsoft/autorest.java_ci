@@ -55,6 +55,10 @@ public final class ExperimentProperties {
     @JsonProperty(value = "scriptFileUri", access = JsonProperty.Access.WRITE_ONLY)
     private String scriptFileUri;
 
+    /** Creates an instance of ExperimentProperties class. */
+    public ExperimentProperties() {
+    }
+
     /**
      * Get the description property: The description of the details or intents of the Experiment.
      *

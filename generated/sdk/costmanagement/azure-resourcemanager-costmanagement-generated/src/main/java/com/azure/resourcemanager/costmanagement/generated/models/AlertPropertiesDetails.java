@@ -108,6 +108,10 @@ public final class AlertPropertiesDetails {
     @JsonProperty(value = "overridingAlert")
     private String overridingAlert;
 
+    /** Creates an instance of AlertPropertiesDetails class. */
+    public AlertPropertiesDetails() {
+    }
+
     /**
      * Get the timeGrainType property: Type of timegrain cadence.
      *

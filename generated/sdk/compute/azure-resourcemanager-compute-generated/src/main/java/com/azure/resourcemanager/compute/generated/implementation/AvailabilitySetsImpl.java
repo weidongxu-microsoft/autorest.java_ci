@@ -29,21 +29,13 @@ public final class AvailabilitySetsImpl implements AvailabilitySets {
         this.serviceManager = serviceManager;
     }
 
-    public void deleteByResourceGroup(String resourceGroupName, String availabilitySetName) {
-        this.serviceClient().delete(resourceGroupName, availabilitySetName);
-    }
-
-    public Response<Void> deleteWithResponse(String resourceGroupName, String availabilitySetName, Context context) {
+    public Response<Void> deleteByResourceGroupWithResponse(
+        String resourceGroupName, String availabilitySetName, Context context) {
         return this.serviceClient().deleteWithResponse(resourceGroupName, availabilitySetName, context);
     }
 
-    public AvailabilitySet getByResourceGroup(String resourceGroupName, String availabilitySetName) {
-        AvailabilitySetInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, availabilitySetName);
-        if (inner != null) {
-            return new AvailabilitySetImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void deleteByResourceGroup(String resourceGroupName, String availabilitySetName) {
+        this.serviceClient().delete(resourceGroupName, availabilitySetName);
     }
 
     public Response<AvailabilitySet> getByResourceGroupWithResponse(
@@ -56,6 +48,15 @@ public final class AvailabilitySetsImpl implements AvailabilitySets {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new AvailabilitySetImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public AvailabilitySet getByResourceGroup(String resourceGroupName, String availabilitySetName) {
+        AvailabilitySetInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, availabilitySetName);
+        if (inner != null) {
+            return new AvailabilitySetImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -155,7 +156,7 @@ public final class AvailabilitySetsImpl implements AvailabilitySets {
                             .format(
                                 "The resource ID '%s' is not valid. Missing path segment 'availabilitySets'.", id)));
         }
-        this.deleteWithResponse(resourceGroupName, availabilitySetName, Context.NONE);
+        this.deleteByResourceGroupWithResponse(resourceGroupName, availabilitySetName, Context.NONE);
     }
 
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
@@ -176,7 +177,7 @@ public final class AvailabilitySetsImpl implements AvailabilitySets {
                             .format(
                                 "The resource ID '%s' is not valid. Missing path segment 'availabilitySets'.", id)));
         }
-        return this.deleteWithResponse(resourceGroupName, availabilitySetName, context);
+        return this.deleteByResourceGroupWithResponse(resourceGroupName, availabilitySetName, context);
     }
 
     private AvailabilitySetsClient serviceClient() {

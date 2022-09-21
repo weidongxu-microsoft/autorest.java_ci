@@ -28,15 +28,6 @@ public final class ActionGroupsImpl implements ActionGroups {
         this.serviceManager = serviceManager;
     }
 
-    public ActionGroupResource getByResourceGroup(String resourceGroupName, String actionGroupName) {
-        ActionGroupResourceInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, actionGroupName);
-        if (inner != null) {
-            return new ActionGroupResourceImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<ActionGroupResource> getByResourceGroupWithResponse(
         String resourceGroupName, String actionGroupName, Context context) {
         Response<ActionGroupResourceInner> inner =
@@ -52,12 +43,22 @@ public final class ActionGroupsImpl implements ActionGroups {
         }
     }
 
-    public void deleteByResourceGroup(String resourceGroupName, String actionGroupName) {
-        this.serviceClient().delete(resourceGroupName, actionGroupName);
+    public ActionGroupResource getByResourceGroup(String resourceGroupName, String actionGroupName) {
+        ActionGroupResourceInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, actionGroupName);
+        if (inner != null) {
+            return new ActionGroupResourceImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
-    public Response<Void> deleteWithResponse(String resourceGroupName, String actionGroupName, Context context) {
+    public Response<Void> deleteByResourceGroupWithResponse(
+        String resourceGroupName, String actionGroupName, Context context) {
         return this.serviceClient().deleteWithResponse(resourceGroupName, actionGroupName, context);
+    }
+
+    public void deleteByResourceGroup(String resourceGroupName, String actionGroupName) {
+        this.serviceClient().delete(resourceGroupName, actionGroupName);
     }
 
     public PagedIterable<ActionGroupResource> list() {
@@ -81,15 +82,15 @@ public final class ActionGroupsImpl implements ActionGroups {
         return Utils.mapPage(inner, inner1 -> new ActionGroupResourceImpl(inner1, this.manager()));
     }
 
-    public void enableReceiver(String resourceGroupName, String actionGroupName, EnableRequest enableRequest) {
-        this.serviceClient().enableReceiver(resourceGroupName, actionGroupName, enableRequest);
-    }
-
     public Response<Void> enableReceiverWithResponse(
         String resourceGroupName, String actionGroupName, EnableRequest enableRequest, Context context) {
         return this
             .serviceClient()
             .enableReceiverWithResponse(resourceGroupName, actionGroupName, enableRequest, context);
+    }
+
+    public void enableReceiver(String resourceGroupName, String actionGroupName, EnableRequest enableRequest) {
+        this.serviceClient().enableReceiver(resourceGroupName, actionGroupName, enableRequest);
     }
 
     public ActionGroupResource getById(String id) {
@@ -146,7 +147,7 @@ public final class ActionGroupsImpl implements ActionGroups {
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'actionGroups'.", id)));
         }
-        this.deleteWithResponse(resourceGroupName, actionGroupName, Context.NONE);
+        this.deleteByResourceGroupWithResponse(resourceGroupName, actionGroupName, Context.NONE);
     }
 
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
@@ -165,7 +166,7 @@ public final class ActionGroupsImpl implements ActionGroups {
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'actionGroups'.", id)));
         }
-        return this.deleteWithResponse(resourceGroupName, actionGroupName, context);
+        return this.deleteByResourceGroupWithResponse(resourceGroupName, actionGroupName, context);
     }
 
     private ActionGroupsClient serviceClient() {

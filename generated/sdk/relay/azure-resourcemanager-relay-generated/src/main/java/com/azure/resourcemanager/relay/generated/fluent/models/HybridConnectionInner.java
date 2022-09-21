@@ -31,6 +31,10 @@ public final class HybridConnectionInner extends ProxyResource {
     @JsonProperty(value = "location", access = JsonProperty.Access.WRITE_ONLY)
     private String location;
 
+    /** Creates an instance of HybridConnectionInner class. */
+    public HybridConnectionInner() {
+    }
+
     /**
      * Get the innerProperties property: Properties of the HybridConnection.
      *

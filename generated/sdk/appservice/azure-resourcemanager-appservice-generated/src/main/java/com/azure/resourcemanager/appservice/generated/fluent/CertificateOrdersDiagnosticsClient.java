@@ -57,24 +57,6 @@ public interface CertificateOrdersDiagnosticsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName The certificate order name for which the response is needed.
      * @param detectorName The detector name which needs to be run.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing Response from Detector.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    DetectorResponseInner getAppServiceCertificateOrderDetectorResponse(
-        String resourceGroupName, String certificateOrderName, String detectorName);
-
-    /**
-     * Microsoft.CertificateRegistration call to get a detector response from App Lens.
-     *
-     * <p>Description for Microsoft.CertificateRegistration call to get a detector response from App Lens.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param certificateOrderName The certificate order name for which the response is needed.
-     * @param detectorName The detector name which needs to be run.
      * @param startTime The start time for detector response.
      * @param endTime The end time for the detector response.
      * @param timeGrain The time grain for the detector response.
@@ -94,4 +76,22 @@ public interface CertificateOrdersDiagnosticsClient {
         OffsetDateTime endTime,
         String timeGrain,
         Context context);
+
+    /**
+     * Microsoft.CertificateRegistration call to get a detector response from App Lens.
+     *
+     * <p>Description for Microsoft.CertificateRegistration call to get a detector response from App Lens.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param certificateOrderName The certificate order name for which the response is needed.
+     * @param detectorName The detector name which needs to be run.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return class representing Response from Detector.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    DetectorResponseInner getAppServiceCertificateOrderDetectorResponse(
+        String resourceGroupName, String certificateOrderName, String detectorName);
 }

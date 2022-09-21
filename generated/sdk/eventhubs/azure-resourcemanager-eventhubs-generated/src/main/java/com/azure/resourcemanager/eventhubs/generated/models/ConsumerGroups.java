@@ -17,19 +17,6 @@ public interface ConsumerGroups {
      * @param namespaceName The Namespace name.
      * @param eventHubName The Event Hub name.
      * @param consumerGroupName The consumer group name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void delete(String resourceGroupName, String namespaceName, String eventHubName, String consumerGroupName);
-
-    /**
-     * Deletes a consumer group from the specified Event Hub and resource group.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param namespaceName The Namespace name.
-     * @param eventHubName The Event Hub name.
-     * @param consumerGroupName The consumer group name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -40,7 +27,7 @@ public interface ConsumerGroups {
         String resourceGroupName, String namespaceName, String eventHubName, String consumerGroupName, Context context);
 
     /**
-     * Gets a description for the specified consumer group.
+     * Deletes a consumer group from the specified Event Hub and resource group.
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -49,9 +36,8 @@ public interface ConsumerGroups {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a description for the specified consumer group.
      */
-    ConsumerGroup get(String resourceGroupName, String namespaceName, String eventHubName, String consumerGroupName);
+    void delete(String resourceGroupName, String namespaceName, String eventHubName, String consumerGroupName);
 
     /**
      * Gets a description for the specified consumer group.
@@ -68,6 +54,20 @@ public interface ConsumerGroups {
      */
     Response<ConsumerGroup> getWithResponse(
         String resourceGroupName, String namespaceName, String eventHubName, String consumerGroupName, Context context);
+
+    /**
+     * Gets a description for the specified consumer group.
+     *
+     * @param resourceGroupName Name of the resource group within the azure subscription.
+     * @param namespaceName The Namespace name.
+     * @param eventHubName The Event Hub name.
+     * @param consumerGroupName The consumer group name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a description for the specified consumer group.
+     */
+    ConsumerGroup get(String resourceGroupName, String namespaceName, String eventHubName, String consumerGroupName);
 
     /**
      * Gets all the consumer groups in a Namespace. An empty feed is returned if no consumer group exists in the

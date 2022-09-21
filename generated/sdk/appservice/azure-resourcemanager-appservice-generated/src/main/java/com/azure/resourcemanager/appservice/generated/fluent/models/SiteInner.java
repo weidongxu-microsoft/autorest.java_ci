@@ -49,6 +49,10 @@ public final class SiteInner extends Resource {
     @JsonProperty(value = "kind")
     private String kind;
 
+    /** Creates an instance of SiteInner class. */
+    public SiteInner() {
+    }
+
     /**
      * Get the innerProperties property: Site resource specific properties.
      *

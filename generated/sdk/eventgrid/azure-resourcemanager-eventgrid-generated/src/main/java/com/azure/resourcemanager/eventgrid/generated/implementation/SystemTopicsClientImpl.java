@@ -305,11 +305,11 @@ public final class SystemTopicsClientImpl implements SystemTopicsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of a system topic.
+     * @return properties of a system topic along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public SystemTopicInner getByResourceGroup(String resourceGroupName, String systemTopicName) {
-        return getByResourceGroupAsync(resourceGroupName, systemTopicName).block();
+    public Response<SystemTopicInner> getByResourceGroupWithResponse(String resourceGroupName, String systemTopicName) {
+        return getByResourceGroupWithResponseAsync(resourceGroupName, systemTopicName).block();
     }
 
     /**
@@ -329,6 +329,23 @@ public final class SystemTopicsClientImpl implements SystemTopicsClient {
     public Response<SystemTopicInner> getByResourceGroupWithResponse(
         String resourceGroupName, String systemTopicName, Context context) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, systemTopicName, context).block();
+    }
+
+    /**
+     * Get a system topic.
+     *
+     * <p>Get properties of a system topic.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription.
+     * @param systemTopicName Name of the system topic.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return properties of a system topic.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public SystemTopicInner getByResourceGroup(String resourceGroupName, String systemTopicName) {
+        return getByResourceGroupWithResponse(resourceGroupName, systemTopicName, Context.NONE).getValue();
     }
 
     /**

@@ -28,6 +28,10 @@ public final class AlertPropertiesDefinition {
     @JsonProperty(value = "criteria")
     private AlertCriteria criteria;
 
+    /** Creates an instance of AlertPropertiesDefinition class. */
+    public AlertPropertiesDefinition() {
+    }
+
     /**
      * Get the type property: type of alert.
      *

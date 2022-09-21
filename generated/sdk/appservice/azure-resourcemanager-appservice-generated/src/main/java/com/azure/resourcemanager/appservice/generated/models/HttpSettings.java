@@ -32,6 +32,10 @@ public final class HttpSettings {
     @JsonProperty(value = "forwardProxy")
     private ForwardProxy forwardProxy;
 
+    /** Creates an instance of HttpSettings class. */
+    public HttpSettings() {
+    }
+
     /**
      * Get the requireHttps property: &lt;code&gt;false&lt;/code&gt; if the authentication/authorization responses not
      * having the HTTPS scheme are permissible; otherwise, &lt;code&gt;true&lt;/code&gt;.

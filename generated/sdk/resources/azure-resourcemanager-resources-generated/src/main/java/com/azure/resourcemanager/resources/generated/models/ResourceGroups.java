@@ -14,17 +14,6 @@ public interface ResourceGroups {
      * Checks whether a resource group exists.
      *
      * @param resourceGroupName The name of the resource group to check. The name is case insensitive.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return whether resource exists.
-     */
-    boolean checkExistence(String resourceGroupName);
-
-    /**
-     * Checks whether a resource group exists.
-     *
-     * @param resourceGroupName The name of the resource group to check. The name is case insensitive.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -32,6 +21,17 @@ public interface ResourceGroups {
      * @return whether resource exists along with {@link Response}.
      */
     Response<Boolean> checkExistenceWithResponse(String resourceGroupName, Context context);
+
+    /**
+     * Checks whether a resource group exists.
+     *
+     * @param resourceGroupName The name of the resource group to check. The name is case insensitive.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return whether resource exists.
+     */
+    boolean checkExistence(String resourceGroupName);
 
     /**
      * Deletes a resource group.
@@ -81,17 +81,6 @@ public interface ResourceGroups {
      * Gets a resource group.
      *
      * @param resourceGroupName The name of the resource group to get. The name is case insensitive.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a resource group.
-     */
-    ResourceGroup get(String resourceGroupName);
-
-    /**
-     * Gets a resource group.
-     *
-     * @param resourceGroupName The name of the resource group to get. The name is case insensitive.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -99,6 +88,17 @@ public interface ResourceGroups {
      * @return a resource group along with {@link Response}.
      */
     Response<ResourceGroup> getWithResponse(String resourceGroupName, Context context);
+
+    /**
+     * Gets a resource group.
+     *
+     * @param resourceGroupName The name of the resource group to get. The name is case insensitive.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a resource group.
+     */
+    ResourceGroup get(String resourceGroupName);
 
     /**
      * Captures the specified resource group as a template.

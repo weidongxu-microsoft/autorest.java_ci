@@ -66,6 +66,10 @@ public final class WebApplicationFirewallPolicyProperties {
     @JsonProperty(value = "resourceState", access = JsonProperty.Access.WRITE_ONLY)
     private PolicyResourceState resourceState;
 
+    /** Creates an instance of WebApplicationFirewallPolicyProperties class. */
+    public WebApplicationFirewallPolicyProperties() {
+    }
+
     /**
      * Get the policySettings property: Describes settings for the policy.
      *

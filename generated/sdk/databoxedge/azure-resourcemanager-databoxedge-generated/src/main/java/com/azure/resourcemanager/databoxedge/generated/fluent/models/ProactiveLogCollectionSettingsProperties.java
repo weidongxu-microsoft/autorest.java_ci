@@ -18,6 +18,10 @@ public final class ProactiveLogCollectionSettingsProperties {
     @JsonProperty(value = "userConsent", required = true)
     private ProactiveDiagnosticsConsent userConsent;
 
+    /** Creates an instance of ProactiveLogCollectionSettingsProperties class. */
+    public ProactiveLogCollectionSettingsProperties() {
+    }
+
     /**
      * Get the userConsent property: Proactive diagnostic collection consent flag.
      *

@@ -58,18 +58,6 @@ public interface MetricAlerts {
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the metric alert resource.
-     */
-    MetricAlertResource getByResourceGroup(String resourceGroupName, String ruleName);
-
-    /**
-     * Retrieve an alert rule definition.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param ruleName The name of the rule.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -80,15 +68,16 @@ public interface MetricAlerts {
         String resourceGroupName, String ruleName, Context context);
 
     /**
-     * Delete an alert rule definition.
+     * Retrieve an alert rule definition.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the metric alert resource.
      */
-    void deleteByResourceGroup(String resourceGroupName, String ruleName);
+    MetricAlertResource getByResourceGroup(String resourceGroupName, String ruleName);
 
     /**
      * Delete an alert rule definition.
@@ -101,7 +90,18 @@ public interface MetricAlerts {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
-    Response<Void> deleteWithResponse(String resourceGroupName, String ruleName, Context context);
+    Response<Void> deleteByResourceGroupWithResponse(String resourceGroupName, String ruleName, Context context);
+
+    /**
+     * Delete an alert rule definition.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param ruleName The name of the rule.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deleteByResourceGroup(String resourceGroupName, String ruleName);
 
     /**
      * Retrieve an alert rule definition.

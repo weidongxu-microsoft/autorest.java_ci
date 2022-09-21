@@ -299,6 +299,10 @@ public final class LegacyUsageDetailProperties {
     @JsonProperty(value = "pricingModel", access = JsonProperty.Access.WRITE_ONLY)
     private PricingModelType pricingModel;
 
+    /** Creates an instance of LegacyUsageDetailProperties class. */
+    public LegacyUsageDetailProperties() {
+    }
+
     /**
      * Get the billingAccountId property: Billing Account identifier.
      *

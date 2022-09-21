@@ -633,12 +633,12 @@ public final class QueryPacksClientImpl implements QueryPacksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Log Analytics QueryPack definition.
+     * @return an Log Analytics QueryPack definition along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public LogAnalyticsQueryPackInner createOrUpdateWithoutName(
+    public Response<LogAnalyticsQueryPackInner> createOrUpdateWithoutNameWithResponse(
         String resourceGroupName, LogAnalyticsQueryPackInner logAnalyticsQueryPackPayload) {
-        return createOrUpdateWithoutNameAsync(resourceGroupName, logAnalyticsQueryPackPayload).block();
+        return createOrUpdateWithoutNameWithResponseAsync(resourceGroupName, logAnalyticsQueryPackPayload).block();
     }
 
     /**
@@ -659,6 +659,25 @@ public final class QueryPacksClientImpl implements QueryPacksClient {
         String resourceGroupName, LogAnalyticsQueryPackInner logAnalyticsQueryPackPayload, Context context) {
         return createOrUpdateWithoutNameWithResponseAsync(resourceGroupName, logAnalyticsQueryPackPayload, context)
             .block();
+    }
+
+    /**
+     * Creates a Log Analytics QueryPack. Note: You cannot specify a different value for InstrumentationKey nor AppId in
+     * the Put operation.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param logAnalyticsQueryPackPayload Properties that need to be specified to create or update a Log Analytics
+     *     QueryPack.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return an Log Analytics QueryPack definition.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public LogAnalyticsQueryPackInner createOrUpdateWithoutName(
+        String resourceGroupName, LogAnalyticsQueryPackInner logAnalyticsQueryPackPayload) {
+        return createOrUpdateWithoutNameWithResponse(resourceGroupName, logAnalyticsQueryPackPayload, Context.NONE)
+            .getValue();
     }
 
     /**
@@ -779,10 +798,11 @@ public final class QueryPacksClientImpl implements QueryPacksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public void delete(String resourceGroupName, String queryPackName) {
-        deleteAsync(resourceGroupName, queryPackName).block();
+    public Response<Void> deleteWithResponse(String resourceGroupName, String queryPackName) {
+        return deleteWithResponseAsync(resourceGroupName, queryPackName).block();
     }
 
     /**
@@ -799,6 +819,20 @@ public final class QueryPacksClientImpl implements QueryPacksClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> deleteWithResponse(String resourceGroupName, String queryPackName, Context context) {
         return deleteWithResponseAsync(resourceGroupName, queryPackName, context).block();
+    }
+
+    /**
+     * Deletes a Log Analytics QueryPack.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param queryPackName The name of the Log Analytics QueryPack resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public void delete(String resourceGroupName, String queryPackName) {
+        deleteWithResponse(resourceGroupName, queryPackName, Context.NONE);
     }
 
     /**
@@ -923,11 +957,12 @@ public final class QueryPacksClientImpl implements QueryPacksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Log Analytics QueryPack definition.
+     * @return an Log Analytics QueryPack definition along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public LogAnalyticsQueryPackInner getByResourceGroup(String resourceGroupName, String queryPackName) {
-        return getByResourceGroupAsync(resourceGroupName, queryPackName).block();
+    public Response<LogAnalyticsQueryPackInner> getByResourceGroupWithResponse(
+        String resourceGroupName, String queryPackName) {
+        return getByResourceGroupWithResponseAsync(resourceGroupName, queryPackName).block();
     }
 
     /**
@@ -945,6 +980,21 @@ public final class QueryPacksClientImpl implements QueryPacksClient {
     public Response<LogAnalyticsQueryPackInner> getByResourceGroupWithResponse(
         String resourceGroupName, String queryPackName, Context context) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, queryPackName, context).block();
+    }
+
+    /**
+     * Returns a Log Analytics QueryPack.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param queryPackName The name of the Log Analytics QueryPack resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return an Log Analytics QueryPack definition.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public LogAnalyticsQueryPackInner getByResourceGroup(String resourceGroupName, String queryPackName) {
+        return getByResourceGroupWithResponse(resourceGroupName, queryPackName, Context.NONE).getValue();
     }
 
     /**
@@ -1103,12 +1153,12 @@ public final class QueryPacksClientImpl implements QueryPacksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Log Analytics QueryPack definition.
+     * @return an Log Analytics QueryPack definition along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public LogAnalyticsQueryPackInner createOrUpdate(
+    public Response<LogAnalyticsQueryPackInner> createOrUpdateWithResponse(
         String resourceGroupName, String queryPackName, LogAnalyticsQueryPackInner logAnalyticsQueryPackPayload) {
-        return createOrUpdateAsync(resourceGroupName, queryPackName, logAnalyticsQueryPackPayload).block();
+        return createOrUpdateWithResponseAsync(resourceGroupName, queryPackName, logAnalyticsQueryPackPayload).block();
     }
 
     /**
@@ -1133,6 +1183,26 @@ public final class QueryPacksClientImpl implements QueryPacksClient {
         Context context) {
         return createOrUpdateWithResponseAsync(resourceGroupName, queryPackName, logAnalyticsQueryPackPayload, context)
             .block();
+    }
+
+    /**
+     * Creates (or updates) a Log Analytics QueryPack. Note: You cannot specify a different value for InstrumentationKey
+     * nor AppId in the Put operation.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param queryPackName The name of the Log Analytics QueryPack resource.
+     * @param logAnalyticsQueryPackPayload Properties that need to be specified to create or update a Log Analytics
+     *     QueryPack.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return an Log Analytics QueryPack definition.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public LogAnalyticsQueryPackInner createOrUpdate(
+        String resourceGroupName, String queryPackName, LogAnalyticsQueryPackInner logAnalyticsQueryPackPayload) {
+        return createOrUpdateWithResponse(resourceGroupName, queryPackName, logAnalyticsQueryPackPayload, Context.NONE)
+            .getValue();
     }
 
     /**
@@ -1274,12 +1344,12 @@ public final class QueryPacksClientImpl implements QueryPacksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Log Analytics QueryPack definition.
+     * @return an Log Analytics QueryPack definition along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public LogAnalyticsQueryPackInner updateTags(
+    public Response<LogAnalyticsQueryPackInner> updateTagsWithResponse(
         String resourceGroupName, String queryPackName, TagsResource queryPackTags) {
-        return updateTagsAsync(resourceGroupName, queryPackName, queryPackTags).block();
+        return updateTagsWithResponseAsync(resourceGroupName, queryPackName, queryPackTags).block();
     }
 
     /**
@@ -1298,6 +1368,23 @@ public final class QueryPacksClientImpl implements QueryPacksClient {
     public Response<LogAnalyticsQueryPackInner> updateTagsWithResponse(
         String resourceGroupName, String queryPackName, TagsResource queryPackTags, Context context) {
         return updateTagsWithResponseAsync(resourceGroupName, queryPackName, queryPackTags, context).block();
+    }
+
+    /**
+     * Updates an existing QueryPack's tags. To update other fields use the CreateOrUpdate method.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param queryPackName The name of the Log Analytics QueryPack resource.
+     * @param queryPackTags Updated tag information to set into the QueryPack instance.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return an Log Analytics QueryPack definition.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public LogAnalyticsQueryPackInner updateTags(
+        String resourceGroupName, String queryPackName, TagsResource queryPackTags) {
+        return updateTagsWithResponse(resourceGroupName, queryPackName, queryPackTags, Context.NONE).getValue();
     }
 
     /**

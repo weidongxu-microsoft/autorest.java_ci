@@ -77,6 +77,10 @@ public final class DataBoxEdgeDeviceInner extends ArmBaseModel {
     @JsonProperty(value = "properties")
     private DataBoxEdgeDeviceProperties innerProperties;
 
+    /** Creates an instance of DataBoxEdgeDeviceInner class. */
+    public DataBoxEdgeDeviceInner() {
+    }
+
     /**
      * Get the location property: The location of the device. This is a supported and registered Azure geographical
      * region (for example, West US, East US, or Southeast Asia). The geographical region of a device cannot be changed

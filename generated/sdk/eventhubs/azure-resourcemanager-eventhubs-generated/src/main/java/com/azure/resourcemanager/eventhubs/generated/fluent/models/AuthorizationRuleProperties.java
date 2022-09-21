@@ -19,6 +19,10 @@ public final class AuthorizationRuleProperties {
     @JsonProperty(value = "rights", required = true)
     private List<AccessRights> rights;
 
+    /** Creates an instance of AuthorizationRuleProperties class. */
+    public AuthorizationRuleProperties() {
+    }
+
     /**
      * Get the rights property: The rights associated with the rule.
      *

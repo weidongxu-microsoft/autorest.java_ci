@@ -109,6 +109,10 @@ public final class ReservationSummaryProperties {
     @JsonProperty(value = "utilizedPercentage", access = JsonProperty.Access.WRITE_ONLY)
     private BigDecimal utilizedPercentage;
 
+    /** Creates an instance of ReservationSummaryProperties class. */
+    public ReservationSummaryProperties() {
+    }
+
     /**
      * Get the reservationOrderId property: The reservation order ID is the identifier for a reservation purchase. Each
      * reservation order ID represents a single purchase transaction. A reservation order contains reservations. The

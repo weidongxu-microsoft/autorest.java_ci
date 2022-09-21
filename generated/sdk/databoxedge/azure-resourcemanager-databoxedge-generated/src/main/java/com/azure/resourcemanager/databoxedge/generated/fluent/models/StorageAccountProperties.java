@@ -49,6 +49,10 @@ public final class StorageAccountProperties {
     @JsonProperty(value = "containerCount", access = JsonProperty.Access.WRITE_ONLY)
     private Integer containerCount;
 
+    /** Creates an instance of StorageAccountProperties class. */
+    public StorageAccountProperties() {
+    }
+
     /**
      * Get the description property: Description for the storage Account.
      *

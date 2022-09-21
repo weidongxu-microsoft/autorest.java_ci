@@ -800,12 +800,12 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specific private endpoint connection.
+     * @return the specific private endpoint connection along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public PrivateEndpointConnectionInner get(
+    public Response<PrivateEndpointConnectionInner> getWithResponse(
         String resourceGroupName, String clusterName, String privateEndpointConnectionName) {
-        return getAsync(resourceGroupName, clusterName, privateEndpointConnectionName).block();
+        return getWithResponseAsync(resourceGroupName, clusterName, privateEndpointConnectionName).block();
     }
 
     /**
@@ -824,6 +824,23 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     public Response<PrivateEndpointConnectionInner> getWithResponse(
         String resourceGroupName, String clusterName, String privateEndpointConnectionName, Context context) {
         return getWithResponseAsync(resourceGroupName, clusterName, privateEndpointConnectionName, context).block();
+    }
+
+    /**
+     * Gets the specific private endpoint connection.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param clusterName The name of the cluster.
+     * @param privateEndpointConnectionName The name of the private endpoint connection.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specific private endpoint connection.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public PrivateEndpointConnectionInner get(
+        String resourceGroupName, String clusterName, String privateEndpointConnectionName) {
+        return getWithResponse(resourceGroupName, clusterName, privateEndpointConnectionName, Context.NONE).getValue();
     }
 
     /**

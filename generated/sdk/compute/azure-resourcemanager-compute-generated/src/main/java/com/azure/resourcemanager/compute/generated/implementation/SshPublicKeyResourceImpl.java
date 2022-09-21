@@ -160,12 +160,12 @@ public final class SshPublicKeyResourceImpl
         return this;
     }
 
-    public SshPublicKeyGenerateKeyPairResult generateKeyPair() {
-        return serviceManager.sshPublicKeys().generateKeyPair(resourceGroupName, sshPublicKeyName);
-    }
-
     public Response<SshPublicKeyGenerateKeyPairResult> generateKeyPairWithResponse(Context context) {
         return serviceManager.sshPublicKeys().generateKeyPairWithResponse(resourceGroupName, sshPublicKeyName, context);
+    }
+
+    public SshPublicKeyGenerateKeyPairResult generateKeyPair() {
+        return serviceManager.sshPublicKeys().generateKeyPair(resourceGroupName, sshPublicKeyName);
     }
 
     public SshPublicKeyResourceImpl withRegion(Region location) {

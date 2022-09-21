@@ -33,6 +33,10 @@ public final class ResourceNameAvailabilityInner {
     @JsonProperty(value = "message")
     private String message;
 
+    /** Creates an instance of ResourceNameAvailabilityInner class. */
+    public ResourceNameAvailabilityInner() {
+    }
+
     /**
      * Get the nameAvailable property: &lt;code&gt;true&lt;/code&gt; indicates name is valid and available.
      * &lt;code&gt;false&lt;/code&gt; indicates the name is invalid, unavailable, or both.

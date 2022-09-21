@@ -38,18 +38,6 @@ public interface CustomIpPrefixes {
      *
      * @param resourceGroupName The name of the resource group.
      * @param customIpPrefixName The name of the custom IP prefix.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified custom IP prefix in a specified resource group.
-     */
-    CustomIpPrefix getByResourceGroup(String resourceGroupName, String customIpPrefixName);
-
-    /**
-     * Gets the specified custom IP prefix in a specified resource group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param customIpPrefixName The name of the custom IP prefix.
      * @param expand Expands referenced resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -59,6 +47,18 @@ public interface CustomIpPrefixes {
      */
     Response<CustomIpPrefix> getByResourceGroupWithResponse(
         String resourceGroupName, String customIpPrefixName, String expand, Context context);
+
+    /**
+     * Gets the specified custom IP prefix in a specified resource group.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param customIpPrefixName The name of the custom IP prefix.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified custom IP prefix in a specified resource group.
+     */
+    CustomIpPrefix getByResourceGroup(String resourceGroupName, String customIpPrefixName);
 
     /**
      * Gets all the custom IP prefixes in a subscription.

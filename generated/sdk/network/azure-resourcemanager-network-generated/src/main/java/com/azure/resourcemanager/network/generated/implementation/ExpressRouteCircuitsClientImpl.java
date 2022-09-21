@@ -293,7 +293,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -343,7 +343,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -524,7 +524,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -575,7 +575,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -613,11 +613,12 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the specified express route circuit.
+     * @return information about the specified express route circuit along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ExpressRouteCircuitInner getByResourceGroup(String resourceGroupName, String circuitName) {
-        return getByResourceGroupAsync(resourceGroupName, circuitName).block();
+    public Response<ExpressRouteCircuitInner> getByResourceGroupWithResponse(
+        String resourceGroupName, String circuitName) {
+        return getByResourceGroupWithResponseAsync(resourceGroupName, circuitName).block();
     }
 
     /**
@@ -635,6 +636,21 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
     public Response<ExpressRouteCircuitInner> getByResourceGroupWithResponse(
         String resourceGroupName, String circuitName, Context context) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, circuitName, context).block();
+    }
+
+    /**
+     * Gets information about the specified express route circuit.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param circuitName The name of express route circuit.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return information about the specified express route circuit.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ExpressRouteCircuitInner getByResourceGroup(String resourceGroupName, String circuitName) {
+        return getByResourceGroupWithResponse(resourceGroupName, circuitName, Context.NONE).getValue();
     }
 
     /**
@@ -675,7 +691,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -732,7 +748,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -948,7 +964,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1005,7 +1021,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1047,11 +1063,12 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return expressRouteCircuit resource.
+     * @return expressRouteCircuit resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ExpressRouteCircuitInner updateTags(String resourceGroupName, String circuitName, TagsObject parameters) {
-        return updateTagsAsync(resourceGroupName, circuitName, parameters).block();
+    public Response<ExpressRouteCircuitInner> updateTagsWithResponse(
+        String resourceGroupName, String circuitName, TagsObject parameters) {
+        return updateTagsWithResponseAsync(resourceGroupName, circuitName, parameters).block();
     }
 
     /**
@@ -1070,6 +1087,22 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
     public Response<ExpressRouteCircuitInner> updateTagsWithResponse(
         String resourceGroupName, String circuitName, TagsObject parameters, Context context) {
         return updateTagsWithResponseAsync(resourceGroupName, circuitName, parameters, context).block();
+    }
+
+    /**
+     * Updates an express route circuit tags.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param circuitName The name of the circuit.
+     * @param parameters Parameters supplied to update express route circuit tags.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return expressRouteCircuit resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ExpressRouteCircuitInner updateTags(String resourceGroupName, String circuitName, TagsObject parameters) {
+        return updateTagsWithResponse(resourceGroupName, circuitName, parameters, Context.NONE).getValue();
     }
 
     /**
@@ -1113,7 +1146,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1174,7 +1207,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1414,7 +1447,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1475,7 +1508,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1718,7 +1751,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1779,7 +1812,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -2025,7 +2058,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -2076,7 +2109,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -2114,11 +2147,11 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the stats from an express route circuit in a resource group.
+     * @return all the stats from an express route circuit in a resource group along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ExpressRouteCircuitStatsInner getStats(String resourceGroupName, String circuitName) {
-        return getStatsAsync(resourceGroupName, circuitName).block();
+    public Response<ExpressRouteCircuitStatsInner> getStatsWithResponse(String resourceGroupName, String circuitName) {
+        return getStatsWithResponseAsync(resourceGroupName, circuitName).block();
     }
 
     /**
@@ -2136,6 +2169,21 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
     public Response<ExpressRouteCircuitStatsInner> getStatsWithResponse(
         String resourceGroupName, String circuitName, Context context) {
         return getStatsWithResponseAsync(resourceGroupName, circuitName, context).block();
+    }
+
+    /**
+     * Gets all the stats from an express route circuit in a resource group.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param circuitName The name of the express route circuit.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return all the stats from an express route circuit in a resource group.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ExpressRouteCircuitStatsInner getStats(String resourceGroupName, String circuitName) {
+        return getStatsWithResponse(resourceGroupName, circuitName, Context.NONE).getValue();
     }
 
     /**
@@ -2175,7 +2223,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -2231,7 +2279,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -2273,12 +2321,12 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all stats from an express route circuit in a resource group.
+     * @return all stats from an express route circuit in a resource group along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ExpressRouteCircuitStatsInner getPeeringStats(
+    public Response<ExpressRouteCircuitStatsInner> getPeeringStatsWithResponse(
         String resourceGroupName, String circuitName, String peeringName) {
-        return getPeeringStatsAsync(resourceGroupName, circuitName, peeringName).block();
+        return getPeeringStatsWithResponseAsync(resourceGroupName, circuitName, peeringName).block();
     }
 
     /**
@@ -2297,6 +2345,23 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
     public Response<ExpressRouteCircuitStatsInner> getPeeringStatsWithResponse(
         String resourceGroupName, String circuitName, String peeringName, Context context) {
         return getPeeringStatsWithResponseAsync(resourceGroupName, circuitName, peeringName, context).block();
+    }
+
+    /**
+     * Gets all stats from an express route circuit in a resource group.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param circuitName The name of the express route circuit.
+     * @param peeringName The name of the peering.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return all stats from an express route circuit in a resource group.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ExpressRouteCircuitStatsInner getPeeringStats(
+        String resourceGroupName, String circuitName, String peeringName) {
+        return getPeeringStatsWithResponse(resourceGroupName, circuitName, peeringName, Context.NONE).getValue();
     }
 
     /**
@@ -2327,7 +2392,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -2382,7 +2447,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -2487,7 +2552,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -2530,7 +2595,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service

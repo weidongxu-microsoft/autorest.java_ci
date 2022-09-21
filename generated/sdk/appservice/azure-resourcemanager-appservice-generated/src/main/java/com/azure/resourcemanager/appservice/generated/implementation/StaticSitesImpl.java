@@ -58,17 +58,6 @@ public final class StaticSitesImpl implements StaticSites {
         this.serviceManager = serviceManager;
     }
 
-    public StaticSitesWorkflowPreview previewWorkflow(
-        String location, StaticSitesWorkflowPreviewRequest staticSitesWorkflowPreviewRequest) {
-        StaticSitesWorkflowPreviewInner inner =
-            this.serviceClient().previewWorkflow(location, staticSitesWorkflowPreviewRequest);
-        if (inner != null) {
-            return new StaticSitesWorkflowPreviewImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<StaticSitesWorkflowPreview> previewWorkflowWithResponse(
         String location, StaticSitesWorkflowPreviewRequest staticSitesWorkflowPreviewRequest, Context context) {
         Response<StaticSitesWorkflowPreviewInner> inner =
@@ -79,6 +68,17 @@ public final class StaticSitesImpl implements StaticSites {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new StaticSitesWorkflowPreviewImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public StaticSitesWorkflowPreview previewWorkflow(
+        String location, StaticSitesWorkflowPreviewRequest staticSitesWorkflowPreviewRequest) {
+        StaticSitesWorkflowPreviewInner inner =
+            this.serviceClient().previewWorkflow(location, staticSitesWorkflowPreviewRequest);
+        if (inner != null) {
+            return new StaticSitesWorkflowPreviewImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -105,15 +105,6 @@ public final class StaticSitesImpl implements StaticSites {
         return Utils.mapPage(inner, inner1 -> new StaticSiteArmResourceImpl(inner1, this.manager()));
     }
 
-    public StaticSiteArmResource getByResourceGroup(String resourceGroupName, String name) {
-        StaticSiteArmResourceInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, name);
-        if (inner != null) {
-            return new StaticSiteArmResourceImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<StaticSiteArmResource> getByResourceGroupWithResponse(
         String resourceGroupName, String name, Context context) {
         Response<StaticSiteArmResourceInner> inner =
@@ -124,6 +115,15 @@ public final class StaticSitesImpl implements StaticSites {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new StaticSiteArmResourceImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public StaticSiteArmResource getByResourceGroup(String resourceGroupName, String name) {
+        StaticSiteArmResourceInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, name);
+        if (inner != null) {
+            return new StaticSiteArmResourceImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -151,10 +151,6 @@ public final class StaticSitesImpl implements StaticSites {
         return Utils.mapPage(inner, inner1 -> new StaticSiteUserArmResourceImpl(inner1, this.manager()));
     }
 
-    public void deleteStaticSiteUser(String resourceGroupName, String name, String authprovider, String userid) {
-        this.serviceClient().deleteStaticSiteUser(resourceGroupName, name, authprovider, userid);
-    }
-
     public Response<Void> deleteStaticSiteUserWithResponse(
         String resourceGroupName, String name, String authprovider, String userid, Context context) {
         return this
@@ -162,21 +158,8 @@ public final class StaticSitesImpl implements StaticSites {
             .deleteStaticSiteUserWithResponse(resourceGroupName, name, authprovider, userid, context);
     }
 
-    public StaticSiteUserArmResource updateStaticSiteUser(
-        String resourceGroupName,
-        String name,
-        String authprovider,
-        String userid,
-        StaticSiteUserArmResourceInner staticSiteUserEnvelope) {
-        StaticSiteUserArmResourceInner inner =
-            this
-                .serviceClient()
-                .updateStaticSiteUser(resourceGroupName, name, authprovider, userid, staticSiteUserEnvelope);
-        if (inner != null) {
-            return new StaticSiteUserArmResourceImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void deleteStaticSiteUser(String resourceGroupName, String name, String authprovider, String userid) {
+        this.serviceClient().deleteStaticSiteUser(resourceGroupName, name, authprovider, userid);
     }
 
     public Response<StaticSiteUserArmResource> updateStaticSiteUserWithResponse(
@@ -202,6 +185,23 @@ public final class StaticSitesImpl implements StaticSites {
         }
     }
 
+    public StaticSiteUserArmResource updateStaticSiteUser(
+        String resourceGroupName,
+        String name,
+        String authprovider,
+        String userid,
+        StaticSiteUserArmResourceInner staticSiteUserEnvelope) {
+        StaticSiteUserArmResourceInner inner =
+            this
+                .serviceClient()
+                .updateStaticSiteUser(resourceGroupName, name, authprovider, userid, staticSiteUserEnvelope);
+        if (inner != null) {
+            return new StaticSiteUserArmResourceImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
     public PagedIterable<StaticSiteBuildArmResource> getStaticSiteBuilds(String resourceGroupName, String name) {
         PagedIterable<StaticSiteBuildArmResourceInner> inner =
             this.serviceClient().getStaticSiteBuilds(resourceGroupName, name);
@@ -213,17 +213,6 @@ public final class StaticSitesImpl implements StaticSites {
         PagedIterable<StaticSiteBuildArmResourceInner> inner =
             this.serviceClient().getStaticSiteBuilds(resourceGroupName, name, context);
         return Utils.mapPage(inner, inner1 -> new StaticSiteBuildArmResourceImpl(inner1, this.manager()));
-    }
-
-    public StaticSiteBuildArmResource getStaticSiteBuild(
-        String resourceGroupName, String name, String environmentName) {
-        StaticSiteBuildArmResourceInner inner =
-            this.serviceClient().getStaticSiteBuild(resourceGroupName, name, environmentName);
-        if (inner != null) {
-            return new StaticSiteBuildArmResourceImpl(inner, this.manager());
-        } else {
-            return null;
-        }
     }
 
     public Response<StaticSiteBuildArmResource> getStaticSiteBuildWithResponse(
@@ -241,25 +230,23 @@ public final class StaticSitesImpl implements StaticSites {
         }
     }
 
+    public StaticSiteBuildArmResource getStaticSiteBuild(
+        String resourceGroupName, String name, String environmentName) {
+        StaticSiteBuildArmResourceInner inner =
+            this.serviceClient().getStaticSiteBuild(resourceGroupName, name, environmentName);
+        if (inner != null) {
+            return new StaticSiteBuildArmResourceImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
     public void deleteStaticSiteBuild(String resourceGroupName, String name, String environmentName) {
         this.serviceClient().deleteStaticSiteBuild(resourceGroupName, name, environmentName);
     }
 
     public void deleteStaticSiteBuild(String resourceGroupName, String name, String environmentName, Context context) {
         this.serviceClient().deleteStaticSiteBuild(resourceGroupName, name, environmentName, context);
-    }
-
-    public StringDictionary createOrUpdateStaticSiteBuildAppSettings(
-        String resourceGroupName, String name, String environmentName, StringDictionaryInner appSettings) {
-        StringDictionaryInner inner =
-            this
-                .serviceClient()
-                .createOrUpdateStaticSiteBuildAppSettings(resourceGroupName, name, environmentName, appSettings);
-        if (inner != null) {
-            return new StringDictionaryImpl(inner, this.manager());
-        } else {
-            return null;
-        }
     }
 
     public Response<StringDictionary> createOrUpdateStaticSiteBuildAppSettingsWithResponse(
@@ -284,13 +271,12 @@ public final class StaticSitesImpl implements StaticSites {
         }
     }
 
-    public StringDictionary createOrUpdateStaticSiteBuildFunctionAppSettings(
+    public StringDictionary createOrUpdateStaticSiteBuildAppSettings(
         String resourceGroupName, String name, String environmentName, StringDictionaryInner appSettings) {
         StringDictionaryInner inner =
             this
                 .serviceClient()
-                .createOrUpdateStaticSiteBuildFunctionAppSettings(
-                    resourceGroupName, name, environmentName, appSettings);
+                .createOrUpdateStaticSiteBuildAppSettings(resourceGroupName, name, environmentName, appSettings);
         if (inner != null) {
             return new StringDictionaryImpl(inner, this.manager());
         } else {
@@ -320,6 +306,20 @@ public final class StaticSitesImpl implements StaticSites {
         }
     }
 
+    public StringDictionary createOrUpdateStaticSiteBuildFunctionAppSettings(
+        String resourceGroupName, String name, String environmentName, StringDictionaryInner appSettings) {
+        StringDictionaryInner inner =
+            this
+                .serviceClient()
+                .createOrUpdateStaticSiteBuildFunctionAppSettings(
+                    resourceGroupName, name, environmentName, appSettings);
+        if (inner != null) {
+            return new StringDictionaryImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
     public PagedIterable<StaticSiteFunctionOverviewArmResource> listStaticSiteBuildFunctions(
         String resourceGroupName, String name, String environmentName) {
         PagedIterable<StaticSiteFunctionOverviewArmResourceInner> inner =
@@ -332,17 +332,6 @@ public final class StaticSitesImpl implements StaticSites {
         PagedIterable<StaticSiteFunctionOverviewArmResourceInner> inner =
             this.serviceClient().listStaticSiteBuildFunctions(resourceGroupName, name, environmentName, context);
         return Utils.mapPage(inner, inner1 -> new StaticSiteFunctionOverviewArmResourceImpl(inner1, this.manager()));
-    }
-
-    public StringDictionary listStaticSiteBuildAppSettings(
-        String resourceGroupName, String name, String environmentName) {
-        StringDictionaryInner inner =
-            this.serviceClient().listStaticSiteBuildAppSettings(resourceGroupName, name, environmentName);
-        if (inner != null) {
-            return new StringDictionaryImpl(inner, this.manager());
-        } else {
-            return null;
-        }
     }
 
     public Response<StringDictionary> listStaticSiteBuildAppSettingsWithResponse(
@@ -362,10 +351,10 @@ public final class StaticSitesImpl implements StaticSites {
         }
     }
 
-    public StringDictionary listStaticSiteBuildFunctionAppSettings(
+    public StringDictionary listStaticSiteBuildAppSettings(
         String resourceGroupName, String name, String environmentName) {
         StringDictionaryInner inner =
-            this.serviceClient().listStaticSiteBuildFunctionAppSettings(resourceGroupName, name, environmentName);
+            this.serviceClient().listStaticSiteBuildAppSettings(resourceGroupName, name, environmentName);
         if (inner != null) {
             return new StringDictionaryImpl(inner, this.manager());
         } else {
@@ -385,6 +374,17 @@ public final class StaticSitesImpl implements StaticSites {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new StringDictionaryImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public StringDictionary listStaticSiteBuildFunctionAppSettings(
+        String resourceGroupName, String name, String environmentName) {
+        StringDictionaryInner inner =
+            this.serviceClient().listStaticSiteBuildFunctionAppSettings(resourceGroupName, name, environmentName);
+        if (inner != null) {
+            return new StringDictionaryImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -410,20 +410,6 @@ public final class StaticSitesImpl implements StaticSites {
             .mapPage(inner, inner1 -> new StaticSiteUserProvidedFunctionAppArmResourceImpl(inner1, this.manager()));
     }
 
-    public StaticSiteUserProvidedFunctionAppArmResource getUserProvidedFunctionAppForStaticSiteBuild(
-        String resourceGroupName, String name, String environmentName, String functionAppName) {
-        StaticSiteUserProvidedFunctionAppArmResourceInner inner =
-            this
-                .serviceClient()
-                .getUserProvidedFunctionAppForStaticSiteBuild(
-                    resourceGroupName, name, environmentName, functionAppName);
-        if (inner != null) {
-            return new StaticSiteUserProvidedFunctionAppArmResourceImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<StaticSiteUserProvidedFunctionAppArmResource>
         getUserProvidedFunctionAppForStaticSiteBuildWithResponse(
             String resourceGroupName, String name, String environmentName, String functionAppName, Context context) {
@@ -443,12 +429,18 @@ public final class StaticSitesImpl implements StaticSites {
         }
     }
 
-    public void detachUserProvidedFunctionAppFromStaticSiteBuild(
+    public StaticSiteUserProvidedFunctionAppArmResource getUserProvidedFunctionAppForStaticSiteBuild(
         String resourceGroupName, String name, String environmentName, String functionAppName) {
-        this
-            .serviceClient()
-            .detachUserProvidedFunctionAppFromStaticSiteBuild(
-                resourceGroupName, name, environmentName, functionAppName);
+        StaticSiteUserProvidedFunctionAppArmResourceInner inner =
+            this
+                .serviceClient()
+                .getUserProvidedFunctionAppForStaticSiteBuild(
+                    resourceGroupName, name, environmentName, functionAppName);
+        if (inner != null) {
+            return new StaticSiteUserProvidedFunctionAppArmResourceImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> detachUserProvidedFunctionAppFromStaticSiteBuildWithResponse(
@@ -457,6 +449,14 @@ public final class StaticSitesImpl implements StaticSites {
             .serviceClient()
             .detachUserProvidedFunctionAppFromStaticSiteBuildWithResponse(
                 resourceGroupName, name, environmentName, functionAppName, context);
+    }
+
+    public void detachUserProvidedFunctionAppFromStaticSiteBuild(
+        String resourceGroupName, String name, String environmentName, String functionAppName) {
+        this
+            .serviceClient()
+            .detachUserProvidedFunctionAppFromStaticSiteBuild(
+                resourceGroupName, name, environmentName, functionAppName);
     }
 
     public void createZipDeploymentForStaticSiteBuild(
@@ -482,17 +482,6 @@ public final class StaticSitesImpl implements StaticSites {
                 resourceGroupName, name, environmentName, staticSiteZipDeploymentEnvelope, context);
     }
 
-    public StringDictionary createOrUpdateStaticSiteAppSettings(
-        String resourceGroupName, String name, StringDictionaryInner appSettings) {
-        StringDictionaryInner inner =
-            this.serviceClient().createOrUpdateStaticSiteAppSettings(resourceGroupName, name, appSettings);
-        if (inner != null) {
-            return new StringDictionaryImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<StringDictionary> createOrUpdateStaticSiteAppSettingsWithResponse(
         String resourceGroupName, String name, StringDictionaryInner appSettings, Context context) {
         Response<StringDictionaryInner> inner =
@@ -510,10 +499,10 @@ public final class StaticSitesImpl implements StaticSites {
         }
     }
 
-    public StringDictionary createOrUpdateStaticSiteFunctionAppSettings(
+    public StringDictionary createOrUpdateStaticSiteAppSettings(
         String resourceGroupName, String name, StringDictionaryInner appSettings) {
         StringDictionaryInner inner =
-            this.serviceClient().createOrUpdateStaticSiteFunctionAppSettings(resourceGroupName, name, appSettings);
+            this.serviceClient().createOrUpdateStaticSiteAppSettings(resourceGroupName, name, appSettings);
         if (inner != null) {
             return new StringDictionaryImpl(inner, this.manager());
         } else {
@@ -538,16 +527,12 @@ public final class StaticSitesImpl implements StaticSites {
         }
     }
 
-    public StaticSiteUserInvitationResponseResource createUserRolesInvitationLink(
-        String resourceGroupName,
-        String name,
-        StaticSiteUserInvitationRequestResource staticSiteUserRolesInvitationEnvelope) {
-        StaticSiteUserInvitationResponseResourceInner inner =
-            this
-                .serviceClient()
-                .createUserRolesInvitationLink(resourceGroupName, name, staticSiteUserRolesInvitationEnvelope);
+    public StringDictionary createOrUpdateStaticSiteFunctionAppSettings(
+        String resourceGroupName, String name, StringDictionaryInner appSettings) {
+        StringDictionaryInner inner =
+            this.serviceClient().createOrUpdateStaticSiteFunctionAppSettings(resourceGroupName, name, appSettings);
         if (inner != null) {
-            return new StaticSiteUserInvitationResponseResourceImpl(inner, this.manager());
+            return new StringDictionaryImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -574,6 +559,21 @@ public final class StaticSitesImpl implements StaticSites {
         }
     }
 
+    public StaticSiteUserInvitationResponseResource createUserRolesInvitationLink(
+        String resourceGroupName,
+        String name,
+        StaticSiteUserInvitationRequestResource staticSiteUserRolesInvitationEnvelope) {
+        StaticSiteUserInvitationResponseResourceInner inner =
+            this
+                .serviceClient()
+                .createUserRolesInvitationLink(resourceGroupName, name, staticSiteUserRolesInvitationEnvelope);
+        if (inner != null) {
+            return new StaticSiteUserInvitationResponseResourceImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
     public PagedIterable<StaticSiteCustomDomainOverviewArmResource> listStaticSiteCustomDomains(
         String resourceGroupName, String name) {
         PagedIterable<StaticSiteCustomDomainOverviewArmResourceInner> inner =
@@ -590,17 +590,6 @@ public final class StaticSitesImpl implements StaticSites {
             .mapPage(inner, inner1 -> new StaticSiteCustomDomainOverviewArmResourceImpl(inner1, this.manager()));
     }
 
-    public StaticSiteCustomDomainOverviewArmResource getStaticSiteCustomDomain(
-        String resourceGroupName, String name, String domainName) {
-        StaticSiteCustomDomainOverviewArmResourceInner inner =
-            this.serviceClient().getStaticSiteCustomDomain(resourceGroupName, name, domainName);
-        if (inner != null) {
-            return new StaticSiteCustomDomainOverviewArmResourceImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<StaticSiteCustomDomainOverviewArmResource> getStaticSiteCustomDomainWithResponse(
         String resourceGroupName, String name, String domainName, Context context) {
         Response<StaticSiteCustomDomainOverviewArmResourceInner> inner =
@@ -611,6 +600,17 @@ public final class StaticSitesImpl implements StaticSites {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new StaticSiteCustomDomainOverviewArmResourceImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public StaticSiteCustomDomainOverviewArmResource getStaticSiteCustomDomain(
+        String resourceGroupName, String name, String domainName) {
+        StaticSiteCustomDomainOverviewArmResourceInner inner =
+            this.serviceClient().getStaticSiteCustomDomain(resourceGroupName, name, domainName);
+        if (inner != null) {
+            return new StaticSiteCustomDomainOverviewArmResourceImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -670,15 +670,6 @@ public final class StaticSitesImpl implements StaticSites {
         return Utils.mapPage(inner, inner1 -> new StaticSiteFunctionOverviewArmResourceImpl(inner1, this.manager()));
     }
 
-    public StringDictionary listStaticSiteAppSettings(String resourceGroupName, String name) {
-        StringDictionaryInner inner = this.serviceClient().listStaticSiteAppSettings(resourceGroupName, name);
-        if (inner != null) {
-            return new StringDictionaryImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<StringDictionary> listStaticSiteAppSettingsWithResponse(
         String resourceGroupName, String name, Context context) {
         Response<StringDictionaryInner> inner =
@@ -694,10 +685,10 @@ public final class StaticSitesImpl implements StaticSites {
         }
     }
 
-    public StringList listStaticSiteConfiguredRoles(String resourceGroupName, String name) {
-        StringListInner inner = this.serviceClient().listStaticSiteConfiguredRoles(resourceGroupName, name);
+    public StringDictionary listStaticSiteAppSettings(String resourceGroupName, String name) {
+        StringDictionaryInner inner = this.serviceClient().listStaticSiteAppSettings(resourceGroupName, name);
         if (inner != null) {
-            return new StringListImpl(inner, this.manager());
+            return new StringDictionaryImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -718,10 +709,10 @@ public final class StaticSitesImpl implements StaticSites {
         }
     }
 
-    public StringDictionary listStaticSiteFunctionAppSettings(String resourceGroupName, String name) {
-        StringDictionaryInner inner = this.serviceClient().listStaticSiteFunctionAppSettings(resourceGroupName, name);
+    public StringList listStaticSiteConfiguredRoles(String resourceGroupName, String name) {
+        StringListInner inner = this.serviceClient().listStaticSiteConfiguredRoles(resourceGroupName, name);
         if (inner != null) {
-            return new StringDictionaryImpl(inner, this.manager());
+            return new StringListImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -742,8 +733,8 @@ public final class StaticSitesImpl implements StaticSites {
         }
     }
 
-    public StringDictionary listStaticSiteSecrets(String resourceGroupName, String name) {
-        StringDictionaryInner inner = this.serviceClient().listStaticSiteSecrets(resourceGroupName, name);
+    public StringDictionary listStaticSiteFunctionAppSettings(String resourceGroupName, String name) {
+        StringDictionaryInner inner = this.serviceClient().listStaticSiteFunctionAppSettings(resourceGroupName, name);
         if (inner != null) {
             return new StringDictionaryImpl(inner, this.manager());
         } else {
@@ -766,6 +757,15 @@ public final class StaticSitesImpl implements StaticSites {
         }
     }
 
+    public StringDictionary listStaticSiteSecrets(String resourceGroupName, String name) {
+        StringDictionaryInner inner = this.serviceClient().listStaticSiteSecrets(resourceGroupName, name);
+        if (inner != null) {
+            return new StringDictionaryImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
     public PagedIterable<RemotePrivateEndpointConnectionArmResource> getPrivateEndpointConnectionList(
         String resourceGroupName, String name) {
         PagedIterable<RemotePrivateEndpointConnectionArmResourceInner> inner =
@@ -782,17 +782,6 @@ public final class StaticSitesImpl implements StaticSites {
             .mapPage(inner, inner1 -> new RemotePrivateEndpointConnectionArmResourceImpl(inner1, this.manager()));
     }
 
-    public RemotePrivateEndpointConnectionArmResource getPrivateEndpointConnection(
-        String resourceGroupName, String name, String privateEndpointConnectionName) {
-        RemotePrivateEndpointConnectionArmResourceInner inner =
-            this.serviceClient().getPrivateEndpointConnection(resourceGroupName, name, privateEndpointConnectionName);
-        if (inner != null) {
-            return new RemotePrivateEndpointConnectionArmResourceImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<RemotePrivateEndpointConnectionArmResource> getPrivateEndpointConnectionWithResponse(
         String resourceGroupName, String name, String privateEndpointConnectionName, Context context) {
         Response<RemotePrivateEndpointConnectionArmResourceInner> inner =
@@ -806,6 +795,17 @@ public final class StaticSitesImpl implements StaticSites {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new RemotePrivateEndpointConnectionArmResourceImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public RemotePrivateEndpointConnectionArmResource getPrivateEndpointConnection(
+        String resourceGroupName, String name, String privateEndpointConnectionName) {
+        RemotePrivateEndpointConnectionArmResourceInner inner =
+            this.serviceClient().getPrivateEndpointConnection(resourceGroupName, name, privateEndpointConnectionName);
+        if (inner != null) {
+            return new RemotePrivateEndpointConnectionArmResourceImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -860,15 +860,6 @@ public final class StaticSitesImpl implements StaticSites {
             .deletePrivateEndpointConnection(resourceGroupName, name, privateEndpointConnectionName, context);
     }
 
-    public PrivateLinkResourcesWrapper getPrivateLinkResources(String resourceGroupName, String name) {
-        PrivateLinkResourcesWrapperInner inner = this.serviceClient().getPrivateLinkResources(resourceGroupName, name);
-        if (inner != null) {
-            return new PrivateLinkResourcesWrapperImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<PrivateLinkResourcesWrapper> getPrivateLinkResourcesWithResponse(
         String resourceGroupName, String name, Context context) {
         Response<PrivateLinkResourcesWrapperInner> inner =
@@ -884,9 +875,13 @@ public final class StaticSitesImpl implements StaticSites {
         }
     }
 
-    public void resetStaticSiteApiKey(
-        String resourceGroupName, String name, StaticSiteResetPropertiesArmResource resetPropertiesEnvelope) {
-        this.serviceClient().resetStaticSiteApiKey(resourceGroupName, name, resetPropertiesEnvelope);
+    public PrivateLinkResourcesWrapper getPrivateLinkResources(String resourceGroupName, String name) {
+        PrivateLinkResourcesWrapperInner inner = this.serviceClient().getPrivateLinkResources(resourceGroupName, name);
+        if (inner != null) {
+            return new PrivateLinkResourcesWrapperImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> resetStaticSiteApiKeyWithResponse(
@@ -897,6 +892,11 @@ public final class StaticSitesImpl implements StaticSites {
         return this
             .serviceClient()
             .resetStaticSiteApiKeyWithResponse(resourceGroupName, name, resetPropertiesEnvelope, context);
+    }
+
+    public void resetStaticSiteApiKey(
+        String resourceGroupName, String name, StaticSiteResetPropertiesArmResource resetPropertiesEnvelope) {
+        this.serviceClient().resetStaticSiteApiKey(resourceGroupName, name, resetPropertiesEnvelope);
     }
 
     public PagedIterable<StaticSiteUserProvidedFunctionAppArmResource> getUserProvidedFunctionAppsForStaticSite(
@@ -915,17 +915,6 @@ public final class StaticSitesImpl implements StaticSites {
             .mapPage(inner, inner1 -> new StaticSiteUserProvidedFunctionAppArmResourceImpl(inner1, this.manager()));
     }
 
-    public StaticSiteUserProvidedFunctionAppArmResource getUserProvidedFunctionAppForStaticSite(
-        String resourceGroupName, String name, String functionAppName) {
-        StaticSiteUserProvidedFunctionAppArmResourceInner inner =
-            this.serviceClient().getUserProvidedFunctionAppForStaticSite(resourceGroupName, name, functionAppName);
-        if (inner != null) {
-            return new StaticSiteUserProvidedFunctionAppArmResourceImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<StaticSiteUserProvidedFunctionAppArmResource> getUserProvidedFunctionAppForStaticSiteWithResponse(
         String resourceGroupName, String name, String functionAppName, Context context) {
         Response<StaticSiteUserProvidedFunctionAppArmResourceInner> inner =
@@ -938,6 +927,17 @@ public final class StaticSitesImpl implements StaticSites {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new StaticSiteUserProvidedFunctionAppArmResourceImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public StaticSiteUserProvidedFunctionAppArmResource getUserProvidedFunctionAppForStaticSite(
+        String resourceGroupName, String name, String functionAppName) {
+        StaticSiteUserProvidedFunctionAppArmResourceInner inner =
+            this.serviceClient().getUserProvidedFunctionAppForStaticSite(resourceGroupName, name, functionAppName);
+        if (inner != null) {
+            return new StaticSiteUserProvidedFunctionAppArmResourceImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -1002,16 +1002,16 @@ public final class StaticSitesImpl implements StaticSites {
         }
     }
 
-    public void detachUserProvidedFunctionAppFromStaticSite(
-        String resourceGroupName, String name, String functionAppName) {
-        this.serviceClient().detachUserProvidedFunctionAppFromStaticSite(resourceGroupName, name, functionAppName);
-    }
-
     public Response<Void> detachUserProvidedFunctionAppFromStaticSiteWithResponse(
         String resourceGroupName, String name, String functionAppName, Context context) {
         return this
             .serviceClient()
             .detachUserProvidedFunctionAppFromStaticSiteWithResponse(resourceGroupName, name, functionAppName, context);
+    }
+
+    public void detachUserProvidedFunctionAppFromStaticSite(
+        String resourceGroupName, String name, String functionAppName) {
+        this.serviceClient().detachUserProvidedFunctionAppFromStaticSite(resourceGroupName, name, functionAppName);
     }
 
     public void createZipDeploymentForStaticSite(
@@ -1102,17 +1102,6 @@ public final class StaticSitesImpl implements StaticSites {
         return Utils.mapPage(inner, inner1 -> new StaticSiteLinkedBackendArmResourceImpl(inner1, this.manager()));
     }
 
-    public StaticSiteLinkedBackendArmResource getLinkedBackend(
-        String resourceGroupName, String name, String linkedBackendName) {
-        StaticSiteLinkedBackendArmResourceInner inner =
-            this.serviceClient().getLinkedBackend(resourceGroupName, name, linkedBackendName);
-        if (inner != null) {
-            return new StaticSiteLinkedBackendArmResourceImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<StaticSiteLinkedBackendArmResource> getLinkedBackendWithResponse(
         String resourceGroupName, String name, String linkedBackendName, Context context) {
         Response<StaticSiteLinkedBackendArmResourceInner> inner =
@@ -1128,8 +1117,15 @@ public final class StaticSitesImpl implements StaticSites {
         }
     }
 
-    public void unlinkBackend(String resourceGroupName, String name, String linkedBackendName) {
-        this.serviceClient().unlinkBackend(resourceGroupName, name, linkedBackendName);
+    public StaticSiteLinkedBackendArmResource getLinkedBackend(
+        String resourceGroupName, String name, String linkedBackendName) {
+        StaticSiteLinkedBackendArmResourceInner inner =
+            this.serviceClient().getLinkedBackend(resourceGroupName, name, linkedBackendName);
+        if (inner != null) {
+            return new StaticSiteLinkedBackendArmResourceImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> unlinkBackendWithResponse(
@@ -1143,15 +1139,8 @@ public final class StaticSitesImpl implements StaticSites {
             .unlinkBackendWithResponse(resourceGroupName, name, linkedBackendName, isCleaningAuthConfig, context);
     }
 
-    public StaticSiteLinkedBackendArmResource getLinkedBackendForBuild(
-        String resourceGroupName, String name, String environmentName, String linkedBackendName) {
-        StaticSiteLinkedBackendArmResourceInner inner =
-            this.serviceClient().getLinkedBackendForBuild(resourceGroupName, name, environmentName, linkedBackendName);
-        if (inner != null) {
-            return new StaticSiteLinkedBackendArmResourceImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void unlinkBackend(String resourceGroupName, String name, String linkedBackendName) {
+        this.serviceClient().unlinkBackend(resourceGroupName, name, linkedBackendName);
     }
 
     public Response<StaticSiteLinkedBackendArmResource> getLinkedBackendForBuildWithResponse(
@@ -1167,6 +1156,17 @@ public final class StaticSitesImpl implements StaticSites {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new StaticSiteLinkedBackendArmResourceImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public StaticSiteLinkedBackendArmResource getLinkedBackendForBuild(
+        String resourceGroupName, String name, String environmentName, String linkedBackendName) {
+        StaticSiteLinkedBackendArmResourceInner inner =
+            this.serviceClient().getLinkedBackendForBuild(resourceGroupName, name, environmentName, linkedBackendName);
+        if (inner != null) {
+            return new StaticSiteLinkedBackendArmResourceImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -1214,11 +1214,6 @@ public final class StaticSitesImpl implements StaticSites {
         }
     }
 
-    public void unlinkBackendFromBuild(
-        String resourceGroupName, String name, String environmentName, String linkedBackendName) {
-        this.serviceClient().unlinkBackendFromBuild(resourceGroupName, name, environmentName, linkedBackendName);
-    }
-
     public Response<Void> unlinkBackendFromBuildWithResponse(
         String resourceGroupName,
         String name,
@@ -1230,6 +1225,11 @@ public final class StaticSitesImpl implements StaticSites {
             .serviceClient()
             .unlinkBackendFromBuildWithResponse(
                 resourceGroupName, name, environmentName, linkedBackendName, isCleaningAuthConfig, context);
+    }
+
+    public void unlinkBackendFromBuild(
+        String resourceGroupName, String name, String environmentName, String linkedBackendName) {
+        this.serviceClient().unlinkBackendFromBuild(resourceGroupName, name, environmentName, linkedBackendName);
     }
 
     public StaticSiteArmResource getById(String id) {

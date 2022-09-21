@@ -31,6 +31,10 @@ public final class LinkedServiceProperties {
     @JsonProperty(value = "provisioningState")
     private LinkedServiceEntityStatus provisioningState;
 
+    /** Creates an instance of LinkedServiceProperties class. */
+    public LinkedServiceProperties() {
+    }
+
     /**
      * Get the resourceId property: The resource id of the resource that will be linked to the workspace. This should be
      * used for linking resources which require read access.

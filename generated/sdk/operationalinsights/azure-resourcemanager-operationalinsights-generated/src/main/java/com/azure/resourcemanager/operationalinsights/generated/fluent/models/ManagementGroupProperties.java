@@ -59,6 +59,10 @@ public final class ManagementGroupProperties {
     @JsonProperty(value = "sku")
     private String sku;
 
+    /** Creates an instance of ManagementGroupProperties class. */
+    public ManagementGroupProperties() {
+    }
+
     /**
      * Get the serverCount property: The number of servers connected to the management group.
      *

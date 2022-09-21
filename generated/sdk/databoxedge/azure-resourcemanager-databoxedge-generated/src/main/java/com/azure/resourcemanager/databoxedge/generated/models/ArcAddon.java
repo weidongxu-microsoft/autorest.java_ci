@@ -23,6 +23,10 @@ public final class ArcAddon extends AddonInner {
     @JsonProperty(value = "properties", required = true)
     private ArcAddonProperties innerProperties = new ArcAddonProperties();
 
+    /** Creates an instance of ArcAddon class. */
+    public ArcAddon() {
+    }
+
     /**
      * Get the innerProperties property: Properties specific to Arc addon.
      *

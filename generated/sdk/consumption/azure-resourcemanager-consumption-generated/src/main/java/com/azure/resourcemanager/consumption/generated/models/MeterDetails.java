@@ -65,6 +65,10 @@ public final class MeterDetails {
     @JsonProperty(value = "serviceTier", access = JsonProperty.Access.WRITE_ONLY)
     private String serviceTier;
 
+    /** Creates an instance of MeterDetails class. */
+    public MeterDetails() {
+    }
+
     /**
      * Get the meterName property: The name of the meter, within the given meter category.
      *

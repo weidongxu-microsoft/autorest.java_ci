@@ -31,12 +31,12 @@ public final class ResourceGroupsImpl implements ResourceGroups {
         this.serviceManager = serviceManager;
     }
 
-    public boolean checkExistence(String resourceGroupName) {
-        return this.serviceClient().checkExistence(resourceGroupName);
-    }
-
     public Response<Boolean> checkExistenceWithResponse(String resourceGroupName, Context context) {
         return this.serviceClient().checkExistenceWithResponse(resourceGroupName, context);
+    }
+
+    public boolean checkExistence(String resourceGroupName) {
+        return this.serviceClient().checkExistence(resourceGroupName);
     }
 
     public void deleteByResourceGroup(String resourceGroupName, String forceDeletionTypes) {
@@ -51,15 +51,6 @@ public final class ResourceGroupsImpl implements ResourceGroups {
         this.serviceClient().delete(resourceGroupName, forceDeletionTypes, context);
     }
 
-    public ResourceGroup get(String resourceGroupName) {
-        ResourceGroupInner inner = this.serviceClient().get(resourceGroupName);
-        if (inner != null) {
-            return new ResourceGroupImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<ResourceGroup> getWithResponse(String resourceGroupName, Context context) {
         Response<ResourceGroupInner> inner = this.serviceClient().getWithResponse(resourceGroupName, context);
         if (inner != null) {
@@ -68,6 +59,15 @@ public final class ResourceGroupsImpl implements ResourceGroups {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new ResourceGroupImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public ResourceGroup get(String resourceGroupName) {
+        ResourceGroupInner inner = this.serviceClient().get(resourceGroupName);
+        if (inner != null) {
+            return new ResourceGroupImpl(inner, this.manager());
         } else {
             return null;
         }

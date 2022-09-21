@@ -196,11 +196,12 @@ public final class NetworkSecurityPerimeterConfigurationsClientImpl
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of current NetworkSecurityPerimeterConfiguration for Namespace.
+     * @return list of current NetworkSecurityPerimeterConfiguration for Namespace along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public NetworkSecurityPerimeterConfigurationListInner list(String resourceGroupName, String namespaceName) {
-        return listAsync(resourceGroupName, namespaceName).block();
+    public Response<NetworkSecurityPerimeterConfigurationListInner> listWithResponse(
+        String resourceGroupName, String namespaceName) {
+        return listWithResponseAsync(resourceGroupName, namespaceName).block();
     }
 
     /**
@@ -218,5 +219,20 @@ public final class NetworkSecurityPerimeterConfigurationsClientImpl
     public Response<NetworkSecurityPerimeterConfigurationListInner> listWithResponse(
         String resourceGroupName, String namespaceName, Context context) {
         return listWithResponseAsync(resourceGroupName, namespaceName, context).block();
+    }
+
+    /**
+     * Gets list of current NetworkSecurityPerimeterConfiguration for Namespace.
+     *
+     * @param resourceGroupName Name of the resource group within the azure subscription.
+     * @param namespaceName The Namespace name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return list of current NetworkSecurityPerimeterConfiguration for Namespace.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public NetworkSecurityPerimeterConfigurationListInner list(String resourceGroupName, String namespaceName) {
+        return listWithResponse(resourceGroupName, namespaceName, Context.NONE).getValue();
     }
 }

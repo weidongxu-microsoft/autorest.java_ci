@@ -391,17 +391,6 @@ public interface PartnerTopic {
      *
      * <p>Activate a newly created partner topic.
      *
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return event Grid Partner Topic.
-     */
-    PartnerTopic activate();
-
-    /**
-     * Activate a partner topic.
-     *
-     * <p>Activate a newly created partner topic.
-     *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -411,15 +400,15 @@ public interface PartnerTopic {
     Response<PartnerTopic> activateWithResponse(Context context);
 
     /**
-     * Deactivate a partner topic.
+     * Activate a partner topic.
      *
-     * <p>Deactivate specific partner topic.
+     * <p>Activate a newly created partner topic.
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return event Grid Partner Topic.
      */
-    PartnerTopic deactivate();
+    PartnerTopic activate();
 
     /**
      * Deactivate a partner topic.
@@ -433,4 +422,15 @@ public interface PartnerTopic {
      * @return event Grid Partner Topic along with {@link Response}.
      */
     Response<PartnerTopic> deactivateWithResponse(Context context);
+
+    /**
+     * Deactivate a partner topic.
+     *
+     * <p>Deactivate specific partner topic.
+     *
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return event Grid Partner Topic.
+     */
+    PartnerTopic deactivate();
 }

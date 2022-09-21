@@ -24,6 +24,10 @@ public final class EHNamespaceListResult {
     @JsonProperty(value = "nextLink")
     private String nextLink;
 
+    /** Creates an instance of EHNamespaceListResult class. */
+    public EHNamespaceListResult() {
+    }
+
     /**
      * Get the value property: Result of the List Namespace operation.
      *

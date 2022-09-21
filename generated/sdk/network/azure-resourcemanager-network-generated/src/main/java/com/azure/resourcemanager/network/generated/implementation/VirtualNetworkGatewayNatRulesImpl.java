@@ -28,17 +28,6 @@ public final class VirtualNetworkGatewayNatRulesImpl implements VirtualNetworkGa
         this.serviceManager = serviceManager;
     }
 
-    public VirtualNetworkGatewayNatRule get(
-        String resourceGroupName, String virtualNetworkGatewayName, String natRuleName) {
-        VirtualNetworkGatewayNatRuleInner inner =
-            this.serviceClient().get(resourceGroupName, virtualNetworkGatewayName, natRuleName);
-        if (inner != null) {
-            return new VirtualNetworkGatewayNatRuleImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<VirtualNetworkGatewayNatRule> getWithResponse(
         String resourceGroupName, String virtualNetworkGatewayName, String natRuleName, Context context) {
         Response<VirtualNetworkGatewayNatRuleInner> inner =
@@ -49,6 +38,17 @@ public final class VirtualNetworkGatewayNatRulesImpl implements VirtualNetworkGa
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new VirtualNetworkGatewayNatRuleImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public VirtualNetworkGatewayNatRule get(
+        String resourceGroupName, String virtualNetworkGatewayName, String natRuleName) {
+        VirtualNetworkGatewayNatRuleInner inner =
+            this.serviceClient().get(resourceGroupName, virtualNetworkGatewayName, natRuleName);
+        if (inner != null) {
+            return new VirtualNetworkGatewayNatRuleImpl(inner, this.manager());
         } else {
             return null;
         }

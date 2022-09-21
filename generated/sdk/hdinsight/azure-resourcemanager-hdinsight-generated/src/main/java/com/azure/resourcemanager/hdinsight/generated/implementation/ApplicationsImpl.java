@@ -40,15 +40,6 @@ public final class ApplicationsImpl implements Applications {
         return Utils.mapPage(inner, inner1 -> new ApplicationImpl(inner1, this.manager()));
     }
 
-    public Application get(String resourceGroupName, String clusterName, String applicationName) {
-        ApplicationInner inner = this.serviceClient().get(resourceGroupName, clusterName, applicationName);
-        if (inner != null) {
-            return new ApplicationImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<Application> getWithResponse(
         String resourceGroupName, String clusterName, String applicationName, Context context) {
         Response<ApplicationInner> inner =
@@ -64,25 +55,21 @@ public final class ApplicationsImpl implements Applications {
         }
     }
 
+    public Application get(String resourceGroupName, String clusterName, String applicationName) {
+        ApplicationInner inner = this.serviceClient().get(resourceGroupName, clusterName, applicationName);
+        if (inner != null) {
+            return new ApplicationImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
     public void delete(String resourceGroupName, String clusterName, String applicationName) {
         this.serviceClient().delete(resourceGroupName, clusterName, applicationName);
     }
 
     public void delete(String resourceGroupName, String clusterName, String applicationName, Context context) {
         this.serviceClient().delete(resourceGroupName, clusterName, applicationName, context);
-    }
-
-    public AsyncOperationResult getAzureAsyncOperationStatus(
-        String resourceGroupName, String clusterName, String applicationName, String operationId) {
-        AsyncOperationResultInner inner =
-            this
-                .serviceClient()
-                .getAzureAsyncOperationStatus(resourceGroupName, clusterName, applicationName, operationId);
-        if (inner != null) {
-            return new AsyncOperationResultImpl(inner, this.manager());
-        } else {
-            return null;
-        }
     }
 
     public Response<AsyncOperationResult> getAzureAsyncOperationStatusWithResponse(
@@ -98,6 +85,19 @@ public final class ApplicationsImpl implements Applications {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new AsyncOperationResultImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public AsyncOperationResult getAzureAsyncOperationStatus(
+        String resourceGroupName, String clusterName, String applicationName, String operationId) {
+        AsyncOperationResultInner inner =
+            this
+                .serviceClient()
+                .getAzureAsyncOperationStatus(resourceGroupName, clusterName, applicationName, operationId);
+        if (inner != null) {
+            return new AsyncOperationResultImpl(inner, this.manager());
         } else {
             return null;
         }

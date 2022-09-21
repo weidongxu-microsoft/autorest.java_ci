@@ -77,6 +77,10 @@ public final class MetricSpecificationV1 {
     @JsonProperty(value = "supportedAggregationTypes")
     private List<MetricAggregationType> supportedAggregationTypes;
 
+    /** Creates an instance of MetricSpecificationV1 class. */
+    public MetricSpecificationV1() {
+    }
+
     /**
      * Get the name property: Name of the metric.
      *

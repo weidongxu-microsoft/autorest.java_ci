@@ -26,6 +26,10 @@ public final class LegacyUsageDetail extends UsageDetailInner {
     @JsonProperty(value = "properties", required = true)
     private LegacyUsageDetailProperties innerProperties = new LegacyUsageDetailProperties();
 
+    /** Creates an instance of LegacyUsageDetail class. */
+    public LegacyUsageDetail() {
+    }
+
     /**
      * Get the innerProperties property: Properties for legacy usage details.
      *

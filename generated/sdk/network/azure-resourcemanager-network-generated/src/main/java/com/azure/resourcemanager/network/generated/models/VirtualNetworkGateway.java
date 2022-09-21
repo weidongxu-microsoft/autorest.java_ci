@@ -148,6 +148,14 @@ public interface VirtualNetworkGateway {
     VpnClientConfiguration vpnClientConfiguration();
 
     /**
+     * Gets the virtualNetworkGatewayPolicyGroups property: The reference to the VirtualNetworkGatewayPolicyGroup
+     * resource which represents the available VirtualNetworkGatewayPolicyGroup for the gateway.
+     *
+     * @return the virtualNetworkGatewayPolicyGroups value.
+     */
+    List<VirtualNetworkGatewayPolicyGroup> virtualNetworkGatewayPolicyGroups();
+
+    /**
      * Gets the bgpSettings property: Virtual network gateway's BGP speaker settings.
      *
      * @return the bgpSettings value.
@@ -299,6 +307,7 @@ public interface VirtualNetworkGateway {
                 DefinitionStages.WithGatewayDefaultSite,
                 DefinitionStages.WithSku,
                 DefinitionStages.WithVpnClientConfiguration,
+                DefinitionStages.WithVirtualNetworkGatewayPolicyGroups,
                 DefinitionStages.WithBgpSettings,
                 DefinitionStages.WithCustomRoutes,
                 DefinitionStages.WithEnableDnsForwarding,
@@ -461,6 +470,20 @@ public interface VirtualNetworkGateway {
              * @return the next definition stage.
              */
             WithCreate withVpnClientConfiguration(VpnClientConfiguration vpnClientConfiguration);
+        }
+        /** The stage of the VirtualNetworkGateway definition allowing to specify virtualNetworkGatewayPolicyGroups. */
+        interface WithVirtualNetworkGatewayPolicyGroups {
+            /**
+             * Specifies the virtualNetworkGatewayPolicyGroups property: The reference to the
+             * VirtualNetworkGatewayPolicyGroup resource which represents the available VirtualNetworkGatewayPolicyGroup
+             * for the gateway..
+             *
+             * @param virtualNetworkGatewayPolicyGroups The reference to the VirtualNetworkGatewayPolicyGroup resource
+             *     which represents the available VirtualNetworkGatewayPolicyGroup for the gateway.
+             * @return the next definition stage.
+             */
+            WithCreate withVirtualNetworkGatewayPolicyGroups(
+                List<VirtualNetworkGatewayPolicyGroup> virtualNetworkGatewayPolicyGroups);
         }
         /** The stage of the VirtualNetworkGateway definition allowing to specify bgpSettings. */
         interface WithBgpSettings {
@@ -736,15 +759,6 @@ public interface VirtualNetworkGateway {
     /**
      * Gets a xml format representation for supported vpn devices.
      *
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a xml format representation for supported vpn devices.
-     */
-    String supportedVpnDevices();
-
-    /**
-     * Gets a xml format representation for supported vpn devices.
-     *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -752,6 +766,15 @@ public interface VirtualNetworkGateway {
      * @return a xml format representation for supported vpn devices along with {@link Response}.
      */
     Response<String> supportedVpnDevicesWithResponse(Context context);
+
+    /**
+     * Gets a xml format representation for supported vpn devices.
+     *
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a xml format representation for supported vpn devices.
+     */
+    String supportedVpnDevices();
 
     /**
      * This operation retrieves a list of routes the virtual network gateway has learned, including routes learned from

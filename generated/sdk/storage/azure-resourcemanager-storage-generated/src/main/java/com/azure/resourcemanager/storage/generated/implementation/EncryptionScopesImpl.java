@@ -27,15 +27,6 @@ public final class EncryptionScopesImpl implements EncryptionScopes {
         this.serviceManager = serviceManager;
     }
 
-    public EncryptionScope get(String resourceGroupName, String accountName, String encryptionScopeName) {
-        EncryptionScopeInner inner = this.serviceClient().get(resourceGroupName, accountName, encryptionScopeName);
-        if (inner != null) {
-            return new EncryptionScopeImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<EncryptionScope> getWithResponse(
         String resourceGroupName, String accountName, String encryptionScopeName, Context context) {
         Response<EncryptionScopeInner> inner =
@@ -46,6 +37,15 @@ public final class EncryptionScopesImpl implements EncryptionScopes {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new EncryptionScopeImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public EncryptionScope get(String resourceGroupName, String accountName, String encryptionScopeName) {
+        EncryptionScopeInner inner = this.serviceClient().get(resourceGroupName, accountName, encryptionScopeName);
+        if (inner != null) {
+            return new EncryptionScopeImpl(inner, this.manager());
         } else {
             return null;
         }

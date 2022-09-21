@@ -83,6 +83,10 @@ public final class ReservationDetailProperties {
     @JsonProperty(value = "kind", access = JsonProperty.Access.WRITE_ONLY)
     private String kind;
 
+    /** Creates an instance of ReservationDetailProperties class. */
+    public ReservationDetailProperties() {
+    }
+
     /**
      * Get the reservationOrderId property: The reservation order ID is the identifier for a reservation purchase. Each
      * reservation order ID represents a single purchase transaction. A reservation order contains reservations. The

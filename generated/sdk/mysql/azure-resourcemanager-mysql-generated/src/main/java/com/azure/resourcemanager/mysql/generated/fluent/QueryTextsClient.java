@@ -20,20 +20,6 @@ public interface QueryTextsClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param queryId The Query-Store query identifier.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a Query Text.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    QueryTextInner get(String resourceGroupName, String serverName, String queryId);
-
-    /**
-     * Retrieve the Query-Store query texts for the queryId.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param serverName The name of the server.
-     * @param queryId The Query-Store query identifier.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -43,6 +29,20 @@ public interface QueryTextsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<QueryTextInner> getWithResponse(
         String resourceGroupName, String serverName, String queryId, Context context);
+
+    /**
+     * Retrieve the Query-Store query texts for the queryId.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param serverName The name of the server.
+     * @param queryId The Query-Store query identifier.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return represents a Query Text.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    QueryTextInner get(String resourceGroupName, String serverName, String queryId);
 
     /**
      * Retrieve the Query-Store query texts for specified queryIds.

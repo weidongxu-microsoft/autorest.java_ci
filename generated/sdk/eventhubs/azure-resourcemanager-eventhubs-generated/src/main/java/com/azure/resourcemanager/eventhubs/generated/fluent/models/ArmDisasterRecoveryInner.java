@@ -32,6 +32,10 @@ public final class ArmDisasterRecoveryInner extends ProxyResource {
     @JsonProperty(value = "location", access = JsonProperty.Access.WRITE_ONLY)
     private String location;
 
+    /** Creates an instance of ArmDisasterRecoveryInner class. */
+    public ArmDisasterRecoveryInner() {
+    }
+
     /**
      * Get the innerProperties property: Properties required to the Create Or Update Alias(Disaster Recovery
      * configurations).

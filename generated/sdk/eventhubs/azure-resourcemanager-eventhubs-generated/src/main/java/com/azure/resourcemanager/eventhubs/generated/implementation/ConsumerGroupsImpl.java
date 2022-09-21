@@ -28,10 +28,6 @@ public final class ConsumerGroupsImpl implements ConsumerGroups {
         this.serviceManager = serviceManager;
     }
 
-    public void delete(String resourceGroupName, String namespaceName, String eventHubName, String consumerGroupName) {
-        this.serviceClient().delete(resourceGroupName, namespaceName, eventHubName, consumerGroupName);
-    }
-
     public Response<Void> deleteWithResponse(
         String resourceGroupName,
         String namespaceName,
@@ -43,15 +39,8 @@ public final class ConsumerGroupsImpl implements ConsumerGroups {
             .deleteWithResponse(resourceGroupName, namespaceName, eventHubName, consumerGroupName, context);
     }
 
-    public ConsumerGroup get(
-        String resourceGroupName, String namespaceName, String eventHubName, String consumerGroupName) {
-        ConsumerGroupInner inner =
-            this.serviceClient().get(resourceGroupName, namespaceName, eventHubName, consumerGroupName);
-        if (inner != null) {
-            return new ConsumerGroupImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void delete(String resourceGroupName, String namespaceName, String eventHubName, String consumerGroupName) {
+        this.serviceClient().delete(resourceGroupName, namespaceName, eventHubName, consumerGroupName);
     }
 
     public Response<ConsumerGroup> getWithResponse(
@@ -70,6 +59,17 @@ public final class ConsumerGroupsImpl implements ConsumerGroups {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new ConsumerGroupImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public ConsumerGroup get(
+        String resourceGroupName, String namespaceName, String eventHubName, String consumerGroupName) {
+        ConsumerGroupInner inner =
+            this.serviceClient().get(resourceGroupName, namespaceName, eventHubName, consumerGroupName);
+        if (inner != null) {
+            return new ConsumerGroupImpl(inner, this.manager());
         } else {
             return null;
         }

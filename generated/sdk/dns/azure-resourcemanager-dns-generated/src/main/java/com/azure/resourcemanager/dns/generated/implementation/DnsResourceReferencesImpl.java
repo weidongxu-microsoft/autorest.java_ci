@@ -27,15 +27,6 @@ public final class DnsResourceReferencesImpl implements DnsResourceReferences {
         this.serviceManager = serviceManager;
     }
 
-    public DnsResourceReferenceResult getByTargetResources(DnsResourceReferenceRequest parameters) {
-        DnsResourceReferenceResultInner inner = this.serviceClient().getByTargetResources(parameters);
-        if (inner != null) {
-            return new DnsResourceReferenceResultImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<DnsResourceReferenceResult> getByTargetResourcesWithResponse(
         DnsResourceReferenceRequest parameters, Context context) {
         Response<DnsResourceReferenceResultInner> inner =
@@ -46,6 +37,15 @@ public final class DnsResourceReferencesImpl implements DnsResourceReferences {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new DnsResourceReferenceResultImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public DnsResourceReferenceResult getByTargetResources(DnsResourceReferenceRequest parameters) {
+        DnsResourceReferenceResultInner inner = this.serviceClient().getByTargetResources(parameters);
+        if (inner != null) {
+            return new DnsResourceReferenceResultImpl(inner, this.manager());
         } else {
             return null;
         }

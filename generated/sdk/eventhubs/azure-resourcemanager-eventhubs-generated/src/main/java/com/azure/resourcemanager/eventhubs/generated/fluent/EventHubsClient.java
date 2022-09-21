@@ -56,28 +56,6 @@ public interface EventHubsClient {
      * @param eventHubName The Event Hub name.
      * @param authorizationRuleName The authorization rule name.
      * @param parameters The shared access AuthorizationRule.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in a List or Get AuthorizationRule operation.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    AuthorizationRuleInner createOrUpdateAuthorizationRule(
-        String resourceGroupName,
-        String namespaceName,
-        String eventHubName,
-        String authorizationRuleName,
-        AuthorizationRuleInner parameters);
-
-    /**
-     * Creates or updates an AuthorizationRule for the specified Event Hub. Creation/update of the AuthorizationRule
-     * will take a few seconds to take effect.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param namespaceName The Namespace name.
-     * @param eventHubName The Event Hub name.
-     * @param authorizationRuleName The authorization rule name.
-     * @param parameters The shared access AuthorizationRule.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -94,20 +72,26 @@ public interface EventHubsClient {
         Context context);
 
     /**
-     * Gets an AuthorizationRule for an Event Hub by rule name.
+     * Creates or updates an AuthorizationRule for the specified Event Hub. Creation/update of the AuthorizationRule
+     * will take a few seconds to take effect.
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param eventHubName The Event Hub name.
      * @param authorizationRuleName The authorization rule name.
+     * @param parameters The shared access AuthorizationRule.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an AuthorizationRule for an Event Hub by rule name.
+     * @return single item in a List or Get AuthorizationRule operation.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    AuthorizationRuleInner getAuthorizationRule(
-        String resourceGroupName, String namespaceName, String eventHubName, String authorizationRuleName);
+    AuthorizationRuleInner createOrUpdateAuthorizationRule(
+        String resourceGroupName,
+        String namespaceName,
+        String eventHubName,
+        String authorizationRuleName,
+        AuthorizationRuleInner parameters);
 
     /**
      * Gets an AuthorizationRule for an Event Hub by rule name.
@@ -131,7 +115,7 @@ public interface EventHubsClient {
         Context context);
 
     /**
-     * Deletes an Event Hub AuthorizationRule.
+     * Gets an AuthorizationRule for an Event Hub by rule name.
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -140,9 +124,10 @@ public interface EventHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return an AuthorizationRule for an Event Hub by rule name.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    void deleteAuthorizationRule(
+    AuthorizationRuleInner getAuthorizationRule(
         String resourceGroupName, String namespaceName, String eventHubName, String authorizationRuleName);
 
     /**
@@ -167,7 +152,7 @@ public interface EventHubsClient {
         Context context);
 
     /**
-     * Gets the ACS and SAS connection strings for the Event Hub.
+     * Deletes an Event Hub AuthorizationRule.
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -176,10 +161,9 @@ public interface EventHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the ACS and SAS connection strings for the Event Hub.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    AccessKeysInner listKeys(
+    void deleteAuthorizationRule(
         String resourceGroupName, String namespaceName, String eventHubName, String authorizationRuleName);
 
     /**
@@ -204,25 +188,20 @@ public interface EventHubsClient {
         Context context);
 
     /**
-     * Regenerates the ACS and SAS connection strings for the Event Hub.
+     * Gets the ACS and SAS connection strings for the Event Hub.
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param eventHubName The Event Hub name.
      * @param authorizationRuleName The authorization rule name.
-     * @param parameters Parameters supplied to regenerate the AuthorizationRule Keys (PrimaryKey/SecondaryKey).
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return namespace/EventHub Connection String.
+     * @return the ACS and SAS connection strings for the Event Hub.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    AccessKeysInner regenerateKeys(
-        String resourceGroupName,
-        String namespaceName,
-        String eventHubName,
-        String authorizationRuleName,
-        RegenerateAccessKeyParameters parameters);
+    AccessKeysInner listKeys(
+        String resourceGroupName, String namespaceName, String eventHubName, String authorizationRuleName);
 
     /**
      * Regenerates the ACS and SAS connection strings for the Event Hub.
@@ -246,6 +225,27 @@ public interface EventHubsClient {
         String authorizationRuleName,
         RegenerateAccessKeyParameters parameters,
         Context context);
+
+    /**
+     * Regenerates the ACS and SAS connection strings for the Event Hub.
+     *
+     * @param resourceGroupName Name of the resource group within the azure subscription.
+     * @param namespaceName The Namespace name.
+     * @param eventHubName The Event Hub name.
+     * @param authorizationRuleName The authorization rule name.
+     * @param parameters Parameters supplied to regenerate the AuthorizationRule Keys (PrimaryKey/SecondaryKey).
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return namespace/EventHub Connection String.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    AccessKeysInner regenerateKeys(
+        String resourceGroupName,
+        String namespaceName,
+        String eventHubName,
+        String authorizationRuleName,
+        RegenerateAccessKeyParameters parameters);
 
     /**
      * Gets all the Event Hubs in a Namespace.
@@ -286,22 +286,6 @@ public interface EventHubsClient {
      * @param namespaceName The Namespace name.
      * @param eventHubName The Event Hub name.
      * @param parameters Parameters supplied to create an Event Hub resource.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in List or Get Event Hub operation.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    EventhubInner createOrUpdate(
-        String resourceGroupName, String namespaceName, String eventHubName, EventhubInner parameters);
-
-    /**
-     * Creates or updates a new Event Hub as a nested resource within a Namespace.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param namespaceName The Namespace name.
-     * @param eventHubName The Event Hub name.
-     * @param parameters Parameters supplied to create an Event Hub resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -313,17 +297,20 @@ public interface EventHubsClient {
         String resourceGroupName, String namespaceName, String eventHubName, EventhubInner parameters, Context context);
 
     /**
-     * Deletes an Event Hub from the specified Namespace and resource group.
+     * Creates or updates a new Event Hub as a nested resource within a Namespace.
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param eventHubName The Event Hub name.
+     * @param parameters Parameters supplied to create an Event Hub resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return single item in List or Get Event Hub operation.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    void delete(String resourceGroupName, String namespaceName, String eventHubName);
+    EventhubInner createOrUpdate(
+        String resourceGroupName, String namespaceName, String eventHubName, EventhubInner parameters);
 
     /**
      * Deletes an Event Hub from the specified Namespace and resource group.
@@ -342,7 +329,7 @@ public interface EventHubsClient {
         String resourceGroupName, String namespaceName, String eventHubName, Context context);
 
     /**
-     * Gets an Event Hubs description for the specified Event Hub.
+     * Deletes an Event Hub from the specified Namespace and resource group.
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -350,10 +337,9 @@ public interface EventHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Event Hubs description for the specified Event Hub.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    EventhubInner get(String resourceGroupName, String namespaceName, String eventHubName);
+    void delete(String resourceGroupName, String namespaceName, String eventHubName);
 
     /**
      * Gets an Event Hubs description for the specified Event Hub.
@@ -370,4 +356,18 @@ public interface EventHubsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<EventhubInner> getWithResponse(
         String resourceGroupName, String namespaceName, String eventHubName, Context context);
+
+    /**
+     * Gets an Event Hubs description for the specified Event Hub.
+     *
+     * @param resourceGroupName Name of the resource group within the azure subscription.
+     * @param namespaceName The Namespace name.
+     * @param eventHubName The Event Hub name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return an Event Hubs description for the specified Event Hub.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    EventhubInner get(String resourceGroupName, String namespaceName, String eventHubName);
 }

@@ -58,6 +58,10 @@ public final class PerformanceTierServiceLevelObjectives {
     @JsonProperty(value = "minStorageMB")
     private Integer minStorageMB;
 
+    /** Creates an instance of PerformanceTierServiceLevelObjectives class. */
+    public PerformanceTierServiceLevelObjectives() {
+    }
+
     /**
      * Get the id property: ID for the service level objective.
      *

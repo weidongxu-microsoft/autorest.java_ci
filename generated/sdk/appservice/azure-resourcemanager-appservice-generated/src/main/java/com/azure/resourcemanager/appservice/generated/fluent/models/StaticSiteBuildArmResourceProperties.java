@@ -69,6 +69,10 @@ public final class StaticSiteBuildArmResourceProperties {
     @JsonProperty(value = "linkedBackends", access = JsonProperty.Access.WRITE_ONLY)
     private List<StaticSiteLinkedBackend> linkedBackends;
 
+    /** Creates an instance of StaticSiteBuildArmResourceProperties class. */
+    public StaticSiteBuildArmResourceProperties() {
+    }
+
     /**
      * Get the buildId property: An identifier for the static site build.
      *

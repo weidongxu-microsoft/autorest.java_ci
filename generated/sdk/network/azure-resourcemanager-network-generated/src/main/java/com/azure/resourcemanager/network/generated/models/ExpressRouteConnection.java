@@ -65,6 +65,14 @@ public interface ExpressRouteConnection {
     Boolean expressRouteGatewayBypass();
 
     /**
+     * Gets the enablePrivateLinkFastPath property: Bypass the ExpressRoute gateway when accessing private-links.
+     * ExpressRoute FastPath (expressRouteGatewayBypass) must be enabled.
+     *
+     * @return the enablePrivateLinkFastPath value.
+     */
+    Boolean enablePrivateLinkFastPath();
+
+    /**
      * Gets the routingConfiguration property: The Routing Configuration indicating the associated and propagated route
      * tables on this connection.
      *

@@ -65,6 +65,10 @@ public final class SecurityProfile {
     @JsonProperty(value = "msiResourceId")
     private String msiResourceId;
 
+    /** Creates an instance of SecurityProfile class. */
+    public SecurityProfile() {
+    }
+
     /**
      * Get the directoryType property: The directory type.
      *

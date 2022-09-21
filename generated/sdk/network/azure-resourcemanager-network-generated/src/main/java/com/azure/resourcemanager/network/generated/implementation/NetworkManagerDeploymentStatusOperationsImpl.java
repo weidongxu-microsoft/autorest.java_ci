@@ -28,30 +28,31 @@ public final class NetworkManagerDeploymentStatusOperationsImpl implements Netwo
         this.serviceManager = serviceManager;
     }
 
-    public NetworkManagerDeploymentStatusListResult list(
-        String resourceGroupName, String networkManagerName, NetworkManagerDeploymentStatusParameter parameters) {
-        NetworkManagerDeploymentStatusListResultInner inner =
-            this.serviceClient().list(resourceGroupName, networkManagerName, parameters);
-        if (inner != null) {
-            return new NetworkManagerDeploymentStatusListResultImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<NetworkManagerDeploymentStatusListResult> listWithResponse(
         String resourceGroupName,
         String networkManagerName,
         NetworkManagerDeploymentStatusParameter parameters,
+        Integer top,
         Context context) {
         Response<NetworkManagerDeploymentStatusListResultInner> inner =
-            this.serviceClient().listWithResponse(resourceGroupName, networkManagerName, parameters, context);
+            this.serviceClient().listWithResponse(resourceGroupName, networkManagerName, parameters, top, context);
         if (inner != null) {
             return new SimpleResponse<>(
                 inner.getRequest(),
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new NetworkManagerDeploymentStatusListResultImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public NetworkManagerDeploymentStatusListResult list(
+        String resourceGroupName, String networkManagerName, NetworkManagerDeploymentStatusParameter parameters) {
+        NetworkManagerDeploymentStatusListResultInner inner =
+            this.serviceClient().list(resourceGroupName, networkManagerName, parameters);
+        if (inner != null) {
+            return new NetworkManagerDeploymentStatusListResultImpl(inner, this.manager());
         } else {
             return null;
         }

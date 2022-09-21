@@ -29,17 +29,6 @@ public final class SharedPrivateLinkResourcesImpl implements SharedPrivateLinkRe
         this.serviceManager = serviceManager;
     }
 
-    public SharedPrivateLinkResource get(
-        String resourceGroupName, String searchServiceName, String sharedPrivateLinkResourceName) {
-        SharedPrivateLinkResourceInner inner =
-            this.serviceClient().get(resourceGroupName, searchServiceName, sharedPrivateLinkResourceName);
-        if (inner != null) {
-            return new SharedPrivateLinkResourceImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<SharedPrivateLinkResource> getWithResponse(
         String resourceGroupName,
         String searchServiceName,
@@ -57,6 +46,17 @@ public final class SharedPrivateLinkResourcesImpl implements SharedPrivateLinkRe
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new SharedPrivateLinkResourceImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public SharedPrivateLinkResource get(
+        String resourceGroupName, String searchServiceName, String sharedPrivateLinkResourceName) {
+        SharedPrivateLinkResourceInner inner =
+            this.serviceClient().get(resourceGroupName, searchServiceName, sharedPrivateLinkResourceName);
+        if (inner != null) {
+            return new SharedPrivateLinkResourceImpl(inner, this.manager());
         } else {
             return null;
         }

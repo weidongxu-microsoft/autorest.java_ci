@@ -34,6 +34,10 @@ public final class CniConfig {
     @JsonProperty(value = "serviceSubnet", access = JsonProperty.Access.WRITE_ONLY)
     private String serviceSubnet;
 
+    /** Creates an instance of CniConfig class. */
+    public CniConfig() {
+    }
+
     /**
      * Get the type property: Cni type.
      *

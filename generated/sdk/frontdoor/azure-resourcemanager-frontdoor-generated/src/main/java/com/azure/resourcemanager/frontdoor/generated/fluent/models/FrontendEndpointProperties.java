@@ -43,6 +43,10 @@ public final class FrontendEndpointProperties extends FrontendEndpointUpdatePara
     @JsonProperty(value = "customHttpsConfiguration", access = JsonProperty.Access.WRITE_ONLY)
     private CustomHttpsConfiguration customHttpsConfiguration;
 
+    /** Creates an instance of FrontendEndpointProperties class. */
+    public FrontendEndpointProperties() {
+    }
+
     /**
      * Get the resourceState property: Resource status of the Front Door or Front Door SubResource.
      *

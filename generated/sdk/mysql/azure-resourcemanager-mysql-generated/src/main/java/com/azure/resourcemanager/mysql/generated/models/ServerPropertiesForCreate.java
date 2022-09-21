@@ -62,6 +62,10 @@ public class ServerPropertiesForCreate {
     @JsonProperty(value = "storageProfile")
     private StorageProfile storageProfile;
 
+    /** Creates an instance of ServerPropertiesForCreate class. */
+    public ServerPropertiesForCreate() {
+    }
+
     /**
      * Get the version property: Server version.
      *

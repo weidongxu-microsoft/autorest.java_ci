@@ -15,18 +15,6 @@ public interface AvailabilitySets {
      *
      * @param resourceGroupName The name of the resource group.
      * @param availabilitySetName The name of the availability set.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void deleteByResourceGroup(String resourceGroupName, String availabilitySetName);
-
-    /**
-     * Delete an availability set.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param availabilitySetName The name of the availability set.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
@@ -34,10 +22,11 @@ public interface AvailabilitySets {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
-    Response<Void> deleteWithResponse(String resourceGroupName, String availabilitySetName, Context context);
+    Response<Void> deleteByResourceGroupWithResponse(
+        String resourceGroupName, String availabilitySetName, Context context);
 
     /**
-     * Retrieves information about an availability set.
+     * Delete an availability set.
      *
      * @param resourceGroupName The name of the resource group.
      * @param availabilitySetName The name of the availability set.
@@ -45,9 +34,8 @@ public interface AvailabilitySets {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the availability set that the virtual machine should be assigned to.
      */
-    AvailabilitySet getByResourceGroup(String resourceGroupName, String availabilitySetName);
+    void deleteByResourceGroup(String resourceGroupName, String availabilitySetName);
 
     /**
      * Retrieves information about an availability set.
@@ -64,6 +52,19 @@ public interface AvailabilitySets {
      */
     Response<AvailabilitySet> getByResourceGroupWithResponse(
         String resourceGroupName, String availabilitySetName, Context context);
+
+    /**
+     * Retrieves information about an availability set.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param availabilitySetName The name of the availability set.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return specifies information about the availability set that the virtual machine should be assigned to.
+     */
+    AvailabilitySet getByResourceGroup(String resourceGroupName, String availabilitySetName);
 
     /**
      * Lists all availability sets in a subscription.

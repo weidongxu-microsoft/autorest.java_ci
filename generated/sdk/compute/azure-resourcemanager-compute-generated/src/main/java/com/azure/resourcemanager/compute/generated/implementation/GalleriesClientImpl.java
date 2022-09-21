@@ -851,26 +851,6 @@ public final class GalleriesClientImpl implements GalleriesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Image Gallery.
-     * @param select The select expression to apply on the operation.
-     * @param expand The expand query option to apply on the operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ApiErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the Shared Image Gallery that you want to create or update on successful
-     *     completion of {@link Mono}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<GalleryInner> getByResourceGroupAsync(
-        String resourceGroupName, String galleryName, SelectPermissions select, GalleryExpandParams expand) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, galleryName, select, expand)
-            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Retrieves information about a Shared Image Gallery.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Image Gallery.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -890,16 +870,18 @@ public final class GalleriesClientImpl implements GalleriesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Image Gallery.
+     * @param select The select expression to apply on the operation.
+     * @param expand The expand query option to apply on the operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the Shared Image Gallery that you want to create or update.
+     * @return specifies information about the Shared Image Gallery that you want to create or update along with {@link
+     *     Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public GalleryInner getByResourceGroup(String resourceGroupName, String galleryName) {
-        final SelectPermissions select = null;
-        final GalleryExpandParams expand = null;
-        return getByResourceGroupAsync(resourceGroupName, galleryName, select, expand).block();
+    public Response<GalleryInner> getByResourceGroupWithResponse(
+        String resourceGroupName, String galleryName, SelectPermissions select, GalleryExpandParams expand) {
+        return getByResourceGroupWithResponseAsync(resourceGroupName, galleryName, select, expand).block();
     }
 
     /**
@@ -924,6 +906,23 @@ public final class GalleriesClientImpl implements GalleriesClient {
         GalleryExpandParams expand,
         Context context) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, galleryName, select, expand, context).block();
+    }
+
+    /**
+     * Retrieves information about a Shared Image Gallery.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param galleryName The name of the Shared Image Gallery.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ApiErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return specifies information about the Shared Image Gallery that you want to create or update.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public GalleryInner getByResourceGroup(String resourceGroupName, String galleryName) {
+        final SelectPermissions select = null;
+        final GalleryExpandParams expand = null;
+        return getByResourceGroupWithResponse(resourceGroupName, galleryName, select, expand, Context.NONE).getValue();
     }
 
     /**

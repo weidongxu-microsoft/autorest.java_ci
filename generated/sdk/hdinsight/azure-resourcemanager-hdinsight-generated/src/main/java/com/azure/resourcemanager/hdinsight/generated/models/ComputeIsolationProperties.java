@@ -22,6 +22,10 @@ public final class ComputeIsolationProperties {
     @JsonProperty(value = "hostSku")
     private String hostSku;
 
+    /** Creates an instance of ComputeIsolationProperties class. */
+    public ComputeIsolationProperties() {
+    }
+
     /**
      * Get the enableComputeIsolation property: The flag indicates whether enable compute isolation or not.
      *

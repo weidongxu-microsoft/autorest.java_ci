@@ -28,15 +28,6 @@ public final class MetricsImpl implements Metrics {
         this.serviceManager = serviceManager;
     }
 
-    public ResponseModel list(String resourceUri) {
-        ResponseInner inner = this.serviceClient().list(resourceUri);
-        if (inner != null) {
-            return new ResponseModelImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<ResponseModel> listWithResponse(
         String resourceUri,
         String timespan,
@@ -70,6 +61,15 @@ public final class MetricsImpl implements Metrics {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new ResponseModelImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public ResponseModel list(String resourceUri) {
+        ResponseInner inner = this.serviceClient().list(resourceUri);
+        if (inner != null) {
+            return new ResponseModelImpl(inner, this.manager());
         } else {
             return null;
         }

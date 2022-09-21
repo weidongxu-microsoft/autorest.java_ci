@@ -28,16 +28,6 @@ public final class LocalNetworkGatewaysImpl implements LocalNetworkGateways {
         this.serviceManager = serviceManager;
     }
 
-    public LocalNetworkGateway getByResourceGroup(String resourceGroupName, String localNetworkGatewayName) {
-        LocalNetworkGatewayInner inner =
-            this.serviceClient().getByResourceGroup(resourceGroupName, localNetworkGatewayName);
-        if (inner != null) {
-            return new LocalNetworkGatewayImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<LocalNetworkGateway> getByResourceGroupWithResponse(
         String resourceGroupName, String localNetworkGatewayName, Context context) {
         Response<LocalNetworkGatewayInner> inner =
@@ -48,6 +38,16 @@ public final class LocalNetworkGatewaysImpl implements LocalNetworkGateways {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new LocalNetworkGatewayImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public LocalNetworkGateway getByResourceGroup(String resourceGroupName, String localNetworkGatewayName) {
+        LocalNetworkGatewayInner inner =
+            this.serviceClient().getByResourceGroup(resourceGroupName, localNetworkGatewayName);
+        if (inner != null) {
+            return new LocalNetworkGatewayImpl(inner, this.manager());
         } else {
             return null;
         }

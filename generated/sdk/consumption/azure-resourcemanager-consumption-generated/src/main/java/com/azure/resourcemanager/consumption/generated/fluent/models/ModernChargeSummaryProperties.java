@@ -77,6 +77,10 @@ public final class ModernChargeSummaryProperties {
     @JsonProperty(value = "isInvoiced", access = JsonProperty.Access.WRITE_ONLY)
     private Boolean isInvoiced;
 
+    /** Creates an instance of ModernChargeSummaryProperties class. */
+    public ModernChargeSummaryProperties() {
+    }
+
     /**
      * Get the billingPeriodId property: The id of the billing period resource that the charge belongs to.
      *

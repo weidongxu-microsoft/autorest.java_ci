@@ -164,6 +164,10 @@ public final class StorageAccountPropertiesUpdateParameters {
     @JsonProperty(value = "dnsEndpointType")
     private DnsEndpointType dnsEndpointType;
 
+    /** Creates an instance of StorageAccountPropertiesUpdateParameters class. */
+    public StorageAccountPropertiesUpdateParameters() {
+    }
+
     /**
      * Get the customDomain property: Custom domain assigned to the storage account by the user. Name is the CNAME
      * source. Only one custom domain is supported per storage account at this time. To clear the existing custom

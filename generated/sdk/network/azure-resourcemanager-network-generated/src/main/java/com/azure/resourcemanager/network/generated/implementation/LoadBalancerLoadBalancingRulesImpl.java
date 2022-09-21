@@ -39,16 +39,6 @@ public final class LoadBalancerLoadBalancingRulesImpl implements LoadBalancerLoa
         return Utils.mapPage(inner, inner1 -> new LoadBalancingRuleImpl(inner1, this.manager()));
     }
 
-    public LoadBalancingRule get(String resourceGroupName, String loadBalancerName, String loadBalancingRuleName) {
-        LoadBalancingRuleInner inner =
-            this.serviceClient().get(resourceGroupName, loadBalancerName, loadBalancingRuleName);
-        if (inner != null) {
-            return new LoadBalancingRuleImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<LoadBalancingRule> getWithResponse(
         String resourceGroupName, String loadBalancerName, String loadBalancingRuleName, Context context) {
         Response<LoadBalancingRuleInner> inner =
@@ -59,6 +49,16 @@ public final class LoadBalancerLoadBalancingRulesImpl implements LoadBalancerLoa
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new LoadBalancingRuleImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public LoadBalancingRule get(String resourceGroupName, String loadBalancerName, String loadBalancingRuleName) {
+        LoadBalancingRuleInner inner =
+            this.serviceClient().get(resourceGroupName, loadBalancerName, loadBalancingRuleName);
+        if (inner != null) {
+            return new LoadBalancingRuleImpl(inner, this.manager());
         } else {
             return null;
         }

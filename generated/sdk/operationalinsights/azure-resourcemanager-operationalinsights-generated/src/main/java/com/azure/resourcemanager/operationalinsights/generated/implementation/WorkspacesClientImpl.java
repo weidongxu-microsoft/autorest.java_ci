@@ -177,7 +177,7 @@ public final class WorkspacesClientImpl implements WorkspacesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-12-01-preview";
+        final String apiVersion = "2022-10-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -215,7 +215,7 @@ public final class WorkspacesClientImpl implements WorkspacesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-12-01-preview";
+        final String apiVersion = "2022-10-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -305,7 +305,7 @@ public final class WorkspacesClientImpl implements WorkspacesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-12-01-preview";
+        final String apiVersion = "2022-10-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -354,7 +354,7 @@ public final class WorkspacesClientImpl implements WorkspacesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-12-01-preview";
+        final String apiVersion = "2022-10-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -468,7 +468,7 @@ public final class WorkspacesClientImpl implements WorkspacesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2021-12-01-preview";
+        final String apiVersion = "2022-10-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -526,7 +526,7 @@ public final class WorkspacesClientImpl implements WorkspacesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2021-12-01-preview";
+        final String apiVersion = "2022-10-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -735,7 +735,7 @@ public final class WorkspacesClientImpl implements WorkspacesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-12-01-preview";
+        final String apiVersion = "2022-10-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -790,7 +790,7 @@ public final class WorkspacesClientImpl implements WorkspacesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-12-01-preview";
+        final String apiVersion = "2022-10-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1045,7 +1045,7 @@ public final class WorkspacesClientImpl implements WorkspacesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-12-01-preview";
+        final String apiVersion = "2022-10-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1095,7 +1095,7 @@ public final class WorkspacesClientImpl implements WorkspacesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-12-01-preview";
+        final String apiVersion = "2022-10-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1133,11 +1133,11 @@ public final class WorkspacesClientImpl implements WorkspacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a workspace instance.
+     * @return a workspace instance along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public WorkspaceInner getByResourceGroup(String resourceGroupName, String workspaceName) {
-        return getByResourceGroupAsync(resourceGroupName, workspaceName).block();
+    public Response<WorkspaceInner> getByResourceGroupWithResponse(String resourceGroupName, String workspaceName) {
+        return getByResourceGroupWithResponseAsync(resourceGroupName, workspaceName).block();
     }
 
     /**
@@ -1155,6 +1155,21 @@ public final class WorkspacesClientImpl implements WorkspacesClient {
     public Response<WorkspaceInner> getByResourceGroupWithResponse(
         String resourceGroupName, String workspaceName, Context context) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, workspaceName, context).block();
+    }
+
+    /**
+     * Gets a workspace instance.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param workspaceName The name of the workspace.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a workspace instance.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public WorkspaceInner getByResourceGroup(String resourceGroupName, String workspaceName) {
+        return getByResourceGroupWithResponse(resourceGroupName, workspaceName, Context.NONE).getValue();
     }
 
     /**
@@ -1196,7 +1211,7 @@ public final class WorkspacesClientImpl implements WorkspacesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2021-12-01-preview";
+        final String apiVersion = "2022-10-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1254,7 +1269,7 @@ public final class WorkspacesClientImpl implements WorkspacesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2021-12-01-preview";
+        final String apiVersion = "2022-10-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1296,11 +1311,12 @@ public final class WorkspacesClientImpl implements WorkspacesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the top level Workspace resource container.
+     * @return the top level Workspace resource container along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public WorkspaceInner update(String resourceGroupName, String workspaceName, WorkspacePatch parameters) {
-        return updateAsync(resourceGroupName, workspaceName, parameters).block();
+    public Response<WorkspaceInner> updateWithResponse(
+        String resourceGroupName, String workspaceName, WorkspacePatch parameters) {
+        return updateWithResponseAsync(resourceGroupName, workspaceName, parameters).block();
     }
 
     /**
@@ -1319,5 +1335,21 @@ public final class WorkspacesClientImpl implements WorkspacesClient {
     public Response<WorkspaceInner> updateWithResponse(
         String resourceGroupName, String workspaceName, WorkspacePatch parameters, Context context) {
         return updateWithResponseAsync(resourceGroupName, workspaceName, parameters, context).block();
+    }
+
+    /**
+     * Updates a workspace.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param workspaceName The name of the workspace.
+     * @param parameters The parameters required to patch a workspace.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the top level Workspace resource container.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public WorkspaceInner update(String resourceGroupName, String workspaceName, WorkspacePatch parameters) {
+        return updateWithResponse(resourceGroupName, workspaceName, parameters, Context.NONE).getValue();
     }
 }

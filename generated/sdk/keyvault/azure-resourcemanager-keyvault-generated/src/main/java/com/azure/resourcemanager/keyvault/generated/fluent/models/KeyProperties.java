@@ -71,6 +71,10 @@ public final class KeyProperties {
     @JsonProperty(value = "release_policy")
     private KeyReleasePolicy releasePolicy;
 
+    /** Creates an instance of KeyProperties class. */
+    public KeyProperties() {
+    }
+
     /**
      * Get the attributes property: The attributes of the key.
      *

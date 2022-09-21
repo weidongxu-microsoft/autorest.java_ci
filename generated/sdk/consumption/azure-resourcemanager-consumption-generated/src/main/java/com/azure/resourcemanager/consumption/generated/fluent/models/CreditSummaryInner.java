@@ -27,6 +27,10 @@ public final class CreditSummaryInner extends ProxyResource {
     @JsonProperty(value = "eTag")
     private String etag;
 
+    /** Creates an instance of CreditSummaryInner class. */
+    public CreditSummaryInner() {
+    }
+
     /**
      * Get the innerProperties property: The properties of the credit summary.
      *

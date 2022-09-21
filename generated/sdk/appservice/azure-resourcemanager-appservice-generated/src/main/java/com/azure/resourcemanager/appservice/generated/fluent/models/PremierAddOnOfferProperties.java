@@ -71,6 +71,10 @@ public final class PremierAddOnOfferProperties {
     @JsonProperty(value = "marketplaceOffer")
     private String marketplaceOffer;
 
+    /** Creates an instance of PremierAddOnOfferProperties class. */
+    public PremierAddOnOfferProperties() {
+    }
+
     /**
      * Get the sku property: Premier add on SKU.
      *

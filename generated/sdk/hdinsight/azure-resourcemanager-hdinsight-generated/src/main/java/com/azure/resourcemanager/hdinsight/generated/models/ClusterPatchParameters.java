@@ -19,6 +19,10 @@ public final class ClusterPatchParameters {
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, String> tags;
 
+    /** Creates an instance of ClusterPatchParameters class. */
+    public ClusterPatchParameters() {
+    }
+
     /**
      * Get the tags property: The resource tags.
      *

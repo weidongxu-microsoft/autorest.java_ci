@@ -22,18 +22,6 @@ public interface ResourceGroupsClient {
      * Checks whether a resource group exists.
      *
      * @param resourceGroupName The name of the resource group to check. The name is case insensitive.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return whether resource exists.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    boolean checkExistence(String resourceGroupName);
-
-    /**
-     * Checks whether a resource group exists.
-     *
-     * @param resourceGroupName The name of the resource group to check. The name is case insensitive.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -44,19 +32,16 @@ public interface ResourceGroupsClient {
     Response<Boolean> checkExistenceWithResponse(String resourceGroupName, Context context);
 
     /**
-     * Creates or updates a resource group.
+     * Checks whether a resource group exists.
      *
-     * @param resourceGroupName The name of the resource group to create or update. Can include alphanumeric,
-     *     underscore, parentheses, hyphen, period (except at end), and Unicode characters that match the allowed
-     *     characters.
-     * @param parameters Parameters supplied to the create or update a resource group.
+     * @param resourceGroupName The name of the resource group to check. The name is case insensitive.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource group information.
+     * @return whether resource exists.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    ResourceGroupInner createOrUpdate(String resourceGroupName, ResourceGroupInner parameters);
+    boolean checkExistence(String resourceGroupName);
 
     /**
      * Creates or updates a resource group.
@@ -74,6 +59,21 @@ public interface ResourceGroupsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ResourceGroupInner> createOrUpdateWithResponse(
         String resourceGroupName, ResourceGroupInner parameters, Context context);
+
+    /**
+     * Creates or updates a resource group.
+     *
+     * @param resourceGroupName The name of the resource group to create or update. Can include alphanumeric,
+     *     underscore, parentheses, hyphen, period (except at end), and Unicode characters that match the allowed
+     *     characters.
+     * @param parameters Parameters supplied to the create or update a resource group.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return resource group information.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    ResourceGroupInner createOrUpdate(String resourceGroupName, ResourceGroupInner parameters);
 
     /**
      * Deletes a resource group.
@@ -162,18 +162,6 @@ public interface ResourceGroupsClient {
      * Gets a resource group.
      *
      * @param resourceGroupName The name of the resource group to get. The name is case insensitive.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a resource group.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    ResourceGroupInner get(String resourceGroupName);
-
-    /**
-     * Gets a resource group.
-     *
-     * @param resourceGroupName The name of the resource group to get. The name is case insensitive.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -184,20 +172,16 @@ public interface ResourceGroupsClient {
     Response<ResourceGroupInner> getWithResponse(String resourceGroupName, Context context);
 
     /**
-     * Updates a resource group.
+     * Gets a resource group.
      *
-     * <p>Resource groups can be updated through a simple PATCH operation to a group address. The format of the request
-     * is the same as that for creating a resource group. If a field is unspecified, the current value is retained.
-     *
-     * @param resourceGroupName The name of the resource group to update. The name is case insensitive.
-     * @param parameters Parameters supplied to update a resource group.
+     * @param resourceGroupName The name of the resource group to get. The name is case insensitive.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource group information.
+     * @return a resource group.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    ResourceGroupInner update(String resourceGroupName, ResourceGroupPatchable parameters);
+    ResourceGroupInner get(String resourceGroupName);
 
     /**
      * Updates a resource group.
@@ -216,6 +200,22 @@ public interface ResourceGroupsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ResourceGroupInner> updateWithResponse(
         String resourceGroupName, ResourceGroupPatchable parameters, Context context);
+
+    /**
+     * Updates a resource group.
+     *
+     * <p>Resource groups can be updated through a simple PATCH operation to a group address. The format of the request
+     * is the same as that for creating a resource group. If a field is unspecified, the current value is retained.
+     *
+     * @param resourceGroupName The name of the resource group to update. The name is case insensitive.
+     * @param parameters Parameters supplied to update a resource group.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return resource group information.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    ResourceGroupInner update(String resourceGroupName, ResourceGroupPatchable parameters);
 
     /**
      * Captures the specified resource group as a template.

@@ -49,21 +49,6 @@ public interface TopLevelDomainsClient {
      * <p>Description for Get details of a top-level domain.
      *
      * @param name Name of the top-level domain.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a top level domain object.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    TopLevelDomainInner get(String name);
-
-    /**
-     * Get details of a top-level domain.
-     *
-     * <p>Description for Get details of a top-level domain.
-     *
-     * @param name Name of the top-level domain.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -73,6 +58,21 @@ public interface TopLevelDomainsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<TopLevelDomainInner> getWithResponse(String name, Context context);
+
+    /**
+     * Get details of a top-level domain.
+     *
+     * <p>Description for Get details of a top-level domain.
+     *
+     * @param name Name of the top-level domain.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a top level domain object.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    TopLevelDomainInner get(String name);
 
     /**
      * Gets all legal agreements that user needs to accept before purchasing a domain.

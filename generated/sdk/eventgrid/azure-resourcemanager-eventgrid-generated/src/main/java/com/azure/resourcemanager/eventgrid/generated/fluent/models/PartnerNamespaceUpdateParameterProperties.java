@@ -37,6 +37,10 @@ public final class PartnerNamespaceUpdateParameterProperties {
     @JsonProperty(value = "disableLocalAuth")
     private Boolean disableLocalAuth;
 
+    /** Creates an instance of PartnerNamespaceUpdateParameterProperties class. */
+    public PartnerNamespaceUpdateParameterProperties() {
+    }
+
     /**
      * Get the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is
      * enabled. You can further restrict to specific IPs by configuring &lt;seealso

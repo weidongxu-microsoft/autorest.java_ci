@@ -73,19 +73,6 @@ public interface NatGatewaysClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param natGatewayName The name of the nat gateway.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified nat gateway in a specified resource group.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    NatGatewayInner getByResourceGroup(String resourceGroupName, String natGatewayName);
-
-    /**
-     * Gets the specified nat gateway in a specified resource group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param natGatewayName The name of the nat gateway.
      * @param expand Expands referenced resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -96,6 +83,19 @@ public interface NatGatewaysClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<NatGatewayInner> getByResourceGroupWithResponse(
         String resourceGroupName, String natGatewayName, String expand, Context context);
+
+    /**
+     * Gets the specified nat gateway in a specified resource group.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param natGatewayName The name of the nat gateway.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified nat gateway in a specified resource group.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    NatGatewayInner getByResourceGroup(String resourceGroupName, String natGatewayName);
 
     /**
      * Creates or updates a nat gateway.
@@ -164,20 +164,6 @@ public interface NatGatewaysClient {
      * @param resourceGroupName The name of the resource group.
      * @param natGatewayName The name of the nat gateway.
      * @param parameters Parameters supplied to update nat gateway tags.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return nat Gateway resource.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    NatGatewayInner updateTags(String resourceGroupName, String natGatewayName, TagsObject parameters);
-
-    /**
-     * Updates nat gateway tags.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param natGatewayName The name of the nat gateway.
-     * @param parameters Parameters supplied to update nat gateway tags.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -187,6 +173,20 @@ public interface NatGatewaysClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<NatGatewayInner> updateTagsWithResponse(
         String resourceGroupName, String natGatewayName, TagsObject parameters, Context context);
+
+    /**
+     * Updates nat gateway tags.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param natGatewayName The name of the nat gateway.
+     * @param parameters Parameters supplied to update nat gateway tags.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return nat Gateway resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    NatGatewayInner updateTags(String resourceGroupName, String natGatewayName, TagsObject parameters);
 
     /**
      * Gets all the Nat Gateways in a subscription.

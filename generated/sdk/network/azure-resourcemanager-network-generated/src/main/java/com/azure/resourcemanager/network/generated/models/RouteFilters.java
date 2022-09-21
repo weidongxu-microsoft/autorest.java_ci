@@ -38,18 +38,6 @@ public interface RouteFilters {
      *
      * @param resourceGroupName The name of the resource group.
      * @param routeFilterName The name of the route filter.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified route filter.
-     */
-    RouteFilter getByResourceGroup(String resourceGroupName, String routeFilterName);
-
-    /**
-     * Gets the specified route filter.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param routeFilterName The name of the route filter.
      * @param expand Expands referenced express route bgp peering resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -59,6 +47,18 @@ public interface RouteFilters {
      */
     Response<RouteFilter> getByResourceGroupWithResponse(
         String resourceGroupName, String routeFilterName, String expand, Context context);
+
+    /**
+     * Gets the specified route filter.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param routeFilterName The name of the route filter.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified route filter.
+     */
+    RouteFilter getByResourceGroup(String resourceGroupName, String routeFilterName);
 
     /**
      * Gets all route filters in a resource group.

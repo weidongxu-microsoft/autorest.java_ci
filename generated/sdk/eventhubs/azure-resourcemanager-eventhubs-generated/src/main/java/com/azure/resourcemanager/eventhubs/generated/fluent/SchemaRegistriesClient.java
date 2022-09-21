@@ -52,22 +52,6 @@ public interface SchemaRegistriesClient {
      * @param namespaceName The Namespace name.
      * @param schemaGroupName The Schema Group name.
      * @param parameters Parameters supplied to create an Event Hub resource.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in List or Get Schema Group operation.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    SchemaGroupInner createOrUpdate(
-        String resourceGroupName, String namespaceName, String schemaGroupName, SchemaGroupInner parameters);
-
-    /**
-     * The createOrUpdate operation.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param namespaceName The Namespace name.
-     * @param schemaGroupName The Schema Group name.
-     * @param parameters Parameters supplied to create an Event Hub resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -83,17 +67,20 @@ public interface SchemaRegistriesClient {
         Context context);
 
     /**
-     * The delete operation.
+     * The createOrUpdate operation.
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param schemaGroupName The Schema Group name.
+     * @param parameters Parameters supplied to create an Event Hub resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return single item in List or Get Schema Group operation.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    void delete(String resourceGroupName, String namespaceName, String schemaGroupName);
+    SchemaGroupInner createOrUpdate(
+        String resourceGroupName, String namespaceName, String schemaGroupName, SchemaGroupInner parameters);
 
     /**
      * The delete operation.
@@ -112,7 +99,7 @@ public interface SchemaRegistriesClient {
         String resourceGroupName, String namespaceName, String schemaGroupName, Context context);
 
     /**
-     * The get operation.
+     * The delete operation.
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -120,10 +107,9 @@ public interface SchemaRegistriesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in List or Get Schema Group operation.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    SchemaGroupInner get(String resourceGroupName, String namespaceName, String schemaGroupName);
+    void delete(String resourceGroupName, String namespaceName, String schemaGroupName);
 
     /**
      * The get operation.
@@ -140,4 +126,18 @@ public interface SchemaRegistriesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<SchemaGroupInner> getWithResponse(
         String resourceGroupName, String namespaceName, String schemaGroupName, Context context);
+
+    /**
+     * The get operation.
+     *
+     * @param resourceGroupName Name of the resource group within the azure subscription.
+     * @param namespaceName The Namespace name.
+     * @param schemaGroupName The Schema Group name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return single item in List or Get Schema Group operation.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    SchemaGroupInner get(String resourceGroupName, String namespaceName, String schemaGroupName);
 }

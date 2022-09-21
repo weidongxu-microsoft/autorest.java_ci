@@ -21,6 +21,10 @@ public final class NodeInner extends ArmBaseModel {
     @JsonProperty(value = "properties", access = JsonProperty.Access.WRITE_ONLY)
     private NodeProperties innerProperties;
 
+    /** Creates an instance of NodeInner class. */
+    public NodeInner() {
+    }
+
     /**
      * Get the innerProperties property: The properties of the node.
      *

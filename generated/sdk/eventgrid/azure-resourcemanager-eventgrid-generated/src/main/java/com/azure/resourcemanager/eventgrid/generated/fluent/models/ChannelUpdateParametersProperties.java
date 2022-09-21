@@ -26,6 +26,10 @@ public final class ChannelUpdateParametersProperties {
     @JsonProperty(value = "partnerTopicInfo")
     private PartnerUpdateTopicInfo partnerTopicInfo;
 
+    /** Creates an instance of ChannelUpdateParametersProperties class. */
+    public ChannelUpdateParametersProperties() {
+    }
+
     /**
      * Get the expirationTimeIfNotActivatedUtc property: Expiration time of the channel. If this timer expires while the
      * corresponding partner topic or partner destination is never activated, the channel and corresponding partner

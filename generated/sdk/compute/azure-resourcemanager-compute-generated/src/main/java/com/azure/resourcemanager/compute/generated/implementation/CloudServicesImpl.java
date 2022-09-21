@@ -38,15 +38,6 @@ public final class CloudServicesImpl implements CloudServices {
         this.serviceClient().delete(resourceGroupName, cloudServiceName, context);
     }
 
-    public CloudService getByResourceGroup(String resourceGroupName, String cloudServiceName) {
-        CloudServiceInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, cloudServiceName);
-        if (inner != null) {
-            return new CloudServiceImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<CloudService> getByResourceGroupWithResponse(
         String resourceGroupName, String cloudServiceName, Context context) {
         Response<CloudServiceInner> inner =
@@ -62,10 +53,10 @@ public final class CloudServicesImpl implements CloudServices {
         }
     }
 
-    public CloudServiceInstanceView getInstanceView(String resourceGroupName, String cloudServiceName) {
-        CloudServiceInstanceViewInner inner = this.serviceClient().getInstanceView(resourceGroupName, cloudServiceName);
+    public CloudService getByResourceGroup(String resourceGroupName, String cloudServiceName) {
+        CloudServiceInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, cloudServiceName);
         if (inner != null) {
-            return new CloudServiceInstanceViewImpl(inner, this.manager());
+            return new CloudServiceImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -81,6 +72,15 @@ public final class CloudServicesImpl implements CloudServices {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new CloudServiceInstanceViewImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public CloudServiceInstanceView getInstanceView(String resourceGroupName, String cloudServiceName) {
+        CloudServiceInstanceViewInner inner = this.serviceClient().getInstanceView(resourceGroupName, cloudServiceName);
+        if (inner != null) {
+            return new CloudServiceInstanceViewImpl(inner, this.manager());
         } else {
             return null;
         }

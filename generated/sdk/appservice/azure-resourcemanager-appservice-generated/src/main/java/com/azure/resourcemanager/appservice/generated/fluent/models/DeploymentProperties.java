@@ -65,6 +65,10 @@ public final class DeploymentProperties {
     @JsonProperty(value = "details")
     private String details;
 
+    /** Creates an instance of DeploymentProperties class. */
+    public DeploymentProperties() {
+    }
+
     /**
      * Get the status property: Deployment status.
      *

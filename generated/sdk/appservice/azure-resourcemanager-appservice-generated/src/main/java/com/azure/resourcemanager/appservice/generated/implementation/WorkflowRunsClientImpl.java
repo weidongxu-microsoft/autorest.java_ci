@@ -500,11 +500,12 @@ public final class WorkflowRunsClientImpl implements WorkflowRunsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a workflow run.
+     * @return a workflow run along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public WorkflowRunInner get(String resourceGroupName, String name, String workflowName, String runName) {
-        return getAsync(resourceGroupName, name, workflowName, runName).block();
+    public Response<WorkflowRunInner> getWithResponse(
+        String resourceGroupName, String name, String workflowName, String runName) {
+        return getWithResponseAsync(resourceGroupName, name, workflowName, runName).block();
     }
 
     /**
@@ -524,6 +525,23 @@ public final class WorkflowRunsClientImpl implements WorkflowRunsClient {
     public Response<WorkflowRunInner> getWithResponse(
         String resourceGroupName, String name, String workflowName, String runName, Context context) {
         return getWithResponseAsync(resourceGroupName, name, workflowName, runName, context).block();
+    }
+
+    /**
+     * Gets a workflow run.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Site name.
+     * @param workflowName The workflow name.
+     * @param runName The workflow run name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a workflow run.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public WorkflowRunInner get(String resourceGroupName, String name, String workflowName, String runName) {
+        return getWithResponse(resourceGroupName, name, workflowName, runName, Context.NONE).getValue();
     }
 
     /**
@@ -667,10 +685,12 @@ public final class WorkflowRunsClientImpl implements WorkflowRunsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public void cancel(String resourceGroupName, String name, String workflowName, String runName) {
-        cancelAsync(resourceGroupName, name, workflowName, runName).block();
+    public Response<Void> cancelWithResponse(
+        String resourceGroupName, String name, String workflowName, String runName) {
+        return cancelWithResponseAsync(resourceGroupName, name, workflowName, runName).block();
     }
 
     /**
@@ -690,6 +710,22 @@ public final class WorkflowRunsClientImpl implements WorkflowRunsClient {
     public Response<Void> cancelWithResponse(
         String resourceGroupName, String name, String workflowName, String runName, Context context) {
         return cancelWithResponseAsync(resourceGroupName, name, workflowName, runName, context).block();
+    }
+
+    /**
+     * Cancels a workflow run.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Site name.
+     * @param workflowName The workflow name.
+     * @param runName The workflow run name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public void cancel(String resourceGroupName, String name, String workflowName, String runName) {
+        cancelWithResponse(resourceGroupName, name, workflowName, runName, Context.NONE);
     }
 
     /**

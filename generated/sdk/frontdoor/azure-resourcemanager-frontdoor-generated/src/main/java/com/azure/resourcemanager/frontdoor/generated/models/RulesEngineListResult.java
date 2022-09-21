@@ -27,6 +27,10 @@ public final class RulesEngineListResult {
     @JsonProperty(value = "nextLink")
     private String nextLink;
 
+    /** Creates an instance of RulesEngineListResult class. */
+    public RulesEngineListResult() {
+    }
+
     /**
      * Get the value property: List of rulesEngines within a Front Door.
      *

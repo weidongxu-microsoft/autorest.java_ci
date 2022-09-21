@@ -28,15 +28,6 @@ public final class WaitStatisticsImpl implements WaitStatistics {
         this.serviceManager = serviceManager;
     }
 
-    public WaitStatistic get(String resourceGroupName, String serverName, String waitStatisticsId) {
-        WaitStatisticInner inner = this.serviceClient().get(resourceGroupName, serverName, waitStatisticsId);
-        if (inner != null) {
-            return new WaitStatisticImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<WaitStatistic> getWithResponse(
         String resourceGroupName, String serverName, String waitStatisticsId, Context context) {
         Response<WaitStatisticInner> inner =
@@ -47,6 +38,15 @@ public final class WaitStatisticsImpl implements WaitStatistics {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new WaitStatisticImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public WaitStatistic get(String resourceGroupName, String serverName, String waitStatisticsId) {
+        WaitStatisticInner inner = this.serviceClient().get(resourceGroupName, serverName, waitStatisticsId);
+        if (inner != null) {
+            return new WaitStatisticImpl(inner, this.manager());
         } else {
             return null;
         }

@@ -475,12 +475,13 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified private endpoint connection associated with the managed HSM Pool.
+     * @return the specified private endpoint connection associated with the managed HSM Pool along with {@link
+     *     Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public MhsmPrivateEndpointConnectionInner get(
+    public Response<MhsmPrivateEndpointConnectionInner> getWithResponse(
         String resourceGroupName, String name, String privateEndpointConnectionName) {
-        return getAsync(resourceGroupName, name, privateEndpointConnectionName).block();
+        return getWithResponseAsync(resourceGroupName, name, privateEndpointConnectionName).block();
     }
 
     /**
@@ -501,6 +502,24 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
     public Response<MhsmPrivateEndpointConnectionInner> getWithResponse(
         String resourceGroupName, String name, String privateEndpointConnectionName, Context context) {
         return getWithResponseAsync(resourceGroupName, name, privateEndpointConnectionName, context).block();
+    }
+
+    /**
+     * Gets the specified private endpoint connection associated with the managed HSM Pool.
+     *
+     * @param resourceGroupName Name of the resource group that contains the managed HSM pool.
+     * @param name Name of the managed HSM Pool.
+     * @param privateEndpointConnectionName Name of the private endpoint connection associated with the managed hsm
+     *     pool.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified private endpoint connection associated with the managed HSM Pool.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public MhsmPrivateEndpointConnectionInner get(
+        String resourceGroupName, String name, String privateEndpointConnectionName) {
+        return getWithResponse(resourceGroupName, name, privateEndpointConnectionName, Context.NONE).getValue();
     }
 
     /**
@@ -673,12 +692,12 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
      * @return private endpoint connection resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public MhsmPrivateEndpointConnectionInner put(
+    public MhsmPrivateEndpointConnectionsPutResponse putWithResponse(
         String resourceGroupName,
         String name,
         String privateEndpointConnectionName,
         MhsmPrivateEndpointConnectionInner properties) {
-        return putAsync(resourceGroupName, name, privateEndpointConnectionName, properties).block();
+        return putWithResponseAsync(resourceGroupName, name, privateEndpointConnectionName, properties).block();
     }
 
     /**
@@ -704,6 +723,29 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
         Context context) {
         return putWithResponseAsync(resourceGroupName, name, privateEndpointConnectionName, properties, context)
             .block();
+    }
+
+    /**
+     * Updates the specified private endpoint connection associated with the managed hsm pool.
+     *
+     * @param resourceGroupName Name of the resource group that contains the managed HSM pool.
+     * @param name Name of the managed HSM Pool.
+     * @param privateEndpointConnectionName Name of the private endpoint connection associated with the managed hsm
+     *     pool.
+     * @param properties The intended state of private endpoint connection.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return private endpoint connection resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public MhsmPrivateEndpointConnectionInner put(
+        String resourceGroupName,
+        String name,
+        String privateEndpointConnectionName,
+        MhsmPrivateEndpointConnectionInner properties) {
+        return putWithResponse(resourceGroupName, name, privateEndpointConnectionName, properties, Context.NONE)
+            .getValue();
     }
 
     /**

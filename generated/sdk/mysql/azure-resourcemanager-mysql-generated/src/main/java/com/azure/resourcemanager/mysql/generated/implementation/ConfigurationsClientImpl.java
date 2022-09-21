@@ -558,11 +558,12 @@ public final class ConfigurationsClientImpl implements ConfigurationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a configuration of server.
+     * @return information about a configuration of server along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ConfigurationInner get(String resourceGroupName, String serverName, String configurationName) {
-        return getAsync(resourceGroupName, serverName, configurationName).block();
+    public Response<ConfigurationInner> getWithResponse(
+        String resourceGroupName, String serverName, String configurationName) {
+        return getWithResponseAsync(resourceGroupName, serverName, configurationName).block();
     }
 
     /**
@@ -581,6 +582,22 @@ public final class ConfigurationsClientImpl implements ConfigurationsClient {
     public Response<ConfigurationInner> getWithResponse(
         String resourceGroupName, String serverName, String configurationName, Context context) {
         return getWithResponseAsync(resourceGroupName, serverName, configurationName, context).block();
+    }
+
+    /**
+     * Gets information about a configuration of server.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param serverName The name of the server.
+     * @param configurationName The name of the server configuration.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return information about a configuration of server.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ConfigurationInner get(String resourceGroupName, String serverName, String configurationName) {
+        return getWithResponse(resourceGroupName, serverName, configurationName, Context.NONE).getValue();
     }
 
     /**

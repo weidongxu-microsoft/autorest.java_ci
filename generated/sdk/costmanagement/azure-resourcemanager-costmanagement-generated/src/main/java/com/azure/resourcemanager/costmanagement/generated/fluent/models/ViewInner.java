@@ -35,6 +35,10 @@ public final class ViewInner extends ProxyResource {
     @JsonProperty(value = "eTag")
     private String etag;
 
+    /** Creates an instance of ViewInner class. */
+    public ViewInner() {
+    }
+
     /**
      * Get the innerProperties property: The properties of the view.
      *

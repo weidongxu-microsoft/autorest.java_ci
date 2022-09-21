@@ -94,6 +94,10 @@ public final class ValidatePropertiesInner {
     @JsonProperty(value = "appServiceEnvironment")
     private AppServiceEnvironmentInner appServiceEnvironment;
 
+    /** Creates an instance of ValidatePropertiesInner class. */
+    public ValidatePropertiesInner() {
+    }
+
     /**
      * Get the serverFarmId property: ARM resource ID of an App Service plan that would host the app.
      *

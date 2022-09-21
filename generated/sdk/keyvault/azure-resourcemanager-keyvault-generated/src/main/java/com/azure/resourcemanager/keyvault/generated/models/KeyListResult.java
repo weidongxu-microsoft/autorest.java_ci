@@ -24,6 +24,10 @@ public final class KeyListResult {
     @JsonProperty(value = "nextLink")
     private String nextLink;
 
+    /** Creates an instance of KeyListResult class. */
+    public KeyListResult() {
+    }
+
     /**
      * Get the value property: The key resources.
      *

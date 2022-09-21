@@ -48,6 +48,10 @@ public final class RulesEngineRule {
     @JsonProperty(value = "matchProcessingBehavior")
     private MatchProcessingBehavior matchProcessingBehavior;
 
+    /** Creates an instance of RulesEngineRule class. */
+    public RulesEngineRule() {
+    }
+
     /**
      * Get the name property: A name to refer to this specific rule.
      *

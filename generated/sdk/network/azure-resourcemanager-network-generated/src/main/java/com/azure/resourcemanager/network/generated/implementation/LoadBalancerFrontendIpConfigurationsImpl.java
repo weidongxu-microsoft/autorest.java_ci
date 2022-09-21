@@ -41,17 +41,6 @@ public final class LoadBalancerFrontendIpConfigurationsImpl implements LoadBalan
         return Utils.mapPage(inner, inner1 -> new FrontendIpConfigurationImpl(inner1, this.manager()));
     }
 
-    public FrontendIpConfiguration get(
-        String resourceGroupName, String loadBalancerName, String frontendIpConfigurationName) {
-        FrontendIpConfigurationInner inner =
-            this.serviceClient().get(resourceGroupName, loadBalancerName, frontendIpConfigurationName);
-        if (inner != null) {
-            return new FrontendIpConfigurationImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<FrontendIpConfiguration> getWithResponse(
         String resourceGroupName, String loadBalancerName, String frontendIpConfigurationName, Context context) {
         Response<FrontendIpConfigurationInner> inner =
@@ -64,6 +53,17 @@ public final class LoadBalancerFrontendIpConfigurationsImpl implements LoadBalan
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new FrontendIpConfigurationImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public FrontendIpConfiguration get(
+        String resourceGroupName, String loadBalancerName, String frontendIpConfigurationName) {
+        FrontendIpConfigurationInner inner =
+            this.serviceClient().get(resourceGroupName, loadBalancerName, frontendIpConfigurationName);
+        if (inner != null) {
+            return new FrontendIpConfigurationImpl(inner, this.manager());
         } else {
             return null;
         }

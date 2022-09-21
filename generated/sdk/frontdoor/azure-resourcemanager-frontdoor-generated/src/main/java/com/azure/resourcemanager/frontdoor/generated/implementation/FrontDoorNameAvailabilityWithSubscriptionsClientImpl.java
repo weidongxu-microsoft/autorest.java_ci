@@ -193,11 +193,12 @@ public final class FrontDoorNameAvailabilityWithSubscriptionsClientImpl
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return output of check name availability API.
+     * @return output of check name availability API along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public CheckNameAvailabilityOutputInner check(CheckNameAvailabilityInput checkFrontDoorNameAvailabilityInput) {
-        return checkAsync(checkFrontDoorNameAvailabilityInput).block();
+    public Response<CheckNameAvailabilityOutputInner> checkWithResponse(
+        CheckNameAvailabilityInput checkFrontDoorNameAvailabilityInput) {
+        return checkWithResponseAsync(checkFrontDoorNameAvailabilityInput).block();
     }
 
     /**
@@ -214,5 +215,19 @@ public final class FrontDoorNameAvailabilityWithSubscriptionsClientImpl
     public Response<CheckNameAvailabilityOutputInner> checkWithResponse(
         CheckNameAvailabilityInput checkFrontDoorNameAvailabilityInput, Context context) {
         return checkWithResponseAsync(checkFrontDoorNameAvailabilityInput, context).block();
+    }
+
+    /**
+     * Check the availability of a Front Door subdomain.
+     *
+     * @param checkFrontDoorNameAvailabilityInput Input to check.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return output of check name availability API.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public CheckNameAvailabilityOutputInner check(CheckNameAvailabilityInput checkFrontDoorNameAvailabilityInput) {
+        return checkWithResponse(checkFrontDoorNameAvailabilityInput, Context.NONE).getValue();
     }
 }

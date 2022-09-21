@@ -99,6 +99,10 @@ public final class FunctionAppRuntimeSettings {
     @JsonProperty(value = "isDefault", access = JsonProperty.Access.WRITE_ONLY)
     private Boolean isDefault;
 
+    /** Creates an instance of FunctionAppRuntimeSettings class. */
+    public FunctionAppRuntimeSettings() {
+    }
+
     /**
      * Get the runtimeVersion property: Function App stack minor version (runtime only).
      *

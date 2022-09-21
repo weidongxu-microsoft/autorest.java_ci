@@ -69,15 +69,6 @@ public final class AppServicePlansImpl implements AppServicePlans {
         return Utils.mapPage(inner, inner1 -> new AppServicePlanImpl(inner1, this.manager()));
     }
 
-    public AppServicePlan getByResourceGroup(String resourceGroupName, String name) {
-        AppServicePlanInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, name);
-        if (inner != null) {
-            return new AppServicePlanImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<AppServicePlan> getByResourceGroupWithResponse(
         String resourceGroupName, String name, Context context) {
         Response<AppServicePlanInner> inner =
@@ -93,26 +84,21 @@ public final class AppServicePlansImpl implements AppServicePlans {
         }
     }
 
-    public void deleteByResourceGroup(String resourceGroupName, String name) {
-        this.serviceClient().delete(resourceGroupName, name);
+    public AppServicePlan getByResourceGroup(String resourceGroupName, String name) {
+        AppServicePlanInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, name);
+        if (inner != null) {
+            return new AppServicePlanImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
-    public Response<Void> deleteWithResponse(String resourceGroupName, String name, Context context) {
+    public Response<Void> deleteByResourceGroupWithResponse(String resourceGroupName, String name, Context context) {
         return this.serviceClient().deleteWithResponse(resourceGroupName, name, context);
     }
 
-    public List<Capability> listCapabilities(String resourceGroupName, String name) {
-        List<CapabilityInner> inner = this.serviceClient().listCapabilities(resourceGroupName, name);
-        if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new CapabilityImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
-        } else {
-            return Collections.emptyList();
-        }
+    public void deleteByResourceGroup(String resourceGroupName, String name) {
+        this.serviceClient().delete(resourceGroupName, name);
     }
 
     public Response<List<Capability>> listCapabilitiesWithResponse(
@@ -134,14 +120,17 @@ public final class AppServicePlansImpl implements AppServicePlans {
         }
     }
 
-    public HybridConnection getHybridConnection(
-        String resourceGroupName, String name, String namespaceName, String relayName) {
-        HybridConnectionInner inner =
-            this.serviceClient().getHybridConnection(resourceGroupName, name, namespaceName, relayName);
+    public List<Capability> listCapabilities(String resourceGroupName, String name) {
+        List<CapabilityInner> inner = this.serviceClient().listCapabilities(resourceGroupName, name);
         if (inner != null) {
-            return new HybridConnectionImpl(inner, this.manager());
+            return Collections
+                .unmodifiableList(
+                    inner
+                        .stream()
+                        .map(inner1 -> new CapabilityImpl(inner1, this.manager()))
+                        .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -162,8 +151,15 @@ public final class AppServicePlansImpl implements AppServicePlans {
         }
     }
 
-    public void deleteHybridConnection(String resourceGroupName, String name, String namespaceName, String relayName) {
-        this.serviceClient().deleteHybridConnection(resourceGroupName, name, namespaceName, relayName);
+    public HybridConnection getHybridConnection(
+        String resourceGroupName, String name, String namespaceName, String relayName) {
+        HybridConnectionInner inner =
+            this.serviceClient().getHybridConnection(resourceGroupName, name, namespaceName, relayName);
+        if (inner != null) {
+            return new HybridConnectionImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> deleteHybridConnectionWithResponse(
@@ -173,15 +169,8 @@ public final class AppServicePlansImpl implements AppServicePlans {
             .deleteHybridConnectionWithResponse(resourceGroupName, name, namespaceName, relayName, context);
     }
 
-    public HybridConnectionKey listHybridConnectionKeys(
-        String resourceGroupName, String name, String namespaceName, String relayName) {
-        HybridConnectionKeyInner inner =
-            this.serviceClient().listHybridConnectionKeys(resourceGroupName, name, namespaceName, relayName);
-        if (inner != null) {
-            return new HybridConnectionKeyImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void deleteHybridConnection(String resourceGroupName, String name, String namespaceName, String relayName) {
+        this.serviceClient().deleteHybridConnection(resourceGroupName, name, namespaceName, relayName);
     }
 
     public Response<HybridConnectionKey> listHybridConnectionKeysWithResponse(
@@ -201,6 +190,17 @@ public final class AppServicePlansImpl implements AppServicePlans {
         }
     }
 
+    public HybridConnectionKey listHybridConnectionKeys(
+        String resourceGroupName, String name, String namespaceName, String relayName) {
+        HybridConnectionKeyInner inner =
+            this.serviceClient().listHybridConnectionKeys(resourceGroupName, name, namespaceName, relayName);
+        if (inner != null) {
+            return new HybridConnectionKeyImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
     public PagedIterable<String> listWebAppsByHybridConnection(
         String resourceGroupName, String name, String namespaceName, String relayName) {
         return this.serviceClient().listWebAppsByHybridConnection(resourceGroupName, name, namespaceName, relayName);
@@ -213,15 +213,6 @@ public final class AppServicePlansImpl implements AppServicePlans {
             .listWebAppsByHybridConnection(resourceGroupName, name, namespaceName, relayName, context);
     }
 
-    public HybridConnectionLimits getHybridConnectionPlanLimit(String resourceGroupName, String name) {
-        HybridConnectionLimitsInner inner = this.serviceClient().getHybridConnectionPlanLimit(resourceGroupName, name);
-        if (inner != null) {
-            return new HybridConnectionLimitsImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<HybridConnectionLimits> getHybridConnectionPlanLimitWithResponse(
         String resourceGroupName, String name, Context context) {
         Response<HybridConnectionLimitsInner> inner =
@@ -232,6 +223,15 @@ public final class AppServicePlansImpl implements AppServicePlans {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new HybridConnectionLimitsImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public HybridConnectionLimits getHybridConnectionPlanLimit(String resourceGroupName, String name) {
+        HybridConnectionLimitsInner inner = this.serviceClient().getHybridConnectionPlanLimit(resourceGroupName, name);
+        if (inner != null) {
+            return new HybridConnectionLimitsImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -250,13 +250,13 @@ public final class AppServicePlansImpl implements AppServicePlans {
         return Utils.mapPage(inner, inner1 -> new HybridConnectionImpl(inner1, this.manager()));
     }
 
-    public void restartWebApps(String resourceGroupName, String name) {
-        this.serviceClient().restartWebApps(resourceGroupName, name);
-    }
-
     public Response<Void> restartWebAppsWithResponse(
         String resourceGroupName, String name, Boolean softRestart, Context context) {
         return this.serviceClient().restartWebAppsWithResponse(resourceGroupName, name, softRestart, context);
+    }
+
+    public void restartWebApps(String resourceGroupName, String name) {
+        this.serviceClient().restartWebApps(resourceGroupName, name);
     }
 
     public PagedIterable<Site> listWebApps(String resourceGroupName, String name) {
@@ -271,12 +271,12 @@ public final class AppServicePlansImpl implements AppServicePlans {
         return Utils.mapPage(inner, inner1 -> new SiteImpl(inner1, this.manager()));
     }
 
-    public Object getServerFarmSkus(String resourceGroupName, String name) {
-        return this.serviceClient().getServerFarmSkus(resourceGroupName, name);
-    }
-
     public Response<Object> getServerFarmSkusWithResponse(String resourceGroupName, String name, Context context) {
         return this.serviceClient().getServerFarmSkusWithResponse(resourceGroupName, name, context);
+    }
+
+    public Object getServerFarmSkus(String resourceGroupName, String name) {
+        return this.serviceClient().getServerFarmSkus(resourceGroupName, name);
     }
 
     public PagedIterable<CsmUsageQuota> listUsages(String resourceGroupName, String name) {
@@ -289,20 +289,6 @@ public final class AppServicePlansImpl implements AppServicePlans {
         PagedIterable<CsmUsageQuotaInner> inner =
             this.serviceClient().listUsages(resourceGroupName, name, filter, context);
         return Utils.mapPage(inner, inner1 -> new CsmUsageQuotaImpl(inner1, this.manager()));
-    }
-
-    public List<VnetInfoResource> listVnets(String resourceGroupName, String name) {
-        List<VnetInfoResourceInner> inner = this.serviceClient().listVnets(resourceGroupName, name);
-        if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new VnetInfoResourceImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
-        } else {
-            return Collections.emptyList();
-        }
     }
 
     public Response<List<VnetInfoResource>> listVnetsWithResponse(
@@ -324,12 +310,17 @@ public final class AppServicePlansImpl implements AppServicePlans {
         }
     }
 
-    public VnetInfoResource getVnetFromServerFarm(String resourceGroupName, String name, String vnetName) {
-        VnetInfoResourceInner inner = this.serviceClient().getVnetFromServerFarm(resourceGroupName, name, vnetName);
+    public List<VnetInfoResource> listVnets(String resourceGroupName, String name) {
+        List<VnetInfoResourceInner> inner = this.serviceClient().listVnets(resourceGroupName, name);
         if (inner != null) {
-            return new VnetInfoResourceImpl(inner, this.manager());
+            return Collections
+                .unmodifiableList(
+                    inner
+                        .stream()
+                        .map(inner1 -> new VnetInfoResourceImpl(inner1, this.manager()))
+                        .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -348,10 +339,10 @@ public final class AppServicePlansImpl implements AppServicePlans {
         }
     }
 
-    public VnetGateway getVnetGateway(String resourceGroupName, String name, String vnetName, String gatewayName) {
-        VnetGatewayInner inner = this.serviceClient().getVnetGateway(resourceGroupName, name, vnetName, gatewayName);
+    public VnetInfoResource getVnetFromServerFarm(String resourceGroupName, String name, String vnetName) {
+        VnetInfoResourceInner inner = this.serviceClient().getVnetFromServerFarm(resourceGroupName, name, vnetName);
         if (inner != null) {
-            return new VnetGatewayImpl(inner, this.manager());
+            return new VnetInfoResourceImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -372,14 +363,8 @@ public final class AppServicePlansImpl implements AppServicePlans {
         }
     }
 
-    public VnetGateway updateVnetGateway(
-        String resourceGroupName,
-        String name,
-        String vnetName,
-        String gatewayName,
-        VnetGatewayInner connectionEnvelope) {
-        VnetGatewayInner inner =
-            this.serviceClient().updateVnetGateway(resourceGroupName, name, vnetName, gatewayName, connectionEnvelope);
+    public VnetGateway getVnetGateway(String resourceGroupName, String name, String vnetName, String gatewayName) {
+        VnetGatewayInner inner = this.serviceClient().getVnetGateway(resourceGroupName, name, vnetName, gatewayName);
         if (inner != null) {
             return new VnetGatewayImpl(inner, this.manager());
         } else {
@@ -410,17 +395,18 @@ public final class AppServicePlansImpl implements AppServicePlans {
         }
     }
 
-    public List<VnetRoute> listRoutesForVnet(String resourceGroupName, String name, String vnetName) {
-        List<VnetRouteInner> inner = this.serviceClient().listRoutesForVnet(resourceGroupName, name, vnetName);
+    public VnetGateway updateVnetGateway(
+        String resourceGroupName,
+        String name,
+        String vnetName,
+        String gatewayName,
+        VnetGatewayInner connectionEnvelope) {
+        VnetGatewayInner inner =
+            this.serviceClient().updateVnetGateway(resourceGroupName, name, vnetName, gatewayName, connectionEnvelope);
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new VnetRouteImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return new VnetGatewayImpl(inner, this.manager());
         } else {
-            return Collections.emptyList();
+            return null;
         }
     }
 
@@ -443,8 +429,8 @@ public final class AppServicePlansImpl implements AppServicePlans {
         }
     }
 
-    public List<VnetRoute> getRouteForVnet(String resourceGroupName, String name, String vnetName, String routeName) {
-        List<VnetRouteInner> inner = this.serviceClient().getRouteForVnet(resourceGroupName, name, vnetName, routeName);
+    public List<VnetRoute> listRoutesForVnet(String resourceGroupName, String name, String vnetName) {
+        List<VnetRouteInner> inner = this.serviceClient().listRoutesForVnet(resourceGroupName, name, vnetName);
         if (inner != null) {
             return Collections
                 .unmodifiableList(
@@ -476,8 +462,18 @@ public final class AppServicePlansImpl implements AppServicePlans {
         }
     }
 
-    public void deleteVnetRoute(String resourceGroupName, String name, String vnetName, String routeName) {
-        this.serviceClient().deleteVnetRoute(resourceGroupName, name, vnetName, routeName);
+    public List<VnetRoute> getRouteForVnet(String resourceGroupName, String name, String vnetName, String routeName) {
+        List<VnetRouteInner> inner = this.serviceClient().getRouteForVnet(resourceGroupName, name, vnetName, routeName);
+        if (inner != null) {
+            return Collections
+                .unmodifiableList(
+                    inner
+                        .stream()
+                        .map(inner1 -> new VnetRouteImpl(inner1, this.manager()))
+                        .collect(Collectors.toList()));
+        } else {
+            return Collections.emptyList();
+        }
     }
 
     public Response<Void> deleteVnetRouteWithResponse(
@@ -485,13 +481,17 @@ public final class AppServicePlansImpl implements AppServicePlans {
         return this.serviceClient().deleteVnetRouteWithResponse(resourceGroupName, name, vnetName, routeName, context);
     }
 
-    public void rebootWorker(String resourceGroupName, String name, String workerName) {
-        this.serviceClient().rebootWorker(resourceGroupName, name, workerName);
+    public void deleteVnetRoute(String resourceGroupName, String name, String vnetName, String routeName) {
+        this.serviceClient().deleteVnetRoute(resourceGroupName, name, vnetName, routeName);
     }
 
     public Response<Void> rebootWorkerWithResponse(
         String resourceGroupName, String name, String workerName, Context context) {
         return this.serviceClient().rebootWorkerWithResponse(resourceGroupName, name, workerName, context);
+    }
+
+    public void rebootWorker(String resourceGroupName, String name, String workerName) {
+        this.serviceClient().rebootWorker(resourceGroupName, name, workerName);
     }
 
     public AppServicePlan getById(String id) {
@@ -548,7 +548,7 @@ public final class AppServicePlansImpl implements AppServicePlans {
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'serverfarms'.", id)));
         }
-        this.deleteWithResponse(resourceGroupName, name, Context.NONE);
+        this.deleteByResourceGroupWithResponse(resourceGroupName, name, Context.NONE);
     }
 
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
@@ -567,7 +567,7 @@ public final class AppServicePlansImpl implements AppServicePlans {
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'serverfarms'.", id)));
         }
-        return this.deleteWithResponse(resourceGroupName, name, context);
+        return this.deleteByResourceGroupWithResponse(resourceGroupName, name, context);
     }
 
     public void deleteVnetRouteById(String id) {

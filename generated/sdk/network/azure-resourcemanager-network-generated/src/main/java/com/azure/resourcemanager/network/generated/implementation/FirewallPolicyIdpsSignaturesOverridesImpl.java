@@ -29,16 +29,6 @@ public final class FirewallPolicyIdpsSignaturesOverridesImpl implements Firewall
         this.serviceManager = serviceManager;
     }
 
-    public SignaturesOverrides patch(
-        String resourceGroupName, String firewallPolicyName, SignaturesOverridesInner parameters) {
-        SignaturesOverridesInner inner = this.serviceClient().patch(resourceGroupName, firewallPolicyName, parameters);
-        if (inner != null) {
-            return new SignaturesOverridesImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<SignaturesOverrides> patchWithResponse(
         String resourceGroupName, String firewallPolicyName, SignaturesOverridesInner parameters, Context context) {
         Response<SignaturesOverridesInner> inner =
@@ -54,9 +44,9 @@ public final class FirewallPolicyIdpsSignaturesOverridesImpl implements Firewall
         }
     }
 
-    public SignaturesOverrides put(
+    public SignaturesOverrides patch(
         String resourceGroupName, String firewallPolicyName, SignaturesOverridesInner parameters) {
-        SignaturesOverridesInner inner = this.serviceClient().put(resourceGroupName, firewallPolicyName, parameters);
+        SignaturesOverridesInner inner = this.serviceClient().patch(resourceGroupName, firewallPolicyName, parameters);
         if (inner != null) {
             return new SignaturesOverridesImpl(inner, this.manager());
         } else {
@@ -79,8 +69,9 @@ public final class FirewallPolicyIdpsSignaturesOverridesImpl implements Firewall
         }
     }
 
-    public SignaturesOverrides get(String resourceGroupName, String firewallPolicyName) {
-        SignaturesOverridesInner inner = this.serviceClient().get(resourceGroupName, firewallPolicyName);
+    public SignaturesOverrides put(
+        String resourceGroupName, String firewallPolicyName, SignaturesOverridesInner parameters) {
+        SignaturesOverridesInner inner = this.serviceClient().put(resourceGroupName, firewallPolicyName, parameters);
         if (inner != null) {
             return new SignaturesOverridesImpl(inner, this.manager());
         } else {
@@ -103,10 +94,10 @@ public final class FirewallPolicyIdpsSignaturesOverridesImpl implements Firewall
         }
     }
 
-    public SignaturesOverridesList list(String resourceGroupName, String firewallPolicyName) {
-        SignaturesOverridesListInner inner = this.serviceClient().list(resourceGroupName, firewallPolicyName);
+    public SignaturesOverrides get(String resourceGroupName, String firewallPolicyName) {
+        SignaturesOverridesInner inner = this.serviceClient().get(resourceGroupName, firewallPolicyName);
         if (inner != null) {
-            return new SignaturesOverridesListImpl(inner, this.manager());
+            return new SignaturesOverridesImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -122,6 +113,15 @@ public final class FirewallPolicyIdpsSignaturesOverridesImpl implements Firewall
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new SignaturesOverridesListImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public SignaturesOverridesList list(String resourceGroupName, String firewallPolicyName) {
+        SignaturesOverridesListInner inner = this.serviceClient().list(resourceGroupName, firewallPolicyName);
+        if (inner != null) {
+            return new SignaturesOverridesListImpl(inner, this.manager());
         } else {
             return null;
         }

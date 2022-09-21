@@ -18,6 +18,10 @@ public final class ServerListResult {
     @JsonProperty(value = "value")
     private List<ServerInner> value;
 
+    /** Creates an instance of ServerListResult class. */
+    public ServerListResult() {
+    }
+
     /**
      * Get the value property: The list of servers.
      *

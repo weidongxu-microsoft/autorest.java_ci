@@ -29,6 +29,10 @@ public final class CheckNameAvailabilityResultInner {
     @JsonProperty(value = "reason")
     private UnavailableReason reason;
 
+    /** Creates an instance of CheckNameAvailabilityResultInner class. */
+    public CheckNameAvailabilityResultInner() {
+    }
+
     /**
      * Get the message property: The detailed info regarding the reason associated with the Namespace.
      *

@@ -49,15 +49,6 @@ public final class KubeEnvironmentsImpl implements KubeEnvironments {
         return Utils.mapPage(inner, inner1 -> new KubeEnvironmentImpl(inner1, this.manager()));
     }
 
-    public KubeEnvironment getByResourceGroup(String resourceGroupName, String name) {
-        KubeEnvironmentInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, name);
-        if (inner != null) {
-            return new KubeEnvironmentImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<KubeEnvironment> getByResourceGroupWithResponse(
         String resourceGroupName, String name, Context context) {
         Response<KubeEnvironmentInner> inner =
@@ -68,6 +59,15 @@ public final class KubeEnvironmentsImpl implements KubeEnvironments {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new KubeEnvironmentImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public KubeEnvironment getByResourceGroup(String resourceGroupName, String name) {
+        KubeEnvironmentInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, name);
+        if (inner != null) {
+            return new KubeEnvironmentImpl(inner, this.manager());
         } else {
             return null;
         }

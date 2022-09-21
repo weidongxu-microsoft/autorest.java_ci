@@ -96,6 +96,10 @@ public final class ManagedHsmProperties {
     @JsonProperty(value = "scheduledPurgeDate", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime scheduledPurgeDate;
 
+    /** Creates an instance of ManagedHsmProperties class. */
+    public ManagedHsmProperties() {
+    }
+
     /**
      * Get the tenantId property: The Azure Active Directory tenant ID that should be used for authenticating requests
      * to the managed HSM pool.

@@ -709,11 +709,12 @@ public final class ClustersClientImpl implements ClustersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the HDInsight cluster.
+     * @return the HDInsight cluster along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ClusterInner update(String resourceGroupName, String clusterName, ClusterPatchParameters parameters) {
-        return updateAsync(resourceGroupName, clusterName, parameters).block();
+    public Response<ClusterInner> updateWithResponse(
+        String resourceGroupName, String clusterName, ClusterPatchParameters parameters) {
+        return updateWithResponseAsync(resourceGroupName, clusterName, parameters).block();
     }
 
     /**
@@ -732,6 +733,22 @@ public final class ClustersClientImpl implements ClustersClient {
     public Response<ClusterInner> updateWithResponse(
         String resourceGroupName, String clusterName, ClusterPatchParameters parameters, Context context) {
         return updateWithResponseAsync(resourceGroupName, clusterName, parameters, context).block();
+    }
+
+    /**
+     * Patch HDInsight cluster with the specified parameters.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param clusterName The name of the cluster.
+     * @param parameters The cluster patch request.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the HDInsight cluster.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ClusterInner update(String resourceGroupName, String clusterName, ClusterPatchParameters parameters) {
+        return updateWithResponse(resourceGroupName, clusterName, parameters, Context.NONE).getValue();
     }
 
     /**
@@ -1079,11 +1096,11 @@ public final class ClustersClientImpl implements ClustersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified cluster.
+     * @return the specified cluster along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ClusterInner getByResourceGroup(String resourceGroupName, String clusterName) {
-        return getByResourceGroupAsync(resourceGroupName, clusterName).block();
+    public Response<ClusterInner> getByResourceGroupWithResponse(String resourceGroupName, String clusterName) {
+        return getByResourceGroupWithResponseAsync(resourceGroupName, clusterName).block();
     }
 
     /**
@@ -1101,6 +1118,21 @@ public final class ClustersClientImpl implements ClustersClient {
     public Response<ClusterInner> getByResourceGroupWithResponse(
         String resourceGroupName, String clusterName, Context context) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, clusterName, context).block();
+    }
+
+    /**
+     * Gets the specified cluster.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param clusterName The name of the cluster.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified cluster.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ClusterInner getByResourceGroup(String resourceGroupName, String clusterName) {
+        return getByResourceGroupWithResponse(resourceGroupName, clusterName, Context.NONE).getValue();
     }
 
     /**
@@ -2404,11 +2436,11 @@ public final class ClustersClientImpl implements ClustersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the gateway settings for the specified cluster.
+     * @return the gateway settings for the specified cluster along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public GatewaySettingsInner getGatewaySettings(String resourceGroupName, String clusterName) {
-        return getGatewaySettingsAsync(resourceGroupName, clusterName).block();
+    public Response<GatewaySettingsInner> getGatewaySettingsWithResponse(String resourceGroupName, String clusterName) {
+        return getGatewaySettingsWithResponseAsync(resourceGroupName, clusterName).block();
     }
 
     /**
@@ -2426,6 +2458,21 @@ public final class ClustersClientImpl implements ClustersClient {
     public Response<GatewaySettingsInner> getGatewaySettingsWithResponse(
         String resourceGroupName, String clusterName, Context context) {
         return getGatewaySettingsWithResponseAsync(resourceGroupName, clusterName, context).block();
+    }
+
+    /**
+     * Gets the gateway settings for the specified cluster.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param clusterName The name of the cluster.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the gateway settings for the specified cluster.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public GatewaySettingsInner getGatewaySettings(String resourceGroupName, String clusterName) {
+        return getGatewaySettingsWithResponse(resourceGroupName, clusterName, Context.NONE).getValue();
     }
 
     /**
@@ -2819,12 +2866,12 @@ public final class ClustersClientImpl implements ClustersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the azure async operation response.
+     * @return the azure async operation response along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public AsyncOperationResultInner getAzureAsyncOperationStatus(
+    public Response<AsyncOperationResultInner> getAzureAsyncOperationStatusWithResponse(
         String resourceGroupName, String clusterName, String operationId) {
-        return getAzureAsyncOperationStatusAsync(resourceGroupName, clusterName, operationId).block();
+        return getAzureAsyncOperationStatusWithResponseAsync(resourceGroupName, clusterName, operationId).block();
     }
 
     /**
@@ -2844,6 +2891,24 @@ public final class ClustersClientImpl implements ClustersClient {
         String resourceGroupName, String clusterName, String operationId, Context context) {
         return getAzureAsyncOperationStatusWithResponseAsync(resourceGroupName, clusterName, operationId, context)
             .block();
+    }
+
+    /**
+     * The the async operation status.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param clusterName The name of the cluster.
+     * @param operationId The long running operation id.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the azure async operation response.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public AsyncOperationResultInner getAzureAsyncOperationStatus(
+        String resourceGroupName, String clusterName, String operationId) {
+        return getAzureAsyncOperationStatusWithResponse(resourceGroupName, clusterName, operationId, Context.NONE)
+            .getValue();
     }
 
     /**

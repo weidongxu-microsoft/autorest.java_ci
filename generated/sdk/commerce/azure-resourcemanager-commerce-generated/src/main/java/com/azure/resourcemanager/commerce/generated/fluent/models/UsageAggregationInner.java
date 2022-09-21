@@ -37,6 +37,10 @@ public final class UsageAggregationInner {
     @JsonProperty(value = "properties")
     private UsageSample innerProperties;
 
+    /** Creates an instance of UsageAggregationInner class. */
+    public UsageAggregationInner() {
+    }
+
     /**
      * Get the id property: Unique Id for the usage aggregate.
      *

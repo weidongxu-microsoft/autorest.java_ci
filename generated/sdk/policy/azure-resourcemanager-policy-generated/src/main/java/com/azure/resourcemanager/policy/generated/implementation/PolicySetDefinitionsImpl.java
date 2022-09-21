@@ -28,21 +28,12 @@ public final class PolicySetDefinitionsImpl implements PolicySetDefinitions {
         this.serviceManager = serviceManager;
     }
 
-    public void delete(String policySetDefinitionName) {
-        this.serviceClient().delete(policySetDefinitionName);
-    }
-
     public Response<Void> deleteWithResponse(String policySetDefinitionName, Context context) {
         return this.serviceClient().deleteWithResponse(policySetDefinitionName, context);
     }
 
-    public PolicySetDefinition get(String policySetDefinitionName) {
-        PolicySetDefinitionInner inner = this.serviceClient().get(policySetDefinitionName);
-        if (inner != null) {
-            return new PolicySetDefinitionImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void delete(String policySetDefinitionName) {
+        this.serviceClient().delete(policySetDefinitionName);
     }
 
     public Response<PolicySetDefinition> getWithResponse(String policySetDefinitionName, Context context) {
@@ -59,8 +50,8 @@ public final class PolicySetDefinitionsImpl implements PolicySetDefinitions {
         }
     }
 
-    public PolicySetDefinition getBuiltIn(String policySetDefinitionName) {
-        PolicySetDefinitionInner inner = this.serviceClient().getBuiltIn(policySetDefinitionName);
+    public PolicySetDefinition get(String policySetDefinitionName) {
+        PolicySetDefinitionInner inner = this.serviceClient().get(policySetDefinitionName);
         if (inner != null) {
             return new PolicySetDefinitionImpl(inner, this.manager());
         } else {
@@ -77,6 +68,15 @@ public final class PolicySetDefinitionsImpl implements PolicySetDefinitions {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new PolicySetDefinitionImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public PolicySetDefinition getBuiltIn(String policySetDefinitionName) {
+        PolicySetDefinitionInner inner = this.serviceClient().getBuiltIn(policySetDefinitionName);
+        if (inner != null) {
+            return new PolicySetDefinitionImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -102,19 +102,6 @@ public final class PolicySetDefinitionsImpl implements PolicySetDefinitions {
         return Utils.mapPage(inner, inner1 -> new PolicySetDefinitionImpl(inner1, this.manager()));
     }
 
-    public PolicySetDefinition createOrUpdateAtManagementGroup(
-        String policySetDefinitionName, String managementGroupId, PolicySetDefinitionInner parameters) {
-        PolicySetDefinitionInner inner =
-            this
-                .serviceClient()
-                .createOrUpdateAtManagementGroup(policySetDefinitionName, managementGroupId, parameters);
-        if (inner != null) {
-            return new PolicySetDefinitionImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<PolicySetDefinition> createOrUpdateAtManagementGroupWithResponse(
         String policySetDefinitionName,
         String managementGroupId,
@@ -136,8 +123,17 @@ public final class PolicySetDefinitionsImpl implements PolicySetDefinitions {
         }
     }
 
-    public void deleteAtManagementGroup(String policySetDefinitionName, String managementGroupId) {
-        this.serviceClient().deleteAtManagementGroup(policySetDefinitionName, managementGroupId);
+    public PolicySetDefinition createOrUpdateAtManagementGroup(
+        String policySetDefinitionName, String managementGroupId, PolicySetDefinitionInner parameters) {
+        PolicySetDefinitionInner inner =
+            this
+                .serviceClient()
+                .createOrUpdateAtManagementGroup(policySetDefinitionName, managementGroupId, parameters);
+        if (inner != null) {
+            return new PolicySetDefinitionImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> deleteAtManagementGroupWithResponse(
@@ -147,14 +143,8 @@ public final class PolicySetDefinitionsImpl implements PolicySetDefinitions {
             .deleteAtManagementGroupWithResponse(policySetDefinitionName, managementGroupId, context);
     }
 
-    public PolicySetDefinition getAtManagementGroup(String policySetDefinitionName, String managementGroupId) {
-        PolicySetDefinitionInner inner =
-            this.serviceClient().getAtManagementGroup(policySetDefinitionName, managementGroupId);
-        if (inner != null) {
-            return new PolicySetDefinitionImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void deleteAtManagementGroup(String policySetDefinitionName, String managementGroupId) {
+        this.serviceClient().deleteAtManagementGroup(policySetDefinitionName, managementGroupId);
     }
 
     public Response<PolicySetDefinition> getAtManagementGroupWithResponse(
@@ -167,6 +157,16 @@ public final class PolicySetDefinitionsImpl implements PolicySetDefinitions {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new PolicySetDefinitionImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public PolicySetDefinition getAtManagementGroup(String policySetDefinitionName, String managementGroupId) {
+        PolicySetDefinitionInner inner =
+            this.serviceClient().getAtManagementGroup(policySetDefinitionName, managementGroupId);
+        if (inner != null) {
+            return new PolicySetDefinitionImpl(inner, this.manager());
         } else {
             return null;
         }

@@ -28,6 +28,10 @@ public final class ServerPropertiesForRestore extends ServerPropertiesForCreate 
     @JsonProperty(value = "restorePointInTime", required = true)
     private OffsetDateTime restorePointInTime;
 
+    /** Creates an instance of ServerPropertiesForRestore class. */
+    public ServerPropertiesForRestore() {
+    }
+
     /**
      * Get the sourceServerId property: The source server id to restore from.
      *

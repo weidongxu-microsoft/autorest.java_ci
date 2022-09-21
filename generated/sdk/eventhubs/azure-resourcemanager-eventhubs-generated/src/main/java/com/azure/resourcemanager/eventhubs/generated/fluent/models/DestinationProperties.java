@@ -49,6 +49,10 @@ public final class DestinationProperties {
     @JsonProperty(value = "dataLakeFolderPath")
     private String dataLakeFolderPath;
 
+    /** Creates an instance of DestinationProperties class. */
+    public DestinationProperties() {
+    }
+
     /**
      * Get the storageAccountResourceId property: Resource id of the storage account to be used to create the blobs.
      *

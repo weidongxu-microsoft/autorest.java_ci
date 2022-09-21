@@ -43,6 +43,10 @@ public final class HybridConnectionProperties {
     @JsonProperty(value = "userMetadata")
     private String userMetadata;
 
+    /** Creates an instance of HybridConnectionProperties class. */
+    public HybridConnectionProperties() {
+    }
+
     /**
      * Get the createdAt property: The time the hybrid connection was created.
      *

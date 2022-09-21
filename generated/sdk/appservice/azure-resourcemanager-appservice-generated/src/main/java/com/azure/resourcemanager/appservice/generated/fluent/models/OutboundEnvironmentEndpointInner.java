@@ -25,6 +25,10 @@ public final class OutboundEnvironmentEndpointInner {
     @JsonProperty(value = "endpoints")
     private List<EndpointDependency> endpoints;
 
+    /** Creates an instance of OutboundEnvironmentEndpointInner class. */
+    public OutboundEnvironmentEndpointInner() {
+    }
+
     /**
      * Get the category property: The type of service accessed by the App Service Environment, e.g., Azure Storage,
      * Azure SQL Database, and Azure Active Directory.

@@ -26,6 +26,10 @@ public final class TagsResultInner extends ProxyResource {
     @JsonProperty(value = "eTag")
     private String etag;
 
+    /** Creates an instance of TagsResultInner class. */
+    public TagsResultInner() {
+    }
+
     /**
      * Get the innerProperties property: The properties of the tag.
      *

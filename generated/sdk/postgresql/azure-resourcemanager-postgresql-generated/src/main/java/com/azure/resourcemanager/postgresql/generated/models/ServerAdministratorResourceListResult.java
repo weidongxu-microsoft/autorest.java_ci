@@ -18,6 +18,10 @@ public final class ServerAdministratorResourceListResult {
     @JsonProperty(value = "value")
     private List<ServerAdministratorResourceInner> value;
 
+    /** Creates an instance of ServerAdministratorResourceListResult class. */
+    public ServerAdministratorResourceListResult() {
+    }
+
     /**
      * Get the value property: The list of server Active Directory Administrators for the server.
      *

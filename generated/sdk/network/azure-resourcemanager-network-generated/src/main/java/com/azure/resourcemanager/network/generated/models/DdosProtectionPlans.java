@@ -38,18 +38,6 @@ public interface DdosProtectionPlans {
      *
      * @param resourceGroupName The name of the resource group.
      * @param ddosProtectionPlanName The name of the DDoS protection plan.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the specified DDoS protection plan.
-     */
-    DdosProtectionPlan getByResourceGroup(String resourceGroupName, String ddosProtectionPlanName);
-
-    /**
-     * Gets information about the specified DDoS protection plan.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param ddosProtectionPlanName The name of the DDoS protection plan.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -58,6 +46,18 @@ public interface DdosProtectionPlans {
      */
     Response<DdosProtectionPlan> getByResourceGroupWithResponse(
         String resourceGroupName, String ddosProtectionPlanName, Context context);
+
+    /**
+     * Gets information about the specified DDoS protection plan.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param ddosProtectionPlanName The name of the DDoS protection plan.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return information about the specified DDoS protection plan.
+     */
+    DdosProtectionPlan getByResourceGroup(String resourceGroupName, String ddosProtectionPlanName);
 
     /**
      * Gets all DDoS protection plans in a subscription.

@@ -38,18 +38,6 @@ public interface NatGateways {
      *
      * @param resourceGroupName The name of the resource group.
      * @param natGatewayName The name of the nat gateway.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified nat gateway in a specified resource group.
-     */
-    NatGateway getByResourceGroup(String resourceGroupName, String natGatewayName);
-
-    /**
-     * Gets the specified nat gateway in a specified resource group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param natGatewayName The name of the nat gateway.
      * @param expand Expands referenced resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -59,6 +47,18 @@ public interface NatGateways {
      */
     Response<NatGateway> getByResourceGroupWithResponse(
         String resourceGroupName, String natGatewayName, String expand, Context context);
+
+    /**
+     * Gets the specified nat gateway in a specified resource group.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param natGatewayName The name of the nat gateway.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified nat gateway in a specified resource group.
+     */
+    NatGateway getByResourceGroup(String resourceGroupName, String natGatewayName);
 
     /**
      * Gets all the Nat Gateways in a subscription.

@@ -1100,11 +1100,11 @@ public final class ServersClientImpl implements ServersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a server.
+     * @return information about a server along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ServerInner getByResourceGroup(String resourceGroupName, String serverName) {
-        return getByResourceGroupAsync(resourceGroupName, serverName).block();
+    public Response<ServerInner> getByResourceGroupWithResponse(String resourceGroupName, String serverName) {
+        return getByResourceGroupWithResponseAsync(resourceGroupName, serverName).block();
     }
 
     /**
@@ -1122,6 +1122,21 @@ public final class ServersClientImpl implements ServersClient {
     public Response<ServerInner> getByResourceGroupWithResponse(
         String resourceGroupName, String serverName, Context context) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, serverName, context).block();
+    }
+
+    /**
+     * Gets information about a server.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param serverName The name of the server.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return information about a server.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ServerInner getByResourceGroup(String resourceGroupName, String serverName) {
+        return getByResourceGroupWithResponse(resourceGroupName, serverName, Context.NONE).getValue();
     }
 
     /**

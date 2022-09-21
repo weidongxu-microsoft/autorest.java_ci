@@ -23,6 +23,10 @@ public final class HealthProbeSettingsProperties extends HealthProbeSettingsUpda
     @JsonProperty(value = "resourceState", access = JsonProperty.Access.WRITE_ONLY)
     private FrontDoorResourceState resourceState;
 
+    /** Creates an instance of HealthProbeSettingsProperties class. */
+    public HealthProbeSettingsProperties() {
+    }
+
     /**
      * Get the resourceState property: Resource status of the Front Door or Front Door SubResource.
      *

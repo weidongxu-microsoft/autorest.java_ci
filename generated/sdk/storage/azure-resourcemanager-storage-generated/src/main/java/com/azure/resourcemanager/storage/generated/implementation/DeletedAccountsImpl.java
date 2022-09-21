@@ -37,15 +37,6 @@ public final class DeletedAccountsImpl implements DeletedAccounts {
         return Utils.mapPage(inner, inner1 -> new DeletedAccountImpl(inner1, this.manager()));
     }
 
-    public DeletedAccount get(String deletedAccountName, String location) {
-        DeletedAccountInner inner = this.serviceClient().get(deletedAccountName, location);
-        if (inner != null) {
-            return new DeletedAccountImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<DeletedAccount> getWithResponse(String deletedAccountName, String location, Context context) {
         Response<DeletedAccountInner> inner =
             this.serviceClient().getWithResponse(deletedAccountName, location, context);
@@ -55,6 +46,15 @@ public final class DeletedAccountsImpl implements DeletedAccounts {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new DeletedAccountImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public DeletedAccount get(String deletedAccountName, String location) {
+        DeletedAccountInner inner = this.serviceClient().get(deletedAccountName, location);
+        if (inner != null) {
+            return new DeletedAccountImpl(inner, this.manager());
         } else {
             return null;
         }

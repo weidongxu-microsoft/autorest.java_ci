@@ -222,11 +222,11 @@ public final class AlertRuleIncidentsClientImpl implements AlertRuleIncidentsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an incident associated to an alert rule.
+     * @return an incident associated to an alert rule along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public IncidentInner get(String resourceGroupName, String ruleName, String incidentName) {
-        return getAsync(resourceGroupName, ruleName, incidentName).block();
+    public Response<IncidentInner> getWithResponse(String resourceGroupName, String ruleName, String incidentName) {
+        return getWithResponseAsync(resourceGroupName, ruleName, incidentName).block();
     }
 
     /**
@@ -245,6 +245,22 @@ public final class AlertRuleIncidentsClientImpl implements AlertRuleIncidentsCli
     public Response<IncidentInner> getWithResponse(
         String resourceGroupName, String ruleName, String incidentName, Context context) {
         return getWithResponseAsync(resourceGroupName, ruleName, incidentName, context).block();
+    }
+
+    /**
+     * Gets an incident associated to an alert rule.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param ruleName The name of the rule.
+     * @param incidentName The name of the incident to retrieve.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return an incident associated to an alert rule.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public IncidentInner get(String resourceGroupName, String ruleName, String incidentName) {
+        return getWithResponse(resourceGroupName, ruleName, incidentName, Context.NONE).getValue();
     }
 
     /**

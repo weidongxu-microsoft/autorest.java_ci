@@ -17,6 +17,10 @@ public final class ConfigurationListResultInner {
     @JsonProperty(value = "value")
     private List<ConfigurationInner> value;
 
+    /** Creates an instance of ConfigurationListResultInner class. */
+    public ConfigurationListResultInner() {
+    }
+
     /**
      * Get the value property: The list of server configurations.
      *

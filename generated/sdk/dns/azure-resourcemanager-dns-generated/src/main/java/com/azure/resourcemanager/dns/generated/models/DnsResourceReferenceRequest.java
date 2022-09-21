@@ -19,6 +19,10 @@ public final class DnsResourceReferenceRequest {
     @JsonProperty(value = "properties")
     private DnsResourceReferenceRequestProperties innerProperties;
 
+    /** Creates an instance of DnsResourceReferenceRequest class. */
+    public DnsResourceReferenceRequest() {
+    }
+
     /**
      * Get the innerProperties property: The properties of the Resource Reference Request.
      *

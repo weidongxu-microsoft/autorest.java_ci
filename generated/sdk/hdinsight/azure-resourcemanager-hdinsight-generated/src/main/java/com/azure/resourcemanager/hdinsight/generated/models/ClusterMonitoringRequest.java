@@ -22,6 +22,10 @@ public final class ClusterMonitoringRequest {
     @JsonProperty(value = "primaryKey")
     private String primaryKey;
 
+    /** Creates an instance of ClusterMonitoringRequest class. */
+    public ClusterMonitoringRequest() {
+    }
+
     /**
      * Get the workspaceId property: The cluster monitor workspace ID.
      *

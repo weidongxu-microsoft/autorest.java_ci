@@ -74,21 +74,6 @@ public interface Certificates {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return sSL certificate for an app.
-     */
-    Certificate getByResourceGroup(String resourceGroupName, String name);
-
-    /**
-     * Get a certificate.
-     *
-     * <p>Description for Get a certificate.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the certificate.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -99,9 +84,9 @@ public interface Certificates {
     Response<Certificate> getByResourceGroupWithResponse(String resourceGroupName, String name, Context context);
 
     /**
-     * Delete a certificate.
+     * Get a certificate.
      *
-     * <p>Description for Delete a certificate.
+     * <p>Description for Get a certificate.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate.
@@ -109,8 +94,9 @@ public interface Certificates {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return sSL certificate for an app.
      */
-    void deleteByResourceGroup(String resourceGroupName, String name);
+    Certificate getByResourceGroup(String resourceGroupName, String name);
 
     /**
      * Delete a certificate.
@@ -126,7 +112,21 @@ public interface Certificates {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
-    Response<Void> deleteWithResponse(String resourceGroupName, String name, Context context);
+    Response<Void> deleteByResourceGroupWithResponse(String resourceGroupName, String name, Context context);
+
+    /**
+     * Delete a certificate.
+     *
+     * <p>Description for Delete a certificate.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the certificate.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deleteByResourceGroup(String resourceGroupName, String name);
 
     /**
      * Get a certificate.

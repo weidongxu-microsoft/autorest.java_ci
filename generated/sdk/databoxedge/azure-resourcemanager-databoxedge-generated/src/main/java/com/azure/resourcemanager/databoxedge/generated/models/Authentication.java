@@ -16,6 +16,10 @@ public final class Authentication {
     @JsonProperty(value = "symmetricKey")
     private SymmetricKey symmetricKey;
 
+    /** Creates an instance of Authentication class. */
+    public Authentication() {
+    }
+
     /**
      * Get the symmetricKey property: Symmetric key for authentication.
      *

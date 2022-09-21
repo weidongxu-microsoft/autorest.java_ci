@@ -142,6 +142,10 @@ public final class NetworkInterfaceImpl
         return this.innerModel().enableAcceleratedNetworking();
     }
 
+    public Boolean disableTcpStateTracking() {
+        return this.innerModel().disableTcpStateTracking();
+    }
+
     public Boolean enableIpForwarding() {
         return this.innerModel().enableIpForwarding();
     }
@@ -366,6 +370,11 @@ public final class NetworkInterfaceImpl
 
     public NetworkInterfaceImpl withEnableAcceleratedNetworking(Boolean enableAcceleratedNetworking) {
         this.innerModel().withEnableAcceleratedNetworking(enableAcceleratedNetworking);
+        return this;
+    }
+
+    public NetworkInterfaceImpl withDisableTcpStateTracking(Boolean disableTcpStateTracking) {
+        this.innerModel().withDisableTcpStateTracking(disableTcpStateTracking);
         return this;
     }
 

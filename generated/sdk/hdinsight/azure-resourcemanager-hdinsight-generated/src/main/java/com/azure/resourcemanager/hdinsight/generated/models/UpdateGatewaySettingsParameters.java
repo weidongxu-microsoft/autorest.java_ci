@@ -28,6 +28,10 @@ public final class UpdateGatewaySettingsParameters {
     @JsonProperty(value = "restAuthCredential.password")
     private String password;
 
+    /** Creates an instance of UpdateGatewaySettingsParameters class. */
+    public UpdateGatewaySettingsParameters() {
+    }
+
     /**
      * Get the isCredentialEnabled property: Indicates whether or not the gateway settings based authorization is
      * enabled.

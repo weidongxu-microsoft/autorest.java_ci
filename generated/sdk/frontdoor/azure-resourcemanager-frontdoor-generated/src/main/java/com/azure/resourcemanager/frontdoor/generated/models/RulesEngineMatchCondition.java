@@ -49,6 +49,10 @@ public final class RulesEngineMatchCondition {
     @JsonProperty(value = "transforms")
     private List<Transform> transforms;
 
+    /** Creates an instance of RulesEngineMatchCondition class. */
+    public RulesEngineMatchCondition() {
+    }
+
     /**
      * Get the rulesEngineMatchVariable property: Match Variable.
      *

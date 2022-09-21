@@ -26,6 +26,10 @@ public final class ActivityLogAlertPatchBody {
     @JsonProperty(value = "properties")
     private ActivityLogAlertPatch innerProperties;
 
+    /** Creates an instance of ActivityLogAlertPatchBody class. */
+    public ActivityLogAlertPatchBody() {
+    }
+
     /**
      * Get the tags property: Resource tags.
      *

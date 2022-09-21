@@ -352,11 +352,11 @@ public final class TopicsClientImpl implements TopicsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of a topic.
+     * @return properties of a topic along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public TopicInner getByResourceGroup(String resourceGroupName, String topicName) {
-        return getByResourceGroupAsync(resourceGroupName, topicName).block();
+    public Response<TopicInner> getByResourceGroupWithResponse(String resourceGroupName, String topicName) {
+        return getByResourceGroupWithResponseAsync(resourceGroupName, topicName).block();
     }
 
     /**
@@ -376,6 +376,23 @@ public final class TopicsClientImpl implements TopicsClient {
     public Response<TopicInner> getByResourceGroupWithResponse(
         String resourceGroupName, String topicName, Context context) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, topicName, context).block();
+    }
+
+    /**
+     * Get a topic.
+     *
+     * <p>Get properties of a topic.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription.
+     * @param topicName Name of the topic.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return properties of a topic.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public TopicInner getByResourceGroup(String resourceGroupName, String topicName) {
+        return getByResourceGroupWithResponse(resourceGroupName, topicName, Context.NONE).getValue();
     }
 
     /**
@@ -1778,11 +1795,12 @@ public final class TopicsClientImpl implements TopicsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return shared access keys of the Topic.
+     * @return shared access keys of the Topic along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public TopicSharedAccessKeysInner listSharedAccessKeys(String resourceGroupName, String topicName) {
-        return listSharedAccessKeysAsync(resourceGroupName, topicName).block();
+    public Response<TopicSharedAccessKeysInner> listSharedAccessKeysWithResponse(
+        String resourceGroupName, String topicName) {
+        return listSharedAccessKeysWithResponseAsync(resourceGroupName, topicName).block();
     }
 
     /**
@@ -1802,6 +1820,23 @@ public final class TopicsClientImpl implements TopicsClient {
     public Response<TopicSharedAccessKeysInner> listSharedAccessKeysWithResponse(
         String resourceGroupName, String topicName, Context context) {
         return listSharedAccessKeysWithResponseAsync(resourceGroupName, topicName, context).block();
+    }
+
+    /**
+     * List keys for a topic.
+     *
+     * <p>List the two keys used to publish to a topic.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription.
+     * @param topicName Name of the topic.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return shared access keys of the Topic.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public TopicSharedAccessKeysInner listSharedAccessKeys(String resourceGroupName, String topicName) {
+        return listSharedAccessKeysWithResponse(resourceGroupName, topicName, Context.NONE).getValue();
     }
 
     /**

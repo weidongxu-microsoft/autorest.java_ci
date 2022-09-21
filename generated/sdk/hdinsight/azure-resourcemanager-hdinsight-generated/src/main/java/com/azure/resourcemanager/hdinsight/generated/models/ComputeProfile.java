@@ -17,6 +17,10 @@ public final class ComputeProfile {
     @JsonProperty(value = "roles")
     private List<Role> roles;
 
+    /** Creates an instance of ComputeProfile class. */
+    public ComputeProfile() {
+    }
+
     /**
      * Get the roles property: The list of roles in the cluster.
      *

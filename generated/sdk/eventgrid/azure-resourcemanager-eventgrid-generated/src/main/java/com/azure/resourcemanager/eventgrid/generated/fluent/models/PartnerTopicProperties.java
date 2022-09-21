@@ -66,6 +66,10 @@ public final class PartnerTopicProperties {
     @JsonProperty(value = "messageForActivation")
     private String messageForActivation;
 
+    /** Creates an instance of PartnerTopicProperties class. */
+    public PartnerTopicProperties() {
+    }
+
     /**
      * Get the partnerRegistrationImmutableId property: The immutableId of the corresponding partner registration.
      *

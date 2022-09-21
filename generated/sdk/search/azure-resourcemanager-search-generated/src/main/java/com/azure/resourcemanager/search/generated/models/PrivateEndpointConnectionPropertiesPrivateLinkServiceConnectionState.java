@@ -28,6 +28,10 @@ public final class PrivateEndpointConnectionPropertiesPrivateLinkServiceConnecti
     @JsonProperty(value = "actionsRequired")
     private String actionsRequired;
 
+    /** Creates an instance of PrivateEndpointConnectionPropertiesPrivateLinkServiceConnectionState class. */
+    public PrivateEndpointConnectionPropertiesPrivateLinkServiceConnectionState() {
+    }
+
     /**
      * Get the status property: Status of the the private link service connection. Can be Pending, Approved, Rejected,
      * or Disconnected.

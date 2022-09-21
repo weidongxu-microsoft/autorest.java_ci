@@ -40,19 +40,6 @@ public interface PrivateEndpoints {
      *
      * @param resourceGroupName The name of the resource group.
      * @param privateEndpointName The name of the private endpoint.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified private endpoint by resource group.
-     */
-    PrivateEndpoint getByResourceGroup(String resourceGroupName, String privateEndpointName);
-
-    /**
-     * Gets the specified private endpoint by resource group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param privateEndpointName The name of the private endpoint.
      * @param expand Expands referenced resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -63,6 +50,19 @@ public interface PrivateEndpoints {
      */
     Response<PrivateEndpoint> getByResourceGroupWithResponse(
         String resourceGroupName, String privateEndpointName, String expand, Context context);
+
+    /**
+     * Gets the specified private endpoint by resource group.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param privateEndpointName The name of the private endpoint.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified private endpoint by resource group.
+     */
+    PrivateEndpoint getByResourceGroup(String resourceGroupName, String privateEndpointName);
 
     /**
      * Gets all private endpoints in a resource group.

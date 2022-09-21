@@ -28,16 +28,6 @@ public final class ActivityLogAlertsImpl implements ActivityLogAlerts {
         this.serviceManager = serviceManager;
     }
 
-    public ActivityLogAlertResource getByResourceGroup(String resourceGroupName, String activityLogAlertName) {
-        ActivityLogAlertResourceInner inner =
-            this.serviceClient().getByResourceGroup(resourceGroupName, activityLogAlertName);
-        if (inner != null) {
-            return new ActivityLogAlertResourceImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<ActivityLogAlertResource> getByResourceGroupWithResponse(
         String resourceGroupName, String activityLogAlertName, Context context) {
         Response<ActivityLogAlertResourceInner> inner =
@@ -53,12 +43,23 @@ public final class ActivityLogAlertsImpl implements ActivityLogAlerts {
         }
     }
 
-    public void deleteByResourceGroup(String resourceGroupName, String activityLogAlertName) {
-        this.serviceClient().delete(resourceGroupName, activityLogAlertName);
+    public ActivityLogAlertResource getByResourceGroup(String resourceGroupName, String activityLogAlertName) {
+        ActivityLogAlertResourceInner inner =
+            this.serviceClient().getByResourceGroup(resourceGroupName, activityLogAlertName);
+        if (inner != null) {
+            return new ActivityLogAlertResourceImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
-    public Response<Void> deleteWithResponse(String resourceGroupName, String activityLogAlertName, Context context) {
+    public Response<Void> deleteByResourceGroupWithResponse(
+        String resourceGroupName, String activityLogAlertName, Context context) {
         return this.serviceClient().deleteWithResponse(resourceGroupName, activityLogAlertName, context);
+    }
+
+    public void deleteByResourceGroup(String resourceGroupName, String activityLogAlertName) {
+        this.serviceClient().delete(resourceGroupName, activityLogAlertName);
     }
 
     public PagedIterable<ActivityLogAlertResource> list() {
@@ -143,7 +144,7 @@ public final class ActivityLogAlertsImpl implements ActivityLogAlerts {
                             .format(
                                 "The resource ID '%s' is not valid. Missing path segment 'activityLogAlerts'.", id)));
         }
-        this.deleteWithResponse(resourceGroupName, activityLogAlertName, Context.NONE);
+        this.deleteByResourceGroupWithResponse(resourceGroupName, activityLogAlertName, Context.NONE);
     }
 
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
@@ -164,7 +165,7 @@ public final class ActivityLogAlertsImpl implements ActivityLogAlerts {
                             .format(
                                 "The resource ID '%s' is not valid. Missing path segment 'activityLogAlerts'.", id)));
         }
-        return this.deleteWithResponse(resourceGroupName, activityLogAlertName, context);
+        return this.deleteByResourceGroupWithResponse(resourceGroupName, activityLogAlertName, context);
     }
 
     private ActivityLogAlertsClient serviceClient() {

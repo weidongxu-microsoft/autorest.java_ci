@@ -34,6 +34,10 @@ public final class EventhubInner extends ProxyResource {
     @JsonProperty(value = "location", access = JsonProperty.Access.WRITE_ONLY)
     private String location;
 
+    /** Creates an instance of EventhubInner class. */
+    public EventhubInner() {
+    }
+
     /**
      * Get the innerProperties property: Properties supplied to the Create Or Update Event Hub operation.
      *

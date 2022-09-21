@@ -38,15 +38,6 @@ public final class VirtualApplianceSkusImpl implements VirtualApplianceSkus {
         return Utils.mapPage(inner, inner1 -> new NetworkVirtualApplianceSkuImpl(inner1, this.manager()));
     }
 
-    public NetworkVirtualApplianceSku get(String skuName) {
-        NetworkVirtualApplianceSkuInner inner = this.serviceClient().get(skuName);
-        if (inner != null) {
-            return new NetworkVirtualApplianceSkuImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<NetworkVirtualApplianceSku> getWithResponse(String skuName, Context context) {
         Response<NetworkVirtualApplianceSkuInner> inner = this.serviceClient().getWithResponse(skuName, context);
         if (inner != null) {
@@ -55,6 +46,15 @@ public final class VirtualApplianceSkusImpl implements VirtualApplianceSkus {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new NetworkVirtualApplianceSkuImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public NetworkVirtualApplianceSku get(String skuName) {
+        NetworkVirtualApplianceSkuInner inner = this.serviceClient().get(skuName);
+        if (inner != null) {
+            return new NetworkVirtualApplianceSkuImpl(inner, this.manager());
         } else {
             return null;
         }

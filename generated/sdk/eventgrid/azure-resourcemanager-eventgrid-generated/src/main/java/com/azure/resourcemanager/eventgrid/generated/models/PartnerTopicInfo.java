@@ -46,6 +46,10 @@ public final class PartnerTopicInfo {
     @JsonProperty(value = "source")
     private String source;
 
+    /** Creates an instance of PartnerTopicInfo class. */
+    public PartnerTopicInfo() {
+    }
+
     /**
      * Get the azureSubscriptionId property: Azure subscription ID of the subscriber. The partner topic associated with
      * the channel will be created under this Azure subscription.

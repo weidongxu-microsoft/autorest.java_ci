@@ -39,16 +39,6 @@ public final class LoadBalancerBackendAddressPoolsImpl implements LoadBalancerBa
         return Utils.mapPage(inner, inner1 -> new BackendAddressPoolImpl(inner1, this.manager()));
     }
 
-    public BackendAddressPool get(String resourceGroupName, String loadBalancerName, String backendAddressPoolName) {
-        BackendAddressPoolInner inner =
-            this.serviceClient().get(resourceGroupName, loadBalancerName, backendAddressPoolName);
-        if (inner != null) {
-            return new BackendAddressPoolImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<BackendAddressPool> getWithResponse(
         String resourceGroupName, String loadBalancerName, String backendAddressPoolName, Context context) {
         Response<BackendAddressPoolInner> inner =
@@ -59,6 +49,16 @@ public final class LoadBalancerBackendAddressPoolsImpl implements LoadBalancerBa
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new BackendAddressPoolImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public BackendAddressPool get(String resourceGroupName, String loadBalancerName, String backendAddressPoolName) {
+        BackendAddressPoolInner inner =
+            this.serviceClient().get(resourceGroupName, loadBalancerName, backendAddressPoolName);
+        if (inner != null) {
+            return new BackendAddressPoolImpl(inner, this.manager());
         } else {
             return null;
         }

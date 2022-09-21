@@ -36,6 +36,10 @@ public final class ComponentPurgeBodyFilters {
     @JsonProperty(value = "key")
     private String key;
 
+    /** Creates an instance of ComponentPurgeBodyFilters class. */
+    public ComponentPurgeBodyFilters() {
+    }
+
     /**
      * Get the column property: The column of the table over which the given query should run.
      *

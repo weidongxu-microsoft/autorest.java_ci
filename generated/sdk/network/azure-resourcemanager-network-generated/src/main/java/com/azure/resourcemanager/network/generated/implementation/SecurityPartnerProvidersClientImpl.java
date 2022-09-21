@@ -210,7 +210,7 @@ public final class SecurityPartnerProvidersClientImpl implements SecurityPartner
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -263,7 +263,7 @@ public final class SecurityPartnerProvidersClientImpl implements SecurityPartner
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -452,7 +452,7 @@ public final class SecurityPartnerProvidersClientImpl implements SecurityPartner
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -506,7 +506,7 @@ public final class SecurityPartnerProvidersClientImpl implements SecurityPartner
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -545,12 +545,12 @@ public final class SecurityPartnerProvidersClientImpl implements SecurityPartner
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Security Partner Provider.
+     * @return the specified Security Partner Provider along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public SecurityPartnerProviderInner getByResourceGroup(
+    public Response<SecurityPartnerProviderInner> getByResourceGroupWithResponse(
         String resourceGroupName, String securityPartnerProviderName) {
-        return getByResourceGroupAsync(resourceGroupName, securityPartnerProviderName).block();
+        return getByResourceGroupWithResponseAsync(resourceGroupName, securityPartnerProviderName).block();
     }
 
     /**
@@ -568,6 +568,22 @@ public final class SecurityPartnerProvidersClientImpl implements SecurityPartner
     public Response<SecurityPartnerProviderInner> getByResourceGroupWithResponse(
         String resourceGroupName, String securityPartnerProviderName, Context context) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, securityPartnerProviderName, context).block();
+    }
+
+    /**
+     * Gets the specified Security Partner Provider.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param securityPartnerProviderName The name of the Security Partner Provider.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified Security Partner Provider.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public SecurityPartnerProviderInner getByResourceGroup(
+        String resourceGroupName, String securityPartnerProviderName) {
+        return getByResourceGroupWithResponse(resourceGroupName, securityPartnerProviderName, Context.NONE).getValue();
     }
 
     /**
@@ -611,7 +627,7 @@ public final class SecurityPartnerProvidersClientImpl implements SecurityPartner
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -674,7 +690,7 @@ public final class SecurityPartnerProvidersClientImpl implements SecurityPartner
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -906,7 +922,7 @@ public final class SecurityPartnerProvidersClientImpl implements SecurityPartner
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -966,7 +982,7 @@ public final class SecurityPartnerProvidersClientImpl implements SecurityPartner
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1008,12 +1024,12 @@ public final class SecurityPartnerProvidersClientImpl implements SecurityPartner
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return security Partner Provider resource.
+     * @return security Partner Provider resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public SecurityPartnerProviderInner updateTags(
+    public Response<SecurityPartnerProviderInner> updateTagsWithResponse(
         String resourceGroupName, String securityPartnerProviderName, TagsObject parameters) {
-        return updateTagsAsync(resourceGroupName, securityPartnerProviderName, parameters).block();
+        return updateTagsWithResponseAsync(resourceGroupName, securityPartnerProviderName, parameters).block();
     }
 
     /**
@@ -1032,6 +1048,24 @@ public final class SecurityPartnerProvidersClientImpl implements SecurityPartner
     public Response<SecurityPartnerProviderInner> updateTagsWithResponse(
         String resourceGroupName, String securityPartnerProviderName, TagsObject parameters, Context context) {
         return updateTagsWithResponseAsync(resourceGroupName, securityPartnerProviderName, parameters, context).block();
+    }
+
+    /**
+     * Updates tags of a Security Partner Provider resource.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param securityPartnerProviderName The name of the Security Partner Provider.
+     * @param parameters Parameters supplied to update Security Partner Provider tags.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return security Partner Provider resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public SecurityPartnerProviderInner updateTags(
+        String resourceGroupName, String securityPartnerProviderName, TagsObject parameters) {
+        return updateTagsWithResponse(resourceGroupName, securityPartnerProviderName, parameters, Context.NONE)
+            .getValue();
     }
 
     /**
@@ -1063,7 +1097,7 @@ public final class SecurityPartnerProvidersClientImpl implements SecurityPartner
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1118,7 +1152,7 @@ public final class SecurityPartnerProvidersClientImpl implements SecurityPartner
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1227,7 +1261,7 @@ public final class SecurityPartnerProvidersClientImpl implements SecurityPartner
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1270,7 +1304,7 @@ public final class SecurityPartnerProvidersClientImpl implements SecurityPartner
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service

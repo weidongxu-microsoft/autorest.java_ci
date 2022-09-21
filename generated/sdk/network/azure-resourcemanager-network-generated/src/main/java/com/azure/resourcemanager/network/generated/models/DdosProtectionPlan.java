@@ -72,6 +72,14 @@ public interface DdosProtectionPlan {
     ProvisioningState provisioningState();
 
     /**
+     * Gets the publicIpAddresses property: The list of public IPs associated with the DDoS protection plan resource.
+     * This list is read-only.
+     *
+     * @return the publicIpAddresses value.
+     */
+    List<SubResource> publicIpAddresses();
+
+    /**
      * Gets the virtualNetworks property: The list of virtual networks associated with the DDoS protection plan
      * resource. This list is read-only.
      *

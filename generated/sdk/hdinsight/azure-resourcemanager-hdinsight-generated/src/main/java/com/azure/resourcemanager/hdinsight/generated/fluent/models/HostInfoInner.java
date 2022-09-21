@@ -28,6 +28,10 @@ public final class HostInfoInner {
     @JsonProperty(value = "effectiveDiskEncryptionKeyUrl")
     private String effectiveDiskEncryptionKeyUrl;
 
+    /** Creates an instance of HostInfoInner class. */
+    public HostInfoInner() {
+    }
+
     /**
      * Get the name property: The host name.
      *

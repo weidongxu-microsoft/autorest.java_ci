@@ -35,6 +35,10 @@ public final class PrivateLinkResourceInner {
     @JsonProperty(value = "type", access = JsonProperty.Access.WRITE_ONLY)
     private String type;
 
+    /** Creates an instance of PrivateLinkResourceInner class. */
+    public PrivateLinkResourceInner() {
+    }
+
     /**
      * Get the innerProperties property: Resource properties.
      *

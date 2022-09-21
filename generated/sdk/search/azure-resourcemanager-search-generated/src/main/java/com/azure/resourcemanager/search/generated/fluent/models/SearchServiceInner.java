@@ -39,6 +39,10 @@ public final class SearchServiceInner extends Resource {
     @JsonProperty(value = "identity")
     private Identity identity;
 
+    /** Creates an instance of SearchServiceInner class. */
+    public SearchServiceInner() {
+    }
+
     /**
      * Get the innerProperties property: Properties of the search service.
      *

@@ -29,6 +29,10 @@ public final class RulesEngineAction {
     @JsonProperty(value = "routeConfigurationOverride")
     private RouteConfiguration routeConfigurationOverride;
 
+    /** Creates an instance of RulesEngineAction class. */
+    public RulesEngineAction() {
+    }
+
     /**
      * Get the requestHeaderActions property: A list of header actions to apply from the request from AFD to the origin.
      *

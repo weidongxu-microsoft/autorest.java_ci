@@ -53,6 +53,10 @@ public final class ChannelProperties {
     @JsonProperty(value = "expirationTimeIfNotActivatedUtc")
     private OffsetDateTime expirationTimeIfNotActivatedUtc;
 
+    /** Creates an instance of ChannelProperties class. */
+    public ChannelProperties() {
+    }
+
     /**
      * Get the channelType property: The type of the event channel which represents the direction flow of events.
      *

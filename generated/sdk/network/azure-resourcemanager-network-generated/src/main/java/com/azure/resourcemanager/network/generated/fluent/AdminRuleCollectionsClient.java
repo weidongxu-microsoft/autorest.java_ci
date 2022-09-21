@@ -65,22 +65,6 @@ public interface AdminRuleCollectionsClient {
      * @param networkManagerName The name of the network manager.
      * @param configurationName The name of the network manager Security Configuration.
      * @param ruleCollectionName The name of the network manager security Configuration rule collection.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a network manager security admin configuration rule collection.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    AdminRuleCollectionInner get(
-        String resourceGroupName, String networkManagerName, String configurationName, String ruleCollectionName);
-
-    /**
-     * Gets a network manager security admin configuration rule collection.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param networkManagerName The name of the network manager.
-     * @param configurationName The name of the network manager Security Configuration.
-     * @param ruleCollectionName The name of the network manager security Configuration rule collection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -96,25 +80,20 @@ public interface AdminRuleCollectionsClient {
         Context context);
 
     /**
-     * Creates or updates an admin rule collection.
+     * Gets a network manager security admin configuration rule collection.
      *
      * @param resourceGroupName The name of the resource group.
      * @param networkManagerName The name of the network manager.
      * @param configurationName The name of the network manager Security Configuration.
      * @param ruleCollectionName The name of the network manager security Configuration rule collection.
-     * @param ruleCollection The Rule Collection to create or update.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return defines the admin rule collection.
+     * @return a network manager security admin configuration rule collection.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    AdminRuleCollectionInner createOrUpdate(
-        String resourceGroupName,
-        String networkManagerName,
-        String configurationName,
-        String ruleCollectionName,
-        AdminRuleCollectionInner ruleCollection);
+    AdminRuleCollectionInner get(
+        String resourceGroupName, String networkManagerName, String configurationName, String ruleCollectionName);
 
     /**
      * Creates or updates an admin rule collection.
@@ -138,6 +117,27 @@ public interface AdminRuleCollectionsClient {
         String ruleCollectionName,
         AdminRuleCollectionInner ruleCollection,
         Context context);
+
+    /**
+     * Creates or updates an admin rule collection.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param networkManagerName The name of the network manager.
+     * @param configurationName The name of the network manager Security Configuration.
+     * @param ruleCollectionName The name of the network manager security Configuration rule collection.
+     * @param ruleCollection The Rule Collection to create or update.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return defines the admin rule collection.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    AdminRuleCollectionInner createOrUpdate(
+        String resourceGroupName,
+        String networkManagerName,
+        String configurationName,
+        String ruleCollectionName,
+        AdminRuleCollectionInner ruleCollection);
 
     /**
      * Deletes an admin rule collection.

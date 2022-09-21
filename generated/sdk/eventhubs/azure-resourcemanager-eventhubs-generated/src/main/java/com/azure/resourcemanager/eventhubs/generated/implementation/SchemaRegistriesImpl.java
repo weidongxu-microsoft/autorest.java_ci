@@ -40,22 +40,13 @@ public final class SchemaRegistriesImpl implements SchemaRegistries {
         return Utils.mapPage(inner, inner1 -> new SchemaGroupImpl(inner1, this.manager()));
     }
 
-    public void delete(String resourceGroupName, String namespaceName, String schemaGroupName) {
-        this.serviceClient().delete(resourceGroupName, namespaceName, schemaGroupName);
-    }
-
     public Response<Void> deleteWithResponse(
         String resourceGroupName, String namespaceName, String schemaGroupName, Context context) {
         return this.serviceClient().deleteWithResponse(resourceGroupName, namespaceName, schemaGroupName, context);
     }
 
-    public SchemaGroup get(String resourceGroupName, String namespaceName, String schemaGroupName) {
-        SchemaGroupInner inner = this.serviceClient().get(resourceGroupName, namespaceName, schemaGroupName);
-        if (inner != null) {
-            return new SchemaGroupImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void delete(String resourceGroupName, String namespaceName, String schemaGroupName) {
+        this.serviceClient().delete(resourceGroupName, namespaceName, schemaGroupName);
     }
 
     public Response<SchemaGroup> getWithResponse(
@@ -68,6 +59,15 @@ public final class SchemaRegistriesImpl implements SchemaRegistries {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new SchemaGroupImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public SchemaGroup get(String resourceGroupName, String namespaceName, String schemaGroupName) {
+        SchemaGroupInner inner = this.serviceClient().get(resourceGroupName, namespaceName, schemaGroupName);
+        if (inner != null) {
+            return new SchemaGroupImpl(inner, this.manager());
         } else {
             return null;
         }

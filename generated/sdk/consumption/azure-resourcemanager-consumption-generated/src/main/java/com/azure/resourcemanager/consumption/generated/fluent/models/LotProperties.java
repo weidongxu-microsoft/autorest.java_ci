@@ -101,6 +101,10 @@ public final class LotProperties {
     @JsonProperty(value = "eTag", access = JsonProperty.Access.WRITE_ONLY)
     private String etag;
 
+    /** Creates an instance of LotProperties class. */
+    public LotProperties() {
+    }
+
     /**
      * Get the originalAmount property: The original amount of a lot.
      *

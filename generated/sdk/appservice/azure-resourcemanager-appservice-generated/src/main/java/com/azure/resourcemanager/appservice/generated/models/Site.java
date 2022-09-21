@@ -6,7 +6,6 @@ package com.azure.resourcemanager.appservice.generated.models;
 
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
-import com.azure.core.http.rest.StreamResponse;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.fluent.models.BackupRequestInner;
@@ -1197,19 +1196,6 @@ public interface Site {
      * <p>Description for Applies the configuration settings from the target slot onto the current slot.
      *
      * @param slotSwapEntity JSON object that contains the target slot name. See example.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void applySlotConfigToProduction(CsmSlotEntity slotSwapEntity);
-
-    /**
-     * Applies the configuration settings from the target slot onto the current slot.
-     *
-     * <p>Description for Applies the configuration settings from the target slot onto the current slot.
-     *
-     * @param slotSwapEntity JSON object that contains the target slot name. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -1220,18 +1206,17 @@ public interface Site {
     Response<Void> applySlotConfigToProductionWithResponse(CsmSlotEntity slotSwapEntity, Context context);
 
     /**
-     * Creates a backup of an app.
+     * Applies the configuration settings from the target slot onto the current slot.
      *
-     * <p>Description for Creates a backup of an app.
+     * <p>Description for Applies the configuration settings from the target slot onto the current slot.
      *
-     * @param request Backup configuration. You can use the JSON response from the POST action as input here.
+     * @param slotSwapEntity JSON object that contains the target slot name. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return backup description.
      */
-    BackupItem backup(BackupRequestInner request);
+    void applySlotConfigToProduction(CsmSlotEntity slotSwapEntity);
 
     /**
      * Creates a backup of an app.
@@ -1249,15 +1234,18 @@ public interface Site {
     Response<BackupItem> backupWithResponse(BackupRequestInner request, Context context);
 
     /**
-     * Gets the last lines of docker logs for the given site
+     * Creates a backup of an app.
      *
-     * <p>Description for Gets the last lines of docker logs for the given site.
+     * <p>Description for Creates a backup of an app.
      *
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @param request Backup configuration. You can use the JSON response from the POST action as input here.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return backup description.
      */
-    InputStream getWebSiteContainerLogs();
+    BackupItem backup(BackupRequestInner request);
 
     /**
      * Gets the last lines of docker logs for the given site
@@ -1268,25 +1256,20 @@ public interface Site {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the response body along with {@link Response}.
      */
-    StreamResponse getWebSiteContainerLogsWithResponse(Context context);
+    Response<InputStream> getWebSiteContainerLogsWithResponse(Context context);
 
     /**
-     * Discovers an existing app backup that can be restored from a blob in Azure storage. Use this to get information
-     * about the databases stored in a backup.
+     * Gets the last lines of docker logs for the given site
      *
-     * <p>Description for Discovers an existing app backup that can be restored from a blob in Azure storage. Use this
-     * to get information about the databases stored in a backup.
+     * <p>Description for Gets the last lines of docker logs for the given site.
      *
-     * @param request A RestoreRequest object that includes Azure storage URL and blog name for discovery of backup.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of a restore request.
+     * @return the response.
      */
-    RestoreRequest discoverBackup(RestoreRequestInner request);
+    InputStream getWebSiteContainerLogs();
 
     /**
      * Discovers an existing app backup that can be restored from a blob in Azure storage. Use this to get information
@@ -1306,16 +1289,20 @@ public interface Site {
     Response<RestoreRequest> discoverBackupWithResponse(RestoreRequestInner request, Context context);
 
     /**
-     * Shows whether an app can be cloned to another resource group or subscription.
+     * Discovers an existing app backup that can be restored from a blob in Azure storage. Use this to get information
+     * about the databases stored in a backup.
      *
-     * <p>Description for Shows whether an app can be cloned to another resource group or subscription.
+     * <p>Description for Discovers an existing app backup that can be restored from a blob in Azure storage. Use this
+     * to get information about the databases stored in a backup.
      *
+     * @param request A RestoreRequest object that includes Azure storage URL and blog name for discovery of backup.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents whether or not an app is cloneable.
+     * @return description of a restore request.
      */
-    SiteCloneability isCloneable();
+    RestoreRequest discoverBackup(RestoreRequestInner request);
 
     /**
      * Shows whether an app can be cloned to another resource group or subscription.
@@ -1330,6 +1317,18 @@ public interface Site {
      * @return represents whether or not an app is cloneable along with {@link Response}.
      */
     Response<SiteCloneability> isCloneableWithResponse(Context context);
+
+    /**
+     * Shows whether an app can be cloned to another resource group or subscription.
+     *
+     * <p>Description for Shows whether an app can be cloned to another resource group or subscription.
+     *
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return represents whether or not an app is cloneable.
+     */
+    SiteCloneability isCloneable();
 
     /**
      * Gets existing backups of an app.
@@ -1362,18 +1361,6 @@ public interface Site {
      *
      * <p>Description for This is to allow calling via powershell and ARM template.
      *
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return function secrets.
-     */
-    FunctionSecrets listSyncFunctionTriggers();
-
-    /**
-     * This is to allow calling via powershell and ARM template.
-     *
-     * <p>Description for This is to allow calling via powershell and ARM template.
-     *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -1382,6 +1369,18 @@ public interface Site {
      * @return function secrets along with {@link Response}.
      */
     Response<FunctionSecrets> listSyncFunctionTriggersWithResponse(Context context);
+
+    /**
+     * This is to allow calling via powershell and ARM template.
+     *
+     * <p>Description for This is to allow calling via powershell and ARM template.
+     *
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return function secrets.
+     */
+    FunctionSecrets listSyncFunctionTriggers();
 
     /**
      * Migrates a local (in-app) MySql database to a remote MySql database.
@@ -1417,17 +1416,6 @@ public interface Site {
      *
      * <p>Description for Generates a new publishing password for an app (or deployment slot, if specified).
      *
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void generateNewSitePublishingPassword();
-
-    /**
-     * Generates a new publishing password for an app (or deployment slot, if specified).
-     *
-     * <p>Description for Generates a new publishing password for an app (or deployment slot, if specified).
-     *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -1436,6 +1424,34 @@ public interface Site {
      * @return the {@link Response}.
      */
     Response<Void> generateNewSitePublishingPasswordWithResponse(Context context);
+
+    /**
+     * Generates a new publishing password for an app (or deployment slot, if specified).
+     *
+     * <p>Description for Generates a new publishing password for an app (or deployment slot, if specified).
+     *
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void generateNewSitePublishingPassword();
+
+    /**
+     * Gets the publishing profile for an app (or deployment slot, if specified).
+     *
+     * <p>Description for Gets the publishing profile for an app (or deployment slot, if specified).
+     *
+     * @param publishingProfileOptions Specifies publishingProfileOptions for publishing profile. For example, use
+     *     {"format": "FileZilla3"} to get a FileZilla publishing profile.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response body along with {@link Response}.
+     */
+    Response<InputStream> listPublishingProfileXmlWithSecretsWithResponse(
+        CsmPublishingProfileOptions publishingProfileOptions, Context context);
 
     /**
      * Gets the publishing profile for an app (or deployment slot, if specified).
@@ -1451,36 +1467,6 @@ public interface Site {
      * @return the response.
      */
     InputStream listPublishingProfileXmlWithSecrets(CsmPublishingProfileOptions publishingProfileOptions);
-
-    /**
-     * Gets the publishing profile for an app (or deployment slot, if specified).
-     *
-     * <p>Description for Gets the publishing profile for an app (or deployment slot, if specified).
-     *
-     * @param publishingProfileOptions Specifies publishingProfileOptions for publishing profile. For example, use
-     *     {"format": "FileZilla3"} to get a FileZilla publishing profile.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
-     */
-    StreamResponse listPublishingProfileXmlWithSecretsWithResponse(
-        CsmPublishingProfileOptions publishingProfileOptions, Context context);
-
-    /**
-     * Resets the configuration settings of the current slot if they were previously modified by calling the API with
-     * POST.
-     *
-     * <p>Description for Resets the configuration settings of the current slot if they were previously modified by
-     * calling the API with POST.
-     *
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void resetProductionSlotConfig();
 
     /**
      * Resets the configuration settings of the current slot if they were previously modified by calling the API with
@@ -1499,15 +1485,17 @@ public interface Site {
     Response<Void> resetProductionSlotConfigWithResponse(Context context);
 
     /**
-     * Restarts an app (or deployment slot, if specified).
+     * Resets the configuration settings of the current slot if they were previously modified by calling the API with
+     * POST.
      *
-     * <p>Description for Restarts an app (or deployment slot, if specified).
+     * <p>Description for Resets the configuration settings of the current slot if they were previously modified by
+     * calling the API with POST.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
-    void restart();
+    void resetProductionSlotConfig();
 
     /**
      * Restarts an app (or deployment slot, if specified).
@@ -1526,6 +1514,17 @@ public interface Site {
      * @return the {@link Response}.
      */
     Response<Void> restartWithResponse(Boolean softRestart, Boolean synchronous, Context context);
+
+    /**
+     * Restarts an app (or deployment slot, if specified).
+     *
+     * <p>Description for Restarts an app (or deployment slot, if specified).
+     *
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void restart();
 
     /**
      * Restores an app from a backup blob in Azure Storage.
@@ -1671,17 +1670,6 @@ public interface Site {
      *
      * <p>Description for Starts an app (or deployment slot, if specified).
      *
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void start();
-
-    /**
-     * Starts an app (or deployment slot, if specified).
-     *
-     * <p>Description for Starts an app (or deployment slot, if specified).
-     *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -1690,6 +1678,17 @@ public interface Site {
      * @return the {@link Response}.
      */
     Response<Void> startWithResponse(Context context);
+
+    /**
+     * Starts an app (or deployment slot, if specified).
+     *
+     * <p>Description for Starts an app (or deployment slot, if specified).
+     *
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void start();
 
     /**
      * Start capturing network packets for the site.
@@ -1741,17 +1740,6 @@ public interface Site {
      *
      * <p>Description for Stops an app (or deployment slot, if specified).
      *
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void stop();
-
-    /**
-     * Stops an app (or deployment slot, if specified).
-     *
-     * <p>Description for Stops an app (or deployment slot, if specified).
-     *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -1762,15 +1750,15 @@ public interface Site {
     Response<Void> stopWithResponse(Context context);
 
     /**
-     * Stop ongoing capturing network packets for the site.
+     * Stops an app (or deployment slot, if specified).
      *
-     * <p>Description for Stop ongoing capturing network packets for the site.
+     * <p>Description for Stops an app (or deployment slot, if specified).
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
-    void stopNetworkTrace();
+    void stop();
 
     /**
      * Stop ongoing capturing network packets for the site.
@@ -1787,15 +1775,15 @@ public interface Site {
     Response<Void> stopNetworkTraceWithResponse(Context context);
 
     /**
-     * Sync web app repository.
+     * Stop ongoing capturing network packets for the site.
      *
-     * <p>Description for Sync web app repository.
+     * <p>Description for Stop ongoing capturing network packets for the site.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
-    void syncRepository();
+    void stopNetworkTrace();
 
     /**
      * Sync web app repository.
@@ -1812,15 +1800,15 @@ public interface Site {
     Response<Void> syncRepositoryWithResponse(Context context);
 
     /**
-     * Syncs function trigger metadata to the management database
+     * Sync web app repository.
      *
-     * <p>Description for Syncs function trigger metadata to the management database.
+     * <p>Description for Sync web app repository.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
-    void syncFunctionTriggers();
+    void syncRepository();
 
     /**
      * Syncs function trigger metadata to the management database
@@ -1835,4 +1823,15 @@ public interface Site {
      * @return the {@link Response}.
      */
     Response<Void> syncFunctionTriggersWithResponse(Context context);
+
+    /**
+     * Syncs function trigger metadata to the management database
+     *
+     * <p>Description for Syncs function trigger metadata to the management database.
+     *
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void syncFunctionTriggers();
 }

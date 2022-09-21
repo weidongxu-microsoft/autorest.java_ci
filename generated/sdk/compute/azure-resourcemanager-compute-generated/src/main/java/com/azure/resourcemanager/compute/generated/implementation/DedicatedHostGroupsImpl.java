@@ -29,21 +29,13 @@ public final class DedicatedHostGroupsImpl implements DedicatedHostGroups {
         this.serviceManager = serviceManager;
     }
 
-    public void deleteByResourceGroup(String resourceGroupName, String hostGroupName) {
-        this.serviceClient().delete(resourceGroupName, hostGroupName);
-    }
-
-    public Response<Void> deleteWithResponse(String resourceGroupName, String hostGroupName, Context context) {
+    public Response<Void> deleteByResourceGroupWithResponse(
+        String resourceGroupName, String hostGroupName, Context context) {
         return this.serviceClient().deleteWithResponse(resourceGroupName, hostGroupName, context);
     }
 
-    public DedicatedHostGroup getByResourceGroup(String resourceGroupName, String hostGroupName) {
-        DedicatedHostGroupInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, hostGroupName);
-        if (inner != null) {
-            return new DedicatedHostGroupImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void deleteByResourceGroup(String resourceGroupName, String hostGroupName) {
+        this.serviceClient().delete(resourceGroupName, hostGroupName);
     }
 
     public Response<DedicatedHostGroup> getByResourceGroupWithResponse(
@@ -56,6 +48,15 @@ public final class DedicatedHostGroupsImpl implements DedicatedHostGroups {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new DedicatedHostGroupImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public DedicatedHostGroup getByResourceGroup(String resourceGroupName, String hostGroupName) {
+        DedicatedHostGroupInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, hostGroupName);
+        if (inner != null) {
+            return new DedicatedHostGroupImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -139,7 +140,7 @@ public final class DedicatedHostGroupsImpl implements DedicatedHostGroups {
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'hostGroups'.", id)));
         }
-        this.deleteWithResponse(resourceGroupName, hostGroupName, Context.NONE);
+        this.deleteByResourceGroupWithResponse(resourceGroupName, hostGroupName, Context.NONE);
     }
 
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
@@ -158,7 +159,7 @@ public final class DedicatedHostGroupsImpl implements DedicatedHostGroups {
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'hostGroups'.", id)));
         }
-        return this.deleteWithResponse(resourceGroupName, hostGroupName, context);
+        return this.deleteByResourceGroupWithResponse(resourceGroupName, hostGroupName, context);
     }
 
     private DedicatedHostGroupsClient serviceClient() {

@@ -43,17 +43,6 @@ public final class SharedGalleryImageVersionsImpl implements SharedGalleryImageV
         return Utils.mapPage(inner, inner1 -> new SharedGalleryImageVersionImpl(inner1, this.manager()));
     }
 
-    public SharedGalleryImageVersion get(
-        String location, String galleryUniqueName, String galleryImageName, String galleryImageVersionName) {
-        SharedGalleryImageVersionInner inner =
-            this.serviceClient().get(location, galleryUniqueName, galleryImageName, galleryImageVersionName);
-        if (inner != null) {
-            return new SharedGalleryImageVersionImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<SharedGalleryImageVersion> getWithResponse(
         String location,
         String galleryUniqueName,
@@ -70,6 +59,17 @@ public final class SharedGalleryImageVersionsImpl implements SharedGalleryImageV
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new SharedGalleryImageVersionImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public SharedGalleryImageVersion get(
+        String location, String galleryUniqueName, String galleryImageName, String galleryImageVersionName) {
+        SharedGalleryImageVersionInner inner =
+            this.serviceClient().get(location, galleryUniqueName, galleryImageName, galleryImageVersionName);
+        if (inner != null) {
+            return new SharedGalleryImageVersionImpl(inner, this.manager());
         } else {
             return null;
         }

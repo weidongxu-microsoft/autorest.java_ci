@@ -59,6 +59,10 @@ public final class LinuxJavaContainerSettings {
     @JsonProperty(value = "isEarlyAccess", access = JsonProperty.Access.WRITE_ONLY)
     private Boolean isEarlyAccess;
 
+    /** Creates an instance of LinuxJavaContainerSettings class. */
+    public LinuxJavaContainerSettings() {
+    }
+
     /**
      * Get the java11Runtime property: Java 11 version (runtime only).
      *

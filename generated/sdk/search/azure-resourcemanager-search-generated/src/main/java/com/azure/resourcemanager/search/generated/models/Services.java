@@ -18,20 +18,6 @@ public interface Services {
      *     value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure Cognitive Search service associated with the specified resource
      *     group.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the search service with the given name in the given resource group.
-     */
-    SearchService getByResourceGroup(String resourceGroupName, String searchServiceName);
-
-    /**
-     * Gets the search service with the given name in the given resource group.
-     *
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
-     *     value from the Azure Resource Manager API or the portal.
-     * @param searchServiceName The name of the Azure Cognitive Search service associated with the specified resource
-     *     group.
      * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
      *     included in response information as a way to track the request.
      * @param context The context to associate with this operation.
@@ -44,7 +30,7 @@ public interface Services {
         String resourceGroupName, String searchServiceName, UUID clientRequestId, Context context);
 
     /**
-     * Deletes a search service in the given resource group, along with its associated resources.
+     * Gets the search service with the given name in the given resource group.
      *
      * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
      *     value from the Azure Resource Manager API or the portal.
@@ -53,8 +39,9 @@ public interface Services {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the search service with the given name in the given resource group.
      */
-    void delete(String resourceGroupName, String searchServiceName);
+    SearchService getByResourceGroup(String resourceGroupName, String searchServiceName);
 
     /**
      * Deletes a search service in the given resource group, along with its associated resources.
@@ -73,6 +60,19 @@ public interface Services {
      */
     Response<Void> deleteWithResponse(
         String resourceGroupName, String searchServiceName, UUID clientRequestId, Context context);
+
+    /**
+     * Deletes a search service in the given resource group, along with its associated resources.
+     *
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     *     value from the Azure Resource Manager API or the portal.
+     * @param searchServiceName The name of the Azure Cognitive Search service associated with the specified resource
+     *     group.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void delete(String resourceGroupName, String searchServiceName);
 
     /**
      * Gets a list of all search services in the given resource group.
@@ -130,18 +130,6 @@ public interface Services {
      * unique since they are part of the service URI (https://&lt;name&gt;.search.windows.net).
      *
      * @param checkNameAvailabilityInput The resource name and type to check.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return output of check name availability API.
-     */
-    CheckNameAvailabilityOutput checkNameAvailability(CheckNameAvailabilityInput checkNameAvailabilityInput);
-
-    /**
-     * Checks whether or not the given search service name is available for use. Search service names must be globally
-     * unique since they are part of the service URI (https://&lt;name&gt;.search.windows.net).
-     *
-     * @param checkNameAvailabilityInput The resource name and type to check.
      * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
      *     included in response information as a way to track the request.
      * @param context The context to associate with this operation.
@@ -152,6 +140,18 @@ public interface Services {
      */
     Response<CheckNameAvailabilityOutput> checkNameAvailabilityWithResponse(
         CheckNameAvailabilityInput checkNameAvailabilityInput, UUID clientRequestId, Context context);
+
+    /**
+     * Checks whether or not the given search service name is available for use. Search service names must be globally
+     * unique since they are part of the service URI (https://&lt;name&gt;.search.windows.net).
+     *
+     * @param checkNameAvailabilityInput The resource name and type to check.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return output of check name availability API.
+     */
+    CheckNameAvailabilityOutput checkNameAvailability(CheckNameAvailabilityInput checkNameAvailabilityInput);
 
     /**
      * Gets the search service with the given name in the given resource group.

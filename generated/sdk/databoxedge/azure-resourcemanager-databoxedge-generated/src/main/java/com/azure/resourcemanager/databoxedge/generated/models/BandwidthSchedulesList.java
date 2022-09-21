@@ -24,6 +24,10 @@ public final class BandwidthSchedulesList {
     @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
 
+    /** Creates an instance of BandwidthSchedulesList class. */
+    public BandwidthSchedulesList() {
+    }
+
     /**
      * Get the value property: The list of bandwidth schedules.
      *

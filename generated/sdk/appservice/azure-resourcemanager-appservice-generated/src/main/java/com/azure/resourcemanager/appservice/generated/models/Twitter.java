@@ -23,6 +23,10 @@ public final class Twitter {
     @JsonProperty(value = "registration")
     private TwitterRegistration registration;
 
+    /** Creates an instance of Twitter class. */
+    public Twitter() {
+    }
+
     /**
      * Get the enabled property: &lt;code&gt;false&lt;/code&gt; if the Twitter provider should not be enabled despite
      * the set registration; otherwise, &lt;code&gt;true&lt;/code&gt;.

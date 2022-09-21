@@ -47,6 +47,10 @@ public final class ReservationRecommendationDetailsSavingsProperties {
     @JsonProperty(value = "unitOfMeasure", access = JsonProperty.Access.WRITE_ONLY)
     private String unitOfMeasure;
 
+    /** Creates an instance of ReservationRecommendationDetailsSavingsProperties class. */
+    public ReservationRecommendationDetailsSavingsProperties() {
+    }
+
     /**
      * Get the calculatedSavings property: List of calculated savings.
      *

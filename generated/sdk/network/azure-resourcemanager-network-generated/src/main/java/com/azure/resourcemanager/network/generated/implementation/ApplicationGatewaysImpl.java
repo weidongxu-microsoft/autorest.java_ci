@@ -49,16 +49,6 @@ public final class ApplicationGatewaysImpl implements ApplicationGateways {
         this.serviceClient().delete(resourceGroupName, applicationGatewayName, context);
     }
 
-    public ApplicationGateway getByResourceGroup(String resourceGroupName, String applicationGatewayName) {
-        ApplicationGatewayInner inner =
-            this.serviceClient().getByResourceGroup(resourceGroupName, applicationGatewayName);
-        if (inner != null) {
-            return new ApplicationGatewayImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<ApplicationGateway> getByResourceGroupWithResponse(
         String resourceGroupName, String applicationGatewayName, Context context) {
         Response<ApplicationGatewayInner> inner =
@@ -69,6 +59,16 @@ public final class ApplicationGatewaysImpl implements ApplicationGateways {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new ApplicationGatewayImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public ApplicationGateway getByResourceGroup(String resourceGroupName, String applicationGatewayName) {
+        ApplicationGatewayInner inner =
+            this.serviceClient().getByResourceGroup(resourceGroupName, applicationGatewayName);
+        if (inner != null) {
+            return new ApplicationGatewayImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -185,21 +185,12 @@ public final class ApplicationGatewaysImpl implements ApplicationGateways {
         }
     }
 
-    public List<String> listAvailableServerVariables() {
-        List<String> inner = this.serviceClient().listAvailableServerVariables();
-        if (inner != null) {
-            return Collections.unmodifiableList(inner);
-        } else {
-            return Collections.emptyList();
-        }
-    }
-
     public Response<List<String>> listAvailableServerVariablesWithResponse(Context context) {
         return this.serviceClient().listAvailableServerVariablesWithResponse(context);
     }
 
-    public List<String> listAvailableRequestHeaders() {
-        List<String> inner = this.serviceClient().listAvailableRequestHeaders();
+    public List<String> listAvailableServerVariables() {
+        List<String> inner = this.serviceClient().listAvailableServerVariables();
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
@@ -211,8 +202,8 @@ public final class ApplicationGatewaysImpl implements ApplicationGateways {
         return this.serviceClient().listAvailableRequestHeadersWithResponse(context);
     }
 
-    public List<String> listAvailableResponseHeaders() {
-        List<String> inner = this.serviceClient().listAvailableResponseHeaders();
+    public List<String> listAvailableRequestHeaders() {
+        List<String> inner = this.serviceClient().listAvailableRequestHeaders();
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
@@ -224,12 +215,12 @@ public final class ApplicationGatewaysImpl implements ApplicationGateways {
         return this.serviceClient().listAvailableResponseHeadersWithResponse(context);
     }
 
-    public ApplicationGatewayAvailableWafRuleSetsResult listAvailableWafRuleSets() {
-        ApplicationGatewayAvailableWafRuleSetsResultInner inner = this.serviceClient().listAvailableWafRuleSets();
+    public List<String> listAvailableResponseHeaders() {
+        List<String> inner = this.serviceClient().listAvailableResponseHeaders();
         if (inner != null) {
-            return new ApplicationGatewayAvailableWafRuleSetsResultImpl(inner, this.manager());
+            return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -248,10 +239,10 @@ public final class ApplicationGatewaysImpl implements ApplicationGateways {
         }
     }
 
-    public ApplicationGatewayAvailableSslOptions listAvailableSslOptions() {
-        ApplicationGatewayAvailableSslOptionsInner inner = this.serviceClient().listAvailableSslOptions();
+    public ApplicationGatewayAvailableWafRuleSetsResult listAvailableWafRuleSets() {
+        ApplicationGatewayAvailableWafRuleSetsResultInner inner = this.serviceClient().listAvailableWafRuleSets();
         if (inner != null) {
-            return new ApplicationGatewayAvailableSslOptionsImpl(inner, this.manager());
+            return new ApplicationGatewayAvailableWafRuleSetsResultImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -271,6 +262,15 @@ public final class ApplicationGatewaysImpl implements ApplicationGateways {
         }
     }
 
+    public ApplicationGatewayAvailableSslOptions listAvailableSslOptions() {
+        ApplicationGatewayAvailableSslOptionsInner inner = this.serviceClient().listAvailableSslOptions();
+        if (inner != null) {
+            return new ApplicationGatewayAvailableSslOptionsImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
     public PagedIterable<ApplicationGatewaySslPredefinedPolicy> listAvailableSslPredefinedPolicies() {
         PagedIterable<ApplicationGatewaySslPredefinedPolicyInner> inner =
             this.serviceClient().listAvailableSslPredefinedPolicies();
@@ -283,16 +283,6 @@ public final class ApplicationGatewaysImpl implements ApplicationGateways {
         return Utils.mapPage(inner, inner1 -> new ApplicationGatewaySslPredefinedPolicyImpl(inner1, this.manager()));
     }
 
-    public ApplicationGatewaySslPredefinedPolicy getSslPredefinedPolicy(String predefinedPolicyName) {
-        ApplicationGatewaySslPredefinedPolicyInner inner =
-            this.serviceClient().getSslPredefinedPolicy(predefinedPolicyName);
-        if (inner != null) {
-            return new ApplicationGatewaySslPredefinedPolicyImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<ApplicationGatewaySslPredefinedPolicy> getSslPredefinedPolicyWithResponse(
         String predefinedPolicyName, Context context) {
         Response<ApplicationGatewaySslPredefinedPolicyInner> inner =
@@ -303,6 +293,16 @@ public final class ApplicationGatewaysImpl implements ApplicationGateways {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new ApplicationGatewaySslPredefinedPolicyImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public ApplicationGatewaySslPredefinedPolicy getSslPredefinedPolicy(String predefinedPolicyName) {
+        ApplicationGatewaySslPredefinedPolicyInner inner =
+            this.serviceClient().getSslPredefinedPolicy(predefinedPolicyName);
+        if (inner != null) {
+            return new ApplicationGatewaySslPredefinedPolicyImpl(inner, this.manager());
         } else {
             return null;
         }

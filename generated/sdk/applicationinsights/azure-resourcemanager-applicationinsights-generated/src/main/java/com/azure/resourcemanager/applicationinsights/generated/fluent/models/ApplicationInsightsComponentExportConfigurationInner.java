@@ -130,6 +130,10 @@ public final class ApplicationInsightsComponentExportConfigurationInner {
     @JsonProperty(value = "ContainerName", access = JsonProperty.Access.WRITE_ONLY)
     private String containerName;
 
+    /** Creates an instance of ApplicationInsightsComponentExportConfigurationInner class. */
+    public ApplicationInsightsComponentExportConfigurationInner() {
+    }
+
     /**
      * Get the exportId property: The unique ID of the export configuration inside an Application Insights component. It
      * is auto generated when the Continuous Export configuration is created.

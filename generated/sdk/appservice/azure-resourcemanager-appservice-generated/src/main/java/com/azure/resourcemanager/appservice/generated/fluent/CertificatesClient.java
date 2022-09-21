@@ -82,22 +82,6 @@ public interface CertificatesClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return sSL certificate for an app.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    CertificateInner getByResourceGroup(String resourceGroupName, String name);
-
-    /**
-     * Get a certificate.
-     *
-     * <p>Description for Get a certificate.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the certificate.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -109,13 +93,12 @@ public interface CertificatesClient {
     Response<CertificateInner> getByResourceGroupWithResponse(String resourceGroupName, String name, Context context);
 
     /**
-     * Create or update a certificate.
+     * Get a certificate.
      *
-     * <p>Description for Create or update a certificate.
+     * <p>Description for Get a certificate.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate.
-     * @param certificateEnvelope Details of certificate, if it exists already.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -123,7 +106,7 @@ public interface CertificatesClient {
      * @return sSL certificate for an app.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    CertificateInner createOrUpdate(String resourceGroupName, String name, CertificateInner certificateEnvelope);
+    CertificateInner getByResourceGroup(String resourceGroupName, String name);
 
     /**
      * Create or update a certificate.
@@ -145,19 +128,21 @@ public interface CertificatesClient {
         String resourceGroupName, String name, CertificateInner certificateEnvelope, Context context);
 
     /**
-     * Delete a certificate.
+     * Create or update a certificate.
      *
-     * <p>Description for Delete a certificate.
+     * <p>Description for Create or update a certificate.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate.
+     * @param certificateEnvelope Details of certificate, if it exists already.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return sSL certificate for an app.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    void delete(String resourceGroupName, String name);
+    CertificateInner createOrUpdate(String resourceGroupName, String name, CertificateInner certificateEnvelope);
 
     /**
      * Delete a certificate.
@@ -177,21 +162,19 @@ public interface CertificatesClient {
     Response<Void> deleteWithResponse(String resourceGroupName, String name, Context context);
 
     /**
-     * Create or update a certificate.
+     * Delete a certificate.
      *
-     * <p>Description for Create or update a certificate.
+     * <p>Description for Delete a certificate.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate.
-     * @param certificateEnvelope Details of certificate, if it exists already.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return sSL certificate for an app.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    CertificateInner update(String resourceGroupName, String name, CertificatePatchResource certificateEnvelope);
+    void delete(String resourceGroupName, String name);
 
     /**
      * Create or update a certificate.
@@ -211,4 +194,21 @@ public interface CertificatesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<CertificateInner> updateWithResponse(
         String resourceGroupName, String name, CertificatePatchResource certificateEnvelope, Context context);
+
+    /**
+     * Create or update a certificate.
+     *
+     * <p>Description for Create or update a certificate.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the certificate.
+     * @param certificateEnvelope Details of certificate, if it exists already.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return sSL certificate for an app.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    CertificateInner update(String resourceGroupName, String name, CertificatePatchResource certificateEnvelope);
 }

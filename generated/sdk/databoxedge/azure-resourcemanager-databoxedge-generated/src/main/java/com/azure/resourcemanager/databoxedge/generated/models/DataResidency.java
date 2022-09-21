@@ -16,6 +16,10 @@ public final class DataResidency {
     @JsonProperty(value = "type")
     private DataResidencyType type;
 
+    /** Creates an instance of DataResidency class. */
+    public DataResidency() {
+    }
+
     /**
      * Get the type property: DataResidencyType enum.
      *

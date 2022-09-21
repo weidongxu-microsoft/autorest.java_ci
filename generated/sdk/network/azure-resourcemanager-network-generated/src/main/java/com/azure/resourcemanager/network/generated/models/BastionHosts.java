@@ -38,18 +38,6 @@ public interface BastionHosts {
      *
      * @param resourceGroupName The name of the resource group.
      * @param bastionHostname The name of the Bastion Host.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Bastion Host.
-     */
-    BastionHost getByResourceGroup(String resourceGroupName, String bastionHostname);
-
-    /**
-     * Gets the specified Bastion Host.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param bastionHostname The name of the Bastion Host.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -58,6 +46,18 @@ public interface BastionHosts {
      */
     Response<BastionHost> getByResourceGroupWithResponse(
         String resourceGroupName, String bastionHostname, Context context);
+
+    /**
+     * Gets the specified Bastion Host.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param bastionHostname The name of the Bastion Host.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified Bastion Host.
+     */
+    BastionHost getByResourceGroup(String resourceGroupName, String bastionHostname);
 
     /**
      * Lists all Bastion Hosts in a subscription.

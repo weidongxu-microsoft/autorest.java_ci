@@ -29,6 +29,10 @@ public final class EventSummaryInner extends ProxyResource {
     @JsonProperty(value = "eTag")
     private String etag;
 
+    /** Creates an instance of EventSummaryInner class. */
+    public EventSummaryInner() {
+    }
+
     /**
      * Get the innerProperties property: The event properties.
      *

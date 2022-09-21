@@ -480,12 +480,12 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the autoscale setting resource.
+     * @return the autoscale setting resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public AutoscaleSettingResourceInner createOrUpdate(
+    public Response<AutoscaleSettingResourceInner> createOrUpdateWithResponse(
         String resourceGroupName, String autoscaleSettingName, AutoscaleSettingResourceInner parameters) {
-        return createOrUpdateAsync(resourceGroupName, autoscaleSettingName, parameters).block();
+        return createOrUpdateWithResponseAsync(resourceGroupName, autoscaleSettingName, parameters).block();
     }
 
     /**
@@ -507,6 +507,23 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
         AutoscaleSettingResourceInner parameters,
         Context context) {
         return createOrUpdateWithResponseAsync(resourceGroupName, autoscaleSettingName, parameters, context).block();
+    }
+
+    /**
+     * Creates or updates an autoscale setting.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param autoscaleSettingName The autoscale setting name.
+     * @param parameters Parameters supplied to the operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the autoscale setting resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public AutoscaleSettingResourceInner createOrUpdate(
+        String resourceGroupName, String autoscaleSettingName, AutoscaleSettingResourceInner parameters) {
+        return createOrUpdateWithResponse(resourceGroupName, autoscaleSettingName, parameters, Context.NONE).getValue();
     }
 
     /**
@@ -629,10 +646,11 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public void delete(String resourceGroupName, String autoscaleSettingName) {
-        deleteAsync(resourceGroupName, autoscaleSettingName).block();
+    public Response<Void> deleteWithResponse(String resourceGroupName, String autoscaleSettingName) {
+        return deleteWithResponseAsync(resourceGroupName, autoscaleSettingName).block();
     }
 
     /**
@@ -649,6 +667,20 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> deleteWithResponse(String resourceGroupName, String autoscaleSettingName, Context context) {
         return deleteWithResponseAsync(resourceGroupName, autoscaleSettingName, context).block();
+    }
+
+    /**
+     * Deletes and autoscale setting.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param autoscaleSettingName The autoscale setting name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public void delete(String resourceGroupName, String autoscaleSettingName) {
+        deleteWithResponse(resourceGroupName, autoscaleSettingName, Context.NONE);
     }
 
     /**
@@ -774,11 +806,12 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an autoscale setting.
+     * @return an autoscale setting along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public AutoscaleSettingResourceInner getByResourceGroup(String resourceGroupName, String autoscaleSettingName) {
-        return getByResourceGroupAsync(resourceGroupName, autoscaleSettingName).block();
+    public Response<AutoscaleSettingResourceInner> getByResourceGroupWithResponse(
+        String resourceGroupName, String autoscaleSettingName) {
+        return getByResourceGroupWithResponseAsync(resourceGroupName, autoscaleSettingName).block();
     }
 
     /**
@@ -796,6 +829,21 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
     public Response<AutoscaleSettingResourceInner> getByResourceGroupWithResponse(
         String resourceGroupName, String autoscaleSettingName, Context context) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, autoscaleSettingName, context).block();
+    }
+
+    /**
+     * Gets an autoscale setting.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param autoscaleSettingName The autoscale setting name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return an autoscale setting.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public AutoscaleSettingResourceInner getByResourceGroup(String resourceGroupName, String autoscaleSettingName) {
+        return getByResourceGroupWithResponse(resourceGroupName, autoscaleSettingName, Context.NONE).getValue();
     }
 
     /**
@@ -944,12 +992,12 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the autoscale setting resource.
+     * @return the autoscale setting resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public AutoscaleSettingResourceInner update(
+    public Response<AutoscaleSettingResourceInner> updateWithResponse(
         String resourceGroupName, String autoscaleSettingName, AutoscaleSettingResourcePatch autoscaleSettingResource) {
-        return updateAsync(resourceGroupName, autoscaleSettingName, autoscaleSettingResource).block();
+        return updateWithResponseAsync(resourceGroupName, autoscaleSettingName, autoscaleSettingResource).block();
     }
 
     /**
@@ -972,6 +1020,24 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
         Context context) {
         return updateWithResponseAsync(resourceGroupName, autoscaleSettingName, autoscaleSettingResource, context)
             .block();
+    }
+
+    /**
+     * Updates an existing AutoscaleSettingsResource. To update other fields use the CreateOrUpdate method.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param autoscaleSettingName The autoscale setting name.
+     * @param autoscaleSettingResource Parameters supplied to the operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the autoscale setting resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public AutoscaleSettingResourceInner update(
+        String resourceGroupName, String autoscaleSettingName, AutoscaleSettingResourcePatch autoscaleSettingResource) {
+        return updateWithResponse(resourceGroupName, autoscaleSettingName, autoscaleSettingResource, Context.NONE)
+            .getValue();
     }
 
     /**

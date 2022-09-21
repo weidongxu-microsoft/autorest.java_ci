@@ -106,6 +106,10 @@ public final class DataBoxEdgeDeviceExtendedInfoProperties {
     @JsonProperty(value = "cloudWitnessStorageEndpoint", access = JsonProperty.Access.WRITE_ONLY)
     private String cloudWitnessStorageEndpoint;
 
+    /** Creates an instance of DataBoxEdgeDeviceExtendedInfoProperties class. */
+    public DataBoxEdgeDeviceExtendedInfoProperties() {
+    }
+
     /**
      * Get the encryptionKeyThumbprint property: The digital signature of encrypted certificate.
      *

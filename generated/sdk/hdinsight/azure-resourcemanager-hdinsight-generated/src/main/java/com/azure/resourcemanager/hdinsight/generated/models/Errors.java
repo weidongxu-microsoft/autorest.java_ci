@@ -22,6 +22,10 @@ public final class Errors {
     @JsonProperty(value = "message")
     private String message;
 
+    /** Creates an instance of Errors class. */
+    public Errors() {
+    }
+
     /**
      * Get the code property: The error code.
      *

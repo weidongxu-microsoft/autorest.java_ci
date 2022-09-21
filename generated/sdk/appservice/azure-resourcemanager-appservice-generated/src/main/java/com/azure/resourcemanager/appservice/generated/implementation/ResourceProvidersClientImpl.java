@@ -416,11 +416,11 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return user credentials used for publishing activity.
+     * @return user credentials used for publishing activity along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public UserInner getPublishingUser() {
-        return getPublishingUserAsync().block();
+    public Response<UserInner> getPublishingUserWithResponse() {
+        return getPublishingUserWithResponseAsync().block();
     }
 
     /**
@@ -437,6 +437,20 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<UserInner> getPublishingUserWithResponse(Context context) {
         return getPublishingUserWithResponseAsync(context).block();
+    }
+
+    /**
+     * Gets publishing user
+     *
+     * <p>Description for Gets publishing user.
+     *
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return user credentials used for publishing activity.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public UserInner getPublishingUser() {
+        return getPublishingUserWithResponse(Context.NONE).getValue();
     }
 
     /**
@@ -531,11 +545,11 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return user credentials used for publishing activity.
+     * @return user credentials used for publishing activity along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public UserInner updatePublishingUser(UserInner userDetails) {
-        return updatePublishingUserAsync(userDetails).block();
+    public Response<UserInner> updatePublishingUserWithResponse(UserInner userDetails) {
+        return updatePublishingUserWithResponseAsync(userDetails).block();
     }
 
     /**
@@ -553,6 +567,22 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<UserInner> updatePublishingUserWithResponse(UserInner userDetails, Context context) {
         return updatePublishingUserWithResponseAsync(userDetails, context).block();
+    }
+
+    /**
+     * Updates publishing user
+     *
+     * <p>Description for Updates publishing user.
+     *
+     * @param userDetails Details of publishing user.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return user credentials used for publishing activity.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public UserInner updatePublishingUser(UserInner userDetails) {
+        return updatePublishingUserWithResponse(userDetails, Context.NONE).getValue();
     }
 
     /**
@@ -776,11 +806,11 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the source control OAuth token.
+     * @return the source control OAuth token along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public SourceControlInner getSourceControl(String sourceControlType) {
-        return getSourceControlAsync(sourceControlType).block();
+    public Response<SourceControlInner> getSourceControlWithResponse(String sourceControlType) {
+        return getSourceControlWithResponseAsync(sourceControlType).block();
     }
 
     /**
@@ -798,6 +828,22 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<SourceControlInner> getSourceControlWithResponse(String sourceControlType, Context context) {
         return getSourceControlWithResponseAsync(sourceControlType, context).block();
+    }
+
+    /**
+     * Gets source control token
+     *
+     * <p>Description for Gets source control token.
+     *
+     * @param sourceControlType Type of source control.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the source control OAuth token.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public SourceControlInner getSourceControl(String sourceControlType) {
+        return getSourceControlWithResponse(sourceControlType, Context.NONE).getValue();
     }
 
     /**
@@ -917,11 +963,12 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the source control OAuth token.
+     * @return the source control OAuth token along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public SourceControlInner updateSourceControl(String sourceControlType, SourceControlInner requestMessage) {
-        return updateSourceControlAsync(sourceControlType, requestMessage).block();
+    public Response<SourceControlInner> updateSourceControlWithResponse(
+        String sourceControlType, SourceControlInner requestMessage) {
+        return updateSourceControlWithResponseAsync(sourceControlType, requestMessage).block();
     }
 
     /**
@@ -941,6 +988,23 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     public Response<SourceControlInner> updateSourceControlWithResponse(
         String sourceControlType, SourceControlInner requestMessage, Context context) {
         return updateSourceControlWithResponseAsync(sourceControlType, requestMessage, context).block();
+    }
+
+    /**
+     * Updates source control token
+     *
+     * <p>Description for Updates source control token.
+     *
+     * @param sourceControlType Type of source control.
+     * @param requestMessage Source control token information.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the source control OAuth token.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public SourceControlInner updateSourceControl(String sourceControlType, SourceControlInner requestMessage) {
+        return updateSourceControlWithResponse(sourceControlType, requestMessage, Context.NONE).getValue();
     }
 
     /**
@@ -1252,11 +1316,12 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information regarding availability of a resource name.
+     * @return information regarding availability of a resource name along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ResourceNameAvailabilityInner checkNameAvailability(ResourceNameAvailabilityRequest request) {
-        return checkNameAvailabilityAsync(request).block();
+    public Response<ResourceNameAvailabilityInner> checkNameAvailabilityWithResponse(
+        ResourceNameAvailabilityRequest request) {
+        return checkNameAvailabilityWithResponseAsync(request).block();
     }
 
     /**
@@ -1275,6 +1340,22 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     public Response<ResourceNameAvailabilityInner> checkNameAvailabilityWithResponse(
         ResourceNameAvailabilityRequest request, Context context) {
         return checkNameAvailabilityWithResponseAsync(request, context).block();
+    }
+
+    /**
+     * Check if a resource name is available.
+     *
+     * <p>Description for Check if a resource name is available.
+     *
+     * @param request Name availability request.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return information regarding availability of a resource name.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ResourceNameAvailabilityInner checkNameAvailability(ResourceNameAvailabilityRequest request) {
+        return checkNameAvailabilityWithResponse(request, Context.NONE).getValue();
     }
 
     /**
@@ -1546,12 +1627,12 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of available locations (regions or App Service Environments) for deployment of App Service
-     *     resources.
+     * @return list of available locations (regions or App Service Environments) for deployment of App Service resources
+     *     along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public DeploymentLocationsInner getSubscriptionDeploymentLocations() {
-        return getSubscriptionDeploymentLocationsAsync().block();
+    public Response<DeploymentLocationsInner> getSubscriptionDeploymentLocationsWithResponse() {
+        return getSubscriptionDeploymentLocationsWithResponseAsync().block();
     }
 
     /**
@@ -1569,6 +1650,21 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<DeploymentLocationsInner> getSubscriptionDeploymentLocationsWithResponse(Context context) {
         return getSubscriptionDeploymentLocationsWithResponseAsync(context).block();
+    }
+
+    /**
+     * Gets list of available geo regions plus ministamps
+     *
+     * <p>Description for Gets list of available geo regions plus ministamps.
+     *
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return list of available locations (regions or App Service Environments) for deployment of App Service
+     *     resources.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public DeploymentLocationsInner getSubscriptionDeploymentLocations() {
+        return getSubscriptionDeploymentLocationsWithResponse(Context.NONE).getValue();
     }
 
     /**
@@ -2253,11 +2349,11 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of SKU information.
+     * @return collection of SKU information along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public SkuInfosInner listSkus() {
-        return listSkusAsync().block();
+    public Response<SkuInfosInner> listSkusWithResponse() {
+        return listSkusWithResponseAsync().block();
     }
 
     /**
@@ -2274,6 +2370,20 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<SkuInfosInner> listSkusWithResponse(Context context) {
         return listSkusWithResponseAsync(context).block();
+    }
+
+    /**
+     * List all SKUs.
+     *
+     * <p>Description for List all SKUs.
+     *
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of SKU information.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public SkuInfosInner listSkus() {
+        return listSkusWithResponse(Context.NONE).getValue();
     }
 
     /**
@@ -2402,11 +2512,12 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a class that describes the reason for a validation failure.
+     * @return a class that describes the reason for a validation failure along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public VnetValidationFailureDetailsInner verifyHostingEnvironmentVnet(VnetParameters parameters) {
-        return verifyHostingEnvironmentVnetAsync(parameters).block();
+    public Response<VnetValidationFailureDetailsInner> verifyHostingEnvironmentVnetWithResponse(
+        VnetParameters parameters) {
+        return verifyHostingEnvironmentVnetWithResponseAsync(parameters).block();
     }
 
     /**
@@ -2427,6 +2538,24 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     public Response<VnetValidationFailureDetailsInner> verifyHostingEnvironmentVnetWithResponse(
         VnetParameters parameters, Context context) {
         return verifyHostingEnvironmentVnetWithResponseAsync(parameters, context).block();
+    }
+
+    /**
+     * Verifies if this VNET is compatible with an App Service Environment by analyzing the Network Security Group
+     * rules.
+     *
+     * <p>Description for Verifies if this VNET is compatible with an App Service Environment by analyzing the Network
+     * Security Group rules.
+     *
+     * @param parameters VNET information.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a class that describes the reason for a validation failure.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public VnetValidationFailureDetailsInner verifyHostingEnvironmentVnet(VnetParameters parameters) {
+        return verifyHostingEnvironmentVnetWithResponse(parameters, Context.NONE).getValue();
     }
 
     /**
@@ -2560,10 +2689,11 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public void move(String resourceGroupName, CsmMoveResourceEnvelope moveResourceEnvelope) {
-        moveAsync(resourceGroupName, moveResourceEnvelope).block();
+    public Response<Void> moveWithResponse(String resourceGroupName, CsmMoveResourceEnvelope moveResourceEnvelope) {
+        return moveWithResponseAsync(resourceGroupName, moveResourceEnvelope).block();
     }
 
     /**
@@ -2583,6 +2713,22 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     public Response<Void> moveWithResponse(
         String resourceGroupName, CsmMoveResourceEnvelope moveResourceEnvelope, Context context) {
         return moveWithResponseAsync(resourceGroupName, moveResourceEnvelope, context).block();
+    }
+
+    /**
+     * Move resources between resource groups.
+     *
+     * <p>Description for Move resources between resource groups.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param moveResourceEnvelope Object that represents the resource to move.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public void move(String resourceGroupName, CsmMoveResourceEnvelope moveResourceEnvelope) {
+        moveWithResponse(resourceGroupName, moveResourceEnvelope, Context.NONE);
     }
 
     /**
@@ -2719,11 +2865,12 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes the result of resource validation.
+     * @return describes the result of resource validation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ValidateResponseInner validate(String resourceGroupName, ValidateRequestInner validateRequest) {
-        return validateAsync(resourceGroupName, validateRequest).block();
+    public Response<ValidateResponseInner> validateWithResponse(
+        String resourceGroupName, ValidateRequestInner validateRequest) {
+        return validateWithResponseAsync(resourceGroupName, validateRequest).block();
     }
 
     /**
@@ -2743,6 +2890,23 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     public Response<ValidateResponseInner> validateWithResponse(
         String resourceGroupName, ValidateRequestInner validateRequest, Context context) {
         return validateWithResponseAsync(resourceGroupName, validateRequest, context).block();
+    }
+
+    /**
+     * Validate if a resource can be created.
+     *
+     * <p>Description for Validate if a resource can be created.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param validateRequest Request with the resources to validate.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return describes the result of resource validation.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ValidateResponseInner validate(String resourceGroupName, ValidateRequestInner validateRequest) {
+        return validateWithResponse(resourceGroupName, validateRequest, Context.NONE).getValue();
     }
 
     /**
@@ -2876,10 +3040,12 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public void validateMove(String resourceGroupName, CsmMoveResourceEnvelope moveResourceEnvelope) {
-        validateMoveAsync(resourceGroupName, moveResourceEnvelope).block();
+    public Response<Void> validateMoveWithResponse(
+        String resourceGroupName, CsmMoveResourceEnvelope moveResourceEnvelope) {
+        return validateMoveWithResponseAsync(resourceGroupName, moveResourceEnvelope).block();
     }
 
     /**
@@ -2899,6 +3065,22 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     public Response<Void> validateMoveWithResponse(
         String resourceGroupName, CsmMoveResourceEnvelope moveResourceEnvelope, Context context) {
         return validateMoveWithResponseAsync(resourceGroupName, moveResourceEnvelope, context).block();
+    }
+
+    /**
+     * Validate whether a resource can be moved.
+     *
+     * <p>Description for Validate whether a resource can be moved.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param moveResourceEnvelope Object that represents the resource to move.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public void validateMove(String resourceGroupName, CsmMoveResourceEnvelope moveResourceEnvelope) {
+        validateMoveWithResponse(resourceGroupName, moveResourceEnvelope, Context.NONE);
     }
 
     /**

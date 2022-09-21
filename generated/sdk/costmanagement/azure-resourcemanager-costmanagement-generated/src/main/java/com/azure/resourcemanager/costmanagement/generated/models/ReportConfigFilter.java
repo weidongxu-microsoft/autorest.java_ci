@@ -47,6 +47,10 @@ public final class ReportConfigFilter {
     @JsonProperty(value = "tagValue")
     private ReportConfigComparisonExpression tagValue;
 
+    /** Creates an instance of ReportConfigFilter class. */
+    public ReportConfigFilter() {
+    }
+
     /**
      * Get the and property: The logical "AND" expression. Must have at least 2 items.
      *

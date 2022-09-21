@@ -267,12 +267,12 @@ public final class CommunityGalleryImageVersionsClientImpl implements CommunityG
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a community gallery image version.
+     * @return a community gallery image version along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public CommunityGalleryImageVersionInner get(
+    public Response<CommunityGalleryImageVersionInner> getWithResponse(
         String location, String publicGalleryName, String galleryImageName, String galleryImageVersionName) {
-        return getAsync(location, publicGalleryName, galleryImageName, galleryImageVersionName).block();
+        return getWithResponseAsync(location, publicGalleryName, galleryImageName, galleryImageVersionName).block();
     }
 
     /**
@@ -299,6 +299,27 @@ public final class CommunityGalleryImageVersionsClientImpl implements CommunityG
         Context context) {
         return getWithResponseAsync(location, publicGalleryName, galleryImageName, galleryImageVersionName, context)
             .block();
+    }
+
+    /**
+     * Get a community gallery image version.
+     *
+     * @param location Resource location.
+     * @param publicGalleryName The public name of the community gallery.
+     * @param galleryImageName The name of the community gallery image definition.
+     * @param galleryImageVersionName The name of the community gallery image version. Needs to follow semantic version
+     *     name pattern: The allowed characters are digit and period. Digits must be within the range of a 32-bit
+     *     integer. Format: &lt;MajorVersion&gt;.&lt;MinorVersion&gt;.&lt;Patch&gt;.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ApiErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a community gallery image version.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public CommunityGalleryImageVersionInner get(
+        String location, String publicGalleryName, String galleryImageName, String galleryImageVersionName) {
+        return getWithResponse(location, publicGalleryName, galleryImageName, galleryImageVersionName, Context.NONE)
+            .getValue();
     }
 
     /**

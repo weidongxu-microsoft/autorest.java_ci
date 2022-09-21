@@ -24,6 +24,10 @@ public class DeadLetterWithResourceIdentity {
     @JsonProperty(value = "deadLetterDestination")
     private DeadLetterDestination deadLetterDestination;
 
+    /** Creates an instance of DeadLetterWithResourceIdentity class. */
+    public DeadLetterWithResourceIdentity() {
+    }
+
     /**
      * Get the identity property: The identity to use when dead-lettering events.
      *

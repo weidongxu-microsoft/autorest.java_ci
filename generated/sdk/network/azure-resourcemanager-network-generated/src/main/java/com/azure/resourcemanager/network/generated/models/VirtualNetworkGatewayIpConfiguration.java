@@ -30,6 +30,10 @@ public final class VirtualNetworkGatewayIpConfiguration extends SubResource {
     @JsonProperty(value = "etag", access = JsonProperty.Access.WRITE_ONLY)
     private String etag;
 
+    /** Creates an instance of VirtualNetworkGatewayIpConfiguration class. */
+    public VirtualNetworkGatewayIpConfiguration() {
+    }
+
     /**
      * Get the innerProperties property: Properties of the virtual network gateway ip configuration.
      *

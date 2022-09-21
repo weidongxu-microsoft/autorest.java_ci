@@ -118,6 +118,10 @@ public final class DeploymentPropertiesExtended {
     @JsonProperty(value = "error", access = JsonProperty.Access.WRITE_ONLY)
     private ManagementError error;
 
+    /** Creates an instance of DeploymentPropertiesExtended class. */
+    public DeploymentPropertiesExtended() {
+    }
+
     /**
      * Get the provisioningState property: Denotes the state of provisioning.
      *

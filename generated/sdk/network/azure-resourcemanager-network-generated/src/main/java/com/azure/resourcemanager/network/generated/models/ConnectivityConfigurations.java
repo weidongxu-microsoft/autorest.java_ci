@@ -17,21 +17,6 @@ public interface ConnectivityConfigurations {
      * @param resourceGroupName The name of the resource group.
      * @param networkManagerName The name of the network manager.
      * @param configurationName The name of the network manager connectivity configuration.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Network Connectivity Configuration, specified by the resource group, network manager name, and
-     *     connectivity Configuration name.
-     */
-    ConnectivityConfiguration get(String resourceGroupName, String networkManagerName, String configurationName);
-
-    /**
-     * Gets a Network Connectivity Configuration, specified by the resource group, network manager name, and
-     * connectivity Configuration name.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param networkManagerName The name of the network manager.
-     * @param configurationName The name of the network manager connectivity configuration.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -41,6 +26,21 @@ public interface ConnectivityConfigurations {
      */
     Response<ConnectivityConfiguration> getWithResponse(
         String resourceGroupName, String networkManagerName, String configurationName, Context context);
+
+    /**
+     * Gets a Network Connectivity Configuration, specified by the resource group, network manager name, and
+     * connectivity Configuration name.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param networkManagerName The name of the network manager.
+     * @param configurationName The name of the network manager connectivity configuration.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a Network Connectivity Configuration, specified by the resource group, network manager name, and
+     *     connectivity Configuration name.
+     */
+    ConnectivityConfiguration get(String resourceGroupName, String networkManagerName, String configurationName);
 
     /**
      * Deletes a network manager connectivity configuration, specified by the resource group, network manager name, and

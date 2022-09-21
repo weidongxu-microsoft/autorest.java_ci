@@ -35,6 +35,10 @@ public final class Partner {
     @JsonProperty(value = "authorizationExpirationTimeInUtc")
     private OffsetDateTime authorizationExpirationTimeInUtc;
 
+    /** Creates an instance of Partner class. */
+    public Partner() {
+    }
+
     /**
      * Get the partnerRegistrationImmutableId property: The immutableId of the corresponding partner registration.
      *

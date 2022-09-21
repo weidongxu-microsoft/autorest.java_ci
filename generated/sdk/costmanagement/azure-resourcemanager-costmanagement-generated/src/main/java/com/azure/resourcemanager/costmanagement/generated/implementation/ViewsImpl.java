@@ -48,15 +48,6 @@ public final class ViewsImpl implements Views {
         return Utils.mapPage(inner, inner1 -> new ViewImpl(inner1, this.manager()));
     }
 
-    public View get(String viewName) {
-        ViewInner inner = this.serviceClient().get(viewName);
-        if (inner != null) {
-            return new ViewImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<View> getWithResponse(String viewName, Context context) {
         Response<ViewInner> inner = this.serviceClient().getWithResponse(viewName, context);
         if (inner != null) {
@@ -70,8 +61,8 @@ public final class ViewsImpl implements Views {
         }
     }
 
-    public View createOrUpdate(String viewName, ViewInner parameters) {
-        ViewInner inner = this.serviceClient().createOrUpdate(viewName, parameters);
+    public View get(String viewName) {
+        ViewInner inner = this.serviceClient().get(viewName);
         if (inner != null) {
             return new ViewImpl(inner, this.manager());
         } else {
@@ -92,21 +83,21 @@ public final class ViewsImpl implements Views {
         }
     }
 
-    public void delete(String viewName) {
-        this.serviceClient().delete(viewName);
+    public View createOrUpdate(String viewName, ViewInner parameters) {
+        ViewInner inner = this.serviceClient().createOrUpdate(viewName, parameters);
+        if (inner != null) {
+            return new ViewImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> deleteWithResponse(String viewName, Context context) {
         return this.serviceClient().deleteWithResponse(viewName, context);
     }
 
-    public View getByScope(String scope, String viewName) {
-        ViewInner inner = this.serviceClient().getByScope(scope, viewName);
-        if (inner != null) {
-            return new ViewImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void delete(String viewName) {
+        this.serviceClient().delete(viewName);
     }
 
     public Response<View> getByScopeWithResponse(String scope, String viewName, Context context) {
@@ -122,12 +113,21 @@ public final class ViewsImpl implements Views {
         }
     }
 
-    public void deleteByScope(String scope, String viewName) {
-        this.serviceClient().deleteByScope(scope, viewName);
+    public View getByScope(String scope, String viewName) {
+        ViewInner inner = this.serviceClient().getByScope(scope, viewName);
+        if (inner != null) {
+            return new ViewImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> deleteByScopeWithResponse(String scope, String viewName, Context context) {
         return this.serviceClient().deleteByScopeWithResponse(scope, viewName, context);
+    }
+
+    public void deleteByScope(String scope, String viewName) {
+        this.serviceClient().deleteByScope(scope, viewName);
     }
 
     public View getById(String id) {

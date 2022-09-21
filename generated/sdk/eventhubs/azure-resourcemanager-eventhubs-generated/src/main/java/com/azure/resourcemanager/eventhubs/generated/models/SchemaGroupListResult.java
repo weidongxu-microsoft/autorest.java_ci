@@ -24,6 +24,10 @@ public final class SchemaGroupListResult {
     @JsonProperty(value = "nextLink")
     private String nextLink;
 
+    /** Creates an instance of SchemaGroupListResult class. */
+    public SchemaGroupListResult() {
+    }
+
     /**
      * Get the value property: Result of the List SchemaGroups operation.
      *

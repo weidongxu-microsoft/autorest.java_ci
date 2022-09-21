@@ -32,7 +32,6 @@ import com.azure.core.management.exception.ManagementException;
 import com.azure.core.management.polling.PollResult;
 import com.azure.core.util.Context;
 import com.azure.core.util.FluxUtil;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.core.util.polling.PollerFlux;
 import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.resources.generated.fluent.ResourcesClient;
@@ -1607,30 +1606,24 @@ public final class ResourcesClientImpl implements ResourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return whether resource exists.
+     * @return whether resource exists along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public boolean checkExistence(
+    public Response<Boolean> checkExistenceWithResponse(
         String resourceGroupName,
         String resourceProviderNamespace,
         String parentResourcePath,
         String resourceType,
         String resourceName,
         String apiVersion) {
-        Boolean value =
-            checkExistenceAsync(
-                    resourceGroupName,
-                    resourceProviderNamespace,
-                    parentResourcePath,
-                    resourceType,
-                    resourceName,
-                    apiVersion)
-                .block();
-        if (value != null) {
-            return value;
-        } else {
-            throw LOGGER.logExceptionAsError(new NullPointerException());
-        }
+        return checkExistenceWithResponseAsync(
+                resourceGroupName,
+                resourceProviderNamespace,
+                parentResourcePath,
+                resourceType,
+                resourceName,
+                apiVersion)
+            .block();
     }
 
     /**
@@ -1667,6 +1660,40 @@ public final class ResourcesClientImpl implements ResourcesClient {
                 apiVersion,
                 context)
             .block();
+    }
+
+    /**
+     * Checks whether a resource exists.
+     *
+     * @param resourceGroupName The name of the resource group containing the resource to check. The name is case
+     *     insensitive.
+     * @param resourceProviderNamespace The resource provider of the resource to check.
+     * @param parentResourcePath The parent resource identity.
+     * @param resourceType The resource type.
+     * @param resourceName The name of the resource to check whether it exists.
+     * @param apiVersion The API version to use for the operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return whether resource exists.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public boolean checkExistence(
+        String resourceGroupName,
+        String resourceProviderNamespace,
+        String parentResourcePath,
+        String resourceType,
+        String resourceName,
+        String apiVersion) {
+        return checkExistenceWithResponse(
+                resourceGroupName,
+                resourceProviderNamespace,
+                parentResourcePath,
+                resourceType,
+                resourceName,
+                apiVersion,
+                Context.NONE)
+            .getValue();
     }
 
     /**
@@ -3253,17 +3280,17 @@ public final class ResourcesClientImpl implements ResourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a resource.
+     * @return a resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public GenericResourceInner get(
+    public Response<GenericResourceInner> getWithResponse(
         String resourceGroupName,
         String resourceProviderNamespace,
         String parentResourcePath,
         String resourceType,
         String resourceName,
         String apiVersion) {
-        return getAsync(
+        return getWithResponseAsync(
                 resourceGroupName,
                 resourceProviderNamespace,
                 parentResourcePath,
@@ -3307,6 +3334,40 @@ public final class ResourcesClientImpl implements ResourcesClient {
                 apiVersion,
                 context)
             .block();
+    }
+
+    /**
+     * Gets a resource.
+     *
+     * @param resourceGroupName The name of the resource group containing the resource to get. The name is case
+     *     insensitive.
+     * @param resourceProviderNamespace The namespace of the resource provider.
+     * @param parentResourcePath The parent resource identity.
+     * @param resourceType The resource type of the resource.
+     * @param resourceName The name of the resource to get.
+     * @param apiVersion The API version to use for the operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public GenericResourceInner get(
+        String resourceGroupName,
+        String resourceProviderNamespace,
+        String parentResourcePath,
+        String resourceType,
+        String resourceName,
+        String apiVersion) {
+        return getWithResponse(
+                resourceGroupName,
+                resourceProviderNamespace,
+                parentResourcePath,
+                resourceType,
+                resourceName,
+                apiVersion,
+                Context.NONE)
+            .getValue();
     }
 
     /**
@@ -3404,16 +3465,11 @@ public final class ResourcesClientImpl implements ResourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return whether resource exists.
+     * @return whether resource exists along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public boolean checkExistenceById(String resourceId, String apiVersion) {
-        Boolean value = checkExistenceByIdAsync(resourceId, apiVersion).block();
-        if (value != null) {
-            return value;
-        } else {
-            throw LOGGER.logExceptionAsError(new NullPointerException());
-        }
+    public Response<Boolean> checkExistenceByIdWithResponse(String resourceId, String apiVersion) {
+        return checkExistenceByIdWithResponseAsync(resourceId, apiVersion).block();
     }
 
     /**
@@ -3432,6 +3488,23 @@ public final class ResourcesClientImpl implements ResourcesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Boolean> checkExistenceByIdWithResponse(String resourceId, String apiVersion, Context context) {
         return checkExistenceByIdWithResponseAsync(resourceId, apiVersion, context).block();
+    }
+
+    /**
+     * Checks by ID whether a resource exists.
+     *
+     * @param resourceId The fully qualified ID of the resource, including the resource name and resource type. Use the
+     *     format,
+     *     /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
+     * @param apiVersion The API version to use for the operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return whether resource exists.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public boolean checkExistenceById(String resourceId, String apiVersion) {
+        return checkExistenceByIdWithResponse(resourceId, apiVersion, Context.NONE).getValue();
     }
 
     /**
@@ -4251,11 +4324,11 @@ public final class ResourcesClientImpl implements ResourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a resource by ID.
+     * @return a resource by ID along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public GenericResourceInner getById(String resourceId, String apiVersion) {
-        return getByIdAsync(resourceId, apiVersion).block();
+    public Response<GenericResourceInner> getByIdWithResponse(String resourceId, String apiVersion) {
+        return getByIdWithResponseAsync(resourceId, apiVersion).block();
     }
 
     /**
@@ -4274,6 +4347,23 @@ public final class ResourcesClientImpl implements ResourcesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<GenericResourceInner> getByIdWithResponse(String resourceId, String apiVersion, Context context) {
         return getByIdWithResponseAsync(resourceId, apiVersion, context).block();
+    }
+
+    /**
+     * Gets a resource by ID.
+     *
+     * @param resourceId The fully qualified ID of the resource, including the resource name and resource type. Use the
+     *     format,
+     *     /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
+     * @param apiVersion The API version to use for the operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a resource by ID.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public GenericResourceInner getById(String resourceId, String apiVersion) {
+        return getByIdWithResponse(resourceId, apiVersion, Context.NONE).getValue();
     }
 
     /**
@@ -4424,6 +4514,4 @@ public final class ResourcesClientImpl implements ResourcesClient {
                         res.getValue().nextLink(),
                         null));
     }
-
-    private static final ClientLogger LOGGER = new ClientLogger(ResourcesClientImpl.class);
 }

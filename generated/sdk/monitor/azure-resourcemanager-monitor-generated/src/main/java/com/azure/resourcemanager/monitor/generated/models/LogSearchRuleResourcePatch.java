@@ -26,6 +26,10 @@ public final class LogSearchRuleResourcePatch {
     @JsonProperty(value = "properties")
     private LogSearchRulePatch innerProperties;
 
+    /** Creates an instance of LogSearchRuleResourcePatch class. */
+    public LogSearchRuleResourcePatch() {
+    }
+
     /**
      * Get the tags property: Resource tags.
      *

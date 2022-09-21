@@ -17,6 +17,10 @@ public final class SshProfile {
     @JsonProperty(value = "publicKeys")
     private List<SshPublicKey> publicKeys;
 
+    /** Creates an instance of SshProfile class. */
+    public SshProfile() {
+    }
+
     /**
      * Get the publicKeys property: The list of SSH public keys.
      *

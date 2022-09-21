@@ -23,6 +23,10 @@ public final class QueryAggregation {
     @JsonProperty(value = "function", required = true)
     private FunctionType function;
 
+    /** Creates an instance of QueryAggregation class. */
+    public QueryAggregation() {
+    }
+
     /**
      * Get the name property: The name of the column to aggregate.
      *

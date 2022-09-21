@@ -30,6 +30,10 @@ public final class QueryProperties {
     @JsonProperty(value = "rows")
     private List<List<Object>> rows;
 
+    /** Creates an instance of QueryProperties class. */
+    public QueryProperties() {
+    }
+
     /**
      * Get the nextLink property: The link (url) to the next page of results.
      *

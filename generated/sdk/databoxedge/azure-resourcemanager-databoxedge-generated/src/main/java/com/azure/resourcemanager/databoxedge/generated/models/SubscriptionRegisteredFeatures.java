@@ -22,6 +22,10 @@ public final class SubscriptionRegisteredFeatures {
     @JsonProperty(value = "state")
     private String state;
 
+    /** Creates an instance of SubscriptionRegisteredFeatures class. */
+    public SubscriptionRegisteredFeatures() {
+    }
+
     /**
      * Get the name property: The name property.
      *

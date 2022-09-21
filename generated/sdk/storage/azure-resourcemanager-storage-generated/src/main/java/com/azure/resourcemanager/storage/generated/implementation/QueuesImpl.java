@@ -29,15 +29,6 @@ public final class QueuesImpl implements Queues {
         this.serviceManager = serviceManager;
     }
 
-    public StorageQueue get(String resourceGroupName, String accountName, String queueName) {
-        StorageQueueInner inner = this.serviceClient().get(resourceGroupName, accountName, queueName);
-        if (inner != null) {
-            return new StorageQueueImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<StorageQueue> getWithResponse(
         String resourceGroupName, String accountName, String queueName, Context context) {
         Response<StorageQueueInner> inner =
@@ -53,13 +44,22 @@ public final class QueuesImpl implements Queues {
         }
     }
 
-    public void delete(String resourceGroupName, String accountName, String queueName) {
-        this.serviceClient().delete(resourceGroupName, accountName, queueName);
+    public StorageQueue get(String resourceGroupName, String accountName, String queueName) {
+        StorageQueueInner inner = this.serviceClient().get(resourceGroupName, accountName, queueName);
+        if (inner != null) {
+            return new StorageQueueImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> deleteWithResponse(
         String resourceGroupName, String accountName, String queueName, Context context) {
         return this.serviceClient().deleteWithResponse(resourceGroupName, accountName, queueName, context);
+    }
+
+    public void delete(String resourceGroupName, String accountName, String queueName) {
+        this.serviceClient().delete(resourceGroupName, accountName, queueName);
     }
 
     public PagedIterable<ListQueue> list(String resourceGroupName, String accountName) {

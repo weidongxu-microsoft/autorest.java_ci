@@ -47,6 +47,10 @@ public final class ReservationRecommendationDetailsResourceProperties {
     @JsonProperty(value = "resourceType", access = JsonProperty.Access.WRITE_ONLY)
     private String resourceType;
 
+    /** Creates an instance of ReservationRecommendationDetailsResourceProperties class. */
+    public ReservationRecommendationDetailsResourceProperties() {
+    }
+
     /**
      * Get the appliedScopes property: List of subscriptions for which the reservation is applied.
      *

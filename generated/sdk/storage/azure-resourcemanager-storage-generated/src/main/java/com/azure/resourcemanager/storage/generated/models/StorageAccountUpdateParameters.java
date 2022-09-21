@@ -47,6 +47,10 @@ public final class StorageAccountUpdateParameters {
     @JsonProperty(value = "kind")
     private Kind kind;
 
+    /** Creates an instance of StorageAccountUpdateParameters class. */
+    public StorageAccountUpdateParameters() {
+    }
+
     /**
      * Get the sku property: Gets or sets the SKU name. Note that the SKU name cannot be updated to Standard_ZRS,
      * Premium_LRS or Premium_ZRS, nor can accounts of those SKU names be updated to any other value.

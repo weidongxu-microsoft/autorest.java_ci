@@ -24,6 +24,10 @@ public final class ActivityLogAlertList {
     @JsonProperty(value = "nextLink")
     private String nextLink;
 
+    /** Creates an instance of ActivityLogAlertList class. */
+    public ActivityLogAlertList() {
+    }
+
     /**
      * Get the value property: The list of activity log alerts.
      *

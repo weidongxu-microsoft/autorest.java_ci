@@ -38,15 +38,6 @@ public final class LoadBalancerProbesImpl implements LoadBalancerProbes {
         return Utils.mapPage(inner, inner1 -> new ProbeImpl(inner1, this.manager()));
     }
 
-    public Probe get(String resourceGroupName, String loadBalancerName, String probeName) {
-        ProbeInner inner = this.serviceClient().get(resourceGroupName, loadBalancerName, probeName);
-        if (inner != null) {
-            return new ProbeImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<Probe> getWithResponse(
         String resourceGroupName, String loadBalancerName, String probeName, Context context) {
         Response<ProbeInner> inner =
@@ -57,6 +48,15 @@ public final class LoadBalancerProbesImpl implements LoadBalancerProbes {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new ProbeImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public Probe get(String resourceGroupName, String loadBalancerName, String probeName) {
+        ProbeInner inner = this.serviceClient().get(resourceGroupName, loadBalancerName, probeName);
+        if (inner != null) {
+            return new ProbeImpl(inner, this.manager());
         } else {
             return null;
         }

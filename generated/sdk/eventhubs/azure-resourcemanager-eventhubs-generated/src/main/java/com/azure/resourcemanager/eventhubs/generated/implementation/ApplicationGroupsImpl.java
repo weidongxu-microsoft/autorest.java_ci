@@ -41,22 +41,13 @@ public final class ApplicationGroupsImpl implements ApplicationGroups {
         return Utils.mapPage(inner, inner1 -> new ApplicationGroupImpl(inner1, this.manager()));
     }
 
-    public void delete(String resourceGroupName, String namespaceName, String applicationGroupName) {
-        this.serviceClient().delete(resourceGroupName, namespaceName, applicationGroupName);
-    }
-
     public Response<Void> deleteWithResponse(
         String resourceGroupName, String namespaceName, String applicationGroupName, Context context) {
         return this.serviceClient().deleteWithResponse(resourceGroupName, namespaceName, applicationGroupName, context);
     }
 
-    public ApplicationGroup get(String resourceGroupName, String namespaceName, String applicationGroupName) {
-        ApplicationGroupInner inner = this.serviceClient().get(resourceGroupName, namespaceName, applicationGroupName);
-        if (inner != null) {
-            return new ApplicationGroupImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void delete(String resourceGroupName, String namespaceName, String applicationGroupName) {
+        this.serviceClient().delete(resourceGroupName, namespaceName, applicationGroupName);
     }
 
     public Response<ApplicationGroup> getWithResponse(
@@ -69,6 +60,15 @@ public final class ApplicationGroupsImpl implements ApplicationGroups {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new ApplicationGroupImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public ApplicationGroup get(String resourceGroupName, String namespaceName, String applicationGroupName) {
+        ApplicationGroupInner inner = this.serviceClient().get(resourceGroupName, namespaceName, applicationGroupName);
+        if (inner != null) {
+            return new ApplicationGroupImpl(inner, this.manager());
         } else {
             return null;
         }

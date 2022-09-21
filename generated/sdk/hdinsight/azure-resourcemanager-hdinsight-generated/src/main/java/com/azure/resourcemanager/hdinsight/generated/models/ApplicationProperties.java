@@ -83,6 +83,10 @@ public final class ApplicationProperties {
     @JsonProperty(value = "privateLinkConfigurations")
     private List<PrivateLinkConfiguration> privateLinkConfigurations;
 
+    /** Creates an instance of ApplicationProperties class. */
+    public ApplicationProperties() {
+    }
+
     /**
      * Get the computeProfile property: The list of roles in the cluster.
      *

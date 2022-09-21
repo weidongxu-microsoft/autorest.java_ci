@@ -44,6 +44,10 @@ public final class EHNamespaceInner extends Resource {
     @JsonProperty(value = "properties")
     private EHNamespaceProperties innerProperties;
 
+    /** Creates an instance of EHNamespaceInner class. */
+    public EHNamespaceInner() {
+    }
+
     /**
      * Get the sku property: Properties of sku resource.
      *

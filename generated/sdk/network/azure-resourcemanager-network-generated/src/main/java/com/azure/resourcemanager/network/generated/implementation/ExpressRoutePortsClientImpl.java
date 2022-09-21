@@ -226,7 +226,7 @@ public final class ExpressRoutePortsClientImpl implements ExpressRoutePortsClien
             return Mono
                 .error(new IllegalArgumentException("Parameter expressRoutePortName is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -277,7 +277,7 @@ public final class ExpressRoutePortsClientImpl implements ExpressRoutePortsClien
             return Mono
                 .error(new IllegalArgumentException("Parameter expressRoutePortName is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -461,7 +461,7 @@ public final class ExpressRoutePortsClientImpl implements ExpressRoutePortsClien
             return Mono
                 .error(new IllegalArgumentException("Parameter expressRoutePortName is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -512,7 +512,7 @@ public final class ExpressRoutePortsClientImpl implements ExpressRoutePortsClien
             return Mono
                 .error(new IllegalArgumentException("Parameter expressRoutePortName is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -550,11 +550,12 @@ public final class ExpressRoutePortsClientImpl implements ExpressRoutePortsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return expressRoute Port.
+     * @return expressRoute Port along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ExpressRoutePortInner getByResourceGroup(String resourceGroupName, String expressRoutePortName) {
-        return getByResourceGroupAsync(resourceGroupName, expressRoutePortName).block();
+    public Response<ExpressRoutePortInner> getByResourceGroupWithResponse(
+        String resourceGroupName, String expressRoutePortName) {
+        return getByResourceGroupWithResponseAsync(resourceGroupName, expressRoutePortName).block();
     }
 
     /**
@@ -572,6 +573,21 @@ public final class ExpressRoutePortsClientImpl implements ExpressRoutePortsClien
     public Response<ExpressRoutePortInner> getByResourceGroupWithResponse(
         String resourceGroupName, String expressRoutePortName, Context context) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, expressRoutePortName, context).block();
+    }
+
+    /**
+     * Retrieves the requested ExpressRoutePort resource.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param expressRoutePortName The name of ExpressRoutePort.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return expressRoute Port.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ExpressRoutePortInner getByResourceGroup(String resourceGroupName, String expressRoutePortName) {
+        return getByResourceGroupWithResponse(resourceGroupName, expressRoutePortName, Context.NONE).getValue();
     }
 
     /**
@@ -613,7 +629,7 @@ public final class ExpressRoutePortsClientImpl implements ExpressRoutePortsClien
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -671,7 +687,7 @@ public final class ExpressRoutePortsClientImpl implements ExpressRoutePortsClien
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -884,7 +900,7 @@ public final class ExpressRoutePortsClientImpl implements ExpressRoutePortsClien
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -942,7 +958,7 @@ public final class ExpressRoutePortsClientImpl implements ExpressRoutePortsClien
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -984,12 +1000,12 @@ public final class ExpressRoutePortsClientImpl implements ExpressRoutePortsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return expressRoute Port.
+     * @return expressRoute Port along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ExpressRoutePortInner updateTags(
+    public Response<ExpressRoutePortInner> updateTagsWithResponse(
         String resourceGroupName, String expressRoutePortName, TagsObject parameters) {
-        return updateTagsAsync(resourceGroupName, expressRoutePortName, parameters).block();
+        return updateTagsWithResponseAsync(resourceGroupName, expressRoutePortName, parameters).block();
     }
 
     /**
@@ -1008,6 +1024,23 @@ public final class ExpressRoutePortsClientImpl implements ExpressRoutePortsClien
     public Response<ExpressRoutePortInner> updateTagsWithResponse(
         String resourceGroupName, String expressRoutePortName, TagsObject parameters, Context context) {
         return updateTagsWithResponseAsync(resourceGroupName, expressRoutePortName, parameters, context).block();
+    }
+
+    /**
+     * Update ExpressRoutePort tags.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param expressRoutePortName The name of the ExpressRoutePort resource.
+     * @param parameters Parameters supplied to update ExpressRoutePort resource tags.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return expressRoute Port.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ExpressRoutePortInner updateTags(
+        String resourceGroupName, String expressRoutePortName, TagsObject parameters) {
+        return updateTagsWithResponse(resourceGroupName, expressRoutePortName, parameters, Context.NONE).getValue();
     }
 
     /**
@@ -1037,7 +1070,7 @@ public final class ExpressRoutePortsClientImpl implements ExpressRoutePortsClien
             return Mono
                 .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1091,7 +1124,7 @@ public final class ExpressRoutePortsClientImpl implements ExpressRoutePortsClien
             return Mono
                 .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1196,7 +1229,7 @@ public final class ExpressRoutePortsClientImpl implements ExpressRoutePortsClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1238,7 +1271,7 @@ public final class ExpressRoutePortsClientImpl implements ExpressRoutePortsClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1347,7 +1380,7 @@ public final class ExpressRoutePortsClientImpl implements ExpressRoutePortsClien
         } else {
             request.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1409,7 +1442,7 @@ public final class ExpressRoutePortsClientImpl implements ExpressRoutePortsClien
         } else {
             request.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1451,12 +1484,12 @@ public final class ExpressRoutePortsClientImpl implements ExpressRoutePortsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for GenerateExpressRoutePortsLOA API service call.
+     * @return response for GenerateExpressRoutePortsLOA API service call along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public GenerateExpressRoutePortsLoaResultInner generateLoa(
+    public Response<GenerateExpressRoutePortsLoaResultInner> generateLoaWithResponse(
         String resourceGroupName, String expressRoutePortName, GenerateExpressRoutePortsLoaRequest request) {
-        return generateLoaAsync(resourceGroupName, expressRoutePortName, request).block();
+        return generateLoaWithResponseAsync(resourceGroupName, expressRoutePortName, request).block();
     }
 
     /**
@@ -1478,6 +1511,23 @@ public final class ExpressRoutePortsClientImpl implements ExpressRoutePortsClien
         GenerateExpressRoutePortsLoaRequest request,
         Context context) {
         return generateLoaWithResponseAsync(resourceGroupName, expressRoutePortName, request, context).block();
+    }
+
+    /**
+     * Generate a letter of authorization for the requested ExpressRoutePort resource.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param expressRoutePortName The name of ExpressRoutePort.
+     * @param request Request parameters supplied to generate a letter of authorization.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return response for GenerateExpressRoutePortsLOA API service call.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public GenerateExpressRoutePortsLoaResultInner generateLoa(
+        String resourceGroupName, String expressRoutePortName, GenerateExpressRoutePortsLoaRequest request) {
+        return generateLoaWithResponse(resourceGroupName, expressRoutePortName, request, Context.NONE).getValue();
     }
 
     /**

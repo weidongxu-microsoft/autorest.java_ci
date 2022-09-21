@@ -35,6 +35,10 @@ public final class MarketplaceInner extends ProxyResource {
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, String> tags;
 
+    /** Creates an instance of MarketplaceInner class. */
+    public MarketplaceInner() {
+    }
+
     /**
      * Get the innerProperties property: The properties of the marketplace usage detail.
      *

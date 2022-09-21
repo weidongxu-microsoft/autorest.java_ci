@@ -53,13 +53,13 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
         return Utils.mapPage(inner, inner1 -> new AppServiceCertificateOrderImpl(inner1, this.manager()));
     }
 
-    public void validatePurchaseInformation(AppServiceCertificateOrderInner appServiceCertificateOrder) {
-        this.serviceClient().validatePurchaseInformation(appServiceCertificateOrder);
-    }
-
     public Response<Void> validatePurchaseInformationWithResponse(
         AppServiceCertificateOrderInner appServiceCertificateOrder, Context context) {
         return this.serviceClient().validatePurchaseInformationWithResponse(appServiceCertificateOrder, context);
+    }
+
+    public void validatePurchaseInformation(AppServiceCertificateOrderInner appServiceCertificateOrder) {
+        this.serviceClient().validatePurchaseInformation(appServiceCertificateOrder);
     }
 
     public PagedIterable<AppServiceCertificateOrder> listByResourceGroup(String resourceGroupName) {
@@ -72,16 +72,6 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
         PagedIterable<AppServiceCertificateOrderInner> inner =
             this.serviceClient().listByResourceGroup(resourceGroupName, context);
         return Utils.mapPage(inner, inner1 -> new AppServiceCertificateOrderImpl(inner1, this.manager()));
-    }
-
-    public AppServiceCertificateOrder getByResourceGroup(String resourceGroupName, String certificateOrderName) {
-        AppServiceCertificateOrderInner inner =
-            this.serviceClient().getByResourceGroup(resourceGroupName, certificateOrderName);
-        if (inner != null) {
-            return new AppServiceCertificateOrderImpl(inner, this.manager());
-        } else {
-            return null;
-        }
     }
 
     public Response<AppServiceCertificateOrder> getByResourceGroupWithResponse(
@@ -99,12 +89,23 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
         }
     }
 
-    public void deleteByResourceGroup(String resourceGroupName, String certificateOrderName) {
-        this.serviceClient().delete(resourceGroupName, certificateOrderName);
+    public AppServiceCertificateOrder getByResourceGroup(String resourceGroupName, String certificateOrderName) {
+        AppServiceCertificateOrderInner inner =
+            this.serviceClient().getByResourceGroup(resourceGroupName, certificateOrderName);
+        if (inner != null) {
+            return new AppServiceCertificateOrderImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
-    public Response<Void> deleteWithResponse(String resourceGroupName, String certificateOrderName, Context context) {
+    public Response<Void> deleteByResourceGroupWithResponse(
+        String resourceGroupName, String certificateOrderName, Context context) {
         return this.serviceClient().deleteWithResponse(resourceGroupName, certificateOrderName, context);
+    }
+
+    public void deleteByResourceGroup(String resourceGroupName, String certificateOrderName) {
+        this.serviceClient().delete(resourceGroupName, certificateOrderName);
     }
 
     public PagedIterable<AppServiceCertificateResource> listCertificates(
@@ -119,17 +120,6 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
         PagedIterable<AppServiceCertificateResourceInner> inner =
             this.serviceClient().listCertificates(resourceGroupName, certificateOrderName, context);
         return Utils.mapPage(inner, inner1 -> new AppServiceCertificateResourceImpl(inner1, this.manager()));
-    }
-
-    public AppServiceCertificateResource getCertificate(
-        String resourceGroupName, String certificateOrderName, String name) {
-        AppServiceCertificateResourceInner inner =
-            this.serviceClient().getCertificate(resourceGroupName, certificateOrderName, name);
-        if (inner != null) {
-            return new AppServiceCertificateResourceImpl(inner, this.manager());
-        } else {
-            return null;
-        }
     }
 
     public Response<AppServiceCertificateResource> getCertificateWithResponse(
@@ -147,8 +137,15 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
         }
     }
 
-    public void deleteCertificate(String resourceGroupName, String certificateOrderName, String name) {
-        this.serviceClient().deleteCertificate(resourceGroupName, certificateOrderName, name);
+    public AppServiceCertificateResource getCertificate(
+        String resourceGroupName, String certificateOrderName, String name) {
+        AppServiceCertificateResourceInner inner =
+            this.serviceClient().getCertificate(resourceGroupName, certificateOrderName, name);
+        if (inner != null) {
+            return new AppServiceCertificateResourceImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> deleteCertificateWithResponse(
@@ -158,11 +155,8 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
             .deleteCertificateWithResponse(resourceGroupName, certificateOrderName, name, context);
     }
 
-    public void reissue(
-        String resourceGroupName,
-        String certificateOrderName,
-        ReissueCertificateOrderRequest reissueCertificateOrderRequest) {
-        this.serviceClient().reissue(resourceGroupName, certificateOrderName, reissueCertificateOrderRequest);
+    public void deleteCertificate(String resourceGroupName, String certificateOrderName, String name) {
+        this.serviceClient().deleteCertificate(resourceGroupName, certificateOrderName, name);
     }
 
     public Response<Void> reissueWithResponse(
@@ -175,11 +169,11 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
             .reissueWithResponse(resourceGroupName, certificateOrderName, reissueCertificateOrderRequest, context);
     }
 
-    public void renew(
+    public void reissue(
         String resourceGroupName,
         String certificateOrderName,
-        RenewCertificateOrderRequest renewCertificateOrderRequest) {
-        this.serviceClient().renew(resourceGroupName, certificateOrderName, renewCertificateOrderRequest);
+        ReissueCertificateOrderRequest reissueCertificateOrderRequest) {
+        this.serviceClient().reissue(resourceGroupName, certificateOrderName, reissueCertificateOrderRequest);
     }
 
     public Response<Void> renewWithResponse(
@@ -192,8 +186,11 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
             .renewWithResponse(resourceGroupName, certificateOrderName, renewCertificateOrderRequest, context);
     }
 
-    public void resendEmail(String resourceGroupName, String certificateOrderName) {
-        this.serviceClient().resendEmail(resourceGroupName, certificateOrderName);
+    public void renew(
+        String resourceGroupName,
+        String certificateOrderName,
+        RenewCertificateOrderRequest renewCertificateOrderRequest) {
+        this.serviceClient().renew(resourceGroupName, certificateOrderName, renewCertificateOrderRequest);
     }
 
     public Response<Void> resendEmailWithResponse(
@@ -201,9 +198,8 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
         return this.serviceClient().resendEmailWithResponse(resourceGroupName, certificateOrderName, context);
     }
 
-    public void resendRequestEmails(
-        String resourceGroupName, String certificateOrderName, NameIdentifierInner nameIdentifier) {
-        this.serviceClient().resendRequestEmails(resourceGroupName, certificateOrderName, nameIdentifier);
+    public void resendEmail(String resourceGroupName, String certificateOrderName) {
+        this.serviceClient().resendEmail(resourceGroupName, certificateOrderName);
     }
 
     public Response<Void> resendRequestEmailsWithResponse(
@@ -213,15 +209,9 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
             .resendRequestEmailsWithResponse(resourceGroupName, certificateOrderName, nameIdentifier, context);
     }
 
-    public SiteSeal retrieveSiteSeal(
-        String resourceGroupName, String certificateOrderName, SiteSealRequest siteSealRequest) {
-        SiteSealInner inner =
-            this.serviceClient().retrieveSiteSeal(resourceGroupName, certificateOrderName, siteSealRequest);
-        if (inner != null) {
-            return new SiteSealImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void resendRequestEmails(
+        String resourceGroupName, String certificateOrderName, NameIdentifierInner nameIdentifier) {
+        this.serviceClient().resendRequestEmails(resourceGroupName, certificateOrderName, nameIdentifier);
     }
 
     public Response<SiteSeal> retrieveSiteSealWithResponse(
@@ -241,8 +231,15 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
         }
     }
 
-    public void verifyDomainOwnership(String resourceGroupName, String certificateOrderName) {
-        this.serviceClient().verifyDomainOwnership(resourceGroupName, certificateOrderName);
+    public SiteSeal retrieveSiteSeal(
+        String resourceGroupName, String certificateOrderName, SiteSealRequest siteSealRequest) {
+        SiteSealInner inner =
+            this.serviceClient().retrieveSiteSeal(resourceGroupName, certificateOrderName, siteSealRequest);
+        if (inner != null) {
+            return new SiteSealImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> verifyDomainOwnershipWithResponse(
@@ -250,19 +247,8 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
         return this.serviceClient().verifyDomainOwnershipWithResponse(resourceGroupName, certificateOrderName, context);
     }
 
-    public List<CertificateOrderAction> retrieveCertificateActions(String resourceGroupName, String name) {
-        List<CertificateOrderActionInner> inner =
-            this.serviceClient().retrieveCertificateActions(resourceGroupName, name);
-        if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new CertificateOrderActionImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
-        } else {
-            return Collections.emptyList();
-        }
+    public void verifyDomainOwnership(String resourceGroupName, String certificateOrderName) {
+        this.serviceClient().verifyDomainOwnership(resourceGroupName, certificateOrderName);
     }
 
     public Response<List<CertificateOrderAction>> retrieveCertificateActionsWithResponse(
@@ -284,15 +270,15 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
         }
     }
 
-    public List<CertificateEmail> retrieveCertificateEmailHistory(String resourceGroupName, String name) {
-        List<CertificateEmailInner> inner =
-            this.serviceClient().retrieveCertificateEmailHistory(resourceGroupName, name);
+    public List<CertificateOrderAction> retrieveCertificateActions(String resourceGroupName, String name) {
+        List<CertificateOrderActionInner> inner =
+            this.serviceClient().retrieveCertificateActions(resourceGroupName, name);
         if (inner != null) {
             return Collections
                 .unmodifiableList(
                     inner
                         .stream()
-                        .map(inner1 -> new CertificateEmailImpl(inner1, this.manager()))
+                        .map(inner1 -> new CertificateOrderActionImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
@@ -315,6 +301,21 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
                     .collect(Collectors.toList()));
         } else {
             return null;
+        }
+    }
+
+    public List<CertificateEmail> retrieveCertificateEmailHistory(String resourceGroupName, String name) {
+        List<CertificateEmailInner> inner =
+            this.serviceClient().retrieveCertificateEmailHistory(resourceGroupName, name);
+        if (inner != null) {
+            return Collections
+                .unmodifiableList(
+                    inner
+                        .stream()
+                        .map(inner1 -> new CertificateEmailImpl(inner1, this.manager()))
+                        .collect(Collectors.toList()));
+        } else {
+            return Collections.emptyList();
         }
     }
 
@@ -434,7 +435,7 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
                             .format(
                                 "The resource ID '%s' is not valid. Missing path segment 'certificateOrders'.", id)));
         }
-        this.deleteWithResponse(resourceGroupName, certificateOrderName, Context.NONE);
+        this.deleteByResourceGroupWithResponse(resourceGroupName, certificateOrderName, Context.NONE);
     }
 
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
@@ -455,7 +456,7 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
                             .format(
                                 "The resource ID '%s' is not valid. Missing path segment 'certificateOrders'.", id)));
         }
-        return this.deleteWithResponse(resourceGroupName, certificateOrderName, context);
+        return this.deleteByResourceGroupWithResponse(resourceGroupName, certificateOrderName, context);
     }
 
     public void deleteCertificateById(String id) {

@@ -22,6 +22,10 @@ public final class ProvisioningIssue {
     @JsonProperty(value = "properties", access = JsonProperty.Access.WRITE_ONLY)
     private ProvisioningIssueProperties properties;
 
+    /** Creates an instance of ProvisioningIssue class. */
+    public ProvisioningIssue() {
+    }
+
     /**
      * Get the name property: Name of the issue.
      *

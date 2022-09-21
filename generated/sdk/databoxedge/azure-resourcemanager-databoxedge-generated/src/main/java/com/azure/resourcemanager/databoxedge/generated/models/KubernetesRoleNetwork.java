@@ -22,6 +22,10 @@ public final class KubernetesRoleNetwork {
     @JsonProperty(value = "loadBalancerConfig", access = JsonProperty.Access.WRITE_ONLY)
     private LoadBalancerConfig loadBalancerConfig;
 
+    /** Creates an instance of KubernetesRoleNetwork class. */
+    public KubernetesRoleNetwork() {
+    }
+
     /**
      * Get the cniConfig property: Cni configuration.
      *

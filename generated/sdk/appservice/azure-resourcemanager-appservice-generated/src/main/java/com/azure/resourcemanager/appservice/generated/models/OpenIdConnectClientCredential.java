@@ -22,6 +22,10 @@ public final class OpenIdConnectClientCredential {
     @JsonProperty(value = "clientSecretSettingName")
     private String clientSecretSettingName;
 
+    /** Creates an instance of OpenIdConnectClientCredential class. */
+    public OpenIdConnectClientCredential() {
+    }
+
     /**
      * Get the method property: The method that should be used to authenticate the user.
      *

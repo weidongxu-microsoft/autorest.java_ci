@@ -31,15 +31,6 @@ public final class ServicesImpl implements Services {
         this.serviceManager = serviceManager;
     }
 
-    public SearchService getByResourceGroup(String resourceGroupName, String searchServiceName) {
-        SearchServiceInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, searchServiceName);
-        if (inner != null) {
-            return new SearchServiceImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<SearchService> getByResourceGroupWithResponse(
         String resourceGroupName, String searchServiceName, UUID clientRequestId, Context context) {
         Response<SearchServiceInner> inner =
@@ -57,13 +48,22 @@ public final class ServicesImpl implements Services {
         }
     }
 
-    public void delete(String resourceGroupName, String searchServiceName) {
-        this.serviceClient().delete(resourceGroupName, searchServiceName);
+    public SearchService getByResourceGroup(String resourceGroupName, String searchServiceName) {
+        SearchServiceInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, searchServiceName);
+        if (inner != null) {
+            return new SearchServiceImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> deleteWithResponse(
         String resourceGroupName, String searchServiceName, UUID clientRequestId, Context context) {
         return this.serviceClient().deleteWithResponse(resourceGroupName, searchServiceName, clientRequestId, context);
+    }
+
+    public void delete(String resourceGroupName, String searchServiceName) {
+        this.serviceClient().delete(resourceGroupName, searchServiceName);
     }
 
     public PagedIterable<SearchService> listByResourceGroup(String resourceGroupName) {
@@ -88,15 +88,6 @@ public final class ServicesImpl implements Services {
         return Utils.mapPage(inner, inner1 -> new SearchServiceImpl(inner1, this.manager()));
     }
 
-    public CheckNameAvailabilityOutput checkNameAvailability(CheckNameAvailabilityInput checkNameAvailabilityInput) {
-        CheckNameAvailabilityOutputInner inner = this.serviceClient().checkNameAvailability(checkNameAvailabilityInput);
-        if (inner != null) {
-            return new CheckNameAvailabilityOutputImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<CheckNameAvailabilityOutput> checkNameAvailabilityWithResponse(
         CheckNameAvailabilityInput checkNameAvailabilityInput, UUID clientRequestId, Context context) {
         Response<CheckNameAvailabilityOutputInner> inner =
@@ -109,6 +100,15 @@ public final class ServicesImpl implements Services {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new CheckNameAvailabilityOutputImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public CheckNameAvailabilityOutput checkNameAvailability(CheckNameAvailabilityInput checkNameAvailabilityInput) {
+        CheckNameAvailabilityOutputInner inner = this.serviceClient().checkNameAvailability(checkNameAvailabilityInput);
+        if (inner != null) {
+            return new CheckNameAvailabilityOutputImpl(inner, this.manager());
         } else {
             return null;
         }

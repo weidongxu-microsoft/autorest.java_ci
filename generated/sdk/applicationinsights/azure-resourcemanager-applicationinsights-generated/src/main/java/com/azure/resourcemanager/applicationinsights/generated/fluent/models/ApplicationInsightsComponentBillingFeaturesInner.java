@@ -25,6 +25,10 @@ public final class ApplicationInsightsComponentBillingFeaturesInner {
     @JsonProperty(value = "CurrentBillingFeatures")
     private List<String> currentBillingFeatures;
 
+    /** Creates an instance of ApplicationInsightsComponentBillingFeaturesInner class. */
+    public ApplicationInsightsComponentBillingFeaturesInner() {
+    }
+
     /**
      * Get the dataVolumeCap property: An Application Insights component daily data volume cap.
      *

@@ -57,6 +57,10 @@ public final class TimeseriesProperties {
     @JsonProperty(value = "timeseriesData")
     private List<TimeseriesDataPoint> timeseriesData;
 
+    /** Creates an instance of TimeseriesProperties class. */
+    public TimeseriesProperties() {
+    }
+
     /**
      * Get the endpoint property: The endpoint associated with the Timeseries data point.
      *

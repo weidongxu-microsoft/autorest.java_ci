@@ -22,6 +22,10 @@ public final class CookieExpiration {
     @JsonProperty(value = "timeToExpiration")
     private String timeToExpiration;
 
+    /** Creates an instance of CookieExpiration class. */
+    public CookieExpiration() {
+    }
+
     /**
      * Get the convention property: The convention used when determining the session cookie's expiration.
      *

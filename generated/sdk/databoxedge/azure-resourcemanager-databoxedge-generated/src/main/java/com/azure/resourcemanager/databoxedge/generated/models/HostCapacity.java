@@ -50,6 +50,10 @@ public final class HostCapacity {
     @JsonProperty(value = "numaNodesData")
     private List<NumaNodeData> numaNodesData;
 
+    /** Creates an instance of HostCapacity class. */
+    public HostCapacity() {
+    }
+
     /**
      * Get the hostname property: The name of the host.
      *

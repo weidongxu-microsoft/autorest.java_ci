@@ -72,6 +72,10 @@ public final class PolicyAssignmentProperties {
     @JsonProperty(value = "nonComplianceMessages")
     private List<NonComplianceMessage> nonComplianceMessages;
 
+    /** Creates an instance of PolicyAssignmentProperties class. */
+    public PolicyAssignmentProperties() {
+    }
+
     /**
      * Get the displayName property: The display name of the policy assignment.
      *

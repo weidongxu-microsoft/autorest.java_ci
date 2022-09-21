@@ -23,6 +23,10 @@ public final class QueryPerformanceInsightResetDataResultInner {
     @JsonProperty(value = "message")
     private String message;
 
+    /** Creates an instance of QueryPerformanceInsightResetDataResultInner class. */
+    public QueryPerformanceInsightResetDataResultInner() {
+    }
+
     /**
      * Get the status property: Indicates result of the operation.
      *

@@ -145,6 +145,13 @@ public interface ExpressRoutePort {
     String resourceGuid();
 
     /**
+     * Gets the billingType property: The billing type of the ExpressRoutePort resource.
+     *
+     * @return the billingType value.
+     */
+    ExpressRoutePortsBillingType billingType();
+
+    /**
      * Gets the region of the resource.
      *
      * @return the region of the resource.
@@ -222,7 +229,8 @@ public interface ExpressRoutePort {
                 DefinitionStages.WithPeeringLocation,
                 DefinitionStages.WithBandwidthInGbps,
                 DefinitionStages.WithEncapsulation,
-                DefinitionStages.WithLinks {
+                DefinitionStages.WithLinks,
+                DefinitionStages.WithBillingType {
             /**
              * Executes the create request.
              *
@@ -302,6 +310,16 @@ public interface ExpressRoutePort {
              * @return the next definition stage.
              */
             WithCreate withLinks(List<ExpressRouteLinkInner> links);
+        }
+        /** The stage of the ExpressRoutePort definition allowing to specify billingType. */
+        interface WithBillingType {
+            /**
+             * Specifies the billingType property: The billing type of the ExpressRoutePort resource..
+             *
+             * @param billingType The billing type of the ExpressRoutePort resource.
+             * @return the next definition stage.
+             */
+            WithCreate withBillingType(ExpressRoutePortsBillingType billingType);
         }
     }
     /**

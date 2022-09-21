@@ -462,17 +462,6 @@ public interface Topic {
      *
      * <p>List the two keys used to publish to a topic.
      *
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return shared access keys of the Topic.
-     */
-    TopicSharedAccessKeys listSharedAccessKeys();
-
-    /**
-     * List keys for a topic.
-     *
-     * <p>List the two keys used to publish to a topic.
-     *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -480,6 +469,17 @@ public interface Topic {
      * @return shared access keys of the Topic along with {@link Response}.
      */
     Response<TopicSharedAccessKeys> listSharedAccessKeysWithResponse(Context context);
+
+    /**
+     * List keys for a topic.
+     *
+     * <p>List the two keys used to publish to a topic.
+     *
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return shared access keys of the Topic.
+     */
+    TopicSharedAccessKeys listSharedAccessKeys();
 
     /**
      * Regenerate key for a topic.

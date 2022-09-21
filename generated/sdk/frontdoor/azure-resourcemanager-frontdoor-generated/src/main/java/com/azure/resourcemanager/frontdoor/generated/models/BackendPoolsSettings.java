@@ -24,6 +24,10 @@ public final class BackendPoolsSettings {
     @JsonProperty(value = "sendRecvTimeoutSeconds")
     private Integer sendRecvTimeoutSeconds;
 
+    /** Creates an instance of BackendPoolsSettings class. */
+    public BackendPoolsSettings() {
+    }
+
     /**
      * Get the enforceCertificateNameCheck property: Whether to enforce certificate name check on HTTPS requests to all
      * backend pools. No effect on non-HTTPS requests.

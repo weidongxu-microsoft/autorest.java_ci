@@ -40,15 +40,6 @@ public final class WorkflowVersionsImpl implements WorkflowVersions {
         return Utils.mapPage(inner, inner1 -> new WorkflowVersionImpl(inner1, this.manager()));
     }
 
-    public WorkflowVersion get(String resourceGroupName, String name, String workflowName, String versionId) {
-        WorkflowVersionInner inner = this.serviceClient().get(resourceGroupName, name, workflowName, versionId);
-        if (inner != null) {
-            return new WorkflowVersionImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<WorkflowVersion> getWithResponse(
         String resourceGroupName, String name, String workflowName, String versionId, Context context) {
         Response<WorkflowVersionInner> inner =
@@ -59,6 +50,15 @@ public final class WorkflowVersionsImpl implements WorkflowVersions {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new WorkflowVersionImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public WorkflowVersion get(String resourceGroupName, String name, String workflowName, String versionId) {
+        WorkflowVersionInner inner = this.serviceClient().get(resourceGroupName, name, workflowName, versionId);
+        if (inner != null) {
+            return new WorkflowVersionImpl(inner, this.manager());
         } else {
             return null;
         }

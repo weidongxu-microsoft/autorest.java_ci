@@ -71,6 +71,13 @@ public interface CustomIpPrefix {
     String id();
 
     /**
+     * Gets the asn property: The ASN for CIDR advertising. Should be an integer as string.
+     *
+     * @return the asn value.
+     */
+    String asn();
+
+    /**
      * Gets the cidr property: The prefix range in CIDR notation. Should include the start address and the prefix
      * length.
      *
@@ -114,11 +121,32 @@ public interface CustomIpPrefix {
     CommissionedState commissionedState();
 
     /**
+     * Gets the expressRouteAdvertise property: Whether to do express route advertise.
+     *
+     * @return the expressRouteAdvertise value.
+     */
+    Boolean expressRouteAdvertise();
+
+    /**
+     * Gets the geo property: The Geo for CIDR advertising. Should be an Geo code.
+     *
+     * @return the geo value.
+     */
+    Geo geo();
+
+    /**
      * Gets the noInternetAdvertise property: Whether to Advertise the range to Internet.
      *
      * @return the noInternetAdvertise value.
      */
     Boolean noInternetAdvertise();
+
+    /**
+     * Gets the prefixType property: Type of custom IP prefix. Should be Singular, Parent, or Child.
+     *
+     * @return the prefixType value.
+     */
+    CustomIpPrefixType prefixType();
 
     /**
      * Gets the publicIpPrefixes property: The list of all referenced PublicIpPrefixes.
@@ -224,12 +252,16 @@ public interface CustomIpPrefix {
             extends DefinitionStages.WithTags,
                 DefinitionStages.WithExtendedLocation,
                 DefinitionStages.WithZones,
+                DefinitionStages.WithAsn,
                 DefinitionStages.WithCidr,
                 DefinitionStages.WithSignedMessage,
                 DefinitionStages.WithAuthorizationMessage,
                 DefinitionStages.WithCustomIpPrefixParent,
                 DefinitionStages.WithCommissionedState,
-                DefinitionStages.WithNoInternetAdvertise {
+                DefinitionStages.WithExpressRouteAdvertise,
+                DefinitionStages.WithGeo,
+                DefinitionStages.WithNoInternetAdvertise,
+                DefinitionStages.WithPrefixType {
             /**
              * Executes the create request.
              *
@@ -275,6 +307,16 @@ public interface CustomIpPrefix {
              * @return the next definition stage.
              */
             WithCreate withZones(List<String> zones);
+        }
+        /** The stage of the CustomIpPrefix definition allowing to specify asn. */
+        interface WithAsn {
+            /**
+             * Specifies the asn property: The ASN for CIDR advertising. Should be an integer as string..
+             *
+             * @param asn The ASN for CIDR advertising. Should be an integer as string.
+             * @return the next definition stage.
+             */
+            WithCreate withAsn(String asn);
         }
         /** The stage of the CustomIpPrefix definition allowing to specify cidr. */
         interface WithCidr {
@@ -327,6 +369,26 @@ public interface CustomIpPrefix {
              */
             WithCreate withCommissionedState(CommissionedState commissionedState);
         }
+        /** The stage of the CustomIpPrefix definition allowing to specify expressRouteAdvertise. */
+        interface WithExpressRouteAdvertise {
+            /**
+             * Specifies the expressRouteAdvertise property: Whether to do express route advertise..
+             *
+             * @param expressRouteAdvertise Whether to do express route advertise.
+             * @return the next definition stage.
+             */
+            WithCreate withExpressRouteAdvertise(Boolean expressRouteAdvertise);
+        }
+        /** The stage of the CustomIpPrefix definition allowing to specify geo. */
+        interface WithGeo {
+            /**
+             * Specifies the geo property: The Geo for CIDR advertising. Should be an Geo code..
+             *
+             * @param geo The Geo for CIDR advertising. Should be an Geo code.
+             * @return the next definition stage.
+             */
+            WithCreate withGeo(Geo geo);
+        }
         /** The stage of the CustomIpPrefix definition allowing to specify noInternetAdvertise. */
         interface WithNoInternetAdvertise {
             /**
@@ -336,6 +398,16 @@ public interface CustomIpPrefix {
              * @return the next definition stage.
              */
             WithCreate withNoInternetAdvertise(Boolean noInternetAdvertise);
+        }
+        /** The stage of the CustomIpPrefix definition allowing to specify prefixType. */
+        interface WithPrefixType {
+            /**
+             * Specifies the prefixType property: Type of custom IP prefix. Should be Singular, Parent, or Child..
+             *
+             * @param prefixType Type of custom IP prefix. Should be Singular, Parent, or Child.
+             * @return the next definition stage.
+             */
+            WithCreate withPrefixType(CustomIpPrefixType prefixType);
         }
     }
     /**

@@ -18,12 +18,14 @@ public interface Channels {
      * @param resourceGroupName The name of the resource group within the partners subscription.
      * @param partnerNamespaceName Name of the partner namespace.
      * @param channelName Name of the channel.
+     * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of a channel.
+     * @return properties of a channel along with {@link Response}.
      */
-    Channel get(String resourceGroupName, String partnerNamespaceName, String channelName);
+    Response<Channel> getWithResponse(
+        String resourceGroupName, String partnerNamespaceName, String channelName, Context context);
 
     /**
      * Get a channel.
@@ -33,14 +35,12 @@ public interface Channels {
      * @param resourceGroupName The name of the resource group within the partners subscription.
      * @param partnerNamespaceName Name of the partner namespace.
      * @param channelName Name of the channel.
-     * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of a channel along with {@link Response}.
+     * @return properties of a channel.
      */
-    Response<Channel> getWithResponse(
-        String resourceGroupName, String partnerNamespaceName, String channelName, Context context);
+    Channel get(String resourceGroupName, String partnerNamespaceName, String channelName);
 
     /**
      * Delete a channel.
@@ -80,25 +80,6 @@ public interface Channels {
      * @param partnerNamespaceName Name of the partner namespace.
      * @param channelName Name of the channel.
      * @param channelUpdateParameters Channel update information.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void update(
-        String resourceGroupName,
-        String partnerNamespaceName,
-        String channelName,
-        ChannelUpdateParameters channelUpdateParameters);
-
-    /**
-     * Update a Channel.
-     *
-     * <p>Synchronously updates a channel with the specified parameters.
-     *
-     * @param resourceGroupName The name of the resource group within the partners subscription.
-     * @param partnerNamespaceName Name of the partner namespace.
-     * @param channelName Name of the channel.
-     * @param channelUpdateParameters Channel update information.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -111,6 +92,25 @@ public interface Channels {
         String channelName,
         ChannelUpdateParameters channelUpdateParameters,
         Context context);
+
+    /**
+     * Update a Channel.
+     *
+     * <p>Synchronously updates a channel with the specified parameters.
+     *
+     * @param resourceGroupName The name of the resource group within the partners subscription.
+     * @param partnerNamespaceName Name of the partner namespace.
+     * @param channelName Name of the channel.
+     * @param channelUpdateParameters Channel update information.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void update(
+        String resourceGroupName,
+        String partnerNamespaceName,
+        String channelName,
+        ChannelUpdateParameters channelUpdateParameters);
 
     /**
      * List channels.
@@ -158,12 +158,14 @@ public interface Channels {
      * @param resourceGroupName The name of the resource group within the partners subscription.
      * @param partnerNamespaceName Name of the partner namespace.
      * @param channelName Name of the Channel.
+     * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the full endpoint URL of a partner destination channel.
+     * @return the full endpoint URL of a partner destination channel along with {@link Response}.
      */
-    EventSubscriptionFullUrl getFullUrl(String resourceGroupName, String partnerNamespaceName, String channelName);
+    Response<EventSubscriptionFullUrl> getFullUrlWithResponse(
+        String resourceGroupName, String partnerNamespaceName, String channelName, Context context);
 
     /**
      * Get full URL of partner destination channel.
@@ -173,14 +175,12 @@ public interface Channels {
      * @param resourceGroupName The name of the resource group within the partners subscription.
      * @param partnerNamespaceName Name of the partner namespace.
      * @param channelName Name of the Channel.
-     * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the full endpoint URL of a partner destination channel along with {@link Response}.
+     * @return the full endpoint URL of a partner destination channel.
      */
-    Response<EventSubscriptionFullUrl> getFullUrlWithResponse(
-        String resourceGroupName, String partnerNamespaceName, String channelName, Context context);
+    EventSubscriptionFullUrl getFullUrl(String resourceGroupName, String partnerNamespaceName, String channelName);
 
     /**
      * Get a channel.

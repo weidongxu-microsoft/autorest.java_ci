@@ -490,12 +490,12 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the lock information.
+     * @return the lock information along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ManagementLockObjectInner createOrUpdateAtResourceGroupLevel(
+    public Response<ManagementLockObjectInner> createOrUpdateAtResourceGroupLevelWithResponse(
         String resourceGroupName, String lockName, ManagementLockObjectInner parameters) {
-        return createOrUpdateAtResourceGroupLevelAsync(resourceGroupName, lockName, parameters).block();
+        return createOrUpdateAtResourceGroupLevelWithResponseAsync(resourceGroupName, lockName, parameters).block();
     }
 
     /**
@@ -520,6 +520,29 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
         String resourceGroupName, String lockName, ManagementLockObjectInner parameters, Context context) {
         return createOrUpdateAtResourceGroupLevelWithResponseAsync(resourceGroupName, lockName, parameters, context)
             .block();
+    }
+
+    /**
+     * Creates or updates a management lock at the resource group level.
+     *
+     * <p>When you apply a lock at a parent scope, all child resources inherit the same lock. To create management
+     * locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the
+     * built-in roles, only Owner and User Access Administrator are granted those actions.
+     *
+     * @param resourceGroupName The name of the resource group to lock.
+     * @param lockName The lock name. The lock name can be a maximum of 260 characters. It cannot contain &lt;, &gt; %,
+     *     &amp;, :, \, ?, /, or any control characters.
+     * @param parameters The management lock parameters.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the lock information.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ManagementLockObjectInner createOrUpdateAtResourceGroupLevel(
+        String resourceGroupName, String lockName, ManagementLockObjectInner parameters) {
+        return createOrUpdateAtResourceGroupLevelWithResponse(resourceGroupName, lockName, parameters, Context.NONE)
+            .getValue();
     }
 
     /**
@@ -649,10 +672,11 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public void delete(String resourceGroupName, String lockName) {
-        deleteAsync(resourceGroupName, lockName).block();
+    public Response<Void> deleteWithResponse(String resourceGroupName, String lockName) {
+        return deleteWithResponseAsync(resourceGroupName, lockName).block();
     }
 
     /**
@@ -673,6 +697,24 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> deleteWithResponse(String resourceGroupName, String lockName, Context context) {
         return deleteWithResponseAsync(resourceGroupName, lockName, context).block();
+    }
+
+    /**
+     * Deletes a management lock at the resource group level.
+     *
+     * <p>To delete management locks, you must have access to Microsoft.Authorization/* or
+     * Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are
+     * granted those actions.
+     *
+     * @param resourceGroupName The name of the resource group containing the lock.
+     * @param lockName The name of lock to delete.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public void delete(String resourceGroupName, String lockName) {
+        deleteWithResponse(resourceGroupName, lockName, Context.NONE);
     }
 
     /**
@@ -795,11 +837,12 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a management lock at the resource group level.
+     * @return a management lock at the resource group level along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ManagementLockObjectInner getByResourceGroup(String resourceGroupName, String lockName) {
-        return getByResourceGroupAsync(resourceGroupName, lockName).block();
+    public Response<ManagementLockObjectInner> getByResourceGroupWithResponse(
+        String resourceGroupName, String lockName) {
+        return getByResourceGroupWithResponseAsync(resourceGroupName, lockName).block();
     }
 
     /**
@@ -817,6 +860,21 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
     public Response<ManagementLockObjectInner> getByResourceGroupWithResponse(
         String resourceGroupName, String lockName, Context context) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, lockName, context).block();
+    }
+
+    /**
+     * Gets a management lock at the resource group level.
+     *
+     * @param resourceGroupName The name of the locked resource group.
+     * @param lockName The name of the lock to get.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a management lock at the resource group level.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ManagementLockObjectInner getByResourceGroup(String resourceGroupName, String lockName) {
+        return getByResourceGroupWithResponse(resourceGroupName, lockName, Context.NONE).getValue();
     }
 
     /**
@@ -948,12 +1006,12 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the lock information.
+     * @return the lock information along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ManagementLockObjectInner createOrUpdateByScope(
+    public Response<ManagementLockObjectInner> createOrUpdateByScopeWithResponse(
         String scope, String lockName, ManagementLockObjectInner parameters) {
-        return createOrUpdateByScopeAsync(scope, lockName, parameters).block();
+        return createOrUpdateByScopeWithResponseAsync(scope, lockName, parameters).block();
     }
 
     /**
@@ -976,6 +1034,27 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
     public Response<ManagementLockObjectInner> createOrUpdateByScopeWithResponse(
         String scope, String lockName, ManagementLockObjectInner parameters, Context context) {
         return createOrUpdateByScopeWithResponseAsync(scope, lockName, parameters, context).block();
+    }
+
+    /**
+     * Create or update a management lock by scope.
+     *
+     * @param scope The scope for the lock. When providing a scope for the assignment, use
+     *     '/subscriptions/{subscriptionId}' for subscriptions,
+     *     '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}' for resource groups, and
+     *     '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePathIfPresent}/{resourceType}/{resourceName}'
+     *     for resources.
+     * @param lockName The name of lock.
+     * @param parameters Create or update management lock parameters.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the lock information.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ManagementLockObjectInner createOrUpdateByScope(
+        String scope, String lockName, ManagementLockObjectInner parameters) {
+        return createOrUpdateByScopeWithResponse(scope, lockName, parameters, Context.NONE).getValue();
     }
 
     /**
@@ -1063,10 +1142,11 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public void deleteByScope(String scope, String lockName) {
-        deleteByScopeAsync(scope, lockName).block();
+    public Response<Void> deleteByScopeWithResponse(String scope, String lockName) {
+        return deleteByScopeWithResponseAsync(scope, lockName).block();
     }
 
     /**
@@ -1083,6 +1163,20 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> deleteByScopeWithResponse(String scope, String lockName, Context context) {
         return deleteByScopeWithResponseAsync(scope, lockName, context).block();
+    }
+
+    /**
+     * Delete a management lock by scope.
+     *
+     * @param scope The scope for the lock.
+     * @param lockName The name of lock.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public void deleteByScope(String scope, String lockName) {
+        deleteByScopeWithResponse(scope, lockName, Context.NONE);
     }
 
     /**
@@ -1174,11 +1268,11 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a management lock by scope.
+     * @return a management lock by scope along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ManagementLockObjectInner getByScope(String scope, String lockName) {
-        return getByScopeAsync(scope, lockName).block();
+    public Response<ManagementLockObjectInner> getByScopeWithResponse(String scope, String lockName) {
+        return getByScopeWithResponseAsync(scope, lockName).block();
     }
 
     /**
@@ -1195,6 +1289,21 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<ManagementLockObjectInner> getByScopeWithResponse(String scope, String lockName, Context context) {
         return getByScopeWithResponseAsync(scope, lockName, context).block();
+    }
+
+    /**
+     * Get a management lock by scope.
+     *
+     * @param scope The scope for the lock.
+     * @param lockName The name of lock.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a management lock by scope.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ManagementLockObjectInner getByScope(String scope, String lockName) {
+        return getByScopeWithResponse(scope, lockName, Context.NONE).getValue();
     }
 
     /**
@@ -1434,10 +1543,10 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the lock information.
+     * @return the lock information along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ManagementLockObjectInner createOrUpdateAtResourceLevel(
+    public Response<ManagementLockObjectInner> createOrUpdateAtResourceLevelWithResponse(
         String resourceGroupName,
         String resourceProviderNamespace,
         String parentResourcePath,
@@ -1445,7 +1554,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
         String resourceName,
         String lockName,
         ManagementLockObjectInner parameters) {
-        return createOrUpdateAtResourceLevelAsync(
+        return createOrUpdateAtResourceLevelWithResponseAsync(
                 resourceGroupName,
                 resourceProviderNamespace,
                 parentResourcePath,
@@ -1497,6 +1606,47 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
                 parameters,
                 context)
             .block();
+    }
+
+    /**
+     * Creates or updates a management lock at the resource level or any level below the resource.
+     *
+     * <p>When you apply a lock at a parent scope, all child resources inherit the same lock. To create management
+     * locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the
+     * built-in roles, only Owner and User Access Administrator are granted those actions.
+     *
+     * @param resourceGroupName The name of the resource group containing the resource to lock.
+     * @param resourceProviderNamespace The resource provider namespace of the resource to lock.
+     * @param parentResourcePath The parent resource identity.
+     * @param resourceType The resource type of the resource to lock.
+     * @param resourceName The name of the resource to lock.
+     * @param lockName The name of lock. The lock name can be a maximum of 260 characters. It cannot contain &lt;, &gt;
+     *     %, &amp;, :, \, ?, /, or any control characters.
+     * @param parameters Parameters for creating or updating a management lock.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the lock information.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ManagementLockObjectInner createOrUpdateAtResourceLevel(
+        String resourceGroupName,
+        String resourceProviderNamespace,
+        String parentResourcePath,
+        String resourceType,
+        String resourceName,
+        String lockName,
+        ManagementLockObjectInner parameters) {
+        return createOrUpdateAtResourceLevelWithResponse(
+                resourceGroupName,
+                resourceProviderNamespace,
+                parentResourcePath,
+                resourceType,
+                resourceName,
+                lockName,
+                parameters,
+                Context.NONE)
+            .getValue();
     }
 
     /**
@@ -1703,16 +1853,17 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public void deleteAtResourceLevel(
+    public Response<Void> deleteAtResourceLevelWithResponse(
         String resourceGroupName,
         String resourceProviderNamespace,
         String parentResourcePath,
         String resourceType,
         String resourceName,
         String lockName) {
-        deleteAtResourceLevelAsync(
+        return deleteAtResourceLevelWithResponseAsync(
                 resourceGroupName, resourceProviderNamespace, parentResourcePath, resourceType, resourceName, lockName)
             .block();
     }
@@ -1754,6 +1905,41 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
                 lockName,
                 context)
             .block();
+    }
+
+    /**
+     * Deletes the management lock of a resource or any level below the resource.
+     *
+     * <p>To delete management locks, you must have access to Microsoft.Authorization/* or
+     * Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are
+     * granted those actions.
+     *
+     * @param resourceGroupName The name of the resource group containing the resource with the lock to delete.
+     * @param resourceProviderNamespace The resource provider namespace of the resource with the lock to delete.
+     * @param parentResourcePath The parent resource identity.
+     * @param resourceType The resource type of the resource with the lock to delete.
+     * @param resourceName The name of the resource with the lock to delete.
+     * @param lockName The name of the lock to delete.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public void deleteAtResourceLevel(
+        String resourceGroupName,
+        String resourceProviderNamespace,
+        String parentResourcePath,
+        String resourceType,
+        String resourceName,
+        String lockName) {
+        deleteAtResourceLevelWithResponse(
+            resourceGroupName,
+            resourceProviderNamespace,
+            parentResourcePath,
+            resourceType,
+            resourceName,
+            lockName,
+            Context.NONE);
     }
 
     /**
@@ -1950,17 +2136,17 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the management lock of a resource or any level below resource.
+     * @return the management lock of a resource or any level below resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ManagementLockObjectInner getAtResourceLevel(
+    public Response<ManagementLockObjectInner> getAtResourceLevelWithResponse(
         String resourceGroupName,
         String resourceProviderNamespace,
         String parentResourcePath,
         String resourceType,
         String resourceName,
         String lockName) {
-        return getAtResourceLevelAsync(
+        return getAtResourceLevelWithResponseAsync(
                 resourceGroupName, resourceProviderNamespace, parentResourcePath, resourceType, resourceName, lockName)
             .block();
     }
@@ -1998,6 +2184,39 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
                 lockName,
                 context)
             .block();
+    }
+
+    /**
+     * Get the management lock of a resource or any level below resource.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param resourceProviderNamespace The namespace of the resource provider.
+     * @param parentResourcePath An extra path parameter needed in some services, like SQL Databases.
+     * @param resourceType The type of the resource.
+     * @param resourceName The name of the resource.
+     * @param lockName The name of lock.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the management lock of a resource or any level below resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ManagementLockObjectInner getAtResourceLevel(
+        String resourceGroupName,
+        String resourceProviderNamespace,
+        String parentResourcePath,
+        String resourceType,
+        String resourceName,
+        String lockName) {
+        return getAtResourceLevelWithResponse(
+                resourceGroupName,
+                resourceProviderNamespace,
+                parentResourcePath,
+                resourceType,
+                resourceName,
+                lockName,
+                Context.NONE)
+            .getValue();
     }
 
     /**
@@ -2141,12 +2360,12 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the lock information.
+     * @return the lock information along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ManagementLockObjectInner createOrUpdateAtSubscriptionLevel(
+    public Response<ManagementLockObjectInner> createOrUpdateAtSubscriptionLevelWithResponse(
         String lockName, ManagementLockObjectInner parameters) {
-        return createOrUpdateAtSubscriptionLevelAsync(lockName, parameters).block();
+        return createOrUpdateAtSubscriptionLevelWithResponseAsync(lockName, parameters).block();
     }
 
     /**
@@ -2169,6 +2388,27 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
     public Response<ManagementLockObjectInner> createOrUpdateAtSubscriptionLevelWithResponse(
         String lockName, ManagementLockObjectInner parameters, Context context) {
         return createOrUpdateAtSubscriptionLevelWithResponseAsync(lockName, parameters, context).block();
+    }
+
+    /**
+     * Creates or updates a management lock at the subscription level.
+     *
+     * <p>When you apply a lock at a parent scope, all child resources inherit the same lock. To create management
+     * locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the
+     * built-in roles, only Owner and User Access Administrator are granted those actions.
+     *
+     * @param lockName The name of lock. The lock name can be a maximum of 260 characters. It cannot contain &lt;, &gt;
+     *     %, &amp;, :, \, ?, /, or any control characters.
+     * @param parameters The management lock parameters.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the lock information.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ManagementLockObjectInner createOrUpdateAtSubscriptionLevel(
+        String lockName, ManagementLockObjectInner parameters) {
+        return createOrUpdateAtSubscriptionLevelWithResponse(lockName, parameters, Context.NONE).getValue();
     }
 
     /**
@@ -2284,10 +2524,11 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public void deleteAtSubscriptionLevel(String lockName) {
-        deleteAtSubscriptionLevelAsync(lockName).block();
+    public Response<Void> deleteAtSubscriptionLevelWithResponse(String lockName) {
+        return deleteAtSubscriptionLevelWithResponseAsync(lockName).block();
     }
 
     /**
@@ -2307,6 +2548,23 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> deleteAtSubscriptionLevelWithResponse(String lockName, Context context) {
         return deleteAtSubscriptionLevelWithResponseAsync(lockName, context).block();
+    }
+
+    /**
+     * Deletes the management lock at the subscription level.
+     *
+     * <p>To delete management locks, you must have access to Microsoft.Authorization/* or
+     * Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are
+     * granted those actions.
+     *
+     * @param lockName The name of lock to delete.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public void deleteAtSubscriptionLevel(String lockName) {
+        deleteAtSubscriptionLevelWithResponse(lockName, Context.NONE);
     }
 
     /**
@@ -2413,11 +2671,11 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a management lock at the subscription level.
+     * @return a management lock at the subscription level along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ManagementLockObjectInner getAtSubscriptionLevel(String lockName) {
-        return getAtSubscriptionLevelAsync(lockName).block();
+    public Response<ManagementLockObjectInner> getAtSubscriptionLevelWithResponse(String lockName) {
+        return getAtSubscriptionLevelWithResponseAsync(lockName).block();
     }
 
     /**
@@ -2433,6 +2691,20 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<ManagementLockObjectInner> getAtSubscriptionLevelWithResponse(String lockName, Context context) {
         return getAtSubscriptionLevelWithResponseAsync(lockName, context).block();
+    }
+
+    /**
+     * Gets a management lock at the subscription level.
+     *
+     * @param lockName The name of the lock to get.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a management lock at the subscription level.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ManagementLockObjectInner getAtSubscriptionLevel(String lockName) {
+        return getAtSubscriptionLevelWithResponse(lockName, Context.NONE).getValue();
     }
 
     /**

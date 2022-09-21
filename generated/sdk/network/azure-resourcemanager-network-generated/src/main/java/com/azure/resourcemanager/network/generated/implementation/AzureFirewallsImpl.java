@@ -37,15 +37,6 @@ public final class AzureFirewallsImpl implements AzureFirewalls {
         this.serviceClient().delete(resourceGroupName, azureFirewallName, context);
     }
 
-    public AzureFirewall getByResourceGroup(String resourceGroupName, String azureFirewallName) {
-        AzureFirewallInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, azureFirewallName);
-        if (inner != null) {
-            return new AzureFirewallImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<AzureFirewall> getByResourceGroupWithResponse(
         String resourceGroupName, String azureFirewallName, Context context) {
         Response<AzureFirewallInner> inner =
@@ -56,6 +47,15 @@ public final class AzureFirewallsImpl implements AzureFirewalls {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new AzureFirewallImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public AzureFirewall getByResourceGroup(String resourceGroupName, String azureFirewallName) {
+        AzureFirewallInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, azureFirewallName);
+        if (inner != null) {
+            return new AzureFirewallImpl(inner, this.manager());
         } else {
             return null;
         }

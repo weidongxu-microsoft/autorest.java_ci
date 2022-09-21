@@ -23,18 +23,6 @@ public interface LocationsClient {
      * Gets the capabilities for the specified location.
      *
      * @param location The Azure location (region) for which to make the request.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the capabilities for the specified location.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    CapabilitiesResultInner getCapabilities(String location);
-
-    /**
-     * Gets the capabilities for the specified location.
-     *
-     * @param location The Azure location (region) for which to make the request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -45,16 +33,16 @@ public interface LocationsClient {
     Response<CapabilitiesResultInner> getCapabilitiesWithResponse(String location, Context context);
 
     /**
-     * Lists the usages for the specified location.
+     * Gets the capabilities for the specified location.
      *
      * @param location The Azure location (region) for which to make the request.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response for the operation to get regional usages for a subscription.
+     * @return the capabilities for the specified location.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    UsagesListResultInner listUsages(String location);
+    CapabilitiesResultInner getCapabilities(String location);
 
     /**
      * Lists the usages for the specified location.
@@ -70,16 +58,16 @@ public interface LocationsClient {
     Response<UsagesListResultInner> listUsagesWithResponse(String location, Context context);
 
     /**
-     * Lists the billingSpecs for the specified subscription and location.
+     * Lists the usages for the specified location.
      *
      * @param location The Azure location (region) for which to make the request.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response for the operation to get regional billingSpecs for a subscription.
+     * @return the response for the operation to get regional usages for a subscription.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    BillingResponseListResultInner listBillingSpecs(String location);
+    UsagesListResultInner listUsages(String location);
 
     /**
      * Lists the billingSpecs for the specified subscription and location.
@@ -96,17 +84,16 @@ public interface LocationsClient {
     Response<BillingResponseListResultInner> listBillingSpecsWithResponse(String location, Context context);
 
     /**
-     * Get the async operation status.
+     * Lists the billingSpecs for the specified subscription and location.
      *
      * @param location The Azure location (region) for which to make the request.
-     * @param operationId The long running operation id.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the async operation status.
+     * @return the response for the operation to get regional billingSpecs for a subscription.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    AsyncOperationResultInner getAzureAsyncOperationStatus(String location, String operationId);
+    BillingResponseListResultInner listBillingSpecs(String location);
 
     /**
      * Get the async operation status.
@@ -124,18 +111,17 @@ public interface LocationsClient {
         String location, String operationId, Context context);
 
     /**
-     * Check the cluster name is available or not.
+     * Get the async operation status.
      *
      * @param location The Azure location (region) for which to make the request.
-     * @param parameters The request spec of checking name availability.
+     * @param operationId The long running operation id.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response spec of checking name availability.
+     * @return the async operation status.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    NameAvailabilityCheckResultInner checkNameAvailability(
-        String location, NameAvailabilityCheckRequestParameters parameters);
+    AsyncOperationResultInner getAzureAsyncOperationStatus(String location, String operationId);
 
     /**
      * Check the cluster name is available or not.
@@ -153,18 +139,18 @@ public interface LocationsClient {
         String location, NameAvailabilityCheckRequestParameters parameters, Context context);
 
     /**
-     * Validate the cluster create request spec is valid or not.
+     * Check the cluster name is available or not.
      *
      * @param location The Azure location (region) for which to make the request.
-     * @param parameters The cluster create request specification.
+     * @param parameters The request spec of checking name availability.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of cluster create request validation.
+     * @return the response spec of checking name availability.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    ClusterCreateValidationResultInner validateClusterCreateRequest(
-        String location, ClusterCreateRequestValidationParameters parameters);
+    NameAvailabilityCheckResultInner checkNameAvailability(
+        String location, NameAvailabilityCheckRequestParameters parameters);
 
     /**
      * Validate the cluster create request spec is valid or not.
@@ -180,4 +166,18 @@ public interface LocationsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ClusterCreateValidationResultInner> validateClusterCreateRequestWithResponse(
         String location, ClusterCreateRequestValidationParameters parameters, Context context);
+
+    /**
+     * Validate the cluster create request spec is valid or not.
+     *
+     * @param location The Azure location (region) for which to make the request.
+     * @param parameters The cluster create request specification.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response of cluster create request validation.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    ClusterCreateValidationResultInner validateClusterCreateRequest(
+        String location, ClusterCreateRequestValidationParameters parameters);
 }

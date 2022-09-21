@@ -43,19 +43,6 @@ public interface StorageAccounts {
      * @param deviceName The device name.
      * @param storageAccountName The storage account name.
      * @param resourceGroupName The resource group name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a StorageAccount by name.
-     */
-    StorageAccount get(String deviceName, String storageAccountName, String resourceGroupName);
-
-    /**
-     * Gets a StorageAccount by name.
-     *
-     * @param deviceName The device name.
-     * @param storageAccountName The storage account name.
-     * @param resourceGroupName The resource group name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -64,6 +51,19 @@ public interface StorageAccounts {
      */
     Response<StorageAccount> getWithResponse(
         String deviceName, String storageAccountName, String resourceGroupName, Context context);
+
+    /**
+     * Gets a StorageAccount by name.
+     *
+     * @param deviceName The device name.
+     * @param storageAccountName The storage account name.
+     * @param resourceGroupName The resource group name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a StorageAccount by name.
+     */
+    StorageAccount get(String deviceName, String storageAccountName, String resourceGroupName);
 
     /**
      * Deletes the StorageAccount on the Data Box Edge/Data Box Gateway device.

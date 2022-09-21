@@ -111,7 +111,7 @@ public final class VpnSiteLinkConnectionsClientImpl implements VpnSiteLinkConnec
             return Mono
                 .error(new IllegalArgumentException("Parameter linkConnectionName is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -176,7 +176,7 @@ public final class VpnSiteLinkConnectionsClientImpl implements VpnSiteLinkConnec
             return Mono
                 .error(new IllegalArgumentException("Parameter linkConnectionName is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -221,12 +221,12 @@ public final class VpnSiteLinkConnectionsClientImpl implements VpnSiteLinkConnec
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpnSiteLinkConnection Resource.
+     * @return vpnSiteLinkConnection Resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public VpnSiteLinkConnectionInner get(
+    public Response<VpnSiteLinkConnectionInner> getWithResponse(
         String resourceGroupName, String gatewayName, String connectionName, String linkConnectionName) {
-        return getAsync(resourceGroupName, gatewayName, connectionName, linkConnectionName).block();
+        return getWithResponseAsync(resourceGroupName, gatewayName, connectionName, linkConnectionName).block();
     }
 
     /**
@@ -251,5 +251,24 @@ public final class VpnSiteLinkConnectionsClientImpl implements VpnSiteLinkConnec
         Context context) {
         return getWithResponseAsync(resourceGroupName, gatewayName, connectionName, linkConnectionName, context)
             .block();
+    }
+
+    /**
+     * Retrieves the details of a vpn site link connection.
+     *
+     * @param resourceGroupName The resource group name of the VpnGateway.
+     * @param gatewayName The name of the gateway.
+     * @param connectionName The name of the vpn connection.
+     * @param linkConnectionName The name of the vpn connection.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return vpnSiteLinkConnection Resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public VpnSiteLinkConnectionInner get(
+        String resourceGroupName, String gatewayName, String connectionName, String linkConnectionName) {
+        return getWithResponse(resourceGroupName, gatewayName, connectionName, linkConnectionName, Context.NONE)
+            .getValue();
     }
 }

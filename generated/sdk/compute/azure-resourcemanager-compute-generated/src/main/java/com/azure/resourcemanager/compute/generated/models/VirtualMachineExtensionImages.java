@@ -17,21 +17,6 @@ public interface VirtualMachineExtensionImages {
      * @param publisherName The publisherName parameter.
      * @param type The type parameter.
      * @param version The version parameter.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a virtual machine extension image.
-     */
-    VirtualMachineExtensionImage get(String location, String publisherName, String type, String version);
-
-    /**
-     * Gets a virtual machine extension image.
-     *
-     * @param location The name of a supported Azure region.
-     * @param publisherName The publisherName parameter.
-     * @param type The type parameter.
-     * @param version The version parameter.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
@@ -43,17 +28,19 @@ public interface VirtualMachineExtensionImages {
         String location, String publisherName, String type, String version, Context context);
 
     /**
-     * Gets a list of virtual machine extension image types.
+     * Gets a virtual machine extension image.
      *
      * @param location The name of a supported Azure region.
      * @param publisherName The publisherName parameter.
+     * @param type The type parameter.
+     * @param version The version parameter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of virtual machine extension image types.
+     * @return a virtual machine extension image.
      */
-    List<VirtualMachineExtensionImage> listTypes(String location, String publisherName);
+    VirtualMachineExtensionImage get(String location, String publisherName, String type, String version);
 
     /**
      * Gets a list of virtual machine extension image types.
@@ -71,18 +58,17 @@ public interface VirtualMachineExtensionImages {
         String location, String publisherName, Context context);
 
     /**
-     * Gets a list of virtual machine extension image versions.
+     * Gets a list of virtual machine extension image types.
      *
      * @param location The name of a supported Azure region.
      * @param publisherName The publisherName parameter.
-     * @param type The type parameter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of virtual machine extension image versions.
+     * @return a list of virtual machine extension image types.
      */
-    List<VirtualMachineExtensionImage> listVersions(String location, String publisherName, String type);
+    List<VirtualMachineExtensionImage> listTypes(String location, String publisherName);
 
     /**
      * Gets a list of virtual machine extension image versions.
@@ -108,4 +94,18 @@ public interface VirtualMachineExtensionImages {
         Integer top,
         String orderby,
         Context context);
+
+    /**
+     * Gets a list of virtual machine extension image versions.
+     *
+     * @param location The name of a supported Azure region.
+     * @param publisherName The publisherName parameter.
+     * @param type The type parameter.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a list of virtual machine extension image versions.
+     */
+    List<VirtualMachineExtensionImage> listVersions(String location, String publisherName, String type);
 }

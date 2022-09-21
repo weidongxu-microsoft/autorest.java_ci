@@ -30,17 +30,6 @@ public final class ReservationRecommendationDetailsImpl implements ReservationRe
         this.serviceManager = serviceManager;
     }
 
-    public ReservationRecommendationDetailsModel get(
-        String resourceScope, Scope scope, String region, Term term, LookBackPeriod lookBackPeriod, String product) {
-        ReservationRecommendationDetailsModelInner inner =
-            this.serviceClient().get(resourceScope, scope, region, term, lookBackPeriod, product);
-        if (inner != null) {
-            return new ReservationRecommendationDetailsModelImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<ReservationRecommendationDetailsModel> getWithResponse(
         String resourceScope,
         Scope scope,
@@ -57,6 +46,17 @@ public final class ReservationRecommendationDetailsImpl implements ReservationRe
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new ReservationRecommendationDetailsModelImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public ReservationRecommendationDetailsModel get(
+        String resourceScope, Scope scope, String region, Term term, LookBackPeriod lookBackPeriod, String product) {
+        ReservationRecommendationDetailsModelInner inner =
+            this.serviceClient().get(resourceScope, scope, region, term, lookBackPeriod, product);
+        if (inner != null) {
+            return new ReservationRecommendationDetailsModelImpl(inner, this.manager());
         } else {
             return null;
         }

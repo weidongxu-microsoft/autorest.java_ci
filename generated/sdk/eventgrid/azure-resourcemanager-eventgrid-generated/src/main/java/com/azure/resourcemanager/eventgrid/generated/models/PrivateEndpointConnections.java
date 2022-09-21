@@ -22,28 +22,6 @@ public interface PrivateEndpointConnections {
      * @param parentName The name of the parent resource (namely, either, the topic name, domain name, or partner
      *     namespace name).
      * @param privateEndpointConnectionName The name of the private endpoint connection connection.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a specific private endpoint connection under a topic, domain, or partner namespace.
-     */
-    PrivateEndpointConnection get(
-        String resourceGroupName,
-        PrivateEndpointConnectionsParentType parentType,
-        String parentName,
-        String privateEndpointConnectionName);
-
-    /**
-     * Get a specific private endpoint connection.
-     *
-     * <p>Get a specific private endpoint connection under a topic, domain, or partner namespace.
-     *
-     * @param resourceGroupName The name of the resource group within the user's subscription.
-     * @param parentType The type of the parent resource. This can be either \'topics\', \'domains\', or
-     *     \'partnerNamespaces\'.
-     * @param parentName The name of the parent resource (namely, either, the topic name, domain name, or partner
-     *     namespace name).
-     * @param privateEndpointConnectionName The name of the private endpoint connection connection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -57,6 +35,28 @@ public interface PrivateEndpointConnections {
         String parentName,
         String privateEndpointConnectionName,
         Context context);
+
+    /**
+     * Get a specific private endpoint connection.
+     *
+     * <p>Get a specific private endpoint connection under a topic, domain, or partner namespace.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription.
+     * @param parentType The type of the parent resource. This can be either \'topics\', \'domains\', or
+     *     \'partnerNamespaces\'.
+     * @param parentName The name of the parent resource (namely, either, the topic name, domain name, or partner
+     *     namespace name).
+     * @param privateEndpointConnectionName The name of the private endpoint connection connection.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a specific private endpoint connection under a topic, domain, or partner namespace.
+     */
+    PrivateEndpointConnection get(
+        String resourceGroupName,
+        PrivateEndpointConnectionsParentType parentType,
+        String parentName,
+        String privateEndpointConnectionName);
 
     /**
      * Update a specific private endpoint connection.

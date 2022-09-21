@@ -28,6 +28,10 @@ public final class CustomOpenIdConnectProvider {
     @JsonProperty(value = "login")
     private OpenIdConnectLogin login;
 
+    /** Creates an instance of CustomOpenIdConnectProvider class. */
+    public CustomOpenIdConnectProvider() {
+    }
+
     /**
      * Get the enabled property: &lt;code&gt;false&lt;/code&gt; if the custom Open ID provider provider should not be
      * enabled; otherwise, &lt;code&gt;true&lt;/code&gt;.

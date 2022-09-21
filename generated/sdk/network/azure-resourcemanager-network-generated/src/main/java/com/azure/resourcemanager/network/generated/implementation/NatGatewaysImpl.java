@@ -35,15 +35,6 @@ public final class NatGatewaysImpl implements NatGateways {
         this.serviceClient().delete(resourceGroupName, natGatewayName, context);
     }
 
-    public NatGateway getByResourceGroup(String resourceGroupName, String natGatewayName) {
-        NatGatewayInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, natGatewayName);
-        if (inner != null) {
-            return new NatGatewayImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<NatGateway> getByResourceGroupWithResponse(
         String resourceGroupName, String natGatewayName, String expand, Context context) {
         Response<NatGatewayInner> inner =
@@ -54,6 +45,15 @@ public final class NatGatewaysImpl implements NatGateways {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new NatGatewayImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public NatGateway getByResourceGroup(String resourceGroupName, String natGatewayName) {
+        NatGatewayInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, natGatewayName);
+        if (inner != null) {
+            return new NatGatewayImpl(inner, this.manager());
         } else {
             return null;
         }

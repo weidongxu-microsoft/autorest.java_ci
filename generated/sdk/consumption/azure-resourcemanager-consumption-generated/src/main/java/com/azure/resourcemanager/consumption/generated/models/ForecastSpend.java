@@ -24,6 +24,10 @@ public final class ForecastSpend {
     @JsonProperty(value = "unit", access = JsonProperty.Access.WRITE_ONLY)
     private String unit;
 
+    /** Creates an instance of ForecastSpend class. */
+    public ForecastSpend() {
+    }
+
     /**
      * Get the amount property: The forecasted cost for the total time period which is being tracked by the budget. This
      * value is only provided if the budget contains a forecast alert type.

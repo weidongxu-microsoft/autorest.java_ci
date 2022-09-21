@@ -37,17 +37,6 @@ public final class PrivateDnsZoneGroupsImpl implements PrivateDnsZoneGroups {
         this.serviceClient().delete(resourceGroupName, privateEndpointName, privateDnsZoneGroupName, context);
     }
 
-    public PrivateDnsZoneGroup get(
-        String resourceGroupName, String privateEndpointName, String privateDnsZoneGroupName) {
-        PrivateDnsZoneGroupInner inner =
-            this.serviceClient().get(resourceGroupName, privateEndpointName, privateDnsZoneGroupName);
-        if (inner != null) {
-            return new PrivateDnsZoneGroupImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<PrivateDnsZoneGroup> getWithResponse(
         String resourceGroupName, String privateEndpointName, String privateDnsZoneGroupName, Context context) {
         Response<PrivateDnsZoneGroupInner> inner =
@@ -60,6 +49,17 @@ public final class PrivateDnsZoneGroupsImpl implements PrivateDnsZoneGroups {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new PrivateDnsZoneGroupImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public PrivateDnsZoneGroup get(
+        String resourceGroupName, String privateEndpointName, String privateDnsZoneGroupName) {
+        PrivateDnsZoneGroupInner inner =
+            this.serviceClient().get(resourceGroupName, privateEndpointName, privateDnsZoneGroupName);
+        if (inner != null) {
+            return new PrivateDnsZoneGroupImpl(inner, this.manager());
         } else {
             return null;
         }

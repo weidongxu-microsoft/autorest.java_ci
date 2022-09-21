@@ -61,26 +61,6 @@ public interface AdminRules {
      * @param configurationName The name of the network manager Security Configuration.
      * @param ruleCollectionName The name of the network manager security Configuration rule collection.
      * @param ruleName The name of the rule.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a network manager security configuration admin rule.
-     */
-    BaseAdminRule get(
-        String resourceGroupName,
-        String networkManagerName,
-        String configurationName,
-        String ruleCollectionName,
-        String ruleName);
-
-    /**
-     * Gets a network manager security configuration admin rule.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param networkManagerName The name of the network manager.
-     * @param configurationName The name of the network manager Security Configuration.
-     * @param ruleCollectionName The name of the network manager security Configuration rule collection.
-     * @param ruleName The name of the rule.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -96,26 +76,24 @@ public interface AdminRules {
         Context context);
 
     /**
-     * Creates or updates an admin rule.
+     * Gets a network manager security configuration admin rule.
      *
      * @param resourceGroupName The name of the resource group.
      * @param networkManagerName The name of the network manager.
      * @param configurationName The name of the network manager Security Configuration.
      * @param ruleCollectionName The name of the network manager security Configuration rule collection.
      * @param ruleName The name of the rule.
-     * @param adminRule The admin rule to create or update.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return network base admin rule.
+     * @return a network manager security configuration admin rule.
      */
-    BaseAdminRule createOrUpdate(
+    BaseAdminRule get(
         String resourceGroupName,
         String networkManagerName,
         String configurationName,
         String ruleCollectionName,
-        String ruleName,
-        BaseAdminRuleInner adminRule);
+        String ruleName);
 
     /**
      * Creates or updates an admin rule.
@@ -140,6 +118,28 @@ public interface AdminRules {
         String ruleName,
         BaseAdminRuleInner adminRule,
         Context context);
+
+    /**
+     * Creates or updates an admin rule.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param networkManagerName The name of the network manager.
+     * @param configurationName The name of the network manager Security Configuration.
+     * @param ruleCollectionName The name of the network manager security Configuration rule collection.
+     * @param ruleName The name of the rule.
+     * @param adminRule The admin rule to create or update.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return network base admin rule.
+     */
+    BaseAdminRule createOrUpdate(
+        String resourceGroupName,
+        String networkManagerName,
+        String configurationName,
+        String ruleCollectionName,
+        String ruleName,
+        BaseAdminRuleInner adminRule);
 
     /**
      * Deletes an admin rule.

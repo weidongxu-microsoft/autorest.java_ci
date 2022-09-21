@@ -28,6 +28,10 @@ public final class UpdateClusterIdentityCertificateParameters {
     @JsonProperty(value = "certificatePassword")
     private String certificatePassword;
 
+    /** Creates an instance of UpdateClusterIdentityCertificateParameters class. */
+    public UpdateClusterIdentityCertificateParameters() {
+    }
+
     /**
      * Get the applicationId property: The application id.
      *

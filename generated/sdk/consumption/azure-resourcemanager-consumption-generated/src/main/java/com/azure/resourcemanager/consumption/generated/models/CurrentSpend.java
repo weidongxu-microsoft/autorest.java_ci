@@ -23,6 +23,10 @@ public final class CurrentSpend {
     @JsonProperty(value = "unit", access = JsonProperty.Access.WRITE_ONLY)
     private String unit;
 
+    /** Creates an instance of CurrentSpend class. */
+    public CurrentSpend() {
+    }
+
     /**
      * Get the amount property: The total amount of cost which is being tracked by the budget.
      *

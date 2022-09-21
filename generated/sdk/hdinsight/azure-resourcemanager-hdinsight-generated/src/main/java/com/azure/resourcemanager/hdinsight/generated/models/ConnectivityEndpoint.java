@@ -40,6 +40,10 @@ public final class ConnectivityEndpoint {
     @JsonProperty(value = "privateIPAddress")
     private String privateIpAddress;
 
+    /** Creates an instance of ConnectivityEndpoint class. */
+    public ConnectivityEndpoint() {
+    }
+
     /**
      * Get the name property: The name of the endpoint.
      *

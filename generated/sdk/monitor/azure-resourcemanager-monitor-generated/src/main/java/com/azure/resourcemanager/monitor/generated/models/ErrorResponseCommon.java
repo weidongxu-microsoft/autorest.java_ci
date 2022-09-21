@@ -18,6 +18,10 @@ public final class ErrorResponseCommon extends ManagementError {
     @JsonProperty(value = "details", access = JsonProperty.Access.WRITE_ONLY)
     private List<ErrorResponseCommon> details;
 
+    /** Creates an instance of ErrorResponseCommon class. */
+    public ErrorResponseCommon() {
+    }
+
     /**
      * Get the details property: The error details.
      *

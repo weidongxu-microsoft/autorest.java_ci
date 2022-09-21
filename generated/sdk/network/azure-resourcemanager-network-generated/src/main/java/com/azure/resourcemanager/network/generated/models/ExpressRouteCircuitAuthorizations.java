@@ -41,19 +41,6 @@ public interface ExpressRouteCircuitAuthorizations {
      * @param resourceGroupName The name of the resource group.
      * @param circuitName The name of the express route circuit.
      * @param authorizationName The name of the authorization.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified authorization from the specified express route circuit.
-     */
-    ExpressRouteCircuitAuthorization get(String resourceGroupName, String circuitName, String authorizationName);
-
-    /**
-     * Gets the specified authorization from the specified express route circuit.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param circuitName The name of the express route circuit.
-     * @param authorizationName The name of the authorization.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -62,6 +49,19 @@ public interface ExpressRouteCircuitAuthorizations {
      */
     Response<ExpressRouteCircuitAuthorization> getWithResponse(
         String resourceGroupName, String circuitName, String authorizationName, Context context);
+
+    /**
+     * Gets the specified authorization from the specified express route circuit.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param circuitName The name of the express route circuit.
+     * @param authorizationName The name of the authorization.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified authorization from the specified express route circuit.
+     */
+    ExpressRouteCircuitAuthorization get(String resourceGroupName, String circuitName, String authorizationName);
 
     /**
      * Gets all authorizations in an express route circuit.

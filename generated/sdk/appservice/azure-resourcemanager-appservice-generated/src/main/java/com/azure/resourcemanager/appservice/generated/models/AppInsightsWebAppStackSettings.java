@@ -22,6 +22,10 @@ public final class AppInsightsWebAppStackSettings {
     @JsonProperty(value = "isDefaultOff", access = JsonProperty.Access.WRITE_ONLY)
     private Boolean isDefaultOff;
 
+    /** Creates an instance of AppInsightsWebAppStackSettings class. */
+    public AppInsightsWebAppStackSettings() {
+    }
+
     /**
      * Get the isSupported property: &lt;code&gt;true&lt;/code&gt; if remote Application Insights is supported for the
      * stack; otherwise, &lt;code&gt;false&lt;/code&gt;.

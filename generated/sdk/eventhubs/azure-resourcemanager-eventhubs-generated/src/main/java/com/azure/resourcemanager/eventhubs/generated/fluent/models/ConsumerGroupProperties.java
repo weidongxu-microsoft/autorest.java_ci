@@ -31,6 +31,10 @@ public final class ConsumerGroupProperties {
     @JsonProperty(value = "userMetadata")
     private String userMetadata;
 
+    /** Creates an instance of ConsumerGroupProperties class. */
+    public ConsumerGroupProperties() {
+    }
+
     /**
      * Get the createdAt property: Exact time the message was created.
      *

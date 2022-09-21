@@ -20,20 +20,6 @@ public interface AlertRulesClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @param parameters The parameters of the rule to create or update.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the alert rule resource.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    AlertRuleResourceInner createOrUpdate(String resourceGroupName, String ruleName, AlertRuleResourceInner parameters);
-
-    /**
-     * Creates or updates a classic metric alert rule.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param ruleName The name of the rule.
-     * @param parameters The parameters of the rule to create or update.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -45,16 +31,18 @@ public interface AlertRulesClient {
         String resourceGroupName, String ruleName, AlertRuleResourceInner parameters, Context context);
 
     /**
-     * Deletes a classic metric alert rule.
+     * Creates or updates a classic metric alert rule.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
+     * @param parameters The parameters of the rule to create or update.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the alert rule resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    void delete(String resourceGroupName, String ruleName);
+    AlertRuleResourceInner createOrUpdate(String resourceGroupName, String ruleName, AlertRuleResourceInner parameters);
 
     /**
      * Deletes a classic metric alert rule.
@@ -71,17 +59,16 @@ public interface AlertRulesClient {
     Response<Void> deleteWithResponse(String resourceGroupName, String ruleName, Context context);
 
     /**
-     * Gets a classic metric alert rule.
+     * Deletes a classic metric alert rule.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a classic metric alert rule.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    AlertRuleResourceInner getByResourceGroup(String resourceGroupName, String ruleName);
+    void delete(String resourceGroupName, String ruleName);
 
     /**
      * Gets a classic metric alert rule.
@@ -99,18 +86,17 @@ public interface AlertRulesClient {
         String resourceGroupName, String ruleName, Context context);
 
     /**
-     * Updates an existing classic metric AlertRuleResource. To update other fields use the CreateOrUpdate method.
+     * Gets a classic metric alert rule.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
-     * @param alertRulesResource Parameters supplied to the operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the alert rule resource.
+     * @return a classic metric alert rule.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    AlertRuleResourceInner update(String resourceGroupName, String ruleName, AlertRuleResourcePatch alertRulesResource);
+    AlertRuleResourceInner getByResourceGroup(String resourceGroupName, String ruleName);
 
     /**
      * Updates an existing classic metric AlertRuleResource. To update other fields use the CreateOrUpdate method.
@@ -127,6 +113,20 @@ public interface AlertRulesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<AlertRuleResourceInner> updateWithResponse(
         String resourceGroupName, String ruleName, AlertRuleResourcePatch alertRulesResource, Context context);
+
+    /**
+     * Updates an existing classic metric AlertRuleResource. To update other fields use the CreateOrUpdate method.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param ruleName The name of the rule.
+     * @param alertRulesResource Parameters supplied to the operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the alert rule resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    AlertRuleResourceInner update(String resourceGroupName, String ruleName, AlertRuleResourcePatch alertRulesResource);
 
     /**
      * List the classic metric alert rules within a resource group.

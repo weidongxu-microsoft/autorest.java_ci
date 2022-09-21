@@ -35,6 +35,10 @@ public final class RelayNamespaceInner extends Resource {
     @JsonProperty(value = "properties")
     private RelayNamespaceProperties innerProperties;
 
+    /** Creates an instance of RelayNamespaceInner class. */
+    public RelayNamespaceInner() {
+    }
+
     /**
      * Get the sku property: SKU of the namespace.
      *

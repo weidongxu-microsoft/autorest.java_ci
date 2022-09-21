@@ -345,11 +345,12 @@ public final class SystemTopicEventSubscriptionsClientImpl implements SystemTopi
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an event subscription.
+     * @return an event subscription along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public EventSubscriptionInner get(String resourceGroupName, String systemTopicName, String eventSubscriptionName) {
-        return getAsync(resourceGroupName, systemTopicName, eventSubscriptionName).block();
+    public Response<EventSubscriptionInner> getWithResponse(
+        String resourceGroupName, String systemTopicName, String eventSubscriptionName) {
+        return getWithResponseAsync(resourceGroupName, systemTopicName, eventSubscriptionName).block();
     }
 
     /**
@@ -371,6 +372,25 @@ public final class SystemTopicEventSubscriptionsClientImpl implements SystemTopi
     public Response<EventSubscriptionInner> getWithResponse(
         String resourceGroupName, String systemTopicName, String eventSubscriptionName, Context context) {
         return getWithResponseAsync(resourceGroupName, systemTopicName, eventSubscriptionName, context).block();
+    }
+
+    /**
+     * Get an event subscription of a system topic.
+     *
+     * <p>Get an event subscription.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription.
+     * @param systemTopicName Name of the system topic.
+     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
+     *     between 3 and 100 characters in length and use alphanumeric letters only.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return an event subscription.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public EventSubscriptionInner get(String resourceGroupName, String systemTopicName, String eventSubscriptionName) {
+        return getWithResponse(resourceGroupName, systemTopicName, eventSubscriptionName, Context.NONE).getValue();
     }
 
     /**
@@ -1563,12 +1583,12 @@ public final class SystemTopicEventSubscriptionsClientImpl implements SystemTopi
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the full endpoint URL for an event subscription of a system topic.
+     * @return the full endpoint URL for an event subscription of a system topic along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public EventSubscriptionFullUrlInner getFullUrl(
+    public Response<EventSubscriptionFullUrlInner> getFullUrlWithResponse(
         String resourceGroupName, String systemTopicName, String eventSubscriptionName) {
-        return getFullUrlAsync(resourceGroupName, systemTopicName, eventSubscriptionName).block();
+        return getFullUrlWithResponseAsync(resourceGroupName, systemTopicName, eventSubscriptionName).block();
     }
 
     /**
@@ -1590,6 +1610,27 @@ public final class SystemTopicEventSubscriptionsClientImpl implements SystemTopi
     public Response<EventSubscriptionFullUrlInner> getFullUrlWithResponse(
         String resourceGroupName, String systemTopicName, String eventSubscriptionName, Context context) {
         return getFullUrlWithResponseAsync(resourceGroupName, systemTopicName, eventSubscriptionName, context).block();
+    }
+
+    /**
+     * Get full URL of an event subscription of a system topic
+     *
+     * <p>Get the full endpoint URL for an event subscription of a system topic.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription.
+     * @param systemTopicName Name of the system topic.
+     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
+     *     between 3 and 100 characters in length and use alphanumeric letters only.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the full endpoint URL for an event subscription of a system topic.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public EventSubscriptionFullUrlInner getFullUrl(
+        String resourceGroupName, String systemTopicName, String eventSubscriptionName) {
+        return getFullUrlWithResponse(resourceGroupName, systemTopicName, eventSubscriptionName, Context.NONE)
+            .getValue();
     }
 
     /**
@@ -2005,12 +2046,13 @@ public final class SystemTopicEventSubscriptionsClientImpl implements SystemTopi
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all delivery attributes for an event subscription.
+     * @return all delivery attributes for an event subscription along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public DeliveryAttributeListResultInner getDeliveryAttributes(
+    public Response<DeliveryAttributeListResultInner> getDeliveryAttributesWithResponse(
         String resourceGroupName, String systemTopicName, String eventSubscriptionName) {
-        return getDeliveryAttributesAsync(resourceGroupName, systemTopicName, eventSubscriptionName).block();
+        return getDeliveryAttributesWithResponseAsync(resourceGroupName, systemTopicName, eventSubscriptionName)
+            .block();
     }
 
     /**
@@ -2034,6 +2076,28 @@ public final class SystemTopicEventSubscriptionsClientImpl implements SystemTopi
         return getDeliveryAttributesWithResponseAsync(
                 resourceGroupName, systemTopicName, eventSubscriptionName, context)
             .block();
+    }
+
+    /**
+     * Get delivery attributes for an event subscription.
+     *
+     * <p>Get all delivery attributes for an event subscription.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription.
+     * @param systemTopicName Name of the system topic.
+     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
+     *     between 3 and 100 characters in length and use alphanumeric letters only.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return all delivery attributes for an event subscription.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public DeliveryAttributeListResultInner getDeliveryAttributes(
+        String resourceGroupName, String systemTopicName, String eventSubscriptionName) {
+        return getDeliveryAttributesWithResponse(
+                resourceGroupName, systemTopicName, eventSubscriptionName, Context.NONE)
+            .getValue();
     }
 
     /**

@@ -30,6 +30,10 @@ public final class PartnerDetails {
     @JsonProperty(value = "setupUri")
     private String setupUri;
 
+    /** Creates an instance of PartnerDetails class. */
+    public PartnerDetails() {
+    }
+
     /**
      * Get the description property: This is short description about the partner. The length of this description should
      * not exceed 256 characters.

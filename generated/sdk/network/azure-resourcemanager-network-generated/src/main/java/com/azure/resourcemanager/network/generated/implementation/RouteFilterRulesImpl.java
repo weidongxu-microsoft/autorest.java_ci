@@ -35,15 +35,6 @@ public final class RouteFilterRulesImpl implements RouteFilterRules {
         this.serviceClient().delete(resourceGroupName, routeFilterName, ruleName, context);
     }
 
-    public RouteFilterRule get(String resourceGroupName, String routeFilterName, String ruleName) {
-        RouteFilterRuleInner inner = this.serviceClient().get(resourceGroupName, routeFilterName, ruleName);
-        if (inner != null) {
-            return new RouteFilterRuleImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<RouteFilterRule> getWithResponse(
         String resourceGroupName, String routeFilterName, String ruleName, Context context) {
         Response<RouteFilterRuleInner> inner =
@@ -54,6 +45,15 @@ public final class RouteFilterRulesImpl implements RouteFilterRules {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new RouteFilterRuleImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public RouteFilterRule get(String resourceGroupName, String routeFilterName, String ruleName) {
+        RouteFilterRuleInner inner = this.serviceClient().get(resourceGroupName, routeFilterName, ruleName);
+        if (inner != null) {
+            return new RouteFilterRuleImpl(inner, this.manager());
         } else {
             return null;
         }

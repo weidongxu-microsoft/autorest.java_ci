@@ -73,19 +73,6 @@ public interface IpAllocationsClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param ipAllocationName The name of the IpAllocation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified IpAllocation by resource group.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    IpAllocationInner getByResourceGroup(String resourceGroupName, String ipAllocationName);
-
-    /**
-     * Gets the specified IpAllocation by resource group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param ipAllocationName The name of the IpAllocation.
      * @param expand Expands referenced resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -96,6 +83,19 @@ public interface IpAllocationsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<IpAllocationInner> getByResourceGroupWithResponse(
         String resourceGroupName, String ipAllocationName, String expand, Context context);
+
+    /**
+     * Gets the specified IpAllocation by resource group.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param ipAllocationName The name of the IpAllocation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified IpAllocation by resource group.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    IpAllocationInner getByResourceGroup(String resourceGroupName, String ipAllocationName);
 
     /**
      * Creates or updates an IpAllocation in the specified resource group.
@@ -164,20 +164,6 @@ public interface IpAllocationsClient {
      * @param resourceGroupName The name of the resource group.
      * @param ipAllocationName The name of the IpAllocation.
      * @param parameters Parameters supplied to update IpAllocation tags.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return ipAllocation resource.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    IpAllocationInner updateTags(String resourceGroupName, String ipAllocationName, TagsObject parameters);
-
-    /**
-     * Updates a IpAllocation tags.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param ipAllocationName The name of the IpAllocation.
-     * @param parameters Parameters supplied to update IpAllocation tags.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -187,6 +173,20 @@ public interface IpAllocationsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<IpAllocationInner> updateTagsWithResponse(
         String resourceGroupName, String ipAllocationName, TagsObject parameters, Context context);
+
+    /**
+     * Updates a IpAllocation tags.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param ipAllocationName The name of the IpAllocation.
+     * @param parameters Parameters supplied to update IpAllocation tags.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return ipAllocation resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    IpAllocationInner updateTags(String resourceGroupName, String ipAllocationName, TagsObject parameters);
 
     /**
      * Gets all IpAllocations in a subscription.

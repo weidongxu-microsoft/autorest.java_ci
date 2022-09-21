@@ -24,6 +24,10 @@ public final class ProfileProperties {
     @JsonProperty(value = "enabledState")
     private State enabledState;
 
+    /** Creates an instance of ProfileProperties class. */
+    public ProfileProperties() {
+    }
+
     /**
      * Get the resourceState property: Resource status.
      *

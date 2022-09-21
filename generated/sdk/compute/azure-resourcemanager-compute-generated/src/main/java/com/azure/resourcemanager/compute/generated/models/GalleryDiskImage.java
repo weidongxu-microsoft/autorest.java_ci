@@ -28,6 +28,10 @@ public class GalleryDiskImage {
     @JsonProperty(value = "source")
     private GalleryArtifactVersionSource source;
 
+    /** Creates an instance of GalleryDiskImage class. */
+    public GalleryDiskImage() {
+    }
+
     /**
      * Get the sizeInGB property: This property indicates the size of the VHD to be created.
      *

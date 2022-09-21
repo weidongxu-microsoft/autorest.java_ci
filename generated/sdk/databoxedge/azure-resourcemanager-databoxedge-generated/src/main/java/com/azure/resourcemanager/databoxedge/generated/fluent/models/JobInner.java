@@ -71,6 +71,10 @@ public final class JobInner {
     @JsonProperty(value = "properties", access = JsonProperty.Access.WRITE_ONLY)
     private JobProperties innerProperties;
 
+    /** Creates an instance of JobInner class. */
+    public JobInner() {
+    }
+
     /**
      * Get the id property: The path ID that uniquely identifies the object.
      *

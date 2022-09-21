@@ -73,6 +73,10 @@ public final class KubeEnvironmentPatchResourceProperties {
     @JsonProperty(value = "aksResourceID")
     private String aksResourceId;
 
+    /** Creates an instance of KubeEnvironmentPatchResourceProperties class. */
+    public KubeEnvironmentPatchResourceProperties() {
+    }
+
     /**
      * Get the provisioningState property: Provisioning state of the Kubernetes Environment.
      *

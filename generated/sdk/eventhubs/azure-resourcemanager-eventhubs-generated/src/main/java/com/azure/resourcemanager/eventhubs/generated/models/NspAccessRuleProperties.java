@@ -41,6 +41,10 @@ public final class NspAccessRuleProperties {
     @JsonProperty(value = "fullyQualifiedDomainNames", access = JsonProperty.Access.WRITE_ONLY)
     private List<String> fullyQualifiedDomainNames;
 
+    /** Creates an instance of NspAccessRuleProperties class. */
+    public NspAccessRuleProperties() {
+    }
+
     /**
      * Get the direction property: Direction of Access Rule.
      *

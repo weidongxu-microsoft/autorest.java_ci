@@ -143,6 +143,10 @@ public final class AppServiceCertificateOrderPatchResourceProperties {
     @JsonProperty(value = "contact", access = JsonProperty.Access.WRITE_ONLY)
     private CertificateOrderContact contact;
 
+    /** Creates an instance of AppServiceCertificateOrderPatchResourceProperties class. */
+    public AppServiceCertificateOrderPatchResourceProperties() {
+    }
+
     /**
      * Get the certificates property: State of the Key Vault secret.
      *

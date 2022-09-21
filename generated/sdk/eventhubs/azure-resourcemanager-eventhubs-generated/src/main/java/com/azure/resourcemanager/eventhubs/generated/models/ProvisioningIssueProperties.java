@@ -22,6 +22,10 @@ public final class ProvisioningIssueProperties {
     @JsonProperty(value = "description")
     private String description;
 
+    /** Creates an instance of ProvisioningIssueProperties class. */
+    public ProvisioningIssueProperties() {
+    }
+
     /**
      * Get the issueType property: Type of Issue.
      *

@@ -25,6 +25,10 @@ public final class PartnerRegistrationProperties {
     @JsonProperty(value = "partnerRegistrationImmutableId")
     private UUID partnerRegistrationImmutableId;
 
+    /** Creates an instance of PartnerRegistrationProperties class. */
+    public PartnerRegistrationProperties() {
+    }
+
     /**
      * Get the provisioningState property: Provisioning state of the partner registration.
      *

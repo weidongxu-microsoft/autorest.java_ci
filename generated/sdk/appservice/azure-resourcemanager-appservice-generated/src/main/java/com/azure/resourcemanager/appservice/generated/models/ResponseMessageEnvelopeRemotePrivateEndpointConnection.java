@@ -93,6 +93,10 @@ public final class ResponseMessageEnvelopeRemotePrivateEndpointConnection {
     @JsonProperty(value = "zones")
     private List<String> zones;
 
+    /** Creates an instance of ResponseMessageEnvelopeRemotePrivateEndpointConnection class. */
+    public ResponseMessageEnvelopeRemotePrivateEndpointConnection() {
+    }
+
     /**
      * Get the id property: Resource Id. Typically ID is populated only for responses to GET requests. Caller is
      * responsible for passing in this value for GET requests only. For example:

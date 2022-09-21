@@ -23,6 +23,10 @@ public final class PeriodicTimerEventTrigger extends TriggerInner {
     @JsonProperty(value = "properties", required = true)
     private PeriodicTimerProperties innerProperties = new PeriodicTimerProperties();
 
+    /** Creates an instance of PeriodicTimerEventTrigger class. */
+    public PeriodicTimerEventTrigger() {
+    }
+
     /**
      * Get the innerProperties property: Periodic timer trigger properties.
      *

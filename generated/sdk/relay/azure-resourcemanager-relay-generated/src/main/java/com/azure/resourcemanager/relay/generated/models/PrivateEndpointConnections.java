@@ -68,19 +68,6 @@ public interface PrivateEndpointConnections {
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param namespaceName The namespace name.
      * @param privateEndpointConnectionName The PrivateEndpointConnection name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a description for the specified Private Endpoint Connection name.
-     */
-    PrivateEndpointConnection get(String resourceGroupName, String namespaceName, String privateEndpointConnectionName);
-
-    /**
-     * Gets a description for the specified Private Endpoint Connection name.
-     *
-     * @param resourceGroupName Name of the Resource group within the Azure subscription.
-     * @param namespaceName The namespace name.
-     * @param privateEndpointConnectionName The PrivateEndpointConnection name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -89,6 +76,19 @@ public interface PrivateEndpointConnections {
      */
     Response<PrivateEndpointConnection> getWithResponse(
         String resourceGroupName, String namespaceName, String privateEndpointConnectionName, Context context);
+
+    /**
+     * Gets a description for the specified Private Endpoint Connection name.
+     *
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param namespaceName The namespace name.
+     * @param privateEndpointConnectionName The PrivateEndpointConnection name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a description for the specified Private Endpoint Connection name.
+     */
+    PrivateEndpointConnection get(String resourceGroupName, String namespaceName, String privateEndpointConnectionName);
 
     /**
      * Gets a description for the specified Private Endpoint Connection name.

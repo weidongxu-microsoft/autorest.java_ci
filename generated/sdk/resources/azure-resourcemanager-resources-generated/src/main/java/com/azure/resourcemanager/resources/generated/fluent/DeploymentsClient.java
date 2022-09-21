@@ -108,19 +108,6 @@ public interface DeploymentsClient {
      *
      * @param scope The resource scope.
      * @param deploymentName The name of the deployment.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return whether resource exists.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    boolean checkExistenceAtScope(String scope, String deploymentName);
-
-    /**
-     * Checks whether the deployment exists.
-     *
-     * @param scope The resource scope.
-     * @param deploymentName The name of the deployment.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -129,6 +116,19 @@ public interface DeploymentsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Boolean> checkExistenceAtScopeWithResponse(String scope, String deploymentName, Context context);
+
+    /**
+     * Checks whether the deployment exists.
+     *
+     * @param scope The resource scope.
+     * @param deploymentName The name of the deployment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return whether resource exists.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    boolean checkExistenceAtScope(String scope, String deploymentName);
 
     /**
      * Deploys resources at a given scope.
@@ -204,19 +204,6 @@ public interface DeploymentsClient {
      *
      * @param scope The resource scope.
      * @param deploymentName The name of the deployment.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployment.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    DeploymentExtendedInner getAtScope(String scope, String deploymentName);
-
-    /**
-     * Gets a deployment.
-     *
-     * @param scope The resource scope.
-     * @param deploymentName The name of the deployment.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -227,20 +214,17 @@ public interface DeploymentsClient {
     Response<DeploymentExtendedInner> getAtScopeWithResponse(String scope, String deploymentName, Context context);
 
     /**
-     * Cancels a currently running template deployment.
-     *
-     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
-     * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
-     * template deployment and leaves the resources partially deployed.
+     * Gets a deployment.
      *
      * @param scope The resource scope.
      * @param deploymentName The name of the deployment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a deployment.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    void cancelAtScope(String scope, String deploymentName);
+    DeploymentExtendedInner getAtScope(String scope, String deploymentName);
 
     /**
      * Cancels a currently running template deployment.
@@ -259,6 +243,22 @@ public interface DeploymentsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> cancelAtScopeWithResponse(String scope, String deploymentName, Context context);
+
+    /**
+     * Cancels a currently running template deployment.
+     *
+     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
+     * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
+     * template deployment and leaves the resources partially deployed.
+     *
+     * @param scope The resource scope.
+     * @param deploymentName The name of the deployment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    void cancelAtScope(String scope, String deploymentName);
 
     /**
      * Validates whether the specified template is syntactically correct and will be accepted by Azure Resource
@@ -330,19 +330,6 @@ public interface DeploymentsClient {
      *
      * @param scope The resource scope.
      * @param deploymentName The name of the deployment.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the deployment export result.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    DeploymentExportResultInner exportTemplateAtScope(String scope, String deploymentName);
-
-    /**
-     * Exports the template used for specified deployment.
-     *
-     * @param scope The resource scope.
-     * @param deploymentName The name of the deployment.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -352,6 +339,19 @@ public interface DeploymentsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<DeploymentExportResultInner> exportTemplateAtScopeWithResponse(
         String scope, String deploymentName, Context context);
+
+    /**
+     * Exports the template used for specified deployment.
+     *
+     * @param scope The resource scope.
+     * @param deploymentName The name of the deployment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the deployment export result.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    DeploymentExportResultInner exportTemplateAtScope(String scope, String deploymentName);
 
     /**
      * Get all the deployments at the given scope.
@@ -461,18 +461,6 @@ public interface DeploymentsClient {
      * Checks whether the deployment exists.
      *
      * @param deploymentName The name of the deployment.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return whether resource exists.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    boolean checkExistenceAtTenantScope(String deploymentName);
-
-    /**
-     * Checks whether the deployment exists.
-     *
-     * @param deploymentName The name of the deployment.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -481,6 +469,18 @@ public interface DeploymentsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Boolean> checkExistenceAtTenantScopeWithResponse(String deploymentName, Context context);
+
+    /**
+     * Checks whether the deployment exists.
+     *
+     * @param deploymentName The name of the deployment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return whether resource exists.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    boolean checkExistenceAtTenantScope(String deploymentName);
 
     /**
      * Deploys resources at tenant scope.
@@ -551,18 +551,6 @@ public interface DeploymentsClient {
      * Gets a deployment.
      *
      * @param deploymentName The name of the deployment.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployment.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    DeploymentExtendedInner getAtTenantScope(String deploymentName);
-
-    /**
-     * Gets a deployment.
-     *
-     * @param deploymentName The name of the deployment.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -573,19 +561,16 @@ public interface DeploymentsClient {
     Response<DeploymentExtendedInner> getAtTenantScopeWithResponse(String deploymentName, Context context);
 
     /**
-     * Cancels a currently running template deployment.
-     *
-     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
-     * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
-     * template deployment and leaves the resources partially deployed.
+     * Gets a deployment.
      *
      * @param deploymentName The name of the deployment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a deployment.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    void cancelAtTenantScope(String deploymentName);
+    DeploymentExtendedInner getAtTenantScope(String deploymentName);
 
     /**
      * Cancels a currently running template deployment.
@@ -603,6 +588,21 @@ public interface DeploymentsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> cancelAtTenantScopeWithResponse(String deploymentName, Context context);
+
+    /**
+     * Cancels a currently running template deployment.
+     *
+     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
+     * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
+     * template deployment and leaves the resources partially deployed.
+     *
+     * @param deploymentName The name of the deployment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    void cancelAtTenantScope(String deploymentName);
 
     /**
      * Validates whether the specified template is syntactically correct and will be accepted by Azure Resource
@@ -726,18 +726,6 @@ public interface DeploymentsClient {
      * Exports the template used for specified deployment.
      *
      * @param deploymentName The name of the deployment.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the deployment export result.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    DeploymentExportResultInner exportTemplateAtTenantScope(String deploymentName);
-
-    /**
-     * Exports the template used for specified deployment.
-     *
-     * @param deploymentName The name of the deployment.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -747,6 +735,18 @@ public interface DeploymentsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<DeploymentExportResultInner> exportTemplateAtTenantScopeWithResponse(
         String deploymentName, Context context);
+
+    /**
+     * Exports the template used for specified deployment.
+     *
+     * @param deploymentName The name of the deployment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the deployment export result.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    DeploymentExportResultInner exportTemplateAtTenantScope(String deploymentName);
 
     /**
      * Get all the deployments at the tenant scope.
@@ -859,19 +859,6 @@ public interface DeploymentsClient {
      *
      * @param groupId The management group ID.
      * @param deploymentName The name of the deployment.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return whether resource exists.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    boolean checkExistenceAtManagementGroupScope(String groupId, String deploymentName);
-
-    /**
-     * Checks whether the deployment exists.
-     *
-     * @param groupId The management group ID.
-     * @param deploymentName The name of the deployment.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -883,6 +870,19 @@ public interface DeploymentsClient {
         String groupId, String deploymentName, Context context);
 
     /**
+     * Checks whether the deployment exists.
+     *
+     * @param groupId The management group ID.
+     * @param deploymentName The name of the deployment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return whether resource exists.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    boolean checkExistenceAtManagementGroupScope(String groupId, String deploymentName);
+
+    /**
      * Deploys resources at management group scope.
      *
      * <p>You can provide the template and parameters directly in the request or link to JSON files.
@@ -951,19 +951,6 @@ public interface DeploymentsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     DeploymentExtendedInner createOrUpdateAtManagementGroupScope(
         String groupId, String deploymentName, ScopedDeployment parameters, Context context);
-
-    /**
-     * Gets a deployment.
-     *
-     * @param groupId The management group ID.
-     * @param deploymentName The name of the deployment.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployment.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    DeploymentExtendedInner getAtManagementGroupScope(String groupId, String deploymentName);
 
     /**
      * Gets a deployment.
@@ -981,20 +968,17 @@ public interface DeploymentsClient {
         String groupId, String deploymentName, Context context);
 
     /**
-     * Cancels a currently running template deployment.
-     *
-     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
-     * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
-     * template deployment and leaves the resources partially deployed.
+     * Gets a deployment.
      *
      * @param groupId The management group ID.
      * @param deploymentName The name of the deployment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a deployment.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    void cancelAtManagementGroupScope(String groupId, String deploymentName);
+    DeploymentExtendedInner getAtManagementGroupScope(String groupId, String deploymentName);
 
     /**
      * Cancels a currently running template deployment.
@@ -1013,6 +997,22 @@ public interface DeploymentsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> cancelAtManagementGroupScopeWithResponse(String groupId, String deploymentName, Context context);
+
+    /**
+     * Cancels a currently running template deployment.
+     *
+     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
+     * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
+     * template deployment and leaves the resources partially deployed.
+     *
+     * @param groupId The management group ID.
+     * @param deploymentName The name of the deployment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    void cancelAtManagementGroupScope(String groupId, String deploymentName);
 
     /**
      * Validates whether the specified template is syntactically correct and will be accepted by Azure Resource
@@ -1148,19 +1148,6 @@ public interface DeploymentsClient {
      *
      * @param groupId The management group ID.
      * @param deploymentName The name of the deployment.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the deployment export result.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    DeploymentExportResultInner exportTemplateAtManagementGroupScope(String groupId, String deploymentName);
-
-    /**
-     * Exports the template used for specified deployment.
-     *
-     * @param groupId The management group ID.
-     * @param deploymentName The name of the deployment.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -1170,6 +1157,19 @@ public interface DeploymentsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<DeploymentExportResultInner> exportTemplateAtManagementGroupScopeWithResponse(
         String groupId, String deploymentName, Context context);
+
+    /**
+     * Exports the template used for specified deployment.
+     *
+     * @param groupId The management group ID.
+     * @param deploymentName The name of the deployment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the deployment export result.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    DeploymentExportResultInner exportTemplateAtManagementGroupScope(String groupId, String deploymentName);
 
     /**
      * Get all the deployments for a management group.
@@ -1280,18 +1280,6 @@ public interface DeploymentsClient {
      * Checks whether the deployment exists.
      *
      * @param deploymentName The name of the deployment.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return whether resource exists.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    boolean checkExistenceAtSubscriptionScope(String deploymentName);
-
-    /**
-     * Checks whether the deployment exists.
-     *
-     * @param deploymentName The name of the deployment.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -1300,6 +1288,18 @@ public interface DeploymentsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Boolean> checkExistenceAtSubscriptionScopeWithResponse(String deploymentName, Context context);
+
+    /**
+     * Checks whether the deployment exists.
+     *
+     * @param deploymentName The name of the deployment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return whether resource exists.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    boolean checkExistenceAtSubscriptionScope(String deploymentName);
 
     /**
      * Deploys resources at subscription scope.
@@ -1370,18 +1370,6 @@ public interface DeploymentsClient {
      * Gets a deployment.
      *
      * @param deploymentName The name of the deployment.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployment.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    DeploymentExtendedInner getAtSubscriptionScope(String deploymentName);
-
-    /**
-     * Gets a deployment.
-     *
-     * @param deploymentName The name of the deployment.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -1392,19 +1380,16 @@ public interface DeploymentsClient {
     Response<DeploymentExtendedInner> getAtSubscriptionScopeWithResponse(String deploymentName, Context context);
 
     /**
-     * Cancels a currently running template deployment.
-     *
-     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
-     * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
-     * template deployment and leaves the resources partially deployed.
+     * Gets a deployment.
      *
      * @param deploymentName The name of the deployment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a deployment.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    void cancelAtSubscriptionScope(String deploymentName);
+    DeploymentExtendedInner getAtSubscriptionScope(String deploymentName);
 
     /**
      * Cancels a currently running template deployment.
@@ -1422,6 +1407,21 @@ public interface DeploymentsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> cancelAtSubscriptionScopeWithResponse(String deploymentName, Context context);
+
+    /**
+     * Cancels a currently running template deployment.
+     *
+     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
+     * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
+     * template deployment and leaves the resources partially deployed.
+     *
+     * @param deploymentName The name of the deployment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    void cancelAtSubscriptionScope(String deploymentName);
 
     /**
      * Validates whether the specified template is syntactically correct and will be accepted by Azure Resource
@@ -1545,18 +1545,6 @@ public interface DeploymentsClient {
      * Exports the template used for specified deployment.
      *
      * @param deploymentName The name of the deployment.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the deployment export result.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    DeploymentExportResultInner exportTemplateAtSubscriptionScope(String deploymentName);
-
-    /**
-     * Exports the template used for specified deployment.
-     *
-     * @param deploymentName The name of the deployment.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -1566,6 +1554,18 @@ public interface DeploymentsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<DeploymentExportResultInner> exportTemplateAtSubscriptionScopeWithResponse(
         String deploymentName, Context context);
+
+    /**
+     * Exports the template used for specified deployment.
+     *
+     * @param deploymentName The name of the deployment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the deployment export result.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    DeploymentExportResultInner exportTemplateAtSubscriptionScope(String deploymentName);
 
     /**
      * Get all the deployments for a subscription.
@@ -1686,20 +1686,6 @@ public interface DeploymentsClient {
      * @param resourceGroupName The name of the resource group with the deployment to check. The name is case
      *     insensitive.
      * @param deploymentName The name of the deployment.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return whether resource exists.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    boolean checkExistence(String resourceGroupName, String deploymentName);
-
-    /**
-     * Checks whether the deployment exists.
-     *
-     * @param resourceGroupName The name of the resource group with the deployment to check. The name is case
-     *     insensitive.
-     * @param deploymentName The name of the deployment.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -1708,6 +1694,20 @@ public interface DeploymentsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Boolean> checkExistenceWithResponse(String resourceGroupName, String deploymentName, Context context);
+
+    /**
+     * Checks whether the deployment exists.
+     *
+     * @param resourceGroupName The name of the resource group with the deployment to check. The name is case
+     *     insensitive.
+     * @param deploymentName The name of the deployment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return whether resource exists.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    boolean checkExistence(String resourceGroupName, String deploymentName);
 
     /**
      * Deploys resources to a resource group.
@@ -1787,19 +1787,6 @@ public interface DeploymentsClient {
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param deploymentName The name of the deployment.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployment.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    DeploymentExtendedInner getByResourceGroup(String resourceGroupName, String deploymentName);
-
-    /**
-     * Gets a deployment.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param deploymentName The name of the deployment.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -1811,20 +1798,17 @@ public interface DeploymentsClient {
         String resourceGroupName, String deploymentName, Context context);
 
     /**
-     * Cancels a currently running template deployment.
-     *
-     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
-     * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
-     * template deployment and leaves the resource group partially deployed.
+     * Gets a deployment.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param deploymentName The name of the deployment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a deployment.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    void cancel(String resourceGroupName, String deploymentName);
+    DeploymentExtendedInner getByResourceGroup(String resourceGroupName, String deploymentName);
 
     /**
      * Cancels a currently running template deployment.
@@ -1843,6 +1827,22 @@ public interface DeploymentsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> cancelWithResponse(String resourceGroupName, String deploymentName, Context context);
+
+    /**
+     * Cancels a currently running template deployment.
+     *
+     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
+     * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
+     * template deployment and leaves the resource group partially deployed.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param deploymentName The name of the deployment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    void cancel(String resourceGroupName, String deploymentName);
 
     /**
      * Validates whether the specified template is syntactically correct and will be accepted by Azure Resource
@@ -1983,19 +1983,6 @@ public interface DeploymentsClient {
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param deploymentName The name of the deployment.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the deployment export result.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    DeploymentExportResultInner exportTemplate(String resourceGroupName, String deploymentName);
-
-    /**
-     * Exports the template used for specified deployment.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param deploymentName The name of the deployment.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -2005,6 +1992,19 @@ public interface DeploymentsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<DeploymentExportResultInner> exportTemplateWithResponse(
         String resourceGroupName, String deploymentName, Context context);
+
+    /**
+     * Exports the template used for specified deployment.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param deploymentName The name of the deployment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the deployment export result.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    DeploymentExportResultInner exportTemplate(String resourceGroupName, String deploymentName);
 
     /**
      * Get all the deployments for a resource group.
@@ -2041,18 +2041,6 @@ public interface DeploymentsClient {
      * Calculate the hash of the given template.
      *
      * @param template The template provided to calculate hash.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to calculate template hash.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    TemplateHashResultInner calculateTemplateHash(Object template);
-
-    /**
-     * Calculate the hash of the given template.
-     *
-     * @param template The template provided to calculate hash.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -2061,4 +2049,16 @@ public interface DeploymentsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<TemplateHashResultInner> calculateTemplateHashWithResponse(Object template, Context context);
+
+    /**
+     * Calculate the hash of the given template.
+     *
+     * @param template The template provided to calculate hash.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return result of the request to calculate template hash.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    TemplateHashResultInner calculateTemplateHash(Object template);
 }

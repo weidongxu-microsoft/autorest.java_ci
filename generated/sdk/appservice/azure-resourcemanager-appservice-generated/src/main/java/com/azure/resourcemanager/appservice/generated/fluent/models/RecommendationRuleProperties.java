@@ -93,6 +93,10 @@ public final class RecommendationRuleProperties {
     @JsonProperty(value = "forwardLink")
     private String forwardLink;
 
+    /** Creates an instance of RecommendationRuleProperties class. */
+    public RecommendationRuleProperties() {
+    }
+
     /**
      * Get the recommendationName property: Unique name of the rule.
      *

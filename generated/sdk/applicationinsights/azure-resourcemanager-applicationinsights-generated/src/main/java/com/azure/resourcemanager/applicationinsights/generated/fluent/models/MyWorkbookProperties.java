@@ -61,6 +61,10 @@ public final class MyWorkbookProperties {
     @JsonProperty(value = "sourceId")
     private String sourceId;
 
+    /** Creates an instance of MyWorkbookProperties class. */
+    public MyWorkbookProperties() {
+    }
+
     /**
      * Get the displayName property: The user-defined name of the private workbook.
      *

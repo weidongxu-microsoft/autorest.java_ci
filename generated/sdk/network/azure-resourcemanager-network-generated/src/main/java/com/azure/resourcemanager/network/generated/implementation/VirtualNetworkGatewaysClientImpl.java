@@ -484,7 +484,7 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -548,7 +548,7 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -775,7 +775,7 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -829,7 +829,7 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -868,11 +868,12 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified virtual network gateway by resource group.
+     * @return the specified virtual network gateway by resource group along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public VirtualNetworkGatewayInner getByResourceGroup(String resourceGroupName, String virtualNetworkGatewayName) {
-        return getByResourceGroupAsync(resourceGroupName, virtualNetworkGatewayName).block();
+    public Response<VirtualNetworkGatewayInner> getByResourceGroupWithResponse(
+        String resourceGroupName, String virtualNetworkGatewayName) {
+        return getByResourceGroupWithResponseAsync(resourceGroupName, virtualNetworkGatewayName).block();
     }
 
     /**
@@ -890,6 +891,21 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     public Response<VirtualNetworkGatewayInner> getByResourceGroupWithResponse(
         String resourceGroupName, String virtualNetworkGatewayName, Context context) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, virtualNetworkGatewayName, context).block();
+    }
+
+    /**
+     * Gets the specified virtual network gateway by resource group.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param virtualNetworkGatewayName The name of the virtual network gateway.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified virtual network gateway by resource group.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public VirtualNetworkGatewayInner getByResourceGroup(String resourceGroupName, String virtualNetworkGatewayName) {
+        return getByResourceGroupWithResponse(resourceGroupName, virtualNetworkGatewayName, Context.NONE).getValue();
     }
 
     /**
@@ -927,7 +943,7 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -980,7 +996,7 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1174,7 +1190,7 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1235,7 +1251,7 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1442,7 +1458,7 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1497,7 +1513,7 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1616,7 +1632,7 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1679,7 +1695,7 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1810,7 +1826,7 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1867,7 +1883,7 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -2122,7 +2138,7 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -2175,7 +2191,7 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -2371,7 +2387,7 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -2431,7 +2447,7 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -2645,7 +2661,7 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -2706,7 +2722,7 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -2921,7 +2937,7 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -2976,7 +2992,7 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -3184,7 +3200,7 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -3240,7 +3256,7 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -3490,7 +3506,7 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -3544,7 +3560,7 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -3582,11 +3598,12 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a xml format representation for supported vpn devices.
+     * @return a xml format representation for supported vpn devices along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public String supportedVpnDevices(String resourceGroupName, String virtualNetworkGatewayName) {
-        return supportedVpnDevicesAsync(resourceGroupName, virtualNetworkGatewayName).block();
+    public Response<String> supportedVpnDevicesWithResponse(
+        String resourceGroupName, String virtualNetworkGatewayName) {
+        return supportedVpnDevicesWithResponseAsync(resourceGroupName, virtualNetworkGatewayName).block();
     }
 
     /**
@@ -3604,6 +3621,21 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     public Response<String> supportedVpnDevicesWithResponse(
         String resourceGroupName, String virtualNetworkGatewayName, Context context) {
         return supportedVpnDevicesWithResponseAsync(resourceGroupName, virtualNetworkGatewayName, context).block();
+    }
+
+    /**
+     * Gets a xml format representation for supported vpn devices.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param virtualNetworkGatewayName The name of the virtual network gateway.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a xml format representation for supported vpn devices.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public String supportedVpnDevices(String resourceGroupName, String virtualNetworkGatewayName) {
+        return supportedVpnDevicesWithResponse(resourceGroupName, virtualNetworkGatewayName, Context.NONE).getValue();
     }
 
     /**
@@ -3643,7 +3675,7 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -3698,7 +3730,7 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -3914,7 +3946,7 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -3973,7 +4005,7 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -4200,7 +4232,7 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
         } else {
             vpnclientIpsecParams.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -4267,7 +4299,7 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
         } else {
             vpnclientIpsecParams.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -4533,7 +4565,7 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -4588,7 +4620,7 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -4812,7 +4844,7 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -4877,7 +4909,7 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -4922,12 +4954,13 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a xml format representation for vpn device configuration script.
+     * @return a xml format representation for vpn device configuration script along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public String vpnDeviceConfigurationScript(
+    public Response<String> vpnDeviceConfigurationScriptWithResponse(
         String resourceGroupName, String virtualNetworkGatewayConnectionName, VpnDeviceScriptParameters parameters) {
-        return vpnDeviceConfigurationScriptAsync(resourceGroupName, virtualNetworkGatewayConnectionName, parameters)
+        return vpnDeviceConfigurationScriptWithResponseAsync(
+                resourceGroupName, virtualNetworkGatewayConnectionName, parameters)
             .block();
     }
 
@@ -4953,6 +4986,26 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
         return vpnDeviceConfigurationScriptWithResponseAsync(
                 resourceGroupName, virtualNetworkGatewayConnectionName, parameters, context)
             .block();
+    }
+
+    /**
+     * Gets a xml format representation for vpn device configuration script.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param virtualNetworkGatewayConnectionName The name of the virtual network gateway connection for which the
+     *     configuration script is generated.
+     * @param parameters Parameters supplied to the generate vpn device script operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a xml format representation for vpn device configuration script.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public String vpnDeviceConfigurationScript(
+        String resourceGroupName, String virtualNetworkGatewayConnectionName, VpnDeviceScriptParameters parameters) {
+        return vpnDeviceConfigurationScriptWithResponse(
+                resourceGroupName, virtualNetworkGatewayConnectionName, parameters, Context.NONE)
+            .getValue();
     }
 
     /**
@@ -4994,7 +5047,7 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
         if (parameters != null) {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -5055,7 +5108,7 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
         if (parameters != null) {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -5312,7 +5365,7 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -5375,7 +5428,7 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -5594,7 +5647,7 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -5649,7 +5702,7 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -5883,7 +5936,7 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
         } else {
             request.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -5943,7 +5996,7 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
         } else {
             request.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service

@@ -28,15 +28,6 @@ public final class VerifiedPartnersImpl implements VerifiedPartners {
         this.serviceManager = serviceManager;
     }
 
-    public VerifiedPartner get(String verifiedPartnerName) {
-        VerifiedPartnerInner inner = this.serviceClient().get(verifiedPartnerName);
-        if (inner != null) {
-            return new VerifiedPartnerImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<VerifiedPartner> getWithResponse(String verifiedPartnerName, Context context) {
         Response<VerifiedPartnerInner> inner = this.serviceClient().getWithResponse(verifiedPartnerName, context);
         if (inner != null) {
@@ -45,6 +36,15 @@ public final class VerifiedPartnersImpl implements VerifiedPartners {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new VerifiedPartnerImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public VerifiedPartner get(String verifiedPartnerName) {
+        VerifiedPartnerInner inner = this.serviceClient().get(verifiedPartnerName);
+        if (inner != null) {
+            return new VerifiedPartnerImpl(inner, this.manager());
         } else {
             return null;
         }

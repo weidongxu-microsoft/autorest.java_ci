@@ -40,6 +40,10 @@ public final class AccessKeysInner {
     @JsonProperty(value = "keyName")
     private String keyName;
 
+    /** Creates an instance of AccessKeysInner class. */
+    public AccessKeysInner() {
+    }
+
     /**
      * Get the primaryConnectionString property: Primary connection string of the created namespace authorization rule.
      *

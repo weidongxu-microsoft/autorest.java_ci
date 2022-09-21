@@ -553,17 +553,6 @@ public interface Domain {
      *
      * <p>Description for Renew a domain.
      *
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void renew();
-
-    /**
-     * Renew a domain.
-     *
-     * <p>Description for Renew a domain.
-     *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -572,4 +561,15 @@ public interface Domain {
      * @return the {@link Response}.
      */
     Response<Void> renewWithResponse(Context context);
+
+    /**
+     * Renew a domain.
+     *
+     * <p>Description for Renew a domain.
+     *
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void renew();
 }

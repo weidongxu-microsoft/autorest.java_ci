@@ -22,6 +22,10 @@ public final class TimeseriesInner extends Resource {
     @JsonProperty(value = "properties")
     private TimeseriesProperties innerProperties;
 
+    /** Creates an instance of TimeseriesInner class. */
+    public TimeseriesInner() {
+    }
+
     /**
      * Get the innerProperties property: The properties of a Timeseries.
      *

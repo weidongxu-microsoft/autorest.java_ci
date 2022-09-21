@@ -245,9 +245,6 @@ public final class ReportsClientImpl implements ReportsClient {
      * @param profileName The Profile identifier associated with the Tenant and Partner.
      * @param experimentName The Experiment identifier associated with the Experiment.
      * @param aggregationInterval The aggregation interval of the Latency Scorecard.
-     * @param endDateTimeUtc The end DateTime of the Latency Scorecard in UTC.
-     * @param country The country associated with the Latency Scorecard. Values are country ISO codes as specified here-
-     *     https://www.iso.org/iso-3166-country-codes.html.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -255,6 +252,34 @@ public final class ReportsClientImpl implements ReportsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<LatencyScorecardInner> getLatencyScorecardsAsync(
+        String resourceGroupName,
+        String profileName,
+        String experimentName,
+        LatencyScorecardAggregationInterval aggregationInterval) {
+        final String endDateTimeUtc = null;
+        final String country = null;
+        return getLatencyScorecardsWithResponseAsync(
+                resourceGroupName, profileName, experimentName, aggregationInterval, endDateTimeUtc, country)
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
+    }
+
+    /**
+     * Gets a Latency Scorecard for a given Experiment.
+     *
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param profileName The Profile identifier associated with the Tenant and Partner.
+     * @param experimentName The Experiment identifier associated with the Experiment.
+     * @param aggregationInterval The aggregation interval of the Latency Scorecard.
+     * @param endDateTimeUtc The end DateTime of the Latency Scorecard in UTC.
+     * @param country The country associated with the Latency Scorecard. Values are country ISO codes as specified here-
+     *     https://www.iso.org/iso-3166-country-codes.html.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a Latency Scorecard for a given Experiment along with {@link Response}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public Response<LatencyScorecardInner> getLatencyScorecardsWithResponse(
         String resourceGroupName,
         String profileName,
         String experimentName,
@@ -262,56 +287,6 @@ public final class ReportsClientImpl implements ReportsClient {
         String endDateTimeUtc,
         String country) {
         return getLatencyScorecardsWithResponseAsync(
-                resourceGroupName, profileName, experimentName, aggregationInterval, endDateTimeUtc, country)
-            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets a Latency Scorecard for a given Experiment.
-     *
-     * @param resourceGroupName Name of the Resource group within the Azure subscription.
-     * @param profileName The Profile identifier associated with the Tenant and Partner.
-     * @param experimentName The Experiment identifier associated with the Experiment.
-     * @param aggregationInterval The aggregation interval of the Latency Scorecard.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Latency Scorecard for a given Experiment on successful completion of {@link Mono}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<LatencyScorecardInner> getLatencyScorecardsAsync(
-        String resourceGroupName,
-        String profileName,
-        String experimentName,
-        LatencyScorecardAggregationInterval aggregationInterval) {
-        final String endDateTimeUtc = null;
-        final String country = null;
-        return getLatencyScorecardsWithResponseAsync(
-                resourceGroupName, profileName, experimentName, aggregationInterval, endDateTimeUtc, country)
-            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets a Latency Scorecard for a given Experiment.
-     *
-     * @param resourceGroupName Name of the Resource group within the Azure subscription.
-     * @param profileName The Profile identifier associated with the Tenant and Partner.
-     * @param experimentName The Experiment identifier associated with the Experiment.
-     * @param aggregationInterval The aggregation interval of the Latency Scorecard.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Latency Scorecard for a given Experiment.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public LatencyScorecardInner getLatencyScorecards(
-        String resourceGroupName,
-        String profileName,
-        String experimentName,
-        LatencyScorecardAggregationInterval aggregationInterval) {
-        final String endDateTimeUtc = null;
-        final String country = null;
-        return getLatencyScorecardsAsync(
                 resourceGroupName, profileName, experimentName, aggregationInterval, endDateTimeUtc, country)
             .block();
     }
@@ -344,6 +319,37 @@ public final class ReportsClientImpl implements ReportsClient {
         return getLatencyScorecardsWithResponseAsync(
                 resourceGroupName, profileName, experimentName, aggregationInterval, endDateTimeUtc, country, context)
             .block();
+    }
+
+    /**
+     * Gets a Latency Scorecard for a given Experiment.
+     *
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param profileName The Profile identifier associated with the Tenant and Partner.
+     * @param experimentName The Experiment identifier associated with the Experiment.
+     * @param aggregationInterval The aggregation interval of the Latency Scorecard.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a Latency Scorecard for a given Experiment.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public LatencyScorecardInner getLatencyScorecards(
+        String resourceGroupName,
+        String profileName,
+        String experimentName,
+        LatencyScorecardAggregationInterval aggregationInterval) {
+        final String endDateTimeUtc = null;
+        final String country = null;
+        return getLatencyScorecardsWithResponse(
+                resourceGroupName,
+                profileName,
+                experimentName,
+                aggregationInterval,
+                endDateTimeUtc,
+                country,
+                Context.NONE)
+            .getValue();
     }
 
     /**
@@ -533,9 +539,6 @@ public final class ReportsClientImpl implements ReportsClient {
      * @param endDateTimeUtc The end DateTime of the Timeseries in UTC.
      * @param aggregationInterval The aggregation interval of the Timeseries.
      * @param timeseriesType The type of Timeseries.
-     * @param endpointParam The specific endpoint.
-     * @param country The country associated with the Timeseries. Values are country ISO codes as specified here-
-     *     https://www.iso.org/iso-3166-country-codes.html.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -543,6 +546,48 @@ public final class ReportsClientImpl implements ReportsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<TimeseriesInner> getTimeseriesAsync(
+        String resourceGroupName,
+        String profileName,
+        String experimentName,
+        OffsetDateTime startDateTimeUtc,
+        OffsetDateTime endDateTimeUtc,
+        TimeseriesAggregationInterval aggregationInterval,
+        TimeseriesType timeseriesType) {
+        final String endpointParam = null;
+        final String country = null;
+        return getTimeseriesWithResponseAsync(
+                resourceGroupName,
+                profileName,
+                experimentName,
+                startDateTimeUtc,
+                endDateTimeUtc,
+                aggregationInterval,
+                timeseriesType,
+                endpointParam,
+                country)
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
+    }
+
+    /**
+     * Gets a Timeseries for a given Experiment.
+     *
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param profileName The Profile identifier associated with the Tenant and Partner.
+     * @param experimentName The Experiment identifier associated with the Experiment.
+     * @param startDateTimeUtc The start DateTime of the Timeseries in UTC.
+     * @param endDateTimeUtc The end DateTime of the Timeseries in UTC.
+     * @param aggregationInterval The aggregation interval of the Timeseries.
+     * @param timeseriesType The type of Timeseries.
+     * @param endpointParam The specific endpoint.
+     * @param country The country associated with the Timeseries. Values are country ISO codes as specified here-
+     *     https://www.iso.org/iso-3166-country-codes.html.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a Timeseries for a given Experiment along with {@link Response}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public Response<TimeseriesInner> getTimeseriesWithResponse(
         String resourceGroupName,
         String profileName,
         String experimentName,
@@ -553,84 +598,6 @@ public final class ReportsClientImpl implements ReportsClient {
         String endpointParam,
         String country) {
         return getTimeseriesWithResponseAsync(
-                resourceGroupName,
-                profileName,
-                experimentName,
-                startDateTimeUtc,
-                endDateTimeUtc,
-                aggregationInterval,
-                timeseriesType,
-                endpointParam,
-                country)
-            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets a Timeseries for a given Experiment.
-     *
-     * @param resourceGroupName Name of the Resource group within the Azure subscription.
-     * @param profileName The Profile identifier associated with the Tenant and Partner.
-     * @param experimentName The Experiment identifier associated with the Experiment.
-     * @param startDateTimeUtc The start DateTime of the Timeseries in UTC.
-     * @param endDateTimeUtc The end DateTime of the Timeseries in UTC.
-     * @param aggregationInterval The aggregation interval of the Timeseries.
-     * @param timeseriesType The type of Timeseries.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Timeseries for a given Experiment on successful completion of {@link Mono}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<TimeseriesInner> getTimeseriesAsync(
-        String resourceGroupName,
-        String profileName,
-        String experimentName,
-        OffsetDateTime startDateTimeUtc,
-        OffsetDateTime endDateTimeUtc,
-        TimeseriesAggregationInterval aggregationInterval,
-        TimeseriesType timeseriesType) {
-        final String endpointParam = null;
-        final String country = null;
-        return getTimeseriesWithResponseAsync(
-                resourceGroupName,
-                profileName,
-                experimentName,
-                startDateTimeUtc,
-                endDateTimeUtc,
-                aggregationInterval,
-                timeseriesType,
-                endpointParam,
-                country)
-            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets a Timeseries for a given Experiment.
-     *
-     * @param resourceGroupName Name of the Resource group within the Azure subscription.
-     * @param profileName The Profile identifier associated with the Tenant and Partner.
-     * @param experimentName The Experiment identifier associated with the Experiment.
-     * @param startDateTimeUtc The start DateTime of the Timeseries in UTC.
-     * @param endDateTimeUtc The end DateTime of the Timeseries in UTC.
-     * @param aggregationInterval The aggregation interval of the Timeseries.
-     * @param timeseriesType The type of Timeseries.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Timeseries for a given Experiment.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public TimeseriesInner getTimeseries(
-        String resourceGroupName,
-        String profileName,
-        String experimentName,
-        OffsetDateTime startDateTimeUtc,
-        OffsetDateTime endDateTimeUtc,
-        TimeseriesAggregationInterval aggregationInterval,
-        TimeseriesType timeseriesType) {
-        final String endpointParam = null;
-        final String country = null;
-        return getTimeseriesAsync(
                 resourceGroupName,
                 profileName,
                 experimentName,
@@ -686,5 +653,45 @@ public final class ReportsClientImpl implements ReportsClient {
                 country,
                 context)
             .block();
+    }
+
+    /**
+     * Gets a Timeseries for a given Experiment.
+     *
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param profileName The Profile identifier associated with the Tenant and Partner.
+     * @param experimentName The Experiment identifier associated with the Experiment.
+     * @param startDateTimeUtc The start DateTime of the Timeseries in UTC.
+     * @param endDateTimeUtc The end DateTime of the Timeseries in UTC.
+     * @param aggregationInterval The aggregation interval of the Timeseries.
+     * @param timeseriesType The type of Timeseries.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a Timeseries for a given Experiment.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public TimeseriesInner getTimeseries(
+        String resourceGroupName,
+        String profileName,
+        String experimentName,
+        OffsetDateTime startDateTimeUtc,
+        OffsetDateTime endDateTimeUtc,
+        TimeseriesAggregationInterval aggregationInterval,
+        TimeseriesType timeseriesType) {
+        final String endpointParam = null;
+        final String country = null;
+        return getTimeseriesWithResponse(
+                resourceGroupName,
+                profileName,
+                experimentName,
+                startDateTimeUtc,
+                endDateTimeUtc,
+                aggregationInterval,
+                timeseriesType,
+                endpointParam,
+                country,
+                Context.NONE)
+            .getValue();
     }
 }

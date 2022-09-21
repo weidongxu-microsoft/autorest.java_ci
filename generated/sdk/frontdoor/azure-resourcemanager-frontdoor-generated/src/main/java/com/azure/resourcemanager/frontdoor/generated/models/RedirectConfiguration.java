@@ -54,6 +54,10 @@ public final class RedirectConfiguration extends RouteConfiguration {
     @JsonProperty(value = "customQueryString")
     private String customQueryString;
 
+    /** Creates an instance of RedirectConfiguration class. */
+    public RedirectConfiguration() {
+    }
+
     /**
      * Get the redirectType property: The redirect type the rule will use when redirecting traffic.
      *

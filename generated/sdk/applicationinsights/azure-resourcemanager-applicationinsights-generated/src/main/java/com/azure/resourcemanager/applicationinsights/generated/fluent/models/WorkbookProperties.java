@@ -75,6 +75,10 @@ public final class WorkbookProperties {
     @JsonProperty(value = "sourceResourceId")
     private String sourceResourceId;
 
+    /** Creates an instance of WorkbookProperties class. */
+    public WorkbookProperties() {
+    }
+
     /**
      * Get the name property: The user-defined name of the workbook.
      *

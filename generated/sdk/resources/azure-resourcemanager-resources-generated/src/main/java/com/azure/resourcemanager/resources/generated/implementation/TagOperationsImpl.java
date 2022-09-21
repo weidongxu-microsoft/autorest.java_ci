@@ -32,21 +32,12 @@ public final class TagOperationsImpl implements TagOperations {
         this.serviceManager = serviceManager;
     }
 
-    public void deleteValue(String tagName, String tagValue) {
-        this.serviceClient().deleteValue(tagName, tagValue);
-    }
-
     public Response<Void> deleteValueWithResponse(String tagName, String tagValue, Context context) {
         return this.serviceClient().deleteValueWithResponse(tagName, tagValue, context);
     }
 
-    public TagValue createOrUpdateValue(String tagName, String tagValue) {
-        TagValueInner inner = this.serviceClient().createOrUpdateValue(tagName, tagValue);
-        if (inner != null) {
-            return new TagValueImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void deleteValue(String tagName, String tagValue) {
+        this.serviceClient().deleteValue(tagName, tagValue);
     }
 
     public Response<TagValue> createOrUpdateValueWithResponse(String tagName, String tagValue, Context context) {
@@ -63,10 +54,10 @@ public final class TagOperationsImpl implements TagOperations {
         }
     }
 
-    public TagDetails createOrUpdate(String tagName) {
-        TagDetailsInner inner = this.serviceClient().createOrUpdate(tagName);
+    public TagValue createOrUpdateValue(String tagName, String tagValue) {
+        TagValueInner inner = this.serviceClient().createOrUpdateValue(tagName, tagValue);
         if (inner != null) {
-            return new TagDetailsImpl(inner, this.manager());
+            return new TagValueImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -85,12 +76,21 @@ public final class TagOperationsImpl implements TagOperations {
         }
     }
 
-    public void delete(String tagName) {
-        this.serviceClient().delete(tagName);
+    public TagDetails createOrUpdate(String tagName) {
+        TagDetailsInner inner = this.serviceClient().createOrUpdate(tagName);
+        if (inner != null) {
+            return new TagDetailsImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> deleteWithResponse(String tagName, Context context) {
         return this.serviceClient().deleteWithResponse(tagName, context);
+    }
+
+    public void delete(String tagName) {
+        this.serviceClient().delete(tagName);
     }
 
     public PagedIterable<TagDetails> list() {
@@ -101,15 +101,6 @@ public final class TagOperationsImpl implements TagOperations {
     public PagedIterable<TagDetails> list(Context context) {
         PagedIterable<TagDetailsInner> inner = this.serviceClient().list(context);
         return Utils.mapPage(inner, inner1 -> new TagDetailsImpl(inner1, this.manager()));
-    }
-
-    public TagsResource createOrUpdateAtScope(String scope, TagsResourceInner parameters) {
-        TagsResourceInner inner = this.serviceClient().createOrUpdateAtScope(scope, parameters);
-        if (inner != null) {
-            return new TagsResourceImpl(inner, this.manager());
-        } else {
-            return null;
-        }
     }
 
     public Response<TagsResource> createOrUpdateAtScopeWithResponse(
@@ -127,8 +118,8 @@ public final class TagOperationsImpl implements TagOperations {
         }
     }
 
-    public TagsResource updateAtScope(String scope, TagsPatchResource parameters) {
-        TagsResourceInner inner = this.serviceClient().updateAtScope(scope, parameters);
+    public TagsResource createOrUpdateAtScope(String scope, TagsResourceInner parameters) {
+        TagsResourceInner inner = this.serviceClient().createOrUpdateAtScope(scope, parameters);
         if (inner != null) {
             return new TagsResourceImpl(inner, this.manager());
         } else {
@@ -150,8 +141,8 @@ public final class TagOperationsImpl implements TagOperations {
         }
     }
 
-    public TagsResource getAtScope(String scope) {
-        TagsResourceInner inner = this.serviceClient().getAtScope(scope);
+    public TagsResource updateAtScope(String scope, TagsPatchResource parameters) {
+        TagsResourceInner inner = this.serviceClient().updateAtScope(scope, parameters);
         if (inner != null) {
             return new TagsResourceImpl(inner, this.manager());
         } else {
@@ -172,12 +163,21 @@ public final class TagOperationsImpl implements TagOperations {
         }
     }
 
-    public void deleteAtScope(String scope) {
-        this.serviceClient().deleteAtScope(scope);
+    public TagsResource getAtScope(String scope) {
+        TagsResourceInner inner = this.serviceClient().getAtScope(scope);
+        if (inner != null) {
+            return new TagsResourceImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> deleteAtScopeWithResponse(String scope, Context context) {
         return this.serviceClient().deleteAtScopeWithResponse(scope, context);
+    }
+
+    public void deleteAtScope(String scope) {
+        this.serviceClient().deleteAtScope(scope);
     }
 
     private TagOperationsClient serviceClient() {

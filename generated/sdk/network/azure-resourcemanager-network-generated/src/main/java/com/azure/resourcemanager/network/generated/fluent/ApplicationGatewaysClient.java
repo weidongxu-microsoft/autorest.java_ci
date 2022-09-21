@@ -81,19 +81,6 @@ public interface ApplicationGatewaysClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param applicationGatewayName The name of the application gateway.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified application gateway.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    ApplicationGatewayInner getByResourceGroup(String resourceGroupName, String applicationGatewayName);
-
-    /**
-     * Gets the specified application gateway.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param applicationGatewayName The name of the application gateway.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -105,6 +92,19 @@ public interface ApplicationGatewaysClient {
         String resourceGroupName, String applicationGatewayName, Context context);
 
     /**
+     * Gets the specified application gateway.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param applicationGatewayName The name of the application gateway.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified application gateway.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    ApplicationGatewayInner getByResourceGroup(String resourceGroupName, String applicationGatewayName);
+
+    /**
      * Creates or updates the specified application gateway.
      *
      * @param resourceGroupName The name of the resource group.
@@ -165,20 +165,6 @@ public interface ApplicationGatewaysClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     ApplicationGatewayInner createOrUpdate(
         String resourceGroupName, String applicationGatewayName, ApplicationGatewayInner parameters, Context context);
-
-    /**
-     * Updates the specified application gateway tags.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param applicationGatewayName The name of the application gateway.
-     * @param parameters Parameters supplied to update application gateway tags.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return application gateway resource.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    ApplicationGatewayInner updateTags(String resourceGroupName, String applicationGatewayName, TagsObject parameters);
 
     /**
      * Updates the specified application gateway tags.
@@ -195,6 +181,20 @@ public interface ApplicationGatewaysClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ApplicationGatewayInner> updateTagsWithResponse(
         String resourceGroupName, String applicationGatewayName, TagsObject parameters, Context context);
+
+    /**
+     * Updates the specified application gateway tags.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param applicationGatewayName The name of the application gateway.
+     * @param parameters Parameters supplied to update application gateway tags.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return application gateway resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    ApplicationGatewayInner updateTags(String resourceGroupName, String applicationGatewayName, TagsObject parameters);
 
     /**
      * Lists all application gateways in a resource group.
@@ -536,17 +536,6 @@ public interface ApplicationGatewaysClient {
     /**
      * Lists all available server variables.
      *
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ApplicationGatewayAvailableServerVariables API service call.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    List<String> listAvailableServerVariables();
-
-    /**
-     * Lists all available server variables.
-     *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
@@ -558,15 +547,15 @@ public interface ApplicationGatewaysClient {
     Response<List<String>> listAvailableServerVariablesWithResponse(Context context);
 
     /**
-     * Lists all available request headers.
+     * Lists all available server variables.
      *
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ApplicationGatewayAvailableRequestHeaders API service call.
+     * @return response for ApplicationGatewayAvailableServerVariables API service call.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    List<String> listAvailableRequestHeaders();
+    List<String> listAvailableServerVariables();
 
     /**
      * Lists all available request headers.
@@ -582,15 +571,15 @@ public interface ApplicationGatewaysClient {
     Response<List<String>> listAvailableRequestHeadersWithResponse(Context context);
 
     /**
-     * Lists all available response headers.
+     * Lists all available request headers.
      *
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ApplicationGatewayAvailableResponseHeaders API service call.
+     * @return response for ApplicationGatewayAvailableRequestHeaders API service call.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    List<String> listAvailableResponseHeaders();
+    List<String> listAvailableRequestHeaders();
 
     /**
      * Lists all available response headers.
@@ -606,14 +595,15 @@ public interface ApplicationGatewaysClient {
     Response<List<String>> listAvailableResponseHeadersWithResponse(Context context);
 
     /**
-     * Lists all available web application firewall rule sets.
+     * Lists all available response headers.
      *
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ApplicationGatewayAvailableWafRuleSets API service call.
+     * @return response for ApplicationGatewayAvailableResponseHeaders API service call.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    ApplicationGatewayAvailableWafRuleSetsResultInner listAvailableWafRuleSets();
+    List<String> listAvailableResponseHeaders();
 
     /**
      * Lists all available web application firewall rule sets.
@@ -628,14 +618,14 @@ public interface ApplicationGatewaysClient {
     Response<ApplicationGatewayAvailableWafRuleSetsResultInner> listAvailableWafRuleSetsWithResponse(Context context);
 
     /**
-     * Lists available Ssl options for configuring Ssl policy.
+     * Lists all available web application firewall rule sets.
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ApplicationGatewayAvailableSslOptions API service call.
+     * @return response for ApplicationGatewayAvailableWafRuleSets API service call.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    ApplicationGatewayAvailableSslOptionsInner listAvailableSslOptions();
+    ApplicationGatewayAvailableWafRuleSetsResultInner listAvailableWafRuleSets();
 
     /**
      * Lists available Ssl options for configuring Ssl policy.
@@ -648,6 +638,16 @@ public interface ApplicationGatewaysClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ApplicationGatewayAvailableSslOptionsInner> listAvailableSslOptionsWithResponse(Context context);
+
+    /**
+     * Lists available Ssl options for configuring Ssl policy.
+     *
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return response for ApplicationGatewayAvailableSslOptions API service call.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    ApplicationGatewayAvailableSslOptionsInner listAvailableSslOptions();
 
     /**
      * Lists all SSL predefined policies for configuring Ssl policy.
@@ -677,18 +677,6 @@ public interface ApplicationGatewaysClient {
      * Gets Ssl predefined policy with the specified policy name.
      *
      * @param predefinedPolicyName Name of Ssl predefined policy.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return ssl predefined policy with the specified policy name.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    ApplicationGatewaySslPredefinedPolicyInner getSslPredefinedPolicy(String predefinedPolicyName);
-
-    /**
-     * Gets Ssl predefined policy with the specified policy name.
-     *
-     * @param predefinedPolicyName Name of Ssl predefined policy.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -698,4 +686,16 @@ public interface ApplicationGatewaysClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ApplicationGatewaySslPredefinedPolicyInner> getSslPredefinedPolicyWithResponse(
         String predefinedPolicyName, Context context);
+
+    /**
+     * Gets Ssl predefined policy with the specified policy name.
+     *
+     * @param predefinedPolicyName Name of Ssl predefined policy.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return ssl predefined policy with the specified policy name.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    ApplicationGatewaySslPredefinedPolicyInner getSslPredefinedPolicy(String predefinedPolicyName);
 }

@@ -28,17 +28,6 @@ public final class FirewallPolicyIdpsSignaturesFilterValuesImpl implements Firew
         this.serviceManager = serviceManager;
     }
 
-    public SignatureOverridesFilterValuesResponse list(
-        String resourceGroupName, String firewallPolicyName, SignatureOverridesFilterValuesQuery parameters) {
-        SignatureOverridesFilterValuesResponseInner inner =
-            this.serviceClient().list(resourceGroupName, firewallPolicyName, parameters);
-        if (inner != null) {
-            return new SignatureOverridesFilterValuesResponseImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<SignatureOverridesFilterValuesResponse> listWithResponse(
         String resourceGroupName,
         String firewallPolicyName,
@@ -52,6 +41,17 @@ public final class FirewallPolicyIdpsSignaturesFilterValuesImpl implements Firew
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new SignatureOverridesFilterValuesResponseImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public SignatureOverridesFilterValuesResponse list(
+        String resourceGroupName, String firewallPolicyName, SignatureOverridesFilterValuesQuery parameters) {
+        SignatureOverridesFilterValuesResponseInner inner =
+            this.serviceClient().list(resourceGroupName, firewallPolicyName, parameters);
+        if (inner != null) {
+            return new SignatureOverridesFilterValuesResponseImpl(inner, this.manager());
         } else {
             return null;
         }

@@ -30,6 +30,10 @@ public final class TagProperties {
     @JsonProperty(value = "previousLink", access = JsonProperty.Access.WRITE_ONLY)
     private String previousLink;
 
+    /** Creates an instance of TagProperties class. */
+    public TagProperties() {
+    }
+
     /**
      * Get the tags property: A list of Tag.
      *

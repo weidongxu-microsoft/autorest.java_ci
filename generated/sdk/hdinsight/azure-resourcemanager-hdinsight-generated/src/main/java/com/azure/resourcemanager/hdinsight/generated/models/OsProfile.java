@@ -16,6 +16,10 @@ public final class OsProfile {
     @JsonProperty(value = "linuxOperatingSystemProfile")
     private LinuxOperatingSystemProfile linuxOperatingSystemProfile;
 
+    /** Creates an instance of OsProfile class. */
+    public OsProfile() {
+    }
+
     /**
      * Get the linuxOperatingSystemProfile property: The Linux OS profile.
      *

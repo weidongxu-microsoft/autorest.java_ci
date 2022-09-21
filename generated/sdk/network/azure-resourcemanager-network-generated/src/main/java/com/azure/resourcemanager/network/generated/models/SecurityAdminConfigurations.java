@@ -47,19 +47,6 @@ public interface SecurityAdminConfigurations {
      * @param resourceGroupName The name of the resource group.
      * @param networkManagerName The name of the network manager.
      * @param configurationName The name of the network manager Security Configuration.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return defines the security admin configuration.
-     */
-    SecurityAdminConfiguration get(String resourceGroupName, String networkManagerName, String configurationName);
-
-    /**
-     * Retrieves a network manager security admin configuration.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param networkManagerName The name of the network manager.
-     * @param configurationName The name of the network manager Security Configuration.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -68,6 +55,19 @@ public interface SecurityAdminConfigurations {
      */
     Response<SecurityAdminConfiguration> getWithResponse(
         String resourceGroupName, String networkManagerName, String configurationName, Context context);
+
+    /**
+     * Retrieves a network manager security admin configuration.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param networkManagerName The name of the network manager.
+     * @param configurationName The name of the network manager Security Configuration.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return defines the security admin configuration.
+     */
+    SecurityAdminConfiguration get(String resourceGroupName, String networkManagerName, String configurationName);
 
     /**
      * Deletes a network manager security admin configuration.

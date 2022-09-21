@@ -17,20 +17,6 @@ public interface PartnerRegistrations {
      *
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerRegistrationName Name of the partner registration.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a partner registration with the specified parameters.
-     */
-    PartnerRegistration getByResourceGroup(String resourceGroupName, String partnerRegistrationName);
-
-    /**
-     * Get a partner registration.
-     *
-     * <p>Gets a partner registration with the specified parameters.
-     *
-     * @param resourceGroupName The name of the resource group within the user's subscription.
-     * @param partnerRegistrationName Name of the partner registration.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -39,6 +25,20 @@ public interface PartnerRegistrations {
      */
     Response<PartnerRegistration> getByResourceGroupWithResponse(
         String resourceGroupName, String partnerRegistrationName, Context context);
+
+    /**
+     * Get a partner registration.
+     *
+     * <p>Gets a partner registration with the specified parameters.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription.
+     * @param partnerRegistrationName Name of the partner registration.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a partner registration with the specified parameters.
+     */
+    PartnerRegistration getByResourceGroup(String resourceGroupName, String partnerRegistrationName);
 
     /**
      * Delete a partner registration.

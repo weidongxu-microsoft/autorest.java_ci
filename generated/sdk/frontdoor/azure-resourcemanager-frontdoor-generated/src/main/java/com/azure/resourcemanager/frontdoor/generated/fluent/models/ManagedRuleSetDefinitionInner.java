@@ -20,6 +20,10 @@ public final class ManagedRuleSetDefinitionInner extends Resource {
     @JsonProperty(value = "properties")
     private ManagedRuleSetDefinitionProperties innerProperties;
 
+    /** Creates an instance of ManagedRuleSetDefinitionInner class. */
+    public ManagedRuleSetDefinitionInner() {
+    }
+
     /**
      * Get the innerProperties property: Properties for a managed rule set definition.
      *

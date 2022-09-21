@@ -44,6 +44,10 @@ public class ClusterCreateParametersExtended {
     @JsonProperty(value = "identity")
     private ClusterIdentity identity;
 
+    /** Creates an instance of ClusterCreateParametersExtended class. */
+    public ClusterCreateParametersExtended() {
+    }
+
     /**
      * Get the location property: The location of the cluster.
      *

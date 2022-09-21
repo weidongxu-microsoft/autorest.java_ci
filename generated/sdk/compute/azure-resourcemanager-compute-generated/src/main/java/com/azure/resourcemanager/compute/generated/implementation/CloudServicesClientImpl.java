@@ -1243,11 +1243,12 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes the cloud service.
+     * @return describes the cloud service along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public CloudServiceInner getByResourceGroup(String resourceGroupName, String cloudServiceName) {
-        return getByResourceGroupAsync(resourceGroupName, cloudServiceName).block();
+    public Response<CloudServiceInner> getByResourceGroupWithResponse(
+        String resourceGroupName, String cloudServiceName) {
+        return getByResourceGroupWithResponseAsync(resourceGroupName, cloudServiceName).block();
     }
 
     /**
@@ -1265,6 +1266,21 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
     public Response<CloudServiceInner> getByResourceGroupWithResponse(
         String resourceGroupName, String cloudServiceName, Context context) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, cloudServiceName, context).block();
+    }
+
+    /**
+     * Display information about a cloud service.
+     *
+     * @param resourceGroupName Name of the resource group.
+     * @param cloudServiceName Name of the cloud service.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ApiErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return describes the cloud service.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public CloudServiceInner getByResourceGroup(String resourceGroupName, String cloudServiceName) {
+        return getByResourceGroupWithResponse(resourceGroupName, cloudServiceName, Context.NONE).getValue();
     }
 
     /**
@@ -1390,11 +1406,12 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the status of a cloud service.
+     * @return the status of a cloud service along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public CloudServiceInstanceViewInner getInstanceView(String resourceGroupName, String cloudServiceName) {
-        return getInstanceViewAsync(resourceGroupName, cloudServiceName).block();
+    public Response<CloudServiceInstanceViewInner> getInstanceViewWithResponse(
+        String resourceGroupName, String cloudServiceName) {
+        return getInstanceViewWithResponseAsync(resourceGroupName, cloudServiceName).block();
     }
 
     /**
@@ -1412,6 +1429,21 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
     public Response<CloudServiceInstanceViewInner> getInstanceViewWithResponse(
         String resourceGroupName, String cloudServiceName, Context context) {
         return getInstanceViewWithResponseAsync(resourceGroupName, cloudServiceName, context).block();
+    }
+
+    /**
+     * Gets the status of a cloud service.
+     *
+     * @param resourceGroupName Name of the resource group.
+     * @param cloudServiceName Name of the cloud service.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ApiErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the status of a cloud service.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public CloudServiceInstanceViewInner getInstanceView(String resourceGroupName, String cloudServiceName) {
+        return getInstanceViewWithResponse(resourceGroupName, cloudServiceName, Context.NONE).getValue();
     }
 
     /**

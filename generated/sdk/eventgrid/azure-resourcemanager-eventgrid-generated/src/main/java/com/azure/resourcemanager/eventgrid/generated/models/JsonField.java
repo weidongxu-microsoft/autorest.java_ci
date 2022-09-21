@@ -20,6 +20,10 @@ public final class JsonField {
     @JsonProperty(value = "sourceField")
     private String sourceField;
 
+    /** Creates an instance of JsonField class. */
+    public JsonField() {
+    }
+
     /**
      * Get the sourceField property: Name of a field in the input event schema that's to be used as the source of a
      * mapping.

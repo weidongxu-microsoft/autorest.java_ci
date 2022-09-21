@@ -81,6 +81,10 @@ public final class ShareProperties {
     @JsonProperty(value = "dataPolicy")
     private DataPolicy dataPolicy;
 
+    /** Creates an instance of ShareProperties class. */
+    public ShareProperties() {
+    }
+
     /**
      * Get the description property: Description for the share.
      *

@@ -46,20 +46,6 @@ public interface WorkflowVersions {
      * @param name Site name.
      * @param workflowName The workflow name.
      * @param versionId The workflow versionId.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a workflow version.
-     */
-    WorkflowVersion get(String resourceGroupName, String name, String workflowName, String versionId);
-
-    /**
-     * Gets a workflow version.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Site name.
-     * @param workflowName The workflow name.
-     * @param versionId The workflow versionId.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -68,4 +54,18 @@ public interface WorkflowVersions {
      */
     Response<WorkflowVersion> getWithResponse(
         String resourceGroupName, String name, String workflowName, String versionId, Context context);
+
+    /**
+     * Gets a workflow version.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Site name.
+     * @param workflowName The workflow name.
+     * @param versionId The workflow versionId.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a workflow version.
+     */
+    WorkflowVersion get(String resourceGroupName, String name, String workflowName, String versionId);
 }

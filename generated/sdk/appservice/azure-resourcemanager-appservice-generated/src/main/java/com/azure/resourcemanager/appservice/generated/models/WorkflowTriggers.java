@@ -47,20 +47,6 @@ public interface WorkflowTriggers {
      * @param name Site name.
      * @param workflowName The workflow name.
      * @param triggerName The workflow trigger name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a workflow trigger.
-     */
-    WorkflowTrigger get(String resourceGroupName, String name, String workflowName, String triggerName);
-
-    /**
-     * Gets a workflow trigger.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Site name.
-     * @param workflowName The workflow name.
-     * @param triggerName The workflow trigger name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -71,7 +57,7 @@ public interface WorkflowTriggers {
         String resourceGroupName, String name, String workflowName, String triggerName, Context context);
 
     /**
-     * Get the callback URL for a workflow trigger.
+     * Gets a workflow trigger.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -80,10 +66,9 @@ public interface WorkflowTriggers {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the callback URL for a workflow trigger.
+     * @return a workflow trigger.
      */
-    WorkflowTriggerCallbackUrl listCallbackUrl(
-        String resourceGroupName, String name, String workflowName, String triggerName);
+    WorkflowTrigger get(String resourceGroupName, String name, String workflowName, String triggerName);
 
     /**
      * Get the callback URL for a workflow trigger.
@@ -100,6 +85,21 @@ public interface WorkflowTriggers {
      */
     Response<WorkflowTriggerCallbackUrl> listCallbackUrlWithResponse(
         String resourceGroupName, String name, String workflowName, String triggerName, Context context);
+
+    /**
+     * Get the callback URL for a workflow trigger.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Site name.
+     * @param workflowName The workflow name.
+     * @param triggerName The workflow trigger name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the callback URL for a workflow trigger.
+     */
+    WorkflowTriggerCallbackUrl listCallbackUrl(
+        String resourceGroupName, String name, String workflowName, String triggerName);
 
     /**
      * Runs a workflow trigger.
@@ -135,20 +135,6 @@ public interface WorkflowTriggers {
      * @param name Site name.
      * @param workflowName The workflow name.
      * @param triggerName The workflow trigger name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the trigger schema as JSON.
-     */
-    JsonSchema getSchemaJson(String resourceGroupName, String name, String workflowName, String triggerName);
-
-    /**
-     * Get the trigger schema as JSON.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Site name.
-     * @param workflowName The workflow name.
-     * @param triggerName The workflow trigger name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -157,4 +143,18 @@ public interface WorkflowTriggers {
      */
     Response<JsonSchema> getSchemaJsonWithResponse(
         String resourceGroupName, String name, String workflowName, String triggerName, Context context);
+
+    /**
+     * Get the trigger schema as JSON.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Site name.
+     * @param workflowName The workflow name.
+     * @param triggerName The workflow trigger name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the trigger schema as JSON.
+     */
+    JsonSchema getSchemaJson(String resourceGroupName, String name, String workflowName, String triggerName);
 }

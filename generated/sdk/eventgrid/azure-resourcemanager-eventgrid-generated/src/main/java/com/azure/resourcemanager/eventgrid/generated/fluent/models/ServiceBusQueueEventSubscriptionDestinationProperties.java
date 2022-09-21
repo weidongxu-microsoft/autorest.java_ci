@@ -24,6 +24,10 @@ public final class ServiceBusQueueEventSubscriptionDestinationProperties {
     @JsonProperty(value = "deliveryAttributeMappings")
     private List<DeliveryAttributeMapping> deliveryAttributeMappings;
 
+    /** Creates an instance of ServiceBusQueueEventSubscriptionDestinationProperties class. */
+    public ServiceBusQueueEventSubscriptionDestinationProperties() {
+    }
+
     /**
      * Get the resourceId property: The Azure Resource Id that represents the endpoint of the Service Bus destination of
      * an event subscription.

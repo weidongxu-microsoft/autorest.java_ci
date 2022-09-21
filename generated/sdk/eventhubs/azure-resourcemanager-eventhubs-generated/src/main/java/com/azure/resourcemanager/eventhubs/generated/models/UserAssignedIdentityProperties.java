@@ -16,6 +16,10 @@ public final class UserAssignedIdentityProperties {
     @JsonProperty(value = "userAssignedIdentity")
     private String userAssignedIdentity;
 
+    /** Creates an instance of UserAssignedIdentityProperties class. */
+    public UserAssignedIdentityProperties() {
+    }
+
     /**
      * Get the userAssignedIdentity property: ARM ID of user Identity selected for encryption.
      *

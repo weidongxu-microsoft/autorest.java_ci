@@ -27,21 +27,13 @@ public final class AlertRulesImpl implements AlertRules {
         this.serviceManager = serviceManager;
     }
 
-    public void deleteByResourceGroup(String resourceGroupName, String ruleName) {
-        this.serviceClient().delete(resourceGroupName, ruleName);
-    }
-
-    public Response<Void> deleteWithResponse(String resourceGroupName, String ruleName, Context context) {
+    public Response<Void> deleteByResourceGroupWithResponse(
+        String resourceGroupName, String ruleName, Context context) {
         return this.serviceClient().deleteWithResponse(resourceGroupName, ruleName, context);
     }
 
-    public AlertRuleResource getByResourceGroup(String resourceGroupName, String ruleName) {
-        AlertRuleResourceInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, ruleName);
-        if (inner != null) {
-            return new AlertRuleResourceImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void deleteByResourceGroup(String resourceGroupName, String ruleName) {
+        this.serviceClient().delete(resourceGroupName, ruleName);
     }
 
     public Response<AlertRuleResource> getByResourceGroupWithResponse(
@@ -54,6 +46,15 @@ public final class AlertRulesImpl implements AlertRules {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new AlertRuleResourceImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public AlertRuleResource getByResourceGroup(String resourceGroupName, String ruleName) {
+        AlertRuleResourceInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, ruleName);
+        if (inner != null) {
+            return new AlertRuleResourceImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -134,7 +135,7 @@ public final class AlertRulesImpl implements AlertRules {
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'alertrules'.", id)));
         }
-        this.deleteWithResponse(resourceGroupName, ruleName, Context.NONE);
+        this.deleteByResourceGroupWithResponse(resourceGroupName, ruleName, Context.NONE);
     }
 
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
@@ -153,7 +154,7 @@ public final class AlertRulesImpl implements AlertRules {
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'alertrules'.", id)));
         }
-        return this.deleteWithResponse(resourceGroupName, ruleName, context);
+        return this.deleteByResourceGroupWithResponse(resourceGroupName, ruleName, context);
     }
 
     private AlertRulesClient serviceClient() {

@@ -170,11 +170,11 @@ public final class CreditsClientImpl implements CreditsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a credit summary resource.
+     * @return a credit summary resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public CreditSummaryInner get(String billingAccountId, String billingProfileId) {
-        return getAsync(billingAccountId, billingProfileId).block();
+    public Response<CreditSummaryInner> getWithResponse(String billingAccountId, String billingProfileId) {
+        return getWithResponseAsync(billingAccountId, billingProfileId).block();
     }
 
     /**
@@ -192,5 +192,20 @@ public final class CreditsClientImpl implements CreditsClient {
     public Response<CreditSummaryInner> getWithResponse(
         String billingAccountId, String billingProfileId, Context context) {
         return getWithResponseAsync(billingAccountId, billingProfileId, context).block();
+    }
+
+    /**
+     * The credit summary by billingAccountId and billingProfileId.
+     *
+     * @param billingAccountId BillingAccount ID.
+     * @param billingProfileId Azure Billing Profile ID.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a credit summary resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public CreditSummaryInner get(String billingAccountId, String billingProfileId) {
+        return getWithResponse(billingAccountId, billingProfileId, Context.NONE).getValue();
     }
 }

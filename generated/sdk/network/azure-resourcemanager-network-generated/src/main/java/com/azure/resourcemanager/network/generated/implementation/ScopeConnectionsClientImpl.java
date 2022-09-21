@@ -183,7 +183,7 @@ public final class ScopeConnectionsClientImpl implements ScopeConnectionsClient 
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -251,7 +251,7 @@ public final class ScopeConnectionsClientImpl implements ScopeConnectionsClient 
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -299,15 +299,16 @@ public final class ScopeConnectionsClientImpl implements ScopeConnectionsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Scope Connections resource.
+     * @return the Scope Connections resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ScopeConnectionInner createOrUpdate(
+    public Response<ScopeConnectionInner> createOrUpdateWithResponse(
         String resourceGroupName,
         String networkManagerName,
         String scopeConnectionName,
         ScopeConnectionInner parameters) {
-        return createOrUpdateAsync(resourceGroupName, networkManagerName, scopeConnectionName, parameters).block();
+        return createOrUpdateWithResponseAsync(resourceGroupName, networkManagerName, scopeConnectionName, parameters)
+            .block();
     }
 
     /**
@@ -333,6 +334,29 @@ public final class ScopeConnectionsClientImpl implements ScopeConnectionsClient 
         return createOrUpdateWithResponseAsync(
                 resourceGroupName, networkManagerName, scopeConnectionName, parameters, context)
             .block();
+    }
+
+    /**
+     * Creates or updates scope connection from Network Manager.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param networkManagerName The name of the network manager.
+     * @param scopeConnectionName Name for the cross-tenant connection.
+     * @param parameters Scope connection to be created/updated.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the Scope Connections resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ScopeConnectionInner createOrUpdate(
+        String resourceGroupName,
+        String networkManagerName,
+        String scopeConnectionName,
+        ScopeConnectionInner parameters) {
+        return createOrUpdateWithResponse(
+                resourceGroupName, networkManagerName, scopeConnectionName, parameters, Context.NONE)
+            .getValue();
     }
 
     /**
@@ -374,7 +398,7 @@ public final class ScopeConnectionsClientImpl implements ScopeConnectionsClient 
             return Mono
                 .error(new IllegalArgumentException("Parameter scopeConnectionName is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -432,7 +456,7 @@ public final class ScopeConnectionsClientImpl implements ScopeConnectionsClient 
             return Mono
                 .error(new IllegalArgumentException("Parameter scopeConnectionName is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -474,11 +498,12 @@ public final class ScopeConnectionsClientImpl implements ScopeConnectionsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specified scope connection created by this Network Manager.
+     * @return specified scope connection created by this Network Manager along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ScopeConnectionInner get(String resourceGroupName, String networkManagerName, String scopeConnectionName) {
-        return getAsync(resourceGroupName, networkManagerName, scopeConnectionName).block();
+    public Response<ScopeConnectionInner> getWithResponse(
+        String resourceGroupName, String networkManagerName, String scopeConnectionName) {
+        return getWithResponseAsync(resourceGroupName, networkManagerName, scopeConnectionName).block();
     }
 
     /**
@@ -497,6 +522,22 @@ public final class ScopeConnectionsClientImpl implements ScopeConnectionsClient 
     public Response<ScopeConnectionInner> getWithResponse(
         String resourceGroupName, String networkManagerName, String scopeConnectionName, Context context) {
         return getWithResponseAsync(resourceGroupName, networkManagerName, scopeConnectionName, context).block();
+    }
+
+    /**
+     * Get specified scope connection created by this Network Manager.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param networkManagerName The name of the network manager.
+     * @param scopeConnectionName Name for the cross-tenant connection.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return specified scope connection created by this Network Manager.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ScopeConnectionInner get(String resourceGroupName, String networkManagerName, String scopeConnectionName) {
+        return getWithResponse(resourceGroupName, networkManagerName, scopeConnectionName, Context.NONE).getValue();
     }
 
     /**
@@ -537,7 +578,7 @@ public final class ScopeConnectionsClientImpl implements ScopeConnectionsClient 
             return Mono
                 .error(new IllegalArgumentException("Parameter scopeConnectionName is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -594,7 +635,7 @@ public final class ScopeConnectionsClientImpl implements ScopeConnectionsClient 
             return Mono
                 .error(new IllegalArgumentException("Parameter scopeConnectionName is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -635,10 +676,12 @@ public final class ScopeConnectionsClientImpl implements ScopeConnectionsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public void delete(String resourceGroupName, String networkManagerName, String scopeConnectionName) {
-        deleteAsync(resourceGroupName, networkManagerName, scopeConnectionName).block();
+    public Response<Void> deleteWithResponse(
+        String resourceGroupName, String networkManagerName, String scopeConnectionName) {
+        return deleteWithResponseAsync(resourceGroupName, networkManagerName, scopeConnectionName).block();
     }
 
     /**
@@ -657,6 +700,21 @@ public final class ScopeConnectionsClientImpl implements ScopeConnectionsClient 
     public Response<Void> deleteWithResponse(
         String resourceGroupName, String networkManagerName, String scopeConnectionName, Context context) {
         return deleteWithResponseAsync(resourceGroupName, networkManagerName, scopeConnectionName, context).block();
+    }
+
+    /**
+     * Delete the pending scope connection created by this network manager.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param networkManagerName The name of the network manager.
+     * @param scopeConnectionName Name for the cross-tenant connection.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public void delete(String resourceGroupName, String networkManagerName, String scopeConnectionName) {
+        deleteWithResponse(resourceGroupName, networkManagerName, scopeConnectionName, Context.NONE);
     }
 
     /**
@@ -697,7 +755,7 @@ public final class ScopeConnectionsClientImpl implements ScopeConnectionsClient 
             return Mono
                 .error(new IllegalArgumentException("Parameter networkManagerName is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -764,7 +822,7 @@ public final class ScopeConnectionsClientImpl implements ScopeConnectionsClient 
             return Mono
                 .error(new IllegalArgumentException("Parameter networkManagerName is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service

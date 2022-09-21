@@ -43,6 +43,10 @@ public final class IpConfigurationProperties {
     @JsonProperty(value = "subnet")
     private ResourceId subnet;
 
+    /** Creates an instance of IpConfigurationProperties class. */
+    public IpConfigurationProperties() {
+    }
+
     /**
      * Get the provisioningState property: The private link configuration provisioning state, which only appears in the
      * response.

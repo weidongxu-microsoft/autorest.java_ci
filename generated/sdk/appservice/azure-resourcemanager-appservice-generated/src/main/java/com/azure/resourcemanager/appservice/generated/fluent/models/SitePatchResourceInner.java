@@ -35,6 +35,10 @@ public final class SitePatchResourceInner extends ProxyOnlyResource {
     @JsonProperty(value = "identity")
     private ManagedServiceIdentity identity;
 
+    /** Creates an instance of SitePatchResourceInner class. */
+    public SitePatchResourceInner() {
+    }
+
     /**
      * Get the innerProperties property: SitePatchResource resource specific properties.
      *

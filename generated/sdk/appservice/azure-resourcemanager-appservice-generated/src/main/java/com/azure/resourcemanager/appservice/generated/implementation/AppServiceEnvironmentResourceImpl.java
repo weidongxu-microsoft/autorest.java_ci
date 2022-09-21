@@ -282,14 +282,14 @@ public final class AppServiceEnvironmentResourceImpl
         return serviceManager.appServiceEnvironments().changeVnet(resourceGroupName, name, vnetInfo, context);
     }
 
-    public void testUpgradeAvailableNotification() {
-        serviceManager.appServiceEnvironments().testUpgradeAvailableNotification(resourceGroupName, name);
-    }
-
     public Response<Void> testUpgradeAvailableNotificationWithResponse(Context context) {
         return serviceManager
             .appServiceEnvironments()
             .testUpgradeAvailableNotificationWithResponse(resourceGroupName, name, context);
+    }
+
+    public void testUpgradeAvailableNotification() {
+        serviceManager.appServiceEnvironments().testUpgradeAvailableNotification(resourceGroupName, name);
     }
 
     public void upgrade() {
@@ -300,12 +300,12 @@ public final class AppServiceEnvironmentResourceImpl
         serviceManager.appServiceEnvironments().upgrade(resourceGroupName, name, context);
     }
 
-    public void reboot() {
-        serviceManager.appServiceEnvironments().reboot(resourceGroupName, name);
-    }
-
     public Response<Void> rebootWithResponse(Context context) {
         return serviceManager.appServiceEnvironments().rebootWithResponse(resourceGroupName, name, context);
+    }
+
+    public void reboot() {
+        serviceManager.appServiceEnvironments().reboot(resourceGroupName, name);
     }
 
     public PagedIterable<Site> resume() {

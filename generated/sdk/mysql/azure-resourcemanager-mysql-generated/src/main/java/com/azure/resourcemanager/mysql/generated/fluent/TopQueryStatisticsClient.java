@@ -20,20 +20,6 @@ public interface TopQueryStatisticsClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param queryStatisticId The Query Statistic identifier.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a Query Statistic.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    QueryStatisticInner get(String resourceGroupName, String serverName, String queryStatisticId);
-
-    /**
-     * Retrieve the query statistic for specified identifier.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param serverName The name of the server.
-     * @param queryStatisticId The Query Statistic identifier.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -43,6 +29,20 @@ public interface TopQueryStatisticsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<QueryStatisticInner> getWithResponse(
         String resourceGroupName, String serverName, String queryStatisticId, Context context);
+
+    /**
+     * Retrieve the query statistic for specified identifier.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param serverName The name of the server.
+     * @param queryStatisticId The Query Statistic identifier.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return represents a Query Statistic.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    QueryStatisticInner get(String resourceGroupName, String serverName, String queryStatisticId);
 
     /**
      * Retrieve the Query-Store top queries for specified metric and aggregation.

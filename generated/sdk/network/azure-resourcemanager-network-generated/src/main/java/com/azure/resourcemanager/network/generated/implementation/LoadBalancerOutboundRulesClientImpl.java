@@ -134,7 +134,7 @@ public final class LoadBalancerOutboundRulesClientImpl implements LoadBalancerOu
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -195,7 +195,7 @@ public final class LoadBalancerOutboundRulesClientImpl implements LoadBalancerOu
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -323,7 +323,7 @@ public final class LoadBalancerOutboundRulesClientImpl implements LoadBalancerOu
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -381,7 +381,7 @@ public final class LoadBalancerOutboundRulesClientImpl implements LoadBalancerOu
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -423,11 +423,12 @@ public final class LoadBalancerOutboundRulesClientImpl implements LoadBalancerOu
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified load balancer outbound rule.
+     * @return the specified load balancer outbound rule along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public OutboundRuleInner get(String resourceGroupName, String loadBalancerName, String outboundRuleName) {
-        return getAsync(resourceGroupName, loadBalancerName, outboundRuleName).block();
+    public Response<OutboundRuleInner> getWithResponse(
+        String resourceGroupName, String loadBalancerName, String outboundRuleName) {
+        return getWithResponseAsync(resourceGroupName, loadBalancerName, outboundRuleName).block();
     }
 
     /**
@@ -446,6 +447,22 @@ public final class LoadBalancerOutboundRulesClientImpl implements LoadBalancerOu
     public Response<OutboundRuleInner> getWithResponse(
         String resourceGroupName, String loadBalancerName, String outboundRuleName, Context context) {
         return getWithResponseAsync(resourceGroupName, loadBalancerName, outboundRuleName, context).block();
+    }
+
+    /**
+     * Gets the specified load balancer outbound rule.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param loadBalancerName The name of the load balancer.
+     * @param outboundRuleName The name of the outbound rule.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified load balancer outbound rule.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public OutboundRuleInner get(String resourceGroupName, String loadBalancerName, String outboundRuleName) {
+        return getWithResponse(resourceGroupName, loadBalancerName, outboundRuleName, Context.NONE).getValue();
     }
 
     /**

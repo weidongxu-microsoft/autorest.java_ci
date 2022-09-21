@@ -40,6 +40,10 @@ public final class DataSourceInner extends ProxyResource {
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, String> tags;
 
+    /** Creates an instance of DataSourceInner class. */
+    public DataSourceInner() {
+    }
+
     /**
      * Get the properties property: The data source properties in raw json format, each kind of data source have it's
      * own schema.

@@ -39,15 +39,6 @@ public final class LoadBalancerOutboundRulesImpl implements LoadBalancerOutbound
         return Utils.mapPage(inner, inner1 -> new OutboundRuleImpl(inner1, this.manager()));
     }
 
-    public OutboundRule get(String resourceGroupName, String loadBalancerName, String outboundRuleName) {
-        OutboundRuleInner inner = this.serviceClient().get(resourceGroupName, loadBalancerName, outboundRuleName);
-        if (inner != null) {
-            return new OutboundRuleImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<OutboundRule> getWithResponse(
         String resourceGroupName, String loadBalancerName, String outboundRuleName, Context context) {
         Response<OutboundRuleInner> inner =
@@ -58,6 +49,15 @@ public final class LoadBalancerOutboundRulesImpl implements LoadBalancerOutbound
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new OutboundRuleImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public OutboundRule get(String resourceGroupName, String loadBalancerName, String outboundRuleName) {
+        OutboundRuleInner inner = this.serviceClient().get(resourceGroupName, loadBalancerName, outboundRuleName);
+        if (inner != null) {
+            return new OutboundRuleImpl(inner, this.manager());
         } else {
             return null;
         }

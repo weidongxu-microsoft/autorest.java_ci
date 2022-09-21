@@ -53,21 +53,6 @@ public interface AddonsClient {
      * @param roleName The role name.
      * @param addonName The addon name.
      * @param resourceGroupName The resource group name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a specific addon by name.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    AddonInner get(String deviceName, String roleName, String addonName, String resourceGroupName);
-
-    /**
-     * Gets a specific addon by name.
-     *
-     * @param deviceName The device name.
-     * @param roleName The role name.
-     * @param addonName The addon name.
-     * @param resourceGroupName The resource group name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -77,6 +62,21 @@ public interface AddonsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<AddonInner> getWithResponse(
         String deviceName, String roleName, String addonName, String resourceGroupName, Context context);
+
+    /**
+     * Gets a specific addon by name.
+     *
+     * @param deviceName The device name.
+     * @param roleName The role name.
+     * @param addonName The addon name.
+     * @param resourceGroupName The resource group name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a specific addon by name.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    AddonInner get(String deviceName, String roleName, String addonName, String resourceGroupName);
 
     /**
      * Create or update a addon.

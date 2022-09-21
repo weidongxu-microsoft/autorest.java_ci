@@ -466,6 +466,10 @@ public final class ModernUsageDetailProperties {
     @JsonProperty(value = "costAllocationRuleName", access = JsonProperty.Access.WRITE_ONLY)
     private String costAllocationRuleName;
 
+    /** Creates an instance of ModernUsageDetailProperties class. */
+    public ModernUsageDetailProperties() {
+    }
+
     /**
      * Get the billingAccountId property: Billing Account identifier.
      *

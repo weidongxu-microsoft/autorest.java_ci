@@ -47,6 +47,10 @@ public final class PolicySettings {
     @JsonProperty(value = "requestBodyCheck")
     private PolicyRequestBodyCheck requestBodyCheck;
 
+    /** Creates an instance of PolicySettings class. */
+    public PolicySettings() {
+    }
+
     /**
      * Get the enabledState property: Describes if the policy is in enabled or disabled state. Defaults to Enabled if
      * not specified.

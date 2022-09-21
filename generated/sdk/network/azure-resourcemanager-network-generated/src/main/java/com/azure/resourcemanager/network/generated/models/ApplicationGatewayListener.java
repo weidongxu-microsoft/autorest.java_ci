@@ -36,6 +36,10 @@ public final class ApplicationGatewayListener extends SubResource {
     @JsonProperty(value = "type", access = JsonProperty.Access.WRITE_ONLY)
     private String type;
 
+    /** Creates an instance of ApplicationGatewayListener class. */
+    public ApplicationGatewayListener() {
+    }
+
     /**
      * Get the innerProperties property: Properties of the application gateway listener.
      *

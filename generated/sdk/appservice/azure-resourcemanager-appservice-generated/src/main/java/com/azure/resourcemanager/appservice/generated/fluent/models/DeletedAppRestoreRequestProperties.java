@@ -36,6 +36,10 @@ public final class DeletedAppRestoreRequestProperties {
     @JsonProperty(value = "useDRSecondary")
     private Boolean useDRSecondary;
 
+    /** Creates an instance of DeletedAppRestoreRequestProperties class. */
+    public DeletedAppRestoreRequestProperties() {
+    }
+
     /**
      * Get the deletedSiteId property: ARM resource ID of the deleted app. Example:
      * /subscriptions/{subId}/providers/Microsoft.Web/deletedSites/{deletedSiteId}.

@@ -234,11 +234,11 @@ public final class QueryTextsClientImpl implements QueryTextsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a Query Text.
+     * @return represents a Query Text along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public QueryTextInner get(String resourceGroupName, String serverName, String queryId) {
-        return getAsync(resourceGroupName, serverName, queryId).block();
+    public Response<QueryTextInner> getWithResponse(String resourceGroupName, String serverName, String queryId) {
+        return getWithResponseAsync(resourceGroupName, serverName, queryId).block();
     }
 
     /**
@@ -257,6 +257,22 @@ public final class QueryTextsClientImpl implements QueryTextsClient {
     public Response<QueryTextInner> getWithResponse(
         String resourceGroupName, String serverName, String queryId, Context context) {
         return getWithResponseAsync(resourceGroupName, serverName, queryId, context).block();
+    }
+
+    /**
+     * Retrieve the Query-Store query texts for the queryId.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param serverName The name of the server.
+     * @param queryId The Query-Store query identifier.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return represents a Query Text.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public QueryTextInner get(String resourceGroupName, String serverName, String queryId) {
+        return getWithResponse(resourceGroupName, serverName, queryId, Context.NONE).getValue();
     }
 
     /**

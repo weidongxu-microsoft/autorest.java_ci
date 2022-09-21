@@ -25,6 +25,10 @@ public final class ClusterListResult {
     @JsonProperty(value = "nextLink")
     private String nextLink;
 
+    /** Creates an instance of ClusterListResult class. */
+    public ClusterListResult() {
+    }
+
     /**
      * Get the value property: The Event Hubs Clusters present in the List Event Hubs operation results.
      *

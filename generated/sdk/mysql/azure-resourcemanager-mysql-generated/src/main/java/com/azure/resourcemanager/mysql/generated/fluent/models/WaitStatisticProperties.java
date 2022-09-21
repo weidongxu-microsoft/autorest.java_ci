@@ -65,6 +65,10 @@ public final class WaitStatisticProperties {
     @JsonProperty(value = "totalTimeInMs")
     private Double totalTimeInMs;
 
+    /** Creates an instance of WaitStatisticProperties class. */
+    public WaitStatisticProperties() {
+    }
+
     /**
      * Get the startTime property: Observation start time.
      *

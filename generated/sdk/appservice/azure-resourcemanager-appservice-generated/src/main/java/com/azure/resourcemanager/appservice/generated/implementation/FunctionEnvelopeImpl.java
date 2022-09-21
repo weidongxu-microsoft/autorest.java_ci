@@ -162,20 +162,20 @@ public final class FunctionEnvelopeImpl implements FunctionEnvelope, FunctionEnv
         return this;
     }
 
-    public StringDictionary listFunctionKeys() {
-        return serviceManager.webApps().listFunctionKeys(resourceGroupName, name, functionName);
-    }
-
     public Response<StringDictionary> listFunctionKeysWithResponse(Context context) {
         return serviceManager.webApps().listFunctionKeysWithResponse(resourceGroupName, name, functionName, context);
     }
 
-    public FunctionSecrets listFunctionSecrets() {
-        return serviceManager.webApps().listFunctionSecrets(resourceGroupName, name, functionName);
+    public StringDictionary listFunctionKeys() {
+        return serviceManager.webApps().listFunctionKeys(resourceGroupName, name, functionName);
     }
 
     public Response<FunctionSecrets> listFunctionSecretsWithResponse(Context context) {
         return serviceManager.webApps().listFunctionSecretsWithResponse(resourceGroupName, name, functionName, context);
+    }
+
+    public FunctionSecrets listFunctionSecrets() {
+        return serviceManager.webApps().listFunctionSecrets(resourceGroupName, name, functionName);
     }
 
     public FunctionEnvelopeImpl withKind(String kind) {

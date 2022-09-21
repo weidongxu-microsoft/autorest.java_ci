@@ -43,17 +43,6 @@ public final class ServiceEndpointPolicyDefinitionsImpl implements ServiceEndpoi
             .delete(resourceGroupName, serviceEndpointPolicyName, serviceEndpointPolicyDefinitionName, context);
     }
 
-    public ServiceEndpointPolicyDefinition get(
-        String resourceGroupName, String serviceEndpointPolicyName, String serviceEndpointPolicyDefinitionName) {
-        ServiceEndpointPolicyDefinitionInner inner =
-            this.serviceClient().get(resourceGroupName, serviceEndpointPolicyName, serviceEndpointPolicyDefinitionName);
-        if (inner != null) {
-            return new ServiceEndpointPolicyDefinitionImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<ServiceEndpointPolicyDefinition> getWithResponse(
         String resourceGroupName,
         String serviceEndpointPolicyName,
@@ -70,6 +59,17 @@ public final class ServiceEndpointPolicyDefinitionsImpl implements ServiceEndpoi
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new ServiceEndpointPolicyDefinitionImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public ServiceEndpointPolicyDefinition get(
+        String resourceGroupName, String serviceEndpointPolicyName, String serviceEndpointPolicyDefinitionName) {
+        ServiceEndpointPolicyDefinitionInner inner =
+            this.serviceClient().get(resourceGroupName, serviceEndpointPolicyName, serviceEndpointPolicyDefinitionName);
+        if (inner != null) {
+            return new ServiceEndpointPolicyDefinitionImpl(inner, this.manager());
         } else {
             return null;
         }

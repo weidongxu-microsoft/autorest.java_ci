@@ -28,6 +28,10 @@ public final class AzureMonitorRequest {
     @JsonProperty(value = "selectedConfigurations")
     private AzureMonitorSelectedConfigurations selectedConfigurations;
 
+    /** Creates an instance of AzureMonitorRequest class. */
+    public AzureMonitorRequest() {
+    }
+
     /**
      * Get the workspaceId property: The Log Analytics workspace ID.
      *

@@ -228,23 +228,6 @@ public interface GalleryImageVersionsClient {
      * @param galleryName The name of the Shared Image Gallery in which the Image Definition resides.
      * @param galleryImageName The name of the gallery image definition in which the Image Version resides.
      * @param galleryImageVersionName The name of the gallery image version to be retrieved.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the gallery image version that you want to create or update.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    GalleryImageVersionInner get(
-        String resourceGroupName, String galleryName, String galleryImageName, String galleryImageVersionName);
-
-    /**
-     * Retrieves information about a gallery image version.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Image Gallery in which the Image Definition resides.
-     * @param galleryImageName The name of the gallery image definition in which the Image Version resides.
-     * @param galleryImageVersionName The name of the gallery image version to be retrieved.
      * @param expand The expand expression to apply on the operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -262,6 +245,23 @@ public interface GalleryImageVersionsClient {
         String galleryImageVersionName,
         ReplicationStatusTypes expand,
         Context context);
+
+    /**
+     * Retrieves information about a gallery image version.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param galleryName The name of the Shared Image Gallery in which the Image Definition resides.
+     * @param galleryImageName The name of the gallery image definition in which the Image Version resides.
+     * @param galleryImageVersionName The name of the gallery image version to be retrieved.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return specifies information about the gallery image version that you want to create or update.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    GalleryImageVersionInner get(
+        String resourceGroupName, String galleryName, String galleryImageName, String galleryImageVersionName);
 
     /**
      * Delete a gallery image version.

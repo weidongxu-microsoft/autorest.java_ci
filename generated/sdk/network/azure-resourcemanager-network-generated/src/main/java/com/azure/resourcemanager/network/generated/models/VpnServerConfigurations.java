@@ -15,18 +15,6 @@ public interface VpnServerConfigurations {
      *
      * @param resourceGroupName The resource group name of the VpnServerConfiguration.
      * @param vpnServerConfigurationName The name of the VpnServerConfiguration being retrieved.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpnServerConfiguration Resource.
-     */
-    VpnServerConfiguration getByResourceGroup(String resourceGroupName, String vpnServerConfigurationName);
-
-    /**
-     * Retrieves the details of a VpnServerConfiguration.
-     *
-     * @param resourceGroupName The resource group name of the VpnServerConfiguration.
-     * @param vpnServerConfigurationName The name of the VpnServerConfiguration being retrieved.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -35,6 +23,18 @@ public interface VpnServerConfigurations {
      */
     Response<VpnServerConfiguration> getByResourceGroupWithResponse(
         String resourceGroupName, String vpnServerConfigurationName, Context context);
+
+    /**
+     * Retrieves the details of a VpnServerConfiguration.
+     *
+     * @param resourceGroupName The resource group name of the VpnServerConfiguration.
+     * @param vpnServerConfigurationName The name of the VpnServerConfiguration being retrieved.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return vpnServerConfiguration Resource.
+     */
+    VpnServerConfiguration getByResourceGroup(String resourceGroupName, String vpnServerConfigurationName);
 
     /**
      * Deletes a VpnServerConfiguration.

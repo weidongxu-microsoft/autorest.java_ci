@@ -28,6 +28,10 @@ public final class AlertErrorDetails {
     @JsonProperty(value = "occurrences", access = JsonProperty.Access.WRITE_ONLY)
     private Integer occurrences;
 
+    /** Creates an instance of AlertErrorDetails class. */
+    public AlertErrorDetails() {
+    }
+
     /**
      * Get the errorCode property: Error code.
      *

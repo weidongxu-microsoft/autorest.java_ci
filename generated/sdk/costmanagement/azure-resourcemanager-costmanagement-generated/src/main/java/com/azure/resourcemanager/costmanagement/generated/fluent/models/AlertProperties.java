@@ -80,6 +80,10 @@ public final class AlertProperties {
     @JsonProperty(value = "statusModificationTime")
     private String statusModificationTime;
 
+    /** Creates an instance of AlertProperties class. */
+    public AlertProperties() {
+    }
+
     /**
      * Get the definition property: defines the type of alert.
      *

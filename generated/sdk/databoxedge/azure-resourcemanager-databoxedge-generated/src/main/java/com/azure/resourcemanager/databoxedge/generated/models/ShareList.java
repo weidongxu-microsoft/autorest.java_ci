@@ -24,6 +24,10 @@ public final class ShareList {
     @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
 
+    /** Creates an instance of ShareList class. */
+    public ShareList() {
+    }
+
     /**
      * Get the value property: The list of shares.
      *

@@ -191,11 +191,12 @@ public final class ComponentAvailableFeaturesClientImpl implements ComponentAvai
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Application Insights component available features.
+     * @return an Application Insights component available features along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ApplicationInsightsComponentAvailableFeaturesInner get(String resourceGroupName, String resourceName) {
-        return getAsync(resourceGroupName, resourceName).block();
+    public Response<ApplicationInsightsComponentAvailableFeaturesInner> getWithResponse(
+        String resourceGroupName, String resourceName) {
+        return getWithResponseAsync(resourceGroupName, resourceName).block();
     }
 
     /**
@@ -213,5 +214,20 @@ public final class ComponentAvailableFeaturesClientImpl implements ComponentAvai
     public Response<ApplicationInsightsComponentAvailableFeaturesInner> getWithResponse(
         String resourceGroupName, String resourceName, Context context) {
         return getWithResponseAsync(resourceGroupName, resourceName, context).block();
+    }
+
+    /**
+     * Returns all available features of the application insights component.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceName The name of the Application Insights component resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return an Application Insights component available features.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ApplicationInsightsComponentAvailableFeaturesInner get(String resourceGroupName, String resourceName) {
+        return getWithResponse(resourceGroupName, resourceName, Context.NONE).getValue();
     }
 }

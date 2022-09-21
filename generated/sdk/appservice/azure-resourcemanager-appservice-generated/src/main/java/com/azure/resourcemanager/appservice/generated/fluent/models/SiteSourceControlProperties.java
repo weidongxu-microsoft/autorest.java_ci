@@ -54,6 +54,10 @@ public final class SiteSourceControlProperties {
     @JsonProperty(value = "gitHubActionConfiguration")
     private GitHubActionConfiguration gitHubActionConfiguration;
 
+    /** Creates an instance of SiteSourceControlProperties class. */
+    public SiteSourceControlProperties() {
+    }
+
     /**
      * Get the repoUrl property: Repository or source control URL.
      *

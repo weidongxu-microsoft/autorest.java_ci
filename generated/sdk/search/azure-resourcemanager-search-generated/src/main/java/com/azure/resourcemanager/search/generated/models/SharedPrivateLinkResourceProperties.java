@@ -51,6 +51,10 @@ public final class SharedPrivateLinkResourceProperties {
     @JsonProperty(value = "provisioningState")
     private SharedPrivateLinkResourceProvisioningState provisioningState;
 
+    /** Creates an instance of SharedPrivateLinkResourceProperties class. */
+    public SharedPrivateLinkResourceProperties() {
+    }
+
     /**
      * Get the privateLinkResourceId property: The resource id of the resource the shared private link resource is for.
      *

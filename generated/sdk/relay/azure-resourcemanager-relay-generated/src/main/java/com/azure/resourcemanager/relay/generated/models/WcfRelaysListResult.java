@@ -24,6 +24,10 @@ public final class WcfRelaysListResult {
     @JsonProperty(value = "nextLink")
     private String nextLink;
 
+    /** Creates an instance of WcfRelaysListResult class. */
+    public WcfRelaysListResult() {
+    }
+
     /**
      * Get the value property: Result of the list WCF relay operation.
      *

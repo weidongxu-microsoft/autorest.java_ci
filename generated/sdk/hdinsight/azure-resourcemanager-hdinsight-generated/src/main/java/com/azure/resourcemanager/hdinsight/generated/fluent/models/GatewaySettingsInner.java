@@ -28,6 +28,10 @@ public final class GatewaySettingsInner {
     @JsonProperty(value = "restAuthCredential.password", access = JsonProperty.Access.WRITE_ONLY)
     private String password;
 
+    /** Creates an instance of GatewaySettingsInner class. */
+    public GatewaySettingsInner() {
+    }
+
     /**
      * Get the isCredentialEnabled property: Indicates whether or not the gateway settings based authorization is
      * enabled.

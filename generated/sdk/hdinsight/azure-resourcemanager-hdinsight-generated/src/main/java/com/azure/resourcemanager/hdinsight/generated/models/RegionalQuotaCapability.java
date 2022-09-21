@@ -28,6 +28,10 @@ public final class RegionalQuotaCapability {
     @JsonProperty(value = "coresAvailable")
     private Long coresAvailable;
 
+    /** Creates an instance of RegionalQuotaCapability class. */
+    public RegionalQuotaCapability() {
+    }
+
     /**
      * Get the regionName property: The region name.
      *

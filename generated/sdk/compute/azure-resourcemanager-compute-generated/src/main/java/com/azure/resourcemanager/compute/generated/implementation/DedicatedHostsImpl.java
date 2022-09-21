@@ -36,15 +36,6 @@ public final class DedicatedHostsImpl implements DedicatedHosts {
         this.serviceClient().delete(resourceGroupName, hostGroupName, hostname, context);
     }
 
-    public DedicatedHost get(String resourceGroupName, String hostGroupName, String hostname) {
-        DedicatedHostInner inner = this.serviceClient().get(resourceGroupName, hostGroupName, hostname);
-        if (inner != null) {
-            return new DedicatedHostImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<DedicatedHost> getWithResponse(
         String resourceGroupName, String hostGroupName, String hostname, InstanceViewTypes expand, Context context) {
         Response<DedicatedHostInner> inner =
@@ -55,6 +46,15 @@ public final class DedicatedHostsImpl implements DedicatedHosts {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new DedicatedHostImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public DedicatedHost get(String resourceGroupName, String hostGroupName, String hostname) {
+        DedicatedHostInner inner = this.serviceClient().get(resourceGroupName, hostGroupName, hostname);
+        if (inner != null) {
+            return new DedicatedHostImpl(inner, this.manager());
         } else {
             return null;
         }

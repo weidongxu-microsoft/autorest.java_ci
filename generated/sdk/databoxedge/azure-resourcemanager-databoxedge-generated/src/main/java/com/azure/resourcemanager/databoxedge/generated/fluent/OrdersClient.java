@@ -48,19 +48,6 @@ public interface OrdersClient {
      *
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a specific order by name.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    OrderInner get(String deviceName, String resourceGroupName);
-
-    /**
-     * Gets a specific order by name.
-     *
-     * @param deviceName The device name.
-     * @param resourceGroupName The resource group name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -69,6 +56,19 @@ public interface OrdersClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<OrderInner> getWithResponse(String deviceName, String resourceGroupName, Context context);
+
+    /**
+     * Gets a specific order by name.
+     *
+     * @param deviceName The device name.
+     * @param resourceGroupName The resource group name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a specific order by name.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    OrderInner get(String deviceName, String resourceGroupName);
 
     /**
      * Creates or updates an order.
@@ -187,19 +187,6 @@ public interface OrdersClient {
      *
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the DCAccess Code.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    DCAccessCodeInner listDCAccessCode(String deviceName, String resourceGroupName);
-
-    /**
-     * Gets the DCAccess Code.
-     *
-     * @param deviceName The device name.
-     * @param resourceGroupName The resource group name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -209,4 +196,17 @@ public interface OrdersClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<DCAccessCodeInner> listDCAccessCodeWithResponse(
         String deviceName, String resourceGroupName, Context context);
+
+    /**
+     * Gets the DCAccess Code.
+     *
+     * @param deviceName The device name.
+     * @param resourceGroupName The resource group name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the DCAccess Code.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    DCAccessCodeInner listDCAccessCode(String deviceName, String resourceGroupName);
 }

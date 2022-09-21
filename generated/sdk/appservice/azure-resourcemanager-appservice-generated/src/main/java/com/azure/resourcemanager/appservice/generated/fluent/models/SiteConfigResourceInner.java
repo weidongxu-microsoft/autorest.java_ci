@@ -38,6 +38,10 @@ public final class SiteConfigResourceInner extends ProxyOnlyResource {
     @JsonProperty(value = "properties")
     private SiteConfigInner innerProperties;
 
+    /** Creates an instance of SiteConfigResourceInner class. */
+    public SiteConfigResourceInner() {
+    }
+
     /**
      * Get the innerProperties property: Core resource properties.
      *

@@ -21,6 +21,10 @@ public final class LatencyScorecardInner extends Resource {
     @JsonProperty(value = "properties")
     private LatencyScorecardProperties innerProperties;
 
+    /** Creates an instance of LatencyScorecardInner class. */
+    public LatencyScorecardInner() {
+    }
+
     /**
      * Get the innerProperties property: The properties of a latency scorecard.
      *

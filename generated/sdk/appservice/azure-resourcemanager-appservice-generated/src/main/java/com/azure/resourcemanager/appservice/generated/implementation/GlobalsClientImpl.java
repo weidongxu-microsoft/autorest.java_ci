@@ -199,11 +199,11 @@ public final class GlobalsClientImpl implements GlobalsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deleted app.
+     * @return a deleted app along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public DeletedSiteInner getDeletedWebApp(String deletedSiteId) {
-        return getDeletedWebAppAsync(deletedSiteId).block();
+    public Response<DeletedSiteInner> getDeletedWebAppWithResponse(String deletedSiteId) {
+        return getDeletedWebAppWithResponseAsync(deletedSiteId).block();
     }
 
     /**
@@ -221,6 +221,22 @@ public final class GlobalsClientImpl implements GlobalsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<DeletedSiteInner> getDeletedWebAppWithResponse(String deletedSiteId, Context context) {
         return getDeletedWebAppWithResponseAsync(deletedSiteId, context).block();
+    }
+
+    /**
+     * Get deleted app for a subscription.
+     *
+     * <p>Description for Get deleted app for a subscription.
+     *
+     * @param deletedSiteId The numeric ID of the deleted app, e.g. 12345.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a deleted app.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public DeletedSiteInner getDeletedWebApp(String deletedSiteId) {
+        return getDeletedWebAppWithResponse(deletedSiteId, Context.NONE).getValue();
     }
 
     /**
@@ -334,11 +350,11 @@ public final class GlobalsClientImpl implements GlobalsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of Snapshot.
+     * @return array of Snapshot along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public List<SnapshotInner> getDeletedWebAppSnapshots(String deletedSiteId) {
-        return getDeletedWebAppSnapshotsAsync(deletedSiteId).block();
+    public Response<List<SnapshotInner>> getDeletedWebAppSnapshotsWithResponse(String deletedSiteId) {
+        return getDeletedWebAppSnapshotsWithResponseAsync(deletedSiteId).block();
     }
 
     /**
@@ -356,6 +372,22 @@ public final class GlobalsClientImpl implements GlobalsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<List<SnapshotInner>> getDeletedWebAppSnapshotsWithResponse(String deletedSiteId, Context context) {
         return getDeletedWebAppSnapshotsWithResponseAsync(deletedSiteId, context).block();
+    }
+
+    /**
+     * Get all deleted apps for a subscription.
+     *
+     * <p>Description for Get all deleted apps for a subscription.
+     *
+     * @param deletedSiteId The numeric ID of the deleted app, e.g. 12345.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return array of Snapshot.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public List<SnapshotInner> getDeletedWebAppSnapshots(String deletedSiteId) {
+        return getDeletedWebAppSnapshotsWithResponse(deletedSiteId, Context.NONE).getValue();
     }
 
     /**
@@ -482,10 +514,11 @@ public final class GlobalsClientImpl implements GlobalsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public void getSubscriptionOperationWithAsyncResponse(String location, String operationId) {
-        getSubscriptionOperationWithAsyncResponseAsync(location, operationId).block();
+    public Response<Void> getSubscriptionOperationWithAsyncResponseWithResponse(String location, String operationId) {
+        return getSubscriptionOperationWithAsyncResponseWithResponseAsync(location, operationId).block();
     }
 
     /**
@@ -505,5 +538,21 @@ public final class GlobalsClientImpl implements GlobalsClient {
     public Response<Void> getSubscriptionOperationWithAsyncResponseWithResponse(
         String location, String operationId, Context context) {
         return getSubscriptionOperationWithAsyncResponseWithResponseAsync(location, operationId, context).block();
+    }
+
+    /**
+     * Gets an operation in a subscription and given region
+     *
+     * <p>Description for Gets an operation in a subscription and given region.
+     *
+     * @param location Location name.
+     * @param operationId Operation Id.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public void getSubscriptionOperationWithAsyncResponse(String location, String operationId) {
+        getSubscriptionOperationWithAsyncResponseWithResponse(location, operationId, Context.NONE);
     }
 }

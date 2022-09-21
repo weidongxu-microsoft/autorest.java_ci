@@ -28,6 +28,10 @@ public final class KubernetesRoleStorageClassInfo {
     @JsonProperty(value = "posixCompliant", access = JsonProperty.Access.WRITE_ONLY)
     private PosixComplianceStatus posixCompliant;
 
+    /** Creates an instance of KubernetesRoleStorageClassInfo class. */
+    public KubernetesRoleStorageClassInfo() {
+    }
+
     /**
      * Get the name property: Storage class name.
      *

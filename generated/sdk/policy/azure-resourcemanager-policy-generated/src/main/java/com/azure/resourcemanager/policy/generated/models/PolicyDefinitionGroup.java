@@ -41,6 +41,10 @@ public final class PolicyDefinitionGroup {
     @JsonProperty(value = "additionalMetadataId")
     private String additionalMetadataId;
 
+    /** Creates an instance of PolicyDefinitionGroup class. */
+    public PolicyDefinitionGroup() {
+    }
+
     /**
      * Get the name property: The name of the group.
      *

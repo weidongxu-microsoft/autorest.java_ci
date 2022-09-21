@@ -24,6 +24,10 @@ public final class SharedPrivateLinkResourceListResult {
     @JsonProperty(value = "nextLink")
     private String nextLink;
 
+    /** Creates an instance of SharedPrivateLinkResourceListResult class. */
+    public SharedPrivateLinkResourceListResult() {
+    }
+
     /**
      * Get the value property: The list of Shared Private Link Resources.
      *

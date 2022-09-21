@@ -23,22 +23,6 @@ public interface DomainTopicsClient {
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param domainName Name of the domain.
      * @param domainTopicName Name of the topic.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of a domain topic.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    DomainTopicInner get(String resourceGroupName, String domainName, String domainTopicName);
-
-    /**
-     * Get a domain topic.
-     *
-     * <p>Get properties of a domain topic.
-     *
-     * @param resourceGroupName The name of the resource group within the user's subscription.
-     * @param domainName Name of the domain.
-     * @param domainTopicName Name of the topic.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -48,6 +32,22 @@ public interface DomainTopicsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<DomainTopicInner> getWithResponse(
         String resourceGroupName, String domainName, String domainTopicName, Context context);
+
+    /**
+     * Get a domain topic.
+     *
+     * <p>Get properties of a domain topic.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription.
+     * @param domainName Name of the domain.
+     * @param domainTopicName Name of the topic.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return properties of a domain topic.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    DomainTopicInner get(String resourceGroupName, String domainName, String domainTopicName);
 
     /**
      * Create or update a domain topic.

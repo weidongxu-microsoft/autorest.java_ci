@@ -24,6 +24,10 @@ public final class ClusterListResult {
     @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
 
+    /** Creates an instance of ClusterListResult class. */
+    public ClusterListResult() {
+    }
+
     /**
      * Get the value property: The list of Clusters.
      *

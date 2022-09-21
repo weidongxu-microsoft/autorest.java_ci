@@ -17,12 +17,13 @@ public interface Secrets {
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param vaultName The name of the vault.
      * @param secretName The name of the secret.
+     * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified secret.
+     * @return the specified secret along with {@link Response}.
      */
-    Secret get(String resourceGroupName, String vaultName, String secretName);
+    Response<Secret> getWithResponse(String resourceGroupName, String vaultName, String secretName, Context context);
 
     /**
      * Gets the specified secret. NOTE: This API is intended for internal use in ARM deployments. Users should use the
@@ -31,13 +32,12 @@ public interface Secrets {
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param vaultName The name of the vault.
      * @param secretName The name of the secret.
-     * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified secret along with {@link Response}.
+     * @return the specified secret.
      */
-    Response<Secret> getWithResponse(String resourceGroupName, String vaultName, String secretName, Context context);
+    Secret get(String resourceGroupName, String vaultName, String secretName);
 
     /**
      * The List operation gets information about the secrets in a vault. NOTE: This API is intended for internal use in

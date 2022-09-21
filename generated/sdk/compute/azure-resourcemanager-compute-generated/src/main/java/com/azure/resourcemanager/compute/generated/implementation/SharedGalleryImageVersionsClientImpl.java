@@ -512,12 +512,12 @@ public final class SharedGalleryImageVersionsClientImpl implements SharedGallery
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a shared gallery image version by subscription id or tenant id.
+     * @return a shared gallery image version by subscription id or tenant id along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public SharedGalleryImageVersionInner get(
+    public Response<SharedGalleryImageVersionInner> getWithResponse(
         String location, String galleryUniqueName, String galleryImageName, String galleryImageVersionName) {
-        return getAsync(location, galleryUniqueName, galleryImageName, galleryImageVersionName).block();
+        return getWithResponseAsync(location, galleryUniqueName, galleryImageName, galleryImageVersionName).block();
     }
 
     /**
@@ -545,6 +545,28 @@ public final class SharedGalleryImageVersionsClientImpl implements SharedGallery
         Context context) {
         return getWithResponseAsync(location, galleryUniqueName, galleryImageName, galleryImageVersionName, context)
             .block();
+    }
+
+    /**
+     * Get a shared gallery image version by subscription id or tenant id.
+     *
+     * @param location Resource location.
+     * @param galleryUniqueName The unique name of the Shared Gallery.
+     * @param galleryImageName The name of the Shared Gallery Image Definition from which the Image Versions are to be
+     *     listed.
+     * @param galleryImageVersionName The name of the gallery image version to be created. Needs to follow semantic
+     *     version name pattern: The allowed characters are digit and period. Digits must be within the range of a
+     *     32-bit integer. Format: &lt;MajorVersion&gt;.&lt;MinorVersion&gt;.&lt;Patch&gt;.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ApiErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a shared gallery image version by subscription id or tenant id.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public SharedGalleryImageVersionInner get(
+        String location, String galleryUniqueName, String galleryImageName, String galleryImageVersionName) {
+        return getWithResponse(location, galleryUniqueName, galleryImageName, galleryImageVersionName, Context.NONE)
+            .getValue();
     }
 
     /**

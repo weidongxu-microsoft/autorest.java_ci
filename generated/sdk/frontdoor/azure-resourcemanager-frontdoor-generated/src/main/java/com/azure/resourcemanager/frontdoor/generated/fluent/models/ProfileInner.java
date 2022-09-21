@@ -26,6 +26,10 @@ public final class ProfileInner extends Resource {
     @JsonProperty(value = "etag")
     private String etag;
 
+    /** Creates an instance of ProfileInner class. */
+    public ProfileInner() {
+    }
+
     /**
      * Get the innerProperties property: The properties of a Profile.
      *

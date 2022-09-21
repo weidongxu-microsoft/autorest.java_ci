@@ -46,15 +46,6 @@ public final class ClustersImpl implements Clusters {
         this.serviceClient().delete(resourceGroupName, clusterName, context);
     }
 
-    public Cluster getByResourceGroup(String resourceGroupName, String clusterName) {
-        ClusterInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, clusterName);
-        if (inner != null) {
-            return new ClusterImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<Cluster> getByResourceGroupWithResponse(
         String resourceGroupName, String clusterName, Context context) {
         Response<ClusterInner> inner =
@@ -65,6 +56,15 @@ public final class ClustersImpl implements Clusters {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new ClusterImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public Cluster getByResourceGroup(String resourceGroupName, String clusterName) {
+        ClusterInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, clusterName);
+        if (inner != null) {
+            return new ClusterImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -133,15 +133,6 @@ public final class ClustersImpl implements Clusters {
         this.serviceClient().rotateDiskEncryptionKey(resourceGroupName, clusterName, parameters, context);
     }
 
-    public GatewaySettings getGatewaySettings(String resourceGroupName, String clusterName) {
-        GatewaySettingsInner inner = this.serviceClient().getGatewaySettings(resourceGroupName, clusterName);
-        if (inner != null) {
-            return new GatewaySettingsImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<GatewaySettings> getGatewaySettingsWithResponse(
         String resourceGroupName, String clusterName, Context context) {
         Response<GatewaySettingsInner> inner =
@@ -157,6 +148,15 @@ public final class ClustersImpl implements Clusters {
         }
     }
 
+    public GatewaySettings getGatewaySettings(String resourceGroupName, String clusterName) {
+        GatewaySettingsInner inner = this.serviceClient().getGatewaySettings(resourceGroupName, clusterName);
+        if (inner != null) {
+            return new GatewaySettingsImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
     public void updateGatewaySettings(
         String resourceGroupName, String clusterName, UpdateGatewaySettingsParameters parameters) {
         this.serviceClient().updateGatewaySettings(resourceGroupName, clusterName, parameters);
@@ -165,17 +165,6 @@ public final class ClustersImpl implements Clusters {
     public void updateGatewaySettings(
         String resourceGroupName, String clusterName, UpdateGatewaySettingsParameters parameters, Context context) {
         this.serviceClient().updateGatewaySettings(resourceGroupName, clusterName, parameters, context);
-    }
-
-    public AsyncOperationResult getAzureAsyncOperationStatus(
-        String resourceGroupName, String clusterName, String operationId) {
-        AsyncOperationResultInner inner =
-            this.serviceClient().getAzureAsyncOperationStatus(resourceGroupName, clusterName, operationId);
-        if (inner != null) {
-            return new AsyncOperationResultImpl(inner, this.manager());
-        } else {
-            return null;
-        }
     }
 
     public Response<AsyncOperationResult> getAzureAsyncOperationStatusWithResponse(
@@ -190,6 +179,17 @@ public final class ClustersImpl implements Clusters {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new AsyncOperationResultImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public AsyncOperationResult getAzureAsyncOperationStatus(
+        String resourceGroupName, String clusterName, String operationId) {
+        AsyncOperationResultInner inner =
+            this.serviceClient().getAzureAsyncOperationStatus(resourceGroupName, clusterName, operationId);
+        if (inner != null) {
+            return new AsyncOperationResultImpl(inner, this.manager());
         } else {
             return null;
         }

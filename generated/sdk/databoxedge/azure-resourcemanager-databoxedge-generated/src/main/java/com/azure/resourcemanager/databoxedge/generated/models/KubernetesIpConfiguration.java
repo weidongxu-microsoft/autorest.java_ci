@@ -22,6 +22,10 @@ public final class KubernetesIpConfiguration {
     @JsonProperty(value = "ipAddress")
     private String ipAddress;
 
+    /** Creates an instance of KubernetesIpConfiguration class. */
+    public KubernetesIpConfiguration() {
+    }
+
     /**
      * Get the port property: Port of the Kubernetes node.
      *

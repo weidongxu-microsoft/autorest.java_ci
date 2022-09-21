@@ -43,6 +43,10 @@ public final class AzureActiveDirectory {
     @JsonProperty(value = "isAutoProvisioned")
     private Boolean isAutoProvisioned;
 
+    /** Creates an instance of AzureActiveDirectory class. */
+    public AzureActiveDirectory() {
+    }
+
     /**
      * Get the enabled property: &lt;code&gt;false&lt;/code&gt; if the Azure Active Directory provider should not be
      * enabled despite the set registration; otherwise, &lt;code&gt;true&lt;/code&gt;.

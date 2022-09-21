@@ -23,6 +23,10 @@ public final class RotationPolicy {
     @JsonProperty(value = "lifetimeActions")
     private List<LifetimeAction> lifetimeActions;
 
+    /** Creates an instance of RotationPolicy class. */
+    public RotationPolicy() {
+    }
+
     /**
      * Get the attributes property: The attributes of key rotation policy.
      *

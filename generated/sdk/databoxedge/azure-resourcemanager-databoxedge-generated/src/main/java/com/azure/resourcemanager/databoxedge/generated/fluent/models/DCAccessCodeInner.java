@@ -16,6 +16,10 @@ public final class DCAccessCodeInner {
     @JsonProperty(value = "properties")
     private DCAccessCodeProperties innerProperties;
 
+    /** Creates an instance of DCAccessCodeInner class. */
+    public DCAccessCodeInner() {
+    }
+
     /**
      * Get the innerProperties property: DCAccessCode properties.
      *

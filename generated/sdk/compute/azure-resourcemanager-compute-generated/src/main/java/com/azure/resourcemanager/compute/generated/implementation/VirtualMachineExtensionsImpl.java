@@ -37,15 +37,6 @@ public final class VirtualMachineExtensionsImpl implements VirtualMachineExtensi
         this.serviceClient().delete(resourceGroupName, vmName, vmExtensionName, context);
     }
 
-    public VirtualMachineExtension get(String resourceGroupName, String vmName, String vmExtensionName) {
-        VirtualMachineExtensionInner inner = this.serviceClient().get(resourceGroupName, vmName, vmExtensionName);
-        if (inner != null) {
-            return new VirtualMachineExtensionImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<VirtualMachineExtension> getWithResponse(
         String resourceGroupName, String vmName, String vmExtensionName, String expand, Context context) {
         Response<VirtualMachineExtensionInner> inner =
@@ -61,10 +52,10 @@ public final class VirtualMachineExtensionsImpl implements VirtualMachineExtensi
         }
     }
 
-    public VirtualMachineExtensionsListResult list(String resourceGroupName, String vmName) {
-        VirtualMachineExtensionsListResultInner inner = this.serviceClient().list(resourceGroupName, vmName);
+    public VirtualMachineExtension get(String resourceGroupName, String vmName, String vmExtensionName) {
+        VirtualMachineExtensionInner inner = this.serviceClient().get(resourceGroupName, vmName, vmExtensionName);
         if (inner != null) {
-            return new VirtualMachineExtensionsListResultImpl(inner, this.manager());
+            return new VirtualMachineExtensionImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -80,6 +71,15 @@ public final class VirtualMachineExtensionsImpl implements VirtualMachineExtensi
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new VirtualMachineExtensionsListResultImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public VirtualMachineExtensionsListResult list(String resourceGroupName, String vmName) {
+        VirtualMachineExtensionsListResultInner inner = this.serviceClient().list(resourceGroupName, vmName);
+        if (inner != null) {
+            return new VirtualMachineExtensionsListResultImpl(inner, this.manager());
         } else {
             return null;
         }

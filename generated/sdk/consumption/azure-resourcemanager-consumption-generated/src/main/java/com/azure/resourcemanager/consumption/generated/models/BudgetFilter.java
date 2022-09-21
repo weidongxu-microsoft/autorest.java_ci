@@ -29,6 +29,10 @@ public final class BudgetFilter {
     @JsonProperty(value = "tags")
     private BudgetComparisonExpression tags;
 
+    /** Creates an instance of BudgetFilter class. */
+    public BudgetFilter() {
+    }
+
     /**
      * Get the and property: The logical "AND" expression. Must have at least 2 items.
      *

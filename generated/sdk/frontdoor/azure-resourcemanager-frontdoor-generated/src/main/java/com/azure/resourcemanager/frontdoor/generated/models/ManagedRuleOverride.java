@@ -36,6 +36,10 @@ public final class ManagedRuleOverride {
     @JsonProperty(value = "exclusions")
     private List<ManagedRuleExclusion> exclusions;
 
+    /** Creates an instance of ManagedRuleOverride class. */
+    public ManagedRuleOverride() {
+    }
+
     /**
      * Get the ruleId property: Identifier for the managed rule.
      *

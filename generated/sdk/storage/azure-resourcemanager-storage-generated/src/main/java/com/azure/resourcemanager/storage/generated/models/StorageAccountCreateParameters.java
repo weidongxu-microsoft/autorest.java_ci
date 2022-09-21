@@ -63,6 +63,10 @@ public final class StorageAccountCreateParameters {
     @JsonProperty(value = "properties")
     private StorageAccountPropertiesCreateParameters innerProperties;
 
+    /** Creates an instance of StorageAccountCreateParameters class. */
+    public StorageAccountCreateParameters() {
+    }
+
     /**
      * Get the sku property: Required. Gets or sets the SKU name.
      *

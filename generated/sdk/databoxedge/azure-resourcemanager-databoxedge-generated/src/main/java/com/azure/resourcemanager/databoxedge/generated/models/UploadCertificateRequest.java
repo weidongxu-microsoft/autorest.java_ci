@@ -18,6 +18,10 @@ public final class UploadCertificateRequest {
     @JsonProperty(value = "properties", required = true)
     private RawCertificateData innerProperties = new RawCertificateData();
 
+    /** Creates an instance of UploadCertificateRequest class. */
+    public UploadCertificateRequest() {
+    }
+
     /**
      * Get the innerProperties property: The Base 64 encoded certificate raw data.
      *

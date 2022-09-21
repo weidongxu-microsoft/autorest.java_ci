@@ -32,6 +32,10 @@ public final class AuthPlatform {
     @JsonProperty(value = "configFilePath")
     private String configFilePath;
 
+    /** Creates an instance of AuthPlatform class. */
+    public AuthPlatform() {
+    }
+
     /**
      * Get the enabled property: &lt;code&gt;true&lt;/code&gt; if the Authentication / Authorization feature is enabled
      * for the current app; otherwise, &lt;code&gt;false&lt;/code&gt;.

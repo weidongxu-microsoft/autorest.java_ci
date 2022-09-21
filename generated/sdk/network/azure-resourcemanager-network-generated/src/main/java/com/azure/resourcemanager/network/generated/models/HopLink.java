@@ -51,6 +51,10 @@ public final class HopLink {
     @JsonProperty(value = "resourceId", access = JsonProperty.Access.WRITE_ONLY)
     private String resourceId;
 
+    /** Creates an instance of HopLink class. */
+    public HopLink() {
+    }
+
     /**
      * Get the nextHopId property: The ID of the next hop.
      *

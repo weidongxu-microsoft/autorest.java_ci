@@ -47,6 +47,10 @@ public final class Alias {
     @JsonProperty(value = "defaultMetadata", access = JsonProperty.Access.WRITE_ONLY)
     private AliasPathMetadata defaultMetadata;
 
+    /** Creates an instance of Alias class. */
+    public Alias() {
+    }
+
     /**
      * Get the name property: The alias name.
      *

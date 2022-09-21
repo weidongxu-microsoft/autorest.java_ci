@@ -23,6 +23,10 @@ public final class ReportConfigAggregation {
     @JsonProperty(value = "function", required = true)
     private FunctionType function;
 
+    /** Creates an instance of ReportConfigAggregation class. */
+    public ReportConfigAggregation() {
+    }
+
     /**
      * Get the name property: The name of the column to aggregate.
      *

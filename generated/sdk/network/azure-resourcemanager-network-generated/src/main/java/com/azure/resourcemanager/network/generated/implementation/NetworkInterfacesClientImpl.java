@@ -439,7 +439,7 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -506,7 +506,7 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -649,7 +649,7 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -710,7 +710,7 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -853,7 +853,7 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -924,7 +924,7 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -948,7 +948,6 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @param cloudServiceName The name of the cloud service.
      * @param roleInstanceName The name of role instance.
      * @param networkInterfaceName The name of the network interface.
-     * @param expand Expands referenced resources.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -956,54 +955,34 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<NetworkInterfaceInner> getCloudServiceNetworkInterfaceAsync(
+        String resourceGroupName, String cloudServiceName, String roleInstanceName, String networkInterfaceName) {
+        final String expand = null;
+        return getCloudServiceNetworkInterfaceWithResponseAsync(
+                resourceGroupName, cloudServiceName, roleInstanceName, networkInterfaceName, expand)
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
+    }
+
+    /**
+     * Get the specified network interface in a cloud service.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param cloudServiceName The name of the cloud service.
+     * @param roleInstanceName The name of role instance.
+     * @param networkInterfaceName The name of the network interface.
+     * @param expand Expands referenced resources.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified network interface in a cloud service along with {@link Response}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public Response<NetworkInterfaceInner> getCloudServiceNetworkInterfaceWithResponse(
         String resourceGroupName,
         String cloudServiceName,
         String roleInstanceName,
         String networkInterfaceName,
         String expand) {
         return getCloudServiceNetworkInterfaceWithResponseAsync(
-                resourceGroupName, cloudServiceName, roleInstanceName, networkInterfaceName, expand)
-            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Get the specified network interface in a cloud service.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param cloudServiceName The name of the cloud service.
-     * @param roleInstanceName The name of role instance.
-     * @param networkInterfaceName The name of the network interface.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network interface in a cloud service on successful completion of {@link Mono}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<NetworkInterfaceInner> getCloudServiceNetworkInterfaceAsync(
-        String resourceGroupName, String cloudServiceName, String roleInstanceName, String networkInterfaceName) {
-        final String expand = null;
-        return getCloudServiceNetworkInterfaceWithResponseAsync(
-                resourceGroupName, cloudServiceName, roleInstanceName, networkInterfaceName, expand)
-            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Get the specified network interface in a cloud service.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param cloudServiceName The name of the cloud service.
-     * @param roleInstanceName The name of role instance.
-     * @param networkInterfaceName The name of the network interface.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network interface in a cloud service.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public NetworkInterfaceInner getCloudServiceNetworkInterface(
-        String resourceGroupName, String cloudServiceName, String roleInstanceName, String networkInterfaceName) {
-        final String expand = null;
-        return getCloudServiceNetworkInterfaceAsync(
                 resourceGroupName, cloudServiceName, roleInstanceName, networkInterfaceName, expand)
             .block();
     }
@@ -1033,6 +1012,27 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
         return getCloudServiceNetworkInterfaceWithResponseAsync(
                 resourceGroupName, cloudServiceName, roleInstanceName, networkInterfaceName, expand, context)
             .block();
+    }
+
+    /**
+     * Get the specified network interface in a cloud service.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param cloudServiceName The name of the cloud service.
+     * @param roleInstanceName The name of role instance.
+     * @param networkInterfaceName The name of the network interface.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified network interface in a cloud service.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public NetworkInterfaceInner getCloudServiceNetworkInterface(
+        String resourceGroupName, String cloudServiceName, String roleInstanceName, String networkInterfaceName) {
+        final String expand = null;
+        return getCloudServiceNetworkInterfaceWithResponse(
+                resourceGroupName, cloudServiceName, roleInstanceName, networkInterfaceName, expand, Context.NONE)
+            .getValue();
     }
 
     /**
@@ -1068,7 +1068,7 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1119,7 +1119,7 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1305,7 +1305,7 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1359,7 +1359,7 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1372,24 +1372,6 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
                 expand,
                 accept,
                 context);
-    }
-
-    /**
-     * Gets information about the specified network interface.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param networkInterfaceName The name of the network interface.
-     * @param expand Expands referenced resources.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the specified network interface on successful completion of {@link Mono}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<NetworkInterfaceInner> getByResourceGroupAsync(
-        String resourceGroupName, String networkInterfaceName, String expand) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, networkInterfaceName, expand)
-            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1414,15 +1396,16 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      *
      * @param resourceGroupName The name of the resource group.
      * @param networkInterfaceName The name of the network interface.
+     * @param expand Expands referenced resources.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the specified network interface.
+     * @return information about the specified network interface along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public NetworkInterfaceInner getByResourceGroup(String resourceGroupName, String networkInterfaceName) {
-        final String expand = null;
-        return getByResourceGroupAsync(resourceGroupName, networkInterfaceName, expand).block();
+    public Response<NetworkInterfaceInner> getByResourceGroupWithResponse(
+        String resourceGroupName, String networkInterfaceName, String expand) {
+        return getByResourceGroupWithResponseAsync(resourceGroupName, networkInterfaceName, expand).block();
     }
 
     /**
@@ -1441,6 +1424,22 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
     public Response<NetworkInterfaceInner> getByResourceGroupWithResponse(
         String resourceGroupName, String networkInterfaceName, String expand, Context context) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, networkInterfaceName, expand, context).block();
+    }
+
+    /**
+     * Gets information about the specified network interface.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param networkInterfaceName The name of the network interface.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return information about the specified network interface.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public NetworkInterfaceInner getByResourceGroup(String resourceGroupName, String networkInterfaceName) {
+        final String expand = null;
+        return getByResourceGroupWithResponse(resourceGroupName, networkInterfaceName, expand, Context.NONE).getValue();
     }
 
     /**
@@ -1483,7 +1482,7 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1542,7 +1541,7 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1756,7 +1755,7 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1815,7 +1814,7 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1857,12 +1856,12 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a network interface in a resource group.
+     * @return a network interface in a resource group along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public NetworkInterfaceInner updateTags(
+    public Response<NetworkInterfaceInner> updateTagsWithResponse(
         String resourceGroupName, String networkInterfaceName, TagsObject parameters) {
-        return updateTagsAsync(resourceGroupName, networkInterfaceName, parameters).block();
+        return updateTagsWithResponseAsync(resourceGroupName, networkInterfaceName, parameters).block();
     }
 
     /**
@@ -1881,6 +1880,23 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
     public Response<NetworkInterfaceInner> updateTagsWithResponse(
         String resourceGroupName, String networkInterfaceName, TagsObject parameters, Context context) {
         return updateTagsWithResponseAsync(resourceGroupName, networkInterfaceName, parameters, context).block();
+    }
+
+    /**
+     * Updates a network interface tags.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param networkInterfaceName The name of the network interface.
+     * @param parameters Parameters supplied to update network interface tags.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a network interface in a resource group.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public NetworkInterfaceInner updateTags(
+        String resourceGroupName, String networkInterfaceName, TagsObject parameters) {
+        return updateTagsWithResponse(resourceGroupName, networkInterfaceName, parameters, Context.NONE).getValue();
     }
 
     /**
@@ -1905,7 +1921,7 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1948,7 +1964,7 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -2045,7 +2061,7 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -2100,7 +2116,7 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -2217,7 +2233,7 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -2269,7 +2285,7 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -2471,7 +2487,7 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -2523,7 +2539,7 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -3265,7 +3281,6 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @param virtualMachineScaleSetName The name of the virtual machine scale set.
      * @param virtualmachineIndex The virtual machine index.
      * @param networkInterfaceName The name of the network interface.
-     * @param expand Expands referenced resources.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -3273,60 +3288,37 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<NetworkInterfaceInner> getVirtualMachineScaleSetNetworkInterfaceAsync(
+        String resourceGroupName,
+        String virtualMachineScaleSetName,
+        String virtualmachineIndex,
+        String networkInterfaceName) {
+        final String expand = null;
+        return getVirtualMachineScaleSetNetworkInterfaceWithResponseAsync(
+                resourceGroupName, virtualMachineScaleSetName, virtualmachineIndex, networkInterfaceName, expand)
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
+    }
+
+    /**
+     * Get the specified network interface in a virtual machine scale set.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param virtualMachineScaleSetName The name of the virtual machine scale set.
+     * @param virtualmachineIndex The virtual machine index.
+     * @param networkInterfaceName The name of the network interface.
+     * @param expand Expands referenced resources.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified network interface in a virtual machine scale set along with {@link Response}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public Response<NetworkInterfaceInner> getVirtualMachineScaleSetNetworkInterfaceWithResponse(
         String resourceGroupName,
         String virtualMachineScaleSetName,
         String virtualmachineIndex,
         String networkInterfaceName,
         String expand) {
         return getVirtualMachineScaleSetNetworkInterfaceWithResponseAsync(
-                resourceGroupName, virtualMachineScaleSetName, virtualmachineIndex, networkInterfaceName, expand)
-            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Get the specified network interface in a virtual machine scale set.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param virtualMachineScaleSetName The name of the virtual machine scale set.
-     * @param virtualmachineIndex The virtual machine index.
-     * @param networkInterfaceName The name of the network interface.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network interface in a virtual machine scale set on successful completion of {@link Mono}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<NetworkInterfaceInner> getVirtualMachineScaleSetNetworkInterfaceAsync(
-        String resourceGroupName,
-        String virtualMachineScaleSetName,
-        String virtualmachineIndex,
-        String networkInterfaceName) {
-        final String expand = null;
-        return getVirtualMachineScaleSetNetworkInterfaceWithResponseAsync(
-                resourceGroupName, virtualMachineScaleSetName, virtualmachineIndex, networkInterfaceName, expand)
-            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Get the specified network interface in a virtual machine scale set.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param virtualMachineScaleSetName The name of the virtual machine scale set.
-     * @param virtualmachineIndex The virtual machine index.
-     * @param networkInterfaceName The name of the network interface.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network interface in a virtual machine scale set.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public NetworkInterfaceInner getVirtualMachineScaleSetNetworkInterface(
-        String resourceGroupName,
-        String virtualMachineScaleSetName,
-        String virtualmachineIndex,
-        String networkInterfaceName) {
-        final String expand = null;
-        return getVirtualMachineScaleSetNetworkInterfaceAsync(
                 resourceGroupName, virtualMachineScaleSetName, virtualmachineIndex, networkInterfaceName, expand)
             .block();
     }
@@ -3361,6 +3353,35 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
                 expand,
                 context)
             .block();
+    }
+
+    /**
+     * Get the specified network interface in a virtual machine scale set.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param virtualMachineScaleSetName The name of the virtual machine scale set.
+     * @param virtualmachineIndex The virtual machine index.
+     * @param networkInterfaceName The name of the network interface.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified network interface in a virtual machine scale set.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public NetworkInterfaceInner getVirtualMachineScaleSetNetworkInterface(
+        String resourceGroupName,
+        String virtualMachineScaleSetName,
+        String virtualmachineIndex,
+        String networkInterfaceName) {
+        final String expand = null;
+        return getVirtualMachineScaleSetNetworkInterfaceWithResponse(
+                resourceGroupName,
+                virtualMachineScaleSetName,
+                virtualmachineIndex,
+                networkInterfaceName,
+                expand,
+                Context.NONE)
+            .getValue();
     }
 
     /**
@@ -3837,7 +3858,6 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @param virtualmachineIndex The virtual machine index.
      * @param networkInterfaceName The name of the network interface.
      * @param ipConfigurationName The name of the ip configuration.
-     * @param expand Expands referenced resources.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -3846,6 +3866,39 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<NetworkInterfaceIpConfigurationInner> getVirtualMachineScaleSetIpConfigurationAsync(
+        String resourceGroupName,
+        String virtualMachineScaleSetName,
+        String virtualmachineIndex,
+        String networkInterfaceName,
+        String ipConfigurationName) {
+        final String expand = null;
+        return getVirtualMachineScaleSetIpConfigurationWithResponseAsync(
+                resourceGroupName,
+                virtualMachineScaleSetName,
+                virtualmachineIndex,
+                networkInterfaceName,
+                ipConfigurationName,
+                expand)
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
+    }
+
+    /**
+     * Get the specified network interface ip configuration in a virtual machine scale set.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param virtualMachineScaleSetName The name of the virtual machine scale set.
+     * @param virtualmachineIndex The virtual machine index.
+     * @param networkInterfaceName The name of the network interface.
+     * @param ipConfigurationName The name of the ip configuration.
+     * @param expand Expands referenced resources.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified network interface ip configuration in a virtual machine scale set along with {@link
+     *     Response}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public Response<NetworkInterfaceIpConfigurationInner> getVirtualMachineScaleSetIpConfigurationWithResponse(
         String resourceGroupName,
         String virtualMachineScaleSetName,
         String virtualmachineIndex,
@@ -3853,69 +3906,6 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
         String ipConfigurationName,
         String expand) {
         return getVirtualMachineScaleSetIpConfigurationWithResponseAsync(
-                resourceGroupName,
-                virtualMachineScaleSetName,
-                virtualmachineIndex,
-                networkInterfaceName,
-                ipConfigurationName,
-                expand)
-            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Get the specified network interface ip configuration in a virtual machine scale set.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param virtualMachineScaleSetName The name of the virtual machine scale set.
-     * @param virtualmachineIndex The virtual machine index.
-     * @param networkInterfaceName The name of the network interface.
-     * @param ipConfigurationName The name of the ip configuration.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network interface ip configuration in a virtual machine scale set on successful completion
-     *     of {@link Mono}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<NetworkInterfaceIpConfigurationInner> getVirtualMachineScaleSetIpConfigurationAsync(
-        String resourceGroupName,
-        String virtualMachineScaleSetName,
-        String virtualmachineIndex,
-        String networkInterfaceName,
-        String ipConfigurationName) {
-        final String expand = null;
-        return getVirtualMachineScaleSetIpConfigurationWithResponseAsync(
-                resourceGroupName,
-                virtualMachineScaleSetName,
-                virtualmachineIndex,
-                networkInterfaceName,
-                ipConfigurationName,
-                expand)
-            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Get the specified network interface ip configuration in a virtual machine scale set.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param virtualMachineScaleSetName The name of the virtual machine scale set.
-     * @param virtualmachineIndex The virtual machine index.
-     * @param networkInterfaceName The name of the network interface.
-     * @param ipConfigurationName The name of the ip configuration.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network interface ip configuration in a virtual machine scale set.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public NetworkInterfaceIpConfigurationInner getVirtualMachineScaleSetIpConfiguration(
-        String resourceGroupName,
-        String virtualMachineScaleSetName,
-        String virtualmachineIndex,
-        String networkInterfaceName,
-        String ipConfigurationName) {
-        final String expand = null;
-        return getVirtualMachineScaleSetIpConfigurationAsync(
                 resourceGroupName,
                 virtualMachineScaleSetName,
                 virtualmachineIndex,
@@ -3959,6 +3949,38 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
                 expand,
                 context)
             .block();
+    }
+
+    /**
+     * Get the specified network interface ip configuration in a virtual machine scale set.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param virtualMachineScaleSetName The name of the virtual machine scale set.
+     * @param virtualmachineIndex The virtual machine index.
+     * @param networkInterfaceName The name of the network interface.
+     * @param ipConfigurationName The name of the ip configuration.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified network interface ip configuration in a virtual machine scale set.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public NetworkInterfaceIpConfigurationInner getVirtualMachineScaleSetIpConfiguration(
+        String resourceGroupName,
+        String virtualMachineScaleSetName,
+        String virtualmachineIndex,
+        String networkInterfaceName,
+        String ipConfigurationName) {
+        final String expand = null;
+        return getVirtualMachineScaleSetIpConfigurationWithResponse(
+                resourceGroupName,
+                virtualMachineScaleSetName,
+                virtualmachineIndex,
+                networkInterfaceName,
+                ipConfigurationName,
+                expand,
+                Context.NONE)
+            .getValue();
     }
 
     /**

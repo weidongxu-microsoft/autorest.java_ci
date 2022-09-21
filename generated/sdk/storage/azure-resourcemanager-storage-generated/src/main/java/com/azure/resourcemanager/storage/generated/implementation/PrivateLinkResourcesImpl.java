@@ -27,16 +27,6 @@ public final class PrivateLinkResourcesImpl implements PrivateLinkResources {
         this.serviceManager = serviceManager;
     }
 
-    public PrivateLinkResourceListResult listByStorageAccount(String resourceGroupName, String accountName) {
-        PrivateLinkResourceListResultInner inner =
-            this.serviceClient().listByStorageAccount(resourceGroupName, accountName);
-        if (inner != null) {
-            return new PrivateLinkResourceListResultImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<PrivateLinkResourceListResult> listByStorageAccountWithResponse(
         String resourceGroupName, String accountName, Context context) {
         Response<PrivateLinkResourceListResultInner> inner =
@@ -47,6 +37,16 @@ public final class PrivateLinkResourcesImpl implements PrivateLinkResources {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new PrivateLinkResourceListResultImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public PrivateLinkResourceListResult listByStorageAccount(String resourceGroupName, String accountName) {
+        PrivateLinkResourceListResultInner inner =
+            this.serviceClient().listByStorageAccount(resourceGroupName, accountName);
+        if (inner != null) {
+            return new PrivateLinkResourceListResultImpl(inner, this.manager());
         } else {
             return null;
         }

@@ -6,6 +6,7 @@ package com.azure.resourcemanager.compute.generated.implementation;
 
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineScaleSetExtensionInner;
+import com.azure.resourcemanager.compute.generated.models.KeyVaultSecretReference;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetExtension;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetExtensionUpdate;
 import java.util.Collections;
@@ -80,7 +81,7 @@ public final class VirtualMachineScaleSetExtensionImpl
         return this.innerModel().suppressFailures();
     }
 
-    public Object protectedSettingsFromKeyVault() {
+    public KeyVaultSecretReference protectedSettingsFromKeyVault() {
         return this.innerModel().protectedSettingsFromKeyVault();
     }
 
@@ -296,7 +297,8 @@ public final class VirtualMachineScaleSetExtensionImpl
         }
     }
 
-    public VirtualMachineScaleSetExtensionImpl withProtectedSettingsFromKeyVault(Object protectedSettingsFromKeyVault) {
+    public VirtualMachineScaleSetExtensionImpl withProtectedSettingsFromKeyVault(
+        KeyVaultSecretReference protectedSettingsFromKeyVault) {
         if (isInCreateMode()) {
             this.innerModel().withProtectedSettingsFromKeyVault(protectedSettingsFromKeyVault);
             return this;

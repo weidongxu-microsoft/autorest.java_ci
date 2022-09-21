@@ -25,6 +25,10 @@ public final class ExportTemplateRequest {
     @JsonProperty(value = "options")
     private String options;
 
+    /** Creates an instance of ExportTemplateRequest class. */
+    public ExportTemplateRequest() {
+    }
+
     /**
      * Get the resources property: The IDs of the resources to filter the export by. To export all resources, supply an
      * array with single entry '*'.

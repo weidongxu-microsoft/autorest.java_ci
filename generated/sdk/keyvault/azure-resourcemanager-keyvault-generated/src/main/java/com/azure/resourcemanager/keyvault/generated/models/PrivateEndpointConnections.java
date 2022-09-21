@@ -16,19 +16,6 @@ public interface PrivateEndpointConnections {
      * @param resourceGroupName Name of the resource group that contains the key vault.
      * @param vaultName The name of the key vault.
      * @param privateEndpointConnectionName Name of the private endpoint connection associated with the key vault.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified private endpoint connection associated with the key vault.
-     */
-    PrivateEndpointConnection get(String resourceGroupName, String vaultName, String privateEndpointConnectionName);
-
-    /**
-     * Gets the specified private endpoint connection associated with the key vault.
-     *
-     * @param resourceGroupName Name of the resource group that contains the key vault.
-     * @param vaultName The name of the key vault.
-     * @param privateEndpointConnectionName Name of the private endpoint connection associated with the key vault.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -37,6 +24,19 @@ public interface PrivateEndpointConnections {
      */
     Response<PrivateEndpointConnection> getWithResponse(
         String resourceGroupName, String vaultName, String privateEndpointConnectionName, Context context);
+
+    /**
+     * Gets the specified private endpoint connection associated with the key vault.
+     *
+     * @param resourceGroupName Name of the resource group that contains the key vault.
+     * @param vaultName The name of the key vault.
+     * @param privateEndpointConnectionName Name of the private endpoint connection associated with the key vault.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified private endpoint connection associated with the key vault.
+     */
+    PrivateEndpointConnection get(String resourceGroupName, String vaultName, String privateEndpointConnectionName);
 
     /**
      * Deletes the specified private endpoint connection associated with the key vault.

@@ -28,23 +28,13 @@ public final class ProximityPlacementGroupsImpl implements ProximityPlacementGro
         this.serviceManager = serviceManager;
     }
 
-    public void deleteByResourceGroup(String resourceGroupName, String proximityPlacementGroupName) {
-        this.serviceClient().delete(resourceGroupName, proximityPlacementGroupName);
-    }
-
-    public Response<Void> deleteWithResponse(
+    public Response<Void> deleteByResourceGroupWithResponse(
         String resourceGroupName, String proximityPlacementGroupName, Context context) {
         return this.serviceClient().deleteWithResponse(resourceGroupName, proximityPlacementGroupName, context);
     }
 
-    public ProximityPlacementGroup getByResourceGroup(String resourceGroupName, String proximityPlacementGroupName) {
-        ProximityPlacementGroupInner inner =
-            this.serviceClient().getByResourceGroup(resourceGroupName, proximityPlacementGroupName);
-        if (inner != null) {
-            return new ProximityPlacementGroupImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void deleteByResourceGroup(String resourceGroupName, String proximityPlacementGroupName) {
+        this.serviceClient().delete(resourceGroupName, proximityPlacementGroupName);
     }
 
     public Response<ProximityPlacementGroup> getByResourceGroupWithResponse(
@@ -60,6 +50,16 @@ public final class ProximityPlacementGroupsImpl implements ProximityPlacementGro
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new ProximityPlacementGroupImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public ProximityPlacementGroup getByResourceGroup(String resourceGroupName, String proximityPlacementGroupName) {
+        ProximityPlacementGroupInner inner =
+            this.serviceClient().getByResourceGroup(resourceGroupName, proximityPlacementGroupName);
+        if (inner != null) {
+            return new ProximityPlacementGroupImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -156,7 +156,7 @@ public final class ProximityPlacementGroupsImpl implements ProximityPlacementGro
                                 "The resource ID '%s' is not valid. Missing path segment 'proximityPlacementGroups'.",
                                 id)));
         }
-        this.deleteWithResponse(resourceGroupName, proximityPlacementGroupName, Context.NONE);
+        this.deleteByResourceGroupWithResponse(resourceGroupName, proximityPlacementGroupName, Context.NONE);
     }
 
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
@@ -178,7 +178,7 @@ public final class ProximityPlacementGroupsImpl implements ProximityPlacementGro
                                 "The resource ID '%s' is not valid. Missing path segment 'proximityPlacementGroups'.",
                                 id)));
         }
-        return this.deleteWithResponse(resourceGroupName, proximityPlacementGroupName, context);
+        return this.deleteByResourceGroupWithResponse(resourceGroupName, proximityPlacementGroupName, context);
     }
 
     private ProximityPlacementGroupsClient serviceClient() {

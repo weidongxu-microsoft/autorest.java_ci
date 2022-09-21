@@ -30,17 +30,6 @@ public final class ConnectionMonitorsImpl implements ConnectionMonitors {
         this.serviceManager = serviceManager;
     }
 
-    public ConnectionMonitorResult get(
-        String resourceGroupName, String networkWatcherName, String connectionMonitorName) {
-        ConnectionMonitorResultInner inner =
-            this.serviceClient().get(resourceGroupName, networkWatcherName, connectionMonitorName);
-        if (inner != null) {
-            return new ConnectionMonitorResultImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<ConnectionMonitorResult> getWithResponse(
         String resourceGroupName, String networkWatcherName, String connectionMonitorName, Context context) {
         Response<ConnectionMonitorResultInner> inner =
@@ -51,6 +40,17 @@ public final class ConnectionMonitorsImpl implements ConnectionMonitors {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new ConnectionMonitorResultImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public ConnectionMonitorResult get(
+        String resourceGroupName, String networkWatcherName, String connectionMonitorName) {
+        ConnectionMonitorResultInner inner =
+            this.serviceClient().get(resourceGroupName, networkWatcherName, connectionMonitorName);
+        if (inner != null) {
+            return new ConnectionMonitorResultImpl(inner, this.manager());
         } else {
             return null;
         }

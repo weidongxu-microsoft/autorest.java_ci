@@ -97,6 +97,10 @@ public final class WorkspaceProperties {
     @JsonProperty(value = "defaultDataCollectionRuleResourceId")
     private String defaultDataCollectionRuleResourceId;
 
+    /** Creates an instance of WorkspaceProperties class. */
+    public WorkspaceProperties() {
+    }
+
     /**
      * Get the provisioningState property: The provisioning state of the workspace.
      *

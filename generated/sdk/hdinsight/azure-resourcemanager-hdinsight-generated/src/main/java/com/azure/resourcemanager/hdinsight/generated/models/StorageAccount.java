@@ -65,6 +65,10 @@ public final class StorageAccount {
     @JsonProperty(value = "fileshare")
     private String fileshare;
 
+    /** Creates an instance of StorageAccount class. */
+    public StorageAccount() {
+    }
+
     /**
      * Get the name property: The name of the storage account.
      *

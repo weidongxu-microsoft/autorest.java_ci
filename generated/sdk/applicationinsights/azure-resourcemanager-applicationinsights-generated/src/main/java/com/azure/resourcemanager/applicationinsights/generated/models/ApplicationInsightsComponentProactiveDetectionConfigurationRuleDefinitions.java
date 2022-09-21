@@ -58,6 +58,10 @@ public final class ApplicationInsightsComponentProactiveDetectionConfigurationRu
     @JsonProperty(value = "SupportsEmailNotifications")
     private Boolean supportsEmailNotifications;
 
+    /** Creates an instance of ApplicationInsightsComponentProactiveDetectionConfigurationRuleDefinitions class. */
+    public ApplicationInsightsComponentProactiveDetectionConfigurationRuleDefinitions() {
+    }
+
     /**
      * Get the name property: The rule name.
      *

@@ -35,15 +35,6 @@ public final class VirtualRoutersImpl implements VirtualRouters {
         this.serviceClient().delete(resourceGroupName, virtualRouterName, context);
     }
 
-    public VirtualRouter getByResourceGroup(String resourceGroupName, String virtualRouterName) {
-        VirtualRouterInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, virtualRouterName);
-        if (inner != null) {
-            return new VirtualRouterImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<VirtualRouter> getByResourceGroupWithResponse(
         String resourceGroupName, String virtualRouterName, String expand, Context context) {
         Response<VirtualRouterInner> inner =
@@ -54,6 +45,15 @@ public final class VirtualRoutersImpl implements VirtualRouters {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new VirtualRouterImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public VirtualRouter getByResourceGroup(String resourceGroupName, String virtualRouterName) {
+        VirtualRouterInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, virtualRouterName);
+        if (inner != null) {
+            return new VirtualRouterImpl(inner, this.manager());
         } else {
             return null;
         }

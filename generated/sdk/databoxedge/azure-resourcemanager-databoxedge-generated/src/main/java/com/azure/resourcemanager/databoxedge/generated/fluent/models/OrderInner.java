@@ -36,6 +36,10 @@ public final class OrderInner extends ArmBaseModel {
     @JsonProperty(value = "properties")
     private OrderProperties innerProperties;
 
+    /** Creates an instance of OrderInner class. */
+    public OrderInner() {
+    }
+
     /**
      * Get the kind property: It specify the order api version.
      *

@@ -41,6 +41,10 @@ public final class MountPointMap {
     @JsonProperty(value = "roleType", access = JsonProperty.Access.WRITE_ONLY)
     private RoleTypes roleType;
 
+    /** Creates an instance of MountPointMap class. */
+    public MountPointMap() {
+    }
+
     /**
      * Get the shareId property: ID of the share mounted to the role VM.
      *

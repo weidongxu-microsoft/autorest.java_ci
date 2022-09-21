@@ -27,15 +27,6 @@ public final class ServerAdministratorsImpl implements ServerAdministrators {
         this.serviceManager = serviceManager;
     }
 
-    public ServerAdministratorResource get(String resourceGroupName, String serverName) {
-        ServerAdministratorResourceInner inner = this.serviceClient().get(resourceGroupName, serverName);
-        if (inner != null) {
-            return new ServerAdministratorResourceImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<ServerAdministratorResource> getWithResponse(
         String resourceGroupName, String serverName, Context context) {
         Response<ServerAdministratorResourceInner> inner =
@@ -46,6 +37,15 @@ public final class ServerAdministratorsImpl implements ServerAdministrators {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new ServerAdministratorResourceImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public ServerAdministratorResource get(String resourceGroupName, String serverName) {
+        ServerAdministratorResourceInner inner = this.serviceClient().get(resourceGroupName, serverName);
+        if (inner != null) {
+            return new ServerAdministratorResourceImpl(inner, this.manager());
         } else {
             return null;
         }

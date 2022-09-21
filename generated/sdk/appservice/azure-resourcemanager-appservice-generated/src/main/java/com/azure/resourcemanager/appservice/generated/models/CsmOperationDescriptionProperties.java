@@ -16,6 +16,10 @@ public final class CsmOperationDescriptionProperties {
     @JsonProperty(value = "serviceSpecification")
     private ServiceSpecification serviceSpecification;
 
+    /** Creates an instance of CsmOperationDescriptionProperties class. */
+    public CsmOperationDescriptionProperties() {
+    }
+
     /**
      * Get the serviceSpecification property: Resource metrics service provided by Microsoft.Insights resource provider.
      *

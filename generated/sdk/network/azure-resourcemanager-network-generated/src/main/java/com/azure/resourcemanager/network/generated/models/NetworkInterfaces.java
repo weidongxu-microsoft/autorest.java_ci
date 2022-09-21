@@ -75,21 +75,6 @@ public interface NetworkInterfaces {
      * @param cloudServiceName The name of the cloud service.
      * @param roleInstanceName The name of role instance.
      * @param networkInterfaceName The name of the network interface.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network interface in a cloud service.
-     */
-    NetworkInterface getCloudServiceNetworkInterface(
-        String resourceGroupName, String cloudServiceName, String roleInstanceName, String networkInterfaceName);
-
-    /**
-     * Get the specified network interface in a cloud service.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param cloudServiceName The name of the cloud service.
-     * @param roleInstanceName The name of role instance.
-     * @param networkInterfaceName The name of the network interface.
      * @param expand Expands referenced resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -104,6 +89,21 @@ public interface NetworkInterfaces {
         String networkInterfaceName,
         String expand,
         Context context);
+
+    /**
+     * Get the specified network interface in a cloud service.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param cloudServiceName The name of the cloud service.
+     * @param roleInstanceName The name of role instance.
+     * @param networkInterfaceName The name of the network interface.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified network interface in a cloud service.
+     */
+    NetworkInterface getCloudServiceNetworkInterface(
+        String resourceGroupName, String cloudServiceName, String roleInstanceName, String networkInterfaceName);
 
     /**
      * Deletes the specified network interface.
@@ -133,18 +133,6 @@ public interface NetworkInterfaces {
      *
      * @param resourceGroupName The name of the resource group.
      * @param networkInterfaceName The name of the network interface.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the specified network interface.
-     */
-    NetworkInterface getByResourceGroup(String resourceGroupName, String networkInterfaceName);
-
-    /**
-     * Gets information about the specified network interface.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param networkInterfaceName The name of the network interface.
      * @param expand Expands referenced resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -154,6 +142,18 @@ public interface NetworkInterfaces {
      */
     Response<NetworkInterface> getByResourceGroupWithResponse(
         String resourceGroupName, String networkInterfaceName, String expand, Context context);
+
+    /**
+     * Gets information about the specified network interface.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param networkInterfaceName The name of the network interface.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return information about the specified network interface.
+     */
+    NetworkInterface getByResourceGroup(String resourceGroupName, String networkInterfaceName);
 
     /**
      * Gets all network interfaces in a subscription.
@@ -316,24 +316,6 @@ public interface NetworkInterfaces {
      * @param virtualMachineScaleSetName The name of the virtual machine scale set.
      * @param virtualmachineIndex The virtual machine index.
      * @param networkInterfaceName The name of the network interface.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network interface in a virtual machine scale set.
-     */
-    NetworkInterface getVirtualMachineScaleSetNetworkInterface(
-        String resourceGroupName,
-        String virtualMachineScaleSetName,
-        String virtualmachineIndex,
-        String networkInterfaceName);
-
-    /**
-     * Get the specified network interface in a virtual machine scale set.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param virtualMachineScaleSetName The name of the virtual machine scale set.
-     * @param virtualmachineIndex The virtual machine index.
-     * @param networkInterfaceName The name of the network interface.
      * @param expand Expands referenced resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -350,6 +332,24 @@ public interface NetworkInterfaces {
         Context context);
 
     /**
+     * Get the specified network interface in a virtual machine scale set.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param virtualMachineScaleSetName The name of the virtual machine scale set.
+     * @param virtualmachineIndex The virtual machine index.
+     * @param networkInterfaceName The name of the network interface.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified network interface in a virtual machine scale set.
+     */
+    NetworkInterface getVirtualMachineScaleSetNetworkInterface(
+        String resourceGroupName,
+        String virtualMachineScaleSetName,
+        String virtualmachineIndex,
+        String networkInterfaceName);
+
+    /**
      * Get the specified network interface ip configuration in a virtual machine scale set.
      *
      * @param resourceGroupName The name of the resource group.
@@ -390,26 +390,6 @@ public interface NetworkInterfaces {
         String networkInterfaceName,
         String expand,
         Context context);
-
-    /**
-     * Get the specified network interface ip configuration in a virtual machine scale set.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param virtualMachineScaleSetName The name of the virtual machine scale set.
-     * @param virtualmachineIndex The virtual machine index.
-     * @param networkInterfaceName The name of the network interface.
-     * @param ipConfigurationName The name of the ip configuration.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network interface ip configuration in a virtual machine scale set.
-     */
-    NetworkInterfaceIpConfiguration getVirtualMachineScaleSetIpConfiguration(
-        String resourceGroupName,
-        String virtualMachineScaleSetName,
-        String virtualmachineIndex,
-        String networkInterfaceName,
-        String ipConfigurationName);
 
     /**
      * Get the specified network interface ip configuration in a virtual machine scale set.
@@ -435,6 +415,26 @@ public interface NetworkInterfaces {
         String ipConfigurationName,
         String expand,
         Context context);
+
+    /**
+     * Get the specified network interface ip configuration in a virtual machine scale set.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param virtualMachineScaleSetName The name of the virtual machine scale set.
+     * @param virtualmachineIndex The virtual machine index.
+     * @param networkInterfaceName The name of the network interface.
+     * @param ipConfigurationName The name of the ip configuration.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified network interface ip configuration in a virtual machine scale set.
+     */
+    NetworkInterfaceIpConfiguration getVirtualMachineScaleSetIpConfiguration(
+        String resourceGroupName,
+        String virtualMachineScaleSetName,
+        String virtualmachineIndex,
+        String networkInterfaceName,
+        String ipConfigurationName);
 
     /**
      * Gets information about the specified network interface.

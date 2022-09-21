@@ -40,19 +40,6 @@ public interface ManagedHsms {
      *
      * @param resourceGroupName Name of the resource group that contains the managed HSM pool.
      * @param name The name of the managed HSM Pool.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.keyvault.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified managed HSM Pool.
-     */
-    ManagedHsm getByResourceGroup(String resourceGroupName, String name);
-
-    /**
-     * Gets the specified managed HSM Pool.
-     *
-     * @param resourceGroupName Name of the resource group that contains the managed HSM pool.
-     * @param name The name of the managed HSM Pool.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.keyvault.generated.models.ErrorException thrown if the request is rejected by
@@ -61,6 +48,19 @@ public interface ManagedHsms {
      * @return the specified managed HSM Pool along with {@link Response}.
      */
     Response<ManagedHsm> getByResourceGroupWithResponse(String resourceGroupName, String name, Context context);
+
+    /**
+     * Gets the specified managed HSM Pool.
+     *
+     * @param resourceGroupName Name of the resource group that contains the managed HSM pool.
+     * @param name The name of the managed HSM Pool.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.keyvault.generated.models.ErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified managed HSM Pool.
+     */
+    ManagedHsm getByResourceGroup(String resourceGroupName, String name);
 
     /**
      * The List operation gets information about the managed HSM Pools associated with the subscription and within the
@@ -140,19 +140,6 @@ public interface ManagedHsms {
      *
      * @param name The name of the deleted managed HSM.
      * @param location The location of the deleted managed HSM.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.keyvault.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified deleted managed HSM.
-     */
-    DeletedManagedHsm getDeleted(String name, String location);
-
-    /**
-     * Gets the specified deleted managed HSM.
-     *
-     * @param name The name of the deleted managed HSM.
-     * @param location The location of the deleted managed HSM.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.keyvault.generated.models.ErrorException thrown if the request is rejected by
@@ -161,6 +148,19 @@ public interface ManagedHsms {
      * @return the specified deleted managed HSM along with {@link Response}.
      */
     Response<DeletedManagedHsm> getDeletedWithResponse(String name, String location, Context context);
+
+    /**
+     * Gets the specified deleted managed HSM.
+     *
+     * @param name The name of the deleted managed HSM.
+     * @param location The location of the deleted managed HSM.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.keyvault.generated.models.ErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified deleted managed HSM.
+     */
+    DeletedManagedHsm getDeleted(String name, String location);
 
     /**
      * Permanently deletes the specified managed HSM.
@@ -191,17 +191,6 @@ public interface ManagedHsms {
      * Checks that the managed hsm name is valid and is not already in use.
      *
      * @param mhsmName The name of the managed hsm.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the CheckMhsmNameAvailability operation response.
-     */
-    CheckMhsmNameAvailabilityResult checkMhsmNameAvailability(CheckMhsmNameAvailabilityParameters mhsmName);
-
-    /**
-     * Checks that the managed hsm name is valid and is not already in use.
-     *
-     * @param mhsmName The name of the managed hsm.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -210,6 +199,17 @@ public interface ManagedHsms {
      */
     Response<CheckMhsmNameAvailabilityResult> checkMhsmNameAvailabilityWithResponse(
         CheckMhsmNameAvailabilityParameters mhsmName, Context context);
+
+    /**
+     * Checks that the managed hsm name is valid and is not already in use.
+     *
+     * @param mhsmName The name of the managed hsm.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the CheckMhsmNameAvailability operation response.
+     */
+    CheckMhsmNameAvailabilityResult checkMhsmNameAvailability(CheckMhsmNameAvailabilityParameters mhsmName);
 
     /**
      * Gets the specified managed HSM Pool.

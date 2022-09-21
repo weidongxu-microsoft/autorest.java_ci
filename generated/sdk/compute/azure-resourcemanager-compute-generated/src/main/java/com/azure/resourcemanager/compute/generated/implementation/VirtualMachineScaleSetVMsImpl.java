@@ -113,15 +113,6 @@ public final class VirtualMachineScaleSetVMsImpl implements VirtualMachineScaleS
         this.serviceClient().delete(resourceGroupName, vmScaleSetName, instanceId, forceDeletion, context);
     }
 
-    public VirtualMachineScaleSetVM get(String resourceGroupName, String vmScaleSetName, String instanceId) {
-        VirtualMachineScaleSetVMInner inner = this.serviceClient().get(resourceGroupName, vmScaleSetName, instanceId);
-        if (inner != null) {
-            return new VirtualMachineScaleSetVMImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<VirtualMachineScaleSetVM> getWithResponse(
         String resourceGroupName, String vmScaleSetName, String instanceId, InstanceViewTypes expand, Context context) {
         Response<VirtualMachineScaleSetVMInner> inner =
@@ -137,12 +128,10 @@ public final class VirtualMachineScaleSetVMsImpl implements VirtualMachineScaleS
         }
     }
 
-    public VirtualMachineScaleSetVMInstanceView getInstanceView(
-        String resourceGroupName, String vmScaleSetName, String instanceId) {
-        VirtualMachineScaleSetVMInstanceViewInner inner =
-            this.serviceClient().getInstanceView(resourceGroupName, vmScaleSetName, instanceId);
+    public VirtualMachineScaleSetVM get(String resourceGroupName, String vmScaleSetName, String instanceId) {
+        VirtualMachineScaleSetVMInner inner = this.serviceClient().get(resourceGroupName, vmScaleSetName, instanceId);
         if (inner != null) {
-            return new VirtualMachineScaleSetVMInstanceViewImpl(inner, this.manager());
+            return new VirtualMachineScaleSetVMImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -158,6 +147,17 @@ public final class VirtualMachineScaleSetVMsImpl implements VirtualMachineScaleS
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new VirtualMachineScaleSetVMInstanceViewImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public VirtualMachineScaleSetVMInstanceView getInstanceView(
+        String resourceGroupName, String vmScaleSetName, String instanceId) {
+        VirtualMachineScaleSetVMInstanceViewInner inner =
+            this.serviceClient().getInstanceView(resourceGroupName, vmScaleSetName, instanceId);
+        if (inner != null) {
+            return new VirtualMachineScaleSetVMInstanceViewImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -218,17 +218,6 @@ public final class VirtualMachineScaleSetVMsImpl implements VirtualMachineScaleS
         this.serviceClient().redeploy(resourceGroupName, vmScaleSetName, instanceId, context);
     }
 
-    public RetrieveBootDiagnosticsDataResult retrieveBootDiagnosticsData(
-        String resourceGroupName, String vmScaleSetName, String instanceId) {
-        RetrieveBootDiagnosticsDataResultInner inner =
-            this.serviceClient().retrieveBootDiagnosticsData(resourceGroupName, vmScaleSetName, instanceId);
-        if (inner != null) {
-            return new RetrieveBootDiagnosticsDataResultImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<RetrieveBootDiagnosticsDataResult> retrieveBootDiagnosticsDataWithResponse(
         String resourceGroupName,
         String vmScaleSetName,
@@ -251,6 +240,17 @@ public final class VirtualMachineScaleSetVMsImpl implements VirtualMachineScaleS
         }
     }
 
+    public RetrieveBootDiagnosticsDataResult retrieveBootDiagnosticsData(
+        String resourceGroupName, String vmScaleSetName, String instanceId) {
+        RetrieveBootDiagnosticsDataResultInner inner =
+            this.serviceClient().retrieveBootDiagnosticsData(resourceGroupName, vmScaleSetName, instanceId);
+        if (inner != null) {
+            return new RetrieveBootDiagnosticsDataResultImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
     public void performMaintenance(String resourceGroupName, String vmScaleSetName, String instanceId) {
         this.serviceClient().performMaintenance(resourceGroupName, vmScaleSetName, instanceId);
     }
@@ -260,15 +260,15 @@ public final class VirtualMachineScaleSetVMsImpl implements VirtualMachineScaleS
         this.serviceClient().performMaintenance(resourceGroupName, vmScaleSetName, instanceId, context);
     }
 
-    public void simulateEviction(String resourceGroupName, String vmScaleSetName, String instanceId) {
-        this.serviceClient().simulateEviction(resourceGroupName, vmScaleSetName, instanceId);
-    }
-
     public Response<Void> simulateEvictionWithResponse(
         String resourceGroupName, String vmScaleSetName, String instanceId, Context context) {
         return this
             .serviceClient()
             .simulateEvictionWithResponse(resourceGroupName, vmScaleSetName, instanceId, context);
+    }
+
+    public void simulateEviction(String resourceGroupName, String vmScaleSetName, String instanceId) {
+        this.serviceClient().simulateEviction(resourceGroupName, vmScaleSetName, instanceId);
     }
 
     public RunCommandResult runCommand(

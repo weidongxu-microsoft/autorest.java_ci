@@ -30,6 +30,10 @@ public final class ExportSchedule {
     @JsonProperty(value = "recurrencePeriod")
     private ExportRecurrencePeriod recurrencePeriod;
 
+    /** Creates an instance of ExportSchedule class. */
+    public ExportSchedule() {
+    }
+
     /**
      * Get the status property: The status of the schedule. Whether active or not. If inactive, the export's scheduled
      * execution is paused.

@@ -27,21 +27,12 @@ public final class PolicyExemptionsImpl implements PolicyExemptions {
         this.serviceManager = serviceManager;
     }
 
-    public void deleteByResourceGroup(String scope, String policyExemptionName) {
-        this.serviceClient().delete(scope, policyExemptionName);
-    }
-
-    public Response<Void> deleteWithResponse(String scope, String policyExemptionName, Context context) {
+    public Response<Void> deleteByResourceGroupWithResponse(String scope, String policyExemptionName, Context context) {
         return this.serviceClient().deleteWithResponse(scope, policyExemptionName, context);
     }
 
-    public PolicyExemption get(String scope, String policyExemptionName) {
-        PolicyExemptionInner inner = this.serviceClient().get(scope, policyExemptionName);
-        if (inner != null) {
-            return new PolicyExemptionImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void deleteByResourceGroup(String scope, String policyExemptionName) {
+        this.serviceClient().delete(scope, policyExemptionName);
     }
 
     public Response<PolicyExemption> getWithResponse(String scope, String policyExemptionName, Context context) {
@@ -53,6 +44,15 @@ public final class PolicyExemptionsImpl implements PolicyExemptions {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new PolicyExemptionImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public PolicyExemption get(String scope, String policyExemptionName) {
+        PolicyExemptionInner inner = this.serviceClient().get(scope, policyExemptionName);
+        if (inner != null) {
+            return new PolicyExemptionImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -209,7 +209,7 @@ public final class PolicyExemptionsImpl implements PolicyExemptions {
                             .format(
                                 "The resource ID '%s' is not valid. Missing path segment 'policyExemptions'.", id)));
         }
-        this.deleteWithResponse(scope, policyExemptionName, Context.NONE);
+        this.deleteByResourceGroupWithResponse(scope, policyExemptionName, Context.NONE);
     }
 
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
@@ -237,7 +237,7 @@ public final class PolicyExemptionsImpl implements PolicyExemptions {
                             .format(
                                 "The resource ID '%s' is not valid. Missing path segment 'policyExemptions'.", id)));
         }
-        return this.deleteWithResponse(scope, policyExemptionName, context);
+        return this.deleteByResourceGroupWithResponse(scope, policyExemptionName, context);
     }
 
     private PolicyExemptionsClient serviceClient() {

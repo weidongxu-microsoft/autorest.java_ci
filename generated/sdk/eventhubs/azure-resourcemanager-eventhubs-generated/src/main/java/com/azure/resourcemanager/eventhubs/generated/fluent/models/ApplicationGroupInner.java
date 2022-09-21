@@ -32,6 +32,10 @@ public final class ApplicationGroupInner extends ProxyResource {
     @JsonProperty(value = "location", access = JsonProperty.Access.WRITE_ONLY)
     private String location;
 
+    /** Creates an instance of ApplicationGroupInner class. */
+    public ApplicationGroupInner() {
+    }
+
     /**
      * Get the innerProperties property: The properties property.
      *

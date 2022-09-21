@@ -95,6 +95,10 @@ public final class ClusterCreateProperties {
     @JsonProperty(value = "privateLinkConfigurations")
     private List<PrivateLinkConfiguration> privateLinkConfigurations;
 
+    /** Creates an instance of ClusterCreateProperties class. */
+    public ClusterCreateProperties() {
+    }
+
     /**
      * Get the clusterVersion property: The version of the cluster.
      *

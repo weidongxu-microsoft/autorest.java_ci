@@ -182,11 +182,11 @@ public final class VerifiedPartnersClientImpl implements VerifiedPartnersClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of a verified partner.
+     * @return properties of a verified partner along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public VerifiedPartnerInner get(String verifiedPartnerName) {
-        return getAsync(verifiedPartnerName).block();
+    public Response<VerifiedPartnerInner> getWithResponse(String verifiedPartnerName) {
+        return getWithResponseAsync(verifiedPartnerName).block();
     }
 
     /**
@@ -204,6 +204,22 @@ public final class VerifiedPartnersClientImpl implements VerifiedPartnersClient 
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<VerifiedPartnerInner> getWithResponse(String verifiedPartnerName, Context context) {
         return getWithResponseAsync(verifiedPartnerName, context).block();
+    }
+
+    /**
+     * Get a verified partner.
+     *
+     * <p>Get properties of a verified partner.
+     *
+     * @param verifiedPartnerName Name of the verified partner.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return properties of a verified partner.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public VerifiedPartnerInner get(String verifiedPartnerName) {
+        return getWithResponse(verifiedPartnerName, Context.NONE).getValue();
     }
 
     /**

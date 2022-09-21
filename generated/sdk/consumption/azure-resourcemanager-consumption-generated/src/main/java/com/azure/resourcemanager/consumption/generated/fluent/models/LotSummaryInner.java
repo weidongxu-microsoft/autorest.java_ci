@@ -30,6 +30,10 @@ public final class LotSummaryInner extends ProxyResource {
     @JsonProperty(value = "eTag")
     private String etag;
 
+    /** Creates an instance of LotSummaryInner class. */
+    public LotSummaryInner() {
+    }
+
     /**
      * Get the innerProperties property: The lot properties.
      *

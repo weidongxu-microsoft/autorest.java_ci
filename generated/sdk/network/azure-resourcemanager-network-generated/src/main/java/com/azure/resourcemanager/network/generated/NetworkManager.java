@@ -28,6 +28,8 @@ import com.azure.resourcemanager.network.generated.implementation.AdminRuleColle
 import com.azure.resourcemanager.network.generated.implementation.AdminRulesImpl;
 import com.azure.resourcemanager.network.generated.implementation.ApplicationGatewayPrivateEndpointConnectionsImpl;
 import com.azure.resourcemanager.network.generated.implementation.ApplicationGatewayPrivateLinkResourcesImpl;
+import com.azure.resourcemanager.network.generated.implementation.ApplicationGatewayWafDynamicManifestsDefaultsImpl;
+import com.azure.resourcemanager.network.generated.implementation.ApplicationGatewayWafDynamicManifestsImpl;
 import com.azure.resourcemanager.network.generated.implementation.ApplicationGatewaysImpl;
 import com.azure.resourcemanager.network.generated.implementation.ApplicationSecurityGroupsImpl;
 import com.azure.resourcemanager.network.generated.implementation.AvailableDelegationsImpl;
@@ -110,6 +112,7 @@ import com.azure.resourcemanager.network.generated.implementation.ResourceNaviga
 import com.azure.resourcemanager.network.generated.implementation.ResourceProvidersImpl;
 import com.azure.resourcemanager.network.generated.implementation.RouteFilterRulesImpl;
 import com.azure.resourcemanager.network.generated.implementation.RouteFiltersImpl;
+import com.azure.resourcemanager.network.generated.implementation.RouteMapsImpl;
 import com.azure.resourcemanager.network.generated.implementation.RouteTablesImpl;
 import com.azure.resourcemanager.network.generated.implementation.RoutesImpl;
 import com.azure.resourcemanager.network.generated.implementation.RoutingIntentsImpl;
@@ -126,6 +129,7 @@ import com.azure.resourcemanager.network.generated.implementation.StaticMembersI
 import com.azure.resourcemanager.network.generated.implementation.SubnetsImpl;
 import com.azure.resourcemanager.network.generated.implementation.SubscriptionNetworkManagerConnectionsImpl;
 import com.azure.resourcemanager.network.generated.implementation.UsagesImpl;
+import com.azure.resourcemanager.network.generated.implementation.VipSwapsImpl;
 import com.azure.resourcemanager.network.generated.implementation.VirtualApplianceSitesImpl;
 import com.azure.resourcemanager.network.generated.implementation.VirtualApplianceSkusImpl;
 import com.azure.resourcemanager.network.generated.implementation.VirtualHubBgpConnectionsImpl;
@@ -156,6 +160,8 @@ import com.azure.resourcemanager.network.generated.models.AdminRuleCollections;
 import com.azure.resourcemanager.network.generated.models.AdminRules;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayPrivateEndpointConnections;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayPrivateLinkResources;
+import com.azure.resourcemanager.network.generated.models.ApplicationGatewayWafDynamicManifests;
+import com.azure.resourcemanager.network.generated.models.ApplicationGatewayWafDynamicManifestsDefaults;
 import com.azure.resourcemanager.network.generated.models.ApplicationGateways;
 import com.azure.resourcemanager.network.generated.models.ApplicationSecurityGroups;
 import com.azure.resourcemanager.network.generated.models.AvailableDelegations;
@@ -237,6 +243,7 @@ import com.azure.resourcemanager.network.generated.models.ResourceNavigationLink
 import com.azure.resourcemanager.network.generated.models.ResourceProviders;
 import com.azure.resourcemanager.network.generated.models.RouteFilterRules;
 import com.azure.resourcemanager.network.generated.models.RouteFilters;
+import com.azure.resourcemanager.network.generated.models.RouteMaps;
 import com.azure.resourcemanager.network.generated.models.RouteTables;
 import com.azure.resourcemanager.network.generated.models.Routes;
 import com.azure.resourcemanager.network.generated.models.RoutingIntents;
@@ -253,6 +260,7 @@ import com.azure.resourcemanager.network.generated.models.StaticMembers;
 import com.azure.resourcemanager.network.generated.models.Subnets;
 import com.azure.resourcemanager.network.generated.models.SubscriptionNetworkManagerConnections;
 import com.azure.resourcemanager.network.generated.models.Usages;
+import com.azure.resourcemanager.network.generated.models.VipSwaps;
 import com.azure.resourcemanager.network.generated.models.VirtualApplianceSites;
 import com.azure.resourcemanager.network.generated.models.VirtualApplianceSkus;
 import com.azure.resourcemanager.network.generated.models.VirtualHubBgpConnections;
@@ -293,6 +301,10 @@ public final class NetworkManager {
     private ApplicationGatewayPrivateLinkResources applicationGatewayPrivateLinkResources;
 
     private ApplicationGatewayPrivateEndpointConnections applicationGatewayPrivateEndpointConnections;
+
+    private ApplicationGatewayWafDynamicManifestsDefaults applicationGatewayWafDynamicManifestsDefaults;
+
+    private ApplicationGatewayWafDynamicManifests applicationGatewayWafDynamicManifests;
 
     private ApplicationSecurityGroups applicationSecurityGroups;
 
@@ -349,6 +361,8 @@ public final class NetworkManager {
     private ExpressRouteLinks expressRouteLinks;
 
     private ExpressRoutePortAuthorizations expressRoutePortAuthorizations;
+
+    private ExpressRouteProviderPortsLocations expressRouteProviderPortsLocations;
 
     private FirewallPolicies firewallPolicies;
 
@@ -508,6 +522,8 @@ public final class NetworkManager {
 
     private VirtualHubs virtualHubs;
 
+    private RouteMaps routeMaps;
+
     private HubVirtualNetworkConnections hubVirtualNetworkConnections;
 
     private VpnGateways vpnGateways;
@@ -540,7 +556,7 @@ public final class NetworkManager {
 
     private WebApplicationFirewallPolicies webApplicationFirewallPolicies;
 
-    private ExpressRouteProviderPortsLocations expressRouteProviderPortsLocations;
+    private VipSwaps vipSwaps;
 
     private final NetworkManagementClient clientObject;
 
@@ -802,6 +818,34 @@ public final class NetworkManager {
                     clientObject.getApplicationGatewayPrivateEndpointConnections(), this);
         }
         return applicationGatewayPrivateEndpointConnections;
+    }
+
+    /**
+     * Gets the resource collection API of ApplicationGatewayWafDynamicManifestsDefaults.
+     *
+     * @return Resource collection API of ApplicationGatewayWafDynamicManifestsDefaults.
+     */
+    public ApplicationGatewayWafDynamicManifestsDefaults applicationGatewayWafDynamicManifestsDefaults() {
+        if (this.applicationGatewayWafDynamicManifestsDefaults == null) {
+            this.applicationGatewayWafDynamicManifestsDefaults =
+                new ApplicationGatewayWafDynamicManifestsDefaultsImpl(
+                    clientObject.getApplicationGatewayWafDynamicManifestsDefaults(), this);
+        }
+        return applicationGatewayWafDynamicManifestsDefaults;
+    }
+
+    /**
+     * Gets the resource collection API of ApplicationGatewayWafDynamicManifests.
+     *
+     * @return Resource collection API of ApplicationGatewayWafDynamicManifests.
+     */
+    public ApplicationGatewayWafDynamicManifests applicationGatewayWafDynamicManifests() {
+        if (this.applicationGatewayWafDynamicManifests == null) {
+            this.applicationGatewayWafDynamicManifests =
+                new ApplicationGatewayWafDynamicManifestsImpl(
+                    clientObject.getApplicationGatewayWafDynamicManifests(), this);
+        }
+        return applicationGatewayWafDynamicManifests;
     }
 
     /**
@@ -1153,6 +1197,19 @@ public final class NetworkManager {
                 new ExpressRoutePortAuthorizationsImpl(clientObject.getExpressRoutePortAuthorizations(), this);
         }
         return expressRoutePortAuthorizations;
+    }
+
+    /**
+     * Gets the resource collection API of ExpressRouteProviderPortsLocations.
+     *
+     * @return Resource collection API of ExpressRouteProviderPortsLocations.
+     */
+    public ExpressRouteProviderPortsLocations expressRouteProviderPortsLocations() {
+        if (this.expressRouteProviderPortsLocations == null) {
+            this.expressRouteProviderPortsLocations =
+                new ExpressRouteProviderPortsLocationsImpl(clientObject.getExpressRouteProviderPortsLocations(), this);
+        }
+        return expressRouteProviderPortsLocations;
     }
 
     /**
@@ -2145,6 +2202,18 @@ public final class NetworkManager {
     }
 
     /**
+     * Gets the resource collection API of RouteMaps. It manages RouteMap.
+     *
+     * @return Resource collection API of RouteMaps.
+     */
+    public RouteMaps routeMaps() {
+        if (this.routeMaps == null) {
+            this.routeMaps = new RouteMapsImpl(clientObject.getRouteMaps(), this);
+        }
+        return routeMaps;
+    }
+
+    /**
      * Gets the resource collection API of HubVirtualNetworkConnections.
      *
      * @return Resource collection API of HubVirtualNetworkConnections.
@@ -2346,16 +2415,15 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of ExpressRouteProviderPortsLocations.
+     * Gets the resource collection API of VipSwaps.
      *
-     * @return Resource collection API of ExpressRouteProviderPortsLocations.
+     * @return Resource collection API of VipSwaps.
      */
-    public ExpressRouteProviderPortsLocations expressRouteProviderPortsLocations() {
-        if (this.expressRouteProviderPortsLocations == null) {
-            this.expressRouteProviderPortsLocations =
-                new ExpressRouteProviderPortsLocationsImpl(clientObject.getExpressRouteProviderPortsLocations(), this);
+    public VipSwaps vipSwaps() {
+        if (this.vipSwaps == null) {
+            this.vipSwaps = new VipSwapsImpl(clientObject.getVipSwaps(), this);
         }
-        return expressRouteProviderPortsLocations;
+        return vipSwaps;
     }
 
     /**

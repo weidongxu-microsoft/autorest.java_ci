@@ -16,6 +16,10 @@ public final class EdgeProfilePatch {
     @JsonProperty(value = "subscription")
     private EdgeProfileSubscriptionPatch subscription;
 
+    /** Creates an instance of EdgeProfilePatch class. */
+    public EdgeProfilePatch() {
+    }
+
     /**
      * Get the subscription property: The Data Box Edge/Gateway Edge Profile Subscription patch.
      *

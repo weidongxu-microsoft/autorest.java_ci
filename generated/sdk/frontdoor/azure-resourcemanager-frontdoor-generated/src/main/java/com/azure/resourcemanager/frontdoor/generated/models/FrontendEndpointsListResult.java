@@ -27,6 +27,10 @@ public final class FrontendEndpointsListResult {
     @JsonProperty(value = "nextLink")
     private String nextLink;
 
+    /** Creates an instance of FrontendEndpointsListResult class. */
+    public FrontendEndpointsListResult() {
+    }
+
     /**
      * Get the value property: List of Frontend endpoints within a Front Door.
      *

@@ -29,15 +29,6 @@ public final class DiagnosticSettingsCategoriesImpl implements DiagnosticSetting
         this.serviceManager = serviceManager;
     }
 
-    public DiagnosticSettingsCategoryResource get(String resourceUri, String name) {
-        DiagnosticSettingsCategoryResourceInner inner = this.serviceClient().get(resourceUri, name);
-        if (inner != null) {
-            return new DiagnosticSettingsCategoryResourceImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<DiagnosticSettingsCategoryResource> getWithResponse(
         String resourceUri, String name, Context context) {
         Response<DiagnosticSettingsCategoryResourceInner> inner =
@@ -53,10 +44,10 @@ public final class DiagnosticSettingsCategoriesImpl implements DiagnosticSetting
         }
     }
 
-    public DiagnosticSettingsCategoryResourceCollection list(String resourceUri) {
-        DiagnosticSettingsCategoryResourceCollectionInner inner = this.serviceClient().list(resourceUri);
+    public DiagnosticSettingsCategoryResource get(String resourceUri, String name) {
+        DiagnosticSettingsCategoryResourceInner inner = this.serviceClient().get(resourceUri, name);
         if (inner != null) {
-            return new DiagnosticSettingsCategoryResourceCollectionImpl(inner, this.manager());
+            return new DiagnosticSettingsCategoryResourceImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -72,6 +63,15 @@ public final class DiagnosticSettingsCategoriesImpl implements DiagnosticSetting
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new DiagnosticSettingsCategoryResourceCollectionImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public DiagnosticSettingsCategoryResourceCollection list(String resourceUri) {
+        DiagnosticSettingsCategoryResourceCollectionInner inner = this.serviceClient().list(resourceUri);
+        if (inner != null) {
+            return new DiagnosticSettingsCategoryResourceCollectionImpl(inner, this.manager());
         } else {
             return null;
         }

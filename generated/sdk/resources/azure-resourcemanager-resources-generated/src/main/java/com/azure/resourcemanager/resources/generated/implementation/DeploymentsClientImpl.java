@@ -31,7 +31,6 @@ import com.azure.core.management.exception.ManagementException;
 import com.azure.core.management.polling.PollResult;
 import com.azure.core.util.Context;
 import com.azure.core.util.FluxUtil;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.core.util.polling.PollerFlux;
 import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.resources.generated.fluent.DeploymentsClient;
@@ -1090,16 +1089,11 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return whether resource exists.
+     * @return whether resource exists along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public boolean checkExistenceAtScope(String scope, String deploymentName) {
-        Boolean value = checkExistenceAtScopeAsync(scope, deploymentName).block();
-        if (value != null) {
-            return value;
-        } else {
-            throw LOGGER.logExceptionAsError(new NullPointerException());
-        }
+    public Response<Boolean> checkExistenceAtScopeWithResponse(String scope, String deploymentName) {
+        return checkExistenceAtScopeWithResponseAsync(scope, deploymentName).block();
     }
 
     /**
@@ -1116,6 +1110,21 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Boolean> checkExistenceAtScopeWithResponse(String scope, String deploymentName, Context context) {
         return checkExistenceAtScopeWithResponseAsync(scope, deploymentName, context).block();
+    }
+
+    /**
+     * Checks whether the deployment exists.
+     *
+     * @param scope The resource scope.
+     * @param deploymentName The name of the deployment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return whether resource exists.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public boolean checkExistenceAtScope(String scope, String deploymentName) {
+        return checkExistenceAtScopeWithResponse(scope, deploymentName, Context.NONE).getValue();
     }
 
     /**
@@ -1486,11 +1495,11 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployment.
+     * @return a deployment along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public DeploymentExtendedInner getAtScope(String scope, String deploymentName) {
-        return getAtScopeAsync(scope, deploymentName).block();
+    public Response<DeploymentExtendedInner> getAtScopeWithResponse(String scope, String deploymentName) {
+        return getAtScopeWithResponseAsync(scope, deploymentName).block();
     }
 
     /**
@@ -1508,6 +1517,21 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     public Response<DeploymentExtendedInner> getAtScopeWithResponse(
         String scope, String deploymentName, Context context) {
         return getAtScopeWithResponseAsync(scope, deploymentName, context).block();
+    }
+
+    /**
+     * Gets a deployment.
+     *
+     * @param scope The resource scope.
+     * @param deploymentName The name of the deployment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a deployment.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public DeploymentExtendedInner getAtScope(String scope, String deploymentName) {
+        return getAtScopeWithResponse(scope, deploymentName, Context.NONE).getValue();
     }
 
     /**
@@ -1620,10 +1644,11 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public void cancelAtScope(String scope, String deploymentName) {
-        cancelAtScopeAsync(scope, deploymentName).block();
+    public Response<Void> cancelAtScopeWithResponse(String scope, String deploymentName) {
+        return cancelAtScopeWithResponseAsync(scope, deploymentName).block();
     }
 
     /**
@@ -1644,6 +1669,24 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> cancelAtScopeWithResponse(String scope, String deploymentName, Context context) {
         return cancelAtScopeWithResponseAsync(scope, deploymentName, context).block();
+    }
+
+    /**
+     * Cancels a currently running template deployment.
+     *
+     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
+     * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
+     * template deployment and leaves the resources partially deployed.
+     *
+     * @param scope The resource scope.
+     * @param deploymentName The name of the deployment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public void cancelAtScope(String scope, String deploymentName) {
+        cancelAtScopeWithResponse(scope, deploymentName, Context.NONE);
     }
 
     /**
@@ -2008,11 +2051,12 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the deployment export result.
+     * @return the deployment export result along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public DeploymentExportResultInner exportTemplateAtScope(String scope, String deploymentName) {
-        return exportTemplateAtScopeAsync(scope, deploymentName).block();
+    public Response<DeploymentExportResultInner> exportTemplateAtScopeWithResponse(
+        String scope, String deploymentName) {
+        return exportTemplateAtScopeWithResponseAsync(scope, deploymentName).block();
     }
 
     /**
@@ -2030,6 +2074,21 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     public Response<DeploymentExportResultInner> exportTemplateAtScopeWithResponse(
         String scope, String deploymentName, Context context) {
         return exportTemplateAtScopeWithResponseAsync(scope, deploymentName, context).block();
+    }
+
+    /**
+     * Exports the template used for specified deployment.
+     *
+     * @param scope The resource scope.
+     * @param deploymentName The name of the deployment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the deployment export result.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public DeploymentExportResultInner exportTemplateAtScope(String scope, String deploymentName) {
+        return exportTemplateAtScopeWithResponse(scope, deploymentName, Context.NONE).getValue();
     }
 
     /**
@@ -2548,16 +2607,11 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return whether resource exists.
+     * @return whether resource exists along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public boolean checkExistenceAtTenantScope(String deploymentName) {
-        Boolean value = checkExistenceAtTenantScopeAsync(deploymentName).block();
-        if (value != null) {
-            return value;
-        } else {
-            throw LOGGER.logExceptionAsError(new NullPointerException());
-        }
+    public Response<Boolean> checkExistenceAtTenantScopeWithResponse(String deploymentName) {
+        return checkExistenceAtTenantScopeWithResponseAsync(deploymentName).block();
     }
 
     /**
@@ -2573,6 +2627,20 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Boolean> checkExistenceAtTenantScopeWithResponse(String deploymentName, Context context) {
         return checkExistenceAtTenantScopeWithResponseAsync(deploymentName, context).block();
+    }
+
+    /**
+     * Checks whether the deployment exists.
+     *
+     * @param deploymentName The name of the deployment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return whether resource exists.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public boolean checkExistenceAtTenantScope(String deploymentName) {
+        return checkExistenceAtTenantScopeWithResponse(deploymentName, Context.NONE).getValue();
     }
 
     /**
@@ -2905,11 +2973,11 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployment.
+     * @return a deployment along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public DeploymentExtendedInner getAtTenantScope(String deploymentName) {
-        return getAtTenantScopeAsync(deploymentName).block();
+    public Response<DeploymentExtendedInner> getAtTenantScopeWithResponse(String deploymentName) {
+        return getAtTenantScopeWithResponseAsync(deploymentName).block();
     }
 
     /**
@@ -2925,6 +2993,20 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<DeploymentExtendedInner> getAtTenantScopeWithResponse(String deploymentName, Context context) {
         return getAtTenantScopeWithResponseAsync(deploymentName, context).block();
+    }
+
+    /**
+     * Gets a deployment.
+     *
+     * @param deploymentName The name of the deployment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a deployment.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public DeploymentExtendedInner getAtTenantScope(String deploymentName) {
+        return getAtTenantScopeWithResponse(deploymentName, Context.NONE).getValue();
     }
 
     /**
@@ -3022,10 +3104,11 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public void cancelAtTenantScope(String deploymentName) {
-        cancelAtTenantScopeAsync(deploymentName).block();
+    public Response<Void> cancelAtTenantScopeWithResponse(String deploymentName) {
+        return cancelAtTenantScopeWithResponseAsync(deploymentName).block();
     }
 
     /**
@@ -3045,6 +3128,23 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> cancelAtTenantScopeWithResponse(String deploymentName, Context context) {
         return cancelAtTenantScopeWithResponseAsync(deploymentName, context).block();
+    }
+
+    /**
+     * Cancels a currently running template deployment.
+     *
+     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
+     * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
+     * template deployment and leaves the resources partially deployed.
+     *
+     * @param deploymentName The name of the deployment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public void cancelAtTenantScope(String deploymentName) {
+        cancelAtTenantScopeWithResponse(deploymentName, Context.NONE);
     }
 
     /**
@@ -3601,11 +3701,11 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the deployment export result.
+     * @return the deployment export result along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public DeploymentExportResultInner exportTemplateAtTenantScope(String deploymentName) {
-        return exportTemplateAtTenantScopeAsync(deploymentName).block();
+    public Response<DeploymentExportResultInner> exportTemplateAtTenantScopeWithResponse(String deploymentName) {
+        return exportTemplateAtTenantScopeWithResponseAsync(deploymentName).block();
     }
 
     /**
@@ -3622,6 +3722,20 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     public Response<DeploymentExportResultInner> exportTemplateAtTenantScopeWithResponse(
         String deploymentName, Context context) {
         return exportTemplateAtTenantScopeWithResponseAsync(deploymentName, context).block();
+    }
+
+    /**
+     * Exports the template used for specified deployment.
+     *
+     * @param deploymentName The name of the deployment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the deployment export result.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public DeploymentExportResultInner exportTemplateAtTenantScope(String deploymentName) {
+        return exportTemplateAtTenantScopeWithResponse(deploymentName, Context.NONE).getValue();
     }
 
     /**
@@ -4162,16 +4276,11 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return whether resource exists.
+     * @return whether resource exists along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public boolean checkExistenceAtManagementGroupScope(String groupId, String deploymentName) {
-        Boolean value = checkExistenceAtManagementGroupScopeAsync(groupId, deploymentName).block();
-        if (value != null) {
-            return value;
-        } else {
-            throw LOGGER.logExceptionAsError(new NullPointerException());
-        }
+    public Response<Boolean> checkExistenceAtManagementGroupScopeWithResponse(String groupId, String deploymentName) {
+        return checkExistenceAtManagementGroupScopeWithResponseAsync(groupId, deploymentName).block();
     }
 
     /**
@@ -4189,6 +4298,21 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     public Response<Boolean> checkExistenceAtManagementGroupScopeWithResponse(
         String groupId, String deploymentName, Context context) {
         return checkExistenceAtManagementGroupScopeWithResponseAsync(groupId, deploymentName, context).block();
+    }
+
+    /**
+     * Checks whether the deployment exists.
+     *
+     * @param groupId The management group ID.
+     * @param deploymentName The name of the deployment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return whether resource exists.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public boolean checkExistenceAtManagementGroupScope(String groupId, String deploymentName) {
+        return checkExistenceAtManagementGroupScopeWithResponse(groupId, deploymentName, Context.NONE).getValue();
     }
 
     /**
@@ -4567,11 +4691,12 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployment.
+     * @return a deployment along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public DeploymentExtendedInner getAtManagementGroupScope(String groupId, String deploymentName) {
-        return getAtManagementGroupScopeAsync(groupId, deploymentName).block();
+    public Response<DeploymentExtendedInner> getAtManagementGroupScopeWithResponse(
+        String groupId, String deploymentName) {
+        return getAtManagementGroupScopeWithResponseAsync(groupId, deploymentName).block();
     }
 
     /**
@@ -4589,6 +4714,21 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     public Response<DeploymentExtendedInner> getAtManagementGroupScopeWithResponse(
         String groupId, String deploymentName, Context context) {
         return getAtManagementGroupScopeWithResponseAsync(groupId, deploymentName, context).block();
+    }
+
+    /**
+     * Gets a deployment.
+     *
+     * @param groupId The management group ID.
+     * @param deploymentName The name of the deployment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a deployment.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public DeploymentExtendedInner getAtManagementGroupScope(String groupId, String deploymentName) {
+        return getAtManagementGroupScopeWithResponse(groupId, deploymentName, Context.NONE).getValue();
     }
 
     /**
@@ -4702,10 +4842,11 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public void cancelAtManagementGroupScope(String groupId, String deploymentName) {
-        cancelAtManagementGroupScopeAsync(groupId, deploymentName).block();
+    public Response<Void> cancelAtManagementGroupScopeWithResponse(String groupId, String deploymentName) {
+        return cancelAtManagementGroupScopeWithResponseAsync(groupId, deploymentName).block();
     }
 
     /**
@@ -4727,6 +4868,24 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     public Response<Void> cancelAtManagementGroupScopeWithResponse(
         String groupId, String deploymentName, Context context) {
         return cancelAtManagementGroupScopeWithResponseAsync(groupId, deploymentName, context).block();
+    }
+
+    /**
+     * Cancels a currently running template deployment.
+     *
+     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
+     * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
+     * template deployment and leaves the resources partially deployed.
+     *
+     * @param groupId The management group ID.
+     * @param deploymentName The name of the deployment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public void cancelAtManagementGroupScope(String groupId, String deploymentName) {
+        cancelAtManagementGroupScopeWithResponse(groupId, deploymentName, Context.NONE);
     }
 
     /**
@@ -5354,11 +5513,12 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the deployment export result.
+     * @return the deployment export result along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public DeploymentExportResultInner exportTemplateAtManagementGroupScope(String groupId, String deploymentName) {
-        return exportTemplateAtManagementGroupScopeAsync(groupId, deploymentName).block();
+    public Response<DeploymentExportResultInner> exportTemplateAtManagementGroupScopeWithResponse(
+        String groupId, String deploymentName) {
+        return exportTemplateAtManagementGroupScopeWithResponseAsync(groupId, deploymentName).block();
     }
 
     /**
@@ -5376,6 +5536,21 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     public Response<DeploymentExportResultInner> exportTemplateAtManagementGroupScopeWithResponse(
         String groupId, String deploymentName, Context context) {
         return exportTemplateAtManagementGroupScopeWithResponseAsync(groupId, deploymentName, context).block();
+    }
+
+    /**
+     * Exports the template used for specified deployment.
+     *
+     * @param groupId The management group ID.
+     * @param deploymentName The name of the deployment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the deployment export result.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public DeploymentExportResultInner exportTemplateAtManagementGroupScope(String groupId, String deploymentName) {
+        return exportTemplateAtManagementGroupScopeWithResponse(groupId, deploymentName, Context.NONE).getValue();
     }
 
     /**
@@ -5945,16 +6120,11 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return whether resource exists.
+     * @return whether resource exists along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public boolean checkExistenceAtSubscriptionScope(String deploymentName) {
-        Boolean value = checkExistenceAtSubscriptionScopeAsync(deploymentName).block();
-        if (value != null) {
-            return value;
-        } else {
-            throw LOGGER.logExceptionAsError(new NullPointerException());
-        }
+    public Response<Boolean> checkExistenceAtSubscriptionScopeWithResponse(String deploymentName) {
+        return checkExistenceAtSubscriptionScopeWithResponseAsync(deploymentName).block();
     }
 
     /**
@@ -5970,6 +6140,20 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Boolean> checkExistenceAtSubscriptionScopeWithResponse(String deploymentName, Context context) {
         return checkExistenceAtSubscriptionScopeWithResponseAsync(deploymentName, context).block();
+    }
+
+    /**
+     * Checks whether the deployment exists.
+     *
+     * @param deploymentName The name of the deployment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return whether resource exists.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public boolean checkExistenceAtSubscriptionScope(String deploymentName) {
+        return checkExistenceAtSubscriptionScopeWithResponse(deploymentName, Context.NONE).getValue();
     }
 
     /**
@@ -6344,11 +6528,11 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployment.
+     * @return a deployment along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public DeploymentExtendedInner getAtSubscriptionScope(String deploymentName) {
-        return getAtSubscriptionScopeAsync(deploymentName).block();
+    public Response<DeploymentExtendedInner> getAtSubscriptionScopeWithResponse(String deploymentName) {
+        return getAtSubscriptionScopeWithResponseAsync(deploymentName).block();
     }
 
     /**
@@ -6365,6 +6549,20 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     public Response<DeploymentExtendedInner> getAtSubscriptionScopeWithResponse(
         String deploymentName, Context context) {
         return getAtSubscriptionScopeWithResponseAsync(deploymentName, context).block();
+    }
+
+    /**
+     * Gets a deployment.
+     *
+     * @param deploymentName The name of the deployment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a deployment.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public DeploymentExtendedInner getAtSubscriptionScope(String deploymentName) {
+        return getAtSubscriptionScopeWithResponse(deploymentName, Context.NONE).getValue();
     }
 
     /**
@@ -6484,10 +6682,11 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public void cancelAtSubscriptionScope(String deploymentName) {
-        cancelAtSubscriptionScopeAsync(deploymentName).block();
+    public Response<Void> cancelAtSubscriptionScopeWithResponse(String deploymentName) {
+        return cancelAtSubscriptionScopeWithResponseAsync(deploymentName).block();
     }
 
     /**
@@ -6507,6 +6706,23 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> cancelAtSubscriptionScopeWithResponse(String deploymentName, Context context) {
         return cancelAtSubscriptionScopeWithResponseAsync(deploymentName, context).block();
+    }
+
+    /**
+     * Cancels a currently running template deployment.
+     *
+     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
+     * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
+     * template deployment and leaves the resources partially deployed.
+     *
+     * @param deploymentName The name of the deployment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public void cancelAtSubscriptionScope(String deploymentName) {
+        cancelAtSubscriptionScopeWithResponse(deploymentName, Context.NONE);
     }
 
     /**
@@ -7124,11 +7340,11 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the deployment export result.
+     * @return the deployment export result along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public DeploymentExportResultInner exportTemplateAtSubscriptionScope(String deploymentName) {
-        return exportTemplateAtSubscriptionScopeAsync(deploymentName).block();
+    public Response<DeploymentExportResultInner> exportTemplateAtSubscriptionScopeWithResponse(String deploymentName) {
+        return exportTemplateAtSubscriptionScopeWithResponseAsync(deploymentName).block();
     }
 
     /**
@@ -7145,6 +7361,20 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     public Response<DeploymentExportResultInner> exportTemplateAtSubscriptionScopeWithResponse(
         String deploymentName, Context context) {
         return exportTemplateAtSubscriptionScopeWithResponseAsync(deploymentName, context).block();
+    }
+
+    /**
+     * Exports the template used for specified deployment.
+     *
+     * @param deploymentName The name of the deployment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the deployment export result.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public DeploymentExportResultInner exportTemplateAtSubscriptionScope(String deploymentName) {
+        return exportTemplateAtSubscriptionScopeWithResponse(deploymentName, Context.NONE).getValue();
     }
 
     /**
@@ -7770,16 +8000,11 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return whether resource exists.
+     * @return whether resource exists along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public boolean checkExistence(String resourceGroupName, String deploymentName) {
-        Boolean value = checkExistenceAsync(resourceGroupName, deploymentName).block();
-        if (value != null) {
-            return value;
-        } else {
-            throw LOGGER.logExceptionAsError(new NullPointerException());
-        }
+    public Response<Boolean> checkExistenceWithResponse(String resourceGroupName, String deploymentName) {
+        return checkExistenceWithResponseAsync(resourceGroupName, deploymentName).block();
     }
 
     /**
@@ -7798,6 +8023,22 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     public Response<Boolean> checkExistenceWithResponse(
         String resourceGroupName, String deploymentName, Context context) {
         return checkExistenceWithResponseAsync(resourceGroupName, deploymentName, context).block();
+    }
+
+    /**
+     * Checks whether the deployment exists.
+     *
+     * @param resourceGroupName The name of the resource group with the deployment to check. The name is case
+     *     insensitive.
+     * @param deploymentName The name of the deployment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return whether resource exists.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public boolean checkExistence(String resourceGroupName, String deploymentName) {
+        return checkExistenceWithResponse(resourceGroupName, deploymentName, Context.NONE).getValue();
     }
 
     /**
@@ -8219,11 +8460,12 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployment.
+     * @return a deployment along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public DeploymentExtendedInner getByResourceGroup(String resourceGroupName, String deploymentName) {
-        return getByResourceGroupAsync(resourceGroupName, deploymentName).block();
+    public Response<DeploymentExtendedInner> getByResourceGroupWithResponse(
+        String resourceGroupName, String deploymentName) {
+        return getByResourceGroupWithResponseAsync(resourceGroupName, deploymentName).block();
     }
 
     /**
@@ -8241,6 +8483,21 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     public Response<DeploymentExtendedInner> getByResourceGroupWithResponse(
         String resourceGroupName, String deploymentName, Context context) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, deploymentName, context).block();
+    }
+
+    /**
+     * Gets a deployment.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param deploymentName The name of the deployment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a deployment.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public DeploymentExtendedInner getByResourceGroup(String resourceGroupName, String deploymentName) {
+        return getByResourceGroupWithResponse(resourceGroupName, deploymentName, Context.NONE).getValue();
     }
 
     /**
@@ -8375,10 +8632,11 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public void cancel(String resourceGroupName, String deploymentName) {
-        cancelAsync(resourceGroupName, deploymentName).block();
+    public Response<Void> cancelWithResponse(String resourceGroupName, String deploymentName) {
+        return cancelWithResponseAsync(resourceGroupName, deploymentName).block();
     }
 
     /**
@@ -8399,6 +8657,24 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> cancelWithResponse(String resourceGroupName, String deploymentName, Context context) {
         return cancelWithResponseAsync(resourceGroupName, deploymentName, context).block();
+    }
+
+    /**
+     * Cancels a currently running template deployment.
+     *
+     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
+     * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
+     * template deployment and leaves the resource group partially deployed.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param deploymentName The name of the deployment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public void cancel(String resourceGroupName, String deploymentName) {
+        cancelWithResponse(resourceGroupName, deploymentName, Context.NONE);
     }
 
     /**
@@ -9092,11 +9368,12 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the deployment export result.
+     * @return the deployment export result along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public DeploymentExportResultInner exportTemplate(String resourceGroupName, String deploymentName) {
-        return exportTemplateAsync(resourceGroupName, deploymentName).block();
+    public Response<DeploymentExportResultInner> exportTemplateWithResponse(
+        String resourceGroupName, String deploymentName) {
+        return exportTemplateWithResponseAsync(resourceGroupName, deploymentName).block();
     }
 
     /**
@@ -9114,6 +9391,21 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     public Response<DeploymentExportResultInner> exportTemplateWithResponse(
         String resourceGroupName, String deploymentName, Context context) {
         return exportTemplateWithResponseAsync(resourceGroupName, deploymentName, context).block();
+    }
+
+    /**
+     * Exports the template used for specified deployment.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param deploymentName The name of the deployment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the deployment export result.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public DeploymentExportResultInner exportTemplate(String resourceGroupName, String deploymentName) {
+        return exportTemplateWithResponse(resourceGroupName, deploymentName, Context.NONE).getValue();
     }
 
     /**
@@ -9412,11 +9704,11 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to calculate template hash.
+     * @return result of the request to calculate template hash along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public TemplateHashResultInner calculateTemplateHash(Object template) {
-        return calculateTemplateHashAsync(template).block();
+    public Response<TemplateHashResultInner> calculateTemplateHashWithResponse(Object template) {
+        return calculateTemplateHashWithResponseAsync(template).block();
     }
 
     /**
@@ -9432,6 +9724,20 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<TemplateHashResultInner> calculateTemplateHashWithResponse(Object template, Context context) {
         return calculateTemplateHashWithResponseAsync(template, context).block();
+    }
+
+    /**
+     * Calculate the hash of the given template.
+     *
+     * @param template The template provided to calculate hash.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return result of the request to calculate template hash.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public TemplateHashResultInner calculateTemplateHash(Object template) {
+        return calculateTemplateHashWithResponse(template, Context.NONE).getValue();
     }
 
     /**
@@ -9807,6 +10113,4 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
                         res.getValue().nextLink(),
                         null));
     }
-
-    private static final ClientLogger LOGGER = new ClientLogger(DeploymentsClientImpl.class);
 }

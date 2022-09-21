@@ -16,6 +16,10 @@ public final class PrivateEndpointConnectionPropertiesPrivateEndpoint {
     @JsonProperty(value = "id")
     private String id;
 
+    /** Creates an instance of PrivateEndpointConnectionPropertiesPrivateEndpoint class. */
+    public PrivateEndpointConnectionPropertiesPrivateEndpoint() {
+    }
+
     /**
      * Get the id property: The resource id of the private endpoint resource from Microsoft.Network provider.
      *

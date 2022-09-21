@@ -22,6 +22,10 @@ public final class NetworkAdapterPosition {
     @JsonProperty(value = "port", access = JsonProperty.Access.WRITE_ONLY)
     private Integer port;
 
+    /** Creates an instance of NetworkAdapterPosition class. */
+    public NetworkAdapterPosition() {
+    }
+
     /**
      * Get the networkGroup property: The network group.
      *

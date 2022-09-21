@@ -24,14 +24,15 @@ public interface ManagementLocksClient {
      * @param lockName The lock name. The lock name can be a maximum of 260 characters. It cannot contain &lt;, &gt; %,
      *     &amp;, :, \, ?, /, or any control characters.
      * @param parameters The management lock parameters.
+     * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the lock information.
+     * @return the lock information along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    ManagementLockObjectInner createOrUpdateAtResourceGroupLevel(
-        String resourceGroupName, String lockName, ManagementLockObjectInner parameters);
+    Response<ManagementLockObjectInner> createOrUpdateAtResourceGroupLevelWithResponse(
+        String resourceGroupName, String lockName, ManagementLockObjectInner parameters, Context context);
 
     /**
      * Creates or updates a management lock at the resource group level.
@@ -44,31 +45,14 @@ public interface ManagementLocksClient {
      * @param lockName The lock name. The lock name can be a maximum of 260 characters. It cannot contain &lt;, &gt; %,
      *     &amp;, :, \, ?, /, or any control characters.
      * @param parameters The management lock parameters.
-     * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the lock information along with {@link Response}.
+     * @return the lock information.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<ManagementLockObjectInner> createOrUpdateAtResourceGroupLevelWithResponse(
-        String resourceGroupName, String lockName, ManagementLockObjectInner parameters, Context context);
-
-    /**
-     * Deletes a management lock at the resource group level.
-     *
-     * <p>To delete management locks, you must have access to Microsoft.Authorization/* or
-     * Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are
-     * granted those actions.
-     *
-     * @param resourceGroupName The name of the resource group containing the lock.
-     * @param lockName The name of lock to delete.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    void delete(String resourceGroupName, String lockName);
+    ManagementLockObjectInner createOrUpdateAtResourceGroupLevel(
+        String resourceGroupName, String lockName, ManagementLockObjectInner parameters);
 
     /**
      * Deletes a management lock at the resource group level.
@@ -89,17 +73,20 @@ public interface ManagementLocksClient {
     Response<Void> deleteWithResponse(String resourceGroupName, String lockName, Context context);
 
     /**
-     * Gets a management lock at the resource group level.
+     * Deletes a management lock at the resource group level.
      *
-     * @param resourceGroupName The name of the locked resource group.
-     * @param lockName The name of the lock to get.
+     * <p>To delete management locks, you must have access to Microsoft.Authorization/* or
+     * Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are
+     * granted those actions.
+     *
+     * @param resourceGroupName The name of the resource group containing the lock.
+     * @param lockName The name of lock to delete.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a management lock at the resource group level.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    ManagementLockObjectInner getByResourceGroup(String resourceGroupName, String lockName);
+    void delete(String resourceGroupName, String lockName);
 
     /**
      * Gets a management lock at the resource group level.
@@ -117,23 +104,17 @@ public interface ManagementLocksClient {
         String resourceGroupName, String lockName, Context context);
 
     /**
-     * Create or update a management lock by scope.
+     * Gets a management lock at the resource group level.
      *
-     * @param scope The scope for the lock. When providing a scope for the assignment, use
-     *     '/subscriptions/{subscriptionId}' for subscriptions,
-     *     '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}' for resource groups, and
-     *     '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePathIfPresent}/{resourceType}/{resourceName}'
-     *     for resources.
-     * @param lockName The name of lock.
-     * @param parameters Create or update management lock parameters.
+     * @param resourceGroupName The name of the locked resource group.
+     * @param lockName The name of the lock to get.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the lock information.
+     * @return a management lock at the resource group level.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    ManagementLockObjectInner createOrUpdateByScope(
-        String scope, String lockName, ManagementLockObjectInner parameters);
+    ManagementLockObjectInner getByResourceGroup(String resourceGroupName, String lockName);
 
     /**
      * Create or update a management lock by scope.
@@ -156,16 +137,23 @@ public interface ManagementLocksClient {
         String scope, String lockName, ManagementLockObjectInner parameters, Context context);
 
     /**
-     * Delete a management lock by scope.
+     * Create or update a management lock by scope.
      *
-     * @param scope The scope for the lock.
+     * @param scope The scope for the lock. When providing a scope for the assignment, use
+     *     '/subscriptions/{subscriptionId}' for subscriptions,
+     *     '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}' for resource groups, and
+     *     '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePathIfPresent}/{resourceType}/{resourceName}'
+     *     for resources.
      * @param lockName The name of lock.
+     * @param parameters Create or update management lock parameters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the lock information.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    void deleteByScope(String scope, String lockName);
+    ManagementLockObjectInner createOrUpdateByScope(
+        String scope, String lockName, ManagementLockObjectInner parameters);
 
     /**
      * Delete a management lock by scope.
@@ -182,17 +170,16 @@ public interface ManagementLocksClient {
     Response<Void> deleteByScopeWithResponse(String scope, String lockName, Context context);
 
     /**
-     * Get a management lock by scope.
+     * Delete a management lock by scope.
      *
      * @param scope The scope for the lock.
      * @param lockName The name of lock.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a management lock by scope.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    ManagementLockObjectInner getByScope(String scope, String lockName);
+    void deleteByScope(String scope, String lockName);
 
     /**
      * Get a management lock by scope.
@@ -209,34 +196,17 @@ public interface ManagementLocksClient {
     Response<ManagementLockObjectInner> getByScopeWithResponse(String scope, String lockName, Context context);
 
     /**
-     * Creates or updates a management lock at the resource level or any level below the resource.
+     * Get a management lock by scope.
      *
-     * <p>When you apply a lock at a parent scope, all child resources inherit the same lock. To create management
-     * locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the
-     * built-in roles, only Owner and User Access Administrator are granted those actions.
-     *
-     * @param resourceGroupName The name of the resource group containing the resource to lock.
-     * @param resourceProviderNamespace The resource provider namespace of the resource to lock.
-     * @param parentResourcePath The parent resource identity.
-     * @param resourceType The resource type of the resource to lock.
-     * @param resourceName The name of the resource to lock.
-     * @param lockName The name of lock. The lock name can be a maximum of 260 characters. It cannot contain &lt;, &gt;
-     *     %, &amp;, :, \, ?, /, or any control characters.
-     * @param parameters Parameters for creating or updating a management lock.
+     * @param scope The scope for the lock.
+     * @param lockName The name of lock.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the lock information.
+     * @return a management lock by scope.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    ManagementLockObjectInner createOrUpdateAtResourceLevel(
-        String resourceGroupName,
-        String resourceProviderNamespace,
-        String parentResourcePath,
-        String resourceType,
-        String resourceName,
-        String lockName,
-        ManagementLockObjectInner parameters);
+    ManagementLockObjectInner getByScope(String scope, String lockName);
 
     /**
      * Creates or updates a management lock at the resource level or any level below the resource.
@@ -271,30 +241,34 @@ public interface ManagementLocksClient {
         Context context);
 
     /**
-     * Deletes the management lock of a resource or any level below the resource.
+     * Creates or updates a management lock at the resource level or any level below the resource.
      *
-     * <p>To delete management locks, you must have access to Microsoft.Authorization/* or
-     * Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are
-     * granted those actions.
+     * <p>When you apply a lock at a parent scope, all child resources inherit the same lock. To create management
+     * locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the
+     * built-in roles, only Owner and User Access Administrator are granted those actions.
      *
-     * @param resourceGroupName The name of the resource group containing the resource with the lock to delete.
-     * @param resourceProviderNamespace The resource provider namespace of the resource with the lock to delete.
+     * @param resourceGroupName The name of the resource group containing the resource to lock.
+     * @param resourceProviderNamespace The resource provider namespace of the resource to lock.
      * @param parentResourcePath The parent resource identity.
-     * @param resourceType The resource type of the resource with the lock to delete.
-     * @param resourceName The name of the resource with the lock to delete.
-     * @param lockName The name of the lock to delete.
+     * @param resourceType The resource type of the resource to lock.
+     * @param resourceName The name of the resource to lock.
+     * @param lockName The name of lock. The lock name can be a maximum of 260 characters. It cannot contain &lt;, &gt;
+     *     %, &amp;, :, \, ?, /, or any control characters.
+     * @param parameters Parameters for creating or updating a management lock.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the lock information.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    void deleteAtResourceLevel(
+    ManagementLockObjectInner createOrUpdateAtResourceLevel(
         String resourceGroupName,
         String resourceProviderNamespace,
         String parentResourcePath,
         String resourceType,
         String resourceName,
-        String lockName);
+        String lockName,
+        ManagementLockObjectInner parameters);
 
     /**
      * Deletes the management lock of a resource or any level below the resource.
@@ -326,21 +300,24 @@ public interface ManagementLocksClient {
         Context context);
 
     /**
-     * Get the management lock of a resource or any level below resource.
+     * Deletes the management lock of a resource or any level below the resource.
      *
-     * @param resourceGroupName The name of the resource group.
-     * @param resourceProviderNamespace The namespace of the resource provider.
-     * @param parentResourcePath An extra path parameter needed in some services, like SQL Databases.
-     * @param resourceType The type of the resource.
-     * @param resourceName The name of the resource.
-     * @param lockName The name of lock.
+     * <p>To delete management locks, you must have access to Microsoft.Authorization/* or
+     * Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are
+     * granted those actions.
+     *
+     * @param resourceGroupName The name of the resource group containing the resource with the lock to delete.
+     * @param resourceProviderNamespace The resource provider namespace of the resource with the lock to delete.
+     * @param parentResourcePath The parent resource identity.
+     * @param resourceType The resource type of the resource with the lock to delete.
+     * @param resourceName The name of the resource with the lock to delete.
+     * @param lockName The name of the lock to delete.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the management lock of a resource or any level below resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    ManagementLockObjectInner getAtResourceLevel(
+    void deleteAtResourceLevel(
         String resourceGroupName,
         String resourceProviderNamespace,
         String parentResourcePath,
@@ -374,22 +351,27 @@ public interface ManagementLocksClient {
         Context context);
 
     /**
-     * Creates or updates a management lock at the subscription level.
+     * Get the management lock of a resource or any level below resource.
      *
-     * <p>When you apply a lock at a parent scope, all child resources inherit the same lock. To create management
-     * locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the
-     * built-in roles, only Owner and User Access Administrator are granted those actions.
-     *
-     * @param lockName The name of lock. The lock name can be a maximum of 260 characters. It cannot contain &lt;, &gt;
-     *     %, &amp;, :, \, ?, /, or any control characters.
-     * @param parameters The management lock parameters.
+     * @param resourceGroupName The name of the resource group.
+     * @param resourceProviderNamespace The namespace of the resource provider.
+     * @param parentResourcePath An extra path parameter needed in some services, like SQL Databases.
+     * @param resourceType The type of the resource.
+     * @param resourceName The name of the resource.
+     * @param lockName The name of lock.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the lock information.
+     * @return the management lock of a resource or any level below resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    ManagementLockObjectInner createOrUpdateAtSubscriptionLevel(String lockName, ManagementLockObjectInner parameters);
+    ManagementLockObjectInner getAtResourceLevel(
+        String resourceGroupName,
+        String resourceProviderNamespace,
+        String parentResourcePath,
+        String resourceType,
+        String resourceName,
+        String lockName);
 
     /**
      * Creates or updates a management lock at the subscription level.
@@ -412,19 +394,22 @@ public interface ManagementLocksClient {
         String lockName, ManagementLockObjectInner parameters, Context context);
 
     /**
-     * Deletes the management lock at the subscription level.
+     * Creates or updates a management lock at the subscription level.
      *
-     * <p>To delete management locks, you must have access to Microsoft.Authorization/* or
-     * Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are
-     * granted those actions.
+     * <p>When you apply a lock at a parent scope, all child resources inherit the same lock. To create management
+     * locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the
+     * built-in roles, only Owner and User Access Administrator are granted those actions.
      *
-     * @param lockName The name of lock to delete.
+     * @param lockName The name of lock. The lock name can be a maximum of 260 characters. It cannot contain &lt;, &gt;
+     *     %, &amp;, :, \, ?, /, or any control characters.
+     * @param parameters The management lock parameters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the lock information.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    void deleteAtSubscriptionLevel(String lockName);
+    ManagementLockObjectInner createOrUpdateAtSubscriptionLevel(String lockName, ManagementLockObjectInner parameters);
 
     /**
      * Deletes the management lock at the subscription level.
@@ -444,16 +429,19 @@ public interface ManagementLocksClient {
     Response<Void> deleteAtSubscriptionLevelWithResponse(String lockName, Context context);
 
     /**
-     * Gets a management lock at the subscription level.
+     * Deletes the management lock at the subscription level.
      *
-     * @param lockName The name of the lock to get.
+     * <p>To delete management locks, you must have access to Microsoft.Authorization/* or
+     * Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are
+     * granted those actions.
+     *
+     * @param lockName The name of lock to delete.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a management lock at the subscription level.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    ManagementLockObjectInner getAtSubscriptionLevel(String lockName);
+    void deleteAtSubscriptionLevel(String lockName);
 
     /**
      * Gets a management lock at the subscription level.
@@ -467,6 +455,18 @@ public interface ManagementLocksClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ManagementLockObjectInner> getAtSubscriptionLevelWithResponse(String lockName, Context context);
+
+    /**
+     * Gets a management lock at the subscription level.
+     *
+     * @param lockName The name of the lock to get.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a management lock at the subscription level.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    ManagementLockObjectInner getAtSubscriptionLevel(String lockName);
 
     /**
      * Gets all the management locks for a resource group.

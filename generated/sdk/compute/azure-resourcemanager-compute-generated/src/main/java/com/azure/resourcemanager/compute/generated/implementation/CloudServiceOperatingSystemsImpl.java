@@ -30,15 +30,6 @@ public final class CloudServiceOperatingSystemsImpl implements CloudServiceOpera
         this.serviceManager = serviceManager;
     }
 
-    public OSVersion getOSVersion(String location, String osVersionName) {
-        OSVersionInner inner = this.serviceClient().getOSVersion(location, osVersionName);
-        if (inner != null) {
-            return new OSVersionImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<OSVersion> getOSVersionWithResponse(String location, String osVersionName, Context context) {
         Response<OSVersionInner> inner =
             this.serviceClient().getOSVersionWithResponse(location, osVersionName, context);
@@ -48,6 +39,15 @@ public final class CloudServiceOperatingSystemsImpl implements CloudServiceOpera
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new OSVersionImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public OSVersion getOSVersion(String location, String osVersionName) {
+        OSVersionInner inner = this.serviceClient().getOSVersion(location, osVersionName);
+        if (inner != null) {
+            return new OSVersionImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -63,15 +63,6 @@ public final class CloudServiceOperatingSystemsImpl implements CloudServiceOpera
         return Utils.mapPage(inner, inner1 -> new OSVersionImpl(inner1, this.manager()));
     }
 
-    public OSFamily getOSFamily(String location, String osFamilyName) {
-        OSFamilyInner inner = this.serviceClient().getOSFamily(location, osFamilyName);
-        if (inner != null) {
-            return new OSFamilyImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<OSFamily> getOSFamilyWithResponse(String location, String osFamilyName, Context context) {
         Response<OSFamilyInner> inner = this.serviceClient().getOSFamilyWithResponse(location, osFamilyName, context);
         if (inner != null) {
@@ -80,6 +71,15 @@ public final class CloudServiceOperatingSystemsImpl implements CloudServiceOpera
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new OSFamilyImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public OSFamily getOSFamily(String location, String osFamilyName) {
+        OSFamilyInner inner = this.serviceClient().getOSFamily(location, osFamilyName);
+        if (inner != null) {
+            return new OSFamilyImpl(inner, this.manager());
         } else {
             return null;
         }

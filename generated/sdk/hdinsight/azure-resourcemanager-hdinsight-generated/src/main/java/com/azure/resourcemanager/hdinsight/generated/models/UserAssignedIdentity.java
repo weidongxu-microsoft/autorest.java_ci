@@ -28,6 +28,10 @@ public class UserAssignedIdentity {
     @JsonProperty(value = "tenantId")
     private String tenantId;
 
+    /** Creates an instance of UserAssignedIdentity class. */
+    public UserAssignedIdentity() {
+    }
+
     /**
      * Get the principalId property: The principal id of user assigned identity.
      *

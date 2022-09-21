@@ -66,6 +66,10 @@ public final class DimensionProperties {
     @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
 
+    /** Creates an instance of DimensionProperties class. */
+    public DimensionProperties() {
+    }
+
     /**
      * Get the description property: Dimension description.
      *

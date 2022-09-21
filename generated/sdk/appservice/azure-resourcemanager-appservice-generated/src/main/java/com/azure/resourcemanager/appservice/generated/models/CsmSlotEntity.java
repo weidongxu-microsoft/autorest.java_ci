@@ -23,6 +23,10 @@ public final class CsmSlotEntity {
     @JsonProperty(value = "preserveVnet", required = true)
     private boolean preserveVnet;
 
+    /** Creates an instance of CsmSlotEntity class. */
+    public CsmSlotEntity() {
+    }
+
     /**
      * Get the targetSlot property: Destination deployment slot during swap operation.
      *

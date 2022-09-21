@@ -61,6 +61,10 @@ public final class RelayNamespaceProperties {
     @JsonProperty(value = "publicNetworkAccess")
     private PublicNetworkAccess publicNetworkAccess;
 
+    /** Creates an instance of RelayNamespaceProperties class. */
+    public RelayNamespaceProperties() {
+    }
+
     /**
      * Get the provisioningState property: Provisioning state of the Namespace.
      *

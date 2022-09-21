@@ -39,6 +39,10 @@ public final class ExpressRouteGatewayProperties {
     @JsonProperty(value = "virtualHub", required = true)
     private VirtualHubId virtualHub;
 
+    /** Creates an instance of ExpressRouteGatewayProperties class. */
+    public ExpressRouteGatewayProperties() {
+    }
+
     /**
      * Get the autoScaleConfiguration property: Configuration for auto scaling.
      *

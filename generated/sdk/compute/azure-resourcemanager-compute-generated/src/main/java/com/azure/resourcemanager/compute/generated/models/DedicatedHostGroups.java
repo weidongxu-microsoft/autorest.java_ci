@@ -15,18 +15,6 @@ public interface DedicatedHostGroups {
      *
      * @param resourceGroupName The name of the resource group.
      * @param hostGroupName The name of the dedicated host group.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void deleteByResourceGroup(String resourceGroupName, String hostGroupName);
-
-    /**
-     * Delete a dedicated host group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param hostGroupName The name of the dedicated host group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
@@ -34,10 +22,10 @@ public interface DedicatedHostGroups {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
-    Response<Void> deleteWithResponse(String resourceGroupName, String hostGroupName, Context context);
+    Response<Void> deleteByResourceGroupWithResponse(String resourceGroupName, String hostGroupName, Context context);
 
     /**
-     * Retrieves information about a dedicated host group.
+     * Delete a dedicated host group.
      *
      * @param resourceGroupName The name of the resource group.
      * @param hostGroupName The name of the dedicated host group.
@@ -45,9 +33,8 @@ public interface DedicatedHostGroups {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the dedicated host group that the dedicated hosts should be assigned to.
      */
-    DedicatedHostGroup getByResourceGroup(String resourceGroupName, String hostGroupName);
+    void deleteByResourceGroup(String resourceGroupName, String hostGroupName);
 
     /**
      * Retrieves information about a dedicated host group.
@@ -67,6 +54,19 @@ public interface DedicatedHostGroups {
      */
     Response<DedicatedHostGroup> getByResourceGroupWithResponse(
         String resourceGroupName, String hostGroupName, InstanceViewTypes expand, Context context);
+
+    /**
+     * Retrieves information about a dedicated host group.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param hostGroupName The name of the dedicated host group.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return specifies information about the dedicated host group that the dedicated hosts should be assigned to.
+     */
+    DedicatedHostGroup getByResourceGroup(String resourceGroupName, String hostGroupName);
 
     /**
      * Lists all of the dedicated host groups in the specified resource group. Use the nextLink property in the response

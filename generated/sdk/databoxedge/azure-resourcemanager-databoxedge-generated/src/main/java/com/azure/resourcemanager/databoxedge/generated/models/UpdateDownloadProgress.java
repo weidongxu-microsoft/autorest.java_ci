@@ -46,6 +46,10 @@ public final class UpdateDownloadProgress {
     @JsonProperty(value = "numberOfUpdatesDownloaded", access = JsonProperty.Access.WRITE_ONLY)
     private Integer numberOfUpdatesDownloaded;
 
+    /** Creates an instance of UpdateDownloadProgress class. */
+    public UpdateDownloadProgress() {
+    }
+
     /**
      * Get the downloadPhase property: The download phase.
      *

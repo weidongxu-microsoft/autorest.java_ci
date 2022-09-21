@@ -24,6 +24,10 @@ public final class QueryTimePeriod {
     @JsonProperty(value = "to", required = true)
     private OffsetDateTime to;
 
+    /** Creates an instance of QueryTimePeriod class. */
+    public QueryTimePeriod() {
+    }
+
     /**
      * Get the from property: The start date to pull data from.
      *

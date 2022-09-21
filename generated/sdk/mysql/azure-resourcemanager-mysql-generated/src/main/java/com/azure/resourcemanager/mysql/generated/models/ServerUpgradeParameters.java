@@ -17,6 +17,10 @@ public final class ServerUpgradeParameters {
     @JsonProperty(value = "properties")
     private ServerUpgradeParametersProperties innerProperties;
 
+    /** Creates an instance of ServerUpgradeParameters class. */
+    public ServerUpgradeParameters() {
+    }
+
     /**
      * Get the innerProperties property: The properties that can be updated for a server.
      *

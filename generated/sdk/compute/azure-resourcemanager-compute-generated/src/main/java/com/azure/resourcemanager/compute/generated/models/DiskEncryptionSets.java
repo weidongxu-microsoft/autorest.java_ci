@@ -17,21 +17,6 @@ public interface DiskEncryptionSets {
      * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
      *     after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The
      *     maximum name length is 80 characters.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a disk encryption set.
-     */
-    DiskEncryptionSet getByResourceGroup(String resourceGroupName, String diskEncryptionSetName);
-
-    /**
-     * Gets information about a disk encryption set.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
-     *     after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The
-     *     maximum name length is 80 characters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
@@ -41,6 +26,21 @@ public interface DiskEncryptionSets {
      */
     Response<DiskEncryptionSet> getByResourceGroupWithResponse(
         String resourceGroupName, String diskEncryptionSetName, Context context);
+
+    /**
+     * Gets information about a disk encryption set.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
+     *     after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The
+     *     maximum name length is 80 characters.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return information about a disk encryption set.
+     */
+    DiskEncryptionSet getByResourceGroup(String resourceGroupName, String diskEncryptionSetName);
 
     /**
      * Deletes a disk encryption set.

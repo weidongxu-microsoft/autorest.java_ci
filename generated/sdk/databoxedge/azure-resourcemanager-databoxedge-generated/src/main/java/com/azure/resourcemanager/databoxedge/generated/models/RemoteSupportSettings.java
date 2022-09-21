@@ -29,6 +29,10 @@ public final class RemoteSupportSettings {
     @JsonProperty(value = "expirationTimeStampInUTC")
     private OffsetDateTime expirationTimestampInUtc;
 
+    /** Creates an instance of RemoteSupportSettings class. */
+    public RemoteSupportSettings() {
+    }
+
     /**
      * Get the remoteApplicationType property: Remote application type.
      *

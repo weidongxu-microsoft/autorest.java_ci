@@ -28,6 +28,10 @@ public final class MetricDimensionV1 {
     @JsonProperty(value = "toBeExportedForShoebox")
     private Boolean toBeExportedForShoebox;
 
+    /** Creates an instance of MetricDimensionV1 class. */
+    public MetricDimensionV1() {
+    }
+
     /**
      * Get the name property: Name of the metrics dimension.
      *

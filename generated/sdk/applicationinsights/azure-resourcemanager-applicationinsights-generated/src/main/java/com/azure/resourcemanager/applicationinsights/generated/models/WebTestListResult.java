@@ -26,6 +26,10 @@ public final class WebTestListResult {
     @JsonProperty(value = "nextLink")
     private String nextLink;
 
+    /** Creates an instance of WebTestListResult class. */
+    public WebTestListResult() {
+    }
+
     /**
      * Get the value property: Set of Application Insights web test definitions.
      *

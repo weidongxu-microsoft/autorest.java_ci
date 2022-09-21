@@ -49,6 +49,10 @@ public final class ReservationRecommendationDetailsProperties {
     @JsonProperty(value = "usage", access = JsonProperty.Access.WRITE_ONLY)
     private ReservationRecommendationDetailsUsageProperties usage;
 
+    /** Creates an instance of ReservationRecommendationDetailsProperties class. */
+    public ReservationRecommendationDetailsProperties() {
+    }
+
     /**
      * Get the currency property: An ISO 4217 currency code identifier for the costs and savings.
      *

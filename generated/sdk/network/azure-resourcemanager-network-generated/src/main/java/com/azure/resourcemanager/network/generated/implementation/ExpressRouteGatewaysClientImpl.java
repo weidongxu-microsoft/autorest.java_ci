@@ -172,7 +172,7 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -206,7 +206,7 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -231,11 +231,11 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of ExpressRoute gateways.
+     * @return list of ExpressRoute gateways along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ExpressRouteGatewayListInner listBySubscription() {
-        return listBySubscriptionAsync().block();
+    public Response<ExpressRouteGatewayListInner> listBySubscriptionWithResponse() {
+        return listBySubscriptionWithResponseAsync().block();
     }
 
     /**
@@ -250,6 +250,18 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<ExpressRouteGatewayListInner> listBySubscriptionWithResponse(Context context) {
         return listBySubscriptionWithResponseAsync(context).block();
+    }
+
+    /**
+     * Lists ExpressRoute gateways under a given subscription.
+     *
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return list of ExpressRoute gateways.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ExpressRouteGatewayListInner listBySubscription() {
+        return listBySubscriptionWithResponse(Context.NONE).getValue();
     }
 
     /**
@@ -280,7 +292,7 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -325,7 +337,7 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -359,11 +371,11 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of ExpressRoute gateways.
+     * @return list of ExpressRoute gateways along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ExpressRouteGatewayListInner listByResourceGroup(String resourceGroupName) {
-        return listByResourceGroupAsync(resourceGroupName).block();
+    public Response<ExpressRouteGatewayListInner> listByResourceGroupWithResponse(String resourceGroupName) {
+        return listByResourceGroupWithResponseAsync(resourceGroupName).block();
     }
 
     /**
@@ -380,6 +392,20 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
     public Response<ExpressRouteGatewayListInner> listByResourceGroupWithResponse(
         String resourceGroupName, Context context) {
         return listByResourceGroupWithResponseAsync(resourceGroupName, context).block();
+    }
+
+    /**
+     * Lists ExpressRoute gateways in a given resource group.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return list of ExpressRoute gateways.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ExpressRouteGatewayListInner listByResourceGroup(String resourceGroupName) {
+        return listByResourceGroupWithResponse(resourceGroupName, Context.NONE).getValue();
     }
 
     /**
@@ -427,7 +453,7 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
         } else {
             putExpressRouteGatewayParameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -492,7 +518,7 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
         } else {
             putExpressRouteGatewayParameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -742,7 +768,7 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
         } else {
             expressRouteGatewayParameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -807,7 +833,7 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
         } else {
             expressRouteGatewayParameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1035,7 +1061,7 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1087,7 +1113,7 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1126,11 +1152,12 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return expressRoute gateway resource.
+     * @return expressRoute gateway resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ExpressRouteGatewayInner getByResourceGroup(String resourceGroupName, String expressRouteGatewayName) {
-        return getByResourceGroupAsync(resourceGroupName, expressRouteGatewayName).block();
+    public Response<ExpressRouteGatewayInner> getByResourceGroupWithResponse(
+        String resourceGroupName, String expressRouteGatewayName) {
+        return getByResourceGroupWithResponseAsync(resourceGroupName, expressRouteGatewayName).block();
     }
 
     /**
@@ -1148,6 +1175,21 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
     public Response<ExpressRouteGatewayInner> getByResourceGroupWithResponse(
         String resourceGroupName, String expressRouteGatewayName, Context context) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, expressRouteGatewayName, context).block();
+    }
+
+    /**
+     * Fetches the details of a ExpressRoute gateway in a resource group.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param expressRouteGatewayName The name of the ExpressRoute gateway.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return expressRoute gateway resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ExpressRouteGatewayInner getByResourceGroup(String resourceGroupName, String expressRouteGatewayName) {
+        return getByResourceGroupWithResponse(resourceGroupName, expressRouteGatewayName, Context.NONE).getValue();
     }
 
     /**
@@ -1185,7 +1227,7 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1238,7 +1280,7 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service

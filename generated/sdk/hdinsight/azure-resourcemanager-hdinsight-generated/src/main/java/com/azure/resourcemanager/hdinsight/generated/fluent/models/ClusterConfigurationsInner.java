@@ -19,6 +19,10 @@ public final class ClusterConfigurationsInner {
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, Map<String, String>> configurations;
 
+    /** Creates an instance of ClusterConfigurationsInner class. */
+    public ClusterConfigurationsInner() {
+    }
+
     /**
      * Get the configurations property: The configuration object for the specified configuration for the specified
      * cluster.

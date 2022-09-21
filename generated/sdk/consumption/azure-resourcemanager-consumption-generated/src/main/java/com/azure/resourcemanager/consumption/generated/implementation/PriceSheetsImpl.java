@@ -27,15 +27,6 @@ public final class PriceSheetsImpl implements PriceSheets {
         this.serviceManager = serviceManager;
     }
 
-    public PriceSheetResult get() {
-        PriceSheetResultInner inner = this.serviceClient().get();
-        if (inner != null) {
-            return new PriceSheetResultImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<PriceSheetResult> getWithResponse(String expand, String skiptoken, Integer top, Context context) {
         Response<PriceSheetResultInner> inner = this.serviceClient().getWithResponse(expand, skiptoken, top, context);
         if (inner != null) {
@@ -49,8 +40,8 @@ public final class PriceSheetsImpl implements PriceSheets {
         }
     }
 
-    public PriceSheetResult getByBillingPeriod(String billingPeriodName) {
-        PriceSheetResultInner inner = this.serviceClient().getByBillingPeriod(billingPeriodName);
+    public PriceSheetResult get() {
+        PriceSheetResultInner inner = this.serviceClient().get();
         if (inner != null) {
             return new PriceSheetResultImpl(inner, this.manager());
         } else {
@@ -68,6 +59,15 @@ public final class PriceSheetsImpl implements PriceSheets {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new PriceSheetResultImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public PriceSheetResult getByBillingPeriod(String billingPeriodName) {
+        PriceSheetResultInner inner = this.serviceClient().getByBillingPeriod(billingPeriodName);
+        if (inner != null) {
+            return new PriceSheetResultImpl(inner, this.manager());
         } else {
             return null;
         }

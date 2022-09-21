@@ -28,6 +28,10 @@ public class LoadBalancingSettingsUpdateParameters {
     @JsonProperty(value = "additionalLatencyMilliseconds")
     private Integer additionalLatencyMilliseconds;
 
+    /** Creates an instance of LoadBalancingSettingsUpdateParameters class. */
+    public LoadBalancingSettingsUpdateParameters() {
+    }
+
     /**
      * Get the sampleSize property: The number of samples to consider for load balancing decisions.
      *

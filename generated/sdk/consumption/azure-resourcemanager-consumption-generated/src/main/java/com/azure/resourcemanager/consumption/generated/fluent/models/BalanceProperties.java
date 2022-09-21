@@ -105,6 +105,10 @@ public final class BalanceProperties {
     @JsonProperty(value = "adjustmentDetails", access = JsonProperty.Access.WRITE_ONLY)
     private List<BalancePropertiesAdjustmentDetailsItem> adjustmentDetails;
 
+    /** Creates an instance of BalanceProperties class. */
+    public BalanceProperties() {
+    }
+
     /**
      * Get the currency property: The ISO currency in which the meter is charged, for example, USD.
      *

@@ -36,16 +36,6 @@ public final class RestorePointsImpl implements RestorePoints {
         this.serviceClient().delete(resourceGroupName, restorePointCollectionName, restorePointName, context);
     }
 
-    public RestorePoint get(String resourceGroupName, String restorePointCollectionName, String restorePointName) {
-        RestorePointInner inner =
-            this.serviceClient().get(resourceGroupName, restorePointCollectionName, restorePointName);
-        if (inner != null) {
-            return new RestorePointImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<RestorePoint> getWithResponse(
         String resourceGroupName,
         String restorePointCollectionName,
@@ -62,6 +52,16 @@ public final class RestorePointsImpl implements RestorePoints {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new RestorePointImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public RestorePoint get(String resourceGroupName, String restorePointCollectionName, String restorePointName) {
+        RestorePointInner inner =
+            this.serviceClient().get(resourceGroupName, restorePointCollectionName, restorePointName);
+        if (inner != null) {
+            return new RestorePointImpl(inner, this.manager());
         } else {
             return null;
         }

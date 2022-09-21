@@ -24,6 +24,10 @@ public final class RoleList {
     @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
 
+    /** Creates an instance of RoleList class. */
+    public RoleList() {
+    }
+
     /**
      * Get the value property: The Value.
      *

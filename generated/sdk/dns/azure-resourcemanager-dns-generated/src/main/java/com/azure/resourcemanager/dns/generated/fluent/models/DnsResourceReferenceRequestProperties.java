@@ -18,6 +18,10 @@ public final class DnsResourceReferenceRequestProperties {
     @JsonProperty(value = "targetResources")
     private List<SubResource> targetResources;
 
+    /** Creates an instance of DnsResourceReferenceRequestProperties class. */
+    public DnsResourceReferenceRequestProperties() {
+    }
+
     /**
      * Get the targetResources property: A list of references to azure resources for which referencing dns records need
      * to be queried.

@@ -28,6 +28,10 @@ public final class NetworkTraceInner {
     @JsonProperty(value = "message")
     private String message;
 
+    /** Creates an instance of NetworkTraceInner class. */
+    public NetworkTraceInner() {
+    }
+
     /**
      * Get the path property: Local file path for the captured network trace file.
      *

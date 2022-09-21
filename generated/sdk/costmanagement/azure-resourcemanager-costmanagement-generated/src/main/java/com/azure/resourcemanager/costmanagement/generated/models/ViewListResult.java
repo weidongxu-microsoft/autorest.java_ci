@@ -24,6 +24,10 @@ public final class ViewListResult {
     @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
 
+    /** Creates an instance of ViewListResult class. */
+    public ViewListResult() {
+    }
+
     /**
      * Get the value property: The list of views.
      *

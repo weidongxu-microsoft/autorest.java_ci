@@ -27,17 +27,6 @@ public final class VpnSiteLinkConnectionsImpl implements VpnSiteLinkConnections 
         this.serviceManager = serviceManager;
     }
 
-    public VpnSiteLinkConnection get(
-        String resourceGroupName, String gatewayName, String connectionName, String linkConnectionName) {
-        VpnSiteLinkConnectionInner inner =
-            this.serviceClient().get(resourceGroupName, gatewayName, connectionName, linkConnectionName);
-        if (inner != null) {
-            return new VpnSiteLinkConnectionImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<VpnSiteLinkConnection> getWithResponse(
         String resourceGroupName,
         String gatewayName,
@@ -54,6 +43,17 @@ public final class VpnSiteLinkConnectionsImpl implements VpnSiteLinkConnections 
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new VpnSiteLinkConnectionImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public VpnSiteLinkConnection get(
+        String resourceGroupName, String gatewayName, String connectionName, String linkConnectionName) {
+        VpnSiteLinkConnectionInner inner =
+            this.serviceClient().get(resourceGroupName, gatewayName, connectionName, linkConnectionName);
+        if (inner != null) {
+            return new VpnSiteLinkConnectionImpl(inner, this.manager());
         } else {
             return null;
         }

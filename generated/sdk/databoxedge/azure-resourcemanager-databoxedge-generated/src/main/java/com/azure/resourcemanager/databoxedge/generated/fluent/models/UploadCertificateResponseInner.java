@@ -59,6 +59,10 @@ public final class UploadCertificateResponseInner {
     @JsonProperty(value = "aadAudience", access = JsonProperty.Access.WRITE_ONLY)
     private String aadAudience;
 
+    /** Creates an instance of UploadCertificateResponseInner class. */
+    public UploadCertificateResponseInner() {
+    }
+
     /**
      * Get the authType property: Specifies authentication type.
      *

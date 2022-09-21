@@ -26,6 +26,10 @@ public final class ExperimentUpdateModel {
     @JsonProperty(value = "properties")
     private ExperimentUpdateProperties innerProperties;
 
+    /** Creates an instance of ExperimentUpdateModel class. */
+    public ExperimentUpdateModel() {
+    }
+
     /**
      * Get the tags property: Resource tags.
      *

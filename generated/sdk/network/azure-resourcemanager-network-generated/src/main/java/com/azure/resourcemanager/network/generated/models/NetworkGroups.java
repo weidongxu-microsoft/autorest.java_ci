@@ -16,19 +16,6 @@ public interface NetworkGroups {
      * @param resourceGroupName The name of the resource group.
      * @param networkManagerName The name of the network manager.
      * @param networkGroupName The name of the network group.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network group.
-     */
-    NetworkGroup get(String resourceGroupName, String networkManagerName, String networkGroupName);
-
-    /**
-     * Gets the specified network group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param networkManagerName The name of the network manager.
-     * @param networkGroupName The name of the network group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -37,6 +24,19 @@ public interface NetworkGroups {
      */
     Response<NetworkGroup> getWithResponse(
         String resourceGroupName, String networkManagerName, String networkGroupName, Context context);
+
+    /**
+     * Gets the specified network group.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param networkManagerName The name of the network manager.
+     * @param networkGroupName The name of the network group.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified network group.
+     */
+    NetworkGroup get(String resourceGroupName, String networkManagerName, String networkGroupName);
 
     /**
      * Deletes a network group.

@@ -28,17 +28,6 @@ public final class PeerExpressRouteCircuitConnectionsImpl implements PeerExpress
         this.serviceManager = serviceManager;
     }
 
-    public PeerExpressRouteCircuitConnection get(
-        String resourceGroupName, String circuitName, String peeringName, String connectionName) {
-        PeerExpressRouteCircuitConnectionInner inner =
-            this.serviceClient().get(resourceGroupName, circuitName, peeringName, connectionName);
-        if (inner != null) {
-            return new PeerExpressRouteCircuitConnectionImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<PeerExpressRouteCircuitConnection> getWithResponse(
         String resourceGroupName, String circuitName, String peeringName, String connectionName, Context context) {
         Response<PeerExpressRouteCircuitConnectionInner> inner =
@@ -49,6 +38,17 @@ public final class PeerExpressRouteCircuitConnectionsImpl implements PeerExpress
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new PeerExpressRouteCircuitConnectionImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public PeerExpressRouteCircuitConnection get(
+        String resourceGroupName, String circuitName, String peeringName, String connectionName) {
+        PeerExpressRouteCircuitConnectionInner inner =
+            this.serviceClient().get(resourceGroupName, circuitName, peeringName, connectionName);
+        if (inner != null) {
+            return new PeerExpressRouteCircuitConnectionImpl(inner, this.manager());
         } else {
             return null;
         }

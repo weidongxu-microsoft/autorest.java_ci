@@ -74,19 +74,6 @@ public interface FirewallPoliciesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Firewall Policy.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    FirewallPolicyInner getByResourceGroup(String resourceGroupName, String firewallPolicyName);
-
-    /**
-     * Gets the specified Firewall Policy.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param firewallPolicyName The name of the Firewall Policy.
      * @param expand Expands referenced resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -99,6 +86,19 @@ public interface FirewallPoliciesClient {
         String resourceGroupName, String firewallPolicyName, String expand, Context context);
 
     /**
+     * Gets the specified Firewall Policy.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param firewallPolicyName The name of the Firewall Policy.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified Firewall Policy.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    FirewallPolicyInner getByResourceGroup(String resourceGroupName, String firewallPolicyName);
+
+    /**
      * Creates or updates the specified Firewall Policy.
      *
      * @param resourceGroupName The name of the resource group.
@@ -159,20 +159,6 @@ public interface FirewallPoliciesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     FirewallPolicyInner createOrUpdate(
         String resourceGroupName, String firewallPolicyName, FirewallPolicyInner parameters, Context context);
-
-    /**
-     * Updates tags of a Azure Firewall Policy resource.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param firewallPolicyName The name of the Firewall Policy.
-     * @param parameters Parameters supplied to update Azure Firewall Policy tags.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return firewallPolicy Resource.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    FirewallPolicyInner updateTags(String resourceGroupName, String firewallPolicyName, TagsObject parameters);
 
     /**
      * Updates tags of a Azure Firewall Policy resource.
@@ -189,6 +175,20 @@ public interface FirewallPoliciesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<FirewallPolicyInner> updateTagsWithResponse(
         String resourceGroupName, String firewallPolicyName, TagsObject parameters, Context context);
+
+    /**
+     * Updates tags of a Azure Firewall Policy resource.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param firewallPolicyName The name of the Firewall Policy.
+     * @param parameters Parameters supplied to update Azure Firewall Policy tags.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return firewallPolicy Resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    FirewallPolicyInner updateTags(String resourceGroupName, String firewallPolicyName, TagsObject parameters);
 
     /**
      * Lists all Firewall Policies in a resource group.

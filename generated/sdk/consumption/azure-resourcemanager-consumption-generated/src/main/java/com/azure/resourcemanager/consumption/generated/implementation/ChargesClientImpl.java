@@ -207,45 +207,6 @@ public final class ChargesClientImpl implements ChargesClient {
      *     for invoiceSection scope, and
      *     'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/customers/{customerId}' specific for
      *     partners.
-     * @param startDate Start date.
-     * @param endDate End date.
-     * @param filter May be used to filter charges by properties/usageEnd (Utc time), properties/usageStart (Utc time).
-     *     The filter supports 'eq', 'lt', 'gt', 'le', 'ge', and 'and'. It does not currently support 'ne', 'or', or
-     *     'not'. Tag filter is a key value pair string where key and value is separated by a colon (:).
-     * @param apply May be used to group charges for billingAccount scope by properties/billingProfileId,
-     *     properties/invoiceSectionId, properties/customerId (specific for Partner Led), or for billingProfile scope by
-     *     properties/invoiceSectionId.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing charge summary on successful completion of {@link Mono}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<ChargesListResultInner> listAsync(
-        String scope, String startDate, String endDate, String filter, String apply) {
-        return listWithResponseAsync(scope, startDate, endDate, filter, apply)
-            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Lists the charges based for the defined scope.
-     *
-     * @param scope The scope associated with charges operations. This includes
-     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/departments/{departmentId}' for Department
-     *     scope, and
-     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/enrollmentAccounts/{enrollmentAccountId}'
-     *     for EnrollmentAccount scope. For department and enrollment accounts, you can also add billing period to the
-     *     scope using '/providers/Microsoft.Billing/billingPeriods/{billingPeriodName}'. For e.g. to specify billing
-     *     period at department scope use
-     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/departments/{departmentId}/providers/Microsoft.Billing/billingPeriods/{billingPeriodName}'.
-     *     Also, Modern Commerce Account scopes are '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}'
-     *     for billingAccount scope,
-     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
-     *     billingProfile scope,
-     *     'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}/invoiceSections/{invoiceSectionId}'
-     *     for invoiceSection scope, and
-     *     'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/customers/{customerId}' specific for
-     *     partners.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -280,18 +241,23 @@ public final class ChargesClientImpl implements ChargesClient {
      *     for invoiceSection scope, and
      *     'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/customers/{customerId}' specific for
      *     partners.
+     * @param startDate Start date.
+     * @param endDate End date.
+     * @param filter May be used to filter charges by properties/usageEnd (Utc time), properties/usageStart (Utc time).
+     *     The filter supports 'eq', 'lt', 'gt', 'le', 'ge', and 'and'. It does not currently support 'ne', 'or', or
+     *     'not'. Tag filter is a key value pair string where key and value is separated by a colon (:).
+     * @param apply May be used to group charges for billingAccount scope by properties/billingProfileId,
+     *     properties/invoiceSectionId, properties/customerId (specific for Partner Led), or for billingProfile scope by
+     *     properties/invoiceSectionId.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing charge summary.
+     * @return result of listing charge summary along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ChargesListResultInner list(String scope) {
-        final String startDate = null;
-        final String endDate = null;
-        final String filter = null;
-        final String apply = null;
-        return listAsync(scope, startDate, endDate, filter, apply).block();
+    public Response<ChargesListResultInner> listWithResponse(
+        String scope, String startDate, String endDate, String filter, String apply) {
+        return listWithResponseAsync(scope, startDate, endDate, filter, apply).block();
     }
 
     /**
@@ -331,5 +297,38 @@ public final class ChargesClientImpl implements ChargesClient {
     public Response<ChargesListResultInner> listWithResponse(
         String scope, String startDate, String endDate, String filter, String apply, Context context) {
         return listWithResponseAsync(scope, startDate, endDate, filter, apply, context).block();
+    }
+
+    /**
+     * Lists the charges based for the defined scope.
+     *
+     * @param scope The scope associated with charges operations. This includes
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/departments/{departmentId}' for Department
+     *     scope, and
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/enrollmentAccounts/{enrollmentAccountId}'
+     *     for EnrollmentAccount scope. For department and enrollment accounts, you can also add billing period to the
+     *     scope using '/providers/Microsoft.Billing/billingPeriods/{billingPeriodName}'. For e.g. to specify billing
+     *     period at department scope use
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/departments/{departmentId}/providers/Microsoft.Billing/billingPeriods/{billingPeriodName}'.
+     *     Also, Modern Commerce Account scopes are '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}'
+     *     for billingAccount scope,
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
+     *     billingProfile scope,
+     *     'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}/invoiceSections/{invoiceSectionId}'
+     *     for invoiceSection scope, and
+     *     'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/customers/{customerId}' specific for
+     *     partners.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return result of listing charge summary.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ChargesListResultInner list(String scope) {
+        final String startDate = null;
+        final String endDate = null;
+        final String filter = null;
+        final String apply = null;
+        return listWithResponse(scope, startDate, endDate, filter, apply, Context.NONE).getValue();
     }
 }

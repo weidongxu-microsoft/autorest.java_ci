@@ -233,10 +233,13 @@ public interface DeploymentExtended {
      * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
      * template deployment and leaves the resource group partially deployed.
      *
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
      */
-    void cancel();
+    Response<Void> cancelWithResponse(Context context);
 
     /**
      * Cancels a currently running template deployment.
@@ -245,13 +248,10 @@ public interface DeploymentExtended {
      * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
      * template deployment and leaves the resource group partially deployed.
      *
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
      */
-    Response<Void> cancelWithResponse(Context context);
+    void cancel();
 
     /**
      * Validates whether the specified template is syntactically correct and will be accepted by Azure Resource
@@ -304,15 +304,6 @@ public interface DeploymentExtended {
     /**
      * Exports the template used for specified deployment.
      *
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the deployment export result.
-     */
-    DeploymentExportResult exportTemplate();
-
-    /**
-     * Exports the template used for specified deployment.
-     *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -320,4 +311,13 @@ public interface DeploymentExtended {
      * @return the deployment export result along with {@link Response}.
      */
     Response<DeploymentExportResult> exportTemplateWithResponse(Context context);
+
+    /**
+     * Exports the template used for specified deployment.
+     *
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the deployment export result.
+     */
+    DeploymentExportResult exportTemplate();
 }

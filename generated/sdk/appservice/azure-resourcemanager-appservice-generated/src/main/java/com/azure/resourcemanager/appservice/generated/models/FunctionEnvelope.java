@@ -352,18 +352,6 @@ public interface FunctionEnvelope {
      *
      * <p>Description for Get function keys for a function in a web site, or a deployment slot.
      *
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource.
-     */
-    StringDictionary listFunctionKeys();
-
-    /**
-     * Get function keys for a function in a web site, or a deployment slot.
-     *
-     * <p>Description for Get function keys for a function in a web site, or a deployment slot.
-     *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -374,16 +362,16 @@ public interface FunctionEnvelope {
     Response<StringDictionary> listFunctionKeysWithResponse(Context context);
 
     /**
-     * Get function secrets for a function in a web site, or a deployment slot.
+     * Get function keys for a function in a web site, or a deployment slot.
      *
-     * <p>Description for Get function secrets for a function in a web site, or a deployment slot.
+     * <p>Description for Get function keys for a function in a web site, or a deployment slot.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return function secrets.
+     * @return string dictionary resource.
      */
-    FunctionSecrets listFunctionSecrets();
+    StringDictionary listFunctionKeys();
 
     /**
      * Get function secrets for a function in a web site, or a deployment slot.
@@ -398,4 +386,16 @@ public interface FunctionEnvelope {
      * @return function secrets along with {@link Response}.
      */
     Response<FunctionSecrets> listFunctionSecretsWithResponse(Context context);
+
+    /**
+     * Get function secrets for a function in a web site, or a deployment slot.
+     *
+     * <p>Description for Get function secrets for a function in a web site, or a deployment slot.
+     *
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return function secrets.
+     */
+    FunctionSecrets listFunctionSecrets();
 }

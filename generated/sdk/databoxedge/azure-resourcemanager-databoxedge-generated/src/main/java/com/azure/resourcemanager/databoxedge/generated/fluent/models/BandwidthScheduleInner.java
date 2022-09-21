@@ -27,6 +27,10 @@ public final class BandwidthScheduleInner extends ArmBaseModel {
     @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;
 
+    /** Creates an instance of BandwidthScheduleInner class. */
+    public BandwidthScheduleInner() {
+    }
+
     /**
      * Get the innerProperties property: The properties of the bandwidth schedule.
      *

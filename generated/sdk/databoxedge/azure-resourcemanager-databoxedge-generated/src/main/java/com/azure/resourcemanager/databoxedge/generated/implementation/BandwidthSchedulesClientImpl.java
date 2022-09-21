@@ -458,11 +458,11 @@ public final class BandwidthSchedulesClientImpl implements BandwidthSchedulesCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the properties of the specified bandwidth schedule.
+     * @return the properties of the specified bandwidth schedule along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public BandwidthScheduleInner get(String deviceName, String name, String resourceGroupName) {
-        return getAsync(deviceName, name, resourceGroupName).block();
+    public Response<BandwidthScheduleInner> getWithResponse(String deviceName, String name, String resourceGroupName) {
+        return getWithResponseAsync(deviceName, name, resourceGroupName).block();
     }
 
     /**
@@ -481,6 +481,22 @@ public final class BandwidthSchedulesClientImpl implements BandwidthSchedulesCli
     public Response<BandwidthScheduleInner> getWithResponse(
         String deviceName, String name, String resourceGroupName, Context context) {
         return getWithResponseAsync(deviceName, name, resourceGroupName, context).block();
+    }
+
+    /**
+     * Gets the properties of the specified bandwidth schedule.
+     *
+     * @param deviceName The device name.
+     * @param name The bandwidth schedule name.
+     * @param resourceGroupName The resource group name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the properties of the specified bandwidth schedule.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public BandwidthScheduleInner get(String deviceName, String name, String resourceGroupName) {
+        return getWithResponse(deviceName, name, resourceGroupName, Context.NONE).getValue();
     }
 
     /**

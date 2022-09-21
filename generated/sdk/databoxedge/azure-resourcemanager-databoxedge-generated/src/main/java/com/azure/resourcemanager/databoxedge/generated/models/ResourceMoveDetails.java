@@ -23,6 +23,10 @@ public final class ResourceMoveDetails {
     @JsonProperty(value = "operationInProgressLockTimeoutInUTC")
     private OffsetDateTime operationInProgressLockTimeoutInUtc;
 
+    /** Creates an instance of ResourceMoveDetails class. */
+    public ResourceMoveDetails() {
+    }
+
     /**
      * Get the operationInProgress property: Denotes whether move operation is in progress.
      *

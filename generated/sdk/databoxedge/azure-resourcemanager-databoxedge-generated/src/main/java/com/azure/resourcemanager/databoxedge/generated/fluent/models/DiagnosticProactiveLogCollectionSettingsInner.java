@@ -26,6 +26,10 @@ public final class DiagnosticProactiveLogCollectionSettingsInner extends ArmBase
     @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;
 
+    /** Creates an instance of DiagnosticProactiveLogCollectionSettingsInner class. */
+    public DiagnosticProactiveLogCollectionSettingsInner() {
+    }
+
     /**
      * Get the innerProperties property: Properties of the diagnostic proactive log collection settings.
      *

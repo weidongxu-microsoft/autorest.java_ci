@@ -79,6 +79,10 @@ public final class ClusterProperties {
     @JsonProperty(value = "capacityReservationProperties")
     private CapacityReservationProperties capacityReservationProperties;
 
+    /** Creates an instance of ClusterProperties class. */
+    public ClusterProperties() {
+    }
+
     /**
      * Get the clusterId property: The ID associated with the cluster.
      *

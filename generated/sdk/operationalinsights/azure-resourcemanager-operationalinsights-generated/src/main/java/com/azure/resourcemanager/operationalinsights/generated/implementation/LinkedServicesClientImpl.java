@@ -845,11 +845,12 @@ public final class LinkedServicesClientImpl implements LinkedServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a linked service instance.
+     * @return a linked service instance along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public LinkedServiceInner get(String resourceGroupName, String workspaceName, String linkedServiceName) {
-        return getAsync(resourceGroupName, workspaceName, linkedServiceName).block();
+    public Response<LinkedServiceInner> getWithResponse(
+        String resourceGroupName, String workspaceName, String linkedServiceName) {
+        return getWithResponseAsync(resourceGroupName, workspaceName, linkedServiceName).block();
     }
 
     /**
@@ -868,6 +869,22 @@ public final class LinkedServicesClientImpl implements LinkedServicesClient {
     public Response<LinkedServiceInner> getWithResponse(
         String resourceGroupName, String workspaceName, String linkedServiceName, Context context) {
         return getWithResponseAsync(resourceGroupName, workspaceName, linkedServiceName, context).block();
+    }
+
+    /**
+     * Gets a linked service instance.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param workspaceName The name of the workspace.
+     * @param linkedServiceName Name of the linked service.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a linked service instance.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public LinkedServiceInner get(String resourceGroupName, String workspaceName, String linkedServiceName) {
+        return getWithResponse(resourceGroupName, workspaceName, linkedServiceName, Context.NONE).getValue();
     }
 
     /**

@@ -13,15 +13,6 @@ public interface Clusters {
     /**
      * List the quantity of available pre-provisioned Event Hubs Clusters, indexed by Azure region.
      *
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the List Available Clusters operation.
-     */
-    AvailableClustersList listAvailableClusterRegion();
-
-    /**
-     * List the quantity of available pre-provisioned Event Hubs Clusters, indexed by Azure region.
-     *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -29,6 +20,15 @@ public interface Clusters {
      * @return the response of the List Available Clusters operation along with {@link Response}.
      */
     Response<AvailableClustersList> listAvailableClusterRegionWithResponse(Context context);
+
+    /**
+     * List the quantity of available pre-provisioned Event Hubs Clusters, indexed by Azure region.
+     *
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response of the List Available Clusters operation.
+     */
+    AvailableClustersList listAvailableClusterRegion();
 
     /**
      * Lists the available Event Hubs Clusters within an ARM resource group.
@@ -78,18 +78,6 @@ public interface Clusters {
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param clusterName The name of the Event Hubs Cluster.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the resource description of the specified Event Hubs Cluster.
-     */
-    Cluster getByResourceGroup(String resourceGroupName, String clusterName);
-
-    /**
-     * Gets the resource description of the specified Event Hubs Cluster.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param clusterName The name of the Event Hubs Cluster.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -97,6 +85,18 @@ public interface Clusters {
      * @return the resource description of the specified Event Hubs Cluster along with {@link Response}.
      */
     Response<Cluster> getByResourceGroupWithResponse(String resourceGroupName, String clusterName, Context context);
+
+    /**
+     * Gets the resource description of the specified Event Hubs Cluster.
+     *
+     * @param resourceGroupName Name of the resource group within the azure subscription.
+     * @param clusterName The name of the Event Hubs Cluster.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the resource description of the specified Event Hubs Cluster.
+     */
+    Cluster getByResourceGroup(String resourceGroupName, String clusterName);
 
     /**
      * Deletes an existing Event Hubs Cluster. This operation is idempotent.
@@ -126,18 +126,6 @@ public interface Clusters {
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param clusterName The name of the Event Hubs Cluster.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the List Namespace IDs operation.
-     */
-    EHNamespaceIdListResult listNamespaces(String resourceGroupName, String clusterName);
-
-    /**
-     * List all Event Hubs Namespace IDs in an Event Hubs Dedicated Cluster.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param clusterName The name of the Event Hubs Cluster.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -146,6 +134,18 @@ public interface Clusters {
      */
     Response<EHNamespaceIdListResult> listNamespacesWithResponse(
         String resourceGroupName, String clusterName, Context context);
+
+    /**
+     * List all Event Hubs Namespace IDs in an Event Hubs Dedicated Cluster.
+     *
+     * @param resourceGroupName Name of the resource group within the azure subscription.
+     * @param clusterName The name of the Event Hubs Cluster.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response of the List Namespace IDs operation.
+     */
+    EHNamespaceIdListResult listNamespaces(String resourceGroupName, String clusterName);
 
     /**
      * Gets the resource description of the specified Event Hubs Cluster.

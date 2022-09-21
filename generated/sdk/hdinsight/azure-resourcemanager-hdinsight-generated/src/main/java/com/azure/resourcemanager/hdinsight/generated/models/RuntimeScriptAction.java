@@ -42,6 +42,10 @@ public class RuntimeScriptAction {
     @JsonProperty(value = "applicationName", access = JsonProperty.Access.WRITE_ONLY)
     private String applicationName;
 
+    /** Creates an instance of RuntimeScriptAction class. */
+    public RuntimeScriptAction() {
+    }
+
     /**
      * Get the name property: The name of the script action.
      *

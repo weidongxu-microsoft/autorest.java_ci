@@ -30,6 +30,10 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 })
 @Immutable
 public class Action {
+    /** Creates an instance of Action class. */
+    public Action() {
+    }
+
     /**
      * Validates the instance.
      *

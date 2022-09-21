@@ -22,6 +22,10 @@ public final class NetworkSecurityPerimeterConfigurationPropertiesResourceAssoci
     @JsonProperty(value = "accessMode")
     private ResourceAssociationAccessMode accessMode;
 
+    /** Creates an instance of NetworkSecurityPerimeterConfigurationPropertiesResourceAssociation class. */
+    public NetworkSecurityPerimeterConfigurationPropertiesResourceAssociation() {
+    }
+
     /**
      * Get the name property: Name of the resource association.
      *

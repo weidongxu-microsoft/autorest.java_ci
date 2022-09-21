@@ -43,6 +43,10 @@ public final class Sku {
     @JsonProperty(value = "capacity")
     private String capacity;
 
+    /** Creates an instance of Sku class. */
+    public Sku() {
+    }
+
     /**
      * Get the name property: Name of SKU is RS0 (Recovery Services 0th version) and the tier is standard tier. They do
      * not have affect on backend storage redundancy or any other vault settings. To manage storage redundancy, use the

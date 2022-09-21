@@ -24,12 +24,12 @@ public final class GlobalAdministratorsImpl implements GlobalAdministrators {
         this.serviceManager = serviceManager;
     }
 
-    public void elevateAccess() {
-        this.serviceClient().elevateAccess();
-    }
-
     public Response<Void> elevateAccessWithResponse(Context context) {
         return this.serviceClient().elevateAccessWithResponse(context);
+    }
+
+    public void elevateAccess() {
+        this.serviceClient().elevateAccess();
     }
 
     private GlobalAdministratorsClient serviceClient() {

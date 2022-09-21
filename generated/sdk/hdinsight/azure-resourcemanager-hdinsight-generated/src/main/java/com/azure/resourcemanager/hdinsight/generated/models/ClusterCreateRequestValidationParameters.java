@@ -36,6 +36,10 @@ public final class ClusterCreateRequestValidationParameters extends ClusterCreat
     @JsonProperty(value = "fetchAaddsResource")
     private Boolean fetchAaddsResource;
 
+    /** Creates an instance of ClusterCreateRequestValidationParameters class. */
+    public ClusterCreateRequestValidationParameters() {
+    }
+
     /**
      * Get the name property: The cluster name.
      *

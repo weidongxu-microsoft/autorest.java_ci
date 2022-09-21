@@ -48,15 +48,6 @@ public final class MetricAlertsImpl implements MetricAlerts {
         return Utils.mapPage(inner, inner1 -> new MetricAlertResourceImpl(inner1, this.manager()));
     }
 
-    public MetricAlertResource getByResourceGroup(String resourceGroupName, String ruleName) {
-        MetricAlertResourceInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, ruleName);
-        if (inner != null) {
-            return new MetricAlertResourceImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<MetricAlertResource> getByResourceGroupWithResponse(
         String resourceGroupName, String ruleName, Context context) {
         Response<MetricAlertResourceInner> inner =
@@ -72,12 +63,22 @@ public final class MetricAlertsImpl implements MetricAlerts {
         }
     }
 
-    public void deleteByResourceGroup(String resourceGroupName, String ruleName) {
-        this.serviceClient().delete(resourceGroupName, ruleName);
+    public MetricAlertResource getByResourceGroup(String resourceGroupName, String ruleName) {
+        MetricAlertResourceInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, ruleName);
+        if (inner != null) {
+            return new MetricAlertResourceImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
-    public Response<Void> deleteWithResponse(String resourceGroupName, String ruleName, Context context) {
+    public Response<Void> deleteByResourceGroupWithResponse(
+        String resourceGroupName, String ruleName, Context context) {
         return this.serviceClient().deleteWithResponse(resourceGroupName, ruleName, context);
+    }
+
+    public void deleteByResourceGroup(String resourceGroupName, String ruleName) {
+        this.serviceClient().delete(resourceGroupName, ruleName);
     }
 
     public MetricAlertResource getById(String id) {
@@ -134,7 +135,7 @@ public final class MetricAlertsImpl implements MetricAlerts {
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'metricAlerts'.", id)));
         }
-        this.deleteWithResponse(resourceGroupName, ruleName, Context.NONE);
+        this.deleteByResourceGroupWithResponse(resourceGroupName, ruleName, Context.NONE);
     }
 
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
@@ -153,7 +154,7 @@ public final class MetricAlertsImpl implements MetricAlerts {
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'metricAlerts'.", id)));
         }
-        return this.deleteWithResponse(resourceGroupName, ruleName, context);
+        return this.deleteByResourceGroupWithResponse(resourceGroupName, ruleName, context);
     }
 
     private MetricAlertsClient serviceClient() {

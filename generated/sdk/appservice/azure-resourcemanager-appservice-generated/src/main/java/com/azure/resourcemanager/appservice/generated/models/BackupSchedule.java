@@ -54,6 +54,10 @@ public final class BackupSchedule {
     @JsonProperty(value = "lastExecutionTime", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime lastExecutionTime;
 
+    /** Creates an instance of BackupSchedule class. */
+    public BackupSchedule() {
+    }
+
     /**
      * Get the frequencyInterval property: How often the backup should be executed (e.g. for weekly backup, this should
      * be set to 7 and FrequencyUnit should be set to Day).

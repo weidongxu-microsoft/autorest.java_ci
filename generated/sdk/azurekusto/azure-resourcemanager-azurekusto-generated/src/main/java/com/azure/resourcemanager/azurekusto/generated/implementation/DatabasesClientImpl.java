@@ -359,12 +359,12 @@ public final class DatabasesClientImpl implements DatabasesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the result returned from a check name availability request.
+     * @return the result returned from a check name availability request along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public CheckNameResultInner checkNameAvailability(
+    public Response<CheckNameResultInner> checkNameAvailabilityWithResponse(
         String resourceGroupName, String clusterName, CheckNameRequest resourceName) {
-        return checkNameAvailabilityAsync(resourceGroupName, clusterName, resourceName).block();
+        return checkNameAvailabilityWithResponseAsync(resourceGroupName, clusterName, resourceName).block();
     }
 
     /**
@@ -383,6 +383,23 @@ public final class DatabasesClientImpl implements DatabasesClient {
     public Response<CheckNameResultInner> checkNameAvailabilityWithResponse(
         String resourceGroupName, String clusterName, CheckNameRequest resourceName, Context context) {
         return checkNameAvailabilityWithResponseAsync(resourceGroupName, clusterName, resourceName, context).block();
+    }
+
+    /**
+     * Checks that the databases resource name is valid and is not already in use.
+     *
+     * @param resourceGroupName The name of the resource group containing the Kusto cluster.
+     * @param clusterName The name of the Kusto cluster.
+     * @param resourceName The name of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the result returned from a check name availability request.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public CheckNameResultInner checkNameAvailability(
+        String resourceGroupName, String clusterName, CheckNameRequest resourceName) {
+        return checkNameAvailabilityWithResponse(resourceGroupName, clusterName, resourceName, Context.NONE).getValue();
     }
 
     /**
@@ -681,11 +698,11 @@ public final class DatabasesClientImpl implements DatabasesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing a Kusto database.
+     * @return class representing a Kusto database along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public DatabaseInner get(String resourceGroupName, String clusterName, String databaseName) {
-        return getAsync(resourceGroupName, clusterName, databaseName).block();
+    public Response<DatabaseInner> getWithResponse(String resourceGroupName, String clusterName, String databaseName) {
+        return getWithResponseAsync(resourceGroupName, clusterName, databaseName).block();
     }
 
     /**
@@ -704,6 +721,22 @@ public final class DatabasesClientImpl implements DatabasesClient {
     public Response<DatabaseInner> getWithResponse(
         String resourceGroupName, String clusterName, String databaseName, Context context) {
         return getWithResponseAsync(resourceGroupName, clusterName, databaseName, context).block();
+    }
+
+    /**
+     * Returns a database.
+     *
+     * @param resourceGroupName The name of the resource group containing the Kusto cluster.
+     * @param clusterName The name of the Kusto cluster.
+     * @param databaseName The name of the database in the Kusto cluster.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return class representing a Kusto database.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public DatabaseInner get(String resourceGroupName, String clusterName, String databaseName) {
+        return getWithResponse(resourceGroupName, clusterName, databaseName, Context.NONE).getValue();
     }
 
     /**
@@ -2094,15 +2127,16 @@ public final class DatabasesClientImpl implements DatabasesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list Kusto database principals operation response.
+     * @return the list Kusto database principals operation response along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public DatabasePrincipalListResultInner addPrincipals(
+    public Response<DatabasePrincipalListResultInner> addPrincipalsWithResponse(
         String resourceGroupName,
         String clusterName,
         String databaseName,
         DatabasePrincipalListRequest databasePrincipalsToAdd) {
-        return addPrincipalsAsync(resourceGroupName, clusterName, databaseName, databasePrincipalsToAdd).block();
+        return addPrincipalsWithResponseAsync(resourceGroupName, clusterName, databaseName, databasePrincipalsToAdd)
+            .block();
     }
 
     /**
@@ -2128,6 +2162,29 @@ public final class DatabasesClientImpl implements DatabasesClient {
         return addPrincipalsWithResponseAsync(
                 resourceGroupName, clusterName, databaseName, databasePrincipalsToAdd, context)
             .block();
+    }
+
+    /**
+     * Add Database principals permissions.
+     *
+     * @param resourceGroupName The name of the resource group containing the Kusto cluster.
+     * @param clusterName The name of the Kusto cluster.
+     * @param databaseName The name of the database in the Kusto cluster.
+     * @param databasePrincipalsToAdd List of database principals to add.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the list Kusto database principals operation response.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public DatabasePrincipalListResultInner addPrincipals(
+        String resourceGroupName,
+        String clusterName,
+        String databaseName,
+        DatabasePrincipalListRequest databasePrincipalsToAdd) {
+        return addPrincipalsWithResponse(
+                resourceGroupName, clusterName, databaseName, databasePrincipalsToAdd, Context.NONE)
+            .getValue();
     }
 
     /**
@@ -2296,15 +2353,17 @@ public final class DatabasesClientImpl implements DatabasesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list Kusto database principals operation response.
+     * @return the list Kusto database principals operation response along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public DatabasePrincipalListResultInner removePrincipals(
+    public Response<DatabasePrincipalListResultInner> removePrincipalsWithResponse(
         String resourceGroupName,
         String clusterName,
         String databaseName,
         DatabasePrincipalListRequest databasePrincipalsToRemove) {
-        return removePrincipalsAsync(resourceGroupName, clusterName, databaseName, databasePrincipalsToRemove).block();
+        return removePrincipalsWithResponseAsync(
+                resourceGroupName, clusterName, databaseName, databasePrincipalsToRemove)
+            .block();
     }
 
     /**
@@ -2330,5 +2389,28 @@ public final class DatabasesClientImpl implements DatabasesClient {
         return removePrincipalsWithResponseAsync(
                 resourceGroupName, clusterName, databaseName, databasePrincipalsToRemove, context)
             .block();
+    }
+
+    /**
+     * Remove Database principals permissions.
+     *
+     * @param resourceGroupName The name of the resource group containing the Kusto cluster.
+     * @param clusterName The name of the Kusto cluster.
+     * @param databaseName The name of the database in the Kusto cluster.
+     * @param databasePrincipalsToRemove List of database principals to remove.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the list Kusto database principals operation response.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public DatabasePrincipalListResultInner removePrincipals(
+        String resourceGroupName,
+        String clusterName,
+        String databaseName,
+        DatabasePrincipalListRequest databasePrincipalsToRemove) {
+        return removePrincipalsWithResponse(
+                resourceGroupName, clusterName, databaseName, databasePrincipalsToRemove, Context.NONE)
+            .getValue();
     }
 }

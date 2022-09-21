@@ -62,6 +62,10 @@ public final class WcfRelayProperties {
     @JsonProperty(value = "userMetadata")
     private String userMetadata;
 
+    /** Creates an instance of WcfRelayProperties class. */
+    public WcfRelayProperties() {
+    }
+
     /**
      * Get the isDynamic property: Returns true if the relay is dynamic; otherwise, false.
      *

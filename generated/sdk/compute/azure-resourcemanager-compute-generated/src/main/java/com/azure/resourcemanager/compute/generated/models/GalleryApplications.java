@@ -17,21 +17,6 @@ public interface GalleryApplications {
      * @param galleryName The name of the Shared Application Gallery from which the Application Definitions are to be
      *     retrieved.
      * @param galleryApplicationName The name of the gallery Application Definition to be retrieved.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the gallery Application Definition that you want to create or update.
-     */
-    GalleryApplication get(String resourceGroupName, String galleryName, String galleryApplicationName);
-
-    /**
-     * Retrieves information about a gallery Application Definition.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Application Gallery from which the Application Definitions are to be
-     *     retrieved.
-     * @param galleryApplicationName The name of the gallery Application Definition to be retrieved.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
@@ -42,6 +27,21 @@ public interface GalleryApplications {
      */
     Response<GalleryApplication> getWithResponse(
         String resourceGroupName, String galleryName, String galleryApplicationName, Context context);
+
+    /**
+     * Retrieves information about a gallery Application Definition.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param galleryName The name of the Shared Application Gallery from which the Application Definitions are to be
+     *     retrieved.
+     * @param galleryApplicationName The name of the gallery Application Definition to be retrieved.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return specifies information about the gallery Application Definition that you want to create or update.
+     */
+    GalleryApplication get(String resourceGroupName, String galleryName, String galleryApplicationName);
 
     /**
      * Delete a gallery Application.

@@ -228,11 +228,11 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list cluster hosts.
+     * @return result of the request to list cluster hosts along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public List<HostInfoInner> listHosts(String resourceGroupName, String clusterName) {
-        return listHostsAsync(resourceGroupName, clusterName).block();
+    public Response<List<HostInfoInner>> listHostsWithResponse(String resourceGroupName, String clusterName) {
+        return listHostsWithResponseAsync(resourceGroupName, clusterName).block();
     }
 
     /**
@@ -250,6 +250,21 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
     public Response<List<HostInfoInner>> listHostsWithResponse(
         String resourceGroupName, String clusterName, Context context) {
         return listHostsWithResponseAsync(resourceGroupName, clusterName, context).block();
+    }
+
+    /**
+     * Lists the HDInsight clusters hosts.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param clusterName The name of the cluster.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return result of the request to list cluster hosts.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public List<HostInfoInner> listHosts(String resourceGroupName, String clusterName) {
+        return listHostsWithResponse(resourceGroupName, clusterName, Context.NONE).getValue();
     }
 
     /**
@@ -635,12 +650,12 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the async operation status.
+     * @return the async operation status along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public AsyncOperationResultInner getAsyncOperationStatus(
+    public Response<AsyncOperationResultInner> getAsyncOperationStatusWithResponse(
         String resourceGroupName, String clusterName, String operationId) {
-        return getAsyncOperationStatusAsync(resourceGroupName, clusterName, operationId).block();
+        return getAsyncOperationStatusWithResponseAsync(resourceGroupName, clusterName, operationId).block();
     }
 
     /**
@@ -659,5 +674,23 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
     public Response<AsyncOperationResultInner> getAsyncOperationStatusWithResponse(
         String resourceGroupName, String clusterName, String operationId, Context context) {
         return getAsyncOperationStatusWithResponseAsync(resourceGroupName, clusterName, operationId, context).block();
+    }
+
+    /**
+     * Gets the async operation status.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param clusterName The name of the cluster.
+     * @param operationId The long running operation id.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the async operation status.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public AsyncOperationResultInner getAsyncOperationStatus(
+        String resourceGroupName, String clusterName, String operationId) {
+        return getAsyncOperationStatusWithResponse(resourceGroupName, clusterName, operationId, Context.NONE)
+            .getValue();
     }
 }

@@ -44,16 +44,6 @@ public final class StorageAccountsImpl implements StorageAccounts {
         this.serviceManager = serviceManager;
     }
 
-    public CheckNameAvailabilityResult checkNameAvailability(
-        StorageAccountCheckNameAvailabilityParameters accountName) {
-        CheckNameAvailabilityResultInner inner = this.serviceClient().checkNameAvailability(accountName);
-        if (inner != null) {
-            return new CheckNameAvailabilityResultImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<CheckNameAvailabilityResult> checkNameAvailabilityWithResponse(
         StorageAccountCheckNameAvailabilityParameters accountName, Context context) {
         Response<CheckNameAvailabilityResultInner> inner =
@@ -69,21 +59,23 @@ public final class StorageAccountsImpl implements StorageAccounts {
         }
     }
 
-    public void deleteByResourceGroup(String resourceGroupName, String accountName) {
-        this.serviceClient().delete(resourceGroupName, accountName);
-    }
-
-    public Response<Void> deleteWithResponse(String resourceGroupName, String accountName, Context context) {
-        return this.serviceClient().deleteWithResponse(resourceGroupName, accountName, context);
-    }
-
-    public StorageAccount getByResourceGroup(String resourceGroupName, String accountName) {
-        StorageAccountInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, accountName);
+    public CheckNameAvailabilityResult checkNameAvailability(
+        StorageAccountCheckNameAvailabilityParameters accountName) {
+        CheckNameAvailabilityResultInner inner = this.serviceClient().checkNameAvailability(accountName);
         if (inner != null) {
-            return new StorageAccountImpl(inner, this.manager());
+            return new CheckNameAvailabilityResultImpl(inner, this.manager());
         } else {
             return null;
         }
+    }
+
+    public Response<Void> deleteByResourceGroupWithResponse(
+        String resourceGroupName, String accountName, Context context) {
+        return this.serviceClient().deleteWithResponse(resourceGroupName, accountName, context);
+    }
+
+    public void deleteByResourceGroup(String resourceGroupName, String accountName) {
+        this.serviceClient().delete(resourceGroupName, accountName);
     }
 
     public Response<StorageAccount> getByResourceGroupWithResponse(
@@ -96,6 +88,15 @@ public final class StorageAccountsImpl implements StorageAccounts {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new StorageAccountImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public StorageAccount getByResourceGroup(String resourceGroupName, String accountName) {
+        StorageAccountInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, accountName);
+        if (inner != null) {
+            return new StorageAccountImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -121,15 +122,6 @@ public final class StorageAccountsImpl implements StorageAccounts {
         return Utils.mapPage(inner, inner1 -> new StorageAccountImpl(inner1, this.manager()));
     }
 
-    public StorageAccountListKeysResult listKeys(String resourceGroupName, String accountName) {
-        StorageAccountListKeysResultInner inner = this.serviceClient().listKeys(resourceGroupName, accountName);
-        if (inner != null) {
-            return new StorageAccountListKeysResultImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<StorageAccountListKeysResult> listKeysWithResponse(
         String resourceGroupName, String accountName, ListKeyExpand expand, Context context) {
         Response<StorageAccountListKeysResultInner> inner =
@@ -145,10 +137,8 @@ public final class StorageAccountsImpl implements StorageAccounts {
         }
     }
 
-    public StorageAccountListKeysResult regenerateKey(
-        String resourceGroupName, String accountName, StorageAccountRegenerateKeyParameters regenerateKey) {
-        StorageAccountListKeysResultInner inner =
-            this.serviceClient().regenerateKey(resourceGroupName, accountName, regenerateKey);
+    public StorageAccountListKeysResult listKeys(String resourceGroupName, String accountName) {
+        StorageAccountListKeysResultInner inner = this.serviceClient().listKeys(resourceGroupName, accountName);
         if (inner != null) {
             return new StorageAccountListKeysResultImpl(inner, this.manager());
         } else {
@@ -174,12 +164,12 @@ public final class StorageAccountsImpl implements StorageAccounts {
         }
     }
 
-    public ListAccountSasResponse listAccountSas(
-        String resourceGroupName, String accountName, AccountSasParameters parameters) {
-        ListAccountSasResponseInner inner =
-            this.serviceClient().listAccountSas(resourceGroupName, accountName, parameters);
+    public StorageAccountListKeysResult regenerateKey(
+        String resourceGroupName, String accountName, StorageAccountRegenerateKeyParameters regenerateKey) {
+        StorageAccountListKeysResultInner inner =
+            this.serviceClient().regenerateKey(resourceGroupName, accountName, regenerateKey);
         if (inner != null) {
-            return new ListAccountSasResponseImpl(inner, this.manager());
+            return new StorageAccountListKeysResultImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -200,12 +190,12 @@ public final class StorageAccountsImpl implements StorageAccounts {
         }
     }
 
-    public ListServiceSasResponse listServiceSas(
-        String resourceGroupName, String accountName, ServiceSasParameters parameters) {
-        ListServiceSasResponseInner inner =
-            this.serviceClient().listServiceSas(resourceGroupName, accountName, parameters);
+    public ListAccountSasResponse listAccountSas(
+        String resourceGroupName, String accountName, AccountSasParameters parameters) {
+        ListAccountSasResponseInner inner =
+            this.serviceClient().listAccountSas(resourceGroupName, accountName, parameters);
         if (inner != null) {
-            return new ListServiceSasResponseImpl(inner, this.manager());
+            return new ListAccountSasResponseImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -221,6 +211,17 @@ public final class StorageAccountsImpl implements StorageAccounts {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new ListServiceSasResponseImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public ListServiceSasResponse listServiceSas(
+        String resourceGroupName, String accountName, ServiceSasParameters parameters) {
+        ListServiceSasResponseInner inner =
+            this.serviceClient().listServiceSas(resourceGroupName, accountName, parameters);
+        if (inner != null) {
+            return new ListServiceSasResponseImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -273,13 +274,13 @@ public final class StorageAccountsImpl implements StorageAccounts {
         }
     }
 
-    public void revokeUserDelegationKeys(String resourceGroupName, String accountName) {
-        this.serviceClient().revokeUserDelegationKeys(resourceGroupName, accountName);
-    }
-
     public Response<Void> revokeUserDelegationKeysWithResponse(
         String resourceGroupName, String accountName, Context context) {
         return this.serviceClient().revokeUserDelegationKeysWithResponse(resourceGroupName, accountName, context);
+    }
+
+    public void revokeUserDelegationKeys(String resourceGroupName, String accountName) {
+        this.serviceClient().revokeUserDelegationKeys(resourceGroupName, accountName);
     }
 
     public StorageAccount getById(String id) {
@@ -342,7 +343,7 @@ public final class StorageAccountsImpl implements StorageAccounts {
                         String
                             .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
         }
-        this.deleteWithResponse(resourceGroupName, accountName, Context.NONE);
+        this.deleteByResourceGroupWithResponse(resourceGroupName, accountName, Context.NONE);
     }
 
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
@@ -362,7 +363,7 @@ public final class StorageAccountsImpl implements StorageAccounts {
                         String
                             .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
         }
-        return this.deleteWithResponse(resourceGroupName, accountName, context);
+        return this.deleteByResourceGroupWithResponse(resourceGroupName, accountName, context);
     }
 
     private StorageAccountsClient serviceClient() {

@@ -46,6 +46,10 @@ public final class StaticSiteArmResourceInner extends Resource {
     @JsonProperty(value = "kind")
     private String kind;
 
+    /** Creates an instance of StaticSiteArmResourceInner class. */
+    public StaticSiteArmResourceInner() {
+    }
+
     /**
      * Get the innerProperties property: Core resource properties.
      *

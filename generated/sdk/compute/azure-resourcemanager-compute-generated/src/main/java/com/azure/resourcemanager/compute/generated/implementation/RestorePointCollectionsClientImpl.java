@@ -220,7 +220,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -285,7 +285,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -329,12 +329,12 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return create or update Restore Point collection parameters.
+     * @return create or update Restore Point collection parameters along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public RestorePointCollectionInner createOrUpdate(
+    public Response<RestorePointCollectionInner> createOrUpdateWithResponse(
         String resourceGroupName, String restorePointCollectionName, RestorePointCollectionInner parameters) {
-        return createOrUpdateAsync(resourceGroupName, restorePointCollectionName, parameters).block();
+        return createOrUpdateWithResponseAsync(resourceGroupName, restorePointCollectionName, parameters).block();
     }
 
     /**
@@ -358,6 +358,25 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
         Context context) {
         return createOrUpdateWithResponseAsync(resourceGroupName, restorePointCollectionName, parameters, context)
             .block();
+    }
+
+    /**
+     * The operation to create or update the restore point collection. Please refer to https://aka.ms/RestorePoints for
+     * more details. When updating a restore point collection, only tags may be modified.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param restorePointCollectionName The name of the restore point collection.
+     * @param parameters Parameters supplied to the Create or Update restore point collection operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ApiErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return create or update Restore Point collection parameters.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public RestorePointCollectionInner createOrUpdate(
+        String resourceGroupName, String restorePointCollectionName, RestorePointCollectionInner parameters) {
+        return createOrUpdateWithResponse(resourceGroupName, restorePointCollectionName, parameters, Context.NONE)
+            .getValue();
     }
 
     /**
@@ -402,7 +421,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -466,7 +485,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -508,12 +527,12 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return create or update Restore Point collection parameters.
+     * @return create or update Restore Point collection parameters along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public RestorePointCollectionInner update(
+    public Response<RestorePointCollectionInner> updateWithResponse(
         String resourceGroupName, String restorePointCollectionName, RestorePointCollectionUpdate parameters) {
-        return updateAsync(resourceGroupName, restorePointCollectionName, parameters).block();
+        return updateWithResponseAsync(resourceGroupName, restorePointCollectionName, parameters).block();
     }
 
     /**
@@ -535,6 +554,23 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
         RestorePointCollectionUpdate parameters,
         Context context) {
         return updateWithResponseAsync(resourceGroupName, restorePointCollectionName, parameters, context).block();
+    }
+
+    /**
+     * The operation to update the restore point collection.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param restorePointCollectionName The name of the restore point collection.
+     * @param parameters Parameters supplied to the Update restore point collection operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ApiErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return create or update Restore Point collection parameters.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public RestorePointCollectionInner update(
+        String resourceGroupName, String restorePointCollectionName, RestorePointCollectionUpdate parameters) {
+        return updateWithResponse(resourceGroupName, restorePointCollectionName, parameters, Context.NONE).getValue();
     }
 
     /**
@@ -573,7 +609,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
                     new IllegalArgumentException(
                         "Parameter restorePointCollectionName is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -627,7 +663,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
                     new IllegalArgumentException(
                         "Parameter restorePointCollectionName is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -825,7 +861,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
                     new IllegalArgumentException(
                         "Parameter restorePointCollectionName is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -885,7 +921,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
                     new IllegalArgumentException(
                         "Parameter restorePointCollectionName is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -898,25 +934,6 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
                 apiVersion,
                 accept,
                 context);
-    }
-
-    /**
-     * The operation to get the restore point collection.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param restorePointCollectionName The name of the restore point collection.
-     * @param expand The expand expression to apply on the operation. If expand=restorePoints, server will return all
-     *     contained restore points in the restorePointCollection.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ApiErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return create or update Restore Point collection parameters on successful completion of {@link Mono}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<RestorePointCollectionInner> getByResourceGroupAsync(
-        String resourceGroupName, String restorePointCollectionName, RestorePointCollectionExpandOptions expand) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, restorePointCollectionName, expand)
-            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -942,15 +959,17 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
      *
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the restore point collection.
+     * @param expand The expand expression to apply on the operation. If expand=restorePoints, server will return all
+     *     contained restore points in the restorePointCollection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return create or update Restore Point collection parameters.
+     * @return create or update Restore Point collection parameters along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public RestorePointCollectionInner getByResourceGroup(String resourceGroupName, String restorePointCollectionName) {
-        final RestorePointCollectionExpandOptions expand = null;
-        return getByResourceGroupAsync(resourceGroupName, restorePointCollectionName, expand).block();
+    public Response<RestorePointCollectionInner> getByResourceGroupWithResponse(
+        String resourceGroupName, String restorePointCollectionName, RestorePointCollectionExpandOptions expand) {
+        return getByResourceGroupWithResponseAsync(resourceGroupName, restorePointCollectionName, expand).block();
     }
 
     /**
@@ -974,6 +993,23 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
         Context context) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, restorePointCollectionName, expand, context)
             .block();
+    }
+
+    /**
+     * The operation to get the restore point collection.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param restorePointCollectionName The name of the restore point collection.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ApiErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return create or update Restore Point collection parameters.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public RestorePointCollectionInner getByResourceGroup(String resourceGroupName, String restorePointCollectionName) {
+        final RestorePointCollectionExpandOptions expand = null;
+        return getByResourceGroupWithResponse(resourceGroupName, restorePointCollectionName, expand, Context.NONE)
+            .getValue();
     }
 
     /**
@@ -1005,7 +1041,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
             return Mono
                 .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1060,7 +1096,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
             return Mono
                 .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1169,7 +1205,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1214,7 +1250,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service

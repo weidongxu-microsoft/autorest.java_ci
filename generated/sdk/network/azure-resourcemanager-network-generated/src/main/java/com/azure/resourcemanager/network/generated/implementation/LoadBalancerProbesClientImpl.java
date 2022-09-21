@@ -130,7 +130,7 @@ public final class LoadBalancerProbesClientImpl implements LoadBalancerProbesCli
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -190,7 +190,7 @@ public final class LoadBalancerProbesClientImpl implements LoadBalancerProbesCli
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -316,7 +316,7 @@ public final class LoadBalancerProbesClientImpl implements LoadBalancerProbesCli
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -372,7 +372,7 @@ public final class LoadBalancerProbesClientImpl implements LoadBalancerProbesCli
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -413,11 +413,11 @@ public final class LoadBalancerProbesClientImpl implements LoadBalancerProbesCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return load balancer probe.
+     * @return load balancer probe along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ProbeInner get(String resourceGroupName, String loadBalancerName, String probeName) {
-        return getAsync(resourceGroupName, loadBalancerName, probeName).block();
+    public Response<ProbeInner> getWithResponse(String resourceGroupName, String loadBalancerName, String probeName) {
+        return getWithResponseAsync(resourceGroupName, loadBalancerName, probeName).block();
     }
 
     /**
@@ -436,6 +436,22 @@ public final class LoadBalancerProbesClientImpl implements LoadBalancerProbesCli
     public Response<ProbeInner> getWithResponse(
         String resourceGroupName, String loadBalancerName, String probeName, Context context) {
         return getWithResponseAsync(resourceGroupName, loadBalancerName, probeName, context).block();
+    }
+
+    /**
+     * Gets load balancer probe.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param loadBalancerName The name of the load balancer.
+     * @param probeName The name of the probe.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return load balancer probe.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ProbeInner get(String resourceGroupName, String loadBalancerName, String probeName) {
+        return getWithResponse(resourceGroupName, loadBalancerName, probeName, Context.NONE).getValue();
     }
 
     /**

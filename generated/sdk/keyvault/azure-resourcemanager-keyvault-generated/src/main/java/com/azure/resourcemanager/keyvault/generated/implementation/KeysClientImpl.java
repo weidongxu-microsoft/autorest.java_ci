@@ -167,7 +167,8 @@ public final class KeysClientImpl implements KeysClient {
      *
      * @param resourceGroupName The name of the resource group which contains the specified key vault.
      * @param vaultName The name of the key vault which contains the key to be created.
-     * @param keyName The name of the key to be created.
+     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
+     *     running the service. The value provided should not include personally identifiable or sensitive information.
      * @param parameters The parameters used to create the specified key.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -229,7 +230,8 @@ public final class KeysClientImpl implements KeysClient {
      *
      * @param resourceGroupName The name of the resource group which contains the specified key vault.
      * @param vaultName The name of the key vault which contains the key to be created.
-     * @param keyName The name of the key to be created.
+     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
+     *     running the service. The value provided should not include personally identifiable or sensitive information.
      * @param parameters The parameters used to create the specified key.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -289,7 +291,8 @@ public final class KeysClientImpl implements KeysClient {
      *
      * @param resourceGroupName The name of the resource group which contains the specified key vault.
      * @param vaultName The name of the key vault which contains the key to be created.
-     * @param keyName The name of the key to be created.
+     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
+     *     running the service. The value provided should not include personally identifiable or sensitive information.
      * @param parameters The parameters used to create the specified key.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -310,17 +313,18 @@ public final class KeysClientImpl implements KeysClient {
      *
      * @param resourceGroupName The name of the resource group which contains the specified key vault.
      * @param vaultName The name of the key vault which contains the key to be created.
-     * @param keyName The name of the key to be created.
+     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
+     *     running the service. The value provided should not include personally identifiable or sensitive information.
      * @param parameters The parameters used to create the specified key.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the key resource.
+     * @return the key resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public KeyInner createIfNotExist(
+    public Response<KeyInner> createIfNotExistWithResponse(
         String resourceGroupName, String vaultName, String keyName, KeyCreateParameters parameters) {
-        return createIfNotExistAsync(resourceGroupName, vaultName, keyName, parameters).block();
+        return createIfNotExistWithResponseAsync(resourceGroupName, vaultName, keyName, parameters).block();
     }
 
     /**
@@ -330,7 +334,8 @@ public final class KeysClientImpl implements KeysClient {
      *
      * @param resourceGroupName The name of the resource group which contains the specified key vault.
      * @param vaultName The name of the key vault which contains the key to be created.
-     * @param keyName The name of the key to be created.
+     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
+     *     running the service. The value provided should not include personally identifiable or sensitive information.
      * @param parameters The parameters used to create the specified key.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -342,6 +347,27 @@ public final class KeysClientImpl implements KeysClient {
     public Response<KeyInner> createIfNotExistWithResponse(
         String resourceGroupName, String vaultName, String keyName, KeyCreateParameters parameters, Context context) {
         return createIfNotExistWithResponseAsync(resourceGroupName, vaultName, keyName, parameters, context).block();
+    }
+
+    /**
+     * Creates the first version of a new key if it does not exist. If it already exists, then the existing key is
+     * returned without any write operations being performed. This API does not create subsequent versions, and does not
+     * update existing keys.
+     *
+     * @param resourceGroupName The name of the resource group which contains the specified key vault.
+     * @param vaultName The name of the key vault which contains the key to be created.
+     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
+     *     running the service. The value provided should not include personally identifiable or sensitive information.
+     * @param parameters The parameters used to create the specified key.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the key resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public KeyInner createIfNotExist(
+        String resourceGroupName, String vaultName, String keyName, KeyCreateParameters parameters) {
+        return createIfNotExistWithResponse(resourceGroupName, vaultName, keyName, parameters, Context.NONE).getValue();
     }
 
     /**
@@ -476,11 +502,11 @@ public final class KeysClientImpl implements KeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the current version of the specified key from the specified key vault.
+     * @return the current version of the specified key from the specified key vault along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public KeyInner get(String resourceGroupName, String vaultName, String keyName) {
-        return getAsync(resourceGroupName, vaultName, keyName).block();
+    public Response<KeyInner> getWithResponse(String resourceGroupName, String vaultName, String keyName) {
+        return getWithResponseAsync(resourceGroupName, vaultName, keyName).block();
     }
 
     /**
@@ -499,6 +525,22 @@ public final class KeysClientImpl implements KeysClient {
     public Response<KeyInner> getWithResponse(
         String resourceGroupName, String vaultName, String keyName, Context context) {
         return getWithResponseAsync(resourceGroupName, vaultName, keyName, context).block();
+    }
+
+    /**
+     * Gets the current version of the specified key from the specified key vault.
+     *
+     * @param resourceGroupName The name of the resource group which contains the specified key vault.
+     * @param vaultName The name of the vault which contains the key to be retrieved.
+     * @param keyName The name of the key to be retrieved.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the current version of the specified key from the specified key vault.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public KeyInner get(String resourceGroupName, String vaultName, String keyName) {
+        return getWithResponse(resourceGroupName, vaultName, keyName, Context.NONE).getValue();
     }
 
     /**
@@ -823,11 +865,12 @@ public final class KeysClientImpl implements KeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified version of the specified key in the specified key vault.
+     * @return the specified version of the specified key in the specified key vault along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public KeyInner getVersion(String resourceGroupName, String vaultName, String keyName, String keyVersion) {
-        return getVersionAsync(resourceGroupName, vaultName, keyName, keyVersion).block();
+    public Response<KeyInner> getVersionWithResponse(
+        String resourceGroupName, String vaultName, String keyName, String keyVersion) {
+        return getVersionWithResponseAsync(resourceGroupName, vaultName, keyName, keyVersion).block();
     }
 
     /**
@@ -847,6 +890,23 @@ public final class KeysClientImpl implements KeysClient {
     public Response<KeyInner> getVersionWithResponse(
         String resourceGroupName, String vaultName, String keyName, String keyVersion, Context context) {
         return getVersionWithResponseAsync(resourceGroupName, vaultName, keyName, keyVersion, context).block();
+    }
+
+    /**
+     * Gets the specified version of the specified key in the specified key vault.
+     *
+     * @param resourceGroupName The name of the resource group which contains the specified key vault.
+     * @param vaultName The name of the vault which contains the key version to be retrieved.
+     * @param keyName The name of the key version to be retrieved.
+     * @param keyVersion The version of the key to be retrieved.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified version of the specified key in the specified key vault.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public KeyInner getVersion(String resourceGroupName, String vaultName, String keyName, String keyVersion) {
+        return getVersionWithResponse(resourceGroupName, vaultName, keyName, keyVersion, Context.NONE).getValue();
     }
 
     /**

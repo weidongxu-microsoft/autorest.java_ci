@@ -136,7 +136,7 @@ public interface VirtualMachineExtension {
      *
      * @return the protectedSettingsFromKeyVault value.
      */
-    Object protectedSettingsFromKeyVault();
+    KeyVaultSecretReference protectedSettingsFromKeyVault();
 
     /**
      * Gets the region of the resource.
@@ -374,7 +374,7 @@ public interface VirtualMachineExtension {
              *     consumed from key vault.
              * @return the next definition stage.
              */
-            WithCreate withProtectedSettingsFromKeyVault(Object protectedSettingsFromKeyVault);
+            WithCreate withProtectedSettingsFromKeyVault(KeyVaultSecretReference protectedSettingsFromKeyVault);
         }
     }
     /**
@@ -538,7 +538,7 @@ public interface VirtualMachineExtension {
              *     consumed from key vault.
              * @return the next definition stage.
              */
-            Update withProtectedSettingsFromKeyVault(Object protectedSettingsFromKeyVault);
+            Update withProtectedSettingsFromKeyVault(KeyVaultSecretReference protectedSettingsFromKeyVault);
         }
     }
     /**

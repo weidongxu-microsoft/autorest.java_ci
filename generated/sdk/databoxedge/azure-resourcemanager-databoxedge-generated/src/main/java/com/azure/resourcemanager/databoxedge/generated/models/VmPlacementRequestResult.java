@@ -35,6 +35,10 @@ public final class VmPlacementRequestResult {
     @JsonProperty(value = "message")
     private String message;
 
+    /** Creates an instance of VmPlacementRequestResult class. */
+    public VmPlacementRequestResult() {
+    }
+
     /**
      * Get the vmSize property: List of VM sizes being checked.
      *

@@ -35,6 +35,10 @@ public final class NetworkRuleSetInner extends ProxyResource {
     @JsonProperty(value = "location", access = JsonProperty.Access.WRITE_ONLY)
     private String location;
 
+    /** Creates an instance of NetworkRuleSetInner class. */
+    public NetworkRuleSetInner() {
+    }
+
     /**
      * Get the innerProperties property: NetworkRuleSet properties.
      *

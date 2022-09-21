@@ -24,6 +24,10 @@ public final class BudgetTimePeriod {
     @JsonProperty(value = "endDate")
     private OffsetDateTime endDate;
 
+    /** Creates an instance of BudgetTimePeriod class. */
+    public BudgetTimePeriod() {
+    }
+
     /**
      * Get the startDate property: The start date for the budget.
      *

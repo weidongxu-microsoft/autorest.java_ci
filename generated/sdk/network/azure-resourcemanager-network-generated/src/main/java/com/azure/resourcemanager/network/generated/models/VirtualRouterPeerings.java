@@ -43,20 +43,6 @@ public interface VirtualRouterPeerings {
      * @param resourceGroupName The name of the resource group.
      * @param virtualRouterName The name of the Virtual Router.
      * @param peeringName The name of the Virtual Router Peering.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Virtual Router Peering.
-     */
-    VirtualRouterPeering get(String resourceGroupName, String virtualRouterName, String peeringName);
-
-    /**
-     * Gets the specified Virtual Router Peering.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param virtualRouterName The name of the Virtual Router.
-     * @param peeringName The name of the Virtual Router Peering.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
@@ -66,6 +52,20 @@ public interface VirtualRouterPeerings {
      */
     Response<VirtualRouterPeering> getWithResponse(
         String resourceGroupName, String virtualRouterName, String peeringName, Context context);
+
+    /**
+     * Gets the specified Virtual Router Peering.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param virtualRouterName The name of the Virtual Router.
+     * @param peeringName The name of the Virtual Router Peering.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified Virtual Router Peering.
+     */
+    VirtualRouterPeering get(String resourceGroupName, String virtualRouterName, String peeringName);
 
     /**
      * Lists all Virtual Router Peerings in a Virtual Router resource.

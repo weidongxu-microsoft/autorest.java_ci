@@ -23,6 +23,10 @@ public final class ClientAccessRight {
     @JsonProperty(value = "accessPermission", required = true)
     private ClientPermissionType accessPermission;
 
+    /** Creates an instance of ClientAccessRight class. */
+    public ClientAccessRight() {
+    }
+
     /**
      * Get the client property: IP of the client.
      *

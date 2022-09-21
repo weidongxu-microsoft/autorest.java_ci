@@ -38,18 +38,6 @@ public interface PublicIpPrefixes {
      *
      * @param resourceGroupName The name of the resource group.
      * @param publicIpPrefixName The name of the public IP prefix.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified public IP prefix in a specified resource group.
-     */
-    PublicIpPrefix getByResourceGroup(String resourceGroupName, String publicIpPrefixName);
-
-    /**
-     * Gets the specified public IP prefix in a specified resource group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param publicIpPrefixName The name of the public IP prefix.
      * @param expand Expands referenced resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -59,6 +47,18 @@ public interface PublicIpPrefixes {
      */
     Response<PublicIpPrefix> getByResourceGroupWithResponse(
         String resourceGroupName, String publicIpPrefixName, String expand, Context context);
+
+    /**
+     * Gets the specified public IP prefix in a specified resource group.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param publicIpPrefixName The name of the public IP prefix.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified public IP prefix in a specified resource group.
+     */
+    PublicIpPrefix getByResourceGroup(String resourceGroupName, String publicIpPrefixName);
 
     /**
      * Gets all the public IP prefixes in a subscription.

@@ -28,15 +28,6 @@ public final class ConfigurationsImpl implements Configurations {
         this.serviceManager = serviceManager;
     }
 
-    public Configuration get(String resourceGroupName, String serverName, String configurationName) {
-        ConfigurationInner inner = this.serviceClient().get(resourceGroupName, serverName, configurationName);
-        if (inner != null) {
-            return new ConfigurationImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<Configuration> getWithResponse(
         String resourceGroupName, String serverName, String configurationName, Context context) {
         Response<ConfigurationInner> inner =
@@ -47,6 +38,15 @@ public final class ConfigurationsImpl implements Configurations {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new ConfigurationImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public Configuration get(String resourceGroupName, String serverName, String configurationName) {
+        ConfigurationInner inner = this.serviceClient().get(resourceGroupName, serverName, configurationName);
+        if (inner != null) {
+            return new ConfigurationImpl(inner, this.manager());
         } else {
             return null;
         }

@@ -13,6 +13,7 @@ import com.azure.resourcemanager.network.generated.models.BgpSettings;
 import com.azure.resourcemanager.network.generated.models.ExtendedLocation;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkGatewayIpConfiguration;
+import com.azure.resourcemanager.network.generated.models.VirtualNetworkGatewayPolicyGroup;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkGatewaySku;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkGatewayType;
 import com.azure.resourcemanager.network.generated.models.VpnClientConfiguration;
@@ -48,6 +49,10 @@ public final class VirtualNetworkGatewayInner extends Resource {
      */
     @JsonProperty(value = "id")
     private String id;
+
+    /** Creates an instance of VirtualNetworkGatewayInner class. */
+    public VirtualNetworkGatewayInner() {
+    }
 
     /**
      * Get the innerProperties property: Properties of the virtual network gateway.
@@ -382,6 +387,32 @@ public final class VirtualNetworkGatewayInner extends Resource {
             this.innerProperties = new VirtualNetworkGatewayPropertiesFormat();
         }
         this.innerProperties().withVpnClientConfiguration(vpnClientConfiguration);
+        return this;
+    }
+
+    /**
+     * Get the virtualNetworkGatewayPolicyGroups property: The reference to the VirtualNetworkGatewayPolicyGroup
+     * resource which represents the available VirtualNetworkGatewayPolicyGroup for the gateway.
+     *
+     * @return the virtualNetworkGatewayPolicyGroups value.
+     */
+    public List<VirtualNetworkGatewayPolicyGroup> virtualNetworkGatewayPolicyGroups() {
+        return this.innerProperties() == null ? null : this.innerProperties().virtualNetworkGatewayPolicyGroups();
+    }
+
+    /**
+     * Set the virtualNetworkGatewayPolicyGroups property: The reference to the VirtualNetworkGatewayPolicyGroup
+     * resource which represents the available VirtualNetworkGatewayPolicyGroup for the gateway.
+     *
+     * @param virtualNetworkGatewayPolicyGroups the virtualNetworkGatewayPolicyGroups value to set.
+     * @return the VirtualNetworkGatewayInner object itself.
+     */
+    public VirtualNetworkGatewayInner withVirtualNetworkGatewayPolicyGroups(
+        List<VirtualNetworkGatewayPolicyGroup> virtualNetworkGatewayPolicyGroups) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new VirtualNetworkGatewayPropertiesFormat();
+        }
+        this.innerProperties().withVirtualNetworkGatewayPolicyGroups(virtualNetworkGatewayPolicyGroups);
         return this;
     }
 

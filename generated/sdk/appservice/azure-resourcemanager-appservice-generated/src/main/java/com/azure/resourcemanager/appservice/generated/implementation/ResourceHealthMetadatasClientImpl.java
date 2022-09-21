@@ -838,11 +838,11 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return used for getting ResourceHealthCheck settings.
+     * @return used for getting ResourceHealthCheck settings along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ResourceHealthMetadataInner getBySite(String resourceGroupName, String name) {
-        return getBySiteAsync(resourceGroupName, name).block();
+    public Response<ResourceHealthMetadataInner> getBySiteWithResponse(String resourceGroupName, String name) {
+        return getBySiteWithResponseAsync(resourceGroupName, name).block();
     }
 
     /**
@@ -862,6 +862,23 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     public Response<ResourceHealthMetadataInner> getBySiteWithResponse(
         String resourceGroupName, String name, Context context) {
         return getBySiteWithResponseAsync(resourceGroupName, name, context).block();
+    }
+
+    /**
+     * Gets the category of ResourceHealthMetadata to use for the given site
+     *
+     * <p>Description for Gets the category of ResourceHealthMetadata to use for the given site.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of web app.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return used for getting ResourceHealthCheck settings.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ResourceHealthMetadataInner getBySite(String resourceGroupName, String name) {
+        return getBySiteWithResponse(resourceGroupName, name, Context.NONE).getValue();
     }
 
     /**
@@ -1214,11 +1231,12 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return used for getting ResourceHealthCheck settings.
+     * @return used for getting ResourceHealthCheck settings along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ResourceHealthMetadataInner getBySiteSlot(String resourceGroupName, String name, String slot) {
-        return getBySiteSlotAsync(resourceGroupName, name, slot).block();
+    public Response<ResourceHealthMetadataInner> getBySiteSlotWithResponse(
+        String resourceGroupName, String name, String slot) {
+        return getBySiteSlotWithResponseAsync(resourceGroupName, name, slot).block();
     }
 
     /**
@@ -1239,6 +1257,24 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     public Response<ResourceHealthMetadataInner> getBySiteSlotWithResponse(
         String resourceGroupName, String name, String slot, Context context) {
         return getBySiteSlotWithResponseAsync(resourceGroupName, name, slot, context).block();
+    }
+
+    /**
+     * Gets the category of ResourceHealthMetadata to use for the given site
+     *
+     * <p>Description for Gets the category of ResourceHealthMetadata to use for the given site.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of web app.
+     * @param slot Name of web app slot. If not specified then will default to production slot.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return used for getting ResourceHealthCheck settings.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ResourceHealthMetadataInner getBySiteSlot(String resourceGroupName, String name, String slot) {
+        return getBySiteSlotWithResponse(resourceGroupName, name, slot, Context.NONE).getValue();
     }
 
     /**

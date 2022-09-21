@@ -58,6 +58,10 @@ public final class PolicyDefinitionProperties {
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, ParameterDefinitionsValue> parameters;
 
+    /** Creates an instance of PolicyDefinitionProperties class. */
+    public PolicyDefinitionProperties() {
+    }
+
     /**
      * Get the policyType property: The type of policy definition. Possible values are NotSpecified, BuiltIn, Custom,
      * and Static.

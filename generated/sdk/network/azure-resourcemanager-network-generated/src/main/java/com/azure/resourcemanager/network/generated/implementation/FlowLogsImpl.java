@@ -27,15 +27,6 @@ public final class FlowLogsImpl implements FlowLogs {
         this.serviceManager = serviceManager;
     }
 
-    public FlowLog get(String resourceGroupName, String networkWatcherName, String flowLogName) {
-        FlowLogInner inner = this.serviceClient().get(resourceGroupName, networkWatcherName, flowLogName);
-        if (inner != null) {
-            return new FlowLogImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<FlowLog> getWithResponse(
         String resourceGroupName, String networkWatcherName, String flowLogName, Context context) {
         Response<FlowLogInner> inner =
@@ -46,6 +37,15 @@ public final class FlowLogsImpl implements FlowLogs {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new FlowLogImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public FlowLog get(String resourceGroupName, String networkWatcherName, String flowLogName) {
+        FlowLogInner inner = this.serviceClient().get(resourceGroupName, networkWatcherName, flowLogName);
+        if (inner != null) {
+            return new FlowLogImpl(inner, this.manager());
         } else {
             return null;
         }

@@ -19,23 +19,6 @@ public interface BlobInventoryPolicies {
      *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param blobInventoryPolicyName The name of the storage account blob inventory policy. It should always be
      *     'default'.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the blob inventory policy associated with the specified storage account.
-     */
-    BlobInventoryPolicy get(
-        String resourceGroupName, String accountName, BlobInventoryPolicyName blobInventoryPolicyName);
-
-    /**
-     * Gets the blob inventory policy associated with the specified storage account.
-     *
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     *     insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param blobInventoryPolicyName The name of the storage account blob inventory policy. It should always be
-     *     'default'.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -46,7 +29,7 @@ public interface BlobInventoryPolicies {
         String resourceGroupName, String accountName, BlobInventoryPolicyName blobInventoryPolicyName, Context context);
 
     /**
-     * Deletes the blob inventory policy associated with the specified storage account.
+     * Gets the blob inventory policy associated with the specified storage account.
      *
      * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
      *     insensitive.
@@ -57,8 +40,10 @@ public interface BlobInventoryPolicies {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the blob inventory policy associated with the specified storage account.
      */
-    void delete(String resourceGroupName, String accountName, BlobInventoryPolicyName blobInventoryPolicyName);
+    BlobInventoryPolicy get(
+        String resourceGroupName, String accountName, BlobInventoryPolicyName blobInventoryPolicyName);
 
     /**
      * Deletes the blob inventory policy associated with the specified storage account.
@@ -77,6 +62,21 @@ public interface BlobInventoryPolicies {
      */
     Response<Void> deleteWithResponse(
         String resourceGroupName, String accountName, BlobInventoryPolicyName blobInventoryPolicyName, Context context);
+
+    /**
+     * Deletes the blob inventory policy associated with the specified storage account.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     *     insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param blobInventoryPolicyName The name of the storage account blob inventory policy. It should always be
+     *     'default'.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void delete(String resourceGroupName, String accountName, BlobInventoryPolicyName blobInventoryPolicyName);
 
     /**
      * Gets the blob inventory policy associated with the specified storage account.

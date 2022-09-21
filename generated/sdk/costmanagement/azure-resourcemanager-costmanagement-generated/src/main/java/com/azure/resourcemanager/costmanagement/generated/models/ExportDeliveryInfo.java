@@ -17,6 +17,10 @@ public final class ExportDeliveryInfo {
     @JsonProperty(value = "destination", required = true)
     private ExportDeliveryDestination destination;
 
+    /** Creates an instance of ExportDeliveryInfo class. */
+    public ExportDeliveryInfo() {
+    }
+
     /**
      * Get the destination property: Has destination for the export being delivered.
      *

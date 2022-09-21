@@ -39,6 +39,10 @@ public final class PolicyDefinitionReference {
     @JsonProperty(value = "groupNames")
     private List<String> groupNames;
 
+    /** Creates an instance of PolicyDefinitionReference class. */
+    public PolicyDefinitionReference() {
+    }
+
     /**
      * Get the policyDefinitionId property: The ID of the policy definition or policy set definition.
      *

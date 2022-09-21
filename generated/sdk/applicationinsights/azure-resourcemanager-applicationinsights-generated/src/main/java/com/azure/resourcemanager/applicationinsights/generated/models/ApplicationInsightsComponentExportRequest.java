@@ -66,6 +66,10 @@ public final class ApplicationInsightsComponentExportRequest {
     @JsonProperty(value = "DestinationAccountId")
     private String destinationAccountId;
 
+    /** Creates an instance of ApplicationInsightsComponentExportRequest class. */
+    public ApplicationInsightsComponentExportRequest() {
+    }
+
     /**
      * Get the recordTypes property: The document types to be exported, as comma separated values. Allowed values
      * include 'Requests', 'Event', 'Exceptions', 'Metrics', 'PageViews', 'PageViewPerformance', 'Rdd',

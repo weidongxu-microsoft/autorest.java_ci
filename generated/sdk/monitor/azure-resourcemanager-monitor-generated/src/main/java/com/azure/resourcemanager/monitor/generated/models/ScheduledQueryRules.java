@@ -15,18 +15,6 @@ public interface ScheduledQueryRules {
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Log Search rule.
-     */
-    LogSearchRuleResource getByResourceGroup(String resourceGroupName, String ruleName);
-
-    /**
-     * Gets an Log Search rule.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param ruleName The name of the rule.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -37,15 +25,16 @@ public interface ScheduledQueryRules {
         String resourceGroupName, String ruleName, Context context);
 
     /**
-     * Deletes a Log Search rule.
+     * Gets an Log Search rule.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return an Log Search rule.
      */
-    void deleteByResourceGroup(String resourceGroupName, String ruleName);
+    LogSearchRuleResource getByResourceGroup(String resourceGroupName, String ruleName);
 
     /**
      * Deletes a Log Search rule.
@@ -58,7 +47,18 @@ public interface ScheduledQueryRules {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
-    Response<Void> deleteWithResponse(String resourceGroupName, String ruleName, Context context);
+    Response<Void> deleteByResourceGroupWithResponse(String resourceGroupName, String ruleName, Context context);
+
+    /**
+     * Deletes a Log Search rule.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param ruleName The name of the rule.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deleteByResourceGroup(String resourceGroupName, String ruleName);
 
     /**
      * List the Log Search rules within a subscription group.

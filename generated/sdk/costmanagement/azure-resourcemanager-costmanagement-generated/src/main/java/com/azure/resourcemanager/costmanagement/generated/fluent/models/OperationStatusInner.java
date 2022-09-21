@@ -24,6 +24,10 @@ public final class OperationStatusInner {
     @JsonProperty(value = "properties")
     private ReportUrl innerProperties;
 
+    /** Creates an instance of OperationStatusInner class. */
+    public OperationStatusInner() {
+    }
+
     /**
      * Get the status property: The status of the long running operation.
      *

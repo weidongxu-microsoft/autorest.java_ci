@@ -33,6 +33,10 @@ public final class PeriodicTimerProperties {
     @JsonProperty(value = "customContextTag")
     private String customContextTag;
 
+    /** Creates an instance of PeriodicTimerProperties class. */
+    public PeriodicTimerProperties() {
+    }
+
     /**
      * Get the sourceInfo property: Periodic timer details.
      *

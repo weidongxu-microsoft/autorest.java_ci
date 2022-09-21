@@ -16,19 +16,6 @@ public interface DiagnosticSettings {
      *
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the proactive log collection settings of the specified Data Box Edge/Data Box Gateway device.
-     */
-    DiagnosticProactiveLogCollectionSettings getDiagnosticProactiveLogCollectionSettings(
-        String deviceName, String resourceGroupName);
-
-    /**
-     * Gets the proactive log collection settings of the specified Data Box Edge/Data Box Gateway device.
-     *
-     * @param deviceName The device name.
-     * @param resourceGroupName The resource group name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -38,6 +25,19 @@ public interface DiagnosticSettings {
      */
     Response<DiagnosticProactiveLogCollectionSettings> getDiagnosticProactiveLogCollectionSettingsWithResponse(
         String deviceName, String resourceGroupName, Context context);
+
+    /**
+     * Gets the proactive log collection settings of the specified Data Box Edge/Data Box Gateway device.
+     *
+     * @param deviceName The device name.
+     * @param resourceGroupName The resource group name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the proactive log collection settings of the specified Data Box Edge/Data Box Gateway device.
+     */
+    DiagnosticProactiveLogCollectionSettings getDiagnosticProactiveLogCollectionSettings(
+        String deviceName, String resourceGroupName);
 
     /**
      * Updates the proactive log collection settings on a Data Box Edge/Data Box Gateway device.
@@ -78,18 +78,6 @@ public interface DiagnosticSettings {
      *
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the diagnostic remote support settings of the specified Data Box Edge/Data Box Gateway device.
-     */
-    DiagnosticRemoteSupportSettings getDiagnosticRemoteSupportSettings(String deviceName, String resourceGroupName);
-
-    /**
-     * Gets the diagnostic remote support settings of the specified Data Box Edge/Data Box Gateway device.
-     *
-     * @param deviceName The device name.
-     * @param resourceGroupName The resource group name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -99,6 +87,18 @@ public interface DiagnosticSettings {
      */
     Response<DiagnosticRemoteSupportSettings> getDiagnosticRemoteSupportSettingsWithResponse(
         String deviceName, String resourceGroupName, Context context);
+
+    /**
+     * Gets the diagnostic remote support settings of the specified Data Box Edge/Data Box Gateway device.
+     *
+     * @param deviceName The device name.
+     * @param resourceGroupName The resource group name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the diagnostic remote support settings of the specified Data Box Edge/Data Box Gateway device.
+     */
+    DiagnosticRemoteSupportSettings getDiagnosticRemoteSupportSettings(String deviceName, String resourceGroupName);
 
     /**
      * Updates the diagnostic remote support settings on a Data Box Edge/Data Box Gateway device.

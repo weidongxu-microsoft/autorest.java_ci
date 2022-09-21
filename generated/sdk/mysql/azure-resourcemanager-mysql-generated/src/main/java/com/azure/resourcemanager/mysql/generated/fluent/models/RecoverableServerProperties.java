@@ -46,6 +46,10 @@ public final class RecoverableServerProperties {
     @JsonProperty(value = "version", access = JsonProperty.Access.WRITE_ONLY)
     private String version;
 
+    /** Creates an instance of RecoverableServerProperties class. */
+    public RecoverableServerProperties() {
+    }
+
     /**
      * Get the lastAvailableBackupDateTime property: The last available backup date time.
      *

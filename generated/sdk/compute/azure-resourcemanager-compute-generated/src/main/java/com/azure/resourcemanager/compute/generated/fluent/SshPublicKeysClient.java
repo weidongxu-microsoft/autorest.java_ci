@@ -76,22 +76,6 @@ public interface SshPublicKeysClient {
      * @param resourceGroupName The name of the resource group.
      * @param sshPublicKeyName The name of the SSH public key.
      * @param parameters Parameters supplied to create the SSH public key.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the SSH public key.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    SshPublicKeyResourceInner create(
-        String resourceGroupName, String sshPublicKeyName, SshPublicKeyResourceInner parameters);
-
-    /**
-     * Creates a new SSH public key resource.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param sshPublicKeyName The name of the SSH public key.
-     * @param parameters Parameters supplied to create the SSH public key.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
@@ -104,11 +88,11 @@ public interface SshPublicKeysClient {
         String resourceGroupName, String sshPublicKeyName, SshPublicKeyResourceInner parameters, Context context);
 
     /**
-     * Updates a new SSH public key resource.
+     * Creates a new SSH public key resource.
      *
      * @param resourceGroupName The name of the resource group.
      * @param sshPublicKeyName The name of the SSH public key.
-     * @param parameters Parameters supplied to update the SSH public key.
+     * @param parameters Parameters supplied to create the SSH public key.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
@@ -116,8 +100,8 @@ public interface SshPublicKeysClient {
      * @return specifies information about the SSH public key.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    SshPublicKeyResourceInner update(
-        String resourceGroupName, String sshPublicKeyName, SshPublicKeyUpdateResource parameters);
+    SshPublicKeyResourceInner create(
+        String resourceGroupName, String sshPublicKeyName, SshPublicKeyResourceInner parameters);
 
     /**
      * Updates a new SSH public key resource.
@@ -137,17 +121,20 @@ public interface SshPublicKeysClient {
         String resourceGroupName, String sshPublicKeyName, SshPublicKeyUpdateResource parameters, Context context);
 
     /**
-     * Delete an SSH public key.
+     * Updates a new SSH public key resource.
      *
      * @param resourceGroupName The name of the resource group.
      * @param sshPublicKeyName The name of the SSH public key.
+     * @param parameters Parameters supplied to update the SSH public key.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return specifies information about the SSH public key.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    void delete(String resourceGroupName, String sshPublicKeyName);
+    SshPublicKeyResourceInner update(
+        String resourceGroupName, String sshPublicKeyName, SshPublicKeyUpdateResource parameters);
 
     /**
      * Delete an SSH public key.
@@ -165,7 +152,7 @@ public interface SshPublicKeysClient {
     Response<Void> deleteWithResponse(String resourceGroupName, String sshPublicKeyName, Context context);
 
     /**
-     * Retrieves information about an SSH public key.
+     * Delete an SSH public key.
      *
      * @param resourceGroupName The name of the resource group.
      * @param sshPublicKeyName The name of the SSH public key.
@@ -173,10 +160,9 @@ public interface SshPublicKeysClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the SSH public key.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    SshPublicKeyResourceInner getByResourceGroup(String resourceGroupName, String sshPublicKeyName);
+    void delete(String resourceGroupName, String sshPublicKeyName);
 
     /**
      * Retrieves information about an SSH public key.
@@ -195,8 +181,7 @@ public interface SshPublicKeysClient {
         String resourceGroupName, String sshPublicKeyName, Context context);
 
     /**
-     * Generates and returns a public/private key pair and populates the SSH public key resource with the public key.
-     * The length of the key will be 3072 bits. This operation can only be performed once per SSH public key resource.
+     * Retrieves information about an SSH public key.
      *
      * @param resourceGroupName The name of the resource group.
      * @param sshPublicKeyName The name of the SSH public key.
@@ -204,10 +189,10 @@ public interface SshPublicKeysClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response from generation of an SSH key pair.
+     * @return specifies information about the SSH public key.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    SshPublicKeyGenerateKeyPairResultInner generateKeyPair(String resourceGroupName, String sshPublicKeyName);
+    SshPublicKeyResourceInner getByResourceGroup(String resourceGroupName, String sshPublicKeyName);
 
     /**
      * Generates and returns a public/private key pair and populates the SSH public key resource with the public key.
@@ -225,4 +210,19 @@ public interface SshPublicKeysClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<SshPublicKeyGenerateKeyPairResultInner> generateKeyPairWithResponse(
         String resourceGroupName, String sshPublicKeyName, Context context);
+
+    /**
+     * Generates and returns a public/private key pair and populates the SSH public key resource with the public key.
+     * The length of the key will be 3072 bits. This operation can only be performed once per SSH public key resource.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param sshPublicKeyName The name of the SSH public key.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return response from generation of an SSH key pair.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    SshPublicKeyGenerateKeyPairResultInner generateKeyPair(String resourceGroupName, String sshPublicKeyName);
 }

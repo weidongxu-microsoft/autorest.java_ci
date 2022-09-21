@@ -30,6 +30,10 @@ public final class KubernetesClusterInfo {
     @JsonProperty(value = "version", required = true)
     private String version;
 
+    /** Creates an instance of KubernetesClusterInfo class. */
+    public KubernetesClusterInfo() {
+    }
+
     /**
      * Get the etcdInfo property: Etcd configuration.
      *

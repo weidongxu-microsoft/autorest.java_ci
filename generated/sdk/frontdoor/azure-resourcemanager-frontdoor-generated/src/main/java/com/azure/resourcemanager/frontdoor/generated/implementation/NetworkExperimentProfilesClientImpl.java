@@ -605,11 +605,11 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an NetworkExperiment Profile by ProfileName.
+     * @return an NetworkExperiment Profile by ProfileName along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ProfileInner getByResourceGroup(String resourceGroupName, String profileName) {
-        return getByResourceGroupAsync(resourceGroupName, profileName).block();
+    public Response<ProfileInner> getByResourceGroupWithResponse(String resourceGroupName, String profileName) {
+        return getByResourceGroupWithResponseAsync(resourceGroupName, profileName).block();
     }
 
     /**
@@ -627,6 +627,21 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
     public Response<ProfileInner> getByResourceGroupWithResponse(
         String resourceGroupName, String profileName, Context context) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, profileName, context).block();
+    }
+
+    /**
+     * Gets an NetworkExperiment Profile by ProfileName.
+     *
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param profileName The Profile identifier associated with the Tenant and Partner.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return an NetworkExperiment Profile by ProfileName.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ProfileInner getByResourceGroup(String resourceGroupName, String profileName) {
+        return getByResourceGroupWithResponse(resourceGroupName, profileName, Context.NONE).getValue();
     }
 
     /**

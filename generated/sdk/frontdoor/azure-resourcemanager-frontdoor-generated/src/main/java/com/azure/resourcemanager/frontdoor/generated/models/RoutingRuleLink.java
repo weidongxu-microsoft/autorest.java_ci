@@ -16,6 +16,10 @@ public final class RoutingRuleLink {
     @JsonProperty(value = "id")
     private String id;
 
+    /** Creates an instance of RoutingRuleLink class. */
+    public RoutingRuleLink() {
+    }
+
     /**
      * Get the id property: Resource ID.
      *

@@ -374,7 +374,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -426,7 +426,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -612,7 +612,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -664,7 +664,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -703,11 +703,12 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified application gateway.
+     * @return the specified application gateway along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ApplicationGatewayInner getByResourceGroup(String resourceGroupName, String applicationGatewayName) {
-        return getByResourceGroupAsync(resourceGroupName, applicationGatewayName).block();
+    public Response<ApplicationGatewayInner> getByResourceGroupWithResponse(
+        String resourceGroupName, String applicationGatewayName) {
+        return getByResourceGroupWithResponseAsync(resourceGroupName, applicationGatewayName).block();
     }
 
     /**
@@ -725,6 +726,21 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
     public Response<ApplicationGatewayInner> getByResourceGroupWithResponse(
         String resourceGroupName, String applicationGatewayName, Context context) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, applicationGatewayName, context).block();
+    }
+
+    /**
+     * Gets the specified application gateway.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param applicationGatewayName The name of the application gateway.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified application gateway.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ApplicationGatewayInner getByResourceGroup(String resourceGroupName, String applicationGatewayName) {
+        return getByResourceGroupWithResponse(resourceGroupName, applicationGatewayName, Context.NONE).getValue();
     }
 
     /**
@@ -767,7 +783,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -826,7 +842,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1044,7 +1060,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1103,7 +1119,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1145,12 +1161,12 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return application gateway resource.
+     * @return application gateway resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ApplicationGatewayInner updateTags(
+    public Response<ApplicationGatewayInner> updateTagsWithResponse(
         String resourceGroupName, String applicationGatewayName, TagsObject parameters) {
-        return updateTagsAsync(resourceGroupName, applicationGatewayName, parameters).block();
+        return updateTagsWithResponseAsync(resourceGroupName, applicationGatewayName, parameters).block();
     }
 
     /**
@@ -1169,6 +1185,23 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
     public Response<ApplicationGatewayInner> updateTagsWithResponse(
         String resourceGroupName, String applicationGatewayName, TagsObject parameters, Context context) {
         return updateTagsWithResponseAsync(resourceGroupName, applicationGatewayName, parameters, context).block();
+    }
+
+    /**
+     * Updates the specified application gateway tags.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param applicationGatewayName The name of the application gateway.
+     * @param parameters Parameters supplied to update application gateway tags.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return application gateway resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ApplicationGatewayInner updateTags(
+        String resourceGroupName, String applicationGatewayName, TagsObject parameters) {
+        return updateTagsWithResponse(resourceGroupName, applicationGatewayName, parameters, Context.NONE).getValue();
     }
 
     /**
@@ -1199,7 +1232,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1254,7 +1287,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1359,7 +1392,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1402,7 +1435,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1505,7 +1538,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1557,7 +1590,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1743,7 +1776,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1795,7 +1828,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1982,7 +2015,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -2037,7 +2070,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -2304,7 +2337,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
         } else {
             probeRequest.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -2371,7 +2404,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
         } else {
             probeRequest.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -2678,7 +2711,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -2713,7 +2746,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -2739,11 +2772,11 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
      *
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ApplicationGatewayAvailableServerVariables API service call.
+     * @return response for ApplicationGatewayAvailableServerVariables API service call along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public List<String> listAvailableServerVariables() {
-        return listAvailableServerVariablesAsync().block();
+    public Response<List<String>> listAvailableServerVariablesWithResponse() {
+        return listAvailableServerVariablesWithResponseAsync().block();
     }
 
     /**
@@ -2758,6 +2791,18 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<List<String>> listAvailableServerVariablesWithResponse(Context context) {
         return listAvailableServerVariablesWithResponseAsync(context).block();
+    }
+
+    /**
+     * Lists all available server variables.
+     *
+     * @throws ErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return response for ApplicationGatewayAvailableServerVariables API service call.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public List<String> listAvailableServerVariables() {
+        return listAvailableServerVariablesWithResponse(Context.NONE).getValue();
     }
 
     /**
@@ -2782,7 +2827,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -2817,7 +2862,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -2843,11 +2888,11 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
      *
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ApplicationGatewayAvailableRequestHeaders API service call.
+     * @return response for ApplicationGatewayAvailableRequestHeaders API service call along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public List<String> listAvailableRequestHeaders() {
-        return listAvailableRequestHeadersAsync().block();
+    public Response<List<String>> listAvailableRequestHeadersWithResponse() {
+        return listAvailableRequestHeadersWithResponseAsync().block();
     }
 
     /**
@@ -2862,6 +2907,18 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<List<String>> listAvailableRequestHeadersWithResponse(Context context) {
         return listAvailableRequestHeadersWithResponseAsync(context).block();
+    }
+
+    /**
+     * Lists all available request headers.
+     *
+     * @throws ErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return response for ApplicationGatewayAvailableRequestHeaders API service call.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public List<String> listAvailableRequestHeaders() {
+        return listAvailableRequestHeadersWithResponse(Context.NONE).getValue();
     }
 
     /**
@@ -2886,7 +2943,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -2921,7 +2978,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -2947,11 +3004,11 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
      *
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ApplicationGatewayAvailableResponseHeaders API service call.
+     * @return response for ApplicationGatewayAvailableResponseHeaders API service call along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public List<String> listAvailableResponseHeaders() {
-        return listAvailableResponseHeadersAsync().block();
+    public Response<List<String>> listAvailableResponseHeadersWithResponse() {
+        return listAvailableResponseHeadersWithResponseAsync().block();
     }
 
     /**
@@ -2966,6 +3023,18 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<List<String>> listAvailableResponseHeadersWithResponse(Context context) {
         return listAvailableResponseHeadersWithResponseAsync(context).block();
+    }
+
+    /**
+     * Lists all available response headers.
+     *
+     * @throws ErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return response for ApplicationGatewayAvailableResponseHeaders API service call.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public List<String> listAvailableResponseHeaders() {
+        return listAvailableResponseHeadersWithResponse(Context.NONE).getValue();
     }
 
     /**
@@ -2991,7 +3060,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -3027,7 +3096,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -3053,11 +3122,11 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ApplicationGatewayAvailableWafRuleSets API service call.
+     * @return response for ApplicationGatewayAvailableWafRuleSets API service call along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ApplicationGatewayAvailableWafRuleSetsResultInner listAvailableWafRuleSets() {
-        return listAvailableWafRuleSetsAsync().block();
+    public Response<ApplicationGatewayAvailableWafRuleSetsResultInner> listAvailableWafRuleSetsWithResponse() {
+        return listAvailableWafRuleSetsWithResponseAsync().block();
     }
 
     /**
@@ -3073,6 +3142,18 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
     public Response<ApplicationGatewayAvailableWafRuleSetsResultInner> listAvailableWafRuleSetsWithResponse(
         Context context) {
         return listAvailableWafRuleSetsWithResponseAsync(context).block();
+    }
+
+    /**
+     * Lists all available web application firewall rule sets.
+     *
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return response for ApplicationGatewayAvailableWafRuleSets API service call.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ApplicationGatewayAvailableWafRuleSetsResultInner listAvailableWafRuleSets() {
+        return listAvailableWafRuleSetsWithResponse(Context.NONE).getValue();
     }
 
     /**
@@ -3097,7 +3178,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -3133,7 +3214,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -3159,11 +3240,11 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ApplicationGatewayAvailableSslOptions API service call.
+     * @return response for ApplicationGatewayAvailableSslOptions API service call along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ApplicationGatewayAvailableSslOptionsInner listAvailableSslOptions() {
-        return listAvailableSslOptionsAsync().block();
+    public Response<ApplicationGatewayAvailableSslOptionsInner> listAvailableSslOptionsWithResponse() {
+        return listAvailableSslOptionsWithResponseAsync().block();
     }
 
     /**
@@ -3178,6 +3259,18 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<ApplicationGatewayAvailableSslOptionsInner> listAvailableSslOptionsWithResponse(Context context) {
         return listAvailableSslOptionsWithResponseAsync(context).block();
+    }
+
+    /**
+     * Lists available Ssl options for configuring Ssl policy.
+     *
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return response for ApplicationGatewayAvailableSslOptions API service call.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ApplicationGatewayAvailableSslOptionsInner listAvailableSslOptions() {
+        return listAvailableSslOptionsWithResponse(Context.NONE).getValue();
     }
 
     /**
@@ -3203,7 +3296,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -3248,7 +3341,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -3356,7 +3449,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
             return Mono
                 .error(new IllegalArgumentException("Parameter predefinedPolicyName is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -3402,7 +3495,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
             return Mono
                 .error(new IllegalArgumentException("Parameter predefinedPolicyName is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -3437,11 +3530,12 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return ssl predefined policy with the specified policy name.
+     * @return ssl predefined policy with the specified policy name along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ApplicationGatewaySslPredefinedPolicyInner getSslPredefinedPolicy(String predefinedPolicyName) {
-        return getSslPredefinedPolicyAsync(predefinedPolicyName).block();
+    public Response<ApplicationGatewaySslPredefinedPolicyInner> getSslPredefinedPolicyWithResponse(
+        String predefinedPolicyName) {
+        return getSslPredefinedPolicyWithResponseAsync(predefinedPolicyName).block();
     }
 
     /**
@@ -3458,6 +3552,20 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
     public Response<ApplicationGatewaySslPredefinedPolicyInner> getSslPredefinedPolicyWithResponse(
         String predefinedPolicyName, Context context) {
         return getSslPredefinedPolicyWithResponseAsync(predefinedPolicyName, context).block();
+    }
+
+    /**
+     * Gets Ssl predefined policy with the specified policy name.
+     *
+     * @param predefinedPolicyName Name of Ssl predefined policy.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return ssl predefined policy with the specified policy name.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ApplicationGatewaySslPredefinedPolicyInner getSslPredefinedPolicy(String predefinedPolicyName) {
+        return getSslPredefinedPolicyWithResponse(predefinedPolicyName, Context.NONE).getValue();
     }
 
     /**

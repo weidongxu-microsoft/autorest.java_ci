@@ -16,19 +16,6 @@ public interface VirtualNetworkRules {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param virtualNetworkRuleName The name of the virtual network rule.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a virtual network rule.
-     */
-    VirtualNetworkRule get(String resourceGroupName, String serverName, String virtualNetworkRuleName);
-
-    /**
-     * Gets a virtual network rule.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param serverName The name of the server.
-     * @param virtualNetworkRuleName The name of the virtual network rule.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -37,6 +24,19 @@ public interface VirtualNetworkRules {
      */
     Response<VirtualNetworkRule> getWithResponse(
         String resourceGroupName, String serverName, String virtualNetworkRuleName, Context context);
+
+    /**
+     * Gets a virtual network rule.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param serverName The name of the server.
+     * @param virtualNetworkRuleName The name of the virtual network rule.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a virtual network rule.
+     */
+    VirtualNetworkRule get(String resourceGroupName, String serverName, String virtualNetworkRuleName);
 
     /**
      * Deletes the virtual network rule with the given name.

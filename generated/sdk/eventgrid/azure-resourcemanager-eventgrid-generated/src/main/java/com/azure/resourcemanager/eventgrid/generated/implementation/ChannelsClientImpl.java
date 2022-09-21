@@ -315,11 +315,12 @@ public final class ChannelsClientImpl implements ChannelsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of a channel.
+     * @return properties of a channel along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ChannelInner get(String resourceGroupName, String partnerNamespaceName, String channelName) {
-        return getAsync(resourceGroupName, partnerNamespaceName, channelName).block();
+    public Response<ChannelInner> getWithResponse(
+        String resourceGroupName, String partnerNamespaceName, String channelName) {
+        return getWithResponseAsync(resourceGroupName, partnerNamespaceName, channelName).block();
     }
 
     /**
@@ -340,6 +341,24 @@ public final class ChannelsClientImpl implements ChannelsClient {
     public Response<ChannelInner> getWithResponse(
         String resourceGroupName, String partnerNamespaceName, String channelName, Context context) {
         return getWithResponseAsync(resourceGroupName, partnerNamespaceName, channelName, context).block();
+    }
+
+    /**
+     * Get a channel.
+     *
+     * <p>Get properties of a channel.
+     *
+     * @param resourceGroupName The name of the resource group within the partners subscription.
+     * @param partnerNamespaceName Name of the partner namespace.
+     * @param channelName Name of the channel.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return properties of a channel.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ChannelInner get(String resourceGroupName, String partnerNamespaceName, String channelName) {
+        return getWithResponse(resourceGroupName, partnerNamespaceName, channelName, Context.NONE).getValue();
     }
 
     /**
@@ -503,12 +522,13 @@ public final class ChannelsClientImpl implements ChannelsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return channel info.
+     * @return channel info along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ChannelInner createOrUpdate(
+    public Response<ChannelInner> createOrUpdateWithResponse(
         String resourceGroupName, String partnerNamespaceName, String channelName, ChannelInner channelInfo) {
-        return createOrUpdateAsync(resourceGroupName, partnerNamespaceName, channelName, channelInfo).block();
+        return createOrUpdateWithResponseAsync(resourceGroupName, partnerNamespaceName, channelName, channelInfo)
+            .block();
     }
 
     /**
@@ -536,6 +556,28 @@ public final class ChannelsClientImpl implements ChannelsClient {
         return createOrUpdateWithResponseAsync(
                 resourceGroupName, partnerNamespaceName, channelName, channelInfo, context)
             .block();
+    }
+
+    /**
+     * Create or update a channel.
+     *
+     * <p>Synchronously creates or updates a new channel with the specified parameters.
+     *
+     * @param resourceGroupName The name of the resource group within the partners subscription.
+     * @param partnerNamespaceName Name of the partner namespace.
+     * @param channelName Name of the channel.
+     * @param channelInfo Channel information.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return channel info.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ChannelInner createOrUpdate(
+        String resourceGroupName, String partnerNamespaceName, String channelName, ChannelInner channelInfo) {
+        return createOrUpdateWithResponse(
+                resourceGroupName, partnerNamespaceName, channelName, channelInfo, Context.NONE)
+            .getValue();
     }
 
     /**
@@ -976,14 +1018,16 @@ public final class ChannelsClientImpl implements ChannelsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public void update(
+    public Response<Void> updateWithResponse(
         String resourceGroupName,
         String partnerNamespaceName,
         String channelName,
         ChannelUpdateParameters channelUpdateParameters) {
-        updateAsync(resourceGroupName, partnerNamespaceName, channelName, channelUpdateParameters).block();
+        return updateWithResponseAsync(resourceGroupName, partnerNamespaceName, channelName, channelUpdateParameters)
+            .block();
     }
 
     /**
@@ -1011,6 +1055,28 @@ public final class ChannelsClientImpl implements ChannelsClient {
         return updateWithResponseAsync(
                 resourceGroupName, partnerNamespaceName, channelName, channelUpdateParameters, context)
             .block();
+    }
+
+    /**
+     * Update a Channel.
+     *
+     * <p>Synchronously updates a channel with the specified parameters.
+     *
+     * @param resourceGroupName The name of the resource group within the partners subscription.
+     * @param partnerNamespaceName Name of the partner namespace.
+     * @param channelName Name of the channel.
+     * @param channelUpdateParameters Channel update information.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public void update(
+        String resourceGroupName,
+        String partnerNamespaceName,
+        String channelName,
+        ChannelUpdateParameters channelUpdateParameters) {
+        updateWithResponse(resourceGroupName, partnerNamespaceName, channelName, channelUpdateParameters, Context.NONE);
     }
 
     /**
@@ -1421,12 +1487,12 @@ public final class ChannelsClientImpl implements ChannelsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the full endpoint URL of a partner destination channel.
+     * @return the full endpoint URL of a partner destination channel along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public EventSubscriptionFullUrlInner getFullUrl(
+    public Response<EventSubscriptionFullUrlInner> getFullUrlWithResponse(
         String resourceGroupName, String partnerNamespaceName, String channelName) {
-        return getFullUrlAsync(resourceGroupName, partnerNamespaceName, channelName).block();
+        return getFullUrlWithResponseAsync(resourceGroupName, partnerNamespaceName, channelName).block();
     }
 
     /**
@@ -1447,6 +1513,25 @@ public final class ChannelsClientImpl implements ChannelsClient {
     public Response<EventSubscriptionFullUrlInner> getFullUrlWithResponse(
         String resourceGroupName, String partnerNamespaceName, String channelName, Context context) {
         return getFullUrlWithResponseAsync(resourceGroupName, partnerNamespaceName, channelName, context).block();
+    }
+
+    /**
+     * Get full URL of partner destination channel.
+     *
+     * <p>Get the full endpoint URL of a partner destination channel.
+     *
+     * @param resourceGroupName The name of the resource group within the partners subscription.
+     * @param partnerNamespaceName Name of the partner namespace.
+     * @param channelName Name of the Channel.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the full endpoint URL of a partner destination channel.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public EventSubscriptionFullUrlInner getFullUrl(
+        String resourceGroupName, String partnerNamespaceName, String channelName) {
+        return getFullUrlWithResponse(resourceGroupName, partnerNamespaceName, channelName, Context.NONE).getValue();
     }
 
     /**

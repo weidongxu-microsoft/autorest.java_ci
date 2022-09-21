@@ -31,6 +31,10 @@ public final class CheckMhsmNameAvailabilityResultInner {
     @JsonProperty(value = "message", access = JsonProperty.Access.WRITE_ONLY)
     private String message;
 
+    /** Creates an instance of CheckMhsmNameAvailabilityResultInner class. */
+    public CheckMhsmNameAvailabilityResultInner() {
+    }
+
     /**
      * Get the nameAvailable property: A boolean value that indicates whether the name is available for you to use. If
      * true, the name is available. If false, the name has already been taken or is invalid and cannot be used.

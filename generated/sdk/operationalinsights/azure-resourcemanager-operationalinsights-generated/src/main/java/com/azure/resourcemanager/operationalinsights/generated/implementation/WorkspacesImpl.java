@@ -60,15 +60,6 @@ public final class WorkspacesImpl implements Workspaces {
         this.serviceClient().delete(resourceGroupName, workspaceName, force, context);
     }
 
-    public Workspace getByResourceGroup(String resourceGroupName, String workspaceName) {
-        WorkspaceInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, workspaceName);
-        if (inner != null) {
-            return new WorkspaceImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<Workspace> getByResourceGroupWithResponse(
         String resourceGroupName, String workspaceName, Context context) {
         Response<WorkspaceInner> inner =
@@ -79,6 +70,15 @@ public final class WorkspacesImpl implements Workspaces {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new WorkspaceImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public Workspace getByResourceGroup(String resourceGroupName, String workspaceName) {
+        WorkspaceInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, workspaceName);
+        if (inner != null) {
+            return new WorkspaceImpl(inner, this.manager());
         } else {
             return null;
         }

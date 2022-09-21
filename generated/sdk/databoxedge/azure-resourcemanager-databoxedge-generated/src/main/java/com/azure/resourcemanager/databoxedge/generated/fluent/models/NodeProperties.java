@@ -53,6 +53,10 @@ public final class NodeProperties {
     @JsonProperty(value = "nodeInstanceId", access = JsonProperty.Access.WRITE_ONLY)
     private String nodeInstanceId;
 
+    /** Creates an instance of NodeProperties class. */
+    public NodeProperties() {
+    }
+
     /**
      * Get the nodeStatus property: The current status of the individual node.
      *

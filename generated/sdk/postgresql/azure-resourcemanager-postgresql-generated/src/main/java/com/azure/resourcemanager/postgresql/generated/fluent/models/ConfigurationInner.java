@@ -17,6 +17,10 @@ public final class ConfigurationInner extends ProxyResource {
     @JsonProperty(value = "properties")
     private ConfigurationProperties innerProperties;
 
+    /** Creates an instance of ConfigurationInner class. */
+    public ConfigurationInner() {
+    }
+
     /**
      * Get the innerProperties property: The properties of a configuration.
      *

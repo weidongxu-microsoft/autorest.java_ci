@@ -118,6 +118,10 @@ public final class DomainProperties {
     @JsonProperty(value = "dataResidencyBoundary")
     private DataResidencyBoundary dataResidencyBoundary;
 
+    /** Creates an instance of DomainProperties class. */
+    public DomainProperties() {
+    }
+
     /**
      * Get the privateEndpointConnections property: List of private endpoint connections.
      *

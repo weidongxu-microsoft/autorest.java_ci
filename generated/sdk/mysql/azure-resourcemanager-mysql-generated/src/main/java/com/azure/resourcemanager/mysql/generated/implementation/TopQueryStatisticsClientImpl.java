@@ -235,11 +235,12 @@ public final class TopQueryStatisticsClientImpl implements TopQueryStatisticsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a Query Statistic.
+     * @return represents a Query Statistic along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public QueryStatisticInner get(String resourceGroupName, String serverName, String queryStatisticId) {
-        return getAsync(resourceGroupName, serverName, queryStatisticId).block();
+    public Response<QueryStatisticInner> getWithResponse(
+        String resourceGroupName, String serverName, String queryStatisticId) {
+        return getWithResponseAsync(resourceGroupName, serverName, queryStatisticId).block();
     }
 
     /**
@@ -258,6 +259,22 @@ public final class TopQueryStatisticsClientImpl implements TopQueryStatisticsCli
     public Response<QueryStatisticInner> getWithResponse(
         String resourceGroupName, String serverName, String queryStatisticId, Context context) {
         return getWithResponseAsync(resourceGroupName, serverName, queryStatisticId, context).block();
+    }
+
+    /**
+     * Retrieve the query statistic for specified identifier.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param serverName The name of the server.
+     * @param queryStatisticId The Query Statistic identifier.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return represents a Query Statistic.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public QueryStatisticInner get(String resourceGroupName, String serverName, String queryStatisticId) {
+        return getWithResponse(resourceGroupName, serverName, queryStatisticId, Context.NONE).getValue();
     }
 
     /**

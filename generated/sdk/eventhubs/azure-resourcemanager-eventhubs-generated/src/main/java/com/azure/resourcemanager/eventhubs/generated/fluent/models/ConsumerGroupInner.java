@@ -31,6 +31,10 @@ public final class ConsumerGroupInner extends ProxyResource {
     @JsonProperty(value = "location", access = JsonProperty.Access.WRITE_ONLY)
     private String location;
 
+    /** Creates an instance of ConsumerGroupInner class. */
+    public ConsumerGroupInner() {
+    }
+
     /**
      * Get the innerProperties property: Single item in List or Get Consumer group operation.
      *

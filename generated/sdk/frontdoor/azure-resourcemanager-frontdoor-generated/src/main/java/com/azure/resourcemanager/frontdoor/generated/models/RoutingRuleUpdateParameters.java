@@ -54,6 +54,10 @@ public class RoutingRuleUpdateParameters {
     @JsonProperty(value = "webApplicationFirewallPolicyLink")
     private RoutingRuleUpdateParametersWebApplicationFirewallPolicyLink webApplicationFirewallPolicyLink;
 
+    /** Creates an instance of RoutingRuleUpdateParameters class. */
+    public RoutingRuleUpdateParameters() {
+    }
+
     /**
      * Get the frontendEndpoints property: Frontend endpoints associated with this rule.
      *

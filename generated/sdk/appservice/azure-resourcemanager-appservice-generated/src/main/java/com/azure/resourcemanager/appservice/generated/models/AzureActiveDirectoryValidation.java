@@ -29,6 +29,10 @@ public final class AzureActiveDirectoryValidation {
     @JsonProperty(value = "defaultAuthorizationPolicy")
     private DefaultAuthorizationPolicy defaultAuthorizationPolicy;
 
+    /** Creates an instance of AzureActiveDirectoryValidation class. */
+    public AzureActiveDirectoryValidation() {
+    }
+
     /**
      * Get the jwtClaimChecks property: The configuration settings of the checks that should be made while validating
      * the JWT Claims.

@@ -27,16 +27,6 @@ public final class NetworkSecurityPerimeterConfigurationsImpl implements Network
         this.serviceManager = serviceManager;
     }
 
-    public NetworkSecurityPerimeterConfigurationList list(String resourceGroupName, String namespaceName) {
-        NetworkSecurityPerimeterConfigurationListInner inner =
-            this.serviceClient().list(resourceGroupName, namespaceName);
-        if (inner != null) {
-            return new NetworkSecurityPerimeterConfigurationListImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<NetworkSecurityPerimeterConfigurationList> listWithResponse(
         String resourceGroupName, String namespaceName, Context context) {
         Response<NetworkSecurityPerimeterConfigurationListInner> inner =
@@ -47,6 +37,16 @@ public final class NetworkSecurityPerimeterConfigurationsImpl implements Network
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new NetworkSecurityPerimeterConfigurationListImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public NetworkSecurityPerimeterConfigurationList list(String resourceGroupName, String namespaceName) {
+        NetworkSecurityPerimeterConfigurationListInner inner =
+            this.serviceClient().list(resourceGroupName, namespaceName);
+        if (inner != null) {
+            return new NetworkSecurityPerimeterConfigurationListImpl(inner, this.manager());
         } else {
             return null;
         }

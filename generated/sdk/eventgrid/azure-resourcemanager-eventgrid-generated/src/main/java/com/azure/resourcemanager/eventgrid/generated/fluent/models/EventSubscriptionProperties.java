@@ -97,6 +97,10 @@ public final class EventSubscriptionProperties {
     @JsonProperty(value = "deadLetterWithResourceIdentity")
     private DeadLetterWithResourceIdentity deadLetterWithResourceIdentity;
 
+    /** Creates an instance of EventSubscriptionProperties class. */
+    public EventSubscriptionProperties() {
+    }
+
     /**
      * Get the topic property: Name of the topic of the event subscription.
      *

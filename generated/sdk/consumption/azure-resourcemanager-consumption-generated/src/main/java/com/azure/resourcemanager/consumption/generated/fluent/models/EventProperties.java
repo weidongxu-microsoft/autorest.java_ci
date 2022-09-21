@@ -156,6 +156,10 @@ public final class EventProperties {
     @JsonProperty(value = "eTag", access = JsonProperty.Access.WRITE_ONLY)
     private String etag;
 
+    /** Creates an instance of EventProperties class. */
+    public EventProperties() {
+    }
+
     /**
      * Get the transactionDate property: The date of the event.
      *

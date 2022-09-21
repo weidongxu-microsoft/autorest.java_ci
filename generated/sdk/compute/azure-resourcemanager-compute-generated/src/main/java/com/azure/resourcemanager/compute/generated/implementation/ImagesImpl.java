@@ -35,15 +35,6 @@ public final class ImagesImpl implements Images {
         this.serviceClient().delete(resourceGroupName, imageName, context);
     }
 
-    public Image getByResourceGroup(String resourceGroupName, String imageName) {
-        ImageInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, imageName);
-        if (inner != null) {
-            return new ImageImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<Image> getByResourceGroupWithResponse(
         String resourceGroupName, String imageName, String expand, Context context) {
         Response<ImageInner> inner =
@@ -54,6 +45,15 @@ public final class ImagesImpl implements Images {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new ImageImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public Image getByResourceGroup(String resourceGroupName, String imageName) {
+        ImageInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, imageName);
+        if (inner != null) {
+            return new ImageImpl(inner, this.manager());
         } else {
             return null;
         }

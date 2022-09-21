@@ -24,6 +24,10 @@ public final class DataBoxEdgeDeviceList {
     @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
 
+    /** Creates an instance of DataBoxEdgeDeviceList class. */
+    public DataBoxEdgeDeviceList() {
+    }
+
     /**
      * Get the value property: The list of Data Box Edge/Gateway devices.
      *

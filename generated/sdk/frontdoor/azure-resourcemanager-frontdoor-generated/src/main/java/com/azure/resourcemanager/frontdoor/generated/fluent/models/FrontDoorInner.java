@@ -29,6 +29,10 @@ public final class FrontDoorInner extends Resource {
     @JsonProperty(value = "properties")
     private FrontDoorProperties innerProperties;
 
+    /** Creates an instance of FrontDoorInner class. */
+    public FrontDoorInner() {
+    }
+
     /**
      * Get the innerProperties property: Properties of the Front Door Load Balancer.
      *

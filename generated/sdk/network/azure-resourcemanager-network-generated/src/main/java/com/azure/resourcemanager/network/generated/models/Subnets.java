@@ -41,19 +41,6 @@ public interface Subnets {
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified subnet by virtual network and resource group.
-     */
-    Subnet get(String resourceGroupName, String virtualNetworkName, String subnetName);
-
-    /**
-     * Gets the specified subnet by virtual network and resource group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param virtualNetworkName The name of the virtual network.
-     * @param subnetName The name of the subnet.
      * @param expand Expands referenced resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -63,6 +50,19 @@ public interface Subnets {
      */
     Response<Subnet> getWithResponse(
         String resourceGroupName, String virtualNetworkName, String subnetName, String expand, Context context);
+
+    /**
+     * Gets the specified subnet by virtual network and resource group.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param virtualNetworkName The name of the virtual network.
+     * @param subnetName The name of the subnet.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified subnet by virtual network and resource group.
+     */
+    Subnet get(String resourceGroupName, String virtualNetworkName, String subnetName);
 
     /**
      * Prepares a subnet by applying network intent policies.

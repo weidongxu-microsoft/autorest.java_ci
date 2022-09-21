@@ -84,19 +84,6 @@ public interface MyWorkbooksClient {
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceName The name of the Application Insights component resource.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a single private workbook by its resourceName.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    MyWorkbookInner getByResourceGroup(String resourceGroupName, String resourceName);
-
-    /**
-     * Get a single private workbook by its resourceName.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param resourceName The name of the Application Insights component resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -108,16 +95,17 @@ public interface MyWorkbooksClient {
         String resourceGroupName, String resourceName, Context context);
 
     /**
-     * Delete a private workbook.
+     * Get a single private workbook by its resourceName.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceName The name of the Application Insights component resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a single private workbook by its resourceName.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    void delete(String resourceGroupName, String resourceName);
+    MyWorkbookInner getByResourceGroup(String resourceGroupName, String resourceName);
 
     /**
      * Delete a private workbook.
@@ -134,18 +122,16 @@ public interface MyWorkbooksClient {
     Response<Void> deleteWithResponse(String resourceGroupName, String resourceName, Context context);
 
     /**
-     * Create a new private workbook.
+     * Delete a private workbook.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceName The name of the Application Insights component resource.
-     * @param workbookProperties Properties that need to be specified to create a new private workbook.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Application Insights private workbook definition.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    MyWorkbookInner createOrUpdate(String resourceGroupName, String resourceName, MyWorkbookInner workbookProperties);
+    void delete(String resourceGroupName, String resourceName);
 
     /**
      * Create a new private workbook.
@@ -164,7 +150,7 @@ public interface MyWorkbooksClient {
         String resourceGroupName, String resourceName, MyWorkbookInner workbookProperties, Context context);
 
     /**
-     * Updates a private workbook that has already been added.
+     * Create a new private workbook.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceName The name of the Application Insights component resource.
@@ -175,7 +161,7 @@ public interface MyWorkbooksClient {
      * @return an Application Insights private workbook definition.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    MyWorkbookInner update(String resourceGroupName, String resourceName, MyWorkbookInner workbookProperties);
+    MyWorkbookInner createOrUpdate(String resourceGroupName, String resourceName, MyWorkbookInner workbookProperties);
 
     /**
      * Updates a private workbook that has already been added.
@@ -192,4 +178,18 @@ public interface MyWorkbooksClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<MyWorkbookInner> updateWithResponse(
         String resourceGroupName, String resourceName, MyWorkbookInner workbookProperties, Context context);
+
+    /**
+     * Updates a private workbook that has already been added.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceName The name of the Application Insights component resource.
+     * @param workbookProperties Properties that need to be specified to create a new private workbook.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return an Application Insights private workbook definition.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    MyWorkbookInner update(String resourceGroupName, String resourceName, MyWorkbookInner workbookProperties);
 }

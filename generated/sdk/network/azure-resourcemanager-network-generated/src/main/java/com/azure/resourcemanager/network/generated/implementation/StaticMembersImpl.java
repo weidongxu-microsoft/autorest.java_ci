@@ -27,17 +27,6 @@ public final class StaticMembersImpl implements StaticMembers {
         this.serviceManager = serviceManager;
     }
 
-    public StaticMember get(
-        String resourceGroupName, String networkManagerName, String networkGroupName, String staticMemberName) {
-        StaticMemberInner inner =
-            this.serviceClient().get(resourceGroupName, networkManagerName, networkGroupName, staticMemberName);
-        if (inner != null) {
-            return new StaticMemberImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<StaticMember> getWithResponse(
         String resourceGroupName,
         String networkManagerName,
@@ -59,9 +48,15 @@ public final class StaticMembersImpl implements StaticMembers {
         }
     }
 
-    public void delete(
+    public StaticMember get(
         String resourceGroupName, String networkManagerName, String networkGroupName, String staticMemberName) {
-        this.serviceClient().delete(resourceGroupName, networkManagerName, networkGroupName, staticMemberName);
+        StaticMemberInner inner =
+            this.serviceClient().get(resourceGroupName, networkManagerName, networkGroupName, staticMemberName);
+        if (inner != null) {
+            return new StaticMemberImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> deleteWithResponse(
@@ -73,6 +68,11 @@ public final class StaticMembersImpl implements StaticMembers {
         return this
             .serviceClient()
             .deleteWithResponse(resourceGroupName, networkManagerName, networkGroupName, staticMemberName, context);
+    }
+
+    public void delete(
+        String resourceGroupName, String networkManagerName, String networkGroupName, String staticMemberName) {
+        this.serviceClient().delete(resourceGroupName, networkManagerName, networkGroupName, staticMemberName);
     }
 
     public PagedIterable<StaticMember> list(

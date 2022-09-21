@@ -198,12 +198,12 @@ public final class ClusterImpl implements Cluster, Cluster.Definition, Cluster.U
         serviceManager.clusters().rotateDiskEncryptionKey(resourceGroupName, clusterName, parameters, context);
     }
 
-    public GatewaySettings getGatewaySettings() {
-        return serviceManager.clusters().getGatewaySettings(resourceGroupName, clusterName);
-    }
-
     public Response<GatewaySettings> getGatewaySettingsWithResponse(Context context) {
         return serviceManager.clusters().getGatewaySettingsWithResponse(resourceGroupName, clusterName, context);
+    }
+
+    public GatewaySettings getGatewaySettings() {
+        return serviceManager.clusters().getGatewaySettings(resourceGroupName, clusterName);
     }
 
     public void updateGatewaySettings(UpdateGatewaySettingsParameters parameters) {

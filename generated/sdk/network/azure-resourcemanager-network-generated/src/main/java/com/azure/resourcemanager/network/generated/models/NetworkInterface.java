@@ -138,6 +138,13 @@ public interface NetworkInterface {
     Boolean enableAcceleratedNetworking();
 
     /**
+     * Gets the disableTcpStateTracking property: Indicates whether to disable tcp state tracking.
+     *
+     * @return the disableTcpStateTracking value.
+     */
+    Boolean disableTcpStateTracking();
+
+    /**
      * Gets the enableIpForwarding property: Indicates whether IP forwarding is enabled on this network interface.
      *
      * @return the enableIpForwarding value.
@@ -287,6 +294,7 @@ public interface NetworkInterface {
                 DefinitionStages.WithIpConfigurations,
                 DefinitionStages.WithDnsSettings,
                 DefinitionStages.WithEnableAcceleratedNetworking,
+                DefinitionStages.WithDisableTcpStateTracking,
                 DefinitionStages.WithEnableIpForwarding,
                 DefinitionStages.WithWorkloadType,
                 DefinitionStages.WithNicType,
@@ -369,6 +377,16 @@ public interface NetworkInterface {
              * @return the next definition stage.
              */
             WithCreate withEnableAcceleratedNetworking(Boolean enableAcceleratedNetworking);
+        }
+        /** The stage of the NetworkInterface definition allowing to specify disableTcpStateTracking. */
+        interface WithDisableTcpStateTracking {
+            /**
+             * Specifies the disableTcpStateTracking property: Indicates whether to disable tcp state tracking..
+             *
+             * @param disableTcpStateTracking Indicates whether to disable tcp state tracking.
+             * @return the next definition stage.
+             */
+            WithCreate withDisableTcpStateTracking(Boolean disableTcpStateTracking);
         }
         /** The stage of the NetworkInterface definition allowing to specify enableIpForwarding. */
         interface WithEnableIpForwarding {

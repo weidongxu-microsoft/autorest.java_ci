@@ -24,12 +24,14 @@ public interface PolicyAssignments {
      *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}', or resource (format:
      *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/[{parentResourcePath}/]{resourceType}/{resourceName}'.
      * @param policyAssignmentName The name of the policy assignment to delete.
+     * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy assignment.
+     * @return the policy assignment along with {@link Response}.
      */
-    PolicyAssignment deleteByResourceGroup(String scope, String policyAssignmentName);
+    Response<PolicyAssignment> deleteByResourceGroupWithResponse(
+        String scope, String policyAssignmentName, Context context);
 
     /**
      * Deletes a policy assignment.
@@ -44,31 +46,12 @@ public interface PolicyAssignments {
      *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}', or resource (format:
      *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/[{parentResourcePath}/]{resourceType}/{resourceName}'.
      * @param policyAssignmentName The name of the policy assignment to delete.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy assignment along with {@link Response}.
-     */
-    Response<PolicyAssignment> deleteWithResponse(String scope, String policyAssignmentName, Context context);
-
-    /**
-     * Retrieves a policy assignment.
-     *
-     * <p>This operation retrieves a single policy assignment, given its name and the scope it was created at.
-     *
-     * @param scope The scope of the policy assignment. Valid scopes are: management group (format:
-     *     '/providers/Microsoft.Management/managementGroups/{managementGroup}'), subscription (format:
-     *     '/subscriptions/{subscriptionId}'), resource group (format:
-     *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}', or resource (format:
-     *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/[{parentResourcePath}/]{resourceType}/{resourceName}'.
-     * @param policyAssignmentName The name of the policy assignment to get.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the policy assignment.
      */
-    PolicyAssignment get(String scope, String policyAssignmentName);
+    PolicyAssignment deleteByResourceGroup(String scope, String policyAssignmentName);
 
     /**
      * Retrieves a policy assignment.
@@ -88,6 +71,24 @@ public interface PolicyAssignments {
      * @return the policy assignment along with {@link Response}.
      */
     Response<PolicyAssignment> getWithResponse(String scope, String policyAssignmentName, Context context);
+
+    /**
+     * Retrieves a policy assignment.
+     *
+     * <p>This operation retrieves a single policy assignment, given its name and the scope it was created at.
+     *
+     * @param scope The scope of the policy assignment. Valid scopes are: management group (format:
+     *     '/providers/Microsoft.Management/managementGroups/{managementGroup}'), subscription (format:
+     *     '/subscriptions/{subscriptionId}'), resource group (format:
+     *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}', or resource (format:
+     *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/[{parentResourcePath}/]{resourceType}/{resourceName}'.
+     * @param policyAssignmentName The name of the policy assignment to get.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the policy assignment.
+     */
+    PolicyAssignment get(String scope, String policyAssignmentName);
 
     /**
      * Retrieves all policy assignments that apply to a resource group.
@@ -350,12 +351,13 @@ public interface PolicyAssignments {
      *
      * @param policyAssignmentId The ID of the policy assignment to delete. Use the format
      *     '{scope}/providers/Microsoft.Authorization/policyAssignments/{policyAssignmentName}'.
+     * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy assignment.
+     * @return the policy assignment along with {@link Response}.
      */
-    PolicyAssignment deleteById(String policyAssignmentId);
+    Response<PolicyAssignment> deleteByIdWithResponse(String policyAssignmentId, Context context);
 
     /**
      * Deletes a policy assignment.
@@ -370,35 +372,12 @@ public interface PolicyAssignments {
      *
      * @param policyAssignmentId The ID of the policy assignment to delete. Use the format
      *     '{scope}/providers/Microsoft.Authorization/policyAssignments/{policyAssignmentName}'.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy assignment along with {@link Response}.
-     */
-    Response<PolicyAssignment> deleteByIdWithResponse(String policyAssignmentId, Context context);
-
-    /**
-     * Creates or updates a policy assignment.
-     *
-     * <p>This operation creates or updates the policy assignment with the given ID. Policy assignments made on a scope
-     * apply to all resources contained in that scope. For example, when you assign a policy to a resource group that
-     * policy applies to all resources in the group. Policy assignment IDs have this format:
-     * '{scope}/providers/Microsoft.Authorization/policyAssignments/{policyAssignmentName}'. Valid scopes are:
-     * management group (format: '/providers/Microsoft.Management/managementGroups/{managementGroup}'), subscription
-     * (format: '/subscriptions/{subscriptionId}'), resource group (format:
-     * '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}', or resource (format:
-     * '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/[{parentResourcePath}/]{resourceType}/{resourceName}'.
-     *
-     * @param policyAssignmentId The ID of the policy assignment to create. Use the format
-     *     '{scope}/providers/Microsoft.Authorization/policyAssignments/{policyAssignmentName}'.
-     * @param parameters Parameters for policy assignment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the policy assignment.
      */
-    PolicyAssignment createById(String policyAssignmentId, PolicyAssignmentInner parameters);
+    PolicyAssignment deleteById(String policyAssignmentId);
 
     /**
      * Creates or updates a policy assignment.
@@ -425,23 +404,26 @@ public interface PolicyAssignments {
         String policyAssignmentId, PolicyAssignmentInner parameters, Context context);
 
     /**
-     * Retrieves the policy assignment with the given ID.
+     * Creates or updates a policy assignment.
      *
-     * <p>The operation retrieves the policy assignment with the given ID. Policy assignment IDs have this format:
+     * <p>This operation creates or updates the policy assignment with the given ID. Policy assignments made on a scope
+     * apply to all resources contained in that scope. For example, when you assign a policy to a resource group that
+     * policy applies to all resources in the group. Policy assignment IDs have this format:
      * '{scope}/providers/Microsoft.Authorization/policyAssignments/{policyAssignmentName}'. Valid scopes are:
      * management group (format: '/providers/Microsoft.Management/managementGroups/{managementGroup}'), subscription
      * (format: '/subscriptions/{subscriptionId}'), resource group (format:
      * '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}', or resource (format:
      * '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/[{parentResourcePath}/]{resourceType}/{resourceName}'.
      *
-     * @param policyAssignmentId The ID of the policy assignment to get. Use the format
+     * @param policyAssignmentId The ID of the policy assignment to create. Use the format
      *     '{scope}/providers/Microsoft.Authorization/policyAssignments/{policyAssignmentName}'.
+     * @param parameters Parameters for policy assignment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the policy assignment.
      */
-    PolicyAssignment getById(String policyAssignmentId);
+    PolicyAssignment createById(String policyAssignmentId, PolicyAssignmentInner parameters);
 
     /**
      * Retrieves the policy assignment with the given ID.
@@ -462,6 +444,25 @@ public interface PolicyAssignments {
      * @return the policy assignment along with {@link Response}.
      */
     Response<PolicyAssignment> getByIdWithResponse(String policyAssignmentId, Context context);
+
+    /**
+     * Retrieves the policy assignment with the given ID.
+     *
+     * <p>The operation retrieves the policy assignment with the given ID. Policy assignment IDs have this format:
+     * '{scope}/providers/Microsoft.Authorization/policyAssignments/{policyAssignmentName}'. Valid scopes are:
+     * management group (format: '/providers/Microsoft.Management/managementGroups/{managementGroup}'), subscription
+     * (format: '/subscriptions/{subscriptionId}'), resource group (format:
+     * '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}', or resource (format:
+     * '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/[{parentResourcePath}/]{resourceType}/{resourceName}'.
+     *
+     * @param policyAssignmentId The ID of the policy assignment to get. Use the format
+     *     '{scope}/providers/Microsoft.Authorization/policyAssignments/{policyAssignmentName}'.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the policy assignment.
+     */
+    PolicyAssignment getById(String policyAssignmentId);
 
     /**
      * Begins definition for a new PolicyAssignment resource.

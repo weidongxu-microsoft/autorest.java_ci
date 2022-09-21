@@ -16,6 +16,10 @@ public final class InfoField {
     @JsonProperty(value = "project")
     private String project;
 
+    /** Creates an instance of InfoField class. */
+    public InfoField() {
+    }
+
     /**
      * Get the project property: Identifies the name of the instance provisioned by the user.
      *

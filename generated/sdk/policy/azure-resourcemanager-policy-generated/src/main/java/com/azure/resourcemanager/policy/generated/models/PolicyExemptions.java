@@ -23,11 +23,13 @@ public interface PolicyExemptions {
      *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}', or resource (format:
      *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/[{parentResourcePath}/]{resourceType}/{resourceName}'.
      * @param policyExemptionName The name of the policy exemption to delete.
+     * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
      */
-    void deleteByResourceGroup(String scope, String policyExemptionName);
+    Response<Void> deleteByResourceGroupWithResponse(String scope, String policyExemptionName, Context context);
 
     /**
      * Deletes a policy exemption.
@@ -42,31 +44,11 @@ public interface PolicyExemptions {
      *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}', or resource (format:
      *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/[{parentResourcePath}/]{resourceType}/{resourceName}'.
      * @param policyExemptionName The name of the policy exemption to delete.
-     * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
      */
-    Response<Void> deleteWithResponse(String scope, String policyExemptionName, Context context);
-
-    /**
-     * Retrieves a policy exemption.
-     *
-     * <p>This operation retrieves a single policy exemption, given its name and the scope it was created at.
-     *
-     * @param scope The scope of the policy exemption. Valid scopes are: management group (format:
-     *     '/providers/Microsoft.Management/managementGroups/{managementGroup}'), subscription (format:
-     *     '/subscriptions/{subscriptionId}'), resource group (format:
-     *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}', or resource (format:
-     *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/[{parentResourcePath}/]{resourceType}/{resourceName}'.
-     * @param policyExemptionName The name of the policy exemption to delete.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy exemption.
-     */
-    PolicyExemption get(String scope, String policyExemptionName);
+    void deleteByResourceGroup(String scope, String policyExemptionName);
 
     /**
      * Retrieves a policy exemption.
@@ -86,6 +68,24 @@ public interface PolicyExemptions {
      * @return the policy exemption along with {@link Response}.
      */
     Response<PolicyExemption> getWithResponse(String scope, String policyExemptionName, Context context);
+
+    /**
+     * Retrieves a policy exemption.
+     *
+     * <p>This operation retrieves a single policy exemption, given its name and the scope it was created at.
+     *
+     * @param scope The scope of the policy exemption. Valid scopes are: management group (format:
+     *     '/providers/Microsoft.Management/managementGroups/{managementGroup}'), subscription (format:
+     *     '/subscriptions/{subscriptionId}'), resource group (format:
+     *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}', or resource (format:
+     *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/[{parentResourcePath}/]{resourceType}/{resourceName}'.
+     * @param policyExemptionName The name of the policy exemption to delete.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the policy exemption.
+     */
+    PolicyExemption get(String scope, String policyExemptionName);
 
     /**
      * Retrieves all policy exemptions that apply to a subscription.

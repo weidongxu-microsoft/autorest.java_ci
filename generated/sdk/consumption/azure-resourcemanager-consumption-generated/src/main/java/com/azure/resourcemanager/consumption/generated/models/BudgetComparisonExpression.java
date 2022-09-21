@@ -30,6 +30,10 @@ public final class BudgetComparisonExpression {
     @JsonProperty(value = "values", required = true)
     private List<String> values;
 
+    /** Creates an instance of BudgetComparisonExpression class. */
+    public BudgetComparisonExpression() {
+    }
+
     /**
      * Get the name property: The name of the column to use in comparison.
      *

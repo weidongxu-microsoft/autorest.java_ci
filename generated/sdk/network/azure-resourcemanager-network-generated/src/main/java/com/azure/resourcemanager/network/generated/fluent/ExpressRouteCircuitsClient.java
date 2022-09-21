@@ -77,19 +77,6 @@ public interface ExpressRouteCircuitsClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param circuitName The name of express route circuit.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the specified express route circuit.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    ExpressRouteCircuitInner getByResourceGroup(String resourceGroupName, String circuitName);
-
-    /**
-     * Gets information about the specified express route circuit.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param circuitName The name of express route circuit.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -101,6 +88,19 @@ public interface ExpressRouteCircuitsClient {
         String resourceGroupName, String circuitName, Context context);
 
     /**
+     * Gets information about the specified express route circuit.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param circuitName The name of express route circuit.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return information about the specified express route circuit.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    ExpressRouteCircuitInner getByResourceGroup(String resourceGroupName, String circuitName);
+
+    /**
      * Creates or updates an express route circuit.
      *
      * @param resourceGroupName The name of the resource group.
@@ -161,20 +161,6 @@ public interface ExpressRouteCircuitsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     ExpressRouteCircuitInner createOrUpdate(
         String resourceGroupName, String circuitName, ExpressRouteCircuitInner parameters, Context context);
-
-    /**
-     * Updates an express route circuit tags.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param circuitName The name of the circuit.
-     * @param parameters Parameters supplied to update express route circuit tags.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return expressRouteCircuit resource.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    ExpressRouteCircuitInner updateTags(String resourceGroupName, String circuitName, TagsObject parameters);
 
     /**
      * Updates an express route circuit tags.
@@ -191,6 +177,20 @@ public interface ExpressRouteCircuitsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ExpressRouteCircuitInner> updateTagsWithResponse(
         String resourceGroupName, String circuitName, TagsObject parameters, Context context);
+
+    /**
+     * Updates an express route circuit tags.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param circuitName The name of the circuit.
+     * @param parameters Parameters supplied to update express route circuit tags.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return expressRouteCircuit resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    ExpressRouteCircuitInner updateTags(String resourceGroupName, String circuitName, TagsObject parameters);
 
     /**
      * Gets the currently advertised ARP table associated with the express route circuit in a resource group.
@@ -413,19 +413,6 @@ public interface ExpressRouteCircuitsClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param circuitName The name of the express route circuit.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the stats from an express route circuit in a resource group.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    ExpressRouteCircuitStatsInner getStats(String resourceGroupName, String circuitName);
-
-    /**
-     * Gets all the stats from an express route circuit in a resource group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param circuitName The name of the express route circuit.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -437,18 +424,17 @@ public interface ExpressRouteCircuitsClient {
         String resourceGroupName, String circuitName, Context context);
 
     /**
-     * Gets all stats from an express route circuit in a resource group.
+     * Gets all the stats from an express route circuit in a resource group.
      *
      * @param resourceGroupName The name of the resource group.
      * @param circuitName The name of the express route circuit.
-     * @param peeringName The name of the peering.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all stats from an express route circuit in a resource group.
+     * @return all the stats from an express route circuit in a resource group.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    ExpressRouteCircuitStatsInner getPeeringStats(String resourceGroupName, String circuitName, String peeringName);
+    ExpressRouteCircuitStatsInner getStats(String resourceGroupName, String circuitName);
 
     /**
      * Gets all stats from an express route circuit in a resource group.
@@ -465,6 +451,20 @@ public interface ExpressRouteCircuitsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ExpressRouteCircuitStatsInner> getPeeringStatsWithResponse(
         String resourceGroupName, String circuitName, String peeringName, Context context);
+
+    /**
+     * Gets all stats from an express route circuit in a resource group.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param circuitName The name of the express route circuit.
+     * @param peeringName The name of the peering.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return all stats from an express route circuit in a resource group.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    ExpressRouteCircuitStatsInner getPeeringStats(String resourceGroupName, String circuitName, String peeringName);
 
     /**
      * Gets all the express route circuits in a resource group.

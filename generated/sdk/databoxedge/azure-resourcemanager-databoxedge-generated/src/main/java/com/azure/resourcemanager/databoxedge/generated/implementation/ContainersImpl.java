@@ -42,16 +42,6 @@ public final class ContainersImpl implements Containers {
         return Utils.mapPage(inner, inner1 -> new ContainerImpl(inner1, this.manager()));
     }
 
-    public Container get(String deviceName, String storageAccountName, String containerName, String resourceGroupName) {
-        ContainerInner inner =
-            this.serviceClient().get(deviceName, storageAccountName, containerName, resourceGroupName);
-        if (inner != null) {
-            return new ContainerImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<Container> getWithResponse(
         String deviceName, String storageAccountName, String containerName, String resourceGroupName, Context context) {
         Response<ContainerInner> inner =
@@ -64,6 +54,16 @@ public final class ContainersImpl implements Containers {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new ContainerImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public Container get(String deviceName, String storageAccountName, String containerName, String resourceGroupName) {
+        ContainerInner inner =
+            this.serviceClient().get(deviceName, storageAccountName, containerName, resourceGroupName);
+        if (inner != null) {
+            return new ContainerImpl(inner, this.manager());
         } else {
             return null;
         }

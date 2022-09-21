@@ -23,6 +23,7 @@ import com.azure.resourcemanager.network.generated.models.PublicIpAddress;
 import com.azure.resourcemanager.network.generated.models.PublicIpAddressDnsSettings;
 import com.azure.resourcemanager.network.generated.models.PublicIpAddressMigrationPhase;
 import com.azure.resourcemanager.network.generated.models.PublicIpAddressSku;
+import com.azure.resourcemanager.network.generated.models.PublicIpDdosProtectionStatusResult;
 import com.azure.resourcemanager.network.generated.models.TagsObject;
 import java.util.Collections;
 import java.util.List;
@@ -276,6 +277,14 @@ public final class PublicIpAddressImpl implements PublicIpAddress, PublicIpAddre
                 .getByResourceGroupWithResponse(resourceGroupName, publicIpAddressName, localExpand, context)
                 .getValue();
         return this;
+    }
+
+    public PublicIpDdosProtectionStatusResult ddosProtectionStatus() {
+        return serviceManager.publicIpAddresses().ddosProtectionStatus(resourceGroupName, publicIpAddressName);
+    }
+
+    public PublicIpDdosProtectionStatusResult ddosProtectionStatus(Context context) {
+        return serviceManager.publicIpAddresses().ddosProtectionStatus(resourceGroupName, publicIpAddressName, context);
     }
 
     public PublicIpAddressImpl withRegion(Region location) {

@@ -28,6 +28,10 @@ public final class BillingMeters {
     @JsonProperty(value = "unit")
     private String unit;
 
+    /** Creates an instance of BillingMeters class. */
+    public BillingMeters() {
+    }
+
     /**
      * Get the meterParameter property: The virtual machine sizes.
      *

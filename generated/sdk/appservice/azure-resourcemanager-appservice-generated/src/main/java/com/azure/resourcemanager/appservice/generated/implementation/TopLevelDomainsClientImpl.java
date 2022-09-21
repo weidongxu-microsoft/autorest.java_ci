@@ -383,11 +383,11 @@ public final class TopLevelDomainsClientImpl implements TopLevelDomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a top level domain object.
+     * @return a top level domain object along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public TopLevelDomainInner get(String name) {
-        return getAsync(name).block();
+    public Response<TopLevelDomainInner> getWithResponse(String name) {
+        return getWithResponseAsync(name).block();
     }
 
     /**
@@ -405,6 +405,22 @@ public final class TopLevelDomainsClientImpl implements TopLevelDomainsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<TopLevelDomainInner> getWithResponse(String name, Context context) {
         return getWithResponseAsync(name, context).block();
+    }
+
+    /**
+     * Get details of a top-level domain.
+     *
+     * <p>Description for Get details of a top-level domain.
+     *
+     * @param name Name of the top-level domain.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a top level domain object.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public TopLevelDomainInner get(String name) {
+        return getWithResponse(name, Context.NONE).getValue();
     }
 
     /**

@@ -206,7 +206,7 @@ public final class NatGatewaysClientImpl implements NatGatewaysClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -256,7 +256,7 @@ public final class NatGatewaysClientImpl implements NatGatewaysClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -440,7 +440,7 @@ public final class NatGatewaysClientImpl implements NatGatewaysClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -493,7 +493,7 @@ public final class NatGatewaysClientImpl implements NatGatewaysClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -506,24 +506,6 @@ public final class NatGatewaysClientImpl implements NatGatewaysClient {
                 expand,
                 accept,
                 context);
-    }
-
-    /**
-     * Gets the specified nat gateway in a specified resource group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param natGatewayName The name of the nat gateway.
-     * @param expand Expands referenced resources.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified nat gateway in a specified resource group on successful completion of {@link Mono}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<NatGatewayInner> getByResourceGroupAsync(
-        String resourceGroupName, String natGatewayName, String expand) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, natGatewayName, expand)
-            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -548,15 +530,16 @@ public final class NatGatewaysClientImpl implements NatGatewaysClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param natGatewayName The name of the nat gateway.
+     * @param expand Expands referenced resources.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified nat gateway in a specified resource group.
+     * @return the specified nat gateway in a specified resource group along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public NatGatewayInner getByResourceGroup(String resourceGroupName, String natGatewayName) {
-        final String expand = null;
-        return getByResourceGroupAsync(resourceGroupName, natGatewayName, expand).block();
+    public Response<NatGatewayInner> getByResourceGroupWithResponse(
+        String resourceGroupName, String natGatewayName, String expand) {
+        return getByResourceGroupWithResponseAsync(resourceGroupName, natGatewayName, expand).block();
     }
 
     /**
@@ -575,6 +558,22 @@ public final class NatGatewaysClientImpl implements NatGatewaysClient {
     public Response<NatGatewayInner> getByResourceGroupWithResponse(
         String resourceGroupName, String natGatewayName, String expand, Context context) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, natGatewayName, expand, context).block();
+    }
+
+    /**
+     * Gets the specified nat gateway in a specified resource group.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param natGatewayName The name of the nat gateway.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified nat gateway in a specified resource group.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public NatGatewayInner getByResourceGroup(String resourceGroupName, String natGatewayName) {
+        final String expand = null;
+        return getByResourceGroupWithResponse(resourceGroupName, natGatewayName, expand, Context.NONE).getValue();
     }
 
     /**
@@ -615,7 +614,7 @@ public final class NatGatewaysClientImpl implements NatGatewaysClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -672,7 +671,7 @@ public final class NatGatewaysClientImpl implements NatGatewaysClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -883,7 +882,7 @@ public final class NatGatewaysClientImpl implements NatGatewaysClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -940,7 +939,7 @@ public final class NatGatewaysClientImpl implements NatGatewaysClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -982,11 +981,12 @@ public final class NatGatewaysClientImpl implements NatGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return nat Gateway resource.
+     * @return nat Gateway resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public NatGatewayInner updateTags(String resourceGroupName, String natGatewayName, TagsObject parameters) {
-        return updateTagsAsync(resourceGroupName, natGatewayName, parameters).block();
+    public Response<NatGatewayInner> updateTagsWithResponse(
+        String resourceGroupName, String natGatewayName, TagsObject parameters) {
+        return updateTagsWithResponseAsync(resourceGroupName, natGatewayName, parameters).block();
     }
 
     /**
@@ -1005,6 +1005,22 @@ public final class NatGatewaysClientImpl implements NatGatewaysClient {
     public Response<NatGatewayInner> updateTagsWithResponse(
         String resourceGroupName, String natGatewayName, TagsObject parameters, Context context) {
         return updateTagsWithResponseAsync(resourceGroupName, natGatewayName, parameters, context).block();
+    }
+
+    /**
+     * Updates nat gateway tags.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param natGatewayName The name of the nat gateway.
+     * @param parameters Parameters supplied to update nat gateway tags.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return nat Gateway resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public NatGatewayInner updateTags(String resourceGroupName, String natGatewayName, TagsObject parameters) {
+        return updateTagsWithResponse(resourceGroupName, natGatewayName, parameters, Context.NONE).getValue();
     }
 
     /**
@@ -1029,7 +1045,7 @@ public final class NatGatewaysClientImpl implements NatGatewaysClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1072,7 +1088,7 @@ public final class NatGatewaysClientImpl implements NatGatewaysClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1169,7 +1185,7 @@ public final class NatGatewaysClientImpl implements NatGatewaysClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1224,7 +1240,7 @@ public final class NatGatewaysClientImpl implements NatGatewaysClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service

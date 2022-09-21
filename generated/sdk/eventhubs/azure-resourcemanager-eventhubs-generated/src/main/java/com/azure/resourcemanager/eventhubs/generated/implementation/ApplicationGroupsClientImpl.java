@@ -470,12 +470,13 @@ public final class ApplicationGroupsClientImpl implements ApplicationGroupsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Application Group object.
+     * @return the Application Group object along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ApplicationGroupInner createOrUpdateApplicationGroup(
+    public Response<ApplicationGroupInner> createOrUpdateApplicationGroupWithResponse(
         String resourceGroupName, String namespaceName, String applicationGroupName, ApplicationGroupInner parameters) {
-        return createOrUpdateApplicationGroupAsync(resourceGroupName, namespaceName, applicationGroupName, parameters)
+        return createOrUpdateApplicationGroupWithResponseAsync(
+                resourceGroupName, namespaceName, applicationGroupName, parameters)
             .block();
     }
 
@@ -502,6 +503,26 @@ public final class ApplicationGroupsClientImpl implements ApplicationGroupsClien
         return createOrUpdateApplicationGroupWithResponseAsync(
                 resourceGroupName, namespaceName, applicationGroupName, parameters, context)
             .block();
+    }
+
+    /**
+     * Creates or updates an ApplicationGroup for a Namespace.
+     *
+     * @param resourceGroupName Name of the resource group within the azure subscription.
+     * @param namespaceName The Namespace name.
+     * @param applicationGroupName The Application Group name.
+     * @param parameters The ApplicationGroup.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the Application Group object.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ApplicationGroupInner createOrUpdateApplicationGroup(
+        String resourceGroupName, String namespaceName, String applicationGroupName, ApplicationGroupInner parameters) {
+        return createOrUpdateApplicationGroupWithResponse(
+                resourceGroupName, namespaceName, applicationGroupName, parameters, Context.NONE)
+            .getValue();
     }
 
     /**
@@ -636,10 +657,12 @@ public final class ApplicationGroupsClientImpl implements ApplicationGroupsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public void delete(String resourceGroupName, String namespaceName, String applicationGroupName) {
-        deleteAsync(resourceGroupName, namespaceName, applicationGroupName).block();
+    public Response<Void> deleteWithResponse(
+        String resourceGroupName, String namespaceName, String applicationGroupName) {
+        return deleteWithResponseAsync(resourceGroupName, namespaceName, applicationGroupName).block();
     }
 
     /**
@@ -658,6 +681,21 @@ public final class ApplicationGroupsClientImpl implements ApplicationGroupsClien
     public Response<Void> deleteWithResponse(
         String resourceGroupName, String namespaceName, String applicationGroupName, Context context) {
         return deleteWithResponseAsync(resourceGroupName, namespaceName, applicationGroupName, context).block();
+    }
+
+    /**
+     * Deletes an ApplicationGroup for a Namespace.
+     *
+     * @param resourceGroupName Name of the resource group within the azure subscription.
+     * @param namespaceName The Namespace name.
+     * @param applicationGroupName The Application Group name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public void delete(String resourceGroupName, String namespaceName, String applicationGroupName) {
+        deleteWithResponse(resourceGroupName, namespaceName, applicationGroupName, Context.NONE);
     }
 
     /**
@@ -793,11 +831,12 @@ public final class ApplicationGroupsClientImpl implements ApplicationGroupsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an ApplicationGroup for a Namespace.
+     * @return an ApplicationGroup for a Namespace along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ApplicationGroupInner get(String resourceGroupName, String namespaceName, String applicationGroupName) {
-        return getAsync(resourceGroupName, namespaceName, applicationGroupName).block();
+    public Response<ApplicationGroupInner> getWithResponse(
+        String resourceGroupName, String namespaceName, String applicationGroupName) {
+        return getWithResponseAsync(resourceGroupName, namespaceName, applicationGroupName).block();
     }
 
     /**
@@ -816,6 +855,22 @@ public final class ApplicationGroupsClientImpl implements ApplicationGroupsClien
     public Response<ApplicationGroupInner> getWithResponse(
         String resourceGroupName, String namespaceName, String applicationGroupName, Context context) {
         return getWithResponseAsync(resourceGroupName, namespaceName, applicationGroupName, context).block();
+    }
+
+    /**
+     * Gets an ApplicationGroup for a Namespace.
+     *
+     * @param resourceGroupName Name of the resource group within the azure subscription.
+     * @param namespaceName The Namespace name.
+     * @param applicationGroupName The Application Group name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return an ApplicationGroup for a Namespace.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ApplicationGroupInner get(String resourceGroupName, String namespaceName, String applicationGroupName) {
+        return getWithResponse(resourceGroupName, namespaceName, applicationGroupName, Context.NONE).getValue();
     }
 
     /**

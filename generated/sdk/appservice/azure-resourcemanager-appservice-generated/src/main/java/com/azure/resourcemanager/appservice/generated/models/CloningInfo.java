@@ -89,6 +89,10 @@ public final class CloningInfo {
     @JsonProperty(value = "trafficManagerProfileName")
     private String trafficManagerProfileName;
 
+    /** Creates an instance of CloningInfo class. */
+    public CloningInfo() {
+    }
+
     /**
      * Get the correlationId property: Correlation ID of cloning operation. This ID ties multiple cloning operations
      * together to use the same snapshot.

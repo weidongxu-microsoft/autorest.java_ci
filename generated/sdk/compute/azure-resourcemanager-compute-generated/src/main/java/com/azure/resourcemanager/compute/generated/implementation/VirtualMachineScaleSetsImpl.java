@@ -64,15 +64,6 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
         this.serviceClient().delete(resourceGroupName, vmScaleSetName, forceDeletion, context);
     }
 
-    public VirtualMachineScaleSet getByResourceGroup(String resourceGroupName, String vmScaleSetName) {
-        VirtualMachineScaleSetInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, vmScaleSetName);
-        if (inner != null) {
-            return new VirtualMachineScaleSetImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<VirtualMachineScaleSet> getByResourceGroupWithResponse(
         String resourceGroupName, String vmScaleSetName, ExpandTypesForGetVMScaleSets expand, Context context) {
         Response<VirtualMachineScaleSetInner> inner =
@@ -83,6 +74,15 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new VirtualMachineScaleSetImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public VirtualMachineScaleSet getByResourceGroup(String resourceGroupName, String vmScaleSetName) {
+        VirtualMachineScaleSetInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, vmScaleSetName);
+        if (inner != null) {
+            return new VirtualMachineScaleSetImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -127,16 +127,6 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
         this.serviceClient().deleteInstances(resourceGroupName, vmScaleSetName, vmInstanceIDs, forceDeletion, context);
     }
 
-    public VirtualMachineScaleSetInstanceView getInstanceView(String resourceGroupName, String vmScaleSetName) {
-        VirtualMachineScaleSetInstanceViewInner inner =
-            this.serviceClient().getInstanceView(resourceGroupName, vmScaleSetName);
-        if (inner != null) {
-            return new VirtualMachineScaleSetInstanceViewImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<VirtualMachineScaleSetInstanceView> getInstanceViewWithResponse(
         String resourceGroupName, String vmScaleSetName, Context context) {
         Response<VirtualMachineScaleSetInstanceViewInner> inner =
@@ -147,6 +137,16 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new VirtualMachineScaleSetInstanceViewImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public VirtualMachineScaleSetInstanceView getInstanceView(String resourceGroupName, String vmScaleSetName) {
+        VirtualMachineScaleSetInstanceViewInner inner =
+            this.serviceClient().getInstanceView(resourceGroupName, vmScaleSetName);
+        if (inner != null) {
+            return new VirtualMachineScaleSetInstanceViewImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -338,20 +338,6 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
         this.serviceClient().reimageAll(resourceGroupName, vmScaleSetName, vmInstanceIDs, context);
     }
 
-    public RecoveryWalkResponse forceRecoveryServiceFabricPlatformUpdateDomainWalk(
-        String resourceGroupName, String vmScaleSetName, int platformUpdateDomain) {
-        RecoveryWalkResponseInner inner =
-            this
-                .serviceClient()
-                .forceRecoveryServiceFabricPlatformUpdateDomainWalk(
-                    resourceGroupName, vmScaleSetName, platformUpdateDomain);
-        if (inner != null) {
-            return new RecoveryWalkResponseImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<RecoveryWalkResponse> forceRecoveryServiceFabricPlatformUpdateDomainWalkWithResponse(
         String resourceGroupName,
         String vmScaleSetName,
@@ -375,9 +361,18 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
         }
     }
 
-    public void convertToSinglePlacementGroup(
-        String resourceGroupName, String vmScaleSetName, VMScaleSetConvertToSinglePlacementGroupInput parameters) {
-        this.serviceClient().convertToSinglePlacementGroup(resourceGroupName, vmScaleSetName, parameters);
+    public RecoveryWalkResponse forceRecoveryServiceFabricPlatformUpdateDomainWalk(
+        String resourceGroupName, String vmScaleSetName, int platformUpdateDomain) {
+        RecoveryWalkResponseInner inner =
+            this
+                .serviceClient()
+                .forceRecoveryServiceFabricPlatformUpdateDomainWalk(
+                    resourceGroupName, vmScaleSetName, platformUpdateDomain);
+        if (inner != null) {
+            return new RecoveryWalkResponseImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> convertToSinglePlacementGroupWithResponse(
@@ -388,6 +383,11 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
         return this
             .serviceClient()
             .convertToSinglePlacementGroupWithResponse(resourceGroupName, vmScaleSetName, parameters, context);
+    }
+
+    public void convertToSinglePlacementGroup(
+        String resourceGroupName, String vmScaleSetName, VMScaleSetConvertToSinglePlacementGroupInput parameters) {
+        this.serviceClient().convertToSinglePlacementGroup(resourceGroupName, vmScaleSetName, parameters);
     }
 
     public void setOrchestrationServiceState(

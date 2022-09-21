@@ -31,15 +31,6 @@ public final class DiskAccessesImpl implements DiskAccesses {
         this.serviceManager = serviceManager;
     }
 
-    public DiskAccess getByResourceGroup(String resourceGroupName, String diskAccessName) {
-        DiskAccessInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, diskAccessName);
-        if (inner != null) {
-            return new DiskAccessImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<DiskAccess> getByResourceGroupWithResponse(
         String resourceGroupName, String diskAccessName, Context context) {
         Response<DiskAccessInner> inner =
@@ -50,6 +41,15 @@ public final class DiskAccessesImpl implements DiskAccesses {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new DiskAccessImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public DiskAccess getByResourceGroup(String resourceGroupName, String diskAccessName) {
+        DiskAccessInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, diskAccessName);
+        if (inner != null) {
+            return new DiskAccessImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -83,16 +83,6 @@ public final class DiskAccessesImpl implements DiskAccesses {
         return Utils.mapPage(inner, inner1 -> new DiskAccessImpl(inner1, this.manager()));
     }
 
-    public PrivateLinkResourceListResult getPrivateLinkResources(String resourceGroupName, String diskAccessName) {
-        PrivateLinkResourceListResultInner inner =
-            this.serviceClient().getPrivateLinkResources(resourceGroupName, diskAccessName);
-        if (inner != null) {
-            return new PrivateLinkResourceListResultImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<PrivateLinkResourceListResult> getPrivateLinkResourcesWithResponse(
         String resourceGroupName, String diskAccessName, Context context) {
         Response<PrivateLinkResourceListResultInner> inner =
@@ -103,6 +93,16 @@ public final class DiskAccessesImpl implements DiskAccesses {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new PrivateLinkResourceListResultImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public PrivateLinkResourceListResult getPrivateLinkResources(String resourceGroupName, String diskAccessName) {
+        PrivateLinkResourceListResultInner inner =
+            this.serviceClient().getPrivateLinkResources(resourceGroupName, diskAccessName);
+        if (inner != null) {
+            return new PrivateLinkResourceListResultImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -147,19 +147,6 @@ public final class DiskAccessesImpl implements DiskAccesses {
         }
     }
 
-    public PrivateEndpointConnection getAPrivateEndpointConnection(
-        String resourceGroupName, String diskAccessName, String privateEndpointConnectionName) {
-        PrivateEndpointConnectionInner inner =
-            this
-                .serviceClient()
-                .getAPrivateEndpointConnection(resourceGroupName, diskAccessName, privateEndpointConnectionName);
-        if (inner != null) {
-            return new PrivateEndpointConnectionImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<PrivateEndpointConnection> getAPrivateEndpointConnectionWithResponse(
         String resourceGroupName, String diskAccessName, String privateEndpointConnectionName, Context context) {
         Response<PrivateEndpointConnectionInner> inner =
@@ -173,6 +160,19 @@ public final class DiskAccessesImpl implements DiskAccesses {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new PrivateEndpointConnectionImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public PrivateEndpointConnection getAPrivateEndpointConnection(
+        String resourceGroupName, String diskAccessName, String privateEndpointConnectionName) {
+        PrivateEndpointConnectionInner inner =
+            this
+                .serviceClient()
+                .getAPrivateEndpointConnection(resourceGroupName, diskAccessName, privateEndpointConnectionName);
+        if (inner != null) {
+            return new PrivateEndpointConnectionImpl(inner, this.manager());
         } else {
             return null;
         }

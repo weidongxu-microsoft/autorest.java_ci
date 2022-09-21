@@ -36,6 +36,10 @@ public final class IpConfiguration {
     @JsonProperty(value = "properties")
     private IpConfigurationProperties innerProperties;
 
+    /** Creates an instance of IpConfiguration class. */
+    public IpConfiguration() {
+    }
+
     /**
      * Get the id property: The private link IP configuration id.
      *

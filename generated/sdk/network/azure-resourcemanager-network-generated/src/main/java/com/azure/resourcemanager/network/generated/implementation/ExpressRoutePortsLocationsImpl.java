@@ -38,15 +38,6 @@ public final class ExpressRoutePortsLocationsImpl implements ExpressRoutePortsLo
         return Utils.mapPage(inner, inner1 -> new ExpressRoutePortsLocationImpl(inner1, this.manager()));
     }
 
-    public ExpressRoutePortsLocation get(String locationName) {
-        ExpressRoutePortsLocationInner inner = this.serviceClient().get(locationName);
-        if (inner != null) {
-            return new ExpressRoutePortsLocationImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<ExpressRoutePortsLocation> getWithResponse(String locationName, Context context) {
         Response<ExpressRoutePortsLocationInner> inner = this.serviceClient().getWithResponse(locationName, context);
         if (inner != null) {
@@ -55,6 +46,15 @@ public final class ExpressRoutePortsLocationsImpl implements ExpressRoutePortsLo
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new ExpressRoutePortsLocationImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public ExpressRoutePortsLocation get(String locationName) {
+        ExpressRoutePortsLocationInner inner = this.serviceClient().get(locationName);
+        if (inner != null) {
+            return new ExpressRoutePortsLocationImpl(inner, this.manager());
         } else {
             return null;
         }

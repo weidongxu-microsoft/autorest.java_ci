@@ -16,6 +16,10 @@ public final class AzureMonitorTableConfiguration {
     @JsonProperty(value = "name")
     private String name;
 
+    /** Creates an instance of AzureMonitorTableConfiguration class. */
+    public AzureMonitorTableConfiguration() {
+    }
+
     /**
      * Get the name property: The name.
      *

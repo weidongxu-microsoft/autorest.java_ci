@@ -18,6 +18,10 @@ public final class QueryDatasetConfiguration {
     @JsonProperty(value = "columns")
     private List<String> columns;
 
+    /** Creates an instance of QueryDatasetConfiguration class. */
+    public QueryDatasetConfiguration() {
+    }
+
     /**
      * Get the columns property: Array of column names to be included in the query. Any valid query column name is
      * allowed. If not provided, then query includes all columns.

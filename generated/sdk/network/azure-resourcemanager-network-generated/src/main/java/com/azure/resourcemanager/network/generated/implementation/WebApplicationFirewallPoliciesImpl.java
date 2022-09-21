@@ -50,16 +50,6 @@ public final class WebApplicationFirewallPoliciesImpl implements WebApplicationF
         return Utils.mapPage(inner, inner1 -> new WebApplicationFirewallPolicyImpl(inner1, this.manager()));
     }
 
-    public WebApplicationFirewallPolicy getByResourceGroup(String resourceGroupName, String policyName) {
-        WebApplicationFirewallPolicyInner inner =
-            this.serviceClient().getByResourceGroup(resourceGroupName, policyName);
-        if (inner != null) {
-            return new WebApplicationFirewallPolicyImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<WebApplicationFirewallPolicy> getByResourceGroupWithResponse(
         String resourceGroupName, String policyName, Context context) {
         Response<WebApplicationFirewallPolicyInner> inner =
@@ -70,6 +60,16 @@ public final class WebApplicationFirewallPoliciesImpl implements WebApplicationF
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new WebApplicationFirewallPolicyImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public WebApplicationFirewallPolicy getByResourceGroup(String resourceGroupName, String policyName) {
+        WebApplicationFirewallPolicyInner inner =
+            this.serviceClient().getByResourceGroup(resourceGroupName, policyName);
+        if (inner != null) {
+            return new WebApplicationFirewallPolicyImpl(inner, this.manager());
         } else {
             return null;
         }

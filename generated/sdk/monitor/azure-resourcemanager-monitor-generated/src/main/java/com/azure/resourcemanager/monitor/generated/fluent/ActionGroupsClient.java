@@ -21,21 +21,6 @@ public interface ActionGroupsClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param actionGroupName The name of the action group.
      * @param actionGroup The action group to create or use for the update.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an action group resource.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    ActionGroupResourceInner createOrUpdate(
-        String resourceGroupName, String actionGroupName, ActionGroupResourceInner actionGroup);
-
-    /**
-     * Create a new action group or update an existing one.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param actionGroupName The name of the action group.
-     * @param actionGroup The action group to create or use for the update.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -47,17 +32,19 @@ public interface ActionGroupsClient {
         String resourceGroupName, String actionGroupName, ActionGroupResourceInner actionGroup, Context context);
 
     /**
-     * Get an action group.
+     * Create a new action group or update an existing one.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param actionGroupName The name of the action group.
+     * @param actionGroup The action group to create or use for the update.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an action group.
+     * @return an action group resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    ActionGroupResourceInner getByResourceGroup(String resourceGroupName, String actionGroupName);
+    ActionGroupResourceInner createOrUpdate(
+        String resourceGroupName, String actionGroupName, ActionGroupResourceInner actionGroup);
 
     /**
      * Get an action group.
@@ -75,16 +62,17 @@ public interface ActionGroupsClient {
         String resourceGroupName, String actionGroupName, Context context);
 
     /**
-     * Delete an action group.
+     * Get an action group.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param actionGroupName The name of the action group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return an action group.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    void delete(String resourceGroupName, String actionGroupName);
+    ActionGroupResourceInner getByResourceGroup(String resourceGroupName, String actionGroupName);
 
     /**
      * Delete an action group.
@@ -101,19 +89,16 @@ public interface ActionGroupsClient {
     Response<Void> deleteWithResponse(String resourceGroupName, String actionGroupName, Context context);
 
     /**
-     * Updates an existing action group's tags. To update other fields use the CreateOrUpdate method.
+     * Delete an action group.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param actionGroupName The name of the action group.
-     * @param actionGroupPatch Parameters supplied to the operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an action group resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    ActionGroupResourceInner update(
-        String resourceGroupName, String actionGroupName, ActionGroupPatchBody actionGroupPatch);
+    void delete(String resourceGroupName, String actionGroupName);
 
     /**
      * Updates an existing action group's tags. To update other fields use the CreateOrUpdate method.
@@ -130,6 +115,21 @@ public interface ActionGroupsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ActionGroupResourceInner> updateWithResponse(
         String resourceGroupName, String actionGroupName, ActionGroupPatchBody actionGroupPatch, Context context);
+
+    /**
+     * Updates an existing action group's tags. To update other fields use the CreateOrUpdate method.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param actionGroupName The name of the action group.
+     * @param actionGroupPatch Parameters supplied to the operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return an action group resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    ActionGroupResourceInner update(
+        String resourceGroupName, String actionGroupName, ActionGroupPatchBody actionGroupPatch);
 
     /**
      * Get a list of all action groups in a subscription.
@@ -185,20 +185,6 @@ public interface ActionGroupsClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param actionGroupName The name of the action group.
      * @param enableRequest The receiver to re-enable.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    void enableReceiver(String resourceGroupName, String actionGroupName, EnableRequest enableRequest);
-
-    /**
-     * Enable a receiver in an action group. This changes the receiver's status from Disabled to Enabled. This operation
-     * is only supported for Email or SMS receivers.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param actionGroupName The name of the action group.
-     * @param enableRequest The receiver to re-enable.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -208,4 +194,18 @@ public interface ActionGroupsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> enableReceiverWithResponse(
         String resourceGroupName, String actionGroupName, EnableRequest enableRequest, Context context);
+
+    /**
+     * Enable a receiver in an action group. This changes the receiver's status from Disabled to Enabled. This operation
+     * is only supported for Email or SMS receivers.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param actionGroupName The name of the action group.
+     * @param enableRequest The receiver to re-enable.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    void enableReceiver(String resourceGroupName, String actionGroupName, EnableRequest enableRequest);
 }

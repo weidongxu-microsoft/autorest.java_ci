@@ -54,6 +54,10 @@ public final class ExpressRouteConnectionImpl implements ExpressRouteConnection 
         return this.innerModel().expressRouteGatewayBypass();
     }
 
+    public Boolean enablePrivateLinkFastPath() {
+        return this.innerModel().enablePrivateLinkFastPath();
+    }
+
     public RoutingConfiguration routingConfiguration() {
         return this.innerModel().routingConfiguration();
     }

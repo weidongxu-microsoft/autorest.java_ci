@@ -22,6 +22,10 @@ public final class ClusterMonitoringResponseInner {
     @JsonProperty(value = "workspaceId")
     private String workspaceId;
 
+    /** Creates an instance of ClusterMonitoringResponseInner class. */
+    public ClusterMonitoringResponseInner() {
+    }
+
     /**
      * Get the clusterMonitoringEnabled property: The status of the monitor on the HDInsight cluster.
      *

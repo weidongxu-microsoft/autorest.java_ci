@@ -84,6 +84,10 @@ public final class RestoreRequestProperties {
     @JsonProperty(value = "hostingEnvironment")
     private String hostingEnvironment;
 
+    /** Creates an instance of RestoreRequestProperties class. */
+    public RestoreRequestProperties() {
+    }
+
     /**
      * Get the storageAccountUrl property: SAS URL to the container.
      *

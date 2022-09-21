@@ -22,6 +22,10 @@ public final class NWRuleSetIpRules {
     @JsonProperty(value = "action")
     private NetworkRuleIpAction action;
 
+    /** Creates an instance of NWRuleSetIpRules class. */
+    public NWRuleSetIpRules() {
+    }
+
     /**
      * Get the ipMask property: IP Mask.
      *

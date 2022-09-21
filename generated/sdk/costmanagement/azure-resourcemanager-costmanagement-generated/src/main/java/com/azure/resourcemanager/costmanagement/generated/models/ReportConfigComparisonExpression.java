@@ -30,6 +30,10 @@ public final class ReportConfigComparisonExpression {
     @JsonProperty(value = "values", required = true)
     private List<String> values;
 
+    /** Creates an instance of ReportConfigComparisonExpression class. */
+    public ReportConfigComparisonExpression() {
+    }
+
     /**
      * Get the name property: The name of the column to use in comparison.
      *

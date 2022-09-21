@@ -196,7 +196,7 @@ public final class DscpConfigurationsClientImpl implements DscpConfigurationsCli
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -255,7 +255,7 @@ public final class DscpConfigurationsClientImpl implements DscpConfigurationsCli
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -472,7 +472,7 @@ public final class DscpConfigurationsClientImpl implements DscpConfigurationsCli
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -523,7 +523,7 @@ public final class DscpConfigurationsClientImpl implements DscpConfigurationsCli
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -708,7 +708,7 @@ public final class DscpConfigurationsClientImpl implements DscpConfigurationsCli
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -759,7 +759,7 @@ public final class DscpConfigurationsClientImpl implements DscpConfigurationsCli
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -798,11 +798,12 @@ public final class DscpConfigurationsClientImpl implements DscpConfigurationsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a DSCP Configuration.
+     * @return a DSCP Configuration along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public DscpConfigurationInner getByResourceGroup(String resourceGroupName, String dscpConfigurationName) {
-        return getByResourceGroupAsync(resourceGroupName, dscpConfigurationName).block();
+    public Response<DscpConfigurationInner> getByResourceGroupWithResponse(
+        String resourceGroupName, String dscpConfigurationName) {
+        return getByResourceGroupWithResponseAsync(resourceGroupName, dscpConfigurationName).block();
     }
 
     /**
@@ -820,6 +821,21 @@ public final class DscpConfigurationsClientImpl implements DscpConfigurationsCli
     public Response<DscpConfigurationInner> getByResourceGroupWithResponse(
         String resourceGroupName, String dscpConfigurationName, Context context) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, dscpConfigurationName, context).block();
+    }
+
+    /**
+     * Gets a DSCP Configuration.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param dscpConfigurationName The name of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a DSCP Configuration.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public DscpConfigurationInner getByResourceGroup(String resourceGroupName, String dscpConfigurationName) {
+        return getByResourceGroupWithResponse(resourceGroupName, dscpConfigurationName, Context.NONE).getValue();
     }
 
     /**
@@ -849,7 +865,7 @@ public final class DscpConfigurationsClientImpl implements DscpConfigurationsCli
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -903,7 +919,7 @@ public final class DscpConfigurationsClientImpl implements DscpConfigurationsCli
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1008,7 +1024,7 @@ public final class DscpConfigurationsClientImpl implements DscpConfigurationsCli
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1051,7 +1067,7 @@ public final class DscpConfigurationsClientImpl implements DscpConfigurationsCli
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service

@@ -28,6 +28,10 @@ public final class DimensionInner extends ProxyResource {
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, String> tags;
 
+    /** Creates an instance of DimensionInner class. */
+    public DimensionInner() {
+    }
+
     /**
      * Get the innerProperties property: The properties property.
      *

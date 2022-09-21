@@ -24,6 +24,10 @@ public final class AddonList {
     @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
 
+    /** Creates an instance of AddonList class. */
+    public AddonList() {
+    }
+
     /**
      * Get the value property: The Value.
      *

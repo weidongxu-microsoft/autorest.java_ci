@@ -171,6 +171,13 @@ public interface VirtualHub {
     List<SubResource> ipConfigurations();
 
     /**
+     * Gets the routeMaps property: List of references to RouteMaps.
+     *
+     * @return the routeMaps value.
+     */
+    List<SubResource> routeMaps();
+
+    /**
      * Gets the virtualRouterAsn property: VirtualRouter ASN.
      *
      * @return the virtualRouterAsn value.
@@ -583,4 +590,46 @@ public interface VirtualHub {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void getEffectiveVirtualHubRoutes(EffectiveRoutesParameters effectiveRoutesParameters, Context context);
+
+    /**
+     * Gets the inbound routes configured for the Virtual Hub on a particular connection.
+     *
+     * @param getInboundRoutesParameters Parameters supplied to get the inbound routes for a connection resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void getInboundRoutes(GetInboundRoutesParameters getInboundRoutesParameters);
+
+    /**
+     * Gets the inbound routes configured for the Virtual Hub on a particular connection.
+     *
+     * @param getInboundRoutesParameters Parameters supplied to get the inbound routes for a connection resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void getInboundRoutes(GetInboundRoutesParameters getInboundRoutesParameters, Context context);
+
+    /**
+     * Gets the outbound routes configured for the Virtual Hub on a particular connection.
+     *
+     * @param getOutboundRoutesParameters Parameters supplied to get the outbound routes for a connection resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void getOutboundRoutes(GetOutboundRoutesParameters getOutboundRoutesParameters);
+
+    /**
+     * Gets the outbound routes configured for the Virtual Hub on a particular connection.
+     *
+     * @param getOutboundRoutesParameters Parameters supplied to get the outbound routes for a connection resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void getOutboundRoutes(GetOutboundRoutesParameters getOutboundRoutesParameters, Context context);
 }

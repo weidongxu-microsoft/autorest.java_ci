@@ -54,20 +54,6 @@ public interface SecurityAdminConfigurationsClient {
      * @param resourceGroupName The name of the resource group.
      * @param networkManagerName The name of the network manager.
      * @param configurationName The name of the network manager Security Configuration.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return defines the security admin configuration.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    SecurityAdminConfigurationInner get(String resourceGroupName, String networkManagerName, String configurationName);
-
-    /**
-     * Retrieves a network manager security admin configuration.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param networkManagerName The name of the network manager.
-     * @param configurationName The name of the network manager Security Configuration.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -79,23 +65,18 @@ public interface SecurityAdminConfigurationsClient {
         String resourceGroupName, String networkManagerName, String configurationName, Context context);
 
     /**
-     * Creates or updates a network manager security admin configuration.
+     * Retrieves a network manager security admin configuration.
      *
      * @param resourceGroupName The name of the resource group.
      * @param networkManagerName The name of the network manager.
      * @param configurationName The name of the network manager Security Configuration.
-     * @param securityAdminConfiguration The security admin configuration to create or update.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return defines the security admin configuration.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    SecurityAdminConfigurationInner createOrUpdate(
-        String resourceGroupName,
-        String networkManagerName,
-        String configurationName,
-        SecurityAdminConfigurationInner securityAdminConfiguration);
+    SecurityAdminConfigurationInner get(String resourceGroupName, String networkManagerName, String configurationName);
 
     /**
      * Creates or updates a network manager security admin configuration.
@@ -117,6 +98,25 @@ public interface SecurityAdminConfigurationsClient {
         String configurationName,
         SecurityAdminConfigurationInner securityAdminConfiguration,
         Context context);
+
+    /**
+     * Creates or updates a network manager security admin configuration.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param networkManagerName The name of the network manager.
+     * @param configurationName The name of the network manager Security Configuration.
+     * @param securityAdminConfiguration The security admin configuration to create or update.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return defines the security admin configuration.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    SecurityAdminConfigurationInner createOrUpdate(
+        String resourceGroupName,
+        String networkManagerName,
+        String configurationName,
+        SecurityAdminConfigurationInner securityAdminConfiguration);
 
     /**
      * Deletes a network manager security admin configuration.

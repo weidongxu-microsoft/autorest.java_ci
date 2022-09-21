@@ -27,15 +27,6 @@ public final class RoutingIntentsImpl implements RoutingIntents {
         this.serviceManager = serviceManager;
     }
 
-    public RoutingIntent get(String resourceGroupName, String virtualHubName, String routingIntentName) {
-        RoutingIntentInner inner = this.serviceClient().get(resourceGroupName, virtualHubName, routingIntentName);
-        if (inner != null) {
-            return new RoutingIntentImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<RoutingIntent> getWithResponse(
         String resourceGroupName, String virtualHubName, String routingIntentName, Context context) {
         Response<RoutingIntentInner> inner =
@@ -46,6 +37,15 @@ public final class RoutingIntentsImpl implements RoutingIntents {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new RoutingIntentImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public RoutingIntent get(String resourceGroupName, String virtualHubName, String routingIntentName) {
+        RoutingIntentInner inner = this.serviceClient().get(resourceGroupName, virtualHubName, routingIntentName);
+        if (inner != null) {
+            return new RoutingIntentImpl(inner, this.manager());
         } else {
             return null;
         }

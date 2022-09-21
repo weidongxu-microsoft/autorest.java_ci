@@ -15,18 +15,6 @@ public interface VirtualWans {
      *
      * @param resourceGroupName The resource group name of the VirtualWan.
      * @param virtualWanName The name of the VirtualWAN being retrieved.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtualWAN Resource.
-     */
-    VirtualWan getByResourceGroup(String resourceGroupName, String virtualWanName);
-
-    /**
-     * Retrieves the details of a VirtualWAN.
-     *
-     * @param resourceGroupName The resource group name of the VirtualWan.
-     * @param virtualWanName The name of the VirtualWAN being retrieved.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -35,6 +23,18 @@ public interface VirtualWans {
      */
     Response<VirtualWan> getByResourceGroupWithResponse(
         String resourceGroupName, String virtualWanName, Context context);
+
+    /**
+     * Retrieves the details of a VirtualWAN.
+     *
+     * @param resourceGroupName The resource group name of the VirtualWan.
+     * @param virtualWanName The name of the VirtualWAN being retrieved.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return virtualWAN Resource.
+     */
+    VirtualWan getByResourceGroup(String resourceGroupName, String virtualWanName);
 
     /**
      * Deletes a VirtualWAN.

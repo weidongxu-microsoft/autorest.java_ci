@@ -73,6 +73,10 @@ public final class OrderProperties {
     @JsonProperty(value = "shipmentType")
     private ShipmentType shipmentType;
 
+    /** Creates an instance of OrderProperties class. */
+    public OrderProperties() {
+    }
+
     /**
      * Get the orderId property: It specify the order resource id.
      *

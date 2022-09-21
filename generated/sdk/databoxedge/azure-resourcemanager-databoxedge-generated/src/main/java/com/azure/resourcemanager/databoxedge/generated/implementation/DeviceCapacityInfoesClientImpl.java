@@ -188,11 +188,12 @@ public final class DeviceCapacityInfoesClientImpl implements DeviceCapacityInfoe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the properties of the specified device capacity info.
+     * @return the properties of the specified device capacity info along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public DeviceCapacityInfoInner getDeviceCapacityInfo(String resourceGroupName, String deviceName) {
-        return getDeviceCapacityInfoAsync(resourceGroupName, deviceName).block();
+    public Response<DeviceCapacityInfoInner> getDeviceCapacityInfoWithResponse(
+        String resourceGroupName, String deviceName) {
+        return getDeviceCapacityInfoWithResponseAsync(resourceGroupName, deviceName).block();
     }
 
     /**
@@ -210,5 +211,20 @@ public final class DeviceCapacityInfoesClientImpl implements DeviceCapacityInfoe
     public Response<DeviceCapacityInfoInner> getDeviceCapacityInfoWithResponse(
         String resourceGroupName, String deviceName, Context context) {
         return getDeviceCapacityInfoWithResponseAsync(resourceGroupName, deviceName, context).block();
+    }
+
+    /**
+     * Gets the properties of the specified device capacity info.
+     *
+     * @param resourceGroupName The resource group name.
+     * @param deviceName The device name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the properties of the specified device capacity info.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public DeviceCapacityInfoInner getDeviceCapacityInfo(String resourceGroupName, String deviceName) {
+        return getDeviceCapacityInfoWithResponse(resourceGroupName, deviceName, Context.NONE).getValue();
     }
 }

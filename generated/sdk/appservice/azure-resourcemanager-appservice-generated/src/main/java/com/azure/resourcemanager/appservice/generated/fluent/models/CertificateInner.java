@@ -28,6 +28,10 @@ public final class CertificateInner extends Resource {
     @JsonProperty(value = "kind")
     private String kind;
 
+    /** Creates an instance of CertificateInner class. */
+    public CertificateInner() {
+    }
+
     /**
      * Get the innerProperties property: Certificate resource specific properties.
      *

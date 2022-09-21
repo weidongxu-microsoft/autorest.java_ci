@@ -23,6 +23,10 @@ public final class ReportConfigSorting {
     @JsonProperty(value = "name", required = true)
     private String name;
 
+    /** Creates an instance of ReportConfigSorting class. */
+    public ReportConfigSorting() {
+    }
+
     /**
      * Get the direction property: Direction of sort.
      *

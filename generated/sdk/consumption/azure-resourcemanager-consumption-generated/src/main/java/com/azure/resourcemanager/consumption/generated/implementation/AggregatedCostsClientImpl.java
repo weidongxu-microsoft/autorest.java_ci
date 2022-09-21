@@ -159,25 +159,6 @@ public final class AggregatedCostsClientImpl implements AggregatedCostsClient {
      * Provides the aggregate cost of a management group and all child management groups by current billing period.
      *
      * @param managementGroupId Azure Management Group ID.
-     * @param filter May be used to filter aggregated cost by properties/usageStart (Utc time), properties/usageEnd (Utc
-     *     time). The filter supports 'eq', 'lt', 'gt', 'le', 'ge', and 'and'. It does not currently support 'ne', 'or',
-     *     or 'not'. Tag filter is a key value pair string where key and value is separated by a colon (:).
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a management group aggregated cost resource on successful completion of {@link Mono}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<ManagementGroupAggregatedCostResultInner> getByManagementGroupAsync(
-        String managementGroupId, String filter) {
-        return getByManagementGroupWithResponseAsync(managementGroupId, filter)
-            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Provides the aggregate cost of a management group and all child management groups by current billing period.
-     *
-     * @param managementGroupId Azure Management Group ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -194,15 +175,18 @@ public final class AggregatedCostsClientImpl implements AggregatedCostsClient {
      * Provides the aggregate cost of a management group and all child management groups by current billing period.
      *
      * @param managementGroupId Azure Management Group ID.
+     * @param filter May be used to filter aggregated cost by properties/usageStart (Utc time), properties/usageEnd (Utc
+     *     time). The filter supports 'eq', 'lt', 'gt', 'le', 'ge', and 'and'. It does not currently support 'ne', 'or',
+     *     or 'not'. Tag filter is a key value pair string where key and value is separated by a colon (:).
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a management group aggregated cost resource.
+     * @return a management group aggregated cost resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ManagementGroupAggregatedCostResultInner getByManagementGroup(String managementGroupId) {
-        final String filter = null;
-        return getByManagementGroupAsync(managementGroupId, filter).block();
+    public Response<ManagementGroupAggregatedCostResultInner> getByManagementGroupWithResponse(
+        String managementGroupId, String filter) {
+        return getByManagementGroupWithResponseAsync(managementGroupId, filter).block();
     }
 
     /**
@@ -222,6 +206,21 @@ public final class AggregatedCostsClientImpl implements AggregatedCostsClient {
     public Response<ManagementGroupAggregatedCostResultInner> getByManagementGroupWithResponse(
         String managementGroupId, String filter, Context context) {
         return getByManagementGroupWithResponseAsync(managementGroupId, filter, context).block();
+    }
+
+    /**
+     * Provides the aggregate cost of a management group and all child management groups by current billing period.
+     *
+     * @param managementGroupId Azure Management Group ID.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a management group aggregated cost resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ManagementGroupAggregatedCostResultInner getByManagementGroup(String managementGroupId) {
+        final String filter = null;
+        return getByManagementGroupWithResponse(managementGroupId, filter, Context.NONE).getValue();
     }
 
     /**
@@ -334,12 +333,12 @@ public final class AggregatedCostsClientImpl implements AggregatedCostsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a management group aggregated cost resource.
+     * @return a management group aggregated cost resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ManagementGroupAggregatedCostResultInner getForBillingPeriodByManagementGroup(
+    public Response<ManagementGroupAggregatedCostResultInner> getForBillingPeriodByManagementGroupWithResponse(
         String managementGroupId, String billingPeriodName) {
-        return getForBillingPeriodByManagementGroupAsync(managementGroupId, billingPeriodName).block();
+        return getForBillingPeriodByManagementGroupWithResponseAsync(managementGroupId, billingPeriodName).block();
     }
 
     /**
@@ -358,5 +357,22 @@ public final class AggregatedCostsClientImpl implements AggregatedCostsClient {
         String managementGroupId, String billingPeriodName, Context context) {
         return getForBillingPeriodByManagementGroupWithResponseAsync(managementGroupId, billingPeriodName, context)
             .block();
+    }
+
+    /**
+     * Provides the aggregate cost of a management group and all child management groups by specified billing period.
+     *
+     * @param managementGroupId Azure Management Group ID.
+     * @param billingPeriodName Billing Period Name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a management group aggregated cost resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ManagementGroupAggregatedCostResultInner getForBillingPeriodByManagementGroup(
+        String managementGroupId, String billingPeriodName) {
+        return getForBillingPeriodByManagementGroupWithResponse(managementGroupId, billingPeriodName, Context.NONE)
+            .getValue();
     }
 }

@@ -29,15 +29,6 @@ public final class GalleriesImpl implements Galleries {
         this.serviceManager = serviceManager;
     }
 
-    public Gallery getByResourceGroup(String resourceGroupName, String galleryName) {
-        GalleryInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, galleryName);
-        if (inner != null) {
-            return new GalleryImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<Gallery> getByResourceGroupWithResponse(
         String resourceGroupName,
         String galleryName,
@@ -54,6 +45,15 @@ public final class GalleriesImpl implements Galleries {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new GalleryImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public Gallery getByResourceGroup(String resourceGroupName, String galleryName) {
+        GalleryInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, galleryName);
+        if (inner != null) {
+            return new GalleryImpl(inner, this.manager());
         } else {
             return null;
         }

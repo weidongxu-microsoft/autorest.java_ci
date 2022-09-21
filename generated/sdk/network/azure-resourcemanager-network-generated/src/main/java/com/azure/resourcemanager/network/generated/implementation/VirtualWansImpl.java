@@ -27,15 +27,6 @@ public final class VirtualWansImpl implements VirtualWans {
         this.serviceManager = serviceManager;
     }
 
-    public VirtualWan getByResourceGroup(String resourceGroupName, String virtualWanName) {
-        VirtualWanInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, virtualWanName);
-        if (inner != null) {
-            return new VirtualWanImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<VirtualWan> getByResourceGroupWithResponse(
         String resourceGroupName, String virtualWanName, Context context) {
         Response<VirtualWanInner> inner =
@@ -46,6 +37,15 @@ public final class VirtualWansImpl implements VirtualWans {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new VirtualWanImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public VirtualWan getByResourceGroup(String resourceGroupName, String virtualWanName) {
+        VirtualWanInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, virtualWanName);
+        if (inner != null) {
+            return new VirtualWanImpl(inner, this.manager());
         } else {
             return null;
         }

@@ -46,18 +46,6 @@ public interface SchemaRegistries {
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param schemaGroupName The Schema Group name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void delete(String resourceGroupName, String namespaceName, String schemaGroupName);
-
-    /**
-     * The delete operation.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param namespaceName The Namespace name.
-     * @param schemaGroupName The Schema Group name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -68,7 +56,7 @@ public interface SchemaRegistries {
         String resourceGroupName, String namespaceName, String schemaGroupName, Context context);
 
     /**
-     * The get operation.
+     * The delete operation.
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -76,9 +64,8 @@ public interface SchemaRegistries {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in List or Get Schema Group operation.
      */
-    SchemaGroup get(String resourceGroupName, String namespaceName, String schemaGroupName);
+    void delete(String resourceGroupName, String namespaceName, String schemaGroupName);
 
     /**
      * The get operation.
@@ -94,6 +81,19 @@ public interface SchemaRegistries {
      */
     Response<SchemaGroup> getWithResponse(
         String resourceGroupName, String namespaceName, String schemaGroupName, Context context);
+
+    /**
+     * The get operation.
+     *
+     * @param resourceGroupName Name of the resource group within the azure subscription.
+     * @param namespaceName The Namespace name.
+     * @param schemaGroupName The Schema Group name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return single item in List or Get Schema Group operation.
+     */
+    SchemaGroup get(String resourceGroupName, String namespaceName, String schemaGroupName);
 
     /**
      * The get operation.

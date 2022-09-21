@@ -47,6 +47,10 @@ public final class GalleryApplicationVersionPublishingProfile extends GalleryArt
     @JsonProperty(value = "enableHealthCheck")
     private Boolean enableHealthCheck;
 
+    /** Creates an instance of GalleryApplicationVersionPublishingProfile class. */
+    public GalleryApplicationVersionPublishingProfile() {
+    }
+
     /**
      * Get the source property: The source image from which the Image Version is going to be created.
      *

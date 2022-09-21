@@ -18,6 +18,10 @@ public final class SecuritySettings extends ArmBaseModel {
     @JsonProperty(value = "properties", required = true)
     private SecuritySettingsProperties innerProperties = new SecuritySettingsProperties();
 
+    /** Creates an instance of SecuritySettings class. */
+    public SecuritySettings() {
+    }
+
     /**
      * Get the innerProperties property: Properties of the security settings.
      *

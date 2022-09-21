@@ -106,20 +106,6 @@ public interface InboundNatRulesClient {
      * @param resourceGroupName The name of the resource group.
      * @param loadBalancerName The name of the load balancer.
      * @param inboundNatRuleName The name of the inbound NAT rule.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified load balancer inbound NAT rule.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    InboundNatRuleInner get(String resourceGroupName, String loadBalancerName, String inboundNatRuleName);
-
-    /**
-     * Gets the specified load balancer inbound NAT rule.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param loadBalancerName The name of the load balancer.
-     * @param inboundNatRuleName The name of the inbound NAT rule.
      * @param expand Expands referenced resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -130,6 +116,20 @@ public interface InboundNatRulesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<InboundNatRuleInner> getWithResponse(
         String resourceGroupName, String loadBalancerName, String inboundNatRuleName, String expand, Context context);
+
+    /**
+     * Gets the specified load balancer inbound NAT rule.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param loadBalancerName The name of the load balancer.
+     * @param inboundNatRuleName The name of the inbound NAT rule.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified load balancer inbound NAT rule.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    InboundNatRuleInner get(String resourceGroupName, String loadBalancerName, String inboundNatRuleName);
 
     /**
      * Creates or updates a load balancer inbound NAT rule.

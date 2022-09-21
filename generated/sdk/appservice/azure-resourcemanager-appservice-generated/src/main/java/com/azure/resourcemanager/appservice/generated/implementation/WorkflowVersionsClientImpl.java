@@ -466,11 +466,12 @@ public final class WorkflowVersionsClientImpl implements WorkflowVersionsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a workflow version.
+     * @return a workflow version along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public WorkflowVersionInner get(String resourceGroupName, String name, String workflowName, String versionId) {
-        return getAsync(resourceGroupName, name, workflowName, versionId).block();
+    public Response<WorkflowVersionInner> getWithResponse(
+        String resourceGroupName, String name, String workflowName, String versionId) {
+        return getWithResponseAsync(resourceGroupName, name, workflowName, versionId).block();
     }
 
     /**
@@ -490,6 +491,23 @@ public final class WorkflowVersionsClientImpl implements WorkflowVersionsClient 
     public Response<WorkflowVersionInner> getWithResponse(
         String resourceGroupName, String name, String workflowName, String versionId, Context context) {
         return getWithResponseAsync(resourceGroupName, name, workflowName, versionId, context).block();
+    }
+
+    /**
+     * Gets a workflow version.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Site name.
+     * @param workflowName The workflow name.
+     * @param versionId The workflow versionId.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a workflow version.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public WorkflowVersionInner get(String resourceGroupName, String name, String workflowName, String versionId) {
+        return getWithResponse(resourceGroupName, name, workflowName, versionId, Context.NONE).getValue();
     }
 
     /**

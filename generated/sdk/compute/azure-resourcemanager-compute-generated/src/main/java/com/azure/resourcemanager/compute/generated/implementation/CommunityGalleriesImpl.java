@@ -27,15 +27,6 @@ public final class CommunityGalleriesImpl implements CommunityGalleries {
         this.serviceManager = serviceManager;
     }
 
-    public CommunityGallery get(String location, String publicGalleryName) {
-        CommunityGalleryInner inner = this.serviceClient().get(location, publicGalleryName);
-        if (inner != null) {
-            return new CommunityGalleryImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<CommunityGallery> getWithResponse(String location, String publicGalleryName, Context context) {
         Response<CommunityGalleryInner> inner =
             this.serviceClient().getWithResponse(location, publicGalleryName, context);
@@ -45,6 +36,15 @@ public final class CommunityGalleriesImpl implements CommunityGalleries {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new CommunityGalleryImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public CommunityGallery get(String location, String publicGalleryName) {
+        CommunityGalleryInner inner = this.serviceClient().get(location, publicGalleryName);
+        if (inner != null) {
+            return new CommunityGalleryImpl(inner, this.manager());
         } else {
             return null;
         }

@@ -30,6 +30,10 @@ public final class ManagedRuleExclusion {
     @JsonProperty(value = "selector", required = true)
     private String selector;
 
+    /** Creates an instance of ManagedRuleExclusion class. */
+    public ManagedRuleExclusion() {
+    }
+
     /**
      * Get the matchVariable property: The variable type to be excluded.
      *

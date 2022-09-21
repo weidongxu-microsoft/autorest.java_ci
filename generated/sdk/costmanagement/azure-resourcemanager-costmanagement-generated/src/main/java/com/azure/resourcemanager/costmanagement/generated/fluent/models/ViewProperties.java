@@ -106,6 +106,10 @@ public final class ViewProperties {
     @JsonProperty(value = "pivots")
     private List<PivotProperties> pivots;
 
+    /** Creates an instance of ViewProperties class. */
+    public ViewProperties() {
+    }
+
     /**
      * Get the displayName property: User input name of the view. Required.
      *

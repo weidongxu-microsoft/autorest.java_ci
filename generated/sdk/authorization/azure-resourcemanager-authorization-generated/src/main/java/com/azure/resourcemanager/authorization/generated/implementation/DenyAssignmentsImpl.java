@@ -85,15 +85,6 @@ public final class DenyAssignmentsImpl implements DenyAssignments {
         return Utils.mapPage(inner, inner1 -> new DenyAssignmentImpl(inner1, this.manager()));
     }
 
-    public DenyAssignment get(String scope, String denyAssignmentId) {
-        DenyAssignmentInner inner = this.serviceClient().get(scope, denyAssignmentId);
-        if (inner != null) {
-            return new DenyAssignmentImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<DenyAssignment> getWithResponse(String scope, String denyAssignmentId, Context context) {
         Response<DenyAssignmentInner> inner = this.serviceClient().getWithResponse(scope, denyAssignmentId, context);
         if (inner != null) {
@@ -107,8 +98,8 @@ public final class DenyAssignmentsImpl implements DenyAssignments {
         }
     }
 
-    public DenyAssignment getById(String denyAssignmentId) {
-        DenyAssignmentInner inner = this.serviceClient().getById(denyAssignmentId);
+    public DenyAssignment get(String scope, String denyAssignmentId) {
+        DenyAssignmentInner inner = this.serviceClient().get(scope, denyAssignmentId);
         if (inner != null) {
             return new DenyAssignmentImpl(inner, this.manager());
         } else {
@@ -124,6 +115,15 @@ public final class DenyAssignmentsImpl implements DenyAssignments {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new DenyAssignmentImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public DenyAssignment getById(String denyAssignmentId) {
+        DenyAssignmentInner inner = this.serviceClient().getById(denyAssignmentId);
+        if (inner != null) {
+            return new DenyAssignmentImpl(inner, this.manager());
         } else {
             return null;
         }

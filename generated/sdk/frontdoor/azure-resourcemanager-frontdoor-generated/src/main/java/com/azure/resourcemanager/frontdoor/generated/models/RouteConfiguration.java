@@ -26,6 +26,10 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 })
 @Immutable
 public class RouteConfiguration {
+    /** Creates an instance of RouteConfiguration class. */
+    public RouteConfiguration() {
+    }
+
     /**
      * Validates the instance.
      *

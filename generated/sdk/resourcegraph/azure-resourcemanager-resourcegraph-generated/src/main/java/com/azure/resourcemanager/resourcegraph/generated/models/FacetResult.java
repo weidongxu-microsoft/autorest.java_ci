@@ -33,6 +33,10 @@ public final class FacetResult extends Facet {
     @JsonProperty(value = "data", required = true)
     private Object data;
 
+    /** Creates an instance of FacetResult class. */
+    public FacetResult() {
+    }
+
     /**
      * Get the totalRecords property: Number of total records in the facet results.
      *

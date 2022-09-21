@@ -52,6 +52,10 @@ public final class ReportConfigDataset {
     @JsonProperty(value = "filter")
     private ReportConfigFilter filter;
 
+    /** Creates an instance of ReportConfigDataset class. */
+    public ReportConfigDataset() {
+    }
+
     /**
      * Get the granularity property: The granularity of rows in the report.
      *

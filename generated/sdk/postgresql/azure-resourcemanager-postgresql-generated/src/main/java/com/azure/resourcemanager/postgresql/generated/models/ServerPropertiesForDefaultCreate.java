@@ -28,6 +28,10 @@ public final class ServerPropertiesForDefaultCreate extends ServerPropertiesForC
     @JsonProperty(value = "administratorLoginPassword", required = true)
     private String administratorLoginPassword;
 
+    /** Creates an instance of ServerPropertiesForDefaultCreate class. */
+    public ServerPropertiesForDefaultCreate() {
+    }
+
     /**
      * Get the administratorLogin property: The administrator's login name of a server. Can only be specified when the
      * server is being created (and is required for creation).

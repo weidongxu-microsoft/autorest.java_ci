@@ -27,6 +27,10 @@ public final class UsageDetailsListResult {
     @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
 
+    /** Creates an instance of UsageDetailsListResult class. */
+    public UsageDetailsListResult() {
+    }
+
     /**
      * Get the value property: The list of usage details.
      *

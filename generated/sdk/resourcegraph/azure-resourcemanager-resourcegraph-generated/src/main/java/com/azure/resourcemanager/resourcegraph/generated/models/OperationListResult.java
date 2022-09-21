@@ -21,6 +21,10 @@ public final class OperationListResult {
     @JsonProperty(value = "value")
     private List<OperationInner> value;
 
+    /** Creates an instance of OperationListResult class. */
+    public OperationListResult() {
+    }
+
     /**
      * Get the value property: List of Resource Graph operations supported by the Resource Graph resource provider.
      *

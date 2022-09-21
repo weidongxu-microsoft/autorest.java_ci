@@ -23,6 +23,10 @@ public final class AlertsResultInner {
     @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
 
+    /** Creates an instance of AlertsResultInner class. */
+    public AlertsResultInner() {
+    }
+
     /**
      * Get the value property: List of alerts.
      *

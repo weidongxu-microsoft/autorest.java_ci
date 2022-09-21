@@ -22,6 +22,10 @@ public final class ConnectionState {
     @JsonProperty(value = "description")
     private String description;
 
+    /** Creates an instance of ConnectionState class. */
+    public ConnectionState() {
+    }
+
     /**
      * Get the status property: Status of the connection.
      *

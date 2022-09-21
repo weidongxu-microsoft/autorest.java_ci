@@ -24,6 +24,10 @@ public final class ComponentPurgeBody {
     @JsonProperty(value = "filters", required = true)
     private List<ComponentPurgeBodyFilters> filters;
 
+    /** Creates an instance of ComponentPurgeBody class. */
+    public ComponentPurgeBody() {
+    }
+
     /**
      * Get the table property: Table from which to purge data.
      *

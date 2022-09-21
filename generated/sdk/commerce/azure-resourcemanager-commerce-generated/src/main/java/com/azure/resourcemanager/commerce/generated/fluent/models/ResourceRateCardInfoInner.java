@@ -43,6 +43,10 @@ public final class ResourceRateCardInfoInner {
     @JsonProperty(value = "Meters")
     private List<MeterInfo> meters;
 
+    /** Creates an instance of ResourceRateCardInfoInner class. */
+    public ResourceRateCardInfoInner() {
+    }
+
     /**
      * Get the currency property: The currency in which the rates are provided.
      *

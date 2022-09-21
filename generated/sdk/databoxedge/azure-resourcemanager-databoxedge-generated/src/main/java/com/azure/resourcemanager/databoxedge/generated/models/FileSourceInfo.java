@@ -17,6 +17,10 @@ public final class FileSourceInfo {
     @JsonProperty(value = "shareId", required = true)
     private String shareId;
 
+    /** Creates an instance of FileSourceInfo class. */
+    public FileSourceInfo() {
+    }
+
     /**
      * Get the shareId property: File share ID.
      *

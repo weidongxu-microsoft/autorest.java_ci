@@ -34,17 +34,6 @@ public final class VirtualNetworkGatewayConnectionsImpl implements VirtualNetwor
         this.serviceManager = serviceManager;
     }
 
-    public VirtualNetworkGatewayConnection getByResourceGroup(
-        String resourceGroupName, String virtualNetworkGatewayConnectionName) {
-        VirtualNetworkGatewayConnectionInner inner =
-            this.serviceClient().getByResourceGroup(resourceGroupName, virtualNetworkGatewayConnectionName);
-        if (inner != null) {
-            return new VirtualNetworkGatewayConnectionImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<VirtualNetworkGatewayConnection> getByResourceGroupWithResponse(
         String resourceGroupName, String virtualNetworkGatewayConnectionName, Context context) {
         Response<VirtualNetworkGatewayConnectionInner> inner =
@@ -57,6 +46,17 @@ public final class VirtualNetworkGatewayConnectionsImpl implements VirtualNetwor
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new VirtualNetworkGatewayConnectionImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public VirtualNetworkGatewayConnection getByResourceGroup(
+        String resourceGroupName, String virtualNetworkGatewayConnectionName) {
+        VirtualNetworkGatewayConnectionInner inner =
+            this.serviceClient().getByResourceGroup(resourceGroupName, virtualNetworkGatewayConnectionName);
+        if (inner != null) {
+            return new VirtualNetworkGatewayConnectionImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -97,16 +97,6 @@ public final class VirtualNetworkGatewayConnectionsImpl implements VirtualNetwor
         }
     }
 
-    public ConnectionSharedKey getSharedKey(String resourceGroupName, String virtualNetworkGatewayConnectionName) {
-        ConnectionSharedKeyInner inner =
-            this.serviceClient().getSharedKey(resourceGroupName, virtualNetworkGatewayConnectionName);
-        if (inner != null) {
-            return new ConnectionSharedKeyImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<ConnectionSharedKey> getSharedKeyWithResponse(
         String resourceGroupName, String virtualNetworkGatewayConnectionName, Context context) {
         Response<ConnectionSharedKeyInner> inner =
@@ -119,6 +109,16 @@ public final class VirtualNetworkGatewayConnectionsImpl implements VirtualNetwor
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new ConnectionSharedKeyImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public ConnectionSharedKey getSharedKey(String resourceGroupName, String virtualNetworkGatewayConnectionName) {
+        ConnectionSharedKeyInner inner =
+            this.serviceClient().getSharedKey(resourceGroupName, virtualNetworkGatewayConnectionName);
+        if (inner != null) {
+            return new ConnectionSharedKeyImpl(inner, this.manager());
         } else {
             return null;
         }

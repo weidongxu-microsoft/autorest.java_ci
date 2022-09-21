@@ -82,6 +82,10 @@ public final class TopicProperties {
     @JsonProperty(value = "dataResidencyBoundary")
     private DataResidencyBoundary dataResidencyBoundary;
 
+    /** Creates an instance of TopicProperties class. */
+    public TopicProperties() {
+    }
+
     /**
      * Get the privateEndpointConnections property: The privateEndpointConnections property.
      *

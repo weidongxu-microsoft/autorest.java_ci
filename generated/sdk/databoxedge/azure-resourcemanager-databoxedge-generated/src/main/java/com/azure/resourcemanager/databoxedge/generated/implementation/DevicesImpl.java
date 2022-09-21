@@ -62,15 +62,6 @@ public final class DevicesImpl implements Devices {
         return Utils.mapPage(inner, inner1 -> new DataBoxEdgeDeviceImpl(inner1, this.manager()));
     }
 
-    public DataBoxEdgeDevice getByResourceGroup(String resourceGroupName, String deviceName) {
-        DataBoxEdgeDeviceInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, deviceName);
-        if (inner != null) {
-            return new DataBoxEdgeDeviceImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<DataBoxEdgeDevice> getByResourceGroupWithResponse(
         String resourceGroupName, String deviceName, Context context) {
         Response<DataBoxEdgeDeviceInner> inner =
@@ -81,6 +72,15 @@ public final class DevicesImpl implements Devices {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new DataBoxEdgeDeviceImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public DataBoxEdgeDevice getByResourceGroup(String resourceGroupName, String deviceName) {
+        DataBoxEdgeDeviceInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, deviceName);
+        if (inner != null) {
+            return new DataBoxEdgeDeviceImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -102,15 +102,6 @@ public final class DevicesImpl implements Devices {
         this.serviceClient().downloadUpdates(deviceName, resourceGroupName, context);
     }
 
-    public GenerateCertResponse generateCertificate(String deviceName, String resourceGroupName) {
-        GenerateCertResponseInner inner = this.serviceClient().generateCertificate(deviceName, resourceGroupName);
-        if (inner != null) {
-            return new GenerateCertResponseImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<GenerateCertResponse> generateCertificateWithResponse(
         String deviceName, String resourceGroupName, Context context) {
         Response<GenerateCertResponseInner> inner =
@@ -126,11 +117,10 @@ public final class DevicesImpl implements Devices {
         }
     }
 
-    public DataBoxEdgeDeviceExtendedInfo getExtendedInformation(String deviceName, String resourceGroupName) {
-        DataBoxEdgeDeviceExtendedInfoInner inner =
-            this.serviceClient().getExtendedInformation(deviceName, resourceGroupName);
+    public GenerateCertResponse generateCertificate(String deviceName, String resourceGroupName) {
+        GenerateCertResponseInner inner = this.serviceClient().generateCertificate(deviceName, resourceGroupName);
         if (inner != null) {
-            return new DataBoxEdgeDeviceExtendedInfoImpl(inner, this.manager());
+            return new GenerateCertResponseImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -151,21 +141,22 @@ public final class DevicesImpl implements Devices {
         }
     }
 
+    public DataBoxEdgeDeviceExtendedInfo getExtendedInformation(String deviceName, String resourceGroupName) {
+        DataBoxEdgeDeviceExtendedInfoInner inner =
+            this.serviceClient().getExtendedInformation(deviceName, resourceGroupName);
+        if (inner != null) {
+            return new DataBoxEdgeDeviceExtendedInfoImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
     public void installUpdates(String deviceName, String resourceGroupName) {
         this.serviceClient().installUpdates(deviceName, resourceGroupName);
     }
 
     public void installUpdates(String deviceName, String resourceGroupName, Context context) {
         this.serviceClient().installUpdates(deviceName, resourceGroupName, context);
-    }
-
-    public NetworkSettings getNetworkSettings(String deviceName, String resourceGroupName) {
-        NetworkSettingsInner inner = this.serviceClient().getNetworkSettings(deviceName, resourceGroupName);
-        if (inner != null) {
-            return new NetworkSettingsImpl(inner, this.manager());
-        } else {
-            return null;
-        }
     }
 
     public Response<NetworkSettings> getNetworkSettingsWithResponse(
@@ -178,6 +169,15 @@ public final class DevicesImpl implements Devices {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new NetworkSettingsImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public NetworkSettings getNetworkSettings(String deviceName, String resourceGroupName) {
+        NetworkSettingsInner inner = this.serviceClient().getNetworkSettings(deviceName, resourceGroupName);
+        if (inner != null) {
+            return new NetworkSettingsImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -201,17 +201,6 @@ public final class DevicesImpl implements Devices {
         this.serviceClient().createOrUpdateSecuritySettings(deviceName, resourceGroupName, securitySettings, context);
     }
 
-    public DataBoxEdgeDeviceExtendedInfo updateExtendedInformation(
-        String deviceName, String resourceGroupName, DataBoxEdgeDeviceExtendedInfoPatch parameters) {
-        DataBoxEdgeDeviceExtendedInfoInner inner =
-            this.serviceClient().updateExtendedInformation(deviceName, resourceGroupName, parameters);
-        if (inner != null) {
-            return new DataBoxEdgeDeviceExtendedInfoImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<DataBoxEdgeDeviceExtendedInfo> updateExtendedInformationWithResponse(
         String deviceName, String resourceGroupName, DataBoxEdgeDeviceExtendedInfoPatch parameters, Context context) {
         Response<DataBoxEdgeDeviceExtendedInfoInner> inner =
@@ -229,10 +218,12 @@ public final class DevicesImpl implements Devices {
         }
     }
 
-    public UpdateSummary getUpdateSummary(String deviceName, String resourceGroupName) {
-        UpdateSummaryInner inner = this.serviceClient().getUpdateSummary(deviceName, resourceGroupName);
+    public DataBoxEdgeDeviceExtendedInfo updateExtendedInformation(
+        String deviceName, String resourceGroupName, DataBoxEdgeDeviceExtendedInfoPatch parameters) {
+        DataBoxEdgeDeviceExtendedInfoInner inner =
+            this.serviceClient().updateExtendedInformation(deviceName, resourceGroupName, parameters);
         if (inner != null) {
-            return new UpdateSummaryImpl(inner, this.manager());
+            return new DataBoxEdgeDeviceExtendedInfoImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -253,12 +244,10 @@ public final class DevicesImpl implements Devices {
         }
     }
 
-    public UploadCertificateResponse uploadCertificate(
-        String deviceName, String resourceGroupName, UploadCertificateRequest parameters) {
-        UploadCertificateResponseInner inner =
-            this.serviceClient().uploadCertificate(deviceName, resourceGroupName, parameters);
+    public UpdateSummary getUpdateSummary(String deviceName, String resourceGroupName) {
+        UpdateSummaryInner inner = this.serviceClient().getUpdateSummary(deviceName, resourceGroupName);
         if (inner != null) {
-            return new UploadCertificateResponseImpl(inner, this.manager());
+            return new UpdateSummaryImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -274,6 +263,17 @@ public final class DevicesImpl implements Devices {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new UploadCertificateResponseImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public UploadCertificateResponse uploadCertificate(
+        String deviceName, String resourceGroupName, UploadCertificateRequest parameters) {
+        UploadCertificateResponseInner inner =
+            this.serviceClient().uploadCertificate(deviceName, resourceGroupName, parameters);
+        if (inner != null) {
+            return new UploadCertificateResponseImpl(inner, this.manager());
         } else {
             return null;
         }

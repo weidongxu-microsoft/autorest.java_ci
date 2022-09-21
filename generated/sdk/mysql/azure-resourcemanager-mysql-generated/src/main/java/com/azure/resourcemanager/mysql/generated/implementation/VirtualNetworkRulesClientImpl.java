@@ -275,11 +275,12 @@ public final class VirtualNetworkRulesClientImpl implements VirtualNetworkRulesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a virtual network rule.
+     * @return a virtual network rule along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public VirtualNetworkRuleInner get(String resourceGroupName, String serverName, String virtualNetworkRuleName) {
-        return getAsync(resourceGroupName, serverName, virtualNetworkRuleName).block();
+    public Response<VirtualNetworkRuleInner> getWithResponse(
+        String resourceGroupName, String serverName, String virtualNetworkRuleName) {
+        return getWithResponseAsync(resourceGroupName, serverName, virtualNetworkRuleName).block();
     }
 
     /**
@@ -298,6 +299,22 @@ public final class VirtualNetworkRulesClientImpl implements VirtualNetworkRulesC
     public Response<VirtualNetworkRuleInner> getWithResponse(
         String resourceGroupName, String serverName, String virtualNetworkRuleName, Context context) {
         return getWithResponseAsync(resourceGroupName, serverName, virtualNetworkRuleName, context).block();
+    }
+
+    /**
+     * Gets a virtual network rule.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param serverName The name of the server.
+     * @param virtualNetworkRuleName The name of the virtual network rule.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a virtual network rule.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public VirtualNetworkRuleInner get(String resourceGroupName, String serverName, String virtualNetworkRuleName) {
+        return getWithResponse(resourceGroupName, serverName, virtualNetworkRuleName, Context.NONE).getValue();
     }
 
     /**

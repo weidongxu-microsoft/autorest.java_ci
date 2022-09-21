@@ -42,6 +42,10 @@ public final class StaticSiteCustomDomainOverviewArmResourceProperties {
     @JsonProperty(value = "errorMessage", access = JsonProperty.Access.WRITE_ONLY)
     private String errorMessage;
 
+    /** Creates an instance of StaticSiteCustomDomainOverviewArmResourceProperties class. */
+    public StaticSiteCustomDomainOverviewArmResourceProperties() {
+    }
+
     /**
      * Get the domainName property: The domain name for the static site custom domain.
      *

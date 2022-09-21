@@ -28,6 +28,10 @@ public final class DaprMetadata {
     @JsonProperty(value = "secretRef")
     private String secretRef;
 
+    /** Creates an instance of DaprMetadata class. */
+    public DaprMetadata() {
+    }
+
     /**
      * Get the name property: Metadata property name.
      *

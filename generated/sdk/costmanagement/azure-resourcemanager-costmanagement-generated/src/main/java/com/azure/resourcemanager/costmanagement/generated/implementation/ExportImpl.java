@@ -144,12 +144,12 @@ public final class ExportImpl implements Export, Export.Definition, Export.Updat
         return this;
     }
 
-    public void execute() {
-        serviceManager.exports().execute(scope, exportName);
-    }
-
     public Response<Void> executeWithResponse(Context context) {
         return serviceManager.exports().executeWithResponse(scope, exportName, context);
+    }
+
+    public void execute() {
+        serviceManager.exports().execute(scope, exportName);
     }
 
     public ExportImpl withEtag(String etag) {

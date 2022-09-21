@@ -60,6 +60,10 @@ public class FrontDoorUpdateParameters {
     @JsonProperty(value = "enabledState")
     private FrontDoorEnabledState enabledState;
 
+    /** Creates an instance of FrontDoorUpdateParameters class. */
+    public FrontDoorUpdateParameters() {
+    }
+
     /**
      * Get the friendlyName property: A friendly name for the frontDoor.
      *

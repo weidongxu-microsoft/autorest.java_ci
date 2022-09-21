@@ -28,6 +28,10 @@ public final class PrivateEndpointConnection {
     @JsonProperty(value = "privateLinkServiceConnectionState", access = JsonProperty.Access.WRITE_ONLY)
     private PrivateLinkServiceConnectionState privateLinkServiceConnectionState;
 
+    /** Creates an instance of PrivateEndpointConnection class. */
+    public PrivateEndpointConnection() {
+    }
+
     /**
      * Get the provisioningState property: Gets or sets provisioning state of the private endpoint connection.
      *

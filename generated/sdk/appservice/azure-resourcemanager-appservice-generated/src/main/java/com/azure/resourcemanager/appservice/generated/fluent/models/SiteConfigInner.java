@@ -445,6 +445,10 @@ public final class SiteConfigInner {
     @JsonProperty(value = "publicNetworkAccess")
     private String publicNetworkAccess;
 
+    /** Creates an instance of SiteConfigInner class. */
+    public SiteConfigInner() {
+    }
+
     /**
      * Get the numberOfWorkers property: Number of workers.
      *

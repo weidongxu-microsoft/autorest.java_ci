@@ -50,21 +50,13 @@ public final class SshPublicKeysImpl implements SshPublicKeys {
         return Utils.mapPage(inner, inner1 -> new SshPublicKeyResourceImpl(inner1, this.manager()));
     }
 
-    public void deleteByResourceGroup(String resourceGroupName, String sshPublicKeyName) {
-        this.serviceClient().delete(resourceGroupName, sshPublicKeyName);
-    }
-
-    public Response<Void> deleteWithResponse(String resourceGroupName, String sshPublicKeyName, Context context) {
+    public Response<Void> deleteByResourceGroupWithResponse(
+        String resourceGroupName, String sshPublicKeyName, Context context) {
         return this.serviceClient().deleteWithResponse(resourceGroupName, sshPublicKeyName, context);
     }
 
-    public SshPublicKeyResource getByResourceGroup(String resourceGroupName, String sshPublicKeyName) {
-        SshPublicKeyResourceInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, sshPublicKeyName);
-        if (inner != null) {
-            return new SshPublicKeyResourceImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void deleteByResourceGroup(String resourceGroupName, String sshPublicKeyName) {
+        this.serviceClient().delete(resourceGroupName, sshPublicKeyName);
     }
 
     public Response<SshPublicKeyResource> getByResourceGroupWithResponse(
@@ -82,11 +74,10 @@ public final class SshPublicKeysImpl implements SshPublicKeys {
         }
     }
 
-    public SshPublicKeyGenerateKeyPairResult generateKeyPair(String resourceGroupName, String sshPublicKeyName) {
-        SshPublicKeyGenerateKeyPairResultInner inner =
-            this.serviceClient().generateKeyPair(resourceGroupName, sshPublicKeyName);
+    public SshPublicKeyResource getByResourceGroup(String resourceGroupName, String sshPublicKeyName) {
+        SshPublicKeyResourceInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, sshPublicKeyName);
         if (inner != null) {
-            return new SshPublicKeyGenerateKeyPairResultImpl(inner, this.manager());
+            return new SshPublicKeyResourceImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -102,6 +93,16 @@ public final class SshPublicKeysImpl implements SshPublicKeys {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new SshPublicKeyGenerateKeyPairResultImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public SshPublicKeyGenerateKeyPairResult generateKeyPair(String resourceGroupName, String sshPublicKeyName) {
+        SshPublicKeyGenerateKeyPairResultInner inner =
+            this.serviceClient().generateKeyPair(resourceGroupName, sshPublicKeyName);
+        if (inner != null) {
+            return new SshPublicKeyGenerateKeyPairResultImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -161,7 +162,7 @@ public final class SshPublicKeysImpl implements SshPublicKeys {
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'sshPublicKeys'.", id)));
         }
-        this.deleteWithResponse(resourceGroupName, sshPublicKeyName, Context.NONE);
+        this.deleteByResourceGroupWithResponse(resourceGroupName, sshPublicKeyName, Context.NONE);
     }
 
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
@@ -180,7 +181,7 @@ public final class SshPublicKeysImpl implements SshPublicKeys {
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'sshPublicKeys'.", id)));
         }
-        return this.deleteWithResponse(resourceGroupName, sshPublicKeyName, context);
+        return this.deleteByResourceGroupWithResponse(resourceGroupName, sshPublicKeyName, context);
     }
 
     private SshPublicKeysClient serviceClient() {

@@ -30,6 +30,10 @@ public final class AlertInner extends ProxyResource {
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, String> tags;
 
+    /** Creates an instance of AlertInner class. */
+    public AlertInner() {
+    }
+
     /**
      * Get the innerProperties property: The properties property.
      *

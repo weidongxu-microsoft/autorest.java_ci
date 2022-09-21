@@ -25,6 +25,10 @@ public final class StatusMessage {
     @JsonProperty(value = "error")
     private ManagementError error;
 
+    /** Creates an instance of StatusMessage class. */
+    public StatusMessage() {
+    }
+
     /**
      * Get the status property: Status of the deployment operation.
      *

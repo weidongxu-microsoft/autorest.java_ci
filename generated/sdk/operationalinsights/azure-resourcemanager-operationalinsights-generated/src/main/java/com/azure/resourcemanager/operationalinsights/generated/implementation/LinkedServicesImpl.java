@@ -48,15 +48,6 @@ public final class LinkedServicesImpl implements LinkedServices {
         }
     }
 
-    public LinkedService get(String resourceGroupName, String workspaceName, String linkedServiceName) {
-        LinkedServiceInner inner = this.serviceClient().get(resourceGroupName, workspaceName, linkedServiceName);
-        if (inner != null) {
-            return new LinkedServiceImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<LinkedService> getWithResponse(
         String resourceGroupName, String workspaceName, String linkedServiceName, Context context) {
         Response<LinkedServiceInner> inner =
@@ -67,6 +58,15 @@ public final class LinkedServicesImpl implements LinkedServices {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new LinkedServiceImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public LinkedService get(String resourceGroupName, String workspaceName, String linkedServiceName) {
+        LinkedServiceInner inner = this.serviceClient().get(resourceGroupName, workspaceName, linkedServiceName);
+        if (inner != null) {
+            return new LinkedServiceImpl(inner, this.manager());
         } else {
             return null;
         }

@@ -44,19 +44,6 @@ public interface PrivateLinkResources {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
      * @param groupName The name of the private link resource.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the private link resources that need to be created for a Azure Monitor PrivateLinkScope.
-     */
-    PrivateLinkResource get(String resourceGroupName, String scopeName, String groupName);
-
-    /**
-     * Gets the private link resources that need to be created for a Azure Monitor PrivateLinkScope.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
-     * @param groupName The name of the private link resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -66,4 +53,17 @@ public interface PrivateLinkResources {
      */
     Response<PrivateLinkResource> getWithResponse(
         String resourceGroupName, String scopeName, String groupName, Context context);
+
+    /**
+     * Gets the private link resources that need to be created for a Azure Monitor PrivateLinkScope.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
+     * @param groupName The name of the private link resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the private link resources that need to be created for a Azure Monitor PrivateLinkScope.
+     */
+    PrivateLinkResource get(String resourceGroupName, String scopeName, String groupName);
 }

@@ -30,6 +30,10 @@ public final class QueryComparisonExpression {
     @JsonProperty(value = "values", required = true)
     private List<String> values;
 
+    /** Creates an instance of QueryComparisonExpression class. */
+    public QueryComparisonExpression() {
+    }
+
     /**
      * Get the name property: The name of the column to use in comparison.
      *

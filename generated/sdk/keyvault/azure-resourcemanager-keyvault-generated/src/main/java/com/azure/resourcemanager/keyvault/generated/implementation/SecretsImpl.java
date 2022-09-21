@@ -27,15 +27,6 @@ public final class SecretsImpl implements Secrets {
         this.serviceManager = serviceManager;
     }
 
-    public Secret get(String resourceGroupName, String vaultName, String secretName) {
-        SecretInner inner = this.serviceClient().get(resourceGroupName, vaultName, secretName);
-        if (inner != null) {
-            return new SecretImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<Secret> getWithResponse(
         String resourceGroupName, String vaultName, String secretName, Context context) {
         Response<SecretInner> inner =
@@ -46,6 +37,15 @@ public final class SecretsImpl implements Secrets {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new SecretImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public Secret get(String resourceGroupName, String vaultName, String secretName) {
+        SecretInner inner = this.serviceClient().get(resourceGroupName, vaultName, secretName);
+        if (inner != null) {
+            return new SecretImpl(inner, this.manager());
         } else {
             return null;
         }

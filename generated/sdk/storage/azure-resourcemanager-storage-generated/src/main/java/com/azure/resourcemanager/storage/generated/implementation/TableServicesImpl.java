@@ -28,15 +28,6 @@ public final class TableServicesImpl implements TableServices {
         this.serviceManager = serviceManager;
     }
 
-    public ListTableServices list(String resourceGroupName, String accountName) {
-        ListTableServicesInner inner = this.serviceClient().list(resourceGroupName, accountName);
-        if (inner != null) {
-            return new ListTableServicesImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<ListTableServices> listWithResponse(String resourceGroupName, String accountName, Context context) {
         Response<ListTableServicesInner> inner =
             this.serviceClient().listWithResponse(resourceGroupName, accountName, context);
@@ -51,10 +42,10 @@ public final class TableServicesImpl implements TableServices {
         }
     }
 
-    public TableServiceProperties getServiceProperties(String resourceGroupName, String accountName) {
-        TableServicePropertiesInner inner = this.serviceClient().getServiceProperties(resourceGroupName, accountName);
+    public ListTableServices list(String resourceGroupName, String accountName) {
+        ListTableServicesInner inner = this.serviceClient().list(resourceGroupName, accountName);
         if (inner != null) {
-            return new TableServicePropertiesImpl(inner, this.manager());
+            return new ListTableServicesImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -70,6 +61,15 @@ public final class TableServicesImpl implements TableServices {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new TableServicePropertiesImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public TableServiceProperties getServiceProperties(String resourceGroupName, String accountName) {
+        TableServicePropertiesInner inner = this.serviceClient().getServiceProperties(resourceGroupName, accountName);
+        if (inner != null) {
+            return new TableServicePropertiesImpl(inner, this.manager());
         } else {
             return null;
         }

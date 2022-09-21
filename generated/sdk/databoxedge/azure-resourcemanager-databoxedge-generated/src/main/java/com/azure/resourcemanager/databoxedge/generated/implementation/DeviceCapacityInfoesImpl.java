@@ -27,15 +27,6 @@ public final class DeviceCapacityInfoesImpl implements DeviceCapacityInfoes {
         this.serviceManager = serviceManager;
     }
 
-    public DeviceCapacityInfo getDeviceCapacityInfo(String resourceGroupName, String deviceName) {
-        DeviceCapacityInfoInner inner = this.serviceClient().getDeviceCapacityInfo(resourceGroupName, deviceName);
-        if (inner != null) {
-            return new DeviceCapacityInfoImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<DeviceCapacityInfo> getDeviceCapacityInfoWithResponse(
         String resourceGroupName, String deviceName, Context context) {
         Response<DeviceCapacityInfoInner> inner =
@@ -46,6 +37,15 @@ public final class DeviceCapacityInfoesImpl implements DeviceCapacityInfoes {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new DeviceCapacityInfoImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public DeviceCapacityInfo getDeviceCapacityInfo(String resourceGroupName, String deviceName) {
+        DeviceCapacityInfoInner inner = this.serviceClient().getDeviceCapacityInfo(resourceGroupName, deviceName);
+        if (inner != null) {
+            return new DeviceCapacityInfoImpl(inner, this.manager());
         } else {
             return null;
         }

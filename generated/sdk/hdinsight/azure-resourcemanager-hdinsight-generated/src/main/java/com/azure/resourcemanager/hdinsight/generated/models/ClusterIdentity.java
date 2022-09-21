@@ -40,6 +40,10 @@ public class ClusterIdentity {
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, UserAssignedIdentity> userAssignedIdentities;
 
+    /** Creates an instance of ClusterIdentity class. */
+    public ClusterIdentity() {
+    }
+
     /**
      * Get the principalId property: The principal id of cluster identity. This property will only be provided for a
      * system assigned identity.

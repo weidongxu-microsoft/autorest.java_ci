@@ -36,16 +36,6 @@ public final class ServiceEndpointPoliciesImpl implements ServiceEndpointPolicie
         this.serviceClient().delete(resourceGroupName, serviceEndpointPolicyName, context);
     }
 
-    public ServiceEndpointPolicy getByResourceGroup(String resourceGroupName, String serviceEndpointPolicyName) {
-        ServiceEndpointPolicyInner inner =
-            this.serviceClient().getByResourceGroup(resourceGroupName, serviceEndpointPolicyName);
-        if (inner != null) {
-            return new ServiceEndpointPolicyImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<ServiceEndpointPolicy> getByResourceGroupWithResponse(
         String resourceGroupName, String serviceEndpointPolicyName, String expand, Context context) {
         Response<ServiceEndpointPolicyInner> inner =
@@ -58,6 +48,16 @@ public final class ServiceEndpointPoliciesImpl implements ServiceEndpointPolicie
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new ServiceEndpointPolicyImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public ServiceEndpointPolicy getByResourceGroup(String resourceGroupName, String serviceEndpointPolicyName) {
+        ServiceEndpointPolicyInner inner =
+            this.serviceClient().getByResourceGroup(resourceGroupName, serviceEndpointPolicyName);
+        if (inner != null) {
+            return new ServiceEndpointPolicyImpl(inner, this.manager());
         } else {
             return null;
         }

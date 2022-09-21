@@ -17,6 +17,10 @@ public final class DeletedAccountInner extends ProxyResource {
     @JsonProperty(value = "properties")
     private DeletedAccountProperties innerProperties;
 
+    /** Creates an instance of DeletedAccountInner class. */
+    public DeletedAccountInner() {
+    }
+
     /**
      * Get the innerProperties property: Properties of the deleted account.
      *

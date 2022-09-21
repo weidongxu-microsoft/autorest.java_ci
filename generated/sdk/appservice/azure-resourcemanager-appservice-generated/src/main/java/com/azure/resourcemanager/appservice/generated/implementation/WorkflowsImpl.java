@@ -25,11 +25,6 @@ public final class WorkflowsImpl implements Workflows {
         this.serviceManager = serviceManager;
     }
 
-    public void regenerateAccessKey(
-        String resourceGroupName, String name, String workflowName, RegenerateActionParameter keyType) {
-        this.serviceClient().regenerateAccessKey(resourceGroupName, name, workflowName, keyType);
-    }
-
     public Response<Void> regenerateAccessKeyWithResponse(
         String resourceGroupName,
         String name,
@@ -41,13 +36,18 @@ public final class WorkflowsImpl implements Workflows {
             .regenerateAccessKeyWithResponse(resourceGroupName, name, workflowName, keyType, context);
     }
 
-    public void validate(String resourceGroupName, String name, String workflowName, Workflow validate) {
-        this.serviceClient().validate(resourceGroupName, name, workflowName, validate);
+    public void regenerateAccessKey(
+        String resourceGroupName, String name, String workflowName, RegenerateActionParameter keyType) {
+        this.serviceClient().regenerateAccessKey(resourceGroupName, name, workflowName, keyType);
     }
 
     public Response<Void> validateWithResponse(
         String resourceGroupName, String name, String workflowName, Workflow validate, Context context) {
         return this.serviceClient().validateWithResponse(resourceGroupName, name, workflowName, validate, context);
+    }
+
+    public void validate(String resourceGroupName, String name, String workflowName, Workflow validate) {
+        this.serviceClient().validate(resourceGroupName, name, workflowName, validate);
     }
 
     private WorkflowsClient serviceClient() {

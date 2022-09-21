@@ -16,6 +16,10 @@ public final class NspAccessRulePropertiesSubscriptionsItem {
     @JsonProperty(value = "id")
     private String id;
 
+    /** Creates an instance of NspAccessRulePropertiesSubscriptionsItem class. */
+    public NspAccessRulePropertiesSubscriptionsItem() {
+    }
+
     /**
      * Get the id property: Fully qualified identifier of subscription.
      *

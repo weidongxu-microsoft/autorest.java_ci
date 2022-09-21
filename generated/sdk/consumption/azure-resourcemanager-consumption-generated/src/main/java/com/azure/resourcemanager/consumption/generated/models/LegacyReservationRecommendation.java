@@ -27,6 +27,10 @@ public final class LegacyReservationRecommendation extends ReservationRecommenda
     @JsonProperty(value = "properties", required = true)
     private LegacyReservationRecommendationProperties innerProperties = new LegacyReservationRecommendationProperties();
 
+    /** Creates an instance of LegacyReservationRecommendation class. */
+    public LegacyReservationRecommendation() {
+    }
+
     /**
      * Get the innerProperties property: Properties for legacy reservation recommendation.
      *

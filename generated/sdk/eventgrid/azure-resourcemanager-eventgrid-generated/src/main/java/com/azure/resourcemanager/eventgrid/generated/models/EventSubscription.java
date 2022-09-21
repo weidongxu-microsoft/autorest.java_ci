@@ -471,17 +471,6 @@ public interface EventSubscription {
      *
      * <p>Get all delivery attributes for an event subscription for topic.
      *
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all delivery attributes for an event subscription for topic.
-     */
-    DeliveryAttributeListResult getDeliveryAttributes();
-
-    /**
-     * Get delivery attributes for an event subscription for topic.
-     *
-     * <p>Get all delivery attributes for an event subscription for topic.
-     *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -491,15 +480,15 @@ public interface EventSubscription {
     Response<DeliveryAttributeListResult> getDeliveryAttributesWithResponse(Context context);
 
     /**
-     * Get full URL of an event subscription for topic.
+     * Get delivery attributes for an event subscription for topic.
      *
-     * <p>Get the full endpoint URL for an event subscription for topic.
+     * <p>Get all delivery attributes for an event subscription for topic.
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the full endpoint URL for an event subscription for topic.
+     * @return all delivery attributes for an event subscription for topic.
      */
-    EventSubscriptionFullUrl getFullUrl();
+    DeliveryAttributeListResult getDeliveryAttributes();
 
     /**
      * Get full URL of an event subscription for topic.
@@ -513,4 +502,15 @@ public interface EventSubscription {
      * @return the full endpoint URL for an event subscription for topic along with {@link Response}.
      */
     Response<EventSubscriptionFullUrl> getFullUrlWithResponse(Context context);
+
+    /**
+     * Get full URL of an event subscription for topic.
+     *
+     * <p>Get the full endpoint URL for an event subscription for topic.
+     *
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the full endpoint URL for an event subscription for topic.
+     */
+    EventSubscriptionFullUrl getFullUrl();
 }

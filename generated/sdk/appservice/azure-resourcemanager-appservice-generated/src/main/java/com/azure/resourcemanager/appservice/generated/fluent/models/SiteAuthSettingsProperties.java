@@ -301,6 +301,10 @@ public final class SiteAuthSettingsProperties {
     @JsonProperty(value = "configVersion")
     private String configVersion;
 
+    /** Creates an instance of SiteAuthSettingsProperties class. */
+    public SiteAuthSettingsProperties() {
+    }
+
     /**
      * Get the enabled property: &lt;code&gt;true&lt;/code&gt; if the Authentication / Authorization feature is enabled
      * for the current app; otherwise, &lt;code&gt;false&lt;/code&gt;.

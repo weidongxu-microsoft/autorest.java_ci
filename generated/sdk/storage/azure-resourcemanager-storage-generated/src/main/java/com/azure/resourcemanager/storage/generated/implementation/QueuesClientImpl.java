@@ -317,12 +317,12 @@ public final class QueuesClientImpl implements QueuesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the response body along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public StorageQueueInner create(
+    public Response<StorageQueueInner> createWithResponse(
         String resourceGroupName, String accountName, String queueName, StorageQueueInner queue) {
-        return createAsync(resourceGroupName, accountName, queueName, queue).block();
+        return createWithResponseAsync(resourceGroupName, accountName, queueName, queue).block();
     }
 
     /**
@@ -346,6 +346,28 @@ public final class QueuesClientImpl implements QueuesClient {
     public Response<StorageQueueInner> createWithResponse(
         String resourceGroupName, String accountName, String queueName, StorageQueueInner queue, Context context) {
         return createWithResponseAsync(resourceGroupName, accountName, queueName, queue, context).block();
+    }
+
+    /**
+     * Creates a new queue with the specified queue name, under the specified account.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     *     insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param queueName A queue name must be unique within a storage account and must be between 3 and 63 characters.The
+     *     name must comprise of lowercase alphanumeric and dash(-) characters only, it should begin and end with an
+     *     alphanumeric character and it cannot have two consecutive dash(-) characters.
+     * @param queue Queue properties and metadata to be created with.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public StorageQueueInner create(
+        String resourceGroupName, String accountName, String queueName, StorageQueueInner queue) {
+        return createWithResponse(resourceGroupName, accountName, queueName, queue, Context.NONE).getValue();
     }
 
     /**
@@ -511,12 +533,12 @@ public final class QueuesClientImpl implements QueuesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the response body along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public StorageQueueInner update(
+    public Response<StorageQueueInner> updateWithResponse(
         String resourceGroupName, String accountName, String queueName, StorageQueueInner queue) {
-        return updateAsync(resourceGroupName, accountName, queueName, queue).block();
+        return updateWithResponseAsync(resourceGroupName, accountName, queueName, queue).block();
     }
 
     /**
@@ -540,6 +562,28 @@ public final class QueuesClientImpl implements QueuesClient {
     public Response<StorageQueueInner> updateWithResponse(
         String resourceGroupName, String accountName, String queueName, StorageQueueInner queue, Context context) {
         return updateWithResponseAsync(resourceGroupName, accountName, queueName, queue, context).block();
+    }
+
+    /**
+     * Creates a new queue with the specified queue name, under the specified account.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     *     insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param queueName A queue name must be unique within a storage account and must be between 3 and 63 characters.The
+     *     name must comprise of lowercase alphanumeric and dash(-) characters only, it should begin and end with an
+     *     alphanumeric character and it cannot have two consecutive dash(-) characters.
+     * @param queue Queue properties and metadata to be created with.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public StorageQueueInner update(
+        String resourceGroupName, String accountName, String queueName, StorageQueueInner queue) {
+        return updateWithResponse(resourceGroupName, accountName, queueName, queue, Context.NONE).getValue();
     }
 
     /**
@@ -691,11 +735,12 @@ public final class QueuesClientImpl implements QueuesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the queue with the specified queue name, under the specified account if it exists.
+     * @return the queue with the specified queue name, under the specified account if it exists along with {@link
+     *     Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public StorageQueueInner get(String resourceGroupName, String accountName, String queueName) {
-        return getAsync(resourceGroupName, accountName, queueName).block();
+    public Response<StorageQueueInner> getWithResponse(String resourceGroupName, String accountName, String queueName) {
+        return getWithResponseAsync(resourceGroupName, accountName, queueName).block();
     }
 
     /**
@@ -719,6 +764,26 @@ public final class QueuesClientImpl implements QueuesClient {
     public Response<StorageQueueInner> getWithResponse(
         String resourceGroupName, String accountName, String queueName, Context context) {
         return getWithResponseAsync(resourceGroupName, accountName, queueName, context).block();
+    }
+
+    /**
+     * Gets the queue with the specified queue name, under the specified account if it exists.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     *     insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param queueName A queue name must be unique within a storage account and must be between 3 and 63 characters.The
+     *     name must comprise of lowercase alphanumeric and dash(-) characters only, it should begin and end with an
+     *     alphanumeric character and it cannot have two consecutive dash(-) characters.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the queue with the specified queue name, under the specified account if it exists.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public StorageQueueInner get(String resourceGroupName, String accountName, String queueName) {
+        return getWithResponse(resourceGroupName, accountName, queueName, Context.NONE).getValue();
     }
 
     /**
@@ -866,10 +931,11 @@ public final class QueuesClientImpl implements QueuesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public void delete(String resourceGroupName, String accountName, String queueName) {
-        deleteAsync(resourceGroupName, accountName, queueName).block();
+    public Response<Void> deleteWithResponse(String resourceGroupName, String accountName, String queueName) {
+        return deleteWithResponseAsync(resourceGroupName, accountName, queueName).block();
     }
 
     /**
@@ -892,6 +958,25 @@ public final class QueuesClientImpl implements QueuesClient {
     public Response<Void> deleteWithResponse(
         String resourceGroupName, String accountName, String queueName, Context context) {
         return deleteWithResponseAsync(resourceGroupName, accountName, queueName, context).block();
+    }
+
+    /**
+     * Deletes the queue with the specified queue name, under the specified account if it exists.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     *     insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param queueName A queue name must be unique within a storage account and must be between 3 and 63 characters.The
+     *     name must comprise of lowercase alphanumeric and dash(-) characters only, it should begin and end with an
+     *     alphanumeric character and it cannot have two consecutive dash(-) characters.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public void delete(String resourceGroupName, String accountName, String queueName) {
+        deleteWithResponse(resourceGroupName, accountName, queueName, Context.NONE);
     }
 
     /**

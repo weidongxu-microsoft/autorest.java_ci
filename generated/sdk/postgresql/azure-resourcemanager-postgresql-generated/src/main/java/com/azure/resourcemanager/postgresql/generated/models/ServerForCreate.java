@@ -44,6 +44,10 @@ public final class ServerForCreate {
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, String> tags;
 
+    /** Creates an instance of ServerForCreate class. */
+    public ServerForCreate() {
+    }
+
     /**
      * Get the identity property: The Azure Active Directory identity of the server.
      *

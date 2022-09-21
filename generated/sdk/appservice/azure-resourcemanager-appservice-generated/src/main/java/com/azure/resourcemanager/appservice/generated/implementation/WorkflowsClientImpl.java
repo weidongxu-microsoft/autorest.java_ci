@@ -239,11 +239,12 @@ public final class WorkflowsClientImpl implements WorkflowsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public void regenerateAccessKey(
+    public Response<Void> regenerateAccessKeyWithResponse(
         String resourceGroupName, String name, String workflowName, RegenerateActionParameter keyType) {
-        regenerateAccessKeyAsync(resourceGroupName, name, workflowName, keyType).block();
+        return regenerateAccessKeyWithResponseAsync(resourceGroupName, name, workflowName, keyType).block();
     }
 
     /**
@@ -267,6 +268,23 @@ public final class WorkflowsClientImpl implements WorkflowsClient {
         RegenerateActionParameter keyType,
         Context context) {
         return regenerateAccessKeyWithResponseAsync(resourceGroupName, name, workflowName, keyType, context).block();
+    }
+
+    /**
+     * Regenerates the callback URL access key for request triggers.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Site name.
+     * @param workflowName The workflow name.
+     * @param keyType The access key type.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public void regenerateAccessKey(
+        String resourceGroupName, String name, String workflowName, RegenerateActionParameter keyType) {
+        regenerateAccessKeyWithResponse(resourceGroupName, name, workflowName, keyType, Context.NONE);
     }
 
     /**
@@ -415,10 +433,12 @@ public final class WorkflowsClientImpl implements WorkflowsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public void validate(String resourceGroupName, String name, String workflowName, Workflow validate) {
-        validateAsync(resourceGroupName, name, workflowName, validate).block();
+    public Response<Void> validateWithResponse(
+        String resourceGroupName, String name, String workflowName, Workflow validate) {
+        return validateWithResponseAsync(resourceGroupName, name, workflowName, validate).block();
     }
 
     /**
@@ -438,5 +458,21 @@ public final class WorkflowsClientImpl implements WorkflowsClient {
     public Response<Void> validateWithResponse(
         String resourceGroupName, String name, String workflowName, Workflow validate, Context context) {
         return validateWithResponseAsync(resourceGroupName, name, workflowName, validate, context).block();
+    }
+
+    /**
+     * Validates the workflow definition.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Site name.
+     * @param workflowName The workflow name.
+     * @param validate The workflow.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public void validate(String resourceGroupName, String name, String workflowName, Workflow validate) {
+        validateWithResponse(resourceGroupName, name, workflowName, validate, Context.NONE);
     }
 }

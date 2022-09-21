@@ -325,15 +325,16 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a specific private endpoint connection under a topic, domain, or partner namespace.
+     * @return a specific private endpoint connection under a topic, domain, or partner namespace along with {@link
+     *     Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public PrivateEndpointConnectionInner get(
+    public Response<PrivateEndpointConnectionInner> getWithResponse(
         String resourceGroupName,
         PrivateEndpointConnectionsParentType parentType,
         String parentName,
         String privateEndpointConnectionName) {
-        return getAsync(resourceGroupName, parentType, parentName, privateEndpointConnectionName).block();
+        return getWithResponseAsync(resourceGroupName, parentType, parentName, privateEndpointConnectionName).block();
     }
 
     /**
@@ -363,6 +364,32 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
         Context context) {
         return getWithResponseAsync(resourceGroupName, parentType, parentName, privateEndpointConnectionName, context)
             .block();
+    }
+
+    /**
+     * Get a specific private endpoint connection.
+     *
+     * <p>Get a specific private endpoint connection under a topic, domain, or partner namespace.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription.
+     * @param parentType The type of the parent resource. This can be either \'topics\', \'domains\', or
+     *     \'partnerNamespaces\'.
+     * @param parentName The name of the parent resource (namely, either, the topic name, domain name, or partner
+     *     namespace name).
+     * @param privateEndpointConnectionName The name of the private endpoint connection connection.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a specific private endpoint connection under a topic, domain, or partner namespace.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public PrivateEndpointConnectionInner get(
+        String resourceGroupName,
+        PrivateEndpointConnectionsParentType parentType,
+        String parentName,
+        String privateEndpointConnectionName) {
+        return getWithResponse(resourceGroupName, parentType, parentName, privateEndpointConnectionName, Context.NONE)
+            .getValue();
     }
 
     /**

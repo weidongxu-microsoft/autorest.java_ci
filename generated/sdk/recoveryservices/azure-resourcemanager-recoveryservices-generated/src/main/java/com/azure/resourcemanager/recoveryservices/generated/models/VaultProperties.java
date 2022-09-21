@@ -77,6 +77,10 @@ public final class VaultProperties {
     @JsonProperty(value = "redundancySettings")
     private VaultPropertiesRedundancySettings redundancySettings;
 
+    /** Creates an instance of VaultProperties class. */
+    public VaultProperties() {
+    }
+
     /**
      * Get the provisioningState property: Provisioning State.
      *

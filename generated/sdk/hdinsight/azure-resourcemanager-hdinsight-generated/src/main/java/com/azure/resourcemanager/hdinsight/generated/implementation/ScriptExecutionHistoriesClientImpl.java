@@ -414,10 +414,11 @@ public final class ScriptExecutionHistoriesClientImpl implements ScriptExecution
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public void promote(String resourceGroupName, String clusterName, String scriptExecutionId) {
-        promoteAsync(resourceGroupName, clusterName, scriptExecutionId).block();
+    public Response<Void> promoteWithResponse(String resourceGroupName, String clusterName, String scriptExecutionId) {
+        return promoteWithResponseAsync(resourceGroupName, clusterName, scriptExecutionId).block();
     }
 
     /**
@@ -436,6 +437,21 @@ public final class ScriptExecutionHistoriesClientImpl implements ScriptExecution
     public Response<Void> promoteWithResponse(
         String resourceGroupName, String clusterName, String scriptExecutionId, Context context) {
         return promoteWithResponseAsync(resourceGroupName, clusterName, scriptExecutionId, context).block();
+    }
+
+    /**
+     * Promotes the specified ad-hoc script execution to a persisted script.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param clusterName The name of the cluster.
+     * @param scriptExecutionId The script execution Id.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public void promote(String resourceGroupName, String clusterName, String scriptExecutionId) {
+        promoteWithResponse(resourceGroupName, clusterName, scriptExecutionId, Context.NONE);
     }
 
     /**

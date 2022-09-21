@@ -26,6 +26,10 @@ public final class SavedSearchInner extends ProxyResource {
     @JsonProperty(value = "properties", required = true)
     private SavedSearchProperties innerProperties = new SavedSearchProperties();
 
+    /** Creates an instance of SavedSearchInner class. */
+    public SavedSearchInner() {
+    }
+
     /**
      * Get the etag property: The ETag of the saved search. To override an existing saved search, use "*" or specify the
      * current Etag.

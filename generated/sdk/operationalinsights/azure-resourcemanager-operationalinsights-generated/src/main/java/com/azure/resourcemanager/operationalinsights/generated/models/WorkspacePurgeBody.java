@@ -24,6 +24,10 @@ public final class WorkspacePurgeBody {
     @JsonProperty(value = "filters", required = true)
     private List<WorkspacePurgeBodyFilters> filters;
 
+    /** Creates an instance of WorkspacePurgeBody class. */
+    public WorkspacePurgeBody() {
+    }
+
     /**
      * Get the table property: Table from which to purge data.
      *

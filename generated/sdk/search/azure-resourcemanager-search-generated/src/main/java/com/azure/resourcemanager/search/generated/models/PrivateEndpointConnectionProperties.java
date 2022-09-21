@@ -22,6 +22,10 @@ public final class PrivateEndpointConnectionProperties {
     @JsonProperty(value = "privateLinkServiceConnectionState")
     private PrivateEndpointConnectionPropertiesPrivateLinkServiceConnectionState privateLinkServiceConnectionState;
 
+    /** Creates an instance of PrivateEndpointConnectionProperties class. */
+    public PrivateEndpointConnectionProperties() {
+    }
+
     /**
      * Get the privateEndpoint property: The private endpoint resource from Microsoft.Network provider.
      *

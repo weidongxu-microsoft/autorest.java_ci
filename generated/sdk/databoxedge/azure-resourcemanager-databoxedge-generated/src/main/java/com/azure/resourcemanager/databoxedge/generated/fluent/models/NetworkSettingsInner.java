@@ -26,6 +26,10 @@ public final class NetworkSettingsInner extends ArmBaseModel {
     @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;
 
+    /** Creates an instance of NetworkSettingsInner class. */
+    public NetworkSettingsInner() {
+    }
+
     /**
      * Get the innerProperties property: The properties of network settings of a device.
      *

@@ -48,15 +48,6 @@ public final class DeletedWebAppsImpl implements DeletedWebApps {
         return Utils.mapPage(inner, inner1 -> new DeletedSiteImpl(inner1, this.manager()));
     }
 
-    public DeletedSite getDeletedWebAppByLocation(String location, String deletedSiteId) {
-        DeletedSiteInner inner = this.serviceClient().getDeletedWebAppByLocation(location, deletedSiteId);
-        if (inner != null) {
-            return new DeletedSiteImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<DeletedSite> getDeletedWebAppByLocationWithResponse(
         String location, String deletedSiteId, Context context) {
         Response<DeletedSiteInner> inner =
@@ -67,6 +58,15 @@ public final class DeletedWebAppsImpl implements DeletedWebApps {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new DeletedSiteImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public DeletedSite getDeletedWebAppByLocation(String location, String deletedSiteId) {
+        DeletedSiteInner inner = this.serviceClient().getDeletedWebAppByLocation(location, deletedSiteId);
+        if (inner != null) {
+            return new DeletedSiteImpl(inner, this.manager());
         } else {
             return null;
         }

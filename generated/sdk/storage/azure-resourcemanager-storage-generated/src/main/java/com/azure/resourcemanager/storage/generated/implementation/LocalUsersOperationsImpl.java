@@ -42,15 +42,6 @@ public final class LocalUsersOperationsImpl implements LocalUsersOperations {
         return Utils.mapPage(inner, inner1 -> new LocalUserImpl(inner1, this.manager()));
     }
 
-    public LocalUser get(String resourceGroupName, String accountName, String username) {
-        LocalUserInner inner = this.serviceClient().get(resourceGroupName, accountName, username);
-        if (inner != null) {
-            return new LocalUserImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<LocalUser> getWithResponse(
         String resourceGroupName, String accountName, String username, Context context) {
         Response<LocalUserInner> inner =
@@ -66,8 +57,13 @@ public final class LocalUsersOperationsImpl implements LocalUsersOperations {
         }
     }
 
-    public void delete(String resourceGroupName, String accountName, String username) {
-        this.serviceClient().delete(resourceGroupName, accountName, username);
+    public LocalUser get(String resourceGroupName, String accountName, String username) {
+        LocalUserInner inner = this.serviceClient().get(resourceGroupName, accountName, username);
+        if (inner != null) {
+            return new LocalUserImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> deleteWithResponse(
@@ -75,13 +71,8 @@ public final class LocalUsersOperationsImpl implements LocalUsersOperations {
         return this.serviceClient().deleteWithResponse(resourceGroupName, accountName, username, context);
     }
 
-    public LocalUserKeys listKeys(String resourceGroupName, String accountName, String username) {
-        LocalUserKeysInner inner = this.serviceClient().listKeys(resourceGroupName, accountName, username);
-        if (inner != null) {
-            return new LocalUserKeysImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void delete(String resourceGroupName, String accountName, String username) {
+        this.serviceClient().delete(resourceGroupName, accountName, username);
     }
 
     public Response<LocalUserKeys> listKeysWithResponse(
@@ -99,12 +90,10 @@ public final class LocalUsersOperationsImpl implements LocalUsersOperations {
         }
     }
 
-    public LocalUserRegeneratePasswordResult regeneratePassword(
-        String resourceGroupName, String accountName, String username) {
-        LocalUserRegeneratePasswordResultInner inner =
-            this.serviceClient().regeneratePassword(resourceGroupName, accountName, username);
+    public LocalUserKeys listKeys(String resourceGroupName, String accountName, String username) {
+        LocalUserKeysInner inner = this.serviceClient().listKeys(resourceGroupName, accountName, username);
         if (inner != null) {
-            return new LocalUserRegeneratePasswordResultImpl(inner, this.manager());
+            return new LocalUserKeysImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -120,6 +109,17 @@ public final class LocalUsersOperationsImpl implements LocalUsersOperations {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new LocalUserRegeneratePasswordResultImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public LocalUserRegeneratePasswordResult regeneratePassword(
+        String resourceGroupName, String accountName, String username) {
+        LocalUserRegeneratePasswordResultInner inner =
+            this.serviceClient().regeneratePassword(resourceGroupName, accountName, username);
+        if (inner != null) {
+            return new LocalUserRegeneratePasswordResultImpl(inner, this.manager());
         } else {
             return null;
         }

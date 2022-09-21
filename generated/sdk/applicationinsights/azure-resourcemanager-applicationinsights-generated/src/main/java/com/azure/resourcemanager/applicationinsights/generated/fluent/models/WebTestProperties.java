@@ -83,6 +83,10 @@ public final class WebTestProperties {
     @JsonProperty(value = "provisioningState", access = JsonProperty.Access.WRITE_ONLY)
     private String provisioningState;
 
+    /** Creates an instance of WebTestProperties class. */
+    public WebTestProperties() {
+    }
+
     /**
      * Get the syntheticMonitorId property: Unique ID of this WebTest. This is typically the same value as the Name
      * field.

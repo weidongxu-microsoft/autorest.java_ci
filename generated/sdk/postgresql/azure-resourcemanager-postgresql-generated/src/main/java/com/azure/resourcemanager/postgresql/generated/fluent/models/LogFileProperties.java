@@ -41,6 +41,10 @@ public final class LogFileProperties {
     @JsonProperty(value = "url")
     private String url;
 
+    /** Creates an instance of LogFileProperties class. */
+    public LogFileProperties() {
+    }
+
     /**
      * Get the sizeInKB property: Size of the log file.
      *

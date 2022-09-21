@@ -29,6 +29,10 @@ public final class AzureMonitorResponseInner {
     @JsonProperty(value = "selectedConfigurations")
     private AzureMonitorSelectedConfigurations selectedConfigurations;
 
+    /** Creates an instance of AzureMonitorResponseInner class. */
+    public AzureMonitorResponseInner() {
+    }
+
     /**
      * Get the clusterMonitoringEnabled property: The status of the monitor on the HDInsight cluster.
      *

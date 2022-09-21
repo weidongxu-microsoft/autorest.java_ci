@@ -195,7 +195,7 @@ public final class LocalNetworkGatewaysClientImpl implements LocalNetworkGateway
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -258,7 +258,7 @@ public final class LocalNetworkGatewaysClientImpl implements LocalNetworkGateway
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -484,7 +484,7 @@ public final class LocalNetworkGatewaysClientImpl implements LocalNetworkGateway
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -537,7 +537,7 @@ public final class LocalNetworkGatewaysClientImpl implements LocalNetworkGateway
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -576,11 +576,12 @@ public final class LocalNetworkGatewaysClientImpl implements LocalNetworkGateway
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified local network gateway in a resource group.
+     * @return the specified local network gateway in a resource group along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public LocalNetworkGatewayInner getByResourceGroup(String resourceGroupName, String localNetworkGatewayName) {
-        return getByResourceGroupAsync(resourceGroupName, localNetworkGatewayName).block();
+    public Response<LocalNetworkGatewayInner> getByResourceGroupWithResponse(
+        String resourceGroupName, String localNetworkGatewayName) {
+        return getByResourceGroupWithResponseAsync(resourceGroupName, localNetworkGatewayName).block();
     }
 
     /**
@@ -598,6 +599,21 @@ public final class LocalNetworkGatewaysClientImpl implements LocalNetworkGateway
     public Response<LocalNetworkGatewayInner> getByResourceGroupWithResponse(
         String resourceGroupName, String localNetworkGatewayName, Context context) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, localNetworkGatewayName, context).block();
+    }
+
+    /**
+     * Gets the specified local network gateway in a resource group.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param localNetworkGatewayName The name of the local network gateway.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified local network gateway in a resource group.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public LocalNetworkGatewayInner getByResourceGroup(String resourceGroupName, String localNetworkGatewayName) {
+        return getByResourceGroupWithResponse(resourceGroupName, localNetworkGatewayName, Context.NONE).getValue();
     }
 
     /**
@@ -634,7 +650,7 @@ public final class LocalNetworkGatewaysClientImpl implements LocalNetworkGateway
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -686,7 +702,7 @@ public final class LocalNetworkGatewaysClientImpl implements LocalNetworkGateway
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -879,7 +895,7 @@ public final class LocalNetworkGatewaysClientImpl implements LocalNetworkGateway
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -939,7 +955,7 @@ public final class LocalNetworkGatewaysClientImpl implements LocalNetworkGateway
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -981,12 +997,12 @@ public final class LocalNetworkGatewaysClientImpl implements LocalNetworkGateway
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a common class for general resource information.
+     * @return a common class for general resource information along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public LocalNetworkGatewayInner updateTags(
+    public Response<LocalNetworkGatewayInner> updateTagsWithResponse(
         String resourceGroupName, String localNetworkGatewayName, TagsObject parameters) {
-        return updateTagsAsync(resourceGroupName, localNetworkGatewayName, parameters).block();
+        return updateTagsWithResponseAsync(resourceGroupName, localNetworkGatewayName, parameters).block();
     }
 
     /**
@@ -1005,6 +1021,23 @@ public final class LocalNetworkGatewaysClientImpl implements LocalNetworkGateway
     public Response<LocalNetworkGatewayInner> updateTagsWithResponse(
         String resourceGroupName, String localNetworkGatewayName, TagsObject parameters, Context context) {
         return updateTagsWithResponseAsync(resourceGroupName, localNetworkGatewayName, parameters, context).block();
+    }
+
+    /**
+     * Updates a local network gateway tags.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param localNetworkGatewayName The name of the local network gateway.
+     * @param parameters Parameters supplied to update local network gateway tags.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a common class for general resource information.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public LocalNetworkGatewayInner updateTags(
+        String resourceGroupName, String localNetworkGatewayName, TagsObject parameters) {
+        return updateTagsWithResponse(resourceGroupName, localNetworkGatewayName, parameters, Context.NONE).getValue();
     }
 
     /**
@@ -1035,7 +1068,7 @@ public final class LocalNetworkGatewaysClientImpl implements LocalNetworkGateway
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1090,7 +1123,7 @@ public final class LocalNetworkGatewaysClientImpl implements LocalNetworkGateway
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service

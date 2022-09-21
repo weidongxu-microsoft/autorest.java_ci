@@ -312,7 +312,7 @@ public interface VirtualMachine {
 
     /**
      * Gets the timeCreated property: Specifies the time at which the Virtual Machine resource was
-     * created.&lt;br&gt;&lt;br&gt;Minimum api-version: 2022-03-01.
+     * created.&lt;br&gt;&lt;br&gt;Minimum api-version: 2021-11-01.
      *
      * @return the timeCreated value.
      */
@@ -1335,19 +1335,6 @@ public interface VirtualMachine {
      * please refer to [How to create an image of a virtual machine or
      * VHD](https://docs.microsoft.com/azure/virtual-machines/linux/capture-image).
      *
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void generalize();
-
-    /**
-     * Sets the OS state of the virtual machine to generalized. It is recommended to sysprep the virtual machine before
-     * performing this operation. &lt;br&gt;For Windows, please refer to [Create a managed image of a generalized VM in
-     * Azure](https://docs.microsoft.com/azure/virtual-machines/windows/capture-image-resource).&lt;br&gt;For Linux,
-     * please refer to [How to create an image of a virtual machine or
-     * VHD](https://docs.microsoft.com/azure/virtual-machines/linux/capture-image).
-     *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
@@ -1356,6 +1343,19 @@ public interface VirtualMachine {
      * @return the {@link Response}.
      */
     Response<Void> generalizeWithResponse(Context context);
+
+    /**
+     * Sets the OS state of the virtual machine to generalized. It is recommended to sysprep the virtual machine before
+     * performing this operation. &lt;br&gt;For Windows, please refer to [Create a managed image of a generalized VM in
+     * Azure](https://docs.microsoft.com/azure/virtual-machines/windows/capture-image-resource).&lt;br&gt;For Linux,
+     * please refer to [How to create an image of a virtual machine or
+     * VHD](https://docs.microsoft.com/azure/virtual-machines/linux/capture-image).
+     *
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void generalize();
 
     /**
      * The operation to power off (stop) a virtual machine. The virtual machine can be restarted with the same
@@ -1511,16 +1511,6 @@ public interface VirtualMachine {
     /**
      * The operation to retrieve SAS URIs for a virtual machine's boot diagnostic logs.
      *
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the SAS URIs of the console screenshot and serial log blobs.
-     */
-    RetrieveBootDiagnosticsDataResult retrieveBootDiagnosticsData();
-
-    /**
-     * The operation to retrieve SAS URIs for a virtual machine's boot diagnostic logs.
-     *
      * @param sasUriExpirationTimeInMinutes Expiration duration in minutes for the SAS URIs with a value between 1 to
      *     1440 minutes. &lt;br&gt;&lt;br&gt;NOTE: If not specified, SAS URIs will be generated with a default
      *     expiration duration of 120 minutes.
@@ -1533,6 +1523,16 @@ public interface VirtualMachine {
      */
     Response<RetrieveBootDiagnosticsDataResult> retrieveBootDiagnosticsDataWithResponse(
         Integer sasUriExpirationTimeInMinutes, Context context);
+
+    /**
+     * The operation to retrieve SAS URIs for a virtual machine's boot diagnostic logs.
+     *
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the SAS URIs of the console screenshot and serial log blobs.
+     */
+    RetrieveBootDiagnosticsDataResult retrieveBootDiagnosticsData();
 
     /**
      * The operation to perform maintenance on a virtual machine.
@@ -1557,15 +1557,6 @@ public interface VirtualMachine {
     /**
      * The operation to simulate the eviction of spot virtual machine.
      *
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void simulateEviction();
-
-    /**
-     * The operation to simulate the eviction of spot virtual machine.
-     *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
@@ -1574,6 +1565,15 @@ public interface VirtualMachine {
      * @return the {@link Response}.
      */
     Response<Void> simulateEvictionWithResponse(Context context);
+
+    /**
+     * The operation to simulate the eviction of spot virtual machine.
+     *
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void simulateEviction();
 
     /**
      * Assess patches on the VM.

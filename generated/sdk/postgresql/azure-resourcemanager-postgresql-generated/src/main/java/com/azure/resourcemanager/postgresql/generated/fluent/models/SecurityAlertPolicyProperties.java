@@ -57,6 +57,10 @@ public final class SecurityAlertPolicyProperties {
     @JsonProperty(value = "retentionDays")
     private Integer retentionDays;
 
+    /** Creates an instance of SecurityAlertPolicyProperties class. */
+    public SecurityAlertPolicyProperties() {
+    }
+
     /**
      * Get the state property: Specifies the state of the policy, whether it is enabled or disabled.
      *

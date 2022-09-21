@@ -29,15 +29,6 @@ public final class LocationBasedRecommendedActionSessionsOperationStatusImpl
         this.serviceManager = serviceManager;
     }
 
-    public RecommendedActionSessionsOperationStatus get(String locationName, String operationId) {
-        RecommendedActionSessionsOperationStatusInner inner = this.serviceClient().get(locationName, operationId);
-        if (inner != null) {
-            return new RecommendedActionSessionsOperationStatusImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<RecommendedActionSessionsOperationStatus> getWithResponse(
         String locationName, String operationId, Context context) {
         Response<RecommendedActionSessionsOperationStatusInner> inner =
@@ -48,6 +39,15 @@ public final class LocationBasedRecommendedActionSessionsOperationStatusImpl
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new RecommendedActionSessionsOperationStatusImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public RecommendedActionSessionsOperationStatus get(String locationName, String operationId) {
+        RecommendedActionSessionsOperationStatusInner inner = this.serviceClient().get(locationName, operationId);
+        if (inner != null) {
+            return new RecommendedActionSessionsOperationStatusImpl(inner, this.manager());
         } else {
             return null;
         }

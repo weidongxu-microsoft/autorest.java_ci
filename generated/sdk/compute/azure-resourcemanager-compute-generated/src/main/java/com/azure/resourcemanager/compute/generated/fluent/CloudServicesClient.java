@@ -237,20 +237,6 @@ public interface CloudServicesClient {
      *
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes the cloud service.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    CloudServiceInner getByResourceGroup(String resourceGroupName, String cloudServiceName);
-
-    /**
-     * Display information about a cloud service.
-     *
-     * @param resourceGroupName Name of the resource group.
-     * @param cloudServiceName Name of the cloud service.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
@@ -263,7 +249,7 @@ public interface CloudServicesClient {
         String resourceGroupName, String cloudServiceName, Context context);
 
     /**
-     * Gets the status of a cloud service.
+     * Display information about a cloud service.
      *
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
@@ -271,10 +257,10 @@ public interface CloudServicesClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the status of a cloud service.
+     * @return describes the cloud service.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    CloudServiceInstanceViewInner getInstanceView(String resourceGroupName, String cloudServiceName);
+    CloudServiceInner getByResourceGroup(String resourceGroupName, String cloudServiceName);
 
     /**
      * Gets the status of a cloud service.
@@ -291,6 +277,20 @@ public interface CloudServicesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<CloudServiceInstanceViewInner> getInstanceViewWithResponse(
         String resourceGroupName, String cloudServiceName, Context context);
+
+    /**
+     * Gets the status of a cloud service.
+     *
+     * @param resourceGroupName Name of the resource group.
+     * @param cloudServiceName Name of the cloud service.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the status of a cloud service.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    CloudServiceInstanceViewInner getInstanceView(String resourceGroupName, String cloudServiceName);
 
     /**
      * Gets a list of all cloud services in the subscription, regardless of the associated resource group. Use nextLink

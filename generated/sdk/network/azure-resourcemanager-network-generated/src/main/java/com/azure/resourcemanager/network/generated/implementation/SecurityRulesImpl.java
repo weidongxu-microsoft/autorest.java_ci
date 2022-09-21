@@ -36,16 +36,6 @@ public final class SecurityRulesImpl implements SecurityRules {
         this.serviceClient().delete(resourceGroupName, networkSecurityGroupName, securityRuleName, context);
     }
 
-    public SecurityRule get(String resourceGroupName, String networkSecurityGroupName, String securityRuleName) {
-        SecurityRuleInner inner =
-            this.serviceClient().get(resourceGroupName, networkSecurityGroupName, securityRuleName);
-        if (inner != null) {
-            return new SecurityRuleImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<SecurityRule> getWithResponse(
         String resourceGroupName, String networkSecurityGroupName, String securityRuleName, Context context) {
         Response<SecurityRuleInner> inner =
@@ -58,6 +48,16 @@ public final class SecurityRulesImpl implements SecurityRules {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new SecurityRuleImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public SecurityRule get(String resourceGroupName, String networkSecurityGroupName, String securityRuleName) {
+        SecurityRuleInner inner =
+            this.serviceClient().get(resourceGroupName, networkSecurityGroupName, securityRuleName);
+        if (inner != null) {
+            return new SecurityRuleImpl(inner, this.manager());
         } else {
             return null;
         }

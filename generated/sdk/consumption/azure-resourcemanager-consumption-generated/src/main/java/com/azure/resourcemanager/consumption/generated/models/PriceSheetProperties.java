@@ -66,6 +66,10 @@ public final class PriceSheetProperties {
     @JsonProperty(value = "offerId", access = JsonProperty.Access.WRITE_ONLY)
     private String offerId;
 
+    /** Creates an instance of PriceSheetProperties class. */
+    public PriceSheetProperties() {
+    }
+
     /**
      * Get the billingPeriodId property: The id of the billing period resource that the usage belongs to.
      *

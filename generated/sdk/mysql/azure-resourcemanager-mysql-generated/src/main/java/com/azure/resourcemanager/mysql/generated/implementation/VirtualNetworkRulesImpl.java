@@ -27,15 +27,6 @@ public final class VirtualNetworkRulesImpl implements VirtualNetworkRules {
         this.serviceManager = serviceManager;
     }
 
-    public VirtualNetworkRule get(String resourceGroupName, String serverName, String virtualNetworkRuleName) {
-        VirtualNetworkRuleInner inner = this.serviceClient().get(resourceGroupName, serverName, virtualNetworkRuleName);
-        if (inner != null) {
-            return new VirtualNetworkRuleImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<VirtualNetworkRule> getWithResponse(
         String resourceGroupName, String serverName, String virtualNetworkRuleName, Context context) {
         Response<VirtualNetworkRuleInner> inner =
@@ -46,6 +37,15 @@ public final class VirtualNetworkRulesImpl implements VirtualNetworkRules {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new VirtualNetworkRuleImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public VirtualNetworkRule get(String resourceGroupName, String serverName, String virtualNetworkRuleName) {
+        VirtualNetworkRuleInner inner = this.serviceClient().get(resourceGroupName, serverName, virtualNetworkRuleName);
+        if (inner != null) {
+            return new VirtualNetworkRuleImpl(inner, this.manager());
         } else {
             return null;
         }

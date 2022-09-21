@@ -41,17 +41,6 @@ public final class NetworkInterfaceIpConfigurationsImpl implements NetworkInterf
         return Utils.mapPage(inner, inner1 -> new NetworkInterfaceIpConfigurationImpl(inner1, this.manager()));
     }
 
-    public NetworkInterfaceIpConfiguration get(
-        String resourceGroupName, String networkInterfaceName, String ipConfigurationName) {
-        NetworkInterfaceIpConfigurationInner inner =
-            this.serviceClient().get(resourceGroupName, networkInterfaceName, ipConfigurationName);
-        if (inner != null) {
-            return new NetworkInterfaceIpConfigurationImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<NetworkInterfaceIpConfiguration> getWithResponse(
         String resourceGroupName, String networkInterfaceName, String ipConfigurationName, Context context) {
         Response<NetworkInterfaceIpConfigurationInner> inner =
@@ -62,6 +51,17 @@ public final class NetworkInterfaceIpConfigurationsImpl implements NetworkInterf
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new NetworkInterfaceIpConfigurationImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public NetworkInterfaceIpConfiguration get(
+        String resourceGroupName, String networkInterfaceName, String ipConfigurationName) {
+        NetworkInterfaceIpConfigurationInner inner =
+            this.serviceClient().get(resourceGroupName, networkInterfaceName, ipConfigurationName);
+        if (inner != null) {
+            return new NetworkInterfaceIpConfigurationImpl(inner, this.manager());
         } else {
             return null;
         }

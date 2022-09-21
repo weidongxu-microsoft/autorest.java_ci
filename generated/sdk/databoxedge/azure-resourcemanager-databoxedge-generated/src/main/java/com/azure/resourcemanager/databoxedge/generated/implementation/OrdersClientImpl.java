@@ -448,11 +448,11 @@ public final class OrdersClientImpl implements OrdersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a specific order by name.
+     * @return a specific order by name along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public OrderInner get(String deviceName, String resourceGroupName) {
-        return getAsync(deviceName, resourceGroupName).block();
+    public Response<OrderInner> getWithResponse(String deviceName, String resourceGroupName) {
+        return getWithResponseAsync(deviceName, resourceGroupName).block();
     }
 
     /**
@@ -469,6 +469,21 @@ public final class OrdersClientImpl implements OrdersClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<OrderInner> getWithResponse(String deviceName, String resourceGroupName, Context context) {
         return getWithResponseAsync(deviceName, resourceGroupName, context).block();
+    }
+
+    /**
+     * Gets a specific order by name.
+     *
+     * @param deviceName The device name.
+     * @param resourceGroupName The resource group name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a specific order by name.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public OrderInner get(String deviceName, String resourceGroupName) {
+        return getWithResponse(deviceName, resourceGroupName, Context.NONE).getValue();
     }
 
     /**
@@ -1075,11 +1090,11 @@ public final class OrdersClientImpl implements OrdersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the DCAccess Code.
+     * @return the DCAccess Code along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public DCAccessCodeInner listDCAccessCode(String deviceName, String resourceGroupName) {
-        return listDCAccessCodeAsync(deviceName, resourceGroupName).block();
+    public Response<DCAccessCodeInner> listDCAccessCodeWithResponse(String deviceName, String resourceGroupName) {
+        return listDCAccessCodeWithResponseAsync(deviceName, resourceGroupName).block();
     }
 
     /**
@@ -1097,6 +1112,21 @@ public final class OrdersClientImpl implements OrdersClient {
     public Response<DCAccessCodeInner> listDCAccessCodeWithResponse(
         String deviceName, String resourceGroupName, Context context) {
         return listDCAccessCodeWithResponseAsync(deviceName, resourceGroupName, context).block();
+    }
+
+    /**
+     * Gets the DCAccess Code.
+     *
+     * @param deviceName The device name.
+     * @param resourceGroupName The resource group name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the DCAccess Code.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public DCAccessCodeInner listDCAccessCode(String deviceName, String resourceGroupName) {
+        return listDCAccessCodeWithResponse(deviceName, resourceGroupName, Context.NONE).getValue();
     }
 
     /**

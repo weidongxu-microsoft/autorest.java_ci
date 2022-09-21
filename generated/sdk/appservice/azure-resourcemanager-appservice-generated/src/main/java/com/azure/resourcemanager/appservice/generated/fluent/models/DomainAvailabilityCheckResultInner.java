@@ -30,6 +30,10 @@ public final class DomainAvailabilityCheckResultInner {
     @JsonProperty(value = "domainType")
     private DomainType domainType;
 
+    /** Creates an instance of DomainAvailabilityCheckResultInner class. */
+    public DomainAvailabilityCheckResultInner() {
+    }
+
     /**
      * Get the name property: Name of the domain.
      *

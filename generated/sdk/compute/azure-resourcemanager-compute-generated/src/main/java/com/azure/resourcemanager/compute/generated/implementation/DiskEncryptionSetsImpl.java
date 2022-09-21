@@ -28,16 +28,6 @@ public final class DiskEncryptionSetsImpl implements DiskEncryptionSets {
         this.serviceManager = serviceManager;
     }
 
-    public DiskEncryptionSet getByResourceGroup(String resourceGroupName, String diskEncryptionSetName) {
-        DiskEncryptionSetInner inner =
-            this.serviceClient().getByResourceGroup(resourceGroupName, diskEncryptionSetName);
-        if (inner != null) {
-            return new DiskEncryptionSetImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<DiskEncryptionSet> getByResourceGroupWithResponse(
         String resourceGroupName, String diskEncryptionSetName, Context context) {
         Response<DiskEncryptionSetInner> inner =
@@ -48,6 +38,16 @@ public final class DiskEncryptionSetsImpl implements DiskEncryptionSets {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new DiskEncryptionSetImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public DiskEncryptionSet getByResourceGroup(String resourceGroupName, String diskEncryptionSetName) {
+        DiskEncryptionSetInner inner =
+            this.serviceClient().getByResourceGroup(resourceGroupName, diskEncryptionSetName);
+        if (inner != null) {
+            return new DiskEncryptionSetImpl(inner, this.manager());
         } else {
             return null;
         }

@@ -20,6 +20,10 @@ public final class DebugSetting {
     @JsonProperty(value = "detailLevel")
     private String detailLevel;
 
+    /** Creates an instance of DebugSetting class. */
+    public DebugSetting() {
+    }
+
     /**
      * Get the detailLevel property: Specifies the type of information to log for debugging. The permitted values are
      * none, requestContent, responseContent, or both requestContent and responseContent separated by a comma. The

@@ -43,15 +43,6 @@ public final class PrivateLinkServicesImpl implements PrivateLinkServices {
         this.serviceClient().delete(resourceGroupName, serviceName, context);
     }
 
-    public PrivateLinkService getByResourceGroup(String resourceGroupName, String serviceName) {
-        PrivateLinkServiceInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, serviceName);
-        if (inner != null) {
-            return new PrivateLinkServiceImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<PrivateLinkService> getByResourceGroupWithResponse(
         String resourceGroupName, String serviceName, String expand, Context context) {
         Response<PrivateLinkServiceInner> inner =
@@ -62,6 +53,15 @@ public final class PrivateLinkServicesImpl implements PrivateLinkServices {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new PrivateLinkServiceImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public PrivateLinkService getByResourceGroup(String resourceGroupName, String serviceName) {
+        PrivateLinkServiceInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, serviceName);
+        if (inner != null) {
+            return new PrivateLinkServiceImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -88,17 +88,6 @@ public final class PrivateLinkServicesImpl implements PrivateLinkServices {
         return Utils.mapPage(inner, inner1 -> new PrivateLinkServiceImpl(inner1, this.manager()));
     }
 
-    public PrivateEndpointConnection getPrivateEndpointConnection(
-        String resourceGroupName, String serviceName, String peConnectionName) {
-        PrivateEndpointConnectionInner inner =
-            this.serviceClient().getPrivateEndpointConnection(resourceGroupName, serviceName, peConnectionName);
-        if (inner != null) {
-            return new PrivateEndpointConnectionImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<PrivateEndpointConnection> getPrivateEndpointConnectionWithResponse(
         String resourceGroupName, String serviceName, String peConnectionName, String expand, Context context) {
         Response<PrivateEndpointConnectionInner> inner =
@@ -117,15 +106,10 @@ public final class PrivateLinkServicesImpl implements PrivateLinkServices {
         }
     }
 
-    public PrivateEndpointConnection updatePrivateEndpointConnection(
-        String resourceGroupName,
-        String serviceName,
-        String peConnectionName,
-        PrivateEndpointConnectionInner parameters) {
+    public PrivateEndpointConnection getPrivateEndpointConnection(
+        String resourceGroupName, String serviceName, String peConnectionName) {
         PrivateEndpointConnectionInner inner =
-            this
-                .serviceClient()
-                .updatePrivateEndpointConnection(resourceGroupName, serviceName, peConnectionName, parameters);
+            this.serviceClient().getPrivateEndpointConnection(resourceGroupName, serviceName, peConnectionName);
         if (inner != null) {
             return new PrivateEndpointConnectionImpl(inner, this.manager());
         } else {
@@ -150,6 +134,22 @@ public final class PrivateLinkServicesImpl implements PrivateLinkServices {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new PrivateEndpointConnectionImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public PrivateEndpointConnection updatePrivateEndpointConnection(
+        String resourceGroupName,
+        String serviceName,
+        String peConnectionName,
+        PrivateEndpointConnectionInner parameters) {
+        PrivateEndpointConnectionInner inner =
+            this
+                .serviceClient()
+                .updatePrivateEndpointConnection(resourceGroupName, serviceName, peConnectionName, parameters);
+        if (inner != null) {
+            return new PrivateEndpointConnectionImpl(inner, this.manager());
         } else {
             return null;
         }

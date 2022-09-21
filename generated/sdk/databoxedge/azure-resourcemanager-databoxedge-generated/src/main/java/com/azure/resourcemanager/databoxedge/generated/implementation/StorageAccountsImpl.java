@@ -41,15 +41,6 @@ public final class StorageAccountsImpl implements StorageAccounts {
         return Utils.mapPage(inner, inner1 -> new StorageAccountImpl(inner1, this.manager()));
     }
 
-    public StorageAccount get(String deviceName, String storageAccountName, String resourceGroupName) {
-        StorageAccountInner inner = this.serviceClient().get(deviceName, storageAccountName, resourceGroupName);
-        if (inner != null) {
-            return new StorageAccountImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<StorageAccount> getWithResponse(
         String deviceName, String storageAccountName, String resourceGroupName, Context context) {
         Response<StorageAccountInner> inner =
@@ -60,6 +51,15 @@ public final class StorageAccountsImpl implements StorageAccounts {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new StorageAccountImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public StorageAccount get(String deviceName, String storageAccountName, String resourceGroupName) {
+        StorageAccountInner inner = this.serviceClient().get(deviceName, storageAccountName, resourceGroupName);
+        if (inner != null) {
+            return new StorageAccountImpl(inner, this.manager());
         } else {
             return null;
         }

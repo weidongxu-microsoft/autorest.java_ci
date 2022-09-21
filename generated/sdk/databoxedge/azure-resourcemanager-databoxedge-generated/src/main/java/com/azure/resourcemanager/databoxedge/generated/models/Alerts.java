@@ -43,19 +43,6 @@ public interface Alerts {
      * @param deviceName The device name.
      * @param name The alert name.
      * @param resourceGroupName The resource group name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an alert by name.
-     */
-    Alert get(String deviceName, String name, String resourceGroupName);
-
-    /**
-     * Gets an alert by name.
-     *
-     * @param deviceName The device name.
-     * @param name The alert name.
-     * @param resourceGroupName The resource group name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -63,4 +50,17 @@ public interface Alerts {
      * @return an alert by name along with {@link Response}.
      */
     Response<Alert> getWithResponse(String deviceName, String name, String resourceGroupName, Context context);
+
+    /**
+     * Gets an alert by name.
+     *
+     * @param deviceName The device name.
+     * @param name The alert name.
+     * @param resourceGroupName The resource group name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return an alert by name.
+     */
+    Alert get(String deviceName, String name, String resourceGroupName);
 }

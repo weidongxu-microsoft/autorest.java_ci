@@ -30,6 +30,10 @@ public final class HealthProbeSettingsModel extends SubResource {
     @JsonProperty(value = "type", access = JsonProperty.Access.WRITE_ONLY)
     private String type;
 
+    /** Creates an instance of HealthProbeSettingsModel class. */
+    public HealthProbeSettingsModel() {
+    }
+
     /**
      * Get the innerProperties property: Properties of the health probe settings.
      *

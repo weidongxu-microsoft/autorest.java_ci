@@ -35,6 +35,10 @@ public final class ShareInner extends ArmBaseModel {
     @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;
 
+    /** Creates an instance of ShareInner class. */
+    public ShareInner() {
+    }
+
     /**
      * Get the innerProperties property: The share properties.
      *

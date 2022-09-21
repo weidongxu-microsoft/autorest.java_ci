@@ -357,12 +357,12 @@ public final class VirtualMachineImpl implements VirtualMachine, VirtualMachine.
         serviceManager.virtualMachines().deallocate(resourceGroupName, vmName, hibernate, context);
     }
 
-    public void generalize() {
-        serviceManager.virtualMachines().generalize(resourceGroupName, vmName);
-    }
-
     public Response<Void> generalizeWithResponse(Context context) {
         return serviceManager.virtualMachines().generalizeWithResponse(resourceGroupName, vmName, context);
+    }
+
+    public void generalize() {
+        serviceManager.virtualMachines().generalize(resourceGroupName, vmName);
     }
 
     public void powerOff(Boolean skipShutdown) {
@@ -421,15 +421,15 @@ public final class VirtualMachineImpl implements VirtualMachine, VirtualMachine.
         serviceManager.virtualMachines().reimage(resourceGroupName, vmName, parameters, context);
     }
 
-    public RetrieveBootDiagnosticsDataResult retrieveBootDiagnosticsData() {
-        return serviceManager.virtualMachines().retrieveBootDiagnosticsData(resourceGroupName, vmName);
-    }
-
     public Response<RetrieveBootDiagnosticsDataResult> retrieveBootDiagnosticsDataWithResponse(
         Integer sasUriExpirationTimeInMinutes, Context context) {
         return serviceManager
             .virtualMachines()
             .retrieveBootDiagnosticsDataWithResponse(resourceGroupName, vmName, sasUriExpirationTimeInMinutes, context);
+    }
+
+    public RetrieveBootDiagnosticsDataResult retrieveBootDiagnosticsData() {
+        return serviceManager.virtualMachines().retrieveBootDiagnosticsData(resourceGroupName, vmName);
     }
 
     public void performMaintenance() {
@@ -440,12 +440,12 @@ public final class VirtualMachineImpl implements VirtualMachine, VirtualMachine.
         serviceManager.virtualMachines().performMaintenance(resourceGroupName, vmName, context);
     }
 
-    public void simulateEviction() {
-        serviceManager.virtualMachines().simulateEviction(resourceGroupName, vmName);
-    }
-
     public Response<Void> simulateEvictionWithResponse(Context context) {
         return serviceManager.virtualMachines().simulateEvictionWithResponse(resourceGroupName, vmName, context);
+    }
+
+    public void simulateEviction() {
+        serviceManager.virtualMachines().simulateEviction(resourceGroupName, vmName);
     }
 
     public VirtualMachineAssessPatchesResult assessPatches() {

@@ -38,18 +38,6 @@ public interface IpAllocations {
      *
      * @param resourceGroupName The name of the resource group.
      * @param ipAllocationName The name of the IpAllocation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified IpAllocation by resource group.
-     */
-    IpAllocation getByResourceGroup(String resourceGroupName, String ipAllocationName);
-
-    /**
-     * Gets the specified IpAllocation by resource group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param ipAllocationName The name of the IpAllocation.
      * @param expand Expands referenced resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -59,6 +47,18 @@ public interface IpAllocations {
      */
     Response<IpAllocation> getByResourceGroupWithResponse(
         String resourceGroupName, String ipAllocationName, String expand, Context context);
+
+    /**
+     * Gets the specified IpAllocation by resource group.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param ipAllocationName The name of the IpAllocation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified IpAllocation by resource group.
+     */
+    IpAllocation getByResourceGroup(String resourceGroupName, String ipAllocationName);
 
     /**
      * Gets all IpAllocations in a subscription.

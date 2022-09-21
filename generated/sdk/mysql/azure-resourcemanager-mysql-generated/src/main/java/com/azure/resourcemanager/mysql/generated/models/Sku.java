@@ -41,6 +41,10 @@ public final class Sku {
     @JsonProperty(value = "family")
     private String family;
 
+    /** Creates an instance of Sku class. */
+    public Sku() {
+    }
+
     /**
      * Get the name property: The name of the sku, typically, tier + family + cores, e.g. B_Gen4_1, GP_Gen5_8.
      *

@@ -195,11 +195,12 @@ public final class LocationBasedRecommendedActionSessionsOperationStatusClientIm
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return recommendation action session operation status.
+     * @return recommendation action session operation status along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public RecommendedActionSessionsOperationStatusInner get(String locationName, String operationId) {
-        return getAsync(locationName, operationId).block();
+    public Response<RecommendedActionSessionsOperationStatusInner> getWithResponse(
+        String locationName, String operationId) {
+        return getWithResponseAsync(locationName, operationId).block();
     }
 
     /**
@@ -217,5 +218,20 @@ public final class LocationBasedRecommendedActionSessionsOperationStatusClientIm
     public Response<RecommendedActionSessionsOperationStatusInner> getWithResponse(
         String locationName, String operationId, Context context) {
         return getWithResponseAsync(locationName, operationId, context).block();
+    }
+
+    /**
+     * Recommendation action session operation status.
+     *
+     * @param locationName The name of the location.
+     * @param operationId The operation identifier.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return recommendation action session operation status.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public RecommendedActionSessionsOperationStatusInner get(String locationName, String operationId) {
+        return getWithResponse(locationName, operationId, Context.NONE).getValue();
     }
 }

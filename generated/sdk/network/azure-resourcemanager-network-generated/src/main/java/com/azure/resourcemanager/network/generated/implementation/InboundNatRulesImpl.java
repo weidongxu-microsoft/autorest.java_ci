@@ -46,15 +46,6 @@ public final class InboundNatRulesImpl implements InboundNatRules {
         this.serviceClient().delete(resourceGroupName, loadBalancerName, inboundNatRuleName, context);
     }
 
-    public InboundNatRule get(String resourceGroupName, String loadBalancerName, String inboundNatRuleName) {
-        InboundNatRuleInner inner = this.serviceClient().get(resourceGroupName, loadBalancerName, inboundNatRuleName);
-        if (inner != null) {
-            return new InboundNatRuleImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<InboundNatRule> getWithResponse(
         String resourceGroupName, String loadBalancerName, String inboundNatRuleName, String expand, Context context) {
         Response<InboundNatRuleInner> inner =
@@ -67,6 +58,15 @@ public final class InboundNatRulesImpl implements InboundNatRules {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new InboundNatRuleImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public InboundNatRule get(String resourceGroupName, String loadBalancerName, String inboundNatRuleName) {
+        InboundNatRuleInner inner = this.serviceClient().get(resourceGroupName, loadBalancerName, inboundNatRuleName);
+        if (inner != null) {
+            return new InboundNatRuleImpl(inner, this.manager());
         } else {
             return null;
         }

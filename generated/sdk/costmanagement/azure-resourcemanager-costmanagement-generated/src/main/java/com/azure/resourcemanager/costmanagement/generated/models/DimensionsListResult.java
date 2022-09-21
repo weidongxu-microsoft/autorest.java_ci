@@ -18,6 +18,10 @@ public final class DimensionsListResult {
     @JsonProperty(value = "value", access = JsonProperty.Access.WRITE_ONLY)
     private List<DimensionInner> value;
 
+    /** Creates an instance of DimensionsListResult class. */
+    public DimensionsListResult() {
+    }
+
     /**
      * Get the value property: The list of dimensions.
      *

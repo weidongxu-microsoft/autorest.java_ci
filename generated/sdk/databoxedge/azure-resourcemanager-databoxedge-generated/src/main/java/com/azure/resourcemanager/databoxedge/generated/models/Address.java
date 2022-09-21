@@ -53,6 +53,10 @@ public final class Address {
     @JsonProperty(value = "country", required = true)
     private String country;
 
+    /** Creates an instance of Address class. */
+    public Address() {
+    }
+
     /**
      * Get the addressLine1 property: The address line1.
      *

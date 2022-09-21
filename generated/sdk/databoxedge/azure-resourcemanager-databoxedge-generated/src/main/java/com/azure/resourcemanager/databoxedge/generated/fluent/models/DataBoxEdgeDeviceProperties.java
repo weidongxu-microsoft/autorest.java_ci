@@ -126,6 +126,10 @@ public final class DataBoxEdgeDeviceProperties {
     @JsonProperty(value = "dataResidency")
     private DataResidency dataResidency;
 
+    /** Creates an instance of DataBoxEdgeDeviceProperties class. */
+    public DataBoxEdgeDeviceProperties() {
+    }
+
     /**
      * Get the systemData property: DataBoxEdge Device Properties.
      *

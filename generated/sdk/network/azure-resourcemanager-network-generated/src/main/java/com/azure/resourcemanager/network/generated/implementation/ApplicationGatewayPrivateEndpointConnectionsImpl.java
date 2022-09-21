@@ -67,17 +67,6 @@ public final class ApplicationGatewayPrivateEndpointConnectionsImpl
         }
     }
 
-    public ApplicationGatewayPrivateEndpointConnection get(
-        String resourceGroupName, String applicationGatewayName, String connectionName) {
-        ApplicationGatewayPrivateEndpointConnectionInner inner =
-            this.serviceClient().get(resourceGroupName, applicationGatewayName, connectionName);
-        if (inner != null) {
-            return new ApplicationGatewayPrivateEndpointConnectionImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<ApplicationGatewayPrivateEndpointConnection> getWithResponse(
         String resourceGroupName, String applicationGatewayName, String connectionName, Context context) {
         Response<ApplicationGatewayPrivateEndpointConnectionInner> inner =
@@ -88,6 +77,17 @@ public final class ApplicationGatewayPrivateEndpointConnectionsImpl
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new ApplicationGatewayPrivateEndpointConnectionImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public ApplicationGatewayPrivateEndpointConnection get(
+        String resourceGroupName, String applicationGatewayName, String connectionName) {
+        ApplicationGatewayPrivateEndpointConnectionInner inner =
+            this.serviceClient().get(resourceGroupName, applicationGatewayName, connectionName);
+        if (inner != null) {
+            return new ApplicationGatewayPrivateEndpointConnectionImpl(inner, this.manager());
         } else {
             return null;
         }

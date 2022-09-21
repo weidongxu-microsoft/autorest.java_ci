@@ -26,6 +26,10 @@ public final class RoutingRuleProperties extends RoutingRuleUpdateParameters {
     @JsonProperty(value = "resourceState", access = JsonProperty.Access.WRITE_ONLY)
     private FrontDoorResourceState resourceState;
 
+    /** Creates an instance of RoutingRuleProperties class. */
+    public RoutingRuleProperties() {
+    }
+
     /**
      * Get the resourceState property: Resource status of the Front Door or Front Door SubResource.
      *

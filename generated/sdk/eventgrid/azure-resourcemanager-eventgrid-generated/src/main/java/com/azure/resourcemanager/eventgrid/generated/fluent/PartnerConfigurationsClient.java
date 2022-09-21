@@ -23,20 +23,6 @@ public interface PartnerConfigurationsClient {
      * <p>Get properties of a partner configuration.
      *
      * @param resourceGroupName The name of the resource group within the user's subscription.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of a partner configuration.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    PartnerConfigurationInner getByResourceGroup(String resourceGroupName);
-
-    /**
-     * Get a partner configuration.
-     *
-     * <p>Get properties of a partner configuration.
-     *
-     * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -45,6 +31,20 @@ public interface PartnerConfigurationsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<PartnerConfigurationInner> getByResourceGroupWithResponse(String resourceGroupName, Context context);
+
+    /**
+     * Get a partner configuration.
+     *
+     * <p>Get properties of a partner configuration.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return properties of a partner configuration.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    PartnerConfigurationInner getByResourceGroup(String resourceGroupName);
 
     /**
      * Create or update a partner configuration.
@@ -308,21 +308,6 @@ public interface PartnerConfigurationsClient {
      *
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerInfo The information of the partner to be authorized.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return partner configuration information.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    PartnerConfigurationInner authorizePartner(String resourceGroupName, Partner partnerInfo);
-
-    /**
-     * Authorize a partner.
-     *
-     * <p>Authorize a single partner either by partner registration immutable Id or by partner name.
-     *
-     * @param resourceGroupName The name of the resource group within the user's subscription.
-     * @param partnerInfo The information of the partner to be authorized.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -334,19 +319,19 @@ public interface PartnerConfigurationsClient {
         String resourceGroupName, Partner partnerInfo, Context context);
 
     /**
-     * Unauthorize a partner.
+     * Authorize a partner.
      *
-     * <p>Unauthorize a single partner either by partner registration immutable Id or by partner name.
+     * <p>Authorize a single partner either by partner registration immutable Id or by partner name.
      *
      * @param resourceGroupName The name of the resource group within the user's subscription.
-     * @param partnerInfo The information of the partner to be unauthorized.
+     * @param partnerInfo The information of the partner to be authorized.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return partner configuration information.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    PartnerConfigurationInner unauthorizePartner(String resourceGroupName, Partner partnerInfo);
+    PartnerConfigurationInner authorizePartner(String resourceGroupName, Partner partnerInfo);
 
     /**
      * Unauthorize a partner.
@@ -364,4 +349,19 @@ public interface PartnerConfigurationsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<PartnerConfigurationInner> unauthorizePartnerWithResponse(
         String resourceGroupName, Partner partnerInfo, Context context);
+
+    /**
+     * Unauthorize a partner.
+     *
+     * <p>Unauthorize a single partner either by partner registration immutable Id or by partner name.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription.
+     * @param partnerInfo The information of the partner to be unauthorized.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return partner configuration information.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    PartnerConfigurationInner unauthorizePartner(String resourceGroupName, Partner partnerInfo);
 }

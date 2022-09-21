@@ -22,6 +22,10 @@ public final class LoadBalancerConfig {
     @JsonProperty(value = "version", access = JsonProperty.Access.WRITE_ONLY)
     private String version;
 
+    /** Creates an instance of LoadBalancerConfig class. */
+    public LoadBalancerConfig() {
+    }
+
     /**
      * Get the type property: Load balancer type.
      *

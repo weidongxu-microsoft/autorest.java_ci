@@ -14,6 +14,19 @@ public interface DiagnosticSettingsOperations {
      *
      * @param resourceUri The identifier of the resource.
      * @param name The name of the diagnostic setting.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the active diagnostic settings for the specified resource along with {@link Response}.
+     */
+    Response<DiagnosticSettingsResource> getWithResponse(String resourceUri, String name, Context context);
+
+    /**
+     * Gets the active diagnostic settings for the specified resource.
+     *
+     * @param resourceUri The identifier of the resource.
+     * @param name The name of the diagnostic setting.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -22,7 +35,7 @@ public interface DiagnosticSettingsOperations {
     DiagnosticSettingsResource get(String resourceUri, String name);
 
     /**
-     * Gets the active diagnostic settings for the specified resource.
+     * Deletes existing diagnostic settings for the specified resource.
      *
      * @param resourceUri The identifier of the resource.
      * @param name The name of the diagnostic setting.
@@ -30,9 +43,9 @@ public interface DiagnosticSettingsOperations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the active diagnostic settings for the specified resource along with {@link Response}.
+     * @return the {@link Response}.
      */
-    Response<DiagnosticSettingsResource> getWithResponse(String resourceUri, String name, Context context);
+    Response<Void> deleteByResourceGroupWithResponse(String resourceUri, String name, Context context);
 
     /**
      * Deletes existing diagnostic settings for the specified resource.
@@ -46,17 +59,16 @@ public interface DiagnosticSettingsOperations {
     void deleteByResourceGroup(String resourceUri, String name);
 
     /**
-     * Deletes existing diagnostic settings for the specified resource.
+     * Gets the active diagnostic settings list for the specified resource.
      *
      * @param resourceUri The identifier of the resource.
-     * @param name The name of the diagnostic setting.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
+     * @return the active diagnostic settings list for the specified resource along with {@link Response}.
      */
-    Response<Void> deleteWithResponse(String resourceUri, String name, Context context);
+    Response<DiagnosticSettingsResourceCollection> listWithResponse(String resourceUri, Context context);
 
     /**
      * Gets the active diagnostic settings list for the specified resource.
@@ -68,18 +80,6 @@ public interface DiagnosticSettingsOperations {
      * @return the active diagnostic settings list for the specified resource.
      */
     DiagnosticSettingsResourceCollection list(String resourceUri);
-
-    /**
-     * Gets the active diagnostic settings list for the specified resource.
-     *
-     * @param resourceUri The identifier of the resource.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the active diagnostic settings list for the specified resource along with {@link Response}.
-     */
-    Response<DiagnosticSettingsResourceCollection> listWithResponse(String resourceUri, Context context);
 
     /**
      * Gets the active diagnostic settings for the specified resource.

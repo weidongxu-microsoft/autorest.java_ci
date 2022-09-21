@@ -35,15 +35,6 @@ public final class BastionHostsImpl implements BastionHosts {
         this.serviceClient().delete(resourceGroupName, bastionHostname, context);
     }
 
-    public BastionHost getByResourceGroup(String resourceGroupName, String bastionHostname) {
-        BastionHostInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, bastionHostname);
-        if (inner != null) {
-            return new BastionHostImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<BastionHost> getByResourceGroupWithResponse(
         String resourceGroupName, String bastionHostname, Context context) {
         Response<BastionHostInner> inner =
@@ -54,6 +45,15 @@ public final class BastionHostsImpl implements BastionHosts {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new BastionHostImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public BastionHost getByResourceGroup(String resourceGroupName, String bastionHostname) {
+        BastionHostInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, bastionHostname);
+        if (inner != null) {
+            return new BastionHostImpl(inner, this.manager());
         } else {
             return null;
         }

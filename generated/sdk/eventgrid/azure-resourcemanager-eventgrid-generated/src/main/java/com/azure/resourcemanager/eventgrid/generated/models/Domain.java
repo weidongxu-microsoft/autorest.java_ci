@@ -605,17 +605,6 @@ public interface Domain {
      *
      * <p>List the two keys used to publish to a domain.
      *
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return shared access keys of the Domain.
-     */
-    DomainSharedAccessKeys listSharedAccessKeys();
-
-    /**
-     * List keys for a domain.
-     *
-     * <p>List the two keys used to publish to a domain.
-     *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -625,17 +614,15 @@ public interface Domain {
     Response<DomainSharedAccessKeys> listSharedAccessKeysWithResponse(Context context);
 
     /**
-     * Regenerate key for a domain.
+     * List keys for a domain.
      *
-     * <p>Regenerate a shared access key for a domain.
+     * <p>List the two keys used to publish to a domain.
      *
-     * @param regenerateKeyRequest Request body to regenerate key.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return shared access keys of the Domain.
      */
-    DomainSharedAccessKeys regenerateKey(DomainRegenerateKeyRequest regenerateKeyRequest);
+    DomainSharedAccessKeys listSharedAccessKeys();
 
     /**
      * Regenerate key for a domain.
@@ -651,4 +638,17 @@ public interface Domain {
      */
     Response<DomainSharedAccessKeys> regenerateKeyWithResponse(
         DomainRegenerateKeyRequest regenerateKeyRequest, Context context);
+
+    /**
+     * Regenerate key for a domain.
+     *
+     * <p>Regenerate a shared access key for a domain.
+     *
+     * @param regenerateKeyRequest Request body to regenerate key.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return shared access keys of the Domain.
+     */
+    DomainSharedAccessKeys regenerateKey(DomainRegenerateKeyRequest regenerateKeyRequest);
 }

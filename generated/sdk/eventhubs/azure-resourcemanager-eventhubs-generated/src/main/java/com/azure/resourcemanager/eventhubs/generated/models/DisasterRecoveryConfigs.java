@@ -46,21 +46,6 @@ public interface DisasterRecoveryConfigs {
      * @param namespaceName The Namespace name.
      * @param alias The Disaster Recovery configuration name.
      * @param authorizationRuleName The authorization rule name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an AuthorizationRule for a Namespace by rule name.
-     */
-    AuthorizationRule getAuthorizationRule(
-        String resourceGroupName, String namespaceName, String alias, String authorizationRuleName);
-
-    /**
-     * Gets an AuthorizationRule for a Namespace by rule name.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param namespaceName The Namespace name.
-     * @param alias The Disaster Recovery configuration name.
-     * @param authorizationRuleName The authorization rule name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -71,7 +56,7 @@ public interface DisasterRecoveryConfigs {
         String resourceGroupName, String namespaceName, String alias, String authorizationRuleName, Context context);
 
     /**
-     * Gets the primary and secondary connection strings for the Namespace.
+     * Gets an AuthorizationRule for a Namespace by rule name.
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -80,9 +65,10 @@ public interface DisasterRecoveryConfigs {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the primary and secondary connection strings for the Namespace.
+     * @return an AuthorizationRule for a Namespace by rule name.
      */
-    AccessKeys listKeys(String resourceGroupName, String namespaceName, String alias, String authorizationRuleName);
+    AuthorizationRule getAuthorizationRule(
+        String resourceGroupName, String namespaceName, String alias, String authorizationRuleName);
 
     /**
      * Gets the primary and secondary connection strings for the Namespace.
@@ -101,18 +87,18 @@ public interface DisasterRecoveryConfigs {
         String resourceGroupName, String namespaceName, String alias, String authorizationRuleName, Context context);
 
     /**
-     * Check the give Namespace name availability.
+     * Gets the primary and secondary connection strings for the Namespace.
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
-     * @param parameters Parameters to check availability of the given Alias name.
+     * @param alias The Disaster Recovery configuration name.
+     * @param authorizationRuleName The authorization rule name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Result of the CheckNameAvailability operation.
+     * @return the primary and secondary connection strings for the Namespace.
      */
-    CheckNameAvailabilityResult checkNameAvailability(
-        String resourceGroupName, String namespaceName, CheckNameAvailabilityParameter parameters);
+    AccessKeys listKeys(String resourceGroupName, String namespaceName, String alias, String authorizationRuleName);
 
     /**
      * Check the give Namespace name availability.
@@ -128,6 +114,20 @@ public interface DisasterRecoveryConfigs {
      */
     Response<CheckNameAvailabilityResult> checkNameAvailabilityWithResponse(
         String resourceGroupName, String namespaceName, CheckNameAvailabilityParameter parameters, Context context);
+
+    /**
+     * Check the give Namespace name availability.
+     *
+     * @param resourceGroupName Name of the resource group within the azure subscription.
+     * @param namespaceName The Namespace name.
+     * @param parameters Parameters to check availability of the given Alias name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the Result of the CheckNameAvailability operation.
+     */
+    CheckNameAvailabilityResult checkNameAvailability(
+        String resourceGroupName, String namespaceName, CheckNameAvailabilityParameter parameters);
 
     /**
      * Gets all Alias(Disaster Recovery configurations).
@@ -160,18 +160,6 @@ public interface DisasterRecoveryConfigs {
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param alias The Disaster Recovery configuration name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void delete(String resourceGroupName, String namespaceName, String alias);
-
-    /**
-     * Deletes an Alias(Disaster Recovery configuration).
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param namespaceName The Namespace name.
-     * @param alias The Disaster Recovery configuration name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -181,7 +169,7 @@ public interface DisasterRecoveryConfigs {
     Response<Void> deleteWithResponse(String resourceGroupName, String namespaceName, String alias, Context context);
 
     /**
-     * Retrieves Alias(Disaster Recovery configuration) for primary or secondary namespace.
+     * Deletes an Alias(Disaster Recovery configuration).
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -189,9 +177,8 @@ public interface DisasterRecoveryConfigs {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in List or Get Alias(Disaster Recovery configuration) operation.
      */
-    ArmDisasterRecovery get(String resourceGroupName, String namespaceName, String alias);
+    void delete(String resourceGroupName, String namespaceName, String alias);
 
     /**
      * Retrieves Alias(Disaster Recovery configuration) for primary or secondary namespace.
@@ -209,7 +196,7 @@ public interface DisasterRecoveryConfigs {
         String resourceGroupName, String namespaceName, String alias, Context context);
 
     /**
-     * This operation disables the Disaster Recovery and stops replicating changes from primary to secondary namespaces.
+     * Retrieves Alias(Disaster Recovery configuration) for primary or secondary namespace.
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -217,8 +204,9 @@ public interface DisasterRecoveryConfigs {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return single item in List or Get Alias(Disaster Recovery configuration) operation.
      */
-    void breakPairing(String resourceGroupName, String namespaceName, String alias);
+    ArmDisasterRecovery get(String resourceGroupName, String namespaceName, String alias);
 
     /**
      * This operation disables the Disaster Recovery and stops replicating changes from primary to secondary namespaces.
@@ -236,7 +224,7 @@ public interface DisasterRecoveryConfigs {
         String resourceGroupName, String namespaceName, String alias, Context context);
 
     /**
-     * Invokes GEO DR failover and reconfigure the alias to point to the secondary namespace.
+     * This operation disables the Disaster Recovery and stops replicating changes from primary to secondary namespaces.
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -245,7 +233,7 @@ public interface DisasterRecoveryConfigs {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
-    void failOver(String resourceGroupName, String namespaceName, String alias);
+    void breakPairing(String resourceGroupName, String namespaceName, String alias);
 
     /**
      * Invokes GEO DR failover and reconfigure the alias to point to the secondary namespace.
@@ -260,6 +248,18 @@ public interface DisasterRecoveryConfigs {
      * @return the {@link Response}.
      */
     Response<Void> failOverWithResponse(String resourceGroupName, String namespaceName, String alias, Context context);
+
+    /**
+     * Invokes GEO DR failover and reconfigure the alias to point to the secondary namespace.
+     *
+     * @param resourceGroupName Name of the resource group within the azure subscription.
+     * @param namespaceName The Namespace name.
+     * @param alias The Disaster Recovery configuration name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void failOver(String resourceGroupName, String namespaceName, String alias);
 
     /**
      * Retrieves Alias(Disaster Recovery configuration) for primary or secondary namespace.

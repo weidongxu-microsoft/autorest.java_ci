@@ -22,22 +22,6 @@ public interface ConnectivityConfigurationsClient {
      * @param resourceGroupName The name of the resource group.
      * @param networkManagerName The name of the network manager.
      * @param configurationName The name of the network manager connectivity configuration.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Network Connectivity Configuration, specified by the resource group, network manager name, and
-     *     connectivity Configuration name.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    ConnectivityConfigurationInner get(String resourceGroupName, String networkManagerName, String configurationName);
-
-    /**
-     * Gets a Network Connectivity Configuration, specified by the resource group, network manager name, and
-     * connectivity Configuration name.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param networkManagerName The name of the network manager.
-     * @param configurationName The name of the network manager connectivity configuration.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -50,24 +34,20 @@ public interface ConnectivityConfigurationsClient {
         String resourceGroupName, String networkManagerName, String configurationName, Context context);
 
     /**
-     * Creates/Updates a new network manager connectivity configuration.
+     * Gets a Network Connectivity Configuration, specified by the resource group, network manager name, and
+     * connectivity Configuration name.
      *
      * @param resourceGroupName The name of the resource group.
      * @param networkManagerName The name of the network manager.
      * @param configurationName The name of the network manager connectivity configuration.
-     * @param connectivityConfiguration Parameters supplied to create/update a network manager connectivity
-     *     configuration.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the network manager connectivity configuration resource.
+     * @return a Network Connectivity Configuration, specified by the resource group, network manager name, and
+     *     connectivity Configuration name.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    ConnectivityConfigurationInner createOrUpdate(
-        String resourceGroupName,
-        String networkManagerName,
-        String configurationName,
-        ConnectivityConfigurationInner connectivityConfiguration);
+    ConnectivityConfigurationInner get(String resourceGroupName, String networkManagerName, String configurationName);
 
     /**
      * Creates/Updates a new network manager connectivity configuration.
@@ -90,6 +70,26 @@ public interface ConnectivityConfigurationsClient {
         String configurationName,
         ConnectivityConfigurationInner connectivityConfiguration,
         Context context);
+
+    /**
+     * Creates/Updates a new network manager connectivity configuration.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param networkManagerName The name of the network manager.
+     * @param configurationName The name of the network manager connectivity configuration.
+     * @param connectivityConfiguration Parameters supplied to create/update a network manager connectivity
+     *     configuration.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the network manager connectivity configuration resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    ConnectivityConfigurationInner createOrUpdate(
+        String resourceGroupName,
+        String networkManagerName,
+        String configurationName,
+        ConnectivityConfigurationInner connectivityConfiguration);
 
     /**
      * Deletes a network manager connectivity configuration, specified by the resource group, network manager name, and

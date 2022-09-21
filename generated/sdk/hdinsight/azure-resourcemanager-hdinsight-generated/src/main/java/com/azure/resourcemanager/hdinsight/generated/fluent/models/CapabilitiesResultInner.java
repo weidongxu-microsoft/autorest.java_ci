@@ -42,6 +42,10 @@ public final class CapabilitiesResultInner {
     @JsonProperty(value = "quota", access = JsonProperty.Access.WRITE_ONLY)
     private QuotaCapability quota;
 
+    /** Creates an instance of CapabilitiesResultInner class. */
+    public CapabilitiesResultInner() {
+    }
+
     /**
      * Get the versions property: The version capability.
      *

@@ -27,6 +27,10 @@ public final class StorageAccountInner extends ArmBaseModel {
     @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;
 
+    /** Creates an instance of StorageAccountInner class. */
+    public StorageAccountInner() {
+    }
+
     /**
      * Get the innerProperties property: The Storage Account properties.
      *

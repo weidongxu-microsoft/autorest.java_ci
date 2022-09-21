@@ -36,6 +36,10 @@ public final class WorkspacePurgeBodyFilters {
     @JsonProperty(value = "key")
     private String key;
 
+    /** Creates an instance of WorkspacePurgeBodyFilters class. */
+    public WorkspacePurgeBodyFilters() {
+    }
+
     /**
      * Get the column property: The column of the table over which the given query should run.
      *

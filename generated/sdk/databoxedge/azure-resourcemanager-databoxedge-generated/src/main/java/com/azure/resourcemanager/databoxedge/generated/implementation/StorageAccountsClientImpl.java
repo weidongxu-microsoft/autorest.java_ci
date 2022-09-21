@@ -457,11 +457,12 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a StorageAccount by name.
+     * @return a StorageAccount by name along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public StorageAccountInner get(String deviceName, String storageAccountName, String resourceGroupName) {
-        return getAsync(deviceName, storageAccountName, resourceGroupName).block();
+    public Response<StorageAccountInner> getWithResponse(
+        String deviceName, String storageAccountName, String resourceGroupName) {
+        return getWithResponseAsync(deviceName, storageAccountName, resourceGroupName).block();
     }
 
     /**
@@ -480,6 +481,22 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
     public Response<StorageAccountInner> getWithResponse(
         String deviceName, String storageAccountName, String resourceGroupName, Context context) {
         return getWithResponseAsync(deviceName, storageAccountName, resourceGroupName, context).block();
+    }
+
+    /**
+     * Gets a StorageAccount by name.
+     *
+     * @param deviceName The device name.
+     * @param storageAccountName The storage account name.
+     * @param resourceGroupName The resource group name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a StorageAccount by name.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public StorageAccountInner get(String deviceName, String storageAccountName, String resourceGroupName) {
+        return getWithResponse(deviceName, storageAccountName, resourceGroupName, Context.NONE).getValue();
     }
 
     /**

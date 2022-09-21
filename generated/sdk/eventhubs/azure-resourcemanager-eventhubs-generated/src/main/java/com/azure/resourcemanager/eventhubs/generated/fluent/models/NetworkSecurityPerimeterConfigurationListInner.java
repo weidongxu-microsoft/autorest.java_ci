@@ -18,6 +18,10 @@ public final class NetworkSecurityPerimeterConfigurationListInner {
     @JsonProperty(value = "value", access = JsonProperty.Access.WRITE_ONLY)
     private List<NetworkSecurityPerimeterConfiguration> value;
 
+    /** Creates an instance of NetworkSecurityPerimeterConfigurationListInner class. */
+    public NetworkSecurityPerimeterConfigurationListInner() {
+    }
+
     /**
      * Get the value property: A collection of NetworkSecurityPerimeterConfigurations.
      *

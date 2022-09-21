@@ -24,6 +24,10 @@ public final class HybridConnectionListResult {
     @JsonProperty(value = "nextLink")
     private String nextLink;
 
+    /** Creates an instance of HybridConnectionListResult class. */
+    public HybridConnectionListResult() {
+    }
+
     /**
      * Get the value property: Result of the list hybrid connections.
      *

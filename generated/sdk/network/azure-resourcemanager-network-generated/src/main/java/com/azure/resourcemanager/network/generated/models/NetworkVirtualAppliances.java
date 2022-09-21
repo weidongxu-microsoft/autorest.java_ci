@@ -38,18 +38,6 @@ public interface NetworkVirtualAppliances {
      *
      * @param resourceGroupName The name of the resource group.
      * @param networkVirtualApplianceName The name of Network Virtual Appliance.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Network Virtual Appliance.
-     */
-    NetworkVirtualAppliance getByResourceGroup(String resourceGroupName, String networkVirtualApplianceName);
-
-    /**
-     * Gets the specified Network Virtual Appliance.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param networkVirtualApplianceName The name of Network Virtual Appliance.
      * @param expand Expands referenced resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -59,6 +47,18 @@ public interface NetworkVirtualAppliances {
      */
     Response<NetworkVirtualAppliance> getByResourceGroupWithResponse(
         String resourceGroupName, String networkVirtualApplianceName, String expand, Context context);
+
+    /**
+     * Gets the specified Network Virtual Appliance.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param networkVirtualApplianceName The name of Network Virtual Appliance.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified Network Virtual Appliance.
+     */
+    NetworkVirtualAppliance getByResourceGroup(String resourceGroupName, String networkVirtualApplianceName);
 
     /**
      * Lists all Network Virtual Appliances in a resource group.

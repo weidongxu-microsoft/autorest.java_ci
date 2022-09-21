@@ -39,15 +39,6 @@ public final class UsersImpl implements Users {
         return Utils.mapPage(inner, inner1 -> new UserImpl(inner1, this.manager()));
     }
 
-    public User get(String deviceName, String name, String resourceGroupName) {
-        UserInner inner = this.serviceClient().get(deviceName, name, resourceGroupName);
-        if (inner != null) {
-            return new UserImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<User> getWithResponse(String deviceName, String name, String resourceGroupName, Context context) {
         Response<UserInner> inner = this.serviceClient().getWithResponse(deviceName, name, resourceGroupName, context);
         if (inner != null) {
@@ -56,6 +47,15 @@ public final class UsersImpl implements Users {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new UserImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public User get(String deviceName, String name, String resourceGroupName) {
+        UserInner inner = this.serviceClient().get(deviceName, name, resourceGroupName);
+        if (inner != null) {
+            return new UserImpl(inner, this.manager());
         } else {
             return null;
         }

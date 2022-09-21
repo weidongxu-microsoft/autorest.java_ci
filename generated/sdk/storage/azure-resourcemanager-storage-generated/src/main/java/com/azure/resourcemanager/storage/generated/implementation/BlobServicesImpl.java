@@ -38,15 +38,6 @@ public final class BlobServicesImpl implements BlobServices {
         return Utils.mapPage(inner, inner1 -> new BlobServicePropertiesImpl(inner1, this.manager()));
     }
 
-    public BlobServiceProperties getServiceProperties(String resourceGroupName, String accountName) {
-        BlobServicePropertiesInner inner = this.serviceClient().getServiceProperties(resourceGroupName, accountName);
-        if (inner != null) {
-            return new BlobServicePropertiesImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<BlobServiceProperties> getServicePropertiesWithResponse(
         String resourceGroupName, String accountName, Context context) {
         Response<BlobServicePropertiesInner> inner =
@@ -57,6 +48,15 @@ public final class BlobServicesImpl implements BlobServices {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new BlobServicePropertiesImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public BlobServiceProperties getServiceProperties(String resourceGroupName, String accountName) {
+        BlobServicePropertiesInner inner = this.serviceClient().getServiceProperties(resourceGroupName, accountName);
+        if (inner != null) {
+            return new BlobServicePropertiesImpl(inner, this.manager());
         } else {
             return null;
         }

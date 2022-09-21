@@ -27,6 +27,10 @@ public class ApplicationGroupPolicy {
     @JsonProperty(value = "name", required = true)
     private String name;
 
+    /** Creates an instance of ApplicationGroupPolicy class. */
+    public ApplicationGroupPolicy() {
+    }
+
     /**
      * Get the name property: The Name of this policy.
      *

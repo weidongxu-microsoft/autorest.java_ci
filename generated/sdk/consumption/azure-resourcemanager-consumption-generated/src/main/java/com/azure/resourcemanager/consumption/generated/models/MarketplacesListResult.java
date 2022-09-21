@@ -27,6 +27,10 @@ public final class MarketplacesListResult {
     @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
 
+    /** Creates an instance of MarketplacesListResult class. */
+    public MarketplacesListResult() {
+    }
+
     /**
      * Get the value property: The list of marketplaces.
      *

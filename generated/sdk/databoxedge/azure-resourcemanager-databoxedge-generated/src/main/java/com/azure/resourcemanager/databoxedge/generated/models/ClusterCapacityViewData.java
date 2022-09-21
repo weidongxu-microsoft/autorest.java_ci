@@ -41,6 +41,10 @@ public final class ClusterCapacityViewData {
     @JsonProperty(value = "totalProvisionedNonHpnCores")
     private Long totalProvisionedNonHpnCores;
 
+    /** Creates an instance of ClusterCapacityViewData class. */
+    public ClusterCapacityViewData() {
+    }
+
     /**
      * Get the fqdn property: The FQDN of the cluster.
      *

@@ -79,6 +79,10 @@ public final class CustomHostnameAnalysisResultProperties {
     @JsonProperty(value = "alternateTxtRecords")
     private List<String> alternateTxtRecords;
 
+    /** Creates an instance of CustomHostnameAnalysisResultProperties class. */
+    public CustomHostnameAnalysisResultProperties() {
+    }
+
     /**
      * Get the isHostnameAlreadyVerified property: &lt;code&gt;true&lt;/code&gt; if hostname is already verified;
      * otherwise, &lt;code&gt;false&lt;/code&gt;.

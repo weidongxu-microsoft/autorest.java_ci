@@ -473,11 +473,11 @@ public final class ClustersClientImpl implements ClustersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Kusto cluster.
+     * @return a Kusto cluster along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ClusterInner getByResourceGroup(String resourceGroupName, String clusterName) {
-        return getByResourceGroupAsync(resourceGroupName, clusterName).block();
+    public Response<ClusterInner> getByResourceGroupWithResponse(String resourceGroupName, String clusterName) {
+        return getByResourceGroupWithResponseAsync(resourceGroupName, clusterName).block();
     }
 
     /**
@@ -495,6 +495,21 @@ public final class ClustersClientImpl implements ClustersClient {
     public Response<ClusterInner> getByResourceGroupWithResponse(
         String resourceGroupName, String clusterName, Context context) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, clusterName, context).block();
+    }
+
+    /**
+     * Gets a Kusto cluster.
+     *
+     * @param resourceGroupName The name of the resource group containing the Kusto cluster.
+     * @param clusterName The name of the Kusto cluster.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a Kusto cluster.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ClusterInner getByResourceGroup(String resourceGroupName, String clusterName) {
+        return getByResourceGroupWithResponse(resourceGroupName, clusterName, Context.NONE).getValue();
     }
 
     /**
@@ -3104,11 +3119,12 @@ public final class ClustersClientImpl implements ClustersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the result returned from a check name availability request.
+     * @return the result returned from a check name availability request along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public CheckNameResultInner checkNameAvailability(String location, ClusterCheckNameRequest clusterName) {
-        return checkNameAvailabilityAsync(location, clusterName).block();
+    public Response<CheckNameResultInner> checkNameAvailabilityWithResponse(
+        String location, ClusterCheckNameRequest clusterName) {
+        return checkNameAvailabilityWithResponseAsync(location, clusterName).block();
     }
 
     /**
@@ -3126,6 +3142,21 @@ public final class ClustersClientImpl implements ClustersClient {
     public Response<CheckNameResultInner> checkNameAvailabilityWithResponse(
         String location, ClusterCheckNameRequest clusterName, Context context) {
         return checkNameAvailabilityWithResponseAsync(location, clusterName, context).block();
+    }
+
+    /**
+     * Checks that the cluster name is valid and is not already in use.
+     *
+     * @param location Azure location (region) name.
+     * @param clusterName The name of the cluster.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the result returned from a check name availability request.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public CheckNameResultInner checkNameAvailability(String location, ClusterCheckNameRequest clusterName) {
+        return checkNameAvailabilityWithResponse(location, clusterName, Context.NONE).getValue();
     }
 
     /**

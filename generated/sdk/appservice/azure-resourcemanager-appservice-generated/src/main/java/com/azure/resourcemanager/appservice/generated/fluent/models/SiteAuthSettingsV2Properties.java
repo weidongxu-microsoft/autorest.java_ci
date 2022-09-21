@@ -48,6 +48,10 @@ public final class SiteAuthSettingsV2Properties {
     @JsonProperty(value = "httpSettings")
     private HttpSettings httpSettings;
 
+    /** Creates an instance of SiteAuthSettingsV2Properties class. */
+    public SiteAuthSettingsV2Properties() {
+    }
+
     /**
      * Get the platform property: The configuration settings of the platform of App Service
      * Authentication/Authorization.

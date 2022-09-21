@@ -185,6 +185,10 @@ public final class VirtualNetworkGatewayConnectionPropertiesFormatImpl
         return this.innerModel().expressRouteGatewayBypass();
     }
 
+    public Boolean enablePrivateLinkFastPath() {
+        return this.innerModel().enablePrivateLinkFastPath();
+    }
+
     public VirtualNetworkGatewayConnectionPropertiesFormatInner innerModel() {
         return this.innerObject;
     }

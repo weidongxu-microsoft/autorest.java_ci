@@ -22,6 +22,10 @@ public final class SiteSealRequest {
     @JsonProperty(value = "locale")
     private String locale;
 
+    /** Creates an instance of SiteSealRequest class. */
+    public SiteSealRequest() {
+    }
+
     /**
      * Get the lightTheme property: If &lt;code&gt;true&lt;/code&gt; use the light color theme for site seal; otherwise,
      * use the default color theme.

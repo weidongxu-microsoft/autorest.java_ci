@@ -26,17 +26,6 @@ public final class ResourceProvidersImpl implements ResourceProviders {
         this.serviceManager = serviceManager;
     }
 
-    public QueryPerformanceInsightResetDataResult resetQueryPerformanceInsightData(
-        String resourceGroupName, String serverName) {
-        QueryPerformanceInsightResetDataResultInner inner =
-            this.serviceClient().resetQueryPerformanceInsightData(resourceGroupName, serverName);
-        if (inner != null) {
-            return new QueryPerformanceInsightResetDataResultImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<QueryPerformanceInsightResetDataResult> resetQueryPerformanceInsightDataWithResponse(
         String resourceGroupName, String serverName, Context context) {
         Response<QueryPerformanceInsightResetDataResultInner> inner =
@@ -47,6 +36,17 @@ public final class ResourceProvidersImpl implements ResourceProviders {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new QueryPerformanceInsightResetDataResultImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public QueryPerformanceInsightResetDataResult resetQueryPerformanceInsightData(
+        String resourceGroupName, String serverName) {
+        QueryPerformanceInsightResetDataResultInner inner =
+            this.serviceClient().resetQueryPerformanceInsightData(resourceGroupName, serverName);
+        if (inner != null) {
+            return new QueryPerformanceInsightResetDataResultImpl(inner, this.manager());
         } else {
             return null;
         }

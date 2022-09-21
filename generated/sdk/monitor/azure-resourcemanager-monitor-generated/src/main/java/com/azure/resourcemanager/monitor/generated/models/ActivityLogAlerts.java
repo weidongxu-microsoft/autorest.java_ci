@@ -15,18 +15,6 @@ public interface ActivityLogAlerts {
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param activityLogAlertName The name of the activity log alert.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an activity log alert.
-     */
-    ActivityLogAlertResource getByResourceGroup(String resourceGroupName, String activityLogAlertName);
-
-    /**
-     * Get an activity log alert.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param activityLogAlertName The name of the activity log alert.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -37,15 +25,16 @@ public interface ActivityLogAlerts {
         String resourceGroupName, String activityLogAlertName, Context context);
 
     /**
-     * Delete an activity log alert.
+     * Get an activity log alert.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param activityLogAlertName The name of the activity log alert.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return an activity log alert.
      */
-    void deleteByResourceGroup(String resourceGroupName, String activityLogAlertName);
+    ActivityLogAlertResource getByResourceGroup(String resourceGroupName, String activityLogAlertName);
 
     /**
      * Delete an activity log alert.
@@ -58,7 +47,19 @@ public interface ActivityLogAlerts {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
-    Response<Void> deleteWithResponse(String resourceGroupName, String activityLogAlertName, Context context);
+    Response<Void> deleteByResourceGroupWithResponse(
+        String resourceGroupName, String activityLogAlertName, Context context);
+
+    /**
+     * Delete an activity log alert.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param activityLogAlertName The name of the activity log alert.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deleteByResourceGroup(String resourceGroupName, String activityLogAlertName);
 
     /**
      * Get a list of all activity log alerts in a subscription.

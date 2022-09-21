@@ -72,6 +72,10 @@ public final class VmSizeCompatibilityFilterV2 {
     @JsonProperty(value = "computeIsolationSupported")
     private String computeIsolationSupported;
 
+    /** Creates an instance of VmSizeCompatibilityFilterV2 class. */
+    public VmSizeCompatibilityFilterV2() {
+    }
+
     /**
      * Get the filterMode property: The filtering mode. Effectively this can enabling or disabling the VM sizes in a
      * particular set.

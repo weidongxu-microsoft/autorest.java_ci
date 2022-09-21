@@ -26,15 +26,6 @@ public final class RateCardsImpl implements RateCards {
         this.serviceManager = serviceManager;
     }
 
-    public ResourceRateCardInfo get(String filter) {
-        ResourceRateCardInfoInner inner = this.serviceClient().get(filter);
-        if (inner != null) {
-            return new ResourceRateCardInfoImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<ResourceRateCardInfo> getWithResponse(String filter, Context context) {
         Response<ResourceRateCardInfoInner> inner = this.serviceClient().getWithResponse(filter, context);
         if (inner != null) {
@@ -43,6 +34,15 @@ public final class RateCardsImpl implements RateCards {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new ResourceRateCardInfoImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public ResourceRateCardInfo get(String filter) {
+        ResourceRateCardInfoInner inner = this.serviceClient().get(filter);
+        if (inner != null) {
+            return new ResourceRateCardInfoImpl(inner, this.manager());
         } else {
             return null;
         }

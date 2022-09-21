@@ -18,6 +18,10 @@ public final class RoleAssignmentCreateParameters {
     @JsonProperty(value = "properties", required = true)
     private RoleAssignmentProperties innerProperties = new RoleAssignmentProperties();
 
+    /** Creates an instance of RoleAssignmentCreateParameters class. */
+    public RoleAssignmentCreateParameters() {
+    }
+
     /**
      * Get the innerProperties property: Role assignment properties.
      *

@@ -34,6 +34,10 @@ public final class ReissueCertificateOrderRequestProperties {
     @JsonProperty(value = "isPrivateKeyExternal")
     private Boolean isPrivateKeyExternal;
 
+    /** Creates an instance of ReissueCertificateOrderRequestProperties class. */
+    public ReissueCertificateOrderRequestProperties() {
+    }
+
     /**
      * Get the keySize property: Certificate Key Size.
      *

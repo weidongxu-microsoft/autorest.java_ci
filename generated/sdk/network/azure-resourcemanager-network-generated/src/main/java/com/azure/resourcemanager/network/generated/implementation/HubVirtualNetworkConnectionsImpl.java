@@ -71,16 +71,6 @@ public final class HubVirtualNetworkConnectionsImpl implements HubVirtualNetwork
         this.serviceClient().delete(resourceGroupName, virtualHubName, connectionName, context);
     }
 
-    public HubVirtualNetworkConnection get(String resourceGroupName, String virtualHubName, String connectionName) {
-        HubVirtualNetworkConnectionInner inner =
-            this.serviceClient().get(resourceGroupName, virtualHubName, connectionName);
-        if (inner != null) {
-            return new HubVirtualNetworkConnectionImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<HubVirtualNetworkConnection> getWithResponse(
         String resourceGroupName, String virtualHubName, String connectionName, Context context) {
         Response<HubVirtualNetworkConnectionInner> inner =
@@ -91,6 +81,16 @@ public final class HubVirtualNetworkConnectionsImpl implements HubVirtualNetwork
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new HubVirtualNetworkConnectionImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public HubVirtualNetworkConnection get(String resourceGroupName, String virtualHubName, String connectionName) {
+        HubVirtualNetworkConnectionInner inner =
+            this.serviceClient().get(resourceGroupName, virtualHubName, connectionName);
+        if (inner != null) {
+            return new HubVirtualNetworkConnectionImpl(inner, this.manager());
         } else {
             return null;
         }

@@ -31,22 +31,6 @@ public final class DiskRestorePointsImpl implements DiskRestorePoints {
         this.serviceManager = serviceManager;
     }
 
-    public DiskRestorePoint get(
-        String resourceGroupName,
-        String restorePointCollectionName,
-        String vmRestorePointName,
-        String diskRestorePointName) {
-        DiskRestorePointInner inner =
-            this
-                .serviceClient()
-                .get(resourceGroupName, restorePointCollectionName, vmRestorePointName, diskRestorePointName);
-        if (inner != null) {
-            return new DiskRestorePointImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<DiskRestorePoint> getWithResponse(
         String resourceGroupName,
         String restorePointCollectionName,
@@ -64,6 +48,22 @@ public final class DiskRestorePointsImpl implements DiskRestorePoints {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new DiskRestorePointImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public DiskRestorePoint get(
+        String resourceGroupName,
+        String restorePointCollectionName,
+        String vmRestorePointName,
+        String diskRestorePointName) {
+        DiskRestorePointInner inner =
+            this
+                .serviceClient()
+                .get(resourceGroupName, restorePointCollectionName, vmRestorePointName, diskRestorePointName);
+        if (inner != null) {
+            return new DiskRestorePointImpl(inner, this.manager());
         } else {
             return null;
         }

@@ -35,6 +35,10 @@ public final class Google {
     @JsonProperty(value = "validation")
     private AllowedAudiencesValidation validation;
 
+    /** Creates an instance of Google class. */
+    public Google() {
+    }
+
     /**
      * Get the enabled property: &lt;code&gt;false&lt;/code&gt; if the Google provider should not be enabled despite the
      * set registration; otherwise, &lt;code&gt;true&lt;/code&gt;.

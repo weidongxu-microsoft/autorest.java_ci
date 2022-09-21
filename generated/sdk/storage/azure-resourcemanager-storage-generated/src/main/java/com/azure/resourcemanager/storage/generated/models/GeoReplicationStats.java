@@ -37,6 +37,10 @@ public final class GeoReplicationStats {
     @JsonProperty(value = "canFailover", access = JsonProperty.Access.WRITE_ONLY)
     private Boolean canFailover;
 
+    /** Creates an instance of GeoReplicationStats class. */
+    public GeoReplicationStats() {
+    }
+
     /**
      * Get the status property: The status of the secondary location. Possible values are: - Live: Indicates that the
      * secondary location is active and operational. - Bootstrap: Indicates initial synchronization from the primary

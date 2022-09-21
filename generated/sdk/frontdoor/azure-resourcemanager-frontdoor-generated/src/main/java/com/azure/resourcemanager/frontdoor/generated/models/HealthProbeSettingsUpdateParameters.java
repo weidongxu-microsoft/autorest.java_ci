@@ -41,6 +41,10 @@ public class HealthProbeSettingsUpdateParameters {
     @JsonProperty(value = "enabledState")
     private HealthProbeEnabled enabledState;
 
+    /** Creates an instance of HealthProbeSettingsUpdateParameters class. */
+    public HealthProbeSettingsUpdateParameters() {
+    }
+
     /**
      * Get the path property: The path to use for the health probe. Default is /.
      *

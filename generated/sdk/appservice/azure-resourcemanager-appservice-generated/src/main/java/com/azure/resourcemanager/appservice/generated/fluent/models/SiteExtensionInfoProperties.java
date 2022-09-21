@@ -133,6 +133,10 @@ public final class SiteExtensionInfoProperties {
     @JsonProperty(value = "comment")
     private String comment;
 
+    /** Creates an instance of SiteExtensionInfoProperties class. */
+    public SiteExtensionInfoProperties() {
+    }
+
     /**
      * Get the extensionId property: Site extension ID.
      *

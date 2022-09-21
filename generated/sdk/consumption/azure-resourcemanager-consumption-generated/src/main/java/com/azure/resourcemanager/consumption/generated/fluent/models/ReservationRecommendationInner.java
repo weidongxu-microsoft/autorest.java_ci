@@ -53,6 +53,10 @@ public class ReservationRecommendationInner extends ProxyResource {
     @JsonProperty(value = "sku", access = JsonProperty.Access.WRITE_ONLY)
     private String sku;
 
+    /** Creates an instance of ReservationRecommendationInner class. */
+    public ReservationRecommendationInner() {
+    }
+
     /**
      * Get the etag property: The etag for the resource.
      *

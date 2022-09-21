@@ -62,6 +62,10 @@ public final class RecommendationActionProperties {
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, String> details;
 
+    /** Creates an instance of RecommendationActionProperties class. */
+    public RecommendationActionProperties() {
+    }
+
     /**
      * Get the advisorName property: Advisor name.
      *

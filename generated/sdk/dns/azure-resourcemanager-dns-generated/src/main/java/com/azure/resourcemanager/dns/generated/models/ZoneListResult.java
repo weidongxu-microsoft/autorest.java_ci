@@ -24,6 +24,10 @@ public final class ZoneListResult {
     @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
 
+    /** Creates an instance of ZoneListResult class. */
+    public ZoneListResult() {
+    }
+
     /**
      * Get the value property: Information about the DNS zones.
      *

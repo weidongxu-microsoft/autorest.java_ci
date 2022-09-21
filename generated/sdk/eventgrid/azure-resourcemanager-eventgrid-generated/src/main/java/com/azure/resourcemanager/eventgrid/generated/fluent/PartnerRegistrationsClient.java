@@ -23,21 +23,6 @@ public interface PartnerRegistrationsClient {
      *
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerRegistrationName Name of the partner registration.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a partner registration with the specified parameters.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    PartnerRegistrationInner getByResourceGroup(String resourceGroupName, String partnerRegistrationName);
-
-    /**
-     * Get a partner registration.
-     *
-     * <p>Gets a partner registration with the specified parameters.
-     *
-     * @param resourceGroupName The name of the resource group within the user's subscription.
-     * @param partnerRegistrationName Name of the partner registration.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -47,6 +32,21 @@ public interface PartnerRegistrationsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<PartnerRegistrationInner> getByResourceGroupWithResponse(
         String resourceGroupName, String partnerRegistrationName, Context context);
+
+    /**
+     * Get a partner registration.
+     *
+     * <p>Gets a partner registration with the specified parameters.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription.
+     * @param partnerRegistrationName Name of the partner registration.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a partner registration with the specified parameters.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    PartnerRegistrationInner getByResourceGroup(String resourceGroupName, String partnerRegistrationName);
 
     /**
      * Create a partner registration.

@@ -36,6 +36,10 @@ public final class ApplicationGatewayAuthenticationCertificate extends SubResour
     @JsonProperty(value = "type", access = JsonProperty.Access.WRITE_ONLY)
     private String type;
 
+    /** Creates an instance of ApplicationGatewayAuthenticationCertificate class. */
+    public ApplicationGatewayAuthenticationCertificate() {
+    }
+
     /**
      * Get the innerProperties property: Properties of the application gateway authentication certificate.
      *

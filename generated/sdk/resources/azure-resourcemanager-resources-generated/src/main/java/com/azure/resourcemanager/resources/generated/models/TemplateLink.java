@@ -35,6 +35,10 @@ public final class TemplateLink {
     @JsonProperty(value = "contentVersion")
     private String contentVersion;
 
+    /** Creates an instance of TemplateLink class. */
+    public TemplateLink() {
+    }
+
     /**
      * Get the uri property: The URI of the template to deploy. Use either the uri or id property, but not both.
      *

@@ -277,6 +277,10 @@ public final class StorageAccountPropertiesInner {
     @JsonProperty(value = "dnsEndpointType")
     private DnsEndpointType dnsEndpointType;
 
+    /** Creates an instance of StorageAccountPropertiesInner class. */
+    public StorageAccountPropertiesInner() {
+    }
+
     /**
      * Get the provisioningState property: Gets the status of the storage account at the time the operation was called.
      *

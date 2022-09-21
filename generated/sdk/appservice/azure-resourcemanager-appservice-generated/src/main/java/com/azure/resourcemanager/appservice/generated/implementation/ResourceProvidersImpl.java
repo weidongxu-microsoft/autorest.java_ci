@@ -56,15 +56,6 @@ public final class ResourceProvidersImpl implements ResourceProviders {
         this.serviceManager = serviceManager;
     }
 
-    public User getPublishingUser() {
-        UserInner inner = this.serviceClient().getPublishingUser();
-        if (inner != null) {
-            return new UserImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<User> getPublishingUserWithResponse(Context context) {
         Response<UserInner> inner = this.serviceClient().getPublishingUserWithResponse(context);
         if (inner != null) {
@@ -78,8 +69,8 @@ public final class ResourceProvidersImpl implements ResourceProviders {
         }
     }
 
-    public User updatePublishingUser(UserInner userDetails) {
-        UserInner inner = this.serviceClient().updatePublishingUser(userDetails);
+    public User getPublishingUser() {
+        UserInner inner = this.serviceClient().getPublishingUser();
         if (inner != null) {
             return new UserImpl(inner, this.manager());
         } else {
@@ -100,6 +91,15 @@ public final class ResourceProvidersImpl implements ResourceProviders {
         }
     }
 
+    public User updatePublishingUser(UserInner userDetails) {
+        UserInner inner = this.serviceClient().updatePublishingUser(userDetails);
+        if (inner != null) {
+            return new UserImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
     public PagedIterable<SourceControl> listSourceControls() {
         PagedIterable<SourceControlInner> inner = this.serviceClient().listSourceControls();
         return Utils.mapPage(inner, inner1 -> new SourceControlImpl(inner1, this.manager()));
@@ -108,15 +108,6 @@ public final class ResourceProvidersImpl implements ResourceProviders {
     public PagedIterable<SourceControl> listSourceControls(Context context) {
         PagedIterable<SourceControlInner> inner = this.serviceClient().listSourceControls(context);
         return Utils.mapPage(inner, inner1 -> new SourceControlImpl(inner1, this.manager()));
-    }
-
-    public SourceControl getSourceControl(String sourceControlType) {
-        SourceControlInner inner = this.serviceClient().getSourceControl(sourceControlType);
-        if (inner != null) {
-            return new SourceControlImpl(inner, this.manager());
-        } else {
-            return null;
-        }
     }
 
     public Response<SourceControl> getSourceControlWithResponse(String sourceControlType, Context context) {
@@ -133,8 +124,8 @@ public final class ResourceProvidersImpl implements ResourceProviders {
         }
     }
 
-    public SourceControl updateSourceControl(String sourceControlType, SourceControlInner requestMessage) {
-        SourceControlInner inner = this.serviceClient().updateSourceControl(sourceControlType, requestMessage);
+    public SourceControl getSourceControl(String sourceControlType) {
+        SourceControlInner inner = this.serviceClient().getSourceControl(sourceControlType);
         if (inner != null) {
             return new SourceControlImpl(inner, this.manager());
         } else {
@@ -157,6 +148,15 @@ public final class ResourceProvidersImpl implements ResourceProviders {
         }
     }
 
+    public SourceControl updateSourceControl(String sourceControlType, SourceControlInner requestMessage) {
+        SourceControlInner inner = this.serviceClient().updateSourceControl(sourceControlType, requestMessage);
+        if (inner != null) {
+            return new SourceControlImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
     public PagedIterable<BillingMeter> list() {
         PagedIterable<BillingMeterInner> inner = this.serviceClient().list();
         return Utils.mapPage(inner, inner1 -> new BillingMeterImpl(inner1, this.manager()));
@@ -165,15 +165,6 @@ public final class ResourceProvidersImpl implements ResourceProviders {
     public PagedIterable<BillingMeter> list(String billingLocation, String osType, Context context) {
         PagedIterable<BillingMeterInner> inner = this.serviceClient().list(billingLocation, osType, context);
         return Utils.mapPage(inner, inner1 -> new BillingMeterImpl(inner1, this.manager()));
-    }
-
-    public ResourceNameAvailability checkNameAvailability(ResourceNameAvailabilityRequest request) {
-        ResourceNameAvailabilityInner inner = this.serviceClient().checkNameAvailability(request);
-        if (inner != null) {
-            return new ResourceNameAvailabilityImpl(inner, this.manager());
-        } else {
-            return null;
-        }
     }
 
     public Response<ResourceNameAvailability> checkNameAvailabilityWithResponse(
@@ -191,6 +182,15 @@ public final class ResourceProvidersImpl implements ResourceProviders {
         }
     }
 
+    public ResourceNameAvailability checkNameAvailability(ResourceNameAvailabilityRequest request) {
+        ResourceNameAvailabilityInner inner = this.serviceClient().checkNameAvailability(request);
+        if (inner != null) {
+            return new ResourceNameAvailabilityImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
     public PagedIterable<CustomHostnameSites> listCustomHostnameSites() {
         PagedIterable<CustomHostnameSitesInner> inner = this.serviceClient().listCustomHostnameSites();
         return Utils.mapPage(inner, inner1 -> new CustomHostnameSitesImpl(inner1, this.manager()));
@@ -199,15 +199,6 @@ public final class ResourceProvidersImpl implements ResourceProviders {
     public PagedIterable<CustomHostnameSites> listCustomHostnameSites(String hostname, Context context) {
         PagedIterable<CustomHostnameSitesInner> inner = this.serviceClient().listCustomHostnameSites(hostname, context);
         return Utils.mapPage(inner, inner1 -> new CustomHostnameSitesImpl(inner1, this.manager()));
-    }
-
-    public DeploymentLocations getSubscriptionDeploymentLocations() {
-        DeploymentLocationsInner inner = this.serviceClient().getSubscriptionDeploymentLocations();
-        if (inner != null) {
-            return new DeploymentLocationsImpl(inner, this.manager());
-        } else {
-            return null;
-        }
     }
 
     public Response<DeploymentLocations> getSubscriptionDeploymentLocationsWithResponse(Context context) {
@@ -219,6 +210,15 @@ public final class ResourceProvidersImpl implements ResourceProviders {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new DeploymentLocationsImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public DeploymentLocations getSubscriptionDeploymentLocations() {
+        DeploymentLocationsInner inner = this.serviceClient().getSubscriptionDeploymentLocations();
+        if (inner != null) {
+            return new DeploymentLocationsImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -265,15 +265,6 @@ public final class ResourceProvidersImpl implements ResourceProviders {
         return Utils.mapPage(inner, inner1 -> new PremierAddOnOfferImpl(inner1, this.manager()));
     }
 
-    public SkuInfos listSkus() {
-        SkuInfosInner inner = this.serviceClient().listSkus();
-        if (inner != null) {
-            return new SkuInfosImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<SkuInfos> listSkusWithResponse(Context context) {
         Response<SkuInfosInner> inner = this.serviceClient().listSkusWithResponse(context);
         if (inner != null) {
@@ -287,10 +278,10 @@ public final class ResourceProvidersImpl implements ResourceProviders {
         }
     }
 
-    public VnetValidationFailureDetails verifyHostingEnvironmentVnet(VnetParameters parameters) {
-        VnetValidationFailureDetailsInner inner = this.serviceClient().verifyHostingEnvironmentVnet(parameters);
+    public SkuInfos listSkus() {
+        SkuInfosInner inner = this.serviceClient().listSkus();
         if (inner != null) {
-            return new VnetValidationFailureDetailsImpl(inner, this.manager());
+            return new SkuInfosImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -311,8 +302,13 @@ public final class ResourceProvidersImpl implements ResourceProviders {
         }
     }
 
-    public void move(String resourceGroupName, CsmMoveResourceEnvelope moveResourceEnvelope) {
-        this.serviceClient().move(resourceGroupName, moveResourceEnvelope);
+    public VnetValidationFailureDetails verifyHostingEnvironmentVnet(VnetParameters parameters) {
+        VnetValidationFailureDetailsInner inner = this.serviceClient().verifyHostingEnvironmentVnet(parameters);
+        if (inner != null) {
+            return new VnetValidationFailureDetailsImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> moveWithResponse(
@@ -320,13 +316,8 @@ public final class ResourceProvidersImpl implements ResourceProviders {
         return this.serviceClient().moveWithResponse(resourceGroupName, moveResourceEnvelope, context);
     }
 
-    public ValidateResponse validate(String resourceGroupName, ValidateRequestInner validateRequest) {
-        ValidateResponseInner inner = this.serviceClient().validate(resourceGroupName, validateRequest);
-        if (inner != null) {
-            return new ValidateResponseImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void move(String resourceGroupName, CsmMoveResourceEnvelope moveResourceEnvelope) {
+        this.serviceClient().move(resourceGroupName, moveResourceEnvelope);
     }
 
     public Response<ValidateResponse> validateWithResponse(
@@ -344,13 +335,22 @@ public final class ResourceProvidersImpl implements ResourceProviders {
         }
     }
 
-    public void validateMove(String resourceGroupName, CsmMoveResourceEnvelope moveResourceEnvelope) {
-        this.serviceClient().validateMove(resourceGroupName, moveResourceEnvelope);
+    public ValidateResponse validate(String resourceGroupName, ValidateRequestInner validateRequest) {
+        ValidateResponseInner inner = this.serviceClient().validate(resourceGroupName, validateRequest);
+        if (inner != null) {
+            return new ValidateResponseImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> validateMoveWithResponse(
         String resourceGroupName, CsmMoveResourceEnvelope moveResourceEnvelope, Context context) {
         return this.serviceClient().validateMoveWithResponse(resourceGroupName, moveResourceEnvelope, context);
+    }
+
+    public void validateMove(String resourceGroupName, CsmMoveResourceEnvelope moveResourceEnvelope) {
+        this.serviceClient().validateMove(resourceGroupName, moveResourceEnvelope);
     }
 
     private ResourceProvidersClient serviceClient() {

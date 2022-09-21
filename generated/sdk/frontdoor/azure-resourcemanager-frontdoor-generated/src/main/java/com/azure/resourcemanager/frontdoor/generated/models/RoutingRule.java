@@ -34,6 +34,10 @@ public final class RoutingRule extends SubResource {
     @JsonProperty(value = "type", access = JsonProperty.Access.WRITE_ONLY)
     private String type;
 
+    /** Creates an instance of RoutingRule class. */
+    public RoutingRule() {
+    }
+
     /**
      * Get the innerProperties property: Properties of the Front Door Routing Rule.
      *

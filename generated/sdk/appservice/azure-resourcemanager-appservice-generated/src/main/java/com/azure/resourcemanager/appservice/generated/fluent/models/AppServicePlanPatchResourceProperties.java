@@ -155,6 +155,10 @@ public final class AppServicePlanPatchResourceProperties {
     @JsonProperty(value = "zoneRedundant")
     private Boolean zoneRedundant;
 
+    /** Creates an instance of AppServicePlanPatchResourceProperties class. */
+    public AppServicePlanPatchResourceProperties() {
+    }
+
     /**
      * Get the workerTierName property: Target worker tier assigned to the App Service plan.
      *

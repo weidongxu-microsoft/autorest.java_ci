@@ -38,36 +38,25 @@ public interface AutoscaleSettings {
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param autoscaleSettingName The autoscale setting name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void deleteByResourceGroup(String resourceGroupName, String autoscaleSettingName);
-
-    /**
-     * Deletes and autoscale setting.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param autoscaleSettingName The autoscale setting name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
-    Response<Void> deleteWithResponse(String resourceGroupName, String autoscaleSettingName, Context context);
+    Response<Void> deleteByResourceGroupWithResponse(
+        String resourceGroupName, String autoscaleSettingName, Context context);
 
     /**
-     * Gets an autoscale setting.
+     * Deletes and autoscale setting.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param autoscaleSettingName The autoscale setting name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an autoscale setting.
      */
-    AutoscaleSettingResource getByResourceGroup(String resourceGroupName, String autoscaleSettingName);
+    void deleteByResourceGroup(String resourceGroupName, String autoscaleSettingName);
 
     /**
      * Gets an autoscale setting.
@@ -82,6 +71,18 @@ public interface AutoscaleSettings {
      */
     Response<AutoscaleSettingResource> getByResourceGroupWithResponse(
         String resourceGroupName, String autoscaleSettingName, Context context);
+
+    /**
+     * Gets an autoscale setting.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param autoscaleSettingName The autoscale setting name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return an autoscale setting.
+     */
+    AutoscaleSettingResource getByResourceGroup(String resourceGroupName, String autoscaleSettingName);
 
     /**
      * Lists the autoscale settings for a subscription.

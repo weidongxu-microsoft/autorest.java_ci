@@ -25,6 +25,10 @@ public final class TwitterRegistration {
     @JsonProperty(value = "consumerSecretSettingName")
     private String consumerSecretSettingName;
 
+    /** Creates an instance of TwitterRegistration class. */
+    public TwitterRegistration() {
+    }
+
     /**
      * Get the consumerKey property: The OAuth 1.0a consumer key of the Twitter application used for sign-in. This
      * setting is required for enabling Twitter Sign-In. Twitter Sign-In documentation:

@@ -38,6 +38,10 @@ public final class SiteCloneabilityInner {
     @JsonProperty(value = "blockingCharacteristics")
     private List<SiteCloneabilityCriterion> blockingCharacteristics;
 
+    /** Creates an instance of SiteCloneabilityInner class. */
+    public SiteCloneabilityInner() {
+    }
+
     /**
      * Get the result property: Name of app.
      *

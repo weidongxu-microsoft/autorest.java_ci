@@ -23,6 +23,10 @@ public final class Nonce {
     @JsonProperty(value = "nonceExpirationInterval")
     private String nonceExpirationInterval;
 
+    /** Creates an instance of Nonce class. */
+    public Nonce() {
+    }
+
     /**
      * Get the validateNonce property: &lt;code&gt;false&lt;/code&gt; if the nonce should not be validated while
      * completing the login flow; otherwise, &lt;code&gt;true&lt;/code&gt;.

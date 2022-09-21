@@ -36,17 +36,6 @@ public final class ExpressRouteCircuitAuthorizationsImpl implements ExpressRoute
         this.serviceClient().delete(resourceGroupName, circuitName, authorizationName, context);
     }
 
-    public ExpressRouteCircuitAuthorization get(
-        String resourceGroupName, String circuitName, String authorizationName) {
-        ExpressRouteCircuitAuthorizationInner inner =
-            this.serviceClient().get(resourceGroupName, circuitName, authorizationName);
-        if (inner != null) {
-            return new ExpressRouteCircuitAuthorizationImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<ExpressRouteCircuitAuthorization> getWithResponse(
         String resourceGroupName, String circuitName, String authorizationName, Context context) {
         Response<ExpressRouteCircuitAuthorizationInner> inner =
@@ -57,6 +46,17 @@ public final class ExpressRouteCircuitAuthorizationsImpl implements ExpressRoute
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new ExpressRouteCircuitAuthorizationImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public ExpressRouteCircuitAuthorization get(
+        String resourceGroupName, String circuitName, String authorizationName) {
+        ExpressRouteCircuitAuthorizationInner inner =
+            this.serviceClient().get(resourceGroupName, circuitName, authorizationName);
+        if (inner != null) {
+            return new ExpressRouteCircuitAuthorizationImpl(inner, this.manager());
         } else {
             return null;
         }

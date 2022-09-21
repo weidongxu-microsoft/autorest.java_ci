@@ -17,6 +17,10 @@ public final class DiagnosticSettingsResourceCollectionInner {
     @JsonProperty(value = "value")
     private List<DiagnosticSettingsResourceInner> value;
 
+    /** Creates an instance of DiagnosticSettingsResourceCollectionInner class. */
+    public DiagnosticSettingsResourceCollectionInner() {
+    }
+
     /**
      * Get the value property: The collection of diagnostic settings resources;.
      *

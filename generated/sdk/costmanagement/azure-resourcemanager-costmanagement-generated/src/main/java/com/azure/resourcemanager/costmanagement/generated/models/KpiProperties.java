@@ -28,6 +28,10 @@ public final class KpiProperties {
     @JsonProperty(value = "enabled")
     private Boolean enabled;
 
+    /** Creates an instance of KpiProperties class. */
+    public KpiProperties() {
+    }
+
     /**
      * Get the type property: KPI type (Forecast, Budget).
      *

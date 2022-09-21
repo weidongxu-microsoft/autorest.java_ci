@@ -32,6 +32,10 @@ public final class InboundEnvironmentEndpointInner {
     @JsonProperty(value = "ports")
     private List<String> ports;
 
+    /** Creates an instance of InboundEnvironmentEndpointInner class. */
+    public InboundEnvironmentEndpointInner() {
+    }
+
     /**
      * Get the description property: Short text describing the purpose of the network traffic.
      *

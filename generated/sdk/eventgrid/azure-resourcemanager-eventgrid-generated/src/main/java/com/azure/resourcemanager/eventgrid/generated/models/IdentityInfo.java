@@ -41,6 +41,10 @@ public final class IdentityInfo {
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, UserIdentityProperties> userAssignedIdentities;
 
+    /** Creates an instance of IdentityInfo class. */
+    public IdentityInfo() {
+    }
+
     /**
      * Get the type property: The type of managed identity used. The type 'SystemAssigned, UserAssigned' includes both
      * an implicitly created identity and a set of user-assigned identities. The type 'None' will remove any identity.

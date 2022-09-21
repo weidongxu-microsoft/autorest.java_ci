@@ -56,16 +56,6 @@ public final class PacketCapturesImpl implements PacketCaptures {
         }
     }
 
-    public PacketCaptureResult get(String resourceGroupName, String networkWatcherName, String packetCaptureName) {
-        PacketCaptureResultInner inner =
-            this.serviceClient().get(resourceGroupName, networkWatcherName, packetCaptureName);
-        if (inner != null) {
-            return new PacketCaptureResultImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<PacketCaptureResult> getWithResponse(
         String resourceGroupName, String networkWatcherName, String packetCaptureName, Context context) {
         Response<PacketCaptureResultInner> inner =
@@ -76,6 +66,16 @@ public final class PacketCapturesImpl implements PacketCaptures {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new PacketCaptureResultImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public PacketCaptureResult get(String resourceGroupName, String networkWatcherName, String packetCaptureName) {
+        PacketCaptureResultInner inner =
+            this.serviceClient().get(resourceGroupName, networkWatcherName, packetCaptureName);
+        if (inner != null) {
+            return new PacketCaptureResultImpl(inner, this.manager());
         } else {
             return null;
         }

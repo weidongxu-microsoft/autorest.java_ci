@@ -36,16 +36,6 @@ public final class SecurityPartnerProvidersImpl implements SecurityPartnerProvid
         this.serviceClient().delete(resourceGroupName, securityPartnerProviderName, context);
     }
 
-    public SecurityPartnerProvider getByResourceGroup(String resourceGroupName, String securityPartnerProviderName) {
-        SecurityPartnerProviderInner inner =
-            this.serviceClient().getByResourceGroup(resourceGroupName, securityPartnerProviderName);
-        if (inner != null) {
-            return new SecurityPartnerProviderImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<SecurityPartnerProvider> getByResourceGroupWithResponse(
         String resourceGroupName, String securityPartnerProviderName, Context context) {
         Response<SecurityPartnerProviderInner> inner =
@@ -58,6 +48,16 @@ public final class SecurityPartnerProvidersImpl implements SecurityPartnerProvid
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new SecurityPartnerProviderImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public SecurityPartnerProvider getByResourceGroup(String resourceGroupName, String securityPartnerProviderName) {
+        SecurityPartnerProviderInner inner =
+            this.serviceClient().getByResourceGroup(resourceGroupName, securityPartnerProviderName);
+        if (inner != null) {
+            return new SecurityPartnerProviderImpl(inner, this.manager());
         } else {
             return null;
         }

@@ -34,6 +34,10 @@ public final class StackMinorVersion {
     @JsonProperty(value = "isRemoteDebuggingEnabled")
     private Boolean isRemoteDebuggingEnabled;
 
+    /** Creates an instance of StackMinorVersion class. */
+    public StackMinorVersion() {
+    }
+
     /**
      * Get the displayVersion property: Application stack minor version (display only).
      *

@@ -21,6 +21,10 @@ public final class NetworkRuleSet {
     @JsonProperty(value = "ipRules")
     private List<IpRule> ipRules;
 
+    /** Creates an instance of NetworkRuleSet class. */
+    public NetworkRuleSet() {
+    }
+
     /**
      * Get the ipRules property: A list of IP restriction rules that defines the inbound network(s) with allowing access
      * to the search service endpoint. At the meantime, all other public IP networks are blocked by the firewall. These

@@ -183,7 +183,7 @@ public final class SecurityAdminConfigurationsClientImpl implements SecurityAdmi
             return Mono
                 .error(new IllegalArgumentException("Parameter networkManagerName is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -251,7 +251,7 @@ public final class SecurityAdminConfigurationsClientImpl implements SecurityAdmi
             return Mono
                 .error(new IllegalArgumentException("Parameter networkManagerName is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -420,7 +420,7 @@ public final class SecurityAdminConfigurationsClientImpl implements SecurityAdmi
             return Mono
                 .error(new IllegalArgumentException("Parameter configurationName is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -478,7 +478,7 @@ public final class SecurityAdminConfigurationsClientImpl implements SecurityAdmi
             return Mono
                 .error(new IllegalArgumentException("Parameter configurationName is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -520,12 +520,12 @@ public final class SecurityAdminConfigurationsClientImpl implements SecurityAdmi
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return defines the security admin configuration.
+     * @return defines the security admin configuration along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public SecurityAdminConfigurationInner get(
+    public Response<SecurityAdminConfigurationInner> getWithResponse(
         String resourceGroupName, String networkManagerName, String configurationName) {
-        return getAsync(resourceGroupName, networkManagerName, configurationName).block();
+        return getWithResponseAsync(resourceGroupName, networkManagerName, configurationName).block();
     }
 
     /**
@@ -544,6 +544,23 @@ public final class SecurityAdminConfigurationsClientImpl implements SecurityAdmi
     public Response<SecurityAdminConfigurationInner> getWithResponse(
         String resourceGroupName, String networkManagerName, String configurationName, Context context) {
         return getWithResponseAsync(resourceGroupName, networkManagerName, configurationName, context).block();
+    }
+
+    /**
+     * Retrieves a network manager security admin configuration.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param networkManagerName The name of the network manager.
+     * @param configurationName The name of the network manager Security Configuration.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return defines the security admin configuration.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public SecurityAdminConfigurationInner get(
+        String resourceGroupName, String networkManagerName, String configurationName) {
+        return getWithResponse(resourceGroupName, networkManagerName, configurationName, Context.NONE).getValue();
     }
 
     /**
@@ -597,7 +614,7 @@ public final class SecurityAdminConfigurationsClientImpl implements SecurityAdmi
         } else {
             securityAdminConfiguration.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -669,7 +686,7 @@ public final class SecurityAdminConfigurationsClientImpl implements SecurityAdmi
         } else {
             securityAdminConfiguration.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -718,15 +735,16 @@ public final class SecurityAdminConfigurationsClientImpl implements SecurityAdmi
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return defines the security admin configuration.
+     * @return defines the security admin configuration along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public SecurityAdminConfigurationInner createOrUpdate(
+    public Response<SecurityAdminConfigurationInner> createOrUpdateWithResponse(
         String resourceGroupName,
         String networkManagerName,
         String configurationName,
         SecurityAdminConfigurationInner securityAdminConfiguration) {
-        return createOrUpdateAsync(resourceGroupName, networkManagerName, configurationName, securityAdminConfiguration)
+        return createOrUpdateWithResponseAsync(
+                resourceGroupName, networkManagerName, configurationName, securityAdminConfiguration)
             .block();
     }
 
@@ -753,6 +771,29 @@ public final class SecurityAdminConfigurationsClientImpl implements SecurityAdmi
         return createOrUpdateWithResponseAsync(
                 resourceGroupName, networkManagerName, configurationName, securityAdminConfiguration, context)
             .block();
+    }
+
+    /**
+     * Creates or updates a network manager security admin configuration.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param networkManagerName The name of the network manager.
+     * @param configurationName The name of the network manager Security Configuration.
+     * @param securityAdminConfiguration The security admin configuration to create or update.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return defines the security admin configuration.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public SecurityAdminConfigurationInner createOrUpdate(
+        String resourceGroupName,
+        String networkManagerName,
+        String configurationName,
+        SecurityAdminConfigurationInner securityAdminConfiguration) {
+        return createOrUpdateWithResponse(
+                resourceGroupName, networkManagerName, configurationName, securityAdminConfiguration, Context.NONE)
+            .getValue();
     }
 
     /**
@@ -795,7 +836,7 @@ public final class SecurityAdminConfigurationsClientImpl implements SecurityAdmi
             return Mono
                 .error(new IllegalArgumentException("Parameter configurationName is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -855,7 +896,7 @@ public final class SecurityAdminConfigurationsClientImpl implements SecurityAdmi
             return Mono
                 .error(new IllegalArgumentException("Parameter configurationName is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service

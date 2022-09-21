@@ -30,6 +30,10 @@ public final class AzureBlobStorageHttpLogsConfig {
     @JsonProperty(value = "enabled")
     private Boolean enabled;
 
+    /** Creates an instance of AzureBlobStorageHttpLogsConfig class. */
+    public AzureBlobStorageHttpLogsConfig() {
+    }
+
     /**
      * Get the sasUrl property: SAS url to a azure blob container with read/write/list/delete permissions.
      *

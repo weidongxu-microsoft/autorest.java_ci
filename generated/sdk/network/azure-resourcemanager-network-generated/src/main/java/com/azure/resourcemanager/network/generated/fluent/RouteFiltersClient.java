@@ -73,19 +73,6 @@ public interface RouteFiltersClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param routeFilterName The name of the route filter.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified route filter.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    RouteFilterInner getByResourceGroup(String resourceGroupName, String routeFilterName);
-
-    /**
-     * Gets the specified route filter.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param routeFilterName The name of the route filter.
      * @param expand Expands referenced express route bgp peering resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -98,6 +85,19 @@ public interface RouteFiltersClient {
         String resourceGroupName, String routeFilterName, String expand, Context context);
 
     /**
+     * Gets the specified route filter.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param routeFilterName The name of the route filter.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified route filter.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    RouteFilterInner getByResourceGroup(String resourceGroupName, String routeFilterName);
+
+    /**
      * Creates or updates a route filter in a specified resource group.
      *
      * @param resourceGroupName The name of the resource group.
@@ -158,20 +158,6 @@ public interface RouteFiltersClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     RouteFilterInner createOrUpdate(
         String resourceGroupName, String routeFilterName, RouteFilterInner routeFilterParameters, Context context);
-
-    /**
-     * Updates tags of a route filter.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param routeFilterName The name of the route filter.
-     * @param parameters Parameters supplied to update route filter tags.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return route Filter Resource.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    RouteFilterInner updateTags(String resourceGroupName, String routeFilterName, TagsObject parameters);
 
     /**
      * Updates tags of a route filter.
@@ -188,6 +174,20 @@ public interface RouteFiltersClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<RouteFilterInner> updateTagsWithResponse(
         String resourceGroupName, String routeFilterName, TagsObject parameters, Context context);
+
+    /**
+     * Updates tags of a route filter.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param routeFilterName The name of the route filter.
+     * @param parameters Parameters supplied to update route filter tags.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return route Filter Resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    RouteFilterInner updateTags(String resourceGroupName, String routeFilterName, TagsObject parameters);
 
     /**
      * Gets all route filters in a resource group.

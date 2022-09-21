@@ -29,6 +29,10 @@ public final class Scale {
     @JsonProperty(value = "rules")
     private List<ScaleRule> rules;
 
+    /** Creates an instance of Scale class. */
+    public Scale() {
+    }
+
     /**
      * Get the minReplicas property: Optional. Minimum number of container replicas.
      *

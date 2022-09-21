@@ -29,6 +29,10 @@ public final class StaticSiteUserProvidedFunctionAppProperties {
     @JsonProperty(value = "createdOn", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime createdOn;
 
+    /** Creates an instance of StaticSiteUserProvidedFunctionAppProperties class. */
+    public StaticSiteUserProvidedFunctionAppProperties() {
+    }
+
     /**
      * Get the functionAppResourceId property: The resource id of the function app registered with the static site.
      *

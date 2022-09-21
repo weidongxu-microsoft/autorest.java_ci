@@ -30,6 +30,10 @@ public final class DeploymentLocationsInner {
     @JsonProperty(value = "hostingEnvironmentDeploymentInfos")
     private List<HostingEnvironmentDeploymentInfo> hostingEnvironmentDeploymentInfos;
 
+    /** Creates an instance of DeploymentLocationsInner class. */
+    public DeploymentLocationsInner() {
+    }
+
     /**
      * Get the locations property: Available regions.
      *

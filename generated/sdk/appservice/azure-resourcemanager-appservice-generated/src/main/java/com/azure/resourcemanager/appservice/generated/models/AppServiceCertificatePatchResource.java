@@ -17,6 +17,10 @@ public final class AppServiceCertificatePatchResource extends ProxyOnlyResource 
     @JsonProperty(value = "properties")
     private AppServiceCertificate innerProperties;
 
+    /** Creates an instance of AppServiceCertificatePatchResource class. */
+    public AppServiceCertificatePatchResource() {
+    }
+
     /**
      * Get the innerProperties property: Core resource properties.
      *

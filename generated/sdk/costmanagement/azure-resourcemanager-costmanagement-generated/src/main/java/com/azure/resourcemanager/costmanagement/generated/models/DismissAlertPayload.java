@@ -17,6 +17,10 @@ public final class DismissAlertPayload {
     @JsonProperty(value = "properties")
     private AlertProperties innerProperties;
 
+    /** Creates an instance of DismissAlertPayload class. */
+    public DismissAlertPayload() {
+    }
+
     /**
      * Get the innerProperties property: The properties property.
      *

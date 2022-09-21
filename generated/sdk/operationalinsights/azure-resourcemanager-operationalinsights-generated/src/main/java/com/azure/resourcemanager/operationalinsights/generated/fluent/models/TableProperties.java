@@ -8,9 +8,11 @@ import com.azure.core.annotation.Fluent;
 import com.azure.resourcemanager.operationalinsights.generated.models.ProvisioningStateEnum;
 import com.azure.resourcemanager.operationalinsights.generated.models.RestoredLogs;
 import com.azure.resourcemanager.operationalinsights.generated.models.ResultStatistics;
+import com.azure.resourcemanager.operationalinsights.generated.models.RetentionInDaysAsDefault;
 import com.azure.resourcemanager.operationalinsights.generated.models.Schema;
 import com.azure.resourcemanager.operationalinsights.generated.models.SearchResults;
 import com.azure.resourcemanager.operationalinsights.generated.models.TablePlanEnum;
+import com.azure.resourcemanager.operationalinsights.generated.models.TotalRetentionInDaysAsDefault;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Table properties. */
@@ -51,7 +53,7 @@ public final class TableProperties {
     /*
      * Search job execution statistics.
      */
-    @JsonProperty(value = "resultStatistics")
+    @JsonProperty(value = "resultStatistics", access = JsonProperty.Access.WRITE_ONLY)
     private ResultStatistics resultStatistics;
 
     /*
@@ -78,6 +80,22 @@ public final class TableProperties {
      */
     @JsonProperty(value = "provisioningState", access = JsonProperty.Access.WRITE_ONLY)
     private ProvisioningStateEnum provisioningState;
+
+    /*
+     * True - Value originates from workspace retention in days, False - Customer specific.
+     */
+    @JsonProperty(value = "retentionInDaysAsDefault", access = JsonProperty.Access.WRITE_ONLY)
+    private RetentionInDaysAsDefault retentionInDaysAsDefault;
+
+    /*
+     * True - Value originates from retention in days, False - Customer specific.
+     */
+    @JsonProperty(value = "totalRetentionInDaysAsDefault", access = JsonProperty.Access.WRITE_ONLY)
+    private TotalRetentionInDaysAsDefault totalRetentionInDaysAsDefault;
+
+    /** Creates an instance of TableProperties class. */
+    public TableProperties() {
+    }
 
     /**
      * Get the retentionInDays property: The table retention in days, between 4 and 730. Setting this property to -1
@@ -183,17 +201,6 @@ public final class TableProperties {
     }
 
     /**
-     * Set the resultStatistics property: Search job execution statistics.
-     *
-     * @param resultStatistics the resultStatistics value to set.
-     * @return the TableProperties object itself.
-     */
-    public TableProperties withResultStatistics(ResultStatistics resultStatistics) {
-        this.resultStatistics = resultStatistics;
-        return this;
-    }
-
-    /**
      * Get the plan property: Instruct the system how to handle and charge the logs ingested to this table.
      *
      * @return the plan value.
@@ -251,6 +258,26 @@ public final class TableProperties {
      */
     public ProvisioningStateEnum provisioningState() {
         return this.provisioningState;
+    }
+
+    /**
+     * Get the retentionInDaysAsDefault property: True - Value originates from workspace retention in days, False -
+     * Customer specific.
+     *
+     * @return the retentionInDaysAsDefault value.
+     */
+    public RetentionInDaysAsDefault retentionInDaysAsDefault() {
+        return this.retentionInDaysAsDefault;
+    }
+
+    /**
+     * Get the totalRetentionInDaysAsDefault property: True - Value originates from retention in days, False - Customer
+     * specific.
+     *
+     * @return the totalRetentionInDaysAsDefault value.
+     */
+    public TotalRetentionInDaysAsDefault totalRetentionInDaysAsDefault() {
+        return this.totalRetentionInDaysAsDefault;
     }
 
     /**

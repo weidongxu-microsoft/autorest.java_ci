@@ -28,15 +28,6 @@ public final class DataPolicyManifestsImpl implements DataPolicyManifests {
         this.serviceManager = serviceManager;
     }
 
-    public DataPolicyManifest getByPolicyMode(String policyMode) {
-        DataPolicyManifestInner inner = this.serviceClient().getByPolicyMode(policyMode);
-        if (inner != null) {
-            return new DataPolicyManifestImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<DataPolicyManifest> getByPolicyModeWithResponse(String policyMode, Context context) {
         Response<DataPolicyManifestInner> inner = this.serviceClient().getByPolicyModeWithResponse(policyMode, context);
         if (inner != null) {
@@ -45,6 +36,15 @@ public final class DataPolicyManifestsImpl implements DataPolicyManifests {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new DataPolicyManifestImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public DataPolicyManifest getByPolicyMode(String policyMode) {
+        DataPolicyManifestInner inner = this.serviceClient().getByPolicyMode(policyMode);
+        if (inner != null) {
+            return new DataPolicyManifestImpl(inner, this.manager());
         } else {
             return null;
         }

@@ -31,15 +31,6 @@ public final class ExportsImpl implements Exports {
         this.serviceManager = serviceManager;
     }
 
-    public ExportListResult list(String scope) {
-        ExportListResultInner inner = this.serviceClient().list(scope);
-        if (inner != null) {
-            return new ExportListResultImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<ExportListResult> listWithResponse(String scope, Context context) {
         Response<ExportListResultInner> inner = this.serviceClient().listWithResponse(scope, context);
         if (inner != null) {
@@ -53,10 +44,10 @@ public final class ExportsImpl implements Exports {
         }
     }
 
-    public Export get(String scope, String exportName) {
-        ExportInner inner = this.serviceClient().get(scope, exportName);
+    public ExportListResult list(String scope) {
+        ExportListResultInner inner = this.serviceClient().list(scope);
         if (inner != null) {
-            return new ExportImpl(inner, this.manager());
+            return new ExportListResultImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -75,29 +66,29 @@ public final class ExportsImpl implements Exports {
         }
     }
 
-    public void deleteByResourceGroup(String scope, String exportName) {
-        this.serviceClient().delete(scope, exportName);
+    public Export get(String scope, String exportName) {
+        ExportInner inner = this.serviceClient().get(scope, exportName);
+        if (inner != null) {
+            return new ExportImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
-    public Response<Void> deleteWithResponse(String scope, String exportName, Context context) {
+    public Response<Void> deleteByResourceGroupWithResponse(String scope, String exportName, Context context) {
         return this.serviceClient().deleteWithResponse(scope, exportName, context);
     }
 
-    public void execute(String scope, String exportName) {
-        this.serviceClient().execute(scope, exportName);
+    public void deleteByResourceGroup(String scope, String exportName) {
+        this.serviceClient().delete(scope, exportName);
     }
 
     public Response<Void> executeWithResponse(String scope, String exportName, Context context) {
         return this.serviceClient().executeWithResponse(scope, exportName, context);
     }
 
-    public ExportExecutionListResult getExecutionHistory(String scope, String exportName) {
-        ExportExecutionListResultInner inner = this.serviceClient().getExecutionHistory(scope, exportName);
-        if (inner != null) {
-            return new ExportExecutionListResultImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void execute(String scope, String exportName) {
+        this.serviceClient().execute(scope, exportName);
     }
 
     public Response<ExportExecutionListResult> getExecutionHistoryWithResponse(
@@ -110,6 +101,15 @@ public final class ExportsImpl implements Exports {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new ExportExecutionListResultImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public ExportExecutionListResult getExecutionHistory(String scope, String exportName) {
+        ExportExecutionListResultInner inner = this.serviceClient().getExecutionHistory(scope, exportName);
+        if (inner != null) {
+            return new ExportExecutionListResultImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -184,7 +184,7 @@ public final class ExportsImpl implements Exports {
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'exports'.", id)));
         }
-        this.deleteWithResponse(scope, exportName, Context.NONE);
+        this.deleteByResourceGroupWithResponse(scope, exportName, Context.NONE);
     }
 
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
@@ -208,7 +208,7 @@ public final class ExportsImpl implements Exports {
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'exports'.", id)));
         }
-        return this.deleteWithResponse(scope, exportName, context);
+        return this.deleteByResourceGroupWithResponse(scope, exportName, context);
     }
 
     private ExportsClient serviceClient() {

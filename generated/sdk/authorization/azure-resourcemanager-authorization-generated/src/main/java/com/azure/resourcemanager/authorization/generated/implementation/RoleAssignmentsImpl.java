@@ -76,16 +76,8 @@ public final class RoleAssignmentsImpl implements RoleAssignments {
         return Utils.mapPage(inner, inner1 -> new RoleAssignmentImpl(inner1, this.manager()));
     }
 
-    public RoleAssignment deleteByResourceGroup(String scope, String roleAssignmentName) {
-        RoleAssignmentInner inner = this.serviceClient().delete(scope, roleAssignmentName);
-        if (inner != null) {
-            return new RoleAssignmentImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
-    public Response<RoleAssignment> deleteWithResponse(String scope, String roleAssignmentName, Context context) {
+    public Response<RoleAssignment> deleteByResourceGroupWithResponse(
+        String scope, String roleAssignmentName, Context context) {
         Response<RoleAssignmentInner> inner =
             this.serviceClient().deleteWithResponse(scope, roleAssignmentName, context);
         if (inner != null) {
@@ -99,8 +91,8 @@ public final class RoleAssignmentsImpl implements RoleAssignments {
         }
     }
 
-    public RoleAssignment get(String scope, String roleAssignmentName) {
-        RoleAssignmentInner inner = this.serviceClient().get(scope, roleAssignmentName);
+    public RoleAssignment deleteByResourceGroup(String scope, String roleAssignmentName) {
+        RoleAssignmentInner inner = this.serviceClient().delete(scope, roleAssignmentName);
         if (inner != null) {
             return new RoleAssignmentImpl(inner, this.manager());
         } else {
@@ -121,8 +113,8 @@ public final class RoleAssignmentsImpl implements RoleAssignments {
         }
     }
 
-    public RoleAssignment deleteById(String roleId) {
-        RoleAssignmentInner inner = this.serviceClient().deleteById(roleId);
+    public RoleAssignment get(String scope, String roleAssignmentName) {
+        RoleAssignmentInner inner = this.serviceClient().get(scope, roleAssignmentName);
         if (inner != null) {
             return new RoleAssignmentImpl(inner, this.manager());
         } else {
@@ -143,8 +135,8 @@ public final class RoleAssignmentsImpl implements RoleAssignments {
         }
     }
 
-    public RoleAssignment createById(String roleId, RoleAssignmentCreateParameters parameters) {
-        RoleAssignmentInner inner = this.serviceClient().createById(roleId, parameters);
+    public RoleAssignment deleteById(String roleId) {
+        RoleAssignmentInner inner = this.serviceClient().deleteById(roleId);
         if (inner != null) {
             return new RoleAssignmentImpl(inner, this.manager());
         } else {
@@ -166,8 +158,8 @@ public final class RoleAssignmentsImpl implements RoleAssignments {
         }
     }
 
-    public RoleAssignment getById(String roleId) {
-        RoleAssignmentInner inner = this.serviceClient().getById(roleId);
+    public RoleAssignment createById(String roleId, RoleAssignmentCreateParameters parameters) {
+        RoleAssignmentInner inner = this.serviceClient().createById(roleId, parameters);
         if (inner != null) {
             return new RoleAssignmentImpl(inner, this.manager());
         } else {
@@ -183,6 +175,15 @@ public final class RoleAssignmentsImpl implements RoleAssignments {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new RoleAssignmentImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public RoleAssignment getById(String roleId) {
+        RoleAssignmentInner inner = this.serviceClient().getById(roleId);
+        if (inner != null) {
+            return new RoleAssignmentImpl(inner, this.manager());
         } else {
             return null;
         }

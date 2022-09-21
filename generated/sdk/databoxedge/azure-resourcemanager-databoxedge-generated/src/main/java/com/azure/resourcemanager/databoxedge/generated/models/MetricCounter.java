@@ -36,6 +36,10 @@ public final class MetricCounter {
     @JsonProperty(value = "additionalDimensions")
     private List<MetricDimension> additionalDimensions;
 
+    /** Creates an instance of MetricCounter class. */
+    public MetricCounter() {
+    }
+
     /**
      * Get the name property: The counter name.
      *

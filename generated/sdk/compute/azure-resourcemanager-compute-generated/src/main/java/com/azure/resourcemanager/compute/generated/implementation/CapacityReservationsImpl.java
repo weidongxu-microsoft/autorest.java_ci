@@ -41,17 +41,6 @@ public final class CapacityReservationsImpl implements CapacityReservations {
         this.serviceClient().delete(resourceGroupName, capacityReservationGroupName, capacityReservationName, context);
     }
 
-    public CapacityReservation get(
-        String resourceGroupName, String capacityReservationGroupName, String capacityReservationName) {
-        CapacityReservationInner inner =
-            this.serviceClient().get(resourceGroupName, capacityReservationGroupName, capacityReservationName);
-        if (inner != null) {
-            return new CapacityReservationImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<CapacityReservation> getWithResponse(
         String resourceGroupName,
         String capacityReservationGroupName,
@@ -69,6 +58,17 @@ public final class CapacityReservationsImpl implements CapacityReservations {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new CapacityReservationImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public CapacityReservation get(
+        String resourceGroupName, String capacityReservationGroupName, String capacityReservationName) {
+        CapacityReservationInner inner =
+            this.serviceClient().get(resourceGroupName, capacityReservationGroupName, capacityReservationName);
+        if (inner != null) {
+            return new CapacityReservationImpl(inner, this.manager());
         } else {
             return null;
         }

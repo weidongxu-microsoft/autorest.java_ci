@@ -271,19 +271,19 @@ public final class StaticSiteArmResourceImpl
         return this;
     }
 
-    public StaticSiteUserInvitationResponseResource createUserRolesInvitationLink(
-        StaticSiteUserInvitationRequestResource staticSiteUserRolesInvitationEnvelope) {
-        return serviceManager
-            .staticSites()
-            .createUserRolesInvitationLink(resourceGroupName, name, staticSiteUserRolesInvitationEnvelope);
-    }
-
     public Response<StaticSiteUserInvitationResponseResource> createUserRolesInvitationLinkWithResponse(
         StaticSiteUserInvitationRequestResource staticSiteUserRolesInvitationEnvelope, Context context) {
         return serviceManager
             .staticSites()
             .createUserRolesInvitationLinkWithResponse(
                 resourceGroupName, name, staticSiteUserRolesInvitationEnvelope, context);
+    }
+
+    public StaticSiteUserInvitationResponseResource createUserRolesInvitationLink(
+        StaticSiteUserInvitationRequestResource staticSiteUserRolesInvitationEnvelope) {
+        return serviceManager
+            .staticSites()
+            .createUserRolesInvitationLink(resourceGroupName, name, staticSiteUserRolesInvitationEnvelope);
     }
 
     public void detachStaticSite() {
@@ -294,24 +294,20 @@ public final class StaticSiteArmResourceImpl
         serviceManager.staticSites().detachStaticSite(resourceGroupName, name, context);
     }
 
-    public StringDictionary listStaticSiteAppSettings() {
-        return serviceManager.staticSites().listStaticSiteAppSettings(resourceGroupName, name);
-    }
-
     public Response<StringDictionary> listStaticSiteAppSettingsWithResponse(Context context) {
         return serviceManager.staticSites().listStaticSiteAppSettingsWithResponse(resourceGroupName, name, context);
     }
 
-    public StringList listStaticSiteConfiguredRoles() {
-        return serviceManager.staticSites().listStaticSiteConfiguredRoles(resourceGroupName, name);
+    public StringDictionary listStaticSiteAppSettings() {
+        return serviceManager.staticSites().listStaticSiteAppSettings(resourceGroupName, name);
     }
 
     public Response<StringList> listStaticSiteConfiguredRolesWithResponse(Context context) {
         return serviceManager.staticSites().listStaticSiteConfiguredRolesWithResponse(resourceGroupName, name, context);
     }
 
-    public StringDictionary listStaticSiteFunctionAppSettings() {
-        return serviceManager.staticSites().listStaticSiteFunctionAppSettings(resourceGroupName, name);
+    public StringList listStaticSiteConfiguredRoles() {
+        return serviceManager.staticSites().listStaticSiteConfiguredRoles(resourceGroupName, name);
     }
 
     public Response<StringDictionary> listStaticSiteFunctionAppSettingsWithResponse(Context context) {
@@ -320,16 +316,16 @@ public final class StaticSiteArmResourceImpl
             .listStaticSiteFunctionAppSettingsWithResponse(resourceGroupName, name, context);
     }
 
-    public StringDictionary listStaticSiteSecrets() {
-        return serviceManager.staticSites().listStaticSiteSecrets(resourceGroupName, name);
+    public StringDictionary listStaticSiteFunctionAppSettings() {
+        return serviceManager.staticSites().listStaticSiteFunctionAppSettings(resourceGroupName, name);
     }
 
     public Response<StringDictionary> listStaticSiteSecretsWithResponse(Context context) {
         return serviceManager.staticSites().listStaticSiteSecretsWithResponse(resourceGroupName, name, context);
     }
 
-    public void resetStaticSiteApiKey(StaticSiteResetPropertiesArmResource resetPropertiesEnvelope) {
-        serviceManager.staticSites().resetStaticSiteApiKey(resourceGroupName, name, resetPropertiesEnvelope);
+    public StringDictionary listStaticSiteSecrets() {
+        return serviceManager.staticSites().listStaticSiteSecrets(resourceGroupName, name);
     }
 
     public Response<Void> resetStaticSiteApiKeyWithResponse(
@@ -337,6 +333,10 @@ public final class StaticSiteArmResourceImpl
         return serviceManager
             .staticSites()
             .resetStaticSiteApiKeyWithResponse(resourceGroupName, name, resetPropertiesEnvelope, context);
+    }
+
+    public void resetStaticSiteApiKey(StaticSiteResetPropertiesArmResource resetPropertiesEnvelope) {
+        serviceManager.staticSites().resetStaticSiteApiKey(resourceGroupName, name, resetPropertiesEnvelope);
     }
 
     public void createZipDeploymentForStaticSite(StaticSiteZipDeploymentArmResource staticSiteZipDeploymentEnvelope) {

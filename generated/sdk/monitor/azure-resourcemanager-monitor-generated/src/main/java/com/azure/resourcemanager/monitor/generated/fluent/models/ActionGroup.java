@@ -96,6 +96,10 @@ public final class ActionGroup {
     @JsonProperty(value = "armRoleReceivers")
     private List<ArmRoleReceiver> armRoleReceivers;
 
+    /** Creates an instance of ActionGroup class. */
+    public ActionGroup() {
+    }
+
     /**
      * Get the groupShortName property: The short name of the action group. This will be used in SMS messages.
      *

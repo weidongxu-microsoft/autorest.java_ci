@@ -15,18 +15,6 @@ public interface LocalNetworkGateways {
      *
      * @param resourceGroupName The name of the resource group.
      * @param localNetworkGatewayName The name of the local network gateway.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified local network gateway in a resource group.
-     */
-    LocalNetworkGateway getByResourceGroup(String resourceGroupName, String localNetworkGatewayName);
-
-    /**
-     * Gets the specified local network gateway in a resource group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param localNetworkGatewayName The name of the local network gateway.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -35,6 +23,18 @@ public interface LocalNetworkGateways {
      */
     Response<LocalNetworkGateway> getByResourceGroupWithResponse(
         String resourceGroupName, String localNetworkGatewayName, Context context);
+
+    /**
+     * Gets the specified local network gateway in a resource group.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param localNetworkGatewayName The name of the local network gateway.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified local network gateway in a resource group.
+     */
+    LocalNetworkGateway getByResourceGroup(String resourceGroupName, String localNetworkGatewayName);
 
     /**
      * Deletes the specified local network gateway.

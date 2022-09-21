@@ -16,6 +16,10 @@ public final class BlobStorageTokenStore {
     @JsonProperty(value = "sasUrlSettingName")
     private String sasUrlSettingName;
 
+    /** Creates an instance of BlobStorageTokenStore class. */
+    public BlobStorageTokenStore() {
+    }
+
     /**
      * Get the sasUrlSettingName property: The name of the app setting containing the SAS URL of the blob storage
      * containing the tokens.

@@ -17,6 +17,10 @@ public final class ActivityLogAlertPatch {
     @JsonProperty(value = "enabled")
     private Boolean enabled;
 
+    /** Creates an instance of ActivityLogAlertPatch class. */
+    public ActivityLogAlertPatch() {
+    }
+
     /**
      * Get the enabled property: Indicates whether this activity log alert is enabled. If an activity log alert is not
      * enabled, then none of its actions will be activated.

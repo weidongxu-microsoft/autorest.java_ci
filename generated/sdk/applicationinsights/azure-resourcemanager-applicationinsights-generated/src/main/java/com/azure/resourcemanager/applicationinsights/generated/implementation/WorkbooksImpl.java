@@ -42,15 +42,6 @@ public final class WorkbooksImpl implements Workbooks {
         return Utils.mapPage(inner, inner1 -> new WorkbookImpl(inner1, this.manager()));
     }
 
-    public Workbook getByResourceGroup(String resourceGroupName, String resourceName) {
-        WorkbookInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, resourceName);
-        if (inner != null) {
-            return new WorkbookImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<Workbook> getByResourceGroupWithResponse(
         String resourceGroupName, String resourceName, Context context) {
         Response<WorkbookInner> inner =
@@ -66,12 +57,22 @@ public final class WorkbooksImpl implements Workbooks {
         }
     }
 
-    public void deleteByResourceGroup(String resourceGroupName, String resourceName) {
-        this.serviceClient().delete(resourceGroupName, resourceName);
+    public Workbook getByResourceGroup(String resourceGroupName, String resourceName) {
+        WorkbookInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, resourceName);
+        if (inner != null) {
+            return new WorkbookImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
-    public Response<Void> deleteWithResponse(String resourceGroupName, String resourceName, Context context) {
+    public Response<Void> deleteByResourceGroupWithResponse(
+        String resourceGroupName, String resourceName, Context context) {
         return this.serviceClient().deleteWithResponse(resourceGroupName, resourceName, context);
+    }
+
+    public void deleteByResourceGroup(String resourceGroupName, String resourceName) {
+        this.serviceClient().delete(resourceGroupName, resourceName);
     }
 
     public Workbook getById(String id) {
@@ -128,7 +129,7 @@ public final class WorkbooksImpl implements Workbooks {
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'workbooks'.", id)));
         }
-        this.deleteWithResponse(resourceGroupName, resourceName, Context.NONE);
+        this.deleteByResourceGroupWithResponse(resourceGroupName, resourceName, Context.NONE);
     }
 
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
@@ -147,7 +148,7 @@ public final class WorkbooksImpl implements Workbooks {
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'workbooks'.", id)));
         }
-        return this.deleteWithResponse(resourceGroupName, resourceName, context);
+        return this.deleteByResourceGroupWithResponse(resourceGroupName, resourceName, context);
     }
 
     private WorkbooksClient serviceClient() {

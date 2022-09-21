@@ -206,7 +206,7 @@ public final class BastionHostsClientImpl implements BastionHostsClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -257,7 +257,7 @@ public final class BastionHostsClientImpl implements BastionHostsClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -440,7 +440,7 @@ public final class BastionHostsClientImpl implements BastionHostsClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -491,7 +491,7 @@ public final class BastionHostsClientImpl implements BastionHostsClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -529,11 +529,11 @@ public final class BastionHostsClientImpl implements BastionHostsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Bastion Host.
+     * @return the specified Bastion Host along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public BastionHostInner getByResourceGroup(String resourceGroupName, String bastionHostname) {
-        return getByResourceGroupAsync(resourceGroupName, bastionHostname).block();
+    public Response<BastionHostInner> getByResourceGroupWithResponse(String resourceGroupName, String bastionHostname) {
+        return getByResourceGroupWithResponseAsync(resourceGroupName, bastionHostname).block();
     }
 
     /**
@@ -551,6 +551,21 @@ public final class BastionHostsClientImpl implements BastionHostsClient {
     public Response<BastionHostInner> getByResourceGroupWithResponse(
         String resourceGroupName, String bastionHostname, Context context) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, bastionHostname, context).block();
+    }
+
+    /**
+     * Gets the specified Bastion Host.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param bastionHostname The name of the Bastion Host.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified Bastion Host.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public BastionHostInner getByResourceGroup(String resourceGroupName, String bastionHostname) {
+        return getByResourceGroupWithResponse(resourceGroupName, bastionHostname, Context.NONE).getValue();
     }
 
     /**
@@ -592,7 +607,7 @@ public final class BastionHostsClientImpl implements BastionHostsClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -650,7 +665,7 @@ public final class BastionHostsClientImpl implements BastionHostsClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -863,7 +878,7 @@ public final class BastionHostsClientImpl implements BastionHostsClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -921,7 +936,7 @@ public final class BastionHostsClientImpl implements BastionHostsClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1116,7 +1131,7 @@ public final class BastionHostsClientImpl implements BastionHostsClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1159,7 +1174,7 @@ public final class BastionHostsClientImpl implements BastionHostsClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1256,7 +1271,7 @@ public final class BastionHostsClientImpl implements BastionHostsClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1311,7 +1326,7 @@ public final class BastionHostsClientImpl implements BastionHostsClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service

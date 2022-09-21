@@ -28,12 +28,13 @@ public interface Queries {
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/customers/{customerId}' specific for
      *     partners.
      * @param parameters Parameters supplied to the CreateOrUpdate Query Config operation.
+     * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of query.
+     * @return result of query along with {@link Response}.
      */
-    QueryResult usage(String scope, QueryDefinition parameters);
+    Response<QueryResult> usageWithResponse(String scope, QueryDefinition parameters, Context context);
 
     /**
      * Query the usage data for scope defined.
@@ -54,32 +55,12 @@ public interface Queries {
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/customers/{customerId}' specific for
      *     partners.
      * @param parameters Parameters supplied to the CreateOrUpdate Query Config operation.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of query along with {@link Response}.
-     */
-    Response<QueryResult> usageWithResponse(String scope, QueryDefinition parameters, Context context);
-
-    /**
-     * Query the usage data for external cloud provider type defined.
-     *
-     * @param externalCloudProviderType The external cloud provider type associated with dimension/query operations.
-     *     This includes 'externalSubscriptions' for linked account and 'externalBillingAccounts' for consolidated
-     *     account.
-     * @param externalCloudProviderId This can be '{externalSubscriptionId}' for linked account or
-     *     '{externalBillingAccountId}' for consolidated account used with dimension/query operations.
-     * @param parameters Parameters supplied to the CreateOrUpdate Query Config operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return result of query.
      */
-    QueryResult usageByExternalCloudProviderType(
-        ExternalCloudProviderType externalCloudProviderType,
-        String externalCloudProviderId,
-        QueryDefinition parameters);
+    QueryResult usage(String scope, QueryDefinition parameters);
 
     /**
      * Query the usage data for external cloud provider type defined.
@@ -101,4 +82,23 @@ public interface Queries {
         String externalCloudProviderId,
         QueryDefinition parameters,
         Context context);
+
+    /**
+     * Query the usage data for external cloud provider type defined.
+     *
+     * @param externalCloudProviderType The external cloud provider type associated with dimension/query operations.
+     *     This includes 'externalSubscriptions' for linked account and 'externalBillingAccounts' for consolidated
+     *     account.
+     * @param externalCloudProviderId This can be '{externalSubscriptionId}' for linked account or
+     *     '{externalBillingAccountId}' for consolidated account used with dimension/query operations.
+     * @param parameters Parameters supplied to the CreateOrUpdate Query Config operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return result of query.
+     */
+    QueryResult usageByExternalCloudProviderType(
+        ExternalCloudProviderType externalCloudProviderType,
+        String externalCloudProviderId,
+        QueryDefinition parameters);
 }

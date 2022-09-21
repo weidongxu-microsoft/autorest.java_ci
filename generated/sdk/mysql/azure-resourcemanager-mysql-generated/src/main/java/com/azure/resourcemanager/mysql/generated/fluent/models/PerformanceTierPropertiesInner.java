@@ -60,6 +60,10 @@ public final class PerformanceTierPropertiesInner {
     @JsonProperty(value = "serviceLevelObjectives")
     private List<PerformanceTierServiceLevelObjectives> serviceLevelObjectives;
 
+    /** Creates an instance of PerformanceTierPropertiesInner class. */
+    public PerformanceTierPropertiesInner() {
+    }
+
     /**
      * Get the id property: ID of the performance tier.
      *

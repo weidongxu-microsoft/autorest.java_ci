@@ -42,6 +42,10 @@ public final class ReservationRecommendationDetailsUsageProperties {
     @JsonProperty(value = "usageGrain", access = JsonProperty.Access.WRITE_ONLY)
     private String usageGrain;
 
+    /** Creates an instance of ReservationRecommendationDetailsUsageProperties class. */
+    public ReservationRecommendationDetailsUsageProperties() {
+    }
+
     /**
      * Get the firstConsumptionDate property: The first usage date used for looking back for computing the
      * recommendation.

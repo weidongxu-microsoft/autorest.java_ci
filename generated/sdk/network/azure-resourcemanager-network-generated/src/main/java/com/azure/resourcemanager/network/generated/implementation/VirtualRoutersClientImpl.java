@@ -190,7 +190,7 @@ public final class VirtualRoutersClientImpl implements VirtualRoutersClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -241,7 +241,7 @@ public final class VirtualRoutersClientImpl implements VirtualRoutersClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -425,7 +425,7 @@ public final class VirtualRoutersClientImpl implements VirtualRoutersClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -478,7 +478,7 @@ public final class VirtualRoutersClientImpl implements VirtualRoutersClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -491,24 +491,6 @@ public final class VirtualRoutersClientImpl implements VirtualRoutersClient {
                 expand,
                 accept,
                 context);
-    }
-
-    /**
-     * Gets the specified Virtual Router.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param virtualRouterName The name of the Virtual Router.
-     * @param expand Expands referenced resources.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Virtual Router on successful completion of {@link Mono}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<VirtualRouterInner> getByResourceGroupAsync(
-        String resourceGroupName, String virtualRouterName, String expand) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, virtualRouterName, expand)
-            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -533,15 +515,16 @@ public final class VirtualRoutersClientImpl implements VirtualRoutersClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param virtualRouterName The name of the Virtual Router.
+     * @param expand Expands referenced resources.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Virtual Router.
+     * @return the specified Virtual Router along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public VirtualRouterInner getByResourceGroup(String resourceGroupName, String virtualRouterName) {
-        final String expand = null;
-        return getByResourceGroupAsync(resourceGroupName, virtualRouterName, expand).block();
+    public Response<VirtualRouterInner> getByResourceGroupWithResponse(
+        String resourceGroupName, String virtualRouterName, String expand) {
+        return getByResourceGroupWithResponseAsync(resourceGroupName, virtualRouterName, expand).block();
     }
 
     /**
@@ -560,6 +543,22 @@ public final class VirtualRoutersClientImpl implements VirtualRoutersClient {
     public Response<VirtualRouterInner> getByResourceGroupWithResponse(
         String resourceGroupName, String virtualRouterName, String expand, Context context) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, virtualRouterName, expand, context).block();
+    }
+
+    /**
+     * Gets the specified Virtual Router.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param virtualRouterName The name of the Virtual Router.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified Virtual Router.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public VirtualRouterInner getByResourceGroup(String resourceGroupName, String virtualRouterName) {
+        final String expand = null;
+        return getByResourceGroupWithResponse(resourceGroupName, virtualRouterName, expand, Context.NONE).getValue();
     }
 
     /**
@@ -601,7 +600,7 @@ public final class VirtualRoutersClientImpl implements VirtualRoutersClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -659,7 +658,7 @@ public final class VirtualRoutersClientImpl implements VirtualRoutersClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -861,7 +860,7 @@ public final class VirtualRoutersClientImpl implements VirtualRoutersClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -916,7 +915,7 @@ public final class VirtualRoutersClientImpl implements VirtualRoutersClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1022,7 +1021,7 @@ public final class VirtualRoutersClientImpl implements VirtualRoutersClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1065,7 +1064,7 @@ public final class VirtualRoutersClientImpl implements VirtualRoutersClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service

@@ -29,6 +29,10 @@ public final class AppServiceCertificate {
     @JsonProperty(value = "provisioningState", access = JsonProperty.Access.WRITE_ONLY)
     private KeyVaultSecretStatus provisioningState;
 
+    /** Creates an instance of AppServiceCertificate class. */
+    public AppServiceCertificate() {
+    }
+
     /**
      * Get the keyVaultId property: Key Vault resource Id.
      *

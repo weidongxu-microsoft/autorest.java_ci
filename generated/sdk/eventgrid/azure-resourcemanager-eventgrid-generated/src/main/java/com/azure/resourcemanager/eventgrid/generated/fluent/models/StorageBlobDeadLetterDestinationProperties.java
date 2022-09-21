@@ -22,6 +22,10 @@ public final class StorageBlobDeadLetterDestinationProperties {
     @JsonProperty(value = "blobContainerName")
     private String blobContainerName;
 
+    /** Creates an instance of StorageBlobDeadLetterDestinationProperties class. */
+    public StorageBlobDeadLetterDestinationProperties() {
+    }
+
     /**
      * Get the resourceId property: The Azure Resource ID of the storage account that is the destination of the
      * deadletter events.

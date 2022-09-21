@@ -10,6 +10,8 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualHubInner;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualHubRouteTableV2Inner;
 import com.azure.resourcemanager.network.generated.models.EffectiveRoutesParameters;
+import com.azure.resourcemanager.network.generated.models.GetInboundRoutesParameters;
+import com.azure.resourcemanager.network.generated.models.GetOutboundRoutesParameters;
 import com.azure.resourcemanager.network.generated.models.HubRoutingPreference;
 import com.azure.resourcemanager.network.generated.models.PreferredRoutingGateway;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
@@ -135,6 +137,15 @@ public final class VirtualHubImpl implements VirtualHub, VirtualHub.Definition, 
 
     public List<SubResource> ipConfigurations() {
         List<SubResource> inner = this.innerModel().ipConfigurations();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
+    }
+
+    public List<SubResource> routeMaps() {
+        List<SubResource> inner = this.innerModel().routeMaps();
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
@@ -293,6 +304,26 @@ public final class VirtualHubImpl implements VirtualHub, VirtualHub.Definition, 
         serviceManager
             .virtualHubs()
             .getEffectiveVirtualHubRoutes(resourceGroupName, virtualHubName, effectiveRoutesParameters, context);
+    }
+
+    public void getInboundRoutes(GetInboundRoutesParameters getInboundRoutesParameters) {
+        serviceManager.virtualHubs().getInboundRoutes(resourceGroupName, virtualHubName, getInboundRoutesParameters);
+    }
+
+    public void getInboundRoutes(GetInboundRoutesParameters getInboundRoutesParameters, Context context) {
+        serviceManager
+            .virtualHubs()
+            .getInboundRoutes(resourceGroupName, virtualHubName, getInboundRoutesParameters, context);
+    }
+
+    public void getOutboundRoutes(GetOutboundRoutesParameters getOutboundRoutesParameters) {
+        serviceManager.virtualHubs().getOutboundRoutes(resourceGroupName, virtualHubName, getOutboundRoutesParameters);
+    }
+
+    public void getOutboundRoutes(GetOutboundRoutesParameters getOutboundRoutesParameters, Context context) {
+        serviceManager
+            .virtualHubs()
+            .getOutboundRoutes(resourceGroupName, virtualHubName, getOutboundRoutesParameters, context);
     }
 
     public VirtualHubImpl withRegion(Region location) {

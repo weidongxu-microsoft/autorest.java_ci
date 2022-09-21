@@ -29,15 +29,6 @@ public final class ResourceProvidersImpl implements ResourceProviders {
         this.serviceManager = serviceManager;
     }
 
-    public QueryResponse resources(QueryRequest query) {
-        QueryResponseInner inner = this.serviceClient().resources(query);
-        if (inner != null) {
-            return new QueryResponseImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<QueryResponse> resourcesWithResponse(QueryRequest query, Context context) {
         Response<QueryResponseInner> inner = this.serviceClient().resourcesWithResponse(query, context);
         if (inner != null) {
@@ -51,12 +42,21 @@ public final class ResourceProvidersImpl implements ResourceProviders {
         }
     }
 
-    public Object resourcesHistory(ResourcesHistoryRequest request) {
-        return this.serviceClient().resourcesHistory(request);
+    public QueryResponse resources(QueryRequest query) {
+        QueryResponseInner inner = this.serviceClient().resources(query);
+        if (inner != null) {
+            return new QueryResponseImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Object> resourcesHistoryWithResponse(ResourcesHistoryRequest request, Context context) {
         return this.serviceClient().resourcesHistoryWithResponse(request, context);
+    }
+
+    public Object resourcesHistory(ResourcesHistoryRequest request) {
+        return this.serviceClient().resourcesHistory(request);
     }
 
     private ResourceProvidersClient serviceClient() {

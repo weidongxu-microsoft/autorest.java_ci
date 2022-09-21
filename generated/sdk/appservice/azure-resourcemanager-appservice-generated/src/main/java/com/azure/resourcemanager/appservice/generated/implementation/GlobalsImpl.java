@@ -31,15 +31,6 @@ public final class GlobalsImpl implements Globals {
         this.serviceManager = serviceManager;
     }
 
-    public DeletedSite getDeletedWebApp(String deletedSiteId) {
-        DeletedSiteInner inner = this.serviceClient().getDeletedWebApp(deletedSiteId);
-        if (inner != null) {
-            return new DeletedSiteImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<DeletedSite> getDeletedWebAppWithResponse(String deletedSiteId, Context context) {
         Response<DeletedSiteInner> inner = this.serviceClient().getDeletedWebAppWithResponse(deletedSiteId, context);
         if (inner != null) {
@@ -53,17 +44,12 @@ public final class GlobalsImpl implements Globals {
         }
     }
 
-    public List<Snapshot> getDeletedWebAppSnapshots(String deletedSiteId) {
-        List<SnapshotInner> inner = this.serviceClient().getDeletedWebAppSnapshots(deletedSiteId);
+    public DeletedSite getDeletedWebApp(String deletedSiteId) {
+        DeletedSiteInner inner = this.serviceClient().getDeletedWebApp(deletedSiteId);
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new SnapshotImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return new DeletedSiteImpl(inner, this.manager());
         } else {
-            return Collections.emptyList();
+            return null;
         }
     }
 
@@ -85,8 +71,18 @@ public final class GlobalsImpl implements Globals {
         }
     }
 
-    public void getSubscriptionOperationWithAsyncResponse(String location, String operationId) {
-        this.serviceClient().getSubscriptionOperationWithAsyncResponse(location, operationId);
+    public List<Snapshot> getDeletedWebAppSnapshots(String deletedSiteId) {
+        List<SnapshotInner> inner = this.serviceClient().getDeletedWebAppSnapshots(deletedSiteId);
+        if (inner != null) {
+            return Collections
+                .unmodifiableList(
+                    inner
+                        .stream()
+                        .map(inner1 -> new SnapshotImpl(inner1, this.manager()))
+                        .collect(Collectors.toList()));
+        } else {
+            return Collections.emptyList();
+        }
     }
 
     public Response<Void> getSubscriptionOperationWithAsyncResponseWithResponse(
@@ -94,6 +90,10 @@ public final class GlobalsImpl implements Globals {
         return this
             .serviceClient()
             .getSubscriptionOperationWithAsyncResponseWithResponse(location, operationId, context);
+    }
+
+    public void getSubscriptionOperationWithAsyncResponse(String location, String operationId) {
+        this.serviceClient().getSubscriptionOperationWithAsyncResponse(location, operationId);
     }
 
     private GlobalsClient serviceClient() {

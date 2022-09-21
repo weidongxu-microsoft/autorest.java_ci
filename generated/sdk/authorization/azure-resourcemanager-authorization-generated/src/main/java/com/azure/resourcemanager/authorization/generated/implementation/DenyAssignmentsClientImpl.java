@@ -1063,11 +1063,11 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified deny assignment.
+     * @return the specified deny assignment along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public DenyAssignmentInner get(String scope, String denyAssignmentId) {
-        return getAsync(scope, denyAssignmentId).block();
+    public Response<DenyAssignmentInner> getWithResponse(String scope, String denyAssignmentId) {
+        return getWithResponseAsync(scope, denyAssignmentId).block();
     }
 
     /**
@@ -1084,6 +1084,21 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<DenyAssignmentInner> getWithResponse(String scope, String denyAssignmentId, Context context) {
         return getWithResponseAsync(scope, denyAssignmentId, context).block();
+    }
+
+    /**
+     * Get the specified deny assignment.
+     *
+     * @param scope The scope of the deny assignment.
+     * @param denyAssignmentId The ID of the deny assignment to get.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified deny assignment.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public DenyAssignmentInner get(String scope, String denyAssignmentId) {
+        return getWithResponse(scope, denyAssignmentId, Context.NONE).getValue();
     }
 
     /**
@@ -1176,11 +1191,11 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deny assignment by ID.
+     * @return a deny assignment by ID along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public DenyAssignmentInner getById(String denyAssignmentId) {
-        return getByIdAsync(denyAssignmentId).block();
+    public Response<DenyAssignmentInner> getByIdWithResponse(String denyAssignmentId) {
+        return getByIdWithResponseAsync(denyAssignmentId).block();
     }
 
     /**
@@ -1199,6 +1214,23 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<DenyAssignmentInner> getByIdWithResponse(String denyAssignmentId, Context context) {
         return getByIdWithResponseAsync(denyAssignmentId, context).block();
+    }
+
+    /**
+     * Gets a deny assignment by ID.
+     *
+     * @param denyAssignmentId The fully qualified deny assignment ID. For example, use the format,
+     *     /subscriptions/{guid}/providers/Microsoft.Authorization/denyAssignments/{denyAssignmentId} for subscription
+     *     level deny assignments, or /providers/Microsoft.Authorization/denyAssignments/{denyAssignmentId} for tenant
+     *     level deny assignments.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a deny assignment by ID.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public DenyAssignmentInner getById(String denyAssignmentId) {
+        return getByIdWithResponse(denyAssignmentId, Context.NONE).getValue();
     }
 
     /**

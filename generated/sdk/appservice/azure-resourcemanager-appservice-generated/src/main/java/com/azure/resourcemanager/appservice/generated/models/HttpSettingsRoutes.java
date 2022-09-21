@@ -16,6 +16,10 @@ public final class HttpSettingsRoutes {
     @JsonProperty(value = "apiPrefix")
     private String apiPrefix;
 
+    /** Creates an instance of HttpSettingsRoutes class. */
+    public HttpSettingsRoutes() {
+    }
+
     /**
      * Get the apiPrefix property: The prefix that should precede all the authentication/authorization paths.
      *

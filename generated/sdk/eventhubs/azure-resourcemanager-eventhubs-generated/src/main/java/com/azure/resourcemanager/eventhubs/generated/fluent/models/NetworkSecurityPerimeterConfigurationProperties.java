@@ -46,6 +46,10 @@ public final class NetworkSecurityPerimeterConfigurationProperties {
     @JsonProperty(value = "profile", access = JsonProperty.Access.WRITE_ONLY)
     private NetworkSecurityPerimeterConfigurationPropertiesProfile profile;
 
+    /** Creates an instance of NetworkSecurityPerimeterConfigurationProperties class. */
+    public NetworkSecurityPerimeterConfigurationProperties() {
+    }
+
     /**
      * Get the provisioningState property: Provisioning state of NetworkSecurityPerimeter configuration propagation.
      *

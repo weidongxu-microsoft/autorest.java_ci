@@ -46,6 +46,10 @@ public final class ActivityLogAlert {
     @JsonProperty(value = "description")
     private String description;
 
+    /** Creates an instance of ActivityLogAlert class. */
+    public ActivityLogAlert() {
+    }
+
     /**
      * Get the scopes property: A list of resourceIds that will be used as prefixes. The alert will only apply to
      * activityLogs with resourceIds that fall under one of these prefixes. This list must include at least one item.

@@ -48,15 +48,6 @@ public final class CertificatesImpl implements Certificates {
         return Utils.mapPage(inner, inner1 -> new CertificateImpl(inner1, this.manager()));
     }
 
-    public Certificate getByResourceGroup(String resourceGroupName, String name) {
-        CertificateInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, name);
-        if (inner != null) {
-            return new CertificateImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<Certificate> getByResourceGroupWithResponse(
         String resourceGroupName, String name, Context context) {
         Response<CertificateInner> inner =
@@ -72,12 +63,21 @@ public final class CertificatesImpl implements Certificates {
         }
     }
 
-    public void deleteByResourceGroup(String resourceGroupName, String name) {
-        this.serviceClient().delete(resourceGroupName, name);
+    public Certificate getByResourceGroup(String resourceGroupName, String name) {
+        CertificateInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, name);
+        if (inner != null) {
+            return new CertificateImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
-    public Response<Void> deleteWithResponse(String resourceGroupName, String name, Context context) {
+    public Response<Void> deleteByResourceGroupWithResponse(String resourceGroupName, String name, Context context) {
         return this.serviceClient().deleteWithResponse(resourceGroupName, name, context);
+    }
+
+    public void deleteByResourceGroup(String resourceGroupName, String name) {
+        this.serviceClient().delete(resourceGroupName, name);
     }
 
     public Certificate getById(String id) {
@@ -134,7 +134,7 @@ public final class CertificatesImpl implements Certificates {
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'certificates'.", id)));
         }
-        this.deleteWithResponse(resourceGroupName, name, Context.NONE);
+        this.deleteByResourceGroupWithResponse(resourceGroupName, name, Context.NONE);
     }
 
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
@@ -153,7 +153,7 @@ public final class CertificatesImpl implements Certificates {
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'certificates'.", id)));
         }
-        return this.deleteWithResponse(resourceGroupName, name, context);
+        return this.deleteByResourceGroupWithResponse(resourceGroupName, name, context);
     }
 
     private CertificatesClient serviceClient() {

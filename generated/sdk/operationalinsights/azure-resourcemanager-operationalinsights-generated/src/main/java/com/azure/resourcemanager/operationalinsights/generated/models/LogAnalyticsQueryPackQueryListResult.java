@@ -26,6 +26,10 @@ public final class LogAnalyticsQueryPackQueryListResult {
     @JsonProperty(value = "nextLink")
     private String nextLink;
 
+    /** Creates an instance of LogAnalyticsQueryPackQueryListResult class. */
+    public LogAnalyticsQueryPackQueryListResult() {
+    }
+
     /**
      * Get the value property: List of Log Analytics QueryPack Query definitions.
      *

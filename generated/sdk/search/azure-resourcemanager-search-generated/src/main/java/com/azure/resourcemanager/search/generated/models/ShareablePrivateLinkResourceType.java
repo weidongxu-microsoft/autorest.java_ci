@@ -24,6 +24,10 @@ public final class ShareablePrivateLinkResourceType {
     @JsonProperty(value = "properties", access = JsonProperty.Access.WRITE_ONLY)
     private ShareablePrivateLinkResourceProperties properties;
 
+    /** Creates an instance of ShareablePrivateLinkResourceType class. */
+    public ShareablePrivateLinkResourceType() {
+    }
+
     /**
      * Get the name property: The name of the resource type that has been onboarded to private link service, supported
      * by Azure Cognitive Search.

@@ -18,6 +18,10 @@ public final class OperationListResultInner {
     @JsonProperty(value = "value")
     private List<Operation> value;
 
+    /** Creates an instance of OperationListResultInner class. */
+    public OperationListResultInner() {
+    }
+
     /**
      * Get the value property: The list of resource provider operations.
      *

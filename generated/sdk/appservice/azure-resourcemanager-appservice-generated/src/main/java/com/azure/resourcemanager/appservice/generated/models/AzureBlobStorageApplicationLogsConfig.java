@@ -30,6 +30,10 @@ public final class AzureBlobStorageApplicationLogsConfig {
     @JsonProperty(value = "retentionInDays")
     private Integer retentionInDays;
 
+    /** Creates an instance of AzureBlobStorageApplicationLogsConfig class. */
+    public AzureBlobStorageApplicationLogsConfig() {
+    }
+
     /**
      * Get the level property: Log level.
      *

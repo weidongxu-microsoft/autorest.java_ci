@@ -53,6 +53,10 @@ public final class ContainerAppsConfiguration {
     @JsonProperty(value = "dockerBridgeCidr")
     private String dockerBridgeCidr;
 
+    /** Creates an instance of ContainerAppsConfiguration class. */
+    public ContainerAppsConfiguration() {
+    }
+
     /**
      * Get the daprAIInstrumentationKey property: Azure Monitor instrumentation key used by Dapr to export Service to
      * Service communication telemetry.

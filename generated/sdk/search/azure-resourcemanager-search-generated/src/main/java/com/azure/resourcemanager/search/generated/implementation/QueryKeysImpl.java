@@ -28,15 +28,6 @@ public final class QueryKeysImpl implements QueryKeys {
         this.serviceManager = serviceManager;
     }
 
-    public QueryKey create(String resourceGroupName, String searchServiceName, String name) {
-        QueryKeyInner inner = this.serviceClient().create(resourceGroupName, searchServiceName, name);
-        if (inner != null) {
-            return new QueryKeyImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<QueryKey> createWithResponse(
         String resourceGroupName, String searchServiceName, String name, UUID clientRequestId, Context context) {
         Response<QueryKeyInner> inner =
@@ -49,6 +40,15 @@ public final class QueryKeysImpl implements QueryKeys {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new QueryKeyImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public QueryKey create(String resourceGroupName, String searchServiceName, String name) {
+        QueryKeyInner inner = this.serviceClient().create(resourceGroupName, searchServiceName, name);
+        if (inner != null) {
+            return new QueryKeyImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -67,15 +67,15 @@ public final class QueryKeysImpl implements QueryKeys {
         return Utils.mapPage(inner, inner1 -> new QueryKeyImpl(inner1, this.manager()));
     }
 
-    public void delete(String resourceGroupName, String searchServiceName, String key) {
-        this.serviceClient().delete(resourceGroupName, searchServiceName, key);
-    }
-
     public Response<Void> deleteWithResponse(
         String resourceGroupName, String searchServiceName, String key, UUID clientRequestId, Context context) {
         return this
             .serviceClient()
             .deleteWithResponse(resourceGroupName, searchServiceName, key, clientRequestId, context);
+    }
+
+    public void delete(String resourceGroupName, String searchServiceName, String key) {
+        this.serviceClient().delete(resourceGroupName, searchServiceName, key);
     }
 
     private QueryKeysClient serviceClient() {

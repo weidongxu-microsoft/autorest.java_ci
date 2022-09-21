@@ -16,6 +16,10 @@ public final class SshPublicKey {
     @JsonProperty(value = "certificateData")
     private String certificateData;
 
+    /** Creates an instance of SshPublicKey class. */
+    public SshPublicKey() {
+    }
+
     /**
      * Get the certificateData property: The certificate for SSH.
      *

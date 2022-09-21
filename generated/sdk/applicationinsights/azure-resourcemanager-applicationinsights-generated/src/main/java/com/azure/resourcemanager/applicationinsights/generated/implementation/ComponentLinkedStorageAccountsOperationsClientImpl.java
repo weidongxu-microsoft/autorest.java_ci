@@ -268,12 +268,12 @@ public final class ComponentLinkedStorageAccountsOperationsClientImpl
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Application Insights component linked storage accounts.
+     * @return an Application Insights component linked storage accounts along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ComponentLinkedStorageAccountsInner get(
+    public Response<ComponentLinkedStorageAccountsInner> getWithResponse(
         String resourceGroupName, String resourceName, StorageType storageType) {
-        return getAsync(resourceGroupName, resourceName, storageType).block();
+        return getWithResponseAsync(resourceGroupName, resourceName, storageType).block();
     }
 
     /**
@@ -292,6 +292,23 @@ public final class ComponentLinkedStorageAccountsOperationsClientImpl
     public Response<ComponentLinkedStorageAccountsInner> getWithResponse(
         String resourceGroupName, String resourceName, StorageType storageType, Context context) {
         return getWithResponseAsync(resourceGroupName, resourceName, storageType, context).block();
+    }
+
+    /**
+     * Returns the current linked storage settings for an Application Insights component.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceName The name of the Application Insights component resource.
+     * @param storageType The type of the Application Insights component data source for the linked storage account.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return an Application Insights component linked storage accounts.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ComponentLinkedStorageAccountsInner get(
+        String resourceGroupName, String resourceName, StorageType storageType) {
+        return getWithResponse(resourceGroupName, resourceName, storageType, Context.NONE).getValue();
     }
 
     /**
@@ -466,15 +483,16 @@ public final class ComponentLinkedStorageAccountsOperationsClientImpl
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Application Insights component linked storage accounts.
+     * @return an Application Insights component linked storage accounts along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ComponentLinkedStorageAccountsInner createAndUpdate(
+    public Response<ComponentLinkedStorageAccountsInner> createAndUpdateWithResponse(
         String resourceGroupName,
         String resourceName,
         StorageType storageType,
         ComponentLinkedStorageAccountsInner linkedStorageAccountsProperties) {
-        return createAndUpdateAsync(resourceGroupName, resourceName, storageType, linkedStorageAccountsProperties)
+        return createAndUpdateWithResponseAsync(
+                resourceGroupName, resourceName, storageType, linkedStorageAccountsProperties)
             .block();
     }
 
@@ -502,6 +520,30 @@ public final class ComponentLinkedStorageAccountsOperationsClientImpl
         return createAndUpdateWithResponseAsync(
                 resourceGroupName, resourceName, storageType, linkedStorageAccountsProperties, context)
             .block();
+    }
+
+    /**
+     * Replace current linked storage account for an Application Insights component.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceName The name of the Application Insights component resource.
+     * @param storageType The type of the Application Insights component data source for the linked storage account.
+     * @param linkedStorageAccountsProperties Properties that need to be specified to update linked storage accounts for
+     *     an Application Insights component.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return an Application Insights component linked storage accounts.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ComponentLinkedStorageAccountsInner createAndUpdate(
+        String resourceGroupName,
+        String resourceName,
+        StorageType storageType,
+        ComponentLinkedStorageAccountsInner linkedStorageAccountsProperties) {
+        return createAndUpdateWithResponse(
+                resourceGroupName, resourceName, storageType, linkedStorageAccountsProperties, Context.NONE)
+            .getValue();
     }
 
     /**
@@ -675,15 +717,16 @@ public final class ComponentLinkedStorageAccountsOperationsClientImpl
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Application Insights component linked storage accounts.
+     * @return an Application Insights component linked storage accounts along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ComponentLinkedStorageAccountsInner update(
+    public Response<ComponentLinkedStorageAccountsInner> updateWithResponse(
         String resourceGroupName,
         String resourceName,
         StorageType storageType,
         ComponentLinkedStorageAccountsPatch linkedStorageAccountsProperties) {
-        return updateAsync(resourceGroupName, resourceName, storageType, linkedStorageAccountsProperties).block();
+        return updateWithResponseAsync(resourceGroupName, resourceName, storageType, linkedStorageAccountsProperties)
+            .block();
     }
 
     /**
@@ -710,6 +753,30 @@ public final class ComponentLinkedStorageAccountsOperationsClientImpl
         return updateWithResponseAsync(
                 resourceGroupName, resourceName, storageType, linkedStorageAccountsProperties, context)
             .block();
+    }
+
+    /**
+     * Update linked storage accounts for an Application Insights component.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceName The name of the Application Insights component resource.
+     * @param storageType The type of the Application Insights component data source for the linked storage account.
+     * @param linkedStorageAccountsProperties Properties that need to be specified to update a linked storage accounts
+     *     for an Application Insights component.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return an Application Insights component linked storage accounts.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ComponentLinkedStorageAccountsInner update(
+        String resourceGroupName,
+        String resourceName,
+        StorageType storageType,
+        ComponentLinkedStorageAccountsPatch linkedStorageAccountsProperties) {
+        return updateWithResponse(
+                resourceGroupName, resourceName, storageType, linkedStorageAccountsProperties, Context.NONE)
+            .getValue();
     }
 
     /**
@@ -843,10 +910,11 @@ public final class ComponentLinkedStorageAccountsOperationsClientImpl
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public void delete(String resourceGroupName, String resourceName, StorageType storageType) {
-        deleteAsync(resourceGroupName, resourceName, storageType).block();
+    public Response<Void> deleteWithResponse(String resourceGroupName, String resourceName, StorageType storageType) {
+        return deleteWithResponseAsync(resourceGroupName, resourceName, storageType).block();
     }
 
     /**
@@ -865,5 +933,20 @@ public final class ComponentLinkedStorageAccountsOperationsClientImpl
     public Response<Void> deleteWithResponse(
         String resourceGroupName, String resourceName, StorageType storageType, Context context) {
         return deleteWithResponseAsync(resourceGroupName, resourceName, storageType, context).block();
+    }
+
+    /**
+     * Delete linked storage accounts for an Application Insights component.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceName The name of the Application Insights component resource.
+     * @param storageType The type of the Application Insights component data source for the linked storage account.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public void delete(String resourceGroupName, String resourceName, StorageType storageType) {
+        deleteWithResponse(resourceGroupName, resourceName, storageType, Context.NONE);
     }
 }

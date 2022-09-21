@@ -20,6 +20,10 @@ public final class SettingInner extends ProxySettingResource {
     @JsonProperty(value = "properties")
     private SettingsProperties innerProperties;
 
+    /** Creates an instance of SettingInner class. */
+    public SettingInner() {
+    }
+
     /**
      * Get the innerProperties property: The properties of the setting.
      *

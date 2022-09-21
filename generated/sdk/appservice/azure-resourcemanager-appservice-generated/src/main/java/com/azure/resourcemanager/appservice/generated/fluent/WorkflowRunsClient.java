@@ -53,21 +53,6 @@ public interface WorkflowRunsClient {
      * @param name Site name.
      * @param workflowName The workflow name.
      * @param runName The workflow run name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a workflow run.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    WorkflowRunInner get(String resourceGroupName, String name, String workflowName, String runName);
-
-    /**
-     * Gets a workflow run.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Site name.
-     * @param workflowName The workflow name.
-     * @param runName The workflow run name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -79,7 +64,7 @@ public interface WorkflowRunsClient {
         String resourceGroupName, String name, String workflowName, String runName, Context context);
 
     /**
-     * Cancels a workflow run.
+     * Gets a workflow run.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
@@ -88,9 +73,10 @@ public interface WorkflowRunsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a workflow run.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    void cancel(String resourceGroupName, String name, String workflowName, String runName);
+    WorkflowRunInner get(String resourceGroupName, String name, String workflowName, String runName);
 
     /**
      * Cancels a workflow run.
@@ -108,4 +94,18 @@ public interface WorkflowRunsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> cancelWithResponse(
         String resourceGroupName, String name, String workflowName, String runName, Context context);
+
+    /**
+     * Cancels a workflow run.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Site name.
+     * @param workflowName The workflow name.
+     * @param runName The workflow run name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    void cancel(String resourceGroupName, String name, String workflowName, String runName);
 }

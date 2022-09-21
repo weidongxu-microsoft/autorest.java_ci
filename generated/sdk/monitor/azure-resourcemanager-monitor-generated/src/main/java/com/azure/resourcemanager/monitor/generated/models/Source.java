@@ -36,6 +36,10 @@ public final class Source {
     @JsonProperty(value = "queryType")
     private QueryType queryType;
 
+    /** Creates an instance of Source class. */
+    public Source() {
+    }
+
     /**
      * Get the query property: Log search query. Required for action type - AlertingAction.
      *

@@ -580,11 +580,11 @@ public final class ViewsClientImpl implements ViewsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the view by view name.
+     * @return the view by view name along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ViewInner get(String viewName) {
-        return getAsync(viewName).block();
+    public Response<ViewInner> getWithResponse(String viewName) {
+        return getWithResponseAsync(viewName).block();
     }
 
     /**
@@ -600,6 +600,20 @@ public final class ViewsClientImpl implements ViewsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<ViewInner> getWithResponse(String viewName, Context context) {
         return getWithResponseAsync(viewName, context).block();
+    }
+
+    /**
+     * Gets the view by view name.
+     *
+     * @param viewName View name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the view by view name.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ViewInner get(String viewName) {
+        return getWithResponse(viewName, Context.NONE).getValue();
     }
 
     /**
@@ -707,11 +721,11 @@ public final class ViewsClientImpl implements ViewsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return states and configurations of Cost Analysis.
+     * @return states and configurations of Cost Analysis along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ViewInner createOrUpdate(String viewName, ViewInner parameters) {
-        return createOrUpdateAsync(viewName, parameters).block();
+    public Response<ViewInner> createOrUpdateWithResponse(String viewName, ViewInner parameters) {
+        return createOrUpdateWithResponseAsync(viewName, parameters).block();
     }
 
     /**
@@ -729,6 +743,22 @@ public final class ViewsClientImpl implements ViewsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<ViewInner> createOrUpdateWithResponse(String viewName, ViewInner parameters, Context context) {
         return createOrUpdateWithResponseAsync(viewName, parameters, context).block();
+    }
+
+    /**
+     * The operation to create or update a view. Update operation requires latest eTag to be set in the request. You may
+     * obtain the latest eTag by performing a get operation. Create operation does not require eTag.
+     *
+     * @param viewName View name.
+     * @param parameters Parameters supplied to the CreateOrUpdate View operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return states and configurations of Cost Analysis.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ViewInner createOrUpdate(String viewName, ViewInner parameters) {
+        return createOrUpdateWithResponse(viewName, parameters, Context.NONE).getValue();
     }
 
     /**
@@ -806,10 +836,11 @@ public final class ViewsClientImpl implements ViewsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public void delete(String viewName) {
-        deleteAsync(viewName).block();
+    public Response<Void> deleteWithResponse(String viewName) {
+        return deleteWithResponseAsync(viewName).block();
     }
 
     /**
@@ -825,6 +856,19 @@ public final class ViewsClientImpl implements ViewsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> deleteWithResponse(String viewName, Context context) {
         return deleteWithResponseAsync(viewName, context).block();
+    }
+
+    /**
+     * The operation to delete a view.
+     *
+     * @param viewName View name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public void delete(String viewName) {
+        deleteWithResponse(viewName, Context.NONE);
     }
 
     /**
@@ -973,11 +1017,11 @@ public final class ViewsClientImpl implements ViewsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the view for the defined scope by view name.
+     * @return the view for the defined scope by view name along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ViewInner getByScope(String scope, String viewName) {
-        return getByScopeAsync(scope, viewName).block();
+    public Response<ViewInner> getByScopeWithResponse(String scope, String viewName) {
+        return getByScopeWithResponseAsync(scope, viewName).block();
     }
 
     /**
@@ -1008,6 +1052,35 @@ public final class ViewsClientImpl implements ViewsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<ViewInner> getByScopeWithResponse(String scope, String viewName, Context context) {
         return getByScopeWithResponseAsync(scope, viewName, context).block();
+    }
+
+    /**
+     * Gets the view for the defined scope by view name.
+     *
+     * @param scope The scope associated with view operations. This includes 'subscriptions/{subscriptionId}' for
+     *     subscription scope, 'subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resourceGroup
+     *     scope, 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account scope,
+     *     'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/departments/{departmentId}' for Department
+     *     scope,
+     *     'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/enrollmentAccounts/{enrollmentAccountId}' for
+     *     EnrollmentAccount scope,
+     *     'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
+     *     BillingProfile scope,
+     *     'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
+     *     InvoiceSection scope, 'providers/Microsoft.Management/managementGroups/{managementGroupId}' for Management
+     *     Group scope, 'providers/Microsoft.CostManagement/externalBillingAccounts/{externalBillingAccountName}' for
+     *     External Billing Account scope and
+     *     'providers/Microsoft.CostManagement/externalSubscriptions/{externalSubscriptionName}' for External
+     *     Subscription scope.
+     * @param viewName View name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the view for the defined scope by view name.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ViewInner getByScope(String scope, String viewName) {
+        return getByScopeWithResponse(scope, viewName, Context.NONE).getValue();
     }
 
     /**
@@ -1184,11 +1257,11 @@ public final class ViewsClientImpl implements ViewsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return states and configurations of Cost Analysis.
+     * @return states and configurations of Cost Analysis along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ViewInner createOrUpdateByScope(String scope, String viewName, ViewInner parameters) {
-        return createOrUpdateByScopeAsync(scope, viewName, parameters).block();
+    public Response<ViewInner> createOrUpdateByScopeWithResponse(String scope, String viewName, ViewInner parameters) {
+        return createOrUpdateByScopeWithResponseAsync(scope, viewName, parameters).block();
     }
 
     /**
@@ -1222,6 +1295,37 @@ public final class ViewsClientImpl implements ViewsClient {
     public Response<ViewInner> createOrUpdateByScopeWithResponse(
         String scope, String viewName, ViewInner parameters, Context context) {
         return createOrUpdateByScopeWithResponseAsync(scope, viewName, parameters, context).block();
+    }
+
+    /**
+     * The operation to create or update a view. Update operation requires latest eTag to be set in the request. You may
+     * obtain the latest eTag by performing a get operation. Create operation does not require eTag.
+     *
+     * @param scope The scope associated with view operations. This includes 'subscriptions/{subscriptionId}' for
+     *     subscription scope, 'subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resourceGroup
+     *     scope, 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account scope,
+     *     'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/departments/{departmentId}' for Department
+     *     scope,
+     *     'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/enrollmentAccounts/{enrollmentAccountId}' for
+     *     EnrollmentAccount scope,
+     *     'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
+     *     BillingProfile scope,
+     *     'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
+     *     InvoiceSection scope, 'providers/Microsoft.Management/managementGroups/{managementGroupId}' for Management
+     *     Group scope, 'providers/Microsoft.CostManagement/externalBillingAccounts/{externalBillingAccountName}' for
+     *     External Billing Account scope and
+     *     'providers/Microsoft.CostManagement/externalSubscriptions/{externalSubscriptionName}' for External
+     *     Subscription scope.
+     * @param viewName View name.
+     * @param parameters Parameters supplied to the CreateOrUpdate View operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return states and configurations of Cost Analysis.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ViewInner createOrUpdateByScope(String scope, String viewName, ViewInner parameters) {
+        return createOrUpdateByScopeWithResponse(scope, viewName, parameters, Context.NONE).getValue();
     }
 
     /**
@@ -1368,10 +1472,11 @@ public final class ViewsClientImpl implements ViewsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public void deleteByScope(String scope, String viewName) {
-        deleteByScopeAsync(scope, viewName).block();
+    public Response<Void> deleteByScopeWithResponse(String scope, String viewName) {
+        return deleteByScopeWithResponseAsync(scope, viewName).block();
     }
 
     /**
@@ -1402,6 +1507,34 @@ public final class ViewsClientImpl implements ViewsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> deleteByScopeWithResponse(String scope, String viewName, Context context) {
         return deleteByScopeWithResponseAsync(scope, viewName, context).block();
+    }
+
+    /**
+     * The operation to delete a view.
+     *
+     * @param scope The scope associated with view operations. This includes 'subscriptions/{subscriptionId}' for
+     *     subscription scope, 'subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resourceGroup
+     *     scope, 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account scope,
+     *     'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/departments/{departmentId}' for Department
+     *     scope,
+     *     'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/enrollmentAccounts/{enrollmentAccountId}' for
+     *     EnrollmentAccount scope,
+     *     'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
+     *     BillingProfile scope,
+     *     'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
+     *     InvoiceSection scope, 'providers/Microsoft.Management/managementGroups/{managementGroupId}' for Management
+     *     Group scope, 'providers/Microsoft.CostManagement/externalBillingAccounts/{externalBillingAccountName}' for
+     *     External Billing Account scope and
+     *     'providers/Microsoft.CostManagement/externalSubscriptions/{externalSubscriptionName}' for External
+     *     Subscription scope.
+     * @param viewName View name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public void deleteByScope(String scope, String viewName) {
+        deleteByScopeWithResponse(scope, viewName, Context.NONE);
     }
 
     /**

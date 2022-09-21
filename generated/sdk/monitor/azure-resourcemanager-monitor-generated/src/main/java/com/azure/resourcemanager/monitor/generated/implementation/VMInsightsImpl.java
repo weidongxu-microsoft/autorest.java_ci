@@ -26,15 +26,6 @@ public final class VMInsightsImpl implements VMInsights {
         this.serviceManager = serviceManager;
     }
 
-    public VMInsightsOnboardingStatus getOnboardingStatus(String resourceUri) {
-        VMInsightsOnboardingStatusInner inner = this.serviceClient().getOnboardingStatus(resourceUri);
-        if (inner != null) {
-            return new VMInsightsOnboardingStatusImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<VMInsightsOnboardingStatus> getOnboardingStatusWithResponse(String resourceUri, Context context) {
         Response<VMInsightsOnboardingStatusInner> inner =
             this.serviceClient().getOnboardingStatusWithResponse(resourceUri, context);
@@ -44,6 +35,15 @@ public final class VMInsightsImpl implements VMInsights {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new VMInsightsOnboardingStatusImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public VMInsightsOnboardingStatus getOnboardingStatus(String resourceUri) {
+        VMInsightsOnboardingStatusInner inner = this.serviceClient().getOnboardingStatus(resourceUri);
+        if (inner != null) {
+            return new VMInsightsOnboardingStatusImpl(inner, this.manager());
         } else {
             return null;
         }

@@ -20,21 +20,6 @@ public interface ActivityLogAlertsClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param activityLogAlertName The name of the activity log alert.
      * @param activityLogAlert The activity log alert to create or use for the update.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an activity log alert resource.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    ActivityLogAlertResourceInner createOrUpdate(
-        String resourceGroupName, String activityLogAlertName, ActivityLogAlertResourceInner activityLogAlert);
-
-    /**
-     * Create a new activity log alert or update an existing one.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param activityLogAlertName The name of the activity log alert.
-     * @param activityLogAlert The activity log alert to create or use for the update.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -49,17 +34,19 @@ public interface ActivityLogAlertsClient {
         Context context);
 
     /**
-     * Get an activity log alert.
+     * Create a new activity log alert or update an existing one.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param activityLogAlertName The name of the activity log alert.
+     * @param activityLogAlert The activity log alert to create or use for the update.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an activity log alert.
+     * @return an activity log alert resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    ActivityLogAlertResourceInner getByResourceGroup(String resourceGroupName, String activityLogAlertName);
+    ActivityLogAlertResourceInner createOrUpdate(
+        String resourceGroupName, String activityLogAlertName, ActivityLogAlertResourceInner activityLogAlert);
 
     /**
      * Get an activity log alert.
@@ -77,16 +64,17 @@ public interface ActivityLogAlertsClient {
         String resourceGroupName, String activityLogAlertName, Context context);
 
     /**
-     * Delete an activity log alert.
+     * Get an activity log alert.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param activityLogAlertName The name of the activity log alert.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return an activity log alert.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    void delete(String resourceGroupName, String activityLogAlertName);
+    ActivityLogAlertResourceInner getByResourceGroup(String resourceGroupName, String activityLogAlertName);
 
     /**
      * Delete an activity log alert.
@@ -103,19 +91,16 @@ public interface ActivityLogAlertsClient {
     Response<Void> deleteWithResponse(String resourceGroupName, String activityLogAlertName, Context context);
 
     /**
-     * Updates an existing ActivityLogAlertResource's tags. To update other fields use the CreateOrUpdate method.
+     * Delete an activity log alert.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param activityLogAlertName The name of the activity log alert.
-     * @param activityLogAlertPatch Parameters supplied to the operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an activity log alert resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    ActivityLogAlertResourceInner update(
-        String resourceGroupName, String activityLogAlertName, ActivityLogAlertPatchBody activityLogAlertPatch);
+    void delete(String resourceGroupName, String activityLogAlertName);
 
     /**
      * Updates an existing ActivityLogAlertResource's tags. To update other fields use the CreateOrUpdate method.
@@ -135,6 +120,21 @@ public interface ActivityLogAlertsClient {
         String activityLogAlertName,
         ActivityLogAlertPatchBody activityLogAlertPatch,
         Context context);
+
+    /**
+     * Updates an existing ActivityLogAlertResource's tags. To update other fields use the CreateOrUpdate method.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param activityLogAlertName The name of the activity log alert.
+     * @param activityLogAlertPatch Parameters supplied to the operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return an activity log alert resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    ActivityLogAlertResourceInner update(
+        String resourceGroupName, String activityLogAlertName, ActivityLogAlertPatchBody activityLogAlertPatch);
 
     /**
      * Get a list of all activity log alerts in a subscription.

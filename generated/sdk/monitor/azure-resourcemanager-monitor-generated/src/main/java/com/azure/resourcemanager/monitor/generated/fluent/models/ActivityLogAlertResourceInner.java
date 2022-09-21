@@ -21,6 +21,10 @@ public final class ActivityLogAlertResourceInner extends Resource {
     @JsonProperty(value = "properties")
     private ActivityLogAlert innerProperties;
 
+    /** Creates an instance of ActivityLogAlertResourceInner class. */
+    public ActivityLogAlertResourceInner() {
+    }
+
     /**
      * Get the innerProperties property: The activity log alert properties of the resource.
      *

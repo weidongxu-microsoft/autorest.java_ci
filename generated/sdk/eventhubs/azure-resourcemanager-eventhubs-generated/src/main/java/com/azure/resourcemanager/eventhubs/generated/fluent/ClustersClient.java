@@ -20,16 +20,6 @@ public interface ClustersClient {
     /**
      * List the quantity of available pre-provisioned Event Hubs Clusters, indexed by Azure region.
      *
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the List Available Clusters operation.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    AvailableClustersListInner listAvailableClusterRegion();
-
-    /**
-     * List the quantity of available pre-provisioned Event Hubs Clusters, indexed by Azure region.
-     *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -38,6 +28,16 @@ public interface ClustersClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<AvailableClustersListInner> listAvailableClusterRegionWithResponse(Context context);
+
+    /**
+     * List the quantity of available pre-provisioned Event Hubs Clusters, indexed by Azure region.
+     *
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response of the List Available Clusters operation.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    AvailableClustersListInner listAvailableClusterRegion();
 
     /**
      * Lists the available Event Hubs Clusters within an ARM resource group.
@@ -91,19 +91,6 @@ public interface ClustersClient {
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param clusterName The name of the Event Hubs Cluster.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the resource description of the specified Event Hubs Cluster.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    ClusterInner getByResourceGroup(String resourceGroupName, String clusterName);
-
-    /**
-     * Gets the resource description of the specified Event Hubs Cluster.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param clusterName The name of the Event Hubs Cluster.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -113,6 +100,19 @@ public interface ClustersClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ClusterInner> getByResourceGroupWithResponse(
         String resourceGroupName, String clusterName, Context context);
+
+    /**
+     * Gets the resource description of the specified Event Hubs Cluster.
+     *
+     * @param resourceGroupName Name of the resource group within the azure subscription.
+     * @param clusterName The name of the Event Hubs Cluster.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the resource description of the specified Event Hubs Cluster.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    ClusterInner getByResourceGroup(String resourceGroupName, String clusterName);
 
     /**
      * Creates or updates an instance of an Event Hubs Cluster.
@@ -291,19 +291,6 @@ public interface ClustersClient {
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param clusterName The name of the Event Hubs Cluster.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the List Namespace IDs operation.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    EHNamespaceIdListResultInner listNamespaces(String resourceGroupName, String clusterName);
-
-    /**
-     * List all Event Hubs Namespace IDs in an Event Hubs Dedicated Cluster.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param clusterName The name of the Event Hubs Cluster.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -313,4 +300,17 @@ public interface ClustersClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<EHNamespaceIdListResultInner> listNamespacesWithResponse(
         String resourceGroupName, String clusterName, Context context);
+
+    /**
+     * List all Event Hubs Namespace IDs in an Event Hubs Dedicated Cluster.
+     *
+     * @param resourceGroupName Name of the resource group within the azure subscription.
+     * @param clusterName The name of the Event Hubs Cluster.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response of the List Namespace IDs operation.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    EHNamespaceIdListResultInner listNamespaces(String resourceGroupName, String clusterName);
 }

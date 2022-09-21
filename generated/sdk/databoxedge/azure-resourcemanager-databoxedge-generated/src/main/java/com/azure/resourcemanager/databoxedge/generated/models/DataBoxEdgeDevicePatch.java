@@ -32,6 +32,10 @@ public final class DataBoxEdgeDevicePatch {
     @JsonProperty(value = "properties")
     private DataBoxEdgeDevicePropertiesPatch innerProperties;
 
+    /** Creates an instance of DataBoxEdgeDevicePatch class. */
+    public DataBoxEdgeDevicePatch() {
+    }
+
     /**
      * Get the tags property: The tags attached to the Data Box Edge/Gateway resource.
      *

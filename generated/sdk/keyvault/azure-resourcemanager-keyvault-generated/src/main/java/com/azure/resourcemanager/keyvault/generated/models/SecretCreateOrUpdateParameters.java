@@ -26,6 +26,10 @@ public final class SecretCreateOrUpdateParameters {
     @JsonProperty(value = "properties", required = true)
     private SecretProperties properties;
 
+    /** Creates an instance of SecretCreateOrUpdateParameters class. */
+    public SecretCreateOrUpdateParameters() {
+    }
+
     /**
      * Get the tags property: The tags that will be assigned to the secret.
      *

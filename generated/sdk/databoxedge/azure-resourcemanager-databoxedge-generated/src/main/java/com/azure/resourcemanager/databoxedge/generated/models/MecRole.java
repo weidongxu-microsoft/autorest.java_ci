@@ -22,6 +22,10 @@ public final class MecRole extends RoleInner {
     @JsonProperty(value = "properties")
     private MecRoleProperties innerProperties;
 
+    /** Creates an instance of MecRole class. */
+    public MecRole() {
+    }
+
     /**
      * Get the innerProperties property: Properties specific to MEC role.
      *

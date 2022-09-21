@@ -37,6 +37,10 @@ public final class ClusterDefinition {
     @JsonProperty(value = "configurations")
     private Object configurations;
 
+    /** Creates an instance of ClusterDefinition class. */
+    public ClusterDefinition() {
+    }
+
     /**
      * Get the blueprint property: The link to the blueprint.
      *

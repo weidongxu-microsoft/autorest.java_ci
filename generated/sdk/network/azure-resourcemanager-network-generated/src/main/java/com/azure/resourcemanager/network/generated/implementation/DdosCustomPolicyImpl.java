@@ -5,15 +5,12 @@
 package com.azure.resourcemanager.network.generated.implementation;
 
 import com.azure.core.management.Region;
-import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.DdosCustomPolicyInner;
 import com.azure.resourcemanager.network.generated.models.DdosCustomPolicy;
-import com.azure.resourcemanager.network.generated.models.ProtocolCustomSettingsFormat;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.azure.resourcemanager.network.generated.models.TagsObject;
 import java.util.Collections;
-import java.util.List;
 import java.util.Map;
 
 public final class DdosCustomPolicyImpl
@@ -57,24 +54,6 @@ public final class DdosCustomPolicyImpl
 
     public ProvisioningState provisioningState() {
         return this.innerModel().provisioningState();
-    }
-
-    public List<SubResource> publicIpAddresses() {
-        List<SubResource> inner = this.innerModel().publicIpAddresses();
-        if (inner != null) {
-            return Collections.unmodifiableList(inner);
-        } else {
-            return Collections.emptyList();
-        }
-    }
-
-    public List<ProtocolCustomSettingsFormat> protocolCustomSettings() {
-        List<ProtocolCustomSettingsFormat> inner = this.innerModel().protocolCustomSettings();
-        if (inner != null) {
-            return Collections.unmodifiableList(inner);
-        } else {
-            return Collections.emptyList();
-        }
     }
 
     public Region region() {
@@ -203,11 +182,6 @@ public final class DdosCustomPolicyImpl
             this.updateParameters.withTags(tags);
             return this;
         }
-    }
-
-    public DdosCustomPolicyImpl withProtocolCustomSettings(List<ProtocolCustomSettingsFormat> protocolCustomSettings) {
-        this.innerModel().withProtocolCustomSettings(protocolCustomSettings);
-        return this;
     }
 
     private boolean isInCreateMode() {

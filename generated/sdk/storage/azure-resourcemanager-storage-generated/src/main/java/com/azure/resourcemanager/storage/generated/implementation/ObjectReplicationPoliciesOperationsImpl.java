@@ -39,16 +39,6 @@ public final class ObjectReplicationPoliciesOperationsImpl implements ObjectRepl
         return Utils.mapPage(inner, inner1 -> new ObjectReplicationPolicyImpl(inner1, this.manager()));
     }
 
-    public ObjectReplicationPolicy get(String resourceGroupName, String accountName, String objectReplicationPolicyId) {
-        ObjectReplicationPolicyInner inner =
-            this.serviceClient().get(resourceGroupName, accountName, objectReplicationPolicyId);
-        if (inner != null) {
-            return new ObjectReplicationPolicyImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<ObjectReplicationPolicy> getWithResponse(
         String resourceGroupName, String accountName, String objectReplicationPolicyId, Context context) {
         Response<ObjectReplicationPolicyInner> inner =
@@ -64,8 +54,14 @@ public final class ObjectReplicationPoliciesOperationsImpl implements ObjectRepl
         }
     }
 
-    public void delete(String resourceGroupName, String accountName, String objectReplicationPolicyId) {
-        this.serviceClient().delete(resourceGroupName, accountName, objectReplicationPolicyId);
+    public ObjectReplicationPolicy get(String resourceGroupName, String accountName, String objectReplicationPolicyId) {
+        ObjectReplicationPolicyInner inner =
+            this.serviceClient().get(resourceGroupName, accountName, objectReplicationPolicyId);
+        if (inner != null) {
+            return new ObjectReplicationPolicyImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> deleteWithResponse(
@@ -73,6 +69,10 @@ public final class ObjectReplicationPoliciesOperationsImpl implements ObjectRepl
         return this
             .serviceClient()
             .deleteWithResponse(resourceGroupName, accountName, objectReplicationPolicyId, context);
+    }
+
+    public void delete(String resourceGroupName, String accountName, String objectReplicationPolicyId) {
+        this.serviceClient().delete(resourceGroupName, accountName, objectReplicationPolicyId);
     }
 
     public ObjectReplicationPolicy getById(String id) {

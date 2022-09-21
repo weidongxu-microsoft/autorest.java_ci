@@ -234,11 +234,12 @@ public final class CommunityGalleryImagesClientImpl implements CommunityGalleryI
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a community gallery image.
+     * @return a community gallery image along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public CommunityGalleryImageInner get(String location, String publicGalleryName, String galleryImageName) {
-        return getAsync(location, publicGalleryName, galleryImageName).block();
+    public Response<CommunityGalleryImageInner> getWithResponse(
+        String location, String publicGalleryName, String galleryImageName) {
+        return getWithResponseAsync(location, publicGalleryName, galleryImageName).block();
     }
 
     /**
@@ -257,6 +258,22 @@ public final class CommunityGalleryImagesClientImpl implements CommunityGalleryI
     public Response<CommunityGalleryImageInner> getWithResponse(
         String location, String publicGalleryName, String galleryImageName, Context context) {
         return getWithResponseAsync(location, publicGalleryName, galleryImageName, context).block();
+    }
+
+    /**
+     * Get a community gallery image.
+     *
+     * @param location Resource location.
+     * @param publicGalleryName The public name of the community gallery.
+     * @param galleryImageName The name of the community gallery image definition.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ApiErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a community gallery image.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public CommunityGalleryImageInner get(String location, String publicGalleryName, String galleryImageName) {
+        return getWithResponse(location, publicGalleryName, galleryImageName, Context.NONE).getValue();
     }
 
     /**

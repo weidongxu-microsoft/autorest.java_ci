@@ -26,6 +26,10 @@ public final class KeyInner extends Resource {
     @JsonProperty(value = "properties", required = true)
     private KeyProperties innerProperties = new KeyProperties();
 
+    /** Creates an instance of KeyInner class. */
+    public KeyInner() {
+    }
+
     /**
      * Get the innerProperties property: The properties of the key.
      *

@@ -31,15 +31,6 @@ public final class WorkspacePurgesImpl implements WorkspacePurges {
         this.serviceManager = serviceManager;
     }
 
-    public WorkspacePurgeResponse purge(String resourceGroupName, String workspaceName, WorkspacePurgeBody body) {
-        WorkspacePurgeResponseInner inner = this.serviceClient().purge(resourceGroupName, workspaceName, body);
-        if (inner != null) {
-            return new WorkspacePurgeResponseImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<WorkspacePurgeResponse> purgeWithResponse(
         String resourceGroupName, String workspaceName, WorkspacePurgeBody body, Context context) {
         WorkspacePurgesPurgeResponse inner =
@@ -55,11 +46,10 @@ public final class WorkspacePurgesImpl implements WorkspacePurges {
         }
     }
 
-    public WorkspacePurgeStatusResponse getPurgeStatus(String resourceGroupName, String workspaceName, String purgeId) {
-        WorkspacePurgeStatusResponseInner inner =
-            this.serviceClient().getPurgeStatus(resourceGroupName, workspaceName, purgeId);
+    public WorkspacePurgeResponse purge(String resourceGroupName, String workspaceName, WorkspacePurgeBody body) {
+        WorkspacePurgeResponseInner inner = this.serviceClient().purge(resourceGroupName, workspaceName, body);
         if (inner != null) {
-            return new WorkspacePurgeStatusResponseImpl(inner, this.manager());
+            return new WorkspacePurgeResponseImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -75,6 +65,16 @@ public final class WorkspacePurgesImpl implements WorkspacePurges {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new WorkspacePurgeStatusResponseImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public WorkspacePurgeStatusResponse getPurgeStatus(String resourceGroupName, String workspaceName, String purgeId) {
+        WorkspacePurgeStatusResponseInner inner =
+            this.serviceClient().getPurgeStatus(resourceGroupName, workspaceName, purgeId);
+        if (inner != null) {
+            return new WorkspacePurgeStatusResponseImpl(inner, this.manager());
         } else {
             return null;
         }

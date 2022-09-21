@@ -168,11 +168,11 @@ public final class DiagnosticSettingsCategoriesClientImpl implements DiagnosticS
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the diagnostic settings category for the specified resource.
+     * @return the diagnostic settings category for the specified resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public DiagnosticSettingsCategoryResourceInner get(String resourceUri, String name) {
-        return getAsync(resourceUri, name).block();
+    public Response<DiagnosticSettingsCategoryResourceInner> getWithResponse(String resourceUri, String name) {
+        return getWithResponseAsync(resourceUri, name).block();
     }
 
     /**
@@ -190,6 +190,21 @@ public final class DiagnosticSettingsCategoriesClientImpl implements DiagnosticS
     public Response<DiagnosticSettingsCategoryResourceInner> getWithResponse(
         String resourceUri, String name, Context context) {
         return getWithResponseAsync(resourceUri, name, context).block();
+    }
+
+    /**
+     * Gets the diagnostic settings category for the specified resource.
+     *
+     * @param resourceUri The identifier of the resource.
+     * @param name The name of the diagnostic setting.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the diagnostic settings category for the specified resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public DiagnosticSettingsCategoryResourceInner get(String resourceUri, String name) {
+        return getWithResponse(resourceUri, name, Context.NONE).getValue();
     }
 
     /**
@@ -272,11 +287,11 @@ public final class DiagnosticSettingsCategoriesClientImpl implements DiagnosticS
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of diagnostic setting category resources.
+     * @return represents a collection of diagnostic setting category resources along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public DiagnosticSettingsCategoryResourceCollectionInner list(String resourceUri) {
-        return listAsync(resourceUri).block();
+    public Response<DiagnosticSettingsCategoryResourceCollectionInner> listWithResponse(String resourceUri) {
+        return listWithResponseAsync(resourceUri).block();
     }
 
     /**
@@ -293,5 +308,19 @@ public final class DiagnosticSettingsCategoriesClientImpl implements DiagnosticS
     public Response<DiagnosticSettingsCategoryResourceCollectionInner> listWithResponse(
         String resourceUri, Context context) {
         return listWithResponseAsync(resourceUri, context).block();
+    }
+
+    /**
+     * Lists the diagnostic settings categories for the specified resource.
+     *
+     * @param resourceUri The identifier of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return represents a collection of diagnostic setting category resources.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public DiagnosticSettingsCategoryResourceCollectionInner list(String resourceUri) {
+        return listWithResponse(resourceUri, Context.NONE).getValue();
     }
 }

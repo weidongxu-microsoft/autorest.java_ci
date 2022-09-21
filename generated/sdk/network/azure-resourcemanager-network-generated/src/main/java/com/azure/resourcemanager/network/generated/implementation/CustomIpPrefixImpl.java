@@ -10,7 +10,9 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.CustomIpPrefixInner;
 import com.azure.resourcemanager.network.generated.models.CommissionedState;
 import com.azure.resourcemanager.network.generated.models.CustomIpPrefix;
+import com.azure.resourcemanager.network.generated.models.CustomIpPrefixType;
 import com.azure.resourcemanager.network.generated.models.ExtendedLocation;
+import com.azure.resourcemanager.network.generated.models.Geo;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.azure.resourcemanager.network.generated.models.TagsObject;
 import java.util.Collections;
@@ -64,6 +66,10 @@ public final class CustomIpPrefixImpl implements CustomIpPrefix, CustomIpPrefix.
         return this.innerModel().id();
     }
 
+    public String asn() {
+        return this.innerModel().asn();
+    }
+
     public String cidr() {
         return this.innerModel().cidr();
     }
@@ -93,8 +99,20 @@ public final class CustomIpPrefixImpl implements CustomIpPrefix, CustomIpPrefix.
         return this.innerModel().commissionedState();
     }
 
+    public Boolean expressRouteAdvertise() {
+        return this.innerModel().expressRouteAdvertise();
+    }
+
+    public Geo geo() {
+        return this.innerModel().geo();
+    }
+
     public Boolean noInternetAdvertise() {
         return this.innerModel().noInternetAdvertise();
+    }
+
+    public CustomIpPrefixType prefixType() {
+        return this.innerModel().prefixType();
     }
 
     public List<SubResource> publicIpPrefixes() {
@@ -258,6 +276,11 @@ public final class CustomIpPrefixImpl implements CustomIpPrefix, CustomIpPrefix.
         return this;
     }
 
+    public CustomIpPrefixImpl withAsn(String asn) {
+        this.innerModel().withAsn(asn);
+        return this;
+    }
+
     public CustomIpPrefixImpl withCidr(String cidr) {
         this.innerModel().withCidr(cidr);
         return this;
@@ -283,8 +306,23 @@ public final class CustomIpPrefixImpl implements CustomIpPrefix, CustomIpPrefix.
         return this;
     }
 
+    public CustomIpPrefixImpl withExpressRouteAdvertise(Boolean expressRouteAdvertise) {
+        this.innerModel().withExpressRouteAdvertise(expressRouteAdvertise);
+        return this;
+    }
+
+    public CustomIpPrefixImpl withGeo(Geo geo) {
+        this.innerModel().withGeo(geo);
+        return this;
+    }
+
     public CustomIpPrefixImpl withNoInternetAdvertise(Boolean noInternetAdvertise) {
         this.innerModel().withNoInternetAdvertise(noInternetAdvertise);
+        return this;
+    }
+
+    public CustomIpPrefixImpl withPrefixType(CustomIpPrefixType prefixType) {
+        this.innerModel().withPrefixType(prefixType);
         return this;
     }
 

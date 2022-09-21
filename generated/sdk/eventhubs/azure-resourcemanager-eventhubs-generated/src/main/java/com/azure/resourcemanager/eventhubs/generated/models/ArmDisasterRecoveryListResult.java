@@ -25,6 +25,10 @@ public final class ArmDisasterRecoveryListResult {
     @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
 
+    /** Creates an instance of ArmDisasterRecoveryListResult class. */
+    public ArmDisasterRecoveryListResult() {
+    }
+
     /**
      * Get the value property: List of Alias(Disaster Recovery configurations).
      *

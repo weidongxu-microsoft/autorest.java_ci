@@ -32,6 +32,10 @@ public final class PeriodicTimerSourceInfo {
     @JsonProperty(value = "topic")
     private String topic;
 
+    /** Creates an instance of PeriodicTimerSourceInfo class. */
+    public PeriodicTimerSourceInfo() {
+    }
+
     /**
      * Get the startTime property: The time of the day that results in a valid trigger. Schedule is computed with
      * reference to the time specified upto seconds. If timezone is not specified the time will considered to be in

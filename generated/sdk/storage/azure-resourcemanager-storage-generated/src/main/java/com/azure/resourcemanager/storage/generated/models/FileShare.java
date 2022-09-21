@@ -420,16 +420,6 @@ public interface FileShare {
      * Restore a file share within a valid retention days if share soft delete is enabled.
      *
      * @param deletedShare The deleted share to be restored.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void restore(DeletedShare deletedShare);
-
-    /**
-     * Restore a file share within a valid retention days if share soft delete is enabled.
-     *
-     * @param deletedShare The deleted share to be restored.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -439,14 +429,14 @@ public interface FileShare {
     Response<Void> restoreWithResponse(DeletedShare deletedShare, Context context);
 
     /**
-     * The Lease Share operation establishes and manages a lock on a share for delete operations. The lock duration can
-     * be 15 to 60 seconds, or can be infinite.
+     * Restore a file share within a valid retention days if share soft delete is enabled.
      *
+     * @param deletedShare The deleted share to be restored.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return lease Share response schema.
      */
-    LeaseShareResponse lease();
+    void restore(DeletedShare deletedShare);
 
     /**
      * The Lease Share operation establishes and manages a lock on a share for delete operations. The lock duration can
@@ -461,4 +451,14 @@ public interface FileShare {
      * @return lease Share response schema.
      */
     Response<LeaseShareResponse> leaseWithResponse(String xMsSnapshot, LeaseShareRequest parameters, Context context);
+
+    /**
+     * The Lease Share operation establishes and manages a lock on a share for delete operations. The lock duration can
+     * be 15 to 60 seconds, or can be infinite.
+     *
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return lease Share response schema.
+     */
+    LeaseShareResponse lease();
 }

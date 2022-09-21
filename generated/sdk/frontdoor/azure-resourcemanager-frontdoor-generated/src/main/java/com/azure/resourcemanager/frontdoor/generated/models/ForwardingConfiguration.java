@@ -39,6 +39,10 @@ public final class ForwardingConfiguration extends RouteConfiguration {
     @JsonProperty(value = "backendPool")
     private SubResource backendPool;
 
+    /** Creates an instance of ForwardingConfiguration class. */
+    public ForwardingConfiguration() {
+    }
+
     /**
      * Get the customForwardingPath property: A custom path used to rewrite resource paths matched by this rule. Leave
      * empty to use incoming path.

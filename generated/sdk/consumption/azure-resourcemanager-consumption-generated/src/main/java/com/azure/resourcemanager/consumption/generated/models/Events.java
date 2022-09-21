@@ -24,6 +24,10 @@ public final class Events {
     @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
 
+    /** Creates an instance of Events class. */
+    public Events() {
+    }
+
     /**
      * Get the value property: The list of event summary.
      *

@@ -71,6 +71,10 @@ public final class WebAppRuntimeSettings {
     @JsonProperty(value = "isEarlyAccess", access = JsonProperty.Access.WRITE_ONLY)
     private Boolean isEarlyAccess;
 
+    /** Creates an instance of WebAppRuntimeSettings class. */
+    public WebAppRuntimeSettings() {
+    }
+
     /**
      * Get the runtimeVersion property: Web App stack minor version (runtime only).
      *

@@ -48,6 +48,10 @@ public final class ApplicationInsightsComponentProactiveDetectionConfigurationIn
     @JsonProperty(value = "RuleDefinitions")
     private ApplicationInsightsComponentProactiveDetectionConfigurationRuleDefinitions ruleDefinitions;
 
+    /** Creates an instance of ApplicationInsightsComponentProactiveDetectionConfigurationInner class. */
+    public ApplicationInsightsComponentProactiveDetectionConfigurationInner() {
+    }
+
     /**
      * Get the name property: The rule name.
      *

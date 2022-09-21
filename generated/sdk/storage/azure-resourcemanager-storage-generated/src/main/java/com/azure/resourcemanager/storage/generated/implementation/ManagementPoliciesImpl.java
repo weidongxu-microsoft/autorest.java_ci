@@ -28,16 +28,6 @@ public final class ManagementPoliciesImpl implements ManagementPolicies {
         this.serviceManager = serviceManager;
     }
 
-    public ManagementPolicy get(
-        String resourceGroupName, String accountName, ManagementPolicyName managementPolicyName) {
-        ManagementPolicyInner inner = this.serviceClient().get(resourceGroupName, accountName, managementPolicyName);
-        if (inner != null) {
-            return new ManagementPolicyImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<ManagementPolicy> getWithResponse(
         String resourceGroupName, String accountName, ManagementPolicyName managementPolicyName, Context context) {
         Response<ManagementPolicyInner> inner =
@@ -53,13 +43,23 @@ public final class ManagementPoliciesImpl implements ManagementPolicies {
         }
     }
 
-    public void delete(String resourceGroupName, String accountName, ManagementPolicyName managementPolicyName) {
-        this.serviceClient().delete(resourceGroupName, accountName, managementPolicyName);
+    public ManagementPolicy get(
+        String resourceGroupName, String accountName, ManagementPolicyName managementPolicyName) {
+        ManagementPolicyInner inner = this.serviceClient().get(resourceGroupName, accountName, managementPolicyName);
+        if (inner != null) {
+            return new ManagementPolicyImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> deleteWithResponse(
         String resourceGroupName, String accountName, ManagementPolicyName managementPolicyName, Context context) {
         return this.serviceClient().deleteWithResponse(resourceGroupName, accountName, managementPolicyName, context);
+    }
+
+    public void delete(String resourceGroupName, String accountName, ManagementPolicyName managementPolicyName) {
+        this.serviceClient().delete(resourceGroupName, accountName, managementPolicyName);
     }
 
     public ManagementPolicy getById(String id) {

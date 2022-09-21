@@ -41,18 +41,6 @@ public interface ApplicationGroups {
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param applicationGroupName The Application Group name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void delete(String resourceGroupName, String namespaceName, String applicationGroupName);
-
-    /**
-     * Deletes an ApplicationGroup for a Namespace.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param namespaceName The Namespace name.
-     * @param applicationGroupName The Application Group name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -63,7 +51,7 @@ public interface ApplicationGroups {
         String resourceGroupName, String namespaceName, String applicationGroupName, Context context);
 
     /**
-     * Gets an ApplicationGroup for a Namespace.
+     * Deletes an ApplicationGroup for a Namespace.
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -71,9 +59,8 @@ public interface ApplicationGroups {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an ApplicationGroup for a Namespace.
      */
-    ApplicationGroup get(String resourceGroupName, String namespaceName, String applicationGroupName);
+    void delete(String resourceGroupName, String namespaceName, String applicationGroupName);
 
     /**
      * Gets an ApplicationGroup for a Namespace.
@@ -89,6 +76,19 @@ public interface ApplicationGroups {
      */
     Response<ApplicationGroup> getWithResponse(
         String resourceGroupName, String namespaceName, String applicationGroupName, Context context);
+
+    /**
+     * Gets an ApplicationGroup for a Namespace.
+     *
+     * @param resourceGroupName Name of the resource group within the azure subscription.
+     * @param namespaceName The Namespace name.
+     * @param applicationGroupName The Application Group name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return an ApplicationGroup for a Namespace.
+     */
+    ApplicationGroup get(String resourceGroupName, String namespaceName, String applicationGroupName);
 
     /**
      * Gets an ApplicationGroup for a Namespace.

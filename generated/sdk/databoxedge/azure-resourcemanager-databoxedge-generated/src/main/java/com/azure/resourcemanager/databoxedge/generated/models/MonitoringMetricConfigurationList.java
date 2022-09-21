@@ -24,6 +24,10 @@ public final class MonitoringMetricConfigurationList {
     @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
 
+    /** Creates an instance of MonitoringMetricConfigurationList class. */
+    public MonitoringMetricConfigurationList() {
+    }
+
     /**
      * Get the value property: The list of metric configurations.
      *

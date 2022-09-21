@@ -24,6 +24,10 @@ public final class SecretListResult {
     @JsonProperty(value = "nextLink")
     private String nextLink;
 
+    /** Creates an instance of SecretListResult class. */
+    public SecretListResult() {
+    }
+
     /**
      * Get the value property: The list of secrets.
      *

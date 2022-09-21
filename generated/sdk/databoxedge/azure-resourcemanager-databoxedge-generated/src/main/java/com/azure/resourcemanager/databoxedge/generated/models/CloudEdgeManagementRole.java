@@ -28,6 +28,10 @@ public final class CloudEdgeManagementRole extends RoleInner {
     @JsonProperty(value = "properties")
     private CloudEdgeManagementRoleProperties innerProperties;
 
+    /** Creates an instance of CloudEdgeManagementRole class. */
+    public CloudEdgeManagementRole() {
+    }
+
     /**
      * Get the innerProperties property: Properties specific to CloudEdgeManagementRole role.
      *

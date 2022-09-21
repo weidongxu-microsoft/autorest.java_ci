@@ -29,6 +29,10 @@ public final class DeviceCapacityInfoInner extends ArmBaseModel {
     @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;
 
+    /** Creates an instance of DeviceCapacityInfoInner class. */
+    public DeviceCapacityInfoInner() {
+    }
+
     /**
      * Get the innerProperties property: The device capacity properties.
      *

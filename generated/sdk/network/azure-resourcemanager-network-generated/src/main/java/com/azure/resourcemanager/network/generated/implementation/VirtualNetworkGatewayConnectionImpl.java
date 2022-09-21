@@ -215,6 +215,10 @@ public final class VirtualNetworkGatewayConnectionImpl
         return this.innerModel().expressRouteGatewayBypass();
     }
 
+    public Boolean enablePrivateLinkFastPath() {
+        return this.innerModel().enablePrivateLinkFastPath();
+    }
+
     public Region region() {
         return Region.fromName(this.regionName());
     }
@@ -501,6 +505,11 @@ public final class VirtualNetworkGatewayConnectionImpl
 
     public VirtualNetworkGatewayConnectionImpl withExpressRouteGatewayBypass(Boolean expressRouteGatewayBypass) {
         this.innerModel().withExpressRouteGatewayBypass(expressRouteGatewayBypass);
+        return this;
+    }
+
+    public VirtualNetworkGatewayConnectionImpl withEnablePrivateLinkFastPath(Boolean enablePrivateLinkFastPath) {
+        this.innerModel().withEnablePrivateLinkFastPath(enablePrivateLinkFastPath);
         return this;
     }
 

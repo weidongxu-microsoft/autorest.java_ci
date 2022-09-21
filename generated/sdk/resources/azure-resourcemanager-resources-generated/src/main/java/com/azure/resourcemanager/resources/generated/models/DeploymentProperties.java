@@ -69,6 +69,10 @@ public class DeploymentProperties {
     @JsonProperty(value = "expressionEvaluationOptions")
     private ExpressionEvaluationOptions expressionEvaluationOptions;
 
+    /** Creates an instance of DeploymentProperties class. */
+    public DeploymentProperties() {
+    }
+
     /**
      * Get the template property: The template content. You use this element when you want to pass the template syntax
      * directly in the request rather than link to an existing template. It can be a JObject or well-formed JSON string.

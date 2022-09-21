@@ -22,6 +22,10 @@ public final class ScriptActionExecutionSummary {
     @JsonProperty(value = "instanceCount", access = JsonProperty.Access.WRITE_ONLY)
     private Integer instanceCount;
 
+    /** Creates an instance of ScriptActionExecutionSummary class. */
+    public ScriptActionExecutionSummary() {
+    }
+
     /**
      * Get the status property: The status of script action execution.
      *

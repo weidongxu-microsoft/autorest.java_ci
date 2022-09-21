@@ -27,6 +27,10 @@ public final class DiagnosticRemoteSupportSettingsInner extends ArmBaseModel {
     @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;
 
+    /** Creates an instance of DiagnosticRemoteSupportSettingsInner class. */
+    public DiagnosticRemoteSupportSettingsInner() {
+    }
+
     /**
      * Get the innerProperties property: Properties of the remote support settings.
      *

@@ -11,6 +11,10 @@ import java.util.Map;
 /** An azure resource object. */
 @Fluent
 public class PrivateLinkScopesResource extends Resource {
+    /** Creates an instance of PrivateLinkScopesResource class. */
+    public PrivateLinkScopesResource() {
+    }
+
     /** {@inheritDoc} */
     @Override
     public PrivateLinkScopesResource withLocation(String location) {

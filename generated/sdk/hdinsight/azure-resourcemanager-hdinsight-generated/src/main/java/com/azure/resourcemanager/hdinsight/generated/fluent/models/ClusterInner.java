@@ -46,6 +46,10 @@ public final class ClusterInner extends Resource {
     @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;
 
+    /** Creates an instance of ClusterInner class. */
+    public ClusterInner() {
+    }
+
     /**
      * Get the etag property: The ETag for the resource.
      *

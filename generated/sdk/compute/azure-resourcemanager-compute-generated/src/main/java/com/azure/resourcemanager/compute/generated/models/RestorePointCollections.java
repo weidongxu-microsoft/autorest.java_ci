@@ -42,19 +42,6 @@ public interface RestorePointCollections {
      *
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the restore point collection.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return create or update Restore Point collection parameters.
-     */
-    RestorePointCollection getByResourceGroup(String resourceGroupName, String restorePointCollectionName);
-
-    /**
-     * The operation to get the restore point collection.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param restorePointCollectionName The name of the restore point collection.
      * @param expand The expand expression to apply on the operation. If expand=restorePoints, server will return all
      *     contained restore points in the restorePointCollection.
      * @param context The context to associate with this operation.
@@ -69,6 +56,19 @@ public interface RestorePointCollections {
         String restorePointCollectionName,
         RestorePointCollectionExpandOptions expand,
         Context context);
+
+    /**
+     * The operation to get the restore point collection.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param restorePointCollectionName The name of the restore point collection.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return create or update Restore Point collection parameters.
+     */
+    RestorePointCollection getByResourceGroup(String resourceGroupName, String restorePointCollectionName);
 
     /**
      * Gets the list of restore point collections in a resource group.

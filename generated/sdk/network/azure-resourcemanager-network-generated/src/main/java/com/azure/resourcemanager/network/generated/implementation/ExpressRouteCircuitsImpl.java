@@ -44,15 +44,6 @@ public final class ExpressRouteCircuitsImpl implements ExpressRouteCircuits {
         this.serviceClient().delete(resourceGroupName, circuitName, context);
     }
 
-    public ExpressRouteCircuit getByResourceGroup(String resourceGroupName, String circuitName) {
-        ExpressRouteCircuitInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, circuitName);
-        if (inner != null) {
-            return new ExpressRouteCircuitImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<ExpressRouteCircuit> getByResourceGroupWithResponse(
         String resourceGroupName, String circuitName, Context context) {
         Response<ExpressRouteCircuitInner> inner =
@@ -63,6 +54,15 @@ public final class ExpressRouteCircuitsImpl implements ExpressRouteCircuits {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new ExpressRouteCircuitImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public ExpressRouteCircuit getByResourceGroup(String resourceGroupName, String circuitName) {
+        ExpressRouteCircuitInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, circuitName);
+        if (inner != null) {
+            return new ExpressRouteCircuitImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -136,15 +136,6 @@ public final class ExpressRouteCircuitsImpl implements ExpressRouteCircuits {
         }
     }
 
-    public ExpressRouteCircuitStats getStats(String resourceGroupName, String circuitName) {
-        ExpressRouteCircuitStatsInner inner = this.serviceClient().getStats(resourceGroupName, circuitName);
-        if (inner != null) {
-            return new ExpressRouteCircuitStatsImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<ExpressRouteCircuitStats> getStatsWithResponse(
         String resourceGroupName, String circuitName, Context context) {
         Response<ExpressRouteCircuitStatsInner> inner =
@@ -160,9 +151,8 @@ public final class ExpressRouteCircuitsImpl implements ExpressRouteCircuits {
         }
     }
 
-    public ExpressRouteCircuitStats getPeeringStats(String resourceGroupName, String circuitName, String peeringName) {
-        ExpressRouteCircuitStatsInner inner =
-            this.serviceClient().getPeeringStats(resourceGroupName, circuitName, peeringName);
+    public ExpressRouteCircuitStats getStats(String resourceGroupName, String circuitName) {
+        ExpressRouteCircuitStatsInner inner = this.serviceClient().getStats(resourceGroupName, circuitName);
         if (inner != null) {
             return new ExpressRouteCircuitStatsImpl(inner, this.manager());
         } else {
@@ -180,6 +170,16 @@ public final class ExpressRouteCircuitsImpl implements ExpressRouteCircuits {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new ExpressRouteCircuitStatsImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public ExpressRouteCircuitStats getPeeringStats(String resourceGroupName, String circuitName, String peeringName) {
+        ExpressRouteCircuitStatsInner inner =
+            this.serviceClient().getPeeringStats(resourceGroupName, circuitName, peeringName);
+        if (inner != null) {
+            return new ExpressRouteCircuitStatsImpl(inner, this.manager());
         } else {
             return null;
         }

@@ -263,14 +263,14 @@ public final class AppServicePlanImpl implements AppServicePlan, AppServicePlan.
         return this;
     }
 
-    public void restartWebApps() {
-        serviceManager.appServicePlans().restartWebApps(resourceGroupName, name);
-    }
-
     public Response<Void> restartWebAppsWithResponse(Boolean softRestart, Context context) {
         return serviceManager
             .appServicePlans()
             .restartWebAppsWithResponse(resourceGroupName, name, softRestart, context);
+    }
+
+    public void restartWebApps() {
+        serviceManager.appServicePlans().restartWebApps(resourceGroupName, name);
     }
 
     public AppServicePlanImpl withRegion(Region location) {

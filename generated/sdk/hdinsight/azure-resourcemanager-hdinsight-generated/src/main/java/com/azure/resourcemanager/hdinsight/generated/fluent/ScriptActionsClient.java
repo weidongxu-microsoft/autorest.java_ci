@@ -20,19 +20,6 @@ public interface ScriptActionsClient {
      * @param resourceGroupName The name of the resource group.
      * @param clusterName The name of the cluster.
      * @param scriptName The name of the script.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    void delete(String resourceGroupName, String clusterName, String scriptName);
-
-    /**
-     * Deletes a specified persisted script action of the cluster.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param clusterName The name of the cluster.
-     * @param scriptName The name of the script.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -41,6 +28,19 @@ public interface ScriptActionsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> deleteWithResponse(String resourceGroupName, String clusterName, String scriptName, Context context);
+
+    /**
+     * Deletes a specified persisted script action of the cluster.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param clusterName The name of the cluster.
+     * @param scriptName The name of the script.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    void delete(String resourceGroupName, String clusterName, String scriptName);
 
     /**
      * Lists all the persisted script actions for the specified cluster.
@@ -76,21 +76,6 @@ public interface ScriptActionsClient {
      * @param resourceGroupName The name of the resource group.
      * @param clusterName The name of the cluster.
      * @param scriptExecutionId The script execution Id.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the script execution detail for the given script execution ID.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    RuntimeScriptActionDetailInner getExecutionDetail(
-        String resourceGroupName, String clusterName, String scriptExecutionId);
-
-    /**
-     * Gets the script execution detail for the given script execution ID.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param clusterName The name of the cluster.
-     * @param scriptExecutionId The script execution Id.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -102,19 +87,19 @@ public interface ScriptActionsClient {
         String resourceGroupName, String clusterName, String scriptExecutionId, Context context);
 
     /**
-     * Gets the async operation status of execution operation.
+     * Gets the script execution detail for the given script execution ID.
      *
      * @param resourceGroupName The name of the resource group.
      * @param clusterName The name of the cluster.
-     * @param operationId The long running operation id.
+     * @param scriptExecutionId The script execution Id.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the async operation status of execution operation.
+     * @return the script execution detail for the given script execution ID.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    AsyncOperationResultInner getExecutionAsyncOperationStatus(
-        String resourceGroupName, String clusterName, String operationId);
+    RuntimeScriptActionDetailInner getExecutionDetail(
+        String resourceGroupName, String clusterName, String scriptExecutionId);
 
     /**
      * Gets the async operation status of execution operation.
@@ -131,4 +116,19 @@ public interface ScriptActionsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<AsyncOperationResultInner> getExecutionAsyncOperationStatusWithResponse(
         String resourceGroupName, String clusterName, String operationId, Context context);
+
+    /**
+     * Gets the async operation status of execution operation.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param clusterName The name of the cluster.
+     * @param operationId The long running operation id.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the async operation status of execution operation.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    AsyncOperationResultInner getExecutionAsyncOperationStatus(
+        String resourceGroupName, String clusterName, String operationId);
 }

@@ -50,17 +50,6 @@ public final class ExpressRouteCrossConnectionPeeringsImpl implements ExpressRou
         this.serviceClient().delete(resourceGroupName, crossConnectionName, peeringName, context);
     }
 
-    public ExpressRouteCrossConnectionPeering get(
-        String resourceGroupName, String crossConnectionName, String peeringName) {
-        ExpressRouteCrossConnectionPeeringInner inner =
-            this.serviceClient().get(resourceGroupName, crossConnectionName, peeringName);
-        if (inner != null) {
-            return new ExpressRouteCrossConnectionPeeringImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<ExpressRouteCrossConnectionPeering> getWithResponse(
         String resourceGroupName, String crossConnectionName, String peeringName, Context context) {
         Response<ExpressRouteCrossConnectionPeeringInner> inner =
@@ -71,6 +60,17 @@ public final class ExpressRouteCrossConnectionPeeringsImpl implements ExpressRou
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new ExpressRouteCrossConnectionPeeringImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public ExpressRouteCrossConnectionPeering get(
+        String resourceGroupName, String crossConnectionName, String peeringName) {
+        ExpressRouteCrossConnectionPeeringInner inner =
+            this.serviceClient().get(resourceGroupName, crossConnectionName, peeringName);
+        if (inner != null) {
+            return new ExpressRouteCrossConnectionPeeringImpl(inner, this.manager());
         } else {
             return null;
         }

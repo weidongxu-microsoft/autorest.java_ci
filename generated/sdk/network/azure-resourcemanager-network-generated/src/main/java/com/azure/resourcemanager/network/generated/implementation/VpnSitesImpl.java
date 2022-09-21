@@ -27,15 +27,6 @@ public final class VpnSitesImpl implements VpnSites {
         this.serviceManager = serviceManager;
     }
 
-    public VpnSite getByResourceGroup(String resourceGroupName, String vpnSiteName) {
-        VpnSiteInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, vpnSiteName);
-        if (inner != null) {
-            return new VpnSiteImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<VpnSite> getByResourceGroupWithResponse(
         String resourceGroupName, String vpnSiteName, Context context) {
         Response<VpnSiteInner> inner =
@@ -46,6 +37,15 @@ public final class VpnSitesImpl implements VpnSites {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new VpnSiteImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public VpnSite getByResourceGroup(String resourceGroupName, String vpnSiteName) {
+        VpnSiteInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, vpnSiteName);
+        if (inner != null) {
+            return new VpnSiteImpl(inner, this.manager());
         } else {
             return null;
         }

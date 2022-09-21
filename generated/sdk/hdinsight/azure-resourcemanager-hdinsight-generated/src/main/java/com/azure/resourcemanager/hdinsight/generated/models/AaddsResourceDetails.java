@@ -52,6 +52,10 @@ public final class AaddsResourceDetails {
     @JsonProperty(value = "tenantId")
     private String tenantId;
 
+    /** Creates an instance of AaddsResourceDetails class. */
+    public AaddsResourceDetails() {
+    }
+
     /**
      * Get the domainName property: The Azure active directory domain service name.
      *

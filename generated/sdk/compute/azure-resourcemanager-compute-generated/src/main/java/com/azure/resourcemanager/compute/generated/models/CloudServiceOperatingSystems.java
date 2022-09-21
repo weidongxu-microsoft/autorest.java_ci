@@ -16,21 +16,6 @@ public interface CloudServiceOperatingSystems {
      *
      * @param location Name of the location that the OS version pertains to.
      * @param osVersionName Name of the OS version.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of a guest operating system version that can be specified in the XML service configuration
-     *     (.cscfg) for a cloud service.
-     */
-    OSVersion getOSVersion(String location, String osVersionName);
-
-    /**
-     * Gets properties of a guest operating system version that can be specified in the XML service configuration
-     * (.cscfg) for a cloud service.
-     *
-     * @param location Name of the location that the OS version pertains to.
-     * @param osVersionName Name of the OS version.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
@@ -40,6 +25,21 @@ public interface CloudServiceOperatingSystems {
      *     (.cscfg) for a cloud service along with {@link Response}.
      */
     Response<OSVersion> getOSVersionWithResponse(String location, String osVersionName, Context context);
+
+    /**
+     * Gets properties of a guest operating system version that can be specified in the XML service configuration
+     * (.cscfg) for a cloud service.
+     *
+     * @param location Name of the location that the OS version pertains to.
+     * @param osVersionName Name of the OS version.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return properties of a guest operating system version that can be specified in the XML service configuration
+     *     (.cscfg) for a cloud service.
+     */
+    OSVersion getOSVersion(String location, String osVersionName);
 
     /**
      * Gets a list of all guest operating system versions available to be specified in the XML service configuration
@@ -78,21 +78,6 @@ public interface CloudServiceOperatingSystems {
      *
      * @param location Name of the location that the OS family pertains to.
      * @param osFamilyName Name of the OS family.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of a guest operating system family that can be specified in the XML service configuration
-     *     (.cscfg) for a cloud service.
-     */
-    OSFamily getOSFamily(String location, String osFamilyName);
-
-    /**
-     * Gets properties of a guest operating system family that can be specified in the XML service configuration
-     * (.cscfg) for a cloud service.
-     *
-     * @param location Name of the location that the OS family pertains to.
-     * @param osFamilyName Name of the OS family.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
@@ -102,6 +87,21 @@ public interface CloudServiceOperatingSystems {
      *     (.cscfg) for a cloud service along with {@link Response}.
      */
     Response<OSFamily> getOSFamilyWithResponse(String location, String osFamilyName, Context context);
+
+    /**
+     * Gets properties of a guest operating system family that can be specified in the XML service configuration
+     * (.cscfg) for a cloud service.
+     *
+     * @param location Name of the location that the OS family pertains to.
+     * @param osFamilyName Name of the OS family.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return properties of a guest operating system family that can be specified in the XML service configuration
+     *     (.cscfg) for a cloud service.
+     */
+    OSFamily getOSFamily(String location, String osFamilyName);
 
     /**
      * Gets a list of all guest operating system families available to be specified in the XML service configuration

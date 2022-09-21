@@ -245,12 +245,13 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the proactive log collection settings of the specified Data Box Edge/Data Box Gateway device.
+     * @return the proactive log collection settings of the specified Data Box Edge/Data Box Gateway device along with
+     *     {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public DiagnosticProactiveLogCollectionSettingsInner getDiagnosticProactiveLogCollectionSettings(
-        String deviceName, String resourceGroupName) {
-        return getDiagnosticProactiveLogCollectionSettingsAsync(deviceName, resourceGroupName).block();
+    public Response<DiagnosticProactiveLogCollectionSettingsInner>
+        getDiagnosticProactiveLogCollectionSettingsWithResponse(String deviceName, String resourceGroupName) {
+        return getDiagnosticProactiveLogCollectionSettingsWithResponseAsync(deviceName, resourceGroupName).block();
     }
 
     /**
@@ -271,6 +272,23 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
             String deviceName, String resourceGroupName, Context context) {
         return getDiagnosticProactiveLogCollectionSettingsWithResponseAsync(deviceName, resourceGroupName, context)
             .block();
+    }
+
+    /**
+     * Gets the proactive log collection settings of the specified Data Box Edge/Data Box Gateway device.
+     *
+     * @param deviceName The device name.
+     * @param resourceGroupName The resource group name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the proactive log collection settings of the specified Data Box Edge/Data Box Gateway device.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public DiagnosticProactiveLogCollectionSettingsInner getDiagnosticProactiveLogCollectionSettings(
+        String deviceName, String resourceGroupName) {
+        return getDiagnosticProactiveLogCollectionSettingsWithResponse(deviceName, resourceGroupName, Context.NONE)
+            .getValue();
     }
 
     /**
@@ -719,12 +737,13 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the diagnostic remote support settings of the specified Data Box Edge/Data Box Gateway device.
+     * @return the diagnostic remote support settings of the specified Data Box Edge/Data Box Gateway device along with
+     *     {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public DiagnosticRemoteSupportSettingsInner getDiagnosticRemoteSupportSettings(
+    public Response<DiagnosticRemoteSupportSettingsInner> getDiagnosticRemoteSupportSettingsWithResponse(
         String deviceName, String resourceGroupName) {
-        return getDiagnosticRemoteSupportSettingsAsync(deviceName, resourceGroupName).block();
+        return getDiagnosticRemoteSupportSettingsWithResponseAsync(deviceName, resourceGroupName).block();
     }
 
     /**
@@ -743,6 +762,22 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
     public Response<DiagnosticRemoteSupportSettingsInner> getDiagnosticRemoteSupportSettingsWithResponse(
         String deviceName, String resourceGroupName, Context context) {
         return getDiagnosticRemoteSupportSettingsWithResponseAsync(deviceName, resourceGroupName, context).block();
+    }
+
+    /**
+     * Gets the diagnostic remote support settings of the specified Data Box Edge/Data Box Gateway device.
+     *
+     * @param deviceName The device name.
+     * @param resourceGroupName The resource group name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the diagnostic remote support settings of the specified Data Box Edge/Data Box Gateway device.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public DiagnosticRemoteSupportSettingsInner getDiagnosticRemoteSupportSettings(
+        String deviceName, String resourceGroupName) {
+        return getDiagnosticRemoteSupportSettingsWithResponse(deviceName, resourceGroupName, Context.NONE).getValue();
     }
 
     /**

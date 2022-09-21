@@ -74,19 +74,6 @@ public interface NetworkProfilesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param networkProfileName The name of the public IP prefix.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network profile in a specified resource group.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    NetworkProfileInner getByResourceGroup(String resourceGroupName, String networkProfileName);
-
-    /**
-     * Gets the specified network profile in a specified resource group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param networkProfileName The name of the public IP prefix.
      * @param expand Expands referenced resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -99,19 +86,17 @@ public interface NetworkProfilesClient {
         String resourceGroupName, String networkProfileName, String expand, Context context);
 
     /**
-     * Creates or updates a network profile.
+     * Gets the specified network profile in a specified resource group.
      *
      * @param resourceGroupName The name of the resource group.
-     * @param networkProfileName The name of the network profile.
-     * @param parameters Parameters supplied to the create or update network profile operation.
+     * @param networkProfileName The name of the public IP prefix.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return network profile resource.
+     * @return the specified network profile in a specified resource group.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    NetworkProfileInner createOrUpdate(
-        String resourceGroupName, String networkProfileName, NetworkProfileInner parameters);
+    NetworkProfileInner getByResourceGroup(String resourceGroupName, String networkProfileName);
 
     /**
      * Creates or updates a network profile.
@@ -130,18 +115,19 @@ public interface NetworkProfilesClient {
         String resourceGroupName, String networkProfileName, NetworkProfileInner parameters, Context context);
 
     /**
-     * Updates network profile tags.
+     * Creates or updates a network profile.
      *
      * @param resourceGroupName The name of the resource group.
      * @param networkProfileName The name of the network profile.
-     * @param parameters Parameters supplied to update network profile tags.
+     * @param parameters Parameters supplied to the create or update network profile operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return network profile resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    NetworkProfileInner updateTags(String resourceGroupName, String networkProfileName, TagsObject parameters);
+    NetworkProfileInner createOrUpdate(
+        String resourceGroupName, String networkProfileName, NetworkProfileInner parameters);
 
     /**
      * Updates network profile tags.
@@ -158,6 +144,20 @@ public interface NetworkProfilesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<NetworkProfileInner> updateTagsWithResponse(
         String resourceGroupName, String networkProfileName, TagsObject parameters, Context context);
+
+    /**
+     * Updates network profile tags.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param networkProfileName The name of the network profile.
+     * @param parameters Parameters supplied to update network profile tags.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return network profile resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    NetworkProfileInner updateTags(String resourceGroupName, String networkProfileName, TagsObject parameters);
 
     /**
      * Gets all the network profiles in a subscription.

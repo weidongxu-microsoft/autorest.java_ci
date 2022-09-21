@@ -28,15 +28,6 @@ public final class CloudServiceRolesImpl implements CloudServiceRoles {
         this.serviceManager = serviceManager;
     }
 
-    public CloudServiceRole get(String roleName, String resourceGroupName, String cloudServiceName) {
-        CloudServiceRoleInner inner = this.serviceClient().get(roleName, resourceGroupName, cloudServiceName);
-        if (inner != null) {
-            return new CloudServiceRoleImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<CloudServiceRole> getWithResponse(
         String roleName, String resourceGroupName, String cloudServiceName, Context context) {
         Response<CloudServiceRoleInner> inner =
@@ -47,6 +38,15 @@ public final class CloudServiceRolesImpl implements CloudServiceRoles {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new CloudServiceRoleImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public CloudServiceRole get(String roleName, String resourceGroupName, String cloudServiceName) {
+        CloudServiceRoleInner inner = this.serviceClient().get(roleName, resourceGroupName, cloudServiceName);
+        if (inner != null) {
+            return new CloudServiceRoleImpl(inner, this.manager());
         } else {
             return null;
         }

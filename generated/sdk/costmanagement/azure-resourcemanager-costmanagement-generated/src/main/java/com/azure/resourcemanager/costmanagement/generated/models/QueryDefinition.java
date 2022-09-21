@@ -35,6 +35,10 @@ public final class QueryDefinition {
     @JsonProperty(value = "dataset", required = true)
     private QueryDataset dataset;
 
+    /** Creates an instance of QueryDefinition class. */
+    public QueryDefinition() {
+    }
+
     /**
      * Get the type property: The type of the query.
      *

@@ -286,14 +286,6 @@ public interface Export {
     /**
      * The operation to execute a export.
      *
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void execute();
-
-    /**
-     * The operation to execute a export.
-     *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -301,4 +293,12 @@ public interface Export {
      * @return the {@link Response}.
      */
     Response<Void> executeWithResponse(Context context);
+
+    /**
+     * The operation to execute a export.
+     *
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void execute();
 }

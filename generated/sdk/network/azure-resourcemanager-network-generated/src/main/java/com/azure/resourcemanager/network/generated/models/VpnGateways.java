@@ -15,18 +15,6 @@ public interface VpnGateways {
      *
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpnGateway Resource.
-     */
-    VpnGateway getByResourceGroup(String resourceGroupName, String gatewayName);
-
-    /**
-     * Retrieves the details of a virtual wan vpn gateway.
-     *
-     * @param resourceGroupName The resource group name of the VpnGateway.
-     * @param gatewayName The name of the gateway.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -34,6 +22,18 @@ public interface VpnGateways {
      * @return vpnGateway Resource along with {@link Response}.
      */
     Response<VpnGateway> getByResourceGroupWithResponse(String resourceGroupName, String gatewayName, Context context);
+
+    /**
+     * Retrieves the details of a virtual wan vpn gateway.
+     *
+     * @param resourceGroupName The resource group name of the VpnGateway.
+     * @param gatewayName The name of the gateway.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return vpnGateway Resource.
+     */
+    VpnGateway getByResourceGroup(String resourceGroupName, String gatewayName);
 
     /**
      * Deletes a virtual wan vpn gateway.

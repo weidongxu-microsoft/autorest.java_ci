@@ -157,7 +157,7 @@ public final class DdosCustomPoliciesClientImpl implements DdosCustomPoliciesCli
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -208,7 +208,7 @@ public final class DdosCustomPoliciesClientImpl implements DdosCustomPoliciesCli
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -393,7 +393,7 @@ public final class DdosCustomPoliciesClientImpl implements DdosCustomPoliciesCli
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -445,7 +445,7 @@ public final class DdosCustomPoliciesClientImpl implements DdosCustomPoliciesCli
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -483,11 +483,12 @@ public final class DdosCustomPoliciesClientImpl implements DdosCustomPoliciesCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the specified DDoS custom policy.
+     * @return information about the specified DDoS custom policy along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public DdosCustomPolicyInner getByResourceGroup(String resourceGroupName, String ddosCustomPolicyName) {
-        return getByResourceGroupAsync(resourceGroupName, ddosCustomPolicyName).block();
+    public Response<DdosCustomPolicyInner> getByResourceGroupWithResponse(
+        String resourceGroupName, String ddosCustomPolicyName) {
+        return getByResourceGroupWithResponseAsync(resourceGroupName, ddosCustomPolicyName).block();
     }
 
     /**
@@ -505,6 +506,21 @@ public final class DdosCustomPoliciesClientImpl implements DdosCustomPoliciesCli
     public Response<DdosCustomPolicyInner> getByResourceGroupWithResponse(
         String resourceGroupName, String ddosCustomPolicyName, Context context) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, ddosCustomPolicyName, context).block();
+    }
+
+    /**
+     * Gets information about the specified DDoS custom policy.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param ddosCustomPolicyName The name of the DDoS custom policy.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return information about the specified DDoS custom policy.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public DdosCustomPolicyInner getByResourceGroup(String resourceGroupName, String ddosCustomPolicyName) {
+        return getByResourceGroupWithResponse(resourceGroupName, ddosCustomPolicyName, Context.NONE).getValue();
     }
 
     /**
@@ -547,7 +563,7 @@ public final class DdosCustomPoliciesClientImpl implements DdosCustomPoliciesCli
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -606,7 +622,7 @@ public final class DdosCustomPoliciesClientImpl implements DdosCustomPoliciesCli
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -820,7 +836,7 @@ public final class DdosCustomPoliciesClientImpl implements DdosCustomPoliciesCli
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -879,7 +895,7 @@ public final class DdosCustomPoliciesClientImpl implements DdosCustomPoliciesCli
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -921,12 +937,12 @@ public final class DdosCustomPoliciesClientImpl implements DdosCustomPoliciesCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a DDoS custom policy in a resource group.
+     * @return a DDoS custom policy in a resource group along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public DdosCustomPolicyInner updateTags(
+    public Response<DdosCustomPolicyInner> updateTagsWithResponse(
         String resourceGroupName, String ddosCustomPolicyName, TagsObject parameters) {
-        return updateTagsAsync(resourceGroupName, ddosCustomPolicyName, parameters).block();
+        return updateTagsWithResponseAsync(resourceGroupName, ddosCustomPolicyName, parameters).block();
     }
 
     /**
@@ -945,5 +961,22 @@ public final class DdosCustomPoliciesClientImpl implements DdosCustomPoliciesCli
     public Response<DdosCustomPolicyInner> updateTagsWithResponse(
         String resourceGroupName, String ddosCustomPolicyName, TagsObject parameters, Context context) {
         return updateTagsWithResponseAsync(resourceGroupName, ddosCustomPolicyName, parameters, context).block();
+    }
+
+    /**
+     * Update a DDoS custom policy tags.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param ddosCustomPolicyName The name of the DDoS custom policy.
+     * @param parameters Parameters supplied to update DDoS custom policy resource tags.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a DDoS custom policy in a resource group.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public DdosCustomPolicyInner updateTags(
+        String resourceGroupName, String ddosCustomPolicyName, TagsObject parameters) {
+        return updateTagsWithResponse(resourceGroupName, ddosCustomPolicyName, parameters, Context.NONE).getValue();
     }
 }

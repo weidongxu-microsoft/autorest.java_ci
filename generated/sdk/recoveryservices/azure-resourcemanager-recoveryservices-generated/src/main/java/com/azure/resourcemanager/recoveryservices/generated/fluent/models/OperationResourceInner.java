@@ -49,6 +49,10 @@ public final class OperationResourceInner {
     @JsonProperty(value = "startTime")
     private OffsetDateTime startTime;
 
+    /** Creates an instance of OperationResourceInner class. */
+    public OperationResourceInner() {
+    }
+
     /**
      * Get the endTime property: End time of the operation.
      *

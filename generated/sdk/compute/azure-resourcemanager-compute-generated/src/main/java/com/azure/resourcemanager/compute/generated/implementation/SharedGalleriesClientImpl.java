@@ -404,11 +404,11 @@ public final class SharedGalleriesClientImpl implements SharedGalleriesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a shared gallery by subscription id or tenant id.
+     * @return a shared gallery by subscription id or tenant id along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public SharedGalleryInner get(String location, String galleryUniqueName) {
-        return getAsync(location, galleryUniqueName).block();
+    public Response<SharedGalleryInner> getWithResponse(String location, String galleryUniqueName) {
+        return getWithResponseAsync(location, galleryUniqueName).block();
     }
 
     /**
@@ -425,6 +425,21 @@ public final class SharedGalleriesClientImpl implements SharedGalleriesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<SharedGalleryInner> getWithResponse(String location, String galleryUniqueName, Context context) {
         return getWithResponseAsync(location, galleryUniqueName, context).block();
+    }
+
+    /**
+     * Get a shared gallery by subscription id or tenant id.
+     *
+     * @param location Resource location.
+     * @param galleryUniqueName The unique name of the Shared Gallery.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ApiErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a shared gallery by subscription id or tenant id.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public SharedGalleryInner get(String location, String galleryUniqueName) {
+        return getWithResponse(location, galleryUniqueName, Context.NONE).getValue();
     }
 
     /**

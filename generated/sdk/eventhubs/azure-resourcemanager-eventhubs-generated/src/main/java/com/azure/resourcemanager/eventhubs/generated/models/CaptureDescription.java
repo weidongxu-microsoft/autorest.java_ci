@@ -49,6 +49,10 @@ public final class CaptureDescription {
     @JsonProperty(value = "skipEmptyArchives")
     private Boolean skipEmptyArchives;
 
+    /** Creates an instance of CaptureDescription class. */
+    public CaptureDescription() {
+    }
+
     /**
      * Get the enabled property: A value that indicates whether capture description is enabled.
      *

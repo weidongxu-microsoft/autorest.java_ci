@@ -29,15 +29,6 @@ public final class VpnConnectionsImpl implements VpnConnections {
         this.serviceManager = serviceManager;
     }
 
-    public VpnConnection get(String resourceGroupName, String gatewayName, String connectionName) {
-        VpnConnectionInner inner = this.serviceClient().get(resourceGroupName, gatewayName, connectionName);
-        if (inner != null) {
-            return new VpnConnectionImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<VpnConnection> getWithResponse(
         String resourceGroupName, String gatewayName, String connectionName, Context context) {
         Response<VpnConnectionInner> inner =
@@ -48,6 +39,15 @@ public final class VpnConnectionsImpl implements VpnConnections {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new VpnConnectionImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public VpnConnection get(String resourceGroupName, String gatewayName, String connectionName) {
+        VpnConnectionInner inner = this.serviceClient().get(resourceGroupName, gatewayName, connectionName);
+        if (inner != null) {
+            return new VpnConnectionImpl(inner, this.manager());
         } else {
             return null;
         }

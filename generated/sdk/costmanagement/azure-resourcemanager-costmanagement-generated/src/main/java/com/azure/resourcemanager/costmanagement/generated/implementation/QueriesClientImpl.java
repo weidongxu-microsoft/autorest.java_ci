@@ -228,11 +228,11 @@ public final class QueriesClientImpl implements QueriesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of query.
+     * @return result of query along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public QueryResultInner usage(String scope, QueryDefinition parameters) {
-        return usageAsync(scope, parameters).block();
+    public Response<QueryResultInner> usageWithResponse(String scope, QueryDefinition parameters) {
+        return usageWithResponseAsync(scope, parameters).block();
     }
 
     /**
@@ -263,6 +263,35 @@ public final class QueriesClientImpl implements QueriesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<QueryResultInner> usageWithResponse(String scope, QueryDefinition parameters, Context context) {
         return usageWithResponseAsync(scope, parameters, context).block();
+    }
+
+    /**
+     * Query the usage data for scope defined.
+     *
+     * @param scope The scope associated with query and export operations. This includes
+     *     '/subscriptions/{subscriptionId}/' for subscription scope,
+     *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resourceGroup scope,
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account scope and
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/departments/{departmentId}' for Department
+     *     scope,
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/enrollmentAccounts/{enrollmentAccountId}'
+     *     for EnrollmentAccount scope, '/providers/Microsoft.Management/managementGroups/{managementGroupId} for
+     *     Management Group scope,
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
+     *     billingProfile scope,
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}/invoiceSections/{invoiceSectionId}'
+     *     for invoiceSection scope, and
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/customers/{customerId}' specific for
+     *     partners.
+     * @param parameters Parameters supplied to the CreateOrUpdate Query Config operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return result of query.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public QueryResultInner usage(String scope, QueryDefinition parameters) {
+        return usageWithResponse(scope, parameters, Context.NONE).getValue();
     }
 
     /**
@@ -414,14 +443,15 @@ public final class QueriesClientImpl implements QueriesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of query.
+     * @return result of query along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public QueryResultInner usageByExternalCloudProviderType(
+    public Response<QueryResultInner> usageByExternalCloudProviderTypeWithResponse(
         ExternalCloudProviderType externalCloudProviderType,
         String externalCloudProviderId,
         QueryDefinition parameters) {
-        return usageByExternalCloudProviderTypeAsync(externalCloudProviderType, externalCloudProviderId, parameters)
+        return usageByExternalCloudProviderTypeWithResponseAsync(
+                externalCloudProviderType, externalCloudProviderId, parameters)
             .block();
     }
 
@@ -449,5 +479,29 @@ public final class QueriesClientImpl implements QueriesClient {
         return usageByExternalCloudProviderTypeWithResponseAsync(
                 externalCloudProviderType, externalCloudProviderId, parameters, context)
             .block();
+    }
+
+    /**
+     * Query the usage data for external cloud provider type defined.
+     *
+     * @param externalCloudProviderType The external cloud provider type associated with dimension/query operations.
+     *     This includes 'externalSubscriptions' for linked account and 'externalBillingAccounts' for consolidated
+     *     account.
+     * @param externalCloudProviderId This can be '{externalSubscriptionId}' for linked account or
+     *     '{externalBillingAccountId}' for consolidated account used with dimension/query operations.
+     * @param parameters Parameters supplied to the CreateOrUpdate Query Config operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return result of query.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public QueryResultInner usageByExternalCloudProviderType(
+        ExternalCloudProviderType externalCloudProviderType,
+        String externalCloudProviderId,
+        QueryDefinition parameters) {
+        return usageByExternalCloudProviderTypeWithResponse(
+                externalCloudProviderType, externalCloudProviderId, parameters, Context.NONE)
+            .getValue();
     }
 }

@@ -51,6 +51,10 @@ public final class Login {
     @JsonProperty(value = "nonce")
     private Nonce nonce;
 
+    /** Creates an instance of Login class. */
+    public Login() {
+    }
+
     /**
      * Get the routes property: The routes that specify the endpoints used for login and logout requests.
      *

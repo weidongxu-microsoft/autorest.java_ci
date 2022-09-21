@@ -448,17 +448,6 @@ public interface ActionGroupResource {
      * is only supported for Email or SMS receivers.
      *
      * @param enableRequest The receiver to re-enable.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void enableReceiver(EnableRequest enableRequest);
-
-    /**
-     * Enable a receiver in an action group. This changes the receiver's status from Disabled to Enabled. This operation
-     * is only supported for Email or SMS receivers.
-     *
-     * @param enableRequest The receiver to re-enable.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -466,4 +455,15 @@ public interface ActionGroupResource {
      * @return the {@link Response}.
      */
     Response<Void> enableReceiverWithResponse(EnableRequest enableRequest, Context context);
+
+    /**
+     * Enable a receiver in an action group. This changes the receiver's status from Disabled to Enabled. This operation
+     * is only supported for Email or SMS receivers.
+     *
+     * @param enableRequest The receiver to re-enable.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void enableReceiver(EnableRequest enableRequest);
 }

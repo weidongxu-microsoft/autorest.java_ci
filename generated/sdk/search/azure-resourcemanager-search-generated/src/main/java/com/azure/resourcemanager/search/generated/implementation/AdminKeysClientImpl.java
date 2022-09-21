@@ -202,28 +202,6 @@ public final class AdminKeysClientImpl implements AdminKeysClient {
      *     value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure Cognitive Search service associated with the specified resource
      *     group.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
-     *     included in response information as a way to track the request.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the primary and secondary admin API keys for the specified Azure Cognitive Search service on successful
-     *     completion of {@link Mono}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<AdminKeyResultInner> getAsync(
-        String resourceGroupName, String searchServiceName, UUID clientRequestId) {
-        return getWithResponseAsync(resourceGroupName, searchServiceName, clientRequestId)
-            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets the primary and secondary admin API keys for the specified Azure Cognitive Search service.
-     *
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
-     *     value from the Azure Resource Manager API or the portal.
-     * @param searchServiceName The name of the Azure Cognitive Search service associated with the specified resource
-     *     group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -244,15 +222,18 @@ public final class AdminKeysClientImpl implements AdminKeysClient {
      *     value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure Cognitive Search service associated with the specified resource
      *     group.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
+     *     included in response information as a way to track the request.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the primary and secondary admin API keys for the specified Azure Cognitive Search service.
+     * @return the primary and secondary admin API keys for the specified Azure Cognitive Search service along with
+     *     {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public AdminKeyResultInner get(String resourceGroupName, String searchServiceName) {
-        final UUID clientRequestId = null;
-        return getAsync(resourceGroupName, searchServiceName, clientRequestId).block();
+    public Response<AdminKeyResultInner> getWithResponse(
+        String resourceGroupName, String searchServiceName, UUID clientRequestId) {
+        return getWithResponseAsync(resourceGroupName, searchServiceName, clientRequestId).block();
     }
 
     /**
@@ -275,6 +256,24 @@ public final class AdminKeysClientImpl implements AdminKeysClient {
     public Response<AdminKeyResultInner> getWithResponse(
         String resourceGroupName, String searchServiceName, UUID clientRequestId, Context context) {
         return getWithResponseAsync(resourceGroupName, searchServiceName, clientRequestId, context).block();
+    }
+
+    /**
+     * Gets the primary and secondary admin API keys for the specified Azure Cognitive Search service.
+     *
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     *     value from the Azure Resource Manager API or the portal.
+     * @param searchServiceName The name of the Azure Cognitive Search service associated with the specified resource
+     *     group.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the primary and secondary admin API keys for the specified Azure Cognitive Search service.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public AdminKeyResultInner get(String resourceGroupName, String searchServiceName) {
+        final UUID clientRequestId = null;
+        return getWithResponse(resourceGroupName, searchServiceName, clientRequestId, Context.NONE).getValue();
     }
 
     /**
@@ -407,29 +406,6 @@ public final class AdminKeysClientImpl implements AdminKeysClient {
      * @param searchServiceName The name of the Azure Cognitive Search service associated with the specified resource
      *     group.
      * @param keyKind Specifies which key to regenerate. Valid values include 'primary' and 'secondary'.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
-     *     included in response information as a way to track the request.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response containing the primary and secondary admin API keys for a given Azure Cognitive Search service
-     *     on successful completion of {@link Mono}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<AdminKeyResultInner> regenerateAsync(
-        String resourceGroupName, String searchServiceName, AdminKeyKind keyKind, UUID clientRequestId) {
-        return regenerateWithResponseAsync(resourceGroupName, searchServiceName, keyKind, clientRequestId)
-            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Regenerates either the primary or secondary admin API key. You can only regenerate one key at a time.
-     *
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
-     *     value from the Azure Resource Manager API or the portal.
-     * @param searchServiceName The name of the Azure Cognitive Search service associated with the specified resource
-     *     group.
-     * @param keyKind Specifies which key to regenerate. Valid values include 'primary' and 'secondary'.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -452,15 +428,18 @@ public final class AdminKeysClientImpl implements AdminKeysClient {
      * @param searchServiceName The name of the Azure Cognitive Search service associated with the specified resource
      *     group.
      * @param keyKind Specifies which key to regenerate. Valid values include 'primary' and 'secondary'.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
+     *     included in response information as a way to track the request.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response containing the primary and secondary admin API keys for a given Azure Cognitive Search service.
+     * @return response containing the primary and secondary admin API keys for a given Azure Cognitive Search service
+     *     along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public AdminKeyResultInner regenerate(String resourceGroupName, String searchServiceName, AdminKeyKind keyKind) {
-        final UUID clientRequestId = null;
-        return regenerateAsync(resourceGroupName, searchServiceName, keyKind, clientRequestId).block();
+    public Response<AdminKeyResultInner> regenerateWithResponse(
+        String resourceGroupName, String searchServiceName, AdminKeyKind keyKind, UUID clientRequestId) {
+        return regenerateWithResponseAsync(resourceGroupName, searchServiceName, keyKind, clientRequestId).block();
     }
 
     /**
@@ -489,5 +468,25 @@ public final class AdminKeysClientImpl implements AdminKeysClient {
         Context context) {
         return regenerateWithResponseAsync(resourceGroupName, searchServiceName, keyKind, clientRequestId, context)
             .block();
+    }
+
+    /**
+     * Regenerates either the primary or secondary admin API key. You can only regenerate one key at a time.
+     *
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     *     value from the Azure Resource Manager API or the portal.
+     * @param searchServiceName The name of the Azure Cognitive Search service associated with the specified resource
+     *     group.
+     * @param keyKind Specifies which key to regenerate. Valid values include 'primary' and 'secondary'.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return response containing the primary and secondary admin API keys for a given Azure Cognitive Search service.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public AdminKeyResultInner regenerate(String resourceGroupName, String searchServiceName, AdminKeyKind keyKind) {
+        final UUID clientRequestId = null;
+        return regenerateWithResponse(resourceGroupName, searchServiceName, keyKind, clientRequestId, Context.NONE)
+            .getValue();
     }
 }

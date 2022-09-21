@@ -18,6 +18,10 @@ public final class LogFileListResult {
     @JsonProperty(value = "value")
     private List<LogFileInner> value;
 
+    /** Creates an instance of LogFileListResult class. */
+    public LogFileListResult() {
+    }
+
     /**
      * Get the value property: The list of log files.
      *

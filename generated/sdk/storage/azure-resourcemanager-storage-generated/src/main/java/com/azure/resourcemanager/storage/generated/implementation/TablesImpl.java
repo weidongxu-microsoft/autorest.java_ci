@@ -27,15 +27,6 @@ public final class TablesImpl implements Tables {
         this.serviceManager = serviceManager;
     }
 
-    public Table get(String resourceGroupName, String accountName, String tableName) {
-        TableInner inner = this.serviceClient().get(resourceGroupName, accountName, tableName);
-        if (inner != null) {
-            return new TableImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<Table> getWithResponse(
         String resourceGroupName, String accountName, String tableName, Context context) {
         Response<TableInner> inner =
@@ -51,13 +42,22 @@ public final class TablesImpl implements Tables {
         }
     }
 
-    public void delete(String resourceGroupName, String accountName, String tableName) {
-        this.serviceClient().delete(resourceGroupName, accountName, tableName);
+    public Table get(String resourceGroupName, String accountName, String tableName) {
+        TableInner inner = this.serviceClient().get(resourceGroupName, accountName, tableName);
+        if (inner != null) {
+            return new TableImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> deleteWithResponse(
         String resourceGroupName, String accountName, String tableName, Context context) {
         return this.serviceClient().deleteWithResponse(resourceGroupName, accountName, tableName, context);
+    }
+
+    public void delete(String resourceGroupName, String accountName, String tableName) {
+        this.serviceClient().delete(resourceGroupName, accountName, tableName);
     }
 
     public PagedIterable<Table> list(String resourceGroupName, String accountName) {

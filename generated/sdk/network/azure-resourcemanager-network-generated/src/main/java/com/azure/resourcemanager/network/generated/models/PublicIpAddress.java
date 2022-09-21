@@ -523,4 +523,24 @@ public interface PublicIpAddress {
      * @return the refreshed resource.
      */
     PublicIpAddress refresh(Context context);
+
+    /**
+     * Gets the Ddos Protection Status of a Public IP Address.
+     *
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the Ddos Protection Status of a Public IP Address.
+     */
+    PublicIpDdosProtectionStatusResult ddosProtectionStatus();
+
+    /**
+     * Gets the Ddos Protection Status of a Public IP Address.
+     *
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the Ddos Protection Status of a Public IP Address.
+     */
+    PublicIpDdosProtectionStatusResult ddosProtectionStatus(Context context);
 }

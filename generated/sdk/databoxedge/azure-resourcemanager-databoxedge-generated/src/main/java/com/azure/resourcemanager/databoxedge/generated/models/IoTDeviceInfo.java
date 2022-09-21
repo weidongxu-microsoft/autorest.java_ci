@@ -35,6 +35,10 @@ public final class IoTDeviceInfo {
     @JsonProperty(value = "authentication")
     private Authentication authentication;
 
+    /** Creates an instance of IoTDeviceInfo class. */
+    public IoTDeviceInfo() {
+    }
+
     /**
      * Get the deviceId property: ID of the IoT device/edge device.
      *

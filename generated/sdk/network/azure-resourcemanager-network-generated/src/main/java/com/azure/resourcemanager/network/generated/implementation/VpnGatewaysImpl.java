@@ -29,15 +29,6 @@ public final class VpnGatewaysImpl implements VpnGateways {
         this.serviceManager = serviceManager;
     }
 
-    public VpnGateway getByResourceGroup(String resourceGroupName, String gatewayName) {
-        VpnGatewayInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, gatewayName);
-        if (inner != null) {
-            return new VpnGatewayImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<VpnGateway> getByResourceGroupWithResponse(
         String resourceGroupName, String gatewayName, Context context) {
         Response<VpnGatewayInner> inner =
@@ -48,6 +39,15 @@ public final class VpnGatewaysImpl implements VpnGateways {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new VpnGatewayImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public VpnGateway getByResourceGroup(String resourceGroupName, String gatewayName) {
+        VpnGatewayInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, gatewayName);
+        if (inner != null) {
+            return new VpnGatewayImpl(inner, this.manager());
         } else {
             return null;
         }

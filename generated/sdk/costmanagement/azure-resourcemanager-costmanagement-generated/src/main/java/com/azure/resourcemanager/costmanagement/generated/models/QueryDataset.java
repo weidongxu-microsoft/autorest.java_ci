@@ -40,6 +40,10 @@ public final class QueryDataset {
     @JsonProperty(value = "filter")
     private QueryFilter filter;
 
+    /** Creates an instance of QueryDataset class. */
+    public QueryDataset() {
+    }
+
     /**
      * Get the granularity property: The granularity of rows in the query.
      *

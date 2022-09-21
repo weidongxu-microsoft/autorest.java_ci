@@ -58,6 +58,13 @@ public interface ExpressRouteLink {
     String rackId();
 
     /**
+     * Gets the coloLocation property: Cololocation for ExpressRoute Hybrid Direct.
+     *
+     * @return the coloLocation value.
+     */
+    String coloLocation();
+
+    /**
      * Gets the connectorType property: Physical fiber port type.
      *
      * @return the connectorType value.

@@ -27,16 +27,6 @@ public final class ScopeConnectionsImpl implements ScopeConnections {
         this.serviceManager = serviceManager;
     }
 
-    public ScopeConnection get(String resourceGroupName, String networkManagerName, String scopeConnectionName) {
-        ScopeConnectionInner inner =
-            this.serviceClient().get(resourceGroupName, networkManagerName, scopeConnectionName);
-        if (inner != null) {
-            return new ScopeConnectionImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<ScopeConnection> getWithResponse(
         String resourceGroupName, String networkManagerName, String scopeConnectionName, Context context) {
         Response<ScopeConnectionInner> inner =
@@ -52,8 +42,14 @@ public final class ScopeConnectionsImpl implements ScopeConnections {
         }
     }
 
-    public void delete(String resourceGroupName, String networkManagerName, String scopeConnectionName) {
-        this.serviceClient().delete(resourceGroupName, networkManagerName, scopeConnectionName);
+    public ScopeConnection get(String resourceGroupName, String networkManagerName, String scopeConnectionName) {
+        ScopeConnectionInner inner =
+            this.serviceClient().get(resourceGroupName, networkManagerName, scopeConnectionName);
+        if (inner != null) {
+            return new ScopeConnectionImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> deleteWithResponse(
@@ -61,6 +57,10 @@ public final class ScopeConnectionsImpl implements ScopeConnections {
         return this
             .serviceClient()
             .deleteWithResponse(resourceGroupName, networkManagerName, scopeConnectionName, context);
+    }
+
+    public void delete(String resourceGroupName, String networkManagerName, String scopeConnectionName) {
+        this.serviceClient().delete(resourceGroupName, networkManagerName, scopeConnectionName);
     }
 
     public PagedIterable<ScopeConnection> list(String resourceGroupName, String networkManagerName) {

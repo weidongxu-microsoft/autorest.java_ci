@@ -30,23 +30,13 @@ public final class CapacityReservationGroupsImpl implements CapacityReservationG
         this.serviceManager = serviceManager;
     }
 
-    public void deleteByResourceGroup(String resourceGroupName, String capacityReservationGroupName) {
-        this.serviceClient().delete(resourceGroupName, capacityReservationGroupName);
-    }
-
-    public Response<Void> deleteWithResponse(
+    public Response<Void> deleteByResourceGroupWithResponse(
         String resourceGroupName, String capacityReservationGroupName, Context context) {
         return this.serviceClient().deleteWithResponse(resourceGroupName, capacityReservationGroupName, context);
     }
 
-    public CapacityReservationGroup getByResourceGroup(String resourceGroupName, String capacityReservationGroupName) {
-        CapacityReservationGroupInner inner =
-            this.serviceClient().getByResourceGroup(resourceGroupName, capacityReservationGroupName);
-        if (inner != null) {
-            return new CapacityReservationGroupImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void deleteByResourceGroup(String resourceGroupName, String capacityReservationGroupName) {
+        this.serviceClient().delete(resourceGroupName, capacityReservationGroupName);
     }
 
     public Response<CapacityReservationGroup> getByResourceGroupWithResponse(
@@ -64,6 +54,16 @@ public final class CapacityReservationGroupsImpl implements CapacityReservationG
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new CapacityReservationGroupImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public CapacityReservationGroup getByResourceGroup(String resourceGroupName, String capacityReservationGroupName) {
+        CapacityReservationGroupInner inner =
+            this.serviceClient().getByResourceGroup(resourceGroupName, capacityReservationGroupName);
+        if (inner != null) {
+            return new CapacityReservationGroupImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -160,7 +160,7 @@ public final class CapacityReservationGroupsImpl implements CapacityReservationG
                                 "The resource ID '%s' is not valid. Missing path segment 'capacityReservationGroups'.",
                                 id)));
         }
-        this.deleteWithResponse(resourceGroupName, capacityReservationGroupName, Context.NONE);
+        this.deleteByResourceGroupWithResponse(resourceGroupName, capacityReservationGroupName, Context.NONE);
     }
 
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
@@ -182,7 +182,7 @@ public final class CapacityReservationGroupsImpl implements CapacityReservationG
                                 "The resource ID '%s' is not valid. Missing path segment 'capacityReservationGroups'.",
                                 id)));
         }
-        return this.deleteWithResponse(resourceGroupName, capacityReservationGroupName, context);
+        return this.deleteByResourceGroupWithResponse(resourceGroupName, capacityReservationGroupName, context);
     }
 
     private CapacityReservationGroupsClient serviceClient() {

@@ -30,15 +30,6 @@ public final class SnapshotsImpl implements Snapshots {
         this.serviceManager = serviceManager;
     }
 
-    public Snapshot getByResourceGroup(String resourceGroupName, String snapshotName) {
-        SnapshotInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, snapshotName);
-        if (inner != null) {
-            return new SnapshotImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<Snapshot> getByResourceGroupWithResponse(
         String resourceGroupName, String snapshotName, Context context) {
         Response<SnapshotInner> inner =
@@ -49,6 +40,15 @@ public final class SnapshotsImpl implements Snapshots {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new SnapshotImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public Snapshot getByResourceGroup(String resourceGroupName, String snapshotName) {
+        SnapshotInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, snapshotName);
+        if (inner != null) {
+            return new SnapshotImpl(inner, this.manager());
         } else {
             return null;
         }

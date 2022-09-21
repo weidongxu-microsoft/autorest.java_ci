@@ -27,12 +27,13 @@ public interface Exports {
      *     for invoiceSection scope, and
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/customers/{customerId}' specific for
      *     partners.
+     * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing exports.
+     * @return result of listing exports along with {@link Response}.
      */
-    ExportListResult list(String scope);
+    Response<ExportListResult> listWithResponse(String scope, Context context);
 
     /**
      * The operation to list all exports at the given scope.
@@ -52,39 +53,12 @@ public interface Exports {
      *     for invoiceSection scope, and
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/customers/{customerId}' specific for
      *     partners.
-     * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing exports along with {@link Response}.
+     * @return result of listing exports.
      */
-    Response<ExportListResult> listWithResponse(String scope, Context context);
-
-    /**
-     * The operation to get the export for the defined scope by export name.
-     *
-     * @param scope The scope associated with query and export operations. This includes
-     *     '/subscriptions/{subscriptionId}/' for subscription scope,
-     *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resourceGroup scope,
-     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account scope and
-     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/departments/{departmentId}' for Department
-     *     scope,
-     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/enrollmentAccounts/{enrollmentAccountId}'
-     *     for EnrollmentAccount scope, '/providers/Microsoft.Management/managementGroups/{managementGroupId} for
-     *     Management Group scope,
-     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
-     *     billingProfile scope,
-     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}/invoiceSections/{invoiceSectionId}'
-     *     for invoiceSection scope, and
-     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/customers/{customerId}' specific for
-     *     partners.
-     * @param exportName Export Name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a export resource.
-     */
-    Export get(String scope, String exportName);
+    ExportListResult list(String scope);
 
     /**
      * The operation to get the export for the defined scope by export name.
@@ -114,7 +88,7 @@ public interface Exports {
     Response<Export> getWithResponse(String scope, String exportName, Context context);
 
     /**
-     * The operation to delete a export.
+     * The operation to get the export for the defined scope by export name.
      *
      * @param scope The scope associated with query and export operations. This includes
      *     '/subscriptions/{subscriptionId}/' for subscription scope,
@@ -135,8 +109,9 @@ public interface Exports {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a export resource.
      */
-    void deleteByResourceGroup(String scope, String exportName);
+    Export get(String scope, String exportName);
 
     /**
      * The operation to delete a export.
@@ -163,10 +138,10 @@ public interface Exports {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
-    Response<Void> deleteWithResponse(String scope, String exportName, Context context);
+    Response<Void> deleteByResourceGroupWithResponse(String scope, String exportName, Context context);
 
     /**
-     * The operation to execute a export.
+     * The operation to delete a export.
      *
      * @param scope The scope associated with query and export operations. This includes
      *     '/subscriptions/{subscriptionId}/' for subscription scope,
@@ -188,7 +163,7 @@ public interface Exports {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
-    void execute(String scope, String exportName);
+    void deleteByResourceGroup(String scope, String exportName);
 
     /**
      * The operation to execute a export.
@@ -218,7 +193,7 @@ public interface Exports {
     Response<Void> executeWithResponse(String scope, String exportName, Context context);
 
     /**
-     * The operation to get the execution history of an export for the defined scope by export name.
+     * The operation to execute a export.
      *
      * @param scope The scope associated with query and export operations. This includes
      *     '/subscriptions/{subscriptionId}/' for subscription scope,
@@ -239,9 +214,8 @@ public interface Exports {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing exports execution history of a export by name.
      */
-    ExportExecutionListResult getExecutionHistory(String scope, String exportName);
+    void execute(String scope, String exportName);
 
     /**
      * The operation to get the execution history of an export for the defined scope by export name.
@@ -270,6 +244,32 @@ public interface Exports {
      */
     Response<ExportExecutionListResult> getExecutionHistoryWithResponse(
         String scope, String exportName, Context context);
+
+    /**
+     * The operation to get the execution history of an export for the defined scope by export name.
+     *
+     * @param scope The scope associated with query and export operations. This includes
+     *     '/subscriptions/{subscriptionId}/' for subscription scope,
+     *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resourceGroup scope,
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account scope and
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/departments/{departmentId}' for Department
+     *     scope,
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/enrollmentAccounts/{enrollmentAccountId}'
+     *     for EnrollmentAccount scope, '/providers/Microsoft.Management/managementGroups/{managementGroupId} for
+     *     Management Group scope,
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
+     *     billingProfile scope,
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}/invoiceSections/{invoiceSectionId}'
+     *     for invoiceSection scope, and
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/customers/{customerId}' specific for
+     *     partners.
+     * @param exportName Export Name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return result of listing exports execution history of a export by name.
+     */
+    ExportExecutionListResult getExecutionHistory(String scope, String exportName);
 
     /**
      * The operation to get the export for the defined scope by export name.

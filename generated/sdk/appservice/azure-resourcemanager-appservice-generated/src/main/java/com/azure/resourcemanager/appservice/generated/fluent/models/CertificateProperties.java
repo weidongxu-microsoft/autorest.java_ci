@@ -143,6 +143,10 @@ public final class CertificateProperties {
     @JsonProperty(value = "domainValidationMethod")
     private String domainValidationMethod;
 
+    /** Creates an instance of CertificateProperties class. */
+    public CertificateProperties() {
+    }
+
     /**
      * Get the password property: Certificate password.
      *

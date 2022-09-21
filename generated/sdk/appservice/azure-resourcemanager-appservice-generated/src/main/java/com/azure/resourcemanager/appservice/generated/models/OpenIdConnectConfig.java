@@ -40,6 +40,10 @@ public final class OpenIdConnectConfig {
     @JsonProperty(value = "wellKnownOpenIdConfiguration")
     private String wellKnownOpenIdConfiguration;
 
+    /** Creates an instance of OpenIdConnectConfig class. */
+    public OpenIdConnectConfig() {
+    }
+
     /**
      * Get the authorizationEndpoint property: The endpoint to be used to make an authorization request.
      *

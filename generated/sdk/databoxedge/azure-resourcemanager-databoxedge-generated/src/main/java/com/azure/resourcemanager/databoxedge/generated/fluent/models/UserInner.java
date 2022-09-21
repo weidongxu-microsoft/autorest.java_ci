@@ -29,6 +29,10 @@ public final class UserInner extends ArmBaseModel {
     @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;
 
+    /** Creates an instance of UserInner class. */
+    public UserInner() {
+    }
+
     /**
      * Get the innerProperties property: The storage account credential properties.
      *

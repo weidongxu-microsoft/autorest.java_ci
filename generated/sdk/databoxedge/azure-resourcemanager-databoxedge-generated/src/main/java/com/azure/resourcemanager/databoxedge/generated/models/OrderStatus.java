@@ -46,6 +46,10 @@ public final class OrderStatus {
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, String> additionalOrderDetails;
 
+    /** Creates an instance of OrderStatus class. */
+    public OrderStatus() {
+    }
+
     /**
      * Get the status property: Status of the order as per the allowed status types.
      *

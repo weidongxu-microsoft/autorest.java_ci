@@ -27,15 +27,6 @@ public final class HubRouteTablesImpl implements HubRouteTables {
         this.serviceManager = serviceManager;
     }
 
-    public HubRouteTable get(String resourceGroupName, String virtualHubName, String routeTableName) {
-        HubRouteTableInner inner = this.serviceClient().get(resourceGroupName, virtualHubName, routeTableName);
-        if (inner != null) {
-            return new HubRouteTableImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<HubRouteTable> getWithResponse(
         String resourceGroupName, String virtualHubName, String routeTableName, Context context) {
         Response<HubRouteTableInner> inner =
@@ -46,6 +37,15 @@ public final class HubRouteTablesImpl implements HubRouteTables {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new HubRouteTableImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public HubRouteTable get(String resourceGroupName, String virtualHubName, String routeTableName) {
+        HubRouteTableInner inner = this.serviceClient().get(resourceGroupName, virtualHubName, routeTableName);
+        if (inner != null) {
+            return new HubRouteTableImpl(inner, this.manager());
         } else {
             return null;
         }

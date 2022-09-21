@@ -10,6 +10,10 @@ import com.azure.core.management.ProxyResource;
 /** A proxy only azure resource object. */
 @Immutable
 public class ProxyOnlyResource extends ProxyResource {
+    /** Creates an instance of ProxyOnlyResource class. */
+    public ProxyOnlyResource() {
+    }
+
     /**
      * Validates the instance.
      *

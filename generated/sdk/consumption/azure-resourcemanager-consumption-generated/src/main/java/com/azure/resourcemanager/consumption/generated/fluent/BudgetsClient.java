@@ -76,13 +76,14 @@ public interface BudgetsClient {
      *     'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
      *     invoiceSection scope.
      * @param budgetName Budget Name.
+     * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the budget for the scope by budget name.
+     * @return the budget for the scope by budget name along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    BudgetInner get(String scope, String budgetName);
+    Response<BudgetInner> getWithResponse(String scope, String budgetName, Context context);
 
     /**
      * Gets the budget for the scope by budget name.
@@ -100,41 +101,13 @@ public interface BudgetsClient {
      *     'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
      *     invoiceSection scope.
      * @param budgetName Budget Name.
-     * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the budget for the scope by budget name along with {@link Response}.
+     * @return the budget for the scope by budget name.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<BudgetInner> getWithResponse(String scope, String budgetName, Context context);
-
-    /**
-     * The operation to create or update a budget. You can optionally provide an eTag if desired as a form of
-     * concurrency control. To obtain the latest eTag for a given budget, perform a get operation prior to your put
-     * operation.
-     *
-     * @param scope The scope associated with budget operations. This includes '/subscriptions/{subscriptionId}/' for
-     *     subscription scope, '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resourceGroup
-     *     scope, '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account scope,
-     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/departments/{departmentId}' for Department
-     *     scope,
-     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/enrollmentAccounts/{enrollmentAccountId}'
-     *     for EnrollmentAccount scope, '/providers/Microsoft.Management/managementGroups/{managementGroupId}' for
-     *     Management Group scope,
-     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
-     *     billingProfile scope,
-     *     'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
-     *     invoiceSection scope.
-     * @param budgetName Budget Name.
-     * @param parameters Parameters supplied to the Create Budget operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a budget resource.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    BudgetInner createOrUpdate(String scope, String budgetName, BudgetInner parameters);
+    BudgetInner get(String scope, String budgetName);
 
     /**
      * The operation to create or update a budget. You can optionally provide an eTag if desired as a form of
@@ -166,7 +139,9 @@ public interface BudgetsClient {
         String scope, String budgetName, BudgetInner parameters, Context context);
 
     /**
-     * The operation to delete a budget.
+     * The operation to create or update a budget. You can optionally provide an eTag if desired as a form of
+     * concurrency control. To obtain the latest eTag for a given budget, perform a get operation prior to your put
+     * operation.
      *
      * @param scope The scope associated with budget operations. This includes '/subscriptions/{subscriptionId}/' for
      *     subscription scope, '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resourceGroup
@@ -181,12 +156,14 @@ public interface BudgetsClient {
      *     'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
      *     invoiceSection scope.
      * @param budgetName Budget Name.
+     * @param parameters Parameters supplied to the Create Budget operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a budget resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    void delete(String scope, String budgetName);
+    BudgetInner createOrUpdate(String scope, String budgetName, BudgetInner parameters);
 
     /**
      * The operation to delete a budget.
@@ -212,4 +189,27 @@ public interface BudgetsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> deleteWithResponse(String scope, String budgetName, Context context);
+
+    /**
+     * The operation to delete a budget.
+     *
+     * @param scope The scope associated with budget operations. This includes '/subscriptions/{subscriptionId}/' for
+     *     subscription scope, '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resourceGroup
+     *     scope, '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account scope,
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/departments/{departmentId}' for Department
+     *     scope,
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/enrollmentAccounts/{enrollmentAccountId}'
+     *     for EnrollmentAccount scope, '/providers/Microsoft.Management/managementGroups/{managementGroupId}' for
+     *     Management Group scope,
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
+     *     billingProfile scope,
+     *     'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
+     *     invoiceSection scope.
+     * @param budgetName Budget Name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    void delete(String scope, String budgetName);
 }

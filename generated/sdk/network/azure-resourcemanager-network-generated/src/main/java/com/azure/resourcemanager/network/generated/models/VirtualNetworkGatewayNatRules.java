@@ -16,19 +16,6 @@ public interface VirtualNetworkGatewayNatRules {
      * @param resourceGroupName The resource group name of the Virtual Network Gateway.
      * @param virtualNetworkGatewayName The name of the gateway.
      * @param natRuleName The name of the nat rule.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtualNetworkGatewayNatRule Resource.
-     */
-    VirtualNetworkGatewayNatRule get(String resourceGroupName, String virtualNetworkGatewayName, String natRuleName);
-
-    /**
-     * Retrieves the details of a nat rule.
-     *
-     * @param resourceGroupName The resource group name of the Virtual Network Gateway.
-     * @param virtualNetworkGatewayName The name of the gateway.
-     * @param natRuleName The name of the nat rule.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -37,6 +24,19 @@ public interface VirtualNetworkGatewayNatRules {
      */
     Response<VirtualNetworkGatewayNatRule> getWithResponse(
         String resourceGroupName, String virtualNetworkGatewayName, String natRuleName, Context context);
+
+    /**
+     * Retrieves the details of a nat rule.
+     *
+     * @param resourceGroupName The resource group name of the Virtual Network Gateway.
+     * @param virtualNetworkGatewayName The name of the gateway.
+     * @param natRuleName The name of the nat rule.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return virtualNetworkGatewayNatRule Resource.
+     */
+    VirtualNetworkGatewayNatRule get(String resourceGroupName, String virtualNetworkGatewayName, String natRuleName);
 
     /**
      * Deletes a nat rule.

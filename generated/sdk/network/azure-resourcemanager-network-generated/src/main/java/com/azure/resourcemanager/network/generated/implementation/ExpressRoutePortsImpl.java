@@ -39,15 +39,6 @@ public final class ExpressRoutePortsImpl implements ExpressRoutePorts {
         this.serviceClient().delete(resourceGroupName, expressRoutePortName, context);
     }
 
-    public ExpressRoutePort getByResourceGroup(String resourceGroupName, String expressRoutePortName) {
-        ExpressRoutePortInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, expressRoutePortName);
-        if (inner != null) {
-            return new ExpressRoutePortImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<ExpressRoutePort> getByResourceGroupWithResponse(
         String resourceGroupName, String expressRoutePortName, Context context) {
         Response<ExpressRoutePortInner> inner =
@@ -58,6 +49,15 @@ public final class ExpressRoutePortsImpl implements ExpressRoutePorts {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new ExpressRoutePortImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public ExpressRoutePort getByResourceGroup(String resourceGroupName, String expressRoutePortName) {
+        ExpressRoutePortInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, expressRoutePortName);
+        if (inner != null) {
+            return new ExpressRoutePortImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -84,17 +84,6 @@ public final class ExpressRoutePortsImpl implements ExpressRoutePorts {
         return Utils.mapPage(inner, inner1 -> new ExpressRoutePortImpl(inner1, this.manager()));
     }
 
-    public GenerateExpressRoutePortsLoaResult generateLoa(
-        String resourceGroupName, String expressRoutePortName, GenerateExpressRoutePortsLoaRequest request) {
-        GenerateExpressRoutePortsLoaResultInner inner =
-            this.serviceClient().generateLoa(resourceGroupName, expressRoutePortName, request);
-        if (inner != null) {
-            return new GenerateExpressRoutePortsLoaResultImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<GenerateExpressRoutePortsLoaResult> generateLoaWithResponse(
         String resourceGroupName,
         String expressRoutePortName,
@@ -108,6 +97,17 @@ public final class ExpressRoutePortsImpl implements ExpressRoutePorts {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new GenerateExpressRoutePortsLoaResultImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public GenerateExpressRoutePortsLoaResult generateLoa(
+        String resourceGroupName, String expressRoutePortName, GenerateExpressRoutePortsLoaRequest request) {
+        GenerateExpressRoutePortsLoaResultInner inner =
+            this.serviceClient().generateLoa(resourceGroupName, expressRoutePortName, request);
+        if (inner != null) {
+            return new GenerateExpressRoutePortsLoaResultImpl(inner, this.manager());
         } else {
             return null;
         }

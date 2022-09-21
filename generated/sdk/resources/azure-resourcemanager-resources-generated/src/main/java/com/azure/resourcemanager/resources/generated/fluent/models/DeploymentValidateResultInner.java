@@ -26,6 +26,10 @@ public final class DeploymentValidateResultInner {
     @JsonProperty(value = "properties")
     private DeploymentPropertiesExtended properties;
 
+    /** Creates an instance of DeploymentValidateResultInner class. */
+    public DeploymentValidateResultInner() {
+    }
+
     /**
      * Get the error property: Error Response
      *

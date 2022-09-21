@@ -208,7 +208,7 @@ public final class AdminRulesClientImpl implements AdminRulesClient {
             return Mono
                 .error(new IllegalArgumentException("Parameter ruleCollectionName is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -294,7 +294,7 @@ public final class AdminRulesClientImpl implements AdminRulesClient {
             return Mono
                 .error(new IllegalArgumentException("Parameter ruleCollectionName is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -522,7 +522,7 @@ public final class AdminRulesClientImpl implements AdminRulesClient {
         if (ruleName == null) {
             return Mono.error(new IllegalArgumentException("Parameter ruleName is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -596,7 +596,7 @@ public final class AdminRulesClientImpl implements AdminRulesClient {
         if (ruleName == null) {
             return Mono.error(new IllegalArgumentException("Parameter ruleName is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -649,16 +649,18 @@ public final class AdminRulesClientImpl implements AdminRulesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a network manager security configuration admin rule.
+     * @return a network manager security configuration admin rule along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public BaseAdminRuleInner get(
+    public Response<BaseAdminRuleInner> getWithResponse(
         String resourceGroupName,
         String networkManagerName,
         String configurationName,
         String ruleCollectionName,
         String ruleName) {
-        return getAsync(resourceGroupName, networkManagerName, configurationName, ruleCollectionName, ruleName).block();
+        return getWithResponseAsync(
+                resourceGroupName, networkManagerName, configurationName, ruleCollectionName, ruleName)
+            .block();
     }
 
     /**
@@ -686,6 +688,31 @@ public final class AdminRulesClientImpl implements AdminRulesClient {
         return getWithResponseAsync(
                 resourceGroupName, networkManagerName, configurationName, ruleCollectionName, ruleName, context)
             .block();
+    }
+
+    /**
+     * Gets a network manager security configuration admin rule.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param networkManagerName The name of the network manager.
+     * @param configurationName The name of the network manager Security Configuration.
+     * @param ruleCollectionName The name of the network manager security Configuration rule collection.
+     * @param ruleName The name of the rule.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a network manager security configuration admin rule.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public BaseAdminRuleInner get(
+        String resourceGroupName,
+        String networkManagerName,
+        String configurationName,
+        String ruleCollectionName,
+        String ruleName) {
+        return getWithResponse(
+                resourceGroupName, networkManagerName, configurationName, ruleCollectionName, ruleName, Context.NONE)
+            .getValue();
     }
 
     /**
@@ -746,7 +773,7 @@ public final class AdminRulesClientImpl implements AdminRulesClient {
         } else {
             adminRule.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -827,7 +854,7 @@ public final class AdminRulesClientImpl implements AdminRulesClient {
         } else {
             adminRule.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -884,17 +911,17 @@ public final class AdminRulesClientImpl implements AdminRulesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return network base admin rule.
+     * @return network base admin rule along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public BaseAdminRuleInner createOrUpdate(
+    public Response<BaseAdminRuleInner> createOrUpdateWithResponse(
         String resourceGroupName,
         String networkManagerName,
         String configurationName,
         String ruleCollectionName,
         String ruleName,
         BaseAdminRuleInner adminRule) {
-        return createOrUpdateAsync(
+        return createOrUpdateWithResponseAsync(
                 resourceGroupName, networkManagerName, configurationName, ruleCollectionName, ruleName, adminRule)
             .block();
     }
@@ -932,6 +959,39 @@ public final class AdminRulesClientImpl implements AdminRulesClient {
                 adminRule,
                 context)
             .block();
+    }
+
+    /**
+     * Creates or updates an admin rule.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param networkManagerName The name of the network manager.
+     * @param configurationName The name of the network manager Security Configuration.
+     * @param ruleCollectionName The name of the network manager security Configuration rule collection.
+     * @param ruleName The name of the rule.
+     * @param adminRule The admin rule to create or update.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return network base admin rule.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public BaseAdminRuleInner createOrUpdate(
+        String resourceGroupName,
+        String networkManagerName,
+        String configurationName,
+        String ruleCollectionName,
+        String ruleName,
+        BaseAdminRuleInner adminRule) {
+        return createOrUpdateWithResponse(
+                resourceGroupName,
+                networkManagerName,
+                configurationName,
+                ruleCollectionName,
+                ruleName,
+                adminRule,
+                Context.NONE)
+            .getValue();
     }
 
     /**
@@ -988,7 +1048,7 @@ public final class AdminRulesClientImpl implements AdminRulesClient {
         if (ruleName == null) {
             return Mono.error(new IllegalArgumentException("Parameter ruleName is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1065,7 +1125,7 @@ public final class AdminRulesClientImpl implements AdminRulesClient {
         if (ruleName == null) {
             return Mono.error(new IllegalArgumentException("Parameter ruleName is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service

@@ -15,18 +15,6 @@ public interface ActionGroups {
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param actionGroupName The name of the action group.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an action group.
-     */
-    ActionGroupResource getByResourceGroup(String resourceGroupName, String actionGroupName);
-
-    /**
-     * Get an action group.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param actionGroupName The name of the action group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -37,15 +25,16 @@ public interface ActionGroups {
         String resourceGroupName, String actionGroupName, Context context);
 
     /**
-     * Delete an action group.
+     * Get an action group.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param actionGroupName The name of the action group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return an action group.
      */
-    void deleteByResourceGroup(String resourceGroupName, String actionGroupName);
+    ActionGroupResource getByResourceGroup(String resourceGroupName, String actionGroupName);
 
     /**
      * Delete an action group.
@@ -58,7 +47,18 @@ public interface ActionGroups {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
-    Response<Void> deleteWithResponse(String resourceGroupName, String actionGroupName, Context context);
+    Response<Void> deleteByResourceGroupWithResponse(String resourceGroupName, String actionGroupName, Context context);
+
+    /**
+     * Delete an action group.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param actionGroupName The name of the action group.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deleteByResourceGroup(String resourceGroupName, String actionGroupName);
 
     /**
      * Get a list of all action groups in a subscription.
@@ -110,19 +110,6 @@ public interface ActionGroups {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param actionGroupName The name of the action group.
      * @param enableRequest The receiver to re-enable.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void enableReceiver(String resourceGroupName, String actionGroupName, EnableRequest enableRequest);
-
-    /**
-     * Enable a receiver in an action group. This changes the receiver's status from Disabled to Enabled. This operation
-     * is only supported for Email or SMS receivers.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param actionGroupName The name of the action group.
-     * @param enableRequest The receiver to re-enable.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -131,6 +118,19 @@ public interface ActionGroups {
      */
     Response<Void> enableReceiverWithResponse(
         String resourceGroupName, String actionGroupName, EnableRequest enableRequest, Context context);
+
+    /**
+     * Enable a receiver in an action group. This changes the receiver's status from Disabled to Enabled. This operation
+     * is only supported for Email or SMS receivers.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param actionGroupName The name of the action group.
+     * @param enableRequest The receiver to re-enable.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void enableReceiver(String resourceGroupName, String actionGroupName, EnableRequest enableRequest);
 
     /**
      * Get an action group.

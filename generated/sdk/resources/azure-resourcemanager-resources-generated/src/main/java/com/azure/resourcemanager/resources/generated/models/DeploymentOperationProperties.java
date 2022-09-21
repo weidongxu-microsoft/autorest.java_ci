@@ -73,6 +73,10 @@ public final class DeploymentOperationProperties {
     @JsonProperty(value = "response", access = JsonProperty.Access.WRITE_ONLY)
     private HttpMessage response;
 
+    /** Creates an instance of DeploymentOperationProperties class. */
+    public DeploymentOperationProperties() {
+    }
+
     /**
      * Get the provisioningOperation property: The name of the current provisioning operation.
      *

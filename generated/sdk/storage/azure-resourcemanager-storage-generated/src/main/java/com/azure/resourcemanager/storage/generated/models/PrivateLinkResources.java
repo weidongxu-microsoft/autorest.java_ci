@@ -16,20 +16,6 @@ public interface PrivateLinkResources {
      *     insensitive.
      * @param accountName The name of the storage account within the specified resource group. Storage account names
      *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the private link resources that need to be created for a storage account.
-     */
-    PrivateLinkResourceListResult listByStorageAccount(String resourceGroupName, String accountName);
-
-    /**
-     * Gets the private link resources that need to be created for a storage account.
-     *
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     *     insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -38,4 +24,18 @@ public interface PrivateLinkResources {
      */
     Response<PrivateLinkResourceListResult> listByStorageAccountWithResponse(
         String resourceGroupName, String accountName, Context context);
+
+    /**
+     * Gets the private link resources that need to be created for a storage account.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     *     insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the private link resources that need to be created for a storage account.
+     */
+    PrivateLinkResourceListResult listByStorageAccount(String resourceGroupName, String accountName);
 }

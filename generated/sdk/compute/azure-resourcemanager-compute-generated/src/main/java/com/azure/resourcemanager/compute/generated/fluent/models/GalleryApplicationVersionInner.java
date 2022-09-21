@@ -21,6 +21,10 @@ public final class GalleryApplicationVersionInner extends Resource {
     @JsonProperty(value = "properties")
     private GalleryApplicationVersionProperties innerProperties;
 
+    /** Creates an instance of GalleryApplicationVersionInner class. */
+    public GalleryApplicationVersionInner() {
+    }
+
     /**
      * Get the innerProperties property: Describes the properties of a gallery image version.
      *

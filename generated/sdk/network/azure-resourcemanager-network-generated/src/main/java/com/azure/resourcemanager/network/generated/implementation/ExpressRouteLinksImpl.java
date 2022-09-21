@@ -28,15 +28,6 @@ public final class ExpressRouteLinksImpl implements ExpressRouteLinks {
         this.serviceManager = serviceManager;
     }
 
-    public ExpressRouteLink get(String resourceGroupName, String expressRoutePortName, String linkName) {
-        ExpressRouteLinkInner inner = this.serviceClient().get(resourceGroupName, expressRoutePortName, linkName);
-        if (inner != null) {
-            return new ExpressRouteLinkImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<ExpressRouteLink> getWithResponse(
         String resourceGroupName, String expressRoutePortName, String linkName, Context context) {
         Response<ExpressRouteLinkInner> inner =
@@ -47,6 +38,15 @@ public final class ExpressRouteLinksImpl implements ExpressRouteLinks {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new ExpressRouteLinkImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public ExpressRouteLink get(String resourceGroupName, String expressRoutePortName, String linkName) {
+        ExpressRouteLinkInner inner = this.serviceClient().get(resourceGroupName, expressRoutePortName, linkName);
+        if (inner != null) {
+            return new ExpressRouteLinkImpl(inner, this.manager());
         } else {
             return null;
         }

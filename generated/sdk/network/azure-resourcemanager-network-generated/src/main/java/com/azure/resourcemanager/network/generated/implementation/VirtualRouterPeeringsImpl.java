@@ -36,15 +36,6 @@ public final class VirtualRouterPeeringsImpl implements VirtualRouterPeerings {
         this.serviceClient().delete(resourceGroupName, virtualRouterName, peeringName, context);
     }
 
-    public VirtualRouterPeering get(String resourceGroupName, String virtualRouterName, String peeringName) {
-        VirtualRouterPeeringInner inner = this.serviceClient().get(resourceGroupName, virtualRouterName, peeringName);
-        if (inner != null) {
-            return new VirtualRouterPeeringImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<VirtualRouterPeering> getWithResponse(
         String resourceGroupName, String virtualRouterName, String peeringName, Context context) {
         Response<VirtualRouterPeeringInner> inner =
@@ -55,6 +46,15 @@ public final class VirtualRouterPeeringsImpl implements VirtualRouterPeerings {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new VirtualRouterPeeringImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public VirtualRouterPeering get(String resourceGroupName, String virtualRouterName, String peeringName) {
+        VirtualRouterPeeringInner inner = this.serviceClient().get(resourceGroupName, virtualRouterName, peeringName);
+        if (inner != null) {
+            return new VirtualRouterPeeringImpl(inner, this.manager());
         } else {
             return null;
         }

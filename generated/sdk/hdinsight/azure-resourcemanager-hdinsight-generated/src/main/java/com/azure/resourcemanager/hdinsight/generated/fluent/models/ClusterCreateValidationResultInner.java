@@ -38,6 +38,10 @@ public final class ClusterCreateValidationResultInner {
     @JsonProperty(value = "aaddsResourcesDetails")
     private List<AaddsResourceDetails> aaddsResourcesDetails;
 
+    /** Creates an instance of ClusterCreateValidationResultInner class. */
+    public ClusterCreateValidationResultInner() {
+    }
+
     /**
      * Get the validationErrors property: The validation errors.
      *

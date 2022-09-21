@@ -40,6 +40,10 @@ public final class ClusterGpuCapacity {
     @JsonProperty(value = "gpuTotalUnitsCount")
     private Integer gpuTotalUnitsCount;
 
+    /** Creates an instance of ClusterGpuCapacity class. */
+    public ClusterGpuCapacity() {
+    }
+
     /**
      * Get the gpuType property: The cluster GPU Type.
      *

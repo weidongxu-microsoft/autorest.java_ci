@@ -26,6 +26,10 @@ public final class WorkbookInner extends WorkbookResource {
     @JsonProperty(value = "properties")
     private WorkbookProperties innerProperties;
 
+    /** Creates an instance of WorkbookInner class. */
+    public WorkbookInner() {
+    }
+
     /**
      * Get the kind property: The kind of workbook. Choices are user and shared.
      *

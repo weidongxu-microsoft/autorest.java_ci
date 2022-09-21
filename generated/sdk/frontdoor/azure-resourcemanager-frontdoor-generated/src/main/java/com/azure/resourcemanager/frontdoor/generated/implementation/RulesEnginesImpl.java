@@ -38,15 +38,6 @@ public final class RulesEnginesImpl implements RulesEngines {
         return Utils.mapPage(inner, inner1 -> new RulesEngineImpl(inner1, this.manager()));
     }
 
-    public RulesEngine get(String resourceGroupName, String frontDoorName, String rulesEngineName) {
-        RulesEngineInner inner = this.serviceClient().get(resourceGroupName, frontDoorName, rulesEngineName);
-        if (inner != null) {
-            return new RulesEngineImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<RulesEngine> getWithResponse(
         String resourceGroupName, String frontDoorName, String rulesEngineName, Context context) {
         Response<RulesEngineInner> inner =
@@ -57,6 +48,15 @@ public final class RulesEnginesImpl implements RulesEngines {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new RulesEngineImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public RulesEngine get(String resourceGroupName, String frontDoorName, String rulesEngineName) {
+        RulesEngineInner inner = this.serviceClient().get(resourceGroupName, frontDoorName, rulesEngineName);
+        if (inner != null) {
+            return new RulesEngineImpl(inner, this.manager());
         } else {
             return null;
         }

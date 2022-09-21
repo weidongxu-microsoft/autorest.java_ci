@@ -35,15 +35,6 @@ public final class DdosCustomPoliciesImpl implements DdosCustomPolicies {
         this.serviceClient().delete(resourceGroupName, ddosCustomPolicyName, context);
     }
 
-    public DdosCustomPolicy getByResourceGroup(String resourceGroupName, String ddosCustomPolicyName) {
-        DdosCustomPolicyInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, ddosCustomPolicyName);
-        if (inner != null) {
-            return new DdosCustomPolicyImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<DdosCustomPolicy> getByResourceGroupWithResponse(
         String resourceGroupName, String ddosCustomPolicyName, Context context) {
         Response<DdosCustomPolicyInner> inner =
@@ -54,6 +45,15 @@ public final class DdosCustomPoliciesImpl implements DdosCustomPolicies {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new DdosCustomPolicyImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public DdosCustomPolicy getByResourceGroup(String resourceGroupName, String ddosCustomPolicyName) {
+        DdosCustomPolicyInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, ddosCustomPolicyName);
+        if (inner != null) {
+            return new DdosCustomPolicyImpl(inner, this.manager());
         } else {
             return null;
         }

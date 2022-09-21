@@ -18,21 +18,6 @@ public interface DiskAccesses {
      * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
      *     the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
      *     name length is 80 characters.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a disk access resource.
-     */
-    DiskAccess getByResourceGroup(String resourceGroupName, String diskAccessName);
-
-    /**
-     * Gets information about a disk access resource.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     *     the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     *     name length is 80 characters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
@@ -42,6 +27,21 @@ public interface DiskAccesses {
      */
     Response<DiskAccess> getByResourceGroupWithResponse(
         String resourceGroupName, String diskAccessName, Context context);
+
+    /**
+     * Gets information about a disk access resource.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
+     *     the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
+     *     name length is 80 characters.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return information about a disk access resource.
+     */
+    DiskAccess getByResourceGroup(String resourceGroupName, String diskAccessName);
 
     /**
      * Deletes a disk access resource.
@@ -126,20 +126,6 @@ public interface DiskAccesses {
      * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
      *     the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
      *     name length is 80 characters.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the private link resources possible under disk access resource.
-     */
-    PrivateLinkResourceListResult getPrivateLinkResources(String resourceGroupName, String diskAccessName);
-
-    /**
-     * Gets the private link resources possible under disk access resource.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     *     the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     *     name length is 80 characters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -148,6 +134,20 @@ public interface DiskAccesses {
      */
     Response<PrivateLinkResourceListResult> getPrivateLinkResourcesWithResponse(
         String resourceGroupName, String diskAccessName, Context context);
+
+    /**
+     * Gets the private link resources possible under disk access resource.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
+     *     the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
+     *     name length is 80 characters.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the private link resources possible under disk access resource.
+     */
+    PrivateLinkResourceListResult getPrivateLinkResources(String resourceGroupName, String diskAccessName);
 
     /**
      * Approve or reject a private endpoint connection under disk access resource, this can't be used to create a new
@@ -205,23 +205,6 @@ public interface DiskAccesses {
      *     the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
      *     name length is 80 characters.
      * @param privateEndpointConnectionName The name of the private endpoint connection.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a private endpoint connection under a disk access resource.
-     */
-    PrivateEndpointConnection getAPrivateEndpointConnection(
-        String resourceGroupName, String diskAccessName, String privateEndpointConnectionName);
-
-    /**
-     * Gets information about a private endpoint connection under a disk access resource.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     *     the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     *     name length is 80 characters.
-     * @param privateEndpointConnectionName The name of the private endpoint connection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
@@ -231,6 +214,23 @@ public interface DiskAccesses {
      */
     Response<PrivateEndpointConnection> getAPrivateEndpointConnectionWithResponse(
         String resourceGroupName, String diskAccessName, String privateEndpointConnectionName, Context context);
+
+    /**
+     * Gets information about a private endpoint connection under a disk access resource.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
+     *     the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
+     *     name length is 80 characters.
+     * @param privateEndpointConnectionName The name of the private endpoint connection.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return information about a private endpoint connection under a disk access resource.
+     */
+    PrivateEndpointConnection getAPrivateEndpointConnection(
+        String resourceGroupName, String diskAccessName, String privateEndpointConnectionName);
 
     /**
      * Deletes a private endpoint connection under a disk access resource.

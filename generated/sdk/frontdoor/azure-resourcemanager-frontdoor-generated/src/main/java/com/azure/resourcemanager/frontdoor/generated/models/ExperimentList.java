@@ -27,6 +27,10 @@ public final class ExperimentList {
     @JsonProperty(value = "nextLink")
     private String nextLink;
 
+    /** Creates an instance of ExperimentList class. */
+    public ExperimentList() {
+    }
+
     /**
      * Get the value property: List of Experiments within a resource group.
      *

@@ -42,15 +42,6 @@ public final class StorageAccountCredentialsImpl implements StorageAccountCreden
         return Utils.mapPage(inner, inner1 -> new StorageAccountCredentialImpl(inner1, this.manager()));
     }
 
-    public StorageAccountCredential get(String deviceName, String name, String resourceGroupName) {
-        StorageAccountCredentialInner inner = this.serviceClient().get(deviceName, name, resourceGroupName);
-        if (inner != null) {
-            return new StorageAccountCredentialImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<StorageAccountCredential> getWithResponse(
         String deviceName, String name, String resourceGroupName, Context context) {
         Response<StorageAccountCredentialInner> inner =
@@ -61,6 +52,15 @@ public final class StorageAccountCredentialsImpl implements StorageAccountCreden
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new StorageAccountCredentialImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public StorageAccountCredential get(String deviceName, String name, String resourceGroupName) {
+        StorageAccountCredentialInner inner = this.serviceClient().get(deviceName, name, resourceGroupName);
+        if (inner != null) {
+            return new StorageAccountCredentialImpl(inner, this.manager());
         } else {
             return null;
         }

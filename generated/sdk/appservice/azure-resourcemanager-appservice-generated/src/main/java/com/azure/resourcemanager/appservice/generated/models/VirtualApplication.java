@@ -35,6 +35,10 @@ public final class VirtualApplication {
     @JsonProperty(value = "virtualDirectories")
     private List<VirtualDirectory> virtualDirectories;
 
+    /** Creates an instance of VirtualApplication class. */
+    public VirtualApplication() {
+    }
+
     /**
      * Get the virtualPath property: Virtual path.
      *

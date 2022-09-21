@@ -39,18 +39,6 @@ public interface SettingsClient {
      * Retrieves the current value for a specific setting.
      *
      * @param settingName Name of the setting. Allowed values: myscope.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return state of the myscope setting.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    SettingInner get(String settingName);
-
-    /**
-     * Retrieves the current value for a specific setting.
-     *
-     * @param settingName Name of the setting. Allowed values: myscope.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -61,17 +49,16 @@ public interface SettingsClient {
     Response<SettingInner> getWithResponse(String settingName, Context context);
 
     /**
-     * Sets a new value for a specific setting.
+     * Retrieves the current value for a specific setting.
      *
      * @param settingName Name of the setting. Allowed values: myscope.
-     * @param parameters Body supplied to the CreateOrUpdate setting operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return state of the myscope setting.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    SettingInner createOrUpdate(String settingName, SettingInner parameters);
+    SettingInner get(String settingName);
 
     /**
      * Sets a new value for a specific setting.
@@ -88,15 +75,17 @@ public interface SettingsClient {
     Response<SettingInner> createOrUpdateWithResponse(String settingName, SettingInner parameters, Context context);
 
     /**
-     * Remove the current value for a specific setting and reverts back to the default value, if applicable.
+     * Sets a new value for a specific setting.
      *
      * @param settingName Name of the setting. Allowed values: myscope.
+     * @param parameters Body supplied to the CreateOrUpdate setting operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return state of the myscope setting.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    void delete(String settingName);
+    SettingInner createOrUpdate(String settingName, SettingInner parameters);
 
     /**
      * Remove the current value for a specific setting and reverts back to the default value, if applicable.
@@ -110,4 +99,15 @@ public interface SettingsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> deleteWithResponse(String settingName, Context context);
+
+    /**
+     * Remove the current value for a specific setting and reverts back to the default value, if applicable.
+     *
+     * @param settingName Name of the setting. Allowed values: myscope.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    void delete(String settingName);
 }

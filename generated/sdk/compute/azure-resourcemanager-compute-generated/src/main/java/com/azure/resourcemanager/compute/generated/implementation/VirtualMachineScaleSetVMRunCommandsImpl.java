@@ -106,17 +106,6 @@ public final class VirtualMachineScaleSetVMRunCommandsImpl implements VirtualMac
         this.serviceClient().delete(resourceGroupName, vmScaleSetName, instanceId, runCommandName, context);
     }
 
-    public VirtualMachineRunCommand get(
-        String resourceGroupName, String vmScaleSetName, String instanceId, String runCommandName) {
-        VirtualMachineRunCommandInner inner =
-            this.serviceClient().get(resourceGroupName, vmScaleSetName, instanceId, runCommandName);
-        if (inner != null) {
-            return new VirtualMachineRunCommandImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<VirtualMachineRunCommand> getWithResponse(
         String resourceGroupName,
         String vmScaleSetName,
@@ -134,6 +123,17 @@ public final class VirtualMachineScaleSetVMRunCommandsImpl implements VirtualMac
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new VirtualMachineRunCommandImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public VirtualMachineRunCommand get(
+        String resourceGroupName, String vmScaleSetName, String instanceId, String runCommandName) {
+        VirtualMachineRunCommandInner inner =
+            this.serviceClient().get(resourceGroupName, vmScaleSetName, instanceId, runCommandName);
+        if (inner != null) {
+            return new VirtualMachineRunCommandImpl(inner, this.manager());
         } else {
             return null;
         }

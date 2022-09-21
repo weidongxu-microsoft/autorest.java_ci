@@ -74,6 +74,10 @@ public final class BudgetProperties {
     @JsonProperty(value = "forecastSpend", access = JsonProperty.Access.WRITE_ONLY)
     private ForecastSpend forecastSpend;
 
+    /** Creates an instance of BudgetProperties class. */
+    public BudgetProperties() {
+    }
+
     /**
      * Get the category property: The category of the budget, whether the budget tracks cost or usage.
      *

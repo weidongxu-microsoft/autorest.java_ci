@@ -16,19 +16,6 @@ public interface VpnSiteLinks {
      * @param resourceGroupName The resource group name of the VpnSite.
      * @param vpnSiteName The name of the VpnSite.
      * @param vpnSiteLinkName The name of the VpnSiteLink being retrieved.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpnSiteLink Resource.
-     */
-    VpnSiteLink get(String resourceGroupName, String vpnSiteName, String vpnSiteLinkName);
-
-    /**
-     * Retrieves the details of a VPN site link.
-     *
-     * @param resourceGroupName The resource group name of the VpnSite.
-     * @param vpnSiteName The name of the VpnSite.
-     * @param vpnSiteLinkName The name of the VpnSiteLink being retrieved.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -37,6 +24,19 @@ public interface VpnSiteLinks {
      */
     Response<VpnSiteLink> getWithResponse(
         String resourceGroupName, String vpnSiteName, String vpnSiteLinkName, Context context);
+
+    /**
+     * Retrieves the details of a VPN site link.
+     *
+     * @param resourceGroupName The resource group name of the VpnSite.
+     * @param vpnSiteName The name of the VpnSite.
+     * @param vpnSiteLinkName The name of the VpnSiteLink being retrieved.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return vpnSiteLink Resource.
+     */
+    VpnSiteLink get(String resourceGroupName, String vpnSiteName, String vpnSiteLinkName);
 
     /**
      * Lists all the vpnSiteLinks in a resource group for a vpn site.

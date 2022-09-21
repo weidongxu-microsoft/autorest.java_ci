@@ -35,6 +35,10 @@ public final class Facebook {
     @JsonProperty(value = "login")
     private LoginScopes login;
 
+    /** Creates an instance of Facebook class. */
+    public Facebook() {
+    }
+
     /**
      * Get the enabled property: &lt;code&gt;false&lt;/code&gt; if the Facebook provider should not be enabled despite
      * the set registration; otherwise, &lt;code&gt;true&lt;/code&gt;.

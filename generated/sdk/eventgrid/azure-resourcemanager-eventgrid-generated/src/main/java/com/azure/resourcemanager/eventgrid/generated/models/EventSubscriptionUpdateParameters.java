@@ -77,6 +77,10 @@ public final class EventSubscriptionUpdateParameters {
     @JsonProperty(value = "deadLetterWithResourceIdentity")
     private DeadLetterWithResourceIdentity deadLetterWithResourceIdentity;
 
+    /** Creates an instance of EventSubscriptionUpdateParameters class. */
+    public EventSubscriptionUpdateParameters() {
+    }
+
     /**
      * Get the destination property: Information about the destination where events have to be delivered for the event
      * subscription. Uses Azure Event Grid's identity to acquire the authentication tokens being used during delivery /

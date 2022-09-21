@@ -17,6 +17,10 @@ public class ProxySettingResource extends ProxyResource {
     @JsonProperty(value = "kind", access = JsonProperty.Access.WRITE_ONLY)
     private String kind;
 
+    /** Creates an instance of ProxySettingResource class. */
+    public ProxySettingResource() {
+    }
+
     /**
      * Get the kind property: Resource kind.
      *

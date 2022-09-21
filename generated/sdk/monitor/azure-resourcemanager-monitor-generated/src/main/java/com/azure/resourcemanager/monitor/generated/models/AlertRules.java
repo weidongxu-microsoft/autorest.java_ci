@@ -15,36 +15,24 @@ public interface AlertRules {
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void deleteByResourceGroup(String resourceGroupName, String ruleName);
-
-    /**
-     * Deletes a classic metric alert rule.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param ruleName The name of the rule.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
-    Response<Void> deleteWithResponse(String resourceGroupName, String ruleName, Context context);
+    Response<Void> deleteByResourceGroupWithResponse(String resourceGroupName, String ruleName, Context context);
 
     /**
-     * Gets a classic metric alert rule.
+     * Deletes a classic metric alert rule.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a classic metric alert rule.
      */
-    AlertRuleResource getByResourceGroup(String resourceGroupName, String ruleName);
+    void deleteByResourceGroup(String resourceGroupName, String ruleName);
 
     /**
      * Gets a classic metric alert rule.
@@ -59,6 +47,18 @@ public interface AlertRules {
      */
     Response<AlertRuleResource> getByResourceGroupWithResponse(
         String resourceGroupName, String ruleName, Context context);
+
+    /**
+     * Gets a classic metric alert rule.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param ruleName The name of the rule.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a classic metric alert rule.
+     */
+    AlertRuleResource getByResourceGroup(String resourceGroupName, String ruleName);
 
     /**
      * List the classic metric alert rules within a resource group.

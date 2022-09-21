@@ -184,14 +184,14 @@ public final class NetworkWatcherImpl implements NetworkWatcher, NetworkWatcher.
         return this;
     }
 
-    public Topology getTopology(TopologyParameters parameters) {
-        return serviceManager.networkWatchers().getTopology(resourceGroupName, networkWatcherName, parameters);
-    }
-
     public Response<Topology> getTopologyWithResponse(TopologyParameters parameters, Context context) {
         return serviceManager
             .networkWatchers()
             .getTopologyWithResponse(resourceGroupName, networkWatcherName, parameters, context);
+    }
+
+    public Topology getTopology(TopologyParameters parameters) {
+        return serviceManager.networkWatchers().getTopology(resourceGroupName, networkWatcherName, parameters);
     }
 
     public VerificationIpFlowResult verifyIpFlow(VerificationIpFlowParameters parameters) {

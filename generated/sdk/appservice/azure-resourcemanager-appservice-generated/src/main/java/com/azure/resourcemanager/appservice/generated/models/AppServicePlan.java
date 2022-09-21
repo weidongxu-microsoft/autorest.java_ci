@@ -760,17 +760,6 @@ public interface AppServicePlan {
      *
      * <p>Description for Restart all apps in an App Service plan.
      *
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void restartWebApps();
-
-    /**
-     * Restart all apps in an App Service plan.
-     *
-     * <p>Description for Restart all apps in an App Service plan.
-     *
      * @param softRestart Specify &lt;code&gt;true&lt;/code&gt; to perform a soft restart, applies the configuration
      *     settings and restarts the apps if necessary. The default is &lt;code&gt;false&lt;/code&gt;, which always
      *     restarts and reprovisions the apps.
@@ -782,4 +771,15 @@ public interface AppServicePlan {
      * @return the {@link Response}.
      */
     Response<Void> restartWebAppsWithResponse(Boolean softRestart, Context context);
+
+    /**
+     * Restart all apps in an App Service plan.
+     *
+     * <p>Description for Restart all apps in an App Service plan.
+     *
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void restartWebApps();
 }

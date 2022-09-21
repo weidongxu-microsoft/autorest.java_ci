@@ -46,6 +46,10 @@ public final class ProviderOperation {
     @JsonProperty(value = "isDataAction")
     private Boolean isDataAction;
 
+    /** Creates an instance of ProviderOperation class. */
+    public ProviderOperation() {
+    }
+
     /**
      * Get the name property: The operation name.
      *

@@ -490,15 +490,17 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of the PrivateEndpointConnection.
+     * @return properties of the PrivateEndpointConnection along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public PrivateEndpointConnectionInner createOrUpdate(
+    public Response<PrivateEndpointConnectionInner> createOrUpdateWithResponse(
         String resourceGroupName,
         String namespaceName,
         String privateEndpointConnectionName,
         PrivateEndpointConnectionInner parameters) {
-        return createOrUpdateAsync(resourceGroupName, namespaceName, privateEndpointConnectionName, parameters).block();
+        return createOrUpdateWithResponseAsync(
+                resourceGroupName, namespaceName, privateEndpointConnectionName, parameters)
+            .block();
     }
 
     /**
@@ -524,6 +526,29 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
         return createOrUpdateWithResponseAsync(
                 resourceGroupName, namespaceName, privateEndpointConnectionName, parameters, context)
             .block();
+    }
+
+    /**
+     * Creates or updates PrivateEndpointConnections of service namespace.
+     *
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param namespaceName The namespace name.
+     * @param privateEndpointConnectionName The PrivateEndpointConnection name.
+     * @param parameters Parameters supplied to update Status of PrivateEndPoint Connection to namespace resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return properties of the PrivateEndpointConnection.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public PrivateEndpointConnectionInner createOrUpdate(
+        String resourceGroupName,
+        String namespaceName,
+        String privateEndpointConnectionName,
+        PrivateEndpointConnectionInner parameters) {
+        return createOrUpdateWithResponse(
+                resourceGroupName, namespaceName, privateEndpointConnectionName, parameters, Context.NONE)
+            .getValue();
     }
 
     /**
@@ -928,12 +953,12 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a description for the specified Private Endpoint Connection name.
+     * @return a description for the specified Private Endpoint Connection name along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public PrivateEndpointConnectionInner get(
+    public Response<PrivateEndpointConnectionInner> getWithResponse(
         String resourceGroupName, String namespaceName, String privateEndpointConnectionName) {
-        return getAsync(resourceGroupName, namespaceName, privateEndpointConnectionName).block();
+        return getWithResponseAsync(resourceGroupName, namespaceName, privateEndpointConnectionName).block();
     }
 
     /**
@@ -952,6 +977,24 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     public Response<PrivateEndpointConnectionInner> getWithResponse(
         String resourceGroupName, String namespaceName, String privateEndpointConnectionName, Context context) {
         return getWithResponseAsync(resourceGroupName, namespaceName, privateEndpointConnectionName, context).block();
+    }
+
+    /**
+     * Gets a description for the specified Private Endpoint Connection name.
+     *
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param namespaceName The namespace name.
+     * @param privateEndpointConnectionName The PrivateEndpointConnection name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a description for the specified Private Endpoint Connection name.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public PrivateEndpointConnectionInner get(
+        String resourceGroupName, String namespaceName, String privateEndpointConnectionName) {
+        return getWithResponse(resourceGroupName, namespaceName, privateEndpointConnectionName, Context.NONE)
+            .getValue();
     }
 
     /**

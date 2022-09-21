@@ -65,6 +65,10 @@ public final class Notification {
     @JsonProperty(value = "locale")
     private CultureCode locale;
 
+    /** Creates an instance of Notification class. */
+    public Notification() {
+    }
+
     /**
      * Get the enabled property: The notification is enabled or not.
      *

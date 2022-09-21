@@ -51,6 +51,10 @@ public final class JsonInputSchemaMappingProperties {
     @JsonProperty(value = "dataVersion")
     private JsonFieldWithDefault dataVersion;
 
+    /** Creates an instance of JsonInputSchemaMappingProperties class. */
+    public JsonInputSchemaMappingProperties() {
+    }
+
     /**
      * Get the id property: The mapping information for the Id property of the Event Grid Event.
      *

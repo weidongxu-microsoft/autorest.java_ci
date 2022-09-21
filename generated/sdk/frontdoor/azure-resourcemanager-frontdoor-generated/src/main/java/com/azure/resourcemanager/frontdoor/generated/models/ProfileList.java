@@ -24,6 +24,10 @@ public final class ProfileList {
     @JsonProperty(value = "nextLink")
     private String nextLink;
 
+    /** Creates an instance of ProfileList class. */
+    public ProfileList() {
+    }
+
     /**
      * Get the value property: List of Profiles within a resource group.
      *

@@ -42,6 +42,10 @@ public final class WhatIfChange {
     @JsonProperty(value = "delta")
     private List<WhatIfPropertyChange> delta;
 
+    /** Creates an instance of WhatIfChange class. */
+    public WhatIfChange() {
+    }
+
     /**
      * Get the resourceId property: Resource ID.
      *

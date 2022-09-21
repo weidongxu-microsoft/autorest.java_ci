@@ -23,6 +23,10 @@ public final class NetworkRuleSetListResultInner {
     @JsonProperty(value = "nextLink")
     private String nextLink;
 
+    /** Creates an instance of NetworkRuleSetListResultInner class. */
+    public NetworkRuleSetListResultInner() {
+    }
+
     /**
      * Get the value property: Result of the List NetworkRuleSet operation.
      *

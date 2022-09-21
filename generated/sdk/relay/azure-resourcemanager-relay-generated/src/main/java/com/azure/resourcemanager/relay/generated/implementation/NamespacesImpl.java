@@ -50,10 +50,6 @@ public final class NamespacesImpl implements Namespaces {
         return Utils.mapPage(inner, inner1 -> new AuthorizationRuleImpl(inner1, this.manager()));
     }
 
-    public void deleteAuthorizationRule(String resourceGroupName, String namespaceName, String authorizationRuleName) {
-        this.serviceClient().deleteAuthorizationRule(resourceGroupName, namespaceName, authorizationRuleName);
-    }
-
     public Response<Void> deleteAuthorizationRuleWithResponse(
         String resourceGroupName, String namespaceName, String authorizationRuleName, Context context) {
         return this
@@ -61,15 +57,8 @@ public final class NamespacesImpl implements Namespaces {
             .deleteAuthorizationRuleWithResponse(resourceGroupName, namespaceName, authorizationRuleName, context);
     }
 
-    public AuthorizationRule getAuthorizationRule(
-        String resourceGroupName, String namespaceName, String authorizationRuleName) {
-        AuthorizationRuleInner inner =
-            this.serviceClient().getAuthorizationRule(resourceGroupName, namespaceName, authorizationRuleName);
-        if (inner != null) {
-            return new AuthorizationRuleImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void deleteAuthorizationRule(String resourceGroupName, String namespaceName, String authorizationRuleName) {
+        this.serviceClient().deleteAuthorizationRule(resourceGroupName, namespaceName, authorizationRuleName);
     }
 
     public Response<AuthorizationRule> getAuthorizationRuleWithResponse(
@@ -89,10 +78,12 @@ public final class NamespacesImpl implements Namespaces {
         }
     }
 
-    public AccessKeys listKeys(String resourceGroupName, String namespaceName, String authorizationRuleName) {
-        AccessKeysInner inner = this.serviceClient().listKeys(resourceGroupName, namespaceName, authorizationRuleName);
+    public AuthorizationRule getAuthorizationRule(
+        String resourceGroupName, String namespaceName, String authorizationRuleName) {
+        AuthorizationRuleInner inner =
+            this.serviceClient().getAuthorizationRule(resourceGroupName, namespaceName, authorizationRuleName);
         if (inner != null) {
-            return new AccessKeysImpl(inner, this.manager());
+            return new AuthorizationRuleImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -113,13 +104,8 @@ public final class NamespacesImpl implements Namespaces {
         }
     }
 
-    public AccessKeys regenerateKeys(
-        String resourceGroupName,
-        String namespaceName,
-        String authorizationRuleName,
-        RegenerateAccessKeyParameters parameters) {
-        AccessKeysInner inner =
-            this.serviceClient().regenerateKeys(resourceGroupName, namespaceName, authorizationRuleName, parameters);
+    public AccessKeys listKeys(String resourceGroupName, String namespaceName, String authorizationRuleName) {
+        AccessKeysInner inner = this.serviceClient().listKeys(resourceGroupName, namespaceName, authorizationRuleName);
         if (inner != null) {
             return new AccessKeysImpl(inner, this.manager());
         } else {
@@ -149,10 +135,15 @@ public final class NamespacesImpl implements Namespaces {
         }
     }
 
-    public CheckNameAvailabilityResult checkNameAvailability(CheckNameAvailability parameters) {
-        CheckNameAvailabilityResultInner inner = this.serviceClient().checkNameAvailability(parameters);
+    public AccessKeys regenerateKeys(
+        String resourceGroupName,
+        String namespaceName,
+        String authorizationRuleName,
+        RegenerateAccessKeyParameters parameters) {
+        AccessKeysInner inner =
+            this.serviceClient().regenerateKeys(resourceGroupName, namespaceName, authorizationRuleName, parameters);
         if (inner != null) {
-            return new CheckNameAvailabilityResultImpl(inner, this.manager());
+            return new AccessKeysImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -168,6 +159,15 @@ public final class NamespacesImpl implements Namespaces {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new CheckNameAvailabilityResultImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public CheckNameAvailabilityResult checkNameAvailability(CheckNameAvailability parameters) {
+        CheckNameAvailabilityResultInner inner = this.serviceClient().checkNameAvailability(parameters);
+        if (inner != null) {
+            return new CheckNameAvailabilityResultImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -201,15 +201,6 @@ public final class NamespacesImpl implements Namespaces {
         this.serviceClient().delete(resourceGroupName, namespaceName, context);
     }
 
-    public RelayNamespace getByResourceGroup(String resourceGroupName, String namespaceName) {
-        RelayNamespaceInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, namespaceName);
-        if (inner != null) {
-            return new RelayNamespaceImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<RelayNamespace> getByResourceGroupWithResponse(
         String resourceGroupName, String namespaceName, Context context) {
         Response<RelayNamespaceInner> inner =
@@ -225,12 +216,10 @@ public final class NamespacesImpl implements Namespaces {
         }
     }
 
-    public NetworkRuleSet createOrUpdateNetworkRuleSet(
-        String resourceGroupName, String namespaceName, NetworkRuleSetInner parameters) {
-        NetworkRuleSetInner inner =
-            this.serviceClient().createOrUpdateNetworkRuleSet(resourceGroupName, namespaceName, parameters);
+    public RelayNamespace getByResourceGroup(String resourceGroupName, String namespaceName) {
+        RelayNamespaceInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, namespaceName);
         if (inner != null) {
-            return new NetworkRuleSetImpl(inner, this.manager());
+            return new RelayNamespaceImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -253,8 +242,10 @@ public final class NamespacesImpl implements Namespaces {
         }
     }
 
-    public NetworkRuleSet getNetworkRuleSet(String resourceGroupName, String namespaceName) {
-        NetworkRuleSetInner inner = this.serviceClient().getNetworkRuleSet(resourceGroupName, namespaceName);
+    public NetworkRuleSet createOrUpdateNetworkRuleSet(
+        String resourceGroupName, String namespaceName, NetworkRuleSetInner parameters) {
+        NetworkRuleSetInner inner =
+            this.serviceClient().createOrUpdateNetworkRuleSet(resourceGroupName, namespaceName, parameters);
         if (inner != null) {
             return new NetworkRuleSetImpl(inner, this.manager());
         } else {
@@ -272,6 +263,15 @@ public final class NamespacesImpl implements Namespaces {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new NetworkRuleSetImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public NetworkRuleSet getNetworkRuleSet(String resourceGroupName, String namespaceName) {
+        NetworkRuleSetInner inner = this.serviceClient().getNetworkRuleSet(resourceGroupName, namespaceName);
+        if (inner != null) {
+            return new NetworkRuleSetImpl(inner, this.manager());
         } else {
             return null;
         }

@@ -38,18 +38,6 @@ public interface VirtualNetworks {
      *
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified virtual network by resource group.
-     */
-    VirtualNetwork getByResourceGroup(String resourceGroupName, String virtualNetworkName);
-
-    /**
-     * Gets the specified virtual network by resource group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param virtualNetworkName The name of the virtual network.
      * @param expand Expands referenced resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -59,6 +47,18 @@ public interface VirtualNetworks {
      */
     Response<VirtualNetwork> getByResourceGroupWithResponse(
         String resourceGroupName, String virtualNetworkName, String expand, Context context);
+
+    /**
+     * Gets the specified virtual network by resource group.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param virtualNetworkName The name of the virtual network.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified virtual network by resource group.
+     */
+    VirtualNetwork getByResourceGroup(String resourceGroupName, String virtualNetworkName);
 
     /**
      * Gets all virtual networks in a subscription.
@@ -109,20 +109,6 @@ public interface VirtualNetworks {
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param ipAddress The private IP address to be verified.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for CheckIPAddressAvailability API service call.
-     */
-    IpAddressAvailabilityResult checkIpAddressAvailability(
-        String resourceGroupName, String virtualNetworkName, String ipAddress);
-
-    /**
-     * Checks whether a private IP address is available for use.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param virtualNetworkName The name of the virtual network.
-     * @param ipAddress The private IP address to be verified.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -131,6 +117,20 @@ public interface VirtualNetworks {
      */
     Response<IpAddressAvailabilityResult> checkIpAddressAvailabilityWithResponse(
         String resourceGroupName, String virtualNetworkName, String ipAddress, Context context);
+
+    /**
+     * Checks whether a private IP address is available for use.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param virtualNetworkName The name of the virtual network.
+     * @param ipAddress The private IP address to be verified.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return response for CheckIPAddressAvailability API service call.
+     */
+    IpAddressAvailabilityResult checkIpAddressAvailability(
+        String resourceGroupName, String virtualNetworkName, String ipAddress);
 
     /**
      * Lists usage stats.
@@ -158,6 +158,37 @@ public interface VirtualNetworks {
      *     PagedIterable}.
      */
     PagedIterable<VirtualNetworkUsage> listUsage(String resourceGroupName, String virtualNetworkName, Context context);
+
+    /**
+     * Gets the Ddos Protection Status of all IP Addresses under the Virtual Network.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param virtualNetworkName The name of the virtual network.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the Ddos Protection Status of all IP Addresses under the Virtual Network as paginated response with
+     *     {@link PagedIterable}.
+     */
+    PagedIterable<PublicIpDdosProtectionStatusResult> listDdosProtectionStatus(
+        String resourceGroupName, String virtualNetworkName);
+
+    /**
+     * Gets the Ddos Protection Status of all IP Addresses under the Virtual Network.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param virtualNetworkName The name of the virtual network.
+     * @param top The max number of ip addresses to return.
+     * @param skipToken The skipToken that is given with nextLink.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the Ddos Protection Status of all IP Addresses under the Virtual Network as paginated response with
+     *     {@link PagedIterable}.
+     */
+    PagedIterable<PublicIpDdosProtectionStatusResult> listDdosProtectionStatus(
+        String resourceGroupName, String virtualNetworkName, Integer top, String skipToken, Context context);
 
     /**
      * Gets the specified virtual network by resource group.

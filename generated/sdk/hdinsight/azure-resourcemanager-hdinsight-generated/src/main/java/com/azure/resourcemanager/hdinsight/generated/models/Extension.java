@@ -22,6 +22,10 @@ public final class Extension {
     @JsonProperty(value = "primaryKey")
     private String primaryKey;
 
+    /** Creates an instance of Extension class. */
+    public Extension() {
+    }
+
     /**
      * Get the workspaceId property: The workspace ID for the cluster monitoring extension.
      *

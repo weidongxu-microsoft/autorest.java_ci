@@ -18,6 +18,10 @@ public final class SharedPrivateLinkResourceInner extends ProxyResource {
     @JsonProperty(value = "properties")
     private SharedPrivateLinkResourceProperties properties;
 
+    /** Creates an instance of SharedPrivateLinkResourceInner class. */
+    public SharedPrivateLinkResourceInner() {
+    }
+
     /**
      * Get the properties property: Describes the properties of a Shared Private Link Resource managed by the Azure
      * Cognitive Search service.

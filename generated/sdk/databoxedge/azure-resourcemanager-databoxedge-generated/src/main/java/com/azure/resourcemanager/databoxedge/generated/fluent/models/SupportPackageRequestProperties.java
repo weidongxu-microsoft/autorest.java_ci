@@ -31,6 +31,10 @@ public final class SupportPackageRequestProperties {
     @JsonProperty(value = "include")
     private String include;
 
+    /** Creates an instance of SupportPackageRequestProperties class. */
+    public SupportPackageRequestProperties() {
+    }
+
     /**
      * Get the minimumTimestamp property: MinimumTimeStamp from where logs need to be collected.
      *

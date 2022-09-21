@@ -604,11 +604,12 @@ public final class ExtensionsClientImpl implements ExtensionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the status of Operations Management Suite (OMS) on the HDInsight cluster.
+     * @return the status of Operations Management Suite (OMS) on the HDInsight cluster along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ClusterMonitoringResponseInner getMonitoringStatus(String resourceGroupName, String clusterName) {
-        return getMonitoringStatusAsync(resourceGroupName, clusterName).block();
+    public Response<ClusterMonitoringResponseInner> getMonitoringStatusWithResponse(
+        String resourceGroupName, String clusterName) {
+        return getMonitoringStatusWithResponseAsync(resourceGroupName, clusterName).block();
     }
 
     /**
@@ -626,6 +627,21 @@ public final class ExtensionsClientImpl implements ExtensionsClient {
     public Response<ClusterMonitoringResponseInner> getMonitoringStatusWithResponse(
         String resourceGroupName, String clusterName, Context context) {
         return getMonitoringStatusWithResponseAsync(resourceGroupName, clusterName, context).block();
+    }
+
+    /**
+     * Gets the status of Operations Management Suite (OMS) on the HDInsight cluster.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param clusterName The name of the cluster.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the status of Operations Management Suite (OMS) on the HDInsight cluster.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ClusterMonitoringResponseInner getMonitoringStatus(String resourceGroupName, String clusterName) {
+        return getMonitoringStatusWithResponse(resourceGroupName, clusterName, Context.NONE).getValue();
     }
 
     /**
@@ -1239,11 +1255,12 @@ public final class ExtensionsClientImpl implements ExtensionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the status of Azure Monitor on the HDInsight cluster.
+     * @return the status of Azure Monitor on the HDInsight cluster along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public AzureMonitorResponseInner getAzureMonitorStatus(String resourceGroupName, String clusterName) {
-        return getAzureMonitorStatusAsync(resourceGroupName, clusterName).block();
+    public Response<AzureMonitorResponseInner> getAzureMonitorStatusWithResponse(
+        String resourceGroupName, String clusterName) {
+        return getAzureMonitorStatusWithResponseAsync(resourceGroupName, clusterName).block();
     }
 
     /**
@@ -1261,6 +1278,21 @@ public final class ExtensionsClientImpl implements ExtensionsClient {
     public Response<AzureMonitorResponseInner> getAzureMonitorStatusWithResponse(
         String resourceGroupName, String clusterName, Context context) {
         return getAzureMonitorStatusWithResponseAsync(resourceGroupName, clusterName, context).block();
+    }
+
+    /**
+     * Gets the status of Azure Monitor on the HDInsight cluster.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param clusterName The name of the cluster.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the status of Azure Monitor on the HDInsight cluster.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public AzureMonitorResponseInner getAzureMonitorStatus(String resourceGroupName, String clusterName) {
+        return getAzureMonitorStatusWithResponse(resourceGroupName, clusterName, Context.NONE).getValue();
     }
 
     /**
@@ -1906,11 +1938,12 @@ public final class ExtensionsClientImpl implements ExtensionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the extension properties for the specified HDInsight cluster extension.
+     * @return the extension properties for the specified HDInsight cluster extension along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ClusterMonitoringResponseInner get(String resourceGroupName, String clusterName, String extensionName) {
-        return getAsync(resourceGroupName, clusterName, extensionName).block();
+    public Response<ClusterMonitoringResponseInner> getWithResponse(
+        String resourceGroupName, String clusterName, String extensionName) {
+        return getWithResponseAsync(resourceGroupName, clusterName, extensionName).block();
     }
 
     /**
@@ -1929,6 +1962,22 @@ public final class ExtensionsClientImpl implements ExtensionsClient {
     public Response<ClusterMonitoringResponseInner> getWithResponse(
         String resourceGroupName, String clusterName, String extensionName, Context context) {
         return getWithResponseAsync(resourceGroupName, clusterName, extensionName, context).block();
+    }
+
+    /**
+     * Gets the extension properties for the specified HDInsight cluster extension.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param clusterName The name of the cluster.
+     * @param extensionName The name of the cluster extension.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the extension properties for the specified HDInsight cluster extension.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ClusterMonitoringResponseInner get(String resourceGroupName, String clusterName, String extensionName) {
+        return getWithResponse(resourceGroupName, clusterName, extensionName, Context.NONE).getValue();
     }
 
     /**
@@ -2326,12 +2375,13 @@ public final class ExtensionsClientImpl implements ExtensionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the async operation status.
+     * @return the async operation status along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public AsyncOperationResultInner getAzureAsyncOperationStatus(
+    public Response<AsyncOperationResultInner> getAzureAsyncOperationStatusWithResponse(
         String resourceGroupName, String clusterName, String extensionName, String operationId) {
-        return getAzureAsyncOperationStatusAsync(resourceGroupName, clusterName, extensionName, operationId).block();
+        return getAzureAsyncOperationStatusWithResponseAsync(resourceGroupName, clusterName, extensionName, operationId)
+            .block();
     }
 
     /**
@@ -2353,5 +2403,25 @@ public final class ExtensionsClientImpl implements ExtensionsClient {
         return getAzureAsyncOperationStatusWithResponseAsync(
                 resourceGroupName, clusterName, extensionName, operationId, context)
             .block();
+    }
+
+    /**
+     * Gets the async operation status.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param clusterName The name of the cluster.
+     * @param extensionName The name of the cluster extension.
+     * @param operationId The long running operation id.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the async operation status.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public AsyncOperationResultInner getAzureAsyncOperationStatus(
+        String resourceGroupName, String clusterName, String extensionName, String operationId) {
+        return getAzureAsyncOperationStatusWithResponse(
+                resourceGroupName, clusterName, extensionName, operationId, Context.NONE)
+            .getValue();
     }
 }

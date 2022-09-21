@@ -23,19 +23,6 @@ public interface VpnGatewaysClient {
      *
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpnGateway Resource.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    VpnGatewayInner getByResourceGroup(String resourceGroupName, String gatewayName);
-
-    /**
-     * Retrieves the details of a virtual wan vpn gateway.
-     *
-     * @param resourceGroupName The resource group name of the VpnGateway.
-     * @param gatewayName The name of the gateway.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -45,6 +32,19 @@ public interface VpnGatewaysClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<VpnGatewayInner> getByResourceGroupWithResponse(
         String resourceGroupName, String gatewayName, Context context);
+
+    /**
+     * Retrieves the details of a virtual wan vpn gateway.
+     *
+     * @param resourceGroupName The resource group name of the VpnGateway.
+     * @param gatewayName The name of the gateway.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return vpnGateway Resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    VpnGatewayInner getByResourceGroup(String resourceGroupName, String gatewayName);
 
     /**
      * Creates a virtual wan vpn gateway if it doesn't exist else updates the existing gateway.

@@ -28,15 +28,6 @@ public final class FrontDoorNameAvailabilitiesImpl implements FrontDoorNameAvail
         this.serviceManager = serviceManager;
     }
 
-    public CheckNameAvailabilityOutput check(CheckNameAvailabilityInput checkFrontDoorNameAvailabilityInput) {
-        CheckNameAvailabilityOutputInner inner = this.serviceClient().check(checkFrontDoorNameAvailabilityInput);
-        if (inner != null) {
-            return new CheckNameAvailabilityOutputImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<CheckNameAvailabilityOutput> checkWithResponse(
         CheckNameAvailabilityInput checkFrontDoorNameAvailabilityInput, Context context) {
         Response<CheckNameAvailabilityOutputInner> inner =
@@ -47,6 +38,15 @@ public final class FrontDoorNameAvailabilitiesImpl implements FrontDoorNameAvail
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new CheckNameAvailabilityOutputImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public CheckNameAvailabilityOutput check(CheckNameAvailabilityInput checkFrontDoorNameAvailabilityInput) {
+        CheckNameAvailabilityOutputInner inner = this.serviceClient().check(checkFrontDoorNameAvailabilityInput);
+        if (inner != null) {
+            return new CheckNameAvailabilityOutputImpl(inner, this.manager());
         } else {
             return null;
         }

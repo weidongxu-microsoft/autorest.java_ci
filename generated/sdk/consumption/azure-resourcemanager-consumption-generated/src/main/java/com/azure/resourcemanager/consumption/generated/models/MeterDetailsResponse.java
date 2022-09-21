@@ -40,6 +40,10 @@ public final class MeterDetailsResponse {
     @JsonProperty(value = "serviceFamily", access = JsonProperty.Access.WRITE_ONLY)
     private String serviceFamily;
 
+    /** Creates an instance of MeterDetailsResponse class. */
+    public MeterDetailsResponse() {
+    }
+
     /**
      * Get the meterName property: The name of the meter, within the given meter category.
      *

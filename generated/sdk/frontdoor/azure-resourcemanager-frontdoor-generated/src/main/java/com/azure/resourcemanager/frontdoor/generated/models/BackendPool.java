@@ -31,6 +31,10 @@ public final class BackendPool extends SubResource {
     @JsonProperty(value = "type", access = JsonProperty.Access.WRITE_ONLY)
     private String type;
 
+    /** Creates an instance of BackendPool class. */
+    public BackendPool() {
+    }
+
     /**
      * Get the innerProperties property: Properties of the Front Door Backend Pool.
      *

@@ -23,6 +23,10 @@ public final class LegacySingleScopeReservationRecommendationProperties
     @JsonProperty(value = "subscriptionId", access = JsonProperty.Access.WRITE_ONLY)
     private UUID subscriptionId;
 
+    /** Creates an instance of LegacySingleScopeReservationRecommendationProperties class. */
+    public LegacySingleScopeReservationRecommendationProperties() {
+    }
+
     /**
      * Get the subscriptionId property: Subscription id associated with single scoped recommendation.
      *

@@ -21,27 +21,6 @@ public interface ConsumerGroupsClient {
      * @param eventHubName The Event Hub name.
      * @param consumerGroupName The consumer group name.
      * @param parameters Parameters supplied to create or update a consumer group resource.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in List or Get Consumer group operation.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    ConsumerGroupInner createOrUpdate(
-        String resourceGroupName,
-        String namespaceName,
-        String eventHubName,
-        String consumerGroupName,
-        ConsumerGroupInner parameters);
-
-    /**
-     * Creates or updates an Event Hubs consumer group as a nested resource within a Namespace.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param namespaceName The Namespace name.
-     * @param eventHubName The Event Hub name.
-     * @param consumerGroupName The consumer group name.
-     * @param parameters Parameters supplied to create or update a consumer group resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -58,18 +37,25 @@ public interface ConsumerGroupsClient {
         Context context);
 
     /**
-     * Deletes a consumer group from the specified Event Hub and resource group.
+     * Creates or updates an Event Hubs consumer group as a nested resource within a Namespace.
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param eventHubName The Event Hub name.
      * @param consumerGroupName The consumer group name.
+     * @param parameters Parameters supplied to create or update a consumer group resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return single item in List or Get Consumer group operation.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    void delete(String resourceGroupName, String namespaceName, String eventHubName, String consumerGroupName);
+    ConsumerGroupInner createOrUpdate(
+        String resourceGroupName,
+        String namespaceName,
+        String eventHubName,
+        String consumerGroupName,
+        ConsumerGroupInner parameters);
 
     /**
      * Deletes a consumer group from the specified Event Hub and resource group.
@@ -89,7 +75,7 @@ public interface ConsumerGroupsClient {
         String resourceGroupName, String namespaceName, String eventHubName, String consumerGroupName, Context context);
 
     /**
-     * Gets a description for the specified consumer group.
+     * Deletes a consumer group from the specified Event Hub and resource group.
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -98,11 +84,9 @@ public interface ConsumerGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a description for the specified consumer group.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    ConsumerGroupInner get(
-        String resourceGroupName, String namespaceName, String eventHubName, String consumerGroupName);
+    void delete(String resourceGroupName, String namespaceName, String eventHubName, String consumerGroupName);
 
     /**
      * Gets a description for the specified consumer group.
@@ -120,6 +104,22 @@ public interface ConsumerGroupsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ConsumerGroupInner> getWithResponse(
         String resourceGroupName, String namespaceName, String eventHubName, String consumerGroupName, Context context);
+
+    /**
+     * Gets a description for the specified consumer group.
+     *
+     * @param resourceGroupName Name of the resource group within the azure subscription.
+     * @param namespaceName The Namespace name.
+     * @param eventHubName The Event Hub name.
+     * @param consumerGroupName The consumer group name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a description for the specified consumer group.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    ConsumerGroupInner get(
+        String resourceGroupName, String namespaceName, String eventHubName, String consumerGroupName);
 
     /**
      * Gets all the consumer groups in a Namespace. An empty feed is returned if no consumer group exists in the

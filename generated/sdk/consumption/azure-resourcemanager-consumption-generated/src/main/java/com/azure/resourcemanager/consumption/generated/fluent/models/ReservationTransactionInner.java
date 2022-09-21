@@ -20,6 +20,10 @@ public class ReservationTransactionInner extends ReservationTransactionResource 
     @JsonProperty(value = "properties")
     private LegacyReservationTransactionProperties innerProperties;
 
+    /** Creates an instance of ReservationTransactionInner class. */
+    public ReservationTransactionInner() {
+    }
+
     /**
      * Get the innerProperties property: The properties of a legacy reservation transaction.
      *

@@ -63,6 +63,10 @@ public final class JobProperties {
     @JsonProperty(value = "folder")
     private String folder;
 
+    /** Creates an instance of JobProperties class. */
+    public JobProperties() {
+    }
+
     /**
      * Get the jobType property: The type of the job.
      *

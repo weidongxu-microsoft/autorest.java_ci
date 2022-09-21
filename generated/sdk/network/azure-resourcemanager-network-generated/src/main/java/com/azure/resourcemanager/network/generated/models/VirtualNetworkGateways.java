@@ -16,18 +16,6 @@ public interface VirtualNetworkGateways {
      *
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified virtual network gateway by resource group.
-     */
-    VirtualNetworkGateway getByResourceGroup(String resourceGroupName, String virtualNetworkGatewayName);
-
-    /**
-     * Gets the specified virtual network gateway by resource group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param virtualNetworkGatewayName The name of the virtual network gateway.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -36,6 +24,18 @@ public interface VirtualNetworkGateways {
      */
     Response<VirtualNetworkGateway> getByResourceGroupWithResponse(
         String resourceGroupName, String virtualNetworkGatewayName, Context context);
+
+    /**
+     * Gets the specified virtual network gateway by resource group.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param virtualNetworkGatewayName The name of the virtual network gateway.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified virtual network gateway by resource group.
+     */
+    VirtualNetworkGateway getByResourceGroup(String resourceGroupName, String virtualNetworkGatewayName);
 
     /**
      * Deletes the specified virtual network gateway.
@@ -307,18 +307,6 @@ public interface VirtualNetworkGateways {
      *
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a xml format representation for supported vpn devices.
-     */
-    String supportedVpnDevices(String resourceGroupName, String virtualNetworkGatewayName);
-
-    /**
-     * Gets a xml format representation for supported vpn devices.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param virtualNetworkGatewayName The name of the virtual network gateway.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -327,6 +315,18 @@ public interface VirtualNetworkGateways {
      */
     Response<String> supportedVpnDevicesWithResponse(
         String resourceGroupName, String virtualNetworkGatewayName, Context context);
+
+    /**
+     * Gets a xml format representation for supported vpn devices.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param virtualNetworkGatewayName The name of the virtual network gateway.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a xml format representation for supported vpn devices.
+     */
+    String supportedVpnDevices(String resourceGroupName, String virtualNetworkGatewayName);
 
     /**
      * This operation retrieves a list of routes the virtual network gateway has learned, including routes learned from
@@ -455,21 +455,6 @@ public interface VirtualNetworkGateways {
      * @param virtualNetworkGatewayConnectionName The name of the virtual network gateway connection for which the
      *     configuration script is generated.
      * @param parameters Parameters supplied to the generate vpn device script operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a xml format representation for vpn device configuration script.
-     */
-    String vpnDeviceConfigurationScript(
-        String resourceGroupName, String virtualNetworkGatewayConnectionName, VpnDeviceScriptParameters parameters);
-
-    /**
-     * Gets a xml format representation for vpn device configuration script.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param virtualNetworkGatewayConnectionName The name of the virtual network gateway connection for which the
-     *     configuration script is generated.
-     * @param parameters Parameters supplied to the generate vpn device script operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -481,6 +466,21 @@ public interface VirtualNetworkGateways {
         String virtualNetworkGatewayConnectionName,
         VpnDeviceScriptParameters parameters,
         Context context);
+
+    /**
+     * Gets a xml format representation for vpn device configuration script.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param virtualNetworkGatewayConnectionName The name of the virtual network gateway connection for which the
+     *     configuration script is generated.
+     * @param parameters Parameters supplied to the generate vpn device script operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a xml format representation for vpn device configuration script.
+     */
+    String vpnDeviceConfigurationScript(
+        String resourceGroupName, String virtualNetworkGatewayConnectionName, VpnDeviceScriptParameters parameters);
 
     /**
      * Starts packet capture on virtual network gateway in the specified resource group.

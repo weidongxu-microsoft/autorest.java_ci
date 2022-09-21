@@ -447,11 +447,11 @@ public final class BudgetsClientImpl implements BudgetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the budget for the scope by budget name.
+     * @return the budget for the scope by budget name along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public BudgetInner get(String scope, String budgetName) {
-        return getAsync(scope, budgetName).block();
+    public Response<BudgetInner> getWithResponse(String scope, String budgetName) {
+        return getWithResponseAsync(scope, budgetName).block();
     }
 
     /**
@@ -479,6 +479,32 @@ public final class BudgetsClientImpl implements BudgetsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<BudgetInner> getWithResponse(String scope, String budgetName, Context context) {
         return getWithResponseAsync(scope, budgetName, context).block();
+    }
+
+    /**
+     * Gets the budget for the scope by budget name.
+     *
+     * @param scope The scope associated with budget operations. This includes '/subscriptions/{subscriptionId}/' for
+     *     subscription scope, '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resourceGroup
+     *     scope, '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account scope,
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/departments/{departmentId}' for Department
+     *     scope,
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/enrollmentAccounts/{enrollmentAccountId}'
+     *     for EnrollmentAccount scope, '/providers/Microsoft.Management/managementGroups/{managementGroupId}' for
+     *     Management Group scope,
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
+     *     billingProfile scope,
+     *     'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
+     *     invoiceSection scope.
+     * @param budgetName Budget Name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the budget for the scope by budget name.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public BudgetInner get(String scope, String budgetName) {
+        return getWithResponse(scope, budgetName, Context.NONE).getValue();
     }
 
     /**
@@ -645,11 +671,11 @@ public final class BudgetsClientImpl implements BudgetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a budget resource.
+     * @return a budget resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public BudgetInner createOrUpdate(String scope, String budgetName, BudgetInner parameters) {
-        return createOrUpdateAsync(scope, budgetName, parameters).block();
+    public Response<BudgetInner> createOrUpdateWithResponse(String scope, String budgetName, BudgetInner parameters) {
+        return createOrUpdateWithResponseAsync(scope, budgetName, parameters).block();
     }
 
     /**
@@ -681,6 +707,35 @@ public final class BudgetsClientImpl implements BudgetsClient {
     public Response<BudgetInner> createOrUpdateWithResponse(
         String scope, String budgetName, BudgetInner parameters, Context context) {
         return createOrUpdateWithResponseAsync(scope, budgetName, parameters, context).block();
+    }
+
+    /**
+     * The operation to create or update a budget. You can optionally provide an eTag if desired as a form of
+     * concurrency control. To obtain the latest eTag for a given budget, perform a get operation prior to your put
+     * operation.
+     *
+     * @param scope The scope associated with budget operations. This includes '/subscriptions/{subscriptionId}/' for
+     *     subscription scope, '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resourceGroup
+     *     scope, '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account scope,
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/departments/{departmentId}' for Department
+     *     scope,
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/enrollmentAccounts/{enrollmentAccountId}'
+     *     for EnrollmentAccount scope, '/providers/Microsoft.Management/managementGroups/{managementGroupId}' for
+     *     Management Group scope,
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
+     *     billingProfile scope,
+     *     'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
+     *     invoiceSection scope.
+     * @param budgetName Budget Name.
+     * @param parameters Parameters supplied to the Create Budget operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a budget resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public BudgetInner createOrUpdate(String scope, String budgetName, BudgetInner parameters) {
+        return createOrUpdateWithResponse(scope, budgetName, parameters, Context.NONE).getValue();
     }
 
     /**
@@ -815,10 +870,11 @@ public final class BudgetsClientImpl implements BudgetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public void delete(String scope, String budgetName) {
-        deleteAsync(scope, budgetName).block();
+    public Response<Void> deleteWithResponse(String scope, String budgetName) {
+        return deleteWithResponseAsync(scope, budgetName).block();
     }
 
     /**
@@ -846,6 +902,31 @@ public final class BudgetsClientImpl implements BudgetsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> deleteWithResponse(String scope, String budgetName, Context context) {
         return deleteWithResponseAsync(scope, budgetName, context).block();
+    }
+
+    /**
+     * The operation to delete a budget.
+     *
+     * @param scope The scope associated with budget operations. This includes '/subscriptions/{subscriptionId}/' for
+     *     subscription scope, '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resourceGroup
+     *     scope, '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account scope,
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/departments/{departmentId}' for Department
+     *     scope,
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/enrollmentAccounts/{enrollmentAccountId}'
+     *     for EnrollmentAccount scope, '/providers/Microsoft.Management/managementGroups/{managementGroupId}' for
+     *     Management Group scope,
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
+     *     billingProfile scope,
+     *     'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
+     *     invoiceSection scope.
+     * @param budgetName Budget Name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public void delete(String scope, String budgetName) {
+        deleteWithResponse(scope, budgetName, Context.NONE);
     }
 
     /**

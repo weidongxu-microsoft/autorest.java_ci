@@ -18,6 +18,10 @@ public final class LogSearchRuleResourceCollection {
     @JsonProperty(value = "value")
     private List<LogSearchRuleResourceInner> value;
 
+    /** Creates an instance of LogSearchRuleResourceCollection class. */
+    public LogSearchRuleResourceCollection() {
+    }
+
     /**
      * Get the value property: The values for the Log Search Rule resources.
      *

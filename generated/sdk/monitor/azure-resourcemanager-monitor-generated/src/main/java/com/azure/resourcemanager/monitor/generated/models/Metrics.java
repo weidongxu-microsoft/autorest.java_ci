@@ -14,17 +14,6 @@ public interface Metrics {
      * **Lists the metric values for a resource**.
      *
      * @param resourceUri The identifier of the resource.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a metrics query.
-     */
-    ResponseModel list(String resourceUri);
-
-    /**
-     * **Lists the metric values for a resource**.
-     *
-     * @param resourceUri The identifier of the resource.
      * @param timespan The timespan of the query. It is a string with the following format
      *     'startDateTime_ISO/endDateTime_ISO'.
      * @param interval The interval (i.e. timegrain) of the query.
@@ -65,4 +54,15 @@ public interface Metrics {
         ResultType resultType,
         String metricnamespace,
         Context context);
+
+    /**
+     * **Lists the metric values for a resource**.
+     *
+     * @param resourceUri The identifier of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response to a metrics query.
+     */
+    ResponseModel list(String resourceUri);
 }

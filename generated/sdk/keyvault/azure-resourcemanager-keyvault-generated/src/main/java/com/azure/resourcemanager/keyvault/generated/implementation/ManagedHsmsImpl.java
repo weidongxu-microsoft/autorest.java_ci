@@ -40,15 +40,6 @@ public final class ManagedHsmsImpl implements ManagedHsms {
         this.serviceClient().delete(resourceGroupName, name, context);
     }
 
-    public ManagedHsm getByResourceGroup(String resourceGroupName, String name) {
-        ManagedHsmInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, name);
-        if (inner != null) {
-            return new ManagedHsmImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<ManagedHsm> getByResourceGroupWithResponse(String resourceGroupName, String name, Context context) {
         Response<ManagedHsmInner> inner =
             this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, name, context);
@@ -58,6 +49,15 @@ public final class ManagedHsmsImpl implements ManagedHsms {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new ManagedHsmImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public ManagedHsm getByResourceGroup(String resourceGroupName, String name) {
+        ManagedHsmInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, name);
+        if (inner != null) {
+            return new ManagedHsmImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -94,15 +94,6 @@ public final class ManagedHsmsImpl implements ManagedHsms {
         return Utils.mapPage(inner, inner1 -> new DeletedManagedHsmImpl(inner1, this.manager()));
     }
 
-    public DeletedManagedHsm getDeleted(String name, String location) {
-        DeletedManagedHsmInner inner = this.serviceClient().getDeleted(name, location);
-        if (inner != null) {
-            return new DeletedManagedHsmImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<DeletedManagedHsm> getDeletedWithResponse(String name, String location, Context context) {
         Response<DeletedManagedHsmInner> inner = this.serviceClient().getDeletedWithResponse(name, location, context);
         if (inner != null) {
@@ -116,21 +107,21 @@ public final class ManagedHsmsImpl implements ManagedHsms {
         }
     }
 
+    public DeletedManagedHsm getDeleted(String name, String location) {
+        DeletedManagedHsmInner inner = this.serviceClient().getDeleted(name, location);
+        if (inner != null) {
+            return new DeletedManagedHsmImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
     public void purgeDeleted(String name, String location) {
         this.serviceClient().purgeDeleted(name, location);
     }
 
     public void purgeDeleted(String name, String location, Context context) {
         this.serviceClient().purgeDeleted(name, location, context);
-    }
-
-    public CheckMhsmNameAvailabilityResult checkMhsmNameAvailability(CheckMhsmNameAvailabilityParameters mhsmName) {
-        CheckMhsmNameAvailabilityResultInner inner = this.serviceClient().checkMhsmNameAvailability(mhsmName);
-        if (inner != null) {
-            return new CheckMhsmNameAvailabilityResultImpl(inner, this.manager());
-        } else {
-            return null;
-        }
     }
 
     public Response<CheckMhsmNameAvailabilityResult> checkMhsmNameAvailabilityWithResponse(
@@ -143,6 +134,15 @@ public final class ManagedHsmsImpl implements ManagedHsms {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new CheckMhsmNameAvailabilityResultImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public CheckMhsmNameAvailabilityResult checkMhsmNameAvailability(CheckMhsmNameAvailabilityParameters mhsmName) {
+        CheckMhsmNameAvailabilityResultInner inner = this.serviceClient().checkMhsmNameAvailability(mhsmName);
+        if (inner != null) {
+            return new CheckMhsmNameAvailabilityResultImpl(inner, this.manager());
         } else {
             return null;
         }

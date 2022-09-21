@@ -37,15 +37,6 @@ public final class SubnetsImpl implements Subnets {
         this.serviceClient().delete(resourceGroupName, virtualNetworkName, subnetName, context);
     }
 
-    public Subnet get(String resourceGroupName, String virtualNetworkName, String subnetName) {
-        SubnetInner inner = this.serviceClient().get(resourceGroupName, virtualNetworkName, subnetName);
-        if (inner != null) {
-            return new SubnetImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<Subnet> getWithResponse(
         String resourceGroupName, String virtualNetworkName, String subnetName, String expand, Context context) {
         Response<SubnetInner> inner =
@@ -56,6 +47,15 @@ public final class SubnetsImpl implements Subnets {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new SubnetImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public Subnet get(String resourceGroupName, String virtualNetworkName, String subnetName) {
+        SubnetInner inner = this.serviceClient().get(resourceGroupName, virtualNetworkName, subnetName);
+        if (inner != null) {
+            return new SubnetImpl(inner, this.manager());
         } else {
             return null;
         }

@@ -23,6 +23,10 @@ public final class ReportConfigGrouping {
     @JsonProperty(value = "name", required = true)
     private String name;
 
+    /** Creates an instance of ReportConfigGrouping class. */
+    public ReportConfigGrouping() {
+    }
+
     /**
      * Get the type property: Has type of the column to group.
      *

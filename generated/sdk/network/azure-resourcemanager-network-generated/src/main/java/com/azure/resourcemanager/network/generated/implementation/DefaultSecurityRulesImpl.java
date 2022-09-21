@@ -40,16 +40,6 @@ public final class DefaultSecurityRulesImpl implements DefaultSecurityRules {
         return Utils.mapPage(inner, inner1 -> new SecurityRuleImpl(inner1, this.manager()));
     }
 
-    public SecurityRule get(String resourceGroupName, String networkSecurityGroupName, String defaultSecurityRuleName) {
-        SecurityRuleInner inner =
-            this.serviceClient().get(resourceGroupName, networkSecurityGroupName, defaultSecurityRuleName);
-        if (inner != null) {
-            return new SecurityRuleImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<SecurityRule> getWithResponse(
         String resourceGroupName, String networkSecurityGroupName, String defaultSecurityRuleName, Context context) {
         Response<SecurityRuleInner> inner =
@@ -62,6 +52,16 @@ public final class DefaultSecurityRulesImpl implements DefaultSecurityRules {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new SecurityRuleImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public SecurityRule get(String resourceGroupName, String networkSecurityGroupName, String defaultSecurityRuleName) {
+        SecurityRuleInner inner =
+            this.serviceClient().get(resourceGroupName, networkSecurityGroupName, defaultSecurityRuleName);
+        if (inner != null) {
+            return new SecurityRuleImpl(inner, this.manager());
         } else {
             return null;
         }

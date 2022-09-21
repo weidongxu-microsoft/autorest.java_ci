@@ -18,6 +18,10 @@ public final class CheckNameAvailability {
     @JsonProperty(value = "name", required = true)
     private String name;
 
+    /** Creates an instance of CheckNameAvailability class. */
+    public CheckNameAvailability() {
+    }
+
     /**
      * Get the name property: The namespace name to check for availability. The namespace name can contain only letters,
      * numbers, and hyphens. The namespace must start with a letter, and it must end with a letter or number.

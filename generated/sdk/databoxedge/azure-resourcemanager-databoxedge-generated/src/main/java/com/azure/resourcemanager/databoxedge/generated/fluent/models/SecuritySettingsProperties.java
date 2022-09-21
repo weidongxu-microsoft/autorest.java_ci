@@ -20,6 +20,10 @@ public final class SecuritySettingsProperties {
     @JsonProperty(value = "deviceAdminPassword", required = true)
     private AsymmetricEncryptedSecret deviceAdminPassword;
 
+    /** Creates an instance of SecuritySettingsProperties class. */
+    public SecuritySettingsProperties() {
+    }
+
     /**
      * Get the deviceAdminPassword property: Device administrator password as an encrypted string (encrypted using RSA
      * PKCS #1) is used to sign into the local web UI of the device. The Actual password should have at least 8

@@ -28,6 +28,10 @@ public final class DataBoxEdgeDeviceExtendedInfoInner extends ArmBaseModel {
     @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;
 
+    /** Creates an instance of DataBoxEdgeDeviceExtendedInfoInner class. */
+    public DataBoxEdgeDeviceExtendedInfoInner() {
+    }
+
     /**
      * Get the innerProperties property: The extended info properties.
      *

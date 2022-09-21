@@ -24,6 +24,10 @@ public final class ReservationSummariesListResult {
     @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
 
+    /** Creates an instance of ReservationSummariesListResult class. */
+    public ReservationSummariesListResult() {
+    }
+
     /**
      * Get the value property: The list of reservation summaries.
      *

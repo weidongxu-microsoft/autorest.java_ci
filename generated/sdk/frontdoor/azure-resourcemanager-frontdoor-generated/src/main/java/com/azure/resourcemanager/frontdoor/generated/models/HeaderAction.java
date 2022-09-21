@@ -29,6 +29,10 @@ public final class HeaderAction {
     @JsonProperty(value = "value")
     private String value;
 
+    /** Creates an instance of HeaderAction class. */
+    public HeaderAction() {
+    }
+
     /**
      * Get the headerActionType property: Which type of manipulation to apply to the header.
      *

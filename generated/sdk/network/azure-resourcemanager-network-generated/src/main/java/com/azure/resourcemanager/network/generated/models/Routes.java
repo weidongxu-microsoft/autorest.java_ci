@@ -41,19 +41,6 @@ public interface Routes {
      * @param resourceGroupName The name of the resource group.
      * @param routeTableName The name of the route table.
      * @param routeName The name of the route.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified route from a route table.
-     */
-    Route get(String resourceGroupName, String routeTableName, String routeName);
-
-    /**
-     * Gets the specified route from a route table.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param routeTableName The name of the route table.
-     * @param routeName The name of the route.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -61,6 +48,19 @@ public interface Routes {
      * @return the specified route from a route table along with {@link Response}.
      */
     Response<Route> getWithResponse(String resourceGroupName, String routeTableName, String routeName, Context context);
+
+    /**
+     * Gets the specified route from a route table.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param routeTableName The name of the route table.
+     * @param routeName The name of the route.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified route from a route table.
+     */
+    Route get(String resourceGroupName, String routeTableName, String routeName);
 
     /**
      * Gets all routes in a route table.

@@ -27,15 +27,6 @@ public final class PrivateLinkResourcesImpl implements PrivateLinkResources {
         this.serviceManager = serviceManager;
     }
 
-    public PrivateLinkResourcesListResult get(String resourceGroupName, String namespaceName) {
-        PrivateLinkResourcesListResultInner inner = this.serviceClient().get(resourceGroupName, namespaceName);
-        if (inner != null) {
-            return new PrivateLinkResourcesListResultImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<PrivateLinkResourcesListResult> getWithResponse(
         String resourceGroupName, String namespaceName, Context context) {
         Response<PrivateLinkResourcesListResultInner> inner =
@@ -46,6 +37,15 @@ public final class PrivateLinkResourcesImpl implements PrivateLinkResources {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new PrivateLinkResourcesListResultImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public PrivateLinkResourcesListResult get(String resourceGroupName, String namespaceName) {
+        PrivateLinkResourcesListResultInner inner = this.serviceClient().get(resourceGroupName, namespaceName);
+        if (inner != null) {
+            return new PrivateLinkResourcesListResultImpl(inner, this.manager());
         } else {
             return null;
         }

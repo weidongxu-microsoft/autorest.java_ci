@@ -17,6 +17,10 @@ public final class LogSearchRulePatch {
     @JsonProperty(value = "enabled")
     private Enabled enabled;
 
+    /** Creates an instance of LogSearchRulePatch class. */
+    public LogSearchRulePatch() {
+    }
+
     /**
      * Get the enabled property: The flag which indicates whether the Log Search rule is enabled. Value should be true
      * or false.

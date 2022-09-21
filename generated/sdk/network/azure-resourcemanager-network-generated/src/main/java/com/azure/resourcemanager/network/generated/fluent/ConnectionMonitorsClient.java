@@ -131,20 +131,6 @@ public interface ConnectionMonitorsClient {
      * @param resourceGroupName The name of the resource group containing Network Watcher.
      * @param networkWatcherName The name of the Network Watcher resource.
      * @param connectionMonitorName The name of the connection monitor.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a connection monitor by name.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    ConnectionMonitorResultInner get(String resourceGroupName, String networkWatcherName, String connectionMonitorName);
-
-    /**
-     * Gets a connection monitor by name.
-     *
-     * @param resourceGroupName The name of the resource group containing Network Watcher.
-     * @param networkWatcherName The name of the Network Watcher resource.
-     * @param connectionMonitorName The name of the connection monitor.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -154,6 +140,20 @@ public interface ConnectionMonitorsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ConnectionMonitorResultInner> getWithResponse(
         String resourceGroupName, String networkWatcherName, String connectionMonitorName, Context context);
+
+    /**
+     * Gets a connection monitor by name.
+     *
+     * @param resourceGroupName The name of the resource group containing Network Watcher.
+     * @param networkWatcherName The name of the Network Watcher resource.
+     * @param connectionMonitorName The name of the connection monitor.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a connection monitor by name.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    ConnectionMonitorResultInner get(String resourceGroupName, String networkWatcherName, String connectionMonitorName);
 
     /**
      * Deletes the specified connection monitor.
@@ -220,22 +220,6 @@ public interface ConnectionMonitorsClient {
      * @param networkWatcherName The name of the network watcher.
      * @param connectionMonitorName The name of the connection monitor.
      * @param parameters Parameters supplied to update connection monitor tags.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the connection monitor.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    ConnectionMonitorResultInner updateTags(
-        String resourceGroupName, String networkWatcherName, String connectionMonitorName, TagsObject parameters);
-
-    /**
-     * Update tags of the specified connection monitor.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param networkWatcherName The name of the network watcher.
-     * @param connectionMonitorName The name of the connection monitor.
-     * @param parameters Parameters supplied to update connection monitor tags.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -249,6 +233,22 @@ public interface ConnectionMonitorsClient {
         String connectionMonitorName,
         TagsObject parameters,
         Context context);
+
+    /**
+     * Update tags of the specified connection monitor.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param networkWatcherName The name of the network watcher.
+     * @param connectionMonitorName The name of the connection monitor.
+     * @param parameters Parameters supplied to update connection monitor tags.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return information about the connection monitor.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    ConnectionMonitorResultInner updateTags(
+        String resourceGroupName, String networkWatcherName, String connectionMonitorName, TagsObject parameters);
 
     /**
      * Stops the specified connection monitor.

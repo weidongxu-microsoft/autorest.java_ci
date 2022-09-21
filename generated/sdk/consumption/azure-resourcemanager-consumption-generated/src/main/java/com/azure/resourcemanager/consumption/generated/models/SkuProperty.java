@@ -22,6 +22,10 @@ public final class SkuProperty {
     @JsonProperty(value = "value", access = JsonProperty.Access.WRITE_ONLY)
     private String value;
 
+    /** Creates an instance of SkuProperty class. */
+    public SkuProperty() {
+    }
+
     /**
      * Get the name property: The name of sku property.
      *

@@ -51,15 +51,6 @@ public final class VirtualMachineScaleSetRollingUpgradesImpl implements VirtualM
         this.serviceClient().startExtensionUpgrade(resourceGroupName, vmScaleSetName, context);
     }
 
-    public RollingUpgradeStatusInfo getLatest(String resourceGroupName, String vmScaleSetName) {
-        RollingUpgradeStatusInfoInner inner = this.serviceClient().getLatest(resourceGroupName, vmScaleSetName);
-        if (inner != null) {
-            return new RollingUpgradeStatusInfoImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<RollingUpgradeStatusInfo> getLatestWithResponse(
         String resourceGroupName, String vmScaleSetName, Context context) {
         Response<RollingUpgradeStatusInfoInner> inner =
@@ -70,6 +61,15 @@ public final class VirtualMachineScaleSetRollingUpgradesImpl implements VirtualM
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new RollingUpgradeStatusInfoImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public RollingUpgradeStatusInfo getLatest(String resourceGroupName, String vmScaleSetName) {
+        RollingUpgradeStatusInfoInner inner = this.serviceClient().getLatest(resourceGroupName, vmScaleSetName);
+        if (inner != null) {
+            return new RollingUpgradeStatusInfoImpl(inner, this.manager());
         } else {
             return null;
         }

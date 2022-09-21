@@ -18,6 +18,10 @@ public final class LogFileInner extends ProxyResource {
     @JsonProperty(value = "properties")
     private LogFileProperties innerProperties;
 
+    /** Creates an instance of LogFileInner class. */
+    public LogFileInner() {
+    }
+
     /**
      * Get the innerProperties property: The properties of the log file.
      *

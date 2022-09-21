@@ -20,19 +20,6 @@ public interface NetworkSecurityPerimeterConfigurationsClient {
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of current NetworkSecurityPerimeterConfiguration for Namespace.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    NetworkSecurityPerimeterConfigurationListInner list(String resourceGroupName, String namespaceName);
-
-    /**
-     * Gets list of current NetworkSecurityPerimeterConfiguration for Namespace.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param namespaceName The Namespace name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -42,4 +29,17 @@ public interface NetworkSecurityPerimeterConfigurationsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<NetworkSecurityPerimeterConfigurationListInner> listWithResponse(
         String resourceGroupName, String namespaceName, Context context);
+
+    /**
+     * Gets list of current NetworkSecurityPerimeterConfiguration for Namespace.
+     *
+     * @param resourceGroupName Name of the resource group within the azure subscription.
+     * @param namespaceName The Namespace name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return list of current NetworkSecurityPerimeterConfiguration for Namespace.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    NetworkSecurityPerimeterConfigurationListInner list(String resourceGroupName, String namespaceName);
 }

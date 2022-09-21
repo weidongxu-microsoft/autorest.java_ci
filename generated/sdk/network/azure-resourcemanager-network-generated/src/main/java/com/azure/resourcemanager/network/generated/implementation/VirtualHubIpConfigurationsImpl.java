@@ -28,15 +28,6 @@ public final class VirtualHubIpConfigurationsImpl implements VirtualHubIpConfigu
         this.serviceManager = serviceManager;
     }
 
-    public HubIpConfiguration get(String resourceGroupName, String virtualHubName, String ipConfigName) {
-        HubIpConfigurationInner inner = this.serviceClient().get(resourceGroupName, virtualHubName, ipConfigName);
-        if (inner != null) {
-            return new HubIpConfigurationImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<HubIpConfiguration> getWithResponse(
         String resourceGroupName, String virtualHubName, String ipConfigName, Context context) {
         Response<HubIpConfigurationInner> inner =
@@ -47,6 +38,15 @@ public final class VirtualHubIpConfigurationsImpl implements VirtualHubIpConfigu
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new HubIpConfigurationImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public HubIpConfiguration get(String resourceGroupName, String virtualHubName, String ipConfigName) {
+        HubIpConfigurationInner inner = this.serviceClient().get(resourceGroupName, virtualHubName, ipConfigName);
+        if (inner != null) {
+            return new HubIpConfigurationImpl(inner, this.manager());
         } else {
             return null;
         }

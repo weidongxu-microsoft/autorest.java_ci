@@ -50,15 +50,6 @@ public final class ContainerAppsImpl implements ContainerApps {
         return Utils.mapPage(inner, inner1 -> new ContainerAppImpl(inner1, this.manager()));
     }
 
-    public ContainerApp getByResourceGroup(String resourceGroupName, String name) {
-        ContainerAppInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, name);
-        if (inner != null) {
-            return new ContainerAppImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<ContainerApp> getByResourceGroupWithResponse(
         String resourceGroupName, String name, Context context) {
         Response<ContainerAppInner> inner =
@@ -74,21 +65,21 @@ public final class ContainerAppsImpl implements ContainerApps {
         }
     }
 
+    public ContainerApp getByResourceGroup(String resourceGroupName, String name) {
+        ContainerAppInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, name);
+        if (inner != null) {
+            return new ContainerAppImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
     public void deleteByResourceGroup(String resourceGroupName, String name) {
         this.serviceClient().delete(resourceGroupName, name);
     }
 
     public void delete(String resourceGroupName, String name, Context context) {
         this.serviceClient().delete(resourceGroupName, name, context);
-    }
-
-    public SecretsCollection listSecrets(String name) {
-        SecretsCollectionInner inner = this.serviceClient().listSecrets(name);
-        if (inner != null) {
-            return new SecretsCollectionImpl(inner, this.manager());
-        } else {
-            return null;
-        }
     }
 
     public Response<SecretsCollection> listSecretsWithResponse(String name, Context context) {
@@ -99,6 +90,15 @@ public final class ContainerAppsImpl implements ContainerApps {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new SecretsCollectionImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public SecretsCollection listSecrets(String name) {
+        SecretsCollectionInner inner = this.serviceClient().listSecrets(name);
+        if (inner != null) {
+            return new SecretsCollectionImpl(inner, this.manager());
         } else {
             return null;
         }

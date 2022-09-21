@@ -27,6 +27,10 @@ public final class ApplicationListResult {
     @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
 
+    /** Creates an instance of ApplicationListResult class. */
+    public ApplicationListResult() {
+    }
+
     /**
      * Get the value property: The list of HDInsight applications installed on HDInsight cluster.
      *

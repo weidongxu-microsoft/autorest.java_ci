@@ -360,11 +360,12 @@ public final class PolicyDefinitionsClientImpl implements PolicyDefinitionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy definition.
+     * @return the policy definition along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public PolicyDefinitionInner createOrUpdate(String policyDefinitionName, PolicyDefinitionInner parameters) {
-        return createOrUpdateAsync(policyDefinitionName, parameters).block();
+    public Response<PolicyDefinitionInner> createOrUpdateWithResponse(
+        String policyDefinitionName, PolicyDefinitionInner parameters) {
+        return createOrUpdateWithResponseAsync(policyDefinitionName, parameters).block();
     }
 
     /**
@@ -384,6 +385,23 @@ public final class PolicyDefinitionsClientImpl implements PolicyDefinitionsClien
     public Response<PolicyDefinitionInner> createOrUpdateWithResponse(
         String policyDefinitionName, PolicyDefinitionInner parameters, Context context) {
         return createOrUpdateWithResponseAsync(policyDefinitionName, parameters, context).block();
+    }
+
+    /**
+     * Creates or updates a policy definition in a subscription.
+     *
+     * <p>This operation creates or updates a policy definition in the given subscription with the given name.
+     *
+     * @param policyDefinitionName The name of the policy definition to create.
+     * @param parameters The policy definition properties.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the policy definition.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public PolicyDefinitionInner createOrUpdate(String policyDefinitionName, PolicyDefinitionInner parameters) {
+        return createOrUpdateWithResponse(policyDefinitionName, parameters, Context.NONE).getValue();
     }
 
     /**
@@ -499,10 +517,11 @@ public final class PolicyDefinitionsClientImpl implements PolicyDefinitionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public void delete(String policyDefinitionName) {
-        deleteAsync(policyDefinitionName).block();
+    public Response<Void> deleteWithResponse(String policyDefinitionName) {
+        return deleteWithResponseAsync(policyDefinitionName).block();
     }
 
     /**
@@ -520,6 +539,21 @@ public final class PolicyDefinitionsClientImpl implements PolicyDefinitionsClien
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> deleteWithResponse(String policyDefinitionName, Context context) {
         return deleteWithResponseAsync(policyDefinitionName, context).block();
+    }
+
+    /**
+     * Deletes a policy definition in a subscription.
+     *
+     * <p>This operation deletes the policy definition in the given subscription with the given name.
+     *
+     * @param policyDefinitionName The name of the policy definition to delete.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public void delete(String policyDefinitionName) {
+        deleteWithResponse(policyDefinitionName, Context.NONE);
     }
 
     /**
@@ -635,11 +669,11 @@ public final class PolicyDefinitionsClientImpl implements PolicyDefinitionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy definition.
+     * @return the policy definition along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public PolicyDefinitionInner get(String policyDefinitionName) {
-        return getAsync(policyDefinitionName).block();
+    public Response<PolicyDefinitionInner> getWithResponse(String policyDefinitionName) {
+        return getWithResponseAsync(policyDefinitionName).block();
     }
 
     /**
@@ -657,6 +691,22 @@ public final class PolicyDefinitionsClientImpl implements PolicyDefinitionsClien
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<PolicyDefinitionInner> getWithResponse(String policyDefinitionName, Context context) {
         return getWithResponseAsync(policyDefinitionName, context).block();
+    }
+
+    /**
+     * Retrieves a policy definition in a subscription.
+     *
+     * <p>This operation retrieves the policy definition in the given subscription with the given name.
+     *
+     * @param policyDefinitionName The name of the policy definition to get.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the policy definition.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public PolicyDefinitionInner get(String policyDefinitionName) {
+        return getWithResponse(policyDefinitionName, Context.NONE).getValue();
     }
 
     /**
@@ -747,11 +797,11 @@ public final class PolicyDefinitionsClientImpl implements PolicyDefinitionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy definition.
+     * @return the policy definition along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public PolicyDefinitionInner getBuiltIn(String policyDefinitionName) {
-        return getBuiltInAsync(policyDefinitionName).block();
+    public Response<PolicyDefinitionInner> getBuiltInWithResponse(String policyDefinitionName) {
+        return getBuiltInWithResponseAsync(policyDefinitionName).block();
     }
 
     /**
@@ -769,6 +819,22 @@ public final class PolicyDefinitionsClientImpl implements PolicyDefinitionsClien
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<PolicyDefinitionInner> getBuiltInWithResponse(String policyDefinitionName, Context context) {
         return getBuiltInWithResponseAsync(policyDefinitionName, context).block();
+    }
+
+    /**
+     * Retrieves a built-in policy definition.
+     *
+     * <p>This operation retrieves the built-in policy definition with the given name.
+     *
+     * @param policyDefinitionName The name of the built-in policy definition to get.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the policy definition.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public PolicyDefinitionInner getBuiltIn(String policyDefinitionName) {
+        return getBuiltInWithResponse(policyDefinitionName, Context.NONE).getValue();
     }
 
     /**
@@ -904,12 +970,13 @@ public final class PolicyDefinitionsClientImpl implements PolicyDefinitionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy definition.
+     * @return the policy definition along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public PolicyDefinitionInner createOrUpdateAtManagementGroup(
+    public Response<PolicyDefinitionInner> createOrUpdateAtManagementGroupWithResponse(
         String policyDefinitionName, String managementGroupId, PolicyDefinitionInner parameters) {
-        return createOrUpdateAtManagementGroupAsync(policyDefinitionName, managementGroupId, parameters).block();
+        return createOrUpdateAtManagementGroupWithResponseAsync(policyDefinitionName, managementGroupId, parameters)
+            .block();
     }
 
     /**
@@ -932,6 +999,27 @@ public final class PolicyDefinitionsClientImpl implements PolicyDefinitionsClien
         return createOrUpdateAtManagementGroupWithResponseAsync(
                 policyDefinitionName, managementGroupId, parameters, context)
             .block();
+    }
+
+    /**
+     * Creates or updates a policy definition in a management group.
+     *
+     * <p>This operation creates or updates a policy definition in the given management group with the given name.
+     *
+     * @param policyDefinitionName The name of the policy definition to create.
+     * @param managementGroupId The ID of the management group.
+     * @param parameters The policy definition properties.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the policy definition.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public PolicyDefinitionInner createOrUpdateAtManagementGroup(
+        String policyDefinitionName, String managementGroupId, PolicyDefinitionInner parameters) {
+        return createOrUpdateAtManagementGroupWithResponse(
+                policyDefinitionName, managementGroupId, parameters, Context.NONE)
+            .getValue();
     }
 
     /**
@@ -1045,10 +1133,11 @@ public final class PolicyDefinitionsClientImpl implements PolicyDefinitionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public void deleteAtManagementGroup(String policyDefinitionName, String managementGroupId) {
-        deleteAtManagementGroupAsync(policyDefinitionName, managementGroupId).block();
+    public Response<Void> deleteAtManagementGroupWithResponse(String policyDefinitionName, String managementGroupId) {
+        return deleteAtManagementGroupWithResponseAsync(policyDefinitionName, managementGroupId).block();
     }
 
     /**
@@ -1068,6 +1157,22 @@ public final class PolicyDefinitionsClientImpl implements PolicyDefinitionsClien
     public Response<Void> deleteAtManagementGroupWithResponse(
         String policyDefinitionName, String managementGroupId, Context context) {
         return deleteAtManagementGroupWithResponseAsync(policyDefinitionName, managementGroupId, context).block();
+    }
+
+    /**
+     * Deletes a policy definition in a management group.
+     *
+     * <p>This operation deletes the policy definition in the given management group with the given name.
+     *
+     * @param policyDefinitionName The name of the policy definition to delete.
+     * @param managementGroupId The ID of the management group.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public void deleteAtManagementGroup(String policyDefinitionName, String managementGroupId) {
+        deleteAtManagementGroupWithResponse(policyDefinitionName, managementGroupId, Context.NONE);
     }
 
     /**
@@ -1182,11 +1287,12 @@ public final class PolicyDefinitionsClientImpl implements PolicyDefinitionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy definition.
+     * @return the policy definition along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public PolicyDefinitionInner getAtManagementGroup(String policyDefinitionName, String managementGroupId) {
-        return getAtManagementGroupAsync(policyDefinitionName, managementGroupId).block();
+    public Response<PolicyDefinitionInner> getAtManagementGroupWithResponse(
+        String policyDefinitionName, String managementGroupId) {
+        return getAtManagementGroupWithResponseAsync(policyDefinitionName, managementGroupId).block();
     }
 
     /**
@@ -1206,6 +1312,23 @@ public final class PolicyDefinitionsClientImpl implements PolicyDefinitionsClien
     public Response<PolicyDefinitionInner> getAtManagementGroupWithResponse(
         String policyDefinitionName, String managementGroupId, Context context) {
         return getAtManagementGroupWithResponseAsync(policyDefinitionName, managementGroupId, context).block();
+    }
+
+    /**
+     * Retrieve a policy definition in a management group.
+     *
+     * <p>This operation retrieves the policy definition in the given management group with the given name.
+     *
+     * @param policyDefinitionName The name of the policy definition to get.
+     * @param managementGroupId The ID of the management group.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the policy definition.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public PolicyDefinitionInner getAtManagementGroup(String policyDefinitionName, String managementGroupId) {
+        return getAtManagementGroupWithResponse(policyDefinitionName, managementGroupId, Context.NONE).getValue();
     }
 
     /**

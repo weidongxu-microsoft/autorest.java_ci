@@ -30,6 +30,10 @@ public final class Destination {
     @JsonProperty(value = "metaData")
     private DestinationMetadata innerMetadata;
 
+    /** Creates an instance of Destination class. */
+    public Destination() {
+    }
+
     /**
      * Get the resourceId property: The destination resource ID. This can be copied from the Properties entry of the
      * destination resource in Azure.

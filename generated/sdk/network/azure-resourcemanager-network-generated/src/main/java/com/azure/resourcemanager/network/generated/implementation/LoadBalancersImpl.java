@@ -39,15 +39,6 @@ public final class LoadBalancersImpl implements LoadBalancers {
         this.serviceClient().delete(resourceGroupName, loadBalancerName, context);
     }
 
-    public LoadBalancer getByResourceGroup(String resourceGroupName, String loadBalancerName) {
-        LoadBalancerInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, loadBalancerName);
-        if (inner != null) {
-            return new LoadBalancerImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<LoadBalancer> getByResourceGroupWithResponse(
         String resourceGroupName, String loadBalancerName, String expand, Context context) {
         Response<LoadBalancerInner> inner =
@@ -58,6 +49,15 @@ public final class LoadBalancersImpl implements LoadBalancers {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new LoadBalancerImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public LoadBalancer getByResourceGroup(String resourceGroupName, String loadBalancerName) {
+        LoadBalancerInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, loadBalancerName);
+        if (inner != null) {
+            return new LoadBalancerImpl(inner, this.manager());
         } else {
             return null;
         }

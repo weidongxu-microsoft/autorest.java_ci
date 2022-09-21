@@ -53,6 +53,10 @@ public final class NumaNodeData {
     @JsonProperty(value = "vCpuIndexesForRoot")
     private List<Integer> vCpuIndexesForRoot;
 
+    /** Creates an instance of NumaNodeData class. */
+    public NumaNodeData() {
+    }
+
     /**
      * Get the numaNodeIndex property: The NUMA node index.
      *

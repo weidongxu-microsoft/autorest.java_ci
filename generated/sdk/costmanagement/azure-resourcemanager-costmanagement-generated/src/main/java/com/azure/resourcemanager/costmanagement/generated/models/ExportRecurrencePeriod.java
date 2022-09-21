@@ -24,6 +24,10 @@ public final class ExportRecurrencePeriod {
     @JsonProperty(value = "to")
     private OffsetDateTime to;
 
+    /** Creates an instance of ExportRecurrencePeriod class. */
+    public ExportRecurrencePeriod() {
+    }
+
     /**
      * Get the from property: The start date of recurrence.
      *

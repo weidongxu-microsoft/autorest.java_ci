@@ -42,15 +42,6 @@ public final class VirtualMachineRunCommandsImpl implements VirtualMachineRunCom
         return Utils.mapPage(inner, inner1 -> new RunCommandDocumentBaseImpl(inner1, this.manager()));
     }
 
-    public RunCommandDocument get(String location, String commandId) {
-        RunCommandDocumentInner inner = this.serviceClient().get(location, commandId);
-        if (inner != null) {
-            return new RunCommandDocumentImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<RunCommandDocument> getWithResponse(String location, String commandId, Context context) {
         Response<RunCommandDocumentInner> inner = this.serviceClient().getWithResponse(location, commandId, context);
         if (inner != null) {
@@ -64,23 +55,21 @@ public final class VirtualMachineRunCommandsImpl implements VirtualMachineRunCom
         }
     }
 
+    public RunCommandDocument get(String location, String commandId) {
+        RunCommandDocumentInner inner = this.serviceClient().get(location, commandId);
+        if (inner != null) {
+            return new RunCommandDocumentImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
     public void delete(String resourceGroupName, String vmName, String runCommandName) {
         this.serviceClient().delete(resourceGroupName, vmName, runCommandName);
     }
 
     public void delete(String resourceGroupName, String vmName, String runCommandName, Context context) {
         this.serviceClient().delete(resourceGroupName, vmName, runCommandName, context);
-    }
-
-    public VirtualMachineRunCommand getByVirtualMachine(
-        String resourceGroupName, String vmName, String runCommandName) {
-        VirtualMachineRunCommandInner inner =
-            this.serviceClient().getByVirtualMachine(resourceGroupName, vmName, runCommandName);
-        if (inner != null) {
-            return new VirtualMachineRunCommandImpl(inner, this.manager());
-        } else {
-            return null;
-        }
     }
 
     public Response<VirtualMachineRunCommand> getByVirtualMachineWithResponse(
@@ -95,6 +84,17 @@ public final class VirtualMachineRunCommandsImpl implements VirtualMachineRunCom
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new VirtualMachineRunCommandImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public VirtualMachineRunCommand getByVirtualMachine(
+        String resourceGroupName, String vmName, String runCommandName) {
+        VirtualMachineRunCommandInner inner =
+            this.serviceClient().getByVirtualMachine(resourceGroupName, vmName, runCommandName);
+        if (inner != null) {
+            return new VirtualMachineRunCommandImpl(inner, this.manager());
         } else {
             return null;
         }

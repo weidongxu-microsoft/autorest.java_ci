@@ -25,6 +25,10 @@ public final class SecretPatchParameters {
     @JsonProperty(value = "properties")
     private SecretPatchProperties properties;
 
+    /** Creates an instance of SecretPatchParameters class. */
+    public SecretPatchParameters() {
+    }
+
     /**
      * Get the tags property: The tags that will be assigned to the secret.
      *

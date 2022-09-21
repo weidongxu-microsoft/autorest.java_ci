@@ -61,6 +61,10 @@ public final class DenyAssignmentProperties {
     @JsonProperty(value = "isSystemProtected")
     private Boolean isSystemProtected;
 
+    /** Creates an instance of DenyAssignmentProperties class. */
+    public DenyAssignmentProperties() {
+    }
+
     /**
      * Get the denyAssignmentName property: The display name of the deny assignment.
      *

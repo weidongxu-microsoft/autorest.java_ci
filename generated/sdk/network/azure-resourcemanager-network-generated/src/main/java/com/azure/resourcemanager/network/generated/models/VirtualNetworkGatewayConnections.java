@@ -17,19 +17,6 @@ public interface VirtualNetworkGatewayConnections {
      *
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayConnectionName The name of the virtual network gateway connection.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified virtual network gateway connection by resource group.
-     */
-    VirtualNetworkGatewayConnection getByResourceGroup(
-        String resourceGroupName, String virtualNetworkGatewayConnectionName);
-
-    /**
-     * Gets the specified virtual network gateway connection by resource group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param virtualNetworkGatewayConnectionName The name of the virtual network gateway connection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -38,6 +25,19 @@ public interface VirtualNetworkGatewayConnections {
      */
     Response<VirtualNetworkGatewayConnection> getByResourceGroupWithResponse(
         String resourceGroupName, String virtualNetworkGatewayConnectionName, Context context);
+
+    /**
+     * Gets the specified virtual network gateway connection by resource group.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param virtualNetworkGatewayConnectionName The name of the virtual network gateway connection.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified virtual network gateway connection by resource group.
+     */
+    VirtualNetworkGatewayConnection getByResourceGroup(
+        String resourceGroupName, String virtualNetworkGatewayConnectionName);
 
     /**
      * Deletes the specified virtual network Gateway connection.
@@ -104,19 +104,6 @@ public interface VirtualNetworkGatewayConnections {
      *
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayConnectionName The virtual network gateway connection shared key name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for GetConnectionSharedKey API service call.
-     */
-    ConnectionSharedKey getSharedKey(String resourceGroupName, String virtualNetworkGatewayConnectionName);
-
-    /**
-     * The Get VirtualNetworkGatewayConnectionSharedKey operation retrieves information about the specified virtual
-     * network gateway connection shared key through Network resource provider.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param virtualNetworkGatewayConnectionName The virtual network gateway connection shared key name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -125,6 +112,19 @@ public interface VirtualNetworkGatewayConnections {
      */
     Response<ConnectionSharedKey> getSharedKeyWithResponse(
         String resourceGroupName, String virtualNetworkGatewayConnectionName, Context context);
+
+    /**
+     * The Get VirtualNetworkGatewayConnectionSharedKey operation retrieves information about the specified virtual
+     * network gateway connection shared key through Network resource provider.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param virtualNetworkGatewayConnectionName The virtual network gateway connection shared key name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return response for GetConnectionSharedKey API service call.
+     */
+    ConnectionSharedKey getSharedKey(String resourceGroupName, String virtualNetworkGatewayConnectionName);
 
     /**
      * The List VirtualNetworkGatewayConnections operation retrieves all the virtual network gateways connections

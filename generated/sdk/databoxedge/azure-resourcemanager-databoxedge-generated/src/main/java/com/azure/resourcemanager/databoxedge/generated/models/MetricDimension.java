@@ -23,6 +23,10 @@ public final class MetricDimension {
     @JsonProperty(value = "sourceName", required = true)
     private String sourceName;
 
+    /** Creates an instance of MetricDimension class. */
+    public MetricDimension() {
+    }
+
     /**
      * Get the sourceType property: The dimension type.
      *

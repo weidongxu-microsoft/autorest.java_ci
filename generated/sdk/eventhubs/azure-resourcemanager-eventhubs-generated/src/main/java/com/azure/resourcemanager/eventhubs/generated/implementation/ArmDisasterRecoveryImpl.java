@@ -172,24 +172,24 @@ public final class ArmDisasterRecoveryImpl
         return this;
     }
 
-    public void breakPairing() {
-        serviceManager.disasterRecoveryConfigs().breakPairing(resourceGroupName, namespaceName, alias);
-    }
-
     public Response<Void> breakPairingWithResponse(Context context) {
         return serviceManager
             .disasterRecoveryConfigs()
             .breakPairingWithResponse(resourceGroupName, namespaceName, alias, context);
     }
 
-    public void failOver() {
-        serviceManager.disasterRecoveryConfigs().failOver(resourceGroupName, namespaceName, alias);
+    public void breakPairing() {
+        serviceManager.disasterRecoveryConfigs().breakPairing(resourceGroupName, namespaceName, alias);
     }
 
     public Response<Void> failOverWithResponse(Context context) {
         return serviceManager
             .disasterRecoveryConfigs()
             .failOverWithResponse(resourceGroupName, namespaceName, alias, context);
+    }
+
+    public void failOver() {
+        serviceManager.disasterRecoveryConfigs().failOver(resourceGroupName, namespaceName, alias);
     }
 
     public ArmDisasterRecoveryImpl withPartnerNamespace(String partnerNamespace) {

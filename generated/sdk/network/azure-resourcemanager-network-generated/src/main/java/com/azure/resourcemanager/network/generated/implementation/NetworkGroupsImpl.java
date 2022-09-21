@@ -27,15 +27,6 @@ public final class NetworkGroupsImpl implements NetworkGroups {
         this.serviceManager = serviceManager;
     }
 
-    public NetworkGroup get(String resourceGroupName, String networkManagerName, String networkGroupName) {
-        NetworkGroupInner inner = this.serviceClient().get(resourceGroupName, networkManagerName, networkGroupName);
-        if (inner != null) {
-            return new NetworkGroupImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<NetworkGroup> getWithResponse(
         String resourceGroupName, String networkManagerName, String networkGroupName, Context context) {
         Response<NetworkGroupInner> inner =
@@ -46,6 +37,15 @@ public final class NetworkGroupsImpl implements NetworkGroups {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new NetworkGroupImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public NetworkGroup get(String resourceGroupName, String networkManagerName, String networkGroupName) {
+        NetworkGroupInner inner = this.serviceClient().get(resourceGroupName, networkManagerName, networkGroupName);
+        if (inner != null) {
+            return new NetworkGroupImpl(inner, this.manager());
         } else {
             return null;
         }

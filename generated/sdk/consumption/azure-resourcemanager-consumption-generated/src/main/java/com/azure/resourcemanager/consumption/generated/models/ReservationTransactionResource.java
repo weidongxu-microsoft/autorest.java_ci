@@ -18,6 +18,10 @@ public class ReservationTransactionResource extends ProxyResource {
     @JsonProperty(value = "tags", access = JsonProperty.Access.WRITE_ONLY)
     private List<String> tags;
 
+    /** Creates an instance of ReservationTransactionResource class. */
+    public ReservationTransactionResource() {
+    }
+
     /**
      * Get the tags property: Resource tags.
      *

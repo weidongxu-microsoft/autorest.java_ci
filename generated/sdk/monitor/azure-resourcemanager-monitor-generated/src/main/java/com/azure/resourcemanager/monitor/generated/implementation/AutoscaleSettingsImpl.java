@@ -40,22 +40,13 @@ public final class AutoscaleSettingsImpl implements AutoscaleSettings {
         return Utils.mapPage(inner, inner1 -> new AutoscaleSettingResourceImpl(inner1, this.manager()));
     }
 
-    public void deleteByResourceGroup(String resourceGroupName, String autoscaleSettingName) {
-        this.serviceClient().delete(resourceGroupName, autoscaleSettingName);
-    }
-
-    public Response<Void> deleteWithResponse(String resourceGroupName, String autoscaleSettingName, Context context) {
+    public Response<Void> deleteByResourceGroupWithResponse(
+        String resourceGroupName, String autoscaleSettingName, Context context) {
         return this.serviceClient().deleteWithResponse(resourceGroupName, autoscaleSettingName, context);
     }
 
-    public AutoscaleSettingResource getByResourceGroup(String resourceGroupName, String autoscaleSettingName) {
-        AutoscaleSettingResourceInner inner =
-            this.serviceClient().getByResourceGroup(resourceGroupName, autoscaleSettingName);
-        if (inner != null) {
-            return new AutoscaleSettingResourceImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void deleteByResourceGroup(String resourceGroupName, String autoscaleSettingName) {
+        this.serviceClient().delete(resourceGroupName, autoscaleSettingName);
     }
 
     public Response<AutoscaleSettingResource> getByResourceGroupWithResponse(
@@ -68,6 +59,16 @@ public final class AutoscaleSettingsImpl implements AutoscaleSettings {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new AutoscaleSettingResourceImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public AutoscaleSettingResource getByResourceGroup(String resourceGroupName, String autoscaleSettingName) {
+        AutoscaleSettingResourceInner inner =
+            this.serviceClient().getByResourceGroup(resourceGroupName, autoscaleSettingName);
+        if (inner != null) {
+            return new AutoscaleSettingResourceImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -143,7 +144,7 @@ public final class AutoscaleSettingsImpl implements AutoscaleSettings {
                             .format(
                                 "The resource ID '%s' is not valid. Missing path segment 'autoscalesettings'.", id)));
         }
-        this.deleteWithResponse(resourceGroupName, autoscaleSettingName, Context.NONE);
+        this.deleteByResourceGroupWithResponse(resourceGroupName, autoscaleSettingName, Context.NONE);
     }
 
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
@@ -164,7 +165,7 @@ public final class AutoscaleSettingsImpl implements AutoscaleSettings {
                             .format(
                                 "The resource ID '%s' is not valid. Missing path segment 'autoscalesettings'.", id)));
         }
-        return this.deleteWithResponse(resourceGroupName, autoscaleSettingName, context);
+        return this.deleteByResourceGroupWithResponse(resourceGroupName, autoscaleSettingName, context);
     }
 
     private AutoscaleSettingsClient serviceClient() {

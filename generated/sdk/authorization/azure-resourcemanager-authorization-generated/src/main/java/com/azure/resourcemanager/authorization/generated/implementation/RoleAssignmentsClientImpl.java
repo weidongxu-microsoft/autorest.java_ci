@@ -870,11 +870,11 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return role Assignments.
+     * @return role Assignments along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public RoleAssignmentInner delete(String scope, String roleAssignmentName) {
-        return deleteAsync(scope, roleAssignmentName).block();
+    public Response<RoleAssignmentInner> deleteWithResponse(String scope, String roleAssignmentName) {
+        return deleteWithResponseAsync(scope, roleAssignmentName).block();
     }
 
     /**
@@ -891,6 +891,21 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<RoleAssignmentInner> deleteWithResponse(String scope, String roleAssignmentName, Context context) {
         return deleteWithResponseAsync(scope, roleAssignmentName, context).block();
+    }
+
+    /**
+     * Deletes a role assignment.
+     *
+     * @param scope The scope of the role assignment to delete.
+     * @param roleAssignmentName The name of the role assignment to delete.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return role Assignments.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public RoleAssignmentInner delete(String scope, String roleAssignmentName) {
+        return deleteWithResponse(scope, roleAssignmentName, Context.NONE).getValue();
     }
 
     /**
@@ -1029,12 +1044,12 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return role Assignments.
+     * @return role Assignments along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public RoleAssignmentInner create(
+    public Response<RoleAssignmentInner> createWithResponse(
         String scope, String roleAssignmentName, RoleAssignmentCreateParameters parameters) {
-        return createAsync(scope, roleAssignmentName, parameters).block();
+        return createWithResponseAsync(scope, roleAssignmentName, parameters).block();
     }
 
     /**
@@ -1058,6 +1073,28 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
     public Response<RoleAssignmentInner> createWithResponse(
         String scope, String roleAssignmentName, RoleAssignmentCreateParameters parameters, Context context) {
         return createWithResponseAsync(scope, roleAssignmentName, parameters, context).block();
+    }
+
+    /**
+     * Creates a role assignment.
+     *
+     * @param scope The scope of the role assignment to create. The scope can be any REST resource instance. For
+     *     example, use '/subscriptions/{subscription-id}/' for a subscription,
+     *     '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}' for a resource group, and
+     *     '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/{resource-provider}/{resource-type}/{resource-name}'
+     *     for a resource.
+     * @param roleAssignmentName A GUID for the role assignment to create. The name must be unique and different for
+     *     each role assignment.
+     * @param parameters Parameters for the role assignment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return role Assignments.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public RoleAssignmentInner create(
+        String scope, String roleAssignmentName, RoleAssignmentCreateParameters parameters) {
+        return createWithResponse(scope, roleAssignmentName, parameters, Context.NONE).getValue();
     }
 
     /**
@@ -1150,11 +1187,11 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified role assignment.
+     * @return the specified role assignment along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public RoleAssignmentInner get(String scope, String roleAssignmentName) {
-        return getAsync(scope, roleAssignmentName).block();
+    public Response<RoleAssignmentInner> getWithResponse(String scope, String roleAssignmentName) {
+        return getWithResponseAsync(scope, roleAssignmentName).block();
     }
 
     /**
@@ -1171,6 +1208,21 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<RoleAssignmentInner> getWithResponse(String scope, String roleAssignmentName, Context context) {
         return getWithResponseAsync(scope, roleAssignmentName, context).block();
+    }
+
+    /**
+     * Get the specified role assignment.
+     *
+     * @param scope The scope of the role assignment.
+     * @param roleAssignmentName The name of the role assignment to get.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified role assignment.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public RoleAssignmentInner get(String scope, String roleAssignmentName) {
+        return getWithResponse(scope, roleAssignmentName, Context.NONE).getValue();
     }
 
     /**
@@ -1248,11 +1300,11 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return role Assignments.
+     * @return role Assignments along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public RoleAssignmentInner deleteById(String roleId) {
-        return deleteByIdAsync(roleId).block();
+    public Response<RoleAssignmentInner> deleteByIdWithResponse(String roleId) {
+        return deleteByIdWithResponseAsync(roleId).block();
     }
 
     /**
@@ -1268,6 +1320,20 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<RoleAssignmentInner> deleteByIdWithResponse(String roleId, Context context) {
         return deleteByIdWithResponseAsync(roleId, context).block();
+    }
+
+    /**
+     * Deletes a role assignment.
+     *
+     * @param roleId The ID of the role assignment to delete.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return role Assignments.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public RoleAssignmentInner deleteById(String roleId) {
+        return deleteByIdWithResponse(roleId, Context.NONE).getValue();
     }
 
     /**
@@ -1363,11 +1429,12 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return role Assignments.
+     * @return role Assignments along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public RoleAssignmentInner createById(String roleId, RoleAssignmentCreateParameters parameters) {
-        return createByIdAsync(roleId, parameters).block();
+    public Response<RoleAssignmentInner> createByIdWithResponse(
+        String roleId, RoleAssignmentCreateParameters parameters) {
+        return createByIdWithResponseAsync(roleId, parameters).block();
     }
 
     /**
@@ -1385,6 +1452,21 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
     public Response<RoleAssignmentInner> createByIdWithResponse(
         String roleId, RoleAssignmentCreateParameters parameters, Context context) {
         return createByIdWithResponseAsync(roleId, parameters, context).block();
+    }
+
+    /**
+     * Creates a role assignment by ID.
+     *
+     * @param roleId The ID of the role assignment to create.
+     * @param parameters Parameters for the role assignment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return role Assignments.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public RoleAssignmentInner createById(String roleId, RoleAssignmentCreateParameters parameters) {
+        return createByIdWithResponse(roleId, parameters, Context.NONE).getValue();
     }
 
     /**
@@ -1462,11 +1544,11 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a role assignment by ID.
+     * @return a role assignment by ID along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public RoleAssignmentInner getById(String roleId) {
-        return getByIdAsync(roleId).block();
+    public Response<RoleAssignmentInner> getByIdWithResponse(String roleId) {
+        return getByIdWithResponseAsync(roleId).block();
     }
 
     /**
@@ -1482,6 +1564,20 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<RoleAssignmentInner> getByIdWithResponse(String roleId, Context context) {
         return getByIdWithResponseAsync(roleId, context).block();
+    }
+
+    /**
+     * Gets a role assignment by ID.
+     *
+     * @param roleId The ID of the role assignment to get.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a role assignment by ID.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public RoleAssignmentInner getById(String roleId) {
+        return getByIdWithResponse(roleId, Context.NONE).getValue();
     }
 
     /**

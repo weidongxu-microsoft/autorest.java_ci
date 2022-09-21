@@ -16,6 +16,10 @@ public final class Action {
     @JsonProperty(value = "type")
     private KeyRotationPolicyActionType type;
 
+    /** Creates an instance of Action class. */
+    public Action() {
+    }
+
     /**
      * Get the type property: The type of action.
      *

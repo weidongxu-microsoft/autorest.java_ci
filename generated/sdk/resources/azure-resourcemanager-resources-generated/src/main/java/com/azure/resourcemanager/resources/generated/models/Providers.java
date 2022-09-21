@@ -14,17 +14,6 @@ public interface Providers {
      * Unregisters a subscription from a resource provider.
      *
      * @param resourceProviderNamespace The namespace of the resource provider to unregister.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource provider information.
-     */
-    Provider unregister(String resourceProviderNamespace);
-
-    /**
-     * Unregisters a subscription from a resource provider.
-     *
-     * @param resourceProviderNamespace The namespace of the resource provider to unregister.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -34,15 +23,15 @@ public interface Providers {
     Response<Provider> unregisterWithResponse(String resourceProviderNamespace, Context context);
 
     /**
-     * Registers a management group with a resource provider.
+     * Unregisters a subscription from a resource provider.
      *
-     * @param resourceProviderNamespace The namespace of the resource provider to register.
-     * @param groupId The management group ID.
+     * @param resourceProviderNamespace The namespace of the resource provider to unregister.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return resource provider information.
      */
-    void registerAtManagementGroupScope(String resourceProviderNamespace, String groupId);
+    Provider unregister(String resourceProviderNamespace);
 
     /**
      * Registers a management group with a resource provider.
@@ -59,15 +48,15 @@ public interface Providers {
         String resourceProviderNamespace, String groupId, Context context);
 
     /**
-     * Registers a subscription with a resource provider.
+     * Registers a management group with a resource provider.
      *
      * @param resourceProviderNamespace The namespace of the resource provider to register.
+     * @param groupId The management group ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource provider information.
      */
-    Provider register(String resourceProviderNamespace);
+    void registerAtManagementGroupScope(String resourceProviderNamespace, String groupId);
 
     /**
      * Registers a subscription with a resource provider.
@@ -80,6 +69,17 @@ public interface Providers {
      * @return resource provider information along with {@link Response}.
      */
     Response<Provider> registerWithResponse(String resourceProviderNamespace, Context context);
+
+    /**
+     * Registers a subscription with a resource provider.
+     *
+     * @param resourceProviderNamespace The namespace of the resource provider to register.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return resource provider information.
+     */
+    Provider register(String resourceProviderNamespace);
 
     /**
      * Gets all resource providers for a subscription.
@@ -133,17 +133,6 @@ public interface Providers {
      * Gets the specified resource provider.
      *
      * @param resourceProviderNamespace The namespace of the resource provider.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified resource provider.
-     */
-    Provider get(String resourceProviderNamespace);
-
-    /**
-     * Gets the specified resource provider.
-     *
-     * @param resourceProviderNamespace The namespace of the resource provider.
      * @param expand The $expand query parameter. For example, to include property aliases in response, use
      *     $expand=resourceTypes/aliases.
      * @param context The context to associate with this operation.
@@ -155,15 +144,15 @@ public interface Providers {
     Response<Provider> getWithResponse(String resourceProviderNamespace, String expand, Context context);
 
     /**
-     * Gets the specified resource provider at the tenant level.
+     * Gets the specified resource provider.
      *
      * @param resourceProviderNamespace The namespace of the resource provider.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified resource provider at the tenant level.
+     * @return the specified resource provider.
      */
-    Provider getAtTenantScope(String resourceProviderNamespace);
+    Provider get(String resourceProviderNamespace);
 
     /**
      * Gets the specified resource provider at the tenant level.
@@ -178,4 +167,15 @@ public interface Providers {
      * @return the specified resource provider at the tenant level along with {@link Response}.
      */
     Response<Provider> getAtTenantScopeWithResponse(String resourceProviderNamespace, String expand, Context context);
+
+    /**
+     * Gets the specified resource provider at the tenant level.
+     *
+     * @param resourceProviderNamespace The namespace of the resource provider.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified resource provider at the tenant level.
+     */
+    Provider getAtTenantScope(String resourceProviderNamespace);
 }

@@ -49,17 +49,6 @@ public final class WorkflowRunActionsImpl implements WorkflowRunActions {
         return Utils.mapPage(inner, inner1 -> new WorkflowRunActionImpl(inner1, this.manager()));
     }
 
-    public WorkflowRunAction get(
-        String resourceGroupName, String name, String workflowName, String runName, String actionName) {
-        WorkflowRunActionInner inner =
-            this.serviceClient().get(resourceGroupName, name, workflowName, runName, actionName);
-        if (inner != null) {
-            return new WorkflowRunActionImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<WorkflowRunAction> getWithResponse(
         String resourceGroupName,
         String name,
@@ -75,6 +64,17 @@ public final class WorkflowRunActionsImpl implements WorkflowRunActions {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new WorkflowRunActionImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public WorkflowRunAction get(
+        String resourceGroupName, String name, String workflowName, String runName, String actionName) {
+        WorkflowRunActionInner inner =
+            this.serviceClient().get(resourceGroupName, name, workflowName, runName, actionName);
+        if (inner != null) {
+            return new WorkflowRunActionImpl(inner, this.manager());
         } else {
             return null;
         }

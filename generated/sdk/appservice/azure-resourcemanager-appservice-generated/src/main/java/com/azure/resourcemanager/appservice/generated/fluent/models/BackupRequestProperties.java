@@ -45,6 +45,10 @@ public final class BackupRequestProperties {
     @JsonProperty(value = "databases")
     private List<DatabaseBackupSetting> databases;
 
+    /** Creates an instance of BackupRequestProperties class. */
+    public BackupRequestProperties() {
+    }
+
     /**
      * Get the backupName property: Name of the backup.
      *

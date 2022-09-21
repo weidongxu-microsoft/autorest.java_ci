@@ -20,6 +20,10 @@ public final class LoadBalancingSettingsProperties extends LoadBalancingSettings
     @JsonProperty(value = "resourceState", access = JsonProperty.Access.WRITE_ONLY)
     private FrontDoorResourceState resourceState;
 
+    /** Creates an instance of LoadBalancingSettingsProperties class. */
+    public LoadBalancingSettingsProperties() {
+    }
+
     /**
      * Get the resourceState property: Resource status of the Front Door or Front Door SubResource.
      *

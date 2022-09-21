@@ -85,6 +85,10 @@ public final class Backend {
     @JsonProperty(value = "backendHostHeader")
     private String backendHostHeader;
 
+    /** Creates an instance of Backend class. */
+    public Backend() {
+    }
+
     /**
      * Get the address property: Location of the backend (IP address or FQDN).
      *

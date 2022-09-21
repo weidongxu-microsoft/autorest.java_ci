@@ -23,6 +23,10 @@ public final class KubernetesRoleStorage {
     @JsonProperty(value = "endpoints")
     private List<MountPointMap> endpoints;
 
+    /** Creates an instance of KubernetesRoleStorage class. */
+    public KubernetesRoleStorage() {
+    }
+
     /**
      * Get the storageClasses property: Kubernetes storage class info.
      *

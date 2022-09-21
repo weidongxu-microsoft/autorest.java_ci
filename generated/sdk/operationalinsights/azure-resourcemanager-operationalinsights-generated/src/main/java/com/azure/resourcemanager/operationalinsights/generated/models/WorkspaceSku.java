@@ -29,6 +29,10 @@ public final class WorkspaceSku {
     @JsonProperty(value = "lastSkuUpdate", access = JsonProperty.Access.WRITE_ONLY)
     private String lastSkuUpdate;
 
+    /** Creates an instance of WorkspaceSku class. */
+    public WorkspaceSku() {
+    }
+
     /**
      * Get the name property: The name of the SKU.
      *

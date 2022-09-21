@@ -31,6 +31,10 @@ public final class PriceSheetModel {
     @JsonProperty(value = "download", access = JsonProperty.Access.WRITE_ONLY)
     private MeterDetails download;
 
+    /** Creates an instance of PriceSheetModel class. */
+    public PriceSheetModel() {
+    }
+
     /**
      * Get the pricesheets property: Price sheet.
      *

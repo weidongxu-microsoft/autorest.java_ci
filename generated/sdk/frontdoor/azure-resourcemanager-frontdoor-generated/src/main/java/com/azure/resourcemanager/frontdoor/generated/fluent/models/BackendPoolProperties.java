@@ -23,6 +23,10 @@ public final class BackendPoolProperties extends BackendPoolUpdateParameters {
     @JsonProperty(value = "resourceState", access = JsonProperty.Access.WRITE_ONLY)
     private FrontDoorResourceState resourceState;
 
+    /** Creates an instance of BackendPoolProperties class. */
+    public BackendPoolProperties() {
+    }
+
     /**
      * Get the resourceState property: Resource status of the Front Door or Front Door SubResource.
      *

@@ -55,23 +55,6 @@ public interface LocalUsersOperationsClient {
      *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be
      *     unique only within the storage account.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the local user of the storage account by username.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    LocalUserInner get(String resourceGroupName, String accountName, String username);
-
-    /**
-     * Get the local user of the storage account by username.
-     *
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     *     insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be
-     *     unique only within the storage account.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -83,7 +66,7 @@ public interface LocalUsersOperationsClient {
         String resourceGroupName, String accountName, String username, Context context);
 
     /**
-     * Create or update the properties of a local user associated with the storage account.
+     * Get the local user of the storage account by username.
      *
      * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
      *     insensitive.
@@ -91,15 +74,13 @@ public interface LocalUsersOperationsClient {
      *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be
      *     unique only within the storage account.
-     * @param properties The local user associated with a storage account.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the local user associated with the storage accounts.
+     * @return the local user of the storage account by username.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    LocalUserInner createOrUpdate(
-        String resourceGroupName, String accountName, String username, LocalUserInner properties);
+    LocalUserInner get(String resourceGroupName, String accountName, String username);
 
     /**
      * Create or update the properties of a local user associated with the storage account.
@@ -122,7 +103,7 @@ public interface LocalUsersOperationsClient {
         String resourceGroupName, String accountName, String username, LocalUserInner properties, Context context);
 
     /**
-     * Deletes the local user associated with the specified storage account.
+     * Create or update the properties of a local user associated with the storage account.
      *
      * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
      *     insensitive.
@@ -130,12 +111,15 @@ public interface LocalUsersOperationsClient {
      *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be
      *     unique only within the storage account.
+     * @param properties The local user associated with a storage account.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the local user associated with the storage accounts.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    void delete(String resourceGroupName, String accountName, String username);
+    LocalUserInner createOrUpdate(
+        String resourceGroupName, String accountName, String username, LocalUserInner properties);
 
     /**
      * Deletes the local user associated with the specified storage account.
@@ -156,7 +140,7 @@ public interface LocalUsersOperationsClient {
     Response<Void> deleteWithResponse(String resourceGroupName, String accountName, String username, Context context);
 
     /**
-     * List SSH authorized keys and shared key of the local user.
+     * Deletes the local user associated with the specified storage account.
      *
      * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
      *     insensitive.
@@ -167,10 +151,9 @@ public interface LocalUsersOperationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Storage Account Local User keys.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    LocalUserKeysInner listKeys(String resourceGroupName, String accountName, String username);
+    void delete(String resourceGroupName, String accountName, String username);
 
     /**
      * List SSH authorized keys and shared key of the local user.
@@ -192,7 +175,7 @@ public interface LocalUsersOperationsClient {
         String resourceGroupName, String accountName, String username, Context context);
 
     /**
-     * Regenerate the local user SSH password.
+     * List SSH authorized keys and shared key of the local user.
      *
      * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
      *     insensitive.
@@ -203,11 +186,10 @@ public interface LocalUsersOperationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the secrets of Storage Account Local User.
+     * @return the Storage Account Local User keys.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    LocalUserRegeneratePasswordResultInner regeneratePassword(
-        String resourceGroupName, String accountName, String username);
+    LocalUserKeysInner listKeys(String resourceGroupName, String accountName, String username);
 
     /**
      * Regenerate the local user SSH password.
@@ -227,4 +209,22 @@ public interface LocalUsersOperationsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<LocalUserRegeneratePasswordResultInner> regeneratePasswordWithResponse(
         String resourceGroupName, String accountName, String username, Context context);
+
+    /**
+     * Regenerate the local user SSH password.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     *     insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be
+     *     unique only within the storage account.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the secrets of Storage Account Local User.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    LocalUserRegeneratePasswordResultInner regeneratePassword(
+        String resourceGroupName, String accountName, String username);
 }

@@ -16,6 +16,10 @@ public final class AutoscaleConfigurationUpdateParameter {
     @JsonProperty(value = "autoscale")
     private Autoscale autoscale;
 
+    /** Creates an instance of AutoscaleConfigurationUpdateParameter class. */
+    public AutoscaleConfigurationUpdateParameter() {
+    }
+
     /**
      * Get the autoscale property: The autoscale configuration.
      *

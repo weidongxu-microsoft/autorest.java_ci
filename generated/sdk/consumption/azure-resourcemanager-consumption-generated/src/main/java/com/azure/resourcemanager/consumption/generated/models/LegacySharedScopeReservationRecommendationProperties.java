@@ -15,6 +15,10 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @Immutable
 public final class LegacySharedScopeReservationRecommendationProperties
     extends LegacyReservationRecommendationProperties {
+    /** Creates an instance of LegacySharedScopeReservationRecommendationProperties class. */
+    public LegacySharedScopeReservationRecommendationProperties() {
+    }
+
     /**
      * Validates the instance.
      *

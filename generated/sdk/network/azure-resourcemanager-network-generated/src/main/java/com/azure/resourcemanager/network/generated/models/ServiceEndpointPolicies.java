@@ -38,18 +38,6 @@ public interface ServiceEndpointPolicies {
      *
      * @param resourceGroupName The name of the resource group.
      * @param serviceEndpointPolicyName The name of the service endpoint policy.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified service Endpoint Policies in a specified resource group.
-     */
-    ServiceEndpointPolicy getByResourceGroup(String resourceGroupName, String serviceEndpointPolicyName);
-
-    /**
-     * Gets the specified service Endpoint Policies in a specified resource group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param serviceEndpointPolicyName The name of the service endpoint policy.
      * @param expand Expands referenced resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -59,6 +47,18 @@ public interface ServiceEndpointPolicies {
      */
     Response<ServiceEndpointPolicy> getByResourceGroupWithResponse(
         String resourceGroupName, String serviceEndpointPolicyName, String expand, Context context);
+
+    /**
+     * Gets the specified service Endpoint Policies in a specified resource group.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param serviceEndpointPolicyName The name of the service endpoint policy.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified service Endpoint Policies in a specified resource group.
+     */
+    ServiceEndpointPolicy getByResourceGroup(String resourceGroupName, String serviceEndpointPolicyName);
 
     /**
      * Gets all the service endpoint policies in a subscription.

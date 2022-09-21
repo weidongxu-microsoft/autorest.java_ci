@@ -42,15 +42,6 @@ public final class MonitoringConfigsImpl implements MonitoringConfigs {
         return Utils.mapPage(inner, inner1 -> new MonitoringMetricConfigurationImpl(inner1, this.manager()));
     }
 
-    public MonitoringMetricConfiguration get(String deviceName, String roleName, String resourceGroupName) {
-        MonitoringMetricConfigurationInner inner = this.serviceClient().get(deviceName, roleName, resourceGroupName);
-        if (inner != null) {
-            return new MonitoringMetricConfigurationImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<MonitoringMetricConfiguration> getWithResponse(
         String deviceName, String roleName, String resourceGroupName, Context context) {
         Response<MonitoringMetricConfigurationInner> inner =
@@ -61,6 +52,15 @@ public final class MonitoringConfigsImpl implements MonitoringConfigs {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new MonitoringMetricConfigurationImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public MonitoringMetricConfiguration get(String deviceName, String roleName, String resourceGroupName) {
+        MonitoringMetricConfigurationInner inner = this.serviceClient().get(deviceName, roleName, resourceGroupName);
+        if (inner != null) {
+            return new MonitoringMetricConfigurationImpl(inner, this.manager());
         } else {
             return null;
         }

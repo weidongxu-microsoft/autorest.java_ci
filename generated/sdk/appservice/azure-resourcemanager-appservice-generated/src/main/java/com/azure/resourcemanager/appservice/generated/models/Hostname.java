@@ -49,6 +49,10 @@ public final class Hostname {
     @JsonProperty(value = "hostNameType")
     private HostnameType hostnameType;
 
+    /** Creates an instance of Hostname class. */
+    public Hostname() {
+    }
+
     /**
      * Get the name property: Name of the hostname.
      *

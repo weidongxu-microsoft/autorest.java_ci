@@ -29,6 +29,10 @@ public final class GalleryImageVersionStorageProfile {
     @JsonProperty(value = "dataDiskImages")
     private List<GalleryDataDiskImage> dataDiskImages;
 
+    /** Creates an instance of GalleryImageVersionStorageProfile class. */
+    public GalleryImageVersionStorageProfile() {
+    }
+
     /**
      * Get the source property: The gallery artifact version source.
      *

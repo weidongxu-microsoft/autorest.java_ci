@@ -34,6 +34,10 @@ public final class ApplicationGetEndpoint {
     @JsonProperty(value = "privateIPAddress")
     private String privateIpAddress;
 
+    /** Creates an instance of ApplicationGetEndpoint class. */
+    public ApplicationGetEndpoint() {
+    }
+
     /**
      * Get the location property: The location of the endpoint.
      *

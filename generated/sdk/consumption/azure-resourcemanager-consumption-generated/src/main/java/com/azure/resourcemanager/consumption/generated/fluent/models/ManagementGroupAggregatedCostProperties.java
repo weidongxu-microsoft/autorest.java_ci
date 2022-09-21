@@ -73,6 +73,10 @@ public final class ManagementGroupAggregatedCostProperties {
     @JsonProperty(value = "excludedSubscriptions")
     private List<String> excludedSubscriptions;
 
+    /** Creates an instance of ManagementGroupAggregatedCostProperties class. */
+    public ManagementGroupAggregatedCostProperties() {
+    }
+
     /**
      * Get the billingPeriodId property: The id of the billing period resource that the aggregated cost belongs to.
      *

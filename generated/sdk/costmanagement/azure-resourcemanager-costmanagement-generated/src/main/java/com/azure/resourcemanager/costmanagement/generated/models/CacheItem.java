@@ -49,6 +49,10 @@ public final class CacheItem {
     @JsonProperty(value = "status")
     private String status;
 
+    /** Creates an instance of CacheItem class. */
+    public CacheItem() {
+    }
+
     /**
      * Get the id property: Resource ID used by Resource Manager to uniquely identify the scope.
      *

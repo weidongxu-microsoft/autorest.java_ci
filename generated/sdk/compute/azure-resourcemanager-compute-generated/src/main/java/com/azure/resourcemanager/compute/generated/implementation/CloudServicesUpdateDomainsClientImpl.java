@@ -604,11 +604,12 @@ public final class CloudServicesUpdateDomainsClientImpl implements CloudServices
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified update domain of a cloud service.
+     * @return the specified update domain of a cloud service along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public UpdateDomainInner getUpdateDomain(String resourceGroupName, String cloudServiceName, int updateDomain) {
-        return getUpdateDomainAsync(resourceGroupName, cloudServiceName, updateDomain).block();
+    public Response<UpdateDomainInner> getUpdateDomainWithResponse(
+        String resourceGroupName, String cloudServiceName, int updateDomain) {
+        return getUpdateDomainWithResponseAsync(resourceGroupName, cloudServiceName, updateDomain).block();
     }
 
     /**
@@ -629,6 +630,24 @@ public final class CloudServicesUpdateDomainsClientImpl implements CloudServices
     public Response<UpdateDomainInner> getUpdateDomainWithResponse(
         String resourceGroupName, String cloudServiceName, int updateDomain, Context context) {
         return getUpdateDomainWithResponseAsync(resourceGroupName, cloudServiceName, updateDomain, context).block();
+    }
+
+    /**
+     * Gets the specified update domain of a cloud service. Use nextLink property in the response to get the next page
+     * of update domains. Do this till nextLink is null to fetch all the update domains.
+     *
+     * @param resourceGroupName Name of the resource group.
+     * @param cloudServiceName Name of the cloud service.
+     * @param updateDomain Specifies an integer value that identifies the update domain. Update domains are identified
+     *     with a zero-based index: the first update domain has an ID of 0, the second has an ID of 1, and so on.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ApiErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified update domain of a cloud service.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public UpdateDomainInner getUpdateDomain(String resourceGroupName, String cloudServiceName, int updateDomain) {
+        return getUpdateDomainWithResponse(resourceGroupName, cloudServiceName, updateDomain, Context.NONE).getValue();
     }
 
     /**

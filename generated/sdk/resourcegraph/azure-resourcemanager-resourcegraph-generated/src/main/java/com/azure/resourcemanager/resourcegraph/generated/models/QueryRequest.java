@@ -42,6 +42,10 @@ public final class QueryRequest {
     @JsonProperty(value = "facets")
     private List<FacetRequest> facets;
 
+    /** Creates an instance of QueryRequest class. */
+    public QueryRequest() {
+    }
+
     /**
      * Get the subscriptions property: Azure subscriptions against which to execute the query.
      *

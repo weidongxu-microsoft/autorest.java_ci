@@ -28,6 +28,10 @@ public final class AlertInner extends ArmBaseModel {
     @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;
 
+    /** Creates an instance of AlertInner class. */
+    public AlertInner() {
+    }
+
     /**
      * Get the innerProperties property: Properties of alert.
      *

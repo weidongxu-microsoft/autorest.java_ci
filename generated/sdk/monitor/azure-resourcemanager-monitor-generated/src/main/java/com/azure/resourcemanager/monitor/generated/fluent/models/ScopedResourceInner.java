@@ -17,6 +17,10 @@ public final class ScopedResourceInner extends ProxyResource {
     @JsonProperty(value = "properties")
     private ScopedResourceProperties innerProperties;
 
+    /** Creates an instance of ScopedResourceInner class. */
+    public ScopedResourceInner() {
+    }
+
     /**
      * Get the innerProperties property: Resource properties.
      *

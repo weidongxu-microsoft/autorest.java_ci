@@ -36,6 +36,10 @@ public final class MetricConfiguration {
     @JsonProperty(value = "counterSets", required = true)
     private List<MetricCounterSet> counterSets;
 
+    /** Creates an instance of MetricConfiguration class. */
+    public MetricConfiguration() {
+    }
+
     /**
      * Get the resourceId property: The Resource ID on which the metrics should be pushed.
      *

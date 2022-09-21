@@ -17,6 +17,10 @@ public class RulesEngineUpdateParameters {
     @JsonProperty(value = "rules")
     private List<RulesEngineRule> rules;
 
+    /** Creates an instance of RulesEngineUpdateParameters class. */
+    public RulesEngineUpdateParameters() {
+    }
+
     /**
      * Get the rules property: A list of rules that define a particular Rules Engine Configuration.
      *

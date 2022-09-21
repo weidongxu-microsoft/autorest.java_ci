@@ -338,12 +338,12 @@ public final class DomainEventSubscriptionsClientImpl implements DomainEventSubs
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all delivery attributes for an event subscription for domain.
+     * @return all delivery attributes for an event subscription for domain along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public DeliveryAttributeListResultInner getDeliveryAttributes(
+    public Response<DeliveryAttributeListResultInner> getDeliveryAttributesWithResponse(
         String resourceGroupName, String domainName, String eventSubscriptionName) {
-        return getDeliveryAttributesAsync(resourceGroupName, domainName, eventSubscriptionName).block();
+        return getDeliveryAttributesWithResponseAsync(resourceGroupName, domainName, eventSubscriptionName).block();
     }
 
     /**
@@ -365,6 +365,26 @@ public final class DomainEventSubscriptionsClientImpl implements DomainEventSubs
         String resourceGroupName, String domainName, String eventSubscriptionName, Context context) {
         return getDeliveryAttributesWithResponseAsync(resourceGroupName, domainName, eventSubscriptionName, context)
             .block();
+    }
+
+    /**
+     * Get delivery attributes for an event subscription for domain.
+     *
+     * <p>Get all delivery attributes for an event subscription for domain.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription.
+     * @param domainName Name of the domain topic.
+     * @param eventSubscriptionName Name of the event subscription.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return all delivery attributes for an event subscription for domain.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public DeliveryAttributeListResultInner getDeliveryAttributes(
+        String resourceGroupName, String domainName, String eventSubscriptionName) {
+        return getDeliveryAttributesWithResponse(resourceGroupName, domainName, eventSubscriptionName, Context.NONE)
+            .getValue();
     }
 
     /**
@@ -514,11 +534,12 @@ public final class DomainEventSubscriptionsClientImpl implements DomainEventSubs
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of an event subscription of a domain.
+     * @return properties of an event subscription of a domain along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public EventSubscriptionInner get(String resourceGroupName, String domainName, String eventSubscriptionName) {
-        return getAsync(resourceGroupName, domainName, eventSubscriptionName).block();
+    public Response<EventSubscriptionInner> getWithResponse(
+        String resourceGroupName, String domainName, String eventSubscriptionName) {
+        return getWithResponseAsync(resourceGroupName, domainName, eventSubscriptionName).block();
     }
 
     /**
@@ -540,6 +561,25 @@ public final class DomainEventSubscriptionsClientImpl implements DomainEventSubs
     public Response<EventSubscriptionInner> getWithResponse(
         String resourceGroupName, String domainName, String eventSubscriptionName, Context context) {
         return getWithResponseAsync(resourceGroupName, domainName, eventSubscriptionName, context).block();
+    }
+
+    /**
+     * Get an event subscription of a domain.
+     *
+     * <p>Get properties of an event subscription of a domain.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription.
+     * @param domainName Name of the partner topic.
+     * @param eventSubscriptionName Name of the event subscription to be found. Event subscription names must be between
+     *     3 and 100 characters in length and use alphanumeric letters only.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return properties of an event subscription of a domain.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public EventSubscriptionInner get(String resourceGroupName, String domainName, String eventSubscriptionName) {
+        return getWithResponse(resourceGroupName, domainName, eventSubscriptionName, Context.NONE).getValue();
     }
 
     /**
@@ -1692,12 +1732,12 @@ public final class DomainEventSubscriptionsClientImpl implements DomainEventSubs
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the full endpoint URL for an event subscription for domain.
+     * @return the full endpoint URL for an event subscription for domain along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public EventSubscriptionFullUrlInner getFullUrl(
+    public Response<EventSubscriptionFullUrlInner> getFullUrlWithResponse(
         String resourceGroupName, String domainName, String eventSubscriptionName) {
-        return getFullUrlAsync(resourceGroupName, domainName, eventSubscriptionName).block();
+        return getFullUrlWithResponseAsync(resourceGroupName, domainName, eventSubscriptionName).block();
     }
 
     /**
@@ -1718,6 +1758,25 @@ public final class DomainEventSubscriptionsClientImpl implements DomainEventSubs
     public Response<EventSubscriptionFullUrlInner> getFullUrlWithResponse(
         String resourceGroupName, String domainName, String eventSubscriptionName, Context context) {
         return getFullUrlWithResponseAsync(resourceGroupName, domainName, eventSubscriptionName, context).block();
+    }
+
+    /**
+     * Get full URL of an event subscription for domain.
+     *
+     * <p>Get the full endpoint URL for an event subscription for domain.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription.
+     * @param domainName Name of the domain topic.
+     * @param eventSubscriptionName Name of the event subscription.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the full endpoint URL for an event subscription for domain.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public EventSubscriptionFullUrlInner getFullUrl(
+        String resourceGroupName, String domainName, String eventSubscriptionName) {
+        return getFullUrlWithResponse(resourceGroupName, domainName, eventSubscriptionName, Context.NONE).getValue();
     }
 
     /**

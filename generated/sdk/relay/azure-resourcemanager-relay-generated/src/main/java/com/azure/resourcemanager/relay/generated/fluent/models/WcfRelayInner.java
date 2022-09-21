@@ -32,6 +32,10 @@ public final class WcfRelayInner extends ProxyResource {
     @JsonProperty(value = "location", access = JsonProperty.Access.WRITE_ONLY)
     private String location;
 
+    /** Creates an instance of WcfRelayInner class. */
+    public WcfRelayInner() {
+    }
+
     /**
      * Get the innerProperties property: Properties of the WCF relay.
      *

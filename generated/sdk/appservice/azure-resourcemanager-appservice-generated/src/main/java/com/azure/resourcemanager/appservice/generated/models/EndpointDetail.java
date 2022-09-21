@@ -36,6 +36,10 @@ public final class EndpointDetail {
     @JsonProperty(value = "isAccessible")
     private Boolean isAccessible;
 
+    /** Creates an instance of EndpointDetail class. */
+    public EndpointDetail() {
+    }
+
     /**
      * Get the ipAddress property: An IP Address that Domain Name currently resolves to.
      *

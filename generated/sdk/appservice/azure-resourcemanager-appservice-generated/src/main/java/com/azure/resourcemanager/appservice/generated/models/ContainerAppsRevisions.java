@@ -43,20 +43,6 @@ public interface ContainerAppsRevisions {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param containerAppName Name of the Container App.
      * @param name Name of the Container App Revision.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a revision of a Container App.
-     */
-    Revision getRevision(String resourceGroupName, String containerAppName, String name);
-
-    /**
-     * Get a revision of a Container App.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param containerAppName Name of the Container App.
-     * @param name Name of the Container App Revision.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -68,17 +54,18 @@ public interface ContainerAppsRevisions {
         String resourceGroupName, String containerAppName, String name, Context context);
 
     /**
-     * Activates a revision for a Container App.
+     * Get a revision of a Container App.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param containerAppName Name of the Container App.
-     * @param name Name of the Container App Revision to activate.
+     * @param name Name of the Container App Revision.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a revision of a Container App.
      */
-    void activateRevision(String resourceGroupName, String containerAppName, String name);
+    Revision getRevision(String resourceGroupName, String containerAppName, String name);
 
     /**
      * Activates a revision for a Container App.
@@ -97,17 +84,17 @@ public interface ContainerAppsRevisions {
         String resourceGroupName, String containerAppName, String name, Context context);
 
     /**
-     * Deactivates a revision for a Container App.
+     * Activates a revision for a Container App.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param containerAppName Name of the Container App.
-     * @param name Name of the Container App Revision to deactivate.
+     * @param name Name of the Container App Revision to activate.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
-    void deactivateRevision(String resourceGroupName, String containerAppName, String name);
+    void activateRevision(String resourceGroupName, String containerAppName, String name);
 
     /**
      * Deactivates a revision for a Container App.
@@ -126,17 +113,17 @@ public interface ContainerAppsRevisions {
         String resourceGroupName, String containerAppName, String name, Context context);
 
     /**
-     * Restarts a revision for a Container App.
+     * Deactivates a revision for a Container App.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param containerAppName Name of the Container App.
-     * @param name Name of the Container App Revision to restart.
+     * @param name Name of the Container App Revision to deactivate.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
-    void restartRevision(String resourceGroupName, String containerAppName, String name);
+    void deactivateRevision(String resourceGroupName, String containerAppName, String name);
 
     /**
      * Restarts a revision for a Container App.
@@ -153,4 +140,17 @@ public interface ContainerAppsRevisions {
      */
     Response<Void> restartRevisionWithResponse(
         String resourceGroupName, String containerAppName, String name, Context context);
+
+    /**
+     * Restarts a revision for a Container App.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param containerAppName Name of the Container App.
+     * @param name Name of the Container App Revision to restart.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void restartRevision(String resourceGroupName, String containerAppName, String name);
 }

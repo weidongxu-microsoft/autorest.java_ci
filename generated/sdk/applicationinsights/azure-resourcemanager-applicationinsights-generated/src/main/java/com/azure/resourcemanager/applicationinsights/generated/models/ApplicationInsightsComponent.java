@@ -520,12 +520,13 @@ public interface ApplicationInsightsComponent {
      * a purge request to verify that the results are expected.
      *
      * @param body Describes the body of a request to purge data in a single table of an Application Insights component.
+     * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response containing operationId for a specific purge action.
+     * @return response containing operationId for a specific purge action along with {@link Response}.
      */
-    ComponentPurgeResponse purge(ComponentPurgeBody body);
+    Response<ComponentPurgeResponse> purgeWithResponse(ComponentPurgeBody body, Context context);
 
     /**
      * Purges data in an Application Insights component by a set of user-defined filters.
@@ -536,11 +537,10 @@ public interface ApplicationInsightsComponent {
      * a purge request to verify that the results are expected.
      *
      * @param body Describes the body of a request to purge data in a single table of an Application Insights component.
-     * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response containing operationId for a specific purge action along with {@link Response}.
+     * @return response containing operationId for a specific purge action.
      */
-    Response<ComponentPurgeResponse> purgeWithResponse(ComponentPurgeBody body, Context context);
+    ComponentPurgeResponse purge(ComponentPurgeBody body);
 }

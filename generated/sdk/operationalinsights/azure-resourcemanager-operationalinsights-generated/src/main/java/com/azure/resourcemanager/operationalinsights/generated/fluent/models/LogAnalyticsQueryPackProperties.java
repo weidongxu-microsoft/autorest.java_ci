@@ -37,6 +37,10 @@ public final class LogAnalyticsQueryPackProperties {
     @JsonProperty(value = "provisioningState", access = JsonProperty.Access.WRITE_ONLY)
     private String provisioningState;
 
+    /** Creates an instance of LogAnalyticsQueryPackProperties class. */
+    public LogAnalyticsQueryPackProperties() {
+    }
+
     /**
      * Get the queryPackId property: The unique ID of your application. This field cannot be changed.
      *

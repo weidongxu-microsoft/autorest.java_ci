@@ -22,6 +22,10 @@ public final class DnsResourceReferenceResultProperties {
     @JsonProperty(value = "dnsResourceReferences")
     private List<DnsResourceReference> dnsResourceReferences;
 
+    /** Creates an instance of DnsResourceReferenceResultProperties class. */
+    public DnsResourceReferenceResultProperties() {
+    }
+
     /**
      * Get the dnsResourceReferences property: The result of dns resource reference request. A list of dns resource
      * references for each of the azure resource in the request.

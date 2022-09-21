@@ -28,15 +28,6 @@ public final class SubscriptionNetworkManagerConnectionsImpl implements Subscrip
         this.serviceManager = serviceManager;
     }
 
-    public NetworkManagerConnection get(String networkManagerConnectionName) {
-        NetworkManagerConnectionInner inner = this.serviceClient().get(networkManagerConnectionName);
-        if (inner != null) {
-            return new NetworkManagerConnectionImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<NetworkManagerConnection> getWithResponse(String networkManagerConnectionName, Context context) {
         Response<NetworkManagerConnectionInner> inner =
             this.serviceClient().getWithResponse(networkManagerConnectionName, context);
@@ -51,12 +42,21 @@ public final class SubscriptionNetworkManagerConnectionsImpl implements Subscrip
         }
     }
 
-    public void delete(String networkManagerConnectionName) {
-        this.serviceClient().delete(networkManagerConnectionName);
+    public NetworkManagerConnection get(String networkManagerConnectionName) {
+        NetworkManagerConnectionInner inner = this.serviceClient().get(networkManagerConnectionName);
+        if (inner != null) {
+            return new NetworkManagerConnectionImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> deleteWithResponse(String networkManagerConnectionName, Context context) {
         return this.serviceClient().deleteWithResponse(networkManagerConnectionName, context);
+    }
+
+    public void delete(String networkManagerConnectionName) {
+        this.serviceClient().delete(networkManagerConnectionName);
     }
 
     public PagedIterable<NetworkManagerConnection> list() {

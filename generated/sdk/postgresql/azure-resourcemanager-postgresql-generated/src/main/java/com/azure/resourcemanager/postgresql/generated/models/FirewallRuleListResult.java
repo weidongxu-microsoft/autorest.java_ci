@@ -18,6 +18,10 @@ public final class FirewallRuleListResult {
     @JsonProperty(value = "value")
     private List<FirewallRuleInner> value;
 
+    /** Creates an instance of FirewallRuleListResult class. */
+    public FirewallRuleListResult() {
+    }
+
     /**
      * Get the value property: The list of firewall rules in a server.
      *

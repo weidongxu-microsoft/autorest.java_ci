@@ -237,18 +237,14 @@ public final class FileShareImpl implements FileShare, FileShare.Definition, Fil
         return this;
     }
 
-    public void restore(DeletedShare deletedShare) {
-        serviceManager.fileShares().restore(resourceGroupName, accountName, shareName, deletedShare);
-    }
-
     public Response<Void> restoreWithResponse(DeletedShare deletedShare, Context context) {
         return serviceManager
             .fileShares()
             .restoreWithResponse(resourceGroupName, accountName, shareName, deletedShare, context);
     }
 
-    public LeaseShareResponse lease() {
-        return serviceManager.fileShares().lease(resourceGroupName, accountName, shareName);
+    public void restore(DeletedShare deletedShare) {
+        serviceManager.fileShares().restore(resourceGroupName, accountName, shareName, deletedShare);
     }
 
     public Response<LeaseShareResponse> leaseWithResponse(
@@ -256,6 +252,10 @@ public final class FileShareImpl implements FileShare, FileShare.Definition, Fil
         return serviceManager
             .fileShares()
             .leaseWithResponse(resourceGroupName, accountName, shareName, xMsSnapshot, parameters, context);
+    }
+
+    public LeaseShareResponse lease() {
+        return serviceManager.fileShares().lease(resourceGroupName, accountName, shareName);
     }
 
     public FileShareImpl withMetadata(Map<String, String> metadata) {

@@ -31,15 +31,6 @@ public final class AlertsImpl implements Alerts {
         this.serviceManager = serviceManager;
     }
 
-    public AlertsResult list(String scope) {
-        AlertsResultInner inner = this.serviceClient().list(scope);
-        if (inner != null) {
-            return new AlertsResultImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<AlertsResult> listWithResponse(String scope, Context context) {
         Response<AlertsResultInner> inner = this.serviceClient().listWithResponse(scope, context);
         if (inner != null) {
@@ -53,10 +44,10 @@ public final class AlertsImpl implements Alerts {
         }
     }
 
-    public Alert get(String scope, String alertId) {
-        AlertInner inner = this.serviceClient().get(scope, alertId);
+    public AlertsResult list(String scope) {
+        AlertsResultInner inner = this.serviceClient().list(scope);
         if (inner != null) {
-            return new AlertImpl(inner, this.manager());
+            return new AlertsResultImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -75,8 +66,8 @@ public final class AlertsImpl implements Alerts {
         }
     }
 
-    public Alert dismiss(String scope, String alertId, DismissAlertPayload parameters) {
-        AlertInner inner = this.serviceClient().dismiss(scope, alertId, parameters);
+    public Alert get(String scope, String alertId) {
+        AlertInner inner = this.serviceClient().get(scope, alertId);
         if (inner != null) {
             return new AlertImpl(inner, this.manager());
         } else {
@@ -98,11 +89,10 @@ public final class AlertsImpl implements Alerts {
         }
     }
 
-    public AlertsResult listExternal(
-        ExternalCloudProviderType externalCloudProviderType, String externalCloudProviderId) {
-        AlertsResultInner inner = this.serviceClient().listExternal(externalCloudProviderType, externalCloudProviderId);
+    public Alert dismiss(String scope, String alertId, DismissAlertPayload parameters) {
+        AlertInner inner = this.serviceClient().dismiss(scope, alertId, parameters);
         if (inner != null) {
-            return new AlertsResultImpl(inner, this.manager());
+            return new AlertImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -118,6 +108,16 @@ public final class AlertsImpl implements Alerts {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new AlertsResultImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public AlertsResult listExternal(
+        ExternalCloudProviderType externalCloudProviderType, String externalCloudProviderId) {
+        AlertsResultInner inner = this.serviceClient().listExternal(externalCloudProviderType, externalCloudProviderId);
+        if (inner != null) {
+            return new AlertsResultImpl(inner, this.manager());
         } else {
             return null;
         }

@@ -165,22 +165,6 @@ public final class ProviderOperationsMetadatasClientImpl implements ProviderOper
      * Gets provider operations metadata for the specified resource provider.
      *
      * @param resourceProviderNamespace The namespace of the resource provider.
-     * @param expand Specifies whether to expand the values.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return provider operations metadata for the specified resource provider on successful completion of {@link
-     *     Mono}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<ProviderOperationsMetadataInner> getAsync(String resourceProviderNamespace, String expand) {
-        return getWithResponseAsync(resourceProviderNamespace, expand).flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets provider operations metadata for the specified resource provider.
-     *
-     * @param resourceProviderNamespace The namespace of the resource provider.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -197,15 +181,15 @@ public final class ProviderOperationsMetadatasClientImpl implements ProviderOper
      * Gets provider operations metadata for the specified resource provider.
      *
      * @param resourceProviderNamespace The namespace of the resource provider.
+     * @param expand Specifies whether to expand the values.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return provider operations metadata for the specified resource provider.
+     * @return provider operations metadata for the specified resource provider along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ProviderOperationsMetadataInner get(String resourceProviderNamespace) {
-        final String expand = null;
-        return getAsync(resourceProviderNamespace, expand).block();
+    public Response<ProviderOperationsMetadataInner> getWithResponse(String resourceProviderNamespace, String expand) {
+        return getWithResponseAsync(resourceProviderNamespace, expand).block();
     }
 
     /**
@@ -223,6 +207,21 @@ public final class ProviderOperationsMetadatasClientImpl implements ProviderOper
     public Response<ProviderOperationsMetadataInner> getWithResponse(
         String resourceProviderNamespace, String expand, Context context) {
         return getWithResponseAsync(resourceProviderNamespace, expand, context).block();
+    }
+
+    /**
+     * Gets provider operations metadata for the specified resource provider.
+     *
+     * @param resourceProviderNamespace The namespace of the resource provider.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return provider operations metadata for the specified resource provider.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ProviderOperationsMetadataInner get(String resourceProviderNamespace) {
+        final String expand = null;
+        return getWithResponse(resourceProviderNamespace, expand, Context.NONE).getValue();
     }
 
     /**

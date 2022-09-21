@@ -194,6 +194,14 @@ public interface VirtualNetworkGatewayConnectionPropertiesFormat {
     Boolean expressRouteGatewayBypass();
 
     /**
+     * Gets the enablePrivateLinkFastPath property: Bypass the ExpressRoute gateway when accessing private-links.
+     * ExpressRoute FastPath (expressRouteGatewayBypass) must be enabled.
+     *
+     * @return the enablePrivateLinkFastPath value.
+     */
+    Boolean enablePrivateLinkFastPath();
+
+    /**
      * Gets the inner
      * com.azure.resourcemanager.network.generated.fluent.models.VirtualNetworkGatewayConnectionPropertiesFormatInner
      * object.

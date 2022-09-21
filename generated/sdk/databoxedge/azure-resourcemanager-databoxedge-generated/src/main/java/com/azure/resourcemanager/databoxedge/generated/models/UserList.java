@@ -24,6 +24,10 @@ public final class UserList {
     @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
 
+    /** Creates an instance of UserList class. */
+    public UserList() {
+    }
+
     /**
      * Get the value property: The list of users.
      *

@@ -36,21 +36,13 @@ public final class VaultsImpl implements Vaults {
         this.serviceManager = serviceManager;
     }
 
-    public void deleteByResourceGroup(String resourceGroupName, String vaultName) {
-        this.serviceClient().delete(resourceGroupName, vaultName);
-    }
-
-    public Response<Void> deleteWithResponse(String resourceGroupName, String vaultName, Context context) {
+    public Response<Void> deleteByResourceGroupWithResponse(
+        String resourceGroupName, String vaultName, Context context) {
         return this.serviceClient().deleteWithResponse(resourceGroupName, vaultName, context);
     }
 
-    public Vault getByResourceGroup(String resourceGroupName, String vaultName) {
-        VaultInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, vaultName);
-        if (inner != null) {
-            return new VaultImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void deleteByResourceGroup(String resourceGroupName, String vaultName) {
+        this.serviceClient().delete(resourceGroupName, vaultName);
     }
 
     public Response<Vault> getByResourceGroupWithResponse(String resourceGroupName, String vaultName, Context context) {
@@ -67,15 +59,10 @@ public final class VaultsImpl implements Vaults {
         }
     }
 
-    public VaultAccessPolicyParameters updateAccessPolicy(
-        String resourceGroupName,
-        String vaultName,
-        AccessPolicyUpdateKind operationKind,
-        VaultAccessPolicyParametersInner parameters) {
-        VaultAccessPolicyParametersInner inner =
-            this.serviceClient().updateAccessPolicy(resourceGroupName, vaultName, operationKind, parameters);
+    public Vault getByResourceGroup(String resourceGroupName, String vaultName) {
+        VaultInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, vaultName);
         if (inner != null) {
-            return new VaultAccessPolicyParametersImpl(inner, this.manager());
+            return new VaultImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -97,6 +84,20 @@ public final class VaultsImpl implements Vaults {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new VaultAccessPolicyParametersImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public VaultAccessPolicyParameters updateAccessPolicy(
+        String resourceGroupName,
+        String vaultName,
+        AccessPolicyUpdateKind operationKind,
+        VaultAccessPolicyParametersInner parameters) {
+        VaultAccessPolicyParametersInner inner =
+            this.serviceClient().updateAccessPolicy(resourceGroupName, vaultName, operationKind, parameters);
+        if (inner != null) {
+            return new VaultAccessPolicyParametersImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -132,15 +133,6 @@ public final class VaultsImpl implements Vaults {
         return Utils.mapPage(inner, inner1 -> new DeletedVaultImpl(inner1, this.manager()));
     }
 
-    public DeletedVault getDeleted(String vaultName, String location) {
-        DeletedVaultInner inner = this.serviceClient().getDeleted(vaultName, location);
-        if (inner != null) {
-            return new DeletedVaultImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<DeletedVault> getDeletedWithResponse(String vaultName, String location, Context context) {
         Response<DeletedVaultInner> inner = this.serviceClient().getDeletedWithResponse(vaultName, location, context);
         if (inner != null) {
@@ -149,6 +141,15 @@ public final class VaultsImpl implements Vaults {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new DeletedVaultImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public DeletedVault getDeleted(String vaultName, String location) {
+        DeletedVaultInner inner = this.serviceClient().getDeleted(vaultName, location);
+        if (inner != null) {
+            return new DeletedVaultImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -170,15 +171,6 @@ public final class VaultsImpl implements Vaults {
         return this.serviceClient().list(top, context);
     }
 
-    public CheckNameAvailabilityResult checkNameAvailability(VaultCheckNameAvailabilityParameters vaultName) {
-        CheckNameAvailabilityResultInner inner = this.serviceClient().checkNameAvailability(vaultName);
-        if (inner != null) {
-            return new CheckNameAvailabilityResultImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<CheckNameAvailabilityResult> checkNameAvailabilityWithResponse(
         VaultCheckNameAvailabilityParameters vaultName, Context context) {
         Response<CheckNameAvailabilityResultInner> inner =
@@ -189,6 +181,15 @@ public final class VaultsImpl implements Vaults {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new CheckNameAvailabilityResultImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public CheckNameAvailabilityResult checkNameAvailability(VaultCheckNameAvailabilityParameters vaultName) {
+        CheckNameAvailabilityResultInner inner = this.serviceClient().checkNameAvailability(vaultName);
+        if (inner != null) {
+            return new CheckNameAvailabilityResultImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -248,7 +249,7 @@ public final class VaultsImpl implements Vaults {
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'vaults'.", id)));
         }
-        this.deleteWithResponse(resourceGroupName, vaultName, Context.NONE);
+        this.deleteByResourceGroupWithResponse(resourceGroupName, vaultName, Context.NONE);
     }
 
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
@@ -267,7 +268,7 @@ public final class VaultsImpl implements Vaults {
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'vaults'.", id)));
         }
-        return this.deleteWithResponse(resourceGroupName, vaultName, context);
+        return this.deleteByResourceGroupWithResponse(resourceGroupName, vaultName, context);
     }
 
     private VaultsClient serviceClient() {

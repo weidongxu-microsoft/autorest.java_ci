@@ -24,6 +24,10 @@ public final class QueryTextsResultList {
     @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
 
+    /** Creates an instance of QueryTextsResultList class. */
+    public QueryTextsResultList() {
+    }
+
     /**
      * Get the value property: The list of query texts.
      *

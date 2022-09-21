@@ -27,17 +27,6 @@ public final class ServiceAssociationLinksImpl implements ServiceAssociationLink
         this.serviceManager = serviceManager;
     }
 
-    public ServiceAssociationLinksListResult list(
-        String resourceGroupName, String virtualNetworkName, String subnetName) {
-        ServiceAssociationLinksListResultInner inner =
-            this.serviceClient().list(resourceGroupName, virtualNetworkName, subnetName);
-        if (inner != null) {
-            return new ServiceAssociationLinksListResultImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<ServiceAssociationLinksListResult> listWithResponse(
         String resourceGroupName, String virtualNetworkName, String subnetName, Context context) {
         Response<ServiceAssociationLinksListResultInner> inner =
@@ -48,6 +37,17 @@ public final class ServiceAssociationLinksImpl implements ServiceAssociationLink
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new ServiceAssociationLinksListResultImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public ServiceAssociationLinksListResult list(
+        String resourceGroupName, String virtualNetworkName, String subnetName) {
+        ServiceAssociationLinksListResultInner inner =
+            this.serviceClient().list(resourceGroupName, virtualNetworkName, subnetName);
+        if (inner != null) {
+            return new ServiceAssociationLinksListResultImpl(inner, this.manager());
         } else {
             return null;
         }

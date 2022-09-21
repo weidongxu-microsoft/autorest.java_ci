@@ -51,6 +51,10 @@ public final class SearchServiceUpdate extends ProxyResource {
     @JsonProperty(value = "identity")
     private Identity identity;
 
+    /** Creates an instance of SearchServiceUpdate class. */
+    public SearchServiceUpdate() {
+    }
+
     /**
      * Get the innerProperties property: Properties of the search service.
      *

@@ -19,6 +19,10 @@ public final class WaitStatisticsInput {
     @JsonProperty(value = "properties", required = true)
     private WaitStatisticsInputProperties innerProperties = new WaitStatisticsInputProperties();
 
+    /** Creates an instance of WaitStatisticsInput class. */
+    public WaitStatisticsInput() {
+    }
+
     /**
      * Get the innerProperties property: The properties of a wait statistics input.
      *

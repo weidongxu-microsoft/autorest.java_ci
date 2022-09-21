@@ -36,16 +36,6 @@ public final class DscpConfigurationsImpl implements DscpConfigurations {
         this.serviceClient().delete(resourceGroupName, dscpConfigurationName, context);
     }
 
-    public DscpConfiguration getByResourceGroup(String resourceGroupName, String dscpConfigurationName) {
-        DscpConfigurationInner inner =
-            this.serviceClient().getByResourceGroup(resourceGroupName, dscpConfigurationName);
-        if (inner != null) {
-            return new DscpConfigurationImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<DscpConfiguration> getByResourceGroupWithResponse(
         String resourceGroupName, String dscpConfigurationName, Context context) {
         Response<DscpConfigurationInner> inner =
@@ -56,6 +46,16 @@ public final class DscpConfigurationsImpl implements DscpConfigurations {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new DscpConfigurationImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public DscpConfiguration getByResourceGroup(String resourceGroupName, String dscpConfigurationName) {
+        DscpConfigurationInner inner =
+            this.serviceClient().getByResourceGroup(resourceGroupName, dscpConfigurationName);
+        if (inner != null) {
+            return new DscpConfigurationImpl(inner, this.manager());
         } else {
             return null;
         }

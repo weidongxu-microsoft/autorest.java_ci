@@ -28,16 +28,6 @@ public final class ComponentLinkedStorageAccountsOperationsImpl implements Compo
         this.serviceManager = serviceManager;
     }
 
-    public ComponentLinkedStorageAccounts get(String resourceGroupName, String resourceName, StorageType storageType) {
-        ComponentLinkedStorageAccountsInner inner =
-            this.serviceClient().get(resourceGroupName, resourceName, storageType);
-        if (inner != null) {
-            return new ComponentLinkedStorageAccountsImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<ComponentLinkedStorageAccounts> getWithResponse(
         String resourceGroupName, String resourceName, StorageType storageType, Context context) {
         Response<ComponentLinkedStorageAccountsInner> inner =
@@ -53,13 +43,23 @@ public final class ComponentLinkedStorageAccountsOperationsImpl implements Compo
         }
     }
 
-    public void delete(String resourceGroupName, String resourceName, StorageType storageType) {
-        this.serviceClient().delete(resourceGroupName, resourceName, storageType);
+    public ComponentLinkedStorageAccounts get(String resourceGroupName, String resourceName, StorageType storageType) {
+        ComponentLinkedStorageAccountsInner inner =
+            this.serviceClient().get(resourceGroupName, resourceName, storageType);
+        if (inner != null) {
+            return new ComponentLinkedStorageAccountsImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> deleteWithResponse(
         String resourceGroupName, String resourceName, StorageType storageType, Context context) {
         return this.serviceClient().deleteWithResponse(resourceGroupName, resourceName, storageType, context);
+    }
+
+    public void delete(String resourceGroupName, String resourceName, StorageType storageType) {
+        this.serviceClient().delete(resourceGroupName, resourceName, storageType);
     }
 
     public ComponentLinkedStorageAccounts getById(String id) {

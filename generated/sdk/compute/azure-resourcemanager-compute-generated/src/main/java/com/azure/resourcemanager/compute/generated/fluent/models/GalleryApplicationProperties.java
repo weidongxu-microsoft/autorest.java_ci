@@ -51,6 +51,10 @@ public final class GalleryApplicationProperties {
     @JsonProperty(value = "supportedOSType", required = true)
     private OperatingSystemTypes supportedOSType;
 
+    /** Creates an instance of GalleryApplicationProperties class. */
+    public GalleryApplicationProperties() {
+    }
+
     /**
      * Get the description property: The description of this gallery Application Definition resource. This property is
      * updatable.

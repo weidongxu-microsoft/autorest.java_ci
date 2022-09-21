@@ -20,6 +20,10 @@ public final class PolicyDefinitionInner extends ProxyResource {
     @JsonProperty(value = "properties")
     private PolicyDefinitionProperties innerProperties;
 
+    /** Creates an instance of PolicyDefinitionInner class. */
+    public PolicyDefinitionInner() {
+    }
+
     /**
      * Get the innerProperties property: The policy definition properties.
      *

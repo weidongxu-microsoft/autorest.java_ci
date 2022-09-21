@@ -61,6 +61,10 @@ public final class CreditSummaryProperties {
     @JsonProperty(value = "eTag", access = JsonProperty.Access.WRITE_ONLY)
     private String etag;
 
+    /** Creates an instance of CreditSummaryProperties class. */
+    public CreditSummaryProperties() {
+    }
+
     /**
      * Get the balanceSummary property: Summary of balances associated with this credit summary.
      *

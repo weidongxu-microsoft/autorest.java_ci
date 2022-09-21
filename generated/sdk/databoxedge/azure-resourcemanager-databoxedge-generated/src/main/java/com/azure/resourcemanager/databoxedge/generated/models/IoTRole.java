@@ -23,6 +23,10 @@ public final class IoTRole extends RoleInner {
     @JsonProperty(value = "properties")
     private IoTRoleProperties innerProperties;
 
+    /** Creates an instance of IoTRole class. */
+    public IoTRole() {
+    }
+
     /**
      * Get the innerProperties property: Properties specific to IoT role.
      *

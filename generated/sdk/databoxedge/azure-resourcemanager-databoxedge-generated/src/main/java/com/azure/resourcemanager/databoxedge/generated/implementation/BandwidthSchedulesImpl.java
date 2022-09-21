@@ -41,15 +41,6 @@ public final class BandwidthSchedulesImpl implements BandwidthSchedules {
         return Utils.mapPage(inner, inner1 -> new BandwidthScheduleImpl(inner1, this.manager()));
     }
 
-    public BandwidthSchedule get(String deviceName, String name, String resourceGroupName) {
-        BandwidthScheduleInner inner = this.serviceClient().get(deviceName, name, resourceGroupName);
-        if (inner != null) {
-            return new BandwidthScheduleImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<BandwidthSchedule> getWithResponse(
         String deviceName, String name, String resourceGroupName, Context context) {
         Response<BandwidthScheduleInner> inner =
@@ -60,6 +51,15 @@ public final class BandwidthSchedulesImpl implements BandwidthSchedules {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new BandwidthScheduleImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public BandwidthSchedule get(String deviceName, String name, String resourceGroupName) {
+        BandwidthScheduleInner inner = this.serviceClient().get(deviceName, name, resourceGroupName);
+        if (inner != null) {
+            return new BandwidthScheduleImpl(inner, this.manager());
         } else {
             return null;
         }

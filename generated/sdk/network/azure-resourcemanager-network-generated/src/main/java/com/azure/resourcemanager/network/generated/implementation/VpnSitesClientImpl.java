@@ -203,7 +203,7 @@ public final class VpnSitesClientImpl implements VpnSitesClient {
         if (vpnSiteName == null) {
             return Mono.error(new IllegalArgumentException("Parameter vpnSiteName is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -253,7 +253,7 @@ public final class VpnSitesClientImpl implements VpnSitesClient {
         if (vpnSiteName == null) {
             return Mono.error(new IllegalArgumentException("Parameter vpnSiteName is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -291,11 +291,11 @@ public final class VpnSitesClientImpl implements VpnSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpnSite Resource.
+     * @return vpnSite Resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public VpnSiteInner getByResourceGroup(String resourceGroupName, String vpnSiteName) {
-        return getByResourceGroupAsync(resourceGroupName, vpnSiteName).block();
+    public Response<VpnSiteInner> getByResourceGroupWithResponse(String resourceGroupName, String vpnSiteName) {
+        return getByResourceGroupWithResponseAsync(resourceGroupName, vpnSiteName).block();
     }
 
     /**
@@ -313,6 +313,21 @@ public final class VpnSitesClientImpl implements VpnSitesClient {
     public Response<VpnSiteInner> getByResourceGroupWithResponse(
         String resourceGroupName, String vpnSiteName, Context context) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, vpnSiteName, context).block();
+    }
+
+    /**
+     * Retrieves the details of a VPN site.
+     *
+     * @param resourceGroupName The resource group name of the VpnSite.
+     * @param vpnSiteName The name of the VpnSite being retrieved.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return vpnSite Resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public VpnSiteInner getByResourceGroup(String resourceGroupName, String vpnSiteName) {
+        return getByResourceGroupWithResponse(resourceGroupName, vpnSiteName, Context.NONE).getValue();
     }
 
     /**
@@ -354,7 +369,7 @@ public final class VpnSitesClientImpl implements VpnSitesClient {
         } else {
             vpnSiteParameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -412,7 +427,7 @@ public final class VpnSitesClientImpl implements VpnSitesClient {
         } else {
             vpnSiteParameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -620,7 +635,7 @@ public final class VpnSitesClientImpl implements VpnSitesClient {
         } else {
             vpnSiteParameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -678,7 +693,7 @@ public final class VpnSitesClientImpl implements VpnSitesClient {
         } else {
             vpnSiteParameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -720,11 +735,12 @@ public final class VpnSitesClientImpl implements VpnSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpnSite Resource.
+     * @return vpnSite Resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public VpnSiteInner updateTags(String resourceGroupName, String vpnSiteName, TagsObject vpnSiteParameters) {
-        return updateTagsAsync(resourceGroupName, vpnSiteName, vpnSiteParameters).block();
+    public Response<VpnSiteInner> updateTagsWithResponse(
+        String resourceGroupName, String vpnSiteName, TagsObject vpnSiteParameters) {
+        return updateTagsWithResponseAsync(resourceGroupName, vpnSiteName, vpnSiteParameters).block();
     }
 
     /**
@@ -743,6 +759,22 @@ public final class VpnSitesClientImpl implements VpnSitesClient {
     public Response<VpnSiteInner> updateTagsWithResponse(
         String resourceGroupName, String vpnSiteName, TagsObject vpnSiteParameters, Context context) {
         return updateTagsWithResponseAsync(resourceGroupName, vpnSiteName, vpnSiteParameters, context).block();
+    }
+
+    /**
+     * Updates VpnSite tags.
+     *
+     * @param resourceGroupName The resource group name of the VpnSite.
+     * @param vpnSiteName The name of the VpnSite being updated.
+     * @param vpnSiteParameters Parameters supplied to update VpnSite tags.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return vpnSite Resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public VpnSiteInner updateTags(String resourceGroupName, String vpnSiteName, TagsObject vpnSiteParameters) {
+        return updateTagsWithResponse(resourceGroupName, vpnSiteName, vpnSiteParameters, Context.NONE).getValue();
     }
 
     /**
@@ -776,7 +808,7 @@ public final class VpnSitesClientImpl implements VpnSitesClient {
         if (vpnSiteName == null) {
             return Mono.error(new IllegalArgumentException("Parameter vpnSiteName is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -826,7 +858,7 @@ public final class VpnSitesClientImpl implements VpnSitesClient {
         if (vpnSiteName == null) {
             return Mono.error(new IllegalArgumentException("Parameter vpnSiteName is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1002,7 +1034,7 @@ public final class VpnSitesClientImpl implements VpnSitesClient {
             return Mono
                 .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1057,7 +1089,7 @@ public final class VpnSitesClientImpl implements VpnSitesClient {
             return Mono
                 .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1163,7 +1195,7 @@ public final class VpnSitesClientImpl implements VpnSitesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1206,7 +1238,7 @@ public final class VpnSitesClientImpl implements VpnSitesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service

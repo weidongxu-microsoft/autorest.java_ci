@@ -18,6 +18,10 @@ public final class ExportExecutionListResultInner {
     @JsonProperty(value = "value", access = JsonProperty.Access.WRITE_ONLY)
     private List<ExportExecution> value;
 
+    /** Creates an instance of ExportExecutionListResultInner class. */
+    public ExportExecutionListResultInner() {
+    }
+
     /**
      * Get the value property: The list of export executions.
      *

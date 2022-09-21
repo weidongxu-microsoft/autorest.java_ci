@@ -83,6 +83,10 @@ public final class LogSearchRule {
     @JsonProperty(value = "action", required = true)
     private Action action;
 
+    /** Creates an instance of LogSearchRule class. */
+    public LogSearchRule() {
+    }
+
     /**
      * Get the createdWithApiVersion property: The api-version used when creating this alert rule.
      *

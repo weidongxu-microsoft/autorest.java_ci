@@ -16,19 +16,6 @@ public interface ConnectionMonitors {
      * @param resourceGroupName The name of the resource group containing Network Watcher.
      * @param networkWatcherName The name of the Network Watcher resource.
      * @param connectionMonitorName The name of the connection monitor.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a connection monitor by name.
-     */
-    ConnectionMonitorResult get(String resourceGroupName, String networkWatcherName, String connectionMonitorName);
-
-    /**
-     * Gets a connection monitor by name.
-     *
-     * @param resourceGroupName The name of the resource group containing Network Watcher.
-     * @param networkWatcherName The name of the Network Watcher resource.
-     * @param connectionMonitorName The name of the connection monitor.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -37,6 +24,19 @@ public interface ConnectionMonitors {
      */
     Response<ConnectionMonitorResult> getWithResponse(
         String resourceGroupName, String networkWatcherName, String connectionMonitorName, Context context);
+
+    /**
+     * Gets a connection monitor by name.
+     *
+     * @param resourceGroupName The name of the resource group containing Network Watcher.
+     * @param networkWatcherName The name of the Network Watcher resource.
+     * @param connectionMonitorName The name of the connection monitor.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a connection monitor by name.
+     */
+    ConnectionMonitorResult get(String resourceGroupName, String networkWatcherName, String connectionMonitorName);
 
     /**
      * Deletes the specified connection monitor.

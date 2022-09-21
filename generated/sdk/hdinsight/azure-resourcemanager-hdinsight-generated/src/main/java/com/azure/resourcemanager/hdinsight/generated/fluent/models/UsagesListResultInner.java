@@ -18,6 +18,10 @@ public final class UsagesListResultInner {
     @JsonProperty(value = "value")
     private List<Usage> value;
 
+    /** Creates an instance of UsagesListResultInner class. */
+    public UsagesListResultInner() {
+    }
+
     /**
      * Get the value property: The list of usages.
      *

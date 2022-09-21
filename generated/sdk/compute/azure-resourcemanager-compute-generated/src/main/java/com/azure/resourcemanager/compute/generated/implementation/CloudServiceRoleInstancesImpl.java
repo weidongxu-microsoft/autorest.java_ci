@@ -7,7 +7,6 @@ package com.azure.resourcemanager.compute.generated.implementation;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
-import com.azure.core.http.rest.StreamResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.compute.generated.fluent.CloudServiceRoleInstancesClient;
@@ -41,15 +40,6 @@ public final class CloudServiceRoleInstancesImpl implements CloudServiceRoleInst
         this.serviceClient().delete(roleInstanceName, resourceGroupName, cloudServiceName, context);
     }
 
-    public RoleInstance get(String roleInstanceName, String resourceGroupName, String cloudServiceName) {
-        RoleInstanceInner inner = this.serviceClient().get(roleInstanceName, resourceGroupName, cloudServiceName);
-        if (inner != null) {
-            return new RoleInstanceImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<RoleInstance> getWithResponse(
         String roleInstanceName,
         String resourceGroupName,
@@ -71,12 +61,10 @@ public final class CloudServiceRoleInstancesImpl implements CloudServiceRoleInst
         }
     }
 
-    public RoleInstanceView getInstanceView(
-        String roleInstanceName, String resourceGroupName, String cloudServiceName) {
-        RoleInstanceViewInner inner =
-            this.serviceClient().getInstanceView(roleInstanceName, resourceGroupName, cloudServiceName);
+    public RoleInstance get(String roleInstanceName, String resourceGroupName, String cloudServiceName) {
+        RoleInstanceInner inner = this.serviceClient().get(roleInstanceName, resourceGroupName, cloudServiceName);
         if (inner != null) {
-            return new RoleInstanceViewImpl(inner, this.manager());
+            return new RoleInstanceImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -94,6 +82,17 @@ public final class CloudServiceRoleInstancesImpl implements CloudServiceRoleInst
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new RoleInstanceViewImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public RoleInstanceView getInstanceView(
+        String roleInstanceName, String resourceGroupName, String cloudServiceName) {
+        RoleInstanceViewInner inner =
+            this.serviceClient().getInstanceView(roleInstanceName, resourceGroupName, cloudServiceName);
+        if (inner != null) {
+            return new RoleInstanceViewImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -135,16 +134,16 @@ public final class CloudServiceRoleInstancesImpl implements CloudServiceRoleInst
         this.serviceClient().rebuild(roleInstanceName, resourceGroupName, cloudServiceName, context);
     }
 
-    public InputStream getRemoteDesktopFile(
-        String roleInstanceName, String resourceGroupName, String cloudServiceName) {
-        return this.serviceClient().getRemoteDesktopFile(roleInstanceName, resourceGroupName, cloudServiceName);
-    }
-
-    public StreamResponse getRemoteDesktopFileWithResponse(
+    public Response<InputStream> getRemoteDesktopFileWithResponse(
         String roleInstanceName, String resourceGroupName, String cloudServiceName, Context context) {
         return this
             .serviceClient()
             .getRemoteDesktopFileWithResponse(roleInstanceName, resourceGroupName, cloudServiceName, context);
+    }
+
+    public InputStream getRemoteDesktopFile(
+        String roleInstanceName, String resourceGroupName, String cloudServiceName) {
+        return this.serviceClient().getRemoteDesktopFile(roleInstanceName, resourceGroupName, cloudServiceName);
     }
 
     private CloudServiceRoleInstancesClient serviceClient() {

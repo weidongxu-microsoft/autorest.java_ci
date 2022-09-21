@@ -26,15 +26,6 @@ public final class ServiceTagsImpl implements ServiceTags {
         this.serviceManager = serviceManager;
     }
 
-    public ServiceTagsListResult list(String location) {
-        ServiceTagsListResultInner inner = this.serviceClient().list(location);
-        if (inner != null) {
-            return new ServiceTagsListResultImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<ServiceTagsListResult> listWithResponse(String location, Context context) {
         Response<ServiceTagsListResultInner> inner = this.serviceClient().listWithResponse(location, context);
         if (inner != null) {
@@ -43,6 +34,15 @@ public final class ServiceTagsImpl implements ServiceTags {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new ServiceTagsListResultImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public ServiceTagsListResult list(String location) {
+        ServiceTagsListResultInner inner = this.serviceClient().list(location);
+        if (inner != null) {
+            return new ServiceTagsListResultImpl(inner, this.manager());
         } else {
             return null;
         }

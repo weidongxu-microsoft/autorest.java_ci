@@ -22,6 +22,10 @@ public final class NWRuleSetVirtualNetworkRules {
     @JsonProperty(value = "ignoreMissingVnetServiceEndpoint")
     private Boolean ignoreMissingVnetServiceEndpoint;
 
+    /** Creates an instance of NWRuleSetVirtualNetworkRules class. */
+    public NWRuleSetVirtualNetworkRules() {
+    }
+
     /**
      * Get the subnet property: Subnet properties.
      *

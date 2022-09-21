@@ -595,11 +595,11 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the properties of a Container App.
+     * @return the properties of a Container App along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ContainerAppInner getByResourceGroup(String resourceGroupName, String name) {
-        return getByResourceGroupAsync(resourceGroupName, name).block();
+    public Response<ContainerAppInner> getByResourceGroupWithResponse(String resourceGroupName, String name) {
+        return getByResourceGroupWithResponseAsync(resourceGroupName, name).block();
     }
 
     /**
@@ -617,6 +617,21 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
     public Response<ContainerAppInner> getByResourceGroupWithResponse(
         String resourceGroupName, String name, Context context) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, name, context).block();
+    }
+
+    /**
+     * Get the properties of a Container App.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the Container App.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the properties of a Container App.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ContainerAppInner getByResourceGroup(String resourceGroupName, String name) {
+        return getByResourceGroupWithResponse(resourceGroupName, name, Context.NONE).getValue();
     }
 
     /**
@@ -1255,11 +1270,11 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return container App Secrets Collection ARM resource.
+     * @return container App Secrets Collection ARM resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public SecretsCollectionInner listSecrets(String name) {
-        return listSecretsAsync(name).block();
+    public Response<SecretsCollectionInner> listSecretsWithResponse(String name) {
+        return listSecretsWithResponseAsync(name).block();
     }
 
     /**
@@ -1275,6 +1290,20 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<SecretsCollectionInner> listSecretsWithResponse(String name, Context context) {
         return listSecretsWithResponseAsync(name, context).block();
+    }
+
+    /**
+     * List secrets for a container app.
+     *
+     * @param name Name of the Container App.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return container App Secrets Collection ARM resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public SecretsCollectionInner listSecrets(String name) {
+        return listSecretsWithResponse(name, Context.NONE).getValue();
     }
 
     /**

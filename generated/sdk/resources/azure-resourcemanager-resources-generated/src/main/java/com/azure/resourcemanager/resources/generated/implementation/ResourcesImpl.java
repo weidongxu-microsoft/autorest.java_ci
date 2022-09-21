@@ -68,24 +68,6 @@ public final class ResourcesImpl implements Resources {
         return Utils.mapPage(inner, inner1 -> new GenericResourceExpandedImpl(inner1, this.manager()));
     }
 
-    public boolean checkExistence(
-        String resourceGroupName,
-        String resourceProviderNamespace,
-        String parentResourcePath,
-        String resourceType,
-        String resourceName,
-        String apiVersion) {
-        return this
-            .serviceClient()
-            .checkExistence(
-                resourceGroupName,
-                resourceProviderNamespace,
-                parentResourcePath,
-                resourceType,
-                resourceName,
-                apiVersion);
-    }
-
     public Response<Boolean> checkExistenceWithResponse(
         String resourceGroupName,
         String resourceProviderNamespace,
@@ -106,6 +88,24 @@ public final class ResourcesImpl implements Resources {
                 context);
     }
 
+    public boolean checkExistence(
+        String resourceGroupName,
+        String resourceProviderNamespace,
+        String parentResourcePath,
+        String resourceType,
+        String resourceName,
+        String apiVersion) {
+        return this
+            .serviceClient()
+            .checkExistence(
+                resourceGroupName,
+                resourceProviderNamespace,
+                parentResourcePath,
+                resourceType,
+                resourceName,
+                apiVersion);
+    }
+
     public void delete(
         String resourceGroupName,
         String resourceProviderNamespace,
@@ -245,30 +245,6 @@ public final class ResourcesImpl implements Resources {
                     apiVersion,
                     parameters,
                     context);
-        if (inner != null) {
-            return new GenericResourceImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
-    public GenericResource get(
-        String resourceGroupName,
-        String resourceProviderNamespace,
-        String parentResourcePath,
-        String resourceType,
-        String resourceName,
-        String apiVersion) {
-        GenericResourceInner inner =
-            this
-                .serviceClient()
-                .get(
-                    resourceGroupName,
-                    resourceProviderNamespace,
-                    parentResourcePath,
-                    resourceType,
-                    resourceName,
-                    apiVersion);
         if (inner != null) {
             return new GenericResourceImpl(inner, this.manager());
         } else {
@@ -306,12 +282,36 @@ public final class ResourcesImpl implements Resources {
         }
     }
 
-    public boolean checkExistenceById(String resourceId, String apiVersion) {
-        return this.serviceClient().checkExistenceById(resourceId, apiVersion);
+    public GenericResource get(
+        String resourceGroupName,
+        String resourceProviderNamespace,
+        String parentResourcePath,
+        String resourceType,
+        String resourceName,
+        String apiVersion) {
+        GenericResourceInner inner =
+            this
+                .serviceClient()
+                .get(
+                    resourceGroupName,
+                    resourceProviderNamespace,
+                    parentResourcePath,
+                    resourceType,
+                    resourceName,
+                    apiVersion);
+        if (inner != null) {
+            return new GenericResourceImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Boolean> checkExistenceByIdWithResponse(String resourceId, String apiVersion, Context context) {
         return this.serviceClient().checkExistenceByIdWithResponse(resourceId, apiVersion, context);
+    }
+
+    public boolean checkExistenceById(String resourceId, String apiVersion) {
+        return this.serviceClient().checkExistenceById(resourceId, apiVersion);
     }
 
     public void deleteById(String resourceId, String apiVersion) {
@@ -361,15 +361,6 @@ public final class ResourcesImpl implements Resources {
         }
     }
 
-    public GenericResource getById(String resourceId, String apiVersion) {
-        GenericResourceInner inner = this.serviceClient().getById(resourceId, apiVersion);
-        if (inner != null) {
-            return new GenericResourceImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<GenericResource> getByIdWithResponse(String resourceId, String apiVersion, Context context) {
         Response<GenericResourceInner> inner =
             this.serviceClient().getByIdWithResponse(resourceId, apiVersion, context);
@@ -379,6 +370,15 @@ public final class ResourcesImpl implements Resources {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new GenericResourceImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public GenericResource getById(String resourceId, String apiVersion) {
+        GenericResourceInner inner = this.serviceClient().getById(resourceId, apiVersion);
+        if (inner != null) {
+            return new GenericResourceImpl(inner, this.manager());
         } else {
             return null;
         }

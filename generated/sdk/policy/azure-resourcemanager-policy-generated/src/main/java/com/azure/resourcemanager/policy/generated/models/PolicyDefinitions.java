@@ -17,18 +17,6 @@ public interface PolicyDefinitions {
      * <p>This operation deletes the policy definition in the given subscription with the given name.
      *
      * @param policyDefinitionName The name of the policy definition to delete.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void delete(String policyDefinitionName);
-
-    /**
-     * Deletes a policy definition in a subscription.
-     *
-     * <p>This operation deletes the policy definition in the given subscription with the given name.
-     *
-     * @param policyDefinitionName The name of the policy definition to delete.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -38,17 +26,16 @@ public interface PolicyDefinitions {
     Response<Void> deleteWithResponse(String policyDefinitionName, Context context);
 
     /**
-     * Retrieves a policy definition in a subscription.
+     * Deletes a policy definition in a subscription.
      *
-     * <p>This operation retrieves the policy definition in the given subscription with the given name.
+     * <p>This operation deletes the policy definition in the given subscription with the given name.
      *
-     * @param policyDefinitionName The name of the policy definition to get.
+     * @param policyDefinitionName The name of the policy definition to delete.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy definition.
      */
-    PolicyDefinition get(String policyDefinitionName);
+    void delete(String policyDefinitionName);
 
     /**
      * Retrieves a policy definition in a subscription.
@@ -65,17 +52,17 @@ public interface PolicyDefinitions {
     Response<PolicyDefinition> getWithResponse(String policyDefinitionName, Context context);
 
     /**
-     * Retrieves a built-in policy definition.
+     * Retrieves a policy definition in a subscription.
      *
-     * <p>This operation retrieves the built-in policy definition with the given name.
+     * <p>This operation retrieves the policy definition in the given subscription with the given name.
      *
-     * @param policyDefinitionName The name of the built-in policy definition to get.
+     * @param policyDefinitionName The name of the policy definition to get.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the policy definition.
      */
-    PolicyDefinition getBuiltIn(String policyDefinitionName);
+    PolicyDefinition get(String policyDefinitionName);
 
     /**
      * Retrieves a built-in policy definition.
@@ -92,20 +79,17 @@ public interface PolicyDefinitions {
     Response<PolicyDefinition> getBuiltInWithResponse(String policyDefinitionName, Context context);
 
     /**
-     * Creates or updates a policy definition in a management group.
+     * Retrieves a built-in policy definition.
      *
-     * <p>This operation creates or updates a policy definition in the given management group with the given name.
+     * <p>This operation retrieves the built-in policy definition with the given name.
      *
-     * @param policyDefinitionName The name of the policy definition to create.
-     * @param managementGroupId The ID of the management group.
-     * @param parameters The policy definition properties.
+     * @param policyDefinitionName The name of the built-in policy definition to get.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the policy definition.
      */
-    PolicyDefinition createOrUpdateAtManagementGroup(
-        String policyDefinitionName, String managementGroupId, PolicyDefinitionInner parameters);
+    PolicyDefinition getBuiltIn(String policyDefinitionName);
 
     /**
      * Creates or updates a policy definition in a management group.
@@ -125,17 +109,20 @@ public interface PolicyDefinitions {
         String policyDefinitionName, String managementGroupId, PolicyDefinitionInner parameters, Context context);
 
     /**
-     * Deletes a policy definition in a management group.
+     * Creates or updates a policy definition in a management group.
      *
-     * <p>This operation deletes the policy definition in the given management group with the given name.
+     * <p>This operation creates or updates a policy definition in the given management group with the given name.
      *
-     * @param policyDefinitionName The name of the policy definition to delete.
+     * @param policyDefinitionName The name of the policy definition to create.
      * @param managementGroupId The ID of the management group.
+     * @param parameters The policy definition properties.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the policy definition.
      */
-    void deleteAtManagementGroup(String policyDefinitionName, String managementGroupId);
+    PolicyDefinition createOrUpdateAtManagementGroup(
+        String policyDefinitionName, String managementGroupId, PolicyDefinitionInner parameters);
 
     /**
      * Deletes a policy definition in a management group.
@@ -154,18 +141,17 @@ public interface PolicyDefinitions {
         String policyDefinitionName, String managementGroupId, Context context);
 
     /**
-     * Retrieve a policy definition in a management group.
+     * Deletes a policy definition in a management group.
      *
-     * <p>This operation retrieves the policy definition in the given management group with the given name.
+     * <p>This operation deletes the policy definition in the given management group with the given name.
      *
-     * @param policyDefinitionName The name of the policy definition to get.
+     * @param policyDefinitionName The name of the policy definition to delete.
      * @param managementGroupId The ID of the management group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy definition.
      */
-    PolicyDefinition getAtManagementGroup(String policyDefinitionName, String managementGroupId);
+    void deleteAtManagementGroup(String policyDefinitionName, String managementGroupId);
 
     /**
      * Retrieve a policy definition in a management group.
@@ -182,6 +168,20 @@ public interface PolicyDefinitions {
      */
     Response<PolicyDefinition> getAtManagementGroupWithResponse(
         String policyDefinitionName, String managementGroupId, Context context);
+
+    /**
+     * Retrieve a policy definition in a management group.
+     *
+     * <p>This operation retrieves the policy definition in the given management group with the given name.
+     *
+     * @param policyDefinitionName The name of the policy definition to get.
+     * @param managementGroupId The ID of the management group.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the policy definition.
+     */
+    PolicyDefinition getAtManagementGroup(String policyDefinitionName, String managementGroupId);
 
     /**
      * Retrieves policy definitions in a subscription

@@ -36,6 +36,10 @@ public final class ClientDiscoveryValueForSingleApiInner {
     @JsonProperty(value = "properties")
     private ClientDiscoveryForProperties properties;
 
+    /** Creates an instance of ClientDiscoveryValueForSingleApiInner class. */
+    public ClientDiscoveryValueForSingleApiInner() {
+    }
+
     /**
      * Get the name property: Name of the Operation.
      *

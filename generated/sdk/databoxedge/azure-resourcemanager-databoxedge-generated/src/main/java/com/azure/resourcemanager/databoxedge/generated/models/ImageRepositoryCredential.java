@@ -29,6 +29,10 @@ public final class ImageRepositoryCredential {
     @JsonProperty(value = "password")
     private AsymmetricEncryptedSecret password;
 
+    /** Creates an instance of ImageRepositoryCredential class. */
+    public ImageRepositoryCredential() {
+    }
+
     /**
      * Get the imageRepositoryUrl property: Image repository url (e.g.: mcr.microsoft.com).
      *

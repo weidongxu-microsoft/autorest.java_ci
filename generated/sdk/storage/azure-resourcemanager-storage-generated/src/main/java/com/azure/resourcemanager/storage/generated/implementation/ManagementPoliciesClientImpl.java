@@ -248,12 +248,12 @@ public final class ManagementPoliciesClientImpl implements ManagementPoliciesCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the managementpolicy associated with the specified storage account.
+     * @return the managementpolicy associated with the specified storage account along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ManagementPolicyInner get(
+    public Response<ManagementPolicyInner> getWithResponse(
         String resourceGroupName, String accountName, ManagementPolicyName managementPolicyName) {
-        return getAsync(resourceGroupName, accountName, managementPolicyName).block();
+        return getWithResponseAsync(resourceGroupName, accountName, managementPolicyName).block();
     }
 
     /**
@@ -274,6 +274,25 @@ public final class ManagementPoliciesClientImpl implements ManagementPoliciesCli
     public Response<ManagementPolicyInner> getWithResponse(
         String resourceGroupName, String accountName, ManagementPolicyName managementPolicyName, Context context) {
         return getWithResponseAsync(resourceGroupName, accountName, managementPolicyName, context).block();
+    }
+
+    /**
+     * Gets the managementpolicy associated with the specified storage account.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     *     insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param managementPolicyName The name of the Storage Account Management Policy. It should always be 'default'.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the managementpolicy associated with the specified storage account.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ManagementPolicyInner get(
+        String resourceGroupName, String accountName, ManagementPolicyName managementPolicyName) {
+        return getWithResponse(resourceGroupName, accountName, managementPolicyName, Context.NONE).getValue();
     }
 
     /**
@@ -445,15 +464,16 @@ public final class ManagementPoliciesClientImpl implements ManagementPoliciesCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Get Storage Account ManagementPolicies operation response.
+     * @return the Get Storage Account ManagementPolicies operation response along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ManagementPolicyInner createOrUpdate(
+    public Response<ManagementPolicyInner> createOrUpdateWithResponse(
         String resourceGroupName,
         String accountName,
         ManagementPolicyName managementPolicyName,
         ManagementPolicyInner properties) {
-        return createOrUpdateAsync(resourceGroupName, accountName, managementPolicyName, properties).block();
+        return createOrUpdateWithResponseAsync(resourceGroupName, accountName, managementPolicyName, properties)
+            .block();
     }
 
     /**
@@ -481,6 +501,31 @@ public final class ManagementPoliciesClientImpl implements ManagementPoliciesCli
         return createOrUpdateWithResponseAsync(
                 resourceGroupName, accountName, managementPolicyName, properties, context)
             .block();
+    }
+
+    /**
+     * Sets the managementpolicy to the specified storage account.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     *     insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param managementPolicyName The name of the Storage Account Management Policy. It should always be 'default'.
+     * @param properties The ManagementPolicy set to a storage account.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the Get Storage Account ManagementPolicies operation response.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ManagementPolicyInner createOrUpdate(
+        String resourceGroupName,
+        String accountName,
+        ManagementPolicyName managementPolicyName,
+        ManagementPolicyInner properties) {
+        return createOrUpdateWithResponse(
+                resourceGroupName, accountName, managementPolicyName, properties, Context.NONE)
+            .getValue();
     }
 
     /**
@@ -620,10 +665,12 @@ public final class ManagementPoliciesClientImpl implements ManagementPoliciesCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public void delete(String resourceGroupName, String accountName, ManagementPolicyName managementPolicyName) {
-        deleteAsync(resourceGroupName, accountName, managementPolicyName).block();
+    public Response<Void> deleteWithResponse(
+        String resourceGroupName, String accountName, ManagementPolicyName managementPolicyName) {
+        return deleteWithResponseAsync(resourceGroupName, accountName, managementPolicyName).block();
     }
 
     /**
@@ -644,5 +691,22 @@ public final class ManagementPoliciesClientImpl implements ManagementPoliciesCli
     public Response<Void> deleteWithResponse(
         String resourceGroupName, String accountName, ManagementPolicyName managementPolicyName, Context context) {
         return deleteWithResponseAsync(resourceGroupName, accountName, managementPolicyName, context).block();
+    }
+
+    /**
+     * Deletes the managementpolicy associated with the specified storage account.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     *     insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param managementPolicyName The name of the Storage Account Management Policy. It should always be 'default'.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public void delete(String resourceGroupName, String accountName, ManagementPolicyName managementPolicyName) {
+        deleteWithResponse(resourceGroupName, accountName, managementPolicyName, Context.NONE);
     }
 }

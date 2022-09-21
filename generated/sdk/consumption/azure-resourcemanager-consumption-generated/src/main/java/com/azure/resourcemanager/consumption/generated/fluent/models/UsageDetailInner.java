@@ -41,6 +41,10 @@ public class UsageDetailInner extends ProxyResource {
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, String> tags;
 
+    /** Creates an instance of UsageDetailInner class. */
+    public UsageDetailInner() {
+    }
+
     /**
      * Get the etag property: The etag for the resource.
      *

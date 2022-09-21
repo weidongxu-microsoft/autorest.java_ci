@@ -36,16 +36,6 @@ public final class VirtualApplianceSitesImpl implements VirtualApplianceSites {
         this.serviceClient().delete(resourceGroupName, networkVirtualApplianceName, siteName, context);
     }
 
-    public VirtualApplianceSite get(String resourceGroupName, String networkVirtualApplianceName, String siteName) {
-        VirtualApplianceSiteInner inner =
-            this.serviceClient().get(resourceGroupName, networkVirtualApplianceName, siteName);
-        if (inner != null) {
-            return new VirtualApplianceSiteImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<VirtualApplianceSite> getWithResponse(
         String resourceGroupName, String networkVirtualApplianceName, String siteName, Context context) {
         Response<VirtualApplianceSiteInner> inner =
@@ -56,6 +46,16 @@ public final class VirtualApplianceSitesImpl implements VirtualApplianceSites {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new VirtualApplianceSiteImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public VirtualApplianceSite get(String resourceGroupName, String networkVirtualApplianceName, String siteName) {
+        VirtualApplianceSiteInner inner =
+            this.serviceClient().get(resourceGroupName, networkVirtualApplianceName, siteName);
+        if (inner != null) {
+            return new VirtualApplianceSiteImpl(inner, this.manager());
         } else {
             return null;
         }

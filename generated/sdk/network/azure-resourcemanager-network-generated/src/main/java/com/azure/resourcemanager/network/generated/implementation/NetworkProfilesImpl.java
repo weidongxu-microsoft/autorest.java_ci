@@ -35,15 +35,6 @@ public final class NetworkProfilesImpl implements NetworkProfiles {
         this.serviceClient().delete(resourceGroupName, networkProfileName, context);
     }
 
-    public NetworkProfile getByResourceGroup(String resourceGroupName, String networkProfileName) {
-        NetworkProfileInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, networkProfileName);
-        if (inner != null) {
-            return new NetworkProfileImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<NetworkProfile> getByResourceGroupWithResponse(
         String resourceGroupName, String networkProfileName, String expand, Context context) {
         Response<NetworkProfileInner> inner =
@@ -54,6 +45,15 @@ public final class NetworkProfilesImpl implements NetworkProfiles {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new NetworkProfileImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public NetworkProfile getByResourceGroup(String resourceGroupName, String networkProfileName) {
+        NetworkProfileInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, networkProfileName);
+        if (inner != null) {
+            return new NetworkProfileImpl(inner, this.manager());
         } else {
             return null;
         }

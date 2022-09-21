@@ -28,15 +28,6 @@ public final class ProviderOperationsMetadatasImpl implements ProviderOperations
         this.serviceManager = serviceManager;
     }
 
-    public ProviderOperationsMetadata get(String resourceProviderNamespace) {
-        ProviderOperationsMetadataInner inner = this.serviceClient().get(resourceProviderNamespace);
-        if (inner != null) {
-            return new ProviderOperationsMetadataImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<ProviderOperationsMetadata> getWithResponse(
         String resourceProviderNamespace, String expand, Context context) {
         Response<ProviderOperationsMetadataInner> inner =
@@ -47,6 +38,15 @@ public final class ProviderOperationsMetadatasImpl implements ProviderOperations
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new ProviderOperationsMetadataImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public ProviderOperationsMetadata get(String resourceProviderNamespace) {
+        ProviderOperationsMetadataInner inner = this.serviceClient().get(resourceProviderNamespace);
+        if (inner != null) {
+            return new ProviderOperationsMetadataImpl(inner, this.manager());
         } else {
             return null;
         }

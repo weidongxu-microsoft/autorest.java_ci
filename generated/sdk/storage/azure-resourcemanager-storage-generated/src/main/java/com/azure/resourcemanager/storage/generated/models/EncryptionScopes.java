@@ -20,12 +20,14 @@ public interface EncryptionScopes {
      * @param encryptionScopeName The name of the encryption scope within the specified storage account. Encryption
      *     scope names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-)
      *     only. Every dash (-) character must be immediately preceded and followed by a letter or number.
+     * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Encryption Scope resource.
+     * @return the Encryption Scope resource along with {@link Response}.
      */
-    EncryptionScope get(String resourceGroupName, String accountName, String encryptionScopeName);
+    Response<EncryptionScope> getWithResponse(
+        String resourceGroupName, String accountName, String encryptionScopeName, Context context);
 
     /**
      * Returns the properties for the specified encryption scope.
@@ -37,14 +39,12 @@ public interface EncryptionScopes {
      * @param encryptionScopeName The name of the encryption scope within the specified storage account. Encryption
      *     scope names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-)
      *     only. Every dash (-) character must be immediately preceded and followed by a letter or number.
-     * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Encryption Scope resource along with {@link Response}.
+     * @return the Encryption Scope resource.
      */
-    Response<EncryptionScope> getWithResponse(
-        String resourceGroupName, String accountName, String encryptionScopeName, Context context);
+    EncryptionScope get(String resourceGroupName, String accountName, String encryptionScopeName);
 
     /**
      * Lists all the encryption scopes available under the specified storage account.

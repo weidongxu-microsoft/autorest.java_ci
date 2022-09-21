@@ -24,6 +24,10 @@ public final class AdvisorsResultList {
     @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
 
+    /** Creates an instance of AdvisorsResultList class. */
+    public AdvisorsResultList() {
+    }
+
     /**
      * Get the value property: The list of recommendation action advisors.
      *

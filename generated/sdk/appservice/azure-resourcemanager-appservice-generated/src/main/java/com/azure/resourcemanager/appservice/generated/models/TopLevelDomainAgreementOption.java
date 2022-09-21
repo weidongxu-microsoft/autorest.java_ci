@@ -24,6 +24,10 @@ public final class TopLevelDomainAgreementOption {
     @JsonProperty(value = "forTransfer")
     private Boolean forTransfer;
 
+    /** Creates an instance of TopLevelDomainAgreementOption class. */
+    public TopLevelDomainAgreementOption() {
+    }
+
     /**
      * Get the includePrivacy property: If &lt;code&gt;true&lt;/code&gt;, then the list of agreements will include
      * agreements for domain privacy as well; otherwise, &lt;code&gt;false&lt;/code&gt;.

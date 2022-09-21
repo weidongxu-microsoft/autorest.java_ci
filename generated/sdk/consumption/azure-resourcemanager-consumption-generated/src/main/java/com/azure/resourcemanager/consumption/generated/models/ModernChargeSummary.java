@@ -22,6 +22,10 @@ public final class ModernChargeSummary extends ChargeSummary {
     @JsonProperty(value = "properties", required = true)
     private ModernChargeSummaryProperties innerProperties = new ModernChargeSummaryProperties();
 
+    /** Creates an instance of ModernChargeSummary class. */
+    public ModernChargeSummary() {
+    }
+
     /**
      * Get the innerProperties property: Properties for modern charge summary.
      *

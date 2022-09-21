@@ -50,17 +50,6 @@ public final class PrivateEndpointConnectionsImpl implements PrivateEndpointConn
         this.serviceClient().delete(resourceGroupName, namespaceName, privateEndpointConnectionName, context);
     }
 
-    public PrivateEndpointConnection get(
-        String resourceGroupName, String namespaceName, String privateEndpointConnectionName) {
-        PrivateEndpointConnectionInner inner =
-            this.serviceClient().get(resourceGroupName, namespaceName, privateEndpointConnectionName);
-        if (inner != null) {
-            return new PrivateEndpointConnectionImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<PrivateEndpointConnection> getWithResponse(
         String resourceGroupName, String namespaceName, String privateEndpointConnectionName, Context context) {
         Response<PrivateEndpointConnectionInner> inner =
@@ -73,6 +62,17 @@ public final class PrivateEndpointConnectionsImpl implements PrivateEndpointConn
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new PrivateEndpointConnectionImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public PrivateEndpointConnection get(
+        String resourceGroupName, String namespaceName, String privateEndpointConnectionName) {
+        PrivateEndpointConnectionInner inner =
+            this.serviceClient().get(resourceGroupName, namespaceName, privateEndpointConnectionName);
+        if (inner != null) {
+            return new PrivateEndpointConnectionImpl(inner, this.manager());
         } else {
             return null;
         }

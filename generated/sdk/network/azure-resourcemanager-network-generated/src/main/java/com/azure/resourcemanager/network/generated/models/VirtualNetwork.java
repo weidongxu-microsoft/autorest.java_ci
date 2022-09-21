@@ -4,6 +4,7 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
+import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.management.Region;
 import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
@@ -457,4 +458,29 @@ public interface VirtualNetwork {
      * @return the refreshed resource.
      */
     VirtualNetwork refresh(Context context);
+
+    /**
+     * Gets the Ddos Protection Status of all IP Addresses under the Virtual Network.
+     *
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the Ddos Protection Status of all IP Addresses under the Virtual Network as paginated response with
+     *     {@link PagedIterable}.
+     */
+    PagedIterable<PublicIpDdosProtectionStatusResult> listDdosProtectionStatus();
+
+    /**
+     * Gets the Ddos Protection Status of all IP Addresses under the Virtual Network.
+     *
+     * @param top The max number of ip addresses to return.
+     * @param skipToken The skipToken that is given with nextLink.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the Ddos Protection Status of all IP Addresses under the Virtual Network as paginated response with
+     *     {@link PagedIterable}.
+     */
+    PagedIterable<PublicIpDdosProtectionStatusResult> listDdosProtectionStatus(
+        Integer top, String skipToken, Context context);
 }

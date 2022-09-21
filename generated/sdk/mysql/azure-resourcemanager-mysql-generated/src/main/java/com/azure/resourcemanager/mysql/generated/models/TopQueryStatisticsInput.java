@@ -19,6 +19,10 @@ public final class TopQueryStatisticsInput {
     @JsonProperty(value = "properties", required = true)
     private TopQueryStatisticsInputProperties innerProperties = new TopQueryStatisticsInputProperties();
 
+    /** Creates an instance of TopQueryStatisticsInput class. */
+    public TopQueryStatisticsInput() {
+    }
+
     /**
      * Get the innerProperties property: The properties of a wait statistics input.
      *

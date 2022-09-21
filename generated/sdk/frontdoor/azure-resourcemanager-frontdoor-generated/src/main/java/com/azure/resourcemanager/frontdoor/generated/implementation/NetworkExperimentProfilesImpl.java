@@ -48,15 +48,6 @@ public final class NetworkExperimentProfilesImpl implements NetworkExperimentPro
         return Utils.mapPage(inner, inner1 -> new ProfileImpl(inner1, this.manager()));
     }
 
-    public Profile getByResourceGroup(String resourceGroupName, String profileName) {
-        ProfileInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, profileName);
-        if (inner != null) {
-            return new ProfileImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<Profile> getByResourceGroupWithResponse(
         String resourceGroupName, String profileName, Context context) {
         Response<ProfileInner> inner =
@@ -67,6 +58,15 @@ public final class NetworkExperimentProfilesImpl implements NetworkExperimentPro
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new ProfileImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public Profile getByResourceGroup(String resourceGroupName, String profileName) {
+        ProfileInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, profileName);
+        if (inner != null) {
+            return new ProfileImpl(inner, this.manager());
         } else {
             return null;
         }

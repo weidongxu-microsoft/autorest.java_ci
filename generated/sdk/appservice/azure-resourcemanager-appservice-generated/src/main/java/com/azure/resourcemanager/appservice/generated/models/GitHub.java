@@ -29,6 +29,10 @@ public final class GitHub {
     @JsonProperty(value = "login")
     private LoginScopes login;
 
+    /** Creates an instance of GitHub class. */
+    public GitHub() {
+    }
+
     /**
      * Get the enabled property: &lt;code&gt;false&lt;/code&gt; if the GitHub provider should not be enabled despite the
      * set registration; otherwise, &lt;code&gt;true&lt;/code&gt;.

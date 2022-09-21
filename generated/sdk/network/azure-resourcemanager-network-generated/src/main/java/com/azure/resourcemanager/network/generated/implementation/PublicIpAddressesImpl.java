@@ -11,8 +11,10 @@ import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.fluent.PublicIpAddressesClient;
 import com.azure.resourcemanager.network.generated.fluent.models.PublicIpAddressInner;
+import com.azure.resourcemanager.network.generated.fluent.models.PublicIpDdosProtectionStatusResultInner;
 import com.azure.resourcemanager.network.generated.models.PublicIpAddress;
 import com.azure.resourcemanager.network.generated.models.PublicIpAddresses;
+import com.azure.resourcemanager.network.generated.models.PublicIpDdosProtectionStatusResult;
 
 public final class PublicIpAddressesImpl implements PublicIpAddresses {
     private static final ClientLogger LOGGER = new ClientLogger(PublicIpAddressesImpl.class);
@@ -76,30 +78,6 @@ public final class PublicIpAddressesImpl implements PublicIpAddresses {
         return Utils.mapPage(inner, inner1 -> new PublicIpAddressImpl(inner1, this.manager()));
     }
 
-    public PublicIpAddress getCloudServicePublicIpAddress(
-        String resourceGroupName,
-        String cloudServiceName,
-        String roleInstanceName,
-        String networkInterfaceName,
-        String ipConfigurationName,
-        String publicIpAddressName) {
-        PublicIpAddressInner inner =
-            this
-                .serviceClient()
-                .getCloudServicePublicIpAddress(
-                    resourceGroupName,
-                    cloudServiceName,
-                    roleInstanceName,
-                    networkInterfaceName,
-                    ipConfigurationName,
-                    publicIpAddressName);
-        if (inner != null) {
-            return new PublicIpAddressImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<PublicIpAddress> getCloudServicePublicIpAddressWithResponse(
         String resourceGroupName,
         String cloudServiceName,
@@ -132,21 +110,36 @@ public final class PublicIpAddressesImpl implements PublicIpAddresses {
         }
     }
 
+    public PublicIpAddress getCloudServicePublicIpAddress(
+        String resourceGroupName,
+        String cloudServiceName,
+        String roleInstanceName,
+        String networkInterfaceName,
+        String ipConfigurationName,
+        String publicIpAddressName) {
+        PublicIpAddressInner inner =
+            this
+                .serviceClient()
+                .getCloudServicePublicIpAddress(
+                    resourceGroupName,
+                    cloudServiceName,
+                    roleInstanceName,
+                    networkInterfaceName,
+                    ipConfigurationName,
+                    publicIpAddressName);
+        if (inner != null) {
+            return new PublicIpAddressImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
     public void deleteByResourceGroup(String resourceGroupName, String publicIpAddressName) {
         this.serviceClient().delete(resourceGroupName, publicIpAddressName);
     }
 
     public void delete(String resourceGroupName, String publicIpAddressName, Context context) {
         this.serviceClient().delete(resourceGroupName, publicIpAddressName, context);
-    }
-
-    public PublicIpAddress getByResourceGroup(String resourceGroupName, String publicIpAddressName) {
-        PublicIpAddressInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, publicIpAddressName);
-        if (inner != null) {
-            return new PublicIpAddressImpl(inner, this.manager());
-        } else {
-            return null;
-        }
     }
 
     public Response<PublicIpAddress> getByResourceGroupWithResponse(
@@ -161,6 +154,15 @@ public final class PublicIpAddressesImpl implements PublicIpAddresses {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new PublicIpAddressImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public PublicIpAddress getByResourceGroup(String resourceGroupName, String publicIpAddressName) {
+        PublicIpAddressInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, publicIpAddressName);
+        if (inner != null) {
+            return new PublicIpAddressImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -185,6 +187,28 @@ public final class PublicIpAddressesImpl implements PublicIpAddresses {
         PagedIterable<PublicIpAddressInner> inner =
             this.serviceClient().listByResourceGroup(resourceGroupName, context);
         return Utils.mapPage(inner, inner1 -> new PublicIpAddressImpl(inner1, this.manager()));
+    }
+
+    public PublicIpDdosProtectionStatusResult ddosProtectionStatus(
+        String resourceGroupName, String publicIpAddressName) {
+        PublicIpDdosProtectionStatusResultInner inner =
+            this.serviceClient().ddosProtectionStatus(resourceGroupName, publicIpAddressName);
+        if (inner != null) {
+            return new PublicIpDdosProtectionStatusResultImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public PublicIpDdosProtectionStatusResult ddosProtectionStatus(
+        String resourceGroupName, String publicIpAddressName, Context context) {
+        PublicIpDdosProtectionStatusResultInner inner =
+            this.serviceClient().ddosProtectionStatus(resourceGroupName, publicIpAddressName, context);
+        if (inner != null) {
+            return new PublicIpDdosProtectionStatusResultImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public PagedIterable<PublicIpAddress> listVirtualMachineScaleSetPublicIpAddresses(
@@ -243,30 +267,6 @@ public final class PublicIpAddressesImpl implements PublicIpAddresses {
         return Utils.mapPage(inner, inner1 -> new PublicIpAddressImpl(inner1, this.manager()));
     }
 
-    public PublicIpAddress getVirtualMachineScaleSetPublicIpAddress(
-        String resourceGroupName,
-        String virtualMachineScaleSetName,
-        String virtualmachineIndex,
-        String networkInterfaceName,
-        String ipConfigurationName,
-        String publicIpAddressName) {
-        PublicIpAddressInner inner =
-            this
-                .serviceClient()
-                .getVirtualMachineScaleSetPublicIpAddress(
-                    resourceGroupName,
-                    virtualMachineScaleSetName,
-                    virtualmachineIndex,
-                    networkInterfaceName,
-                    ipConfigurationName,
-                    publicIpAddressName);
-        if (inner != null) {
-            return new PublicIpAddressImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<PublicIpAddress> getVirtualMachineScaleSetPublicIpAddressWithResponse(
         String resourceGroupName,
         String virtualMachineScaleSetName,
@@ -294,6 +294,30 @@ public final class PublicIpAddressesImpl implements PublicIpAddresses {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new PublicIpAddressImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public PublicIpAddress getVirtualMachineScaleSetPublicIpAddress(
+        String resourceGroupName,
+        String virtualMachineScaleSetName,
+        String virtualmachineIndex,
+        String networkInterfaceName,
+        String ipConfigurationName,
+        String publicIpAddressName) {
+        PublicIpAddressInner inner =
+            this
+                .serviceClient()
+                .getVirtualMachineScaleSetPublicIpAddress(
+                    resourceGroupName,
+                    virtualMachineScaleSetName,
+                    virtualmachineIndex,
+                    networkInterfaceName,
+                    ipConfigurationName,
+                    publicIpAddressName);
+        if (inner != null) {
+            return new PublicIpAddressImpl(inner, this.manager());
         } else {
             return null;
         }

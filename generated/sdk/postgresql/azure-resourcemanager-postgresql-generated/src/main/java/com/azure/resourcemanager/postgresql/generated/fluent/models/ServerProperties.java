@@ -112,6 +112,10 @@ public final class ServerProperties {
     @JsonProperty(value = "privateEndpointConnections", access = JsonProperty.Access.WRITE_ONLY)
     private List<ServerPrivateEndpointConnection> privateEndpointConnections;
 
+    /** Creates an instance of ServerProperties class. */
+    public ServerProperties() {
+    }
+
     /**
      * Get the administratorLogin property: The administrator's login name of a server. Can only be specified when the
      * server is being created (and is required for creation).

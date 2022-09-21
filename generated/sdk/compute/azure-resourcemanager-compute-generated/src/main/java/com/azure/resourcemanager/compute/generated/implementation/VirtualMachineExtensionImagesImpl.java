@@ -30,15 +30,6 @@ public final class VirtualMachineExtensionImagesImpl implements VirtualMachineEx
         this.serviceManager = serviceManager;
     }
 
-    public VirtualMachineExtensionImage get(String location, String publisherName, String type, String version) {
-        VirtualMachineExtensionImageInner inner = this.serviceClient().get(location, publisherName, type, version);
-        if (inner != null) {
-            return new VirtualMachineExtensionImageImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<VirtualMachineExtensionImage> getWithResponse(
         String location, String publisherName, String type, String version, Context context) {
         Response<VirtualMachineExtensionImageInner> inner =
@@ -54,17 +45,12 @@ public final class VirtualMachineExtensionImagesImpl implements VirtualMachineEx
         }
     }
 
-    public List<VirtualMachineExtensionImage> listTypes(String location, String publisherName) {
-        List<VirtualMachineExtensionImageInner> inner = this.serviceClient().listTypes(location, publisherName);
+    public VirtualMachineExtensionImage get(String location, String publisherName, String type, String version) {
+        VirtualMachineExtensionImageInner inner = this.serviceClient().get(location, publisherName, type, version);
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new VirtualMachineExtensionImageImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return new VirtualMachineExtensionImageImpl(inner, this.manager());
         } else {
-            return Collections.emptyList();
+            return null;
         }
     }
 
@@ -87,9 +73,8 @@ public final class VirtualMachineExtensionImagesImpl implements VirtualMachineEx
         }
     }
 
-    public List<VirtualMachineExtensionImage> listVersions(String location, String publisherName, String type) {
-        List<VirtualMachineExtensionImageInner> inner =
-            this.serviceClient().listVersions(location, publisherName, type);
+    public List<VirtualMachineExtensionImage> listTypes(String location, String publisherName) {
+        List<VirtualMachineExtensionImageInner> inner = this.serviceClient().listTypes(location, publisherName);
         if (inner != null) {
             return Collections
                 .unmodifiableList(
@@ -124,6 +109,21 @@ public final class VirtualMachineExtensionImagesImpl implements VirtualMachineEx
                     .collect(Collectors.toList()));
         } else {
             return null;
+        }
+    }
+
+    public List<VirtualMachineExtensionImage> listVersions(String location, String publisherName, String type) {
+        List<VirtualMachineExtensionImageInner> inner =
+            this.serviceClient().listVersions(location, publisherName, type);
+        if (inner != null) {
+            return Collections
+                .unmodifiableList(
+                    inner
+                        .stream()
+                        .map(inner1 -> new VirtualMachineExtensionImageImpl(inner1, this.manager()))
+                        .collect(Collectors.toList()));
+        } else {
+            return Collections.emptyList();
         }
     }
 

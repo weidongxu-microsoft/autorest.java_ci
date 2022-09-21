@@ -69,6 +69,10 @@ public final class ApplicationInsightsComponentAnalyticsItemInner {
     @JsonProperty(value = "Properties")
     private ApplicationInsightsComponentAnalyticsItemProperties properties;
 
+    /** Creates an instance of ApplicationInsightsComponentAnalyticsItemInner class. */
+    public ApplicationInsightsComponentAnalyticsItemInner() {
+    }
+
     /**
      * Get the id property: Internally assigned unique id of the item definition.
      *

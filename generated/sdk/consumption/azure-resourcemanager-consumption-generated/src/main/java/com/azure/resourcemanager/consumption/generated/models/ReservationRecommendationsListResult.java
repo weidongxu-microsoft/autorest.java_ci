@@ -30,6 +30,10 @@ public final class ReservationRecommendationsListResult {
     @JsonProperty(value = "previousLink", access = JsonProperty.Access.WRITE_ONLY)
     private String previousLink;
 
+    /** Creates an instance of ReservationRecommendationsListResult class. */
+    public ReservationRecommendationsListResult() {
+    }
+
     /**
      * Get the value property: The list of reservation recommendations.
      *

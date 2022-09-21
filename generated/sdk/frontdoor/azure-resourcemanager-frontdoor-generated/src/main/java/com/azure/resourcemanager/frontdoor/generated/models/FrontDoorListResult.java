@@ -27,6 +27,10 @@ public final class FrontDoorListResult {
     @JsonProperty(value = "nextLink")
     private String nextLink;
 
+    /** Creates an instance of FrontDoorListResult class. */
+    public FrontDoorListResult() {
+    }
+
     /**
      * Get the value property: List of Front Doors within a resource group.
      *

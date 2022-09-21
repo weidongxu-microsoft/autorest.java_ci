@@ -34,6 +34,10 @@ public final class ConnectionMonitor {
     @JsonProperty(value = "properties", required = true)
     private ConnectionMonitorParameters innerProperties = new ConnectionMonitorParameters();
 
+    /** Creates an instance of ConnectionMonitor class. */
+    public ConnectionMonitor() {
+    }
+
     /**
      * Get the location property: Connection monitor location.
      *

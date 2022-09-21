@@ -17,12 +17,15 @@ public interface CapacityReservationGroups {
      *
      * @param resourceGroupName The name of the resource group.
      * @param capacityReservationGroupName The name of the capacity reservation group.
+     * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
      */
-    void deleteByResourceGroup(String resourceGroupName, String capacityReservationGroupName);
+    Response<Void> deleteByResourceGroupWithResponse(
+        String resourceGroupName, String capacityReservationGroupName, Context context);
 
     /**
      * The operation to delete a capacity reservation group. This operation is allowed only if all the associated
@@ -31,28 +34,12 @@ public interface CapacityReservationGroups {
      *
      * @param resourceGroupName The name of the resource group.
      * @param capacityReservationGroupName The name of the capacity reservation group.
-     * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
      */
-    Response<Void> deleteWithResponse(String resourceGroupName, String capacityReservationGroupName, Context context);
-
-    /**
-     * The operation that retrieves information about a capacity reservation group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param capacityReservationGroupName The name of the capacity reservation group.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the capacity reservation group that the capacity reservations should be
-     *     assigned to.
-     */
-    CapacityReservationGroup getByResourceGroup(String resourceGroupName, String capacityReservationGroupName);
+    void deleteByResourceGroup(String resourceGroupName, String capacityReservationGroupName);
 
     /**
      * The operation that retrieves information about a capacity reservation group.
@@ -76,6 +63,20 @@ public interface CapacityReservationGroups {
         String capacityReservationGroupName,
         CapacityReservationGroupInstanceViewTypes expand,
         Context context);
+
+    /**
+     * The operation that retrieves information about a capacity reservation group.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param capacityReservationGroupName The name of the capacity reservation group.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return specifies information about the capacity reservation group that the capacity reservations should be
+     *     assigned to.
+     */
+    CapacityReservationGroup getByResourceGroup(String resourceGroupName, String capacityReservationGroupName);
 
     /**
      * Lists all of the capacity reservation groups in the specified resource group. Use the nextLink property in the

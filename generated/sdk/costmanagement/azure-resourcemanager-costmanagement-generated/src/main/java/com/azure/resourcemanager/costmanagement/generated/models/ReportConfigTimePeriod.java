@@ -24,6 +24,10 @@ public final class ReportConfigTimePeriod {
     @JsonProperty(value = "to", required = true)
     private OffsetDateTime to;
 
+    /** Creates an instance of ReportConfigTimePeriod class. */
+    public ReportConfigTimePeriod() {
+    }
+
     /**
      * Get the from property: The start date to pull data from.
      *

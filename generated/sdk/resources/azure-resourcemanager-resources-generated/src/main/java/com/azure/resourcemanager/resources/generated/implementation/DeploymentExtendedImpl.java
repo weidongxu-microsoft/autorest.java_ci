@@ -164,12 +164,12 @@ public final class DeploymentExtendedImpl
         return this;
     }
 
-    public void cancel() {
-        serviceManager.deployments().cancel(resourceGroupName, deploymentName);
-    }
-
     public Response<Void> cancelWithResponse(Context context) {
         return serviceManager.deployments().cancelWithResponse(resourceGroupName, deploymentName, context);
+    }
+
+    public void cancel() {
+        serviceManager.deployments().cancel(resourceGroupName, deploymentName);
     }
 
     public DeploymentValidateResult validate(Deployment parameters) {
@@ -188,12 +188,12 @@ public final class DeploymentExtendedImpl
         return serviceManager.deployments().whatIf(resourceGroupName, deploymentName, parameters, context);
     }
 
-    public DeploymentExportResult exportTemplate() {
-        return serviceManager.deployments().exportTemplate(resourceGroupName, deploymentName);
-    }
-
     public Response<DeploymentExportResult> exportTemplateWithResponse(Context context) {
         return serviceManager.deployments().exportTemplateWithResponse(resourceGroupName, deploymentName, context);
+    }
+
+    public DeploymentExportResult exportTemplate() {
+        return serviceManager.deployments().exportTemplate(resourceGroupName, deploymentName);
     }
 
     public DeploymentExtendedImpl withProperties(DeploymentProperties properties) {

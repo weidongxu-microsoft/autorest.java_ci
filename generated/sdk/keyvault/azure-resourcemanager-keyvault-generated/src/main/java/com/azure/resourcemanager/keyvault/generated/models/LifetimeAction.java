@@ -22,6 +22,10 @@ public final class LifetimeAction {
     @JsonProperty(value = "action")
     private Action action;
 
+    /** Creates an instance of LifetimeAction class. */
+    public LifetimeAction() {
+    }
+
     /**
      * Get the trigger property: The trigger of key rotation policy lifetimeAction.
      *

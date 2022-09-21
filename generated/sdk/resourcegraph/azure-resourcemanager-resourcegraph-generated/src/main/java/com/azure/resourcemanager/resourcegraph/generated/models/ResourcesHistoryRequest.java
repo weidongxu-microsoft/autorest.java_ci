@@ -35,6 +35,10 @@ public final class ResourcesHistoryRequest {
     @JsonProperty(value = "managementGroups")
     private List<String> managementGroups;
 
+    /** Creates an instance of ResourcesHistoryRequest class. */
+    public ResourcesHistoryRequest() {
+    }
+
     /**
      * Get the subscriptions property: Azure subscriptions against which to execute the query.
      *

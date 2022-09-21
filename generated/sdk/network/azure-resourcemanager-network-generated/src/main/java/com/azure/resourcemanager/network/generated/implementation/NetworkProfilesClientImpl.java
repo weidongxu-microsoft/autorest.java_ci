@@ -208,7 +208,7 @@ public final class NetworkProfilesClientImpl implements NetworkProfilesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -259,7 +259,7 @@ public final class NetworkProfilesClientImpl implements NetworkProfilesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -444,7 +444,7 @@ public final class NetworkProfilesClientImpl implements NetworkProfilesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -498,7 +498,7 @@ public final class NetworkProfilesClientImpl implements NetworkProfilesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -511,24 +511,6 @@ public final class NetworkProfilesClientImpl implements NetworkProfilesClient {
                 expand,
                 accept,
                 context);
-    }
-
-    /**
-     * Gets the specified network profile in a specified resource group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param networkProfileName The name of the public IP prefix.
-     * @param expand Expands referenced resources.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network profile in a specified resource group on successful completion of {@link Mono}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<NetworkProfileInner> getByResourceGroupAsync(
-        String resourceGroupName, String networkProfileName, String expand) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, networkProfileName, expand)
-            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -553,15 +535,16 @@ public final class NetworkProfilesClientImpl implements NetworkProfilesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param networkProfileName The name of the public IP prefix.
+     * @param expand Expands referenced resources.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network profile in a specified resource group.
+     * @return the specified network profile in a specified resource group along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public NetworkProfileInner getByResourceGroup(String resourceGroupName, String networkProfileName) {
-        final String expand = null;
-        return getByResourceGroupAsync(resourceGroupName, networkProfileName, expand).block();
+    public Response<NetworkProfileInner> getByResourceGroupWithResponse(
+        String resourceGroupName, String networkProfileName, String expand) {
+        return getByResourceGroupWithResponseAsync(resourceGroupName, networkProfileName, expand).block();
     }
 
     /**
@@ -580,6 +563,22 @@ public final class NetworkProfilesClientImpl implements NetworkProfilesClient {
     public Response<NetworkProfileInner> getByResourceGroupWithResponse(
         String resourceGroupName, String networkProfileName, String expand, Context context) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, networkProfileName, expand, context).block();
+    }
+
+    /**
+     * Gets the specified network profile in a specified resource group.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param networkProfileName The name of the public IP prefix.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified network profile in a specified resource group.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public NetworkProfileInner getByResourceGroup(String resourceGroupName, String networkProfileName) {
+        final String expand = null;
+        return getByResourceGroupWithResponse(resourceGroupName, networkProfileName, expand, Context.NONE).getValue();
     }
 
     /**
@@ -621,7 +620,7 @@ public final class NetworkProfilesClientImpl implements NetworkProfilesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -679,7 +678,7 @@ public final class NetworkProfilesClientImpl implements NetworkProfilesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -721,12 +720,12 @@ public final class NetworkProfilesClientImpl implements NetworkProfilesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return network profile resource.
+     * @return network profile resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public NetworkProfileInner createOrUpdate(
+    public Response<NetworkProfileInner> createOrUpdateWithResponse(
         String resourceGroupName, String networkProfileName, NetworkProfileInner parameters) {
-        return createOrUpdateAsync(resourceGroupName, networkProfileName, parameters).block();
+        return createOrUpdateWithResponseAsync(resourceGroupName, networkProfileName, parameters).block();
     }
 
     /**
@@ -745,6 +744,23 @@ public final class NetworkProfilesClientImpl implements NetworkProfilesClient {
     public Response<NetworkProfileInner> createOrUpdateWithResponse(
         String resourceGroupName, String networkProfileName, NetworkProfileInner parameters, Context context) {
         return createOrUpdateWithResponseAsync(resourceGroupName, networkProfileName, parameters, context).block();
+    }
+
+    /**
+     * Creates or updates a network profile.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param networkProfileName The name of the network profile.
+     * @param parameters Parameters supplied to the create or update network profile operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return network profile resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public NetworkProfileInner createOrUpdate(
+        String resourceGroupName, String networkProfileName, NetworkProfileInner parameters) {
+        return createOrUpdateWithResponse(resourceGroupName, networkProfileName, parameters, Context.NONE).getValue();
     }
 
     /**
@@ -786,7 +802,7 @@ public final class NetworkProfilesClientImpl implements NetworkProfilesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -844,7 +860,7 @@ public final class NetworkProfilesClientImpl implements NetworkProfilesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -886,11 +902,12 @@ public final class NetworkProfilesClientImpl implements NetworkProfilesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return network profile resource.
+     * @return network profile resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public NetworkProfileInner updateTags(String resourceGroupName, String networkProfileName, TagsObject parameters) {
-        return updateTagsAsync(resourceGroupName, networkProfileName, parameters).block();
+    public Response<NetworkProfileInner> updateTagsWithResponse(
+        String resourceGroupName, String networkProfileName, TagsObject parameters) {
+        return updateTagsWithResponseAsync(resourceGroupName, networkProfileName, parameters).block();
     }
 
     /**
@@ -909,6 +926,22 @@ public final class NetworkProfilesClientImpl implements NetworkProfilesClient {
     public Response<NetworkProfileInner> updateTagsWithResponse(
         String resourceGroupName, String networkProfileName, TagsObject parameters, Context context) {
         return updateTagsWithResponseAsync(resourceGroupName, networkProfileName, parameters, context).block();
+    }
+
+    /**
+     * Updates network profile tags.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param networkProfileName The name of the network profile.
+     * @param parameters Parameters supplied to update network profile tags.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return network profile resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public NetworkProfileInner updateTags(String resourceGroupName, String networkProfileName, TagsObject parameters) {
+        return updateTagsWithResponse(resourceGroupName, networkProfileName, parameters, Context.NONE).getValue();
     }
 
     /**
@@ -933,7 +966,7 @@ public final class NetworkProfilesClientImpl implements NetworkProfilesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -976,7 +1009,7 @@ public final class NetworkProfilesClientImpl implements NetworkProfilesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1073,7 +1106,7 @@ public final class NetworkProfilesClientImpl implements NetworkProfilesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1128,7 +1161,7 @@ public final class NetworkProfilesClientImpl implements NetworkProfilesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service

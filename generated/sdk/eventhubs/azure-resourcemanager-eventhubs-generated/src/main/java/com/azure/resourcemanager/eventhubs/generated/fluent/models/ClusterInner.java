@@ -32,6 +32,10 @@ public final class ClusterInner extends Resource {
     @JsonProperty(value = "properties")
     private ClusterProperties innerProperties;
 
+    /** Creates an instance of ClusterInner class. */
+    public ClusterInner() {
+    }
+
     /**
      * Get the sku property: Properties of the cluster SKU.
      *

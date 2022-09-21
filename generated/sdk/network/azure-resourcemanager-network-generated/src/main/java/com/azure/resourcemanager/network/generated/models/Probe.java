@@ -82,6 +82,16 @@ public interface Probe {
     Integer numberOfProbes();
 
     /**
+     * Gets the probeThreshold property: The number of consecutive successful or failed probes in order to allow or deny
+     * traffic from being delivered to this endpoint. After failing the number of consecutive probes equal to this
+     * value, the endpoint will be taken out of rotation and require the same number of successful consecutive probes to
+     * be placed back in rotation.
+     *
+     * @return the probeThreshold value.
+     */
+    Integer probeThreshold();
+
+    /**
      * Gets the requestPath property: The URI used for requesting health status from the VM. Path is required if a
      * protocol is set to http. Otherwise, it is not allowed. There is no default value.
      *

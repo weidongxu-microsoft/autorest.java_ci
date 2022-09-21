@@ -183,7 +183,7 @@ public final class VirtualNetworkGatewayNatRulesClientImpl implements VirtualNet
         if (natRuleName == null) {
             return Mono.error(new IllegalArgumentException("Parameter natRuleName is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -242,7 +242,7 @@ public final class VirtualNetworkGatewayNatRulesClientImpl implements VirtualNet
         if (natRuleName == null) {
             return Mono.error(new IllegalArgumentException("Parameter natRuleName is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -284,12 +284,12 @@ public final class VirtualNetworkGatewayNatRulesClientImpl implements VirtualNet
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtualNetworkGatewayNatRule Resource.
+     * @return virtualNetworkGatewayNatRule Resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public VirtualNetworkGatewayNatRuleInner get(
+    public Response<VirtualNetworkGatewayNatRuleInner> getWithResponse(
         String resourceGroupName, String virtualNetworkGatewayName, String natRuleName) {
-        return getAsync(resourceGroupName, virtualNetworkGatewayName, natRuleName).block();
+        return getWithResponseAsync(resourceGroupName, virtualNetworkGatewayName, natRuleName).block();
     }
 
     /**
@@ -308,6 +308,23 @@ public final class VirtualNetworkGatewayNatRulesClientImpl implements VirtualNet
     public Response<VirtualNetworkGatewayNatRuleInner> getWithResponse(
         String resourceGroupName, String virtualNetworkGatewayName, String natRuleName, Context context) {
         return getWithResponseAsync(resourceGroupName, virtualNetworkGatewayName, natRuleName, context).block();
+    }
+
+    /**
+     * Retrieves the details of a nat rule.
+     *
+     * @param resourceGroupName The resource group name of the Virtual Network Gateway.
+     * @param virtualNetworkGatewayName The name of the gateway.
+     * @param natRuleName The name of the nat rule.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return virtualNetworkGatewayNatRule Resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public VirtualNetworkGatewayNatRuleInner get(
+        String resourceGroupName, String virtualNetworkGatewayName, String natRuleName) {
+        return getWithResponse(resourceGroupName, virtualNetworkGatewayName, natRuleName, Context.NONE).getValue();
     }
 
     /**
@@ -360,7 +377,7 @@ public final class VirtualNetworkGatewayNatRulesClientImpl implements VirtualNet
         } else {
             natRuleParameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -431,7 +448,7 @@ public final class VirtualNetworkGatewayNatRulesClientImpl implements VirtualNet
         } else {
             natRuleParameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -698,7 +715,7 @@ public final class VirtualNetworkGatewayNatRulesClientImpl implements VirtualNet
         if (natRuleName == null) {
             return Mono.error(new IllegalArgumentException("Parameter natRuleName is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -756,7 +773,7 @@ public final class VirtualNetworkGatewayNatRulesClientImpl implements VirtualNet
         if (natRuleName == null) {
             return Mono.error(new IllegalArgumentException("Parameter natRuleName is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -957,7 +974,7 @@ public final class VirtualNetworkGatewayNatRulesClientImpl implements VirtualNet
                     new IllegalArgumentException(
                         "Parameter virtualNetworkGatewayName is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1020,7 +1037,7 @@ public final class VirtualNetworkGatewayNatRulesClientImpl implements VirtualNet
                     new IllegalArgumentException(
                         "Parameter virtualNetworkGatewayName is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service

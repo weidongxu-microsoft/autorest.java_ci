@@ -16,6 +16,10 @@ public final class SymmetricKey {
     @JsonProperty(value = "connectionString")
     private AsymmetricEncryptedSecret connectionString;
 
+    /** Creates an instance of SymmetricKey class. */
+    public SymmetricKey() {
+    }
+
     /**
      * Get the connectionString property: Connection string based on the symmetric key.
      *

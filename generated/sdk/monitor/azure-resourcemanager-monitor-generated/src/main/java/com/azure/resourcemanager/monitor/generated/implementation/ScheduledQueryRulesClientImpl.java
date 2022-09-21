@@ -288,12 +288,12 @@ public final class ScheduledQueryRulesClientImpl implements ScheduledQueryRulesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Log Search Rule resource.
+     * @return the Log Search Rule resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public LogSearchRuleResourceInner createOrUpdate(
+    public Response<LogSearchRuleResourceInner> createOrUpdateWithResponse(
         String resourceGroupName, String ruleName, LogSearchRuleResourceInner parameters) {
-        return createOrUpdateAsync(resourceGroupName, ruleName, parameters).block();
+        return createOrUpdateWithResponseAsync(resourceGroupName, ruleName, parameters).block();
     }
 
     /**
@@ -312,6 +312,23 @@ public final class ScheduledQueryRulesClientImpl implements ScheduledQueryRulesC
     public Response<LogSearchRuleResourceInner> createOrUpdateWithResponse(
         String resourceGroupName, String ruleName, LogSearchRuleResourceInner parameters, Context context) {
         return createOrUpdateWithResponseAsync(resourceGroupName, ruleName, parameters, context).block();
+    }
+
+    /**
+     * Creates or updates an log search rule.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param ruleName The name of the rule.
+     * @param parameters The parameters of the rule to create or update.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the Log Search Rule resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public LogSearchRuleResourceInner createOrUpdate(
+        String resourceGroupName, String ruleName, LogSearchRuleResourceInner parameters) {
+        return createOrUpdateWithResponse(resourceGroupName, ruleName, parameters, Context.NONE).getValue();
     }
 
     /**
@@ -434,11 +451,12 @@ public final class ScheduledQueryRulesClientImpl implements ScheduledQueryRulesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Log Search rule.
+     * @return an Log Search rule along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public LogSearchRuleResourceInner getByResourceGroup(String resourceGroupName, String ruleName) {
-        return getByResourceGroupAsync(resourceGroupName, ruleName).block();
+    public Response<LogSearchRuleResourceInner> getByResourceGroupWithResponse(
+        String resourceGroupName, String ruleName) {
+        return getByResourceGroupWithResponseAsync(resourceGroupName, ruleName).block();
     }
 
     /**
@@ -456,6 +474,21 @@ public final class ScheduledQueryRulesClientImpl implements ScheduledQueryRulesC
     public Response<LogSearchRuleResourceInner> getByResourceGroupWithResponse(
         String resourceGroupName, String ruleName, Context context) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, ruleName, context).block();
+    }
+
+    /**
+     * Gets an Log Search rule.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param ruleName The name of the rule.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return an Log Search rule.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public LogSearchRuleResourceInner getByResourceGroup(String resourceGroupName, String ruleName) {
+        return getByResourceGroupWithResponse(resourceGroupName, ruleName, Context.NONE).getValue();
     }
 
     /**
@@ -595,12 +628,12 @@ public final class ScheduledQueryRulesClientImpl implements ScheduledQueryRulesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Log Search Rule resource.
+     * @return the Log Search Rule resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public LogSearchRuleResourceInner update(
+    public Response<LogSearchRuleResourceInner> updateWithResponse(
         String resourceGroupName, String ruleName, LogSearchRuleResourcePatch parameters) {
-        return updateAsync(resourceGroupName, ruleName, parameters).block();
+        return updateWithResponseAsync(resourceGroupName, ruleName, parameters).block();
     }
 
     /**
@@ -619,6 +652,23 @@ public final class ScheduledQueryRulesClientImpl implements ScheduledQueryRulesC
     public Response<LogSearchRuleResourceInner> updateWithResponse(
         String resourceGroupName, String ruleName, LogSearchRuleResourcePatch parameters, Context context) {
         return updateWithResponseAsync(resourceGroupName, ruleName, parameters, context).block();
+    }
+
+    /**
+     * Update log search Rule.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param ruleName The name of the rule.
+     * @param parameters The parameters of the rule to update.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the Log Search Rule resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public LogSearchRuleResourceInner update(
+        String resourceGroupName, String ruleName, LogSearchRuleResourcePatch parameters) {
+        return updateWithResponse(resourceGroupName, ruleName, parameters, Context.NONE).getValue();
     }
 
     /**
@@ -738,10 +788,11 @@ public final class ScheduledQueryRulesClientImpl implements ScheduledQueryRulesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public void delete(String resourceGroupName, String ruleName) {
-        deleteAsync(resourceGroupName, ruleName).block();
+    public Response<Void> deleteWithResponse(String resourceGroupName, String ruleName) {
+        return deleteWithResponseAsync(resourceGroupName, ruleName).block();
     }
 
     /**
@@ -758,6 +809,20 @@ public final class ScheduledQueryRulesClientImpl implements ScheduledQueryRulesC
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> deleteWithResponse(String resourceGroupName, String ruleName, Context context) {
         return deleteWithResponseAsync(resourceGroupName, ruleName, context).block();
+    }
+
+    /**
+     * Deletes a Log Search rule.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param ruleName The name of the rule.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public void delete(String resourceGroupName, String ruleName) {
+        deleteWithResponse(resourceGroupName, ruleName, Context.NONE);
     }
 
     /**

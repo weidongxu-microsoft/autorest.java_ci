@@ -27,15 +27,6 @@ public final class PrivateLinkScopeOperationStatusImpl implements PrivateLinkSco
         this.serviceManager = serviceManager;
     }
 
-    public OperationStatus getByResourceGroup(String resourceGroupName, String asyncOperationId) {
-        OperationStatusInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, asyncOperationId);
-        if (inner != null) {
-            return new OperationStatusImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<OperationStatus> getByResourceGroupWithResponse(
         String resourceGroupName, String asyncOperationId, Context context) {
         Response<OperationStatusInner> inner =
@@ -46,6 +37,15 @@ public final class PrivateLinkScopeOperationStatusImpl implements PrivateLinkSco
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new OperationStatusImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public OperationStatus getByResourceGroup(String resourceGroupName, String asyncOperationId) {
+        OperationStatusInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, asyncOperationId);
+        if (inner != null) {
+            return new OperationStatusImpl(inner, this.manager());
         } else {
             return null;
         }

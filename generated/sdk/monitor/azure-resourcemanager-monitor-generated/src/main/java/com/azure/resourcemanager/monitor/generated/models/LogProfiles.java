@@ -14,16 +14,6 @@ public interface LogProfiles {
      * Deletes the log profile.
      *
      * @param logProfileName The name of the log profile.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void delete(String logProfileName);
-
-    /**
-     * Deletes the log profile.
-     *
-     * @param logProfileName The name of the log profile.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -33,15 +23,14 @@ public interface LogProfiles {
     Response<Void> deleteWithResponse(String logProfileName, Context context);
 
     /**
-     * Gets the log profile.
+     * Deletes the log profile.
      *
      * @param logProfileName The name of the log profile.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the log profile.
      */
-    LogProfileResource get(String logProfileName);
+    void delete(String logProfileName);
 
     /**
      * Gets the log profile.
@@ -54,6 +43,17 @@ public interface LogProfiles {
      * @return the log profile along with {@link Response}.
      */
     Response<LogProfileResource> getWithResponse(String logProfileName, Context context);
+
+    /**
+     * Gets the log profile.
+     *
+     * @param logProfileName The name of the log profile.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the log profile.
+     */
+    LogProfileResource get(String logProfileName);
 
     /**
      * List the log profiles.

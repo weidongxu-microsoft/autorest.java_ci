@@ -19,6 +19,10 @@ public final class DeviceCapacityRequestInfo {
     @JsonProperty(value = "properties", required = true)
     private DeviceCapacityRequestInfoProperties innerProperties = new DeviceCapacityRequestInfoProperties();
 
+    /** Creates an instance of DeviceCapacityRequestInfo class. */
+    public DeviceCapacityRequestInfo() {
+    }
+
     /**
      * Get the innerProperties property: The properties of the Device Capacity Request.
      *

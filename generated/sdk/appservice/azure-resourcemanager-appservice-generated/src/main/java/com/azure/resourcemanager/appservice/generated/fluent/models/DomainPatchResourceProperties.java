@@ -142,6 +142,10 @@ public final class DomainPatchResourceProperties {
     @JsonProperty(value = "authCode")
     private String authCode;
 
+    /** Creates an instance of DomainPatchResourceProperties class. */
+    public DomainPatchResourceProperties() {
+    }
+
     /**
      * Get the contactAdmin property: Administrative contact.
      *

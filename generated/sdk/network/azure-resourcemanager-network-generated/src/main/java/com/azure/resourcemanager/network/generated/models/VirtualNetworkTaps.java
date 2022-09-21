@@ -38,18 +38,6 @@ public interface VirtualNetworkTaps {
      *
      * @param resourceGroupName The name of the resource group.
      * @param tapName The name of virtual network tap.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the specified virtual network tap.
-     */
-    VirtualNetworkTap getByResourceGroup(String resourceGroupName, String tapName);
-
-    /**
-     * Gets information about the specified virtual network tap.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param tapName The name of virtual network tap.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -58,6 +46,18 @@ public interface VirtualNetworkTaps {
      */
     Response<VirtualNetworkTap> getByResourceGroupWithResponse(
         String resourceGroupName, String tapName, Context context);
+
+    /**
+     * Gets information about the specified virtual network tap.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param tapName The name of virtual network tap.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return information about the specified virtual network tap.
+     */
+    VirtualNetworkTap getByResourceGroup(String resourceGroupName, String tapName);
 
     /**
      * Gets all the VirtualNetworkTaps in a subscription.

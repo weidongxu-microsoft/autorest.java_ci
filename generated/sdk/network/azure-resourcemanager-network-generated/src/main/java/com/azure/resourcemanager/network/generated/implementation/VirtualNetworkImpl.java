@@ -4,6 +4,7 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
+import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.management.Region;
 import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
@@ -14,6 +15,7 @@ import com.azure.resourcemanager.network.generated.models.AddressSpace;
 import com.azure.resourcemanager.network.generated.models.DhcpOptions;
 import com.azure.resourcemanager.network.generated.models.ExtendedLocation;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
+import com.azure.resourcemanager.network.generated.models.PublicIpDdosProtectionStatusResult;
 import com.azure.resourcemanager.network.generated.models.Subnet;
 import com.azure.resourcemanager.network.generated.models.TagsObject;
 import com.azure.resourcemanager.network.generated.models.VirtualNetwork;
@@ -245,6 +247,17 @@ public final class VirtualNetworkImpl implements VirtualNetwork, VirtualNetwork.
                 .getByResourceGroupWithResponse(resourceGroupName, virtualNetworkName, localExpand, context)
                 .getValue();
         return this;
+    }
+
+    public PagedIterable<PublicIpDdosProtectionStatusResult> listDdosProtectionStatus() {
+        return serviceManager.virtualNetworks().listDdosProtectionStatus(resourceGroupName, virtualNetworkName);
+    }
+
+    public PagedIterable<PublicIpDdosProtectionStatusResult> listDdosProtectionStatus(
+        Integer top, String skipToken, Context context) {
+        return serviceManager
+            .virtualNetworks()
+            .listDdosProtectionStatus(resourceGroupName, virtualNetworkName, top, skipToken, context);
     }
 
     public VirtualNetworkImpl withRegion(Region location) {

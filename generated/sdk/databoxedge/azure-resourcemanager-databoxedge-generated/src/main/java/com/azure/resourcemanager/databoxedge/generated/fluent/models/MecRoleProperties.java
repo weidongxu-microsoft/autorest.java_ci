@@ -37,6 +37,10 @@ public final class MecRoleProperties {
     @JsonProperty(value = "roleStatus", required = true)
     private RoleStatus roleStatus;
 
+    /** Creates an instance of MecRoleProperties class. */
+    public MecRoleProperties() {
+    }
+
     /**
      * Get the connectionString property: Activation key of the MEC.
      *

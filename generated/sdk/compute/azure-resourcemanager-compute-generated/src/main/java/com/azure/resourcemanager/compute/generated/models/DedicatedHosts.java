@@ -43,20 +43,6 @@ public interface DedicatedHosts {
      * @param resourceGroupName The name of the resource group.
      * @param hostGroupName The name of the dedicated host group.
      * @param hostname The name of the dedicated host.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the Dedicated host.
-     */
-    DedicatedHost get(String resourceGroupName, String hostGroupName, String hostname);
-
-    /**
-     * Retrieves information about a dedicated host.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param hostGroupName The name of the dedicated host group.
-     * @param hostname The name of the dedicated host.
      * @param expand The expand expression to apply on the operation. 'InstanceView' will retrieve the list of instance
      *     views of the dedicated host. 'UserData' is not supported for dedicated host.
      * @param context The context to associate with this operation.
@@ -68,6 +54,20 @@ public interface DedicatedHosts {
      */
     Response<DedicatedHost> getWithResponse(
         String resourceGroupName, String hostGroupName, String hostname, InstanceViewTypes expand, Context context);
+
+    /**
+     * Retrieves information about a dedicated host.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param hostGroupName The name of the dedicated host group.
+     * @param hostname The name of the dedicated host.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return specifies information about the Dedicated host.
+     */
+    DedicatedHost get(String resourceGroupName, String hostGroupName, String hostname);
 
     /**
      * Lists all of the dedicated hosts in the specified dedicated host group. Use the nextLink property in the response

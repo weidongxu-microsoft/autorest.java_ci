@@ -29,6 +29,10 @@ public final class KeyVaultCertificateSourceParameters {
     @JsonProperty(value = "secretVersion")
     private String secretVersion;
 
+    /** Creates an instance of KeyVaultCertificateSourceParameters class. */
+    public KeyVaultCertificateSourceParameters() {
+    }
+
     /**
      * Get the vault property: The Key Vault containing the SSL certificate.
      *

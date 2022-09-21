@@ -22,6 +22,10 @@ public final class EtcdInfo {
     @JsonProperty(value = "version", access = JsonProperty.Access.WRITE_ONLY)
     private String version;
 
+    /** Creates an instance of EtcdInfo class. */
+    public EtcdInfo() {
+    }
+
     /**
      * Get the type property: Etcd type.
      *

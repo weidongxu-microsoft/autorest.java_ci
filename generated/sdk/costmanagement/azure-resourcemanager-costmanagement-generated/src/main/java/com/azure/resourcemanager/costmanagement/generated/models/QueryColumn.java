@@ -22,6 +22,10 @@ public final class QueryColumn {
     @JsonProperty(value = "type")
     private String type;
 
+    /** Creates an instance of QueryColumn class. */
+    public QueryColumn() {
+    }
+
     /**
      * Get the name property: The name of column.
      *

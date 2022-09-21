@@ -20,12 +20,14 @@ public interface SystemTopicEventSubscriptions {
      * @param systemTopicName Name of the system topic.
      * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
      *     between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an event subscription.
+     * @return an event subscription along with {@link Response}.
      */
-    EventSubscription get(String resourceGroupName, String systemTopicName, String eventSubscriptionName);
+    Response<EventSubscription> getWithResponse(
+        String resourceGroupName, String systemTopicName, String eventSubscriptionName, Context context);
 
     /**
      * Get an event subscription of a system topic.
@@ -36,14 +38,12 @@ public interface SystemTopicEventSubscriptions {
      * @param systemTopicName Name of the system topic.
      * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
      *     between 3 and 100 characters in length and use alphanumeric letters only.
-     * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an event subscription along with {@link Response}.
+     * @return an event subscription.
      */
-    Response<EventSubscription> getWithResponse(
-        String resourceGroupName, String systemTopicName, String eventSubscriptionName, Context context);
+    EventSubscription get(String resourceGroupName, String systemTopicName, String eventSubscriptionName);
 
     /**
      * Create or update an event subscription for a system topic.
@@ -175,12 +175,14 @@ public interface SystemTopicEventSubscriptions {
      * @param systemTopicName Name of the system topic.
      * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
      *     between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the full endpoint URL for an event subscription of a system topic.
+     * @return the full endpoint URL for an event subscription of a system topic along with {@link Response}.
      */
-    EventSubscriptionFullUrl getFullUrl(String resourceGroupName, String systemTopicName, String eventSubscriptionName);
+    Response<EventSubscriptionFullUrl> getFullUrlWithResponse(
+        String resourceGroupName, String systemTopicName, String eventSubscriptionName, Context context);
 
     /**
      * Get full URL of an event subscription of a system topic
@@ -191,14 +193,12 @@ public interface SystemTopicEventSubscriptions {
      * @param systemTopicName Name of the system topic.
      * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
      *     between 3 and 100 characters in length and use alphanumeric letters only.
-     * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the full endpoint URL for an event subscription of a system topic along with {@link Response}.
+     * @return the full endpoint URL for an event subscription of a system topic.
      */
-    Response<EventSubscriptionFullUrl> getFullUrlWithResponse(
-        String resourceGroupName, String systemTopicName, String eventSubscriptionName, Context context);
+    EventSubscriptionFullUrl getFullUrl(String resourceGroupName, String systemTopicName, String eventSubscriptionName);
 
     /**
      * List event subscriptions of a system topic.
@@ -247,13 +247,14 @@ public interface SystemTopicEventSubscriptions {
      * @param systemTopicName Name of the system topic.
      * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
      *     between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all delivery attributes for an event subscription.
+     * @return all delivery attributes for an event subscription along with {@link Response}.
      */
-    DeliveryAttributeListResult getDeliveryAttributes(
-        String resourceGroupName, String systemTopicName, String eventSubscriptionName);
+    Response<DeliveryAttributeListResult> getDeliveryAttributesWithResponse(
+        String resourceGroupName, String systemTopicName, String eventSubscriptionName, Context context);
 
     /**
      * Get delivery attributes for an event subscription.
@@ -264,12 +265,11 @@ public interface SystemTopicEventSubscriptions {
      * @param systemTopicName Name of the system topic.
      * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
      *     between 3 and 100 characters in length and use alphanumeric letters only.
-     * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all delivery attributes for an event subscription along with {@link Response}.
+     * @return all delivery attributes for an event subscription.
      */
-    Response<DeliveryAttributeListResult> getDeliveryAttributesWithResponse(
-        String resourceGroupName, String systemTopicName, String eventSubscriptionName, Context context);
+    DeliveryAttributeListResult getDeliveryAttributes(
+        String resourceGroupName, String systemTopicName, String eventSubscriptionName);
 }

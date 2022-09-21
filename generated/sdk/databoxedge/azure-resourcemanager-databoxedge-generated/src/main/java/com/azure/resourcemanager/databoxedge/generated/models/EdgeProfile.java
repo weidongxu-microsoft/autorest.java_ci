@@ -16,6 +16,10 @@ public final class EdgeProfile {
     @JsonProperty(value = "subscription")
     private EdgeProfileSubscription subscription;
 
+    /** Creates an instance of EdgeProfile class. */
+    public EdgeProfile() {
+    }
+
     /**
      * Get the subscription property: Edge Profile Subscription.
      *

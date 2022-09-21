@@ -85,18 +85,6 @@ public interface PrivateLinkScopes {
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Azure Monitor PrivateLinkScope definition.
-     */
-    AzureMonitorPrivateLinkScope getByResourceGroup(String resourceGroupName, String scopeName);
-
-    /**
-     * Returns a Azure Monitor PrivateLinkScope.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -105,6 +93,18 @@ public interface PrivateLinkScopes {
      */
     Response<AzureMonitorPrivateLinkScope> getByResourceGroupWithResponse(
         String resourceGroupName, String scopeName, Context context);
+
+    /**
+     * Returns a Azure Monitor PrivateLinkScope.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return an Azure Monitor PrivateLinkScope definition.
+     */
+    AzureMonitorPrivateLinkScope getByResourceGroup(String resourceGroupName, String scopeName);
 
     /**
      * Returns a Azure Monitor PrivateLinkScope.

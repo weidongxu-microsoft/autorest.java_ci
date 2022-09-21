@@ -24,6 +24,10 @@ public final class RelayNamespaceListResult {
     @JsonProperty(value = "nextLink")
     private String nextLink;
 
+    /** Creates an instance of RelayNamespaceListResult class. */
+    public RelayNamespaceListResult() {
+    }
+
     /**
      * Get the value property: Result of the list namespace operation.
      *

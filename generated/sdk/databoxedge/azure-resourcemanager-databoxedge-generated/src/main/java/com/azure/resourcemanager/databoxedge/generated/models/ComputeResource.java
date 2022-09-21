@@ -22,6 +22,10 @@ public final class ComputeResource {
     @JsonProperty(value = "memoryInGB", required = true)
     private long memoryInGB;
 
+    /** Creates an instance of ComputeResource class. */
+    public ComputeResource() {
+    }
+
     /**
      * Get the processorCount property: Processor count.
      *

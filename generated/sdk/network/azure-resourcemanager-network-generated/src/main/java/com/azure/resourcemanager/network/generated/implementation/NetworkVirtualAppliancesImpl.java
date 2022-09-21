@@ -36,16 +36,6 @@ public final class NetworkVirtualAppliancesImpl implements NetworkVirtualApplian
         this.serviceClient().delete(resourceGroupName, networkVirtualApplianceName, context);
     }
 
-    public NetworkVirtualAppliance getByResourceGroup(String resourceGroupName, String networkVirtualApplianceName) {
-        NetworkVirtualApplianceInner inner =
-            this.serviceClient().getByResourceGroup(resourceGroupName, networkVirtualApplianceName);
-        if (inner != null) {
-            return new NetworkVirtualApplianceImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<NetworkVirtualAppliance> getByResourceGroupWithResponse(
         String resourceGroupName, String networkVirtualApplianceName, String expand, Context context) {
         Response<NetworkVirtualApplianceInner> inner =
@@ -58,6 +48,16 @@ public final class NetworkVirtualAppliancesImpl implements NetworkVirtualApplian
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new NetworkVirtualApplianceImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public NetworkVirtualAppliance getByResourceGroup(String resourceGroupName, String networkVirtualApplianceName) {
+        NetworkVirtualApplianceInner inner =
+            this.serviceClient().getByResourceGroup(resourceGroupName, networkVirtualApplianceName);
+        if (inner != null) {
+            return new NetworkVirtualApplianceImpl(inner, this.manager());
         } else {
             return null;
         }

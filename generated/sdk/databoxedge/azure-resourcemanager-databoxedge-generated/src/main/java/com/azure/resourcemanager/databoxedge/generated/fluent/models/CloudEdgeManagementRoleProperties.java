@@ -31,6 +31,10 @@ public final class CloudEdgeManagementRoleProperties {
     @JsonProperty(value = "roleStatus", required = true)
     private RoleStatus roleStatus;
 
+    /** Creates an instance of CloudEdgeManagementRoleProperties class. */
+    public CloudEdgeManagementRoleProperties() {
+    }
+
     /**
      * Get the localManagementStatus property: Local Edge Management Status.
      *

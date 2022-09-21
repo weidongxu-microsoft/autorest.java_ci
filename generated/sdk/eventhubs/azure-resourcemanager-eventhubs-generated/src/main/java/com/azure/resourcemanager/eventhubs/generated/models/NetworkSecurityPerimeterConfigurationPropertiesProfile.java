@@ -29,6 +29,10 @@ public final class NetworkSecurityPerimeterConfigurationPropertiesProfile {
     @JsonProperty(value = "accessRules")
     private List<NspAccessRule> accessRules;
 
+    /** Creates an instance of NetworkSecurityPerimeterConfigurationPropertiesProfile class. */
+    public NetworkSecurityPerimeterConfigurationPropertiesProfile() {
+    }
+
     /**
      * Get the name property: Name of the resource.
      *

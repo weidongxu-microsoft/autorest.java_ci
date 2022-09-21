@@ -16,6 +16,10 @@ public final class DestinationMetadata {
     @JsonProperty(value = "eventHubName")
     private String eventHubName;
 
+    /** Creates an instance of DestinationMetadata class. */
+    public DestinationMetadata() {
+    }
+
     /**
      * Get the eventHubName property: Optional. Allows to define an Event Hub name. Not applicable when destination is
      * Storage Account.

@@ -310,6 +310,10 @@ public final class SitePropertiesInner {
     @JsonProperty(value = "virtualNetworkSubnetId")
     private String virtualNetworkSubnetId;
 
+    /** Creates an instance of SitePropertiesInner class. */
+    public SitePropertiesInner() {
+    }
+
     /**
      * Get the state property: Current state of the app.
      *

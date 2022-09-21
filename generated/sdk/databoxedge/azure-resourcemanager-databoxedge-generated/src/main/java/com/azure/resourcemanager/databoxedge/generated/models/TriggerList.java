@@ -24,6 +24,10 @@ public final class TriggerList {
     @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
 
+    /** Creates an instance of TriggerList class. */
+    public TriggerList() {
+    }
+
     /**
      * Get the value property: The list of triggers.
      *

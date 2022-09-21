@@ -453,12 +453,12 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the CheckNameAvailability operation response.
+     * @return the CheckNameAvailability operation response along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public CheckNameAvailabilityResultInner checkNameAvailability(
+    public Response<CheckNameAvailabilityResultInner> checkNameAvailabilityWithResponse(
         StorageAccountCheckNameAvailabilityParameters accountName) {
-        return checkNameAvailabilityAsync(accountName).block();
+        return checkNameAvailabilityWithResponseAsync(accountName).block();
     }
 
     /**
@@ -476,6 +476,22 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
     public Response<CheckNameAvailabilityResultInner> checkNameAvailabilityWithResponse(
         StorageAccountCheckNameAvailabilityParameters accountName, Context context) {
         return checkNameAvailabilityWithResponseAsync(accountName, context).block();
+    }
+
+    /**
+     * Checks that the storage account name is valid and is not already in use.
+     *
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the CheckNameAvailability operation response.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public CheckNameAvailabilityResultInner checkNameAvailability(
+        StorageAccountCheckNameAvailabilityParameters accountName) {
+        return checkNameAvailabilityWithResponse(accountName, Context.NONE).getValue();
     }
 
     /**
@@ -914,10 +930,11 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public void delete(String resourceGroupName, String accountName) {
-        deleteAsync(resourceGroupName, accountName).block();
+    public Response<Void> deleteWithResponse(String resourceGroupName, String accountName) {
+        return deleteWithResponseAsync(resourceGroupName, accountName).block();
     }
 
     /**
@@ -936,6 +953,22 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> deleteWithResponse(String resourceGroupName, String accountName, Context context) {
         return deleteWithResponseAsync(resourceGroupName, accountName, context).block();
+    }
+
+    /**
+     * Deletes a storage account in Microsoft Azure.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     *     insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public void delete(String resourceGroupName, String accountName) {
+        deleteWithResponse(resourceGroupName, accountName, Context.NONE);
     }
 
     /**
@@ -1052,28 +1085,6 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      *     insensitive.
      * @param accountName The name of the storage account within the specified resource group. Storage account names
      *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param expand May be used to expand the properties within account's properties. By default, data is not included
-     *     when fetching properties. Currently we only support geoReplicationStats and blobRestoreStatus.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the storage account on successful completion of {@link Mono}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<StorageAccountInner> getByResourceGroupAsync(
-        String resourceGroupName, String accountName, StorageAccountExpand expand) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, accountName, expand)
-            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Returns the properties for the specified storage account including but not limited to name, SKU name, location,
-     * and account status. The ListKeys operation should be used to retrieve storage keys.
-     *
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     *     insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1094,15 +1105,17 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      *     insensitive.
      * @param accountName The name of the storage account within the specified resource group. Storage account names
      *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param expand May be used to expand the properties within account's properties. By default, data is not included
+     *     when fetching properties. Currently we only support geoReplicationStats and blobRestoreStatus.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the storage account.
+     * @return the storage account along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public StorageAccountInner getByResourceGroup(String resourceGroupName, String accountName) {
-        final StorageAccountExpand expand = null;
-        return getByResourceGroupAsync(resourceGroupName, accountName, expand).block();
+    public Response<StorageAccountInner> getByResourceGroupWithResponse(
+        String resourceGroupName, String accountName, StorageAccountExpand expand) {
+        return getByResourceGroupWithResponseAsync(resourceGroupName, accountName, expand).block();
     }
 
     /**
@@ -1125,6 +1138,25 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
     public Response<StorageAccountInner> getByResourceGroupWithResponse(
         String resourceGroupName, String accountName, StorageAccountExpand expand, Context context) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, accountName, expand, context).block();
+    }
+
+    /**
+     * Returns the properties for the specified storage account including but not limited to name, SKU name, location,
+     * and account status. The ListKeys operation should be used to retrieve storage keys.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     *     insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the storage account.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public StorageAccountInner getByResourceGroup(String resourceGroupName, String accountName) {
+        final StorageAccountExpand expand = null;
+        return getByResourceGroupWithResponse(resourceGroupName, accountName, expand, Context.NONE).getValue();
     }
 
     /**
@@ -1290,12 +1322,12 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the storage account.
+     * @return the storage account along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public StorageAccountInner update(
+    public Response<StorageAccountInner> updateWithResponse(
         String resourceGroupName, String accountName, StorageAccountUpdateParameters parameters) {
-        return updateAsync(resourceGroupName, accountName, parameters).block();
+        return updateWithResponseAsync(resourceGroupName, accountName, parameters).block();
     }
 
     /**
@@ -1321,6 +1353,30 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
     public Response<StorageAccountInner> updateWithResponse(
         String resourceGroupName, String accountName, StorageAccountUpdateParameters parameters, Context context) {
         return updateWithResponseAsync(resourceGroupName, accountName, parameters, context).block();
+    }
+
+    /**
+     * The update operation can be used to update the SKU, encryption, access tier, or tags for a storage account. It
+     * can also be used to map the account to a custom domain. Only one custom domain is supported per storage account;
+     * the replacement/change of custom domain is not supported. In order to replace an old custom domain, the old value
+     * must be cleared/unregistered before a new value can be set. The update of multiple properties is supported. This
+     * call does not change the storage keys for the account. If you want to change the storage account keys, use the
+     * regenerate keys operation. The location and name of the storage account cannot be changed after creation.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     *     insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param parameters The parameters to provide for the updated account.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the storage account.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public StorageAccountInner update(
+        String resourceGroupName, String accountName, StorageAccountUpdateParameters parameters) {
+        return updateWithResponse(resourceGroupName, accountName, parameters, Context.NONE).getValue();
     }
 
     /**
@@ -1759,26 +1815,6 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      *     insensitive.
      * @param accountName The name of the storage account within the specified resource group. Storage account names
      *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param expand Specifies type of the key to be listed. Possible value is kerb.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the ListKeys operation on successful completion of {@link Mono}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<StorageAccountListKeysResultInner> listKeysAsync(
-        String resourceGroupName, String accountName, ListKeyExpand expand) {
-        return listKeysWithResponseAsync(resourceGroupName, accountName, expand)
-            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Lists the access keys or Kerberos keys (if active directory enabled) for the specified storage account.
-     *
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     *     insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1798,15 +1834,16 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      *     insensitive.
      * @param accountName The name of the storage account within the specified resource group. Storage account names
      *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param expand Specifies type of the key to be listed. Possible value is kerb.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the ListKeys operation.
+     * @return the response from the ListKeys operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public StorageAccountListKeysResultInner listKeys(String resourceGroupName, String accountName) {
-        final ListKeyExpand expand = null;
-        return listKeysAsync(resourceGroupName, accountName, expand).block();
+    public Response<StorageAccountListKeysResultInner> listKeysWithResponse(
+        String resourceGroupName, String accountName, ListKeyExpand expand) {
+        return listKeysWithResponseAsync(resourceGroupName, accountName, expand).block();
     }
 
     /**
@@ -1827,6 +1864,24 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
     public Response<StorageAccountListKeysResultInner> listKeysWithResponse(
         String resourceGroupName, String accountName, ListKeyExpand expand, Context context) {
         return listKeysWithResponseAsync(resourceGroupName, accountName, expand, context).block();
+    }
+
+    /**
+     * Lists the access keys or Kerberos keys (if active directory enabled) for the specified storage account.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     *     insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response from the ListKeys operation.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public StorageAccountListKeysResultInner listKeys(String resourceGroupName, String accountName) {
+        final ListKeyExpand expand = null;
+        return listKeysWithResponse(resourceGroupName, accountName, expand, Context.NONE).getValue();
     }
 
     /**
@@ -1977,12 +2032,12 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the ListKeys operation.
+     * @return the response from the ListKeys operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public StorageAccountListKeysResultInner regenerateKey(
+    public Response<StorageAccountListKeysResultInner> regenerateKeyWithResponse(
         String resourceGroupName, String accountName, StorageAccountRegenerateKeyParameters regenerateKey) {
-        return regenerateKeyAsync(resourceGroupName, accountName, regenerateKey).block();
+        return regenerateKeyWithResponseAsync(resourceGroupName, accountName, regenerateKey).block();
     }
 
     /**
@@ -2006,6 +2061,25 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
         StorageAccountRegenerateKeyParameters regenerateKey,
         Context context) {
         return regenerateKeyWithResponseAsync(resourceGroupName, accountName, regenerateKey, context).block();
+    }
+
+    /**
+     * Regenerates one of the access keys or Kerberos keys for the specified storage account.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     *     insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param regenerateKey Specifies name of the key which should be regenerated -- key1, key2, kerb1, kerb2.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response from the ListKeys operation.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public StorageAccountListKeysResultInner regenerateKey(
+        String resourceGroupName, String accountName, StorageAccountRegenerateKeyParameters regenerateKey) {
+        return regenerateKeyWithResponse(resourceGroupName, accountName, regenerateKey, Context.NONE).getValue();
     }
 
     /**
@@ -2153,12 +2227,12 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List SAS credentials operation response.
+     * @return the List SAS credentials operation response along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ListAccountSasResponseInner listAccountSas(
+    public Response<ListAccountSasResponseInner> listAccountSasWithResponse(
         String resourceGroupName, String accountName, AccountSasParameters parameters) {
-        return listAccountSasAsync(resourceGroupName, accountName, parameters).block();
+        return listAccountSasWithResponseAsync(resourceGroupName, accountName, parameters).block();
     }
 
     /**
@@ -2179,6 +2253,25 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
     public Response<ListAccountSasResponseInner> listAccountSasWithResponse(
         String resourceGroupName, String accountName, AccountSasParameters parameters, Context context) {
         return listAccountSasWithResponseAsync(resourceGroupName, accountName, parameters, context).block();
+    }
+
+    /**
+     * List SAS credentials of a storage account.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     *     insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param parameters The parameters to provide to list SAS credentials for the storage account.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the List SAS credentials operation response.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ListAccountSasResponseInner listAccountSas(
+        String resourceGroupName, String accountName, AccountSasParameters parameters) {
+        return listAccountSasWithResponse(resourceGroupName, accountName, parameters, Context.NONE).getValue();
     }
 
     /**
@@ -2326,12 +2419,12 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List service SAS credentials operation response.
+     * @return the List service SAS credentials operation response along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ListServiceSasResponseInner listServiceSas(
+    public Response<ListServiceSasResponseInner> listServiceSasWithResponse(
         String resourceGroupName, String accountName, ServiceSasParameters parameters) {
-        return listServiceSasAsync(resourceGroupName, accountName, parameters).block();
+        return listServiceSasWithResponseAsync(resourceGroupName, accountName, parameters).block();
     }
 
     /**
@@ -2352,6 +2445,25 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
     public Response<ListServiceSasResponseInner> listServiceSasWithResponse(
         String resourceGroupName, String accountName, ServiceSasParameters parameters, Context context) {
         return listServiceSasWithResponseAsync(resourceGroupName, accountName, parameters, context).block();
+    }
+
+    /**
+     * List service SAS credentials of a specific resource.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     *     insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param parameters The parameters to provide to list service SAS credentials.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the List service SAS credentials operation response.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ListServiceSasResponseInner listServiceSas(
+        String resourceGroupName, String accountName, ServiceSasParameters parameters) {
+        return listServiceSasWithResponse(resourceGroupName, accountName, parameters, Context.NONE).getValue();
     }
 
     /**
@@ -3581,10 +3693,11 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public void revokeUserDelegationKeys(String resourceGroupName, String accountName) {
-        revokeUserDelegationKeysAsync(resourceGroupName, accountName).block();
+    public Response<Void> revokeUserDelegationKeysWithResponse(String resourceGroupName, String accountName) {
+        return revokeUserDelegationKeysWithResponseAsync(resourceGroupName, accountName).block();
     }
 
     /**
@@ -3604,6 +3717,22 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
     public Response<Void> revokeUserDelegationKeysWithResponse(
         String resourceGroupName, String accountName, Context context) {
         return revokeUserDelegationKeysWithResponseAsync(resourceGroupName, accountName, context).block();
+    }
+
+    /**
+     * Revoke user delegation keys.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     *     insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public void revokeUserDelegationKeys(String resourceGroupName, String accountName) {
+        revokeUserDelegationKeysWithResponse(resourceGroupName, accountName, Context.NONE);
     }
 
     /**

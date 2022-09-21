@@ -457,18 +457,6 @@ public interface BlobContainer {
      * pattern and does not clear out the existing tags that are not specified in the request.
      *
      * @param legalHold The LegalHold property that will be set to a blob container.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the LegalHold property of a blob container.
-     */
-    LegalHold setLegalHold(LegalHoldInner legalHold);
-
-    /**
-     * Sets legal hold tags. Setting the same tag results in an idempotent operation. SetLegalHold follows an append
-     * pattern and does not clear out the existing tags that are not specified in the request.
-     *
-     * @param legalHold The LegalHold property that will be set to a blob container.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -478,16 +466,16 @@ public interface BlobContainer {
     Response<LegalHold> setLegalHoldWithResponse(LegalHoldInner legalHold, Context context);
 
     /**
-     * Clears legal hold tags. Clearing the same or non-existent tag results in an idempotent operation. ClearLegalHold
-     * clears out only the specified tags in the request.
+     * Sets legal hold tags. Setting the same tag results in an idempotent operation. SetLegalHold follows an append
+     * pattern and does not clear out the existing tags that are not specified in the request.
      *
-     * @param legalHold The LegalHold property that will be clear from a blob container.
+     * @param legalHold The LegalHold property that will be set to a blob container.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the LegalHold property of a blob container.
      */
-    LegalHold clearLegalHold(LegalHoldInner legalHold);
+    LegalHold setLegalHold(LegalHoldInner legalHold);
 
     /**
      * Clears legal hold tags. Clearing the same or non-existent tag results in an idempotent operation. ClearLegalHold
@@ -503,14 +491,16 @@ public interface BlobContainer {
     Response<LegalHold> clearLegalHoldWithResponse(LegalHoldInner legalHold, Context context);
 
     /**
-     * The Lease Container operation establishes and manages a lock on a container for delete operations. The lock
-     * duration can be 15 to 60 seconds, or can be infinite.
+     * Clears legal hold tags. Clearing the same or non-existent tag results in an idempotent operation. ClearLegalHold
+     * clears out only the specified tags in the request.
      *
+     * @param legalHold The LegalHold property that will be clear from a blob container.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return lease Container response schema.
+     * @return the LegalHold property of a blob container.
      */
-    LeaseContainerResponse lease();
+    LegalHold clearLegalHold(LegalHoldInner legalHold);
 
     /**
      * The Lease Container operation establishes and manages a lock on a container for delete operations. The lock
@@ -524,6 +514,16 @@ public interface BlobContainer {
      * @return lease Container response schema along with {@link Response}.
      */
     Response<LeaseContainerResponse> leaseWithResponse(LeaseContainerRequest parameters, Context context);
+
+    /**
+     * The Lease Container operation establishes and manages a lock on a container for delete operations. The lock
+     * duration can be 15 to 60 seconds, or can be infinite.
+     *
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return lease Container response schema.
+     */
+    LeaseContainerResponse lease();
 
     /**
      * This operation migrates a blob container from container level WORM to object level immutability enabled

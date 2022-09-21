@@ -115,6 +115,10 @@ public final class RecordSetProperties {
     @JsonProperty(value = "caaRecords")
     private List<CaaRecord> caaRecords;
 
+    /** Creates an instance of RecordSetProperties class. */
+    public RecordSetProperties() {
+    }
+
     /**
      * Get the metadata property: The metadata attached to the record set.
      *

@@ -261,10 +261,11 @@ public final class ScriptActionsClientImpl implements ScriptActionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public void delete(String resourceGroupName, String clusterName, String scriptName) {
-        deleteAsync(resourceGroupName, clusterName, scriptName).block();
+    public Response<Void> deleteWithResponse(String resourceGroupName, String clusterName, String scriptName) {
+        return deleteWithResponseAsync(resourceGroupName, clusterName, scriptName).block();
     }
 
     /**
@@ -283,6 +284,21 @@ public final class ScriptActionsClientImpl implements ScriptActionsClient {
     public Response<Void> deleteWithResponse(
         String resourceGroupName, String clusterName, String scriptName, Context context) {
         return deleteWithResponseAsync(resourceGroupName, clusterName, scriptName, context).block();
+    }
+
+    /**
+     * Deletes a specified persisted script action of the cluster.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param clusterName The name of the cluster.
+     * @param scriptName The name of the script.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public void delete(String resourceGroupName, String clusterName, String scriptName) {
+        deleteWithResponse(resourceGroupName, clusterName, scriptName, Context.NONE);
     }
 
     /**
@@ -602,12 +618,12 @@ public final class ScriptActionsClientImpl implements ScriptActionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the script execution detail for the given script execution ID.
+     * @return the script execution detail for the given script execution ID along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public RuntimeScriptActionDetailInner getExecutionDetail(
+    public Response<RuntimeScriptActionDetailInner> getExecutionDetailWithResponse(
         String resourceGroupName, String clusterName, String scriptExecutionId) {
-        return getExecutionDetailAsync(resourceGroupName, clusterName, scriptExecutionId).block();
+        return getExecutionDetailWithResponseAsync(resourceGroupName, clusterName, scriptExecutionId).block();
     }
 
     /**
@@ -626,6 +642,24 @@ public final class ScriptActionsClientImpl implements ScriptActionsClient {
     public Response<RuntimeScriptActionDetailInner> getExecutionDetailWithResponse(
         String resourceGroupName, String clusterName, String scriptExecutionId, Context context) {
         return getExecutionDetailWithResponseAsync(resourceGroupName, clusterName, scriptExecutionId, context).block();
+    }
+
+    /**
+     * Gets the script execution detail for the given script execution ID.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param clusterName The name of the cluster.
+     * @param scriptExecutionId The script execution Id.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the script execution detail for the given script execution ID.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public RuntimeScriptActionDetailInner getExecutionDetail(
+        String resourceGroupName, String clusterName, String scriptExecutionId) {
+        return getExecutionDetailWithResponse(resourceGroupName, clusterName, scriptExecutionId, Context.NONE)
+            .getValue();
     }
 
     /**
@@ -761,12 +795,12 @@ public final class ScriptActionsClientImpl implements ScriptActionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the async operation status of execution operation.
+     * @return the async operation status of execution operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public AsyncOperationResultInner getExecutionAsyncOperationStatus(
+    public Response<AsyncOperationResultInner> getExecutionAsyncOperationStatusWithResponse(
         String resourceGroupName, String clusterName, String operationId) {
-        return getExecutionAsyncOperationStatusAsync(resourceGroupName, clusterName, operationId).block();
+        return getExecutionAsyncOperationStatusWithResponseAsync(resourceGroupName, clusterName, operationId).block();
     }
 
     /**
@@ -786,6 +820,24 @@ public final class ScriptActionsClientImpl implements ScriptActionsClient {
         String resourceGroupName, String clusterName, String operationId, Context context) {
         return getExecutionAsyncOperationStatusWithResponseAsync(resourceGroupName, clusterName, operationId, context)
             .block();
+    }
+
+    /**
+     * Gets the async operation status of execution operation.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param clusterName The name of the cluster.
+     * @param operationId The long running operation id.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the async operation status of execution operation.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public AsyncOperationResultInner getExecutionAsyncOperationStatus(
+        String resourceGroupName, String clusterName, String operationId) {
+        return getExecutionAsyncOperationStatusWithResponse(resourceGroupName, clusterName, operationId, Context.NONE)
+            .getValue();
     }
 
     /**

@@ -35,6 +35,10 @@ public final class SchemaGroupInner extends ProxyResource {
     @JsonProperty(value = "location", access = JsonProperty.Access.WRITE_ONLY)
     private String location;
 
+    /** Creates an instance of SchemaGroupInner class. */
+    public SchemaGroupInner() {
+    }
+
     /**
      * Get the innerProperties property: The properties property.
      *

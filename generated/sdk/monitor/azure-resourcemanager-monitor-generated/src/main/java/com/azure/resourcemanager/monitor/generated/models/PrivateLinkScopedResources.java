@@ -16,19 +16,6 @@ public interface PrivateLinkScopedResources {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
      * @param name The name of the scoped resource object.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a scoped resource in a private link scope.
-     */
-    ScopedResource get(String resourceGroupName, String scopeName, String name);
-
-    /**
-     * Gets a scoped resource in a private link scope.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
-     * @param name The name of the scoped resource object.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -36,6 +23,19 @@ public interface PrivateLinkScopedResources {
      * @return a scoped resource in a private link scope along with {@link Response}.
      */
     Response<ScopedResource> getWithResponse(String resourceGroupName, String scopeName, String name, Context context);
+
+    /**
+     * Gets a scoped resource in a private link scope.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
+     * @param name The name of the scoped resource object.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a scoped resource in a private link scope.
+     */
+    ScopedResource get(String resourceGroupName, String scopeName, String name);
 
     /**
      * Deletes a private endpoint connection with a given name.

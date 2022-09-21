@@ -24,6 +24,10 @@ public final class Trigger {
     @JsonProperty(value = "timeBeforeExpiry")
     private String timeBeforeExpiry;
 
+    /** Creates an instance of Trigger class. */
+    public Trigger() {
+    }
+
     /**
      * Get the timeAfterCreate property: The time duration after key creation to rotate the key. It only applies to
      * rotate. It will be in ISO 8601 duration format. Eg: 'P90D', 'P1Y'.

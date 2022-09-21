@@ -28,6 +28,10 @@ public final class ThrottlingPolicy extends ApplicationGroupPolicy {
     @JsonProperty(value = "metricId", required = true)
     private MetricId metricId;
 
+    /** Creates an instance of ThrottlingPolicy class. */
+    public ThrottlingPolicy() {
+    }
+
     /**
      * Get the rateLimitThreshold property: The Threshold limit above which the application group will be throttled.Rate
      * limit is always per second.

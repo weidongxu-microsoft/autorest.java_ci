@@ -248,11 +248,11 @@ public final class ServerAdministratorsClientImpl implements ServerAdministrator
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a AAD server administrator.
+     * @return information about a AAD server administrator along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ServerAdministratorResourceInner get(String resourceGroupName, String serverName) {
-        return getAsync(resourceGroupName, serverName).block();
+    public Response<ServerAdministratorResourceInner> getWithResponse(String resourceGroupName, String serverName) {
+        return getWithResponseAsync(resourceGroupName, serverName).block();
     }
 
     /**
@@ -270,6 +270,21 @@ public final class ServerAdministratorsClientImpl implements ServerAdministrator
     public Response<ServerAdministratorResourceInner> getWithResponse(
         String resourceGroupName, String serverName, Context context) {
         return getWithResponseAsync(resourceGroupName, serverName, context).block();
+    }
+
+    /**
+     * Gets information about a AAD server administrator.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param serverName The name of the server.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return information about a AAD server administrator.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ServerAdministratorResourceInner get(String resourceGroupName, String serverName) {
+        return getWithResponse(resourceGroupName, serverName, Context.NONE).getValue();
     }
 
     /**

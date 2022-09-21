@@ -17,18 +17,6 @@ public interface DnsResourceReferencesClient {
      * Returns the DNS records specified by the referencing targetResourceIds.
      *
      * @param parameters Properties for dns resource reference request.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents the properties of the Dns Resource Reference Result.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    DnsResourceReferenceResultInner getByTargetResources(DnsResourceReferenceRequest parameters);
-
-    /**
-     * Returns the DNS records specified by the referencing targetResourceIds.
-     *
-     * @param parameters Properties for dns resource reference request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -38,4 +26,16 @@ public interface DnsResourceReferencesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<DnsResourceReferenceResultInner> getByTargetResourcesWithResponse(
         DnsResourceReferenceRequest parameters, Context context);
+
+    /**
+     * Returns the DNS records specified by the referencing targetResourceIds.
+     *
+     * @param parameters Properties for dns resource reference request.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return represents the properties of the Dns Resource Reference Result.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    DnsResourceReferenceResultInner getByTargetResources(DnsResourceReferenceRequest parameters);
 }

@@ -286,11 +286,11 @@ public final class ClustersClientImpl implements ClustersClient {
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the List Available Clusters operation.
+     * @return the response of the List Available Clusters operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public AvailableClustersListInner listAvailableClusterRegion() {
-        return listAvailableClusterRegionAsync().block();
+    public Response<AvailableClustersListInner> listAvailableClusterRegionWithResponse() {
+        return listAvailableClusterRegionWithResponseAsync().block();
     }
 
     /**
@@ -305,6 +305,18 @@ public final class ClustersClientImpl implements ClustersClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<AvailableClustersListInner> listAvailableClusterRegionWithResponse(Context context) {
         return listAvailableClusterRegionWithResponseAsync(context).block();
+    }
+
+    /**
+     * List the quantity of available pre-provisioned Event Hubs Clusters, indexed by Azure region.
+     *
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response of the List Available Clusters operation.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public AvailableClustersListInner listAvailableClusterRegion() {
+        return listAvailableClusterRegionWithResponse(Context.NONE).getValue();
     }
 
     /**
@@ -735,11 +747,11 @@ public final class ClustersClientImpl implements ClustersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the resource description of the specified Event Hubs Cluster.
+     * @return the resource description of the specified Event Hubs Cluster along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ClusterInner getByResourceGroup(String resourceGroupName, String clusterName) {
-        return getByResourceGroupAsync(resourceGroupName, clusterName).block();
+    public Response<ClusterInner> getByResourceGroupWithResponse(String resourceGroupName, String clusterName) {
+        return getByResourceGroupWithResponseAsync(resourceGroupName, clusterName).block();
     }
 
     /**
@@ -757,6 +769,21 @@ public final class ClustersClientImpl implements ClustersClient {
     public Response<ClusterInner> getByResourceGroupWithResponse(
         String resourceGroupName, String clusterName, Context context) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, clusterName, context).block();
+    }
+
+    /**
+     * Gets the resource description of the specified Event Hubs Cluster.
+     *
+     * @param resourceGroupName Name of the resource group within the azure subscription.
+     * @param clusterName The name of the Event Hubs Cluster.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the resource description of the specified Event Hubs Cluster.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ClusterInner getByResourceGroup(String resourceGroupName, String clusterName) {
+        return getByResourceGroupWithResponse(resourceGroupName, clusterName, Context.NONE).getValue();
     }
 
     /**
@@ -1631,11 +1658,12 @@ public final class ClustersClientImpl implements ClustersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the List Namespace IDs operation.
+     * @return the response of the List Namespace IDs operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public EHNamespaceIdListResultInner listNamespaces(String resourceGroupName, String clusterName) {
-        return listNamespacesAsync(resourceGroupName, clusterName).block();
+    public Response<EHNamespaceIdListResultInner> listNamespacesWithResponse(
+        String resourceGroupName, String clusterName) {
+        return listNamespacesWithResponseAsync(resourceGroupName, clusterName).block();
     }
 
     /**
@@ -1653,6 +1681,21 @@ public final class ClustersClientImpl implements ClustersClient {
     public Response<EHNamespaceIdListResultInner> listNamespacesWithResponse(
         String resourceGroupName, String clusterName, Context context) {
         return listNamespacesWithResponseAsync(resourceGroupName, clusterName, context).block();
+    }
+
+    /**
+     * List all Event Hubs Namespace IDs in an Event Hubs Dedicated Cluster.
+     *
+     * @param resourceGroupName Name of the resource group within the azure subscription.
+     * @param clusterName The name of the Event Hubs Cluster.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response of the List Namespace IDs operation.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public EHNamespaceIdListResultInner listNamespaces(String resourceGroupName, String clusterName) {
+        return listNamespacesWithResponse(resourceGroupName, clusterName, Context.NONE).getValue();
     }
 
     /**

@@ -22,6 +22,10 @@ public final class ClientGroupInfo {
     @JsonProperty(value = "groupId")
     private String groupId;
 
+    /** Creates an instance of ClientGroupInfo class. */
+    public ClientGroupInfo() {
+    }
+
     /**
      * Get the groupName property: The AAD security group name.
      *

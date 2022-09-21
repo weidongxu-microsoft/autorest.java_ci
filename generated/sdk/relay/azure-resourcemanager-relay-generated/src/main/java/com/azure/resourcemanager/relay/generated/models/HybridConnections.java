@@ -48,26 +48,6 @@ public interface HybridConnections {
      * @param hybridConnectionName The hybrid connection name.
      * @param authorizationRuleName The authorization rule name.
      * @param parameters The authorization rule parameters.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in a List or Get AuthorizationRule operation.
-     */
-    AuthorizationRule createOrUpdateAuthorizationRule(
-        String resourceGroupName,
-        String namespaceName,
-        String hybridConnectionName,
-        String authorizationRuleName,
-        AuthorizationRuleInner parameters);
-
-    /**
-     * Creates or updates an authorization rule for a hybrid connection.
-     *
-     * @param resourceGroupName Name of the Resource group within the Azure subscription.
-     * @param namespaceName The namespace name.
-     * @param hybridConnectionName The hybrid connection name.
-     * @param authorizationRuleName The authorization rule name.
-     * @param parameters The authorization rule parameters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -83,18 +63,24 @@ public interface HybridConnections {
         Context context);
 
     /**
-     * Deletes a hybrid connection authorization rule.
+     * Creates or updates an authorization rule for a hybrid connection.
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param namespaceName The namespace name.
      * @param hybridConnectionName The hybrid connection name.
      * @param authorizationRuleName The authorization rule name.
+     * @param parameters The authorization rule parameters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return single item in a List or Get AuthorizationRule operation.
      */
-    void deleteAuthorizationRule(
-        String resourceGroupName, String namespaceName, String hybridConnectionName, String authorizationRuleName);
+    AuthorizationRule createOrUpdateAuthorizationRule(
+        String resourceGroupName,
+        String namespaceName,
+        String hybridConnectionName,
+        String authorizationRuleName,
+        AuthorizationRuleInner parameters);
 
     /**
      * Deletes a hybrid connection authorization rule.
@@ -117,7 +103,7 @@ public interface HybridConnections {
         Context context);
 
     /**
-     * Hybrid connection authorization rule for a hybrid connection by name.
+     * Deletes a hybrid connection authorization rule.
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param namespaceName The namespace name.
@@ -126,9 +112,8 @@ public interface HybridConnections {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in a List or Get AuthorizationRule operation.
      */
-    AuthorizationRule getAuthorizationRule(
+    void deleteAuthorizationRule(
         String resourceGroupName, String namespaceName, String hybridConnectionName, String authorizationRuleName);
 
     /**
@@ -152,7 +137,7 @@ public interface HybridConnections {
         Context context);
 
     /**
-     * Primary and secondary connection strings to the hybrid connection.
+     * Hybrid connection authorization rule for a hybrid connection by name.
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param namespaceName The namespace name.
@@ -161,9 +146,9 @@ public interface HybridConnections {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return namespace/Relay Connection String.
+     * @return single item in a List or Get AuthorizationRule operation.
      */
-    AccessKeys listKeys(
+    AuthorizationRule getAuthorizationRule(
         String resourceGroupName, String namespaceName, String hybridConnectionName, String authorizationRuleName);
 
     /**
@@ -187,24 +172,19 @@ public interface HybridConnections {
         Context context);
 
     /**
-     * Regenerates the primary or secondary connection strings to the hybrid connection.
+     * Primary and secondary connection strings to the hybrid connection.
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param namespaceName The namespace name.
      * @param hybridConnectionName The hybrid connection name.
      * @param authorizationRuleName The authorization rule name.
-     * @param parameters Parameters supplied to regenerate authorization rule.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return namespace/Relay Connection String.
      */
-    AccessKeys regenerateKeys(
-        String resourceGroupName,
-        String namespaceName,
-        String hybridConnectionName,
-        String authorizationRuleName,
-        RegenerateAccessKeyParameters parameters);
+    AccessKeys listKeys(
+        String resourceGroupName, String namespaceName, String hybridConnectionName, String authorizationRuleName);
 
     /**
      * Regenerates the primary or secondary connection strings to the hybrid connection.
@@ -227,6 +207,26 @@ public interface HybridConnections {
         String authorizationRuleName,
         RegenerateAccessKeyParameters parameters,
         Context context);
+
+    /**
+     * Regenerates the primary or secondary connection strings to the hybrid connection.
+     *
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param namespaceName The namespace name.
+     * @param hybridConnectionName The hybrid connection name.
+     * @param authorizationRuleName The authorization rule name.
+     * @param parameters Parameters supplied to regenerate authorization rule.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return namespace/Relay Connection String.
+     */
+    AccessKeys regenerateKeys(
+        String resourceGroupName,
+        String namespaceName,
+        String hybridConnectionName,
+        String authorizationRuleName,
+        RegenerateAccessKeyParameters parameters);
 
     /**
      * Lists the hybrid connection within the namespace.
@@ -259,18 +259,6 @@ public interface HybridConnections {
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param namespaceName The namespace name.
      * @param hybridConnectionName The hybrid connection name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void delete(String resourceGroupName, String namespaceName, String hybridConnectionName);
-
-    /**
-     * Deletes a hybrid connection.
-     *
-     * @param resourceGroupName Name of the Resource group within the Azure subscription.
-     * @param namespaceName The namespace name.
-     * @param hybridConnectionName The hybrid connection name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -281,7 +269,7 @@ public interface HybridConnections {
         String resourceGroupName, String namespaceName, String hybridConnectionName, Context context);
 
     /**
-     * Returns the description for the specified hybrid connection.
+     * Deletes a hybrid connection.
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param namespaceName The namespace name.
@@ -289,9 +277,8 @@ public interface HybridConnections {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of hybrid connection resource.
      */
-    HybridConnection get(String resourceGroupName, String namespaceName, String hybridConnectionName);
+    void delete(String resourceGroupName, String namespaceName, String hybridConnectionName);
 
     /**
      * Returns the description for the specified hybrid connection.
@@ -307,6 +294,19 @@ public interface HybridConnections {
      */
     Response<HybridConnection> getWithResponse(
         String resourceGroupName, String namespaceName, String hybridConnectionName, Context context);
+
+    /**
+     * Returns the description for the specified hybrid connection.
+     *
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param namespaceName The namespace name.
+     * @param hybridConnectionName The hybrid connection name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return description of hybrid connection resource.
+     */
+    HybridConnection get(String resourceGroupName, String namespaceName, String hybridConnectionName);
 
     /**
      * Returns the description for the specified hybrid connection.

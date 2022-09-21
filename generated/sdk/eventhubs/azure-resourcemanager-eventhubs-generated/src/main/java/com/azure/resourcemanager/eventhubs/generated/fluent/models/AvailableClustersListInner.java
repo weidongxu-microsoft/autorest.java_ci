@@ -18,6 +18,10 @@ public final class AvailableClustersListInner {
     @JsonProperty(value = "value")
     private List<AvailableCluster> value;
 
+    /** Creates an instance of AvailableClustersListInner class. */
+    public AvailableClustersListInner() {
+    }
+
     /**
      * Get the value property: The count of readily available and pre-provisioned Event Hubs Clusters per region.
      *

@@ -24,6 +24,10 @@ public final class EventHubEventSubscriptionDestinationProperties {
     @JsonProperty(value = "deliveryAttributeMappings")
     private List<DeliveryAttributeMapping> deliveryAttributeMappings;
 
+    /** Creates an instance of EventHubEventSubscriptionDestinationProperties class. */
+    public EventHubEventSubscriptionDestinationProperties() {
+    }
+
     /**
      * Get the resourceId property: The Azure Resource Id that represents the endpoint of an Event Hub destination of an
      * event subscription.

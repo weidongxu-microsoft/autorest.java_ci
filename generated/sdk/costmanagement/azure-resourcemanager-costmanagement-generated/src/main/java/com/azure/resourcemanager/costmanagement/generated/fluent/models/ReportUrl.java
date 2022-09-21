@@ -23,6 +23,10 @@ public final class ReportUrl {
     @JsonProperty(value = "validUntil")
     private OffsetDateTime validUntil;
 
+    /** Creates an instance of ReportUrl class. */
+    public ReportUrl() {
+    }
+
     /**
      * Get the reportUrl property: The URL to download the generated report.
      *

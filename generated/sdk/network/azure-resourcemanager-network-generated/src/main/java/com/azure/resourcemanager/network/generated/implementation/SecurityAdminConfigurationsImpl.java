@@ -41,17 +41,6 @@ public final class SecurityAdminConfigurationsImpl implements SecurityAdminConfi
         return Utils.mapPage(inner, inner1 -> new SecurityAdminConfigurationImpl(inner1, this.manager()));
     }
 
-    public SecurityAdminConfiguration get(
-        String resourceGroupName, String networkManagerName, String configurationName) {
-        SecurityAdminConfigurationInner inner =
-            this.serviceClient().get(resourceGroupName, networkManagerName, configurationName);
-        if (inner != null) {
-            return new SecurityAdminConfigurationImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<SecurityAdminConfiguration> getWithResponse(
         String resourceGroupName, String networkManagerName, String configurationName, Context context) {
         Response<SecurityAdminConfigurationInner> inner =
@@ -62,6 +51,17 @@ public final class SecurityAdminConfigurationsImpl implements SecurityAdminConfi
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new SecurityAdminConfigurationImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public SecurityAdminConfiguration get(
+        String resourceGroupName, String networkManagerName, String configurationName) {
+        SecurityAdminConfigurationInner inner =
+            this.serviceClient().get(resourceGroupName, networkManagerName, configurationName);
+        if (inner != null) {
+            return new SecurityAdminConfigurationImpl(inner, this.manager());
         } else {
             return null;
         }

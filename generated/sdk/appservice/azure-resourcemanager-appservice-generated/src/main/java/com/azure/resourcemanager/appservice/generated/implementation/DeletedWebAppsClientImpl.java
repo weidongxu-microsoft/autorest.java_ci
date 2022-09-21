@@ -561,11 +561,11 @@ public final class DeletedWebAppsClientImpl implements DeletedWebAppsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deleted app.
+     * @return a deleted app along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public DeletedSiteInner getDeletedWebAppByLocation(String location, String deletedSiteId) {
-        return getDeletedWebAppByLocationAsync(location, deletedSiteId).block();
+    public Response<DeletedSiteInner> getDeletedWebAppByLocationWithResponse(String location, String deletedSiteId) {
+        return getDeletedWebAppByLocationWithResponseAsync(location, deletedSiteId).block();
     }
 
     /**
@@ -585,6 +585,23 @@ public final class DeletedWebAppsClientImpl implements DeletedWebAppsClient {
     public Response<DeletedSiteInner> getDeletedWebAppByLocationWithResponse(
         String location, String deletedSiteId, Context context) {
         return getDeletedWebAppByLocationWithResponseAsync(location, deletedSiteId, context).block();
+    }
+
+    /**
+     * Get deleted app for a subscription at location.
+     *
+     * <p>Description for Get deleted app for a subscription at location.
+     *
+     * @param location The location parameter.
+     * @param deletedSiteId The numeric ID of the deleted app, e.g. 12345.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a deleted app.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public DeletedSiteInner getDeletedWebAppByLocation(String location, String deletedSiteId) {
+        return getDeletedWebAppByLocationWithResponse(location, deletedSiteId, Context.NONE).getValue();
     }
 
     /**

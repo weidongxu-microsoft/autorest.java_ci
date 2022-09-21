@@ -41,19 +41,6 @@ public interface Applications {
      * @param resourceGroupName The name of the resource group.
      * @param clusterName The name of the cluster.
      * @param applicationName The constant value for the application name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of the specified application.
-     */
-    Application get(String resourceGroupName, String clusterName, String applicationName);
-
-    /**
-     * Gets properties of the specified application.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param clusterName The name of the cluster.
-     * @param applicationName The constant value for the application name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -62,6 +49,19 @@ public interface Applications {
      */
     Response<Application> getWithResponse(
         String resourceGroupName, String clusterName, String applicationName, Context context);
+
+    /**
+     * Gets properties of the specified application.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param clusterName The name of the cluster.
+     * @param applicationName The constant value for the application name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return properties of the specified application.
+     */
+    Application get(String resourceGroupName, String clusterName, String applicationName);
 
     /**
      * Deletes the specified application on the HDInsight cluster.
@@ -95,21 +95,6 @@ public interface Applications {
      * @param clusterName The name of the cluster.
      * @param applicationName The constant value for the application name.
      * @param operationId The long running operation id.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the async operation status.
-     */
-    AsyncOperationResult getAzureAsyncOperationStatus(
-        String resourceGroupName, String clusterName, String applicationName, String operationId);
-
-    /**
-     * Gets the async operation status.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param clusterName The name of the cluster.
-     * @param applicationName The constant value for the application name.
-     * @param operationId The long running operation id.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -118,6 +103,21 @@ public interface Applications {
      */
     Response<AsyncOperationResult> getAzureAsyncOperationStatusWithResponse(
         String resourceGroupName, String clusterName, String applicationName, String operationId, Context context);
+
+    /**
+     * Gets the async operation status.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param clusterName The name of the cluster.
+     * @param applicationName The constant value for the application name.
+     * @param operationId The long running operation id.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the async operation status.
+     */
+    AsyncOperationResult getAzureAsyncOperationStatus(
+        String resourceGroupName, String clusterName, String applicationName, String operationId);
 
     /**
      * Gets properties of the specified application.

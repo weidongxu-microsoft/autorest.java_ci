@@ -16,6 +16,10 @@ public final class SecurityPolicyLink {
     @JsonProperty(value = "id")
     private String id;
 
+    /** Creates an instance of SecurityPolicyLink class. */
+    public SecurityPolicyLink() {
+    }
+
     /**
      * Get the id property: Resource ID.
      *

@@ -87,6 +87,10 @@ public final class TriggeredWebJobProperties {
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, Object> settings;
 
+    /** Creates an instance of TriggeredWebJobProperties class. */
+    public TriggeredWebJobProperties() {
+    }
+
     /**
      * Get the latestRun property: Latest job run information.
      *

@@ -31,6 +31,10 @@ public final class DomainPurchaseConsent {
     @JsonProperty(value = "agreedAt")
     private OffsetDateTime agreedAt;
 
+    /** Creates an instance of DomainPurchaseConsent class. */
+    public DomainPurchaseConsent() {
+    }
+
     /**
      * Get the agreementKeys property: List of applicable legal agreement keys. This list can be retrieved using
      * ListLegalAgreements API under &lt;code&gt;TopLevelDomain&lt;/code&gt; resource.

@@ -23,6 +23,10 @@ public class Amount {
     @JsonProperty(value = "value", access = JsonProperty.Access.WRITE_ONLY)
     private BigDecimal value;
 
+    /** Creates an instance of Amount class. */
+    public Amount() {
+    }
+
     /**
      * Get the currency property: Amount currency.
      *

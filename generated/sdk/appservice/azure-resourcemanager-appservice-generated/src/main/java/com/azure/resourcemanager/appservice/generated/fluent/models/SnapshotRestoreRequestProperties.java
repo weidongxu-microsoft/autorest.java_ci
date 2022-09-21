@@ -49,6 +49,10 @@ public final class SnapshotRestoreRequestProperties {
     @JsonProperty(value = "useDRSecondary")
     private Boolean useDRSecondary;
 
+    /** Creates an instance of SnapshotRestoreRequestProperties class. */
+    public SnapshotRestoreRequestProperties() {
+    }
+
     /**
      * Get the snapshotTime property: Point in time in which the app restore should be done, formatted as a DateTime
      * string.

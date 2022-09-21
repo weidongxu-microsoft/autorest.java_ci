@@ -23,6 +23,10 @@ public final class Schedule {
     @JsonProperty(value = "timeWindowInMinutes", required = true)
     private int timeWindowInMinutes;
 
+    /** Creates an instance of Schedule class. */
+    public Schedule() {
+    }
+
     /**
      * Get the frequencyInMinutes property: frequency (in minutes) at which rule condition should be evaluated.
      *

@@ -81,6 +81,10 @@ public final class ApplicationInsightsComponentFavoriteInner {
     @JsonProperty(value = "UserId", access = JsonProperty.Access.WRITE_ONLY)
     private String userId;
 
+    /** Creates an instance of ApplicationInsightsComponentFavoriteInner class. */
+    public ApplicationInsightsComponentFavoriteInner() {
+    }
+
     /**
      * Get the name property: The user-defined name of the favorite.
      *

@@ -696,15 +696,6 @@ public interface AppServiceEnvironmentResource {
     /**
      * Send a test notification that an upgrade is available for this App Service Environment.
      *
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void testUpgradeAvailableNotification();
-
-    /**
-     * Send a test notification that an upgrade is available for this App Service Environment.
-     *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -713,6 +704,15 @@ public interface AppServiceEnvironmentResource {
      * @return the {@link Response}.
      */
     Response<Void> testUpgradeAvailableNotificationWithResponse(Context context);
+
+    /**
+     * Send a test notification that an upgrade is available for this App Service Environment.
+     *
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void testUpgradeAvailableNotification();
 
     /**
      * Initiate an upgrade of an App Service Environment if one is available.
@@ -743,17 +743,6 @@ public interface AppServiceEnvironmentResource {
      *
      * <p>Description for Reboot all machines in an App Service Environment.
      *
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void reboot();
-
-    /**
-     * Reboot all machines in an App Service Environment.
-     *
-     * <p>Description for Reboot all machines in an App Service Environment.
-     *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -762,6 +751,17 @@ public interface AppServiceEnvironmentResource {
      * @return the {@link Response}.
      */
     Response<Void> rebootWithResponse(Context context);
+
+    /**
+     * Reboot all machines in an App Service Environment.
+     *
+     * <p>Description for Reboot all machines in an App Service Environment.
+     *
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void reboot();
 
     /**
      * Resume an App Service Environment.

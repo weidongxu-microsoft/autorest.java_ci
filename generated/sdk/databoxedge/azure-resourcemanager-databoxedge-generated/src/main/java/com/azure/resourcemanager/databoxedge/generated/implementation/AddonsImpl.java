@@ -39,15 +39,6 @@ public final class AddonsImpl implements Addons {
         return Utils.mapPage(inner, inner1 -> new AddonImpl(inner1, this.manager()));
     }
 
-    public Addon get(String deviceName, String roleName, String addonName, String resourceGroupName) {
-        AddonInner inner = this.serviceClient().get(deviceName, roleName, addonName, resourceGroupName);
-        if (inner != null) {
-            return new AddonImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<Addon> getWithResponse(
         String deviceName, String roleName, String addonName, String resourceGroupName, Context context) {
         Response<AddonInner> inner =
@@ -58,6 +49,15 @@ public final class AddonsImpl implements Addons {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new AddonImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public Addon get(String deviceName, String roleName, String addonName, String resourceGroupName) {
+        AddonInner inner = this.serviceClient().get(deviceName, roleName, addonName, resourceGroupName);
+        if (inner != null) {
+            return new AddonImpl(inner, this.manager());
         } else {
             return null;
         }

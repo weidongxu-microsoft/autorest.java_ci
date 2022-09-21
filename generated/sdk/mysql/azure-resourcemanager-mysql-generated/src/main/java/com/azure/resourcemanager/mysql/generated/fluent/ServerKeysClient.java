@@ -48,20 +48,6 @@ public interface ServerKeysClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param keyName The name of the MySQL Server key to be retrieved.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a MySQL Server key.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    ServerKeyInner get(String resourceGroupName, String serverName, String keyName);
-
-    /**
-     * Gets a MySQL Server key.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param serverName The name of the server.
-     * @param keyName The name of the MySQL Server key to be retrieved.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -71,6 +57,20 @@ public interface ServerKeysClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ServerKeyInner> getWithResponse(
         String resourceGroupName, String serverName, String keyName, Context context);
+
+    /**
+     * Gets a MySQL Server key.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param serverName The name of the server.
+     * @param keyName The name of the MySQL Server key to be retrieved.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a MySQL Server key.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    ServerKeyInner get(String resourceGroupName, String serverName, String keyName);
 
     /**
      * Creates or updates a MySQL Server key.

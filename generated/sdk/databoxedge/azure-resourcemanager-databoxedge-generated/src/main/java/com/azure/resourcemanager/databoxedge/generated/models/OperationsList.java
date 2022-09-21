@@ -25,6 +25,10 @@ public final class OperationsList {
     @JsonProperty(value = "nextLink")
     private String nextLink;
 
+    /** Creates an instance of OperationsList class. */
+    public OperationsList() {
+    }
+
     /**
      * Get the value property: The value.
      *

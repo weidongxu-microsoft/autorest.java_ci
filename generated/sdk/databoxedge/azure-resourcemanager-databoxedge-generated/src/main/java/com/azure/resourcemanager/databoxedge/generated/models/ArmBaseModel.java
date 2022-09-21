@@ -10,6 +10,10 @@ import com.azure.core.management.ProxyResource;
 /** Represents the base class for all object models. */
 @Immutable
 public class ArmBaseModel extends ProxyResource {
+    /** Creates an instance of ArmBaseModel class. */
+    public ArmBaseModel() {
+    }
+
     /**
      * Validates the instance.
      *

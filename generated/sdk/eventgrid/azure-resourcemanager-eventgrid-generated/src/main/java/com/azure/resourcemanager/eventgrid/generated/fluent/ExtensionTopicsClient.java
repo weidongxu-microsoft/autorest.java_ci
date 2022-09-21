@@ -23,13 +23,14 @@ public interface ExtensionTopicsClient {
      *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for a resource group, and
      *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}'
      *     for Azure resource.
+     * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the properties of an extension topic.
+     * @return the properties of an extension topic along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    ExtensionTopicInner get(String scope);
+    Response<ExtensionTopicInner> getWithResponse(String scope, Context context);
 
     /**
      * Get properties of an extension topic.
@@ -42,12 +43,11 @@ public interface ExtensionTopicsClient {
      *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for a resource group, and
      *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}'
      *     for Azure resource.
-     * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the properties of an extension topic along with {@link Response}.
+     * @return the properties of an extension topic.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<ExtensionTopicInner> getWithResponse(String scope, Context context);
+    ExtensionTopicInner get(String scope);
 }

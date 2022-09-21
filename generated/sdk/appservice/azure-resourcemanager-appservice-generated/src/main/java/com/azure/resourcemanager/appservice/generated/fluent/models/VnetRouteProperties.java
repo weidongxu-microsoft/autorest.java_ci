@@ -35,6 +35,10 @@ public final class VnetRouteProperties {
     @JsonProperty(value = "routeType")
     private RouteType routeType;
 
+    /** Creates an instance of VnetRouteProperties class. */
+    public VnetRouteProperties() {
+    }
+
     /**
      * Get the startAddress property: The starting address for this route. This may also include a CIDR notation, in
      * which case the end address must not be specified.

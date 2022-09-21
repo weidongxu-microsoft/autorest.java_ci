@@ -17,6 +17,10 @@ public final class DataBoxEdgeDevicePropertiesPatch {
     @JsonProperty(value = "edgeProfile")
     private EdgeProfilePatch edgeProfile;
 
+    /** Creates an instance of DataBoxEdgeDevicePropertiesPatch class. */
+    public DataBoxEdgeDevicePropertiesPatch() {
+    }
+
     /**
      * Get the edgeProfile property: Edge Profile property of the Data Box Edge/Gateway device.
      *

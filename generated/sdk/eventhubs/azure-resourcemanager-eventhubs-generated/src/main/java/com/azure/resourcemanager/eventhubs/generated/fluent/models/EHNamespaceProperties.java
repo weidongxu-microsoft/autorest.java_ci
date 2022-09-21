@@ -118,6 +118,10 @@ public final class EHNamespaceProperties {
     @JsonProperty(value = "alternateName")
     private String alternateName;
 
+    /** Creates an instance of EHNamespaceProperties class. */
+    public EHNamespaceProperties() {
+    }
+
     /**
      * Get the minimumTlsVersion property: The minimum TLS version for the cluster to support, e.g. '1.2'.
      *

@@ -43,15 +43,6 @@ public final class ClustersImpl implements Clusters {
         this.serviceManager = serviceManager;
     }
 
-    public Cluster getByResourceGroup(String resourceGroupName, String clusterName) {
-        ClusterInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, clusterName);
-        if (inner != null) {
-            return new ClusterImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<Cluster> getByResourceGroupWithResponse(
         String resourceGroupName, String clusterName, Context context) {
         Response<ClusterInner> inner =
@@ -62,6 +53,15 @@ public final class ClustersImpl implements Clusters {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new ClusterImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public Cluster getByResourceGroup(String resourceGroupName, String clusterName) {
+        ClusterInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, clusterName);
+        if (inner != null) {
+            return new ClusterImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -169,15 +169,6 @@ public final class ClustersImpl implements Clusters {
         return Utils.mapPage(inner, inner1 -> new SkuDescriptionImpl(inner1, this.manager()));
     }
 
-    public CheckNameResult checkNameAvailability(String location, ClusterCheckNameRequest clusterName) {
-        CheckNameResultInner inner = this.serviceClient().checkNameAvailability(location, clusterName);
-        if (inner != null) {
-            return new CheckNameResultImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<CheckNameResult> checkNameAvailabilityWithResponse(
         String location, ClusterCheckNameRequest clusterName, Context context) {
         Response<CheckNameResultInner> inner =
@@ -188,6 +179,15 @@ public final class ClustersImpl implements Clusters {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new CheckNameResultImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public CheckNameResult checkNameAvailability(String location, ClusterCheckNameRequest clusterName) {
+        CheckNameResultInner inner = this.serviceClient().checkNameAvailability(location, clusterName);
+        if (inner != null) {
+            return new CheckNameResultImpl(inner, this.manager());
         } else {
             return null;
         }

@@ -166,6 +166,10 @@ public final class UpdateSummaryProperties {
     @JsonProperty(value = "totalTimeInMinutes", access = JsonProperty.Access.WRITE_ONLY)
     private Integer totalTimeInMinutes;
 
+    /** Creates an instance of UpdateSummaryProperties class. */
+    public UpdateSummaryProperties() {
+    }
+
     /**
      * Get the deviceVersionNumber property: The current version of the device in format: 1.2.17312.13.",.
      *

@@ -18,6 +18,10 @@ public final class ChargesListResultInner {
     @JsonProperty(value = "value", access = JsonProperty.Access.WRITE_ONLY)
     private List<ChargeSummary> value;
 
+    /** Creates an instance of ChargesListResultInner class. */
+    public ChargesListResultInner() {
+    }
+
     /**
      * Get the value property: The list of charge summary.
      *

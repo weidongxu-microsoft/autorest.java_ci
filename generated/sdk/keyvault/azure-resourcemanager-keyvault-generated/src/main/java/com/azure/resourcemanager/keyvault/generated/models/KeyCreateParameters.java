@@ -27,6 +27,10 @@ public final class KeyCreateParameters {
     @JsonProperty(value = "properties", required = true)
     private KeyProperties properties;
 
+    /** Creates an instance of KeyCreateParameters class. */
+    public KeyCreateParameters() {
+    }
+
     /**
      * Get the tags property: The tags that will be assigned to the key.
      *

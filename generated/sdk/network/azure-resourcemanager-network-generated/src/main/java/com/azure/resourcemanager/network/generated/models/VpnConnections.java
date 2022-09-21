@@ -17,19 +17,6 @@ public interface VpnConnections {
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
      * @param connectionName The name of the vpn connection.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpnConnection Resource.
-     */
-    VpnConnection get(String resourceGroupName, String gatewayName, String connectionName);
-
-    /**
-     * Retrieves the details of a vpn connection.
-     *
-     * @param resourceGroupName The resource group name of the VpnGateway.
-     * @param gatewayName The name of the gateway.
-     * @param connectionName The name of the vpn connection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -38,6 +25,19 @@ public interface VpnConnections {
      */
     Response<VpnConnection> getWithResponse(
         String resourceGroupName, String gatewayName, String connectionName, Context context);
+
+    /**
+     * Retrieves the details of a vpn connection.
+     *
+     * @param resourceGroupName The resource group name of the VpnGateway.
+     * @param gatewayName The name of the gateway.
+     * @param connectionName The name of the vpn connection.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return vpnConnection Resource.
+     */
+    VpnConnection get(String resourceGroupName, String gatewayName, String connectionName);
 
     /**
      * Creates a vpn connection to a scalable vpn gateway if it doesn't exist else updates the existing connection.

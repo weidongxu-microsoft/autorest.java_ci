@@ -21,6 +21,10 @@ public final class ModernReservationTransactionInner extends ReservationTransact
     @JsonProperty(value = "properties", required = true)
     private ModernReservationTransactionProperties innerProperties = new ModernReservationTransactionProperties();
 
+    /** Creates an instance of ModernReservationTransactionInner class. */
+    public ModernReservationTransactionInner() {
+    }
+
     /**
      * Get the innerProperties property: The properties of a modern reservation transaction.
      *

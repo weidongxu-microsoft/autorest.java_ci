@@ -58,15 +58,6 @@ public final class PrivateLinkScopesImpl implements PrivateLinkScopes {
         this.serviceClient().delete(resourceGroupName, scopeName, context);
     }
 
-    public AzureMonitorPrivateLinkScope getByResourceGroup(String resourceGroupName, String scopeName) {
-        AzureMonitorPrivateLinkScopeInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, scopeName);
-        if (inner != null) {
-            return new AzureMonitorPrivateLinkScopeImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<AzureMonitorPrivateLinkScope> getByResourceGroupWithResponse(
         String resourceGroupName, String scopeName, Context context) {
         Response<AzureMonitorPrivateLinkScopeInner> inner =
@@ -77,6 +68,15 @@ public final class PrivateLinkScopesImpl implements PrivateLinkScopes {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new AzureMonitorPrivateLinkScopeImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public AzureMonitorPrivateLinkScope getByResourceGroup(String resourceGroupName, String scopeName) {
+        AzureMonitorPrivateLinkScopeInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, scopeName);
+        if (inner != null) {
+            return new AzureMonitorPrivateLinkScopeImpl(inner, this.manager());
         } else {
             return null;
         }

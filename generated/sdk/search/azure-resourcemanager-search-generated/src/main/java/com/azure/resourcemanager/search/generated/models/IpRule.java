@@ -17,6 +17,10 @@ public final class IpRule {
     @JsonProperty(value = "value")
     private String value;
 
+    /** Creates an instance of IpRule class. */
+    public IpRule() {
+    }
+
     /**
      * Get the value property: Value corresponding to a single IPv4 address (eg., 123.1.2.3) or an IP range in CIDR
      * format (eg., 123.1.2.3/24) to be allowed.

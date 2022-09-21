@@ -34,15 +34,6 @@ public final class P2SVpnGatewaysImpl implements P2SVpnGateways {
         this.serviceManager = serviceManager;
     }
 
-    public P2SVpnGateway getByResourceGroup(String resourceGroupName, String gatewayName) {
-        P2SVpnGatewayInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, gatewayName);
-        if (inner != null) {
-            return new P2SVpnGatewayImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<P2SVpnGateway> getByResourceGroupWithResponse(
         String resourceGroupName, String gatewayName, Context context) {
         Response<P2SVpnGatewayInner> inner =
@@ -53,6 +44,15 @@ public final class P2SVpnGatewaysImpl implements P2SVpnGateways {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new P2SVpnGatewayImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public P2SVpnGateway getByResourceGroup(String resourceGroupName, String gatewayName) {
+        P2SVpnGatewayInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, gatewayName);
+        if (inner != null) {
+            return new P2SVpnGatewayImpl(inner, this.manager());
         } else {
             return null;
         }

@@ -60,6 +60,10 @@ public final class HybridConnectionProperties {
     @JsonProperty(value = "serviceBusSuffix")
     private String serviceBusSuffix;
 
+    /** Creates an instance of HybridConnectionProperties class. */
+    public HybridConnectionProperties() {
+    }
+
     /**
      * Get the serviceBusNamespace property: The name of the Service Bus namespace.
      *

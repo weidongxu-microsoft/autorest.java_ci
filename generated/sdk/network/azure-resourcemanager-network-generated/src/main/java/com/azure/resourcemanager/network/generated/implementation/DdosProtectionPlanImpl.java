@@ -58,6 +58,15 @@ public final class DdosProtectionPlanImpl
         return this.innerModel().provisioningState();
     }
 
+    public List<SubResource> publicIpAddresses() {
+        List<SubResource> inner = this.innerModel().publicIpAddresses();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
+    }
+
     public List<SubResource> virtualNetworks() {
         List<SubResource> inner = this.innerModel().virtualNetworks();
         if (inner != null) {

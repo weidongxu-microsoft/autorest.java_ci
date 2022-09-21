@@ -36,6 +36,10 @@ public final class CacheConfiguration {
     @JsonProperty(value = "cacheDuration")
     private Duration cacheDuration;
 
+    /** Creates an instance of CacheConfiguration class. */
+    public CacheConfiguration() {
+    }
+
     /**
      * Get the queryParameterStripDirective property: Treatment of URL query terms when forming the cache key.
      *

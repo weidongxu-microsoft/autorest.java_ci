@@ -28,6 +28,10 @@ public final class NetworkSecurityPerimeter {
     @JsonProperty(value = "location")
     private String location;
 
+    /** Creates an instance of NetworkSecurityPerimeter class. */
+    public NetworkSecurityPerimeter() {
+    }
+
     /**
      * Get the id property: Fully qualified identifier of the resource.
      *

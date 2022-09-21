@@ -24,6 +24,10 @@ public final class KeyReleasePolicy {
     @JsonProperty(value = "data")
     private Base64Url data;
 
+    /** Creates an instance of KeyReleasePolicy class. */
+    public KeyReleasePolicy() {
+    }
+
     /**
      * Get the contentType property: Content type and version of key release policy.
      *

@@ -29,6 +29,10 @@ public final class QuotaCapability {
     @JsonProperty(value = "regionalQuotas")
     private List<RegionalQuotaCapability> regionalQuotas;
 
+    /** Creates an instance of QuotaCapability class. */
+    public QuotaCapability() {
+    }
+
     /**
      * Get the coresUsed property: The number of cores used in the subscription.
      *

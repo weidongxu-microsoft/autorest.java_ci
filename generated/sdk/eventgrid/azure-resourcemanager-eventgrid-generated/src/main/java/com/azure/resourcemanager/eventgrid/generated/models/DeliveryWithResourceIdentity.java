@@ -24,6 +24,10 @@ public class DeliveryWithResourceIdentity {
     @JsonProperty(value = "destination")
     private EventSubscriptionDestination destination;
 
+    /** Creates an instance of DeliveryWithResourceIdentity class. */
+    public DeliveryWithResourceIdentity() {
+    }
+
     /**
      * Get the identity property: The identity to use when delivering events.
      *

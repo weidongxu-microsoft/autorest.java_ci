@@ -40,6 +40,10 @@ public final class GlobalValidation {
     @JsonProperty(value = "excludedPaths")
     private List<String> excludedPaths;
 
+    /** Creates an instance of GlobalValidation class. */
+    public GlobalValidation() {
+    }
+
     /**
      * Get the requireAuthentication property: &lt;code&gt;true&lt;/code&gt; if the authentication flow is required any
      * request is made; otherwise, &lt;code&gt;false&lt;/code&gt;.

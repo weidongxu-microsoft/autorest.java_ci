@@ -37,6 +37,10 @@ public final class VersionSpec {
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, String> componentVersions;
 
+    /** Creates an instance of VersionSpec class. */
+    public VersionSpec() {
+    }
+
     /**
      * Get the friendlyName property: The friendly name.
      *

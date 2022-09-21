@@ -41,19 +41,6 @@ public interface LoadBalancerFrontendIpConfigurations {
      * @param resourceGroupName The name of the resource group.
      * @param loadBalancerName The name of the load balancer.
      * @param frontendIpConfigurationName The name of the frontend IP configuration.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return load balancer frontend IP configuration.
-     */
-    FrontendIpConfiguration get(String resourceGroupName, String loadBalancerName, String frontendIpConfigurationName);
-
-    /**
-     * Gets load balancer frontend IP configuration.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param loadBalancerName The name of the load balancer.
-     * @param frontendIpConfigurationName The name of the frontend IP configuration.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -62,4 +49,17 @@ public interface LoadBalancerFrontendIpConfigurations {
      */
     Response<FrontendIpConfiguration> getWithResponse(
         String resourceGroupName, String loadBalancerName, String frontendIpConfigurationName, Context context);
+
+    /**
+     * Gets load balancer frontend IP configuration.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param loadBalancerName The name of the load balancer.
+     * @param frontendIpConfigurationName The name of the frontend IP configuration.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return load balancer frontend IP configuration.
+     */
+    FrontendIpConfiguration get(String resourceGroupName, String loadBalancerName, String frontendIpConfigurationName);
 }

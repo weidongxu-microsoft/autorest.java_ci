@@ -34,6 +34,10 @@ public final class NspAccessRule {
     @JsonProperty(value = "properties", access = JsonProperty.Access.WRITE_ONLY)
     private NspAccessRuleProperties properties;
 
+    /** Creates an instance of NspAccessRule class. */
+    public NspAccessRule() {
+    }
+
     /**
      * Get the id property: Fully qualified identifier of the resource.
      *

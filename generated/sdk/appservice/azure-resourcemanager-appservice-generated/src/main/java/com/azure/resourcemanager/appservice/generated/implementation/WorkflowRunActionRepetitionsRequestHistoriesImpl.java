@@ -56,25 +56,6 @@ public final class WorkflowRunActionRepetitionsRequestHistoriesImpl
         return Utils.mapPage(inner, inner1 -> new RequestHistoryImpl(inner1, this.manager()));
     }
 
-    public RequestHistory get(
-        String resourceGroupName,
-        String name,
-        String workflowName,
-        String runName,
-        String actionName,
-        String repetitionName,
-        String requestHistoryName) {
-        RequestHistoryInner inner =
-            this
-                .serviceClient()
-                .get(resourceGroupName, name, workflowName, runName, actionName, repetitionName, requestHistoryName);
-        if (inner != null) {
-            return new RequestHistoryImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<RequestHistory> getWithResponse(
         String resourceGroupName,
         String name,
@@ -102,6 +83,25 @@ public final class WorkflowRunActionRepetitionsRequestHistoriesImpl
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new RequestHistoryImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public RequestHistory get(
+        String resourceGroupName,
+        String name,
+        String workflowName,
+        String runName,
+        String actionName,
+        String repetitionName,
+        String requestHistoryName) {
+        RequestHistoryInner inner =
+            this
+                .serviceClient()
+                .get(resourceGroupName, name, workflowName, runName, actionName, repetitionName, requestHistoryName);
+        if (inner != null) {
+            return new RequestHistoryImpl(inner, this.manager());
         } else {
             return null;
         }

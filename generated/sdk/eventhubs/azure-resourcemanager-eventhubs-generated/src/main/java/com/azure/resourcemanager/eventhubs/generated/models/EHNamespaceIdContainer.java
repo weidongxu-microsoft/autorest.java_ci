@@ -16,6 +16,10 @@ public final class EHNamespaceIdContainer {
     @JsonProperty(value = "id")
     private String id;
 
+    /** Creates an instance of EHNamespaceIdContainer class. */
+    public EHNamespaceIdContainer() {
+    }
+
     /**
      * Get the id property: id parameter.
      *

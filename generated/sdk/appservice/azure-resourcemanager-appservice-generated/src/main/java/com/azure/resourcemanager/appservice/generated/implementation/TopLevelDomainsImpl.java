@@ -41,15 +41,6 @@ public final class TopLevelDomainsImpl implements TopLevelDomains {
         return Utils.mapPage(inner, inner1 -> new TopLevelDomainImpl(inner1, this.manager()));
     }
 
-    public TopLevelDomain get(String name) {
-        TopLevelDomainInner inner = this.serviceClient().get(name);
-        if (inner != null) {
-            return new TopLevelDomainImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<TopLevelDomain> getWithResponse(String name, Context context) {
         Response<TopLevelDomainInner> inner = this.serviceClient().getWithResponse(name, context);
         if (inner != null) {
@@ -58,6 +49,15 @@ public final class TopLevelDomainsImpl implements TopLevelDomains {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new TopLevelDomainImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public TopLevelDomain get(String name) {
+        TopLevelDomainInner inner = this.serviceClient().get(name);
+        if (inner != null) {
+            return new TopLevelDomainImpl(inner, this.manager());
         } else {
             return null;
         }

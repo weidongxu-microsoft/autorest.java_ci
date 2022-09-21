@@ -54,6 +54,10 @@ public final class KeyAttributes {
     @JsonProperty(value = "exportable")
     private Boolean exportable;
 
+    /** Creates an instance of KeyAttributes class. */
+    public KeyAttributes() {
+    }
+
     /**
      * Get the enabled property: Determines whether or not the object is enabled.
      *

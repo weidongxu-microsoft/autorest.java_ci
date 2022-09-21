@@ -50,6 +50,10 @@ public final class WorkspaceFeatures {
      */
     @JsonIgnore private Map<String, Object> additionalProperties;
 
+    /** Creates an instance of WorkspaceFeatures class. */
+    public WorkspaceFeatures() {
+    }
+
     /**
      * Get the enableDataExport property: Flag that indicate if data should be exported.
      *

@@ -22,6 +22,10 @@ public final class ExcludedServicesConfig {
     @JsonProperty(value = "excludedServicesList")
     private String excludedServicesList;
 
+    /** Creates an instance of ExcludedServicesConfig class. */
+    public ExcludedServicesConfig() {
+    }
+
     /**
      * Get the excludedServicesConfigId property: The config id of excluded services.
      *

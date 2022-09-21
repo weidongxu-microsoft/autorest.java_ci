@@ -22,6 +22,10 @@ public final class ServerPrivateEndpointConnection {
     @JsonProperty(value = "properties", access = JsonProperty.Access.WRITE_ONLY)
     private ServerPrivateEndpointConnectionProperties properties;
 
+    /** Creates an instance of ServerPrivateEndpointConnection class. */
+    public ServerPrivateEndpointConnection() {
+    }
+
     /**
      * Get the id property: Resource ID of the Private Endpoint Connection.
      *

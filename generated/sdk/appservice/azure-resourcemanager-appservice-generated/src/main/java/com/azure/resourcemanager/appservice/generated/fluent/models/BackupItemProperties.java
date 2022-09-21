@@ -98,6 +98,10 @@ public final class BackupItemProperties {
     @JsonProperty(value = "websiteSizeInBytes", access = JsonProperty.Access.WRITE_ONLY)
     private Long websiteSizeInBytes;
 
+    /** Creates an instance of BackupItemProperties class. */
+    public BackupItemProperties() {
+    }
+
     /**
      * Get the backupId property: Id of the backup.
      *

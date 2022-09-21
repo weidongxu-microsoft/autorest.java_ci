@@ -32,7 +32,6 @@ import com.azure.core.management.exception.ManagementException;
 import com.azure.core.management.polling.PollResult;
 import com.azure.core.util.Context;
 import com.azure.core.util.FluxUtil;
-import com.azure.core.util.logging.ClientLogger;
 import com.azure.core.util.polling.PollerFlux;
 import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.resources.generated.fluent.ResourceGroupsClient;
@@ -274,16 +273,11 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return whether resource exists.
+     * @return whether resource exists along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public boolean checkExistence(String resourceGroupName) {
-        Boolean value = checkExistenceAsync(resourceGroupName).block();
-        if (value != null) {
-            return value;
-        } else {
-            throw LOGGER.logExceptionAsError(new NullPointerException());
-        }
+    public Response<Boolean> checkExistenceWithResponse(String resourceGroupName) {
+        return checkExistenceWithResponseAsync(resourceGroupName).block();
     }
 
     /**
@@ -299,6 +293,20 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Boolean> checkExistenceWithResponse(String resourceGroupName, Context context) {
         return checkExistenceWithResponseAsync(resourceGroupName, context).block();
+    }
+
+    /**
+     * Checks whether a resource group exists.
+     *
+     * @param resourceGroupName The name of the resource group to check. The name is case insensitive.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return whether resource exists.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public boolean checkExistence(String resourceGroupName) {
+        return checkExistenceWithResponse(resourceGroupName, Context.NONE).getValue();
     }
 
     /**
@@ -431,11 +439,12 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource group information.
+     * @return resource group information along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ResourceGroupInner createOrUpdate(String resourceGroupName, ResourceGroupInner parameters) {
-        return createOrUpdateAsync(resourceGroupName, parameters).block();
+    public Response<ResourceGroupInner> createOrUpdateWithResponse(
+        String resourceGroupName, ResourceGroupInner parameters) {
+        return createOrUpdateWithResponseAsync(resourceGroupName, parameters).block();
     }
 
     /**
@@ -455,6 +464,23 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
     public Response<ResourceGroupInner> createOrUpdateWithResponse(
         String resourceGroupName, ResourceGroupInner parameters, Context context) {
         return createOrUpdateWithResponseAsync(resourceGroupName, parameters, context).block();
+    }
+
+    /**
+     * Creates or updates a resource group.
+     *
+     * @param resourceGroupName The name of the resource group to create or update. Can include alphanumeric,
+     *     underscore, parentheses, hyphen, period (except at end), and Unicode characters that match the allowed
+     *     characters.
+     * @param parameters Parameters supplied to the create or update a resource group.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return resource group information.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ResourceGroupInner createOrUpdate(String resourceGroupName, ResourceGroupInner parameters) {
+        return createOrUpdateWithResponse(resourceGroupName, parameters, Context.NONE).getValue();
     }
 
     /**
@@ -861,11 +887,11 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a resource group.
+     * @return a resource group along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ResourceGroupInner get(String resourceGroupName) {
-        return getAsync(resourceGroupName).block();
+    public Response<ResourceGroupInner> getWithResponse(String resourceGroupName) {
+        return getWithResponseAsync(resourceGroupName).block();
     }
 
     /**
@@ -881,6 +907,20 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<ResourceGroupInner> getWithResponse(String resourceGroupName, Context context) {
         return getWithResponseAsync(resourceGroupName, context).block();
+    }
+
+    /**
+     * Gets a resource group.
+     *
+     * @param resourceGroupName The name of the resource group to get. The name is case insensitive.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a resource group.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ResourceGroupInner get(String resourceGroupName) {
+        return getWithResponse(resourceGroupName, Context.NONE).getValue();
     }
 
     /**
@@ -1016,11 +1056,12 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource group information.
+     * @return resource group information along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ResourceGroupInner update(String resourceGroupName, ResourceGroupPatchable parameters) {
-        return updateAsync(resourceGroupName, parameters).block();
+    public Response<ResourceGroupInner> updateWithResponse(
+        String resourceGroupName, ResourceGroupPatchable parameters) {
+        return updateWithResponseAsync(resourceGroupName, parameters).block();
     }
 
     /**
@@ -1041,6 +1082,24 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
     public Response<ResourceGroupInner> updateWithResponse(
         String resourceGroupName, ResourceGroupPatchable parameters, Context context) {
         return updateWithResponseAsync(resourceGroupName, parameters, context).block();
+    }
+
+    /**
+     * Updates a resource group.
+     *
+     * <p>Resource groups can be updated through a simple PATCH operation to a group address. The format of the request
+     * is the same as that for creating a resource group. If a field is unspecified, the current value is retained.
+     *
+     * @param resourceGroupName The name of the resource group to update. The name is case insensitive.
+     * @param parameters Parameters supplied to update a resource group.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return resource group information.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ResourceGroupInner update(String resourceGroupName, ResourceGroupPatchable parameters) {
+        return updateWithResponse(resourceGroupName, parameters, Context.NONE).getValue();
     }
 
     /**
@@ -1544,6 +1603,4 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
                         res.getValue().nextLink(),
                         null));
     }
-
-    private static final ClientLogger LOGGER = new ClientLogger(ResourceGroupsClientImpl.class);
 }

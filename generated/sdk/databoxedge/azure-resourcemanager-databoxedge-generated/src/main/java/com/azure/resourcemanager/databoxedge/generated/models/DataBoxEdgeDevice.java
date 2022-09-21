@@ -458,15 +458,6 @@ public interface DataBoxEdgeDevice {
     /**
      * Generates certificate for activation key.
      *
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return used in activation key generation flow.
-     */
-    GenerateCertResponse generateCertificate();
-
-    /**
-     * Generates certificate for activation key.
-     *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -476,13 +467,13 @@ public interface DataBoxEdgeDevice {
     Response<GenerateCertResponse> generateCertificateWithResponse(Context context);
 
     /**
-     * Gets additional information for the specified Azure Stack Edge/Data Box Gateway device.
+     * Generates certificate for activation key.
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return additional information for the specified Azure Stack Edge/Data Box Gateway device.
+     * @return used in activation key generation flow.
      */
-    DataBoxEdgeDeviceExtendedInfo getExtendedInformation();
+    GenerateCertResponse generateCertificate();
 
     /**
      * Gets additional information for the specified Azure Stack Edge/Data Box Gateway device.
@@ -495,6 +486,15 @@ public interface DataBoxEdgeDevice {
      *     Response}.
      */
     Response<DataBoxEdgeDeviceExtendedInfo> getExtendedInformationWithResponse(Context context);
+
+    /**
+     * Gets additional information for the specified Azure Stack Edge/Data Box Gateway device.
+     *
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return additional information for the specified Azure Stack Edge/Data Box Gateway device.
+     */
+    DataBoxEdgeDeviceExtendedInfo getExtendedInformation();
 
     /**
      * Installs the updates on the Data Box Edge/Data Box Gateway device.
@@ -536,17 +536,6 @@ public interface DataBoxEdgeDevice {
      * Gets additional information for the specified Data Box Edge/Data Box Gateway device.
      *
      * @param parameters The patch object.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return additional information for the specified Data Box Edge/Data Box Gateway device.
-     */
-    DataBoxEdgeDeviceExtendedInfo updateExtendedInformation(DataBoxEdgeDeviceExtendedInfoPatch parameters);
-
-    /**
-     * Gets additional information for the specified Data Box Edge/Data Box Gateway device.
-     *
-     * @param parameters The patch object.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -558,15 +547,15 @@ public interface DataBoxEdgeDevice {
         DataBoxEdgeDeviceExtendedInfoPatch parameters, Context context);
 
     /**
-     * Uploads registration certificate for the device.
+     * Gets additional information for the specified Data Box Edge/Data Box Gateway device.
      *
-     * @param parameters The upload certificate request.
+     * @param parameters The patch object.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the upload registration certificate response.
+     * @return additional information for the specified Data Box Edge/Data Box Gateway device.
      */
-    UploadCertificateResponse uploadCertificate(UploadCertificateRequest parameters);
+    DataBoxEdgeDeviceExtendedInfo updateExtendedInformation(DataBoxEdgeDeviceExtendedInfoPatch parameters);
 
     /**
      * Uploads registration certificate for the device.
@@ -580,4 +569,15 @@ public interface DataBoxEdgeDevice {
      */
     Response<UploadCertificateResponse> uploadCertificateWithResponse(
         UploadCertificateRequest parameters, Context context);
+
+    /**
+     * Uploads registration certificate for the device.
+     *
+     * @param parameters The upload certificate request.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the upload registration certificate response.
+     */
+    UploadCertificateResponse uploadCertificate(UploadCertificateRequest parameters);
 }

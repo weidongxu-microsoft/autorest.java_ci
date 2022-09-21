@@ -161,11 +161,11 @@ public final class ResourceProviderCommonsClientImpl implements ResourceProvider
      *
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the number of free and paid iot hubs in the subscription.
+     * @return the number of free and paid iot hubs in the subscription along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public UserSubscriptionQuotaListResultInner getSubscriptionQuota() {
-        return getSubscriptionQuotaAsync().block();
+    public Response<UserSubscriptionQuotaListResultInner> getSubscriptionQuotaWithResponse() {
+        return getSubscriptionQuotaWithResponseAsync().block();
     }
 
     /**
@@ -182,5 +182,19 @@ public final class ResourceProviderCommonsClientImpl implements ResourceProvider
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<UserSubscriptionQuotaListResultInner> getSubscriptionQuotaWithResponse(Context context) {
         return getSubscriptionQuotaWithResponseAsync(context).block();
+    }
+
+    /**
+     * Get the number of iot hubs in the subscription
+     *
+     * <p>Get the number of free and paid iot hubs in the subscription.
+     *
+     * @throws ErrorDetailsException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the number of free and paid iot hubs in the subscription.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public UserSubscriptionQuotaListResultInner getSubscriptionQuota() {
+        return getSubscriptionQuotaWithResponse(Context.NONE).getValue();
     }
 }

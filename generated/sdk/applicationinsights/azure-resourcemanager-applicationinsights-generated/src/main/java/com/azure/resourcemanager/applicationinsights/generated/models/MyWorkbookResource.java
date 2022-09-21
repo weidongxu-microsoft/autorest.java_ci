@@ -30,6 +30,10 @@ public class MyWorkbookResource extends Resource {
     @JsonProperty(value = "type")
     private String type;
 
+    /** Creates an instance of MyWorkbookResource class. */
+    public MyWorkbookResource() {
+    }
+
     /**
      * Get the id property: Azure resource Id.
      *

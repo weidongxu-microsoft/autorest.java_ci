@@ -31,15 +31,6 @@ public final class ClustersImpl implements Clusters {
         this.serviceManager = serviceManager;
     }
 
-    public AvailableClustersList listAvailableClusterRegion() {
-        AvailableClustersListInner inner = this.serviceClient().listAvailableClusterRegion();
-        if (inner != null) {
-            return new AvailableClustersListImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<AvailableClustersList> listAvailableClusterRegionWithResponse(Context context) {
         Response<AvailableClustersListInner> inner =
             this.serviceClient().listAvailableClusterRegionWithResponse(context);
@@ -49,6 +40,15 @@ public final class ClustersImpl implements Clusters {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new AvailableClustersListImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public AvailableClustersList listAvailableClusterRegion() {
+        AvailableClustersListInner inner = this.serviceClient().listAvailableClusterRegion();
+        if (inner != null) {
+            return new AvailableClustersListImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -74,15 +74,6 @@ public final class ClustersImpl implements Clusters {
         return Utils.mapPage(inner, inner1 -> new ClusterImpl(inner1, this.manager()));
     }
 
-    public Cluster getByResourceGroup(String resourceGroupName, String clusterName) {
-        ClusterInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, clusterName);
-        if (inner != null) {
-            return new ClusterImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<Cluster> getByResourceGroupWithResponse(
         String resourceGroupName, String clusterName, Context context) {
         Response<ClusterInner> inner =
@@ -98,21 +89,21 @@ public final class ClustersImpl implements Clusters {
         }
     }
 
+    public Cluster getByResourceGroup(String resourceGroupName, String clusterName) {
+        ClusterInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, clusterName);
+        if (inner != null) {
+            return new ClusterImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
     public void deleteByResourceGroup(String resourceGroupName, String clusterName) {
         this.serviceClient().delete(resourceGroupName, clusterName);
     }
 
     public void delete(String resourceGroupName, String clusterName, Context context) {
         this.serviceClient().delete(resourceGroupName, clusterName, context);
-    }
-
-    public EHNamespaceIdListResult listNamespaces(String resourceGroupName, String clusterName) {
-        EHNamespaceIdListResultInner inner = this.serviceClient().listNamespaces(resourceGroupName, clusterName);
-        if (inner != null) {
-            return new EHNamespaceIdListResultImpl(inner, this.manager());
-        } else {
-            return null;
-        }
     }
 
     public Response<EHNamespaceIdListResult> listNamespacesWithResponse(
@@ -125,6 +116,15 @@ public final class ClustersImpl implements Clusters {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new EHNamespaceIdListResultImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public EHNamespaceIdListResult listNamespaces(String resourceGroupName, String clusterName) {
+        EHNamespaceIdListResultInner inner = this.serviceClient().listNamespaces(resourceGroupName, clusterName);
+        if (inner != null) {
+            return new EHNamespaceIdListResultImpl(inner, this.manager());
         } else {
             return null;
         }

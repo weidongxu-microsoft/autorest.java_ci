@@ -336,11 +336,12 @@ public final class PartnerTopicsClientImpl implements PartnerTopicsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of a partner topic.
+     * @return properties of a partner topic along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public PartnerTopicInner getByResourceGroup(String resourceGroupName, String partnerTopicName) {
-        return getByResourceGroupAsync(resourceGroupName, partnerTopicName).block();
+    public Response<PartnerTopicInner> getByResourceGroupWithResponse(
+        String resourceGroupName, String partnerTopicName) {
+        return getByResourceGroupWithResponseAsync(resourceGroupName, partnerTopicName).block();
     }
 
     /**
@@ -360,6 +361,23 @@ public final class PartnerTopicsClientImpl implements PartnerTopicsClient {
     public Response<PartnerTopicInner> getByResourceGroupWithResponse(
         String resourceGroupName, String partnerTopicName, Context context) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, partnerTopicName, context).block();
+    }
+
+    /**
+     * Get a partner topic.
+     *
+     * <p>Get properties of a partner topic.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription.
+     * @param partnerTopicName Name of the partner topic.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return properties of a partner topic.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public PartnerTopicInner getByResourceGroup(String resourceGroupName, String partnerTopicName) {
+        return getByResourceGroupWithResponse(resourceGroupName, partnerTopicName, Context.NONE).getValue();
     }
 
     /**
@@ -509,12 +527,12 @@ public final class PartnerTopicsClientImpl implements PartnerTopicsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return event Grid Partner Topic.
+     * @return event Grid Partner Topic along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public PartnerTopicInner createOrUpdate(
+    public Response<PartnerTopicInner> createOrUpdateWithResponse(
         String resourceGroupName, String partnerTopicName, PartnerTopicInner partnerTopicInfo) {
-        return createOrUpdateAsync(resourceGroupName, partnerTopicName, partnerTopicInfo).block();
+        return createOrUpdateWithResponseAsync(resourceGroupName, partnerTopicName, partnerTopicInfo).block();
     }
 
     /**
@@ -535,6 +553,26 @@ public final class PartnerTopicsClientImpl implements PartnerTopicsClient {
     public Response<PartnerTopicInner> createOrUpdateWithResponse(
         String resourceGroupName, String partnerTopicName, PartnerTopicInner partnerTopicInfo, Context context) {
         return createOrUpdateWithResponseAsync(resourceGroupName, partnerTopicName, partnerTopicInfo, context).block();
+    }
+
+    /**
+     * Create a partner topic.
+     *
+     * <p>Asynchronously creates a new partner topic with the specified parameters.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription.
+     * @param partnerTopicName Name of the partner topic.
+     * @param partnerTopicInfo Partner Topic information.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return event Grid Partner Topic.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public PartnerTopicInner createOrUpdate(
+        String resourceGroupName, String partnerTopicName, PartnerTopicInner partnerTopicInfo) {
+        return createOrUpdateWithResponse(resourceGroupName, partnerTopicName, partnerTopicInfo, Context.NONE)
+            .getValue();
     }
 
     /**
@@ -939,12 +977,12 @@ public final class PartnerTopicsClientImpl implements PartnerTopicsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return the response body along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public PartnerTopicInner update(
+    public Response<PartnerTopicInner> updateWithResponse(
         String resourceGroupName, String partnerTopicName, PartnerTopicUpdateParameters partnerTopicUpdateParameters) {
-        return updateAsync(resourceGroupName, partnerTopicName, partnerTopicUpdateParameters).block();
+        return updateWithResponseAsync(resourceGroupName, partnerTopicName, partnerTopicUpdateParameters).block();
     }
 
     /**
@@ -969,6 +1007,26 @@ public final class PartnerTopicsClientImpl implements PartnerTopicsClient {
         Context context) {
         return updateWithResponseAsync(resourceGroupName, partnerTopicName, partnerTopicUpdateParameters, context)
             .block();
+    }
+
+    /**
+     * Update a partner topic.
+     *
+     * <p>Asynchronously updates a partner topic with the specified parameters.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription.
+     * @param partnerTopicName Name of the partner topic.
+     * @param partnerTopicUpdateParameters PartnerTopic update information.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public PartnerTopicInner update(
+        String resourceGroupName, String partnerTopicName, PartnerTopicUpdateParameters partnerTopicUpdateParameters) {
+        return updateWithResponse(resourceGroupName, partnerTopicName, partnerTopicUpdateParameters, Context.NONE)
+            .getValue();
     }
 
     /**
@@ -1567,11 +1625,11 @@ public final class PartnerTopicsClientImpl implements PartnerTopicsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return event Grid Partner Topic.
+     * @return event Grid Partner Topic along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public PartnerTopicInner activate(String resourceGroupName, String partnerTopicName) {
-        return activateAsync(resourceGroupName, partnerTopicName).block();
+    public Response<PartnerTopicInner> activateWithResponse(String resourceGroupName, String partnerTopicName) {
+        return activateWithResponseAsync(resourceGroupName, partnerTopicName).block();
     }
 
     /**
@@ -1591,6 +1649,23 @@ public final class PartnerTopicsClientImpl implements PartnerTopicsClient {
     public Response<PartnerTopicInner> activateWithResponse(
         String resourceGroupName, String partnerTopicName, Context context) {
         return activateWithResponseAsync(resourceGroupName, partnerTopicName, context).block();
+    }
+
+    /**
+     * Activate a partner topic.
+     *
+     * <p>Activate a newly created partner topic.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription.
+     * @param partnerTopicName Name of the partner topic.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return event Grid Partner Topic.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public PartnerTopicInner activate(String resourceGroupName, String partnerTopicName) {
+        return activateWithResponse(resourceGroupName, partnerTopicName, Context.NONE).getValue();
     }
 
     /**
@@ -1721,11 +1796,11 @@ public final class PartnerTopicsClientImpl implements PartnerTopicsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return event Grid Partner Topic.
+     * @return event Grid Partner Topic along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public PartnerTopicInner deactivate(String resourceGroupName, String partnerTopicName) {
-        return deactivateAsync(resourceGroupName, partnerTopicName).block();
+    public Response<PartnerTopicInner> deactivateWithResponse(String resourceGroupName, String partnerTopicName) {
+        return deactivateWithResponseAsync(resourceGroupName, partnerTopicName).block();
     }
 
     /**
@@ -1745,6 +1820,23 @@ public final class PartnerTopicsClientImpl implements PartnerTopicsClient {
     public Response<PartnerTopicInner> deactivateWithResponse(
         String resourceGroupName, String partnerTopicName, Context context) {
         return deactivateWithResponseAsync(resourceGroupName, partnerTopicName, context).block();
+    }
+
+    /**
+     * Deactivate a partner topic.
+     *
+     * <p>Deactivate specific partner topic.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription.
+     * @param partnerTopicName Name of the partner topic.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return event Grid Partner Topic.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public PartnerTopicInner deactivate(String resourceGroupName, String partnerTopicName) {
+        return deactivateWithResponse(resourceGroupName, partnerTopicName, Context.NONE).getValue();
     }
 
     /**

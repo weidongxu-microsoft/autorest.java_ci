@@ -100,6 +100,10 @@ public final class IpSecurityRestriction {
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, List<String>> headers;
 
+    /** Creates an instance of IpSecurityRestriction class. */
+    public IpSecurityRestriction() {
+    }
+
     /**
      * Get the ipAddress property: IP address the security restriction is valid for. It can be in form of pure ipv4
      * address (required SubnetMask property) or CIDR notation such as ipv4/mask (leading bit match). For CIDR,

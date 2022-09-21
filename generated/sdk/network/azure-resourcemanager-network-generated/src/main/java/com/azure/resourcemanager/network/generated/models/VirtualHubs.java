@@ -15,18 +15,6 @@ public interface VirtualHubs {
      *
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtualHub Resource.
-     */
-    VirtualHub getByResourceGroup(String resourceGroupName, String virtualHubName);
-
-    /**
-     * Retrieves the details of a VirtualHub.
-     *
-     * @param resourceGroupName The resource group name of the VirtualHub.
-     * @param virtualHubName The name of the VirtualHub.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -35,6 +23,18 @@ public interface VirtualHubs {
      */
     Response<VirtualHub> getByResourceGroupWithResponse(
         String resourceGroupName, String virtualHubName, Context context);
+
+    /**
+     * Retrieves the details of a VirtualHub.
+     *
+     * @param resourceGroupName The resource group name of the VirtualHub.
+     * @param virtualHubName The name of the VirtualHub.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return virtualHub Resource.
+     */
+    VirtualHub getByResourceGroup(String resourceGroupName, String virtualHubName);
 
     /**
      * Deletes a VirtualHub.
@@ -141,6 +141,66 @@ public interface VirtualHubs {
         String resourceGroupName,
         String virtualHubName,
         EffectiveRoutesParameters effectiveRoutesParameters,
+        Context context);
+
+    /**
+     * Gets the inbound routes configured for the Virtual Hub on a particular connection.
+     *
+     * @param resourceGroupName The resource group name of the VirtualHub.
+     * @param virtualHubName The name of the VirtualHub.
+     * @param getInboundRoutesParameters Parameters supplied to get the inbound routes for a connection resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void getInboundRoutes(
+        String resourceGroupName, String virtualHubName, GetInboundRoutesParameters getInboundRoutesParameters);
+
+    /**
+     * Gets the inbound routes configured for the Virtual Hub on a particular connection.
+     *
+     * @param resourceGroupName The resource group name of the VirtualHub.
+     * @param virtualHubName The name of the VirtualHub.
+     * @param getInboundRoutesParameters Parameters supplied to get the inbound routes for a connection resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void getInboundRoutes(
+        String resourceGroupName,
+        String virtualHubName,
+        GetInboundRoutesParameters getInboundRoutesParameters,
+        Context context);
+
+    /**
+     * Gets the outbound routes configured for the Virtual Hub on a particular connection.
+     *
+     * @param resourceGroupName The resource group name of the VirtualHub.
+     * @param virtualHubName The name of the VirtualHub.
+     * @param getOutboundRoutesParameters Parameters supplied to get the outbound routes for a connection resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void getOutboundRoutes(
+        String resourceGroupName, String virtualHubName, GetOutboundRoutesParameters getOutboundRoutesParameters);
+
+    /**
+     * Gets the outbound routes configured for the Virtual Hub on a particular connection.
+     *
+     * @param resourceGroupName The resource group name of the VirtualHub.
+     * @param virtualHubName The name of the VirtualHub.
+     * @param getOutboundRoutesParameters Parameters supplied to get the outbound routes for a connection resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void getOutboundRoutes(
+        String resourceGroupName,
+        String virtualHubName,
+        GetOutboundRoutesParameters getOutboundRoutesParameters,
         Context context);
 
     /**

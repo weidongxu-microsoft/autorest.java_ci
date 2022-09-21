@@ -33,6 +33,10 @@ public final class ApplicationGroupProperties {
     @JsonProperty(value = "policies")
     private List<ApplicationGroupPolicy> policies;
 
+    /** Creates an instance of ApplicationGroupProperties class. */
+    public ApplicationGroupProperties() {
+    }
+
     /**
      * Get the isEnabled property: Determines if Application Group is allowed to create connection with namespace or
      * not. Once the isEnabled is set to false, all the existing connections of application group gets dropped and no

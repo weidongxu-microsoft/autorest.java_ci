@@ -110,6 +110,10 @@ public final class DataBoxEdgeSkuInner {
     @JsonProperty(value = "capabilities", access = JsonProperty.Access.WRITE_ONLY)
     private List<SkuCapability> capabilities;
 
+    /** Creates an instance of DataBoxEdgeSkuInner class. */
+    public DataBoxEdgeSkuInner() {
+    }
+
     /**
      * Get the resourceType property: The type of the resource.
      *

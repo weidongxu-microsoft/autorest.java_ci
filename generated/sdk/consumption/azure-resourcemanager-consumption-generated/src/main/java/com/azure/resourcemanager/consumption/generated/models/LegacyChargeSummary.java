@@ -23,6 +23,10 @@ public final class LegacyChargeSummary extends ChargeSummary {
     @JsonProperty(value = "properties", required = true)
     private LegacyChargeSummaryProperties innerProperties = new LegacyChargeSummaryProperties();
 
+    /** Creates an instance of LegacyChargeSummary class. */
+    public LegacyChargeSummary() {
+    }
+
     /**
      * Get the innerProperties property: Properties for legacy charge summary.
      *

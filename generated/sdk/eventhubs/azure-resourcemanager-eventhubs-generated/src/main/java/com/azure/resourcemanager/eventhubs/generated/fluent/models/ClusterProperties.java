@@ -40,6 +40,10 @@ public final class ClusterProperties {
     @JsonProperty(value = "supportsScaling")
     private Boolean supportsScaling;
 
+    /** Creates an instance of ClusterProperties class. */
+    public ClusterProperties() {
+    }
+
     /**
      * Get the createdAt property: The UTC time when the Event Hubs Cluster was created.
      *

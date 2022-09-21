@@ -69,6 +69,10 @@ public final class RampUpRule {
     @JsonProperty(value = "name")
     private String name;
 
+    /** Creates an instance of RampUpRule class. */
+    public RampUpRule() {
+    }
+
     /**
      * Get the actionHostname property: Hostname of a slot to which the traffic will be redirected if decided to. E.g.
      * myapp-stage.azurewebsites.net.

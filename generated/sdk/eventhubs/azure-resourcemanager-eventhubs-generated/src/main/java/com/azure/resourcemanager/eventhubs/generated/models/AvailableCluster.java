@@ -16,6 +16,10 @@ public final class AvailableCluster {
     @JsonProperty(value = "location")
     private String location;
 
+    /** Creates an instance of AvailableCluster class. */
+    public AvailableCluster() {
+    }
+
     /**
      * Get the location property: Location fo the Available Cluster.
      *

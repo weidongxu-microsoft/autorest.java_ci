@@ -23,6 +23,10 @@ public final class ClusterSku {
     @JsonProperty(value = "capacity")
     private Integer capacity;
 
+    /** Creates an instance of ClusterSku class. */
+    public ClusterSku() {
+    }
+
     /**
      * Get the name property: Name of this SKU.
      *

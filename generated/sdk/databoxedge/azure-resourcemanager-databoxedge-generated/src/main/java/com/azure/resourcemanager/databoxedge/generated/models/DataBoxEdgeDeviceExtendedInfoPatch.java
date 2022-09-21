@@ -41,6 +41,10 @@ public final class DataBoxEdgeDeviceExtendedInfoPatch {
     @JsonProperty(value = "syncStatus")
     private KeyVaultSyncStatus syncStatus;
 
+    /** Creates an instance of DataBoxEdgeDeviceExtendedInfoPatch class. */
+    public DataBoxEdgeDeviceExtendedInfoPatch() {
+    }
+
     /**
      * Get the clientSecretStoreId property: The Key Vault ARM Id for client secrets.
      *

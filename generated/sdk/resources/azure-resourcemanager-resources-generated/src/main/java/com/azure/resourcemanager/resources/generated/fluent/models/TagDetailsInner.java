@@ -37,6 +37,10 @@ public final class TagDetailsInner {
     @JsonProperty(value = "values")
     private List<TagValueInner> values;
 
+    /** Creates an instance of TagDetailsInner class. */
+    public TagDetailsInner() {
+    }
+
     /**
      * Get the id property: The tag name ID.
      *

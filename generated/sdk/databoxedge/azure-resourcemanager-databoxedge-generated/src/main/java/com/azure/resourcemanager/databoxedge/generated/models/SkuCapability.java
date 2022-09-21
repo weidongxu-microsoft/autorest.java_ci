@@ -22,6 +22,10 @@ public final class SkuCapability {
     @JsonProperty(value = "value", access = JsonProperty.Access.WRITE_ONLY)
     private String value;
 
+    /** Creates an instance of SkuCapability class. */
+    public SkuCapability() {
+    }
+
     /**
      * Get the name property: An invariant to describe the feature.
      *

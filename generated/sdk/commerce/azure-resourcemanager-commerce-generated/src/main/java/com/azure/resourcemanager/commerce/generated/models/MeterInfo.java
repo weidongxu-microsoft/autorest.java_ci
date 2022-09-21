@@ -78,6 +78,10 @@ public final class MeterInfo {
     @JsonProperty(value = "IncludedQuantity")
     private Float includedQuantity;
 
+    /** Creates an instance of MeterInfo class. */
+    public MeterInfo() {
+    }
+
     /**
      * Get the meterId property: The unique identifier of the resource.
      *

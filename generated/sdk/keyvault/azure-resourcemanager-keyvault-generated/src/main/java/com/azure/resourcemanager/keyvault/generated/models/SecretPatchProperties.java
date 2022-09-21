@@ -28,6 +28,10 @@ public final class SecretPatchProperties {
     @JsonProperty(value = "attributes")
     private SecretAttributes attributes;
 
+    /** Creates an instance of SecretPatchProperties class. */
+    public SecretPatchProperties() {
+    }
+
     /**
      * Get the value property: The value of the secret.
      *

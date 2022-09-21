@@ -22,6 +22,10 @@ public final class AutoscaleSettingResourceInner extends Resource {
     @JsonProperty(value = "properties", required = true)
     private AutoscaleSetting innerProperties = new AutoscaleSetting();
 
+    /** Creates an instance of AutoscaleSettingResourceInner class. */
+    public AutoscaleSettingResourceInner() {
+    }
+
     /**
      * Get the innerProperties property: The autoscale setting of the resource.
      *

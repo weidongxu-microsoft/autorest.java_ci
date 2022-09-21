@@ -58,21 +58,6 @@ public interface AdminRuleCollections {
      * @param networkManagerName The name of the network manager.
      * @param configurationName The name of the network manager Security Configuration.
      * @param ruleCollectionName The name of the network manager security Configuration rule collection.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a network manager security admin configuration rule collection.
-     */
-    AdminRuleCollection get(
-        String resourceGroupName, String networkManagerName, String configurationName, String ruleCollectionName);
-
-    /**
-     * Gets a network manager security admin configuration rule collection.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param networkManagerName The name of the network manager.
-     * @param configurationName The name of the network manager Security Configuration.
-     * @param ruleCollectionName The name of the network manager security Configuration rule collection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -85,6 +70,21 @@ public interface AdminRuleCollections {
         String configurationName,
         String ruleCollectionName,
         Context context);
+
+    /**
+     * Gets a network manager security admin configuration rule collection.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param networkManagerName The name of the network manager.
+     * @param configurationName The name of the network manager Security Configuration.
+     * @param ruleCollectionName The name of the network manager security Configuration rule collection.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a network manager security admin configuration rule collection.
+     */
+    AdminRuleCollection get(
+        String resourceGroupName, String networkManagerName, String configurationName, String ruleCollectionName);
 
     /**
      * Deletes an admin rule collection.

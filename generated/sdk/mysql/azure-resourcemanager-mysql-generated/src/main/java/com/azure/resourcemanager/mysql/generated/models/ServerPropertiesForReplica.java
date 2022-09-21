@@ -21,6 +21,10 @@ public final class ServerPropertiesForReplica extends ServerPropertiesForCreate 
     @JsonProperty(value = "sourceServerId", required = true)
     private String sourceServerId;
 
+    /** Creates an instance of ServerPropertiesForReplica class. */
+    public ServerPropertiesForReplica() {
+    }
+
     /**
      * Get the sourceServerId property: The master server id to create replica from.
      *

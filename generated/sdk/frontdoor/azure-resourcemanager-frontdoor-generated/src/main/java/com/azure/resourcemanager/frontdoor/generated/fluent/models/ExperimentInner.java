@@ -21,6 +21,10 @@ public final class ExperimentInner extends Resource {
     @JsonProperty(value = "properties")
     private ExperimentProperties innerProperties;
 
+    /** Creates an instance of ExperimentInner class. */
+    public ExperimentInner() {
+    }
+
     /**
      * Get the innerProperties property: The properties of an Experiment.
      *

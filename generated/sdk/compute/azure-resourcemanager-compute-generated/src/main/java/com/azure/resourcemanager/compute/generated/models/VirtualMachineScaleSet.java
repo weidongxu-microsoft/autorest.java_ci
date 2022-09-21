@@ -214,8 +214,16 @@ public interface VirtualMachineScaleSet {
     SpotRestorePolicy spotRestorePolicy();
 
     /**
+     * Gets the priorityMixPolicy property: Specifies the desired targets for mixing Spot and Regular priority VMs
+     * within the same VMSS Flex instance.
+     *
+     * @return the priorityMixPolicy value.
+     */
+    PriorityMixPolicy priorityMixPolicy();
+
+    /**
      * Gets the timeCreated property: Specifies the time at which the Virtual Machine Scale Set resource was
-     * created.&lt;br&gt;&lt;br&gt;Minimum api-version: 2022-03-01.
+     * created.&lt;br&gt;&lt;br&gt;Minimum api-version: 2021-11-01.
      *
      * @return the timeCreated value.
      */
@@ -313,7 +321,8 @@ public interface VirtualMachineScaleSet {
                 DefinitionStages.WithAdditionalCapabilities,
                 DefinitionStages.WithScaleInPolicy,
                 DefinitionStages.WithOrchestrationMode,
-                DefinitionStages.WithSpotRestorePolicy {
+                DefinitionStages.WithSpotRestorePolicy,
+                DefinitionStages.WithPriorityMixPolicy {
             /**
              * Executes the create request.
              *
@@ -569,6 +578,18 @@ public interface VirtualMachineScaleSet {
              * @return the next definition stage.
              */
             WithCreate withSpotRestorePolicy(SpotRestorePolicy spotRestorePolicy);
+        }
+        /** The stage of the VirtualMachineScaleSet definition allowing to specify priorityMixPolicy. */
+        interface WithPriorityMixPolicy {
+            /**
+             * Specifies the priorityMixPolicy property: Specifies the desired targets for mixing Spot and Regular
+             * priority VMs within the same VMSS Flex instance..
+             *
+             * @param priorityMixPolicy Specifies the desired targets for mixing Spot and Regular priority VMs within
+             *     the same VMSS Flex instance.
+             * @return the next definition stage.
+             */
+            WithCreate withPriorityMixPolicy(PriorityMixPolicy priorityMixPolicy);
         }
     }
     /**
@@ -1129,17 +1150,6 @@ public interface VirtualMachineScaleSet {
      * Converts SinglePlacementGroup property to false for a existing virtual machine scale set.
      *
      * @param parameters The input object for ConvertToSinglePlacementGroup API.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void convertToSinglePlacementGroup(VMScaleSetConvertToSinglePlacementGroupInput parameters);
-
-    /**
-     * Converts SinglePlacementGroup property to false for a existing virtual machine scale set.
-     *
-     * @param parameters The input object for ConvertToSinglePlacementGroup API.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
@@ -1149,6 +1159,17 @@ public interface VirtualMachineScaleSet {
      */
     Response<Void> convertToSinglePlacementGroupWithResponse(
         VMScaleSetConvertToSinglePlacementGroupInput parameters, Context context);
+
+    /**
+     * Converts SinglePlacementGroup property to false for a existing virtual machine scale set.
+     *
+     * @param parameters The input object for ConvertToSinglePlacementGroup API.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void convertToSinglePlacementGroup(VMScaleSetConvertToSinglePlacementGroupInput parameters);
 
     /**
      * Changes ServiceState property for a given service.

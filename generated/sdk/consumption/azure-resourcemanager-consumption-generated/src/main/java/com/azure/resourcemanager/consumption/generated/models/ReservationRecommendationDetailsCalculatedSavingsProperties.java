@@ -52,6 +52,10 @@ public final class ReservationRecommendationDetailsCalculatedSavingsProperties {
     @JsonProperty(value = "savings", access = JsonProperty.Access.WRITE_ONLY)
     private Float savings;
 
+    /** Creates an instance of ReservationRecommendationDetailsCalculatedSavingsProperties class. */
+    public ReservationRecommendationDetailsCalculatedSavingsProperties() {
+    }
+
     /**
      * Get the onDemandCost property: The cost without reservation.
      *

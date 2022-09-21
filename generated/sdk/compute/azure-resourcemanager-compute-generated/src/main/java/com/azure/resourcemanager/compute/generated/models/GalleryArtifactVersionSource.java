@@ -23,6 +23,10 @@ public final class GalleryArtifactVersionSource {
     @JsonProperty(value = "uri")
     private String uri;
 
+    /** Creates an instance of GalleryArtifactVersionSource class. */
+    public GalleryArtifactVersionSource() {
+    }
+
     /**
      * Get the id property: The id of the gallery artifact version source. Can specify a disk uri, snapshot uri, user
      * image or storage account resource.

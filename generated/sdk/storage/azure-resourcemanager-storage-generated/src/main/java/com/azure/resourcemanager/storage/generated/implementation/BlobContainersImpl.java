@@ -58,15 +58,6 @@ public final class BlobContainersImpl implements BlobContainers {
         return Utils.mapPage(inner, inner1 -> new ListContainerItemImpl(inner1, this.manager()));
     }
 
-    public BlobContainer get(String resourceGroupName, String accountName, String containerName) {
-        BlobContainerInner inner = this.serviceClient().get(resourceGroupName, accountName, containerName);
-        if (inner != null) {
-            return new BlobContainerImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<BlobContainer> getWithResponse(
         String resourceGroupName, String accountName, String containerName, Context context) {
         Response<BlobContainerInner> inner =
@@ -82,8 +73,13 @@ public final class BlobContainersImpl implements BlobContainers {
         }
     }
 
-    public void delete(String resourceGroupName, String accountName, String containerName) {
-        this.serviceClient().delete(resourceGroupName, accountName, containerName);
+    public BlobContainer get(String resourceGroupName, String accountName, String containerName) {
+        BlobContainerInner inner = this.serviceClient().get(resourceGroupName, accountName, containerName);
+        if (inner != null) {
+            return new BlobContainerImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> deleteWithResponse(
@@ -91,15 +87,8 @@ public final class BlobContainersImpl implements BlobContainers {
         return this.serviceClient().deleteWithResponse(resourceGroupName, accountName, containerName, context);
     }
 
-    public LegalHold setLegalHold(
-        String resourceGroupName, String accountName, String containerName, LegalHoldInner legalHold) {
-        LegalHoldInner inner =
-            this.serviceClient().setLegalHold(resourceGroupName, accountName, containerName, legalHold);
-        if (inner != null) {
-            return new LegalHoldImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void delete(String resourceGroupName, String accountName, String containerName) {
+        this.serviceClient().delete(resourceGroupName, accountName, containerName);
     }
 
     public Response<LegalHold> setLegalHoldWithResponse(
@@ -119,10 +108,10 @@ public final class BlobContainersImpl implements BlobContainers {
         }
     }
 
-    public LegalHold clearLegalHold(
+    public LegalHold setLegalHold(
         String resourceGroupName, String accountName, String containerName, LegalHoldInner legalHold) {
         LegalHoldInner inner =
-            this.serviceClient().clearLegalHold(resourceGroupName, accountName, containerName, legalHold);
+            this.serviceClient().setLegalHold(resourceGroupName, accountName, containerName, legalHold);
         if (inner != null) {
             return new LegalHoldImpl(inner, this.manager());
         } else {
@@ -147,12 +136,12 @@ public final class BlobContainersImpl implements BlobContainers {
         }
     }
 
-    public ImmutabilityPolicy getImmutabilityPolicy(
-        String resourceGroupName, String accountName, String containerName) {
-        ImmutabilityPolicyInner inner =
-            this.serviceClient().getImmutabilityPolicy(resourceGroupName, accountName, containerName);
+    public LegalHold clearLegalHold(
+        String resourceGroupName, String accountName, String containerName, LegalHoldInner legalHold) {
+        LegalHoldInner inner =
+            this.serviceClient().clearLegalHold(resourceGroupName, accountName, containerName, legalHold);
         if (inner != null) {
-            return new ImmutabilityPolicyImpl(inner, this.manager());
+            return new LegalHoldImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -175,10 +164,10 @@ public final class BlobContainersImpl implements BlobContainers {
         }
     }
 
-    public ImmutabilityPolicy deleteImmutabilityPolicy(
-        String resourceGroupName, String accountName, String containerName, String ifMatch) {
+    public ImmutabilityPolicy getImmutabilityPolicy(
+        String resourceGroupName, String accountName, String containerName) {
         ImmutabilityPolicyInner inner =
-            this.serviceClient().deleteImmutabilityPolicy(resourceGroupName, accountName, containerName, ifMatch);
+            this.serviceClient().getImmutabilityPolicy(resourceGroupName, accountName, containerName);
         if (inner != null) {
             return new ImmutabilityPolicyImpl(inner, this.manager());
         } else {
@@ -203,10 +192,10 @@ public final class BlobContainersImpl implements BlobContainers {
         }
     }
 
-    public ImmutabilityPolicy lockImmutabilityPolicy(
+    public ImmutabilityPolicy deleteImmutabilityPolicy(
         String resourceGroupName, String accountName, String containerName, String ifMatch) {
         ImmutabilityPolicyInner inner =
-            this.serviceClient().lockImmutabilityPolicy(resourceGroupName, accountName, containerName, ifMatch);
+            this.serviceClient().deleteImmutabilityPolicy(resourceGroupName, accountName, containerName, ifMatch);
         if (inner != null) {
             return new ImmutabilityPolicyImpl(inner, this.manager());
         } else {
@@ -231,10 +220,10 @@ public final class BlobContainersImpl implements BlobContainers {
         }
     }
 
-    public ImmutabilityPolicy extendImmutabilityPolicy(
+    public ImmutabilityPolicy lockImmutabilityPolicy(
         String resourceGroupName, String accountName, String containerName, String ifMatch) {
         ImmutabilityPolicyInner inner =
-            this.serviceClient().extendImmutabilityPolicy(resourceGroupName, accountName, containerName, ifMatch);
+            this.serviceClient().lockImmutabilityPolicy(resourceGroupName, accountName, containerName, ifMatch);
         if (inner != null) {
             return new ImmutabilityPolicyImpl(inner, this.manager());
         } else {
@@ -265,10 +254,12 @@ public final class BlobContainersImpl implements BlobContainers {
         }
     }
 
-    public LeaseContainerResponse lease(String resourceGroupName, String accountName, String containerName) {
-        LeaseContainerResponseInner inner = this.serviceClient().lease(resourceGroupName, accountName, containerName);
+    public ImmutabilityPolicy extendImmutabilityPolicy(
+        String resourceGroupName, String accountName, String containerName, String ifMatch) {
+        ImmutabilityPolicyInner inner =
+            this.serviceClient().extendImmutabilityPolicy(resourceGroupName, accountName, containerName, ifMatch);
         if (inner != null) {
-            return new LeaseContainerResponseImpl(inner, this.manager());
+            return new ImmutabilityPolicyImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -288,6 +279,15 @@ public final class BlobContainersImpl implements BlobContainers {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new LeaseContainerResponseImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public LeaseContainerResponse lease(String resourceGroupName, String accountName, String containerName) {
+        LeaseContainerResponseInner inner = this.serviceClient().lease(resourceGroupName, accountName, containerName);
+        if (inner != null) {
+            return new LeaseContainerResponseImpl(inner, this.manager());
         } else {
             return null;
         }

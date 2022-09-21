@@ -26,6 +26,10 @@ public final class ProfileUpdateModel {
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, String> tags;
 
+    /** Creates an instance of ProfileUpdateModel class. */
+    public ProfileUpdateModel() {
+    }
+
     /**
      * Get the innerProperties property: The properties of a Profile.
      *

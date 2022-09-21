@@ -19,6 +19,10 @@ public final class TriggerSupportPackageRequest extends ArmBaseModel {
     @JsonProperty(value = "properties", required = true)
     private SupportPackageRequestProperties innerProperties = new SupportPackageRequestProperties();
 
+    /** Creates an instance of TriggerSupportPackageRequest class. */
+    public TriggerSupportPackageRequest() {
+    }
+
     /**
      * Get the innerProperties property: The TriggerSupportPackageRequest properties.
      *

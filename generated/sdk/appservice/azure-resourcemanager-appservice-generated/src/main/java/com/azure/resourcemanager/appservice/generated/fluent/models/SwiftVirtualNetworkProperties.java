@@ -23,6 +23,10 @@ public final class SwiftVirtualNetworkProperties {
     @JsonProperty(value = "swiftSupported")
     private Boolean swiftSupported;
 
+    /** Creates an instance of SwiftVirtualNetworkProperties class. */
+    public SwiftVirtualNetworkProperties() {
+    }
+
     /**
      * Get the subnetResourceId property: The Virtual Network subnet's resource ID. This is the subnet that this Web App
      * will join. This subnet must have a delegation to Microsoft.Web/serverFarms defined first.

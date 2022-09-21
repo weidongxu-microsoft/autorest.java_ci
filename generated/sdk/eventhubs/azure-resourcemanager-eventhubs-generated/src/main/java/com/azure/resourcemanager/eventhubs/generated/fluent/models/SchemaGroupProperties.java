@@ -53,6 +53,10 @@ public final class SchemaGroupProperties {
     @JsonProperty(value = "schemaType")
     private SchemaType schemaType;
 
+    /** Creates an instance of SchemaGroupProperties class. */
+    public SchemaGroupProperties() {
+    }
+
     /**
      * Get the updatedAtUtc property: Exact time the Schema Group was updated.
      *

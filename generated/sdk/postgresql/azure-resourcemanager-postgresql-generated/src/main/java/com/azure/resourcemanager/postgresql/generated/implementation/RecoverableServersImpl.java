@@ -27,15 +27,6 @@ public final class RecoverableServersImpl implements RecoverableServers {
         this.serviceManager = serviceManager;
     }
 
-    public RecoverableServerResource get(String resourceGroupName, String serverName) {
-        RecoverableServerResourceInner inner = this.serviceClient().get(resourceGroupName, serverName);
-        if (inner != null) {
-            return new RecoverableServerResourceImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<RecoverableServerResource> getWithResponse(
         String resourceGroupName, String serverName, Context context) {
         Response<RecoverableServerResourceInner> inner =
@@ -46,6 +37,15 @@ public final class RecoverableServersImpl implements RecoverableServers {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new RecoverableServerResourceImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public RecoverableServerResource get(String resourceGroupName, String serverName) {
+        RecoverableServerResourceInner inner = this.serviceClient().get(resourceGroupName, serverName);
+        if (inner != null) {
+            return new RecoverableServerResourceImpl(inner, this.manager());
         } else {
             return null;
         }

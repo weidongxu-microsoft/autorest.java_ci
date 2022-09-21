@@ -41,19 +41,6 @@ public interface SecurityRules {
      * @param resourceGroupName The name of the resource group.
      * @param networkSecurityGroupName The name of the network security group.
      * @param securityRuleName The name of the security rule.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network security rule.
-     */
-    SecurityRule get(String resourceGroupName, String networkSecurityGroupName, String securityRuleName);
-
-    /**
-     * Get the specified network security rule.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param networkSecurityGroupName The name of the network security group.
-     * @param securityRuleName The name of the security rule.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -62,6 +49,19 @@ public interface SecurityRules {
      */
     Response<SecurityRule> getWithResponse(
         String resourceGroupName, String networkSecurityGroupName, String securityRuleName, Context context);
+
+    /**
+     * Get the specified network security rule.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param networkSecurityGroupName The name of the network security group.
+     * @param securityRuleName The name of the security rule.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified network security rule.
+     */
+    SecurityRule get(String resourceGroupName, String networkSecurityGroupName, String securityRuleName);
 
     /**
      * Gets all security rules in a network security group.

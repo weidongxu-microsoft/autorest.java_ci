@@ -21,6 +21,10 @@ public final class Sku {
     @JsonProperty(value = "name")
     private SkuName name;
 
+    /** Creates an instance of Sku class. */
+    public Sku() {
+    }
+
     /**
      * Get the name property: The SKU of the search service. Valid values include: 'free': Shared service. 'basic':
      * Dedicated service with up to 3 replicas. 'standard': Dedicated service with up to 12 partitions and 12 replicas.

@@ -29,6 +29,10 @@ public final class AzNsActionGroup {
     @JsonProperty(value = "customWebhookPayload")
     private String customWebhookPayload;
 
+    /** Creates an instance of AzNsActionGroup class. */
+    public AzNsActionGroup() {
+    }
+
     /**
      * Get the actionGroup property: Azure Action Group reference.
      *

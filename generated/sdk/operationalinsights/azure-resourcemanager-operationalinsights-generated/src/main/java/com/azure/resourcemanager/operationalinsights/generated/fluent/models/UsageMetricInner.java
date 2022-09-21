@@ -48,6 +48,10 @@ public final class UsageMetricInner {
     @JsonProperty(value = "quotaPeriod")
     private String quotaPeriod;
 
+    /** Creates an instance of UsageMetricInner class. */
+    public UsageMetricInner() {
+    }
+
     /**
      * Get the name property: The name of the metric.
      *

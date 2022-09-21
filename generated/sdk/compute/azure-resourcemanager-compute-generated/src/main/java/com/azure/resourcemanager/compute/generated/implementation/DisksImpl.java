@@ -30,15 +30,6 @@ public final class DisksImpl implements Disks {
         this.serviceManager = serviceManager;
     }
 
-    public Disk getByResourceGroup(String resourceGroupName, String diskName) {
-        DiskInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, diskName);
-        if (inner != null) {
-            return new DiskImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<Disk> getByResourceGroupWithResponse(String resourceGroupName, String diskName, Context context) {
         Response<DiskInner> inner =
             this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, diskName, context);
@@ -48,6 +39,15 @@ public final class DisksImpl implements Disks {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new DiskImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public Disk getByResourceGroup(String resourceGroupName, String diskName) {
+        DiskInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, diskName);
+        if (inner != null) {
+            return new DiskImpl(inner, this.manager());
         } else {
             return null;
         }

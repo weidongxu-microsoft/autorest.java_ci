@@ -33,6 +33,10 @@ public final class BudgetInner extends ProxyResource {
     @JsonProperty(value = "eTag")
     private String etag;
 
+    /** Creates an instance of BudgetInner class. */
+    public BudgetInner() {
+    }
+
     /**
      * Get the innerProperties property: The properties of the budget.
      *

@@ -29,6 +29,10 @@ public final class NodeInfo {
     @JsonProperty(value = "ipConfiguration")
     private List<KubernetesIpConfiguration> ipConfiguration;
 
+    /** Creates an instance of NodeInfo class. */
+    public NodeInfo() {
+    }
+
     /**
      * Get the name property: Node name.
      *

@@ -18,6 +18,10 @@ public final class DiagnosticRemoteSupportSettingsProperties {
     @JsonProperty(value = "remoteSupportSettingsList")
     private List<RemoteSupportSettings> remoteSupportSettingsList;
 
+    /** Creates an instance of DiagnosticRemoteSupportSettingsProperties class. */
+    public DiagnosticRemoteSupportSettingsProperties() {
+    }
+
     /**
      * Get the remoteSupportSettingsList property: Remote support settings list according to the RemoteApplicationType.
      *

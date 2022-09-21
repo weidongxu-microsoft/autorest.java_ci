@@ -28,15 +28,6 @@ public final class QueueServicesImpl implements QueueServices {
         this.serviceManager = serviceManager;
     }
 
-    public ListQueueServices list(String resourceGroupName, String accountName) {
-        ListQueueServicesInner inner = this.serviceClient().list(resourceGroupName, accountName);
-        if (inner != null) {
-            return new ListQueueServicesImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<ListQueueServices> listWithResponse(String resourceGroupName, String accountName, Context context) {
         Response<ListQueueServicesInner> inner =
             this.serviceClient().listWithResponse(resourceGroupName, accountName, context);
@@ -51,10 +42,10 @@ public final class QueueServicesImpl implements QueueServices {
         }
     }
 
-    public QueueServiceProperties getServiceProperties(String resourceGroupName, String accountName) {
-        QueueServicePropertiesInner inner = this.serviceClient().getServiceProperties(resourceGroupName, accountName);
+    public ListQueueServices list(String resourceGroupName, String accountName) {
+        ListQueueServicesInner inner = this.serviceClient().list(resourceGroupName, accountName);
         if (inner != null) {
-            return new QueueServicePropertiesImpl(inner, this.manager());
+            return new ListQueueServicesImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -70,6 +61,15 @@ public final class QueueServicesImpl implements QueueServices {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new QueueServicePropertiesImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public QueueServiceProperties getServiceProperties(String resourceGroupName, String accountName) {
+        QueueServicePropertiesInner inner = this.serviceClient().getServiceProperties(resourceGroupName, accountName);
+        if (inner != null) {
+            return new QueueServicePropertiesImpl(inner, this.manager());
         } else {
             return null;
         }

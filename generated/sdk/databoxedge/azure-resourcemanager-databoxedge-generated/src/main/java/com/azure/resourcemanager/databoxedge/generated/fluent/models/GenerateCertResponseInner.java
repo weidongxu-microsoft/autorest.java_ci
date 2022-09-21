@@ -30,6 +30,10 @@ public final class GenerateCertResponseInner {
     @JsonProperty(value = "expiryTimeInUTC")
     private String expiryTimeInUtc;
 
+    /** Creates an instance of GenerateCertResponseInner class. */
+    public GenerateCertResponseInner() {
+    }
+
     /**
      * Get the publicKey property: Gets or sets base64 encoded certificate raw data, this is the public part needed to
      * be uploaded to cert vault.

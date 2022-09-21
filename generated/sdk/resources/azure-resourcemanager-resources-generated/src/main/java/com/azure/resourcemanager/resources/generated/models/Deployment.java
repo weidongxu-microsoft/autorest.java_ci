@@ -32,6 +32,10 @@ public final class Deployment {
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, String> tags;
 
+    /** Creates an instance of Deployment class. */
+    public Deployment() {
+    }
+
     /**
      * Get the location property: The location to store the deployment data.
      *

@@ -380,16 +380,12 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
         return this;
     }
 
-    public StorageAccountListKeysResult listKeys() {
-        return serviceManager.storageAccounts().listKeys(resourceGroupName, accountName);
-    }
-
     public Response<StorageAccountListKeysResult> listKeysWithResponse(ListKeyExpand expand, Context context) {
         return serviceManager.storageAccounts().listKeysWithResponse(resourceGroupName, accountName, expand, context);
     }
 
-    public StorageAccountListKeysResult regenerateKey(StorageAccountRegenerateKeyParameters regenerateKey) {
-        return serviceManager.storageAccounts().regenerateKey(resourceGroupName, accountName, regenerateKey);
+    public StorageAccountListKeysResult listKeys() {
+        return serviceManager.storageAccounts().listKeys(resourceGroupName, accountName);
     }
 
     public Response<StorageAccountListKeysResult> regenerateKeyWithResponse(
@@ -399,8 +395,8 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
             .regenerateKeyWithResponse(resourceGroupName, accountName, regenerateKey, context);
     }
 
-    public ListAccountSasResponse listAccountSas(AccountSasParameters parameters) {
-        return serviceManager.storageAccounts().listAccountSas(resourceGroupName, accountName, parameters);
+    public StorageAccountListKeysResult regenerateKey(StorageAccountRegenerateKeyParameters regenerateKey) {
+        return serviceManager.storageAccounts().regenerateKey(resourceGroupName, accountName, regenerateKey);
     }
 
     public Response<ListAccountSasResponse> listAccountSasWithResponse(
@@ -410,8 +406,8 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
             .listAccountSasWithResponse(resourceGroupName, accountName, parameters, context);
     }
 
-    public ListServiceSasResponse listServiceSas(ServiceSasParameters parameters) {
-        return serviceManager.storageAccounts().listServiceSas(resourceGroupName, accountName, parameters);
+    public ListAccountSasResponse listAccountSas(AccountSasParameters parameters) {
+        return serviceManager.storageAccounts().listAccountSas(resourceGroupName, accountName, parameters);
     }
 
     public Response<ListServiceSasResponse> listServiceSasWithResponse(
@@ -419,6 +415,10 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
         return serviceManager
             .storageAccounts()
             .listServiceSasWithResponse(resourceGroupName, accountName, parameters, context);
+    }
+
+    public ListServiceSasResponse listServiceSas(ServiceSasParameters parameters) {
+        return serviceManager.storageAccounts().listServiceSas(resourceGroupName, accountName, parameters);
     }
 
     public void failover() {
@@ -437,14 +437,14 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
         return serviceManager.storageAccounts().restoreBlobRanges(resourceGroupName, accountName, parameters, context);
     }
 
-    public void revokeUserDelegationKeys() {
-        serviceManager.storageAccounts().revokeUserDelegationKeys(resourceGroupName, accountName);
-    }
-
     public Response<Void> revokeUserDelegationKeysWithResponse(Context context) {
         return serviceManager
             .storageAccounts()
             .revokeUserDelegationKeysWithResponse(resourceGroupName, accountName, context);
+    }
+
+    public void revokeUserDelegationKeys() {
+        serviceManager.storageAccounts().revokeUserDelegationKeys(resourceGroupName, accountName);
     }
 
     public StorageAccountImpl withRegion(Region location) {

@@ -16,6 +16,10 @@ public final class ResourceId {
     @JsonProperty(value = "id")
     private String id;
 
+    /** Creates an instance of ResourceId class. */
+    public ResourceId() {
+    }
+
     /**
      * Get the id property: The azure resource id.
      *

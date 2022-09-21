@@ -28,6 +28,10 @@ public final class OnErrorDeploymentExtended {
     @JsonProperty(value = "deploymentName")
     private String deploymentName;
 
+    /** Creates an instance of OnErrorDeploymentExtended class. */
+    public OnErrorDeploymentExtended() {
+    }
+
     /**
      * Get the provisioningState property: The state of the provisioning for the on error deployment.
      *

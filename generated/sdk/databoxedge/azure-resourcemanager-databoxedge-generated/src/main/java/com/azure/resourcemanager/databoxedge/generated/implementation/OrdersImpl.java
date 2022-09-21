@@ -40,15 +40,6 @@ public final class OrdersImpl implements Orders {
         return Utils.mapPage(inner, inner1 -> new OrderImpl(inner1, this.manager()));
     }
 
-    public Order get(String deviceName, String resourceGroupName) {
-        OrderInner inner = this.serviceClient().get(deviceName, resourceGroupName);
-        if (inner != null) {
-            return new OrderImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<Order> getWithResponse(String deviceName, String resourceGroupName, Context context) {
         Response<OrderInner> inner = this.serviceClient().getWithResponse(deviceName, resourceGroupName, context);
         if (inner != null) {
@@ -57,6 +48,15 @@ public final class OrdersImpl implements Orders {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new OrderImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public Order get(String deviceName, String resourceGroupName) {
+        OrderInner inner = this.serviceClient().get(deviceName, resourceGroupName);
+        if (inner != null) {
+            return new OrderImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -88,15 +88,6 @@ public final class OrdersImpl implements Orders {
         this.serviceClient().delete(deviceName, resourceGroupName, context);
     }
 
-    public DCAccessCode listDCAccessCode(String deviceName, String resourceGroupName) {
-        DCAccessCodeInner inner = this.serviceClient().listDCAccessCode(deviceName, resourceGroupName);
-        if (inner != null) {
-            return new DCAccessCodeImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<DCAccessCode> listDCAccessCodeWithResponse(
         String deviceName, String resourceGroupName, Context context) {
         Response<DCAccessCodeInner> inner =
@@ -107,6 +98,15 @@ public final class OrdersImpl implements Orders {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new DCAccessCodeImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public DCAccessCode listDCAccessCode(String deviceName, String resourceGroupName) {
+        DCAccessCodeInner inner = this.serviceClient().listDCAccessCode(deviceName, resourceGroupName);
+        if (inner != null) {
+            return new DCAccessCodeImpl(inner, this.manager());
         } else {
             return null;
         }

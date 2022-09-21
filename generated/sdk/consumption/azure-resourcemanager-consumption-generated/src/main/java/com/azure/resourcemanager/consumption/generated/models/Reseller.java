@@ -22,6 +22,10 @@ public final class Reseller {
     @JsonProperty(value = "resellerDescription", access = JsonProperty.Access.WRITE_ONLY)
     private String resellerDescription;
 
+    /** Creates an instance of Reseller class. */
+    public Reseller() {
+    }
+
     /**
      * Get the resellerId property: The reseller property ID.
      *

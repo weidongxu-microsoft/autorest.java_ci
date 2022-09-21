@@ -35,6 +35,10 @@ public final class FacetRequestOptions {
     @JsonProperty(value = "$top")
     private Integer top;
 
+    /** Creates an instance of FacetRequestOptions class. */
+    public FacetRequestOptions() {
+    }
+
     /**
      * Get the sortBy property: The column name or query expression to sort on. Defaults to count if not present.
      *

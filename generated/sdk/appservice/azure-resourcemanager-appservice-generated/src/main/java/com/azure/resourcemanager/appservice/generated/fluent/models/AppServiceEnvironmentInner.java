@@ -141,6 +141,10 @@ public final class AppServiceEnvironmentInner {
     @JsonProperty(value = "upgradeAvailability", access = JsonProperty.Access.WRITE_ONLY)
     private UpgradeAvailability upgradeAvailability;
 
+    /** Creates an instance of AppServiceEnvironmentInner class. */
+    public AppServiceEnvironmentInner() {
+    }
+
     /**
      * Get the provisioningState property: Provisioning state of the App Service Environment.
      *

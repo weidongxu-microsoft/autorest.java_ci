@@ -38,18 +38,6 @@ public interface Clusters {
      *
      * @param resourceGroupName The name of the resource group.
      * @param clusterName The name of the cluster.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified cluster.
-     */
-    Cluster getByResourceGroup(String resourceGroupName, String clusterName);
-
-    /**
-     * Gets the specified cluster.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param clusterName The name of the cluster.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -57,6 +45,18 @@ public interface Clusters {
      * @return the specified cluster along with {@link Response}.
      */
     Response<Cluster> getByResourceGroupWithResponse(String resourceGroupName, String clusterName, Context context);
+
+    /**
+     * Gets the specified cluster.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param clusterName The name of the cluster.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified cluster.
+     */
+    Cluster getByResourceGroup(String resourceGroupName, String clusterName);
 
     /**
      * Lists the HDInsight clusters in a resource group.
@@ -201,18 +201,6 @@ public interface Clusters {
      *
      * @param resourceGroupName The name of the resource group.
      * @param clusterName The name of the cluster.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the gateway settings for the specified cluster.
-     */
-    GatewaySettings getGatewaySettings(String resourceGroupName, String clusterName);
-
-    /**
-     * Gets the gateway settings for the specified cluster.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param clusterName The name of the cluster.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -221,6 +209,18 @@ public interface Clusters {
      */
     Response<GatewaySettings> getGatewaySettingsWithResponse(
         String resourceGroupName, String clusterName, Context context);
+
+    /**
+     * Gets the gateway settings for the specified cluster.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param clusterName The name of the cluster.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the gateway settings for the specified cluster.
+     */
+    GatewaySettings getGatewaySettings(String resourceGroupName, String clusterName);
 
     /**
      * Configures the gateway settings on the specified cluster.
@@ -255,19 +255,6 @@ public interface Clusters {
      * @param resourceGroupName The name of the resource group.
      * @param clusterName The name of the cluster.
      * @param operationId The long running operation id.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the azure async operation response.
-     */
-    AsyncOperationResult getAzureAsyncOperationStatus(String resourceGroupName, String clusterName, String operationId);
-
-    /**
-     * The the async operation status.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param clusterName The name of the cluster.
-     * @param operationId The long running operation id.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -276,6 +263,19 @@ public interface Clusters {
      */
     Response<AsyncOperationResult> getAzureAsyncOperationStatusWithResponse(
         String resourceGroupName, String clusterName, String operationId, Context context);
+
+    /**
+     * The the async operation status.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param clusterName The name of the cluster.
+     * @param operationId The long running operation id.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the azure async operation response.
+     */
+    AsyncOperationResult getAzureAsyncOperationStatus(String resourceGroupName, String clusterName, String operationId);
 
     /**
      * Updates the cluster identity certificate.

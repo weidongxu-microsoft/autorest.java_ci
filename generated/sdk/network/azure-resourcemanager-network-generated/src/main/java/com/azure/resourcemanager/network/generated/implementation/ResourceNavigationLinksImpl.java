@@ -27,17 +27,6 @@ public final class ResourceNavigationLinksImpl implements ResourceNavigationLink
         this.serviceManager = serviceManager;
     }
 
-    public ResourceNavigationLinksListResult list(
-        String resourceGroupName, String virtualNetworkName, String subnetName) {
-        ResourceNavigationLinksListResultInner inner =
-            this.serviceClient().list(resourceGroupName, virtualNetworkName, subnetName);
-        if (inner != null) {
-            return new ResourceNavigationLinksListResultImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<ResourceNavigationLinksListResult> listWithResponse(
         String resourceGroupName, String virtualNetworkName, String subnetName, Context context) {
         Response<ResourceNavigationLinksListResultInner> inner =
@@ -48,6 +37,17 @@ public final class ResourceNavigationLinksImpl implements ResourceNavigationLink
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new ResourceNavigationLinksListResultImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public ResourceNavigationLinksListResult list(
+        String resourceGroupName, String virtualNetworkName, String subnetName) {
+        ResourceNavigationLinksListResultInner inner =
+            this.serviceClient().list(resourceGroupName, virtualNetworkName, subnetName);
+        if (inner != null) {
+            return new ResourceNavigationLinksListResultImpl(inner, this.manager());
         } else {
             return null;
         }

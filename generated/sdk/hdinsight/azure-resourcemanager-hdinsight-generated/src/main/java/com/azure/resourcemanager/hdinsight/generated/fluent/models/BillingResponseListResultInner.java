@@ -45,6 +45,10 @@ public final class BillingResponseListResultInner {
     @JsonProperty(value = "billingResources")
     private List<BillingResources> billingResources;
 
+    /** Creates an instance of BillingResponseListResultInner class. */
+    public BillingResponseListResultInner() {
+    }
+
     /**
      * Get the vmSizes property: The virtual machine sizes to include or exclude.
      *

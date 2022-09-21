@@ -186,11 +186,11 @@ public final class RecoverableServersClientImpl implements RecoverableServersCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a recoverable MySQL Server.
+     * @return a recoverable MySQL Server along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public RecoverableServerResourceInner get(String resourceGroupName, String serverName) {
-        return getAsync(resourceGroupName, serverName).block();
+    public Response<RecoverableServerResourceInner> getWithResponse(String resourceGroupName, String serverName) {
+        return getWithResponseAsync(resourceGroupName, serverName).block();
     }
 
     /**
@@ -208,5 +208,20 @@ public final class RecoverableServersClientImpl implements RecoverableServersCli
     public Response<RecoverableServerResourceInner> getWithResponse(
         String resourceGroupName, String serverName, Context context) {
         return getWithResponseAsync(resourceGroupName, serverName, context).block();
+    }
+
+    /**
+     * Gets a recoverable MySQL Server.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param serverName The name of the server.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a recoverable MySQL Server.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public RecoverableServerResourceInner get(String resourceGroupName, String serverName) {
+        return getWithResponse(resourceGroupName, serverName, Context.NONE).getValue();
     }
 }

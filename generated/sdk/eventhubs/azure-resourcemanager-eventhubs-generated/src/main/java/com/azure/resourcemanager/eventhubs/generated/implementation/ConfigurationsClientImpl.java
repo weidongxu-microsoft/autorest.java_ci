@@ -229,12 +229,12 @@ public final class ConfigurationsClientImpl implements ConfigurationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return contains all settings for the cluster.
+     * @return contains all settings for the cluster along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ClusterQuotaConfigurationPropertiesInner patch(
+    public Response<ClusterQuotaConfigurationPropertiesInner> patchWithResponse(
         String resourceGroupName, String clusterName, ClusterQuotaConfigurationPropertiesInner parameters) {
-        return patchAsync(resourceGroupName, clusterName, parameters).block();
+        return patchWithResponseAsync(resourceGroupName, clusterName, parameters).block();
     }
 
     /**
@@ -257,6 +257,24 @@ public final class ConfigurationsClientImpl implements ConfigurationsClient {
         ClusterQuotaConfigurationPropertiesInner parameters,
         Context context) {
         return patchWithResponseAsync(resourceGroupName, clusterName, parameters, context).block();
+    }
+
+    /**
+     * Replace all specified Event Hubs Cluster settings with those contained in the request body. Leaves the settings
+     * not specified in the request body unmodified.
+     *
+     * @param resourceGroupName Name of the resource group within the azure subscription.
+     * @param clusterName The name of the Event Hubs Cluster.
+     * @param parameters Parameters for creating an Event Hubs Cluster resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return contains all settings for the cluster.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ClusterQuotaConfigurationPropertiesInner patch(
+        String resourceGroupName, String clusterName, ClusterQuotaConfigurationPropertiesInner parameters) {
+        return patchWithResponse(resourceGroupName, clusterName, parameters, Context.NONE).getValue();
     }
 
     /**
@@ -384,11 +402,12 @@ public final class ConfigurationsClientImpl implements ConfigurationsClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all Event Hubs Cluster settings - a collection of key/value pairs which represent the quotas and settings
-     *     imposed on the cluster.
+     *     imposed on the cluster along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ClusterQuotaConfigurationPropertiesInner get(String resourceGroupName, String clusterName) {
-        return getAsync(resourceGroupName, clusterName).block();
+    public Response<ClusterQuotaConfigurationPropertiesInner> getWithResponse(
+        String resourceGroupName, String clusterName) {
+        return getWithResponseAsync(resourceGroupName, clusterName).block();
     }
 
     /**
@@ -408,5 +427,22 @@ public final class ConfigurationsClientImpl implements ConfigurationsClient {
     public Response<ClusterQuotaConfigurationPropertiesInner> getWithResponse(
         String resourceGroupName, String clusterName, Context context) {
         return getWithResponseAsync(resourceGroupName, clusterName, context).block();
+    }
+
+    /**
+     * Get all Event Hubs Cluster settings - a collection of key/value pairs which represent the quotas and settings
+     * imposed on the cluster.
+     *
+     * @param resourceGroupName Name of the resource group within the azure subscription.
+     * @param clusterName The name of the Event Hubs Cluster.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return all Event Hubs Cluster settings - a collection of key/value pairs which represent the quotas and settings
+     *     imposed on the cluster.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ClusterQuotaConfigurationPropertiesInner get(String resourceGroupName, String clusterName) {
+        return getWithResponse(resourceGroupName, clusterName, Context.NONE).getValue();
     }
 }

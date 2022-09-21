@@ -77,6 +77,10 @@ public final class Role {
     @JsonProperty(value = "encryptDataDisks")
     private Boolean encryptDataDisks;
 
+    /** Creates an instance of Role class. */
+    public Role() {
+    }
+
     /**
      * Get the name property: The name of the role.
      *

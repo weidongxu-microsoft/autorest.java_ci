@@ -259,11 +259,11 @@ public final class ExportsClientImpl implements ExportsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing exports.
+     * @return result of listing exports along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ExportListResultInner list(String scope) {
-        return listAsync(scope).block();
+    public Response<ExportListResultInner> listWithResponse(String scope) {
+        return listWithResponseAsync(scope).block();
     }
 
     /**
@@ -293,6 +293,34 @@ public final class ExportsClientImpl implements ExportsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<ExportListResultInner> listWithResponse(String scope, Context context) {
         return listWithResponseAsync(scope, context).block();
+    }
+
+    /**
+     * The operation to list all exports at the given scope.
+     *
+     * @param scope The scope associated with query and export operations. This includes
+     *     '/subscriptions/{subscriptionId}/' for subscription scope,
+     *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resourceGroup scope,
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account scope and
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/departments/{departmentId}' for Department
+     *     scope,
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/enrollmentAccounts/{enrollmentAccountId}'
+     *     for EnrollmentAccount scope, '/providers/Microsoft.Management/managementGroups/{managementGroupId} for
+     *     Management Group scope,
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
+     *     billingProfile scope,
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}/invoiceSections/{invoiceSectionId}'
+     *     for invoiceSection scope, and
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/customers/{customerId}' specific for
+     *     partners.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return result of listing exports.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ExportListResultInner list(String scope) {
+        return listWithResponse(scope, Context.NONE).getValue();
     }
 
     /**
@@ -438,11 +466,11 @@ public final class ExportsClientImpl implements ExportsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a export resource.
+     * @return a export resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ExportInner get(String scope, String exportName) {
-        return getAsync(scope, exportName).block();
+    public Response<ExportInner> getWithResponse(String scope, String exportName) {
+        return getWithResponseAsync(scope, exportName).block();
     }
 
     /**
@@ -473,6 +501,35 @@ public final class ExportsClientImpl implements ExportsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<ExportInner> getWithResponse(String scope, String exportName, Context context) {
         return getWithResponseAsync(scope, exportName, context).block();
+    }
+
+    /**
+     * The operation to get the export for the defined scope by export name.
+     *
+     * @param scope The scope associated with query and export operations. This includes
+     *     '/subscriptions/{subscriptionId}/' for subscription scope,
+     *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resourceGroup scope,
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account scope and
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/departments/{departmentId}' for Department
+     *     scope,
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/enrollmentAccounts/{enrollmentAccountId}'
+     *     for EnrollmentAccount scope, '/providers/Microsoft.Management/managementGroups/{managementGroupId} for
+     *     Management Group scope,
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
+     *     billingProfile scope,
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}/invoiceSections/{invoiceSectionId}'
+     *     for invoiceSection scope, and
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/customers/{customerId}' specific for
+     *     partners.
+     * @param exportName Export Name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a export resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ExportInner get(String scope, String exportName) {
+        return getWithResponse(scope, exportName, Context.NONE).getValue();
     }
 
     /**
@@ -647,11 +704,11 @@ public final class ExportsClientImpl implements ExportsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a export resource.
+     * @return a export resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ExportInner createOrUpdate(String scope, String exportName, ExportInner parameters) {
-        return createOrUpdateAsync(scope, exportName, parameters).block();
+    public Response<ExportInner> createOrUpdateWithResponse(String scope, String exportName, ExportInner parameters) {
+        return createOrUpdateWithResponseAsync(scope, exportName, parameters).block();
     }
 
     /**
@@ -685,6 +742,37 @@ public final class ExportsClientImpl implements ExportsClient {
     public Response<ExportInner> createOrUpdateWithResponse(
         String scope, String exportName, ExportInner parameters, Context context) {
         return createOrUpdateWithResponseAsync(scope, exportName, parameters, context).block();
+    }
+
+    /**
+     * The operation to create or update a export. Update operation requires latest eTag to be set in the request. You
+     * may obtain the latest eTag by performing a get operation. Create operation does not require eTag.
+     *
+     * @param scope The scope associated with query and export operations. This includes
+     *     '/subscriptions/{subscriptionId}/' for subscription scope,
+     *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resourceGroup scope,
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account scope and
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/departments/{departmentId}' for Department
+     *     scope,
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/enrollmentAccounts/{enrollmentAccountId}'
+     *     for EnrollmentAccount scope, '/providers/Microsoft.Management/managementGroups/{managementGroupId} for
+     *     Management Group scope,
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
+     *     billingProfile scope,
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}/invoiceSections/{invoiceSectionId}'
+     *     for invoiceSection scope, and
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/customers/{customerId}' specific for
+     *     partners.
+     * @param exportName Export Name.
+     * @param parameters Parameters supplied to the CreateOrUpdate Export operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a export resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ExportInner createOrUpdate(String scope, String exportName, ExportInner parameters) {
+        return createOrUpdateWithResponse(scope, exportName, parameters, Context.NONE).getValue();
     }
 
     /**
@@ -831,10 +919,11 @@ public final class ExportsClientImpl implements ExportsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public void delete(String scope, String exportName) {
-        deleteAsync(scope, exportName).block();
+    public Response<Void> deleteWithResponse(String scope, String exportName) {
+        return deleteWithResponseAsync(scope, exportName).block();
     }
 
     /**
@@ -865,6 +954,34 @@ public final class ExportsClientImpl implements ExportsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> deleteWithResponse(String scope, String exportName, Context context) {
         return deleteWithResponseAsync(scope, exportName, context).block();
+    }
+
+    /**
+     * The operation to delete a export.
+     *
+     * @param scope The scope associated with query and export operations. This includes
+     *     '/subscriptions/{subscriptionId}/' for subscription scope,
+     *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resourceGroup scope,
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account scope and
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/departments/{departmentId}' for Department
+     *     scope,
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/enrollmentAccounts/{enrollmentAccountId}'
+     *     for EnrollmentAccount scope, '/providers/Microsoft.Management/managementGroups/{managementGroupId} for
+     *     Management Group scope,
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
+     *     billingProfile scope,
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}/invoiceSections/{invoiceSectionId}'
+     *     for invoiceSection scope, and
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/customers/{customerId}' specific for
+     *     partners.
+     * @param exportName Export Name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public void delete(String scope, String exportName) {
+        deleteWithResponse(scope, exportName, Context.NONE);
     }
 
     /**
@@ -1011,10 +1128,11 @@ public final class ExportsClientImpl implements ExportsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public void execute(String scope, String exportName) {
-        executeAsync(scope, exportName).block();
+    public Response<Void> executeWithResponse(String scope, String exportName) {
+        return executeWithResponseAsync(scope, exportName).block();
     }
 
     /**
@@ -1045,6 +1163,34 @@ public final class ExportsClientImpl implements ExportsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> executeWithResponse(String scope, String exportName, Context context) {
         return executeWithResponseAsync(scope, exportName, context).block();
+    }
+
+    /**
+     * The operation to execute a export.
+     *
+     * @param scope The scope associated with query and export operations. This includes
+     *     '/subscriptions/{subscriptionId}/' for subscription scope,
+     *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resourceGroup scope,
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account scope and
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/departments/{departmentId}' for Department
+     *     scope,
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/enrollmentAccounts/{enrollmentAccountId}'
+     *     for EnrollmentAccount scope, '/providers/Microsoft.Management/managementGroups/{managementGroupId} for
+     *     Management Group scope,
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
+     *     billingProfile scope,
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}/invoiceSections/{invoiceSectionId}'
+     *     for invoiceSection scope, and
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/customers/{customerId}' specific for
+     *     partners.
+     * @param exportName Export Name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public void execute(String scope, String exportName) {
+        executeWithResponse(scope, exportName, Context.NONE);
     }
 
     /**
@@ -1196,11 +1342,11 @@ public final class ExportsClientImpl implements ExportsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing exports execution history of a export by name.
+     * @return result of listing exports execution history of a export by name along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ExportExecutionListResultInner getExecutionHistory(String scope, String exportName) {
-        return getExecutionHistoryAsync(scope, exportName).block();
+    public Response<ExportExecutionListResultInner> getExecutionHistoryWithResponse(String scope, String exportName) {
+        return getExecutionHistoryWithResponseAsync(scope, exportName).block();
     }
 
     /**
@@ -1232,5 +1378,34 @@ public final class ExportsClientImpl implements ExportsClient {
     public Response<ExportExecutionListResultInner> getExecutionHistoryWithResponse(
         String scope, String exportName, Context context) {
         return getExecutionHistoryWithResponseAsync(scope, exportName, context).block();
+    }
+
+    /**
+     * The operation to get the execution history of an export for the defined scope by export name.
+     *
+     * @param scope The scope associated with query and export operations. This includes
+     *     '/subscriptions/{subscriptionId}/' for subscription scope,
+     *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resourceGroup scope,
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account scope and
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/departments/{departmentId}' for Department
+     *     scope,
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/enrollmentAccounts/{enrollmentAccountId}'
+     *     for EnrollmentAccount scope, '/providers/Microsoft.Management/managementGroups/{managementGroupId} for
+     *     Management Group scope,
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
+     *     billingProfile scope,
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}/invoiceSections/{invoiceSectionId}'
+     *     for invoiceSection scope, and
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/customers/{customerId}' specific for
+     *     partners.
+     * @param exportName Export Name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return result of listing exports execution history of a export by name.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ExportExecutionListResultInner getExecutionHistory(String scope, String exportName) {
+        return getExecutionHistoryWithResponse(scope, exportName, Context.NONE).getValue();
     }
 }

@@ -26,15 +26,6 @@ public final class ChargesImpl implements Charges {
         this.serviceManager = serviceManager;
     }
 
-    public ChargesListResult list(String scope) {
-        ChargesListResultInner inner = this.serviceClient().list(scope);
-        if (inner != null) {
-            return new ChargesListResultImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<ChargesListResult> listWithResponse(
         String scope, String startDate, String endDate, String filter, String apply, Context context) {
         Response<ChargesListResultInner> inner =
@@ -45,6 +36,15 @@ public final class ChargesImpl implements Charges {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new ChargesListResultImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public ChargesListResult list(String scope) {
+        ChargesListResultInner inner = this.serviceClient().list(scope);
+        if (inner != null) {
+            return new ChargesListResultImpl(inner, this.manager());
         } else {
             return null;
         }

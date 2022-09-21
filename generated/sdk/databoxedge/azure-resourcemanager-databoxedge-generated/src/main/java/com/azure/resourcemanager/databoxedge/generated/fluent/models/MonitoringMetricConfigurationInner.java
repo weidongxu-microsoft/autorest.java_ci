@@ -27,6 +27,10 @@ public final class MonitoringMetricConfigurationInner extends ArmBaseModel {
     @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;
 
+    /** Creates an instance of MonitoringMetricConfigurationInner class. */
+    public MonitoringMetricConfigurationInner() {
+    }
+
     /**
      * Get the innerProperties property: The metric setting properties.
      *

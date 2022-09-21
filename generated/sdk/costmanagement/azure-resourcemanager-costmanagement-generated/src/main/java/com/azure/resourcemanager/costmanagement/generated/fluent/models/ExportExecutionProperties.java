@@ -63,6 +63,10 @@ public final class ExportExecutionProperties {
     @JsonProperty(value = "runSettings")
     private CommonExportProperties runSettings;
 
+    /** Creates an instance of ExportExecutionProperties class. */
+    public ExportExecutionProperties() {
+    }
+
     /**
      * Get the executionType property: The type of the export execution.
      *

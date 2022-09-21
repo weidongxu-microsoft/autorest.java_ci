@@ -147,7 +147,7 @@ public final class VirtualMachineExtensionImagesClientImpl implements VirtualMac
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -206,7 +206,7 @@ public final class VirtualMachineExtensionImagesClientImpl implements VirtualMac
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -251,11 +251,12 @@ public final class VirtualMachineExtensionImagesClientImpl implements VirtualMac
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a virtual machine extension image.
+     * @return a virtual machine extension image along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public VirtualMachineExtensionImageInner get(String location, String publisherName, String type, String version) {
-        return getAsync(location, publisherName, type, version).block();
+    public Response<VirtualMachineExtensionImageInner> getWithResponse(
+        String location, String publisherName, String type, String version) {
+        return getWithResponseAsync(location, publisherName, type, version).block();
     }
 
     /**
@@ -275,6 +276,23 @@ public final class VirtualMachineExtensionImagesClientImpl implements VirtualMac
     public Response<VirtualMachineExtensionImageInner> getWithResponse(
         String location, String publisherName, String type, String version, Context context) {
         return getWithResponseAsync(location, publisherName, type, version, context).block();
+    }
+
+    /**
+     * Gets a virtual machine extension image.
+     *
+     * @param location The name of a supported Azure region.
+     * @param publisherName The publisherName parameter.
+     * @param type The type parameter.
+     * @param version The version parameter.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ApiErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a virtual machine extension image.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public VirtualMachineExtensionImageInner get(String location, String publisherName, String type, String version) {
+        return getWithResponse(location, publisherName, type, version, Context.NONE).getValue();
     }
 
     /**
@@ -309,7 +327,7 @@ public final class VirtualMachineExtensionImagesClientImpl implements VirtualMac
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -359,7 +377,7 @@ public final class VirtualMachineExtensionImagesClientImpl implements VirtualMac
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -396,11 +414,12 @@ public final class VirtualMachineExtensionImagesClientImpl implements VirtualMac
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of virtual machine extension image types.
+     * @return a list of virtual machine extension image types along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public List<VirtualMachineExtensionImageInner> listTypes(String location, String publisherName) {
-        return listTypesAsync(location, publisherName).block();
+    public Response<List<VirtualMachineExtensionImageInner>> listTypesWithResponse(
+        String location, String publisherName) {
+        return listTypesWithResponseAsync(location, publisherName).block();
     }
 
     /**
@@ -418,6 +437,21 @@ public final class VirtualMachineExtensionImagesClientImpl implements VirtualMac
     public Response<List<VirtualMachineExtensionImageInner>> listTypesWithResponse(
         String location, String publisherName, Context context) {
         return listTypesWithResponseAsync(location, publisherName, context).block();
+    }
+
+    /**
+     * Gets a list of virtual machine extension image types.
+     *
+     * @param location The name of a supported Azure region.
+     * @param publisherName The publisherName parameter.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ApiErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a list of virtual machine extension image types.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public List<VirtualMachineExtensionImageInner> listTypes(String location, String publisherName) {
+        return listTypesWithResponse(location, publisherName, Context.NONE).getValue();
     }
 
     /**
@@ -459,7 +493,7 @@ public final class VirtualMachineExtensionImagesClientImpl implements VirtualMac
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -526,7 +560,7 @@ public final class VirtualMachineExtensionImagesClientImpl implements VirtualMac
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -542,27 +576,6 @@ public final class VirtualMachineExtensionImagesClientImpl implements VirtualMac
                 this.client.getSubscriptionId(),
                 accept,
                 context);
-    }
-
-    /**
-     * Gets a list of virtual machine extension image versions.
-     *
-     * @param location The name of a supported Azure region.
-     * @param publisherName The publisherName parameter.
-     * @param type The type parameter.
-     * @param filter The filter to apply on the operation.
-     * @param top The top parameter.
-     * @param orderby The orderby parameter.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ApiErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of virtual machine extension image versions on successful completion of {@link Mono}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<List<VirtualMachineExtensionImageInner>> listVersionsAsync(
-        String location, String publisherName, String type, String filter, Integer top, String orderby) {
-        return listVersionsWithResponseAsync(location, publisherName, type, filter, top, orderby)
-            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -592,17 +605,18 @@ public final class VirtualMachineExtensionImagesClientImpl implements VirtualMac
      * @param location The name of a supported Azure region.
      * @param publisherName The publisherName parameter.
      * @param type The type parameter.
+     * @param filter The filter to apply on the operation.
+     * @param top The top parameter.
+     * @param orderby The orderby parameter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of virtual machine extension image versions.
+     * @return a list of virtual machine extension image versions along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public List<VirtualMachineExtensionImageInner> listVersions(String location, String publisherName, String type) {
-        final String filter = null;
-        final Integer top = null;
-        final String orderby = null;
-        return listVersionsAsync(location, publisherName, type, filter, top, orderby).block();
+    public Response<List<VirtualMachineExtensionImageInner>> listVersionsWithResponse(
+        String location, String publisherName, String type, String filter, Integer top, String orderby) {
+        return listVersionsWithResponseAsync(location, publisherName, type, filter, top, orderby).block();
     }
 
     /**
@@ -630,5 +644,24 @@ public final class VirtualMachineExtensionImagesClientImpl implements VirtualMac
         String orderby,
         Context context) {
         return listVersionsWithResponseAsync(location, publisherName, type, filter, top, orderby, context).block();
+    }
+
+    /**
+     * Gets a list of virtual machine extension image versions.
+     *
+     * @param location The name of a supported Azure region.
+     * @param publisherName The publisherName parameter.
+     * @param type The type parameter.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ApiErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a list of virtual machine extension image versions.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public List<VirtualMachineExtensionImageInner> listVersions(String location, String publisherName, String type) {
+        final String filter = null;
+        final Integer top = null;
+        final String orderby = null;
+        return listVersionsWithResponse(location, publisherName, type, filter, top, orderby, Context.NONE).getValue();
     }
 }

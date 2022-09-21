@@ -23,6 +23,10 @@ public final class QueryGrouping {
     @JsonProperty(value = "name", required = true)
     private String name;
 
+    /** Creates an instance of QueryGrouping class. */
+    public QueryGrouping() {
+    }
+
     /**
      * Get the type property: Has type of the column to group.
      *

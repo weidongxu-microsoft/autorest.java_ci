@@ -49,6 +49,10 @@ public final class MatchCondition {
     @JsonProperty(value = "transforms")
     private List<TransformType> transforms;
 
+    /** Creates an instance of MatchCondition class. */
+    public MatchCondition() {
+    }
+
     /**
      * Get the matchVariable property: Request variable to compare with.
      *

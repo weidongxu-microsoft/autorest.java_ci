@@ -41,17 +41,6 @@ public final class MhsmPrivateEndpointConnectionsImpl implements MhsmPrivateEndp
         return Utils.mapPage(inner, inner1 -> new MhsmPrivateEndpointConnectionImpl(inner1, this.manager()));
     }
 
-    public MhsmPrivateEndpointConnection get(
-        String resourceGroupName, String name, String privateEndpointConnectionName) {
-        MhsmPrivateEndpointConnectionInner inner =
-            this.serviceClient().get(resourceGroupName, name, privateEndpointConnectionName);
-        if (inner != null) {
-            return new MhsmPrivateEndpointConnectionImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<MhsmPrivateEndpointConnection> getWithResponse(
         String resourceGroupName, String name, String privateEndpointConnectionName, Context context) {
         Response<MhsmPrivateEndpointConnectionInner> inner =
@@ -62,6 +51,17 @@ public final class MhsmPrivateEndpointConnectionsImpl implements MhsmPrivateEndp
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new MhsmPrivateEndpointConnectionImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public MhsmPrivateEndpointConnection get(
+        String resourceGroupName, String name, String privateEndpointConnectionName) {
+        MhsmPrivateEndpointConnectionInner inner =
+            this.serviceClient().get(resourceGroupName, name, privateEndpointConnectionName);
+        if (inner != null) {
+            return new MhsmPrivateEndpointConnectionImpl(inner, this.manager());
         } else {
             return null;
         }

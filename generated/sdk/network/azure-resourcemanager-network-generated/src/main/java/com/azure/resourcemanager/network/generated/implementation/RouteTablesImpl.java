@@ -35,15 +35,6 @@ public final class RouteTablesImpl implements RouteTables {
         this.serviceClient().delete(resourceGroupName, routeTableName, context);
     }
 
-    public RouteTable getByResourceGroup(String resourceGroupName, String routeTableName) {
-        RouteTableInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, routeTableName);
-        if (inner != null) {
-            return new RouteTableImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<RouteTable> getByResourceGroupWithResponse(
         String resourceGroupName, String routeTableName, String expand, Context context) {
         Response<RouteTableInner> inner =
@@ -54,6 +45,15 @@ public final class RouteTablesImpl implements RouteTables {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new RouteTableImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public RouteTable getByResourceGroup(String resourceGroupName, String routeTableName) {
+        RouteTableInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, routeTableName);
+        if (inner != null) {
+            return new RouteTableImpl(inner, this.manager());
         } else {
             return null;
         }

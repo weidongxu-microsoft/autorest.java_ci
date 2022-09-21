@@ -37,6 +37,10 @@ public final class ServerAdministratorProperties {
     @JsonProperty(value = "tenantId", required = true)
     private UUID tenantId;
 
+    /** Creates an instance of ServerAdministratorProperties class. */
+    public ServerAdministratorProperties() {
+    }
+
     /**
      * Get the administratorType property: The type of administrator.
      *

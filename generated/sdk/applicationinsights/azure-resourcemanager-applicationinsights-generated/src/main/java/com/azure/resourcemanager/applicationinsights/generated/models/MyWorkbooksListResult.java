@@ -18,6 +18,10 @@ public final class MyWorkbooksListResult {
     @JsonProperty(value = "value", access = JsonProperty.Access.WRITE_ONLY)
     private List<MyWorkbookInner> value;
 
+    /** Creates an instance of MyWorkbooksListResult class. */
+    public MyWorkbooksListResult() {
+    }
+
     /**
      * Get the value property: An array of private workbooks.
      *

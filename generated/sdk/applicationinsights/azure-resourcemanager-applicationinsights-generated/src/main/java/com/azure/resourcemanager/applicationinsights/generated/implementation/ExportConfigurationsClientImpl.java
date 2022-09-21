@@ -262,12 +262,13 @@ public final class ExportConfigurationsClientImpl implements ExportConfiguration
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of Continuous Export configuration of an Application Insights component.
+     * @return a list of Continuous Export configuration of an Application Insights component along with {@link
+     *     Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public List<ApplicationInsightsComponentExportConfigurationInner> list(
+    public Response<List<ApplicationInsightsComponentExportConfigurationInner>> listWithResponse(
         String resourceGroupName, String resourceName) {
-        return listAsync(resourceGroupName, resourceName).block();
+        return listWithResponseAsync(resourceGroupName, resourceName).block();
     }
 
     /**
@@ -286,6 +287,22 @@ public final class ExportConfigurationsClientImpl implements ExportConfiguration
     public Response<List<ApplicationInsightsComponentExportConfigurationInner>> listWithResponse(
         String resourceGroupName, String resourceName, Context context) {
         return listWithResponseAsync(resourceGroupName, resourceName, context).block();
+    }
+
+    /**
+     * Gets a list of Continuous Export configuration of an Application Insights component.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceName The name of the Application Insights component resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a list of Continuous Export configuration of an Application Insights component.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public List<ApplicationInsightsComponentExportConfigurationInner> list(
+        String resourceGroupName, String resourceName) {
+        return listWithResponse(resourceGroupName, resourceName, Context.NONE).getValue();
     }
 
     /**
@@ -436,12 +453,12 @@ public final class ExportConfigurationsClientImpl implements ExportConfiguration
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of Continuous Export configurations.
+     * @return a list of Continuous Export configurations along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public List<ApplicationInsightsComponentExportConfigurationInner> create(
+    public Response<List<ApplicationInsightsComponentExportConfigurationInner>> createWithResponse(
         String resourceGroupName, String resourceName, ApplicationInsightsComponentExportRequest exportProperties) {
-        return createAsync(resourceGroupName, resourceName, exportProperties).block();
+        return createWithResponseAsync(resourceGroupName, resourceName, exportProperties).block();
     }
 
     /**
@@ -464,6 +481,24 @@ public final class ExportConfigurationsClientImpl implements ExportConfiguration
         ApplicationInsightsComponentExportRequest exportProperties,
         Context context) {
         return createWithResponseAsync(resourceGroupName, resourceName, exportProperties, context).block();
+    }
+
+    /**
+     * Create a Continuous Export configuration of an Application Insights component.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceName The name of the Application Insights component resource.
+     * @param exportProperties Properties that need to be specified to create a Continuous Export configuration of a
+     *     Application Insights component.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a list of Continuous Export configurations.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public List<ApplicationInsightsComponentExportConfigurationInner> create(
+        String resourceGroupName, String resourceName, ApplicationInsightsComponentExportRequest exportProperties) {
+        return createWithResponse(resourceGroupName, resourceName, exportProperties, Context.NONE).getValue();
     }
 
     /**
@@ -601,12 +636,12 @@ public final class ExportConfigurationsClientImpl implements ExportConfiguration
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties that define a Continuous Export configuration.
+     * @return properties that define a Continuous Export configuration along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ApplicationInsightsComponentExportConfigurationInner delete(
+    public Response<ApplicationInsightsComponentExportConfigurationInner> deleteWithResponse(
         String resourceGroupName, String resourceName, String exportId) {
-        return deleteAsync(resourceGroupName, resourceName, exportId).block();
+        return deleteWithResponseAsync(resourceGroupName, resourceName, exportId).block();
     }
 
     /**
@@ -625,6 +660,23 @@ public final class ExportConfigurationsClientImpl implements ExportConfiguration
     public Response<ApplicationInsightsComponentExportConfigurationInner> deleteWithResponse(
         String resourceGroupName, String resourceName, String exportId, Context context) {
         return deleteWithResponseAsync(resourceGroupName, resourceName, exportId, context).block();
+    }
+
+    /**
+     * Delete a Continuous Export configuration of an Application Insights component.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceName The name of the Application Insights component resource.
+     * @param exportId The Continuous Export configuration ID. This is unique within a Application Insights component.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return properties that define a Continuous Export configuration.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ApplicationInsightsComponentExportConfigurationInner delete(
+        String resourceGroupName, String resourceName, String exportId) {
+        return deleteWithResponse(resourceGroupName, resourceName, exportId, Context.NONE).getValue();
     }
 
     /**
@@ -762,12 +814,12 @@ public final class ExportConfigurationsClientImpl implements ExportConfiguration
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Continuous Export configuration for this export id.
+     * @return the Continuous Export configuration for this export id along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ApplicationInsightsComponentExportConfigurationInner get(
+    public Response<ApplicationInsightsComponentExportConfigurationInner> getWithResponse(
         String resourceGroupName, String resourceName, String exportId) {
-        return getAsync(resourceGroupName, resourceName, exportId).block();
+        return getWithResponseAsync(resourceGroupName, resourceName, exportId).block();
     }
 
     /**
@@ -786,6 +838,23 @@ public final class ExportConfigurationsClientImpl implements ExportConfiguration
     public Response<ApplicationInsightsComponentExportConfigurationInner> getWithResponse(
         String resourceGroupName, String resourceName, String exportId, Context context) {
         return getWithResponseAsync(resourceGroupName, resourceName, exportId, context).block();
+    }
+
+    /**
+     * Get the Continuous Export configuration for this export id.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceName The name of the Application Insights component resource.
+     * @param exportId The Continuous Export configuration ID. This is unique within a Application Insights component.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the Continuous Export configuration for this export id.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ApplicationInsightsComponentExportConfigurationInner get(
+        String resourceGroupName, String resourceName, String exportId) {
+        return getWithResponse(resourceGroupName, resourceName, exportId, Context.NONE).getValue();
     }
 
     /**
@@ -951,15 +1020,15 @@ public final class ExportConfigurationsClientImpl implements ExportConfiguration
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties that define a Continuous Export configuration.
+     * @return properties that define a Continuous Export configuration along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ApplicationInsightsComponentExportConfigurationInner update(
+    public Response<ApplicationInsightsComponentExportConfigurationInner> updateWithResponse(
         String resourceGroupName,
         String resourceName,
         String exportId,
         ApplicationInsightsComponentExportRequest exportProperties) {
-        return updateAsync(resourceGroupName, resourceName, exportId, exportProperties).block();
+        return updateWithResponseAsync(resourceGroupName, resourceName, exportId, exportProperties).block();
     }
 
     /**
@@ -983,5 +1052,26 @@ public final class ExportConfigurationsClientImpl implements ExportConfiguration
         ApplicationInsightsComponentExportRequest exportProperties,
         Context context) {
         return updateWithResponseAsync(resourceGroupName, resourceName, exportId, exportProperties, context).block();
+    }
+
+    /**
+     * Update the Continuous Export configuration for this export id.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceName The name of the Application Insights component resource.
+     * @param exportId The Continuous Export configuration ID. This is unique within a Application Insights component.
+     * @param exportProperties Properties that need to be specified to update the Continuous Export configuration.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return properties that define a Continuous Export configuration.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ApplicationInsightsComponentExportConfigurationInner update(
+        String resourceGroupName,
+        String resourceName,
+        String exportId,
+        ApplicationInsightsComponentExportRequest exportProperties) {
+        return updateWithResponse(resourceGroupName, resourceName, exportId, exportProperties, Context.NONE).getValue();
     }
 }

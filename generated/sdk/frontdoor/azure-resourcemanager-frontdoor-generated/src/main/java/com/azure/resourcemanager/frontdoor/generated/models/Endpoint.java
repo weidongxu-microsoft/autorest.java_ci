@@ -22,6 +22,10 @@ public final class Endpoint {
     @JsonProperty(value = "endpoint")
     private String endpoint;
 
+    /** Creates an instance of Endpoint class. */
+    public Endpoint() {
+    }
+
     /**
      * Get the name property: The name of the endpoint.
      *

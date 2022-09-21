@@ -37,6 +37,10 @@ public final class RoleAssignmentProperties {
     @JsonProperty(value = "canDelegate")
     private Boolean canDelegate;
 
+    /** Creates an instance of RoleAssignmentProperties class. */
+    public RoleAssignmentProperties() {
+    }
+
     /**
      * Get the roleDefinitionId property: The role definition ID used in the role assignment.
      *

@@ -25,21 +25,6 @@ public interface PartnerNamespacesClient {
      *
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerNamespaceName Name of the partner namespace.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of a partner namespace.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    PartnerNamespaceInner getByResourceGroup(String resourceGroupName, String partnerNamespaceName);
-
-    /**
-     * Get a partner namespace.
-     *
-     * <p>Get properties of a partner namespace.
-     *
-     * @param resourceGroupName The name of the resource group within the user's subscription.
-     * @param partnerNamespaceName Name of the partner namespace.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -49,6 +34,21 @@ public interface PartnerNamespacesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<PartnerNamespaceInner> getByResourceGroupWithResponse(
         String resourceGroupName, String partnerNamespaceName, Context context);
+
+    /**
+     * Get a partner namespace.
+     *
+     * <p>Get properties of a partner namespace.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription.
+     * @param partnerNamespaceName Name of the partner namespace.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return properties of a partner namespace.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    PartnerNamespaceInner getByResourceGroup(String resourceGroupName, String partnerNamespaceName);
 
     /**
      * Create a partner namespace.
@@ -346,21 +346,6 @@ public interface PartnerNamespacesClient {
      *
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerNamespaceName Name of the partner namespace.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return shared access keys of the partner namespace.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    PartnerNamespaceSharedAccessKeysInner listSharedAccessKeys(String resourceGroupName, String partnerNamespaceName);
-
-    /**
-     * List keys for a partner namespace.
-     *
-     * <p>List the two keys used to publish to a partner namespace.
-     *
-     * @param resourceGroupName The name of the resource group within the user's subscription.
-     * @param partnerNamespaceName Name of the partner namespace.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -372,23 +357,19 @@ public interface PartnerNamespacesClient {
         String resourceGroupName, String partnerNamespaceName, Context context);
 
     /**
-     * Regenerate key for a partner namespace.
+     * List keys for a partner namespace.
      *
-     * <p>Regenerate a shared access key for a partner namespace.
+     * <p>List the two keys used to publish to a partner namespace.
      *
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerNamespaceName Name of the partner namespace.
-     * @param regenerateKeyRequest Request body to regenerate key.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return shared access keys of the partner namespace.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    PartnerNamespaceSharedAccessKeysInner regenerateKey(
-        String resourceGroupName,
-        String partnerNamespaceName,
-        PartnerNamespaceRegenerateKeyRequest regenerateKeyRequest);
+    PartnerNamespaceSharedAccessKeysInner listSharedAccessKeys(String resourceGroupName, String partnerNamespaceName);
 
     /**
      * Regenerate key for a partner namespace.
@@ -410,4 +391,23 @@ public interface PartnerNamespacesClient {
         String partnerNamespaceName,
         PartnerNamespaceRegenerateKeyRequest regenerateKeyRequest,
         Context context);
+
+    /**
+     * Regenerate key for a partner namespace.
+     *
+     * <p>Regenerate a shared access key for a partner namespace.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription.
+     * @param partnerNamespaceName Name of the partner namespace.
+     * @param regenerateKeyRequest Request body to regenerate key.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return shared access keys of the partner namespace.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    PartnerNamespaceSharedAccessKeysInner regenerateKey(
+        String resourceGroupName,
+        String partnerNamespaceName,
+        PartnerNamespaceRegenerateKeyRequest regenerateKeyRequest);
 }

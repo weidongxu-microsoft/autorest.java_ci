@@ -28,6 +28,10 @@ public final class DiskBillingMeters {
     @JsonProperty(value = "tier")
     private Tier tier;
 
+    /** Creates an instance of DiskBillingMeters class. */
+    public DiskBillingMeters() {
+    }
+
     /**
      * Get the diskRpMeter property: The managed disk meter guid.
      *

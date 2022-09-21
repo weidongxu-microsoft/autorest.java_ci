@@ -569,12 +569,12 @@ public final class WorkflowTriggerHistoriesClientImpl implements WorkflowTrigger
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a workflow trigger history.
+     * @return a workflow trigger history along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public WorkflowTriggerHistoryInner get(
+    public Response<WorkflowTriggerHistoryInner> getWithResponse(
         String resourceGroupName, String name, String workflowName, String triggerName, String historyName) {
-        return getAsync(resourceGroupName, name, workflowName, triggerName, historyName).block();
+        return getWithResponseAsync(resourceGroupName, name, workflowName, triggerName, historyName).block();
     }
 
     /**
@@ -601,6 +601,27 @@ public final class WorkflowTriggerHistoriesClientImpl implements WorkflowTrigger
         String historyName,
         Context context) {
         return getWithResponseAsync(resourceGroupName, name, workflowName, triggerName, historyName, context).block();
+    }
+
+    /**
+     * Gets a workflow trigger history.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Site name.
+     * @param workflowName The workflow name.
+     * @param triggerName The workflow trigger name.
+     * @param historyName The workflow trigger history name. Corresponds to the run name for triggers that resulted in a
+     *     run.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a workflow trigger history.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public WorkflowTriggerHistoryInner get(
+        String resourceGroupName, String name, String workflowName, String triggerName, String historyName) {
+        return getWithResponse(resourceGroupName, name, workflowName, triggerName, historyName, Context.NONE)
+            .getValue();
     }
 
     /**

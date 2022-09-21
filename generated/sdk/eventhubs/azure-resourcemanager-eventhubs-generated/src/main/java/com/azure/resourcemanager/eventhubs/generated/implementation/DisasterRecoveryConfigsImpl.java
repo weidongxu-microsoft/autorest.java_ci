@@ -49,17 +49,6 @@ public final class DisasterRecoveryConfigsImpl implements DisasterRecoveryConfig
         return Utils.mapPage(inner, inner1 -> new AuthorizationRuleImpl(inner1, this.manager()));
     }
 
-    public AuthorizationRule getAuthorizationRule(
-        String resourceGroupName, String namespaceName, String alias, String authorizationRuleName) {
-        AuthorizationRuleInner inner =
-            this.serviceClient().getAuthorizationRule(resourceGroupName, namespaceName, alias, authorizationRuleName);
-        if (inner != null) {
-            return new AuthorizationRuleImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<AuthorizationRule> getAuthorizationRuleWithResponse(
         String resourceGroupName, String namespaceName, String alias, String authorizationRuleName, Context context) {
         Response<AuthorizationRuleInner> inner =
@@ -78,12 +67,12 @@ public final class DisasterRecoveryConfigsImpl implements DisasterRecoveryConfig
         }
     }
 
-    public AccessKeys listKeys(
+    public AuthorizationRule getAuthorizationRule(
         String resourceGroupName, String namespaceName, String alias, String authorizationRuleName) {
-        AccessKeysInner inner =
-            this.serviceClient().listKeys(resourceGroupName, namespaceName, alias, authorizationRuleName);
+        AuthorizationRuleInner inner =
+            this.serviceClient().getAuthorizationRule(resourceGroupName, namespaceName, alias, authorizationRuleName);
         if (inner != null) {
-            return new AccessKeysImpl(inner, this.manager());
+            return new AuthorizationRuleImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -106,12 +95,12 @@ public final class DisasterRecoveryConfigsImpl implements DisasterRecoveryConfig
         }
     }
 
-    public CheckNameAvailabilityResult checkNameAvailability(
-        String resourceGroupName, String namespaceName, CheckNameAvailabilityParameter parameters) {
-        CheckNameAvailabilityResultInner inner =
-            this.serviceClient().checkNameAvailability(resourceGroupName, namespaceName, parameters);
+    public AccessKeys listKeys(
+        String resourceGroupName, String namespaceName, String alias, String authorizationRuleName) {
+        AccessKeysInner inner =
+            this.serviceClient().listKeys(resourceGroupName, namespaceName, alias, authorizationRuleName);
         if (inner != null) {
-            return new CheckNameAvailabilityResultImpl(inner, this.manager());
+            return new AccessKeysImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -134,6 +123,17 @@ public final class DisasterRecoveryConfigsImpl implements DisasterRecoveryConfig
         }
     }
 
+    public CheckNameAvailabilityResult checkNameAvailability(
+        String resourceGroupName, String namespaceName, CheckNameAvailabilityParameter parameters) {
+        CheckNameAvailabilityResultInner inner =
+            this.serviceClient().checkNameAvailability(resourceGroupName, namespaceName, parameters);
+        if (inner != null) {
+            return new CheckNameAvailabilityResultImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
     public PagedIterable<ArmDisasterRecovery> list(String resourceGroupName, String namespaceName) {
         PagedIterable<ArmDisasterRecoveryInner> inner = this.serviceClient().list(resourceGroupName, namespaceName);
         return Utils.mapPage(inner, inner1 -> new ArmDisasterRecoveryImpl(inner1, this.manager()));
@@ -145,22 +145,13 @@ public final class DisasterRecoveryConfigsImpl implements DisasterRecoveryConfig
         return Utils.mapPage(inner, inner1 -> new ArmDisasterRecoveryImpl(inner1, this.manager()));
     }
 
-    public void delete(String resourceGroupName, String namespaceName, String alias) {
-        this.serviceClient().delete(resourceGroupName, namespaceName, alias);
-    }
-
     public Response<Void> deleteWithResponse(
         String resourceGroupName, String namespaceName, String alias, Context context) {
         return this.serviceClient().deleteWithResponse(resourceGroupName, namespaceName, alias, context);
     }
 
-    public ArmDisasterRecovery get(String resourceGroupName, String namespaceName, String alias) {
-        ArmDisasterRecoveryInner inner = this.serviceClient().get(resourceGroupName, namespaceName, alias);
-        if (inner != null) {
-            return new ArmDisasterRecoveryImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void delete(String resourceGroupName, String namespaceName, String alias) {
+        this.serviceClient().delete(resourceGroupName, namespaceName, alias);
     }
 
     public Response<ArmDisasterRecovery> getWithResponse(
@@ -178,8 +169,13 @@ public final class DisasterRecoveryConfigsImpl implements DisasterRecoveryConfig
         }
     }
 
-    public void breakPairing(String resourceGroupName, String namespaceName, String alias) {
-        this.serviceClient().breakPairing(resourceGroupName, namespaceName, alias);
+    public ArmDisasterRecovery get(String resourceGroupName, String namespaceName, String alias) {
+        ArmDisasterRecoveryInner inner = this.serviceClient().get(resourceGroupName, namespaceName, alias);
+        if (inner != null) {
+            return new ArmDisasterRecoveryImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> breakPairingWithResponse(
@@ -187,13 +183,17 @@ public final class DisasterRecoveryConfigsImpl implements DisasterRecoveryConfig
         return this.serviceClient().breakPairingWithResponse(resourceGroupName, namespaceName, alias, context);
     }
 
-    public void failOver(String resourceGroupName, String namespaceName, String alias) {
-        this.serviceClient().failOver(resourceGroupName, namespaceName, alias);
+    public void breakPairing(String resourceGroupName, String namespaceName, String alias) {
+        this.serviceClient().breakPairing(resourceGroupName, namespaceName, alias);
     }
 
     public Response<Void> failOverWithResponse(
         String resourceGroupName, String namespaceName, String alias, Context context) {
         return this.serviceClient().failOverWithResponse(resourceGroupName, namespaceName, alias, context);
+    }
+
+    public void failOver(String resourceGroupName, String namespaceName, String alias) {
+        this.serviceClient().failOver(resourceGroupName, namespaceName, alias);
     }
 
     public ArmDisasterRecovery getById(String id) {

@@ -17,6 +17,10 @@ public final class ProfileUpdateProperties {
     @JsonProperty(value = "enabledState")
     private State enabledState;
 
+    /** Creates an instance of ProfileUpdateProperties class. */
+    public ProfileUpdateProperties() {
+    }
+
     /**
      * Get the enabledState property: The enabled state of the Profile.
      *

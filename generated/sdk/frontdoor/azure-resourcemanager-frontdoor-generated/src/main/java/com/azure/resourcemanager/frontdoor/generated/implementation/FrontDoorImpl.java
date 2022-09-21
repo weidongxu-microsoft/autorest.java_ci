@@ -261,17 +261,17 @@ public final class FrontDoorImpl implements FrontDoor, FrontDoor.Definition, Fro
         return this;
     }
 
-    public ValidateCustomDomainOutput validateCustomDomain(ValidateCustomDomainInput customDomainProperties) {
-        return serviceManager
-            .frontDoors()
-            .validateCustomDomain(resourceGroupName, frontDoorName, customDomainProperties);
-    }
-
     public Response<ValidateCustomDomainOutput> validateCustomDomainWithResponse(
         ValidateCustomDomainInput customDomainProperties, Context context) {
         return serviceManager
             .frontDoors()
             .validateCustomDomainWithResponse(resourceGroupName, frontDoorName, customDomainProperties, context);
+    }
+
+    public ValidateCustomDomainOutput validateCustomDomain(ValidateCustomDomainInput customDomainProperties) {
+        return serviceManager
+            .frontDoors()
+            .validateCustomDomain(resourceGroupName, frontDoorName, customDomainProperties);
     }
 
     public FrontDoorImpl withRegion(Region location) {

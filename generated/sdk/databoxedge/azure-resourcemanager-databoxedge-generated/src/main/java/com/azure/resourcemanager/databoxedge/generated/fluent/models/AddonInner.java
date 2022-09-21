@@ -33,6 +33,10 @@ public class AddonInner extends ArmBaseModel {
     @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;
 
+    /** Creates an instance of AddonInner class. */
+    public AddonInner() {
+    }
+
     /**
      * Get the systemData property: Metadata pertaining to creation and last modification of Addon.
      *

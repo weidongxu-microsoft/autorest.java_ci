@@ -29,17 +29,6 @@ public final class ServerSecurityAlertPoliciesImpl implements ServerSecurityAler
         this.serviceManager = serviceManager;
     }
 
-    public ServerSecurityAlertPolicy get(
-        String resourceGroupName, String serverName, SecurityAlertPolicyName securityAlertPolicyName) {
-        ServerSecurityAlertPolicyInner inner =
-            this.serviceClient().get(resourceGroupName, serverName, securityAlertPolicyName);
-        if (inner != null) {
-            return new ServerSecurityAlertPolicyImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<ServerSecurityAlertPolicy> getWithResponse(
         String resourceGroupName, String serverName, SecurityAlertPolicyName securityAlertPolicyName, Context context) {
         Response<ServerSecurityAlertPolicyInner> inner =
@@ -50,6 +39,17 @@ public final class ServerSecurityAlertPoliciesImpl implements ServerSecurityAler
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new ServerSecurityAlertPolicyImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public ServerSecurityAlertPolicy get(
+        String resourceGroupName, String serverName, SecurityAlertPolicyName securityAlertPolicyName) {
+        ServerSecurityAlertPolicyInner inner =
+            this.serviceClient().get(resourceGroupName, serverName, securityAlertPolicyName);
+        if (inner != null) {
+            return new ServerSecurityAlertPolicyImpl(inner, this.manager());
         } else {
             return null;
         }

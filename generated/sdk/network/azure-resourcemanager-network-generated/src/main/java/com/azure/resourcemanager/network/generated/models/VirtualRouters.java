@@ -40,19 +40,6 @@ public interface VirtualRouters {
      *
      * @param resourceGroupName The name of the resource group.
      * @param virtualRouterName The name of the Virtual Router.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Virtual Router.
-     */
-    VirtualRouter getByResourceGroup(String resourceGroupName, String virtualRouterName);
-
-    /**
-     * Gets the specified Virtual Router.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param virtualRouterName The name of the Virtual Router.
      * @param expand Expands referenced resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -63,6 +50,19 @@ public interface VirtualRouters {
      */
     Response<VirtualRouter> getByResourceGroupWithResponse(
         String resourceGroupName, String virtualRouterName, String expand, Context context);
+
+    /**
+     * Gets the specified Virtual Router.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param virtualRouterName The name of the Virtual Router.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified Virtual Router.
+     */
+    VirtualRouter getByResourceGroup(String resourceGroupName, String virtualRouterName);
 
     /**
      * Lists all Virtual Routers in a resource group.

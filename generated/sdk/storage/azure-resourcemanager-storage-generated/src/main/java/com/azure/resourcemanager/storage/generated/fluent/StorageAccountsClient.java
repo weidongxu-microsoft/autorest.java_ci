@@ -34,19 +34,6 @@ public interface StorageAccountsClient {
      *
      * @param accountName The name of the storage account within the specified resource group. Storage account names
      *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the CheckNameAvailability operation response.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    CheckNameAvailabilityResultInner checkNameAvailability(StorageAccountCheckNameAvailabilityParameters accountName);
-
-    /**
-     * Checks that the storage account name is valid and is not already in use.
-     *
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -56,6 +43,19 @@ public interface StorageAccountsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<CheckNameAvailabilityResultInner> checkNameAvailabilityWithResponse(
         StorageAccountCheckNameAvailabilityParameters accountName, Context context);
+
+    /**
+     * Checks that the storage account name is valid and is not already in use.
+     *
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the CheckNameAvailability operation response.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    CheckNameAvailabilityResultInner checkNameAvailability(StorageAccountCheckNameAvailabilityParameters accountName);
 
     /**
      * Asynchronously creates a new storage account with the specified parameters. If an account is already created and
@@ -145,20 +145,6 @@ public interface StorageAccountsClient {
      *     insensitive.
      * @param accountName The name of the storage account within the specified resource group. Storage account names
      *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    void delete(String resourceGroupName, String accountName);
-
-    /**
-     * Deletes a storage account in Microsoft Azure.
-     *
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     *     insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -169,8 +155,7 @@ public interface StorageAccountsClient {
     Response<Void> deleteWithResponse(String resourceGroupName, String accountName, Context context);
 
     /**
-     * Returns the properties for the specified storage account including but not limited to name, SKU name, location,
-     * and account status. The ListKeys operation should be used to retrieve storage keys.
+     * Deletes a storage account in Microsoft Azure.
      *
      * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
      *     insensitive.
@@ -179,10 +164,9 @@ public interface StorageAccountsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the storage account.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    StorageAccountInner getByResourceGroup(String resourceGroupName, String accountName);
+    void delete(String resourceGroupName, String accountName);
 
     /**
      * Returns the properties for the specified storage account including but not limited to name, SKU name, location,
@@ -205,25 +189,20 @@ public interface StorageAccountsClient {
         String resourceGroupName, String accountName, StorageAccountExpand expand, Context context);
 
     /**
-     * The update operation can be used to update the SKU, encryption, access tier, or tags for a storage account. It
-     * can also be used to map the account to a custom domain. Only one custom domain is supported per storage account;
-     * the replacement/change of custom domain is not supported. In order to replace an old custom domain, the old value
-     * must be cleared/unregistered before a new value can be set. The update of multiple properties is supported. This
-     * call does not change the storage keys for the account. If you want to change the storage account keys, use the
-     * regenerate keys operation. The location and name of the storage account cannot be changed after creation.
+     * Returns the properties for the specified storage account including but not limited to name, SKU name, location,
+     * and account status. The ListKeys operation should be used to retrieve storage keys.
      *
      * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
      *     insensitive.
      * @param accountName The name of the storage account within the specified resource group. Storage account names
      *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param parameters The parameters to provide for the updated account.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the storage account.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    StorageAccountInner update(String resourceGroupName, String accountName, StorageAccountUpdateParameters parameters);
+    StorageAccountInner getByResourceGroup(String resourceGroupName, String accountName);
 
     /**
      * The update operation can be used to update the SKU, encryption, access tier, or tags for a storage account. It
@@ -247,6 +226,27 @@ public interface StorageAccountsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<StorageAccountInner> updateWithResponse(
         String resourceGroupName, String accountName, StorageAccountUpdateParameters parameters, Context context);
+
+    /**
+     * The update operation can be used to update the SKU, encryption, access tier, or tags for a storage account. It
+     * can also be used to map the account to a custom domain. Only one custom domain is supported per storage account;
+     * the replacement/change of custom domain is not supported. In order to replace an old custom domain, the old value
+     * must be cleared/unregistered before a new value can be set. The update of multiple properties is supported. This
+     * call does not change the storage keys for the account. If you want to change the storage account keys, use the
+     * regenerate keys operation. The location and name of the storage account cannot be changed after creation.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     *     insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param parameters The parameters to provide for the updated account.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the storage account.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    StorageAccountInner update(String resourceGroupName, String accountName, StorageAccountUpdateParameters parameters);
 
     /**
      * Lists all the storage accounts available under the subscription. Note that storage keys are not returned; use the
@@ -308,21 +308,6 @@ public interface StorageAccountsClient {
      *     insensitive.
      * @param accountName The name of the storage account within the specified resource group. Storage account names
      *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the ListKeys operation.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    StorageAccountListKeysResultInner listKeys(String resourceGroupName, String accountName);
-
-    /**
-     * Lists the access keys or Kerberos keys (if active directory enabled) for the specified storage account.
-     *
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     *     insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param expand Specifies type of the key to be listed. Possible value is kerb.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -335,21 +320,19 @@ public interface StorageAccountsClient {
         String resourceGroupName, String accountName, ListKeyExpand expand, Context context);
 
     /**
-     * Regenerates one of the access keys or Kerberos keys for the specified storage account.
+     * Lists the access keys or Kerberos keys (if active directory enabled) for the specified storage account.
      *
      * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
      *     insensitive.
      * @param accountName The name of the storage account within the specified resource group. Storage account names
      *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param regenerateKey Specifies name of the key which should be regenerated -- key1, key2, kerb1, kerb2.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the response from the ListKeys operation.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    StorageAccountListKeysResultInner regenerateKey(
-        String resourceGroupName, String accountName, StorageAccountRegenerateKeyParameters regenerateKey);
+    StorageAccountListKeysResultInner listKeys(String resourceGroupName, String accountName);
 
     /**
      * Regenerates one of the access keys or Kerberos keys for the specified storage account.
@@ -373,21 +356,21 @@ public interface StorageAccountsClient {
         Context context);
 
     /**
-     * List SAS credentials of a storage account.
+     * Regenerates one of the access keys or Kerberos keys for the specified storage account.
      *
      * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
      *     insensitive.
      * @param accountName The name of the storage account within the specified resource group. Storage account names
      *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param parameters The parameters to provide to list SAS credentials for the storage account.
+     * @param regenerateKey Specifies name of the key which should be regenerated -- key1, key2, kerb1, kerb2.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List SAS credentials operation response.
+     * @return the response from the ListKeys operation.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    ListAccountSasResponseInner listAccountSas(
-        String resourceGroupName, String accountName, AccountSasParameters parameters);
+    StorageAccountListKeysResultInner regenerateKey(
+        String resourceGroupName, String accountName, StorageAccountRegenerateKeyParameters regenerateKey);
 
     /**
      * List SAS credentials of a storage account.
@@ -408,21 +391,21 @@ public interface StorageAccountsClient {
         String resourceGroupName, String accountName, AccountSasParameters parameters, Context context);
 
     /**
-     * List service SAS credentials of a specific resource.
+     * List SAS credentials of a storage account.
      *
      * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
      *     insensitive.
      * @param accountName The name of the storage account within the specified resource group. Storage account names
      *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param parameters The parameters to provide to list service SAS credentials.
+     * @param parameters The parameters to provide to list SAS credentials for the storage account.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List service SAS credentials operation response.
+     * @return the List SAS credentials operation response.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    ListServiceSasResponseInner listServiceSas(
-        String resourceGroupName, String accountName, ServiceSasParameters parameters);
+    ListAccountSasResponseInner listAccountSas(
+        String resourceGroupName, String accountName, AccountSasParameters parameters);
 
     /**
      * List service SAS credentials of a specific resource.
@@ -441,6 +424,23 @@ public interface StorageAccountsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ListServiceSasResponseInner> listServiceSasWithResponse(
         String resourceGroupName, String accountName, ServiceSasParameters parameters, Context context);
+
+    /**
+     * List service SAS credentials of a specific resource.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     *     insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param parameters The parameters to provide to list service SAS credentials.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the List service SAS credentials operation response.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    ListServiceSasResponseInner listServiceSas(
+        String resourceGroupName, String accountName, ServiceSasParameters parameters);
 
     /**
      * Failover request can be triggered for a storage account in case of availability issues. The failover occurs from
@@ -724,20 +724,6 @@ public interface StorageAccountsClient {
      *     insensitive.
      * @param accountName The name of the storage account within the specified resource group. Storage account names
      *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    void revokeUserDelegationKeys(String resourceGroupName, String accountName);
-
-    /**
-     * Revoke user delegation keys.
-     *
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     *     insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -746,4 +732,18 @@ public interface StorageAccountsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> revokeUserDelegationKeysWithResponse(String resourceGroupName, String accountName, Context context);
+
+    /**
+     * Revoke user delegation keys.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     *     insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    void revokeUserDelegationKeys(String resourceGroupName, String accountName);
 }

@@ -17,6 +17,10 @@ public final class RegionsCapability {
     @JsonProperty(value = "available")
     private List<String> available;
 
+    /** Creates an instance of RegionsCapability class. */
+    public RegionsCapability() {
+    }
+
     /**
      * Get the available property: The list of region capabilities.
      *

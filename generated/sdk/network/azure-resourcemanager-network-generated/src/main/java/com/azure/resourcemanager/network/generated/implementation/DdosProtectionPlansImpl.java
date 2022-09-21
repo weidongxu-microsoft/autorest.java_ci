@@ -36,16 +36,6 @@ public final class DdosProtectionPlansImpl implements DdosProtectionPlans {
         this.serviceClient().delete(resourceGroupName, ddosProtectionPlanName, context);
     }
 
-    public DdosProtectionPlan getByResourceGroup(String resourceGroupName, String ddosProtectionPlanName) {
-        DdosProtectionPlanInner inner =
-            this.serviceClient().getByResourceGroup(resourceGroupName, ddosProtectionPlanName);
-        if (inner != null) {
-            return new DdosProtectionPlanImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<DdosProtectionPlan> getByResourceGroupWithResponse(
         String resourceGroupName, String ddosProtectionPlanName, Context context) {
         Response<DdosProtectionPlanInner> inner =
@@ -56,6 +46,16 @@ public final class DdosProtectionPlansImpl implements DdosProtectionPlans {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new DdosProtectionPlanImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public DdosProtectionPlan getByResourceGroup(String resourceGroupName, String ddosProtectionPlanName) {
+        DdosProtectionPlanInner inner =
+            this.serviceClient().getByResourceGroup(resourceGroupName, ddosProtectionPlanName);
+        if (inner != null) {
+            return new DdosProtectionPlanImpl(inner, this.manager());
         } else {
             return null;
         }

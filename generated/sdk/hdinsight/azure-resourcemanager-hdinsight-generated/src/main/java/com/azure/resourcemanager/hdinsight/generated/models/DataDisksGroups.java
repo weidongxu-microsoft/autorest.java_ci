@@ -28,6 +28,10 @@ public final class DataDisksGroups {
     @JsonProperty(value = "diskSizeGB", access = JsonProperty.Access.WRITE_ONLY)
     private Integer diskSizeGB;
 
+    /** Creates an instance of DataDisksGroups class. */
+    public DataDisksGroups() {
+    }
+
     /**
      * Get the disksPerNode property: The number of disks per node.
      *

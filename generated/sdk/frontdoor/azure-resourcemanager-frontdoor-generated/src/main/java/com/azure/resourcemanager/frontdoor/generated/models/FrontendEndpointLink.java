@@ -16,6 +16,10 @@ public final class FrontendEndpointLink {
     @JsonProperty(value = "id")
     private String id;
 
+    /** Creates an instance of FrontendEndpointLink class. */
+    public FrontendEndpointLink() {
+    }
+
     /**
      * Get the id property: Resource ID.
      *

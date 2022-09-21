@@ -598,11 +598,11 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Vault details.
+     * @return the Vault details along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public VaultInner getByResourceGroup(String resourceGroupName, String vaultName) {
-        return getByResourceGroupAsync(resourceGroupName, vaultName).block();
+    public Response<VaultInner> getByResourceGroupWithResponse(String resourceGroupName, String vaultName) {
+        return getByResourceGroupWithResponseAsync(resourceGroupName, vaultName).block();
     }
 
     /**
@@ -620,6 +620,21 @@ public final class VaultsClientImpl implements VaultsClient {
     public Response<VaultInner> getByResourceGroupWithResponse(
         String resourceGroupName, String vaultName, Context context) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, vaultName, context).block();
+    }
+
+    /**
+     * Get the Vault details.
+     *
+     * @param resourceGroupName The name of the resource group where the recovery services vault is present.
+     * @param vaultName The name of the recovery services vault.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the Vault details.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public VaultInner getByResourceGroup(String resourceGroupName, String vaultName) {
+        return getByResourceGroupWithResponse(resourceGroupName, vaultName, Context.NONE).getValue();
     }
 
     /**
@@ -998,10 +1013,11 @@ public final class VaultsClientImpl implements VaultsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public void delete(String resourceGroupName, String vaultName) {
-        deleteAsync(resourceGroupName, vaultName).block();
+    public Response<Void> deleteWithResponse(String resourceGroupName, String vaultName) {
+        return deleteWithResponseAsync(resourceGroupName, vaultName).block();
     }
 
     /**
@@ -1018,6 +1034,20 @@ public final class VaultsClientImpl implements VaultsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> deleteWithResponse(String resourceGroupName, String vaultName, Context context) {
         return deleteWithResponseAsync(resourceGroupName, vaultName, context).block();
+    }
+
+    /**
+     * Deletes a vault.
+     *
+     * @param resourceGroupName The name of the resource group where the recovery services vault is present.
+     * @param vaultName The name of the recovery services vault.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public void delete(String resourceGroupName, String vaultName) {
+        deleteWithResponse(resourceGroupName, vaultName, Context.NONE);
     }
 
     /**

@@ -61,6 +61,10 @@ public final class ZoneProperties {
     @JsonProperty(value = "resolutionVirtualNetworks")
     private List<SubResource> resolutionVirtualNetworks;
 
+    /** Creates an instance of ZoneProperties class. */
+    public ZoneProperties() {
+    }
+
     /**
      * Get the maxNumberOfRecordSets property: The maximum number of record sets that can be created in this DNS zone.
      * This is a read-only property and any attempt to set this value will be ignored.

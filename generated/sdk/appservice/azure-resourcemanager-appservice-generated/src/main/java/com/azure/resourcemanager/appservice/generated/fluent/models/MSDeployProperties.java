@@ -19,6 +19,10 @@ public final class MSDeployProperties extends MSDeployCore {
     @JsonProperty(value = "addOnPackages")
     private List<MSDeployCore> addOnPackages;
 
+    /** Creates an instance of MSDeployProperties class. */
+    public MSDeployProperties() {
+    }
+
     /**
      * Get the addOnPackages property: List of Add-On packages. Add-On packages implicitly enable the Do Not Delete
      * MSDeploy rule.

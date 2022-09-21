@@ -19,6 +19,10 @@ public final class DnsResourceReferenceResultInner {
     @JsonProperty(value = "properties")
     private DnsResourceReferenceResultProperties innerProperties;
 
+    /** Creates an instance of DnsResourceReferenceResultInner class. */
+    public DnsResourceReferenceResultInner() {
+    }
+
     /**
      * Get the innerProperties property: The result of dns resource reference request. Returns a list of dns resource
      * references for each of the azure resource in the request.

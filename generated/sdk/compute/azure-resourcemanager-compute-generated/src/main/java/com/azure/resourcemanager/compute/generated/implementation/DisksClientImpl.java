@@ -890,11 +890,11 @@ public final class DisksClientImpl implements DisksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a disk.
+     * @return information about a disk along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public DiskInner getByResourceGroup(String resourceGroupName, String diskName) {
-        return getByResourceGroupAsync(resourceGroupName, diskName).block();
+    public Response<DiskInner> getByResourceGroupWithResponse(String resourceGroupName, String diskName) {
+        return getByResourceGroupWithResponseAsync(resourceGroupName, diskName).block();
     }
 
     /**
@@ -914,6 +914,23 @@ public final class DisksClientImpl implements DisksClient {
     public Response<DiskInner> getByResourceGroupWithResponse(
         String resourceGroupName, String diskName, Context context) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, diskName, context).block();
+    }
+
+    /**
+     * Gets information about a disk.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param diskName The name of the managed disk that is being created. The name can't be changed after the disk is
+     *     created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80
+     *     characters.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return information about a disk.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public DiskInner getByResourceGroup(String resourceGroupName, String diskName) {
+        return getByResourceGroupWithResponse(resourceGroupName, diskName, Context.NONE).getValue();
     }
 
     /**

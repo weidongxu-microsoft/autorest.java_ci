@@ -28,6 +28,10 @@ public final class WebTestInner extends WebtestsResource {
     @JsonProperty(value = "properties")
     private WebTestProperties innerProperties;
 
+    /** Creates an instance of WebTestInner class. */
+    public WebTestInner() {
+    }
+
     /**
      * Get the kind property: The kind of web test that this web test watches. Choices are ping and multistep.
      *

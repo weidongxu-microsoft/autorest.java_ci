@@ -142,6 +142,10 @@ public final class DomainProperties {
     @JsonProperty(value = "authCode")
     private String authCode;
 
+    /** Creates an instance of DomainProperties class. */
+    public DomainProperties() {
+    }
+
     /**
      * Get the contactAdmin property: Administrative contact.
      *

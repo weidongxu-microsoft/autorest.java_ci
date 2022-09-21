@@ -18,6 +18,10 @@ public final class PerformanceTierListResult {
     @JsonProperty(value = "value")
     private List<PerformanceTierPropertiesInner> value;
 
+    /** Creates an instance of PerformanceTierListResult class. */
+    public PerformanceTierListResult() {
+    }
+
     /**
      * Get the value property: The list of performance tiers.
      *

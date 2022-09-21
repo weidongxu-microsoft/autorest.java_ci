@@ -36,17 +36,6 @@ public final class VirtualMachineScaleSetExtensionsImpl implements VirtualMachin
         this.serviceClient().delete(resourceGroupName, vmScaleSetName, vmssExtensionName, context);
     }
 
-    public VirtualMachineScaleSetExtension get(
-        String resourceGroupName, String vmScaleSetName, String vmssExtensionName) {
-        VirtualMachineScaleSetExtensionInner inner =
-            this.serviceClient().get(resourceGroupName, vmScaleSetName, vmssExtensionName);
-        if (inner != null) {
-            return new VirtualMachineScaleSetExtensionImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<VirtualMachineScaleSetExtension> getWithResponse(
         String resourceGroupName, String vmScaleSetName, String vmssExtensionName, String expand, Context context) {
         Response<VirtualMachineScaleSetExtensionInner> inner =
@@ -57,6 +46,17 @@ public final class VirtualMachineScaleSetExtensionsImpl implements VirtualMachin
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new VirtualMachineScaleSetExtensionImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public VirtualMachineScaleSetExtension get(
+        String resourceGroupName, String vmScaleSetName, String vmssExtensionName) {
+        VirtualMachineScaleSetExtensionInner inner =
+            this.serviceClient().get(resourceGroupName, vmScaleSetName, vmssExtensionName);
+        if (inner != null) {
+            return new VirtualMachineScaleSetExtensionImpl(inner, this.manager());
         } else {
             return null;
         }

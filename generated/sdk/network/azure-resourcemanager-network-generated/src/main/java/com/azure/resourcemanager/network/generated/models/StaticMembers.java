@@ -17,21 +17,6 @@ public interface StaticMembers {
      * @param networkManagerName The name of the network manager.
      * @param networkGroupName The name of the network group.
      * @param staticMemberName The name of the static member.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified static member.
-     */
-    StaticMember get(
-        String resourceGroupName, String networkManagerName, String networkGroupName, String staticMemberName);
-
-    /**
-     * Gets the specified static member.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param networkManagerName The name of the network manager.
-     * @param networkGroupName The name of the network group.
-     * @param staticMemberName The name of the static member.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -46,7 +31,7 @@ public interface StaticMembers {
         Context context);
 
     /**
-     * Deletes a static member.
+     * Gets the specified static member.
      *
      * @param resourceGroupName The name of the resource group.
      * @param networkManagerName The name of the network manager.
@@ -55,8 +40,10 @@ public interface StaticMembers {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified static member.
      */
-    void delete(String resourceGroupName, String networkManagerName, String networkGroupName, String staticMemberName);
+    StaticMember get(
+        String resourceGroupName, String networkManagerName, String networkGroupName, String staticMemberName);
 
     /**
      * Deletes a static member.
@@ -77,6 +64,19 @@ public interface StaticMembers {
         String networkGroupName,
         String staticMemberName,
         Context context);
+
+    /**
+     * Deletes a static member.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param networkManagerName The name of the network manager.
+     * @param networkGroupName The name of the network group.
+     * @param staticMemberName The name of the static member.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void delete(String resourceGroupName, String networkManagerName, String networkGroupName, String staticMemberName);
 
     /**
      * Lists the specified static member.

@@ -262,12 +262,12 @@ public final class ServerSecurityAlertPoliciesClientImpl implements ServerSecuri
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a server's security alert policy.
+     * @return a server's security alert policy along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ServerSecurityAlertPolicyInner get(
+    public Response<ServerSecurityAlertPolicyInner> getWithResponse(
         String resourceGroupName, String serverName, SecurityAlertPolicyName securityAlertPolicyName) {
-        return getAsync(resourceGroupName, serverName, securityAlertPolicyName).block();
+        return getWithResponseAsync(resourceGroupName, serverName, securityAlertPolicyName).block();
     }
 
     /**
@@ -286,6 +286,23 @@ public final class ServerSecurityAlertPoliciesClientImpl implements ServerSecuri
     public Response<ServerSecurityAlertPolicyInner> getWithResponse(
         String resourceGroupName, String serverName, SecurityAlertPolicyName securityAlertPolicyName, Context context) {
         return getWithResponseAsync(resourceGroupName, serverName, securityAlertPolicyName, context).block();
+    }
+
+    /**
+     * Get a server's security alert policy.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param serverName The name of the server.
+     * @param securityAlertPolicyName The name of the security alert policy.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a server's security alert policy.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ServerSecurityAlertPolicyInner get(
+        String resourceGroupName, String serverName, SecurityAlertPolicyName securityAlertPolicyName) {
+        return getWithResponse(resourceGroupName, serverName, securityAlertPolicyName, Context.NONE).getValue();
     }
 
     /**

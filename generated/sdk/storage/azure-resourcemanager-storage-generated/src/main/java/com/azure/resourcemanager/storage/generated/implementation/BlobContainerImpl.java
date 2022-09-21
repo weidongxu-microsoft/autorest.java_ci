@@ -228,18 +228,14 @@ public final class BlobContainerImpl implements BlobContainer, BlobContainer.Def
         return this;
     }
 
-    public LegalHold setLegalHold(LegalHoldInner legalHold) {
-        return serviceManager.blobContainers().setLegalHold(resourceGroupName, accountName, containerName, legalHold);
-    }
-
     public Response<LegalHold> setLegalHoldWithResponse(LegalHoldInner legalHold, Context context) {
         return serviceManager
             .blobContainers()
             .setLegalHoldWithResponse(resourceGroupName, accountName, containerName, legalHold, context);
     }
 
-    public LegalHold clearLegalHold(LegalHoldInner legalHold) {
-        return serviceManager.blobContainers().clearLegalHold(resourceGroupName, accountName, containerName, legalHold);
+    public LegalHold setLegalHold(LegalHoldInner legalHold) {
+        return serviceManager.blobContainers().setLegalHold(resourceGroupName, accountName, containerName, legalHold);
     }
 
     public Response<LegalHold> clearLegalHoldWithResponse(LegalHoldInner legalHold, Context context) {
@@ -248,14 +244,18 @@ public final class BlobContainerImpl implements BlobContainer, BlobContainer.Def
             .clearLegalHoldWithResponse(resourceGroupName, accountName, containerName, legalHold, context);
     }
 
-    public LeaseContainerResponse lease() {
-        return serviceManager.blobContainers().lease(resourceGroupName, accountName, containerName);
+    public LegalHold clearLegalHold(LegalHoldInner legalHold) {
+        return serviceManager.blobContainers().clearLegalHold(resourceGroupName, accountName, containerName, legalHold);
     }
 
     public Response<LeaseContainerResponse> leaseWithResponse(LeaseContainerRequest parameters, Context context) {
         return serviceManager
             .blobContainers()
             .leaseWithResponse(resourceGroupName, accountName, containerName, parameters, context);
+    }
+
+    public LeaseContainerResponse lease() {
+        return serviceManager.blobContainers().lease(resourceGroupName, accountName, containerName);
     }
 
     public void objectLevelWorm() {

@@ -35,15 +35,6 @@ public final class IpAllocationsImpl implements IpAllocations {
         this.serviceClient().delete(resourceGroupName, ipAllocationName, context);
     }
 
-    public IpAllocation getByResourceGroup(String resourceGroupName, String ipAllocationName) {
-        IpAllocationInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, ipAllocationName);
-        if (inner != null) {
-            return new IpAllocationImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<IpAllocation> getByResourceGroupWithResponse(
         String resourceGroupName, String ipAllocationName, String expand, Context context) {
         Response<IpAllocationInner> inner =
@@ -54,6 +45,15 @@ public final class IpAllocationsImpl implements IpAllocations {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new IpAllocationImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public IpAllocation getByResourceGroup(String resourceGroupName, String ipAllocationName) {
+        IpAllocationInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, ipAllocationName);
+        if (inner != null) {
+            return new IpAllocationImpl(inner, this.manager());
         } else {
             return null;
         }

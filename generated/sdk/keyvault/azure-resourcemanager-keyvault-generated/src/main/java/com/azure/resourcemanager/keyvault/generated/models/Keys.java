@@ -16,19 +16,6 @@ public interface Keys {
      * @param resourceGroupName The name of the resource group which contains the specified key vault.
      * @param vaultName The name of the vault which contains the key to be retrieved.
      * @param keyName The name of the key to be retrieved.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the current version of the specified key from the specified key vault.
-     */
-    Key get(String resourceGroupName, String vaultName, String keyName);
-
-    /**
-     * Gets the current version of the specified key from the specified key vault.
-     *
-     * @param resourceGroupName The name of the resource group which contains the specified key vault.
-     * @param vaultName The name of the vault which contains the key to be retrieved.
-     * @param keyName The name of the key to be retrieved.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -36,6 +23,19 @@ public interface Keys {
      * @return the current version of the specified key from the specified key vault along with {@link Response}.
      */
     Response<Key> getWithResponse(String resourceGroupName, String vaultName, String keyName, Context context);
+
+    /**
+     * Gets the current version of the specified key from the specified key vault.
+     *
+     * @param resourceGroupName The name of the resource group which contains the specified key vault.
+     * @param vaultName The name of the vault which contains the key to be retrieved.
+     * @param keyName The name of the key to be retrieved.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the current version of the specified key from the specified key vault.
+     */
+    Key get(String resourceGroupName, String vaultName, String keyName);
 
     /**
      * Lists the keys in the specified key vault.
@@ -69,20 +69,6 @@ public interface Keys {
      * @param vaultName The name of the vault which contains the key version to be retrieved.
      * @param keyName The name of the key version to be retrieved.
      * @param keyVersion The version of the key to be retrieved.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified version of the specified key in the specified key vault.
-     */
-    Key getVersion(String resourceGroupName, String vaultName, String keyName, String keyVersion);
-
-    /**
-     * Gets the specified version of the specified key in the specified key vault.
-     *
-     * @param resourceGroupName The name of the resource group which contains the specified key vault.
-     * @param vaultName The name of the vault which contains the key version to be retrieved.
-     * @param keyName The name of the key version to be retrieved.
-     * @param keyVersion The version of the key to be retrieved.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -91,6 +77,20 @@ public interface Keys {
      */
     Response<Key> getVersionWithResponse(
         String resourceGroupName, String vaultName, String keyName, String keyVersion, Context context);
+
+    /**
+     * Gets the specified version of the specified key in the specified key vault.
+     *
+     * @param resourceGroupName The name of the resource group which contains the specified key vault.
+     * @param vaultName The name of the vault which contains the key version to be retrieved.
+     * @param keyName The name of the key version to be retrieved.
+     * @param keyVersion The version of the key to be retrieved.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified version of the specified key in the specified key vault.
+     */
+    Key getVersion(String resourceGroupName, String vaultName, String keyName, String keyVersion);
 
     /**
      * Lists the versions of the specified key in the specified key vault.

@@ -34,6 +34,10 @@ public final class KubernetesRole extends RoleInner {
     @JsonProperty(value = "properties")
     private KubernetesRoleProperties innerProperties;
 
+    /** Creates an instance of KubernetesRole class. */
+    public KubernetesRole() {
+    }
+
     /**
      * Get the innerProperties property: Properties specific to Kubernetes role.
      *

@@ -16,20 +16,6 @@ public interface CommunityGalleryImages {
      * @param location Resource location.
      * @param publicGalleryName The public name of the community gallery.
      * @param galleryImageName The name of the community gallery image definition.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a community gallery image.
-     */
-    CommunityGalleryImage get(String location, String publicGalleryName, String galleryImageName);
-
-    /**
-     * Get a community gallery image.
-     *
-     * @param location Resource location.
-     * @param publicGalleryName The public name of the community gallery.
-     * @param galleryImageName The name of the community gallery image definition.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
@@ -39,6 +25,20 @@ public interface CommunityGalleryImages {
      */
     Response<CommunityGalleryImage> getWithResponse(
         String location, String publicGalleryName, String galleryImageName, Context context);
+
+    /**
+     * Get a community gallery image.
+     *
+     * @param location Resource location.
+     * @param publicGalleryName The public name of the community gallery.
+     * @param galleryImageName The name of the community gallery image definition.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a community gallery image.
+     */
+    CommunityGalleryImage get(String location, String publicGalleryName, String galleryImageName);
 
     /**
      * List community gallery images inside a gallery.

@@ -217,20 +217,6 @@ public interface ResourceProvidersClient {
      * @param location The location of the domain name.
      * @param domainNameLabel The domain name to be verified. It must conform to the following regular expression:
      *     ^[a-z][a-z0-9-]{1,61}[a-z0-9]$.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the CheckDnsNameAvailability API service call.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    DnsNameAvailabilityResultInner checkDnsNameAvailability(String location, String domainNameLabel);
-
-    /**
-     * Checks whether a domain name in the cloudapp.azure.com zone is available for use.
-     *
-     * @param location The location of the domain name.
-     * @param domainNameLabel The domain name to be verified. It must conform to the following regular expression:
-     *     ^[a-z][a-z0-9-]{1,61}[a-z0-9]$.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -240,6 +226,67 @@ public interface ResourceProvidersClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<DnsNameAvailabilityResultInner> checkDnsNameAvailabilityWithResponse(
         String location, String domainNameLabel, Context context);
+
+    /**
+     * Checks whether a domain name in the cloudapp.azure.com zone is available for use.
+     *
+     * @param location The location of the domain name.
+     * @param domainNameLabel The domain name to be verified. It must conform to the following regular expression:
+     *     ^[a-z][a-z0-9-]{1,61}[a-z0-9]$.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return response for the CheckDnsNameAvailability API service call.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    DnsNameAvailabilityResultInner checkDnsNameAvailability(String location, String domainNameLabel);
+
+    /**
+     * Retrieves detail of a provider port.
+     *
+     * @param providerport The name of the provider port.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return expressRouteProviderPort resource along with {@link Response}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    Response<ExpressRouteProviderPortInner> expressRouteProviderPortWithResponse(String providerport, Context context);
+
+    /**
+     * Retrieves detail of a provider port.
+     *
+     * @param providerport The name of the provider port.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return expressRouteProviderPort resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    ExpressRouteProviderPortInner expressRouteProviderPort(String providerport);
+
+    /**
+     * Lists active connectivity configurations in a network manager.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param networkManagerName The name of the network manager.
+     * @param parameters Active Configuration Parameter.
+     * @param top An optional query parameter which specifies the maximum number of records to be returned by the
+     *     server.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return result of the request to list active connectivity configurations along with {@link Response}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    Response<ActiveConnectivityConfigurationsListResultInner> listActiveConnectivityConfigurationsWithResponse(
+        String resourceGroupName,
+        String networkManagerName,
+        ActiveConfigurationParameter parameters,
+        Integer top,
+        Context context);
 
     /**
      * Lists active connectivity configurations in a network manager.
@@ -257,20 +304,26 @@ public interface ResourceProvidersClient {
         String resourceGroupName, String networkManagerName, ActiveConfigurationParameter parameters);
 
     /**
-     * Lists active connectivity configurations in a network manager.
+     * Lists active security admin rules in a network manager.
      *
      * @param resourceGroupName The name of the resource group.
      * @param networkManagerName The name of the network manager.
      * @param parameters Active Configuration Parameter.
+     * @param top An optional query parameter which specifies the maximum number of records to be returned by the
+     *     server.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list active connectivity configurations along with {@link Response}.
+     * @return result of the request to list active security admin rules along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<ActiveConnectivityConfigurationsListResultInner> listActiveConnectivityConfigurationsWithResponse(
-        String resourceGroupName, String networkManagerName, ActiveConfigurationParameter parameters, Context context);
+    Response<ActiveSecurityAdminRulesListResultInner> listActiveSecurityAdminRulesWithResponse(
+        String resourceGroupName,
+        String networkManagerName,
+        ActiveConfigurationParameter parameters,
+        Integer top,
+        Context context);
 
     /**
      * Lists active security admin rules in a network manager.
@@ -288,20 +341,28 @@ public interface ResourceProvidersClient {
         String resourceGroupName, String networkManagerName, ActiveConfigurationParameter parameters);
 
     /**
-     * Lists active security admin rules in a network manager.
+     * List all effective connectivity configurations applied on a virtual network.
      *
      * @param resourceGroupName The name of the resource group.
-     * @param networkManagerName The name of the network manager.
-     * @param parameters Active Configuration Parameter.
+     * @param virtualNetworkName The name of the virtual network.
+     * @param parameters Parameters supplied to list correct page.
+     * @param top An optional query parameter which specifies the maximum number of records to be returned by the
+     *     server.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list active security admin rules along with {@link Response}.
+     * @return result of the request to list networkManagerEffectiveConnectivityConfiguration along with {@link
+     *     Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<ActiveSecurityAdminRulesListResultInner> listActiveSecurityAdminRulesWithResponse(
-        String resourceGroupName, String networkManagerName, ActiveConfigurationParameter parameters, Context context);
+    Response<NetworkManagerEffectiveConnectivityConfigurationListResultInner>
+        listNetworkManagerEffectiveConnectivityConfigurationsWithResponse(
+            String resourceGroupName,
+            String virtualNetworkName,
+            QueryRequestOptions parameters,
+            Integer top,
+            Context context);
 
     /**
      * List all effective connectivity configurations applied on a virtual network.
@@ -320,22 +381,27 @@ public interface ResourceProvidersClient {
             String resourceGroupName, String virtualNetworkName, QueryRequestOptions parameters);
 
     /**
-     * List all effective connectivity configurations applied on a virtual network.
+     * List all effective security admin rules applied on a virtual network.
      *
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param parameters Parameters supplied to list correct page.
+     * @param top An optional query parameter which specifies the maximum number of records to be returned by the
+     *     server.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list networkManagerEffectiveConnectivityConfiguration along with {@link
-     *     Response}.
+     * @return result of the request to list networkManagerEffectiveSecurityAdminRules along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<NetworkManagerEffectiveConnectivityConfigurationListResultInner>
-        listNetworkManagerEffectiveConnectivityConfigurationsWithResponse(
-            String resourceGroupName, String virtualNetworkName, QueryRequestOptions parameters, Context context);
+    Response<NetworkManagerEffectiveSecurityAdminRulesListResultInner>
+        listNetworkManagerEffectiveSecurityAdminRulesWithResponse(
+            String resourceGroupName,
+            String virtualNetworkName,
+            QueryRequestOptions parameters,
+            Integer top,
+            Context context);
 
     /**
      * List all effective security admin rules applied on a virtual network.
@@ -353,36 +419,6 @@ public interface ResourceProvidersClient {
         String resourceGroupName, String virtualNetworkName, QueryRequestOptions parameters);
 
     /**
-     * List all effective security admin rules applied on a virtual network.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param virtualNetworkName The name of the virtual network.
-     * @param parameters Parameters supplied to list correct page.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list networkManagerEffectiveSecurityAdminRules along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<NetworkManagerEffectiveSecurityAdminRulesListResultInner>
-        listNetworkManagerEffectiveSecurityAdminRulesWithResponse(
-            String resourceGroupName, String virtualNetworkName, QueryRequestOptions parameters, Context context);
-
-    /**
-     * Gives the supported security providers for the virtual wan.
-     *
-     * @param resourceGroupName The resource group name.
-     * @param virtualWanName The name of the VirtualWAN for which supported security providers are needed.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of SecurityProviders.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    VirtualWanSecurityProvidersInner supportedSecurityProviders(String resourceGroupName, String virtualWanName);
-
-    /**
      * Gives the supported security providers for the virtual wan.
      *
      * @param resourceGroupName The resource group name.
@@ -396,6 +432,19 @@ public interface ResourceProvidersClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<VirtualWanSecurityProvidersInner> supportedSecurityProvidersWithResponse(
         String resourceGroupName, String virtualWanName, Context context);
+
+    /**
+     * Gives the supported security providers for the virtual wan.
+     *
+     * @param resourceGroupName The resource group name.
+     * @param virtualWanName The name of the VirtualWAN for which supported security providers are needed.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of SecurityProviders.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    VirtualWanSecurityProvidersInner supportedSecurityProviders(String resourceGroupName, String virtualWanName);
 
     /**
      * Generates a unique VPN profile for P2S clients for VirtualWan and associated VpnServerConfiguration combination
@@ -470,29 +519,4 @@ public interface ResourceProvidersClient {
         String virtualWanName,
         VirtualWanVpnProfileParameters vpnClientParams,
         Context context);
-
-    /**
-     * Retrieves detail of a provider port.
-     *
-     * @param providerport The name of the provider port.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return expressRouteProviderPort resource.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    ExpressRouteProviderPortInner expressRouteProviderPort(String providerport);
-
-    /**
-     * Retrieves detail of a provider port.
-     *
-     * @param providerport The name of the provider port.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return expressRouteProviderPort resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<ExpressRouteProviderPortInner> expressRouteProviderPortWithResponse(String providerport, Context context);
 }

@@ -40,15 +40,6 @@ public final class WorkflowRunsImpl implements WorkflowRuns {
         return Utils.mapPage(inner, inner1 -> new WorkflowRunImpl(inner1, this.manager()));
     }
 
-    public WorkflowRun get(String resourceGroupName, String name, String workflowName, String runName) {
-        WorkflowRunInner inner = this.serviceClient().get(resourceGroupName, name, workflowName, runName);
-        if (inner != null) {
-            return new WorkflowRunImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<WorkflowRun> getWithResponse(
         String resourceGroupName, String name, String workflowName, String runName, Context context) {
         Response<WorkflowRunInner> inner =
@@ -64,13 +55,22 @@ public final class WorkflowRunsImpl implements WorkflowRuns {
         }
     }
 
-    public void cancel(String resourceGroupName, String name, String workflowName, String runName) {
-        this.serviceClient().cancel(resourceGroupName, name, workflowName, runName);
+    public WorkflowRun get(String resourceGroupName, String name, String workflowName, String runName) {
+        WorkflowRunInner inner = this.serviceClient().get(resourceGroupName, name, workflowName, runName);
+        if (inner != null) {
+            return new WorkflowRunImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> cancelWithResponse(
         String resourceGroupName, String name, String workflowName, String runName, Context context) {
         return this.serviceClient().cancelWithResponse(resourceGroupName, name, workflowName, runName, context);
+    }
+
+    public void cancel(String resourceGroupName, String name, String workflowName, String runName) {
+        this.serviceClient().cancel(resourceGroupName, name, workflowName, runName);
     }
 
     private WorkflowRunsClient serviceClient() {

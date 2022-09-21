@@ -155,11 +155,11 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return query result.
+     * @return query result along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public QueryResponseInner resources(QueryRequest query) {
-        return resourcesAsync(query).block();
+    public Response<QueryResponseInner> resourcesWithResponse(QueryRequest query) {
+        return resourcesWithResponseAsync(query).block();
     }
 
     /**
@@ -175,6 +175,20 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<QueryResponseInner> resourcesWithResponse(QueryRequest query, Context context) {
         return resourcesWithResponseAsync(query, context).block();
+    }
+
+    /**
+     * Queries the resources managed by Azure Resource Manager for scopes specified in the request.
+     *
+     * @param query Request specifying query and its options.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return query result.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public QueryResponseInner resources(QueryRequest query) {
+        return resourcesWithResponse(query, Context.NONE).getValue();
     }
 
     /**
@@ -259,11 +273,11 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return any object.
+     * @return any object along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public Object resourcesHistory(ResourcesHistoryRequest request) {
-        return resourcesHistoryAsync(request).block();
+    public Response<Object> resourcesHistoryWithResponse(ResourcesHistoryRequest request) {
+        return resourcesHistoryWithResponseAsync(request).block();
     }
 
     /**
@@ -279,5 +293,19 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Object> resourcesHistoryWithResponse(ResourcesHistoryRequest request, Context context) {
         return resourcesHistoryWithResponseAsync(request, context).block();
+    }
+
+    /**
+     * List all snapshots of a resource for a given time interval.
+     *
+     * @param request Request specifying the query and its options.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return any object.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public Object resourcesHistory(ResourcesHistoryRequest request) {
+        return resourcesHistoryWithResponse(request, Context.NONE).getValue();
     }
 }

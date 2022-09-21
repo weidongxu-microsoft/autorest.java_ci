@@ -37,17 +37,6 @@ public final class ExpressRoutePortAuthorizationsImpl implements ExpressRoutePor
         this.serviceClient().delete(resourceGroupName, expressRoutePortName, authorizationName, context);
     }
 
-    public ExpressRoutePortAuthorization get(
-        String resourceGroupName, String expressRoutePortName, String authorizationName) {
-        ExpressRoutePortAuthorizationInner inner =
-            this.serviceClient().get(resourceGroupName, expressRoutePortName, authorizationName);
-        if (inner != null) {
-            return new ExpressRoutePortAuthorizationImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<ExpressRoutePortAuthorization> getWithResponse(
         String resourceGroupName, String expressRoutePortName, String authorizationName, Context context) {
         Response<ExpressRoutePortAuthorizationInner> inner =
@@ -58,6 +47,17 @@ public final class ExpressRoutePortAuthorizationsImpl implements ExpressRoutePor
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new ExpressRoutePortAuthorizationImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public ExpressRoutePortAuthorization get(
+        String resourceGroupName, String expressRoutePortName, String authorizationName) {
+        ExpressRoutePortAuthorizationInner inner =
+            this.serviceClient().get(resourceGroupName, expressRoutePortName, authorizationName);
+        if (inner != null) {
+            return new ExpressRoutePortAuthorizationImpl(inner, this.manager());
         } else {
             return null;
         }

@@ -34,6 +34,10 @@ public final class TrackingInfo {
     @JsonProperty(value = "trackingUrl")
     private String trackingUrl;
 
+    /** Creates an instance of TrackingInfo class. */
+    public TrackingInfo() {
+    }
+
     /**
      * Get the serialNumber property: Serial number of the device being tracked.
      *

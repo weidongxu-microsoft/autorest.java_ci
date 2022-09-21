@@ -519,12 +519,12 @@ public final class SchemaRegistriesClientImpl implements SchemaRegistriesClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in List or Get Schema Group operation.
+     * @return single item in List or Get Schema Group operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public SchemaGroupInner createOrUpdate(
+    public Response<SchemaGroupInner> createOrUpdateWithResponse(
         String resourceGroupName, String namespaceName, String schemaGroupName, SchemaGroupInner parameters) {
-        return createOrUpdateAsync(resourceGroupName, namespaceName, schemaGroupName, parameters).block();
+        return createOrUpdateWithResponseAsync(resourceGroupName, namespaceName, schemaGroupName, parameters).block();
     }
 
     /**
@@ -549,6 +549,25 @@ public final class SchemaRegistriesClientImpl implements SchemaRegistriesClient 
         Context context) {
         return createOrUpdateWithResponseAsync(resourceGroupName, namespaceName, schemaGroupName, parameters, context)
             .block();
+    }
+
+    /**
+     * The createOrUpdate operation.
+     *
+     * @param resourceGroupName Name of the resource group within the azure subscription.
+     * @param namespaceName The Namespace name.
+     * @param schemaGroupName The Schema Group name.
+     * @param parameters Parameters supplied to create an Event Hub resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return single item in List or Get Schema Group operation.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public SchemaGroupInner createOrUpdate(
+        String resourceGroupName, String namespaceName, String schemaGroupName, SchemaGroupInner parameters) {
+        return createOrUpdateWithResponse(resourceGroupName, namespaceName, schemaGroupName, parameters, Context.NONE)
+            .getValue();
     }
 
     /**
@@ -683,10 +702,11 @@ public final class SchemaRegistriesClientImpl implements SchemaRegistriesClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public void delete(String resourceGroupName, String namespaceName, String schemaGroupName) {
-        deleteAsync(resourceGroupName, namespaceName, schemaGroupName).block();
+    public Response<Void> deleteWithResponse(String resourceGroupName, String namespaceName, String schemaGroupName) {
+        return deleteWithResponseAsync(resourceGroupName, namespaceName, schemaGroupName).block();
     }
 
     /**
@@ -705,6 +725,21 @@ public final class SchemaRegistriesClientImpl implements SchemaRegistriesClient 
     public Response<Void> deleteWithResponse(
         String resourceGroupName, String namespaceName, String schemaGroupName, Context context) {
         return deleteWithResponseAsync(resourceGroupName, namespaceName, schemaGroupName, context).block();
+    }
+
+    /**
+     * The delete operation.
+     *
+     * @param resourceGroupName Name of the resource group within the azure subscription.
+     * @param namespaceName The Namespace name.
+     * @param schemaGroupName The Schema Group name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public void delete(String resourceGroupName, String namespaceName, String schemaGroupName) {
+        deleteWithResponse(resourceGroupName, namespaceName, schemaGroupName, Context.NONE);
     }
 
     /**
@@ -841,11 +876,12 @@ public final class SchemaRegistriesClientImpl implements SchemaRegistriesClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in List or Get Schema Group operation.
+     * @return single item in List or Get Schema Group operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public SchemaGroupInner get(String resourceGroupName, String namespaceName, String schemaGroupName) {
-        return getAsync(resourceGroupName, namespaceName, schemaGroupName).block();
+    public Response<SchemaGroupInner> getWithResponse(
+        String resourceGroupName, String namespaceName, String schemaGroupName) {
+        return getWithResponseAsync(resourceGroupName, namespaceName, schemaGroupName).block();
     }
 
     /**
@@ -864,6 +900,22 @@ public final class SchemaRegistriesClientImpl implements SchemaRegistriesClient 
     public Response<SchemaGroupInner> getWithResponse(
         String resourceGroupName, String namespaceName, String schemaGroupName, Context context) {
         return getWithResponseAsync(resourceGroupName, namespaceName, schemaGroupName, context).block();
+    }
+
+    /**
+     * The get operation.
+     *
+     * @param resourceGroupName Name of the resource group within the azure subscription.
+     * @param namespaceName The Namespace name.
+     * @param schemaGroupName The Schema Group name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return single item in List or Get Schema Group operation.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public SchemaGroupInner get(String resourceGroupName, String namespaceName, String schemaGroupName) {
+        return getWithResponse(resourceGroupName, namespaceName, schemaGroupName, Context.NONE).getValue();
     }
 
     /**

@@ -19,6 +19,10 @@ public final class MonitoringMetricConfigurationProperties {
     @JsonProperty(value = "metricConfigurations", required = true)
     private List<MetricConfiguration> metricConfigurations;
 
+    /** Creates an instance of MonitoringMetricConfigurationProperties class. */
+    public MonitoringMetricConfigurationProperties() {
+    }
+
     /**
      * Get the metricConfigurations property: The metrics configuration details.
      *

@@ -55,6 +55,10 @@ public final class RuntimeScriptActionDetailInner extends RuntimeScriptAction {
     @JsonProperty(value = "debugInformation", access = JsonProperty.Access.WRITE_ONLY)
     private String debugInformation;
 
+    /** Creates an instance of RuntimeScriptActionDetailInner class. */
+    public RuntimeScriptActionDetailInner() {
+    }
+
     /**
      * Get the scriptExecutionId property: The execution id of the script action.
      *

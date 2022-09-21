@@ -26,6 +26,10 @@ public final class ApplicationInsightsComponentListResult {
     @JsonProperty(value = "nextLink")
     private String nextLink;
 
+    /** Creates an instance of ApplicationInsightsComponentListResult class. */
+    public ApplicationInsightsComponentListResult() {
+    }
+
     /**
      * Get the value property: List of Application Insights component definitions.
      *

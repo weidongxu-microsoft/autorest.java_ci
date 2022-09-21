@@ -38,18 +38,6 @@ public interface ExpressRoutePorts {
      *
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of ExpressRoutePort.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return expressRoute Port.
-     */
-    ExpressRoutePort getByResourceGroup(String resourceGroupName, String expressRoutePortName);
-
-    /**
-     * Retrieves the requested ExpressRoutePort resource.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param expressRoutePortName The name of ExpressRoutePort.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -58,6 +46,18 @@ public interface ExpressRoutePorts {
      */
     Response<ExpressRoutePort> getByResourceGroupWithResponse(
         String resourceGroupName, String expressRoutePortName, Context context);
+
+    /**
+     * Retrieves the requested ExpressRoutePort resource.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param expressRoutePortName The name of ExpressRoutePort.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return expressRoute Port.
+     */
+    ExpressRoutePort getByResourceGroup(String resourceGroupName, String expressRoutePortName);
 
     /**
      * List all the ExpressRoutePort resources in the specified resource group.
@@ -108,20 +108,6 @@ public interface ExpressRoutePorts {
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of ExpressRoutePort.
      * @param request Request parameters supplied to generate a letter of authorization.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for GenerateExpressRoutePortsLOA API service call.
-     */
-    GenerateExpressRoutePortsLoaResult generateLoa(
-        String resourceGroupName, String expressRoutePortName, GenerateExpressRoutePortsLoaRequest request);
-
-    /**
-     * Generate a letter of authorization for the requested ExpressRoutePort resource.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param expressRoutePortName The name of ExpressRoutePort.
-     * @param request Request parameters supplied to generate a letter of authorization.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -133,6 +119,20 @@ public interface ExpressRoutePorts {
         String expressRoutePortName,
         GenerateExpressRoutePortsLoaRequest request,
         Context context);
+
+    /**
+     * Generate a letter of authorization for the requested ExpressRoutePort resource.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param expressRoutePortName The name of ExpressRoutePort.
+     * @param request Request parameters supplied to generate a letter of authorization.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return response for GenerateExpressRoutePortsLOA API service call.
+     */
+    GenerateExpressRoutePortsLoaResult generateLoa(
+        String resourceGroupName, String expressRoutePortName, GenerateExpressRoutePortsLoaRequest request);
 
     /**
      * Retrieves the requested ExpressRoutePort resource.

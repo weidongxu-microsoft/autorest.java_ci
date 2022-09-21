@@ -34,15 +34,6 @@ public final class VirtualMachineImagesImpl implements VirtualMachineImages {
         this.serviceManager = serviceManager;
     }
 
-    public VirtualMachineImage get(String location, String publisherName, String offer, String skus, String version) {
-        VirtualMachineImageInner inner = this.serviceClient().get(location, publisherName, offer, skus, version);
-        if (inner != null) {
-            return new VirtualMachineImageImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<VirtualMachineImage> getWithResponse(
         String location, String publisherName, String offer, String skus, String version, Context context) {
         Response<VirtualMachineImageInner> inner =
@@ -58,17 +49,12 @@ public final class VirtualMachineImagesImpl implements VirtualMachineImages {
         }
     }
 
-    public List<VirtualMachineImageResource> list(String location, String publisherName, String offer, String skus) {
-        List<VirtualMachineImageResourceInner> inner = this.serviceClient().list(location, publisherName, offer, skus);
+    public VirtualMachineImage get(String location, String publisherName, String offer, String skus, String version) {
+        VirtualMachineImageInner inner = this.serviceClient().get(location, publisherName, offer, skus, version);
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new VirtualMachineImageResourceImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return new VirtualMachineImageImpl(inner, this.manager());
         } else {
-            return Collections.emptyList();
+            return null;
         }
     }
 
@@ -98,8 +84,8 @@ public final class VirtualMachineImagesImpl implements VirtualMachineImages {
         }
     }
 
-    public List<VirtualMachineImageResource> listOffers(String location, String publisherName) {
-        List<VirtualMachineImageResourceInner> inner = this.serviceClient().listOffers(location, publisherName);
+    public List<VirtualMachineImageResource> list(String location, String publisherName, String offer, String skus) {
+        List<VirtualMachineImageResourceInner> inner = this.serviceClient().list(location, publisherName, offer, skus);
         if (inner != null) {
             return Collections
                 .unmodifiableList(
@@ -131,8 +117,8 @@ public final class VirtualMachineImagesImpl implements VirtualMachineImages {
         }
     }
 
-    public List<VirtualMachineImageResource> listPublishers(String location) {
-        List<VirtualMachineImageResourceInner> inner = this.serviceClient().listPublishers(location);
+    public List<VirtualMachineImageResource> listOffers(String location, String publisherName) {
+        List<VirtualMachineImageResourceInner> inner = this.serviceClient().listOffers(location, publisherName);
         if (inner != null) {
             return Collections
                 .unmodifiableList(
@@ -163,8 +149,8 @@ public final class VirtualMachineImagesImpl implements VirtualMachineImages {
         }
     }
 
-    public List<VirtualMachineImageResource> listSkus(String location, String publisherName, String offer) {
-        List<VirtualMachineImageResourceInner> inner = this.serviceClient().listSkus(location, publisherName, offer);
+    public List<VirtualMachineImageResource> listPublishers(String location) {
+        List<VirtualMachineImageResourceInner> inner = this.serviceClient().listPublishers(location);
         if (inner != null) {
             return Collections
                 .unmodifiableList(
@@ -196,12 +182,17 @@ public final class VirtualMachineImagesImpl implements VirtualMachineImages {
         }
     }
 
-    public VmImagesInEdgeZoneListResult listByEdgeZone(String location, String edgeZone) {
-        VmImagesInEdgeZoneListResultInner inner = this.serviceClient().listByEdgeZone(location, edgeZone);
+    public List<VirtualMachineImageResource> listSkus(String location, String publisherName, String offer) {
+        List<VirtualMachineImageResourceInner> inner = this.serviceClient().listSkus(location, publisherName, offer);
         if (inner != null) {
-            return new VmImagesInEdgeZoneListResultImpl(inner, this.manager());
+            return Collections
+                .unmodifiableList(
+                    inner
+                        .stream()
+                        .map(inner1 -> new VirtualMachineImageResourceImpl(inner1, this.manager()))
+                        .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -215,6 +206,15 @@ public final class VirtualMachineImagesImpl implements VirtualMachineImages {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new VmImagesInEdgeZoneListResultImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public VmImagesInEdgeZoneListResult listByEdgeZone(String location, String edgeZone) {
+        VmImagesInEdgeZoneListResultInner inner = this.serviceClient().listByEdgeZone(location, edgeZone);
+        if (inner != null) {
+            return new VmImagesInEdgeZoneListResultImpl(inner, this.manager());
         } else {
             return null;
         }

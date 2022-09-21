@@ -48,6 +48,10 @@ public final class TopQueryStatisticsInputProperties {
     @JsonProperty(value = "aggregationWindow", required = true)
     private String aggregationWindow;
 
+    /** Creates an instance of TopQueryStatisticsInputProperties class. */
+    public TopQueryStatisticsInputProperties() {
+    }
+
     /**
      * Get the numberOfTopQueries property: Max number of top queries to return.
      *

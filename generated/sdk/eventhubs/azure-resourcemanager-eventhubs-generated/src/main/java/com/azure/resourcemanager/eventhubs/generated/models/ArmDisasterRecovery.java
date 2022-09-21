@@ -243,14 +243,6 @@ public interface ArmDisasterRecovery {
     /**
      * This operation disables the Disaster Recovery and stops replicating changes from primary to secondary namespaces.
      *
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void breakPairing();
-
-    /**
-     * This operation disables the Disaster Recovery and stops replicating changes from primary to secondary namespaces.
-     *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -260,12 +252,12 @@ public interface ArmDisasterRecovery {
     Response<Void> breakPairingWithResponse(Context context);
 
     /**
-     * Invokes GEO DR failover and reconfigure the alias to point to the secondary namespace.
+     * This operation disables the Disaster Recovery and stops replicating changes from primary to secondary namespaces.
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
-    void failOver();
+    void breakPairing();
 
     /**
      * Invokes GEO DR failover and reconfigure the alias to point to the secondary namespace.
@@ -277,4 +269,12 @@ public interface ArmDisasterRecovery {
      * @return the {@link Response}.
      */
     Response<Void> failOverWithResponse(Context context);
+
+    /**
+     * Invokes GEO DR failover and reconfigure the alias to point to the secondary namespace.
+     *
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void failOver();
 }

@@ -43,6 +43,10 @@ public final class CustomHttpsConfiguration {
     @JsonProperty(value = "frontDoorCertificateSourceParameters")
     private FrontDoorCertificateSourceParameters innerFrontDoorCertificateSourceParameters;
 
+    /** Creates an instance of CustomHttpsConfiguration class. */
+    public CustomHttpsConfiguration() {
+    }
+
     /**
      * Get the certificateSource property: Defines the source of the SSL certificate.
      *

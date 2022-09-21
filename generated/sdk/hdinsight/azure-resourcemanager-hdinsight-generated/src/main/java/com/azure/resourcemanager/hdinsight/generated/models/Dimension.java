@@ -34,6 +34,10 @@ public final class Dimension {
     @JsonProperty(value = "toBeExportedForShoebox")
     private Boolean toBeExportedForShoebox;
 
+    /** Creates an instance of Dimension class. */
+    public Dimension() {
+    }
+
     /**
      * Get the name property: The name of the dimension.
      *

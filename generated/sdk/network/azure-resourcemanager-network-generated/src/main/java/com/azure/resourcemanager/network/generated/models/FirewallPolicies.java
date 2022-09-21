@@ -38,18 +38,6 @@ public interface FirewallPolicies {
      *
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Firewall Policy.
-     */
-    FirewallPolicy getByResourceGroup(String resourceGroupName, String firewallPolicyName);
-
-    /**
-     * Gets the specified Firewall Policy.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param firewallPolicyName The name of the Firewall Policy.
      * @param expand Expands referenced resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -59,6 +47,18 @@ public interface FirewallPolicies {
      */
     Response<FirewallPolicy> getByResourceGroupWithResponse(
         String resourceGroupName, String firewallPolicyName, String expand, Context context);
+
+    /**
+     * Gets the specified Firewall Policy.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param firewallPolicyName The name of the Firewall Policy.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified Firewall Policy.
+     */
+    FirewallPolicy getByResourceGroup(String resourceGroupName, String firewallPolicyName);
 
     /**
      * Lists all Firewall Policies in a resource group.

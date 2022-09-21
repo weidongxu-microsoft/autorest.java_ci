@@ -38,18 +38,6 @@ public interface NetworkSecurityGroups {
      *
      * @param resourceGroupName The name of the resource group.
      * @param networkSecurityGroupName The name of the network security group.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network security group.
-     */
-    NetworkSecurityGroup getByResourceGroup(String resourceGroupName, String networkSecurityGroupName);
-
-    /**
-     * Gets the specified network security group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param networkSecurityGroupName The name of the network security group.
      * @param expand Expands referenced resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -59,6 +47,18 @@ public interface NetworkSecurityGroups {
      */
     Response<NetworkSecurityGroup> getByResourceGroupWithResponse(
         String resourceGroupName, String networkSecurityGroupName, String expand, Context context);
+
+    /**
+     * Gets the specified network security group.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param networkSecurityGroupName The name of the network security group.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified network security group.
+     */
+    NetworkSecurityGroup getByResourceGroup(String resourceGroupName, String networkSecurityGroupName);
 
     /**
      * Gets all network security groups in a subscription.

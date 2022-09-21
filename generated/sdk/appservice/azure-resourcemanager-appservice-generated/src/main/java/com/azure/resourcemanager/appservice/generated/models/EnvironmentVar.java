@@ -28,6 +28,10 @@ public final class EnvironmentVar {
     @JsonProperty(value = "secretRef")
     private String secretRef;
 
+    /** Creates an instance of EnvironmentVar class. */
+    public EnvironmentVar() {
+    }
+
     /**
      * Get the name property: Environment variable name.
      *

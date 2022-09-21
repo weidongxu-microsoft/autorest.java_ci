@@ -16,6 +16,10 @@ public final class EnabledConfig {
     @JsonProperty(value = "enabled")
     private Boolean enabled;
 
+    /** Creates an instance of EnabledConfig class. */
+    public EnabledConfig() {
+    }
+
     /**
      * Get the enabled property: True if configuration is enabled, false if it is disabled and null if configuration is
      * not set.

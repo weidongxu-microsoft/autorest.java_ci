@@ -37,6 +37,10 @@ public class RoleInner extends ArmBaseModel {
     @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;
 
+    /** Creates an instance of RoleInner class. */
+    public RoleInner() {
+    }
+
     /**
      * Get the systemData property: Metadata pertaining to creation and last modification of Role.
      *

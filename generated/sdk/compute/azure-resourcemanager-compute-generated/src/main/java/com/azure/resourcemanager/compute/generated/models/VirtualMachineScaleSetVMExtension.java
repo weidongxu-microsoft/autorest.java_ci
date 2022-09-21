@@ -120,7 +120,7 @@ public interface VirtualMachineScaleSetVMExtension {
      *
      * @return the protectedSettingsFromKeyVault value.
      */
-    Object protectedSettingsFromKeyVault();
+    KeyVaultSecretReference protectedSettingsFromKeyVault();
 
     /**
      * Gets the name of the resource group.
@@ -319,7 +319,7 @@ public interface VirtualMachineScaleSetVMExtension {
              *     consumed from key vault.
              * @return the next definition stage.
              */
-            WithCreate withProtectedSettingsFromKeyVault(Object protectedSettingsFromKeyVault);
+            WithCreate withProtectedSettingsFromKeyVault(KeyVaultSecretReference protectedSettingsFromKeyVault);
         }
     }
     /**
@@ -475,7 +475,7 @@ public interface VirtualMachineScaleSetVMExtension {
              *     consumed from key vault.
              * @return the next definition stage.
              */
-            Update withProtectedSettingsFromKeyVault(Object protectedSettingsFromKeyVault);
+            Update withProtectedSettingsFromKeyVault(KeyVaultSecretReference protectedSettingsFromKeyVault);
         }
     }
     /**

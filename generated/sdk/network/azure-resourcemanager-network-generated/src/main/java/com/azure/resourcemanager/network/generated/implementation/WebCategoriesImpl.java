@@ -27,15 +27,6 @@ public final class WebCategoriesImpl implements WebCategories {
         this.serviceManager = serviceManager;
     }
 
-    public AzureWebCategory get(String name) {
-        AzureWebCategoryInner inner = this.serviceClient().get(name);
-        if (inner != null) {
-            return new AzureWebCategoryImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<AzureWebCategory> getWithResponse(String name, String expand, Context context) {
         Response<AzureWebCategoryInner> inner = this.serviceClient().getWithResponse(name, expand, context);
         if (inner != null) {
@@ -44,6 +35,15 @@ public final class WebCategoriesImpl implements WebCategories {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new AzureWebCategoryImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public AzureWebCategory get(String name) {
+        AzureWebCategoryInner inner = this.serviceClient().get(name);
+        if (inner != null) {
+            return new AzureWebCategoryImpl(inner, this.manager());
         } else {
             return null;
         }

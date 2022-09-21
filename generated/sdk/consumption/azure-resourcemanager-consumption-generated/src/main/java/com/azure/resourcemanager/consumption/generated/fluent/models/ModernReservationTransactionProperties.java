@@ -135,6 +135,10 @@ public final class ModernReservationTransactionProperties {
     @JsonProperty(value = "term", access = JsonProperty.Access.WRITE_ONLY)
     private String term;
 
+    /** Creates an instance of ModernReservationTransactionProperties class. */
+    public ModernReservationTransactionProperties() {
+    }
+
     /**
      * Get the amount property: The charge of the transaction.
      *

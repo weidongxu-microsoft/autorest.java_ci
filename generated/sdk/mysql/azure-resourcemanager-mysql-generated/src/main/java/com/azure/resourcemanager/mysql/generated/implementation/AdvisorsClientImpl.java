@@ -229,11 +229,11 @@ public final class AdvisorsClientImpl implements AdvisorsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a recommendation action advisor.
+     * @return a recommendation action advisor along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public AdvisorInner get(String resourceGroupName, String serverName, String advisorName) {
-        return getAsync(resourceGroupName, serverName, advisorName).block();
+    public Response<AdvisorInner> getWithResponse(String resourceGroupName, String serverName, String advisorName) {
+        return getWithResponseAsync(resourceGroupName, serverName, advisorName).block();
     }
 
     /**
@@ -252,6 +252,22 @@ public final class AdvisorsClientImpl implements AdvisorsClient {
     public Response<AdvisorInner> getWithResponse(
         String resourceGroupName, String serverName, String advisorName, Context context) {
         return getWithResponseAsync(resourceGroupName, serverName, advisorName, context).block();
+    }
+
+    /**
+     * Get a recommendation action advisor.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param serverName The name of the server.
+     * @param advisorName The advisor name for recommendation action.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a recommendation action advisor.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public AdvisorInner get(String resourceGroupName, String serverName, String advisorName) {
+        return getWithResponse(resourceGroupName, serverName, advisorName, Context.NONE).getValue();
     }
 
     /**

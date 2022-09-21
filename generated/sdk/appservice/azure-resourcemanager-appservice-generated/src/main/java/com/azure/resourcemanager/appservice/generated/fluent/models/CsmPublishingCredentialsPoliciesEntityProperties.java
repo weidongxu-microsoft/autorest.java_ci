@@ -16,6 +16,10 @@ public final class CsmPublishingCredentialsPoliciesEntityProperties {
     @JsonProperty(value = "allow", required = true)
     private boolean allow;
 
+    /** Creates an instance of CsmPublishingCredentialsPoliciesEntityProperties class. */
+    public CsmPublishingCredentialsPoliciesEntityProperties() {
+    }
+
     /**
      * Get the allow property: &lt;code&gt;true&lt;/code&gt; to allow access to a publishing method; otherwise,
      * &lt;code&gt;false&lt;/code&gt;.

@@ -37,6 +37,10 @@ public final class ApplicationGatewayRedirectConfiguration extends SubResource {
     @JsonProperty(value = "type", access = JsonProperty.Access.WRITE_ONLY)
     private String type;
 
+    /** Creates an instance of ApplicationGatewayRedirectConfiguration class. */
+    public ApplicationGatewayRedirectConfiguration() {
+    }
+
     /**
      * Get the innerProperties property: Properties of the application gateway redirect configuration.
      *

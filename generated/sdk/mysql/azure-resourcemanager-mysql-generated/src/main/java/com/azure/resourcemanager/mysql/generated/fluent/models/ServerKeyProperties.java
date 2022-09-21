@@ -31,6 +31,10 @@ public final class ServerKeyProperties {
     @JsonProperty(value = "creationDate", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime creationDate;
 
+    /** Creates an instance of ServerKeyProperties class. */
+    public ServerKeyProperties() {
+    }
+
     /**
      * Get the serverKeyType property: The key type like 'AzureKeyVault'.
      *

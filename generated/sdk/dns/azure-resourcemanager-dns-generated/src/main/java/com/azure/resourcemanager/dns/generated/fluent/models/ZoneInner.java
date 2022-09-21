@@ -27,6 +27,10 @@ public final class ZoneInner extends Resource {
     @JsonProperty(value = "properties")
     private ZoneProperties innerProperties;
 
+    /** Creates an instance of ZoneInner class. */
+    public ZoneInner() {
+    }
+
     /**
      * Get the etag property: The etag of the zone.
      *

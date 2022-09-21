@@ -25,6 +25,10 @@ public final class SearchServiceListResult {
     @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
 
+    /** Creates an instance of SearchServiceListResult class. */
+    public SearchServiceListResult() {
+    }
+
     /**
      * Get the value property: The list of search services.
      *

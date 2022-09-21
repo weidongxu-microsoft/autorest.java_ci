@@ -35,6 +35,10 @@ public final class StorageMigrationOptionsProperties {
     @JsonProperty(value = "blockWriteAccessToSite")
     private Boolean blockWriteAccessToSite;
 
+    /** Creates an instance of StorageMigrationOptionsProperties class. */
+    public StorageMigrationOptionsProperties() {
+    }
+
     /**
      * Get the azurefilesConnectionString property: AzureFiles connection string.
      *

@@ -16,6 +16,10 @@ public final class EncryptionInTransitProperties {
     @JsonProperty(value = "isEncryptionInTransitEnabled")
     private Boolean isEncryptionInTransitEnabled;
 
+    /** Creates an instance of EncryptionInTransitProperties class. */
+    public EncryptionInTransitProperties() {
+    }
+
     /**
      * Get the isEncryptionInTransitEnabled property: Indicates whether or not inter cluster node communication is
      * encrypted in transit.

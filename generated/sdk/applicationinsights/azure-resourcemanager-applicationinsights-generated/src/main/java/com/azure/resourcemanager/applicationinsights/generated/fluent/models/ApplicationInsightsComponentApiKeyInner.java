@@ -48,6 +48,10 @@ public final class ApplicationInsightsComponentApiKeyInner {
     @JsonProperty(value = "linkedWriteProperties")
     private List<String> linkedWriteProperties;
 
+    /** Creates an instance of ApplicationInsightsComponentApiKeyInner class. */
+    public ApplicationInsightsComponentApiKeyInner() {
+    }
+
     /**
      * Get the id property: The unique ID of the API key inside an Application Insights component. It is auto generated
      * when the API key is created.

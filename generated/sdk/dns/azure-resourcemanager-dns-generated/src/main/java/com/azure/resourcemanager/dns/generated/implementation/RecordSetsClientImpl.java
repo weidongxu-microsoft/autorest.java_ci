@@ -375,8 +375,6 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @param relativeRecordSetName The name of the record set, relative to the name of the zone.
      * @param recordType The type of DNS record in this record set.
      * @param parameters Parameters supplied to the Update operation.
-     * @param ifMatch The etag of the record set. Omit this value to always overwrite the current record set. Specify
-     *     the last-seen etag value to prevent accidentally overwriting concurrent changes.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -385,6 +383,35 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<RecordSetInner> updateAsync(
+        String resourceGroupName,
+        String zoneName,
+        String relativeRecordSetName,
+        RecordType recordType,
+        RecordSetInner parameters) {
+        final String ifMatch = null;
+        return updateWithResponseAsync(
+                resourceGroupName, zoneName, relativeRecordSetName, recordType, parameters, ifMatch)
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
+    }
+
+    /**
+     * Updates a record set within a DNS zone.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param zoneName The name of the DNS zone (without a terminating dot).
+     * @param relativeRecordSetName The name of the record set, relative to the name of the zone.
+     * @param recordType The type of DNS record in this record set.
+     * @param parameters Parameters supplied to the Update operation.
+     * @param ifMatch The etag of the record set. Omit this value to always overwrite the current record set. Specify
+     *     the last-seen etag value to prevent accidentally overwriting concurrent changes.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return describes a DNS record set (a collection of DNS records with the same name and type) along with {@link
+     *     Response}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public Response<RecordSetInner> updateWithResponse(
         String resourceGroupName,
         String zoneName,
         String relativeRecordSetName,
@@ -393,58 +420,7 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
         String ifMatch) {
         return updateWithResponseAsync(
                 resourceGroupName, zoneName, relativeRecordSetName, recordType, parameters, ifMatch)
-            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Updates a record set within a DNS zone.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param relativeRecordSetName The name of the record set, relative to the name of the zone.
-     * @param recordType The type of DNS record in this record set.
-     * @param parameters Parameters supplied to the Update operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a DNS record set (a collection of DNS records with the same name and type) on successful
-     *     completion of {@link Mono}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<RecordSetInner> updateAsync(
-        String resourceGroupName,
-        String zoneName,
-        String relativeRecordSetName,
-        RecordType recordType,
-        RecordSetInner parameters) {
-        final String ifMatch = null;
-        return updateWithResponseAsync(
-                resourceGroupName, zoneName, relativeRecordSetName, recordType, parameters, ifMatch)
-            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Updates a record set within a DNS zone.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param relativeRecordSetName The name of the record set, relative to the name of the zone.
-     * @param recordType The type of DNS record in this record set.
-     * @param parameters Parameters supplied to the Update operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a DNS record set (a collection of DNS records with the same name and type).
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public RecordSetInner update(
-        String resourceGroupName,
-        String zoneName,
-        String relativeRecordSetName,
-        RecordType recordType,
-        RecordSetInner parameters) {
-        final String ifMatch = null;
-        return updateAsync(resourceGroupName, zoneName, relativeRecordSetName, recordType, parameters, ifMatch).block();
+            .block();
     }
 
     /**
@@ -476,6 +452,32 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
         return updateWithResponseAsync(
                 resourceGroupName, zoneName, relativeRecordSetName, recordType, parameters, ifMatch, context)
             .block();
+    }
+
+    /**
+     * Updates a record set within a DNS zone.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param zoneName The name of the DNS zone (without a terminating dot).
+     * @param relativeRecordSetName The name of the record set, relative to the name of the zone.
+     * @param recordType The type of DNS record in this record set.
+     * @param parameters Parameters supplied to the Update operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return describes a DNS record set (a collection of DNS records with the same name and type).
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public RecordSetInner update(
+        String resourceGroupName,
+        String zoneName,
+        String relativeRecordSetName,
+        RecordType recordType,
+        RecordSetInner parameters) {
+        final String ifMatch = null;
+        return updateWithResponse(
+                resourceGroupName, zoneName, relativeRecordSetName, recordType, parameters, ifMatch, Context.NONE)
+            .getValue();
     }
 
     /**
@@ -646,10 +648,6 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @param recordType The type of DNS record in this record set. Record sets of type SOA can be updated but not
      *     created (they are created when the DNS zone is created).
      * @param parameters Parameters supplied to the CreateOrUpdate operation.
-     * @param ifMatch The etag of the record set. Omit this value to always overwrite the current record set. Specify
-     *     the last-seen etag value to prevent accidentally overwriting any concurrent changes.
-     * @param ifNoneMatch Set to '*' to allow a new record set to be created, but to prevent updating an existing record
-     *     set. Other values will be ignored.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -658,6 +656,39 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<RecordSetInner> createOrUpdateAsync(
+        String resourceGroupName,
+        String zoneName,
+        String relativeRecordSetName,
+        RecordType recordType,
+        RecordSetInner parameters) {
+        final String ifMatch = null;
+        final String ifNoneMatch = null;
+        return createOrUpdateWithResponseAsync(
+                resourceGroupName, zoneName, relativeRecordSetName, recordType, parameters, ifMatch, ifNoneMatch)
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
+    }
+
+    /**
+     * Creates or updates a record set within a DNS zone.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param zoneName The name of the DNS zone (without a terminating dot).
+     * @param relativeRecordSetName The name of the record set, relative to the name of the zone.
+     * @param recordType The type of DNS record in this record set. Record sets of type SOA can be updated but not
+     *     created (they are created when the DNS zone is created).
+     * @param parameters Parameters supplied to the CreateOrUpdate operation.
+     * @param ifMatch The etag of the record set. Omit this value to always overwrite the current record set. Specify
+     *     the last-seen etag value to prevent accidentally overwriting any concurrent changes.
+     * @param ifNoneMatch Set to '*' to allow a new record set to be created, but to prevent updating an existing record
+     *     set. Other values will be ignored.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return describes a DNS record set (a collection of DNS records with the same name and type) along with {@link
+     *     Response}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public Response<RecordSetInner> createOrUpdateWithResponse(
         String resourceGroupName,
         String zoneName,
         String relativeRecordSetName,
@@ -666,63 +697,6 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
         String ifMatch,
         String ifNoneMatch) {
         return createOrUpdateWithResponseAsync(
-                resourceGroupName, zoneName, relativeRecordSetName, recordType, parameters, ifMatch, ifNoneMatch)
-            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Creates or updates a record set within a DNS zone.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param relativeRecordSetName The name of the record set, relative to the name of the zone.
-     * @param recordType The type of DNS record in this record set. Record sets of type SOA can be updated but not
-     *     created (they are created when the DNS zone is created).
-     * @param parameters Parameters supplied to the CreateOrUpdate operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a DNS record set (a collection of DNS records with the same name and type) on successful
-     *     completion of {@link Mono}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<RecordSetInner> createOrUpdateAsync(
-        String resourceGroupName,
-        String zoneName,
-        String relativeRecordSetName,
-        RecordType recordType,
-        RecordSetInner parameters) {
-        final String ifMatch = null;
-        final String ifNoneMatch = null;
-        return createOrUpdateWithResponseAsync(
-                resourceGroupName, zoneName, relativeRecordSetName, recordType, parameters, ifMatch, ifNoneMatch)
-            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Creates or updates a record set within a DNS zone.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param relativeRecordSetName The name of the record set, relative to the name of the zone.
-     * @param recordType The type of DNS record in this record set. Record sets of type SOA can be updated but not
-     *     created (they are created when the DNS zone is created).
-     * @param parameters Parameters supplied to the CreateOrUpdate operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a DNS record set (a collection of DNS records with the same name and type).
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public RecordSetInner createOrUpdate(
-        String resourceGroupName,
-        String zoneName,
-        String relativeRecordSetName,
-        RecordType recordType,
-        RecordSetInner parameters) {
-        final String ifMatch = null;
-        final String ifNoneMatch = null;
-        return createOrUpdateAsync(
                 resourceGroupName, zoneName, relativeRecordSetName, recordType, parameters, ifMatch, ifNoneMatch)
             .block();
     }
@@ -767,6 +741,41 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
                 ifNoneMatch,
                 context)
             .block();
+    }
+
+    /**
+     * Creates or updates a record set within a DNS zone.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param zoneName The name of the DNS zone (without a terminating dot).
+     * @param relativeRecordSetName The name of the record set, relative to the name of the zone.
+     * @param recordType The type of DNS record in this record set. Record sets of type SOA can be updated but not
+     *     created (they are created when the DNS zone is created).
+     * @param parameters Parameters supplied to the CreateOrUpdate operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return describes a DNS record set (a collection of DNS records with the same name and type).
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public RecordSetInner createOrUpdate(
+        String resourceGroupName,
+        String zoneName,
+        String relativeRecordSetName,
+        RecordType recordType,
+        RecordSetInner parameters) {
+        final String ifMatch = null;
+        final String ifNoneMatch = null;
+        return createOrUpdateWithResponse(
+                resourceGroupName,
+                zoneName,
+                relativeRecordSetName,
+                recordType,
+                parameters,
+                ifMatch,
+                ifNoneMatch,
+                Context.NONE)
+            .getValue();
     }
 
     /**
@@ -910,32 +919,6 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @param relativeRecordSetName The name of the record set, relative to the name of the zone.
      * @param recordType The type of DNS record in this record set. Record sets of type SOA cannot be deleted (they are
      *     deleted when the DNS zone is deleted).
-     * @param ifMatch The etag of the record set. Omit this value to always delete the current record set. Specify the
-     *     last-seen etag value to prevent accidentally deleting any concurrent changes.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return A {@link Mono} that completes when a successful response is received.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Void> deleteAsync(
-        String resourceGroupName,
-        String zoneName,
-        String relativeRecordSetName,
-        RecordType recordType,
-        String ifMatch) {
-        return deleteWithResponseAsync(resourceGroupName, zoneName, relativeRecordSetName, recordType, ifMatch)
-            .flatMap(ignored -> Mono.empty());
-    }
-
-    /**
-     * Deletes a record set from a DNS zone. This operation cannot be undone.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param relativeRecordSetName The name of the record set, relative to the name of the zone.
-     * @param recordType The type of DNS record in this record set. Record sets of type SOA cannot be deleted (they are
-     *     deleted when the DNS zone is deleted).
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -957,14 +940,21 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @param relativeRecordSetName The name of the record set, relative to the name of the zone.
      * @param recordType The type of DNS record in this record set. Record sets of type SOA cannot be deleted (they are
      *     deleted when the DNS zone is deleted).
+     * @param ifMatch The etag of the record set. Omit this value to always delete the current record set. Specify the
+     *     last-seen etag value to prevent accidentally deleting any concurrent changes.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public void delete(String resourceGroupName, String zoneName, String relativeRecordSetName, RecordType recordType) {
-        final String ifMatch = null;
-        deleteAsync(resourceGroupName, zoneName, relativeRecordSetName, recordType, ifMatch).block();
+    public Response<Void> deleteWithResponse(
+        String resourceGroupName,
+        String zoneName,
+        String relativeRecordSetName,
+        RecordType recordType,
+        String ifMatch) {
+        return deleteWithResponseAsync(resourceGroupName, zoneName, relativeRecordSetName, recordType, ifMatch).block();
     }
 
     /**
@@ -993,6 +983,24 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
         Context context) {
         return deleteWithResponseAsync(resourceGroupName, zoneName, relativeRecordSetName, recordType, ifMatch, context)
             .block();
+    }
+
+    /**
+     * Deletes a record set from a DNS zone. This operation cannot be undone.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param zoneName The name of the DNS zone (without a terminating dot).
+     * @param relativeRecordSetName The name of the record set, relative to the name of the zone.
+     * @param recordType The type of DNS record in this record set. Record sets of type SOA cannot be deleted (they are
+     *     deleted when the DNS zone is deleted).
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public void delete(String resourceGroupName, String zoneName, String relativeRecordSetName, RecordType recordType) {
+        final String ifMatch = null;
+        deleteWithResponse(resourceGroupName, zoneName, relativeRecordSetName, recordType, ifMatch, Context.NONE);
     }
 
     /**
@@ -1144,12 +1152,12 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a record set.
+     * @return a record set along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public RecordSetInner get(
+    public Response<RecordSetInner> getWithResponse(
         String resourceGroupName, String zoneName, String relativeRecordSetName, RecordType recordType) {
-        return getAsync(resourceGroupName, zoneName, relativeRecordSetName, recordType).block();
+        return getWithResponseAsync(resourceGroupName, zoneName, relativeRecordSetName, recordType).block();
     }
 
     /**
@@ -1173,6 +1181,24 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
         RecordType recordType,
         Context context) {
         return getWithResponseAsync(resourceGroupName, zoneName, relativeRecordSetName, recordType, context).block();
+    }
+
+    /**
+     * Gets a record set.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param zoneName The name of the DNS zone (without a terminating dot).
+     * @param relativeRecordSetName The name of the record set, relative to the name of the zone.
+     * @param recordType The type of DNS record in this record set.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a record set.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public RecordSetInner get(
+        String resourceGroupName, String zoneName, String relativeRecordSetName, RecordType recordType) {
+        return getWithResponse(resourceGroupName, zoneName, relativeRecordSetName, recordType, Context.NONE).getValue();
     }
 
     /**

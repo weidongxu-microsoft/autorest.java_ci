@@ -41,6 +41,10 @@ public final class RoleAssignmentPropertiesWithScope {
     @JsonProperty(value = "canDelegate")
     private Boolean canDelegate;
 
+    /** Creates an instance of RoleAssignmentPropertiesWithScope class. */
+    public RoleAssignmentPropertiesWithScope() {
+    }
+
     /**
      * Get the scope property: The role assignment scope.
      *

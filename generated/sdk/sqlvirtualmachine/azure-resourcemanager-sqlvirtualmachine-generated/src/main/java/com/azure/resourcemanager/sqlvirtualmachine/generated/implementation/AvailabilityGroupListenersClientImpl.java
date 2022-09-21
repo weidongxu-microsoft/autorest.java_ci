@@ -280,7 +280,6 @@ public final class AvailabilityGroupListenersClientImpl implements AvailabilityG
      *     the Azure Resource Manager API or the portal.
      * @param sqlVirtualMachineGroupName Name of the SQL virtual machine group.
      * @param availabilityGroupListenerName Name of the availability group listener.
-     * @param expand The child resources to include in the response.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -288,53 +287,35 @@ public final class AvailabilityGroupListenersClientImpl implements AvailabilityG
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AvailabilityGroupListenerInner> getAsync(
+        String resourceGroupName, String sqlVirtualMachineGroupName, String availabilityGroupListenerName) {
+        final String expand = null;
+        return getWithResponseAsync(
+                resourceGroupName, sqlVirtualMachineGroupName, availabilityGroupListenerName, expand)
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
+    }
+
+    /**
+     * Gets an availability group listener.
+     *
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
+     *     the Azure Resource Manager API or the portal.
+     * @param sqlVirtualMachineGroupName Name of the SQL virtual machine group.
+     * @param availabilityGroupListenerName Name of the availability group listener.
+     * @param expand The child resources to include in the response.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return an availability group listener along with {@link Response}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public Response<AvailabilityGroupListenerInner> getWithResponse(
         String resourceGroupName,
         String sqlVirtualMachineGroupName,
         String availabilityGroupListenerName,
         String expand) {
         return getWithResponseAsync(
                 resourceGroupName, sqlVirtualMachineGroupName, availabilityGroupListenerName, expand)
-            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets an availability group listener.
-     *
-     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
-     *     the Azure Resource Manager API or the portal.
-     * @param sqlVirtualMachineGroupName Name of the SQL virtual machine group.
-     * @param availabilityGroupListenerName Name of the availability group listener.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an availability group listener on successful completion of {@link Mono}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<AvailabilityGroupListenerInner> getAsync(
-        String resourceGroupName, String sqlVirtualMachineGroupName, String availabilityGroupListenerName) {
-        final String expand = null;
-        return getWithResponseAsync(
-                resourceGroupName, sqlVirtualMachineGroupName, availabilityGroupListenerName, expand)
-            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets an availability group listener.
-     *
-     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
-     *     the Azure Resource Manager API or the portal.
-     * @param sqlVirtualMachineGroupName Name of the SQL virtual machine group.
-     * @param availabilityGroupListenerName Name of the availability group listener.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an availability group listener.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public AvailabilityGroupListenerInner get(
-        String resourceGroupName, String sqlVirtualMachineGroupName, String availabilityGroupListenerName) {
-        final String expand = null;
-        return getAsync(resourceGroupName, sqlVirtualMachineGroupName, availabilityGroupListenerName, expand).block();
+            .block();
     }
 
     /**
@@ -361,6 +342,27 @@ public final class AvailabilityGroupListenersClientImpl implements AvailabilityG
         return getWithResponseAsync(
                 resourceGroupName, sqlVirtualMachineGroupName, availabilityGroupListenerName, expand, context)
             .block();
+    }
+
+    /**
+     * Gets an availability group listener.
+     *
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
+     *     the Azure Resource Manager API or the portal.
+     * @param sqlVirtualMachineGroupName Name of the SQL virtual machine group.
+     * @param availabilityGroupListenerName Name of the availability group listener.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return an availability group listener.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public AvailabilityGroupListenerInner get(
+        String resourceGroupName, String sqlVirtualMachineGroupName, String availabilityGroupListenerName) {
+        final String expand = null;
+        return getWithResponse(
+                resourceGroupName, sqlVirtualMachineGroupName, availabilityGroupListenerName, expand, Context.NONE)
+            .getValue();
     }
 
     /**

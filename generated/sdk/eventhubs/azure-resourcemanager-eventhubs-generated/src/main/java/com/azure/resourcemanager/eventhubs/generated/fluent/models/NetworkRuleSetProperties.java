@@ -47,6 +47,10 @@ public final class NetworkRuleSetProperties {
     @JsonProperty(value = "publicNetworkAccess")
     private PublicNetworkAccessFlag publicNetworkAccess;
 
+    /** Creates an instance of NetworkRuleSetProperties class. */
+    public NetworkRuleSetProperties() {
+    }
+
     /**
      * Get the trustedServiceAccessEnabled property: Value that indicates whether Trusted Service Access is Enabled or
      * not.

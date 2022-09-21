@@ -26,6 +26,10 @@ public final class DateTimeInterval {
     @JsonProperty(value = "end", required = true)
     private OffsetDateTime end;
 
+    /** Creates an instance of DateTimeInterval class. */
+    public DateTimeInterval() {
+    }
+
     /**
      * Get the start property: A datetime indicating the inclusive/closed start of the time interval, i.e.
      * `[`**`start`**`, end)`. Specifying a `start` that occurs chronologically after `end` will result in an error.

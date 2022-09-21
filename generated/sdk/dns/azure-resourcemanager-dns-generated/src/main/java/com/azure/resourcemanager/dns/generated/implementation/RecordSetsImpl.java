@@ -28,21 +28,6 @@ public final class RecordSetsImpl implements RecordSets {
         this.serviceManager = serviceManager;
     }
 
-    public RecordSet update(
-        String resourceGroupName,
-        String zoneName,
-        String relativeRecordSetName,
-        RecordType recordType,
-        RecordSetInner parameters) {
-        RecordSetInner inner =
-            this.serviceClient().update(resourceGroupName, zoneName, relativeRecordSetName, recordType, parameters);
-        if (inner != null) {
-            return new RecordSetImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<RecordSet> updateWithResponse(
         String resourceGroupName,
         String zoneName,
@@ -67,16 +52,14 @@ public final class RecordSetsImpl implements RecordSets {
         }
     }
 
-    public RecordSet createOrUpdate(
+    public RecordSet update(
         String resourceGroupName,
         String zoneName,
         String relativeRecordSetName,
         RecordType recordType,
         RecordSetInner parameters) {
         RecordSetInner inner =
-            this
-                .serviceClient()
-                .createOrUpdate(resourceGroupName, zoneName, relativeRecordSetName, recordType, parameters);
+            this.serviceClient().update(resourceGroupName, zoneName, relativeRecordSetName, recordType, parameters);
         if (inner != null) {
             return new RecordSetImpl(inner, this.manager());
         } else {
@@ -116,8 +99,21 @@ public final class RecordSetsImpl implements RecordSets {
         }
     }
 
-    public void delete(String resourceGroupName, String zoneName, String relativeRecordSetName, RecordType recordType) {
-        this.serviceClient().delete(resourceGroupName, zoneName, relativeRecordSetName, recordType);
+    public RecordSet createOrUpdate(
+        String resourceGroupName,
+        String zoneName,
+        String relativeRecordSetName,
+        RecordType recordType,
+        RecordSetInner parameters) {
+        RecordSetInner inner =
+            this
+                .serviceClient()
+                .createOrUpdate(resourceGroupName, zoneName, relativeRecordSetName, recordType, parameters);
+        if (inner != null) {
+            return new RecordSetImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> deleteWithResponse(
@@ -132,14 +128,8 @@ public final class RecordSetsImpl implements RecordSets {
             .deleteWithResponse(resourceGroupName, zoneName, relativeRecordSetName, recordType, ifMatch, context);
     }
 
-    public RecordSet get(
-        String resourceGroupName, String zoneName, String relativeRecordSetName, RecordType recordType) {
-        RecordSetInner inner = this.serviceClient().get(resourceGroupName, zoneName, relativeRecordSetName, recordType);
-        if (inner != null) {
-            return new RecordSetImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void delete(String resourceGroupName, String zoneName, String relativeRecordSetName, RecordType recordType) {
+        this.serviceClient().delete(resourceGroupName, zoneName, relativeRecordSetName, recordType);
     }
 
     public Response<RecordSet> getWithResponse(
@@ -158,6 +148,16 @@ public final class RecordSetsImpl implements RecordSets {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new RecordSetImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public RecordSet get(
+        String resourceGroupName, String zoneName, String relativeRecordSetName, RecordType recordType) {
+        RecordSetInner inner = this.serviceClient().get(resourceGroupName, zoneName, relativeRecordSetName, recordType);
+        if (inner != null) {
+            return new RecordSetImpl(inner, this.manager());
         } else {
             return null;
         }

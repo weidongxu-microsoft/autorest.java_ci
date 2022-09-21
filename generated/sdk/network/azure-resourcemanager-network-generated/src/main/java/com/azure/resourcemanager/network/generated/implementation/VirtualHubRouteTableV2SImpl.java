@@ -28,15 +28,6 @@ public final class VirtualHubRouteTableV2SImpl implements VirtualHubRouteTableV2
         this.serviceManager = serviceManager;
     }
 
-    public VirtualHubRouteTableV2 get(String resourceGroupName, String virtualHubName, String routeTableName) {
-        VirtualHubRouteTableV2Inner inner = this.serviceClient().get(resourceGroupName, virtualHubName, routeTableName);
-        if (inner != null) {
-            return new VirtualHubRouteTableV2Impl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<VirtualHubRouteTableV2> getWithResponse(
         String resourceGroupName, String virtualHubName, String routeTableName, Context context) {
         Response<VirtualHubRouteTableV2Inner> inner =
@@ -47,6 +38,15 @@ public final class VirtualHubRouteTableV2SImpl implements VirtualHubRouteTableV2
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new VirtualHubRouteTableV2Impl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public VirtualHubRouteTableV2 get(String resourceGroupName, String virtualHubName, String routeTableName) {
+        VirtualHubRouteTableV2Inner inner = this.serviceClient().get(resourceGroupName, virtualHubName, routeTableName);
+        if (inner != null) {
+            return new VirtualHubRouteTableV2Impl(inner, this.manager());
         } else {
             return null;
         }

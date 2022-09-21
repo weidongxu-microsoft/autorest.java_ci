@@ -32,22 +32,6 @@ public final class ReportsImpl implements Reports {
         this.serviceManager = serviceManager;
     }
 
-    public LatencyScorecard getLatencyScorecards(
-        String resourceGroupName,
-        String profileName,
-        String experimentName,
-        LatencyScorecardAggregationInterval aggregationInterval) {
-        LatencyScorecardInner inner =
-            this
-                .serviceClient()
-                .getLatencyScorecards(resourceGroupName, profileName, experimentName, aggregationInterval);
-        if (inner != null) {
-            return new LatencyScorecardImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<LatencyScorecard> getLatencyScorecardsWithResponse(
         String resourceGroupName,
         String profileName,
@@ -78,27 +62,17 @@ public final class ReportsImpl implements Reports {
         }
     }
 
-    public Timeseries getTimeseries(
+    public LatencyScorecard getLatencyScorecards(
         String resourceGroupName,
         String profileName,
         String experimentName,
-        OffsetDateTime startDateTimeUtc,
-        OffsetDateTime endDateTimeUtc,
-        TimeseriesAggregationInterval aggregationInterval,
-        TimeseriesType timeseriesType) {
-        TimeseriesInner inner =
+        LatencyScorecardAggregationInterval aggregationInterval) {
+        LatencyScorecardInner inner =
             this
                 .serviceClient()
-                .getTimeseries(
-                    resourceGroupName,
-                    profileName,
-                    experimentName,
-                    startDateTimeUtc,
-                    endDateTimeUtc,
-                    aggregationInterval,
-                    timeseriesType);
+                .getLatencyScorecards(resourceGroupName, profileName, experimentName, aggregationInterval);
         if (inner != null) {
-            return new TimeseriesImpl(inner, this.manager());
+            return new LatencyScorecardImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -135,6 +109,32 @@ public final class ReportsImpl implements Reports {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new TimeseriesImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public Timeseries getTimeseries(
+        String resourceGroupName,
+        String profileName,
+        String experimentName,
+        OffsetDateTime startDateTimeUtc,
+        OffsetDateTime endDateTimeUtc,
+        TimeseriesAggregationInterval aggregationInterval,
+        TimeseriesType timeseriesType) {
+        TimeseriesInner inner =
+            this
+                .serviceClient()
+                .getTimeseries(
+                    resourceGroupName,
+                    profileName,
+                    experimentName,
+                    startDateTimeUtc,
+                    endDateTimeUtc,
+                    aggregationInterval,
+                    timeseriesType);
+        if (inner != null) {
+            return new TimeseriesImpl(inner, this.manager());
         } else {
             return null;
         }

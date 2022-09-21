@@ -26,6 +26,10 @@ public final class ModernUsageDetail extends UsageDetailInner {
     @JsonProperty(value = "properties", required = true)
     private ModernUsageDetailProperties innerProperties = new ModernUsageDetailProperties();
 
+    /** Creates an instance of ModernUsageDetail class. */
+    public ModernUsageDetail() {
+    }
+
     /**
      * Get the innerProperties property: Properties for modern usage details.
      *

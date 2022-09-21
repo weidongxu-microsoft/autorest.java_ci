@@ -259,12 +259,12 @@ public final class DomainImpl implements Domain, Domain.Definition, Domain.Updat
         return this;
     }
 
-    public void renew() {
-        serviceManager.domains().renew(resourceGroupName, domainName);
-    }
-
     public Response<Void> renewWithResponse(Context context) {
         return serviceManager.domains().renewWithResponse(resourceGroupName, domainName, context);
+    }
+
+    public void renew() {
+        serviceManager.domains().renew(resourceGroupName, domainName);
     }
 
     public DomainImpl withRegion(Region location) {

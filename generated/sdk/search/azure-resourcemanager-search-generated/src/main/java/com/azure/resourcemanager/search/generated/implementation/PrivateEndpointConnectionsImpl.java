@@ -29,22 +29,6 @@ public final class PrivateEndpointConnectionsImpl implements PrivateEndpointConn
         this.serviceManager = serviceManager;
     }
 
-    public PrivateEndpointConnection update(
-        String resourceGroupName,
-        String searchServiceName,
-        String privateEndpointConnectionName,
-        PrivateEndpointConnectionInner privateEndpointConnection) {
-        PrivateEndpointConnectionInner inner =
-            this
-                .serviceClient()
-                .update(resourceGroupName, searchServiceName, privateEndpointConnectionName, privateEndpointConnection);
-        if (inner != null) {
-            return new PrivateEndpointConnectionImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<PrivateEndpointConnection> updateWithResponse(
         String resourceGroupName,
         String searchServiceName,
@@ -73,10 +57,15 @@ public final class PrivateEndpointConnectionsImpl implements PrivateEndpointConn
         }
     }
 
-    public PrivateEndpointConnection get(
-        String resourceGroupName, String searchServiceName, String privateEndpointConnectionName) {
+    public PrivateEndpointConnection update(
+        String resourceGroupName,
+        String searchServiceName,
+        String privateEndpointConnectionName,
+        PrivateEndpointConnectionInner privateEndpointConnection) {
         PrivateEndpointConnectionInner inner =
-            this.serviceClient().get(resourceGroupName, searchServiceName, privateEndpointConnectionName);
+            this
+                .serviceClient()
+                .update(resourceGroupName, searchServiceName, privateEndpointConnectionName, privateEndpointConnection);
         if (inner != null) {
             return new PrivateEndpointConnectionImpl(inner, this.manager());
         } else {
@@ -106,10 +95,10 @@ public final class PrivateEndpointConnectionsImpl implements PrivateEndpointConn
         }
     }
 
-    public PrivateEndpointConnection delete(
+    public PrivateEndpointConnection get(
         String resourceGroupName, String searchServiceName, String privateEndpointConnectionName) {
         PrivateEndpointConnectionInner inner =
-            this.serviceClient().delete(resourceGroupName, searchServiceName, privateEndpointConnectionName);
+            this.serviceClient().get(resourceGroupName, searchServiceName, privateEndpointConnectionName);
         if (inner != null) {
             return new PrivateEndpointConnectionImpl(inner, this.manager());
         } else {
@@ -134,6 +123,17 @@ public final class PrivateEndpointConnectionsImpl implements PrivateEndpointConn
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new PrivateEndpointConnectionImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public PrivateEndpointConnection delete(
+        String resourceGroupName, String searchServiceName, String privateEndpointConnectionName) {
+        PrivateEndpointConnectionInner inner =
+            this.serviceClient().delete(resourceGroupName, searchServiceName, privateEndpointConnectionName);
+        if (inner != null) {
+            return new PrivateEndpointConnectionImpl(inner, this.manager());
         } else {
             return null;
         }

@@ -22,6 +22,10 @@ public class CmkKekIdentity {
     @JsonProperty(value = "userAssignedIdentity")
     private String userAssignedIdentity;
 
+    /** Creates an instance of CmkKekIdentity class. */
+    public CmkKekIdentity() {
+    }
+
     /**
      * Get the useSystemAssignedIdentity property: Indicate that system assigned identity should be used. Mutually
      * exclusive with 'userAssignedIdentity' field.

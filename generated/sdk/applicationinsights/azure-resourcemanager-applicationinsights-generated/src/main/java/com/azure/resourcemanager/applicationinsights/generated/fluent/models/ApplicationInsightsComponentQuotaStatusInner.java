@@ -28,6 +28,10 @@ public final class ApplicationInsightsComponentQuotaStatusInner {
     @JsonProperty(value = "ExpirationTime", access = JsonProperty.Access.WRITE_ONLY)
     private String expirationTime;
 
+    /** Creates an instance of ApplicationInsightsComponentQuotaStatusInner class. */
+    public ApplicationInsightsComponentQuotaStatusInner() {
+    }
+
     /**
      * Get the appId property: The Application ID for the Application Insights component.
      *

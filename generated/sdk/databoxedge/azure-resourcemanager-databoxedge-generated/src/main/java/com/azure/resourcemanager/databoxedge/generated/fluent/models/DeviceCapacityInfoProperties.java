@@ -41,6 +41,10 @@ public final class DeviceCapacityInfoProperties {
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, HostCapacity> nodeCapacityInfos;
 
+    /** Creates an instance of DeviceCapacityInfoProperties class. */
+    public DeviceCapacityInfoProperties() {
+    }
+
     /**
      * Get the timestamp property: Timestamp of request in UTC.
      *

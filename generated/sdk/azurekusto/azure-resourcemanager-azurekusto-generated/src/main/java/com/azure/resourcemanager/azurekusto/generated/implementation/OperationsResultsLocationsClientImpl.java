@@ -175,10 +175,11 @@ public final class OperationsResultsLocationsClientImpl implements OperationsRes
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public void get(String location, String operationId) {
-        getAsync(location, operationId).block();
+    public Response<Void> getWithResponse(String location, String operationId) {
+        return getWithResponseAsync(location, operationId).block();
     }
 
     /**
@@ -195,5 +196,19 @@ public final class OperationsResultsLocationsClientImpl implements OperationsRes
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> getWithResponse(String location, String operationId, Context context) {
         return getWithResponseAsync(location, operationId, context).block();
+    }
+
+    /**
+     * Returns operation results.
+     *
+     * @param location Azure location (region) name.
+     * @param operationId The Guid of the operation ID.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public void get(String location, String operationId) {
+        getWithResponse(location, operationId, Context.NONE);
     }
 }

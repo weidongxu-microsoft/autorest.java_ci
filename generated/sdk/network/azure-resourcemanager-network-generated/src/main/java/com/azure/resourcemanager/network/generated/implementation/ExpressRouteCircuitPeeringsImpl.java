@@ -36,15 +36,6 @@ public final class ExpressRouteCircuitPeeringsImpl implements ExpressRouteCircui
         this.serviceClient().delete(resourceGroupName, circuitName, peeringName, context);
     }
 
-    public ExpressRouteCircuitPeering get(String resourceGroupName, String circuitName, String peeringName) {
-        ExpressRouteCircuitPeeringInner inner = this.serviceClient().get(resourceGroupName, circuitName, peeringName);
-        if (inner != null) {
-            return new ExpressRouteCircuitPeeringImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<ExpressRouteCircuitPeering> getWithResponse(
         String resourceGroupName, String circuitName, String peeringName, Context context) {
         Response<ExpressRouteCircuitPeeringInner> inner =
@@ -55,6 +46,15 @@ public final class ExpressRouteCircuitPeeringsImpl implements ExpressRouteCircui
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new ExpressRouteCircuitPeeringImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public ExpressRouteCircuitPeering get(String resourceGroupName, String circuitName, String peeringName) {
+        ExpressRouteCircuitPeeringInner inner = this.serviceClient().get(resourceGroupName, circuitName, peeringName);
+        if (inner != null) {
+            return new ExpressRouteCircuitPeeringImpl(inner, this.manager());
         } else {
             return null;
         }

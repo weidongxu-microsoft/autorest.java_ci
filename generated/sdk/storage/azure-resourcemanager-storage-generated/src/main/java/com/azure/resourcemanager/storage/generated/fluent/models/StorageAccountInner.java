@@ -68,6 +68,10 @@ public final class StorageAccountInner extends Resource {
     @JsonProperty(value = "properties")
     private StorageAccountPropertiesInner innerProperties;
 
+    /** Creates an instance of StorageAccountInner class. */
+    public StorageAccountInner() {
+    }
+
     /**
      * Get the sku property: Gets the SKU.
      *

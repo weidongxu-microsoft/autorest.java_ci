@@ -36,6 +36,10 @@ public final class AddressResponseProperties {
     @JsonProperty(value = "vipMappings")
     private List<VirtualIpMapping> vipMappings;
 
+    /** Creates an instance of AddressResponseProperties class. */
+    public AddressResponseProperties() {
+    }
+
     /**
      * Get the serviceIpAddress property: Main public virtual IP.
      *

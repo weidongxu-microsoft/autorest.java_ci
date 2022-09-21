@@ -25,6 +25,10 @@ public final class ListQueryKeysResult {
     @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
 
+    /** Creates an instance of ListQueryKeysResult class. */
+    public ListQueryKeysResult() {
+    }
+
     /**
      * Get the value property: The query keys for the Azure Cognitive Search service.
      *

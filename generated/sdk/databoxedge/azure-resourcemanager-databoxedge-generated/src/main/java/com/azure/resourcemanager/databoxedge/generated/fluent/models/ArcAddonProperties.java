@@ -62,6 +62,10 @@ public final class ArcAddonProperties {
     @JsonProperty(value = "provisioningState", access = JsonProperty.Access.WRITE_ONLY)
     private AddonState provisioningState;
 
+    /** Creates an instance of ArcAddonProperties class. */
+    public ArcAddonProperties() {
+    }
+
     /**
      * Get the subscriptionId property: Arc resource subscription Id.
      *

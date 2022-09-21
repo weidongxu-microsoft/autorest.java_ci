@@ -14,18 +14,6 @@ public interface DiagnosticSettingsCategories {
      *
      * @param resourceUri The identifier of the resource.
      * @param name The name of the diagnostic setting.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the diagnostic settings category for the specified resource.
-     */
-    DiagnosticSettingsCategoryResource get(String resourceUri, String name);
-
-    /**
-     * Gets the diagnostic settings category for the specified resource.
-     *
-     * @param resourceUri The identifier of the resource.
-     * @param name The name of the diagnostic setting.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -35,15 +23,16 @@ public interface DiagnosticSettingsCategories {
     Response<DiagnosticSettingsCategoryResource> getWithResponse(String resourceUri, String name, Context context);
 
     /**
-     * Lists the diagnostic settings categories for the specified resource.
+     * Gets the diagnostic settings category for the specified resource.
      *
      * @param resourceUri The identifier of the resource.
+     * @param name The name of the diagnostic setting.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of diagnostic setting category resources.
+     * @return the diagnostic settings category for the specified resource.
      */
-    DiagnosticSettingsCategoryResourceCollection list(String resourceUri);
+    DiagnosticSettingsCategoryResource get(String resourceUri, String name);
 
     /**
      * Lists the diagnostic settings categories for the specified resource.
@@ -56,4 +45,15 @@ public interface DiagnosticSettingsCategories {
      * @return represents a collection of diagnostic setting category resources along with {@link Response}.
      */
     Response<DiagnosticSettingsCategoryResourceCollection> listWithResponse(String resourceUri, Context context);
+
+    /**
+     * Lists the diagnostic settings categories for the specified resource.
+     *
+     * @param resourceUri The identifier of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return represents a collection of diagnostic setting category resources.
+     */
+    DiagnosticSettingsCategoryResourceCollection list(String resourceUri);
 }

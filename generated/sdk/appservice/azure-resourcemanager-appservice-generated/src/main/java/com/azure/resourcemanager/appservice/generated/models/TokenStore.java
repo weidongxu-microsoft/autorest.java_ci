@@ -37,6 +37,10 @@ public final class TokenStore {
     @JsonProperty(value = "azureBlobStorage")
     private BlobStorageTokenStore azureBlobStorage;
 
+    /** Creates an instance of TokenStore class. */
+    public TokenStore() {
+    }
+
     /**
      * Get the enabled property: &lt;code&gt;true&lt;/code&gt; to durably store platform-specific security tokens that
      * are obtained during login flows; otherwise, &lt;code&gt;false&lt;/code&gt;. The default is

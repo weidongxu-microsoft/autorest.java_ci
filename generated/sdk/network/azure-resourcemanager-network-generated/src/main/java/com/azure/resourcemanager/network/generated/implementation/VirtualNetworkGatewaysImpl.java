@@ -43,16 +43,6 @@ public final class VirtualNetworkGatewaysImpl implements VirtualNetworkGateways 
         this.serviceManager = serviceManager;
     }
 
-    public VirtualNetworkGateway getByResourceGroup(String resourceGroupName, String virtualNetworkGatewayName) {
-        VirtualNetworkGatewayInner inner =
-            this.serviceClient().getByResourceGroup(resourceGroupName, virtualNetworkGatewayName);
-        if (inner != null) {
-            return new VirtualNetworkGatewayImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<VirtualNetworkGateway> getByResourceGroupWithResponse(
         String resourceGroupName, String virtualNetworkGatewayName, Context context) {
         Response<VirtualNetworkGatewayInner> inner =
@@ -63,6 +53,16 @@ public final class VirtualNetworkGatewaysImpl implements VirtualNetworkGateways 
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new VirtualNetworkGatewayImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public VirtualNetworkGateway getByResourceGroup(String resourceGroupName, String virtualNetworkGatewayName) {
+        VirtualNetworkGatewayInner inner =
+            this.serviceClient().getByResourceGroup(resourceGroupName, virtualNetworkGatewayName);
+        if (inner != null) {
+            return new VirtualNetworkGatewayImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -205,15 +205,15 @@ public final class VirtualNetworkGatewaysImpl implements VirtualNetworkGateways 
         }
     }
 
-    public String supportedVpnDevices(String resourceGroupName, String virtualNetworkGatewayName) {
-        return this.serviceClient().supportedVpnDevices(resourceGroupName, virtualNetworkGatewayName);
-    }
-
     public Response<String> supportedVpnDevicesWithResponse(
         String resourceGroupName, String virtualNetworkGatewayName, Context context) {
         return this
             .serviceClient()
             .supportedVpnDevicesWithResponse(resourceGroupName, virtualNetworkGatewayName, context);
+    }
+
+    public String supportedVpnDevices(String resourceGroupName, String virtualNetworkGatewayName) {
+        return this.serviceClient().supportedVpnDevices(resourceGroupName, virtualNetworkGatewayName);
     }
 
     public GatewayRouteListResult getLearnedRoutes(String resourceGroupName, String virtualNetworkGatewayName) {
@@ -313,13 +313,6 @@ public final class VirtualNetworkGatewaysImpl implements VirtualNetworkGateways 
         }
     }
 
-    public String vpnDeviceConfigurationScript(
-        String resourceGroupName, String virtualNetworkGatewayConnectionName, VpnDeviceScriptParameters parameters) {
-        return this
-            .serviceClient()
-            .vpnDeviceConfigurationScript(resourceGroupName, virtualNetworkGatewayConnectionName, parameters);
-    }
-
     public Response<String> vpnDeviceConfigurationScriptWithResponse(
         String resourceGroupName,
         String virtualNetworkGatewayConnectionName,
@@ -329,6 +322,13 @@ public final class VirtualNetworkGatewaysImpl implements VirtualNetworkGateways 
             .serviceClient()
             .vpnDeviceConfigurationScriptWithResponse(
                 resourceGroupName, virtualNetworkGatewayConnectionName, parameters, context);
+    }
+
+    public String vpnDeviceConfigurationScript(
+        String resourceGroupName, String virtualNetworkGatewayConnectionName, VpnDeviceScriptParameters parameters) {
+        return this
+            .serviceClient()
+            .vpnDeviceConfigurationScript(resourceGroupName, virtualNetworkGatewayConnectionName, parameters);
     }
 
     public String startPacketCapture(

@@ -28,6 +28,10 @@ public final class OpenIdConnectRegistration {
     @JsonProperty(value = "openIdConnectConfiguration")
     private OpenIdConnectConfig openIdConnectConfiguration;
 
+    /** Creates an instance of OpenIdConnectRegistration class. */
+    public OpenIdConnectRegistration() {
+    }
+
     /**
      * Get the clientId property: The client id of the custom Open ID Connect provider.
      *

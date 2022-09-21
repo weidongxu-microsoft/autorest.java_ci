@@ -25,6 +25,10 @@ public final class ActivityLogAlertLeafCondition {
     @JsonProperty(value = "equals", required = true)
     private String equals;
 
+    /** Creates an instance of ActivityLogAlertLeafCondition class. */
+    public ActivityLogAlertLeafCondition() {
+    }
+
     /**
      * Get the field property: The name of the field that this condition will examine. The possible values for this
      * field are (case-insensitive): 'resourceId', 'category', 'caller', 'level', 'operationName', 'resourceGroup',

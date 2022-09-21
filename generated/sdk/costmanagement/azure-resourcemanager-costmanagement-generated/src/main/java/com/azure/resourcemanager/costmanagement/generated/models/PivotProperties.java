@@ -22,6 +22,10 @@ public final class PivotProperties {
     @JsonProperty(value = "name")
     private String name;
 
+    /** Creates an instance of PivotProperties class. */
+    public PivotProperties() {
+    }
+
     /**
      * Get the type property: Data type to show in view.
      *

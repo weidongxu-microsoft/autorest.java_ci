@@ -28,6 +28,10 @@ public final class CaaRecord {
     @JsonProperty(value = "value")
     private String value;
 
+    /** Creates an instance of CaaRecord class. */
+    public CaaRecord() {
+    }
+
     /**
      * Get the flags property: The flags for this CAA record as an integer between 0 and 255.
      *

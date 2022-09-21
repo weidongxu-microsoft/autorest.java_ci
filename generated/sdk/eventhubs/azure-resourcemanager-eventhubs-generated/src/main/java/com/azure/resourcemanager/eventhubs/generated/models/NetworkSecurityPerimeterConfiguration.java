@@ -20,6 +20,10 @@ public final class NetworkSecurityPerimeterConfiguration extends Resource {
     @JsonProperty(value = "properties", access = JsonProperty.Access.WRITE_ONLY)
     private NetworkSecurityPerimeterConfigurationProperties innerProperties;
 
+    /** Creates an instance of NetworkSecurityPerimeterConfiguration class. */
+    public NetworkSecurityPerimeterConfiguration() {
+    }
+
     /**
      * Get the innerProperties property: Properties of the Network Security Perimeter Configuration.
      *

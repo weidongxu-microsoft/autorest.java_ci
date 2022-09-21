@@ -31,6 +31,10 @@ public class ChargeSummary extends ProxyResource {
     @JsonProperty(value = "eTag")
     private String etag;
 
+    /** Creates an instance of ChargeSummary class. */
+    public ChargeSummary() {
+    }
+
     /**
      * Get the etag property: eTag of the resource. To handle concurrent update scenario, this field will be used to
      * determine whether the user is updating the latest version or not.

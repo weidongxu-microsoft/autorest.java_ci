@@ -5,10 +5,8 @@
 package com.azure.resourcemanager.network.generated.models;
 
 import com.azure.core.management.Region;
-import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.DdosCustomPolicyInner;
-import java.util.List;
 import java.util.Map;
 
 /** An immutable client-side representation of DdosCustomPolicy. */
@@ -70,21 +68,6 @@ public interface DdosCustomPolicy {
      * @return the provisioningState value.
      */
     ProvisioningState provisioningState();
-
-    /**
-     * Gets the publicIpAddresses property: The list of public IPs associated with the DDoS custom policy resource. This
-     * list is read-only.
-     *
-     * @return the publicIpAddresses value.
-     */
-    List<SubResource> publicIpAddresses();
-
-    /**
-     * Gets the protocolCustomSettings property: The protocol-specific DDoS policy customization parameters.
-     *
-     * @return the protocolCustomSettings value.
-     */
-    List<ProtocolCustomSettingsFormat> protocolCustomSettings();
 
     /**
      * Gets the region of the resource.
@@ -158,7 +141,7 @@ public interface DdosCustomPolicy {
          * The stage of the DdosCustomPolicy definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
          */
-        interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithProtocolCustomSettings {
+        interface WithCreate extends DefinitionStages.WithTags {
             /**
              * Executes the create request.
              *
@@ -183,17 +166,6 @@ public interface DdosCustomPolicy {
              * @return the next definition stage.
              */
             WithCreate withTags(Map<String, String> tags);
-        }
-        /** The stage of the DdosCustomPolicy definition allowing to specify protocolCustomSettings. */
-        interface WithProtocolCustomSettings {
-            /**
-             * Specifies the protocolCustomSettings property: The protocol-specific DDoS policy customization
-             * parameters..
-             *
-             * @param protocolCustomSettings The protocol-specific DDoS policy customization parameters.
-             * @return the next definition stage.
-             */
-            WithCreate withProtocolCustomSettings(List<ProtocolCustomSettingsFormat> protocolCustomSettings);
         }
     }
     /**

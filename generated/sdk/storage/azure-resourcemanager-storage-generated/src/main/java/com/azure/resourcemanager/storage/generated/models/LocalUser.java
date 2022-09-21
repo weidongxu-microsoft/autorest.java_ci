@@ -333,15 +333,6 @@ public interface LocalUser {
     /**
      * List SSH authorized keys and shared key of the local user.
      *
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Storage Account Local User keys.
-     */
-    LocalUserKeys listKeys();
-
-    /**
-     * List SSH authorized keys and shared key of the local user.
-     *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -351,13 +342,13 @@ public interface LocalUser {
     Response<LocalUserKeys> listKeysWithResponse(Context context);
 
     /**
-     * Regenerate the local user SSH password.
+     * List SSH authorized keys and shared key of the local user.
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the secrets of Storage Account Local User.
+     * @return the Storage Account Local User keys.
      */
-    LocalUserRegeneratePasswordResult regeneratePassword();
+    LocalUserKeys listKeys();
 
     /**
      * Regenerate the local user SSH password.
@@ -369,4 +360,13 @@ public interface LocalUser {
      * @return the secrets of Storage Account Local User along with {@link Response}.
      */
     Response<LocalUserRegeneratePasswordResult> regeneratePasswordWithResponse(Context context);
+
+    /**
+     * Regenerate the local user SSH password.
+     *
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the secrets of Storage Account Local User.
+     */
+    LocalUserRegeneratePasswordResult regeneratePassword();
 }

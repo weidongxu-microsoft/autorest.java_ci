@@ -23,6 +23,10 @@ public final class AutoscaleRecurrence {
     @JsonProperty(value = "schedule")
     private List<AutoscaleSchedule> schedule;
 
+    /** Creates an instance of AutoscaleRecurrence class. */
+    public AutoscaleRecurrence() {
+    }
+
     /**
      * Get the timeZone property: The time zone for the autoscale schedule times.
      *

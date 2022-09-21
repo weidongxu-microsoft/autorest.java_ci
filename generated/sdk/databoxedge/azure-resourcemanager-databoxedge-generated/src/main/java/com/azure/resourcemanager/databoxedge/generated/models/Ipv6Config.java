@@ -28,6 +28,10 @@ public final class Ipv6Config {
     @JsonProperty(value = "gateway", access = JsonProperty.Access.WRITE_ONLY)
     private String gateway;
 
+    /** Creates an instance of Ipv6Config class. */
+    public Ipv6Config() {
+    }
+
     /**
      * Get the ipAddress property: The IPv6 address of the network adapter.
      *

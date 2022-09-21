@@ -48,6 +48,10 @@ public final class EdgeProfileSubscription {
     @JsonProperty(value = "properties")
     private SubscriptionProperties innerProperties;
 
+    /** Creates an instance of EdgeProfileSubscription class. */
+    public EdgeProfileSubscription() {
+    }
+
     /**
      * Get the registrationId property: Edge Subscription Registration ID.
      *

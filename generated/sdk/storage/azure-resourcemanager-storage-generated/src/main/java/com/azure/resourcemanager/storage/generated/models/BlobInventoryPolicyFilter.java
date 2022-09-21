@@ -58,6 +58,10 @@ public final class BlobInventoryPolicyFilter {
     @JsonProperty(value = "includeDeleted")
     private Boolean includeDeleted;
 
+    /** Creates an instance of BlobInventoryPolicyFilter class. */
+    public BlobInventoryPolicyFilter() {
+    }
+
     /**
      * Get the prefixMatch property: An array of strings with maximum 10 blob prefixes to be included in the inventory.
      *

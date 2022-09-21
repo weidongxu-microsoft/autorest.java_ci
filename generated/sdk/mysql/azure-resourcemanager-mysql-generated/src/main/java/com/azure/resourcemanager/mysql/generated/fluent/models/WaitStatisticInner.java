@@ -18,6 +18,10 @@ public final class WaitStatisticInner extends ProxyResource {
     @JsonProperty(value = "properties")
     private WaitStatisticProperties innerProperties;
 
+    /** Creates an instance of WaitStatisticInner class. */
+    public WaitStatisticInner() {
+    }
+
     /**
      * Get the innerProperties property: The properties of a wait statistic.
      *

@@ -24,6 +24,10 @@ public final class AuthorizationRuleListResult {
     @JsonProperty(value = "nextLink")
     private String nextLink;
 
+    /** Creates an instance of AuthorizationRuleListResult class. */
+    public AuthorizationRuleListResult() {
+    }
+
     /**
      * Get the value property: Result of the list authorization rules operation.
      *

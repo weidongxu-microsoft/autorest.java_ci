@@ -176,11 +176,12 @@ public final class DnsResourceReferencesClientImpl implements DnsResourceReferen
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents the properties of the Dns Resource Reference Result.
+     * @return represents the properties of the Dns Resource Reference Result along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public DnsResourceReferenceResultInner getByTargetResources(DnsResourceReferenceRequest parameters) {
-        return getByTargetResourcesAsync(parameters).block();
+    public Response<DnsResourceReferenceResultInner> getByTargetResourcesWithResponse(
+        DnsResourceReferenceRequest parameters) {
+        return getByTargetResourcesWithResponseAsync(parameters).block();
     }
 
     /**
@@ -197,5 +198,19 @@ public final class DnsResourceReferencesClientImpl implements DnsResourceReferen
     public Response<DnsResourceReferenceResultInner> getByTargetResourcesWithResponse(
         DnsResourceReferenceRequest parameters, Context context) {
         return getByTargetResourcesWithResponseAsync(parameters, context).block();
+    }
+
+    /**
+     * Returns the DNS records specified by the referencing targetResourceIds.
+     *
+     * @param parameters Properties for dns resource reference request.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return represents the properties of the Dns Resource Reference Result.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public DnsResourceReferenceResultInner getByTargetResources(DnsResourceReferenceRequest parameters) {
+        return getByTargetResourcesWithResponse(parameters, Context.NONE).getValue();
     }
 }

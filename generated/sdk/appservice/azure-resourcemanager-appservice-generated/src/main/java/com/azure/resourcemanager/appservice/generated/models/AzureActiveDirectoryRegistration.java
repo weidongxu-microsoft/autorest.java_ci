@@ -59,6 +59,10 @@ public final class AzureActiveDirectoryRegistration {
     @JsonProperty(value = "clientSecretCertificateIssuer")
     private String clientSecretCertificateIssuer;
 
+    /** Creates an instance of AzureActiveDirectoryRegistration class. */
+    public AzureActiveDirectoryRegistration() {
+    }
+
     /**
      * Get the openIdIssuer property: The OpenID Connect Issuer URI that represents the entity which issues access
      * tokens for this application. When using Azure Active Directory, this value is the URI of the directory tenant,

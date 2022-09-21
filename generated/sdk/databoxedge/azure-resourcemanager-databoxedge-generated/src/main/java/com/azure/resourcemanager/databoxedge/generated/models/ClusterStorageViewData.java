@@ -22,6 +22,10 @@ public final class ClusterStorageViewData {
     @JsonProperty(value = "clusterFreeStorageMb")
     private Double clusterFreeStorageMb;
 
+    /** Creates an instance of ClusterStorageViewData class. */
+    public ClusterStorageViewData() {
+    }
+
     /**
      * Get the clusterTotalStorageMb property: Total storage on the cluster in MB.
      *

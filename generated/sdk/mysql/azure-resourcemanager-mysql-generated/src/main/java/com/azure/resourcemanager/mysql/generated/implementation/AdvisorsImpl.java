@@ -27,15 +27,6 @@ public final class AdvisorsImpl implements Advisors {
         this.serviceManager = serviceManager;
     }
 
-    public Advisor get(String resourceGroupName, String serverName, String advisorName) {
-        AdvisorInner inner = this.serviceClient().get(resourceGroupName, serverName, advisorName);
-        if (inner != null) {
-            return new AdvisorImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<Advisor> getWithResponse(
         String resourceGroupName, String serverName, String advisorName, Context context) {
         Response<AdvisorInner> inner =
@@ -46,6 +37,15 @@ public final class AdvisorsImpl implements Advisors {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new AdvisorImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public Advisor get(String resourceGroupName, String serverName, String advisorName) {
+        AdvisorInner inner = this.serviceClient().get(resourceGroupName, serverName, advisorName);
+        if (inner != null) {
+            return new AdvisorImpl(inner, this.manager());
         } else {
             return null;
         }

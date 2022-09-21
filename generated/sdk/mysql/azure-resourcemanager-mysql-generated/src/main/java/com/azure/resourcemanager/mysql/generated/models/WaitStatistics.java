@@ -16,19 +16,6 @@ public interface WaitStatistics {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param waitStatisticsId The Wait Statistic identifier.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a Wait Statistic.
-     */
-    WaitStatistic get(String resourceGroupName, String serverName, String waitStatisticsId);
-
-    /**
-     * Retrieve wait statistics for specified identifier.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param serverName The name of the server.
-     * @param waitStatisticsId The Wait Statistic identifier.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -37,6 +24,19 @@ public interface WaitStatistics {
      */
     Response<WaitStatistic> getWithResponse(
         String resourceGroupName, String serverName, String waitStatisticsId, Context context);
+
+    /**
+     * Retrieve wait statistics for specified identifier.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param serverName The name of the server.
+     * @param waitStatisticsId The Wait Statistic identifier.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return represents a Wait Statistic.
+     */
+    WaitStatistic get(String resourceGroupName, String serverName, String waitStatisticsId);
 
     /**
      * Retrieve wait statistics for specified aggregation window.

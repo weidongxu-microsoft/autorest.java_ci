@@ -93,20 +93,6 @@ public interface ClustersClient {
      * @param resourceGroupName The name of the resource group.
      * @param clusterName The name of the cluster.
      * @param parameters The cluster patch request.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the HDInsight cluster.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    ClusterInner update(String resourceGroupName, String clusterName, ClusterPatchParameters parameters);
-
-    /**
-     * Patch HDInsight cluster with the specified parameters.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param clusterName The name of the cluster.
-     * @param parameters The cluster patch request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -116,6 +102,20 @@ public interface ClustersClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ClusterInner> updateWithResponse(
         String resourceGroupName, String clusterName, ClusterPatchParameters parameters, Context context);
+
+    /**
+     * Patch HDInsight cluster with the specified parameters.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param clusterName The name of the cluster.
+     * @param parameters The cluster patch request.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the HDInsight cluster.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    ClusterInner update(String resourceGroupName, String clusterName, ClusterPatchParameters parameters);
 
     /**
      * Deletes the specified HDInsight cluster.
@@ -174,19 +174,6 @@ public interface ClustersClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param clusterName The name of the cluster.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified cluster.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    ClusterInner getByResourceGroup(String resourceGroupName, String clusterName);
-
-    /**
-     * Gets the specified cluster.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param clusterName The name of the cluster.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -196,6 +183,19 @@ public interface ClustersClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ClusterInner> getByResourceGroupWithResponse(
         String resourceGroupName, String clusterName, Context context);
+
+    /**
+     * Gets the specified cluster.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param clusterName The name of the cluster.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified cluster.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    ClusterInner getByResourceGroup(String resourceGroupName, String clusterName);
 
     /**
      * Lists the HDInsight clusters in a resource group.
@@ -458,19 +458,6 @@ public interface ClustersClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param clusterName The name of the cluster.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the gateway settings for the specified cluster.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    GatewaySettingsInner getGatewaySettings(String resourceGroupName, String clusterName);
-
-    /**
-     * Gets the gateway settings for the specified cluster.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param clusterName The name of the cluster.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -482,6 +469,19 @@ public interface ClustersClient {
         String resourceGroupName, String clusterName, Context context);
 
     /**
+     * Gets the gateway settings for the specified cluster.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param clusterName The name of the cluster.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the gateway settings for the specified cluster.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    GatewaySettingsInner getGatewaySettings(String resourceGroupName, String clusterName);
+
+    /**
      * Configures the gateway settings on the specified cluster.
      *
      * @param resourceGroupName The name of the resource group.
@@ -540,21 +540,6 @@ public interface ClustersClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     void updateGatewaySettings(
         String resourceGroupName, String clusterName, UpdateGatewaySettingsParameters parameters, Context context);
-
-    /**
-     * The the async operation status.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param clusterName The name of the cluster.
-     * @param operationId The long running operation id.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the azure async operation response.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    AsyncOperationResultInner getAzureAsyncOperationStatus(
-        String resourceGroupName, String clusterName, String operationId);
 
     /**
      * The the async operation status.
@@ -571,6 +556,21 @@ public interface ClustersClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<AsyncOperationResultInner> getAzureAsyncOperationStatusWithResponse(
         String resourceGroupName, String clusterName, String operationId, Context context);
+
+    /**
+     * The the async operation status.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param clusterName The name of the cluster.
+     * @param operationId The long running operation id.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the azure async operation response.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    AsyncOperationResultInner getAzureAsyncOperationStatus(
+        String resourceGroupName, String clusterName, String operationId);
 
     /**
      * Updates the cluster identity certificate.

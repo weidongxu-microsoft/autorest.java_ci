@@ -56,6 +56,10 @@ public final class WebhookEventSubscriptionDestinationProperties {
     @JsonProperty(value = "deliveryAttributeMappings")
     private List<DeliveryAttributeMapping> deliveryAttributeMappings;
 
+    /** Creates an instance of WebhookEventSubscriptionDestinationProperties class. */
+    public WebhookEventSubscriptionDestinationProperties() {
+    }
+
     /**
      * Get the endpointUrl property: The URL that represents the endpoint of the destination of an event subscription.
      *

@@ -27,15 +27,6 @@ public final class MhsmPrivateLinkResourcesImpl implements MhsmPrivateLinkResour
         this.serviceManager = serviceManager;
     }
 
-    public MhsmPrivateLinkResourceListResult listByMhsmResource(String resourceGroupName, String name) {
-        MhsmPrivateLinkResourceListResultInner inner = this.serviceClient().listByMhsmResource(resourceGroupName, name);
-        if (inner != null) {
-            return new MhsmPrivateLinkResourceListResultImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<MhsmPrivateLinkResourceListResult> listByMhsmResourceWithResponse(
         String resourceGroupName, String name, Context context) {
         Response<MhsmPrivateLinkResourceListResultInner> inner =
@@ -46,6 +37,15 @@ public final class MhsmPrivateLinkResourcesImpl implements MhsmPrivateLinkResour
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new MhsmPrivateLinkResourceListResultImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public MhsmPrivateLinkResourceListResult listByMhsmResource(String resourceGroupName, String name) {
+        MhsmPrivateLinkResourceListResultInner inner = this.serviceClient().listByMhsmResource(resourceGroupName, name);
+        if (inner != null) {
+            return new MhsmPrivateLinkResourceListResultImpl(inner, this.manager());
         } else {
             return null;
         }

@@ -28,16 +28,6 @@ public final class VpnServerConfigurationsImpl implements VpnServerConfiguration
         this.serviceManager = serviceManager;
     }
 
-    public VpnServerConfiguration getByResourceGroup(String resourceGroupName, String vpnServerConfigurationName) {
-        VpnServerConfigurationInner inner =
-            this.serviceClient().getByResourceGroup(resourceGroupName, vpnServerConfigurationName);
-        if (inner != null) {
-            return new VpnServerConfigurationImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<VpnServerConfiguration> getByResourceGroupWithResponse(
         String resourceGroupName, String vpnServerConfigurationName, Context context) {
         Response<VpnServerConfigurationInner> inner =
@@ -48,6 +38,16 @@ public final class VpnServerConfigurationsImpl implements VpnServerConfiguration
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new VpnServerConfigurationImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public VpnServerConfiguration getByResourceGroup(String resourceGroupName, String vpnServerConfigurationName) {
+        VpnServerConfigurationInner inner =
+            this.serviceClient().getByResourceGroup(resourceGroupName, vpnServerConfigurationName);
+        if (inner != null) {
+            return new VpnServerConfigurationImpl(inner, this.manager());
         } else {
             return null;
         }

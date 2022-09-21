@@ -82,6 +82,10 @@ public final class StampCapacityInner {
     @JsonProperty(value = "isLinux")
     private Boolean isLinux;
 
+    /** Creates an instance of StampCapacityInner class. */
+    public StampCapacityInner() {
+    }
+
     /**
      * Get the name property: Name of the stamp.
      *

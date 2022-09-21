@@ -273,11 +273,11 @@ public final class ProvidersClientImpl implements ProvidersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource provider information.
+     * @return resource provider information along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ProviderInner unregister(String resourceProviderNamespace) {
-        return unregisterAsync(resourceProviderNamespace).block();
+    public Response<ProviderInner> unregisterWithResponse(String resourceProviderNamespace) {
+        return unregisterWithResponseAsync(resourceProviderNamespace).block();
     }
 
     /**
@@ -293,6 +293,20 @@ public final class ProvidersClientImpl implements ProvidersClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<ProviderInner> unregisterWithResponse(String resourceProviderNamespace, Context context) {
         return unregisterWithResponseAsync(resourceProviderNamespace, context).block();
+    }
+
+    /**
+     * Unregisters a subscription from a resource provider.
+     *
+     * @param resourceProviderNamespace The namespace of the resource provider to unregister.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return resource provider information.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ProviderInner unregister(String resourceProviderNamespace) {
+        return unregisterWithResponse(resourceProviderNamespace, Context.NONE).getValue();
     }
 
     /**
@@ -403,10 +417,11 @@ public final class ProvidersClientImpl implements ProvidersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public void registerAtManagementGroupScope(String resourceProviderNamespace, String groupId) {
-        registerAtManagementGroupScopeAsync(resourceProviderNamespace, groupId).block();
+    public Response<Void> registerAtManagementGroupScopeWithResponse(String resourceProviderNamespace, String groupId) {
+        return registerAtManagementGroupScopeWithResponseAsync(resourceProviderNamespace, groupId).block();
     }
 
     /**
@@ -424,6 +439,20 @@ public final class ProvidersClientImpl implements ProvidersClient {
     public Response<Void> registerAtManagementGroupScopeWithResponse(
         String resourceProviderNamespace, String groupId, Context context) {
         return registerAtManagementGroupScopeWithResponseAsync(resourceProviderNamespace, groupId, context).block();
+    }
+
+    /**
+     * Registers a management group with a resource provider.
+     *
+     * @param resourceProviderNamespace The namespace of the resource provider to register.
+     * @param groupId The management group ID.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public void registerAtManagementGroupScope(String resourceProviderNamespace, String groupId) {
+        registerAtManagementGroupScopeWithResponse(resourceProviderNamespace, groupId, Context.NONE);
     }
 
     /**
@@ -533,11 +562,11 @@ public final class ProvidersClientImpl implements ProvidersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource provider information.
+     * @return resource provider information along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ProviderInner register(String resourceProviderNamespace) {
-        return registerAsync(resourceProviderNamespace).block();
+    public Response<ProviderInner> registerWithResponse(String resourceProviderNamespace) {
+        return registerWithResponseAsync(resourceProviderNamespace).block();
     }
 
     /**
@@ -553,6 +582,20 @@ public final class ProvidersClientImpl implements ProvidersClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<ProviderInner> registerWithResponse(String resourceProviderNamespace, Context context) {
         return registerWithResponseAsync(resourceProviderNamespace, context).block();
+    }
+
+    /**
+     * Registers a subscription with a resource provider.
+     *
+     * @param resourceProviderNamespace The namespace of the resource provider to register.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return resource provider information.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ProviderInner register(String resourceProviderNamespace) {
+        return registerWithResponse(resourceProviderNamespace, Context.NONE).getValue();
     }
 
     /**
@@ -1001,22 +1044,6 @@ public final class ProvidersClientImpl implements ProvidersClient {
      * Gets the specified resource provider.
      *
      * @param resourceProviderNamespace The namespace of the resource provider.
-     * @param expand The $expand query parameter. For example, to include property aliases in response, use
-     *     $expand=resourceTypes/aliases.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified resource provider on successful completion of {@link Mono}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<ProviderInner> getAsync(String resourceProviderNamespace, String expand) {
-        return getWithResponseAsync(resourceProviderNamespace, expand).flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets the specified resource provider.
-     *
-     * @param resourceProviderNamespace The namespace of the resource provider.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1032,15 +1059,16 @@ public final class ProvidersClientImpl implements ProvidersClient {
      * Gets the specified resource provider.
      *
      * @param resourceProviderNamespace The namespace of the resource provider.
+     * @param expand The $expand query parameter. For example, to include property aliases in response, use
+     *     $expand=resourceTypes/aliases.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified resource provider.
+     * @return the specified resource provider along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ProviderInner get(String resourceProviderNamespace) {
-        final String expand = null;
-        return getAsync(resourceProviderNamespace, expand).block();
+    public Response<ProviderInner> getWithResponse(String resourceProviderNamespace, String expand) {
+        return getWithResponseAsync(resourceProviderNamespace, expand).block();
     }
 
     /**
@@ -1058,6 +1086,21 @@ public final class ProvidersClientImpl implements ProvidersClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<ProviderInner> getWithResponse(String resourceProviderNamespace, String expand, Context context) {
         return getWithResponseAsync(resourceProviderNamespace, expand, context).block();
+    }
+
+    /**
+     * Gets the specified resource provider.
+     *
+     * @param resourceProviderNamespace The namespace of the resource provider.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified resource provider.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ProviderInner get(String resourceProviderNamespace) {
+        final String expand = null;
+        return getWithResponse(resourceProviderNamespace, expand, Context.NONE).getValue();
     }
 
     /**
@@ -1146,23 +1189,6 @@ public final class ProvidersClientImpl implements ProvidersClient {
      * Gets the specified resource provider at the tenant level.
      *
      * @param resourceProviderNamespace The namespace of the resource provider.
-     * @param expand The $expand query parameter. For example, to include property aliases in response, use
-     *     $expand=resourceTypes/aliases.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified resource provider at the tenant level on successful completion of {@link Mono}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<ProviderInner> getAtTenantScopeAsync(String resourceProviderNamespace, String expand) {
-        return getAtTenantScopeWithResponseAsync(resourceProviderNamespace, expand)
-            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets the specified resource provider at the tenant level.
-     *
-     * @param resourceProviderNamespace The namespace of the resource provider.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1179,15 +1205,16 @@ public final class ProvidersClientImpl implements ProvidersClient {
      * Gets the specified resource provider at the tenant level.
      *
      * @param resourceProviderNamespace The namespace of the resource provider.
+     * @param expand The $expand query parameter. For example, to include property aliases in response, use
+     *     $expand=resourceTypes/aliases.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified resource provider at the tenant level.
+     * @return the specified resource provider at the tenant level along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ProviderInner getAtTenantScope(String resourceProviderNamespace) {
-        final String expand = null;
-        return getAtTenantScopeAsync(resourceProviderNamespace, expand).block();
+    public Response<ProviderInner> getAtTenantScopeWithResponse(String resourceProviderNamespace, String expand) {
+        return getAtTenantScopeWithResponseAsync(resourceProviderNamespace, expand).block();
     }
 
     /**
@@ -1206,6 +1233,21 @@ public final class ProvidersClientImpl implements ProvidersClient {
     public Response<ProviderInner> getAtTenantScopeWithResponse(
         String resourceProviderNamespace, String expand, Context context) {
         return getAtTenantScopeWithResponseAsync(resourceProviderNamespace, expand, context).block();
+    }
+
+    /**
+     * Gets the specified resource provider at the tenant level.
+     *
+     * @param resourceProviderNamespace The namespace of the resource provider.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified resource provider at the tenant level.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ProviderInner getAtTenantScope(String resourceProviderNamespace) {
+        final String expand = null;
+        return getAtTenantScopeWithResponse(resourceProviderNamespace, expand, Context.NONE).getValue();
     }
 
     /**

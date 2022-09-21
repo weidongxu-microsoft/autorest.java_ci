@@ -38,18 +38,6 @@ public interface AzureFirewalls {
      *
      * @param resourceGroupName The name of the resource group.
      * @param azureFirewallName The name of the Azure Firewall.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Azure Firewall.
-     */
-    AzureFirewall getByResourceGroup(String resourceGroupName, String azureFirewallName);
-
-    /**
-     * Gets the specified Azure Firewall.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param azureFirewallName The name of the Azure Firewall.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -58,6 +46,18 @@ public interface AzureFirewalls {
      */
     Response<AzureFirewall> getByResourceGroupWithResponse(
         String resourceGroupName, String azureFirewallName, Context context);
+
+    /**
+     * Gets the specified Azure Firewall.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param azureFirewallName The name of the Azure Firewall.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified Azure Firewall.
+     */
+    AzureFirewall getByResourceGroup(String resourceGroupName, String azureFirewallName);
 
     /**
      * Lists all Azure Firewalls in a resource group.

@@ -47,6 +47,10 @@ public final class ReportConfigDefinition {
     @JsonProperty(value = "includeMonetaryCommitment", access = JsonProperty.Access.WRITE_ONLY)
     private Boolean includeMonetaryCommitment;
 
+    /** Creates an instance of ReportConfigDefinition class. */
+    public ReportConfigDefinition() {
+    }
+
     /**
      * Get the type property: The type of the report. Usage represents actual usage, forecast represents forecasted data
      * and UsageAndForecast represents both usage and forecasted data. Actual usage and forecasted data can be

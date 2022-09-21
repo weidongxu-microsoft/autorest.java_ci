@@ -17,6 +17,10 @@ public final class FrontDoorCertificateSourceParameters {
     @JsonProperty(value = "certificateType")
     private FrontDoorCertificateType certificateType;
 
+    /** Creates an instance of FrontDoorCertificateSourceParameters class. */
+    public FrontDoorCertificateSourceParameters() {
+    }
+
     /**
      * Get the certificateType property: Defines the type of the certificate used for secure connections to a
      * frontendEndpoint.

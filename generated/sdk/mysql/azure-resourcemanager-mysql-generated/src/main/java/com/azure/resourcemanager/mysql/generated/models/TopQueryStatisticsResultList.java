@@ -24,6 +24,10 @@ public final class TopQueryStatisticsResultList {
     @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
 
+    /** Creates an instance of TopQueryStatisticsResultList class. */
+    public TopQueryStatisticsResultList() {
+    }
+
     /**
      * Get the value property: The list of top query statistics.
      *

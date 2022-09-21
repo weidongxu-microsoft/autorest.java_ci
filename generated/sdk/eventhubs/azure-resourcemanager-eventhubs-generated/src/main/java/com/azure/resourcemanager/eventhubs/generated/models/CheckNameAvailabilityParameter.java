@@ -17,6 +17,10 @@ public final class CheckNameAvailabilityParameter {
     @JsonProperty(value = "name", required = true)
     private String name;
 
+    /** Creates an instance of CheckNameAvailabilityParameter class. */
+    public CheckNameAvailabilityParameter() {
+    }
+
     /**
      * Get the name property: Name to check the namespace name availability.
      *

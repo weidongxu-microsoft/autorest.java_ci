@@ -29,6 +29,10 @@ public final class Encryption {
     @JsonProperty(value = "requireInfrastructureEncryption")
     private Boolean requireInfrastructureEncryption;
 
+    /** Creates an instance of Encryption class. */
+    public Encryption() {
+    }
+
     /**
      * Get the keyVaultProperties property: Properties of KeyVault.
      *

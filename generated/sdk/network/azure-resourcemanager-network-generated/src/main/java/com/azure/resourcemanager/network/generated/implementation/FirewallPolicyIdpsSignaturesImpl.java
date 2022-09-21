@@ -28,15 +28,6 @@ public final class FirewallPolicyIdpsSignaturesImpl implements FirewallPolicyIdp
         this.serviceManager = serviceManager;
     }
 
-    public QueryResults list(String resourceGroupName, String firewallPolicyName, IdpsQueryObject parameters) {
-        QueryResultsInner inner = this.serviceClient().list(resourceGroupName, firewallPolicyName, parameters);
-        if (inner != null) {
-            return new QueryResultsImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<QueryResults> listWithResponse(
         String resourceGroupName, String firewallPolicyName, IdpsQueryObject parameters, Context context) {
         Response<QueryResultsInner> inner =
@@ -47,6 +38,15 @@ public final class FirewallPolicyIdpsSignaturesImpl implements FirewallPolicyIdp
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new QueryResultsImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public QueryResults list(String resourceGroupName, String firewallPolicyName, IdpsQueryObject parameters) {
+        QueryResultsInner inner = this.serviceClient().list(resourceGroupName, firewallPolicyName, parameters);
+        if (inner != null) {
+            return new QueryResultsImpl(inner, this.manager());
         } else {
             return null;
         }

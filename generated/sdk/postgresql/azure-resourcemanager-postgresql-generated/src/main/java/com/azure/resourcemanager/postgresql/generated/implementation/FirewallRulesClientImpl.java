@@ -832,11 +832,12 @@ public final class FirewallRulesClientImpl implements FirewallRulesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a server firewall rule.
+     * @return information about a server firewall rule along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public FirewallRuleInner get(String resourceGroupName, String serverName, String firewallRuleName) {
-        return getAsync(resourceGroupName, serverName, firewallRuleName).block();
+    public Response<FirewallRuleInner> getWithResponse(
+        String resourceGroupName, String serverName, String firewallRuleName) {
+        return getWithResponseAsync(resourceGroupName, serverName, firewallRuleName).block();
     }
 
     /**
@@ -855,6 +856,22 @@ public final class FirewallRulesClientImpl implements FirewallRulesClient {
     public Response<FirewallRuleInner> getWithResponse(
         String resourceGroupName, String serverName, String firewallRuleName, Context context) {
         return getWithResponseAsync(resourceGroupName, serverName, firewallRuleName, context).block();
+    }
+
+    /**
+     * Gets information about a server firewall rule.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param serverName The name of the server.
+     * @param firewallRuleName The name of the server firewall rule.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return information about a server firewall rule.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public FirewallRuleInner get(String resourceGroupName, String serverName, String firewallRuleName) {
+        return getWithResponse(resourceGroupName, serverName, firewallRuleName, Context.NONE).getValue();
     }
 
     /**

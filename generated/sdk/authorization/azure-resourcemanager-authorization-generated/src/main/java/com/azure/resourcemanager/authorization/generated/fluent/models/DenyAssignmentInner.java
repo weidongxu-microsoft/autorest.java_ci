@@ -37,6 +37,10 @@ public final class DenyAssignmentInner {
     @JsonProperty(value = "properties")
     private DenyAssignmentProperties innerProperties;
 
+    /** Creates an instance of DenyAssignmentInner class. */
+    public DenyAssignmentInner() {
+    }
+
     /**
      * Get the id property: The deny assignment ID.
      *

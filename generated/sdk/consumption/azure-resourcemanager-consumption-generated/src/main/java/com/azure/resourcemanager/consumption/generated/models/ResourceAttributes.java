@@ -22,6 +22,10 @@ public class ResourceAttributes {
     @JsonProperty(value = "sku", access = JsonProperty.Access.WRITE_ONLY)
     private String sku;
 
+    /** Creates an instance of ResourceAttributes class. */
+    public ResourceAttributes() {
+    }
+
     /**
      * Get the location property: Resource location.
      *

@@ -23,6 +23,10 @@ public final class ExperimentUpdateProperties {
     @JsonProperty(value = "enabledState")
     private State enabledState;
 
+    /** Creates an instance of ExperimentUpdateProperties class. */
+    public ExperimentUpdateProperties() {
+    }
+
     /**
      * Get the description property: The description of the intent or details of the Experiment.
      *

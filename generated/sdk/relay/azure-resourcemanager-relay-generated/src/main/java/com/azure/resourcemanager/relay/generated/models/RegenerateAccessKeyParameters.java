@@ -23,6 +23,10 @@ public final class RegenerateAccessKeyParameters {
     @JsonProperty(value = "key")
     private String key;
 
+    /** Creates an instance of RegenerateAccessKeyParameters class. */
+    public RegenerateAccessKeyParameters() {
+    }
+
     /**
      * Get the keyType property: The access key to regenerate.
      *

@@ -28,16 +28,6 @@ public final class GalleryApplicationsImpl implements GalleryApplications {
         this.serviceManager = serviceManager;
     }
 
-    public GalleryApplication get(String resourceGroupName, String galleryName, String galleryApplicationName) {
-        GalleryApplicationInner inner =
-            this.serviceClient().get(resourceGroupName, galleryName, galleryApplicationName);
-        if (inner != null) {
-            return new GalleryApplicationImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<GalleryApplication> getWithResponse(
         String resourceGroupName, String galleryName, String galleryApplicationName, Context context) {
         Response<GalleryApplicationInner> inner =
@@ -48,6 +38,16 @@ public final class GalleryApplicationsImpl implements GalleryApplications {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new GalleryApplicationImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public GalleryApplication get(String resourceGroupName, String galleryName, String galleryApplicationName) {
+        GalleryApplicationInner inner =
+            this.serviceClient().get(resourceGroupName, galleryName, galleryApplicationName);
+        if (inner != null) {
+            return new GalleryApplicationImpl(inner, this.manager());
         } else {
             return null;
         }

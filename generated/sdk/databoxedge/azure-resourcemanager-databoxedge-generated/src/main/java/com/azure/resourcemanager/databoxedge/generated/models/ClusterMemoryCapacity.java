@@ -64,6 +64,10 @@ public final class ClusterMemoryCapacity {
     @JsonProperty(value = "clusterMemoryUsedByVmsMb")
     private Double clusterMemoryUsedByVmsMb;
 
+    /** Creates an instance of ClusterMemoryCapacity class. */
+    public ClusterMemoryCapacity() {
+    }
+
     /**
      * Get the clusterFreeMemoryMb property: The free memory in the cluster in MB.
      *

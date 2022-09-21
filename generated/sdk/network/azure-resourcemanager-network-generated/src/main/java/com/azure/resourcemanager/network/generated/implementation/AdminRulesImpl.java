@@ -56,23 +56,6 @@ public final class AdminRulesImpl implements AdminRules {
         return Utils.mapPage(inner, inner1 -> new BaseAdminRuleImpl(inner1, this.manager()));
     }
 
-    public BaseAdminRule get(
-        String resourceGroupName,
-        String networkManagerName,
-        String configurationName,
-        String ruleCollectionName,
-        String ruleName) {
-        BaseAdminRuleInner inner =
-            this
-                .serviceClient()
-                .get(resourceGroupName, networkManagerName, configurationName, ruleCollectionName, ruleName);
-        if (inner != null) {
-            return new BaseAdminRuleImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<BaseAdminRule> getWithResponse(
         String resourceGroupName,
         String networkManagerName,
@@ -96,18 +79,16 @@ public final class AdminRulesImpl implements AdminRules {
         }
     }
 
-    public BaseAdminRule createOrUpdate(
+    public BaseAdminRule get(
         String resourceGroupName,
         String networkManagerName,
         String configurationName,
         String ruleCollectionName,
-        String ruleName,
-        BaseAdminRuleInner adminRule) {
+        String ruleName) {
         BaseAdminRuleInner inner =
             this
                 .serviceClient()
-                .createOrUpdate(
-                    resourceGroupName, networkManagerName, configurationName, ruleCollectionName, ruleName, adminRule);
+                .get(resourceGroupName, networkManagerName, configurationName, ruleCollectionName, ruleName);
         if (inner != null) {
             return new BaseAdminRuleImpl(inner, this.manager());
         } else {
@@ -140,6 +121,25 @@ public final class AdminRulesImpl implements AdminRules {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new BaseAdminRuleImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public BaseAdminRule createOrUpdate(
+        String resourceGroupName,
+        String networkManagerName,
+        String configurationName,
+        String ruleCollectionName,
+        String ruleName,
+        BaseAdminRuleInner adminRule) {
+        BaseAdminRuleInner inner =
+            this
+                .serviceClient()
+                .createOrUpdate(
+                    resourceGroupName, networkManagerName, configurationName, ruleCollectionName, ruleName, adminRule);
+        if (inner != null) {
+            return new BaseAdminRuleImpl(inner, this.manager());
         } else {
             return null;
         }

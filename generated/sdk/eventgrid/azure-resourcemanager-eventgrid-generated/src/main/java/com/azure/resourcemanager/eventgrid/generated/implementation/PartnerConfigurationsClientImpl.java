@@ -308,11 +308,11 @@ public final class PartnerConfigurationsClientImpl implements PartnerConfigurati
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of a partner configuration.
+     * @return properties of a partner configuration along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public PartnerConfigurationInner getByResourceGroup(String resourceGroupName) {
-        return getByResourceGroupAsync(resourceGroupName).block();
+    public Response<PartnerConfigurationInner> getByResourceGroupWithResponse(String resourceGroupName) {
+        return getByResourceGroupWithResponseAsync(resourceGroupName).block();
     }
 
     /**
@@ -331,6 +331,22 @@ public final class PartnerConfigurationsClientImpl implements PartnerConfigurati
     public Response<PartnerConfigurationInner> getByResourceGroupWithResponse(
         String resourceGroupName, Context context) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, context).block();
+    }
+
+    /**
+     * Get a partner configuration.
+     *
+     * <p>Get properties of a partner configuration.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return properties of a partner configuration.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public PartnerConfigurationInner getByResourceGroup(String resourceGroupName) {
+        return getByResourceGroupWithResponse(resourceGroupName, Context.NONE).getValue();
     }
 
     /**
@@ -1635,11 +1651,12 @@ public final class PartnerConfigurationsClientImpl implements PartnerConfigurati
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return partner configuration information.
+     * @return partner configuration information along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public PartnerConfigurationInner authorizePartner(String resourceGroupName, Partner partnerInfo) {
-        return authorizePartnerAsync(resourceGroupName, partnerInfo).block();
+    public Response<PartnerConfigurationInner> authorizePartnerWithResponse(
+        String resourceGroupName, Partner partnerInfo) {
+        return authorizePartnerWithResponseAsync(resourceGroupName, partnerInfo).block();
     }
 
     /**
@@ -1659,6 +1676,23 @@ public final class PartnerConfigurationsClientImpl implements PartnerConfigurati
     public Response<PartnerConfigurationInner> authorizePartnerWithResponse(
         String resourceGroupName, Partner partnerInfo, Context context) {
         return authorizePartnerWithResponseAsync(resourceGroupName, partnerInfo, context).block();
+    }
+
+    /**
+     * Authorize a partner.
+     *
+     * <p>Authorize a single partner either by partner registration immutable Id or by partner name.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription.
+     * @param partnerInfo The information of the partner to be authorized.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return partner configuration information.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public PartnerConfigurationInner authorizePartner(String resourceGroupName, Partner partnerInfo) {
+        return authorizePartnerWithResponse(resourceGroupName, partnerInfo, Context.NONE).getValue();
     }
 
     /**
@@ -1791,11 +1825,12 @@ public final class PartnerConfigurationsClientImpl implements PartnerConfigurati
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return partner configuration information.
+     * @return partner configuration information along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public PartnerConfigurationInner unauthorizePartner(String resourceGroupName, Partner partnerInfo) {
-        return unauthorizePartnerAsync(resourceGroupName, partnerInfo).block();
+    public Response<PartnerConfigurationInner> unauthorizePartnerWithResponse(
+        String resourceGroupName, Partner partnerInfo) {
+        return unauthorizePartnerWithResponseAsync(resourceGroupName, partnerInfo).block();
     }
 
     /**
@@ -1815,6 +1850,23 @@ public final class PartnerConfigurationsClientImpl implements PartnerConfigurati
     public Response<PartnerConfigurationInner> unauthorizePartnerWithResponse(
         String resourceGroupName, Partner partnerInfo, Context context) {
         return unauthorizePartnerWithResponseAsync(resourceGroupName, partnerInfo, context).block();
+    }
+
+    /**
+     * Unauthorize a partner.
+     *
+     * <p>Unauthorize a single partner either by partner registration immutable Id or by partner name.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription.
+     * @param partnerInfo The information of the partner to be unauthorized.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return partner configuration information.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public PartnerConfigurationInner unauthorizePartner(String resourceGroupName, Partner partnerInfo) {
+        return unauthorizePartnerWithResponse(resourceGroupName, partnerInfo, Context.NONE).getValue();
     }
 
     /**

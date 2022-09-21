@@ -22,6 +22,10 @@ public final class NetworkProperties {
     @JsonProperty(value = "privateLink")
     private PrivateLink privateLink;
 
+    /** Creates an instance of NetworkProperties class. */
+    public NetworkProperties() {
+    }
+
     /**
      * Get the resourceProviderConnection property: The direction for the resource provider connection.
      *

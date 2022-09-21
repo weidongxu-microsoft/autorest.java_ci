@@ -29,6 +29,10 @@ public final class StorageQueueEventSubscriptionDestinationProperties {
     @JsonProperty(value = "queueMessageTimeToLiveInSeconds")
     private Long queueMessageTimeToLiveInSeconds;
 
+    /** Creates an instance of StorageQueueEventSubscriptionDestinationProperties class. */
+    public StorageQueueEventSubscriptionDestinationProperties() {
+    }
+
     /**
      * Get the resourceId property: The Azure Resource ID of the storage account that contains the queue that is the
      * destination of an event subscription.

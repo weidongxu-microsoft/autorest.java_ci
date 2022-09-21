@@ -25,6 +25,10 @@ public final class PartnerAuthorization {
     @JsonProperty(value = "authorizedPartnersList")
     private List<Partner> authorizedPartnersList;
 
+    /** Creates an instance of PartnerAuthorization class. */
+    public PartnerAuthorization() {
+    }
+
     /**
      * Get the defaultMaximumExpirationTimeInDays property: Time used to validate the authorization expiration time for
      * each authorized partner. If DefaultMaximumExpirationTimeInDays is not specified, the default is 7 days.

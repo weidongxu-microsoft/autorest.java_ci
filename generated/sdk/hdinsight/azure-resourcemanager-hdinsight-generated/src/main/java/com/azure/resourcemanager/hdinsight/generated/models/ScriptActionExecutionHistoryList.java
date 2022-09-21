@@ -24,6 +24,10 @@ public final class ScriptActionExecutionHistoryList {
     @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
 
+    /** Creates an instance of ScriptActionExecutionHistoryList class. */
+    public ScriptActionExecutionHistoryList() {
+    }
+
     /**
      * Get the value property: The list of persisted script action details for the cluster.
      *

@@ -42,19 +42,6 @@ public interface PrivateDnsZoneGroups {
      * @param resourceGroupName The name of the resource group.
      * @param privateEndpointName The name of the private endpoint.
      * @param privateDnsZoneGroupName The name of the private dns zone group.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the private dns zone group resource by specified private dns zone group name.
-     */
-    PrivateDnsZoneGroup get(String resourceGroupName, String privateEndpointName, String privateDnsZoneGroupName);
-
-    /**
-     * Gets the private dns zone group resource by specified private dns zone group name.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param privateEndpointName The name of the private endpoint.
-     * @param privateDnsZoneGroupName The name of the private dns zone group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -63,6 +50,19 @@ public interface PrivateDnsZoneGroups {
      */
     Response<PrivateDnsZoneGroup> getWithResponse(
         String resourceGroupName, String privateEndpointName, String privateDnsZoneGroupName, Context context);
+
+    /**
+     * Gets the private dns zone group resource by specified private dns zone group name.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param privateEndpointName The name of the private endpoint.
+     * @param privateDnsZoneGroupName The name of the private dns zone group.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the private dns zone group resource by specified private dns zone group name.
+     */
+    PrivateDnsZoneGroup get(String resourceGroupName, String privateEndpointName, String privateDnsZoneGroupName);
 
     /**
      * Creates or updates a private dns zone group in the specified private endpoint.

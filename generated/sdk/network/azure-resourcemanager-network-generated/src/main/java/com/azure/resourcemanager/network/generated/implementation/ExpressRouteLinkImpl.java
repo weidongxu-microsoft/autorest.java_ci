@@ -50,6 +50,10 @@ public final class ExpressRouteLinkImpl implements ExpressRouteLink {
         return this.innerModel().rackId();
     }
 
+    public String coloLocation() {
+        return this.innerModel().coloLocation();
+    }
+
     public ExpressRouteLinkConnectorType connectorType() {
         return this.innerModel().connectorType();
     }

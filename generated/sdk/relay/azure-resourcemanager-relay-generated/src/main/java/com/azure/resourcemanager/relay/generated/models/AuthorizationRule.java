@@ -189,15 +189,6 @@ public interface AuthorizationRule {
     /**
      * Primary and secondary connection strings to the namespace.
      *
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return namespace/Relay Connection String.
-     */
-    AccessKeys listKeys();
-
-    /**
-     * Primary and secondary connection strings to the namespace.
-     *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -207,15 +198,13 @@ public interface AuthorizationRule {
     Response<AccessKeys> listKeysWithResponse(Context context);
 
     /**
-     * Regenerates the primary or secondary connection strings to the namespace.
+     * Primary and secondary connection strings to the namespace.
      *
-     * @param parameters Parameters supplied to regenerate authorization rule.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return namespace/Relay Connection String.
      */
-    AccessKeys regenerateKeys(RegenerateAccessKeyParameters parameters);
+    AccessKeys listKeys();
 
     /**
      * Regenerates the primary or secondary connection strings to the namespace.
@@ -228,4 +217,15 @@ public interface AuthorizationRule {
      * @return namespace/Relay Connection String along with {@link Response}.
      */
     Response<AccessKeys> regenerateKeysWithResponse(RegenerateAccessKeyParameters parameters, Context context);
+
+    /**
+     * Regenerates the primary or secondary connection strings to the namespace.
+     *
+     * @param parameters Parameters supplied to regenerate authorization rule.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return namespace/Relay Connection String.
+     */
+    AccessKeys regenerateKeys(RegenerateAccessKeyParameters parameters);
 }

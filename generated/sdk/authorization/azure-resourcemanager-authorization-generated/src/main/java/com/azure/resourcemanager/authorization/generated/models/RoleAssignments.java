@@ -87,37 +87,26 @@ public interface RoleAssignments {
      *
      * @param scope The scope of the role assignment to delete.
      * @param roleAssignmentName The name of the role assignment to delete.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return role Assignments.
-     */
-    RoleAssignment deleteByResourceGroup(String scope, String roleAssignmentName);
-
-    /**
-     * Deletes a role assignment.
-     *
-     * @param scope The scope of the role assignment to delete.
-     * @param roleAssignmentName The name of the role assignment to delete.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return role Assignments along with {@link Response}.
      */
-    Response<RoleAssignment> deleteWithResponse(String scope, String roleAssignmentName, Context context);
+    Response<RoleAssignment> deleteByResourceGroupWithResponse(
+        String scope, String roleAssignmentName, Context context);
 
     /**
-     * Get the specified role assignment.
+     * Deletes a role assignment.
      *
-     * @param scope The scope of the role assignment.
-     * @param roleAssignmentName The name of the role assignment to get.
+     * @param scope The scope of the role assignment to delete.
+     * @param roleAssignmentName The name of the role assignment to delete.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified role assignment.
+     * @return role Assignments.
      */
-    RoleAssignment get(String scope, String roleAssignmentName);
+    RoleAssignment deleteByResourceGroup(String scope, String roleAssignmentName);
 
     /**
      * Get the specified role assignment.
@@ -133,15 +122,16 @@ public interface RoleAssignments {
     Response<RoleAssignment> getWithResponse(String scope, String roleAssignmentName, Context context);
 
     /**
-     * Deletes a role assignment.
+     * Get the specified role assignment.
      *
-     * @param roleId The ID of the role assignment to delete.
+     * @param scope The scope of the role assignment.
+     * @param roleAssignmentName The name of the role assignment to get.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return role Assignments.
+     * @return the specified role assignment.
      */
-    RoleAssignment deleteById(String roleId);
+    RoleAssignment get(String scope, String roleAssignmentName);
 
     /**
      * Deletes a role assignment.
@@ -156,16 +146,15 @@ public interface RoleAssignments {
     Response<RoleAssignment> deleteByIdWithResponse(String roleId, Context context);
 
     /**
-     * Creates a role assignment by ID.
+     * Deletes a role assignment.
      *
-     * @param roleId The ID of the role assignment to create.
-     * @param parameters Parameters for the role assignment.
+     * @param roleId The ID of the role assignment to delete.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return role Assignments.
      */
-    RoleAssignment createById(String roleId, RoleAssignmentCreateParameters parameters);
+    RoleAssignment deleteById(String roleId);
 
     /**
      * Creates a role assignment by ID.
@@ -182,15 +171,16 @@ public interface RoleAssignments {
         String roleId, RoleAssignmentCreateParameters parameters, Context context);
 
     /**
-     * Gets a role assignment by ID.
+     * Creates a role assignment by ID.
      *
-     * @param roleId The ID of the role assignment to get.
+     * @param roleId The ID of the role assignment to create.
+     * @param parameters Parameters for the role assignment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a role assignment by ID.
+     * @return role Assignments.
      */
-    RoleAssignment getById(String roleId);
+    RoleAssignment createById(String roleId, RoleAssignmentCreateParameters parameters);
 
     /**
      * Gets a role assignment by ID.
@@ -203,6 +193,17 @@ public interface RoleAssignments {
      * @return a role assignment by ID along with {@link Response}.
      */
     Response<RoleAssignment> getByIdWithResponse(String roleId, Context context);
+
+    /**
+     * Gets a role assignment by ID.
+     *
+     * @param roleId The ID of the role assignment to get.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a role assignment by ID.
+     */
+    RoleAssignment getById(String roleId);
 
     /**
      * Gets all role assignments for the subscription.

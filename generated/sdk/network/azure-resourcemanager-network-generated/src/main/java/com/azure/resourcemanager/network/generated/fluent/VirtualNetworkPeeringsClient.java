@@ -80,21 +80,6 @@ public interface VirtualNetworkPeeringsClient {
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param virtualNetworkPeeringName The name of the virtual network peering.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified virtual network peering.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    VirtualNetworkPeeringInner get(
-        String resourceGroupName, String virtualNetworkName, String virtualNetworkPeeringName);
-
-    /**
-     * Gets the specified virtual network peering.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param virtualNetworkName The name of the virtual network.
-     * @param virtualNetworkPeeringName The name of the virtual network peering.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -104,6 +89,21 @@ public interface VirtualNetworkPeeringsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<VirtualNetworkPeeringInner> getWithResponse(
         String resourceGroupName, String virtualNetworkName, String virtualNetworkPeeringName, Context context);
+
+    /**
+     * Gets the specified virtual network peering.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param virtualNetworkName The name of the virtual network.
+     * @param virtualNetworkPeeringName The name of the virtual network peering.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified virtual network peering.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    VirtualNetworkPeeringInner get(
+        String resourceGroupName, String virtualNetworkName, String virtualNetworkPeeringName);
 
     /**
      * Creates or updates a peering in the specified virtual network.

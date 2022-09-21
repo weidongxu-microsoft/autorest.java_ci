@@ -38,18 +38,6 @@ public interface NetworkProfiles {
      *
      * @param resourceGroupName The name of the resource group.
      * @param networkProfileName The name of the public IP prefix.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network profile in a specified resource group.
-     */
-    NetworkProfile getByResourceGroup(String resourceGroupName, String networkProfileName);
-
-    /**
-     * Gets the specified network profile in a specified resource group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param networkProfileName The name of the public IP prefix.
      * @param expand Expands referenced resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -59,6 +47,18 @@ public interface NetworkProfiles {
      */
     Response<NetworkProfile> getByResourceGroupWithResponse(
         String resourceGroupName, String networkProfileName, String expand, Context context);
+
+    /**
+     * Gets the specified network profile in a specified resource group.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param networkProfileName The name of the public IP prefix.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified network profile in a specified resource group.
+     */
+    NetworkProfile getByResourceGroup(String resourceGroupName, String networkProfileName);
 
     /**
      * Gets all the network profiles in a subscription.

@@ -36,6 +36,10 @@ public final class RecordSetInner extends ProxyResource {
     @JsonProperty(value = "properties")
     private RecordSetProperties innerProperties;
 
+    /** Creates an instance of RecordSetInner class. */
+    public RecordSetInner() {
+    }
+
     /**
      * Get the etag property: The etag of the record set.
      *

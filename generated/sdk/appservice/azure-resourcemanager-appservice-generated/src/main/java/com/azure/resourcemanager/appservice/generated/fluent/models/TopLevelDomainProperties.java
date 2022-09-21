@@ -16,6 +16,10 @@ public final class TopLevelDomainProperties {
     @JsonProperty(value = "privacy")
     private Boolean privacy;
 
+    /** Creates an instance of TopLevelDomainProperties class. */
+    public TopLevelDomainProperties() {
+    }
+
     /**
      * Get the privacy property: If &lt;code&gt;true&lt;/code&gt;, then the top level domain supports domain privacy;
      * otherwise, &lt;code&gt;false&lt;/code&gt;.

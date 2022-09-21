@@ -265,14 +265,14 @@ public final class ActionGroupResourceImpl
         return this;
     }
 
-    public void enableReceiver(EnableRequest enableRequest) {
-        serviceManager.actionGroups().enableReceiver(resourceGroupName, actionGroupName, enableRequest);
-    }
-
     public Response<Void> enableReceiverWithResponse(EnableRequest enableRequest, Context context) {
         return serviceManager
             .actionGroups()
             .enableReceiverWithResponse(resourceGroupName, actionGroupName, enableRequest, context);
+    }
+
+    public void enableReceiver(EnableRequest enableRequest) {
+        serviceManager.actionGroups().enableReceiver(resourceGroupName, actionGroupName, enableRequest);
     }
 
     public ActionGroupResourceImpl withRegion(Region location) {

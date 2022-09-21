@@ -18,6 +18,10 @@ public final class PrivateEndpointConnectionInner extends ProxyResource {
     @JsonProperty(value = "properties")
     private PrivateEndpointConnectionProperties properties;
 
+    /** Creates an instance of PrivateEndpointConnectionInner class. */
+    public PrivateEndpointConnectionInner() {
+    }
+
     /**
      * Get the properties property: Describes the properties of an existing Private Endpoint connection to the Azure
      * Cognitive Search service.

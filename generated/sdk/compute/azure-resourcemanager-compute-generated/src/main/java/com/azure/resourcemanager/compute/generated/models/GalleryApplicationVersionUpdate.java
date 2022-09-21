@@ -18,6 +18,10 @@ public final class GalleryApplicationVersionUpdate extends UpdateResourceDefinit
     @JsonProperty(value = "properties")
     private GalleryApplicationVersionProperties innerProperties;
 
+    /** Creates an instance of GalleryApplicationVersionUpdate class. */
+    public GalleryApplicationVersionUpdate() {
+    }
+
     /**
      * Get the innerProperties property: Describes the properties of a gallery image version.
      *

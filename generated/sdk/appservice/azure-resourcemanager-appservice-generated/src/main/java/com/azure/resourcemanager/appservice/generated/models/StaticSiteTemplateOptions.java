@@ -40,6 +40,10 @@ public final class StaticSiteTemplateOptions {
     @JsonProperty(value = "isPrivate")
     private Boolean isPrivate;
 
+    /** Creates an instance of StaticSiteTemplateOptions class. */
+    public StaticSiteTemplateOptions() {
+    }
+
     /**
      * Get the templateRepositoryUrl property: URL of the template repository. The newly generated repository will be
      * based on this one.

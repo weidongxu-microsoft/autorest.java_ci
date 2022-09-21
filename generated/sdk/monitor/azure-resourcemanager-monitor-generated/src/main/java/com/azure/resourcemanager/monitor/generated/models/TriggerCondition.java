@@ -29,6 +29,10 @@ public final class TriggerCondition {
     @JsonProperty(value = "metricTrigger")
     private LogMetricTrigger metricTrigger;
 
+    /** Creates an instance of TriggerCondition class. */
+    public TriggerCondition() {
+    }
+
     /**
      * Get the thresholdOperator property: Evaluation operation for rule - 'GreaterThan' or 'LessThan.
      *

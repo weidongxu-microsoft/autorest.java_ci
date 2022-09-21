@@ -28,17 +28,6 @@ public final class ConnectivityConfigurationsImpl implements ConnectivityConfigu
         this.serviceManager = serviceManager;
     }
 
-    public ConnectivityConfiguration get(
-        String resourceGroupName, String networkManagerName, String configurationName) {
-        ConnectivityConfigurationInner inner =
-            this.serviceClient().get(resourceGroupName, networkManagerName, configurationName);
-        if (inner != null) {
-            return new ConnectivityConfigurationImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<ConnectivityConfiguration> getWithResponse(
         String resourceGroupName, String networkManagerName, String configurationName, Context context) {
         Response<ConnectivityConfigurationInner> inner =
@@ -49,6 +38,17 @@ public final class ConnectivityConfigurationsImpl implements ConnectivityConfigu
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new ConnectivityConfigurationImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public ConnectivityConfiguration get(
+        String resourceGroupName, String networkManagerName, String configurationName) {
+        ConnectivityConfigurationInner inner =
+            this.serviceClient().get(resourceGroupName, networkManagerName, configurationName);
+        if (inner != null) {
+            return new ConnectivityConfigurationImpl(inner, this.manager());
         } else {
             return null;
         }

@@ -19,16 +19,6 @@ public interface ExpressRouteGatewaysClient {
     /**
      * Lists ExpressRoute gateways under a given subscription.
      *
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of ExpressRoute gateways.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    ExpressRouteGatewayListInner listBySubscription();
-
-    /**
-     * Lists ExpressRoute gateways under a given subscription.
-     *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -39,16 +29,14 @@ public interface ExpressRouteGatewaysClient {
     Response<ExpressRouteGatewayListInner> listBySubscriptionWithResponse(Context context);
 
     /**
-     * Lists ExpressRoute gateways in a given resource group.
+     * Lists ExpressRoute gateways under a given subscription.
      *
-     * @param resourceGroupName The name of the resource group.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return list of ExpressRoute gateways.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    ExpressRouteGatewayListInner listByResourceGroup(String resourceGroupName);
+    ExpressRouteGatewayListInner listBySubscription();
 
     /**
      * Lists ExpressRoute gateways in a given resource group.
@@ -64,6 +52,18 @@ public interface ExpressRouteGatewaysClient {
     Response<ExpressRouteGatewayListInner> listByResourceGroupWithResponse(String resourceGroupName, Context context);
 
     /**
+     * Lists ExpressRoute gateways in a given resource group.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return list of ExpressRoute gateways.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    ExpressRouteGatewayListInner listByResourceGroup(String resourceGroupName);
+
+    /**
      * Creates or updates a ExpressRoute gateway in a specified resource group.
      *
      * @param resourceGroupName The name of the resource group.
@@ -202,19 +202,6 @@ public interface ExpressRouteGatewaysClient {
         String expressRouteGatewayName,
         TagsObject expressRouteGatewayParameters,
         Context context);
-
-    /**
-     * Fetches the details of a ExpressRoute gateway in a resource group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param expressRouteGatewayName The name of the ExpressRoute gateway.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return expressRoute gateway resource.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    ExpressRouteGatewayInner getByResourceGroup(String resourceGroupName, String expressRouteGatewayName);
 
     /**
      * Fetches the details of a ExpressRoute gateway in a resource group.
@@ -230,6 +217,19 @@ public interface ExpressRouteGatewaysClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ExpressRouteGatewayInner> getByResourceGroupWithResponse(
         String resourceGroupName, String expressRouteGatewayName, Context context);
+
+    /**
+     * Fetches the details of a ExpressRoute gateway in a resource group.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param expressRouteGatewayName The name of the ExpressRoute gateway.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return expressRoute gateway resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    ExpressRouteGatewayInner getByResourceGroup(String resourceGroupName, String expressRouteGatewayName);
 
     /**
      * Deletes the specified ExpressRoute gateway in a resource group. An ExpressRoute gateway resource can only be

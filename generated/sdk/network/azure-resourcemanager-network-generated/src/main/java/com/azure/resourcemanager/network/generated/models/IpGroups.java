@@ -15,19 +15,6 @@ public interface IpGroups {
      *
      * @param resourceGroupName The name of the resource group.
      * @param ipGroupsName The name of the ipGroups.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified ipGroups.
-     */
-    IpGroup getByResourceGroup(String resourceGroupName, String ipGroupsName);
-
-    /**
-     * Gets the specified ipGroups.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param ipGroupsName The name of the ipGroups.
      * @param expand Expands resourceIds (of Firewalls/Network Security Groups etc.) back referenced by the IpGroups
      *     resource.
      * @param context The context to associate with this operation.
@@ -39,6 +26,19 @@ public interface IpGroups {
      */
     Response<IpGroup> getByResourceGroupWithResponse(
         String resourceGroupName, String ipGroupsName, String expand, Context context);
+
+    /**
+     * Gets the specified ipGroups.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param ipGroupsName The name of the ipGroups.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified ipGroups.
+     */
+    IpGroup getByResourceGroup(String resourceGroupName, String ipGroupsName);
 
     /**
      * Deletes the specified ipGroups.

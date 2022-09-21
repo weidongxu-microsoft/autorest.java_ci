@@ -35,6 +35,10 @@ public final class ExportDeliveryDestination {
     @JsonProperty(value = "rootFolderPath")
     private String rootFolderPath;
 
+    /** Creates an instance of ExportDeliveryDestination class. */
+    public ExportDeliveryDestination() {
+    }
+
     /**
      * Get the resourceId property: The resource id of the storage account where exports will be delivered.
      *

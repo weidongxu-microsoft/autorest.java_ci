@@ -17,20 +17,6 @@ public interface PartnerTopics {
      *
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerTopicName Name of the partner topic.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of a partner topic.
-     */
-    PartnerTopic getByResourceGroup(String resourceGroupName, String partnerTopicName);
-
-    /**
-     * Get a partner topic.
-     *
-     * <p>Get properties of a partner topic.
-     *
-     * @param resourceGroupName The name of the resource group within the user's subscription.
-     * @param partnerTopicName Name of the partner topic.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -39,6 +25,20 @@ public interface PartnerTopics {
      */
     Response<PartnerTopic> getByResourceGroupWithResponse(
         String resourceGroupName, String partnerTopicName, Context context);
+
+    /**
+     * Get a partner topic.
+     *
+     * <p>Get properties of a partner topic.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription.
+     * @param partnerTopicName Name of the partner topic.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return properties of a partner topic.
+     */
+    PartnerTopic getByResourceGroup(String resourceGroupName, String partnerTopicName);
 
     /**
      * Delete a partner topic.
@@ -142,20 +142,6 @@ public interface PartnerTopics {
      *
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerTopicName Name of the partner topic.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return event Grid Partner Topic.
-     */
-    PartnerTopic activate(String resourceGroupName, String partnerTopicName);
-
-    /**
-     * Activate a partner topic.
-     *
-     * <p>Activate a newly created partner topic.
-     *
-     * @param resourceGroupName The name of the resource group within the user's subscription.
-     * @param partnerTopicName Name of the partner topic.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -165,9 +151,9 @@ public interface PartnerTopics {
     Response<PartnerTopic> activateWithResponse(String resourceGroupName, String partnerTopicName, Context context);
 
     /**
-     * Deactivate a partner topic.
+     * Activate a partner topic.
      *
-     * <p>Deactivate specific partner topic.
+     * <p>Activate a newly created partner topic.
      *
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerTopicName Name of the partner topic.
@@ -176,7 +162,7 @@ public interface PartnerTopics {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return event Grid Partner Topic.
      */
-    PartnerTopic deactivate(String resourceGroupName, String partnerTopicName);
+    PartnerTopic activate(String resourceGroupName, String partnerTopicName);
 
     /**
      * Deactivate a partner topic.
@@ -192,6 +178,20 @@ public interface PartnerTopics {
      * @return event Grid Partner Topic along with {@link Response}.
      */
     Response<PartnerTopic> deactivateWithResponse(String resourceGroupName, String partnerTopicName, Context context);
+
+    /**
+     * Deactivate a partner topic.
+     *
+     * <p>Deactivate specific partner topic.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription.
+     * @param partnerTopicName Name of the partner topic.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return event Grid Partner Topic.
+     */
+    PartnerTopic deactivate(String resourceGroupName, String partnerTopicName);
 
     /**
      * Get a partner topic.

@@ -28,6 +28,10 @@ public final class LinuxOperatingSystemProfile {
     @JsonProperty(value = "sshProfile")
     private SshProfile sshProfile;
 
+    /** Creates an instance of LinuxOperatingSystemProfile class. */
+    public LinuxOperatingSystemProfile() {
+    }
+
     /**
      * Get the username property: The username.
      *

@@ -22,6 +22,10 @@ public final class AutoscaleCapacity {
     @JsonProperty(value = "maxInstanceCount")
     private Integer maxInstanceCount;
 
+    /** Creates an instance of AutoscaleCapacity class. */
+    public AutoscaleCapacity() {
+    }
+
     /**
      * Get the minInstanceCount property: The minimum instance count of the cluster.
      *

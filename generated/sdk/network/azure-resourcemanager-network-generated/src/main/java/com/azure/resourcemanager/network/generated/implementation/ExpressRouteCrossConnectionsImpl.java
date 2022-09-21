@@ -56,16 +56,6 @@ public final class ExpressRouteCrossConnectionsImpl implements ExpressRouteCross
         return Utils.mapPage(inner, inner1 -> new ExpressRouteCrossConnectionImpl(inner1, this.manager()));
     }
 
-    public ExpressRouteCrossConnection getByResourceGroup(String resourceGroupName, String crossConnectionName) {
-        ExpressRouteCrossConnectionInner inner =
-            this.serviceClient().getByResourceGroup(resourceGroupName, crossConnectionName);
-        if (inner != null) {
-            return new ExpressRouteCrossConnectionImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<ExpressRouteCrossConnection> getByResourceGroupWithResponse(
         String resourceGroupName, String crossConnectionName, Context context) {
         Response<ExpressRouteCrossConnectionInner> inner =
@@ -76,6 +66,16 @@ public final class ExpressRouteCrossConnectionsImpl implements ExpressRouteCross
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new ExpressRouteCrossConnectionImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public ExpressRouteCrossConnection getByResourceGroup(String resourceGroupName, String crossConnectionName) {
+        ExpressRouteCrossConnectionInner inner =
+            this.serviceClient().getByResourceGroup(resourceGroupName, crossConnectionName);
+        if (inner != null) {
+            return new ExpressRouteCrossConnectionImpl(inner, this.manager());
         } else {
             return null;
         }

@@ -29,6 +29,10 @@ public final class JobErrorDetails {
     @JsonProperty(value = "message", access = JsonProperty.Access.WRITE_ONLY)
     private String message;
 
+    /** Creates an instance of JobErrorDetails class. */
+    public JobErrorDetails() {
+    }
+
     /**
      * Get the errorDetails property: The error details.
      *

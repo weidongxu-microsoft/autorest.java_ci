@@ -166,11 +166,11 @@ public final class TagsClientImpl implements TagsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all available tag keys for the defined scope.
+     * @return all available tag keys for the defined scope along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public TagsResultInner get(String scope) {
-        return getAsync(scope).block();
+    public Response<TagsResultInner> getWithResponse(String scope) {
+        return getWithResponseAsync(scope).block();
     }
 
     /**
@@ -193,5 +193,26 @@ public final class TagsClientImpl implements TagsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<TagsResultInner> getWithResponse(String scope, Context context) {
         return getWithResponseAsync(scope, context).block();
+    }
+
+    /**
+     * Get all available tag keys for the defined scope.
+     *
+     * @param scope The scope associated with tags operations. This includes '/subscriptions/{subscriptionId}/' for
+     *     subscription scope, '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resourceGroup
+     *     scope, '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account scope,
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/departments/{departmentId}' for Department
+     *     scope,
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/enrollmentAccounts/{enrollmentAccountId}'
+     *     for EnrollmentAccount scope and '/providers/Microsoft.Management/managementGroups/{managementGroupId}' for
+     *     Management Group scope..
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return all available tag keys for the defined scope.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public TagsResultInner get(String scope) {
+        return getWithResponse(scope, Context.NONE).getValue();
     }
 }

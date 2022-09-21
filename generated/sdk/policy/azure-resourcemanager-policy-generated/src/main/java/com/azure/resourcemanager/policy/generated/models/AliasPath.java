@@ -35,6 +35,10 @@ public final class AliasPath {
     @JsonProperty(value = "metadata", access = JsonProperty.Access.WRITE_ONLY)
     private AliasPathMetadata metadata;
 
+    /** Creates an instance of AliasPath class. */
+    public AliasPath() {
+    }
+
     /**
      * Get the path property: The path of an alias.
      *

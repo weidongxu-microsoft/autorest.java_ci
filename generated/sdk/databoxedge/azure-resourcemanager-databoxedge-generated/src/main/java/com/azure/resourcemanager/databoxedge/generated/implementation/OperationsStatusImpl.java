@@ -27,15 +27,6 @@ public final class OperationsStatusImpl implements OperationsStatus {
         this.serviceManager = serviceManager;
     }
 
-    public Job get(String deviceName, String name, String resourceGroupName) {
-        JobInner inner = this.serviceClient().get(deviceName, name, resourceGroupName);
-        if (inner != null) {
-            return new JobImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<Job> getWithResponse(String deviceName, String name, String resourceGroupName, Context context) {
         Response<JobInner> inner = this.serviceClient().getWithResponse(deviceName, name, resourceGroupName, context);
         if (inner != null) {
@@ -44,6 +35,15 @@ public final class OperationsStatusImpl implements OperationsStatus {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new JobImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public Job get(String deviceName, String name, String resourceGroupName) {
+        JobInner inner = this.serviceClient().get(deviceName, name, resourceGroupName);
+        if (inner != null) {
+            return new JobImpl(inner, this.manager());
         } else {
             return null;
         }

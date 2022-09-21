@@ -60,6 +60,20 @@ public interface NetworkManagementClient {
     ApplicationGatewayPrivateEndpointConnectionsClient getApplicationGatewayPrivateEndpointConnections();
 
     /**
+     * Gets the ApplicationGatewayWafDynamicManifestsDefaultsClient object to access its operations.
+     *
+     * @return the ApplicationGatewayWafDynamicManifestsDefaultsClient object.
+     */
+    ApplicationGatewayWafDynamicManifestsDefaultsClient getApplicationGatewayWafDynamicManifestsDefaults();
+
+    /**
+     * Gets the ApplicationGatewayWafDynamicManifestsClient object to access its operations.
+     *
+     * @return the ApplicationGatewayWafDynamicManifestsClient object.
+     */
+    ApplicationGatewayWafDynamicManifestsClient getApplicationGatewayWafDynamicManifests();
+
+    /**
      * Gets the ApplicationSecurityGroupsClient object to access its operations.
      *
      * @return the ApplicationSecurityGroupsClient object.
@@ -254,6 +268,13 @@ public interface NetworkManagementClient {
      * @return the ExpressRoutePortAuthorizationsClient object.
      */
     ExpressRoutePortAuthorizationsClient getExpressRoutePortAuthorizations();
+
+    /**
+     * Gets the ExpressRouteProviderPortsLocationsClient object to access its operations.
+     *
+     * @return the ExpressRouteProviderPortsLocationsClient object.
+     */
+    ExpressRouteProviderPortsLocationsClient getExpressRouteProviderPortsLocations();
 
     /**
      * Gets the FirewallPoliciesClient object to access its operations.
@@ -809,6 +830,13 @@ public interface NetworkManagementClient {
     VirtualHubsClient getVirtualHubs();
 
     /**
+     * Gets the RouteMapsClient object to access its operations.
+     *
+     * @return the RouteMapsClient object.
+     */
+    RouteMapsClient getRouteMaps();
+
+    /**
      * Gets the HubVirtualNetworkConnectionsClient object to access its operations.
      *
      * @return the HubVirtualNetworkConnectionsClient object.
@@ -921,9 +949,9 @@ public interface NetworkManagementClient {
     WebApplicationFirewallPoliciesClient getWebApplicationFirewallPolicies();
 
     /**
-     * Gets the ExpressRouteProviderPortsLocationsClient object to access its operations.
+     * Gets the VipSwapsClient object to access its operations.
      *
-     * @return the ExpressRouteProviderPortsLocationsClient object.
+     * @return the VipSwapsClient object.
      */
-    ExpressRouteProviderPortsLocationsClient getExpressRouteProviderPortsLocations();
+    VipSwapsClient getVipSwaps();
 }

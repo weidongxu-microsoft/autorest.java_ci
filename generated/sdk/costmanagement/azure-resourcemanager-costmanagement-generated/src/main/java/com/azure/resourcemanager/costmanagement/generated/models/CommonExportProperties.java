@@ -29,6 +29,10 @@ public class CommonExportProperties {
     @JsonProperty(value = "definition", required = true)
     private ExportDefinition definition;
 
+    /** Creates an instance of CommonExportProperties class. */
+    public CommonExportProperties() {
+    }
+
     /**
      * Get the format property: The format of the export being delivered.
      *

@@ -60,20 +60,6 @@ public interface AppServiceCertificateOrdersClient {
      * <p>Description for Validate information for a certificate order.
      *
      * @param appServiceCertificateOrder Information for a certificate order.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    void validatePurchaseInformation(AppServiceCertificateOrderInner appServiceCertificateOrder);
-
-    /**
-     * Validate information for a certificate order.
-     *
-     * <p>Description for Validate information for a certificate order.
-     *
-     * @param appServiceCertificateOrder Information for a certificate order.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -84,6 +70,20 @@ public interface AppServiceCertificateOrdersClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> validatePurchaseInformationWithResponse(
         AppServiceCertificateOrderInner appServiceCertificateOrder, Context context);
+
+    /**
+     * Validate information for a certificate order.
+     *
+     * <p>Description for Validate information for a certificate order.
+     *
+     * @param appServiceCertificateOrder Information for a certificate order.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    void validatePurchaseInformation(AppServiceCertificateOrderInner appServiceCertificateOrder);
 
     /**
      * Get certificate orders in a resource group.
@@ -123,22 +123,6 @@ public interface AppServiceCertificateOrdersClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order..
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return sSL certificate purchase order.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    AppServiceCertificateOrderInner getByResourceGroup(String resourceGroupName, String certificateOrderName);
-
-    /**
-     * Get a certificate order.
-     *
-     * <p>Description for Get a certificate order.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param certificateOrderName Name of the certificate order..
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -151,6 +135,22 @@ public interface AppServiceCertificateOrdersClient {
         String resourceGroupName, String certificateOrderName, Context context);
 
     /**
+     * Get a certificate order.
+     *
+     * <p>Description for Get a certificate order.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param certificateOrderName Name of the certificate order..
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return sSL certificate purchase order.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    AppServiceCertificateOrderInner getByResourceGroup(String resourceGroupName, String certificateOrderName);
+
+    /**
      * Create or update a certificate purchase order.
      *
      * <p>Description for Create or update a certificate purchase order.
@@ -233,21 +233,6 @@ public interface AppServiceCertificateOrdersClient {
         String certificateOrderName,
         AppServiceCertificateOrderInner certificateDistinguishedName,
         Context context);
-
-    /**
-     * Delete an existing certificate order.
-     *
-     * <p>Description for Delete an existing certificate order.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param certificateOrderName Name of the certificate order.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    void delete(String resourceGroupName, String certificateOrderName);
 
     /**
      * Delete an existing certificate order.
@@ -267,24 +252,19 @@ public interface AppServiceCertificateOrdersClient {
     Response<Void> deleteWithResponse(String resourceGroupName, String certificateOrderName, Context context);
 
     /**
-     * Create or update a certificate purchase order.
+     * Delete an existing certificate order.
      *
-     * <p>Description for Create or update a certificate purchase order.
+     * <p>Description for Delete an existing certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
-     * @param certificateDistinguishedName Distinguished name to use for the certificate order.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return sSL certificate purchase order.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    AppServiceCertificateOrderInner update(
-        String resourceGroupName,
-        String certificateOrderName,
-        AppServiceCertificateOrderPatchResource certificateDistinguishedName);
+    void delete(String resourceGroupName, String certificateOrderName);
 
     /**
      * Create or update a certificate purchase order.
@@ -307,6 +287,26 @@ public interface AppServiceCertificateOrdersClient {
         String certificateOrderName,
         AppServiceCertificateOrderPatchResource certificateDistinguishedName,
         Context context);
+
+    /**
+     * Create or update a certificate purchase order.
+     *
+     * <p>Description for Create or update a certificate purchase order.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param certificateOrderName Name of the certificate order.
+     * @param certificateDistinguishedName Distinguished name to use for the certificate order.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return sSL certificate purchase order.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    AppServiceCertificateOrderInner update(
+        String resourceGroupName,
+        String certificateOrderName,
+        AppServiceCertificateOrderPatchResource certificateDistinguishedName);
 
     /**
      * List all certificates associated with a certificate order.
@@ -351,24 +351,6 @@ public interface AppServiceCertificateOrdersClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
      * @param name Name of the certificate.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return key Vault container ARM resource for a certificate that is purchased through Azure.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    AppServiceCertificateResourceInner getCertificate(
-        String resourceGroupName, String certificateOrderName, String name);
-
-    /**
-     * Get the certificate associated with a certificate order.
-     *
-     * <p>Description for Get the certificate associated with a certificate order.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param certificateOrderName Name of the certificate order.
-     * @param name Name of the certificate.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -380,6 +362,24 @@ public interface AppServiceCertificateOrdersClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<AppServiceCertificateResourceInner> getCertificateWithResponse(
         String resourceGroupName, String certificateOrderName, String name, Context context);
+
+    /**
+     * Get the certificate associated with a certificate order.
+     *
+     * <p>Description for Get the certificate associated with a certificate order.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param certificateOrderName Name of the certificate order.
+     * @param name Name of the certificate.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return key Vault container ARM resource for a certificate that is purchased through Azure.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    AppServiceCertificateResourceInner getCertificate(
+        String resourceGroupName, String certificateOrderName, String name);
 
     /**
      * Creates or updates a certificate and associates with key vault secret.
@@ -485,22 +485,6 @@ public interface AppServiceCertificateOrdersClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
      * @param name Name of the certificate.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    void deleteCertificate(String resourceGroupName, String certificateOrderName, String name);
-
-    /**
-     * Delete the certificate associated with a certificate order.
-     *
-     * <p>Description for Delete the certificate associated with a certificate order.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param certificateOrderName Name of the certificate order.
-     * @param name Name of the certificate.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -513,26 +497,20 @@ public interface AppServiceCertificateOrdersClient {
         String resourceGroupName, String certificateOrderName, String name, Context context);
 
     /**
-     * Creates or updates a certificate and associates with key vault secret.
+     * Delete the certificate associated with a certificate order.
      *
-     * <p>Description for Creates or updates a certificate and associates with key vault secret.
+     * <p>Description for Delete the certificate associated with a certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
      * @param name Name of the certificate.
-     * @param keyVaultCertificate Key vault certificate resource Id.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return key Vault container ARM resource for a certificate that is purchased through Azure.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    AppServiceCertificateResourceInner updateCertificate(
-        String resourceGroupName,
-        String certificateOrderName,
-        String name,
-        AppServiceCertificatePatchResource keyVaultCertificate);
+    void deleteCertificate(String resourceGroupName, String certificateOrderName, String name);
 
     /**
      * Creates or updates a certificate and associates with key vault secret.
@@ -560,23 +538,26 @@ public interface AppServiceCertificateOrdersClient {
         Context context);
 
     /**
-     * Reissue an existing certificate order.
+     * Creates or updates a certificate and associates with key vault secret.
      *
-     * <p>Description for Reissue an existing certificate order.
+     * <p>Description for Creates or updates a certificate and associates with key vault secret.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
-     * @param reissueCertificateOrderRequest Parameters for the reissue.
+     * @param name Name of the certificate.
+     * @param keyVaultCertificate Key vault certificate resource Id.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return key Vault container ARM resource for a certificate that is purchased through Azure.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    void reissue(
+    AppServiceCertificateResourceInner updateCertificate(
         String resourceGroupName,
         String certificateOrderName,
-        ReissueCertificateOrderRequest reissueCertificateOrderRequest);
+        String name,
+        AppServiceCertificatePatchResource keyVaultCertificate);
 
     /**
      * Reissue an existing certificate order.
@@ -601,23 +582,23 @@ public interface AppServiceCertificateOrdersClient {
         Context context);
 
     /**
-     * Renew an existing certificate order.
+     * Reissue an existing certificate order.
      *
-     * <p>Description for Renew an existing certificate order.
+     * <p>Description for Reissue an existing certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
-     * @param renewCertificateOrderRequest Renew parameters.
+     * @param reissueCertificateOrderRequest Parameters for the reissue.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    void renew(
+    void reissue(
         String resourceGroupName,
         String certificateOrderName,
-        RenewCertificateOrderRequest renewCertificateOrderRequest);
+        ReissueCertificateOrderRequest reissueCertificateOrderRequest);
 
     /**
      * Renew an existing certificate order.
@@ -642,19 +623,23 @@ public interface AppServiceCertificateOrdersClient {
         Context context);
 
     /**
-     * Resend certificate email.
+     * Renew an existing certificate order.
      *
-     * <p>Description for Resend certificate email.
+     * <p>Description for Renew an existing certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
+     * @param renewCertificateOrderRequest Renew parameters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    void resendEmail(String resourceGroupName, String certificateOrderName);
+    void renew(
+        String resourceGroupName,
+        String certificateOrderName,
+        RenewCertificateOrderRequest renewCertificateOrderRequest);
 
     /**
      * Resend certificate email.
@@ -674,21 +659,19 @@ public interface AppServiceCertificateOrdersClient {
     Response<Void> resendEmailWithResponse(String resourceGroupName, String certificateOrderName, Context context);
 
     /**
-     * Resend domain verification email to customer for this certificate order
+     * Resend certificate email.
      *
-     * <p>Resend domain verification ownership email containing steps on how to verify a domain for a given certificate
-     * order.
+     * <p>Description for Resend certificate email.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
-     * @param nameIdentifier Email address.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    void resendRequestEmails(String resourceGroupName, String certificateOrderName, NameIdentifierInner nameIdentifier);
+    void resendEmail(String resourceGroupName, String certificateOrderName);
 
     /**
      * Resend domain verification email to customer for this certificate order
@@ -711,28 +694,21 @@ public interface AppServiceCertificateOrdersClient {
         String resourceGroupName, String certificateOrderName, NameIdentifierInner nameIdentifier, Context context);
 
     /**
-     * This method is used to obtain the site seal information for an issued certificate.
+     * Resend domain verification email to customer for this certificate order
      *
-     * <p>This method is used to obtain the site seal information for an issued certificate. A site seal is a graphic
-     * that the certificate purchaser can embed on their web site to show their visitors information about their SSL
-     * certificate. If a web site visitor clicks on the site seal image, a pop-up page is displayed that contains
-     * detailed information about the SSL certificate. The site seal token is used to link the site seal graphic image
-     * to the appropriate certificate details pop-up page display when a user clicks on the site seal. The site seal
-     * images are expected to be static images and hosted by the reseller, to minimize delays for customer page load
-     * times.
+     * <p>Resend domain verification ownership email containing steps on how to verify a domain for a given certificate
+     * order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
-     * @param siteSealRequest Site seal request.
+     * @param nameIdentifier Email address.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return site seal.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    SiteSealInner retrieveSiteSeal(
-        String resourceGroupName, String certificateOrderName, SiteSealRequest siteSealRequest);
+    void resendRequestEmails(String resourceGroupName, String certificateOrderName, NameIdentifierInner nameIdentifier);
 
     /**
      * This method is used to obtain the site seal information for an issued certificate.
@@ -760,19 +736,28 @@ public interface AppServiceCertificateOrdersClient {
         String resourceGroupName, String certificateOrderName, SiteSealRequest siteSealRequest, Context context);
 
     /**
-     * Verify domain ownership for this certificate order.
+     * This method is used to obtain the site seal information for an issued certificate.
      *
-     * <p>Description for Verify domain ownership for this certificate order.
+     * <p>This method is used to obtain the site seal information for an issued certificate. A site seal is a graphic
+     * that the certificate purchaser can embed on their web site to show their visitors information about their SSL
+     * certificate. If a web site visitor clicks on the site seal image, a pop-up page is displayed that contains
+     * detailed information about the SSL certificate. The site seal token is used to link the site seal graphic image
+     * to the appropriate certificate details pop-up page display when a user clicks on the site seal. The site seal
+     * images are expected to be static images and hosted by the reseller, to minimize delays for customer page load
+     * times.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
+     * @param siteSealRequest Site seal request.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return site seal.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    void verifyDomainOwnership(String resourceGroupName, String certificateOrderName);
+    SiteSealInner retrieveSiteSeal(
+        String resourceGroupName, String certificateOrderName, SiteSealRequest siteSealRequest);
 
     /**
      * Verify domain ownership for this certificate order.
@@ -793,20 +778,19 @@ public interface AppServiceCertificateOrdersClient {
         String resourceGroupName, String certificateOrderName, Context context);
 
     /**
-     * Retrieve the list of certificate actions.
+     * Verify domain ownership for this certificate order.
      *
-     * <p>Description for Retrieve the list of certificate actions.
+     * <p>Description for Verify domain ownership for this certificate order.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the certificate order.
+     * @param certificateOrderName Name of the certificate order.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of CertificateOrderAction.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    List<CertificateOrderActionInner> retrieveCertificateActions(String resourceGroupName, String name);
+    void verifyDomainOwnership(String resourceGroupName, String certificateOrderName);
 
     /**
      * Retrieve the list of certificate actions.
@@ -827,9 +811,9 @@ public interface AppServiceCertificateOrdersClient {
         String resourceGroupName, String name, Context context);
 
     /**
-     * Retrieve email history.
+     * Retrieve the list of certificate actions.
      *
-     * <p>Description for Retrieve email history.
+     * <p>Description for Retrieve the list of certificate actions.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate order.
@@ -837,10 +821,10 @@ public interface AppServiceCertificateOrdersClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of CertificateEmail.
+     * @return array of CertificateOrderAction.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    List<CertificateEmailInner> retrieveCertificateEmailHistory(String resourceGroupName, String name);
+    List<CertificateOrderActionInner> retrieveCertificateActions(String resourceGroupName, String name);
 
     /**
      * Retrieve email history.
@@ -859,4 +843,20 @@ public interface AppServiceCertificateOrdersClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<List<CertificateEmailInner>> retrieveCertificateEmailHistoryWithResponse(
         String resourceGroupName, String name, Context context);
+
+    /**
+     * Retrieve email history.
+     *
+     * <p>Description for Retrieve email history.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the certificate order.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return array of CertificateEmail.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    List<CertificateEmailInner> retrieveCertificateEmailHistory(String resourceGroupName, String name);
 }

@@ -96,6 +96,10 @@ public final class SearchServiceProperties {
     @JsonProperty(value = "sharedPrivateLinkResources", access = JsonProperty.Access.WRITE_ONLY)
     private List<SharedPrivateLinkResourceInner> sharedPrivateLinkResources;
 
+    /** Creates an instance of SearchServiceProperties class. */
+    public SearchServiceProperties() {
+    }
+
     /**
      * Get the replicaCount property: The number of replicas in the search service. If specified, it must be a value
      * between 1 and 12 inclusive for standard SKUs or between 1 and 3 inclusive for basic SKU.

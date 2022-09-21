@@ -34,6 +34,10 @@ public final class ReservationDetailInner extends ProxyResource {
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, String> tags;
 
+    /** Creates an instance of ReservationDetailInner class. */
+    public ReservationDetailInner() {
+    }
+
     /**
      * Get the innerProperties property: The properties of the reservation detail.
      *

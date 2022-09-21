@@ -19,6 +19,10 @@ public final class PreconfiguredEndpointInner extends Resource {
     @JsonProperty(value = "properties")
     private PreconfiguredEndpointProperties innerProperties;
 
+    /** Creates an instance of PreconfiguredEndpointInner class. */
+    public PreconfiguredEndpointInner() {
+    }
+
     /**
      * Get the innerProperties property: The properties of a preconfiguredEndpoint.
      *

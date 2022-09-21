@@ -47,22 +47,6 @@ public final class WorkflowRunActionScopeRepetitionsImpl implements WorkflowRunA
         return Utils.mapPage(inner, inner1 -> new WorkflowRunActionRepetitionDefinitionImpl(inner1, this.manager()));
     }
 
-    public WorkflowRunActionRepetitionDefinition get(
-        String resourceGroupName,
-        String name,
-        String workflowName,
-        String runName,
-        String actionName,
-        String repetitionName) {
-        WorkflowRunActionRepetitionDefinitionInner inner =
-            this.serviceClient().get(resourceGroupName, name, workflowName, runName, actionName, repetitionName);
-        if (inner != null) {
-            return new WorkflowRunActionRepetitionDefinitionImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<WorkflowRunActionRepetitionDefinition> getWithResponse(
         String resourceGroupName,
         String name,
@@ -81,6 +65,22 @@ public final class WorkflowRunActionScopeRepetitionsImpl implements WorkflowRunA
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new WorkflowRunActionRepetitionDefinitionImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public WorkflowRunActionRepetitionDefinition get(
+        String resourceGroupName,
+        String name,
+        String workflowName,
+        String runName,
+        String actionName,
+        String repetitionName) {
+        WorkflowRunActionRepetitionDefinitionInner inner =
+            this.serviceClient().get(resourceGroupName, name, workflowName, runName, actionName, repetitionName);
+        if (inner != null) {
+            return new WorkflowRunActionRepetitionDefinitionImpl(inner, this.manager());
         } else {
             return null;
         }

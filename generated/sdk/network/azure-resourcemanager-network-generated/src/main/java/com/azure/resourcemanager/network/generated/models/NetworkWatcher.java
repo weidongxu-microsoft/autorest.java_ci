@@ -217,17 +217,6 @@ public interface NetworkWatcher {
      * Gets the current network topology by resource group.
      *
      * @param parameters Parameters that define the representation of topology.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the current network topology by resource group.
-     */
-    Topology getTopology(TopologyParameters parameters);
-
-    /**
-     * Gets the current network topology by resource group.
-     *
-     * @param parameters Parameters that define the representation of topology.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -235,6 +224,17 @@ public interface NetworkWatcher {
      * @return the current network topology by resource group along with {@link Response}.
      */
     Response<Topology> getTopologyWithResponse(TopologyParameters parameters, Context context);
+
+    /**
+     * Gets the current network topology by resource group.
+     *
+     * @param parameters Parameters that define the representation of topology.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the current network topology by resource group.
+     */
+    Topology getTopology(TopologyParameters parameters);
 
     /**
      * Verify IP flow from the specified VM to a location given the currently configured NSG rules.

@@ -28,6 +28,10 @@ public final class Ipv4Config {
     @JsonProperty(value = "gateway", access = JsonProperty.Access.WRITE_ONLY)
     private String gateway;
 
+    /** Creates an instance of Ipv4Config class. */
+    public Ipv4Config() {
+    }
+
     /**
      * Get the ipAddress property: The IPv4 address of the network adapter.
      *

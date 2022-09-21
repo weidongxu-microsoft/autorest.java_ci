@@ -157,6 +157,10 @@ public final class ClusterGetProperties {
     @JsonProperty(value = "privateEndpointConnections", access = JsonProperty.Access.WRITE_ONLY)
     private List<PrivateEndpointConnectionInner> privateEndpointConnections;
 
+    /** Creates an instance of ClusterGetProperties class. */
+    public ClusterGetProperties() {
+    }
+
     /**
      * Get the clusterVersion property: The version of the cluster.
      *

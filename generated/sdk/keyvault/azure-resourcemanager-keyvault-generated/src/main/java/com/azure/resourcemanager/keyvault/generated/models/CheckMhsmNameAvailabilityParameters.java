@@ -17,6 +17,10 @@ public final class CheckMhsmNameAvailabilityParameters {
     @JsonProperty(value = "name", required = true)
     private String name;
 
+    /** Creates an instance of CheckMhsmNameAvailabilityParameters class. */
+    public CheckMhsmNameAvailabilityParameters() {
+    }
+
     /**
      * Get the name property: The managed hsm name.
      *

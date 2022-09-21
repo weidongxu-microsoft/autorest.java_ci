@@ -22,6 +22,10 @@ public final class Autoscale {
     @JsonProperty(value = "recurrence")
     private AutoscaleRecurrence recurrence;
 
+    /** Creates an instance of Autoscale class. */
+    public Autoscale() {
+    }
+
     /**
      * Get the capacity property: Parameters for load-based autoscale.
      *

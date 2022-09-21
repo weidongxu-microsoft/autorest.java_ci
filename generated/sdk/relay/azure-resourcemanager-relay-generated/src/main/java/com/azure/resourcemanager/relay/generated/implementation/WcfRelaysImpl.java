@@ -46,24 +46,6 @@ public final class WcfRelaysImpl implements WcfRelays {
         return Utils.mapPage(inner, inner1 -> new AuthorizationRuleImpl(inner1, this.manager()));
     }
 
-    public AuthorizationRule createOrUpdateAuthorizationRule(
-        String resourceGroupName,
-        String namespaceName,
-        String relayName,
-        String authorizationRuleName,
-        AuthorizationRuleInner parameters) {
-        AuthorizationRuleInner inner =
-            this
-                .serviceClient()
-                .createOrUpdateAuthorizationRule(
-                    resourceGroupName, namespaceName, relayName, authorizationRuleName, parameters);
-        if (inner != null) {
-            return new AuthorizationRuleImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<AuthorizationRule> createOrUpdateAuthorizationRuleWithResponse(
         String resourceGroupName,
         String namespaceName,
@@ -87,11 +69,22 @@ public final class WcfRelaysImpl implements WcfRelays {
         }
     }
 
-    public void deleteAuthorizationRule(
-        String resourceGroupName, String namespaceName, String relayName, String authorizationRuleName) {
-        this
-            .serviceClient()
-            .deleteAuthorizationRule(resourceGroupName, namespaceName, relayName, authorizationRuleName);
+    public AuthorizationRule createOrUpdateAuthorizationRule(
+        String resourceGroupName,
+        String namespaceName,
+        String relayName,
+        String authorizationRuleName,
+        AuthorizationRuleInner parameters) {
+        AuthorizationRuleInner inner =
+            this
+                .serviceClient()
+                .createOrUpdateAuthorizationRule(
+                    resourceGroupName, namespaceName, relayName, authorizationRuleName, parameters);
+        if (inner != null) {
+            return new AuthorizationRuleImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> deleteAuthorizationRuleWithResponse(
@@ -106,17 +99,11 @@ public final class WcfRelaysImpl implements WcfRelays {
                 resourceGroupName, namespaceName, relayName, authorizationRuleName, context);
     }
 
-    public AuthorizationRule getAuthorizationRule(
+    public void deleteAuthorizationRule(
         String resourceGroupName, String namespaceName, String relayName, String authorizationRuleName) {
-        AuthorizationRuleInner inner =
-            this
-                .serviceClient()
-                .getAuthorizationRule(resourceGroupName, namespaceName, relayName, authorizationRuleName);
-        if (inner != null) {
-            return new AuthorizationRuleImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+        this
+            .serviceClient()
+            .deleteAuthorizationRule(resourceGroupName, namespaceName, relayName, authorizationRuleName);
     }
 
     public Response<AuthorizationRule> getAuthorizationRuleWithResponse(
@@ -141,12 +128,14 @@ public final class WcfRelaysImpl implements WcfRelays {
         }
     }
 
-    public AccessKeys listKeys(
+    public AuthorizationRule getAuthorizationRule(
         String resourceGroupName, String namespaceName, String relayName, String authorizationRuleName) {
-        AccessKeysInner inner =
-            this.serviceClient().listKeys(resourceGroupName, namespaceName, relayName, authorizationRuleName);
+        AuthorizationRuleInner inner =
+            this
+                .serviceClient()
+                .getAuthorizationRule(resourceGroupName, namespaceName, relayName, authorizationRuleName);
         if (inner != null) {
-            return new AccessKeysImpl(inner, this.manager());
+            return new AuthorizationRuleImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -173,16 +162,10 @@ public final class WcfRelaysImpl implements WcfRelays {
         }
     }
 
-    public AccessKeys regenerateKeys(
-        String resourceGroupName,
-        String namespaceName,
-        String relayName,
-        String authorizationRuleName,
-        RegenerateAccessKeyParameters parameters) {
+    public AccessKeys listKeys(
+        String resourceGroupName, String namespaceName, String relayName, String authorizationRuleName) {
         AccessKeysInner inner =
-            this
-                .serviceClient()
-                .regenerateKeys(resourceGroupName, namespaceName, relayName, authorizationRuleName, parameters);
+            this.serviceClient().listKeys(resourceGroupName, namespaceName, relayName, authorizationRuleName);
         if (inner != null) {
             return new AccessKeysImpl(inner, this.manager());
         } else {
@@ -213,6 +196,23 @@ public final class WcfRelaysImpl implements WcfRelays {
         }
     }
 
+    public AccessKeys regenerateKeys(
+        String resourceGroupName,
+        String namespaceName,
+        String relayName,
+        String authorizationRuleName,
+        RegenerateAccessKeyParameters parameters) {
+        AccessKeysInner inner =
+            this
+                .serviceClient()
+                .regenerateKeys(resourceGroupName, namespaceName, relayName, authorizationRuleName, parameters);
+        if (inner != null) {
+            return new AccessKeysImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
     public PagedIterable<WcfRelay> listByNamespace(String resourceGroupName, String namespaceName) {
         PagedIterable<WcfRelayInner> inner = this.serviceClient().listByNamespace(resourceGroupName, namespaceName);
         return Utils.mapPage(inner, inner1 -> new WcfRelayImpl(inner1, this.manager()));
@@ -224,22 +224,13 @@ public final class WcfRelaysImpl implements WcfRelays {
         return Utils.mapPage(inner, inner1 -> new WcfRelayImpl(inner1, this.manager()));
     }
 
-    public void delete(String resourceGroupName, String namespaceName, String relayName) {
-        this.serviceClient().delete(resourceGroupName, namespaceName, relayName);
-    }
-
     public Response<Void> deleteWithResponse(
         String resourceGroupName, String namespaceName, String relayName, Context context) {
         return this.serviceClient().deleteWithResponse(resourceGroupName, namespaceName, relayName, context);
     }
 
-    public WcfRelay get(String resourceGroupName, String namespaceName, String relayName) {
-        WcfRelayInner inner = this.serviceClient().get(resourceGroupName, namespaceName, relayName);
-        if (inner != null) {
-            return new WcfRelayImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void delete(String resourceGroupName, String namespaceName, String relayName) {
+        this.serviceClient().delete(resourceGroupName, namespaceName, relayName);
     }
 
     public Response<WcfRelay> getWithResponse(
@@ -252,6 +243,15 @@ public final class WcfRelaysImpl implements WcfRelays {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new WcfRelayImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public WcfRelay get(String resourceGroupName, String namespaceName, String relayName) {
+        WcfRelayInner inner = this.serviceClient().get(resourceGroupName, namespaceName, relayName);
+        if (inner != null) {
+            return new WcfRelayImpl(inner, this.manager());
         } else {
             return null;
         }

@@ -23,6 +23,10 @@ public final class VmMemory {
     @JsonProperty(value = "currentMemoryUsageMB")
     private Long currentMemoryUsageMB;
 
+    /** Creates an instance of VmMemory class. */
+    public VmMemory() {
+    }
+
     /**
      * Get the startupMemoryMB property: The total amount of RAM in the virtual machine, as seen by the guest operating
      * system. For a virtual machine with dynamic memory enabled, this represents the initial memory available at

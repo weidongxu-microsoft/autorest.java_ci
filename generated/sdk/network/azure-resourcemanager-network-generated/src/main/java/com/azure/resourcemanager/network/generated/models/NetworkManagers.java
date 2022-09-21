@@ -15,18 +15,6 @@ public interface NetworkManagers {
      *
      * @param resourceGroupName The name of the resource group.
      * @param networkManagerName The name of the network manager.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Network Manager.
-     */
-    NetworkManager getByResourceGroup(String resourceGroupName, String networkManagerName);
-
-    /**
-     * Gets the specified Network Manager.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param networkManagerName The name of the network manager.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -35,6 +23,18 @@ public interface NetworkManagers {
      */
     Response<NetworkManager> getByResourceGroupWithResponse(
         String resourceGroupName, String networkManagerName, Context context);
+
+    /**
+     * Gets the specified Network Manager.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param networkManagerName The name of the network manager.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified Network Manager.
+     */
+    NetworkManager getByResourceGroup(String resourceGroupName, String networkManagerName);
 
     /**
      * Deletes a network manager.

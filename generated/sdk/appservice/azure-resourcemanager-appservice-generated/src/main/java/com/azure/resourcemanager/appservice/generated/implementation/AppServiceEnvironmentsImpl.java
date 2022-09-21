@@ -88,15 +88,6 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         return Utils.mapPage(inner, inner1 -> new AppServiceEnvironmentResourceImpl(inner1, this.manager()));
     }
 
-    public AppServiceEnvironmentResource getByResourceGroup(String resourceGroupName, String name) {
-        AppServiceEnvironmentResourceInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, name);
-        if (inner != null) {
-            return new AppServiceEnvironmentResourceImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<AppServiceEnvironmentResource> getByResourceGroupWithResponse(
         String resourceGroupName, String name, Context context) {
         Response<AppServiceEnvironmentResourceInner> inner =
@@ -107,6 +98,15 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new AppServiceEnvironmentResourceImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public AppServiceEnvironmentResource getByResourceGroup(String resourceGroupName, String name) {
+        AppServiceEnvironmentResourceInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, name);
+        if (inner != null) {
+            return new AppServiceEnvironmentResourceImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -134,15 +134,6 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         return Utils.mapPage(inner, inner1 -> new StampCapacityImpl(inner1, this.manager()));
     }
 
-    public AddressResponse getVipInfo(String resourceGroupName, String name) {
-        AddressResponseInner inner = this.serviceClient().getVipInfo(resourceGroupName, name);
-        if (inner != null) {
-            return new AddressResponseImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<AddressResponse> getVipInfoWithResponse(String resourceGroupName, String name, Context context) {
         Response<AddressResponseInner> inner =
             this.serviceClient().getVipInfoWithResponse(resourceGroupName, name, context);
@@ -157,6 +148,15 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         }
     }
 
+    public AddressResponse getVipInfo(String resourceGroupName, String name) {
+        AddressResponseInner inner = this.serviceClient().getVipInfo(resourceGroupName, name);
+        if (inner != null) {
+            return new AddressResponseImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
     public PagedIterable<Site> changeVnet(String resourceGroupName, String name, VirtualNetworkProfile vnetInfo) {
         PagedIterable<SiteInner> inner = this.serviceClient().changeVnet(resourceGroupName, name, vnetInfo);
         return Utils.mapPage(inner, inner1 -> new SiteImpl(inner1, this.manager()));
@@ -166,16 +166,6 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         String resourceGroupName, String name, VirtualNetworkProfile vnetInfo, Context context) {
         PagedIterable<SiteInner> inner = this.serviceClient().changeVnet(resourceGroupName, name, vnetInfo, context);
         return Utils.mapPage(inner, inner1 -> new SiteImpl(inner1, this.manager()));
-    }
-
-    public CustomDnsSuffixConfiguration getAseCustomDnsSuffixConfiguration(String resourceGroupName, String name) {
-        CustomDnsSuffixConfigurationInner inner =
-            this.serviceClient().getAseCustomDnsSuffixConfiguration(resourceGroupName, name);
-        if (inner != null) {
-            return new CustomDnsSuffixConfigurationImpl(inner, this.manager());
-        } else {
-            return null;
-        }
     }
 
     public Response<CustomDnsSuffixConfiguration> getAseCustomDnsSuffixConfigurationWithResponse(
@@ -193,12 +183,9 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         }
     }
 
-    public CustomDnsSuffixConfiguration updateAseCustomDnsSuffixConfiguration(
-        String resourceGroupName, String name, CustomDnsSuffixConfigurationInner customDnsSuffixConfiguration) {
+    public CustomDnsSuffixConfiguration getAseCustomDnsSuffixConfiguration(String resourceGroupName, String name) {
         CustomDnsSuffixConfigurationInner inner =
-            this
-                .serviceClient()
-                .updateAseCustomDnsSuffixConfiguration(resourceGroupName, name, customDnsSuffixConfiguration);
+            this.serviceClient().getAseCustomDnsSuffixConfiguration(resourceGroupName, name);
         if (inner != null) {
             return new CustomDnsSuffixConfigurationImpl(inner, this.manager());
         } else {
@@ -227,8 +214,17 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         }
     }
 
-    public Object deleteAseCustomDnsSuffixConfiguration(String resourceGroupName, String name) {
-        return this.serviceClient().deleteAseCustomDnsSuffixConfiguration(resourceGroupName, name);
+    public CustomDnsSuffixConfiguration updateAseCustomDnsSuffixConfiguration(
+        String resourceGroupName, String name, CustomDnsSuffixConfigurationInner customDnsSuffixConfiguration) {
+        CustomDnsSuffixConfigurationInner inner =
+            this
+                .serviceClient()
+                .updateAseCustomDnsSuffixConfiguration(resourceGroupName, name, customDnsSuffixConfiguration);
+        if (inner != null) {
+            return new CustomDnsSuffixConfigurationImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Object> deleteAseCustomDnsSuffixConfigurationWithResponse(
@@ -236,14 +232,8 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         return this.serviceClient().deleteAseCustomDnsSuffixConfigurationWithResponse(resourceGroupName, name, context);
     }
 
-    public AseV3NetworkingConfiguration getAseV3NetworkingConfiguration(String resourceGroupName, String name) {
-        AseV3NetworkingConfigurationInner inner =
-            this.serviceClient().getAseV3NetworkingConfiguration(resourceGroupName, name);
-        if (inner != null) {
-            return new AseV3NetworkingConfigurationImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public Object deleteAseCustomDnsSuffixConfiguration(String resourceGroupName, String name) {
+        return this.serviceClient().deleteAseCustomDnsSuffixConfiguration(resourceGroupName, name);
     }
 
     public Response<AseV3NetworkingConfiguration> getAseV3NetworkingConfigurationWithResponse(
@@ -261,10 +251,9 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         }
     }
 
-    public AseV3NetworkingConfiguration updateAseNetworkingConfiguration(
-        String resourceGroupName, String name, AseV3NetworkingConfigurationInner aseNetworkingConfiguration) {
+    public AseV3NetworkingConfiguration getAseV3NetworkingConfiguration(String resourceGroupName, String name) {
         AseV3NetworkingConfigurationInner inner =
-            this.serviceClient().updateAseNetworkingConfiguration(resourceGroupName, name, aseNetworkingConfiguration);
+            this.serviceClient().getAseV3NetworkingConfiguration(resourceGroupName, name);
         if (inner != null) {
             return new AseV3NetworkingConfigurationImpl(inner, this.manager());
         } else {
@@ -293,17 +282,14 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         }
     }
 
-    public List<HostingEnvironmentDiagnostics> listDiagnostics(String resourceGroupName, String name) {
-        List<HostingEnvironmentDiagnosticsInner> inner = this.serviceClient().listDiagnostics(resourceGroupName, name);
+    public AseV3NetworkingConfiguration updateAseNetworkingConfiguration(
+        String resourceGroupName, String name, AseV3NetworkingConfigurationInner aseNetworkingConfiguration) {
+        AseV3NetworkingConfigurationInner inner =
+            this.serviceClient().updateAseNetworkingConfiguration(resourceGroupName, name, aseNetworkingConfiguration);
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new HostingEnvironmentDiagnosticsImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return new AseV3NetworkingConfigurationImpl(inner, this.manager());
         } else {
-            return Collections.emptyList();
+            return null;
         }
     }
 
@@ -326,14 +312,17 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         }
     }
 
-    public HostingEnvironmentDiagnostics getDiagnosticsItem(
-        String resourceGroupName, String name, String diagnosticsName) {
-        HostingEnvironmentDiagnosticsInner inner =
-            this.serviceClient().getDiagnosticsItem(resourceGroupName, name, diagnosticsName);
+    public List<HostingEnvironmentDiagnostics> listDiagnostics(String resourceGroupName, String name) {
+        List<HostingEnvironmentDiagnosticsInner> inner = this.serviceClient().listDiagnostics(resourceGroupName, name);
         if (inner != null) {
-            return new HostingEnvironmentDiagnosticsImpl(inner, this.manager());
+            return Collections
+                .unmodifiableList(
+                    inner
+                        .stream()
+                        .map(inner1 -> new HostingEnvironmentDiagnosticsImpl(inner1, this.manager()))
+                        .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -347,6 +336,17 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new HostingEnvironmentDiagnosticsImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public HostingEnvironmentDiagnostics getDiagnosticsItem(
+        String resourceGroupName, String name, String diagnosticsName) {
+        HostingEnvironmentDiagnosticsInner inner =
+            this.serviceClient().getDiagnosticsItem(resourceGroupName, name, diagnosticsName);
+        if (inner != null) {
+            return new HostingEnvironmentDiagnosticsImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -378,15 +378,6 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         return Utils.mapPage(inner, inner1 -> new WorkerPoolResourceImpl(inner1, this.manager()));
     }
 
-    public WorkerPoolResource getMultiRolePool(String resourceGroupName, String name) {
-        WorkerPoolResourceInner inner = this.serviceClient().getMultiRolePool(resourceGroupName, name);
-        if (inner != null) {
-            return new WorkerPoolResourceImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<WorkerPoolResource> getMultiRolePoolWithResponse(
         String resourceGroupName, String name, Context context) {
         Response<WorkerPoolResourceInner> inner =
@@ -397,6 +388,15 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new WorkerPoolResourceImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public WorkerPoolResource getMultiRolePool(String resourceGroupName, String name) {
+        WorkerPoolResourceInner inner = this.serviceClient().getMultiRolePool(resourceGroupName, name);
+        if (inner != null) {
+            return new WorkerPoolResourceImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -424,17 +424,6 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         }
     }
 
-    public WorkerPoolResource updateMultiRolePool(
-        String resourceGroupName, String name, WorkerPoolResourceInner multiRolePoolEnvelope) {
-        WorkerPoolResourceInner inner =
-            this.serviceClient().updateMultiRolePool(resourceGroupName, name, multiRolePoolEnvelope);
-        if (inner != null) {
-            return new WorkerPoolResourceImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<WorkerPoolResource> updateMultiRolePoolWithResponse(
         String resourceGroupName, String name, WorkerPoolResourceInner multiRolePoolEnvelope, Context context) {
         Response<WorkerPoolResourceInner> inner =
@@ -447,6 +436,17 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new WorkerPoolResourceImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public WorkerPoolResource updateMultiRolePool(
+        String resourceGroupName, String name, WorkerPoolResourceInner multiRolePoolEnvelope) {
+        WorkerPoolResourceInner inner =
+            this.serviceClient().updateMultiRolePool(resourceGroupName, name, multiRolePoolEnvelope);
+        if (inner != null) {
+            return new WorkerPoolResourceImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -491,13 +491,13 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         return Utils.mapPage(inner, inner1 -> new SkuInfoImpl(inner1, this.manager()));
     }
 
-    public void testUpgradeAvailableNotification(String resourceGroupName, String name) {
-        this.serviceClient().testUpgradeAvailableNotification(resourceGroupName, name);
-    }
-
     public Response<Void> testUpgradeAvailableNotificationWithResponse(
         String resourceGroupName, String name, Context context) {
         return this.serviceClient().testUpgradeAvailableNotificationWithResponse(resourceGroupName, name, context);
+    }
+
+    public void testUpgradeAvailableNotification(String resourceGroupName, String name) {
+        this.serviceClient().testUpgradeAvailableNotification(resourceGroupName, name);
     }
 
     public void upgrade(String resourceGroupName, String name) {
@@ -518,20 +518,6 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         return Utils.mapPage(inner, inner1 -> new UsageImpl(inner1, this.manager()));
     }
 
-    public List<Operation> listOperations(String resourceGroupName, String name) {
-        List<OperationInner> inner = this.serviceClient().listOperations(resourceGroupName, name);
-        if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new OperationImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
-        } else {
-            return Collections.emptyList();
-        }
-    }
-
     public Response<List<Operation>> listOperationsWithResponse(
         String resourceGroupName, String name, Context context) {
         Response<List<OperationInner>> inner =
@@ -548,6 +534,20 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
                     .collect(Collectors.toList()));
         } else {
             return null;
+        }
+    }
+
+    public List<Operation> listOperations(String resourceGroupName, String name) {
+        List<OperationInner> inner = this.serviceClient().listOperations(resourceGroupName, name);
+        if (inner != null) {
+            return Collections
+                .unmodifiableList(
+                    inner
+                        .stream()
+                        .map(inner1 -> new OperationImpl(inner1, this.manager()))
+                        .collect(Collectors.toList()));
+        } else {
+            return Collections.emptyList();
         }
     }
 
@@ -581,17 +581,6 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
             .mapPage(inner, inner1 -> new RemotePrivateEndpointConnectionArmResourceImpl(inner1, this.manager()));
     }
 
-    public RemotePrivateEndpointConnectionArmResource getPrivateEndpointConnection(
-        String resourceGroupName, String name, String privateEndpointConnectionName) {
-        RemotePrivateEndpointConnectionArmResourceInner inner =
-            this.serviceClient().getPrivateEndpointConnection(resourceGroupName, name, privateEndpointConnectionName);
-        if (inner != null) {
-            return new RemotePrivateEndpointConnectionArmResourceImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<RemotePrivateEndpointConnectionArmResource> getPrivateEndpointConnectionWithResponse(
         String resourceGroupName, String name, String privateEndpointConnectionName, Context context) {
         Response<RemotePrivateEndpointConnectionArmResourceInner> inner =
@@ -605,6 +594,17 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new RemotePrivateEndpointConnectionArmResourceImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public RemotePrivateEndpointConnectionArmResource getPrivateEndpointConnection(
+        String resourceGroupName, String name, String privateEndpointConnectionName) {
+        RemotePrivateEndpointConnectionArmResourceInner inner =
+            this.serviceClient().getPrivateEndpointConnection(resourceGroupName, name, privateEndpointConnectionName);
+        if (inner != null) {
+            return new RemotePrivateEndpointConnectionArmResourceImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -624,15 +624,6 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
             .deletePrivateEndpointConnection(resourceGroupName, name, privateEndpointConnectionName, context);
     }
 
-    public PrivateLinkResourcesWrapper getPrivateLinkResources(String resourceGroupName, String name) {
-        PrivateLinkResourcesWrapperInner inner = this.serviceClient().getPrivateLinkResources(resourceGroupName, name);
-        if (inner != null) {
-            return new PrivateLinkResourcesWrapperImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<PrivateLinkResourcesWrapper> getPrivateLinkResourcesWithResponse(
         String resourceGroupName, String name, Context context) {
         Response<PrivateLinkResourcesWrapperInner> inner =
@@ -648,12 +639,21 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         }
     }
 
-    public void reboot(String resourceGroupName, String name) {
-        this.serviceClient().reboot(resourceGroupName, name);
+    public PrivateLinkResourcesWrapper getPrivateLinkResources(String resourceGroupName, String name) {
+        PrivateLinkResourcesWrapperInner inner = this.serviceClient().getPrivateLinkResources(resourceGroupName, name);
+        if (inner != null) {
+            return new PrivateLinkResourcesWrapperImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> rebootWithResponse(String resourceGroupName, String name, Context context) {
         return this.serviceClient().rebootWithResponse(resourceGroupName, name, context);
+    }
+
+    public void reboot(String resourceGroupName, String name) {
+        this.serviceClient().reboot(resourceGroupName, name);
     }
 
     public PagedIterable<Site> resume(String resourceGroupName, String name) {
@@ -722,15 +722,6 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         return Utils.mapPage(inner, inner1 -> new WorkerPoolResourceImpl(inner1, this.manager()));
     }
 
-    public WorkerPoolResource getWorkerPool(String resourceGroupName, String name, String workerPoolName) {
-        WorkerPoolResourceInner inner = this.serviceClient().getWorkerPool(resourceGroupName, name, workerPoolName);
-        if (inner != null) {
-            return new WorkerPoolResourceImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<WorkerPoolResource> getWorkerPoolWithResponse(
         String resourceGroupName, String name, String workerPoolName, Context context) {
         Response<WorkerPoolResourceInner> inner =
@@ -741,6 +732,15 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new WorkerPoolResourceImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public WorkerPoolResource getWorkerPool(String resourceGroupName, String name, String workerPoolName) {
+        WorkerPoolResourceInner inner = this.serviceClient().getWorkerPool(resourceGroupName, name, workerPoolName);
+        if (inner != null) {
+            return new WorkerPoolResourceImpl(inner, this.manager());
         } else {
             return null;
         }

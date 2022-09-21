@@ -251,21 +251,6 @@ public interface VirtualMachineExtensionsClient {
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine containing the extension.
      * @param vmExtensionName The name of the virtual machine extension.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Virtual Machine Extension.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    VirtualMachineExtensionInner get(String resourceGroupName, String vmName, String vmExtensionName);
-
-    /**
-     * The operation to get the extension.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param vmName The name of the virtual machine containing the extension.
-     * @param vmExtensionName The name of the virtual machine extension.
      * @param expand The expand expression to apply on the operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -279,18 +264,19 @@ public interface VirtualMachineExtensionsClient {
         String resourceGroupName, String vmName, String vmExtensionName, String expand, Context context);
 
     /**
-     * The operation to get all extensions of a Virtual Machine.
+     * The operation to get the extension.
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine containing the extension.
+     * @param vmExtensionName The name of the virtual machine extension.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Extension operation response.
+     * @return describes a Virtual Machine Extension.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    VirtualMachineExtensionsListResultInner list(String resourceGroupName, String vmName);
+    VirtualMachineExtensionInner get(String resourceGroupName, String vmName, String vmExtensionName);
 
     /**
      * The operation to get all extensions of a Virtual Machine.
@@ -308,4 +294,18 @@ public interface VirtualMachineExtensionsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<VirtualMachineExtensionsListResultInner> listWithResponse(
         String resourceGroupName, String vmName, String expand, Context context);
+
+    /**
+     * The operation to get all extensions of a Virtual Machine.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param vmName The name of the virtual machine containing the extension.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the List Extension operation response.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    VirtualMachineExtensionsListResultInner list(String resourceGroupName, String vmName);
 }

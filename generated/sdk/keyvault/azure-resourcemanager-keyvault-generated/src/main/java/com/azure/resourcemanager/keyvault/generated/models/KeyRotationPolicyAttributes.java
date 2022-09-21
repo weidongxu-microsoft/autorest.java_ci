@@ -28,6 +28,10 @@ public final class KeyRotationPolicyAttributes {
     @JsonProperty(value = "expiryTime")
     private String expiryTime;
 
+    /** Creates an instance of KeyRotationPolicyAttributes class. */
+    public KeyRotationPolicyAttributes() {
+    }
+
     /**
      * Get the created property: Creation time in seconds since 1970-01-01T00:00:00Z.
      *

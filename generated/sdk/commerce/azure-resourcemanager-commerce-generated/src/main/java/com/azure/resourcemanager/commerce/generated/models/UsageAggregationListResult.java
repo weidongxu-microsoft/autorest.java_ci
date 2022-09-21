@@ -24,6 +24,10 @@ public final class UsageAggregationListResult {
     @JsonProperty(value = "nextLink")
     private String nextLink;
 
+    /** Creates an instance of UsageAggregationListResult class. */
+    public UsageAggregationListResult() {
+    }
+
     /**
      * Get the value property: Gets or sets details for the requested aggregation.
      *

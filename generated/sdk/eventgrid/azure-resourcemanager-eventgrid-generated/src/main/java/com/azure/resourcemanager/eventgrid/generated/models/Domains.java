@@ -17,12 +17,13 @@ public interface Domains {
      *
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param domainName Name of the domain.
+     * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of a domain.
+     * @return properties of a domain along with {@link Response}.
      */
-    Domain getByResourceGroup(String resourceGroupName, String domainName);
+    Response<Domain> getByResourceGroupWithResponse(String resourceGroupName, String domainName, Context context);
 
     /**
      * Get a domain.
@@ -31,13 +32,12 @@ public interface Domains {
      *
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param domainName Name of the domain.
-     * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of a domain along with {@link Response}.
+     * @return properties of a domain.
      */
-    Response<Domain> getByResourceGroupWithResponse(String resourceGroupName, String domainName, Context context);
+    Domain getByResourceGroup(String resourceGroupName, String domainName);
 
     /**
      * Delete a domain.
@@ -140,20 +140,6 @@ public interface Domains {
      *
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param domainName Name of the domain.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return shared access keys of the Domain.
-     */
-    DomainSharedAccessKeys listSharedAccessKeys(String resourceGroupName, String domainName);
-
-    /**
-     * List keys for a domain.
-     *
-     * <p>List the two keys used to publish to a domain.
-     *
-     * @param resourceGroupName The name of the resource group within the user's subscription.
-     * @param domainName Name of the domain.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -164,20 +150,18 @@ public interface Domains {
         String resourceGroupName, String domainName, Context context);
 
     /**
-     * Regenerate key for a domain.
+     * List keys for a domain.
      *
-     * <p>Regenerate a shared access key for a domain.
+     * <p>List the two keys used to publish to a domain.
      *
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param domainName Name of the domain.
-     * @param regenerateKeyRequest Request body to regenerate key.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return shared access keys of the Domain.
      */
-    DomainSharedAccessKeys regenerateKey(
-        String resourceGroupName, String domainName, DomainRegenerateKeyRequest regenerateKeyRequest);
+    DomainSharedAccessKeys listSharedAccessKeys(String resourceGroupName, String domainName);
 
     /**
      * Regenerate key for a domain.
@@ -195,6 +179,22 @@ public interface Domains {
      */
     Response<DomainSharedAccessKeys> regenerateKeyWithResponse(
         String resourceGroupName, String domainName, DomainRegenerateKeyRequest regenerateKeyRequest, Context context);
+
+    /**
+     * Regenerate key for a domain.
+     *
+     * <p>Regenerate a shared access key for a domain.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription.
+     * @param domainName Name of the domain.
+     * @param regenerateKeyRequest Request body to regenerate key.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return shared access keys of the Domain.
+     */
+    DomainSharedAccessKeys regenerateKey(
+        String resourceGroupName, String domainName, DomainRegenerateKeyRequest regenerateKeyRequest);
 
     /**
      * Get a domain.

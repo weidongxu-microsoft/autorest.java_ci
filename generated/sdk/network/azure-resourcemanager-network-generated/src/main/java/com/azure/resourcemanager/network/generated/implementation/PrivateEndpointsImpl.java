@@ -35,15 +35,6 @@ public final class PrivateEndpointsImpl implements PrivateEndpoints {
         this.serviceClient().delete(resourceGroupName, privateEndpointName, context);
     }
 
-    public PrivateEndpoint getByResourceGroup(String resourceGroupName, String privateEndpointName) {
-        PrivateEndpointInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, privateEndpointName);
-        if (inner != null) {
-            return new PrivateEndpointImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<PrivateEndpoint> getByResourceGroupWithResponse(
         String resourceGroupName, String privateEndpointName, String expand, Context context) {
         Response<PrivateEndpointInner> inner =
@@ -56,6 +47,15 @@ public final class PrivateEndpointsImpl implements PrivateEndpoints {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new PrivateEndpointImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public PrivateEndpoint getByResourceGroup(String resourceGroupName, String privateEndpointName) {
+        PrivateEndpointInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, privateEndpointName);
+        if (inner != null) {
+            return new PrivateEndpointImpl(inner, this.manager());
         } else {
             return null;
         }

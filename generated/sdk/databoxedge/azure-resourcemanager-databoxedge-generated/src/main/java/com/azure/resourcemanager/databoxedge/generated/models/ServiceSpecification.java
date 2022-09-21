@@ -17,6 +17,10 @@ public final class ServiceSpecification {
     @JsonProperty(value = "metricSpecifications")
     private List<MetricSpecificationV1> metricSpecifications;
 
+    /** Creates an instance of ServiceSpecification class. */
+    public ServiceSpecification() {
+    }
+
     /**
      * Get the metricSpecifications property: Metric specification as defined by shoebox.
      *

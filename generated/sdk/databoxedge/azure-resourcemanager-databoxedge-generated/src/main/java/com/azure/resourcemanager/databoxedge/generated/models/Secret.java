@@ -22,6 +22,10 @@ public final class Secret {
     @JsonProperty(value = "keyVaultId")
     private String keyVaultId;
 
+    /** Creates an instance of Secret class. */
+    public Secret() {
+    }
+
     /**
      * Get the encryptedSecret property: Encrypted (using device public key) secret value.
      *

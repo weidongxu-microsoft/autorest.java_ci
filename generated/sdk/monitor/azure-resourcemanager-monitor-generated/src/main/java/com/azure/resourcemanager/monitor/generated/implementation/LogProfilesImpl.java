@@ -27,21 +27,12 @@ public final class LogProfilesImpl implements LogProfiles {
         this.serviceManager = serviceManager;
     }
 
-    public void delete(String logProfileName) {
-        this.serviceClient().delete(logProfileName);
-    }
-
     public Response<Void> deleteWithResponse(String logProfileName, Context context) {
         return this.serviceClient().deleteWithResponse(logProfileName, context);
     }
 
-    public LogProfileResource get(String logProfileName) {
-        LogProfileResourceInner inner = this.serviceClient().get(logProfileName);
-        if (inner != null) {
-            return new LogProfileResourceImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void delete(String logProfileName) {
+        this.serviceClient().delete(logProfileName);
     }
 
     public Response<LogProfileResource> getWithResponse(String logProfileName, Context context) {
@@ -52,6 +43,15 @@ public final class LogProfilesImpl implements LogProfiles {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new LogProfileResourceImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public LogProfileResource get(String logProfileName) {
+        LogProfileResourceInner inner = this.serviceClient().get(logProfileName);
+        if (inner != null) {
+            return new LogProfileResourceImpl(inner, this.manager());
         } else {
             return null;
         }

@@ -37,6 +37,10 @@ public final class BandwidthScheduleProperties {
     @JsonProperty(value = "days", required = true)
     private List<DayOfWeek> days;
 
+    /** Creates an instance of BandwidthScheduleProperties class. */
+    public BandwidthScheduleProperties() {
+    }
+
     /**
      * Get the start property: The start time of the schedule in UTC.
      *

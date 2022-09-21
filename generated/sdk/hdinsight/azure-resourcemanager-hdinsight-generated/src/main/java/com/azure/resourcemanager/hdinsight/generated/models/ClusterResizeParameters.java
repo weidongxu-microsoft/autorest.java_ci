@@ -16,6 +16,10 @@ public final class ClusterResizeParameters {
     @JsonProperty(value = "targetInstanceCount")
     private Integer targetInstanceCount;
 
+    /** Creates an instance of ClusterResizeParameters class. */
+    public ClusterResizeParameters() {
+    }
+
     /**
      * Get the targetInstanceCount property: The target instance count for the operation.
      *

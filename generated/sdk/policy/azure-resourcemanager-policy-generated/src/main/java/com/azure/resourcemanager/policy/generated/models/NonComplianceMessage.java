@@ -29,6 +29,10 @@ public final class NonComplianceMessage {
     @JsonProperty(value = "policyDefinitionReferenceId")
     private String policyDefinitionReferenceId;
 
+    /** Creates an instance of NonComplianceMessage class. */
+    public NonComplianceMessage() {
+    }
+
     /**
      * Get the message property: A message that describes why a resource is non-compliant with the policy. This is shown
      * in 'deny' error messages and on resource's non-compliant compliance results.

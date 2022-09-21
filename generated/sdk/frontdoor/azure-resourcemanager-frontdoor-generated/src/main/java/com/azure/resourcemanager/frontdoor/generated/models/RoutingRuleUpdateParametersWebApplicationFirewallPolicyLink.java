@@ -16,6 +16,10 @@ public final class RoutingRuleUpdateParametersWebApplicationFirewallPolicyLink {
     @JsonProperty(value = "id")
     private String id;
 
+    /** Creates an instance of RoutingRuleUpdateParametersWebApplicationFirewallPolicyLink class. */
+    public RoutingRuleUpdateParametersWebApplicationFirewallPolicyLink() {
+    }
+
     /**
      * Get the id property: Resource ID.
      *

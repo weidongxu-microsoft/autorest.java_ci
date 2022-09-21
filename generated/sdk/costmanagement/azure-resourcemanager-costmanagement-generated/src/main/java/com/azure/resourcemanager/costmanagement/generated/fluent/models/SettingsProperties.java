@@ -32,6 +32,10 @@ public final class SettingsProperties {
     @JsonProperty(value = "cache")
     private List<CacheItem> cache;
 
+    /** Creates an instance of SettingsProperties class. */
+    public SettingsProperties() {
+    }
+
     /**
      * Get the scope property: Sets the default scope the current user will see when they sign into Azure Cost
      * Management in the Azure portal.

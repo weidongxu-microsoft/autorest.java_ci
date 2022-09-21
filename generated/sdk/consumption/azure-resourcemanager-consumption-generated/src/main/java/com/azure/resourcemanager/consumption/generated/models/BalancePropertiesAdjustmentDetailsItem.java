@@ -23,6 +23,10 @@ public final class BalancePropertiesAdjustmentDetailsItem {
     @JsonProperty(value = "value", access = JsonProperty.Access.WRITE_ONLY)
     private BigDecimal value;
 
+    /** Creates an instance of BalancePropertiesAdjustmentDetailsItem class. */
+    public BalancePropertiesAdjustmentDetailsItem() {
+    }
+
     /**
      * Get the name property: the name of new adjustment.
      *

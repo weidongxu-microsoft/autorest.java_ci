@@ -66,6 +66,10 @@ public final class CapacityReservationImpl
         return this.innerModel().reservationId();
     }
 
+    public Integer platformFaultDomainCount() {
+        return this.innerModel().platformFaultDomainCount();
+    }
+
     public List<SubResourceReadOnly> virtualMachinesAssociated() {
         List<SubResourceReadOnly> inner = this.innerModel().virtualMachinesAssociated();
         if (inner != null) {

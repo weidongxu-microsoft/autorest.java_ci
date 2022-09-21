@@ -37,6 +37,10 @@ public final class DataManifestCustomResourceFunctionDefinition {
     @JsonProperty(value = "allowCustomProperties")
     private Boolean allowCustomProperties;
 
+    /** Creates an instance of DataManifestCustomResourceFunctionDefinition class. */
+    public DataManifestCustomResourceFunctionDefinition() {
+    }
+
     /**
      * Get the name property: The function name as it will appear in the policy rule. eg - 'vault'.
      *

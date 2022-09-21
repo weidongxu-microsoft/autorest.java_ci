@@ -48,6 +48,10 @@ public final class Ingress {
     @JsonProperty(value = "allowInsecure")
     private Boolean allowInsecure;
 
+    /** Creates an instance of Ingress class. */
+    public Ingress() {
+    }
+
     /**
      * Get the fqdn property: Hostname.
      *

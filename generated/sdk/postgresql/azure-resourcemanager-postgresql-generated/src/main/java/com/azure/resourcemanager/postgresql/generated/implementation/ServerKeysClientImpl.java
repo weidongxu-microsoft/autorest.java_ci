@@ -449,11 +449,11 @@ public final class ServerKeysClientImpl implements ServerKeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a PostgreSQL Server key.
+     * @return a PostgreSQL Server key along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ServerKeyInner get(String resourceGroupName, String serverName, String keyName) {
-        return getAsync(resourceGroupName, serverName, keyName).block();
+    public Response<ServerKeyInner> getWithResponse(String resourceGroupName, String serverName, String keyName) {
+        return getWithResponseAsync(resourceGroupName, serverName, keyName).block();
     }
 
     /**
@@ -472,6 +472,22 @@ public final class ServerKeysClientImpl implements ServerKeysClient {
     public Response<ServerKeyInner> getWithResponse(
         String resourceGroupName, String serverName, String keyName, Context context) {
         return getWithResponseAsync(resourceGroupName, serverName, keyName, context).block();
+    }
+
+    /**
+     * Gets a PostgreSQL Server key.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param serverName The name of the server.
+     * @param keyName The name of the PostgreSQL Server key to be retrieved.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a PostgreSQL Server key.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ServerKeyInner get(String resourceGroupName, String serverName, String keyName) {
+        return getWithResponse(resourceGroupName, serverName, keyName, Context.NONE).getValue();
     }
 
     /**

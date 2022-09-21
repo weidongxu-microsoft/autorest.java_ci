@@ -47,19 +47,6 @@ public final class CertificateOrdersDiagnosticsImpl implements CertificateOrders
         return Utils.mapPage(inner, inner1 -> new DetectorResponseImpl(inner1, this.manager()));
     }
 
-    public DetectorResponse getAppServiceCertificateOrderDetectorResponse(
-        String resourceGroupName, String certificateOrderName, String detectorName) {
-        DetectorResponseInner inner =
-            this
-                .serviceClient()
-                .getAppServiceCertificateOrderDetectorResponse(resourceGroupName, certificateOrderName, detectorName);
-        if (inner != null) {
-            return new DetectorResponseImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<DetectorResponse> getAppServiceCertificateOrderDetectorResponseWithResponse(
         String resourceGroupName,
         String certificateOrderName,
@@ -79,6 +66,19 @@ public final class CertificateOrdersDiagnosticsImpl implements CertificateOrders
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new DetectorResponseImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public DetectorResponse getAppServiceCertificateOrderDetectorResponse(
+        String resourceGroupName, String certificateOrderName, String detectorName) {
+        DetectorResponseInner inner =
+            this
+                .serviceClient()
+                .getAppServiceCertificateOrderDetectorResponse(resourceGroupName, certificateOrderName, detectorName);
+        if (inner != null) {
+            return new DetectorResponseImpl(inner, this.manager());
         } else {
             return null;
         }

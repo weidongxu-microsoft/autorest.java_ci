@@ -33,6 +33,10 @@ public final class GenericResourceExpandedInner extends GenericResourceInner {
     @JsonProperty(value = "provisioningState", access = JsonProperty.Access.WRITE_ONLY)
     private String provisioningState;
 
+    /** Creates an instance of GenericResourceExpandedInner class. */
+    public GenericResourceExpandedInner() {
+    }
+
     /**
      * Get the createdTime property: The created time of the resource. This is only present if requested via the $expand
      * query parameter.

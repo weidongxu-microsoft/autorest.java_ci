@@ -118,15 +118,6 @@ public final class ResourceProvidersImpl implements ResourceProviders {
         return Utils.mapPage(inner, inner1 -> new BastionSessionStateImpl(inner1, this.manager()));
     }
 
-    public DnsNameAvailabilityResult checkDnsNameAvailability(String location, String domainNameLabel) {
-        DnsNameAvailabilityResultInner inner = this.serviceClient().checkDnsNameAvailability(location, domainNameLabel);
-        if (inner != null) {
-            return new DnsNameAvailabilityResultImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<DnsNameAvailabilityResult> checkDnsNameAvailabilityWithResponse(
         String location, String domainNameLabel, Context context) {
         Response<DnsNameAvailabilityResultInner> inner =
@@ -137,6 +128,61 @@ public final class ResourceProvidersImpl implements ResourceProviders {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new DnsNameAvailabilityResultImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public DnsNameAvailabilityResult checkDnsNameAvailability(String location, String domainNameLabel) {
+        DnsNameAvailabilityResultInner inner = this.serviceClient().checkDnsNameAvailability(location, domainNameLabel);
+        if (inner != null) {
+            return new DnsNameAvailabilityResultImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<ExpressRouteProviderPort> expressRouteProviderPortWithResponse(
+        String providerport, Context context) {
+        Response<ExpressRouteProviderPortInner> inner =
+            this.serviceClient().expressRouteProviderPortWithResponse(providerport, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new ExpressRouteProviderPortImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public ExpressRouteProviderPort expressRouteProviderPort(String providerport) {
+        ExpressRouteProviderPortInner inner = this.serviceClient().expressRouteProviderPort(providerport);
+        if (inner != null) {
+            return new ExpressRouteProviderPortImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<ActiveConnectivityConfigurationsListResult> listActiveConnectivityConfigurationsWithResponse(
+        String resourceGroupName,
+        String networkManagerName,
+        ActiveConfigurationParameter parameters,
+        Integer top,
+        Context context) {
+        Response<ActiveConnectivityConfigurationsListResultInner> inner =
+            this
+                .serviceClient()
+                .listActiveConnectivityConfigurationsWithResponse(
+                    resourceGroupName, networkManagerName, parameters, top, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new ActiveConnectivityConfigurationsListResultImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
@@ -155,19 +201,23 @@ public final class ResourceProvidersImpl implements ResourceProviders {
         }
     }
 
-    public Response<ActiveConnectivityConfigurationsListResult> listActiveConnectivityConfigurationsWithResponse(
-        String resourceGroupName, String networkManagerName, ActiveConfigurationParameter parameters, Context context) {
-        Response<ActiveConnectivityConfigurationsListResultInner> inner =
+    public Response<ActiveSecurityAdminRulesListResult> listActiveSecurityAdminRulesWithResponse(
+        String resourceGroupName,
+        String networkManagerName,
+        ActiveConfigurationParameter parameters,
+        Integer top,
+        Context context) {
+        Response<ActiveSecurityAdminRulesListResultInner> inner =
             this
                 .serviceClient()
-                .listActiveConnectivityConfigurationsWithResponse(
-                    resourceGroupName, networkManagerName, parameters, context);
+                .listActiveSecurityAdminRulesWithResponse(
+                    resourceGroupName, networkManagerName, parameters, top, context);
         if (inner != null) {
             return new SimpleResponse<>(
                 inner.getRequest(),
                 inner.getStatusCode(),
                 inner.getHeaders(),
-                new ActiveConnectivityConfigurationsListResultImpl(inner.getValue(), this.manager()));
+                new ActiveSecurityAdminRulesListResultImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
@@ -184,18 +234,24 @@ public final class ResourceProvidersImpl implements ResourceProviders {
         }
     }
 
-    public Response<ActiveSecurityAdminRulesListResult> listActiveSecurityAdminRulesWithResponse(
-        String resourceGroupName, String networkManagerName, ActiveConfigurationParameter parameters, Context context) {
-        Response<ActiveSecurityAdminRulesListResultInner> inner =
+    public Response<NetworkManagerEffectiveConnectivityConfigurationListResult>
+        listNetworkManagerEffectiveConnectivityConfigurationsWithResponse(
+            String resourceGroupName,
+            String virtualNetworkName,
+            QueryRequestOptions parameters,
+            Integer top,
+            Context context) {
+        Response<NetworkManagerEffectiveConnectivityConfigurationListResultInner> inner =
             this
                 .serviceClient()
-                .listActiveSecurityAdminRulesWithResponse(resourceGroupName, networkManagerName, parameters, context);
+                .listNetworkManagerEffectiveConnectivityConfigurationsWithResponse(
+                    resourceGroupName, virtualNetworkName, parameters, top, context);
         if (inner != null) {
             return new SimpleResponse<>(
                 inner.getRequest(),
                 inner.getStatusCode(),
                 inner.getHeaders(),
-                new ActiveSecurityAdminRulesListResultImpl(inner.getValue(), this.manager()));
+                new NetworkManagerEffectiveConnectivityConfigurationListResultImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
@@ -216,20 +272,24 @@ public final class ResourceProvidersImpl implements ResourceProviders {
         }
     }
 
-    public Response<NetworkManagerEffectiveConnectivityConfigurationListResult>
-        listNetworkManagerEffectiveConnectivityConfigurationsWithResponse(
-            String resourceGroupName, String virtualNetworkName, QueryRequestOptions parameters, Context context) {
-        Response<NetworkManagerEffectiveConnectivityConfigurationListResultInner> inner =
+    public Response<NetworkManagerEffectiveSecurityAdminRulesListResult>
+        listNetworkManagerEffectiveSecurityAdminRulesWithResponse(
+            String resourceGroupName,
+            String virtualNetworkName,
+            QueryRequestOptions parameters,
+            Integer top,
+            Context context) {
+        Response<NetworkManagerEffectiveSecurityAdminRulesListResultInner> inner =
             this
                 .serviceClient()
-                .listNetworkManagerEffectiveConnectivityConfigurationsWithResponse(
-                    resourceGroupName, virtualNetworkName, parameters, context);
+                .listNetworkManagerEffectiveSecurityAdminRulesWithResponse(
+                    resourceGroupName, virtualNetworkName, parameters, top, context);
         if (inner != null) {
             return new SimpleResponse<>(
                 inner.getRequest(),
                 inner.getStatusCode(),
                 inner.getHeaders(),
-                new NetworkManagerEffectiveConnectivityConfigurationListResultImpl(inner.getValue(), this.manager()));
+                new NetworkManagerEffectiveSecurityAdminRulesListResultImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
@@ -248,35 +308,6 @@ public final class ResourceProvidersImpl implements ResourceProviders {
         }
     }
 
-    public Response<NetworkManagerEffectiveSecurityAdminRulesListResult>
-        listNetworkManagerEffectiveSecurityAdminRulesWithResponse(
-            String resourceGroupName, String virtualNetworkName, QueryRequestOptions parameters, Context context) {
-        Response<NetworkManagerEffectiveSecurityAdminRulesListResultInner> inner =
-            this
-                .serviceClient()
-                .listNetworkManagerEffectiveSecurityAdminRulesWithResponse(
-                    resourceGroupName, virtualNetworkName, parameters, context);
-        if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
-                new NetworkManagerEffectiveSecurityAdminRulesListResultImpl(inner.getValue(), this.manager()));
-        } else {
-            return null;
-        }
-    }
-
-    public VirtualWanSecurityProviders supportedSecurityProviders(String resourceGroupName, String virtualWanName) {
-        VirtualWanSecurityProvidersInner inner =
-            this.serviceClient().supportedSecurityProviders(resourceGroupName, virtualWanName);
-        if (inner != null) {
-            return new VirtualWanSecurityProvidersImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<VirtualWanSecurityProviders> supportedSecurityProvidersWithResponse(
         String resourceGroupName, String virtualWanName, Context context) {
         Response<VirtualWanSecurityProvidersInner> inner =
@@ -287,6 +318,16 @@ public final class ResourceProvidersImpl implements ResourceProviders {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new VirtualWanSecurityProvidersImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public VirtualWanSecurityProviders supportedSecurityProviders(String resourceGroupName, String virtualWanName) {
+        VirtualWanSecurityProvidersInner inner =
+            this.serviceClient().supportedSecurityProviders(resourceGroupName, virtualWanName);
+        if (inner != null) {
+            return new VirtualWanSecurityProvidersImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -317,30 +358,6 @@ public final class ResourceProvidersImpl implements ResourceProviders {
                     resourceGroupName, virtualWanName, vpnClientParams, context);
         if (inner != null) {
             return new VpnProfileResponseImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
-    public ExpressRouteProviderPort expressRouteProviderPort(String providerport) {
-        ExpressRouteProviderPortInner inner = this.serviceClient().expressRouteProviderPort(providerport);
-        if (inner != null) {
-            return new ExpressRouteProviderPortImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
-    public Response<ExpressRouteProviderPort> expressRouteProviderPortWithResponse(
-        String providerport, Context context) {
-        Response<ExpressRouteProviderPortInner> inner =
-            this.serviceClient().expressRouteProviderPortWithResponse(providerport, context);
-        if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
-                new ExpressRouteProviderPortImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }

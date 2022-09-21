@@ -24,6 +24,10 @@ public final class EventHubListResult {
     @JsonProperty(value = "nextLink")
     private String nextLink;
 
+    /** Creates an instance of EventHubListResult class. */
+    public EventHubListResult() {
+    }
+
     /**
      * Get the value property: Result of the List EventHubs operation.
      *

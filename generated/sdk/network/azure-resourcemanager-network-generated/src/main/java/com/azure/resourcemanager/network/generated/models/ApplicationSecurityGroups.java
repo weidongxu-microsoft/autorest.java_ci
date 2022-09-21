@@ -38,18 +38,6 @@ public interface ApplicationSecurityGroups {
      *
      * @param resourceGroupName The name of the resource group.
      * @param applicationSecurityGroupName The name of the application security group.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the specified application security group.
-     */
-    ApplicationSecurityGroup getByResourceGroup(String resourceGroupName, String applicationSecurityGroupName);
-
-    /**
-     * Gets information about the specified application security group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param applicationSecurityGroupName The name of the application security group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -58,6 +46,18 @@ public interface ApplicationSecurityGroups {
      */
     Response<ApplicationSecurityGroup> getByResourceGroupWithResponse(
         String resourceGroupName, String applicationSecurityGroupName, Context context);
+
+    /**
+     * Gets information about the specified application security group.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param applicationSecurityGroupName The name of the application security group.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return information about the specified application security group.
+     */
+    ApplicationSecurityGroup getByResourceGroup(String resourceGroupName, String applicationSecurityGroupName);
 
     /**
      * Gets all application security groups in a subscription.

@@ -35,6 +35,10 @@ public final class LegacyMicrosoftAccount {
     @JsonProperty(value = "validation")
     private AllowedAudiencesValidation validation;
 
+    /** Creates an instance of LegacyMicrosoftAccount class. */
+    public LegacyMicrosoftAccount() {
+    }
+
     /**
      * Get the enabled property: &lt;code&gt;false&lt;/code&gt; if the legacy Microsoft Account provider should not be
      * enabled despite the set registration; otherwise, &lt;code&gt;true&lt;/code&gt;.

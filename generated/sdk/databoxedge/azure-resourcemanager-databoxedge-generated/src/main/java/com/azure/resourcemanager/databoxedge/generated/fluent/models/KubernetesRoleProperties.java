@@ -53,6 +53,10 @@ public final class KubernetesRoleProperties {
     @JsonProperty(value = "roleStatus", required = true)
     private RoleStatus roleStatus;
 
+    /** Creates an instance of KubernetesRoleProperties class. */
+    public KubernetesRoleProperties() {
+    }
+
     /**
      * Get the hostPlatform property: Host OS supported by the Kubernetes role.
      *

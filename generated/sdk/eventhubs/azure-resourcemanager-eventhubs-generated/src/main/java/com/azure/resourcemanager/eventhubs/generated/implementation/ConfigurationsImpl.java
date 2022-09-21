@@ -27,17 +27,6 @@ public final class ConfigurationsImpl implements Configurations {
         this.serviceManager = serviceManager;
     }
 
-    public ClusterQuotaConfigurationProperties patch(
-        String resourceGroupName, String clusterName, ClusterQuotaConfigurationPropertiesInner parameters) {
-        ClusterQuotaConfigurationPropertiesInner inner =
-            this.serviceClient().patch(resourceGroupName, clusterName, parameters);
-        if (inner != null) {
-            return new ClusterQuotaConfigurationPropertiesImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<ClusterQuotaConfigurationProperties> patchWithResponse(
         String resourceGroupName,
         String clusterName,
@@ -56,8 +45,10 @@ public final class ConfigurationsImpl implements Configurations {
         }
     }
 
-    public ClusterQuotaConfigurationProperties get(String resourceGroupName, String clusterName) {
-        ClusterQuotaConfigurationPropertiesInner inner = this.serviceClient().get(resourceGroupName, clusterName);
+    public ClusterQuotaConfigurationProperties patch(
+        String resourceGroupName, String clusterName, ClusterQuotaConfigurationPropertiesInner parameters) {
+        ClusterQuotaConfigurationPropertiesInner inner =
+            this.serviceClient().patch(resourceGroupName, clusterName, parameters);
         if (inner != null) {
             return new ClusterQuotaConfigurationPropertiesImpl(inner, this.manager());
         } else {
@@ -75,6 +66,15 @@ public final class ConfigurationsImpl implements Configurations {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new ClusterQuotaConfigurationPropertiesImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public ClusterQuotaConfigurationProperties get(String resourceGroupName, String clusterName) {
+        ClusterQuotaConfigurationPropertiesInner inner = this.serviceClient().get(resourceGroupName, clusterName);
+        if (inner != null) {
+            return new ClusterQuotaConfigurationPropertiesImpl(inner, this.manager());
         } else {
             return null;
         }

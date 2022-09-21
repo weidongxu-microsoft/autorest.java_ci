@@ -443,11 +443,12 @@ public final class PoliciesClientImpl implements PoliciesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return defines web application firewall policy.
+     * @return defines web application firewall policy along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public WebApplicationFirewallPolicyInner getByResourceGroup(String resourceGroupName, String policyName) {
-        return getByResourceGroupAsync(resourceGroupName, policyName).block();
+    public Response<WebApplicationFirewallPolicyInner> getByResourceGroupWithResponse(
+        String resourceGroupName, String policyName) {
+        return getByResourceGroupWithResponseAsync(resourceGroupName, policyName).block();
     }
 
     /**
@@ -465,6 +466,21 @@ public final class PoliciesClientImpl implements PoliciesClient {
     public Response<WebApplicationFirewallPolicyInner> getByResourceGroupWithResponse(
         String resourceGroupName, String policyName, Context context) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, policyName, context).block();
+    }
+
+    /**
+     * Retrieve protection policy with specified name within a resource group.
+     *
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param policyName The name of the Web Application Firewall Policy.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return defines web application firewall policy.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public WebApplicationFirewallPolicyInner getByResourceGroup(String resourceGroupName, String policyName) {
+        return getByResourceGroupWithResponse(resourceGroupName, policyName, Context.NONE).getValue();
     }
 
     /**

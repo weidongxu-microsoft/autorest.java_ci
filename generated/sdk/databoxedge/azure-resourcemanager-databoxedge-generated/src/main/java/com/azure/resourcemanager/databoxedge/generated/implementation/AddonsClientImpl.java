@@ -484,11 +484,12 @@ public final class AddonsClientImpl implements AddonsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a specific addon by name.
+     * @return a specific addon by name along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public AddonInner get(String deviceName, String roleName, String addonName, String resourceGroupName) {
-        return getAsync(deviceName, roleName, addonName, resourceGroupName).block();
+    public Response<AddonInner> getWithResponse(
+        String deviceName, String roleName, String addonName, String resourceGroupName) {
+        return getWithResponseAsync(deviceName, roleName, addonName, resourceGroupName).block();
     }
 
     /**
@@ -508,6 +509,23 @@ public final class AddonsClientImpl implements AddonsClient {
     public Response<AddonInner> getWithResponse(
         String deviceName, String roleName, String addonName, String resourceGroupName, Context context) {
         return getWithResponseAsync(deviceName, roleName, addonName, resourceGroupName, context).block();
+    }
+
+    /**
+     * Gets a specific addon by name.
+     *
+     * @param deviceName The device name.
+     * @param roleName The role name.
+     * @param addonName The addon name.
+     * @param resourceGroupName The resource group name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a specific addon by name.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public AddonInner get(String deviceName, String roleName, String addonName, String resourceGroupName) {
+        return getWithResponse(deviceName, roleName, addonName, resourceGroupName, Context.NONE).getValue();
     }
 
     /**

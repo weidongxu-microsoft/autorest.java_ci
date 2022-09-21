@@ -25,6 +25,10 @@ public final class ResourceGroupExportResultInner {
     @JsonProperty(value = "error")
     private ManagementError error;
 
+    /** Creates an instance of ResourceGroupExportResultInner class. */
+    public ResourceGroupExportResultInner() {
+    }
+
     /**
      * Get the template property: The template content.
      *

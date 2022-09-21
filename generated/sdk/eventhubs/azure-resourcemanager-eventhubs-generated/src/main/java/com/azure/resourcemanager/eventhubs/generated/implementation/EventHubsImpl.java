@@ -46,24 +46,6 @@ public final class EventHubsImpl implements EventHubs {
         return Utils.mapPage(inner, inner1 -> new AuthorizationRuleImpl(inner1, this.manager()));
     }
 
-    public AuthorizationRule createOrUpdateAuthorizationRule(
-        String resourceGroupName,
-        String namespaceName,
-        String eventHubName,
-        String authorizationRuleName,
-        AuthorizationRuleInner parameters) {
-        AuthorizationRuleInner inner =
-            this
-                .serviceClient()
-                .createOrUpdateAuthorizationRule(
-                    resourceGroupName, namespaceName, eventHubName, authorizationRuleName, parameters);
-        if (inner != null) {
-            return new AuthorizationRuleImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<AuthorizationRule> createOrUpdateAuthorizationRuleWithResponse(
         String resourceGroupName,
         String namespaceName,
@@ -87,12 +69,17 @@ public final class EventHubsImpl implements EventHubs {
         }
     }
 
-    public AuthorizationRule getAuthorizationRule(
-        String resourceGroupName, String namespaceName, String eventHubName, String authorizationRuleName) {
+    public AuthorizationRule createOrUpdateAuthorizationRule(
+        String resourceGroupName,
+        String namespaceName,
+        String eventHubName,
+        String authorizationRuleName,
+        AuthorizationRuleInner parameters) {
         AuthorizationRuleInner inner =
             this
                 .serviceClient()
-                .getAuthorizationRule(resourceGroupName, namespaceName, eventHubName, authorizationRuleName);
+                .createOrUpdateAuthorizationRule(
+                    resourceGroupName, namespaceName, eventHubName, authorizationRuleName, parameters);
         if (inner != null) {
             return new AuthorizationRuleImpl(inner, this.manager());
         } else {
@@ -122,11 +109,17 @@ public final class EventHubsImpl implements EventHubs {
         }
     }
 
-    public void deleteAuthorizationRule(
+    public AuthorizationRule getAuthorizationRule(
         String resourceGroupName, String namespaceName, String eventHubName, String authorizationRuleName) {
-        this
-            .serviceClient()
-            .deleteAuthorizationRule(resourceGroupName, namespaceName, eventHubName, authorizationRuleName);
+        AuthorizationRuleInner inner =
+            this
+                .serviceClient()
+                .getAuthorizationRule(resourceGroupName, namespaceName, eventHubName, authorizationRuleName);
+        if (inner != null) {
+            return new AuthorizationRuleImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> deleteAuthorizationRuleWithResponse(
@@ -141,15 +134,11 @@ public final class EventHubsImpl implements EventHubs {
                 resourceGroupName, namespaceName, eventHubName, authorizationRuleName, context);
     }
 
-    public AccessKeys listKeys(
+    public void deleteAuthorizationRule(
         String resourceGroupName, String namespaceName, String eventHubName, String authorizationRuleName) {
-        AccessKeysInner inner =
-            this.serviceClient().listKeys(resourceGroupName, namespaceName, eventHubName, authorizationRuleName);
-        if (inner != null) {
-            return new AccessKeysImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+        this
+            .serviceClient()
+            .deleteAuthorizationRule(resourceGroupName, namespaceName, eventHubName, authorizationRuleName);
     }
 
     public Response<AccessKeys> listKeysWithResponse(
@@ -173,16 +162,10 @@ public final class EventHubsImpl implements EventHubs {
         }
     }
 
-    public AccessKeys regenerateKeys(
-        String resourceGroupName,
-        String namespaceName,
-        String eventHubName,
-        String authorizationRuleName,
-        RegenerateAccessKeyParameters parameters) {
+    public AccessKeys listKeys(
+        String resourceGroupName, String namespaceName, String eventHubName, String authorizationRuleName) {
         AccessKeysInner inner =
-            this
-                .serviceClient()
-                .regenerateKeys(resourceGroupName, namespaceName, eventHubName, authorizationRuleName, parameters);
+            this.serviceClient().listKeys(resourceGroupName, namespaceName, eventHubName, authorizationRuleName);
         if (inner != null) {
             return new AccessKeysImpl(inner, this.manager());
         } else {
@@ -213,6 +196,23 @@ public final class EventHubsImpl implements EventHubs {
         }
     }
 
+    public AccessKeys regenerateKeys(
+        String resourceGroupName,
+        String namespaceName,
+        String eventHubName,
+        String authorizationRuleName,
+        RegenerateAccessKeyParameters parameters) {
+        AccessKeysInner inner =
+            this
+                .serviceClient()
+                .regenerateKeys(resourceGroupName, namespaceName, eventHubName, authorizationRuleName, parameters);
+        if (inner != null) {
+            return new AccessKeysImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
     public PagedIterable<Eventhub> listByNamespace(String resourceGroupName, String namespaceName) {
         PagedIterable<EventhubInner> inner = this.serviceClient().listByNamespace(resourceGroupName, namespaceName);
         return Utils.mapPage(inner, inner1 -> new EventhubImpl(inner1, this.manager()));
@@ -225,22 +225,13 @@ public final class EventHubsImpl implements EventHubs {
         return Utils.mapPage(inner, inner1 -> new EventhubImpl(inner1, this.manager()));
     }
 
-    public void delete(String resourceGroupName, String namespaceName, String eventHubName) {
-        this.serviceClient().delete(resourceGroupName, namespaceName, eventHubName);
-    }
-
     public Response<Void> deleteWithResponse(
         String resourceGroupName, String namespaceName, String eventHubName, Context context) {
         return this.serviceClient().deleteWithResponse(resourceGroupName, namespaceName, eventHubName, context);
     }
 
-    public Eventhub get(String resourceGroupName, String namespaceName, String eventHubName) {
-        EventhubInner inner = this.serviceClient().get(resourceGroupName, namespaceName, eventHubName);
-        if (inner != null) {
-            return new EventhubImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void delete(String resourceGroupName, String namespaceName, String eventHubName) {
+        this.serviceClient().delete(resourceGroupName, namespaceName, eventHubName);
     }
 
     public Response<Eventhub> getWithResponse(
@@ -253,6 +244,15 @@ public final class EventHubsImpl implements EventHubs {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new EventhubImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public Eventhub get(String resourceGroupName, String namespaceName, String eventHubName) {
+        EventhubInner inner = this.serviceClient().get(resourceGroupName, namespaceName, eventHubName);
+        if (inner != null) {
+            return new EventhubImpl(inner, this.manager());
         } else {
             return null;
         }

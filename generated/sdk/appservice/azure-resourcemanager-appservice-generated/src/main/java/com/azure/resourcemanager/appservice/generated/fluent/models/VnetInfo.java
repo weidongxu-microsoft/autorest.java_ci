@@ -54,6 +54,10 @@ public final class VnetInfo {
     @JsonProperty(value = "isSwift")
     private Boolean isSwift;
 
+    /** Creates an instance of VnetInfo class. */
+    public VnetInfo() {
+    }
+
     /**
      * Get the vnetResourceId property: The Virtual Network's resource ID.
      *

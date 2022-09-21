@@ -14,17 +14,6 @@ public interface SubscriptionNetworkManagerConnections {
      * Get a specified connection created by this subscription.
      *
      * @param networkManagerConnectionName Name for the network manager connection.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a specified connection created by this subscription.
-     */
-    NetworkManagerConnection get(String networkManagerConnectionName);
-
-    /**
-     * Get a specified connection created by this subscription.
-     *
-     * @param networkManagerConnectionName Name for the network manager connection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -34,14 +23,15 @@ public interface SubscriptionNetworkManagerConnections {
     Response<NetworkManagerConnection> getWithResponse(String networkManagerConnectionName, Context context);
 
     /**
-     * Delete specified connection created by this subscription.
+     * Get a specified connection created by this subscription.
      *
      * @param networkManagerConnectionName Name for the network manager connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a specified connection created by this subscription.
      */
-    void delete(String networkManagerConnectionName);
+    NetworkManagerConnection get(String networkManagerConnectionName);
 
     /**
      * Delete specified connection created by this subscription.
@@ -54,6 +44,16 @@ public interface SubscriptionNetworkManagerConnections {
      * @return the {@link Response}.
      */
     Response<Void> deleteWithResponse(String networkManagerConnectionName, Context context);
+
+    /**
+     * Delete specified connection created by this subscription.
+     *
+     * @param networkManagerConnectionName Name for the network manager connection.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void delete(String networkManagerConnectionName);
 
     /**
      * List all network manager connections created by this subscription.

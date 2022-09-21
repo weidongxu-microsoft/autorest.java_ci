@@ -16,6 +16,10 @@ public final class ServerUpgradeParametersProperties {
     @JsonProperty(value = "targetServerVersion")
     private String targetServerVersion;
 
+    /** Creates an instance of ServerUpgradeParametersProperties class. */
+    public ServerUpgradeParametersProperties() {
+    }
+
     /**
      * Get the targetServerVersion property: Represents an server storage profile.
      *

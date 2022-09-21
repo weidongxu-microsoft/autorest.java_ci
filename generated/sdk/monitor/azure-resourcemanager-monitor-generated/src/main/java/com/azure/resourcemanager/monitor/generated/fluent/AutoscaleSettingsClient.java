@@ -45,21 +45,6 @@ public interface AutoscaleSettingsClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param autoscaleSettingName The autoscale setting name.
      * @param parameters Parameters supplied to the operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the autoscale setting resource.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    AutoscaleSettingResourceInner createOrUpdate(
-        String resourceGroupName, String autoscaleSettingName, AutoscaleSettingResourceInner parameters);
-
-    /**
-     * Creates or updates an autoscale setting.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param autoscaleSettingName The autoscale setting name.
-     * @param parameters Parameters supplied to the operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -74,16 +59,19 @@ public interface AutoscaleSettingsClient {
         Context context);
 
     /**
-     * Deletes and autoscale setting.
+     * Creates or updates an autoscale setting.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param autoscaleSettingName The autoscale setting name.
+     * @param parameters Parameters supplied to the operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the autoscale setting resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    void delete(String resourceGroupName, String autoscaleSettingName);
+    AutoscaleSettingResourceInner createOrUpdate(
+        String resourceGroupName, String autoscaleSettingName, AutoscaleSettingResourceInner parameters);
 
     /**
      * Deletes and autoscale setting.
@@ -100,17 +88,16 @@ public interface AutoscaleSettingsClient {
     Response<Void> deleteWithResponse(String resourceGroupName, String autoscaleSettingName, Context context);
 
     /**
-     * Gets an autoscale setting.
+     * Deletes and autoscale setting.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param autoscaleSettingName The autoscale setting name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an autoscale setting.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    AutoscaleSettingResourceInner getByResourceGroup(String resourceGroupName, String autoscaleSettingName);
+    void delete(String resourceGroupName, String autoscaleSettingName);
 
     /**
      * Gets an autoscale setting.
@@ -128,19 +115,17 @@ public interface AutoscaleSettingsClient {
         String resourceGroupName, String autoscaleSettingName, Context context);
 
     /**
-     * Updates an existing AutoscaleSettingsResource. To update other fields use the CreateOrUpdate method.
+     * Gets an autoscale setting.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param autoscaleSettingName The autoscale setting name.
-     * @param autoscaleSettingResource Parameters supplied to the operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the autoscale setting resource.
+     * @return an autoscale setting.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    AutoscaleSettingResourceInner update(
-        String resourceGroupName, String autoscaleSettingName, AutoscaleSettingResourcePatch autoscaleSettingResource);
+    AutoscaleSettingResourceInner getByResourceGroup(String resourceGroupName, String autoscaleSettingName);
 
     /**
      * Updates an existing AutoscaleSettingsResource. To update other fields use the CreateOrUpdate method.
@@ -160,6 +145,21 @@ public interface AutoscaleSettingsClient {
         String autoscaleSettingName,
         AutoscaleSettingResourcePatch autoscaleSettingResource,
         Context context);
+
+    /**
+     * Updates an existing AutoscaleSettingsResource. To update other fields use the CreateOrUpdate method.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param autoscaleSettingName The autoscale setting name.
+     * @param autoscaleSettingResource Parameters supplied to the operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the autoscale setting resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    AutoscaleSettingResourceInner update(
+        String resourceGroupName, String autoscaleSettingName, AutoscaleSettingResourcePatch autoscaleSettingResource);
 
     /**
      * Lists the autoscale settings for a subscription.

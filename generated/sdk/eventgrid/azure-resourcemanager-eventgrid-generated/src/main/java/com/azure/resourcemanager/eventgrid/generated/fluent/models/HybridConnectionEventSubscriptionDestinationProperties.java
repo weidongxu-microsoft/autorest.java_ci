@@ -24,6 +24,10 @@ public final class HybridConnectionEventSubscriptionDestinationProperties {
     @JsonProperty(value = "deliveryAttributeMappings")
     private List<DeliveryAttributeMapping> deliveryAttributeMappings;
 
+    /** Creates an instance of HybridConnectionEventSubscriptionDestinationProperties class. */
+    public HybridConnectionEventSubscriptionDestinationProperties() {
+    }
+
     /**
      * Get the resourceId property: The Azure Resource ID of an hybrid connection that is the destination of an event
      * subscription.

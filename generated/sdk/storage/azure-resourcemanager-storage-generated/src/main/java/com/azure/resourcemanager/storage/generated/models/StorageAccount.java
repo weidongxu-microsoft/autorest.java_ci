@@ -1204,15 +1204,6 @@ public interface StorageAccount {
     /**
      * Lists the access keys or Kerberos keys (if active directory enabled) for the specified storage account.
      *
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the ListKeys operation.
-     */
-    StorageAccountListKeysResult listKeys();
-
-    /**
-     * Lists the access keys or Kerberos keys (if active directory enabled) for the specified storage account.
-     *
      * @param expand Specifies type of the key to be listed. Possible value is kerb.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1223,15 +1214,13 @@ public interface StorageAccount {
     Response<StorageAccountListKeysResult> listKeysWithResponse(ListKeyExpand expand, Context context);
 
     /**
-     * Regenerates one of the access keys or Kerberos keys for the specified storage account.
+     * Lists the access keys or Kerberos keys (if active directory enabled) for the specified storage account.
      *
-     * @param regenerateKey Specifies name of the key which should be regenerated -- key1, key2, kerb1, kerb2.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the response from the ListKeys operation.
      */
-    StorageAccountListKeysResult regenerateKey(StorageAccountRegenerateKeyParameters regenerateKey);
+    StorageAccountListKeysResult listKeys();
 
     /**
      * Regenerates one of the access keys or Kerberos keys for the specified storage account.
@@ -1247,15 +1236,15 @@ public interface StorageAccount {
         StorageAccountRegenerateKeyParameters regenerateKey, Context context);
 
     /**
-     * List SAS credentials of a storage account.
+     * Regenerates one of the access keys or Kerberos keys for the specified storage account.
      *
-     * @param parameters The parameters to provide to list SAS credentials for the storage account.
+     * @param regenerateKey Specifies name of the key which should be regenerated -- key1, key2, kerb1, kerb2.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List SAS credentials operation response.
+     * @return the response from the ListKeys operation.
      */
-    ListAccountSasResponse listAccountSas(AccountSasParameters parameters);
+    StorageAccountListKeysResult regenerateKey(StorageAccountRegenerateKeyParameters regenerateKey);
 
     /**
      * List SAS credentials of a storage account.
@@ -1270,15 +1259,15 @@ public interface StorageAccount {
     Response<ListAccountSasResponse> listAccountSasWithResponse(AccountSasParameters parameters, Context context);
 
     /**
-     * List service SAS credentials of a specific resource.
+     * List SAS credentials of a storage account.
      *
-     * @param parameters The parameters to provide to list service SAS credentials.
+     * @param parameters The parameters to provide to list SAS credentials for the storage account.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List service SAS credentials operation response.
+     * @return the List SAS credentials operation response.
      */
-    ListServiceSasResponse listServiceSas(ServiceSasParameters parameters);
+    ListAccountSasResponse listAccountSas(AccountSasParameters parameters);
 
     /**
      * List service SAS credentials of a specific resource.
@@ -1291,6 +1280,17 @@ public interface StorageAccount {
      * @return the List service SAS credentials operation response along with {@link Response}.
      */
     Response<ListServiceSasResponse> listServiceSasWithResponse(ServiceSasParameters parameters, Context context);
+
+    /**
+     * List service SAS credentials of a specific resource.
+     *
+     * @param parameters The parameters to provide to list service SAS credentials.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the List service SAS credentials operation response.
+     */
+    ListServiceSasResponse listServiceSas(ServiceSasParameters parameters);
 
     /**
      * Failover request can be triggered for a storage account in case of availability issues. The failover occurs from
@@ -1340,14 +1340,6 @@ public interface StorageAccount {
     /**
      * Revoke user delegation keys.
      *
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void revokeUserDelegationKeys();
-
-    /**
-     * Revoke user delegation keys.
-     *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -1355,4 +1347,12 @@ public interface StorageAccount {
      * @return the {@link Response}.
      */
     Response<Void> revokeUserDelegationKeysWithResponse(Context context);
+
+    /**
+     * Revoke user delegation keys.
+     *
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void revokeUserDelegationKeys();
 }

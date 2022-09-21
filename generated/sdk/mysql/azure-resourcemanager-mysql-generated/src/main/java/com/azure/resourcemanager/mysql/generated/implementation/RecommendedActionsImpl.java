@@ -27,17 +27,6 @@ public final class RecommendedActionsImpl implements RecommendedActions {
         this.serviceManager = serviceManager;
     }
 
-    public RecommendationAction get(
-        String resourceGroupName, String serverName, String advisorName, String recommendedActionName) {
-        RecommendationActionInner inner =
-            this.serviceClient().get(resourceGroupName, serverName, advisorName, recommendedActionName);
-        if (inner != null) {
-            return new RecommendationActionImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<RecommendationAction> getWithResponse(
         String resourceGroupName,
         String serverName,
@@ -54,6 +43,17 @@ public final class RecommendedActionsImpl implements RecommendedActions {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new RecommendationActionImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public RecommendationAction get(
+        String resourceGroupName, String serverName, String advisorName, String recommendedActionName) {
+        RecommendationActionInner inner =
+            this.serviceClient().get(resourceGroupName, serverName, advisorName, recommendedActionName);
+        if (inner != null) {
+            return new RecommendationActionImpl(inner, this.manager());
         } else {
             return null;
         }

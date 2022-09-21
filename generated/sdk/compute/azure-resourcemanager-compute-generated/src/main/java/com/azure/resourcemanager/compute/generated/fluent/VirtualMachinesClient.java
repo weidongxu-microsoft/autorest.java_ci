@@ -340,20 +340,6 @@ public interface VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Virtual Machine.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    VirtualMachineInner getByResourceGroup(String resourceGroupName, String vmName);
-
-    /**
-     * Retrieves information about the model view or the instance view of a virtual machine.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param vmName The name of the virtual machine.
      * @param expand The expand expression to apply on the operation. 'InstanceView' retrieves a snapshot of the runtime
      *     properties of the virtual machine that is managed by the platform and can change outside of control plane
      *     operations. 'UserData' retrieves the UserData property as part of the VM model view that was provided by the
@@ -370,7 +356,7 @@ public interface VirtualMachinesClient {
         String resourceGroupName, String vmName, InstanceViewTypes expand, Context context);
 
     /**
-     * Retrieves information about the run-time state of a virtual machine.
+     * Retrieves information about the model view or the instance view of a virtual machine.
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
@@ -378,10 +364,10 @@ public interface VirtualMachinesClient {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the instance view of a virtual machine.
+     * @return describes a Virtual Machine.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    VirtualMachineInstanceViewInner instanceView(String resourceGroupName, String vmName);
+    VirtualMachineInner getByResourceGroup(String resourceGroupName, String vmName);
 
     /**
      * Retrieves information about the run-time state of a virtual machine.
@@ -398,6 +384,20 @@ public interface VirtualMachinesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<VirtualMachineInstanceViewInner> instanceViewWithResponse(
         String resourceGroupName, String vmName, Context context);
+
+    /**
+     * Retrieves information about the run-time state of a virtual machine.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param vmName The name of the virtual machine.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the instance view of a virtual machine.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    VirtualMachineInstanceViewInner instanceView(String resourceGroupName, String vmName);
 
     /**
      * Converts virtual machine disks from blob-based to managed disks. Virtual machine must be stop-deallocated before
@@ -548,13 +548,15 @@ public interface VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
+     * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    void generalize(String resourceGroupName, String vmName);
+    Response<Void> generalizeWithResponse(String resourceGroupName, String vmName, Context context);
 
     /**
      * Sets the OS state of the virtual machine to generalized. It is recommended to sysprep the virtual machine before
@@ -565,15 +567,13 @@ public interface VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<Void> generalizeWithResponse(String resourceGroupName, String vmName, Context context);
+    void generalize(String resourceGroupName, String vmName);
 
     /**
      * Lists all of the virtual machines in the specified resource group. Use the nextLink property in the response to
@@ -1057,20 +1057,6 @@ public interface VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the SAS URIs of the console screenshot and serial log blobs.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    RetrieveBootDiagnosticsDataResultInner retrieveBootDiagnosticsData(String resourceGroupName, String vmName);
-
-    /**
-     * The operation to retrieve SAS URIs for a virtual machine's boot diagnostic logs.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param vmName The name of the virtual machine.
      * @param sasUriExpirationTimeInMinutes Expiration duration in minutes for the SAS URIs with a value between 1 to
      *     1440 minutes. &lt;br&gt;&lt;br&gt;NOTE: If not specified, SAS URIs will be generated with a default
      *     expiration duration of 120 minutes.
@@ -1084,6 +1070,20 @@ public interface VirtualMachinesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<RetrieveBootDiagnosticsDataResultInner> retrieveBootDiagnosticsDataWithResponse(
         String resourceGroupName, String vmName, Integer sasUriExpirationTimeInMinutes, Context context);
+
+    /**
+     * The operation to retrieve SAS URIs for a virtual machine's boot diagnostic logs.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param vmName The name of the virtual machine.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the SAS URIs of the console screenshot and serial log blobs.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    RetrieveBootDiagnosticsDataResultInner retrieveBootDiagnosticsData(String resourceGroupName, String vmName);
 
     /**
      * The operation to perform maintenance on a virtual machine.
@@ -1147,19 +1147,6 @@ public interface VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    void simulateEviction(String resourceGroupName, String vmName);
-
-    /**
-     * The operation to simulate the eviction of spot virtual machine.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param vmName The name of the virtual machine.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
@@ -1169,6 +1156,19 @@ public interface VirtualMachinesClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> simulateEvictionWithResponse(String resourceGroupName, String vmName, Context context);
+
+    /**
+     * The operation to simulate the eviction of spot virtual machine.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param vmName The name of the virtual machine.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    void simulateEviction(String resourceGroupName, String vmName);
 
     /**
      * Assess patches on the VM.

@@ -28,15 +28,6 @@ public final class FileServicesImpl implements FileServices {
         this.serviceManager = serviceManager;
     }
 
-    public FileServiceItems list(String resourceGroupName, String accountName) {
-        FileServiceItemsInner inner = this.serviceClient().list(resourceGroupName, accountName);
-        if (inner != null) {
-            return new FileServiceItemsImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<FileServiceItems> listWithResponse(String resourceGroupName, String accountName, Context context) {
         Response<FileServiceItemsInner> inner =
             this.serviceClient().listWithResponse(resourceGroupName, accountName, context);
@@ -51,10 +42,10 @@ public final class FileServicesImpl implements FileServices {
         }
     }
 
-    public FileServiceProperties getServiceProperties(String resourceGroupName, String accountName) {
-        FileServicePropertiesInner inner = this.serviceClient().getServiceProperties(resourceGroupName, accountName);
+    public FileServiceItems list(String resourceGroupName, String accountName) {
+        FileServiceItemsInner inner = this.serviceClient().list(resourceGroupName, accountName);
         if (inner != null) {
-            return new FileServicePropertiesImpl(inner, this.manager());
+            return new FileServiceItemsImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -70,6 +61,15 @@ public final class FileServicesImpl implements FileServices {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new FileServicePropertiesImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public FileServiceProperties getServiceProperties(String resourceGroupName, String accountName) {
+        FileServicePropertiesInner inner = this.serviceClient().getServiceProperties(resourceGroupName, accountName);
+        if (inner != null) {
+            return new FileServicePropertiesImpl(inner, this.manager());
         } else {
             return null;
         }

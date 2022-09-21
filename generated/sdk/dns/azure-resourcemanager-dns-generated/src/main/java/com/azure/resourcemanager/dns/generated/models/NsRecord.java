@@ -16,6 +16,10 @@ public final class NsRecord {
     @JsonProperty(value = "nsdname")
     private String nsdname;
 
+    /** Creates an instance of NsRecord class. */
+    public NsRecord() {
+    }
+
     /**
      * Get the nsdname property: The name server name for this NS record.
      *

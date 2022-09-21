@@ -24,6 +24,10 @@ public final class Destination {
     @JsonProperty(value = "properties")
     private DestinationProperties innerProperties;
 
+    /** Creates an instance of Destination class. */
+    public Destination() {
+    }
+
     /**
      * Get the name property: Name for capture destination.
      *

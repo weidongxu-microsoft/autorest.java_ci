@@ -22,6 +22,10 @@ public final class VnetValidationTestFailureProperties {
     @JsonProperty(value = "details")
     private String details;
 
+    /** Creates an instance of VnetValidationTestFailureProperties class. */
+    public VnetValidationTestFailureProperties() {
+    }
+
     /**
      * Get the testName property: The name of the test that failed.
      *

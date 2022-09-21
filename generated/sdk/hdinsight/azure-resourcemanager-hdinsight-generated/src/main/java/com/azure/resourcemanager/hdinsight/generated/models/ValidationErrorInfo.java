@@ -35,6 +35,10 @@ public final class ValidationErrorInfo {
     @JsonProperty(value = "messageArguments")
     private List<String> messageArguments;
 
+    /** Creates an instance of ValidationErrorInfo class. */
+    public ValidationErrorInfo() {
+    }
+
     /**
      * Get the code property: The error code.
      *

@@ -36,6 +36,10 @@ public final class ContactDetails {
     @JsonProperty(value = "emailList", required = true)
     private List<String> emailList;
 
+    /** Creates an instance of ContactDetails class. */
+    public ContactDetails() {
+    }
+
     /**
      * Get the contactPerson property: The contact person name.
      *

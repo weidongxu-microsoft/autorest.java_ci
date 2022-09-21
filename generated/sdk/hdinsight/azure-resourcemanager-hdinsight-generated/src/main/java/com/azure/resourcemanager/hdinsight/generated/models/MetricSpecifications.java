@@ -113,6 +113,10 @@ public final class MetricSpecifications {
     @JsonProperty(value = "dimensions")
     private List<Dimension> dimensions;
 
+    /** Creates an instance of MetricSpecifications class. */
+    public MetricSpecifications() {
+    }
+
     /**
      * Get the name property: The name of the metric specification.
      *

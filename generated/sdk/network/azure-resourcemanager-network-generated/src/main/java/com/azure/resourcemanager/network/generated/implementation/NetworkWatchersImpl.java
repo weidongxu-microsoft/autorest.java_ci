@@ -58,15 +58,6 @@ public final class NetworkWatchersImpl implements NetworkWatchers {
         this.serviceManager = serviceManager;
     }
 
-    public NetworkWatcher getByResourceGroup(String resourceGroupName, String networkWatcherName) {
-        NetworkWatcherInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, networkWatcherName);
-        if (inner != null) {
-            return new NetworkWatcherImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<NetworkWatcher> getByResourceGroupWithResponse(
         String resourceGroupName, String networkWatcherName, Context context) {
         Response<NetworkWatcherInner> inner =
@@ -77,6 +68,15 @@ public final class NetworkWatchersImpl implements NetworkWatchers {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new NetworkWatcherImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public NetworkWatcher getByResourceGroup(String resourceGroupName, String networkWatcherName) {
+        NetworkWatcherInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, networkWatcherName);
+        if (inner != null) {
+            return new NetworkWatcherImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -110,15 +110,6 @@ public final class NetworkWatchersImpl implements NetworkWatchers {
         return Utils.mapPage(inner, inner1 -> new NetworkWatcherImpl(inner1, this.manager()));
     }
 
-    public Topology getTopology(String resourceGroupName, String networkWatcherName, TopologyParameters parameters) {
-        TopologyInner inner = this.serviceClient().getTopology(resourceGroupName, networkWatcherName, parameters);
-        if (inner != null) {
-            return new TopologyImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<Topology> getTopologyWithResponse(
         String resourceGroupName, String networkWatcherName, TopologyParameters parameters, Context context) {
         Response<TopologyInner> inner =
@@ -129,6 +120,15 @@ public final class NetworkWatchersImpl implements NetworkWatchers {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new TopologyImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public Topology getTopology(String resourceGroupName, String networkWatcherName, TopologyParameters parameters) {
+        TopologyInner inner = this.serviceClient().getTopology(resourceGroupName, networkWatcherName, parameters);
+        if (inner != null) {
+            return new TopologyImpl(inner, this.manager());
         } else {
             return null;
         }

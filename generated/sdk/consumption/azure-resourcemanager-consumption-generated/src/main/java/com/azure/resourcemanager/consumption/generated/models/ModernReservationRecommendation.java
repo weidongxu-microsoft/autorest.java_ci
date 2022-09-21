@@ -27,6 +27,10 @@ public final class ModernReservationRecommendation extends ReservationRecommenda
     @JsonProperty(value = "properties", required = true)
     private ModernReservationRecommendationProperties innerProperties = new ModernReservationRecommendationProperties();
 
+    /** Creates an instance of ModernReservationRecommendation class. */
+    public ModernReservationRecommendation() {
+    }
+
     /**
      * Get the innerProperties property: Properties for modern reservation recommendation.
      *

@@ -24,6 +24,10 @@ public final class NodeList {
     @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
 
+    /** Creates an instance of NodeList class. */
+    public NodeList() {
+    }
+
     /**
      * Get the value property: The list of Nodes.
      *

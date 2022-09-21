@@ -35,15 +35,6 @@ public final class CustomIpPrefixesImpl implements CustomIpPrefixes {
         this.serviceClient().delete(resourceGroupName, customIpPrefixName, context);
     }
 
-    public CustomIpPrefix getByResourceGroup(String resourceGroupName, String customIpPrefixName) {
-        CustomIpPrefixInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, customIpPrefixName);
-        if (inner != null) {
-            return new CustomIpPrefixImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<CustomIpPrefix> getByResourceGroupWithResponse(
         String resourceGroupName, String customIpPrefixName, String expand, Context context) {
         Response<CustomIpPrefixInner> inner =
@@ -54,6 +45,15 @@ public final class CustomIpPrefixesImpl implements CustomIpPrefixes {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new CustomIpPrefixImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public CustomIpPrefix getByResourceGroup(String resourceGroupName, String customIpPrefixName) {
+        CustomIpPrefixInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, customIpPrefixName);
+        if (inner != null) {
+            return new CustomIpPrefixImpl(inner, this.manager());
         } else {
             return null;
         }

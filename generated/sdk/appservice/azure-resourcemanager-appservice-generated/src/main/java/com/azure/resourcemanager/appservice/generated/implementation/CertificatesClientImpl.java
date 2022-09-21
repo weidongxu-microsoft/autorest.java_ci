@@ -651,11 +651,11 @@ public final class CertificatesClientImpl implements CertificatesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return sSL certificate for an app.
+     * @return sSL certificate for an app along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public CertificateInner getByResourceGroup(String resourceGroupName, String name) {
-        return getByResourceGroupAsync(resourceGroupName, name).block();
+    public Response<CertificateInner> getByResourceGroupWithResponse(String resourceGroupName, String name) {
+        return getByResourceGroupWithResponseAsync(resourceGroupName, name).block();
     }
 
     /**
@@ -675,6 +675,23 @@ public final class CertificatesClientImpl implements CertificatesClient {
     public Response<CertificateInner> getByResourceGroupWithResponse(
         String resourceGroupName, String name, Context context) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, name, context).block();
+    }
+
+    /**
+     * Get a certificate.
+     *
+     * <p>Description for Get a certificate.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the certificate.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return sSL certificate for an app.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public CertificateInner getByResourceGroup(String resourceGroupName, String name) {
+        return getByResourceGroupWithResponse(resourceGroupName, name, Context.NONE).getValue();
     }
 
     /**
@@ -822,12 +839,12 @@ public final class CertificatesClientImpl implements CertificatesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return sSL certificate for an app.
+     * @return sSL certificate for an app along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public CertificateInner createOrUpdate(
+    public Response<CertificateInner> createOrUpdateWithResponse(
         String resourceGroupName, String name, CertificateInner certificateEnvelope) {
-        return createOrUpdateAsync(resourceGroupName, name, certificateEnvelope).block();
+        return createOrUpdateWithResponseAsync(resourceGroupName, name, certificateEnvelope).block();
     }
 
     /**
@@ -848,6 +865,25 @@ public final class CertificatesClientImpl implements CertificatesClient {
     public Response<CertificateInner> createOrUpdateWithResponse(
         String resourceGroupName, String name, CertificateInner certificateEnvelope, Context context) {
         return createOrUpdateWithResponseAsync(resourceGroupName, name, certificateEnvelope, context).block();
+    }
+
+    /**
+     * Create or update a certificate.
+     *
+     * <p>Description for Create or update a certificate.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the certificate.
+     * @param certificateEnvelope Details of certificate, if it exists already.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return sSL certificate for an app.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public CertificateInner createOrUpdate(
+        String resourceGroupName, String name, CertificateInner certificateEnvelope) {
+        return createOrUpdateWithResponse(resourceGroupName, name, certificateEnvelope, Context.NONE).getValue();
     }
 
     /**
@@ -973,10 +1009,11 @@ public final class CertificatesClientImpl implements CertificatesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public void delete(String resourceGroupName, String name) {
-        deleteAsync(resourceGroupName, name).block();
+    public Response<Void> deleteWithResponse(String resourceGroupName, String name) {
+        return deleteWithResponseAsync(resourceGroupName, name).block();
     }
 
     /**
@@ -995,6 +1032,22 @@ public final class CertificatesClientImpl implements CertificatesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<Void> deleteWithResponse(String resourceGroupName, String name, Context context) {
         return deleteWithResponseAsync(resourceGroupName, name, context).block();
+    }
+
+    /**
+     * Delete a certificate.
+     *
+     * <p>Description for Delete a certificate.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the certificate.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public void delete(String resourceGroupName, String name) {
+        deleteWithResponse(resourceGroupName, name, Context.NONE);
     }
 
     /**
@@ -1142,12 +1195,12 @@ public final class CertificatesClientImpl implements CertificatesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return sSL certificate for an app.
+     * @return sSL certificate for an app along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public CertificateInner update(
+    public Response<CertificateInner> updateWithResponse(
         String resourceGroupName, String name, CertificatePatchResource certificateEnvelope) {
-        return updateAsync(resourceGroupName, name, certificateEnvelope).block();
+        return updateWithResponseAsync(resourceGroupName, name, certificateEnvelope).block();
     }
 
     /**
@@ -1168,6 +1221,25 @@ public final class CertificatesClientImpl implements CertificatesClient {
     public Response<CertificateInner> updateWithResponse(
         String resourceGroupName, String name, CertificatePatchResource certificateEnvelope, Context context) {
         return updateWithResponseAsync(resourceGroupName, name, certificateEnvelope, context).block();
+    }
+
+    /**
+     * Create or update a certificate.
+     *
+     * <p>Description for Create or update a certificate.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the certificate.
+     * @param certificateEnvelope Details of certificate, if it exists already.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return sSL certificate for an app.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public CertificateInner update(
+        String resourceGroupName, String name, CertificatePatchResource certificateEnvelope) {
+        return updateWithResponse(resourceGroupName, name, certificateEnvelope, Context.NONE).getValue();
     }
 
     /**

@@ -47,6 +47,10 @@ public final class ForecastDefinition {
     @JsonProperty(value = "includeFreshPartialCost")
     private Boolean includeFreshPartialCost;
 
+    /** Creates an instance of ForecastDefinition class. */
+    public ForecastDefinition() {
+    }
+
     /**
      * Get the type property: The type of the forecast.
      *

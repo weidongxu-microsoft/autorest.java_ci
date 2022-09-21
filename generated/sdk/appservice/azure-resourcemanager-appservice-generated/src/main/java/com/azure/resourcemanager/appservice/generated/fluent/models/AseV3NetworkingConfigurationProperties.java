@@ -59,6 +59,10 @@ public final class AseV3NetworkingConfigurationProperties {
     @JsonProperty(value = "inboundIpAddressOverride")
     private String inboundIpAddressOverride;
 
+    /** Creates an instance of AseV3NetworkingConfigurationProperties class. */
+    public AseV3NetworkingConfigurationProperties() {
+    }
+
     /**
      * Get the windowsOutboundIpAddresses property: The windowsOutboundIpAddresses property.
      *

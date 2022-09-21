@@ -244,17 +244,6 @@ public interface SshPublicKeyResource {
      * Generates and returns a public/private key pair and populates the SSH public key resource with the public key.
      * The length of the key will be 3072 bits. This operation can only be performed once per SSH public key resource.
      *
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response from generation of an SSH key pair.
-     */
-    SshPublicKeyGenerateKeyPairResult generateKeyPair();
-
-    /**
-     * Generates and returns a public/private key pair and populates the SSH public key resource with the public key.
-     * The length of the key will be 3072 bits. This operation can only be performed once per SSH public key resource.
-     *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
@@ -263,4 +252,15 @@ public interface SshPublicKeyResource {
      * @return response from generation of an SSH key pair along with {@link Response}.
      */
     Response<SshPublicKeyGenerateKeyPairResult> generateKeyPairWithResponse(Context context);
+
+    /**
+     * Generates and returns a public/private key pair and populates the SSH public key resource with the public key.
+     * The length of the key will be 3072 bits. This operation can only be performed once per SSH public key resource.
+     *
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return response from generation of an SSH key pair.
+     */
+    SshPublicKeyGenerateKeyPairResult generateKeyPair();
 }

@@ -72,6 +72,10 @@ public final class QueryStatisticProperties {
     @JsonProperty(value = "metricValueUnit")
     private String metricValueUnit;
 
+    /** Creates an instance of QueryStatisticProperties class. */
+    public QueryStatisticProperties() {
+    }
+
     /**
      * Get the queryId property: Database query identifier.
      *

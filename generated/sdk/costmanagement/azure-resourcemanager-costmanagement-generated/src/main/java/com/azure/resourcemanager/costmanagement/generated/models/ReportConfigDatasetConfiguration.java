@@ -18,6 +18,10 @@ public final class ReportConfigDatasetConfiguration {
     @JsonProperty(value = "columns")
     private List<String> columns;
 
+    /** Creates an instance of ReportConfigDatasetConfiguration class. */
+    public ReportConfigDatasetConfiguration() {
+    }
+
     /**
      * Get the columns property: Array of column names to be included in the report. Any valid report column name is
      * allowed. If not provided, then report includes all columns.

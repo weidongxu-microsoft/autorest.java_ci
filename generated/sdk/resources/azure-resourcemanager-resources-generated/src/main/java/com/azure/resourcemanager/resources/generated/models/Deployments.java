@@ -52,18 +52,6 @@ public interface Deployments {
      *
      * @param scope The resource scope.
      * @param deploymentName The name of the deployment.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return whether resource exists.
-     */
-    boolean checkExistenceAtScope(String scope, String deploymentName);
-
-    /**
-     * Checks whether the deployment exists.
-     *
-     * @param scope The resource scope.
-     * @param deploymentName The name of the deployment.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -71,6 +59,18 @@ public interface Deployments {
      * @return whether resource exists along with {@link Response}.
      */
     Response<Boolean> checkExistenceAtScopeWithResponse(String scope, String deploymentName, Context context);
+
+    /**
+     * Checks whether the deployment exists.
+     *
+     * @param scope The resource scope.
+     * @param deploymentName The name of the deployment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return whether resource exists.
+     */
+    boolean checkExistenceAtScope(String scope, String deploymentName);
 
     /**
      * Deploys resources at a given scope.
@@ -109,18 +109,6 @@ public interface Deployments {
      *
      * @param scope The resource scope.
      * @param deploymentName The name of the deployment.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployment.
-     */
-    DeploymentExtended getAtScope(String scope, String deploymentName);
-
-    /**
-     * Gets a deployment.
-     *
-     * @param scope The resource scope.
-     * @param deploymentName The name of the deployment.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -130,19 +118,16 @@ public interface Deployments {
     Response<DeploymentExtended> getAtScopeWithResponse(String scope, String deploymentName, Context context);
 
     /**
-     * Cancels a currently running template deployment.
-     *
-     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
-     * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
-     * template deployment and leaves the resources partially deployed.
+     * Gets a deployment.
      *
      * @param scope The resource scope.
      * @param deploymentName The name of the deployment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a deployment.
      */
-    void cancelAtScope(String scope, String deploymentName);
+    DeploymentExtended getAtScope(String scope, String deploymentName);
 
     /**
      * Cancels a currently running template deployment.
@@ -160,6 +145,21 @@ public interface Deployments {
      * @return the {@link Response}.
      */
     Response<Void> cancelAtScopeWithResponse(String scope, String deploymentName, Context context);
+
+    /**
+     * Cancels a currently running template deployment.
+     *
+     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
+     * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
+     * template deployment and leaves the resources partially deployed.
+     *
+     * @param scope The resource scope.
+     * @param deploymentName The name of the deployment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void cancelAtScope(String scope, String deploymentName);
 
     /**
      * Validates whether the specified template is syntactically correct and will be accepted by Azure Resource
@@ -196,18 +196,6 @@ public interface Deployments {
      *
      * @param scope The resource scope.
      * @param deploymentName The name of the deployment.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the deployment export result.
-     */
-    DeploymentExportResult exportTemplateAtScope(String scope, String deploymentName);
-
-    /**
-     * Exports the template used for specified deployment.
-     *
-     * @param scope The resource scope.
-     * @param deploymentName The name of the deployment.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -216,6 +204,18 @@ public interface Deployments {
      */
     Response<DeploymentExportResult> exportTemplateAtScopeWithResponse(
         String scope, String deploymentName, Context context);
+
+    /**
+     * Exports the template used for specified deployment.
+     *
+     * @param scope The resource scope.
+     * @param deploymentName The name of the deployment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the deployment export result.
+     */
+    DeploymentExportResult exportTemplateAtScope(String scope, String deploymentName);
 
     /**
      * Get all the deployments at the given scope.
@@ -282,17 +282,6 @@ public interface Deployments {
      * Checks whether the deployment exists.
      *
      * @param deploymentName The name of the deployment.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return whether resource exists.
-     */
-    boolean checkExistenceAtTenantScope(String deploymentName);
-
-    /**
-     * Checks whether the deployment exists.
-     *
-     * @param deploymentName The name of the deployment.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -300,6 +289,17 @@ public interface Deployments {
      * @return whether resource exists along with {@link Response}.
      */
     Response<Boolean> checkExistenceAtTenantScopeWithResponse(String deploymentName, Context context);
+
+    /**
+     * Checks whether the deployment exists.
+     *
+     * @param deploymentName The name of the deployment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return whether resource exists.
+     */
+    boolean checkExistenceAtTenantScope(String deploymentName);
 
     /**
      * Deploys resources at tenant scope.
@@ -334,17 +334,6 @@ public interface Deployments {
      * Gets a deployment.
      *
      * @param deploymentName The name of the deployment.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployment.
-     */
-    DeploymentExtended getAtTenantScope(String deploymentName);
-
-    /**
-     * Gets a deployment.
-     *
-     * @param deploymentName The name of the deployment.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -354,18 +343,15 @@ public interface Deployments {
     Response<DeploymentExtended> getAtTenantScopeWithResponse(String deploymentName, Context context);
 
     /**
-     * Cancels a currently running template deployment.
-     *
-     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
-     * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
-     * template deployment and leaves the resources partially deployed.
+     * Gets a deployment.
      *
      * @param deploymentName The name of the deployment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a deployment.
      */
-    void cancelAtTenantScope(String deploymentName);
+    DeploymentExtended getAtTenantScope(String deploymentName);
 
     /**
      * Cancels a currently running template deployment.
@@ -382,6 +368,20 @@ public interface Deployments {
      * @return the {@link Response}.
      */
     Response<Void> cancelAtTenantScopeWithResponse(String deploymentName, Context context);
+
+    /**
+     * Cancels a currently running template deployment.
+     *
+     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
+     * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
+     * template deployment and leaves the resources partially deployed.
+     *
+     * @param deploymentName The name of the deployment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void cancelAtTenantScope(String deploymentName);
 
     /**
      * Validates whether the specified template is syntactically correct and will be accepted by Azure Resource
@@ -440,17 +440,6 @@ public interface Deployments {
      * Exports the template used for specified deployment.
      *
      * @param deploymentName The name of the deployment.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the deployment export result.
-     */
-    DeploymentExportResult exportTemplateAtTenantScope(String deploymentName);
-
-    /**
-     * Exports the template used for specified deployment.
-     *
-     * @param deploymentName The name of the deployment.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -458,6 +447,17 @@ public interface Deployments {
      * @return the deployment export result along with {@link Response}.
      */
     Response<DeploymentExportResult> exportTemplateAtTenantScopeWithResponse(String deploymentName, Context context);
+
+    /**
+     * Exports the template used for specified deployment.
+     *
+     * @param deploymentName The name of the deployment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the deployment export result.
+     */
+    DeploymentExportResult exportTemplateAtTenantScope(String deploymentName);
 
     /**
      * Get all the deployments at the tenant scope.
@@ -524,18 +524,6 @@ public interface Deployments {
      *
      * @param groupId The management group ID.
      * @param deploymentName The name of the deployment.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return whether resource exists.
-     */
-    boolean checkExistenceAtManagementGroupScope(String groupId, String deploymentName);
-
-    /**
-     * Checks whether the deployment exists.
-     *
-     * @param groupId The management group ID.
-     * @param deploymentName The name of the deployment.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -544,6 +532,18 @@ public interface Deployments {
      */
     Response<Boolean> checkExistenceAtManagementGroupScopeWithResponse(
         String groupId, String deploymentName, Context context);
+
+    /**
+     * Checks whether the deployment exists.
+     *
+     * @param groupId The management group ID.
+     * @param deploymentName The name of the deployment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return whether resource exists.
+     */
+    boolean checkExistenceAtManagementGroupScope(String groupId, String deploymentName);
 
     /**
      * Deploys resources at management group scope.
@@ -583,18 +583,6 @@ public interface Deployments {
      *
      * @param groupId The management group ID.
      * @param deploymentName The name of the deployment.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployment.
-     */
-    DeploymentExtended getAtManagementGroupScope(String groupId, String deploymentName);
-
-    /**
-     * Gets a deployment.
-     *
-     * @param groupId The management group ID.
-     * @param deploymentName The name of the deployment.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -605,19 +593,16 @@ public interface Deployments {
         String groupId, String deploymentName, Context context);
 
     /**
-     * Cancels a currently running template deployment.
-     *
-     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
-     * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
-     * template deployment and leaves the resources partially deployed.
+     * Gets a deployment.
      *
      * @param groupId The management group ID.
      * @param deploymentName The name of the deployment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a deployment.
      */
-    void cancelAtManagementGroupScope(String groupId, String deploymentName);
+    DeploymentExtended getAtManagementGroupScope(String groupId, String deploymentName);
 
     /**
      * Cancels a currently running template deployment.
@@ -635,6 +620,21 @@ public interface Deployments {
      * @return the {@link Response}.
      */
     Response<Void> cancelAtManagementGroupScopeWithResponse(String groupId, String deploymentName, Context context);
+
+    /**
+     * Cancels a currently running template deployment.
+     *
+     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
+     * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
+     * template deployment and leaves the resources partially deployed.
+     *
+     * @param groupId The management group ID.
+     * @param deploymentName The name of the deployment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void cancelAtManagementGroupScope(String groupId, String deploymentName);
 
     /**
      * Validates whether the specified template is syntactically correct and will be accepted by Azure Resource
@@ -701,18 +701,6 @@ public interface Deployments {
      *
      * @param groupId The management group ID.
      * @param deploymentName The name of the deployment.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the deployment export result.
-     */
-    DeploymentExportResult exportTemplateAtManagementGroupScope(String groupId, String deploymentName);
-
-    /**
-     * Exports the template used for specified deployment.
-     *
-     * @param groupId The management group ID.
-     * @param deploymentName The name of the deployment.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -721,6 +709,18 @@ public interface Deployments {
      */
     Response<DeploymentExportResult> exportTemplateAtManagementGroupScopeWithResponse(
         String groupId, String deploymentName, Context context);
+
+    /**
+     * Exports the template used for specified deployment.
+     *
+     * @param groupId The management group ID.
+     * @param deploymentName The name of the deployment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the deployment export result.
+     */
+    DeploymentExportResult exportTemplateAtManagementGroupScope(String groupId, String deploymentName);
 
     /**
      * Get all the deployments for a management group.
@@ -788,17 +788,6 @@ public interface Deployments {
      * Checks whether the deployment exists.
      *
      * @param deploymentName The name of the deployment.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return whether resource exists.
-     */
-    boolean checkExistenceAtSubscriptionScope(String deploymentName);
-
-    /**
-     * Checks whether the deployment exists.
-     *
-     * @param deploymentName The name of the deployment.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -806,6 +795,17 @@ public interface Deployments {
      * @return whether resource exists along with {@link Response}.
      */
     Response<Boolean> checkExistenceAtSubscriptionScopeWithResponse(String deploymentName, Context context);
+
+    /**
+     * Checks whether the deployment exists.
+     *
+     * @param deploymentName The name of the deployment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return whether resource exists.
+     */
+    boolean checkExistenceAtSubscriptionScope(String deploymentName);
 
     /**
      * Deploys resources at subscription scope.
@@ -840,17 +840,6 @@ public interface Deployments {
      * Gets a deployment.
      *
      * @param deploymentName The name of the deployment.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployment.
-     */
-    DeploymentExtended getAtSubscriptionScope(String deploymentName);
-
-    /**
-     * Gets a deployment.
-     *
-     * @param deploymentName The name of the deployment.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -860,18 +849,15 @@ public interface Deployments {
     Response<DeploymentExtended> getAtSubscriptionScopeWithResponse(String deploymentName, Context context);
 
     /**
-     * Cancels a currently running template deployment.
-     *
-     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
-     * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
-     * template deployment and leaves the resources partially deployed.
+     * Gets a deployment.
      *
      * @param deploymentName The name of the deployment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a deployment.
      */
-    void cancelAtSubscriptionScope(String deploymentName);
+    DeploymentExtended getAtSubscriptionScope(String deploymentName);
 
     /**
      * Cancels a currently running template deployment.
@@ -888,6 +874,20 @@ public interface Deployments {
      * @return the {@link Response}.
      */
     Response<Void> cancelAtSubscriptionScopeWithResponse(String deploymentName, Context context);
+
+    /**
+     * Cancels a currently running template deployment.
+     *
+     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
+     * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
+     * template deployment and leaves the resources partially deployed.
+     *
+     * @param deploymentName The name of the deployment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void cancelAtSubscriptionScope(String deploymentName);
 
     /**
      * Validates whether the specified template is syntactically correct and will be accepted by Azure Resource
@@ -946,17 +946,6 @@ public interface Deployments {
      * Exports the template used for specified deployment.
      *
      * @param deploymentName The name of the deployment.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the deployment export result.
-     */
-    DeploymentExportResult exportTemplateAtSubscriptionScope(String deploymentName);
-
-    /**
-     * Exports the template used for specified deployment.
-     *
-     * @param deploymentName The name of the deployment.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -965,6 +954,17 @@ public interface Deployments {
      */
     Response<DeploymentExportResult> exportTemplateAtSubscriptionScopeWithResponse(
         String deploymentName, Context context);
+
+    /**
+     * Exports the template used for specified deployment.
+     *
+     * @param deploymentName The name of the deployment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the deployment export result.
+     */
+    DeploymentExportResult exportTemplateAtSubscriptionScope(String deploymentName);
 
     /**
      * Get all the deployments for a subscription.
@@ -1036,19 +1036,6 @@ public interface Deployments {
      * @param resourceGroupName The name of the resource group with the deployment to check. The name is case
      *     insensitive.
      * @param deploymentName The name of the deployment.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return whether resource exists.
-     */
-    boolean checkExistence(String resourceGroupName, String deploymentName);
-
-    /**
-     * Checks whether the deployment exists.
-     *
-     * @param resourceGroupName The name of the resource group with the deployment to check. The name is case
-     *     insensitive.
-     * @param deploymentName The name of the deployment.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -1058,16 +1045,17 @@ public interface Deployments {
     Response<Boolean> checkExistenceWithResponse(String resourceGroupName, String deploymentName, Context context);
 
     /**
-     * Gets a deployment.
+     * Checks whether the deployment exists.
      *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group with the deployment to check. The name is case
+     *     insensitive.
      * @param deploymentName The name of the deployment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployment.
+     * @return whether resource exists.
      */
-    DeploymentExtended getByResourceGroup(String resourceGroupName, String deploymentName);
+    boolean checkExistence(String resourceGroupName, String deploymentName);
 
     /**
      * Gets a deployment.
@@ -1084,19 +1072,16 @@ public interface Deployments {
         String resourceGroupName, String deploymentName, Context context);
 
     /**
-     * Cancels a currently running template deployment.
-     *
-     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
-     * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
-     * template deployment and leaves the resource group partially deployed.
+     * Gets a deployment.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param deploymentName The name of the deployment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a deployment.
      */
-    void cancel(String resourceGroupName, String deploymentName);
+    DeploymentExtended getByResourceGroup(String resourceGroupName, String deploymentName);
 
     /**
      * Cancels a currently running template deployment.
@@ -1114,6 +1099,21 @@ public interface Deployments {
      * @return the {@link Response}.
      */
     Response<Void> cancelWithResponse(String resourceGroupName, String deploymentName, Context context);
+
+    /**
+     * Cancels a currently running template deployment.
+     *
+     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
+     * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
+     * template deployment and leaves the resource group partially deployed.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param deploymentName The name of the deployment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void cancel(String resourceGroupName, String deploymentName);
 
     /**
      * Validates whether the specified template is syntactically correct and will be accepted by Azure Resource
@@ -1182,18 +1182,6 @@ public interface Deployments {
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param deploymentName The name of the deployment.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the deployment export result.
-     */
-    DeploymentExportResult exportTemplate(String resourceGroupName, String deploymentName);
-
-    /**
-     * Exports the template used for specified deployment.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param deploymentName The name of the deployment.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -1202,6 +1190,18 @@ public interface Deployments {
      */
     Response<DeploymentExportResult> exportTemplateWithResponse(
         String resourceGroupName, String deploymentName, Context context);
+
+    /**
+     * Exports the template used for specified deployment.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param deploymentName The name of the deployment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the deployment export result.
+     */
+    DeploymentExportResult exportTemplate(String resourceGroupName, String deploymentName);
 
     /**
      * Get all the deployments for a resource group.
@@ -1236,17 +1236,6 @@ public interface Deployments {
      * Calculate the hash of the given template.
      *
      * @param template The template provided to calculate hash.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to calculate template hash.
-     */
-    TemplateHashResult calculateTemplateHash(Object template);
-
-    /**
-     * Calculate the hash of the given template.
-     *
-     * @param template The template provided to calculate hash.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -1254,6 +1243,17 @@ public interface Deployments {
      * @return result of the request to calculate template hash along with {@link Response}.
      */
     Response<TemplateHashResult> calculateTemplateHashWithResponse(Object template, Context context);
+
+    /**
+     * Calculate the hash of the given template.
+     *
+     * @param template The template provided to calculate hash.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return result of the request to calculate template hash.
+     */
+    TemplateHashResult calculateTemplateHash(Object template);
 
     /**
      * Gets a deployment.

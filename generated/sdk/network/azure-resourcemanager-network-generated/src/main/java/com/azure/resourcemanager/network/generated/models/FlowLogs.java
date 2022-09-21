@@ -16,19 +16,6 @@ public interface FlowLogs {
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param flowLogName The name of the flow log resource.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a flow log resource by name.
-     */
-    FlowLog get(String resourceGroupName, String networkWatcherName, String flowLogName);
-
-    /**
-     * Gets a flow log resource by name.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param networkWatcherName The name of the network watcher.
-     * @param flowLogName The name of the flow log resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -37,6 +24,19 @@ public interface FlowLogs {
      */
     Response<FlowLog> getWithResponse(
         String resourceGroupName, String networkWatcherName, String flowLogName, Context context);
+
+    /**
+     * Gets a flow log resource by name.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param networkWatcherName The name of the network watcher.
+     * @param flowLogName The name of the flow log resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a flow log resource by name.
+     */
+    FlowLog get(String resourceGroupName, String networkWatcherName, String flowLogName);
 
     /**
      * Deletes the specified flow log resource.

@@ -32,6 +32,10 @@ public final class AzureMonitorSelectedConfigurations {
     @JsonProperty(value = "tableList")
     private List<AzureMonitorTableConfiguration> tableList;
 
+    /** Creates an instance of AzureMonitorSelectedConfigurations class. */
+    public AzureMonitorSelectedConfigurations() {
+    }
+
     /**
      * Get the configurationVersion property: The configuration version.
      *

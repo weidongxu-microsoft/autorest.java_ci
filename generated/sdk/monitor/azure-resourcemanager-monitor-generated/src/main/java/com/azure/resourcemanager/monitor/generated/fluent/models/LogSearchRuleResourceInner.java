@@ -42,6 +42,10 @@ public final class LogSearchRuleResourceInner extends Resource {
     @JsonProperty(value = "etag", access = JsonProperty.Access.WRITE_ONLY)
     private String etag;
 
+    /** Creates an instance of LogSearchRuleResourceInner class. */
+    public LogSearchRuleResourceInner() {
+    }
+
     /**
      * Get the innerProperties property: The rule properties of the resource.
      *

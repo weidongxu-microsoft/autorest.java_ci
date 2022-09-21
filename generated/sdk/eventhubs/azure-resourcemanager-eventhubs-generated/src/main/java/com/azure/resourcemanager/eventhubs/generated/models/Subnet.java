@@ -16,6 +16,10 @@ public final class Subnet {
     @JsonProperty(value = "id")
     private String id;
 
+    /** Creates an instance of Subnet class. */
+    public Subnet() {
+    }
+
     /**
      * Get the id property: Resource ID of Virtual Network Subnet.
      *

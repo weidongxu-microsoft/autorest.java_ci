@@ -47,6 +47,10 @@ public final class ParameterDefinitionsValueMetadata {
      */
     @JsonIgnore private Map<String, Object> additionalProperties;
 
+    /** Creates an instance of ParameterDefinitionsValueMetadata class. */
+    public ParameterDefinitionsValueMetadata() {
+    }
+
     /**
      * Get the displayName property: The display name for the parameter.
      *

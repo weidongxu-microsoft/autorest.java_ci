@@ -95,21 +95,6 @@ public interface AppServicePlansClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return app Service plan.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    AppServicePlanInner getByResourceGroup(String resourceGroupName, String name);
-
-    /**
-     * Get an App Service plan.
-     *
-     * <p>Description for Get an App Service plan.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the App Service plan.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -119,6 +104,21 @@ public interface AppServicePlansClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<AppServicePlanInner> getByResourceGroupWithResponse(
         String resourceGroupName, String name, Context context);
+
+    /**
+     * Get an App Service plan.
+     *
+     * <p>Description for Get an App Service plan.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service plan.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return app Service plan.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    AppServicePlanInner getByResourceGroup(String resourceGroupName, String name);
 
     /**
      * Creates or updates an App Service Plan.
@@ -200,21 +200,6 @@ public interface AppServicePlansClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    void delete(String resourceGroupName, String name);
-
-    /**
-     * Delete an App Service plan.
-     *
-     * <p>Description for Delete an App Service plan.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the App Service plan.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -226,21 +211,19 @@ public interface AppServicePlansClient {
     Response<Void> deleteWithResponse(String resourceGroupName, String name, Context context);
 
     /**
-     * Creates or updates an App Service Plan.
+     * Delete an App Service plan.
      *
-     * <p>Description for Creates or updates an App Service Plan.
+     * <p>Description for Delete an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
-     * @param appServicePlan Details of the App Service plan.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return app Service plan.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    AppServicePlanInner update(String resourceGroupName, String name, AppServicePlanPatchResource appServicePlan);
+    void delete(String resourceGroupName, String name);
 
     /**
      * Creates or updates an App Service Plan.
@@ -262,20 +245,21 @@ public interface AppServicePlansClient {
         String resourceGroupName, String name, AppServicePlanPatchResource appServicePlan, Context context);
 
     /**
-     * List all capabilities of an App Service plan.
+     * Creates or updates an App Service Plan.
      *
-     * <p>Description for List all capabilities of an App Service plan.
+     * <p>Description for Creates or updates an App Service Plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
+     * @param appServicePlan Details of the App Service plan.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of Capability.
+     * @return app Service plan.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    List<CapabilityInner> listCapabilities(String resourceGroupName, String name);
+    AppServicePlanInner update(String resourceGroupName, String name, AppServicePlanPatchResource appServicePlan);
 
     /**
      * List all capabilities of an App Service plan.
@@ -296,23 +280,20 @@ public interface AppServicePlansClient {
         String resourceGroupName, String name, Context context);
 
     /**
-     * Retrieve a Hybrid Connection in use in an App Service plan.
+     * List all capabilities of an App Service plan.
      *
-     * <p>Description for Retrieve a Hybrid Connection in use in an App Service plan.
+     * <p>Description for List all capabilities of an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
-     * @param namespaceName Name of the Service Bus namespace.
-     * @param relayName Name of the Service Bus relay.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return hybrid Connection contract.
+     * @return array of Capability.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    HybridConnectionInner getHybridConnection(
-        String resourceGroupName, String name, String namespaceName, String relayName);
+    List<CapabilityInner> listCapabilities(String resourceGroupName, String name);
 
     /**
      * Retrieve a Hybrid Connection in use in an App Service plan.
@@ -335,9 +316,9 @@ public interface AppServicePlansClient {
         String resourceGroupName, String name, String namespaceName, String relayName, Context context);
 
     /**
-     * Delete a Hybrid Connection in use in an App Service plan.
+     * Retrieve a Hybrid Connection in use in an App Service plan.
      *
-     * <p>Description for Delete a Hybrid Connection in use in an App Service plan.
+     * <p>Description for Retrieve a Hybrid Connection in use in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
@@ -347,9 +328,11 @@ public interface AppServicePlansClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return hybrid Connection contract.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    void deleteHybridConnection(String resourceGroupName, String name, String namespaceName, String relayName);
+    HybridConnectionInner getHybridConnection(
+        String resourceGroupName, String name, String namespaceName, String relayName);
 
     /**
      * Delete a Hybrid Connection in use in an App Service plan.
@@ -372,23 +355,21 @@ public interface AppServicePlansClient {
         String resourceGroupName, String name, String namespaceName, String relayName, Context context);
 
     /**
-     * Get the send key name and value of a Hybrid Connection.
+     * Delete a Hybrid Connection in use in an App Service plan.
      *
-     * <p>Description for Get the send key name and value of a Hybrid Connection.
+     * <p>Description for Delete a Hybrid Connection in use in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
-     * @param namespaceName The name of the Service Bus namespace.
-     * @param relayName The name of the Service Bus relay.
+     * @param namespaceName Name of the Service Bus namespace.
+     * @param relayName Name of the Service Bus relay.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return hybrid Connection key contract.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    HybridConnectionKeyInner listHybridConnectionKeys(
-        String resourceGroupName, String name, String namespaceName, String relayName);
+    void deleteHybridConnection(String resourceGroupName, String name, String namespaceName, String relayName);
 
     /**
      * Get the send key name and value of a Hybrid Connection.
@@ -411,6 +392,25 @@ public interface AppServicePlansClient {
         String resourceGroupName, String name, String namespaceName, String relayName, Context context);
 
     /**
+     * Get the send key name and value of a Hybrid Connection.
+     *
+     * <p>Description for Get the send key name and value of a Hybrid Connection.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service plan.
+     * @param namespaceName The name of the Service Bus namespace.
+     * @param relayName The name of the Service Bus relay.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return hybrid Connection key contract.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    HybridConnectionKeyInner listHybridConnectionKeys(
+        String resourceGroupName, String name, String namespaceName, String relayName);
+
+    /**
      * Get all apps that use a Hybrid Connection in an App Service Plan.
      *
      * <p>Description for Get all apps that use a Hybrid Connection in an App Service Plan.
@@ -456,22 +456,6 @@ public interface AppServicePlansClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return hybrid Connection limits contract.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    HybridConnectionLimitsInner getHybridConnectionPlanLimit(String resourceGroupName, String name);
-
-    /**
-     * Get the maximum number of Hybrid Connections allowed in an App Service plan.
-     *
-     * <p>Description for Get the maximum number of Hybrid Connections allowed in an App Service plan.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the App Service plan.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -482,6 +466,22 @@ public interface AppServicePlansClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<HybridConnectionLimitsInner> getHybridConnectionPlanLimitWithResponse(
         String resourceGroupName, String name, Context context);
+
+    /**
+     * Get the maximum number of Hybrid Connections allowed in an App Service plan.
+     *
+     * <p>Description for Get the maximum number of Hybrid Connections allowed in an App Service plan.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service plan.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return hybrid Connection limits contract.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    HybridConnectionLimitsInner getHybridConnectionPlanLimit(String resourceGroupName, String name);
 
     /**
      * Retrieve all Hybrid Connections in use in an App Service plan.
@@ -523,21 +523,6 @@ public interface AppServicePlansClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    void restartWebApps(String resourceGroupName, String name);
-
-    /**
-     * Restart all apps in an App Service plan.
-     *
-     * <p>Description for Restart all apps in an App Service plan.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the App Service plan.
      * @param softRestart Specify &lt;code&gt;true&lt;/code&gt; to perform a soft restart, applies the configuration
      *     settings and restarts the apps if necessary. The default is &lt;code&gt;false&lt;/code&gt;, which always
      *     restarts and reprovisions the apps.
@@ -551,6 +536,21 @@ public interface AppServicePlansClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> restartWebAppsWithResponse(
         String resourceGroupName, String name, Boolean softRestart, Context context);
+
+    /**
+     * Restart all apps in an App Service plan.
+     *
+     * <p>Description for Restart all apps in an App Service plan.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service plan.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    void restartWebApps(String resourceGroupName, String name);
 
     /**
      * Get all apps associated with an App Service plan.
@@ -598,22 +598,6 @@ public interface AppServicePlansClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of App Service Plan.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return any object.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    Object getServerFarmSkus(String resourceGroupName, String name);
-
-    /**
-     * Gets all selectable SKUs for a given App Service Plan
-     *
-     * <p>Description for Gets all selectable SKUs for a given App Service Plan.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of App Service Plan.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -623,6 +607,22 @@ public interface AppServicePlansClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Object> getServerFarmSkusWithResponse(String resourceGroupName, String name, Context context);
+
+    /**
+     * Gets all selectable SKUs for a given App Service Plan
+     *
+     * <p>Description for Gets all selectable SKUs for a given App Service Plan.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of App Service Plan.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return any object.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    Object getServerFarmSkus(String resourceGroupName, String name);
 
     /**
      * Gets server farm usage information
@@ -666,22 +666,6 @@ public interface AppServicePlansClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of VnetInfoResource.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    List<VnetInfoResourceInner> listVnets(String resourceGroupName, String name);
-
-    /**
-     * Get all Virtual Networks associated with an App Service plan.
-     *
-     * <p>Description for Get all Virtual Networks associated with an App Service plan.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the App Service plan.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -693,20 +677,20 @@ public interface AppServicePlansClient {
     Response<List<VnetInfoResourceInner>> listVnetsWithResponse(String resourceGroupName, String name, Context context);
 
     /**
-     * Get a Virtual Network associated with an App Service plan.
+     * Get all Virtual Networks associated with an App Service plan.
      *
-     * <p>Description for Get a Virtual Network associated with an App Service plan.
+     * <p>Description for Get all Virtual Networks associated with an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
-     * @param vnetName Name of the Virtual Network.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtual Network information ARM resource.
+     * @return array of VnetInfoResource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    VnetInfoResourceInner getVnetFromServerFarm(String resourceGroupName, String name, String vnetName);
+    List<VnetInfoResourceInner> listVnets(String resourceGroupName, String name);
 
     /**
      * Get a Virtual Network associated with an App Service plan.
@@ -727,22 +711,20 @@ public interface AppServicePlansClient {
         String resourceGroupName, String name, String vnetName, Context context);
 
     /**
-     * Get a Virtual Network gateway.
+     * Get a Virtual Network associated with an App Service plan.
      *
-     * <p>Description for Get a Virtual Network gateway.
+     * <p>Description for Get a Virtual Network associated with an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
      * @param vnetName Name of the Virtual Network.
-     * @param gatewayName Name of the gateway. Only the 'primary' gateway is supported.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Virtual Network gateway contract.
+     * @return virtual Network information ARM resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    VnetGatewayInner getVnetGateway(String resourceGroupName, String name, String vnetName, String gatewayName);
+    VnetInfoResourceInner getVnetFromServerFarm(String resourceGroupName, String name, String vnetName);
 
     /**
      * Get a Virtual Network gateway.
@@ -765,15 +747,14 @@ public interface AppServicePlansClient {
         String resourceGroupName, String name, String vnetName, String gatewayName, Context context);
 
     /**
-     * Update a Virtual Network gateway.
+     * Get a Virtual Network gateway.
      *
-     * <p>Description for Update a Virtual Network gateway.
+     * <p>Description for Get a Virtual Network gateway.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
      * @param vnetName Name of the Virtual Network.
      * @param gatewayName Name of the gateway. Only the 'primary' gateway is supported.
-     * @param connectionEnvelope Definition of the gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -781,12 +762,7 @@ public interface AppServicePlansClient {
      * @return the Virtual Network gateway contract.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    VnetGatewayInner updateVnetGateway(
-        String resourceGroupName,
-        String name,
-        String vnetName,
-        String gatewayName,
-        VnetGatewayInner connectionEnvelope);
+    VnetGatewayInner getVnetGateway(String resourceGroupName, String name, String vnetName, String gatewayName);
 
     /**
      * Update a Virtual Network gateway.
@@ -815,21 +791,28 @@ public interface AppServicePlansClient {
         Context context);
 
     /**
-     * Get all routes that are associated with a Virtual Network in an App Service plan.
+     * Update a Virtual Network gateway.
      *
-     * <p>Description for Get all routes that are associated with a Virtual Network in an App Service plan.
+     * <p>Description for Update a Virtual Network gateway.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
      * @param vnetName Name of the Virtual Network.
+     * @param gatewayName Name of the gateway. Only the 'primary' gateway is supported.
+     * @param connectionEnvelope Definition of the gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of VnetRoute.
+     * @return the Virtual Network gateway contract.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    List<VnetRouteInner> listRoutesForVnet(String resourceGroupName, String name, String vnetName);
+    VnetGatewayInner updateVnetGateway(
+        String resourceGroupName,
+        String name,
+        String vnetName,
+        String gatewayName,
+        VnetGatewayInner connectionEnvelope);
 
     /**
      * Get all routes that are associated with a Virtual Network in an App Service plan.
@@ -851,21 +834,21 @@ public interface AppServicePlansClient {
         String resourceGroupName, String name, String vnetName, Context context);
 
     /**
-     * Get a Virtual Network route in an App Service plan.
+     * Get all routes that are associated with a Virtual Network in an App Service plan.
      *
-     * <p>Description for Get a Virtual Network route in an App Service plan.
+     * <p>Description for Get all routes that are associated with a Virtual Network in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
      * @param vnetName Name of the Virtual Network.
-     * @param routeName Name of the Virtual Network route.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return array of VnetRoute.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    List<VnetRouteInner> getRouteForVnet(String resourceGroupName, String name, String vnetName, String routeName);
+    List<VnetRouteInner> listRoutesForVnet(String resourceGroupName, String name, String vnetName);
 
     /**
      * Get a Virtual Network route in an App Service plan.
@@ -887,23 +870,21 @@ public interface AppServicePlansClient {
         String resourceGroupName, String name, String vnetName, String routeName, Context context);
 
     /**
-     * Create or update a Virtual Network route in an App Service plan.
+     * Get a Virtual Network route in an App Service plan.
      *
-     * <p>Description for Create or update a Virtual Network route in an App Service plan.
+     * <p>Description for Get a Virtual Network route in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
      * @param vnetName Name of the Virtual Network.
      * @param routeName Name of the Virtual Network route.
-     * @param route Definition of the Virtual Network route.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtual Network route contract used to pass routing information for a Virtual Network.
+     * @return array of VnetRoute.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    VnetRouteInner createOrUpdateVnetRoute(
-        String resourceGroupName, String name, String vnetName, String routeName, VnetRouteInner route);
+    List<VnetRouteInner> getRouteForVnet(String resourceGroupName, String name, String vnetName, String routeName);
 
     /**
      * Create or update a Virtual Network route in an App Service plan.
@@ -932,20 +913,23 @@ public interface AppServicePlansClient {
         Context context);
 
     /**
-     * Delete a Virtual Network route in an App Service plan.
+     * Create or update a Virtual Network route in an App Service plan.
      *
-     * <p>Description for Delete a Virtual Network route in an App Service plan.
+     * <p>Description for Create or update a Virtual Network route in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
      * @param vnetName Name of the Virtual Network.
      * @param routeName Name of the Virtual Network route.
+     * @param route Definition of the Virtual Network route.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return virtual Network route contract used to pass routing information for a Virtual Network.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    void deleteVnetRoute(String resourceGroupName, String name, String vnetName, String routeName);
+    VnetRouteInner createOrUpdateVnetRoute(
+        String resourceGroupName, String name, String vnetName, String routeName, VnetRouteInner route);
 
     /**
      * Delete a Virtual Network route in an App Service plan.
@@ -967,23 +951,20 @@ public interface AppServicePlansClient {
         String resourceGroupName, String name, String vnetName, String routeName, Context context);
 
     /**
-     * Create or update a Virtual Network route in an App Service plan.
+     * Delete a Virtual Network route in an App Service plan.
      *
-     * <p>Description for Create or update a Virtual Network route in an App Service plan.
+     * <p>Description for Delete a Virtual Network route in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
      * @param vnetName Name of the Virtual Network.
      * @param routeName Name of the Virtual Network route.
-     * @param route Definition of the Virtual Network route.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtual Network route contract used to pass routing information for a Virtual Network.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    VnetRouteInner updateVnetRoute(
-        String resourceGroupName, String name, String vnetName, String routeName, VnetRouteInner route);
+    void deleteVnetRoute(String resourceGroupName, String name, String vnetName, String routeName);
 
     /**
      * Create or update a Virtual Network route in an App Service plan.
@@ -1012,20 +993,23 @@ public interface AppServicePlansClient {
         Context context);
 
     /**
-     * Reboot a worker machine in an App Service plan.
+     * Create or update a Virtual Network route in an App Service plan.
      *
-     * <p>Description for Reboot a worker machine in an App Service plan.
+     * <p>Description for Create or update a Virtual Network route in an App Service plan.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
-     * @param workerName Name of worker machine, which typically starts with RD.
+     * @param vnetName Name of the Virtual Network.
+     * @param routeName Name of the Virtual Network route.
+     * @param route Definition of the Virtual Network route.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return virtual Network route contract used to pass routing information for a Virtual Network.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    void rebootWorker(String resourceGroupName, String name, String workerName);
+    VnetRouteInner updateVnetRoute(
+        String resourceGroupName, String name, String vnetName, String routeName, VnetRouteInner route);
 
     /**
      * Reboot a worker machine in an App Service plan.
@@ -1044,4 +1028,20 @@ public interface AppServicePlansClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<Void> rebootWorkerWithResponse(String resourceGroupName, String name, String workerName, Context context);
+
+    /**
+     * Reboot a worker machine in an App Service plan.
+     *
+     * <p>Description for Reboot a worker machine in an App Service plan.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service plan.
+     * @param workerName Name of worker machine, which typically starts with RD.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    void rebootWorker(String resourceGroupName, String name, String workerName);
 }

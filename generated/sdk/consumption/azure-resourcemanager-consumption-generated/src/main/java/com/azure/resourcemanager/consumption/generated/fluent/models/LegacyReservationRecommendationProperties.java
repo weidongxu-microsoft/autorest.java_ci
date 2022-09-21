@@ -114,6 +114,10 @@ public class LegacyReservationRecommendationProperties {
     @JsonProperty(value = "skuProperties", access = JsonProperty.Access.WRITE_ONLY)
     private List<SkuProperty> skuProperties;
 
+    /** Creates an instance of LegacyReservationRecommendationProperties class. */
+    public LegacyReservationRecommendationProperties() {
+    }
+
     /**
      * Get the lookBackPeriod property: The number of days of usage to look back for recommendation.
      *

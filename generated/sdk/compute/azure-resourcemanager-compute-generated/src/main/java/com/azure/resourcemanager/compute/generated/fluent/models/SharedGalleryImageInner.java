@@ -28,6 +28,10 @@ public final class SharedGalleryImageInner extends PirSharedGalleryResource {
     @JsonProperty(value = "properties")
     private SharedGalleryImageProperties innerProperties;
 
+    /** Creates an instance of SharedGalleryImageInner class. */
+    public SharedGalleryImageInner() {
+    }
+
     /**
      * Get the innerProperties property: Describes the properties of a gallery image definition.
      *

@@ -43,6 +43,10 @@ public final class TopicUpdateParameterProperties {
     @JsonProperty(value = "dataResidencyBoundary")
     private DataResidencyBoundary dataResidencyBoundary;
 
+    /** Creates an instance of TopicUpdateParameterProperties class. */
+    public TopicUpdateParameterProperties() {
+    }
+
     /**
      * Get the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is
      * enabled. You can further restrict to specific IPs by configuring &lt;seealso

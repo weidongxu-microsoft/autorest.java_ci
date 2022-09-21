@@ -112,6 +112,10 @@ public final class ModernReservationRecommendationProperties {
     @JsonProperty(value = "skuName", access = JsonProperty.Access.WRITE_ONLY)
     private String skuName;
 
+    /** Creates an instance of ModernReservationRecommendationProperties class. */
+    public ModernReservationRecommendationProperties() {
+    }
+
     /**
      * Get the location property: Resource Location.
      *

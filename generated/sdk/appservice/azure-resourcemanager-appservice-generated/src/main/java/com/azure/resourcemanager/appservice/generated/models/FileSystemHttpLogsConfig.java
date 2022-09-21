@@ -32,6 +32,10 @@ public final class FileSystemHttpLogsConfig {
     @JsonProperty(value = "enabled")
     private Boolean enabled;
 
+    /** Creates an instance of FileSystemHttpLogsConfig class. */
+    public FileSystemHttpLogsConfig() {
+    }
+
     /**
      * Get the retentionInMb property: Maximum size in megabytes that http log files can use. When reached old log files
      * will be removed to make space for new ones. Value can range between 25 and 100.

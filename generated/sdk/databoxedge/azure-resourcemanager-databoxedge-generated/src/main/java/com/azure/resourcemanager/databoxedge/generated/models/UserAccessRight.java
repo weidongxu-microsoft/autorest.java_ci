@@ -23,6 +23,10 @@ public final class UserAccessRight {
     @JsonProperty(value = "accessType", required = true)
     private ShareAccessType accessType;
 
+    /** Creates an instance of UserAccessRight class. */
+    public UserAccessRight() {
+    }
+
     /**
      * Get the userId property: User ID (already existing in the device).
      *

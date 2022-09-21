@@ -30,6 +30,10 @@ public final class AzureContainerInfo {
     @JsonProperty(value = "dataFormat", required = true)
     private AzureContainerDataFormat dataFormat;
 
+    /** Creates an instance of AzureContainerInfo class. */
+    public AzureContainerInfo() {
+    }
+
     /**
      * Get the storageAccountCredentialId property: ID of the storage account credential used to access storage.
      *

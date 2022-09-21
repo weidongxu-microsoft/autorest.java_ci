@@ -53,6 +53,10 @@ public final class ApplicationGetHttpsEndpoint {
     @JsonProperty(value = "disableGatewayAuth")
     private Boolean disableGatewayAuth;
 
+    /** Creates an instance of ApplicationGetHttpsEndpoint class. */
+    public ApplicationGetHttpsEndpoint() {
+    }
+
     /**
      * Get the accessModes property: The list of access modes for the application.
      *

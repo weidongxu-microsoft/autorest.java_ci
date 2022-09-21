@@ -23,6 +23,10 @@ public final class DefaultAuthorizationPolicy {
     @JsonProperty(value = "allowedApplications")
     private List<String> allowedApplications;
 
+    /** Creates an instance of DefaultAuthorizationPolicy class. */
+    public DefaultAuthorizationPolicy() {
+    }
+
     /**
      * Get the allowedPrincipals property: The configuration settings of the Azure Active Directory allowed principals.
      *

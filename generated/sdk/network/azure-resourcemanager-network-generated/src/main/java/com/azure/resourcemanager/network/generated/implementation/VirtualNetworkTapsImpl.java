@@ -36,15 +36,6 @@ public final class VirtualNetworkTapsImpl implements VirtualNetworkTaps {
         this.serviceClient().delete(resourceGroupName, tapName, context);
     }
 
-    public VirtualNetworkTap getByResourceGroup(String resourceGroupName, String tapName) {
-        VirtualNetworkTapInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, tapName);
-        if (inner != null) {
-            return new VirtualNetworkTapImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<VirtualNetworkTap> getByResourceGroupWithResponse(
         String resourceGroupName, String tapName, Context context) {
         Response<VirtualNetworkTapInner> inner =
@@ -55,6 +46,15 @@ public final class VirtualNetworkTapsImpl implements VirtualNetworkTaps {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new VirtualNetworkTapImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public VirtualNetworkTap getByResourceGroup(String resourceGroupName, String tapName) {
+        VirtualNetworkTapInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, tapName);
+        if (inner != null) {
+            return new VirtualNetworkTapImpl(inner, this.manager());
         } else {
             return null;
         }

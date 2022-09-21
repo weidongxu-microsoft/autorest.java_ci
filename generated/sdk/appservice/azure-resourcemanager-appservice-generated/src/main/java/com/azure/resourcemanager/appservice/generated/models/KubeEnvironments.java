@@ -72,21 +72,6 @@ public interface KubeEnvironments {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Kubernetes cluster specialized for web workloads by Azure App Service.
-     */
-    KubeEnvironment getByResourceGroup(String resourceGroupName, String name);
-
-    /**
-     * Get the properties of a Kubernetes Environment.
-     *
-     * <p>Description for Get the properties of a Kubernetes Environment.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the Kubernetes Environment.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -95,6 +80,21 @@ public interface KubeEnvironments {
      * @return a Kubernetes cluster specialized for web workloads by Azure App Service along with {@link Response}.
      */
     Response<KubeEnvironment> getByResourceGroupWithResponse(String resourceGroupName, String name, Context context);
+
+    /**
+     * Get the properties of a Kubernetes Environment.
+     *
+     * <p>Description for Get the properties of a Kubernetes Environment.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the Kubernetes Environment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a Kubernetes cluster specialized for web workloads by Azure App Service.
+     */
+    KubeEnvironment getByResourceGroup(String resourceGroupName, String name);
 
     /**
      * Delete a Kubernetes Environment.

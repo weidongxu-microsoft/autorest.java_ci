@@ -70,6 +70,10 @@ public final class LatencyMetric {
     @JsonProperty(value = "bUpper95CI", access = JsonProperty.Access.WRITE_ONLY)
     private Float bUpper95CI;
 
+    /** Creates an instance of LatencyMetric class. */
+    public LatencyMetric() {
+    }
+
     /**
      * Get the name property: The name of the Latency Metric.
      *

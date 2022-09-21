@@ -62,6 +62,10 @@ public final class PolicySetDefinitionProperties {
     @JsonProperty(value = "policyDefinitionGroups")
     private List<PolicyDefinitionGroup> policyDefinitionGroups;
 
+    /** Creates an instance of PolicySetDefinitionProperties class. */
+    public PolicySetDefinitionProperties() {
+    }
+
     /**
      * Get the policyType property: The type of policy definition. Possible values are NotSpecified, BuiltIn, Custom,
      * and Static.

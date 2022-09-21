@@ -16,6 +16,10 @@ public final class Status {
     @JsonProperty(value = "status")
     private OperationStatusType status;
 
+    /** Creates an instance of Status class. */
+    public Status() {
+    }
+
     /**
      * Get the status property: The status of the long running operation.
      *

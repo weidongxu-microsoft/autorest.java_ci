@@ -28,6 +28,10 @@ public final class ExportExecution extends ProxyResource {
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, String> tags;
 
+    /** Creates an instance of ExportExecution class. */
+    public ExportExecution() {
+    }
+
     /**
      * Get the innerProperties property: The properties of the export execution.
      *

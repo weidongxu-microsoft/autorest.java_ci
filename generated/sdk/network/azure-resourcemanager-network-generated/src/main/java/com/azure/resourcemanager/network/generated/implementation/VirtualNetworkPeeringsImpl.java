@@ -37,17 +37,6 @@ public final class VirtualNetworkPeeringsImpl implements VirtualNetworkPeerings 
         this.serviceClient().delete(resourceGroupName, virtualNetworkName, virtualNetworkPeeringName, context);
     }
 
-    public VirtualNetworkPeering get(
-        String resourceGroupName, String virtualNetworkName, String virtualNetworkPeeringName) {
-        VirtualNetworkPeeringInner inner =
-            this.serviceClient().get(resourceGroupName, virtualNetworkName, virtualNetworkPeeringName);
-        if (inner != null) {
-            return new VirtualNetworkPeeringImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<VirtualNetworkPeering> getWithResponse(
         String resourceGroupName, String virtualNetworkName, String virtualNetworkPeeringName, Context context) {
         Response<VirtualNetworkPeeringInner> inner =
@@ -60,6 +49,17 @@ public final class VirtualNetworkPeeringsImpl implements VirtualNetworkPeerings 
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new VirtualNetworkPeeringImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public VirtualNetworkPeering get(
+        String resourceGroupName, String virtualNetworkName, String virtualNetworkPeeringName) {
+        VirtualNetworkPeeringInner inner =
+            this.serviceClient().get(resourceGroupName, virtualNetworkName, virtualNetworkPeeringName);
+        if (inner != null) {
+            return new VirtualNetworkPeeringImpl(inner, this.manager());
         } else {
             return null;
         }

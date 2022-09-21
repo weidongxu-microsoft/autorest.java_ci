@@ -22,20 +22,6 @@ public interface ZonesClient {
      * @param resourceGroupName The name of the resource group.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param parameters Parameters supplied to the CreateOrUpdate operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a DNS zone.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    ZoneInner createOrUpdate(String resourceGroupName, String zoneName, ZoneInner parameters);
-
-    /**
-     * Creates or updates a DNS zone. Does not modify DNS records within the zone.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param parameters Parameters supplied to the CreateOrUpdate operation.
      * @param ifMatch The etag of the DNS zone. Omit this value to always overwrite the current zone. Specify the
      *     last-seen etag value to prevent accidentally overwriting any concurrent changes.
      * @param ifNoneMatch Set to '*' to allow a new DNS zone to be created, but to prevent updating an existing zone.
@@ -54,6 +40,20 @@ public interface ZonesClient {
         String ifMatch,
         String ifNoneMatch,
         Context context);
+
+    /**
+     * Creates or updates a DNS zone. Does not modify DNS records within the zone.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param zoneName The name of the DNS zone (without a terminating dot).
+     * @param parameters Parameters supplied to the CreateOrUpdate operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return describes a DNS zone.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    ZoneInner createOrUpdate(String resourceGroupName, String zoneName, ZoneInner parameters);
 
     /**
      * Deletes a DNS zone. WARNING: All DNS records in the zone will also be deleted. This operation cannot be undone.
@@ -133,19 +133,6 @@ public interface ZonesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a DNS zone.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    ZoneInner getByResourceGroup(String resourceGroupName, String zoneName);
-
-    /**
-     * Gets a DNS zone. Retrieves the zone properties, but not the record sets within the zone.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -156,18 +143,17 @@ public interface ZonesClient {
     Response<ZoneInner> getByResourceGroupWithResponse(String resourceGroupName, String zoneName, Context context);
 
     /**
-     * Updates a DNS zone. Does not modify DNS records within the zone.
+     * Gets a DNS zone. Retrieves the zone properties, but not the record sets within the zone.
      *
      * @param resourceGroupName The name of the resource group.
      * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param parameters Parameters supplied to the Update operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a DNS zone.
+     * @return a DNS zone.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    ZoneInner update(String resourceGroupName, String zoneName, ZoneUpdate parameters);
+    ZoneInner getByResourceGroup(String resourceGroupName, String zoneName);
 
     /**
      * Updates a DNS zone. Does not modify DNS records within the zone.
@@ -186,6 +172,20 @@ public interface ZonesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ZoneInner> updateWithResponse(
         String resourceGroupName, String zoneName, ZoneUpdate parameters, String ifMatch, Context context);
+
+    /**
+     * Updates a DNS zone. Does not modify DNS records within the zone.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param zoneName The name of the DNS zone (without a terminating dot).
+     * @param parameters Parameters supplied to the Update operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return describes a DNS zone.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    ZoneInner update(String resourceGroupName, String zoneName, ZoneUpdate parameters);
 
     /**
      * Lists the DNS zones within a resource group.

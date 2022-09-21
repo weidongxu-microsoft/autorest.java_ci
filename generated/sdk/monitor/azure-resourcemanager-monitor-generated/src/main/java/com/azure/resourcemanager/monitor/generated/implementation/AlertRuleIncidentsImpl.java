@@ -28,15 +28,6 @@ public final class AlertRuleIncidentsImpl implements AlertRuleIncidents {
         this.serviceManager = serviceManager;
     }
 
-    public Incident get(String resourceGroupName, String ruleName, String incidentName) {
-        IncidentInner inner = this.serviceClient().get(resourceGroupName, ruleName, incidentName);
-        if (inner != null) {
-            return new IncidentImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<Incident> getWithResponse(
         String resourceGroupName, String ruleName, String incidentName, Context context) {
         Response<IncidentInner> inner =
@@ -47,6 +38,15 @@ public final class AlertRuleIncidentsImpl implements AlertRuleIncidents {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new IncidentImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public Incident get(String resourceGroupName, String ruleName, String incidentName) {
+        IncidentInner inner = this.serviceClient().get(resourceGroupName, ruleName, incidentName);
+        if (inner != null) {
+            return new IncidentImpl(inner, this.manager());
         } else {
             return null;
         }

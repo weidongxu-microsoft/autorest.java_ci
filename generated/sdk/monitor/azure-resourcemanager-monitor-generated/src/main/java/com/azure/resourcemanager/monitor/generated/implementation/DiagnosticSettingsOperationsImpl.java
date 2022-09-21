@@ -29,15 +29,6 @@ public final class DiagnosticSettingsOperationsImpl implements DiagnosticSetting
         this.serviceManager = serviceManager;
     }
 
-    public DiagnosticSettingsResource get(String resourceUri, String name) {
-        DiagnosticSettingsResourceInner inner = this.serviceClient().get(resourceUri, name);
-        if (inner != null) {
-            return new DiagnosticSettingsResourceImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<DiagnosticSettingsResource> getWithResponse(String resourceUri, String name, Context context) {
         Response<DiagnosticSettingsResourceInner> inner =
             this.serviceClient().getWithResponse(resourceUri, name, context);
@@ -52,21 +43,21 @@ public final class DiagnosticSettingsOperationsImpl implements DiagnosticSetting
         }
     }
 
-    public void deleteByResourceGroup(String resourceUri, String name) {
-        this.serviceClient().delete(resourceUri, name);
-    }
-
-    public Response<Void> deleteWithResponse(String resourceUri, String name, Context context) {
-        return this.serviceClient().deleteWithResponse(resourceUri, name, context);
-    }
-
-    public DiagnosticSettingsResourceCollection list(String resourceUri) {
-        DiagnosticSettingsResourceCollectionInner inner = this.serviceClient().list(resourceUri);
+    public DiagnosticSettingsResource get(String resourceUri, String name) {
+        DiagnosticSettingsResourceInner inner = this.serviceClient().get(resourceUri, name);
         if (inner != null) {
-            return new DiagnosticSettingsResourceCollectionImpl(inner, this.manager());
+            return new DiagnosticSettingsResourceImpl(inner, this.manager());
         } else {
             return null;
         }
+    }
+
+    public Response<Void> deleteByResourceGroupWithResponse(String resourceUri, String name, Context context) {
+        return this.serviceClient().deleteWithResponse(resourceUri, name, context);
+    }
+
+    public void deleteByResourceGroup(String resourceUri, String name) {
+        this.serviceClient().delete(resourceUri, name);
     }
 
     public Response<DiagnosticSettingsResourceCollection> listWithResponse(String resourceUri, Context context) {
@@ -78,6 +69,15 @@ public final class DiagnosticSettingsOperationsImpl implements DiagnosticSetting
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new DiagnosticSettingsResourceCollectionImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public DiagnosticSettingsResourceCollection list(String resourceUri) {
+        DiagnosticSettingsResourceCollectionInner inner = this.serviceClient().list(resourceUri);
+        if (inner != null) {
+            return new DiagnosticSettingsResourceCollectionImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -158,7 +158,7 @@ public final class DiagnosticSettingsOperationsImpl implements DiagnosticSetting
                             .format(
                                 "The resource ID '%s' is not valid. Missing path segment 'diagnosticSettings'.", id)));
         }
-        this.deleteWithResponse(resourceUri, name, Context.NONE);
+        this.deleteByResourceGroupWithResponse(resourceUri, name, Context.NONE);
     }
 
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
@@ -184,7 +184,7 @@ public final class DiagnosticSettingsOperationsImpl implements DiagnosticSetting
                             .format(
                                 "The resource ID '%s' is not valid. Missing path segment 'diagnosticSettings'.", id)));
         }
-        return this.deleteWithResponse(resourceUri, name, context);
+        return this.deleteByResourceGroupWithResponse(resourceUri, name, context);
     }
 
     private DiagnosticSettingsOperationsClient serviceClient() {

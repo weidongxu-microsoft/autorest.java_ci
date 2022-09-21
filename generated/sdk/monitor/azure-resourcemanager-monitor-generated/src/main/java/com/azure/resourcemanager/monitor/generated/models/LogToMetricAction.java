@@ -24,6 +24,10 @@ public final class LogToMetricAction extends Action {
     @JsonProperty(value = "criteria", required = true)
     private List<Criteria> criteria;
 
+    /** Creates an instance of LogToMetricAction class. */
+    public LogToMetricAction() {
+    }
+
     /**
      * Get the criteria property: Criteria of Metric.
      *

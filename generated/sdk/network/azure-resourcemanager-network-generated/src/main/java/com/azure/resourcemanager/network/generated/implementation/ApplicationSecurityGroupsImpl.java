@@ -36,16 +36,6 @@ public final class ApplicationSecurityGroupsImpl implements ApplicationSecurityG
         this.serviceClient().delete(resourceGroupName, applicationSecurityGroupName, context);
     }
 
-    public ApplicationSecurityGroup getByResourceGroup(String resourceGroupName, String applicationSecurityGroupName) {
-        ApplicationSecurityGroupInner inner =
-            this.serviceClient().getByResourceGroup(resourceGroupName, applicationSecurityGroupName);
-        if (inner != null) {
-            return new ApplicationSecurityGroupImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<ApplicationSecurityGroup> getByResourceGroupWithResponse(
         String resourceGroupName, String applicationSecurityGroupName, Context context) {
         Response<ApplicationSecurityGroupInner> inner =
@@ -58,6 +48,16 @@ public final class ApplicationSecurityGroupsImpl implements ApplicationSecurityG
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new ApplicationSecurityGroupImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public ApplicationSecurityGroup getByResourceGroup(String resourceGroupName, String applicationSecurityGroupName) {
+        ApplicationSecurityGroupInner inner =
+            this.serviceClient().getByResourceGroup(resourceGroupName, applicationSecurityGroupName);
+        if (inner != null) {
+            return new ApplicationSecurityGroupImpl(inner, this.manager());
         } else {
             return null;
         }

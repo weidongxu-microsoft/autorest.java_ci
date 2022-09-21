@@ -27,15 +27,6 @@ public final class IpGroupsImpl implements IpGroups {
         this.serviceManager = serviceManager;
     }
 
-    public IpGroup getByResourceGroup(String resourceGroupName, String ipGroupsName) {
-        IpGroupInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, ipGroupsName);
-        if (inner != null) {
-            return new IpGroupImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<IpGroup> getByResourceGroupWithResponse(
         String resourceGroupName, String ipGroupsName, String expand, Context context) {
         Response<IpGroupInner> inner =
@@ -46,6 +37,15 @@ public final class IpGroupsImpl implements IpGroups {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new IpGroupImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public IpGroup getByResourceGroup(String resourceGroupName, String ipGroupsName) {
+        IpGroupInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, ipGroupsName);
+        if (inner != null) {
+            return new IpGroupImpl(inner, this.manager());
         } else {
             return null;
         }

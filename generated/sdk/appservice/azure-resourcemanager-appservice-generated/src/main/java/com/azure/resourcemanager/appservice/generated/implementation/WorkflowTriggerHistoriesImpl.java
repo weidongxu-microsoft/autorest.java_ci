@@ -48,17 +48,6 @@ public final class WorkflowTriggerHistoriesImpl implements WorkflowTriggerHistor
         return Utils.mapPage(inner, inner1 -> new WorkflowTriggerHistoryImpl(inner1, this.manager()));
     }
 
-    public WorkflowTriggerHistory get(
-        String resourceGroupName, String name, String workflowName, String triggerName, String historyName) {
-        WorkflowTriggerHistoryInner inner =
-            this.serviceClient().get(resourceGroupName, name, workflowName, triggerName, historyName);
-        if (inner != null) {
-            return new WorkflowTriggerHistoryImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<WorkflowTriggerHistory> getWithResponse(
         String resourceGroupName,
         String name,
@@ -76,6 +65,17 @@ public final class WorkflowTriggerHistoriesImpl implements WorkflowTriggerHistor
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new WorkflowTriggerHistoryImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public WorkflowTriggerHistory get(
+        String resourceGroupName, String name, String workflowName, String triggerName, String historyName) {
+        WorkflowTriggerHistoryInner inner =
+            this.serviceClient().get(resourceGroupName, name, workflowName, triggerName, historyName);
+        if (inner != null) {
+            return new WorkflowTriggerHistoryImpl(inner, this.manager());
         } else {
             return null;
         }

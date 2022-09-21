@@ -46,6 +46,10 @@ public final class ConfigurationProperties {
     @JsonProperty(value = "source")
     private String source;
 
+    /** Creates an instance of ConfigurationProperties class. */
+    public ConfigurationProperties() {
+    }
+
     /**
      * Get the value property: Value of the configuration.
      *

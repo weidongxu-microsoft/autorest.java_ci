@@ -19,6 +19,10 @@ public final class ZoneUpdate {
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, String> tags;
 
+    /** Creates an instance of ZoneUpdate class. */
+    public ZoneUpdate() {
+    }
+
     /**
      * Get the tags property: Resource tags.
      *

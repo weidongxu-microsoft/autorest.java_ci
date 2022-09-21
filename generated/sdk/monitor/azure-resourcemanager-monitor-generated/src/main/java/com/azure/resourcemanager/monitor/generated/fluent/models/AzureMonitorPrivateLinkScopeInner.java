@@ -20,6 +20,10 @@ public final class AzureMonitorPrivateLinkScopeInner extends PrivateLinkScopesRe
     @JsonProperty(value = "properties", required = true)
     private AzureMonitorPrivateLinkScopeProperties innerProperties = new AzureMonitorPrivateLinkScopeProperties();
 
+    /** Creates an instance of AzureMonitorPrivateLinkScopeInner class. */
+    public AzureMonitorPrivateLinkScopeInner() {
+    }
+
     /**
      * Get the innerProperties property: Properties that define a Azure Monitor PrivateLinkScope resource.
      *

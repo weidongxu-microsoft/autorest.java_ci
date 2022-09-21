@@ -16,6 +16,10 @@ public final class KeyVaultCertificateSourceParametersVault {
     @JsonProperty(value = "id")
     private String id;
 
+    /** Creates an instance of KeyVaultCertificateSourceParametersVault class. */
+    public KeyVaultCertificateSourceParametersVault() {
+    }
+
     /**
      * Get the id property: Resource ID.
      *

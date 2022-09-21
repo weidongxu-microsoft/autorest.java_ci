@@ -264,12 +264,6 @@ public final class AppServiceCertificateOrderImpl
         return this;
     }
 
-    public void reissue(ReissueCertificateOrderRequest reissueCertificateOrderRequest) {
-        serviceManager
-            .appServiceCertificateOrders()
-            .reissue(resourceGroupName, certificateOrderName, reissueCertificateOrderRequest);
-    }
-
     public Response<Void> reissueWithResponse(
         ReissueCertificateOrderRequest reissueCertificateOrderRequest, Context context) {
         return serviceManager
@@ -277,10 +271,10 @@ public final class AppServiceCertificateOrderImpl
             .reissueWithResponse(resourceGroupName, certificateOrderName, reissueCertificateOrderRequest, context);
     }
 
-    public void renew(RenewCertificateOrderRequest renewCertificateOrderRequest) {
+    public void reissue(ReissueCertificateOrderRequest reissueCertificateOrderRequest) {
         serviceManager
             .appServiceCertificateOrders()
-            .renew(resourceGroupName, certificateOrderName, renewCertificateOrderRequest);
+            .reissue(resourceGroupName, certificateOrderName, reissueCertificateOrderRequest);
     }
 
     public Response<Void> renewWithResponse(
@@ -290,8 +284,10 @@ public final class AppServiceCertificateOrderImpl
             .renewWithResponse(resourceGroupName, certificateOrderName, renewCertificateOrderRequest, context);
     }
 
-    public void resendEmail() {
-        serviceManager.appServiceCertificateOrders().resendEmail(resourceGroupName, certificateOrderName);
+    public void renew(RenewCertificateOrderRequest renewCertificateOrderRequest) {
+        serviceManager
+            .appServiceCertificateOrders()
+            .renew(resourceGroupName, certificateOrderName, renewCertificateOrderRequest);
     }
 
     public Response<Void> resendEmailWithResponse(Context context) {
@@ -300,10 +296,8 @@ public final class AppServiceCertificateOrderImpl
             .resendEmailWithResponse(resourceGroupName, certificateOrderName, context);
     }
 
-    public void resendRequestEmails(NameIdentifierInner nameIdentifier) {
-        serviceManager
-            .appServiceCertificateOrders()
-            .resendRequestEmails(resourceGroupName, certificateOrderName, nameIdentifier);
+    public void resendEmail() {
+        serviceManager.appServiceCertificateOrders().resendEmail(resourceGroupName, certificateOrderName);
     }
 
     public Response<Void> resendRequestEmailsWithResponse(NameIdentifierInner nameIdentifier, Context context) {
@@ -312,10 +306,10 @@ public final class AppServiceCertificateOrderImpl
             .resendRequestEmailsWithResponse(resourceGroupName, certificateOrderName, nameIdentifier, context);
     }
 
-    public SiteSeal retrieveSiteSeal(SiteSealRequest siteSealRequest) {
-        return serviceManager
+    public void resendRequestEmails(NameIdentifierInner nameIdentifier) {
+        serviceManager
             .appServiceCertificateOrders()
-            .retrieveSiteSeal(resourceGroupName, certificateOrderName, siteSealRequest);
+            .resendRequestEmails(resourceGroupName, certificateOrderName, nameIdentifier);
     }
 
     public Response<SiteSeal> retrieveSiteSealWithResponse(SiteSealRequest siteSealRequest, Context context) {
@@ -324,14 +318,20 @@ public final class AppServiceCertificateOrderImpl
             .retrieveSiteSealWithResponse(resourceGroupName, certificateOrderName, siteSealRequest, context);
     }
 
-    public void verifyDomainOwnership() {
-        serviceManager.appServiceCertificateOrders().verifyDomainOwnership(resourceGroupName, certificateOrderName);
+    public SiteSeal retrieveSiteSeal(SiteSealRequest siteSealRequest) {
+        return serviceManager
+            .appServiceCertificateOrders()
+            .retrieveSiteSeal(resourceGroupName, certificateOrderName, siteSealRequest);
     }
 
     public Response<Void> verifyDomainOwnershipWithResponse(Context context) {
         return serviceManager
             .appServiceCertificateOrders()
             .verifyDomainOwnershipWithResponse(resourceGroupName, certificateOrderName, context);
+    }
+
+    public void verifyDomainOwnership() {
+        serviceManager.appServiceCertificateOrders().verifyDomainOwnership(resourceGroupName, certificateOrderName);
     }
 
     public AppServiceCertificateOrderImpl withRegion(Region location) {

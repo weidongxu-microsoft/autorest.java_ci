@@ -176,6 +176,10 @@ public final class StorageAccountPropertiesCreateParameters {
     @JsonProperty(value = "dnsEndpointType")
     private DnsEndpointType dnsEndpointType;
 
+    /** Creates an instance of StorageAccountPropertiesCreateParameters class. */
+    public StorageAccountPropertiesCreateParameters() {
+    }
+
     /**
      * Get the allowedCopyScope property: Restrict copy to and from Storage Accounts within an AAD tenant or with
      * Private Links to the same VNet.

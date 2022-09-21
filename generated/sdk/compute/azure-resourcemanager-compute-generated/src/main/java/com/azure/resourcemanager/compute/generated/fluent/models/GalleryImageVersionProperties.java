@@ -41,6 +41,10 @@ public final class GalleryImageVersionProperties {
     @JsonProperty(value = "replicationStatus", access = JsonProperty.Access.WRITE_ONLY)
     private ReplicationStatus replicationStatus;
 
+    /** Creates an instance of GalleryImageVersionProperties class. */
+    public GalleryImageVersionProperties() {
+    }
+
     /**
      * Get the publishingProfile property: The publishing profile of a gallery image Version.
      *

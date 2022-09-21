@@ -46,20 +46,6 @@ public interface TopicTypesClient {
      * <p>Get information about a topic type.
      *
      * @param topicTypeName Name of the topic type.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a topic type.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    TopicTypeInfoInner get(String topicTypeName);
-
-    /**
-     * Get a topic type.
-     *
-     * <p>Get information about a topic type.
-     *
-     * @param topicTypeName Name of the topic type.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -68,6 +54,20 @@ public interface TopicTypesClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<TopicTypeInfoInner> getWithResponse(String topicTypeName, Context context);
+
+    /**
+     * Get a topic type.
+     *
+     * <p>Get information about a topic type.
+     *
+     * @param topicTypeName Name of the topic type.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return information about a topic type.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    TopicTypeInfoInner get(String topicTypeName);
 
     /**
      * List event types.

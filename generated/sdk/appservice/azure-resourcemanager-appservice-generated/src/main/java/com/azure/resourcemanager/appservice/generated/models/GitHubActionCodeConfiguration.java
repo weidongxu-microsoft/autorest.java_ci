@@ -22,6 +22,10 @@ public final class GitHubActionCodeConfiguration {
     @JsonProperty(value = "runtimeVersion")
     private String runtimeVersion;
 
+    /** Creates an instance of GitHubActionCodeConfiguration class. */
+    public GitHubActionCodeConfiguration() {
+    }
+
     /**
      * Get the runtimeStack property: Runtime stack is used to determine the workflow file content for code base apps.
      *

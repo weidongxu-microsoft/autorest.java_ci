@@ -41,6 +41,10 @@ public final class PrivateEndpointConnectionVaultProperties {
     @JsonProperty(value = "location", access = JsonProperty.Access.WRITE_ONLY)
     private String location;
 
+    /** Creates an instance of PrivateEndpointConnectionVaultProperties class. */
+    public PrivateEndpointConnectionVaultProperties() {
+    }
+
     /**
      * Get the id property: Format of id
      * subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.[Service]/{resource}/{resourceName}/privateEndpointConnections/{connectionName}.

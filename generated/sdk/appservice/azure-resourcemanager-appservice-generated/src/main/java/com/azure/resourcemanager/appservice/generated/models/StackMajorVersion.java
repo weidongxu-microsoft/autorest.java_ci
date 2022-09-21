@@ -81,6 +81,10 @@ public final class StackMajorVersion {
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, Object> siteConfigPropertiesDictionary;
 
+    /** Creates an instance of StackMajorVersion class. */
+    public StackMajorVersion() {
+    }
+
     /**
      * Get the displayVersion property: Application stack major version (display only).
      *

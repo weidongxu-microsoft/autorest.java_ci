@@ -1116,11 +1116,11 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified managed HSM Pool.
+     * @return the specified managed HSM Pool along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ManagedHsmInner getByResourceGroup(String resourceGroupName, String name) {
-        return getByResourceGroupAsync(resourceGroupName, name).block();
+    public Response<ManagedHsmInner> getByResourceGroupWithResponse(String resourceGroupName, String name) {
+        return getByResourceGroupWithResponseAsync(resourceGroupName, name).block();
     }
 
     /**
@@ -1138,6 +1138,21 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
     public Response<ManagedHsmInner> getByResourceGroupWithResponse(
         String resourceGroupName, String name, Context context) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, name, context).block();
+    }
+
+    /**
+     * Gets the specified managed HSM Pool.
+     *
+     * @param resourceGroupName Name of the resource group that contains the managed HSM pool.
+     * @param name The name of the managed HSM Pool.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified managed HSM Pool.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ManagedHsmInner getByResourceGroup(String resourceGroupName, String name) {
+        return getByResourceGroupWithResponse(resourceGroupName, name, Context.NONE).getValue();
     }
 
     /**
@@ -1760,11 +1775,11 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified deleted managed HSM.
+     * @return the specified deleted managed HSM along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public DeletedManagedHsmInner getDeleted(String name, String location) {
-        return getDeletedAsync(name, location).block();
+    public Response<DeletedManagedHsmInner> getDeletedWithResponse(String name, String location) {
+        return getDeletedWithResponseAsync(name, location).block();
     }
 
     /**
@@ -1781,6 +1796,21 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<DeletedManagedHsmInner> getDeletedWithResponse(String name, String location, Context context) {
         return getDeletedWithResponseAsync(name, location, context).block();
+    }
+
+    /**
+     * Gets the specified deleted managed HSM.
+     *
+     * @param name The name of the deleted managed HSM.
+     * @param location The location of the deleted managed HSM.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified deleted managed HSM.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public DeletedManagedHsmInner getDeleted(String name, String location) {
+        return getDeletedWithResponse(name, location, Context.NONE).getValue();
     }
 
     /**
@@ -2114,12 +2144,12 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the CheckMhsmNameAvailability operation response.
+     * @return the CheckMhsmNameAvailability operation response along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public CheckMhsmNameAvailabilityResultInner checkMhsmNameAvailability(
+    public Response<CheckMhsmNameAvailabilityResultInner> checkMhsmNameAvailabilityWithResponse(
         CheckMhsmNameAvailabilityParameters mhsmName) {
-        return checkMhsmNameAvailabilityAsync(mhsmName).block();
+        return checkMhsmNameAvailabilityWithResponseAsync(mhsmName).block();
     }
 
     /**
@@ -2136,6 +2166,21 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
     public Response<CheckMhsmNameAvailabilityResultInner> checkMhsmNameAvailabilityWithResponse(
         CheckMhsmNameAvailabilityParameters mhsmName, Context context) {
         return checkMhsmNameAvailabilityWithResponseAsync(mhsmName, context).block();
+    }
+
+    /**
+     * Checks that the managed hsm name is valid and is not already in use.
+     *
+     * @param mhsmName The name of the managed hsm.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the CheckMhsmNameAvailability operation response.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public CheckMhsmNameAvailabilityResultInner checkMhsmNameAvailability(
+        CheckMhsmNameAvailabilityParameters mhsmName) {
+        return checkMhsmNameAvailabilityWithResponse(mhsmName, Context.NONE).getValue();
     }
 
     /**

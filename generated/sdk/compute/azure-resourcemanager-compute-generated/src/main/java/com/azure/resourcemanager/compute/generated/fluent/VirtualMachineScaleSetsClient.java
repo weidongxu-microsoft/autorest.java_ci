@@ -267,20 +267,6 @@ public interface VirtualMachineScaleSetsClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Virtual Machine Scale Set.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    VirtualMachineScaleSetInner getByResourceGroup(String resourceGroupName, String vmScaleSetName);
-
-    /**
-     * Display information about a virtual machine scale set.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param vmScaleSetName The name of the VM scale set.
      * @param expand The expand expression to apply on the operation. 'UserData' retrieves the UserData property of the
      *     VM scale set that was provided by the user during the VM scale set Create/Update operation.
      * @param context The context to associate with this operation.
@@ -293,6 +279,20 @@ public interface VirtualMachineScaleSetsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<VirtualMachineScaleSetInner> getByResourceGroupWithResponse(
         String resourceGroupName, String vmScaleSetName, ExpandTypesForGetVMScaleSets expand, Context context);
+
+    /**
+     * Display information about a virtual machine scale set.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param vmScaleSetName The name of the VM scale set.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return describes a Virtual Machine Scale Set.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    VirtualMachineScaleSetInner getByResourceGroup(String resourceGroupName, String vmScaleSetName);
 
     /**
      * Deallocates specific virtual machines in a VM scale set. Shuts down the virtual machines and releases the compute
@@ -487,20 +487,6 @@ public interface VirtualMachineScaleSetsClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the status of a VM scale set instance.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    VirtualMachineScaleSetInstanceViewInner getInstanceView(String resourceGroupName, String vmScaleSetName);
-
-    /**
-     * Gets the status of a VM scale set instance.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param vmScaleSetName The name of the VM scale set.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
@@ -511,6 +497,20 @@ public interface VirtualMachineScaleSetsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<VirtualMachineScaleSetInstanceViewInner> getInstanceViewWithResponse(
         String resourceGroupName, String vmScaleSetName, Context context);
+
+    /**
+     * Gets the status of a VM scale set instance.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param vmScaleSetName The name of the VM scale set.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the status of a VM scale set instance.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    VirtualMachineScaleSetInstanceViewInner getInstanceView(String resourceGroupName, String vmScaleSetName);
 
     /**
      * Gets a list of all VM scale sets under a resource group.
@@ -1346,22 +1346,6 @@ public interface VirtualMachineScaleSetsClient {
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param platformUpdateDomain The platform update domain for which a manual recovery walk is requested.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response after calling a manual recovery walk.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    RecoveryWalkResponseInner forceRecoveryServiceFabricPlatformUpdateDomainWalk(
-        String resourceGroupName, String vmScaleSetName, int platformUpdateDomain);
-
-    /**
-     * Manual platform update domain walk to update virtual machines in a service fabric virtual machine scale set.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param vmScaleSetName The name of the VM scale set.
-     * @param platformUpdateDomain The platform update domain for which a manual recovery walk is requested.
      * @param zone The zone in which the manual recovery walk is requested for cross zone virtual machine scale set.
      * @param placementGroupId The placement group id for which the manual recovery walk is requested.
      * @param context The context to associate with this operation.
@@ -1381,19 +1365,20 @@ public interface VirtualMachineScaleSetsClient {
         Context context);
 
     /**
-     * Converts SinglePlacementGroup property to false for a existing virtual machine scale set.
+     * Manual platform update domain walk to update virtual machines in a service fabric virtual machine scale set.
      *
      * @param resourceGroupName The name of the resource group.
-     * @param vmScaleSetName The name of the virtual machine scale set to create or update.
-     * @param parameters The input object for ConvertToSinglePlacementGroup API.
+     * @param vmScaleSetName The name of the VM scale set.
+     * @param platformUpdateDomain The platform update domain for which a manual recovery walk is requested.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return response after calling a manual recovery walk.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    void convertToSinglePlacementGroup(
-        String resourceGroupName, String vmScaleSetName, VMScaleSetConvertToSinglePlacementGroupInput parameters);
+    RecoveryWalkResponseInner forceRecoveryServiceFabricPlatformUpdateDomainWalk(
+        String resourceGroupName, String vmScaleSetName, int platformUpdateDomain);
 
     /**
      * Converts SinglePlacementGroup property to false for a existing virtual machine scale set.
@@ -1414,6 +1399,21 @@ public interface VirtualMachineScaleSetsClient {
         String vmScaleSetName,
         VMScaleSetConvertToSinglePlacementGroupInput parameters,
         Context context);
+
+    /**
+     * Converts SinglePlacementGroup property to false for a existing virtual machine scale set.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param vmScaleSetName The name of the virtual machine scale set to create or update.
+     * @param parameters The input object for ConvertToSinglePlacementGroup API.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    void convertToSinglePlacementGroup(
+        String resourceGroupName, String vmScaleSetName, VMScaleSetConvertToSinglePlacementGroupInput parameters);
 
     /**
      * Changes ServiceState property for a given service.

@@ -28,6 +28,10 @@ public final class ExportInner extends ProxyResource {
     @JsonProperty(value = "eTag")
     private String etag;
 
+    /** Creates an instance of ExportInner class. */
+    public ExportInner() {
+    }
+
     /**
      * Get the innerProperties property: The properties of the export.
      *

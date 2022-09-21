@@ -30,15 +30,6 @@ public final class VirtualHubBgpConnectionsImpl implements VirtualHubBgpConnecti
         this.serviceManager = serviceManager;
     }
 
-    public BgpConnection get(String resourceGroupName, String virtualHubName, String connectionName) {
-        BgpConnectionInner inner = this.serviceClient().get(resourceGroupName, virtualHubName, connectionName);
-        if (inner != null) {
-            return new BgpConnectionImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<BgpConnection> getWithResponse(
         String resourceGroupName, String virtualHubName, String connectionName, Context context) {
         Response<BgpConnectionInner> inner =
@@ -49,6 +40,15 @@ public final class VirtualHubBgpConnectionsImpl implements VirtualHubBgpConnecti
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new BgpConnectionImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public BgpConnection get(String resourceGroupName, String virtualHubName, String connectionName) {
+        BgpConnectionInner inner = this.serviceClient().get(resourceGroupName, virtualHubName, connectionName);
+        if (inner != null) {
+            return new BgpConnectionImpl(inner, this.manager());
         } else {
             return null;
         }

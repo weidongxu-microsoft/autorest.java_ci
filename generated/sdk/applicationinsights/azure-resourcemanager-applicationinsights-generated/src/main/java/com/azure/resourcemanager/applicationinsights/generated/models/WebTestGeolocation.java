@@ -16,6 +16,10 @@ public final class WebTestGeolocation {
     @JsonProperty(value = "Id")
     private String location;
 
+    /** Creates an instance of WebTestGeolocation class. */
+    public WebTestGeolocation() {
+    }
+
     /**
      * Get the location property: Location ID for the webtest to run from.
      *

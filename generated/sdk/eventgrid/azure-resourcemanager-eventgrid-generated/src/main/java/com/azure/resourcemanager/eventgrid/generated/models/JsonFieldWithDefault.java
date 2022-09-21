@@ -28,6 +28,10 @@ public final class JsonFieldWithDefault {
     @JsonProperty(value = "defaultValue")
     private String defaultValue;
 
+    /** Creates an instance of JsonFieldWithDefault class. */
+    public JsonFieldWithDefault() {
+    }
+
     /**
      * Get the sourceField property: Name of a field in the input event schema that's to be used as the source of a
      * mapping.

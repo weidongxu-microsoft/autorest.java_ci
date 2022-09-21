@@ -34,6 +34,10 @@ public final class GitHubActionConfiguration {
     @JsonProperty(value = "generateWorkflowFile")
     private Boolean generateWorkflowFile;
 
+    /** Creates an instance of GitHubActionConfiguration class. */
+    public GitHubActionConfiguration() {
+    }
+
     /**
      * Get the codeConfiguration property: GitHub Action code configuration.
      *

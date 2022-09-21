@@ -34,6 +34,10 @@ public class FrontendEndpointUpdateParameters {
     @JsonProperty(value = "webApplicationFirewallPolicyLink")
     private FrontendEndpointUpdateParametersWebApplicationFirewallPolicyLink webApplicationFirewallPolicyLink;
 
+    /** Creates an instance of FrontendEndpointUpdateParameters class. */
+    public FrontendEndpointUpdateParameters() {
+    }
+
     /**
      * Get the hostname property: The host name of the frontendEndpoint. Must be a domain name.
      *

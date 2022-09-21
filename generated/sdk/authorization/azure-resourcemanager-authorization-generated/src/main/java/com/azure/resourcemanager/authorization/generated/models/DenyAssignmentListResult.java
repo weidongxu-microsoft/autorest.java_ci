@@ -24,6 +24,10 @@ public final class DenyAssignmentListResult {
     @JsonProperty(value = "nextLink")
     private String nextLink;
 
+    /** Creates an instance of DenyAssignmentListResult class. */
+    public DenyAssignmentListResult() {
+    }
+
     /**
      * Get the value property: Deny assignment list.
      *

@@ -51,20 +51,6 @@ public interface StorageAccountsClient {
      * @param deviceName The device name.
      * @param storageAccountName The storage account name.
      * @param resourceGroupName The resource group name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a StorageAccount by name.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    StorageAccountInner get(String deviceName, String storageAccountName, String resourceGroupName);
-
-    /**
-     * Gets a StorageAccount by name.
-     *
-     * @param deviceName The device name.
-     * @param storageAccountName The storage account name.
-     * @param resourceGroupName The resource group name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -74,6 +60,20 @@ public interface StorageAccountsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<StorageAccountInner> getWithResponse(
         String deviceName, String storageAccountName, String resourceGroupName, Context context);
+
+    /**
+     * Gets a StorageAccount by name.
+     *
+     * @param deviceName The device name.
+     * @param storageAccountName The storage account name.
+     * @param resourceGroupName The resource group name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a StorageAccount by name.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    StorageAccountInner get(String deviceName, String storageAccountName, String resourceGroupName);
 
     /**
      * Creates a new StorageAccount or updates an existing StorageAccount on the device.

@@ -638,16 +638,16 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in a List or Get AuthorizationRule operation.
+     * @return single item in a List or Get AuthorizationRule operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public AuthorizationRuleInner createOrUpdateAuthorizationRule(
+    public Response<AuthorizationRuleInner> createOrUpdateAuthorizationRuleWithResponse(
         String resourceGroupName,
         String namespaceName,
         String hybridConnectionName,
         String authorizationRuleName,
         AuthorizationRuleInner parameters) {
-        return createOrUpdateAuthorizationRuleAsync(
+        return createOrUpdateAuthorizationRuleWithResponseAsync(
                 resourceGroupName, namespaceName, hybridConnectionName, authorizationRuleName, parameters)
             .block();
     }
@@ -677,6 +677,31 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
         return createOrUpdateAuthorizationRuleWithResponseAsync(
                 resourceGroupName, namespaceName, hybridConnectionName, authorizationRuleName, parameters, context)
             .block();
+    }
+
+    /**
+     * Creates or updates an authorization rule for a hybrid connection.
+     *
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param namespaceName The namespace name.
+     * @param hybridConnectionName The hybrid connection name.
+     * @param authorizationRuleName The authorization rule name.
+     * @param parameters The authorization rule parameters.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return single item in a List or Get AuthorizationRule operation.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public AuthorizationRuleInner createOrUpdateAuthorizationRule(
+        String resourceGroupName,
+        String namespaceName,
+        String hybridConnectionName,
+        String authorizationRuleName,
+        AuthorizationRuleInner parameters) {
+        return createOrUpdateAuthorizationRuleWithResponse(
+                resourceGroupName, namespaceName, hybridConnectionName, authorizationRuleName, parameters, Context.NONE)
+            .getValue();
     }
 
     /**
@@ -831,11 +856,13 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public void deleteAuthorizationRule(
+    public Response<Void> deleteAuthorizationRuleWithResponse(
         String resourceGroupName, String namespaceName, String hybridConnectionName, String authorizationRuleName) {
-        deleteAuthorizationRuleAsync(resourceGroupName, namespaceName, hybridConnectionName, authorizationRuleName)
+        return deleteAuthorizationRuleWithResponseAsync(
+                resourceGroupName, namespaceName, hybridConnectionName, authorizationRuleName)
             .block();
     }
 
@@ -862,6 +889,24 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
         return deleteAuthorizationRuleWithResponseAsync(
                 resourceGroupName, namespaceName, hybridConnectionName, authorizationRuleName, context)
             .block();
+    }
+
+    /**
+     * Deletes a hybrid connection authorization rule.
+     *
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param namespaceName The namespace name.
+     * @param hybridConnectionName The hybrid connection name.
+     * @param authorizationRuleName The authorization rule name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public void deleteAuthorizationRule(
+        String resourceGroupName, String namespaceName, String hybridConnectionName, String authorizationRuleName) {
+        deleteAuthorizationRuleWithResponse(
+            resourceGroupName, namespaceName, hybridConnectionName, authorizationRuleName, Context.NONE);
     }
 
     /**
@@ -1018,12 +1063,13 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in a List or Get AuthorizationRule operation.
+     * @return single item in a List or Get AuthorizationRule operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public AuthorizationRuleInner getAuthorizationRule(
+    public Response<AuthorizationRuleInner> getAuthorizationRuleWithResponse(
         String resourceGroupName, String namespaceName, String hybridConnectionName, String authorizationRuleName) {
-        return getAuthorizationRuleAsync(resourceGroupName, namespaceName, hybridConnectionName, authorizationRuleName)
+        return getAuthorizationRuleWithResponseAsync(
+                resourceGroupName, namespaceName, hybridConnectionName, authorizationRuleName)
             .block();
     }
 
@@ -1050,6 +1096,26 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
         return getAuthorizationRuleWithResponseAsync(
                 resourceGroupName, namespaceName, hybridConnectionName, authorizationRuleName, context)
             .block();
+    }
+
+    /**
+     * Hybrid connection authorization rule for a hybrid connection by name.
+     *
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param namespaceName The namespace name.
+     * @param hybridConnectionName The hybrid connection name.
+     * @param authorizationRuleName The authorization rule name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return single item in a List or Get AuthorizationRule operation.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public AuthorizationRuleInner getAuthorizationRule(
+        String resourceGroupName, String namespaceName, String hybridConnectionName, String authorizationRuleName) {
+        return getAuthorizationRuleWithResponse(
+                resourceGroupName, namespaceName, hybridConnectionName, authorizationRuleName, Context.NONE)
+            .getValue();
     }
 
     /**
@@ -1203,12 +1269,13 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return namespace/Relay Connection String.
+     * @return namespace/Relay Connection String along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public AccessKeysInner listKeys(
+    public Response<AccessKeysInner> listKeysWithResponse(
         String resourceGroupName, String namespaceName, String hybridConnectionName, String authorizationRuleName) {
-        return listKeysAsync(resourceGroupName, namespaceName, hybridConnectionName, authorizationRuleName).block();
+        return listKeysWithResponseAsync(resourceGroupName, namespaceName, hybridConnectionName, authorizationRuleName)
+            .block();
     }
 
     /**
@@ -1234,6 +1301,26 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
         return listKeysWithResponseAsync(
                 resourceGroupName, namespaceName, hybridConnectionName, authorizationRuleName, context)
             .block();
+    }
+
+    /**
+     * Primary and secondary connection strings to the hybrid connection.
+     *
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param namespaceName The namespace name.
+     * @param hybridConnectionName The hybrid connection name.
+     * @param authorizationRuleName The authorization rule name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return namespace/Relay Connection String.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public AccessKeysInner listKeys(
+        String resourceGroupName, String namespaceName, String hybridConnectionName, String authorizationRuleName) {
+        return listKeysWithResponse(
+                resourceGroupName, namespaceName, hybridConnectionName, authorizationRuleName, Context.NONE)
+            .getValue();
     }
 
     /**
@@ -1413,16 +1500,16 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return namespace/Relay Connection String.
+     * @return namespace/Relay Connection String along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public AccessKeysInner regenerateKeys(
+    public Response<AccessKeysInner> regenerateKeysWithResponse(
         String resourceGroupName,
         String namespaceName,
         String hybridConnectionName,
         String authorizationRuleName,
         RegenerateAccessKeyParameters parameters) {
-        return regenerateKeysAsync(
+        return regenerateKeysWithResponseAsync(
                 resourceGroupName, namespaceName, hybridConnectionName, authorizationRuleName, parameters)
             .block();
     }
@@ -1452,6 +1539,31 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
         return regenerateKeysWithResponseAsync(
                 resourceGroupName, namespaceName, hybridConnectionName, authorizationRuleName, parameters, context)
             .block();
+    }
+
+    /**
+     * Regenerates the primary or secondary connection strings to the hybrid connection.
+     *
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param namespaceName The namespace name.
+     * @param hybridConnectionName The hybrid connection name.
+     * @param authorizationRuleName The authorization rule name.
+     * @param parameters Parameters supplied to regenerate authorization rule.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return namespace/Relay Connection String.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public AccessKeysInner regenerateKeys(
+        String resourceGroupName,
+        String namespaceName,
+        String hybridConnectionName,
+        String authorizationRuleName,
+        RegenerateAccessKeyParameters parameters) {
+        return regenerateKeysWithResponse(
+                resourceGroupName, namespaceName, hybridConnectionName, authorizationRuleName, parameters, Context.NONE)
+            .getValue();
     }
 
     /**
@@ -1791,12 +1903,13 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of hybrid connection resource.
+     * @return description of hybrid connection resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public HybridConnectionInner createOrUpdate(
+    public Response<HybridConnectionInner> createOrUpdateWithResponse(
         String resourceGroupName, String namespaceName, String hybridConnectionName, HybridConnectionInner parameters) {
-        return createOrUpdateAsync(resourceGroupName, namespaceName, hybridConnectionName, parameters).block();
+        return createOrUpdateWithResponseAsync(resourceGroupName, namespaceName, hybridConnectionName, parameters)
+            .block();
     }
 
     /**
@@ -1822,6 +1935,26 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
         return createOrUpdateWithResponseAsync(
                 resourceGroupName, namespaceName, hybridConnectionName, parameters, context)
             .block();
+    }
+
+    /**
+     * Creates or updates a service hybrid connection. This operation is idempotent.
+     *
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param namespaceName The namespace name.
+     * @param hybridConnectionName The hybrid connection name.
+     * @param parameters Parameters supplied to create a hybrid connection.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return description of hybrid connection resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public HybridConnectionInner createOrUpdate(
+        String resourceGroupName, String namespaceName, String hybridConnectionName, HybridConnectionInner parameters) {
+        return createOrUpdateWithResponse(
+                resourceGroupName, namespaceName, hybridConnectionName, parameters, Context.NONE)
+            .getValue();
     }
 
     /**
@@ -1956,10 +2089,12 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public void delete(String resourceGroupName, String namespaceName, String hybridConnectionName) {
-        deleteAsync(resourceGroupName, namespaceName, hybridConnectionName).block();
+    public Response<Void> deleteWithResponse(
+        String resourceGroupName, String namespaceName, String hybridConnectionName) {
+        return deleteWithResponseAsync(resourceGroupName, namespaceName, hybridConnectionName).block();
     }
 
     /**
@@ -1978,6 +2113,21 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
     public Response<Void> deleteWithResponse(
         String resourceGroupName, String namespaceName, String hybridConnectionName, Context context) {
         return deleteWithResponseAsync(resourceGroupName, namespaceName, hybridConnectionName, context).block();
+    }
+
+    /**
+     * Deletes a hybrid connection.
+     *
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param namespaceName The namespace name.
+     * @param hybridConnectionName The hybrid connection name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public void delete(String resourceGroupName, String namespaceName, String hybridConnectionName) {
+        deleteWithResponse(resourceGroupName, namespaceName, hybridConnectionName, Context.NONE);
     }
 
     /**
@@ -2115,11 +2265,12 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of hybrid connection resource.
+     * @return description of hybrid connection resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public HybridConnectionInner get(String resourceGroupName, String namespaceName, String hybridConnectionName) {
-        return getAsync(resourceGroupName, namespaceName, hybridConnectionName).block();
+    public Response<HybridConnectionInner> getWithResponse(
+        String resourceGroupName, String namespaceName, String hybridConnectionName) {
+        return getWithResponseAsync(resourceGroupName, namespaceName, hybridConnectionName).block();
     }
 
     /**
@@ -2138,6 +2289,22 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
     public Response<HybridConnectionInner> getWithResponse(
         String resourceGroupName, String namespaceName, String hybridConnectionName, Context context) {
         return getWithResponseAsync(resourceGroupName, namespaceName, hybridConnectionName, context).block();
+    }
+
+    /**
+     * Returns the description for the specified hybrid connection.
+     *
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param namespaceName The namespace name.
+     * @param hybridConnectionName The hybrid connection name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return description of hybrid connection resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public HybridConnectionInner get(String resourceGroupName, String namespaceName, String hybridConnectionName) {
+        return getWithResponse(resourceGroupName, namespaceName, hybridConnectionName, Context.NONE).getValue();
     }
 
     /**

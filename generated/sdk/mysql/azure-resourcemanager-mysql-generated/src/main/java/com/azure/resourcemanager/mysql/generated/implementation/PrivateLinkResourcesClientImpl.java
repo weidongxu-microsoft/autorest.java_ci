@@ -417,11 +417,12 @@ public final class PrivateLinkResourcesClientImpl implements PrivateLinkResource
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a private link resource for MySQL server.
+     * @return a private link resource for MySQL server along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public PrivateLinkResourceInner get(String resourceGroupName, String serverName, String groupName) {
-        return getAsync(resourceGroupName, serverName, groupName).block();
+    public Response<PrivateLinkResourceInner> getWithResponse(
+        String resourceGroupName, String serverName, String groupName) {
+        return getWithResponseAsync(resourceGroupName, serverName, groupName).block();
     }
 
     /**
@@ -440,6 +441,22 @@ public final class PrivateLinkResourcesClientImpl implements PrivateLinkResource
     public Response<PrivateLinkResourceInner> getWithResponse(
         String resourceGroupName, String serverName, String groupName, Context context) {
         return getWithResponseAsync(resourceGroupName, serverName, groupName, context).block();
+    }
+
+    /**
+     * Gets a private link resource for MySQL server.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param serverName The name of the server.
+     * @param groupName The name of the private link resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a private link resource for MySQL server.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public PrivateLinkResourceInner get(String resourceGroupName, String serverName, String groupName) {
+        return getWithResponse(resourceGroupName, serverName, groupName, Context.NONE).getValue();
     }
 
     /**

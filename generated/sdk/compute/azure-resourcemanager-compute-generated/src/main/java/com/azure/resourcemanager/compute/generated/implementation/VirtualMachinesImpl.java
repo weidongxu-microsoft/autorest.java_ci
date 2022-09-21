@@ -89,15 +89,6 @@ public final class VirtualMachinesImpl implements VirtualMachines {
         this.serviceClient().delete(resourceGroupName, vmName, forceDeletion, context);
     }
 
-    public VirtualMachine getByResourceGroup(String resourceGroupName, String vmName) {
-        VirtualMachineInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, vmName);
-        if (inner != null) {
-            return new VirtualMachineImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<VirtualMachine> getByResourceGroupWithResponse(
         String resourceGroupName, String vmName, InstanceViewTypes expand, Context context) {
         Response<VirtualMachineInner> inner =
@@ -113,10 +104,10 @@ public final class VirtualMachinesImpl implements VirtualMachines {
         }
     }
 
-    public VirtualMachineInstanceView instanceView(String resourceGroupName, String vmName) {
-        VirtualMachineInstanceViewInner inner = this.serviceClient().instanceView(resourceGroupName, vmName);
+    public VirtualMachine getByResourceGroup(String resourceGroupName, String vmName) {
+        VirtualMachineInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, vmName);
         if (inner != null) {
-            return new VirtualMachineInstanceViewImpl(inner, this.manager());
+            return new VirtualMachineImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -132,6 +123,15 @@ public final class VirtualMachinesImpl implements VirtualMachines {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new VirtualMachineInstanceViewImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public VirtualMachineInstanceView instanceView(String resourceGroupName, String vmName) {
+        VirtualMachineInstanceViewInner inner = this.serviceClient().instanceView(resourceGroupName, vmName);
+        if (inner != null) {
+            return new VirtualMachineInstanceViewImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -157,12 +157,12 @@ public final class VirtualMachinesImpl implements VirtualMachines {
         this.serviceClient().deallocate(resourceGroupName, vmName, hibernate, context);
     }
 
-    public void generalize(String resourceGroupName, String vmName) {
-        this.serviceClient().generalize(resourceGroupName, vmName);
-    }
-
     public Response<Void> generalizeWithResponse(String resourceGroupName, String vmName, Context context) {
         return this.serviceClient().generalizeWithResponse(resourceGroupName, vmName, context);
+    }
+
+    public void generalize(String resourceGroupName, String vmName) {
+        this.serviceClient().generalize(resourceGroupName, vmName);
     }
 
     public PagedIterable<VirtualMachine> listByResourceGroup(String resourceGroupName) {
@@ -256,16 +256,6 @@ public final class VirtualMachinesImpl implements VirtualMachines {
         this.serviceClient().reimage(resourceGroupName, vmName, parameters, context);
     }
 
-    public RetrieveBootDiagnosticsDataResult retrieveBootDiagnosticsData(String resourceGroupName, String vmName) {
-        RetrieveBootDiagnosticsDataResultInner inner =
-            this.serviceClient().retrieveBootDiagnosticsData(resourceGroupName, vmName);
-        if (inner != null) {
-            return new RetrieveBootDiagnosticsDataResultImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<RetrieveBootDiagnosticsDataResult> retrieveBootDiagnosticsDataWithResponse(
         String resourceGroupName, String vmName, Integer sasUriExpirationTimeInMinutes, Context context) {
         Response<RetrieveBootDiagnosticsDataResultInner> inner =
@@ -284,6 +274,16 @@ public final class VirtualMachinesImpl implements VirtualMachines {
         }
     }
 
+    public RetrieveBootDiagnosticsDataResult retrieveBootDiagnosticsData(String resourceGroupName, String vmName) {
+        RetrieveBootDiagnosticsDataResultInner inner =
+            this.serviceClient().retrieveBootDiagnosticsData(resourceGroupName, vmName);
+        if (inner != null) {
+            return new RetrieveBootDiagnosticsDataResultImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
     public void performMaintenance(String resourceGroupName, String vmName) {
         this.serviceClient().performMaintenance(resourceGroupName, vmName);
     }
@@ -292,12 +292,12 @@ public final class VirtualMachinesImpl implements VirtualMachines {
         this.serviceClient().performMaintenance(resourceGroupName, vmName, context);
     }
 
-    public void simulateEviction(String resourceGroupName, String vmName) {
-        this.serviceClient().simulateEviction(resourceGroupName, vmName);
-    }
-
     public Response<Void> simulateEvictionWithResponse(String resourceGroupName, String vmName, Context context) {
         return this.serviceClient().simulateEvictionWithResponse(resourceGroupName, vmName, context);
+    }
+
+    public void simulateEviction(String resourceGroupName, String vmName) {
+        this.serviceClient().simulateEviction(resourceGroupName, vmName);
     }
 
     public VirtualMachineAssessPatchesResult assessPatches(String resourceGroupName, String vmName) {

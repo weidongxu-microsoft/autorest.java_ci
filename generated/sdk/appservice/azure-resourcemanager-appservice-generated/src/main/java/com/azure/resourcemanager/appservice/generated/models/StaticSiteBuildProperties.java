@@ -58,6 +58,10 @@ public final class StaticSiteBuildProperties {
     @JsonProperty(value = "githubActionSecretNameOverride")
     private String githubActionSecretNameOverride;
 
+    /** Creates an instance of StaticSiteBuildProperties class. */
+    public StaticSiteBuildProperties() {
+    }
+
     /**
      * Get the appLocation property: The path to the app code within the repository.
      *

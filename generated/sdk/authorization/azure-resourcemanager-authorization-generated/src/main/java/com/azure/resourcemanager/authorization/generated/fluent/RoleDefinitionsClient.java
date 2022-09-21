@@ -18,19 +18,6 @@ public interface RoleDefinitionsClient {
      *
      * @param scope The scope of the role definition.
      * @param roleDefinitionId The ID of the role definition to delete.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return role definition.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    RoleDefinitionInner delete(String scope, String roleDefinitionId);
-
-    /**
-     * Deletes a role definition.
-     *
-     * @param scope The scope of the role definition.
-     * @param roleDefinitionId The ID of the role definition to delete.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -41,17 +28,17 @@ public interface RoleDefinitionsClient {
     Response<RoleDefinitionInner> deleteWithResponse(String scope, String roleDefinitionId, Context context);
 
     /**
-     * Get role definition by name (GUID).
+     * Deletes a role definition.
      *
      * @param scope The scope of the role definition.
-     * @param roleDefinitionId The ID of the role definition.
+     * @param roleDefinitionId The ID of the role definition to delete.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return role definition by name (GUID).
+     * @return role definition.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    RoleDefinitionInner get(String scope, String roleDefinitionId);
+    RoleDefinitionInner delete(String scope, String roleDefinitionId);
 
     /**
      * Get role definition by name (GUID).
@@ -68,18 +55,17 @@ public interface RoleDefinitionsClient {
     Response<RoleDefinitionInner> getWithResponse(String scope, String roleDefinitionId, Context context);
 
     /**
-     * Creates or updates a role definition.
+     * Get role definition by name (GUID).
      *
      * @param scope The scope of the role definition.
      * @param roleDefinitionId The ID of the role definition.
-     * @param roleDefinition The values for the role definition.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return role definition.
+     * @return role definition by name (GUID).
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    RoleDefinitionInner createOrUpdate(String scope, String roleDefinitionId, RoleDefinitionInner roleDefinition);
+    RoleDefinitionInner get(String scope, String roleDefinitionId);
 
     /**
      * Creates or updates a role definition.
@@ -96,6 +82,20 @@ public interface RoleDefinitionsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<RoleDefinitionInner> createOrUpdateWithResponse(
         String scope, String roleDefinitionId, RoleDefinitionInner roleDefinition, Context context);
+
+    /**
+     * Creates or updates a role definition.
+     *
+     * @param scope The scope of the role definition.
+     * @param roleDefinitionId The ID of the role definition.
+     * @param roleDefinition The values for the role definition.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return role definition.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    RoleDefinitionInner createOrUpdate(String scope, String roleDefinitionId, RoleDefinitionInner roleDefinition);
 
     /**
      * Get all role definitions that are applicable at scope and above.
@@ -133,21 +133,6 @@ public interface RoleDefinitionsClient {
      *     /subscriptions/{guid}/providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId} for subscription
      *     level role definitions, or /providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId} for tenant
      *     level role definitions.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a role definition by ID.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    RoleDefinitionInner getById(String roleId);
-
-    /**
-     * Gets a role definition by ID.
-     *
-     * @param roleId The fully qualified role definition ID. Use the format,
-     *     /subscriptions/{guid}/providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId} for subscription
-     *     level role definitions, or /providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId} for tenant
-     *     level role definitions.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -156,4 +141,19 @@ public interface RoleDefinitionsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<RoleDefinitionInner> getByIdWithResponse(String roleId, Context context);
+
+    /**
+     * Gets a role definition by ID.
+     *
+     * @param roleId The fully qualified role definition ID. Use the format,
+     *     /subscriptions/{guid}/providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId} for subscription
+     *     level role definitions, or /providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId} for tenant
+     *     level role definitions.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a role definition by ID.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    RoleDefinitionInner getById(String roleId);
 }

@@ -32,6 +32,10 @@ public final class IoTEdgeAgentInfo {
     @JsonProperty(value = "imageRepository")
     private ImageRepositoryCredential imageRepository;
 
+    /** Creates an instance of IoTEdgeAgentInfo class. */
+    public IoTEdgeAgentInfo() {
+    }
+
     /**
      * Get the imageName property: Name of the IoT edge agent image.
      *

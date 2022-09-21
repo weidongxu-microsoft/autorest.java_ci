@@ -17,6 +17,10 @@ public final class StaticSiteCustomDomainRequestPropertiesArmResource extends Pr
     @JsonProperty(value = "properties")
     private StaticSiteCustomDomainRequestPropertiesArmResourceProperties innerProperties;
 
+    /** Creates an instance of StaticSiteCustomDomainRequestPropertiesArmResource class. */
+    public StaticSiteCustomDomainRequestPropertiesArmResource() {
+    }
+
     /**
      * Get the innerProperties property: StaticSiteCustomDomainRequestPropertiesARMResource resource specific
      * properties.

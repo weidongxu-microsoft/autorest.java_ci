@@ -57,6 +57,10 @@ public final class SavedSearchProperties {
     @JsonProperty(value = "tags")
     private List<Tag> tags;
 
+    /** Creates an instance of SavedSearchProperties class. */
+    public SavedSearchProperties() {
+    }
+
     /**
      * Get the category property: The category of the saved search. This helps the user to find a saved search faster.
      *

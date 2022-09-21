@@ -60,15 +60,6 @@ public final class ResourceHealthMetadatasImpl implements ResourceHealthMetadata
         return Utils.mapPage(inner, inner1 -> new ResourceHealthMetadataImpl(inner1, this.manager()));
     }
 
-    public ResourceHealthMetadata getBySite(String resourceGroupName, String name) {
-        ResourceHealthMetadataInner inner = this.serviceClient().getBySite(resourceGroupName, name);
-        if (inner != null) {
-            return new ResourceHealthMetadataImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<ResourceHealthMetadata> getBySiteWithResponse(
         String resourceGroupName, String name, Context context) {
         Response<ResourceHealthMetadataInner> inner =
@@ -79,6 +70,15 @@ public final class ResourceHealthMetadatasImpl implements ResourceHealthMetadata
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new ResourceHealthMetadataImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public ResourceHealthMetadata getBySite(String resourceGroupName, String name) {
+        ResourceHealthMetadataInner inner = this.serviceClient().getBySite(resourceGroupName, name);
+        if (inner != null) {
+            return new ResourceHealthMetadataImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -97,15 +97,6 @@ public final class ResourceHealthMetadatasImpl implements ResourceHealthMetadata
         return Utils.mapPage(inner, inner1 -> new ResourceHealthMetadataImpl(inner1, this.manager()));
     }
 
-    public ResourceHealthMetadata getBySiteSlot(String resourceGroupName, String name, String slot) {
-        ResourceHealthMetadataInner inner = this.serviceClient().getBySiteSlot(resourceGroupName, name, slot);
-        if (inner != null) {
-            return new ResourceHealthMetadataImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<ResourceHealthMetadata> getBySiteSlotWithResponse(
         String resourceGroupName, String name, String slot, Context context) {
         Response<ResourceHealthMetadataInner> inner =
@@ -116,6 +107,15 @@ public final class ResourceHealthMetadatasImpl implements ResourceHealthMetadata
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new ResourceHealthMetadataImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public ResourceHealthMetadata getBySiteSlot(String resourceGroupName, String name, String slot) {
+        ResourceHealthMetadataInner inner = this.serviceClient().getBySiteSlot(resourceGroupName, name, slot);
+        if (inner != null) {
+            return new ResourceHealthMetadataImpl(inner, this.manager());
         } else {
             return null;
         }

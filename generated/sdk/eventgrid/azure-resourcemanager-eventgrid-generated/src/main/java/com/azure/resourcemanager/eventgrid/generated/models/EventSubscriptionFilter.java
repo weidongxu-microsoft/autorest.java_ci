@@ -52,6 +52,10 @@ public final class EventSubscriptionFilter {
     @JsonProperty(value = "advancedFilters")
     private List<AdvancedFilter> advancedFilters;
 
+    /** Creates an instance of EventSubscriptionFilter class. */
+    public EventSubscriptionFilter() {
+    }
+
     /**
      * Get the subjectBeginsWith property: An optional string to filter events for an event subscription based on a
      * resource path prefix. The format of this depends on the publisher of the events. Wildcard characters are not

@@ -7,6 +7,7 @@ package com.azure.resourcemanager.compute.generated.implementation;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineExtensionInner;
+import com.azure.resourcemanager.compute.generated.models.KeyVaultSecretReference;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineExtension;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineExtensionInstanceView;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineExtensionUpdate;
@@ -88,7 +89,7 @@ public final class VirtualMachineExtensionImpl
         return this.innerModel().suppressFailures();
     }
 
-    public Object protectedSettingsFromKeyVault() {
+    public KeyVaultSecretReference protectedSettingsFromKeyVault() {
         return this.innerModel().protectedSettingsFromKeyVault();
     }
 
@@ -316,7 +317,8 @@ public final class VirtualMachineExtensionImpl
         }
     }
 
-    public VirtualMachineExtensionImpl withProtectedSettingsFromKeyVault(Object protectedSettingsFromKeyVault) {
+    public VirtualMachineExtensionImpl withProtectedSettingsFromKeyVault(
+        KeyVaultSecretReference protectedSettingsFromKeyVault) {
         if (isInCreateMode()) {
             this.innerModel().withProtectedSettingsFromKeyVault(protectedSettingsFromKeyVault);
             return this;

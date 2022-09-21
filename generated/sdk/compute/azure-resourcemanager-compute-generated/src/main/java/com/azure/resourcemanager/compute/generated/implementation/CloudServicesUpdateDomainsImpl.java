@@ -46,16 +46,6 @@ public final class CloudServicesUpdateDomainsImpl implements CloudServicesUpdate
         this.serviceClient().walkUpdateDomain(resourceGroupName, cloudServiceName, updateDomain, parameters, context);
     }
 
-    public UpdateDomain getUpdateDomain(String resourceGroupName, String cloudServiceName, int updateDomain) {
-        UpdateDomainInner inner =
-            this.serviceClient().getUpdateDomain(resourceGroupName, cloudServiceName, updateDomain);
-        if (inner != null) {
-            return new UpdateDomainImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<UpdateDomain> getUpdateDomainWithResponse(
         String resourceGroupName, String cloudServiceName, int updateDomain, Context context) {
         Response<UpdateDomainInner> inner =
@@ -68,6 +58,16 @@ public final class CloudServicesUpdateDomainsImpl implements CloudServicesUpdate
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new UpdateDomainImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public UpdateDomain getUpdateDomain(String resourceGroupName, String cloudServiceName, int updateDomain) {
+        UpdateDomainInner inner =
+            this.serviceClient().getUpdateDomain(resourceGroupName, cloudServiceName, updateDomain);
+        if (inner != null) {
+            return new UpdateDomainImpl(inner, this.manager());
         } else {
             return null;
         }

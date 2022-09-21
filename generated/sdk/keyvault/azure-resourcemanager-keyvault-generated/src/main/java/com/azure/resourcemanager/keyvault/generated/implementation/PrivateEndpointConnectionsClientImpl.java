@@ -282,12 +282,12 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified private endpoint connection associated with the key vault.
+     * @return the specified private endpoint connection associated with the key vault along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public PrivateEndpointConnectionInner get(
+    public Response<PrivateEndpointConnectionInner> getWithResponse(
         String resourceGroupName, String vaultName, String privateEndpointConnectionName) {
-        return getAsync(resourceGroupName, vaultName, privateEndpointConnectionName).block();
+        return getWithResponseAsync(resourceGroupName, vaultName, privateEndpointConnectionName).block();
     }
 
     /**
@@ -306,6 +306,23 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     public Response<PrivateEndpointConnectionInner> getWithResponse(
         String resourceGroupName, String vaultName, String privateEndpointConnectionName, Context context) {
         return getWithResponseAsync(resourceGroupName, vaultName, privateEndpointConnectionName, context).block();
+    }
+
+    /**
+     * Gets the specified private endpoint connection associated with the key vault.
+     *
+     * @param resourceGroupName Name of the resource group that contains the key vault.
+     * @param vaultName The name of the key vault.
+     * @param privateEndpointConnectionName Name of the private endpoint connection associated with the key vault.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified private endpoint connection associated with the key vault.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public PrivateEndpointConnectionInner get(
+        String resourceGroupName, String vaultName, String privateEndpointConnectionName) {
+        return getWithResponse(resourceGroupName, vaultName, privateEndpointConnectionName, Context.NONE).getValue();
     }
 
     /**
@@ -474,12 +491,12 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @return private endpoint connection resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public PrivateEndpointConnectionInner put(
+    public PrivateEndpointConnectionsPutResponse putWithResponse(
         String resourceGroupName,
         String vaultName,
         String privateEndpointConnectionName,
         PrivateEndpointConnectionInner properties) {
-        return putAsync(resourceGroupName, vaultName, privateEndpointConnectionName, properties).block();
+        return putWithResponseAsync(resourceGroupName, vaultName, privateEndpointConnectionName, properties).block();
     }
 
     /**
@@ -504,6 +521,28 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
         Context context) {
         return putWithResponseAsync(resourceGroupName, vaultName, privateEndpointConnectionName, properties, context)
             .block();
+    }
+
+    /**
+     * Updates the specified private endpoint connection associated with the key vault.
+     *
+     * @param resourceGroupName Name of the resource group that contains the key vault.
+     * @param vaultName The name of the key vault.
+     * @param privateEndpointConnectionName Name of the private endpoint connection associated with the key vault.
+     * @param properties The intended state of private endpoint connection.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return private endpoint connection resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public PrivateEndpointConnectionInner put(
+        String resourceGroupName,
+        String vaultName,
+        String privateEndpointConnectionName,
+        PrivateEndpointConnectionInner properties) {
+        return putWithResponse(resourceGroupName, vaultName, privateEndpointConnectionName, properties, Context.NONE)
+            .getValue();
     }
 
     /**

@@ -35,6 +35,10 @@ public final class FrontendEndpointInner extends SubResource {
     @JsonProperty(value = "type", access = JsonProperty.Access.WRITE_ONLY)
     private String type;
 
+    /** Creates an instance of FrontendEndpointInner class. */
+    public FrontendEndpointInner() {
+    }
+
     /**
      * Get the innerProperties property: Properties of the Frontend endpoint.
      *

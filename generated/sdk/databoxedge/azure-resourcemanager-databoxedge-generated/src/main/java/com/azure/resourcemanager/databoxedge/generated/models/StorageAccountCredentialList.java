@@ -24,6 +24,10 @@ public final class StorageAccountCredentialList {
     @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
 
+    /** Creates an instance of StorageAccountCredentialList class. */
+    public StorageAccountCredentialList() {
+    }
+
     /**
      * Get the value property: The value.
      *

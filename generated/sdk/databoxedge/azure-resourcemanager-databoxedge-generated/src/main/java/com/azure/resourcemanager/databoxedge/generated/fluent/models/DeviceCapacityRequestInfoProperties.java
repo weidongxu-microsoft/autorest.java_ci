@@ -25,6 +25,10 @@ public final class DeviceCapacityRequestInfoProperties {
     @JsonProperty(value = "vmPlacementResults")
     private List<VmPlacementRequestResult> vmPlacementResults;
 
+    /** Creates an instance of DeviceCapacityRequestInfoProperties class. */
+    public DeviceCapacityRequestInfoProperties() {
+    }
+
     /**
      * Get the vmPlacementQuery property: Array containing the sizes of the VMs for checking if its feasible to create
      * them on the appliance.

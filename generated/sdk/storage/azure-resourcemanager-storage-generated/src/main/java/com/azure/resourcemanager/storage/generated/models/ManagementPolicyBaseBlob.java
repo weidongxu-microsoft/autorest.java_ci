@@ -35,6 +35,10 @@ public final class ManagementPolicyBaseBlob {
     @JsonProperty(value = "enableAutoTierToHotFromCool")
     private Boolean enableAutoTierToHotFromCool;
 
+    /** Creates an instance of ManagementPolicyBaseBlob class. */
+    public ManagementPolicyBaseBlob() {
+    }
+
     /**
      * Get the tierToCool property: The function to tier blobs to cool storage. Support blobs currently at Hot tier.
      *

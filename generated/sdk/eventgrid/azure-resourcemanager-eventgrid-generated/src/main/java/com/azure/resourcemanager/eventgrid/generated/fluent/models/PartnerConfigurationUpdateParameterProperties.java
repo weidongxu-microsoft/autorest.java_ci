@@ -17,6 +17,10 @@ public final class PartnerConfigurationUpdateParameterProperties {
     @JsonProperty(value = "defaultMaximumExpirationTimeInDays")
     private Integer defaultMaximumExpirationTimeInDays;
 
+    /** Creates an instance of PartnerConfigurationUpdateParameterProperties class. */
+    public PartnerConfigurationUpdateParameterProperties() {
+    }
+
     /**
      * Get the defaultMaximumExpirationTimeInDays property: The default time used to validate the maximum expiration
      * time for each authorized partners in days. Allowed values ar between 1 and 365 days.

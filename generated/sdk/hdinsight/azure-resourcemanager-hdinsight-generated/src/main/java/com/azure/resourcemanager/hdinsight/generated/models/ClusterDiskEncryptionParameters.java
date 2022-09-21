@@ -28,6 +28,10 @@ public final class ClusterDiskEncryptionParameters {
     @JsonProperty(value = "keyVersion")
     private String keyVersion;
 
+    /** Creates an instance of ClusterDiskEncryptionParameters class. */
+    public ClusterDiskEncryptionParameters() {
+    }
+
     /**
      * Get the vaultUri property: Base key vault URI where the customers key is located eg.
      * https://myvault.vault.azure.net.

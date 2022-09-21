@@ -41,19 +41,6 @@ public interface PrivateLinkServices {
      *
      * @param resourceGroupName The name of the resource group.
      * @param serviceName The name of the private link service.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified private link service by resource group.
-     */
-    PrivateLinkService getByResourceGroup(String resourceGroupName, String serviceName);
-
-    /**
-     * Gets the specified private link service by resource group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param serviceName The name of the private link service.
      * @param expand Expands referenced resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -64,6 +51,19 @@ public interface PrivateLinkServices {
      */
     Response<PrivateLinkService> getByResourceGroupWithResponse(
         String resourceGroupName, String serviceName, String expand, Context context);
+
+    /**
+     * Gets the specified private link service by resource group.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param serviceName The name of the private link service.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified private link service by resource group.
+     */
+    PrivateLinkService getByResourceGroup(String resourceGroupName, String serviceName);
 
     /**
      * Gets all private link services in a resource group.
@@ -118,21 +118,6 @@ public interface PrivateLinkServices {
      * @param resourceGroupName The name of the resource group.
      * @param serviceName The name of the private link service.
      * @param peConnectionName The name of the private end point connection.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specific private end point connection by specific private link service in the resource group.
-     */
-    PrivateEndpointConnection getPrivateEndpointConnection(
-        String resourceGroupName, String serviceName, String peConnectionName);
-
-    /**
-     * Get the specific private end point connection by specific private link service in the resource group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param serviceName The name of the private link service.
-     * @param peConnectionName The name of the private end point connection.
      * @param expand Expands referenced resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -146,23 +131,19 @@ public interface PrivateLinkServices {
         String resourceGroupName, String serviceName, String peConnectionName, String expand, Context context);
 
     /**
-     * Approve or reject private end point connection for a private link service in a subscription.
+     * Get the specific private end point connection by specific private link service in the resource group.
      *
      * @param resourceGroupName The name of the resource group.
      * @param serviceName The name of the private link service.
      * @param peConnectionName The name of the private end point connection.
-     * @param parameters Parameters supplied to approve or reject the private end point connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return privateEndpointConnection resource.
+     * @return the specific private end point connection by specific private link service in the resource group.
      */
-    PrivateEndpointConnection updatePrivateEndpointConnection(
-        String resourceGroupName,
-        String serviceName,
-        String peConnectionName,
-        PrivateEndpointConnectionInner parameters);
+    PrivateEndpointConnection getPrivateEndpointConnection(
+        String resourceGroupName, String serviceName, String peConnectionName);
 
     /**
      * Approve or reject private end point connection for a private link service in a subscription.
@@ -184,6 +165,25 @@ public interface PrivateLinkServices {
         String peConnectionName,
         PrivateEndpointConnectionInner parameters,
         Context context);
+
+    /**
+     * Approve or reject private end point connection for a private link service in a subscription.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param serviceName The name of the private link service.
+     * @param peConnectionName The name of the private end point connection.
+     * @param parameters Parameters supplied to approve or reject the private end point connection.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return privateEndpointConnection resource.
+     */
+    PrivateEndpointConnection updatePrivateEndpointConnection(
+        String resourceGroupName,
+        String serviceName,
+        String peConnectionName,
+        PrivateEndpointConnectionInner parameters);
 
     /**
      * Delete private end point connection for a private link service in a subscription.

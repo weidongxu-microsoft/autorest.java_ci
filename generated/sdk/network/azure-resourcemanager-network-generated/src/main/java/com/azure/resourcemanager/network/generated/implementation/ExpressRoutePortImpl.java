@@ -11,6 +11,7 @@ import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteLin
 import com.azure.resourcemanager.network.generated.fluent.models.ExpressRoutePortInner;
 import com.azure.resourcemanager.network.generated.models.ExpressRouteLink;
 import com.azure.resourcemanager.network.generated.models.ExpressRoutePort;
+import com.azure.resourcemanager.network.generated.models.ExpressRoutePortsBillingType;
 import com.azure.resourcemanager.network.generated.models.ExpressRoutePortsEncapsulation;
 import com.azure.resourcemanager.network.generated.models.ManagedServiceIdentity;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
@@ -116,6 +117,10 @@ public final class ExpressRoutePortImpl
 
     public String resourceGuid() {
         return this.innerModel().resourceGuid();
+    }
+
+    public ExpressRoutePortsBillingType billingType() {
+        return this.innerModel().billingType();
     }
 
     public Region region() {
@@ -268,6 +273,11 @@ public final class ExpressRoutePortImpl
 
     public ExpressRoutePortImpl withLinks(List<ExpressRouteLinkInner> links) {
         this.innerModel().withLinks(links);
+        return this;
+    }
+
+    public ExpressRoutePortImpl withBillingType(ExpressRoutePortsBillingType billingType) {
+        this.innerModel().withBillingType(billingType);
         return this;
     }
 

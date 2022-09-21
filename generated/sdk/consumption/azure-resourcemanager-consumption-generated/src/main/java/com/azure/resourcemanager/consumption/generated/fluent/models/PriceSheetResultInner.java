@@ -35,6 +35,10 @@ public final class PriceSheetResultInner extends ProxyResource {
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, String> tags;
 
+    /** Creates an instance of PriceSheetResultInner class. */
+    public PriceSheetResultInner() {
+    }
+
     /**
      * Get the innerProperties property: price sheet result. It contains the pricesheet associated with billing period.
      *

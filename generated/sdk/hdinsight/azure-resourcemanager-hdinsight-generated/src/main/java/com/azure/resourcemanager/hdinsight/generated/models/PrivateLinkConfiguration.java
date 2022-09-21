@@ -37,6 +37,10 @@ public final class PrivateLinkConfiguration {
     @JsonProperty(value = "properties", required = true)
     private PrivateLinkConfigurationProperties innerProperties = new PrivateLinkConfigurationProperties();
 
+    /** Creates an instance of PrivateLinkConfiguration class. */
+    public PrivateLinkConfiguration() {
+    }
+
     /**
      * Get the id property: The private link configuration id.
      *

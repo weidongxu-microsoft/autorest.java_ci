@@ -58,18 +58,6 @@ public interface FrontDoors {
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param frontDoorName Name of the Front Door which is globally unique.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Front Door with the specified Front Door name under the specified subscription and resource group.
-     */
-    FrontDoor getByResourceGroup(String resourceGroupName, String frontDoorName);
-
-    /**
-     * Gets a Front Door with the specified Front Door name under the specified subscription and resource group.
-     *
-     * @param resourceGroupName Name of the Resource group within the Azure subscription.
-     * @param frontDoorName Name of the Front Door which is globally unique.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -78,6 +66,18 @@ public interface FrontDoors {
      *     with {@link Response}.
      */
     Response<FrontDoor> getByResourceGroupWithResponse(String resourceGroupName, String frontDoorName, Context context);
+
+    /**
+     * Gets a Front Door with the specified Front Door name under the specified subscription and resource group.
+     *
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param frontDoorName Name of the Front Door which is globally unique.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a Front Door with the specified Front Door name under the specified subscription and resource group.
+     */
+    FrontDoor getByResourceGroup(String resourceGroupName, String frontDoorName);
 
     /**
      * Deletes an existing Front Door with the specified parameters.
@@ -108,20 +108,6 @@ public interface FrontDoors {
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param frontDoorName Name of the Front Door which is globally unique.
      * @param customDomainProperties Custom domain to be validated.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return output of custom domain validation.
-     */
-    ValidateCustomDomainOutput validateCustomDomain(
-        String resourceGroupName, String frontDoorName, ValidateCustomDomainInput customDomainProperties);
-
-    /**
-     * Validates the custom domain mapping to ensure it maps to the correct Front Door endpoint in DNS.
-     *
-     * @param resourceGroupName Name of the Resource group within the Azure subscription.
-     * @param frontDoorName Name of the Front Door which is globally unique.
-     * @param customDomainProperties Custom domain to be validated.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -133,6 +119,20 @@ public interface FrontDoors {
         String frontDoorName,
         ValidateCustomDomainInput customDomainProperties,
         Context context);
+
+    /**
+     * Validates the custom domain mapping to ensure it maps to the correct Front Door endpoint in DNS.
+     *
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param frontDoorName Name of the Front Door which is globally unique.
+     * @param customDomainProperties Custom domain to be validated.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return output of custom domain validation.
+     */
+    ValidateCustomDomainOutput validateCustomDomain(
+        String resourceGroupName, String frontDoorName, ValidateCustomDomainInput customDomainProperties);
 
     /**
      * Gets a Front Door with the specified Front Door name under the specified subscription and resource group.

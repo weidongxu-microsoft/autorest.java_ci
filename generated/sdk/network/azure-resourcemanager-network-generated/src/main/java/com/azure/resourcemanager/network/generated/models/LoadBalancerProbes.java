@@ -41,19 +41,6 @@ public interface LoadBalancerProbes {
      * @param resourceGroupName The name of the resource group.
      * @param loadBalancerName The name of the load balancer.
      * @param probeName The name of the probe.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return load balancer probe.
-     */
-    Probe get(String resourceGroupName, String loadBalancerName, String probeName);
-
-    /**
-     * Gets load balancer probe.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param loadBalancerName The name of the load balancer.
-     * @param probeName The name of the probe.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -62,4 +49,17 @@ public interface LoadBalancerProbes {
      */
     Response<Probe> getWithResponse(
         String resourceGroupName, String loadBalancerName, String probeName, Context context);
+
+    /**
+     * Gets load balancer probe.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param loadBalancerName The name of the load balancer.
+     * @param probeName The name of the probe.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return load balancer probe.
+     */
+    Probe get(String resourceGroupName, String loadBalancerName, String probeName);
 }

@@ -24,6 +24,10 @@ public final class ContainerList {
     @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
 
+    /** Creates an instance of ContainerList class. */
+    public ContainerList() {
+    }
+
     /**
      * Get the value property: The list of containers.
      *

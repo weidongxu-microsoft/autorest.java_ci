@@ -16,6 +16,10 @@ public final class EdgeProfileSubscriptionPatch {
     @JsonProperty(value = "id")
     private String id;
 
+    /** Creates an instance of EdgeProfileSubscriptionPatch class. */
+    public EdgeProfileSubscriptionPatch() {
+    }
+
     /**
      * Get the id property: The path ID that uniquely identifies the subscription of the edge profile.
      *

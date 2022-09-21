@@ -47,6 +47,10 @@ public final class ReservationRecommendationDetailsModelInner extends ProxyResou
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, String> tags;
 
+    /** Creates an instance of ReservationRecommendationDetailsModelInner class. */
+    public ReservationRecommendationDetailsModelInner() {
+    }
+
     /**
      * Get the location property: Resource Location.
      *

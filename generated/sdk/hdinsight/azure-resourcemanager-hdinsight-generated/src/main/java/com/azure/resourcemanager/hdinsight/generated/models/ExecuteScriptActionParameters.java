@@ -23,6 +23,10 @@ public final class ExecuteScriptActionParameters {
     @JsonProperty(value = "persistOnSuccess", required = true)
     private boolean persistOnSuccess;
 
+    /** Creates an instance of ExecuteScriptActionParameters class. */
+    public ExecuteScriptActionParameters() {
+    }
+
     /**
      * Get the scriptActions property: The list of run time script actions.
      *

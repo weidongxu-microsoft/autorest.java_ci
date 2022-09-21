@@ -28,6 +28,10 @@ public final class CreditBalanceSummary {
     @JsonProperty(value = "estimatedBalanceInBillingCurrency", access = JsonProperty.Access.WRITE_ONLY)
     private AmountWithExchangeRate estimatedBalanceInBillingCurrency;
 
+    /** Creates an instance of CreditBalanceSummary class. */
+    public CreditBalanceSummary() {
+    }
+
     /**
      * Get the estimatedBalance property: Estimated balance.
      *

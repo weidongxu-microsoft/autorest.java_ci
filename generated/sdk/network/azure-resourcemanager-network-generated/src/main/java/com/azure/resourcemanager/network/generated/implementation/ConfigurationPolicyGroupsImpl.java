@@ -43,17 +43,6 @@ public final class ConfigurationPolicyGroupsImpl implements ConfigurationPolicyG
             .delete(resourceGroupName, vpnServerConfigurationName, configurationPolicyGroupName, context);
     }
 
-    public VpnServerConfigurationPolicyGroup get(
-        String resourceGroupName, String vpnServerConfigurationName, String configurationPolicyGroupName) {
-        VpnServerConfigurationPolicyGroupInner inner =
-            this.serviceClient().get(resourceGroupName, vpnServerConfigurationName, configurationPolicyGroupName);
-        if (inner != null) {
-            return new VpnServerConfigurationPolicyGroupImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<VpnServerConfigurationPolicyGroup> getWithResponse(
         String resourceGroupName,
         String vpnServerConfigurationName,
@@ -69,6 +58,17 @@ public final class ConfigurationPolicyGroupsImpl implements ConfigurationPolicyG
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new VpnServerConfigurationPolicyGroupImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public VpnServerConfigurationPolicyGroup get(
+        String resourceGroupName, String vpnServerConfigurationName, String configurationPolicyGroupName) {
+        VpnServerConfigurationPolicyGroupInner inner =
+            this.serviceClient().get(resourceGroupName, vpnServerConfigurationName, configurationPolicyGroupName);
+        if (inner != null) {
+            return new VpnServerConfigurationPolicyGroupImpl(inner, this.manager());
         } else {
             return null;
         }

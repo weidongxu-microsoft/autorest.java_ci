@@ -38,18 +38,6 @@ public interface Policies {
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param policyName The name of the Web Application Firewall Policy.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return defines web application firewall policy.
-     */
-    WebApplicationFirewallPolicy getByResourceGroup(String resourceGroupName, String policyName);
-
-    /**
-     * Retrieve protection policy with specified name within a resource group.
-     *
-     * @param resourceGroupName Name of the Resource group within the Azure subscription.
-     * @param policyName The name of the Web Application Firewall Policy.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -58,6 +46,18 @@ public interface Policies {
      */
     Response<WebApplicationFirewallPolicy> getByResourceGroupWithResponse(
         String resourceGroupName, String policyName, Context context);
+
+    /**
+     * Retrieve protection policy with specified name within a resource group.
+     *
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param policyName The name of the Web Application Firewall Policy.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return defines web application firewall policy.
+     */
+    WebApplicationFirewallPolicy getByResourceGroup(String resourceGroupName, String policyName);
 
     /**
      * Deletes Policy.

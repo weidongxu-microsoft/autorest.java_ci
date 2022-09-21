@@ -52,6 +52,10 @@ public final class QueryResponseInner {
     @JsonProperty(value = "facets")
     private List<Facet> facets;
 
+    /** Creates an instance of QueryResponseInner class. */
+    public QueryResponseInner() {
+    }
+
     /**
      * Get the totalRecords property: Number of total records matching the query.
      *

@@ -22,6 +22,10 @@ public final class RulesEngineProperties extends RulesEngineUpdateParameters {
     @JsonProperty(value = "resourceState", access = JsonProperty.Access.WRITE_ONLY)
     private FrontDoorResourceState resourceState;
 
+    /** Creates an instance of RulesEngineProperties class. */
+    public RulesEngineProperties() {
+    }
+
     /**
      * Get the resourceState property: Resource status of the Front Door or Front Door SubResource.
      *

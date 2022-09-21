@@ -16,6 +16,10 @@ public final class DCAccessCodeProperties {
     @JsonProperty(value = "authCode")
     private String authCode;
 
+    /** Creates an instance of DCAccessCodeProperties class. */
+    public DCAccessCodeProperties() {
+    }
+
     /**
      * Get the authCode property: DCAccess Code for the Self Managed shipment.
      *

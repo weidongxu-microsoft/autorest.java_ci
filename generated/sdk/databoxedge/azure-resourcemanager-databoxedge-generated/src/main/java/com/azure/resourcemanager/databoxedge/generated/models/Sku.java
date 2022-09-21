@@ -22,6 +22,10 @@ public final class Sku {
     @JsonProperty(value = "tier")
     private SkuTier tier;
 
+    /** Creates an instance of Sku class. */
+    public Sku() {
+    }
+
     /**
      * Get the name property: SKU name.
      *

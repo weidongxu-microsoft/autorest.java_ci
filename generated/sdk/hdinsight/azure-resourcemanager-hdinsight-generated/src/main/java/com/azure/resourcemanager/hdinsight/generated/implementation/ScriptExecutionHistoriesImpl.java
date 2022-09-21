@@ -40,13 +40,13 @@ public final class ScriptExecutionHistoriesImpl implements ScriptExecutionHistor
         return Utils.mapPage(inner, inner1 -> new RuntimeScriptActionDetailImpl(inner1, this.manager()));
     }
 
-    public void promote(String resourceGroupName, String clusterName, String scriptExecutionId) {
-        this.serviceClient().promote(resourceGroupName, clusterName, scriptExecutionId);
-    }
-
     public Response<Void> promoteWithResponse(
         String resourceGroupName, String clusterName, String scriptExecutionId, Context context) {
         return this.serviceClient().promoteWithResponse(resourceGroupName, clusterName, scriptExecutionId, context);
+    }
+
+    public void promote(String resourceGroupName, String clusterName, String scriptExecutionId) {
+        this.serviceClient().promote(resourceGroupName, clusterName, scriptExecutionId);
     }
 
     private ScriptExecutionHistoriesClient serviceClient() {

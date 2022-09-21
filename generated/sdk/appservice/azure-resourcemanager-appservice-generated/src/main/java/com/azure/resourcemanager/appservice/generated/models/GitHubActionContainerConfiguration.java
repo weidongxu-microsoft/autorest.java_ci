@@ -34,6 +34,10 @@ public final class GitHubActionContainerConfiguration {
     @JsonProperty(value = "password")
     private String password;
 
+    /** Creates an instance of GitHubActionContainerConfiguration class. */
+    public GitHubActionContainerConfiguration() {
+    }
+
     /**
      * Get the serverUrl property: The server URL for the container registry where the build will be hosted.
      *

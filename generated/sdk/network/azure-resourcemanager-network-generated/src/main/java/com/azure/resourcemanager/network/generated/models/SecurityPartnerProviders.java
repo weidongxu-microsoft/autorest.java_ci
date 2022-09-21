@@ -38,18 +38,6 @@ public interface SecurityPartnerProviders {
      *
      * @param resourceGroupName The name of the resource group.
      * @param securityPartnerProviderName The name of the Security Partner Provider.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Security Partner Provider.
-     */
-    SecurityPartnerProvider getByResourceGroup(String resourceGroupName, String securityPartnerProviderName);
-
-    /**
-     * Gets the specified Security Partner Provider.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param securityPartnerProviderName The name of the Security Partner Provider.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -58,6 +46,18 @@ public interface SecurityPartnerProviders {
      */
     Response<SecurityPartnerProvider> getByResourceGroupWithResponse(
         String resourceGroupName, String securityPartnerProviderName, Context context);
+
+    /**
+     * Gets the specified Security Partner Provider.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param securityPartnerProviderName The name of the Security Partner Provider.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified Security Partner Provider.
+     */
+    SecurityPartnerProvider getByResourceGroup(String resourceGroupName, String securityPartnerProviderName);
 
     /**
      * Lists all Security Partner Providers in a resource group.

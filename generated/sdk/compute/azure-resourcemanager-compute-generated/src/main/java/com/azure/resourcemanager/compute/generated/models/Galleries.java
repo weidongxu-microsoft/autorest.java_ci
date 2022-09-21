@@ -15,19 +15,6 @@ public interface Galleries {
      *
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Image Gallery.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the Shared Image Gallery that you want to create or update.
-     */
-    Gallery getByResourceGroup(String resourceGroupName, String galleryName);
-
-    /**
-     * Retrieves information about a Shared Image Gallery.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Image Gallery.
      * @param select The select expression to apply on the operation.
      * @param expand The expand query option to apply on the operation.
      * @param context The context to associate with this operation.
@@ -44,6 +31,19 @@ public interface Galleries {
         SelectPermissions select,
         GalleryExpandParams expand,
         Context context);
+
+    /**
+     * Retrieves information about a Shared Image Gallery.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param galleryName The name of the Shared Image Gallery.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return specifies information about the Shared Image Gallery that you want to create or update.
+     */
+    Gallery getByResourceGroup(String resourceGroupName, String galleryName);
 
     /**
      * Delete a Shared Image Gallery.

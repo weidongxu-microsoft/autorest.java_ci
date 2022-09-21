@@ -46,6 +46,10 @@ public final class DiskEncryptionProperties {
     @JsonProperty(value = "encryptionAtHost")
     private Boolean encryptionAtHost;
 
+    /** Creates an instance of DiskEncryptionProperties class. */
+    public DiskEncryptionProperties() {
+    }
+
     /**
      * Get the vaultUri property: Base key vault URI where the customers key is located eg.
      * https://myvault.vault.azure.net.

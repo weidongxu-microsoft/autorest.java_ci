@@ -27,15 +27,6 @@ public final class KeysImpl implements Keys {
         this.serviceManager = serviceManager;
     }
 
-    public Key get(String resourceGroupName, String vaultName, String keyName) {
-        KeyInner inner = this.serviceClient().get(resourceGroupName, vaultName, keyName);
-        if (inner != null) {
-            return new KeyImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<Key> getWithResponse(String resourceGroupName, String vaultName, String keyName, Context context) {
         Response<KeyInner> inner = this.serviceClient().getWithResponse(resourceGroupName, vaultName, keyName, context);
         if (inner != null) {
@@ -44,6 +35,15 @@ public final class KeysImpl implements Keys {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new KeyImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public Key get(String resourceGroupName, String vaultName, String keyName) {
+        KeyInner inner = this.serviceClient().get(resourceGroupName, vaultName, keyName);
+        if (inner != null) {
+            return new KeyImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -59,15 +59,6 @@ public final class KeysImpl implements Keys {
         return Utils.mapPage(inner, inner1 -> new KeyImpl(inner1, this.manager()));
     }
 
-    public Key getVersion(String resourceGroupName, String vaultName, String keyName, String keyVersion) {
-        KeyInner inner = this.serviceClient().getVersion(resourceGroupName, vaultName, keyName, keyVersion);
-        if (inner != null) {
-            return new KeyImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<Key> getVersionWithResponse(
         String resourceGroupName, String vaultName, String keyName, String keyVersion, Context context) {
         Response<KeyInner> inner =
@@ -78,6 +69,15 @@ public final class KeysImpl implements Keys {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new KeyImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public Key getVersion(String resourceGroupName, String vaultName, String keyName, String keyVersion) {
+        KeyInner inner = this.serviceClient().getVersion(resourceGroupName, vaultName, keyName, keyVersion);
+        if (inner != null) {
+            return new KeyImpl(inner, this.manager());
         } else {
             return null;
         }

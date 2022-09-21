@@ -22,6 +22,7 @@ import com.azure.resourcemanager.network.generated.models.TagsObject;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkGateway;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkGatewayIpConfiguration;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkGatewayNatRule;
+import com.azure.resourcemanager.network.generated.models.VirtualNetworkGatewayPolicyGroup;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkGatewaySku;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkGatewayType;
 import com.azure.resourcemanager.network.generated.models.VpnClientConfiguration;
@@ -123,6 +124,15 @@ public final class VirtualNetworkGatewayImpl
 
     public VpnClientConfiguration vpnClientConfiguration() {
         return this.innerModel().vpnClientConfiguration();
+    }
+
+    public List<VirtualNetworkGatewayPolicyGroup> virtualNetworkGatewayPolicyGroups() {
+        List<VirtualNetworkGatewayPolicyGroup> inner = this.innerModel().virtualNetworkGatewayPolicyGroups();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
     }
 
     public BgpSettings bgpSettings() {
@@ -354,16 +364,16 @@ public final class VirtualNetworkGatewayImpl
             .getBgpPeerStatus(resourceGroupName, virtualNetworkGatewayName, peer, context);
     }
 
-    public String supportedVpnDevices() {
-        return serviceManager
-            .virtualNetworkGateways()
-            .supportedVpnDevices(resourceGroupName, virtualNetworkGatewayName);
-    }
-
     public Response<String> supportedVpnDevicesWithResponse(Context context) {
         return serviceManager
             .virtualNetworkGateways()
             .supportedVpnDevicesWithResponse(resourceGroupName, virtualNetworkGatewayName, context);
+    }
+
+    public String supportedVpnDevices() {
+        return serviceManager
+            .virtualNetworkGateways()
+            .supportedVpnDevices(resourceGroupName, virtualNetworkGatewayName);
     }
 
     public GatewayRouteListResult getLearnedRoutes() {
@@ -531,6 +541,12 @@ public final class VirtualNetworkGatewayImpl
 
     public VirtualNetworkGatewayImpl withVpnClientConfiguration(VpnClientConfiguration vpnClientConfiguration) {
         this.innerModel().withVpnClientConfiguration(vpnClientConfiguration);
+        return this;
+    }
+
+    public VirtualNetworkGatewayImpl withVirtualNetworkGatewayPolicyGroups(
+        List<VirtualNetworkGatewayPolicyGroup> virtualNetworkGatewayPolicyGroups) {
+        this.innerModel().withVirtualNetworkGatewayPolicyGroups(virtualNetworkGatewayPolicyGroups);
         return this;
     }
 

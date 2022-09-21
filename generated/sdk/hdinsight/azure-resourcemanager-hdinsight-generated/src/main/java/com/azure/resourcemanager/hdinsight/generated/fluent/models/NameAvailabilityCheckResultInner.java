@@ -28,6 +28,10 @@ public final class NameAvailabilityCheckResultInner {
     @JsonProperty(value = "message", access = JsonProperty.Access.WRITE_ONLY)
     private String message;
 
+    /** Creates an instance of NameAvailabilityCheckResultInner class. */
+    public NameAvailabilityCheckResultInner() {
+    }
+
     /**
      * Get the nameAvailable property: This indicates whether the name is available.
      *

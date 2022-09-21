@@ -28,16 +28,8 @@ public final class RoleDefinitionsImpl implements RoleDefinitions {
         this.serviceManager = serviceManager;
     }
 
-    public RoleDefinition deleteByResourceGroup(String scope, String roleDefinitionId) {
-        RoleDefinitionInner inner = this.serviceClient().delete(scope, roleDefinitionId);
-        if (inner != null) {
-            return new RoleDefinitionImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
-    public Response<RoleDefinition> deleteWithResponse(String scope, String roleDefinitionId, Context context) {
+    public Response<RoleDefinition> deleteByResourceGroupWithResponse(
+        String scope, String roleDefinitionId, Context context) {
         Response<RoleDefinitionInner> inner = this.serviceClient().deleteWithResponse(scope, roleDefinitionId, context);
         if (inner != null) {
             return new SimpleResponse<>(
@@ -50,8 +42,8 @@ public final class RoleDefinitionsImpl implements RoleDefinitions {
         }
     }
 
-    public RoleDefinition get(String scope, String roleDefinitionId) {
-        RoleDefinitionInner inner = this.serviceClient().get(scope, roleDefinitionId);
+    public RoleDefinition deleteByResourceGroup(String scope, String roleDefinitionId) {
+        RoleDefinitionInner inner = this.serviceClient().delete(scope, roleDefinitionId);
         if (inner != null) {
             return new RoleDefinitionImpl(inner, this.manager());
         } else {
@@ -72,6 +64,15 @@ public final class RoleDefinitionsImpl implements RoleDefinitions {
         }
     }
 
+    public RoleDefinition get(String scope, String roleDefinitionId) {
+        RoleDefinitionInner inner = this.serviceClient().get(scope, roleDefinitionId);
+        if (inner != null) {
+            return new RoleDefinitionImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
     public PagedIterable<RoleDefinition> list(String scope) {
         PagedIterable<RoleDefinitionInner> inner = this.serviceClient().list(scope);
         return Utils.mapPage(inner, inner1 -> new RoleDefinitionImpl(inner1, this.manager()));
@@ -82,15 +83,6 @@ public final class RoleDefinitionsImpl implements RoleDefinitions {
         return Utils.mapPage(inner, inner1 -> new RoleDefinitionImpl(inner1, this.manager()));
     }
 
-    public RoleDefinition getById(String roleId) {
-        RoleDefinitionInner inner = this.serviceClient().getById(roleId);
-        if (inner != null) {
-            return new RoleDefinitionImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<RoleDefinition> getByIdWithResponse(String roleId, Context context) {
         Response<RoleDefinitionInner> inner = this.serviceClient().getByIdWithResponse(roleId, context);
         if (inner != null) {
@@ -99,6 +91,15 @@ public final class RoleDefinitionsImpl implements RoleDefinitions {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new RoleDefinitionImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public RoleDefinition getById(String roleId) {
+        RoleDefinitionInner inner = this.serviceClient().getById(roleId);
+        if (inner != null) {
+            return new RoleDefinitionImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -128,7 +129,7 @@ public final class RoleDefinitionsImpl implements RoleDefinitions {
                         String
                             .format("The resource ID '%s' is not valid. Missing path segment 'roleDefinitions'.", id)));
         }
-        return this.deleteWithResponse(scope, roleDefinitionId, Context.NONE).getValue();
+        return this.deleteByResourceGroupWithResponse(scope, roleDefinitionId, Context.NONE).getValue();
     }
 
     public Response<RoleDefinition> deleteByIdWithResponse(String id, Context context) {
@@ -155,7 +156,7 @@ public final class RoleDefinitionsImpl implements RoleDefinitions {
                         String
                             .format("The resource ID '%s' is not valid. Missing path segment 'roleDefinitions'.", id)));
         }
-        return this.deleteWithResponse(scope, roleDefinitionId, context);
+        return this.deleteByResourceGroupWithResponse(scope, roleDefinitionId, context);
     }
 
     private RoleDefinitionsClient serviceClient() {

@@ -40,18 +40,6 @@ public interface WebTests {
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param webTestName The name of the Application Insights webtest resource.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a specific Application Insights web test definition.
-     */
-    WebTest getByResourceGroup(String resourceGroupName, String webTestName);
-
-    /**
-     * Get a specific Application Insights web test definition.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param webTestName The name of the Application Insights webtest resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -61,15 +49,16 @@ public interface WebTests {
     Response<WebTest> getByResourceGroupWithResponse(String resourceGroupName, String webTestName, Context context);
 
     /**
-     * Deletes an Application Insights web test.
+     * Get a specific Application Insights web test definition.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param webTestName The name of the Application Insights webtest resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a specific Application Insights web test definition.
      */
-    void deleteByResourceGroup(String resourceGroupName, String webTestName);
+    WebTest getByResourceGroup(String resourceGroupName, String webTestName);
 
     /**
      * Deletes an Application Insights web test.
@@ -82,7 +71,18 @@ public interface WebTests {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
-    Response<Void> deleteWithResponse(String resourceGroupName, String webTestName, Context context);
+    Response<Void> deleteByResourceGroupWithResponse(String resourceGroupName, String webTestName, Context context);
+
+    /**
+     * Deletes an Application Insights web test.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param webTestName The name of the Application Insights webtest resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deleteByResourceGroup(String resourceGroupName, String webTestName);
 
     /**
      * Get all Application Insights web test alerts definitions within a subscription.

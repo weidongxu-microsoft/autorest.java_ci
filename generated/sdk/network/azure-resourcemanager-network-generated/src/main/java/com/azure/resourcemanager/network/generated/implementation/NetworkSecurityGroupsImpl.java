@@ -36,16 +36,6 @@ public final class NetworkSecurityGroupsImpl implements NetworkSecurityGroups {
         this.serviceClient().delete(resourceGroupName, networkSecurityGroupName, context);
     }
 
-    public NetworkSecurityGroup getByResourceGroup(String resourceGroupName, String networkSecurityGroupName) {
-        NetworkSecurityGroupInner inner =
-            this.serviceClient().getByResourceGroup(resourceGroupName, networkSecurityGroupName);
-        if (inner != null) {
-            return new NetworkSecurityGroupImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<NetworkSecurityGroup> getByResourceGroupWithResponse(
         String resourceGroupName, String networkSecurityGroupName, String expand, Context context) {
         Response<NetworkSecurityGroupInner> inner =
@@ -58,6 +48,16 @@ public final class NetworkSecurityGroupsImpl implements NetworkSecurityGroups {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new NetworkSecurityGroupImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public NetworkSecurityGroup getByResourceGroup(String resourceGroupName, String networkSecurityGroupName) {
+        NetworkSecurityGroupInner inner =
+            this.serviceClient().getByResourceGroup(resourceGroupName, networkSecurityGroupName);
+        if (inner != null) {
+            return new NetworkSecurityGroupImpl(inner, this.manager());
         } else {
             return null;
         }

@@ -440,12 +440,12 @@ public final class ApiKeysClientImpl implements ApiKeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties that define an API key of an Application Insights Component.
+     * @return properties that define an API key of an Application Insights Component along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ApplicationInsightsComponentApiKeyInner create(
+    public Response<ApplicationInsightsComponentApiKeyInner> createWithResponse(
         String resourceGroupName, String resourceName, ApiKeyRequest apiKeyProperties) {
-        return createAsync(resourceGroupName, resourceName, apiKeyProperties).block();
+        return createWithResponseAsync(resourceGroupName, resourceName, apiKeyProperties).block();
     }
 
     /**
@@ -465,6 +465,24 @@ public final class ApiKeysClientImpl implements ApiKeysClient {
     public Response<ApplicationInsightsComponentApiKeyInner> createWithResponse(
         String resourceGroupName, String resourceName, ApiKeyRequest apiKeyProperties, Context context) {
         return createWithResponseAsync(resourceGroupName, resourceName, apiKeyProperties, context).block();
+    }
+
+    /**
+     * Create an API Key of an Application Insights component.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceName The name of the Application Insights component resource.
+     * @param apiKeyProperties Properties that need to be specified to create an API key of a Application Insights
+     *     component.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return properties that define an API key of an Application Insights Component.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ApplicationInsightsComponentApiKeyInner create(
+        String resourceGroupName, String resourceName, ApiKeyRequest apiKeyProperties) {
+        return createWithResponse(resourceGroupName, resourceName, apiKeyProperties, Context.NONE).getValue();
     }
 
     /**
@@ -603,11 +621,12 @@ public final class ApiKeysClientImpl implements ApiKeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties that define an API key of an Application Insights Component.
+     * @return properties that define an API key of an Application Insights Component along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ApplicationInsightsComponentApiKeyInner delete(String resourceGroupName, String resourceName, String keyId) {
-        return deleteAsync(resourceGroupName, resourceName, keyId).block();
+    public Response<ApplicationInsightsComponentApiKeyInner> deleteWithResponse(
+        String resourceGroupName, String resourceName, String keyId) {
+        return deleteWithResponseAsync(resourceGroupName, resourceName, keyId).block();
     }
 
     /**
@@ -626,6 +645,22 @@ public final class ApiKeysClientImpl implements ApiKeysClient {
     public Response<ApplicationInsightsComponentApiKeyInner> deleteWithResponse(
         String resourceGroupName, String resourceName, String keyId, Context context) {
         return deleteWithResponseAsync(resourceGroupName, resourceName, keyId, context).block();
+    }
+
+    /**
+     * Delete an API Key of an Application Insights component.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceName The name of the Application Insights component resource.
+     * @param keyId The API Key ID. This is unique within a Application Insights component.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return properties that define an API key of an Application Insights Component.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ApplicationInsightsComponentApiKeyInner delete(String resourceGroupName, String resourceName, String keyId) {
+        return deleteWithResponse(resourceGroupName, resourceName, keyId, Context.NONE).getValue();
     }
 
     /**
@@ -761,11 +796,12 @@ public final class ApiKeysClientImpl implements ApiKeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the API Key for this key id.
+     * @return the API Key for this key id along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ApplicationInsightsComponentApiKeyInner get(String resourceGroupName, String resourceName, String keyId) {
-        return getAsync(resourceGroupName, resourceName, keyId).block();
+    public Response<ApplicationInsightsComponentApiKeyInner> getWithResponse(
+        String resourceGroupName, String resourceName, String keyId) {
+        return getWithResponseAsync(resourceGroupName, resourceName, keyId).block();
     }
 
     /**
@@ -784,5 +820,21 @@ public final class ApiKeysClientImpl implements ApiKeysClient {
     public Response<ApplicationInsightsComponentApiKeyInner> getWithResponse(
         String resourceGroupName, String resourceName, String keyId, Context context) {
         return getWithResponseAsync(resourceGroupName, resourceName, keyId, context).block();
+    }
+
+    /**
+     * Get the API Key for this key id.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param resourceName The name of the Application Insights component resource.
+     * @param keyId The API Key ID. This is unique within a Application Insights component.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the API Key for this key id.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ApplicationInsightsComponentApiKeyInner get(String resourceGroupName, String resourceName, String keyId) {
+        return getWithResponse(resourceGroupName, resourceName, keyId, Context.NONE).getValue();
     }
 }

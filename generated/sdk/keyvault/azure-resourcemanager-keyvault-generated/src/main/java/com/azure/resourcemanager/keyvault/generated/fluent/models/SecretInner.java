@@ -20,6 +20,10 @@ public final class SecretInner extends Resource {
     @JsonProperty(value = "properties", required = true)
     private SecretProperties properties;
 
+    /** Creates an instance of SecretInner class. */
+    public SecretInner() {
+    }
+
     /**
      * Get the properties property: Properties of the secret.
      *

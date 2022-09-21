@@ -43,6 +43,10 @@ public final class CustomDnsSuffixConfigurationProperties {
     @JsonProperty(value = "keyVaultReferenceIdentity")
     private String keyVaultReferenceIdentity;
 
+    /** Creates an instance of CustomDnsSuffixConfigurationProperties class. */
+    public CustomDnsSuffixConfigurationProperties() {
+    }
+
     /**
      * Get the provisioningState property: The provisioningState property.
      *

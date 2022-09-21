@@ -39,18 +39,6 @@ public interface ApplicationGateways {
      *
      * @param resourceGroupName The name of the resource group.
      * @param applicationGatewayName The name of the application gateway.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified application gateway.
-     */
-    ApplicationGateway getByResourceGroup(String resourceGroupName, String applicationGatewayName);
-
-    /**
-     * Gets the specified application gateway.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param applicationGatewayName The name of the application gateway.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -59,6 +47,18 @@ public interface ApplicationGateways {
      */
     Response<ApplicationGateway> getByResourceGroupWithResponse(
         String resourceGroupName, String applicationGatewayName, Context context);
+
+    /**
+     * Gets the specified application gateway.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param applicationGatewayName The name of the application gateway.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified application gateway.
+     */
+    ApplicationGateway getByResourceGroup(String resourceGroupName, String applicationGatewayName);
 
     /**
      * Lists all application gateways in a resource group.
@@ -251,16 +251,6 @@ public interface ApplicationGateways {
     /**
      * Lists all available server variables.
      *
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ApplicationGatewayAvailableServerVariables API service call.
-     */
-    List<String> listAvailableServerVariables();
-
-    /**
-     * Lists all available server variables.
-     *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
@@ -271,14 +261,14 @@ public interface ApplicationGateways {
     Response<List<String>> listAvailableServerVariablesWithResponse(Context context);
 
     /**
-     * Lists all available request headers.
+     * Lists all available server variables.
      *
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ApplicationGatewayAvailableRequestHeaders API service call.
+     * @return response for ApplicationGatewayAvailableServerVariables API service call.
      */
-    List<String> listAvailableRequestHeaders();
+    List<String> listAvailableServerVariables();
 
     /**
      * Lists all available request headers.
@@ -293,14 +283,14 @@ public interface ApplicationGateways {
     Response<List<String>> listAvailableRequestHeadersWithResponse(Context context);
 
     /**
-     * Lists all available response headers.
+     * Lists all available request headers.
      *
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ApplicationGatewayAvailableResponseHeaders API service call.
+     * @return response for ApplicationGatewayAvailableRequestHeaders API service call.
      */
-    List<String> listAvailableResponseHeaders();
+    List<String> listAvailableRequestHeaders();
 
     /**
      * Lists all available response headers.
@@ -315,13 +305,14 @@ public interface ApplicationGateways {
     Response<List<String>> listAvailableResponseHeadersWithResponse(Context context);
 
     /**
-     * Lists all available web application firewall rule sets.
+     * Lists all available response headers.
      *
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ApplicationGatewayAvailableWafRuleSets API service call.
+     * @return response for ApplicationGatewayAvailableResponseHeaders API service call.
      */
-    ApplicationGatewayAvailableWafRuleSetsResult listAvailableWafRuleSets();
+    List<String> listAvailableResponseHeaders();
 
     /**
      * Lists all available web application firewall rule sets.
@@ -335,13 +326,13 @@ public interface ApplicationGateways {
     Response<ApplicationGatewayAvailableWafRuleSetsResult> listAvailableWafRuleSetsWithResponse(Context context);
 
     /**
-     * Lists available Ssl options for configuring Ssl policy.
+     * Lists all available web application firewall rule sets.
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ApplicationGatewayAvailableSslOptions API service call.
+     * @return response for ApplicationGatewayAvailableWafRuleSets API service call.
      */
-    ApplicationGatewayAvailableSslOptions listAvailableSslOptions();
+    ApplicationGatewayAvailableWafRuleSetsResult listAvailableWafRuleSets();
 
     /**
      * Lists available Ssl options for configuring Ssl policy.
@@ -353,6 +344,15 @@ public interface ApplicationGateways {
      * @return response for ApplicationGatewayAvailableSslOptions API service call along with {@link Response}.
      */
     Response<ApplicationGatewayAvailableSslOptions> listAvailableSslOptionsWithResponse(Context context);
+
+    /**
+     * Lists available Ssl options for configuring Ssl policy.
+     *
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return response for ApplicationGatewayAvailableSslOptions API service call.
+     */
+    ApplicationGatewayAvailableSslOptions listAvailableSslOptions();
 
     /**
      * Lists all SSL predefined policies for configuring Ssl policy.
@@ -380,17 +380,6 @@ public interface ApplicationGateways {
      * Gets Ssl predefined policy with the specified policy name.
      *
      * @param predefinedPolicyName Name of Ssl predefined policy.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return ssl predefined policy with the specified policy name.
-     */
-    ApplicationGatewaySslPredefinedPolicy getSslPredefinedPolicy(String predefinedPolicyName);
-
-    /**
-     * Gets Ssl predefined policy with the specified policy name.
-     *
-     * @param predefinedPolicyName Name of Ssl predefined policy.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -399,6 +388,17 @@ public interface ApplicationGateways {
      */
     Response<ApplicationGatewaySslPredefinedPolicy> getSslPredefinedPolicyWithResponse(
         String predefinedPolicyName, Context context);
+
+    /**
+     * Gets Ssl predefined policy with the specified policy name.
+     *
+     * @param predefinedPolicyName Name of Ssl predefined policy.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return ssl predefined policy with the specified policy name.
+     */
+    ApplicationGatewaySslPredefinedPolicy getSslPredefinedPolicy(String predefinedPolicyName);
 
     /**
      * Gets the specified application gateway.

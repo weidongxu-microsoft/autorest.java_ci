@@ -29,22 +29,6 @@ public final class GalleryApplicationVersionsImpl implements GalleryApplicationV
         this.serviceManager = serviceManager;
     }
 
-    public GalleryApplicationVersion get(
-        String resourceGroupName,
-        String galleryName,
-        String galleryApplicationName,
-        String galleryApplicationVersionName) {
-        GalleryApplicationVersionInner inner =
-            this
-                .serviceClient()
-                .get(resourceGroupName, galleryName, galleryApplicationName, galleryApplicationVersionName);
-        if (inner != null) {
-            return new GalleryApplicationVersionImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<GalleryApplicationVersion> getWithResponse(
         String resourceGroupName,
         String galleryName,
@@ -68,6 +52,22 @@ public final class GalleryApplicationVersionsImpl implements GalleryApplicationV
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new GalleryApplicationVersionImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public GalleryApplicationVersion get(
+        String resourceGroupName,
+        String galleryName,
+        String galleryApplicationName,
+        String galleryApplicationVersionName) {
+        GalleryApplicationVersionInner inner =
+            this
+                .serviceClient()
+                .get(resourceGroupName, galleryName, galleryApplicationName, galleryApplicationVersionName);
+        if (inner != null) {
+            return new GalleryApplicationVersionImpl(inner, this.manager());
         } else {
             return null;
         }

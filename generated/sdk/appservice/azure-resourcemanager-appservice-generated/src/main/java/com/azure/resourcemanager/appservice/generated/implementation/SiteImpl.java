@@ -6,7 +6,6 @@ package com.azure.resourcemanager.appservice.generated.implementation;
 
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
-import com.azure.core.http.rest.StreamResponse;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.fluent.models.BackupRequestInner;
@@ -398,46 +397,46 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
         return this;
     }
 
-    public void applySlotConfigToProduction(CsmSlotEntity slotSwapEntity) {
-        serviceManager.webApps().applySlotConfigToProduction(resourceGroupName, name, slotSwapEntity);
-    }
-
     public Response<Void> applySlotConfigToProductionWithResponse(CsmSlotEntity slotSwapEntity, Context context) {
         return serviceManager
             .webApps()
             .applySlotConfigToProductionWithResponse(resourceGroupName, name, slotSwapEntity, context);
     }
 
-    public BackupItem backup(BackupRequestInner request) {
-        return serviceManager.webApps().backup(resourceGroupName, name, request);
+    public void applySlotConfigToProduction(CsmSlotEntity slotSwapEntity) {
+        serviceManager.webApps().applySlotConfigToProduction(resourceGroupName, name, slotSwapEntity);
     }
 
     public Response<BackupItem> backupWithResponse(BackupRequestInner request, Context context) {
         return serviceManager.webApps().backupWithResponse(resourceGroupName, name, request, context);
     }
 
-    public InputStream getWebSiteContainerLogs() {
-        return serviceManager.webApps().getWebSiteContainerLogs(resourceGroupName, name);
+    public BackupItem backup(BackupRequestInner request) {
+        return serviceManager.webApps().backup(resourceGroupName, name, request);
     }
 
-    public StreamResponse getWebSiteContainerLogsWithResponse(Context context) {
+    public Response<InputStream> getWebSiteContainerLogsWithResponse(Context context) {
         return serviceManager.webApps().getWebSiteContainerLogsWithResponse(resourceGroupName, name, context);
     }
 
-    public RestoreRequest discoverBackup(RestoreRequestInner request) {
-        return serviceManager.webApps().discoverBackup(resourceGroupName, name, request);
+    public InputStream getWebSiteContainerLogs() {
+        return serviceManager.webApps().getWebSiteContainerLogs(resourceGroupName, name);
     }
 
     public Response<RestoreRequest> discoverBackupWithResponse(RestoreRequestInner request, Context context) {
         return serviceManager.webApps().discoverBackupWithResponse(resourceGroupName, name, request, context);
     }
 
-    public SiteCloneability isCloneable() {
-        return serviceManager.webApps().isCloneable(resourceGroupName, name);
+    public RestoreRequest discoverBackup(RestoreRequestInner request) {
+        return serviceManager.webApps().discoverBackup(resourceGroupName, name, request);
     }
 
     public Response<SiteCloneability> isCloneableWithResponse(Context context) {
         return serviceManager.webApps().isCloneableWithResponse(resourceGroupName, name, context);
+    }
+
+    public SiteCloneability isCloneable() {
+        return serviceManager.webApps().isCloneable(resourceGroupName, name);
     }
 
     public PagedIterable<BackupItem> listSiteBackups() {
@@ -448,12 +447,12 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
         return serviceManager.webApps().listSiteBackups(resourceGroupName, name, context);
     }
 
-    public FunctionSecrets listSyncFunctionTriggers() {
-        return serviceManager.webApps().listSyncFunctionTriggers(resourceGroupName, name);
-    }
-
     public Response<FunctionSecrets> listSyncFunctionTriggersWithResponse(Context context) {
         return serviceManager.webApps().listSyncFunctionTriggersWithResponse(resourceGroupName, name, context);
+    }
+
+    public FunctionSecrets listSyncFunctionTriggers() {
+        return serviceManager.webApps().listSyncFunctionTriggers(resourceGroupName, name);
     }
 
     public Operation migrateMySql(MigrateMySqlRequest migrationRequestEnvelope) {
@@ -464,12 +463,20 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
         return serviceManager.webApps().migrateMySql(resourceGroupName, name, migrationRequestEnvelope, context);
     }
 
+    public Response<Void> generateNewSitePublishingPasswordWithResponse(Context context) {
+        return serviceManager.webApps().generateNewSitePublishingPasswordWithResponse(resourceGroupName, name, context);
+    }
+
     public void generateNewSitePublishingPassword() {
         serviceManager.webApps().generateNewSitePublishingPassword(resourceGroupName, name);
     }
 
-    public Response<Void> generateNewSitePublishingPasswordWithResponse(Context context) {
-        return serviceManager.webApps().generateNewSitePublishingPasswordWithResponse(resourceGroupName, name, context);
+    public Response<InputStream> listPublishingProfileXmlWithSecretsWithResponse(
+        CsmPublishingProfileOptions publishingProfileOptions, Context context) {
+        return serviceManager
+            .webApps()
+            .listPublishingProfileXmlWithSecretsWithResponse(
+                resourceGroupName, name, publishingProfileOptions, context);
     }
 
     public InputStream listPublishingProfileXmlWithSecrets(CsmPublishingProfileOptions publishingProfileOptions) {
@@ -478,28 +485,20 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
             .listPublishingProfileXmlWithSecrets(resourceGroupName, name, publishingProfileOptions);
     }
 
-    public StreamResponse listPublishingProfileXmlWithSecretsWithResponse(
-        CsmPublishingProfileOptions publishingProfileOptions, Context context) {
-        return serviceManager
-            .webApps()
-            .listPublishingProfileXmlWithSecretsWithResponse(
-                resourceGroupName, name, publishingProfileOptions, context);
+    public Response<Void> resetProductionSlotConfigWithResponse(Context context) {
+        return serviceManager.webApps().resetProductionSlotConfigWithResponse(resourceGroupName, name, context);
     }
 
     public void resetProductionSlotConfig() {
         serviceManager.webApps().resetProductionSlotConfig(resourceGroupName, name);
     }
 
-    public Response<Void> resetProductionSlotConfigWithResponse(Context context) {
-        return serviceManager.webApps().resetProductionSlotConfigWithResponse(resourceGroupName, name, context);
+    public Response<Void> restartWithResponse(Boolean softRestart, Boolean synchronous, Context context) {
+        return serviceManager.webApps().restartWithResponse(resourceGroupName, name, softRestart, synchronous, context);
     }
 
     public void restart() {
         serviceManager.webApps().restart(resourceGroupName, name);
-    }
-
-    public Response<Void> restartWithResponse(Boolean softRestart, Boolean synchronous, Context context) {
-        return serviceManager.webApps().restartWithResponse(resourceGroupName, name, softRestart, synchronous, context);
     }
 
     public void restoreFromBackupBlob(RestoreRequestInner request) {
@@ -545,12 +544,12 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
         serviceManager.webApps().swapSlotWithProduction(resourceGroupName, name, slotSwapEntity, context);
     }
 
-    public void start() {
-        serviceManager.webApps().start(resourceGroupName, name);
-    }
-
     public Response<Void> startWithResponse(Context context) {
         return serviceManager.webApps().startWithResponse(resourceGroupName, name, context);
+    }
+
+    public void start() {
+        serviceManager.webApps().start(resourceGroupName, name);
     }
 
     public Object startNetworkTrace(Integer durationInSeconds, Integer maxFrameLength, String sasUrl) {
@@ -569,36 +568,36 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
             .startNetworkTrace(resourceGroupName, name, durationInSeconds, maxFrameLength, sasUrl, context);
     }
 
-    public void stop() {
-        serviceManager.webApps().stop(resourceGroupName, name);
-    }
-
     public Response<Void> stopWithResponse(Context context) {
         return serviceManager.webApps().stopWithResponse(resourceGroupName, name, context);
     }
 
-    public void stopNetworkTrace() {
-        serviceManager.webApps().stopNetworkTrace(resourceGroupName, name);
+    public void stop() {
+        serviceManager.webApps().stop(resourceGroupName, name);
     }
 
     public Response<Void> stopNetworkTraceWithResponse(Context context) {
         return serviceManager.webApps().stopNetworkTraceWithResponse(resourceGroupName, name, context);
     }
 
-    public void syncRepository() {
-        serviceManager.webApps().syncRepository(resourceGroupName, name);
+    public void stopNetworkTrace() {
+        serviceManager.webApps().stopNetworkTrace(resourceGroupName, name);
     }
 
     public Response<Void> syncRepositoryWithResponse(Context context) {
         return serviceManager.webApps().syncRepositoryWithResponse(resourceGroupName, name, context);
     }
 
-    public void syncFunctionTriggers() {
-        serviceManager.webApps().syncFunctionTriggers(resourceGroupName, name);
+    public void syncRepository() {
+        serviceManager.webApps().syncRepository(resourceGroupName, name);
     }
 
     public Response<Void> syncFunctionTriggersWithResponse(Context context) {
         return serviceManager.webApps().syncFunctionTriggersWithResponse(resourceGroupName, name, context);
+    }
+
+    public void syncFunctionTriggers() {
+        serviceManager.webApps().syncFunctionTriggers(resourceGroupName, name);
     }
 
     public SiteImpl withRegion(Region location) {

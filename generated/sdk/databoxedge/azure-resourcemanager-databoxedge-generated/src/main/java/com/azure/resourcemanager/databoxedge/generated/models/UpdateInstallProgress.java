@@ -28,6 +28,10 @@ public final class UpdateInstallProgress {
     @JsonProperty(value = "numberOfUpdatesInstalled", access = JsonProperty.Access.WRITE_ONLY)
     private Integer numberOfUpdatesInstalled;
 
+    /** Creates an instance of UpdateInstallProgress class. */
+    public UpdateInstallProgress() {
+    }
+
     /**
      * Get the percentComplete property: Percentage completed.
      *

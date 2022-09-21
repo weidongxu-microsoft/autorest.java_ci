@@ -42,6 +42,10 @@ public final class SecretProperties {
     @JsonProperty(value = "secretUriWithVersion", access = JsonProperty.Access.WRITE_ONLY)
     private String secretUriWithVersion;
 
+    /** Creates an instance of SecretProperties class. */
+    public SecretProperties() {
+    }
+
     /**
      * Get the value property: The value of the secret. NOTE: 'value' will never be returned from the service, as APIs
      * using this model are is intended for internal use in ARM deployments. Users should use the data-plane REST

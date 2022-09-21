@@ -23,6 +23,10 @@ public final class AzureStaticWebApps {
     @JsonProperty(value = "registration")
     private AzureStaticWebAppsRegistration registration;
 
+    /** Creates an instance of AzureStaticWebApps class. */
+    public AzureStaticWebApps() {
+    }
+
     /**
      * Get the enabled property: &lt;code&gt;false&lt;/code&gt; if the Azure Static Web Apps provider should not be
      * enabled despite the set registration; otherwise, &lt;code&gt;true&lt;/code&gt;.

@@ -36,6 +36,10 @@ public final class WhatIfOperationResultInner {
     @JsonProperty(value = "error")
     private ManagementError error;
 
+    /** Creates an instance of WhatIfOperationResultInner class. */
+    public WhatIfOperationResultInner() {
+    }
+
     /**
      * Get the status property: Status of the What-If operation.
      *

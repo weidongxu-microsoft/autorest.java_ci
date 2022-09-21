@@ -17,6 +17,10 @@ public final class QueryTextInner extends ProxyResource {
     @JsonProperty(value = "properties")
     private QueryTextProperties innerProperties;
 
+    /** Creates an instance of QueryTextInner class. */
+    public QueryTextInner() {
+    }
+
     /**
      * Get the innerProperties property: The properties of a query text.
      *

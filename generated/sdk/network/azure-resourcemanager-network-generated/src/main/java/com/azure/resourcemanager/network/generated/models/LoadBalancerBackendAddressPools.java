@@ -41,19 +41,6 @@ public interface LoadBalancerBackendAddressPools {
      * @param resourceGroupName The name of the resource group.
      * @param loadBalancerName The name of the load balancer.
      * @param backendAddressPoolName The name of the backend address pool.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return load balancer backend address pool.
-     */
-    BackendAddressPool get(String resourceGroupName, String loadBalancerName, String backendAddressPoolName);
-
-    /**
-     * Gets load balancer backend address pool.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param loadBalancerName The name of the load balancer.
-     * @param backendAddressPoolName The name of the backend address pool.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -62,6 +49,19 @@ public interface LoadBalancerBackendAddressPools {
      */
     Response<BackendAddressPool> getWithResponse(
         String resourceGroupName, String loadBalancerName, String backendAddressPoolName, Context context);
+
+    /**
+     * Gets load balancer backend address pool.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param loadBalancerName The name of the load balancer.
+     * @param backendAddressPoolName The name of the backend address pool.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return load balancer backend address pool.
+     */
+    BackendAddressPool get(String resourceGroupName, String loadBalancerName, String backendAddressPoolName);
 
     /**
      * Deletes the specified load balancer backend address pool.

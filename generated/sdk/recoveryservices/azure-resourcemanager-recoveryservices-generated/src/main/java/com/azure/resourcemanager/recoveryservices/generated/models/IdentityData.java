@@ -41,6 +41,10 @@ public final class IdentityData {
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, UserIdentity> userAssignedIdentities;
 
+    /** Creates an instance of IdentityData class. */
+    public IdentityData() {
+    }
+
     /**
      * Get the principalId property: The principal ID of resource identity.
      *

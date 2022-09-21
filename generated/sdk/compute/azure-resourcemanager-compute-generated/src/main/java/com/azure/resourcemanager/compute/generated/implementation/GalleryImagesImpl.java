@@ -27,15 +27,6 @@ public final class GalleryImagesImpl implements GalleryImages {
         this.serviceManager = serviceManager;
     }
 
-    public GalleryImage get(String resourceGroupName, String galleryName, String galleryImageName) {
-        GalleryImageInner inner = this.serviceClient().get(resourceGroupName, galleryName, galleryImageName);
-        if (inner != null) {
-            return new GalleryImageImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<GalleryImage> getWithResponse(
         String resourceGroupName, String galleryName, String galleryImageName, Context context) {
         Response<GalleryImageInner> inner =
@@ -46,6 +37,15 @@ public final class GalleryImagesImpl implements GalleryImages {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new GalleryImageImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public GalleryImage get(String resourceGroupName, String galleryName, String galleryImageName) {
+        GalleryImageInner inner = this.serviceClient().get(resourceGroupName, galleryName, galleryImageName);
+        if (inner != null) {
+            return new GalleryImageImpl(inner, this.manager());
         } else {
             return null;
         }

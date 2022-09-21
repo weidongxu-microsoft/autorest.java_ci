@@ -54,19 +54,6 @@ public interface ExpressRouteConnections {
      * @param resourceGroupName The name of the resource group.
      * @param expressRouteGatewayName The name of the ExpressRoute gateway.
      * @param connectionName The name of the ExpressRoute connection.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified ExpressRouteConnection.
-     */
-    ExpressRouteConnection get(String resourceGroupName, String expressRouteGatewayName, String connectionName);
-
-    /**
-     * Gets the specified ExpressRouteConnection.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param expressRouteGatewayName The name of the ExpressRoute gateway.
-     * @param connectionName The name of the ExpressRoute connection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -75,6 +62,19 @@ public interface ExpressRouteConnections {
      */
     Response<ExpressRouteConnection> getWithResponse(
         String resourceGroupName, String expressRouteGatewayName, String connectionName, Context context);
+
+    /**
+     * Gets the specified ExpressRouteConnection.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param expressRouteGatewayName The name of the ExpressRoute gateway.
+     * @param connectionName The name of the ExpressRoute connection.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified ExpressRouteConnection.
+     */
+    ExpressRouteConnection get(String resourceGroupName, String expressRouteGatewayName, String connectionName);
 
     /**
      * Deletes a connection to a ExpressRoute circuit.
@@ -106,18 +106,6 @@ public interface ExpressRouteConnections {
      *
      * @param resourceGroupName The name of the resource group.
      * @param expressRouteGatewayName The name of the ExpressRoute gateway.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return expressRouteConnection list.
-     */
-    ExpressRouteConnectionList list(String resourceGroupName, String expressRouteGatewayName);
-
-    /**
-     * Lists ExpressRouteConnections.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param expressRouteGatewayName The name of the ExpressRoute gateway.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -126,4 +114,16 @@ public interface ExpressRouteConnections {
      */
     Response<ExpressRouteConnectionList> listWithResponse(
         String resourceGroupName, String expressRouteGatewayName, Context context);
+
+    /**
+     * Lists ExpressRouteConnections.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param expressRouteGatewayName The name of the ExpressRoute gateway.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return expressRouteConnection list.
+     */
+    ExpressRouteConnectionList list(String resourceGroupName, String expressRouteGatewayName);
 }

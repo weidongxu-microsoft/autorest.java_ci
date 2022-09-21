@@ -21,6 +21,10 @@ public final class ServerPropertiesForGeoRestore extends ServerPropertiesForCrea
     @JsonProperty(value = "sourceServerId", required = true)
     private String sourceServerId;
 
+    /** Creates an instance of ServerPropertiesForGeoRestore class. */
+    public ServerPropertiesForGeoRestore() {
+    }
+
     /**
      * Get the sourceServerId property: The source server id to restore from.
      *

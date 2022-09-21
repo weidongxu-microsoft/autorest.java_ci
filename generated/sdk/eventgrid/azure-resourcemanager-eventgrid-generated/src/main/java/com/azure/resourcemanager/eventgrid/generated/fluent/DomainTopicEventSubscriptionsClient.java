@@ -27,14 +27,15 @@ public interface DomainTopicEventSubscriptionsClient {
      * @param domainName Name of the top level domain.
      * @param topicName Name of the domain topic.
      * @param eventSubscriptionName Name of the event subscription.
+     * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of a nested event subscription for a domain topic.
+     * @return properties of a nested event subscription for a domain topic along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    EventSubscriptionInner get(
-        String resourceGroupName, String domainName, String topicName, String eventSubscriptionName);
+    Response<EventSubscriptionInner> getWithResponse(
+        String resourceGroupName, String domainName, String topicName, String eventSubscriptionName, Context context);
 
     /**
      * Get a nested event subscription for domain topic.
@@ -45,15 +46,14 @@ public interface DomainTopicEventSubscriptionsClient {
      * @param domainName Name of the top level domain.
      * @param topicName Name of the domain topic.
      * @param eventSubscriptionName Name of the event subscription.
-     * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of a nested event subscription for a domain topic along with {@link Response}.
+     * @return properties of a nested event subscription for a domain topic.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<EventSubscriptionInner> getWithResponse(
-        String resourceGroupName, String domainName, String topicName, String eventSubscriptionName, Context context);
+    EventSubscriptionInner get(
+        String resourceGroupName, String domainName, String topicName, String eventSubscriptionName);
 
     /**
      * Create or update a nested event subscription to a domain topic.
@@ -335,14 +335,15 @@ public interface DomainTopicEventSubscriptionsClient {
      * @param domainName Name of the top level domain.
      * @param topicName Name of the domain topic.
      * @param eventSubscriptionName Name of the event subscription.
+     * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the full endpoint URL for a nested event subscription for domain topic.
+     * @return the full endpoint URL for a nested event subscription for domain topic along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    EventSubscriptionFullUrlInner getFullUrl(
-        String resourceGroupName, String domainName, String topicName, String eventSubscriptionName);
+    Response<EventSubscriptionFullUrlInner> getFullUrlWithResponse(
+        String resourceGroupName, String domainName, String topicName, String eventSubscriptionName, Context context);
 
     /**
      * Get full URL of a nested event subscription for domain topic.
@@ -353,15 +354,14 @@ public interface DomainTopicEventSubscriptionsClient {
      * @param domainName Name of the top level domain.
      * @param topicName Name of the domain topic.
      * @param eventSubscriptionName Name of the event subscription.
-     * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the full endpoint URL for a nested event subscription for domain topic along with {@link Response}.
+     * @return the full endpoint URL for a nested event subscription for domain topic.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<EventSubscriptionFullUrlInner> getFullUrlWithResponse(
-        String resourceGroupName, String domainName, String topicName, String eventSubscriptionName, Context context);
+    EventSubscriptionFullUrlInner getFullUrl(
+        String resourceGroupName, String domainName, String topicName, String eventSubscriptionName);
 
     /**
      * List all nested event subscriptions for a specific domain topic.
@@ -414,14 +414,15 @@ public interface DomainTopicEventSubscriptionsClient {
      * @param domainName Name of the top level domain.
      * @param topicName Name of the domain topic.
      * @param eventSubscriptionName Name of the event subscription.
+     * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all delivery attributes for an event subscription for domain topic.
+     * @return all delivery attributes for an event subscription for domain topic along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    DeliveryAttributeListResultInner getDeliveryAttributes(
-        String resourceGroupName, String domainName, String topicName, String eventSubscriptionName);
+    Response<DeliveryAttributeListResultInner> getDeliveryAttributesWithResponse(
+        String resourceGroupName, String domainName, String topicName, String eventSubscriptionName, Context context);
 
     /**
      * Get delivery attributes for an event subscription for domain topic.
@@ -432,13 +433,12 @@ public interface DomainTopicEventSubscriptionsClient {
      * @param domainName Name of the top level domain.
      * @param topicName Name of the domain topic.
      * @param eventSubscriptionName Name of the event subscription.
-     * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all delivery attributes for an event subscription for domain topic along with {@link Response}.
+     * @return all delivery attributes for an event subscription for domain topic.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<DeliveryAttributeListResultInner> getDeliveryAttributesWithResponse(
-        String resourceGroupName, String domainName, String topicName, String eventSubscriptionName, Context context);
+    DeliveryAttributeListResultInner getDeliveryAttributes(
+        String resourceGroupName, String domainName, String topicName, String eventSubscriptionName);
 }

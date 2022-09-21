@@ -16,6 +16,10 @@ public final class HardwareProfile {
     @JsonProperty(value = "vmSize")
     private String vmSize;
 
+    /** Creates an instance of HardwareProfile class. */
+    public HardwareProfile() {
+    }
+
     /**
      * Get the vmSize property: The size of the VM.
      *

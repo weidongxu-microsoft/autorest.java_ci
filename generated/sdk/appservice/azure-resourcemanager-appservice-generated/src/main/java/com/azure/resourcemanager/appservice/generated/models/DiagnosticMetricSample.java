@@ -50,6 +50,10 @@ public final class DiagnosticMetricSample {
     @JsonProperty(value = "isAggregated")
     private Boolean isAggregated;
 
+    /** Creates an instance of DiagnosticMetricSample class. */
+    public DiagnosticMetricSample() {
+    }
+
     /**
      * Get the timestamp property: Time at which metric is measured.
      *

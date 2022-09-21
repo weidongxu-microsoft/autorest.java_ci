@@ -58,6 +58,10 @@ public final class AlertProperties {
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, String> detailedInformation;
 
+    /** Creates an instance of AlertProperties class. */
+    public AlertProperties() {
+    }
+
     /**
      * Get the title property: Alert title.
      *

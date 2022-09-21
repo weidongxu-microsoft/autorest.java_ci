@@ -18,6 +18,10 @@ public final class MetricCounterSet {
     @JsonProperty(value = "counters", required = true)
     private List<MetricCounter> counters;
 
+    /** Creates an instance of MetricCounterSet class. */
+    public MetricCounterSet() {
+    }
+
     /**
      * Get the counters property: The counters that should be collected in this set.
      *

@@ -29,17 +29,6 @@ public final class BlobInventoryPoliciesImpl implements BlobInventoryPolicies {
         this.serviceManager = serviceManager;
     }
 
-    public BlobInventoryPolicy get(
-        String resourceGroupName, String accountName, BlobInventoryPolicyName blobInventoryPolicyName) {
-        BlobInventoryPolicyInner inner =
-            this.serviceClient().get(resourceGroupName, accountName, blobInventoryPolicyName);
-        if (inner != null) {
-            return new BlobInventoryPolicyImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<BlobInventoryPolicy> getWithResponse(
         String resourceGroupName,
         String accountName,
@@ -58,8 +47,15 @@ public final class BlobInventoryPoliciesImpl implements BlobInventoryPolicies {
         }
     }
 
-    public void delete(String resourceGroupName, String accountName, BlobInventoryPolicyName blobInventoryPolicyName) {
-        this.serviceClient().delete(resourceGroupName, accountName, blobInventoryPolicyName);
+    public BlobInventoryPolicy get(
+        String resourceGroupName, String accountName, BlobInventoryPolicyName blobInventoryPolicyName) {
+        BlobInventoryPolicyInner inner =
+            this.serviceClient().get(resourceGroupName, accountName, blobInventoryPolicyName);
+        if (inner != null) {
+            return new BlobInventoryPolicyImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> deleteWithResponse(
@@ -70,6 +66,10 @@ public final class BlobInventoryPoliciesImpl implements BlobInventoryPolicies {
         return this
             .serviceClient()
             .deleteWithResponse(resourceGroupName, accountName, blobInventoryPolicyName, context);
+    }
+
+    public void delete(String resourceGroupName, String accountName, BlobInventoryPolicyName blobInventoryPolicyName) {
+        this.serviceClient().delete(resourceGroupName, accountName, blobInventoryPolicyName);
     }
 
     public PagedIterable<BlobInventoryPolicy> list(String resourceGroupName, String accountName) {

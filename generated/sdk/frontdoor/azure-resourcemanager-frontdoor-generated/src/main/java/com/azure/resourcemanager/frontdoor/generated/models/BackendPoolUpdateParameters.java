@@ -30,6 +30,10 @@ public class BackendPoolUpdateParameters {
     @JsonProperty(value = "healthProbeSettings")
     private SubResource healthProbeSettings;
 
+    /** Creates an instance of BackendPoolUpdateParameters class. */
+    public BackendPoolUpdateParameters() {
+    }
+
     /**
      * Get the backends property: The set of backends for this pool.
      *

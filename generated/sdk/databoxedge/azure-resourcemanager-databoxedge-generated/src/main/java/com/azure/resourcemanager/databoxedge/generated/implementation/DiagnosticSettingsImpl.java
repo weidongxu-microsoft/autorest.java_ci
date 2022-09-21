@@ -29,17 +29,6 @@ public final class DiagnosticSettingsImpl implements DiagnosticSettings {
         this.serviceManager = serviceManager;
     }
 
-    public DiagnosticProactiveLogCollectionSettings getDiagnosticProactiveLogCollectionSettings(
-        String deviceName, String resourceGroupName) {
-        DiagnosticProactiveLogCollectionSettingsInner inner =
-            this.serviceClient().getDiagnosticProactiveLogCollectionSettings(deviceName, resourceGroupName);
-        if (inner != null) {
-            return new DiagnosticProactiveLogCollectionSettingsImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<DiagnosticProactiveLogCollectionSettings> getDiagnosticProactiveLogCollectionSettingsWithResponse(
         String deviceName, String resourceGroupName, Context context) {
         Response<DiagnosticProactiveLogCollectionSettingsInner> inner =
@@ -52,6 +41,17 @@ public final class DiagnosticSettingsImpl implements DiagnosticSettings {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new DiagnosticProactiveLogCollectionSettingsImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public DiagnosticProactiveLogCollectionSettings getDiagnosticProactiveLogCollectionSettings(
+        String deviceName, String resourceGroupName) {
+        DiagnosticProactiveLogCollectionSettingsInner inner =
+            this.serviceClient().getDiagnosticProactiveLogCollectionSettings(deviceName, resourceGroupName);
+        if (inner != null) {
+            return new DiagnosticProactiveLogCollectionSettingsImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -90,17 +90,6 @@ public final class DiagnosticSettingsImpl implements DiagnosticSettings {
         }
     }
 
-    public DiagnosticRemoteSupportSettings getDiagnosticRemoteSupportSettings(
-        String deviceName, String resourceGroupName) {
-        DiagnosticRemoteSupportSettingsInner inner =
-            this.serviceClient().getDiagnosticRemoteSupportSettings(deviceName, resourceGroupName);
-        if (inner != null) {
-            return new DiagnosticRemoteSupportSettingsImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<DiagnosticRemoteSupportSettings> getDiagnosticRemoteSupportSettingsWithResponse(
         String deviceName, String resourceGroupName, Context context) {
         Response<DiagnosticRemoteSupportSettingsInner> inner =
@@ -111,6 +100,17 @@ public final class DiagnosticSettingsImpl implements DiagnosticSettings {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new DiagnosticRemoteSupportSettingsImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public DiagnosticRemoteSupportSettings getDiagnosticRemoteSupportSettings(
+        String deviceName, String resourceGroupName) {
+        DiagnosticRemoteSupportSettingsInner inner =
+            this.serviceClient().getDiagnosticRemoteSupportSettings(deviceName, resourceGroupName);
+        if (inner != null) {
+            return new DiagnosticRemoteSupportSettingsImpl(inner, this.manager());
         } else {
             return null;
         }

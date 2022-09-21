@@ -28,15 +28,6 @@ public final class ScheduledQueryRulesImpl implements ScheduledQueryRules {
         this.serviceManager = serviceManager;
     }
 
-    public LogSearchRuleResource getByResourceGroup(String resourceGroupName, String ruleName) {
-        LogSearchRuleResourceInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, ruleName);
-        if (inner != null) {
-            return new LogSearchRuleResourceImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<LogSearchRuleResource> getByResourceGroupWithResponse(
         String resourceGroupName, String ruleName, Context context) {
         Response<LogSearchRuleResourceInner> inner =
@@ -52,12 +43,22 @@ public final class ScheduledQueryRulesImpl implements ScheduledQueryRules {
         }
     }
 
-    public void deleteByResourceGroup(String resourceGroupName, String ruleName) {
-        this.serviceClient().delete(resourceGroupName, ruleName);
+    public LogSearchRuleResource getByResourceGroup(String resourceGroupName, String ruleName) {
+        LogSearchRuleResourceInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, ruleName);
+        if (inner != null) {
+            return new LogSearchRuleResourceImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
-    public Response<Void> deleteWithResponse(String resourceGroupName, String ruleName, Context context) {
+    public Response<Void> deleteByResourceGroupWithResponse(
+        String resourceGroupName, String ruleName, Context context) {
         return this.serviceClient().deleteWithResponse(resourceGroupName, ruleName, context);
+    }
+
+    public void deleteByResourceGroup(String resourceGroupName, String ruleName) {
+        this.serviceClient().delete(resourceGroupName, ruleName);
     }
 
     public PagedIterable<LogSearchRuleResource> list() {
@@ -142,7 +143,7 @@ public final class ScheduledQueryRulesImpl implements ScheduledQueryRules {
                             .format(
                                 "The resource ID '%s' is not valid. Missing path segment 'scheduledQueryRules'.", id)));
         }
-        this.deleteWithResponse(resourceGroupName, ruleName, Context.NONE);
+        this.deleteByResourceGroupWithResponse(resourceGroupName, ruleName, Context.NONE);
     }
 
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
@@ -163,7 +164,7 @@ public final class ScheduledQueryRulesImpl implements ScheduledQueryRules {
                             .format(
                                 "The resource ID '%s' is not valid. Missing path segment 'scheduledQueryRules'.", id)));
         }
-        return this.deleteWithResponse(resourceGroupName, ruleName, context);
+        return this.deleteByResourceGroupWithResponse(resourceGroupName, ruleName, context);
     }
 
     private ScheduledQueryRulesClient serviceClient() {

@@ -28,6 +28,10 @@ public final class AutoscaleTimeAndCapacity {
     @JsonProperty(value = "maxInstanceCount")
     private Integer maxInstanceCount;
 
+    /** Creates an instance of AutoscaleTimeAndCapacity class. */
+    public AutoscaleTimeAndCapacity() {
+    }
+
     /**
      * Get the time property: 24-hour time in the form xx:xx.
      *

@@ -15,37 +15,25 @@ public interface RoleDefinitions {
      *
      * @param scope The scope of the role definition.
      * @param roleDefinitionId The ID of the role definition to delete.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return role definition.
-     */
-    RoleDefinition deleteByResourceGroup(String scope, String roleDefinitionId);
-
-    /**
-     * Deletes a role definition.
-     *
-     * @param scope The scope of the role definition.
-     * @param roleDefinitionId The ID of the role definition to delete.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return role definition along with {@link Response}.
      */
-    Response<RoleDefinition> deleteWithResponse(String scope, String roleDefinitionId, Context context);
+    Response<RoleDefinition> deleteByResourceGroupWithResponse(String scope, String roleDefinitionId, Context context);
 
     /**
-     * Get role definition by name (GUID).
+     * Deletes a role definition.
      *
      * @param scope The scope of the role definition.
-     * @param roleDefinitionId The ID of the role definition.
+     * @param roleDefinitionId The ID of the role definition to delete.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return role definition by name (GUID).
+     * @return role definition.
      */
-    RoleDefinition get(String scope, String roleDefinitionId);
+    RoleDefinition deleteByResourceGroup(String scope, String roleDefinitionId);
 
     /**
      * Get role definition by name (GUID).
@@ -59,6 +47,18 @@ public interface RoleDefinitions {
      * @return role definition by name (GUID) along with {@link Response}.
      */
     Response<RoleDefinition> getWithResponse(String scope, String roleDefinitionId, Context context);
+
+    /**
+     * Get role definition by name (GUID).
+     *
+     * @param scope The scope of the role definition.
+     * @param roleDefinitionId The ID of the role definition.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return role definition by name (GUID).
+     */
+    RoleDefinition get(String scope, String roleDefinitionId);
 
     /**
      * Get all role definitions that are applicable at scope and above.
@@ -94,12 +94,13 @@ public interface RoleDefinitions {
      *     /subscriptions/{guid}/providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId} for subscription
      *     level role definitions, or /providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId} for tenant
      *     level role definitions.
+     * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a role definition by ID.
+     * @return a role definition by ID along with {@link Response}.
      */
-    RoleDefinition getById(String roleId);
+    Response<RoleDefinition> getByIdWithResponse(String roleId, Context context);
 
     /**
      * Gets a role definition by ID.
@@ -108,13 +109,12 @@ public interface RoleDefinitions {
      *     /subscriptions/{guid}/providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId} for subscription
      *     level role definitions, or /providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId} for tenant
      *     level role definitions.
-     * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a role definition by ID along with {@link Response}.
+     * @return a role definition by ID.
      */
-    Response<RoleDefinition> getByIdWithResponse(String roleId, Context context);
+    RoleDefinition getById(String roleId);
 
     /**
      * Deletes a role definition.

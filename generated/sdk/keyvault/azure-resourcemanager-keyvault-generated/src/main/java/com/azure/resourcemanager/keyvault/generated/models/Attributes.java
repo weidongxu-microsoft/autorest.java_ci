@@ -40,6 +40,10 @@ public class Attributes {
     @JsonProperty(value = "updated", access = JsonProperty.Access.WRITE_ONLY)
     private Long updated;
 
+    /** Creates an instance of Attributes class. */
+    public Attributes() {
+    }
+
     /**
      * Get the enabled property: Determines whether the object is enabled.
      *

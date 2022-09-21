@@ -20,6 +20,10 @@ public final class ClusterQuotaConfigurationPropertiesInner {
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, String> settings;
 
+    /** Creates an instance of ClusterQuotaConfigurationPropertiesInner class. */
+    public ClusterQuotaConfigurationPropertiesInner() {
+    }
+
     /**
      * Get the settings property: All possible Cluster settings - a collection of key/value paired settings which apply
      * to quotas and configurations imposed on the cluster.

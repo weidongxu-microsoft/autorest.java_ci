@@ -23,6 +23,10 @@ public final class AmountWithExchangeRate extends Amount {
     @JsonProperty(value = "exchangeRateMonth", access = JsonProperty.Access.WRITE_ONLY)
     private Integer exchangeRateMonth;
 
+    /** Creates an instance of AmountWithExchangeRate class. */
+    public AmountWithExchangeRate() {
+    }
+
     /**
      * Get the exchangeRate property: The exchange rate.
      *

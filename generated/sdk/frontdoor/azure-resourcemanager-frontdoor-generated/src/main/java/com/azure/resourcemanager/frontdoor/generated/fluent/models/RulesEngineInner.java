@@ -23,6 +23,10 @@ public final class RulesEngineInner extends ProxyResource {
     @JsonProperty(value = "properties")
     private RulesEngineProperties innerProperties;
 
+    /** Creates an instance of RulesEngineInner class. */
+    public RulesEngineInner() {
+    }
+
     /**
      * Get the innerProperties property: Properties of the Rules Engine Configuration.
      *

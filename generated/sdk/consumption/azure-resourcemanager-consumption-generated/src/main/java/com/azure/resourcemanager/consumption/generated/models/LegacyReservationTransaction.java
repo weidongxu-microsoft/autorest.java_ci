@@ -10,6 +10,10 @@ import com.azure.resourcemanager.consumption.generated.fluent.models.Reservation
 /** Legacy Reservation transaction resource. */
 @Immutable
 public final class LegacyReservationTransaction extends ReservationTransactionInner {
+    /** Creates an instance of LegacyReservationTransaction class. */
+    public LegacyReservationTransaction() {
+    }
+
     /**
      * Validates the instance.
      *

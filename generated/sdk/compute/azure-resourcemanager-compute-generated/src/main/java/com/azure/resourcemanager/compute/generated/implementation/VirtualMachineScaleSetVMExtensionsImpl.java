@@ -38,17 +38,6 @@ public final class VirtualMachineScaleSetVMExtensionsImpl implements VirtualMach
         this.serviceClient().delete(resourceGroupName, vmScaleSetName, instanceId, vmExtensionName, context);
     }
 
-    public VirtualMachineScaleSetVMExtension get(
-        String resourceGroupName, String vmScaleSetName, String instanceId, String vmExtensionName) {
-        VirtualMachineScaleSetVMExtensionInner inner =
-            this.serviceClient().get(resourceGroupName, vmScaleSetName, instanceId, vmExtensionName);
-        if (inner != null) {
-            return new VirtualMachineScaleSetVMExtensionImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<VirtualMachineScaleSetVMExtension> getWithResponse(
         String resourceGroupName,
         String vmScaleSetName,
@@ -71,12 +60,12 @@ public final class VirtualMachineScaleSetVMExtensionsImpl implements VirtualMach
         }
     }
 
-    public VirtualMachineScaleSetVMExtensionsListResult list(
-        String resourceGroupName, String vmScaleSetName, String instanceId) {
-        VirtualMachineScaleSetVMExtensionsListResultInner inner =
-            this.serviceClient().list(resourceGroupName, vmScaleSetName, instanceId);
+    public VirtualMachineScaleSetVMExtension get(
+        String resourceGroupName, String vmScaleSetName, String instanceId, String vmExtensionName) {
+        VirtualMachineScaleSetVMExtensionInner inner =
+            this.serviceClient().get(resourceGroupName, vmScaleSetName, instanceId, vmExtensionName);
         if (inner != null) {
-            return new VirtualMachineScaleSetVMExtensionsListResultImpl(inner, this.manager());
+            return new VirtualMachineScaleSetVMExtensionImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -92,6 +81,17 @@ public final class VirtualMachineScaleSetVMExtensionsImpl implements VirtualMach
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new VirtualMachineScaleSetVMExtensionsListResultImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public VirtualMachineScaleSetVMExtensionsListResult list(
+        String resourceGroupName, String vmScaleSetName, String instanceId) {
+        VirtualMachineScaleSetVMExtensionsListResultInner inner =
+            this.serviceClient().list(resourceGroupName, vmScaleSetName, instanceId);
+        if (inner != null) {
+            return new VirtualMachineScaleSetVMExtensionsListResultImpl(inner, this.manager());
         } else {
             return null;
         }

@@ -38,18 +38,6 @@ public interface LoadBalancers {
      *
      * @param resourceGroupName The name of the resource group.
      * @param loadBalancerName The name of the load balancer.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified load balancer.
-     */
-    LoadBalancer getByResourceGroup(String resourceGroupName, String loadBalancerName);
-
-    /**
-     * Gets the specified load balancer.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param loadBalancerName The name of the load balancer.
      * @param expand Expands referenced resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -59,6 +47,18 @@ public interface LoadBalancers {
      */
     Response<LoadBalancer> getByResourceGroupWithResponse(
         String resourceGroupName, String loadBalancerName, String expand, Context context);
+
+    /**
+     * Gets the specified load balancer.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param loadBalancerName The name of the load balancer.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified load balancer.
+     */
+    LoadBalancer getByResourceGroup(String resourceGroupName, String loadBalancerName);
 
     /**
      * Gets all the load balancers in a subscription.

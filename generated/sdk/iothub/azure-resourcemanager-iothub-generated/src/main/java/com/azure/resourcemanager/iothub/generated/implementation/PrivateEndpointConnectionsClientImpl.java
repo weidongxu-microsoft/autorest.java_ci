@@ -254,11 +254,12 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of private endpoint connections for an IotHub.
+     * @return the list of private endpoint connections for an IotHub along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public List<PrivateEndpointConnectionInner> list(String resourceGroupName, String resourceName) {
-        return listAsync(resourceGroupName, resourceName).block();
+    public Response<List<PrivateEndpointConnectionInner>> listWithResponse(
+        String resourceGroupName, String resourceName) {
+        return listWithResponseAsync(resourceGroupName, resourceName).block();
     }
 
     /**
@@ -278,6 +279,23 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     public Response<List<PrivateEndpointConnectionInner>> listWithResponse(
         String resourceGroupName, String resourceName, Context context) {
         return listWithResponseAsync(resourceGroupName, resourceName, context).block();
+    }
+
+    /**
+     * List private endpoint connections
+     *
+     * <p>List private endpoint connection properties.
+     *
+     * @param resourceGroupName The name of the resource group that contains the IoT hub.
+     * @param resourceName The name of the IoT hub.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ErrorDetailsException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the list of private endpoint connections for an IotHub.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public List<PrivateEndpointConnectionInner> list(String resourceGroupName, String resourceName) {
+        return listWithResponse(resourceGroupName, resourceName, Context.NONE).getValue();
     }
 
     /**
@@ -427,12 +445,12 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return private endpoint connection properties.
+     * @return private endpoint connection properties along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public PrivateEndpointConnectionInner get(
+    public Response<PrivateEndpointConnectionInner> getWithResponse(
         String resourceGroupName, String resourceName, String privateEndpointConnectionName) {
-        return getAsync(resourceGroupName, resourceName, privateEndpointConnectionName).block();
+        return getWithResponseAsync(resourceGroupName, resourceName, privateEndpointConnectionName).block();
     }
 
     /**
@@ -453,6 +471,25 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     public Response<PrivateEndpointConnectionInner> getWithResponse(
         String resourceGroupName, String resourceName, String privateEndpointConnectionName, Context context) {
         return getWithResponseAsync(resourceGroupName, resourceName, privateEndpointConnectionName, context).block();
+    }
+
+    /**
+     * Get private endpoint connection
+     *
+     * <p>Get private endpoint connection properties.
+     *
+     * @param resourceGroupName The name of the resource group that contains the IoT hub.
+     * @param resourceName The name of the IoT hub.
+     * @param privateEndpointConnectionName The name of the private endpoint connection.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ErrorDetailsException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return private endpoint connection properties.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public PrivateEndpointConnectionInner get(
+        String resourceGroupName, String resourceName, String privateEndpointConnectionName) {
+        return getWithResponse(resourceGroupName, resourceName, privateEndpointConnectionName, Context.NONE).getValue();
     }
 
     /**

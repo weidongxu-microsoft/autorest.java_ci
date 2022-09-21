@@ -22,6 +22,10 @@ public final class BudgetFilterProperties {
     @JsonProperty(value = "tags")
     private BudgetComparisonExpression tags;
 
+    /** Creates an instance of BudgetFilterProperties class. */
+    public BudgetFilterProperties() {
+    }
+
     /**
      * Get the dimensions property: Has comparison expression for a dimension.
      *

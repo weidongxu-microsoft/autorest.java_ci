@@ -169,6 +169,10 @@ public final class MarketplaceProperties {
     @JsonProperty(value = "isRecurringCharge", access = JsonProperty.Access.WRITE_ONLY)
     private Boolean isRecurringCharge;
 
+    /** Creates an instance of MarketplaceProperties class. */
+    public MarketplaceProperties() {
+    }
+
     /**
      * Get the billingPeriodId property: The id of the billing period resource that the usage belongs to.
      *

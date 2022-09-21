@@ -41,15 +41,6 @@ public final class SharedGalleryImagesImpl implements SharedGalleryImages {
         return Utils.mapPage(inner, inner1 -> new SharedGalleryImageImpl(inner1, this.manager()));
     }
 
-    public SharedGalleryImage get(String location, String galleryUniqueName, String galleryImageName) {
-        SharedGalleryImageInner inner = this.serviceClient().get(location, galleryUniqueName, galleryImageName);
-        if (inner != null) {
-            return new SharedGalleryImageImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<SharedGalleryImage> getWithResponse(
         String location, String galleryUniqueName, String galleryImageName, Context context) {
         Response<SharedGalleryImageInner> inner =
@@ -60,6 +51,15 @@ public final class SharedGalleryImagesImpl implements SharedGalleryImages {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new SharedGalleryImageImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public SharedGalleryImage get(String location, String galleryUniqueName, String galleryImageName) {
+        SharedGalleryImageInner inner = this.serviceClient().get(location, galleryUniqueName, galleryImageName);
+        if (inner != null) {
+            return new SharedGalleryImageImpl(inner, this.manager());
         } else {
             return null;
         }

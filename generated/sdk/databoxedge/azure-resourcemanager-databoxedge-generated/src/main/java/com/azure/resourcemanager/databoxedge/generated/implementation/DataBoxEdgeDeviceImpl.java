@@ -278,20 +278,20 @@ public final class DataBoxEdgeDeviceImpl
         serviceManager.devices().downloadUpdates(deviceName, resourceGroupName, context);
     }
 
-    public GenerateCertResponse generateCertificate() {
-        return serviceManager.devices().generateCertificate(deviceName, resourceGroupName);
-    }
-
     public Response<GenerateCertResponse> generateCertificateWithResponse(Context context) {
         return serviceManager.devices().generateCertificateWithResponse(deviceName, resourceGroupName, context);
     }
 
-    public DataBoxEdgeDeviceExtendedInfo getExtendedInformation() {
-        return serviceManager.devices().getExtendedInformation(deviceName, resourceGroupName);
+    public GenerateCertResponse generateCertificate() {
+        return serviceManager.devices().generateCertificate(deviceName, resourceGroupName);
     }
 
     public Response<DataBoxEdgeDeviceExtendedInfo> getExtendedInformationWithResponse(Context context) {
         return serviceManager.devices().getExtendedInformationWithResponse(deviceName, resourceGroupName, context);
+    }
+
+    public DataBoxEdgeDeviceExtendedInfo getExtendedInformation() {
+        return serviceManager.devices().getExtendedInformation(deviceName, resourceGroupName);
     }
 
     public void installUpdates() {
@@ -310,10 +310,6 @@ public final class DataBoxEdgeDeviceImpl
         serviceManager.devices().scanForUpdates(deviceName, resourceGroupName, context);
     }
 
-    public DataBoxEdgeDeviceExtendedInfo updateExtendedInformation(DataBoxEdgeDeviceExtendedInfoPatch parameters) {
-        return serviceManager.devices().updateExtendedInformation(deviceName, resourceGroupName, parameters);
-    }
-
     public Response<DataBoxEdgeDeviceExtendedInfo> updateExtendedInformationWithResponse(
         DataBoxEdgeDeviceExtendedInfoPatch parameters, Context context) {
         return serviceManager
@@ -321,8 +317,8 @@ public final class DataBoxEdgeDeviceImpl
             .updateExtendedInformationWithResponse(deviceName, resourceGroupName, parameters, context);
     }
 
-    public UploadCertificateResponse uploadCertificate(UploadCertificateRequest parameters) {
-        return serviceManager.devices().uploadCertificate(deviceName, resourceGroupName, parameters);
+    public DataBoxEdgeDeviceExtendedInfo updateExtendedInformation(DataBoxEdgeDeviceExtendedInfoPatch parameters) {
+        return serviceManager.devices().updateExtendedInformation(deviceName, resourceGroupName, parameters);
     }
 
     public Response<UploadCertificateResponse> uploadCertificateWithResponse(
@@ -330,6 +326,10 @@ public final class DataBoxEdgeDeviceImpl
         return serviceManager
             .devices()
             .uploadCertificateWithResponse(deviceName, resourceGroupName, parameters, context);
+    }
+
+    public UploadCertificateResponse uploadCertificate(UploadCertificateRequest parameters) {
+        return serviceManager.devices().uploadCertificate(deviceName, resourceGroupName, parameters);
     }
 
     public DataBoxEdgeDeviceImpl withRegion(Region location) {

@@ -7,7 +7,6 @@ package com.azure.resourcemanager.appservice.generated.implementation;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
-import com.azure.core.http.rest.StreamResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.fluent.WebAppsClient;
@@ -179,15 +178,6 @@ public final class WebAppsImpl implements WebApps {
         return Utils.mapPage(inner, inner1 -> new SiteImpl(inner1, this.manager()));
     }
 
-    public Site getByResourceGroup(String resourceGroupName, String name) {
-        SiteInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, name);
-        if (inner != null) {
-            return new SiteImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<Site> getByResourceGroupWithResponse(String resourceGroupName, String name, Context context) {
         Response<SiteInner> inner =
             this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, name, context);
@@ -202,8 +192,13 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public void delete(String resourceGroupName, String name) {
-        this.serviceClient().delete(resourceGroupName, name);
+    public Site getByResourceGroup(String resourceGroupName, String name) {
+        SiteInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, name);
+        if (inner != null) {
+            return new SiteImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> deleteWithResponse(
@@ -213,13 +208,8 @@ public final class WebAppsImpl implements WebApps {
             .deleteWithResponse(resourceGroupName, name, deleteMetrics, deleteEmptyServerFarm, context);
     }
 
-    public CustomHostnameAnalysisResult analyzeCustomHostname(String resourceGroupName, String name) {
-        CustomHostnameAnalysisResultInner inner = this.serviceClient().analyzeCustomHostname(resourceGroupName, name);
-        if (inner != null) {
-            return new CustomHostnameAnalysisResultImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void delete(String resourceGroupName, String name) {
+        this.serviceClient().delete(resourceGroupName, name);
     }
 
     public Response<CustomHostnameAnalysisResult> analyzeCustomHostnameWithResponse(
@@ -237,8 +227,13 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public void applySlotConfigToProduction(String resourceGroupName, String name, CsmSlotEntity slotSwapEntity) {
-        this.serviceClient().applySlotConfigToProduction(resourceGroupName, name, slotSwapEntity);
+    public CustomHostnameAnalysisResult analyzeCustomHostname(String resourceGroupName, String name) {
+        CustomHostnameAnalysisResultInner inner = this.serviceClient().analyzeCustomHostname(resourceGroupName, name);
+        if (inner != null) {
+            return new CustomHostnameAnalysisResultImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> applySlotConfigToProductionWithResponse(
@@ -248,13 +243,8 @@ public final class WebAppsImpl implements WebApps {
             .applySlotConfigToProductionWithResponse(resourceGroupName, name, slotSwapEntity, context);
     }
 
-    public BackupItem backup(String resourceGroupName, String name, BackupRequestInner request) {
-        BackupItemInner inner = this.serviceClient().backup(resourceGroupName, name, request);
-        if (inner != null) {
-            return new BackupItemImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void applySlotConfigToProduction(String resourceGroupName, String name, CsmSlotEntity slotSwapEntity) {
+        this.serviceClient().applySlotConfigToProduction(resourceGroupName, name, slotSwapEntity);
     }
 
     public Response<BackupItem> backupWithResponse(
@@ -272,6 +262,15 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
+    public BackupItem backup(String resourceGroupName, String name, BackupRequestInner request) {
+        BackupItemInner inner = this.serviceClient().backup(resourceGroupName, name, request);
+        if (inner != null) {
+            return new BackupItemImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
     public PagedIterable<BackupItem> listBackups(String resourceGroupName, String name) {
         PagedIterable<BackupItemInner> inner = this.serviceClient().listBackups(resourceGroupName, name);
         return Utils.mapPage(inner, inner1 -> new BackupItemImpl(inner1, this.manager()));
@@ -280,15 +279,6 @@ public final class WebAppsImpl implements WebApps {
     public PagedIterable<BackupItem> listBackups(String resourceGroupName, String name, Context context) {
         PagedIterable<BackupItemInner> inner = this.serviceClient().listBackups(resourceGroupName, name, context);
         return Utils.mapPage(inner, inner1 -> new BackupItemImpl(inner1, this.manager()));
-    }
-
-    public BackupItem getBackupStatus(String resourceGroupName, String name, String backupId) {
-        BackupItemInner inner = this.serviceClient().getBackupStatus(resourceGroupName, name, backupId);
-        if (inner != null) {
-            return new BackupItemImpl(inner, this.manager());
-        } else {
-            return null;
-        }
     }
 
     public Response<BackupItem> getBackupStatusWithResponse(
@@ -306,8 +296,13 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public void deleteBackup(String resourceGroupName, String name, String backupId) {
-        this.serviceClient().deleteBackup(resourceGroupName, name, backupId);
+    public BackupItem getBackupStatus(String resourceGroupName, String name, String backupId) {
+        BackupItemInner inner = this.serviceClient().getBackupStatus(resourceGroupName, name, backupId);
+        if (inner != null) {
+            return new BackupItemImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> deleteBackupWithResponse(
@@ -315,15 +310,8 @@ public final class WebAppsImpl implements WebApps {
         return this.serviceClient().deleteBackupWithResponse(resourceGroupName, name, backupId, context);
     }
 
-    public BackupItem listBackupStatusSecrets(
-        String resourceGroupName, String name, String backupId, BackupRequestInner request) {
-        BackupItemInner inner =
-            this.serviceClient().listBackupStatusSecrets(resourceGroupName, name, backupId, request);
-        if (inner != null) {
-            return new BackupItemImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void deleteBackup(String resourceGroupName, String name, String backupId) {
+        this.serviceClient().deleteBackup(resourceGroupName, name, backupId);
     }
 
     public Response<BackupItem> listBackupStatusSecretsWithResponse(
@@ -338,6 +326,17 @@ public final class WebAppsImpl implements WebApps {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new BackupItemImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public BackupItem listBackupStatusSecrets(
+        String resourceGroupName, String name, String backupId, BackupRequestInner request) {
+        BackupItemInner inner =
+            this.serviceClient().listBackupStatusSecrets(resourceGroupName, name, backupId, request);
+        if (inner != null) {
+            return new BackupItemImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -366,15 +365,6 @@ public final class WebAppsImpl implements WebApps {
         return Utils.mapPage(inner, inner1 -> new CsmPublishingCredentialsPoliciesEntityImpl(inner1, this.manager()));
     }
 
-    public CsmPublishingCredentialsPoliciesEntity getFtpAllowed(String resourceGroupName, String name) {
-        CsmPublishingCredentialsPoliciesEntityInner inner = this.serviceClient().getFtpAllowed(resourceGroupName, name);
-        if (inner != null) {
-            return new CsmPublishingCredentialsPoliciesEntityImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<CsmPublishingCredentialsPoliciesEntity> getFtpAllowedWithResponse(
         String resourceGroupName, String name, Context context) {
         Response<CsmPublishingCredentialsPoliciesEntityInner> inner =
@@ -390,12 +380,8 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public CsmPublishingCredentialsPoliciesEntity updateFtpAllowed(
-        String resourceGroupName,
-        String name,
-        CsmPublishingCredentialsPoliciesEntityInner csmPublishingAccessPoliciesEntity) {
-        CsmPublishingCredentialsPoliciesEntityInner inner =
-            this.serviceClient().updateFtpAllowed(resourceGroupName, name, csmPublishingAccessPoliciesEntity);
+    public CsmPublishingCredentialsPoliciesEntity getFtpAllowed(String resourceGroupName, String name) {
+        CsmPublishingCredentialsPoliciesEntityInner inner = this.serviceClient().getFtpAllowed(resourceGroupName, name);
         if (inner != null) {
             return new CsmPublishingCredentialsPoliciesEntityImpl(inner, this.manager());
         } else {
@@ -423,8 +409,12 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public CsmPublishingCredentialsPoliciesEntity getScmAllowed(String resourceGroupName, String name) {
-        CsmPublishingCredentialsPoliciesEntityInner inner = this.serviceClient().getScmAllowed(resourceGroupName, name);
+    public CsmPublishingCredentialsPoliciesEntity updateFtpAllowed(
+        String resourceGroupName,
+        String name,
+        CsmPublishingCredentialsPoliciesEntityInner csmPublishingAccessPoliciesEntity) {
+        CsmPublishingCredentialsPoliciesEntityInner inner =
+            this.serviceClient().updateFtpAllowed(resourceGroupName, name, csmPublishingAccessPoliciesEntity);
         if (inner != null) {
             return new CsmPublishingCredentialsPoliciesEntityImpl(inner, this.manager());
         } else {
@@ -447,12 +437,8 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public CsmPublishingCredentialsPoliciesEntity updateScmAllowed(
-        String resourceGroupName,
-        String name,
-        CsmPublishingCredentialsPoliciesEntityInner csmPublishingAccessPoliciesEntity) {
-        CsmPublishingCredentialsPoliciesEntityInner inner =
-            this.serviceClient().updateScmAllowed(resourceGroupName, name, csmPublishingAccessPoliciesEntity);
+    public CsmPublishingCredentialsPoliciesEntity getScmAllowed(String resourceGroupName, String name) {
+        CsmPublishingCredentialsPoliciesEntityInner inner = this.serviceClient().getScmAllowed(resourceGroupName, name);
         if (inner != null) {
             return new CsmPublishingCredentialsPoliciesEntityImpl(inner, this.manager());
         } else {
@@ -480,6 +466,19 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
+    public CsmPublishingCredentialsPoliciesEntity updateScmAllowed(
+        String resourceGroupName,
+        String name,
+        CsmPublishingCredentialsPoliciesEntityInner csmPublishingAccessPoliciesEntity) {
+        CsmPublishingCredentialsPoliciesEntityInner inner =
+            this.serviceClient().updateScmAllowed(resourceGroupName, name, csmPublishingAccessPoliciesEntity);
+        if (inner != null) {
+            return new CsmPublishingCredentialsPoliciesEntityImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
     public PagedIterable<SiteConfigResource> listConfigurations(String resourceGroupName, String name) {
         PagedIterable<SiteConfigResourceInner> inner = this.serviceClient().listConfigurations(resourceGroupName, name);
         return Utils.mapPage(inner, inner1 -> new SiteConfigResourceImpl(inner1, this.manager()));
@@ -490,17 +489,6 @@ public final class WebAppsImpl implements WebApps {
         PagedIterable<SiteConfigResourceInner> inner =
             this.serviceClient().listConfigurations(resourceGroupName, name, context);
         return Utils.mapPage(inner, inner1 -> new SiteConfigResourceImpl(inner1, this.manager()));
-    }
-
-    public StringDictionary updateApplicationSettings(
-        String resourceGroupName, String name, StringDictionaryInner appSettings) {
-        StringDictionaryInner inner =
-            this.serviceClient().updateApplicationSettings(resourceGroupName, name, appSettings);
-        if (inner != null) {
-            return new StringDictionaryImpl(inner, this.manager());
-        } else {
-            return null;
-        }
     }
 
     public Response<StringDictionary> updateApplicationSettingsWithResponse(
@@ -518,8 +506,10 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public StringDictionary listApplicationSettings(String resourceGroupName, String name) {
-        StringDictionaryInner inner = this.serviceClient().listApplicationSettings(resourceGroupName, name);
+    public StringDictionary updateApplicationSettings(
+        String resourceGroupName, String name, StringDictionaryInner appSettings) {
+        StringDictionaryInner inner =
+            this.serviceClient().updateApplicationSettings(resourceGroupName, name, appSettings);
         if (inner != null) {
             return new StringDictionaryImpl(inner, this.manager());
         } else {
@@ -542,12 +532,10 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public SiteAuthSettings updateAuthSettings(
-        String resourceGroupName, String name, SiteAuthSettingsInner siteAuthSettings) {
-        SiteAuthSettingsInner inner =
-            this.serviceClient().updateAuthSettings(resourceGroupName, name, siteAuthSettings);
+    public StringDictionary listApplicationSettings(String resourceGroupName, String name) {
+        StringDictionaryInner inner = this.serviceClient().listApplicationSettings(resourceGroupName, name);
         if (inner != null) {
-            return new SiteAuthSettingsImpl(inner, this.manager());
+            return new StringDictionaryImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -568,8 +556,10 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public SiteAuthSettings getAuthSettings(String resourceGroupName, String name) {
-        SiteAuthSettingsInner inner = this.serviceClient().getAuthSettings(resourceGroupName, name);
+    public SiteAuthSettings updateAuthSettings(
+        String resourceGroupName, String name, SiteAuthSettingsInner siteAuthSettings) {
+        SiteAuthSettingsInner inner =
+            this.serviceClient().updateAuthSettings(resourceGroupName, name, siteAuthSettings);
         if (inner != null) {
             return new SiteAuthSettingsImpl(inner, this.manager());
         } else {
@@ -592,10 +582,10 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public SiteAuthSettingsV2 getAuthSettingsV2WithoutSecrets(String resourceGroupName, String name) {
-        SiteAuthSettingsV2Inner inner = this.serviceClient().getAuthSettingsV2WithoutSecrets(resourceGroupName, name);
+    public SiteAuthSettings getAuthSettings(String resourceGroupName, String name) {
+        SiteAuthSettingsInner inner = this.serviceClient().getAuthSettings(resourceGroupName, name);
         if (inner != null) {
-            return new SiteAuthSettingsV2Impl(inner, this.manager());
+            return new SiteAuthSettingsImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -616,10 +606,8 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public SiteAuthSettingsV2 updateAuthSettingsV2(
-        String resourceGroupName, String name, SiteAuthSettingsV2Inner siteAuthSettingsV2) {
-        SiteAuthSettingsV2Inner inner =
-            this.serviceClient().updateAuthSettingsV2(resourceGroupName, name, siteAuthSettingsV2);
+    public SiteAuthSettingsV2 getAuthSettingsV2WithoutSecrets(String resourceGroupName, String name) {
+        SiteAuthSettingsV2Inner inner = this.serviceClient().getAuthSettingsV2WithoutSecrets(resourceGroupName, name);
         if (inner != null) {
             return new SiteAuthSettingsV2Impl(inner, this.manager());
         } else {
@@ -642,8 +630,10 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public SiteAuthSettingsV2 getAuthSettingsV2(String resourceGroupName, String name) {
-        SiteAuthSettingsV2Inner inner = this.serviceClient().getAuthSettingsV2(resourceGroupName, name);
+    public SiteAuthSettingsV2 updateAuthSettingsV2(
+        String resourceGroupName, String name, SiteAuthSettingsV2Inner siteAuthSettingsV2) {
+        SiteAuthSettingsV2Inner inner =
+            this.serviceClient().updateAuthSettingsV2(resourceGroupName, name, siteAuthSettingsV2);
         if (inner != null) {
             return new SiteAuthSettingsV2Impl(inner, this.manager());
         } else {
@@ -666,12 +656,10 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public AzureStoragePropertyDictionaryResource updateAzureStorageAccounts(
-        String resourceGroupName, String name, AzureStoragePropertyDictionaryResourceInner azureStorageAccounts) {
-        AzureStoragePropertyDictionaryResourceInner inner =
-            this.serviceClient().updateAzureStorageAccounts(resourceGroupName, name, azureStorageAccounts);
+    public SiteAuthSettingsV2 getAuthSettingsV2(String resourceGroupName, String name) {
+        SiteAuthSettingsV2Inner inner = this.serviceClient().getAuthSettingsV2(resourceGroupName, name);
         if (inner != null) {
-            return new AzureStoragePropertyDictionaryResourceImpl(inner, this.manager());
+            return new SiteAuthSettingsV2Impl(inner, this.manager());
         } else {
             return null;
         }
@@ -697,9 +685,10 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public AzureStoragePropertyDictionaryResource listAzureStorageAccounts(String resourceGroupName, String name) {
+    public AzureStoragePropertyDictionaryResource updateAzureStorageAccounts(
+        String resourceGroupName, String name, AzureStoragePropertyDictionaryResourceInner azureStorageAccounts) {
         AzureStoragePropertyDictionaryResourceInner inner =
-            this.serviceClient().listAzureStorageAccounts(resourceGroupName, name);
+            this.serviceClient().updateAzureStorageAccounts(resourceGroupName, name, azureStorageAccounts);
         if (inner != null) {
             return new AzureStoragePropertyDictionaryResourceImpl(inner, this.manager());
         } else {
@@ -722,10 +711,11 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public BackupRequest updateBackupConfiguration(String resourceGroupName, String name, BackupRequestInner request) {
-        BackupRequestInner inner = this.serviceClient().updateBackupConfiguration(resourceGroupName, name, request);
+    public AzureStoragePropertyDictionaryResource listAzureStorageAccounts(String resourceGroupName, String name) {
+        AzureStoragePropertyDictionaryResourceInner inner =
+            this.serviceClient().listAzureStorageAccounts(resourceGroupName, name);
         if (inner != null) {
-            return new BackupRequestImpl(inner, this.manager());
+            return new AzureStoragePropertyDictionaryResourceImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -746,8 +736,13 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public void deleteBackupConfiguration(String resourceGroupName, String name) {
-        this.serviceClient().deleteBackupConfiguration(resourceGroupName, name);
+    public BackupRequest updateBackupConfiguration(String resourceGroupName, String name, BackupRequestInner request) {
+        BackupRequestInner inner = this.serviceClient().updateBackupConfiguration(resourceGroupName, name, request);
+        if (inner != null) {
+            return new BackupRequestImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> deleteBackupConfigurationWithResponse(
@@ -755,13 +750,8 @@ public final class WebAppsImpl implements WebApps {
         return this.serviceClient().deleteBackupConfigurationWithResponse(resourceGroupName, name, context);
     }
 
-    public BackupRequest getBackupConfiguration(String resourceGroupName, String name) {
-        BackupRequestInner inner = this.serviceClient().getBackupConfiguration(resourceGroupName, name);
-        if (inner != null) {
-            return new BackupRequestImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void deleteBackupConfiguration(String resourceGroupName, String name) {
+        this.serviceClient().deleteBackupConfiguration(resourceGroupName, name);
     }
 
     public Response<BackupRequest> getBackupConfigurationWithResponse(
@@ -779,6 +769,15 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
+    public BackupRequest getBackupConfiguration(String resourceGroupName, String name) {
+        BackupRequestInner inner = this.serviceClient().getBackupConfiguration(resourceGroupName, name);
+        if (inner != null) {
+            return new BackupRequestImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
     public PagedIterable<ApiKVReference> getAppSettingsKeyVaultReferences(String resourceGroupName, String name) {
         PagedIterable<ApiKVReferenceInner> inner =
             this.serviceClient().getAppSettingsKeyVaultReferences(resourceGroupName, name);
@@ -790,16 +789,6 @@ public final class WebAppsImpl implements WebApps {
         PagedIterable<ApiKVReferenceInner> inner =
             this.serviceClient().getAppSettingsKeyVaultReferences(resourceGroupName, name, context);
         return Utils.mapPage(inner, inner1 -> new ApiKVReferenceImpl(inner1, this.manager()));
-    }
-
-    public ApiKVReference getAppSettingKeyVaultReference(String resourceGroupName, String name, String appSettingKey) {
-        ApiKVReferenceInner inner =
-            this.serviceClient().getAppSettingKeyVaultReference(resourceGroupName, name, appSettingKey);
-        if (inner != null) {
-            return new ApiKVReferenceImpl(inner, this.manager());
-        } else {
-            return null;
-        }
     }
 
     public Response<ApiKVReference> getAppSettingKeyVaultReferenceWithResponse(
@@ -819,6 +808,16 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
+    public ApiKVReference getAppSettingKeyVaultReference(String resourceGroupName, String name, String appSettingKey) {
+        ApiKVReferenceInner inner =
+            this.serviceClient().getAppSettingKeyVaultReference(resourceGroupName, name, appSettingKey);
+        if (inner != null) {
+            return new ApiKVReferenceImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
     public PagedIterable<ApiKVReference> getSiteConnectionStringKeyVaultReferences(
         String resourceGroupName, String name) {
         PagedIterable<ApiKVReferenceInner> inner =
@@ -831,17 +830,6 @@ public final class WebAppsImpl implements WebApps {
         PagedIterable<ApiKVReferenceInner> inner =
             this.serviceClient().getSiteConnectionStringKeyVaultReferences(resourceGroupName, name, context);
         return Utils.mapPage(inner, inner1 -> new ApiKVReferenceImpl(inner1, this.manager()));
-    }
-
-    public ApiKVReference getSiteConnectionStringKeyVaultReference(
-        String resourceGroupName, String name, String connectionStringKey) {
-        ApiKVReferenceInner inner =
-            this.serviceClient().getSiteConnectionStringKeyVaultReference(resourceGroupName, name, connectionStringKey);
-        if (inner != null) {
-            return new ApiKVReferenceImpl(inner, this.manager());
-        } else {
-            return null;
-        }
     }
 
     public Response<ApiKVReference> getSiteConnectionStringKeyVaultReferenceWithResponse(
@@ -862,12 +850,12 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public ConnectionStringDictionary updateConnectionStrings(
-        String resourceGroupName, String name, ConnectionStringDictionaryInner connectionStrings) {
-        ConnectionStringDictionaryInner inner =
-            this.serviceClient().updateConnectionStrings(resourceGroupName, name, connectionStrings);
+    public ApiKVReference getSiteConnectionStringKeyVaultReference(
+        String resourceGroupName, String name, String connectionStringKey) {
+        ApiKVReferenceInner inner =
+            this.serviceClient().getSiteConnectionStringKeyVaultReference(resourceGroupName, name, connectionStringKey);
         if (inner != null) {
-            return new ConnectionStringDictionaryImpl(inner, this.manager());
+            return new ApiKVReferenceImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -890,8 +878,10 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public ConnectionStringDictionary listConnectionStrings(String resourceGroupName, String name) {
-        ConnectionStringDictionaryInner inner = this.serviceClient().listConnectionStrings(resourceGroupName, name);
+    public ConnectionStringDictionary updateConnectionStrings(
+        String resourceGroupName, String name, ConnectionStringDictionaryInner connectionStrings) {
+        ConnectionStringDictionaryInner inner =
+            this.serviceClient().updateConnectionStrings(resourceGroupName, name, connectionStrings);
         if (inner != null) {
             return new ConnectionStringDictionaryImpl(inner, this.manager());
         } else {
@@ -914,10 +904,10 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public SiteLogsConfig getDiagnosticLogsConfiguration(String resourceGroupName, String name) {
-        SiteLogsConfigInner inner = this.serviceClient().getDiagnosticLogsConfiguration(resourceGroupName, name);
+    public ConnectionStringDictionary listConnectionStrings(String resourceGroupName, String name) {
+        ConnectionStringDictionaryInner inner = this.serviceClient().listConnectionStrings(resourceGroupName, name);
         if (inner != null) {
-            return new SiteLogsConfigImpl(inner, this.manager());
+            return new ConnectionStringDictionaryImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -938,10 +928,8 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public SiteLogsConfig updateDiagnosticLogsConfig(
-        String resourceGroupName, String name, SiteLogsConfigInner siteLogsConfig) {
-        SiteLogsConfigInner inner =
-            this.serviceClient().updateDiagnosticLogsConfig(resourceGroupName, name, siteLogsConfig);
+    public SiteLogsConfig getDiagnosticLogsConfiguration(String resourceGroupName, String name) {
+        SiteLogsConfigInner inner = this.serviceClient().getDiagnosticLogsConfiguration(resourceGroupName, name);
         if (inner != null) {
             return new SiteLogsConfigImpl(inner, this.manager());
         } else {
@@ -966,10 +954,12 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public StringDictionary updateMetadata(String resourceGroupName, String name, StringDictionaryInner metadata) {
-        StringDictionaryInner inner = this.serviceClient().updateMetadata(resourceGroupName, name, metadata);
+    public SiteLogsConfig updateDiagnosticLogsConfig(
+        String resourceGroupName, String name, SiteLogsConfigInner siteLogsConfig) {
+        SiteLogsConfigInner inner =
+            this.serviceClient().updateDiagnosticLogsConfig(resourceGroupName, name, siteLogsConfig);
         if (inner != null) {
-            return new StringDictionaryImpl(inner, this.manager());
+            return new SiteLogsConfigImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -990,8 +980,8 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public StringDictionary listMetadata(String resourceGroupName, String name) {
-        StringDictionaryInner inner = this.serviceClient().listMetadata(resourceGroupName, name);
+    public StringDictionary updateMetadata(String resourceGroupName, String name, StringDictionaryInner metadata) {
+        StringDictionaryInner inner = this.serviceClient().updateMetadata(resourceGroupName, name, metadata);
         if (inner != null) {
             return new StringDictionaryImpl(inner, this.manager());
         } else {
@@ -1008,6 +998,15 @@ public final class WebAppsImpl implements WebApps {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new StringDictionaryImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public StringDictionary listMetadata(String resourceGroupName, String name) {
+        StringDictionaryInner inner = this.serviceClient().listMetadata(resourceGroupName, name);
+        if (inner != null) {
+            return new StringDictionaryImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -1031,15 +1030,6 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public PushSettings updateSitePushSettings(String resourceGroupName, String name, PushSettingsInner pushSettings) {
-        PushSettingsInner inner = this.serviceClient().updateSitePushSettings(resourceGroupName, name, pushSettings);
-        if (inner != null) {
-            return new PushSettingsImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<PushSettings> updateSitePushSettingsWithResponse(
         String resourceGroupName, String name, PushSettingsInner pushSettings, Context context) {
         Response<PushSettingsInner> inner =
@@ -1055,8 +1045,8 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public PushSettings listSitePushSettings(String resourceGroupName, String name) {
-        PushSettingsInner inner = this.serviceClient().listSitePushSettings(resourceGroupName, name);
+    public PushSettings updateSitePushSettings(String resourceGroupName, String name, PushSettingsInner pushSettings) {
+        PushSettingsInner inner = this.serviceClient().updateSitePushSettings(resourceGroupName, name, pushSettings);
         if (inner != null) {
             return new PushSettingsImpl(inner, this.manager());
         } else {
@@ -1079,10 +1069,10 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public SlotConfigNamesResource listSlotConfigurationNames(String resourceGroupName, String name) {
-        SlotConfigNamesResourceInner inner = this.serviceClient().listSlotConfigurationNames(resourceGroupName, name);
+    public PushSettings listSitePushSettings(String resourceGroupName, String name) {
+        PushSettingsInner inner = this.serviceClient().listSitePushSettings(resourceGroupName, name);
         if (inner != null) {
-            return new SlotConfigNamesResourceImpl(inner, this.manager());
+            return new PushSettingsImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -1103,10 +1093,8 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public SlotConfigNamesResource updateSlotConfigurationNames(
-        String resourceGroupName, String name, SlotConfigNamesResourceInner slotConfigNames) {
-        SlotConfigNamesResourceInner inner =
-            this.serviceClient().updateSlotConfigurationNames(resourceGroupName, name, slotConfigNames);
+    public SlotConfigNamesResource listSlotConfigurationNames(String resourceGroupName, String name) {
+        SlotConfigNamesResourceInner inner = this.serviceClient().listSlotConfigurationNames(resourceGroupName, name);
         if (inner != null) {
             return new SlotConfigNamesResourceImpl(inner, this.manager());
         } else {
@@ -1131,10 +1119,12 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public SiteConfigResource getConfiguration(String resourceGroupName, String name) {
-        SiteConfigResourceInner inner = this.serviceClient().getConfiguration(resourceGroupName, name);
+    public SlotConfigNamesResource updateSlotConfigurationNames(
+        String resourceGroupName, String name, SlotConfigNamesResourceInner slotConfigNames) {
+        SlotConfigNamesResourceInner inner =
+            this.serviceClient().updateSlotConfigurationNames(resourceGroupName, name, slotConfigNames);
         if (inner != null) {
-            return new SiteConfigResourceImpl(inner, this.manager());
+            return new SlotConfigNamesResourceImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -1155,10 +1145,8 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public SiteConfigResource createOrUpdateConfiguration(
-        String resourceGroupName, String name, SiteConfigResourceInner siteConfig) {
-        SiteConfigResourceInner inner =
-            this.serviceClient().createOrUpdateConfiguration(resourceGroupName, name, siteConfig);
+    public SiteConfigResource getConfiguration(String resourceGroupName, String name) {
+        SiteConfigResourceInner inner = this.serviceClient().getConfiguration(resourceGroupName, name);
         if (inner != null) {
             return new SiteConfigResourceImpl(inner, this.manager());
         } else {
@@ -1181,9 +1169,10 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public SiteConfigResource updateConfiguration(
+    public SiteConfigResource createOrUpdateConfiguration(
         String resourceGroupName, String name, SiteConfigResourceInner siteConfig) {
-        SiteConfigResourceInner inner = this.serviceClient().updateConfiguration(resourceGroupName, name, siteConfig);
+        SiteConfigResourceInner inner =
+            this.serviceClient().createOrUpdateConfiguration(resourceGroupName, name, siteConfig);
         if (inner != null) {
             return new SiteConfigResourceImpl(inner, this.manager());
         } else {
@@ -1206,6 +1195,16 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
+    public SiteConfigResource updateConfiguration(
+        String resourceGroupName, String name, SiteConfigResourceInner siteConfig) {
+        SiteConfigResourceInner inner = this.serviceClient().updateConfiguration(resourceGroupName, name, siteConfig);
+        if (inner != null) {
+            return new SiteConfigResourceImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
     public PagedIterable<SiteConfigurationSnapshotInfo> listConfigurationSnapshotInfo(
         String resourceGroupName, String name) {
         PagedIterable<SiteConfigurationSnapshotInfoInner> inner =
@@ -1218,16 +1217,6 @@ public final class WebAppsImpl implements WebApps {
         PagedIterable<SiteConfigurationSnapshotInfoInner> inner =
             this.serviceClient().listConfigurationSnapshotInfo(resourceGroupName, name, context);
         return Utils.mapPage(inner, inner1 -> new SiteConfigurationSnapshotInfoImpl(inner1, this.manager()));
-    }
-
-    public SiteConfigResource getConfigurationSnapshot(String resourceGroupName, String name, String snapshotId) {
-        SiteConfigResourceInner inner =
-            this.serviceClient().getConfigurationSnapshot(resourceGroupName, name, snapshotId);
-        if (inner != null) {
-            return new SiteConfigResourceImpl(inner, this.manager());
-        } else {
-            return null;
-        }
     }
 
     public Response<SiteConfigResource> getConfigurationSnapshotWithResponse(
@@ -1245,8 +1234,14 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public void recoverSiteConfigurationSnapshot(String resourceGroupName, String name, String snapshotId) {
-        this.serviceClient().recoverSiteConfigurationSnapshot(resourceGroupName, name, snapshotId);
+    public SiteConfigResource getConfigurationSnapshot(String resourceGroupName, String name, String snapshotId) {
+        SiteConfigResourceInner inner =
+            this.serviceClient().getConfigurationSnapshot(resourceGroupName, name, snapshotId);
+        if (inner != null) {
+            return new SiteConfigResourceImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> recoverSiteConfigurationSnapshotWithResponse(
@@ -1256,20 +1251,26 @@ public final class WebAppsImpl implements WebApps {
             .recoverSiteConfigurationSnapshotWithResponse(resourceGroupName, name, snapshotId, context);
     }
 
+    public void recoverSiteConfigurationSnapshot(String resourceGroupName, String name, String snapshotId) {
+        this.serviceClient().recoverSiteConfigurationSnapshot(resourceGroupName, name, snapshotId);
+    }
+
+    public Response<InputStream> getWebSiteContainerLogsWithResponse(
+        String resourceGroupName, String name, Context context) {
+        return this.serviceClient().getWebSiteContainerLogsWithResponse(resourceGroupName, name, context);
+    }
+
     public InputStream getWebSiteContainerLogs(String resourceGroupName, String name) {
         return this.serviceClient().getWebSiteContainerLogs(resourceGroupName, name);
     }
 
-    public StreamResponse getWebSiteContainerLogsWithResponse(String resourceGroupName, String name, Context context) {
-        return this.serviceClient().getWebSiteContainerLogsWithResponse(resourceGroupName, name, context);
+    public Response<InputStream> getContainerLogsZipWithResponse(
+        String resourceGroupName, String name, Context context) {
+        return this.serviceClient().getContainerLogsZipWithResponse(resourceGroupName, name, context);
     }
 
     public InputStream getContainerLogsZip(String resourceGroupName, String name) {
         return this.serviceClient().getContainerLogsZip(resourceGroupName, name);
-    }
-
-    public StreamResponse getContainerLogsZipWithResponse(String resourceGroupName, String name, Context context) {
-        return this.serviceClient().getContainerLogsZipWithResponse(resourceGroupName, name, context);
     }
 
     public PagedIterable<ContinuousWebJob> listContinuousWebJobs(String resourceGroupName, String name) {
@@ -1283,15 +1284,6 @@ public final class WebAppsImpl implements WebApps {
         PagedIterable<ContinuousWebJobInner> inner =
             this.serviceClient().listContinuousWebJobs(resourceGroupName, name, context);
         return Utils.mapPage(inner, inner1 -> new ContinuousWebJobImpl(inner1, this.manager()));
-    }
-
-    public ContinuousWebJob getContinuousWebJob(String resourceGroupName, String name, String webJobName) {
-        ContinuousWebJobInner inner = this.serviceClient().getContinuousWebJob(resourceGroupName, name, webJobName);
-        if (inner != null) {
-            return new ContinuousWebJobImpl(inner, this.manager());
-        } else {
-            return null;
-        }
     }
 
     public Response<ContinuousWebJob> getContinuousWebJobWithResponse(
@@ -1309,8 +1301,13 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public void deleteContinuousWebJob(String resourceGroupName, String name, String webJobName) {
-        this.serviceClient().deleteContinuousWebJob(resourceGroupName, name, webJobName);
+    public ContinuousWebJob getContinuousWebJob(String resourceGroupName, String name, String webJobName) {
+        ContinuousWebJobInner inner = this.serviceClient().getContinuousWebJob(resourceGroupName, name, webJobName);
+        if (inner != null) {
+            return new ContinuousWebJobImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> deleteContinuousWebJobWithResponse(
@@ -1318,8 +1315,8 @@ public final class WebAppsImpl implements WebApps {
         return this.serviceClient().deleteContinuousWebJobWithResponse(resourceGroupName, name, webJobName, context);
     }
 
-    public void startContinuousWebJob(String resourceGroupName, String name, String webJobName) {
-        this.serviceClient().startContinuousWebJob(resourceGroupName, name, webJobName);
+    public void deleteContinuousWebJob(String resourceGroupName, String name, String webJobName) {
+        this.serviceClient().deleteContinuousWebJob(resourceGroupName, name, webJobName);
     }
 
     public Response<Void> startContinuousWebJobWithResponse(
@@ -1327,13 +1324,17 @@ public final class WebAppsImpl implements WebApps {
         return this.serviceClient().startContinuousWebJobWithResponse(resourceGroupName, name, webJobName, context);
     }
 
-    public void stopContinuousWebJob(String resourceGroupName, String name, String webJobName) {
-        this.serviceClient().stopContinuousWebJob(resourceGroupName, name, webJobName);
+    public void startContinuousWebJob(String resourceGroupName, String name, String webJobName) {
+        this.serviceClient().startContinuousWebJob(resourceGroupName, name, webJobName);
     }
 
     public Response<Void> stopContinuousWebJobWithResponse(
         String resourceGroupName, String name, String webJobName, Context context) {
         return this.serviceClient().stopContinuousWebJobWithResponse(resourceGroupName, name, webJobName, context);
+    }
+
+    public void stopContinuousWebJob(String resourceGroupName, String name, String webJobName) {
+        this.serviceClient().stopContinuousWebJob(resourceGroupName, name, webJobName);
     }
 
     public PagedIterable<CsmDeploymentStatus> listProductionSiteDeploymentStatuses(
@@ -1384,15 +1385,6 @@ public final class WebAppsImpl implements WebApps {
         return Utils.mapPage(inner, inner1 -> new DeploymentImpl(inner1, this.manager()));
     }
 
-    public Deployment getDeployment(String resourceGroupName, String name, String id) {
-        DeploymentInner inner = this.serviceClient().getDeployment(resourceGroupName, name, id);
-        if (inner != null) {
-            return new DeploymentImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<Deployment> getDeploymentWithResponse(
         String resourceGroupName, String name, String id, Context context) {
         Response<DeploymentInner> inner =
@@ -1408,8 +1400,13 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public void deleteDeployment(String resourceGroupName, String name, String id) {
-        this.serviceClient().deleteDeployment(resourceGroupName, name, id);
+    public Deployment getDeployment(String resourceGroupName, String name, String id) {
+        DeploymentInner inner = this.serviceClient().getDeployment(resourceGroupName, name, id);
+        if (inner != null) {
+            return new DeploymentImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> deleteDeploymentWithResponse(
@@ -1417,13 +1414,8 @@ public final class WebAppsImpl implements WebApps {
         return this.serviceClient().deleteDeploymentWithResponse(resourceGroupName, name, id, context);
     }
 
-    public Deployment listDeploymentLog(String resourceGroupName, String name, String id) {
-        DeploymentInner inner = this.serviceClient().listDeploymentLog(resourceGroupName, name, id);
-        if (inner != null) {
-            return new DeploymentImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void deleteDeployment(String resourceGroupName, String name, String id) {
+        this.serviceClient().deleteDeployment(resourceGroupName, name, id);
     }
 
     public Response<Deployment> listDeploymentLogWithResponse(
@@ -1441,10 +1433,10 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public RestoreRequest discoverBackup(String resourceGroupName, String name, RestoreRequestInner request) {
-        RestoreRequestInner inner = this.serviceClient().discoverBackup(resourceGroupName, name, request);
+    public Deployment listDeploymentLog(String resourceGroupName, String name, String id) {
+        DeploymentInner inner = this.serviceClient().listDeploymentLog(resourceGroupName, name, id);
         if (inner != null) {
-            return new RestoreRequestImpl(inner, this.manager());
+            return new DeploymentImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -1465,6 +1457,15 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
+    public RestoreRequest discoverBackup(String resourceGroupName, String name, RestoreRequestInner request) {
+        RestoreRequestInner inner = this.serviceClient().discoverBackup(resourceGroupName, name, request);
+        if (inner != null) {
+            return new RestoreRequestImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
     public PagedIterable<Identifier> listDomainOwnershipIdentifiers(String resourceGroupName, String name) {
         PagedIterable<IdentifierInner> inner =
             this.serviceClient().listDomainOwnershipIdentifiers(resourceGroupName, name);
@@ -1476,17 +1477,6 @@ public final class WebAppsImpl implements WebApps {
         PagedIterable<IdentifierInner> inner =
             this.serviceClient().listDomainOwnershipIdentifiers(resourceGroupName, name, context);
         return Utils.mapPage(inner, inner1 -> new IdentifierImpl(inner1, this.manager()));
-    }
-
-    public Identifier getDomainOwnershipIdentifier(
-        String resourceGroupName, String name, String domainOwnershipIdentifierName) {
-        IdentifierInner inner =
-            this.serviceClient().getDomainOwnershipIdentifier(resourceGroupName, name, domainOwnershipIdentifierName);
-        if (inner != null) {
-            return new IdentifierImpl(inner, this.manager());
-        } else {
-            return null;
-        }
     }
 
     public Response<Identifier> getDomainOwnershipIdentifierWithResponse(
@@ -1507,9 +1497,15 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public void deleteDomainOwnershipIdentifier(
+    public Identifier getDomainOwnershipIdentifier(
         String resourceGroupName, String name, String domainOwnershipIdentifierName) {
-        this.serviceClient().deleteDomainOwnershipIdentifier(resourceGroupName, name, domainOwnershipIdentifierName);
+        IdentifierInner inner =
+            this.serviceClient().getDomainOwnershipIdentifier(resourceGroupName, name, domainOwnershipIdentifierName);
+        if (inner != null) {
+            return new IdentifierImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> deleteDomainOwnershipIdentifierWithResponse(
@@ -1520,13 +1516,9 @@ public final class WebAppsImpl implements WebApps {
                 resourceGroupName, name, domainOwnershipIdentifierName, context);
     }
 
-    public MSDeployStatus getMSDeployStatus(String resourceGroupName, String name) {
-        MSDeployStatusInner inner = this.serviceClient().getMSDeployStatus(resourceGroupName, name);
-        if (inner != null) {
-            return new MSDeployStatusImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void deleteDomainOwnershipIdentifier(
+        String resourceGroupName, String name, String domainOwnershipIdentifierName) {
+        this.serviceClient().deleteDomainOwnershipIdentifier(resourceGroupName, name, domainOwnershipIdentifierName);
     }
 
     public Response<MSDeployStatus> getMSDeployStatusWithResponse(
@@ -1539,6 +1531,15 @@ public final class WebAppsImpl implements WebApps {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new MSDeployStatusImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public MSDeployStatus getMSDeployStatus(String resourceGroupName, String name) {
+        MSDeployStatusInner inner = this.serviceClient().getMSDeployStatus(resourceGroupName, name);
+        if (inner != null) {
+            return new MSDeployStatusImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -1564,15 +1565,6 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public MSDeployLog getMSDeployLog(String resourceGroupName, String name) {
-        MSDeployLogInner inner = this.serviceClient().getMSDeployLog(resourceGroupName, name);
-        if (inner != null) {
-            return new MSDeployLogImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<MSDeployLog> getMSDeployLogWithResponse(String resourceGroupName, String name, Context context) {
         Response<MSDeployLogInner> inner =
             this.serviceClient().getMSDeployLogWithResponse(resourceGroupName, name, context);
@@ -1587,21 +1579,30 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public Object getOneDeployStatus(String resourceGroupName, String name) {
-        return this.serviceClient().getOneDeployStatus(resourceGroupName, name);
+    public MSDeployLog getMSDeployLog(String resourceGroupName, String name) {
+        MSDeployLogInner inner = this.serviceClient().getMSDeployLog(resourceGroupName, name);
+        if (inner != null) {
+            return new MSDeployLogImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Object> getOneDeployStatusWithResponse(String resourceGroupName, String name, Context context) {
         return this.serviceClient().getOneDeployStatusWithResponse(resourceGroupName, name, context);
     }
 
-    public Object createOneDeployOperation(String resourceGroupName, String name) {
-        return this.serviceClient().createOneDeployOperation(resourceGroupName, name);
+    public Object getOneDeployStatus(String resourceGroupName, String name) {
+        return this.serviceClient().getOneDeployStatus(resourceGroupName, name);
     }
 
     public Response<Object> createOneDeployOperationWithResponse(
         String resourceGroupName, String name, Context context) {
         return this.serviceClient().createOneDeployOperationWithResponse(resourceGroupName, name, context);
+    }
+
+    public Object createOneDeployOperation(String resourceGroupName, String name) {
+        return this.serviceClient().createOneDeployOperation(resourceGroupName, name);
     }
 
     public PagedIterable<FunctionEnvelope> listFunctions(String resourceGroupName, String name) {
@@ -1615,21 +1616,12 @@ public final class WebAppsImpl implements WebApps {
         return Utils.mapPage(inner, inner1 -> new FunctionEnvelopeImpl(inner1, this.manager()));
     }
 
-    public String getFunctionsAdminToken(String resourceGroupName, String name) {
-        return this.serviceClient().getFunctionsAdminToken(resourceGroupName, name);
-    }
-
     public Response<String> getFunctionsAdminTokenWithResponse(String resourceGroupName, String name, Context context) {
         return this.serviceClient().getFunctionsAdminTokenWithResponse(resourceGroupName, name, context);
     }
 
-    public FunctionEnvelope getFunction(String resourceGroupName, String name, String functionName) {
-        FunctionEnvelopeInner inner = this.serviceClient().getFunction(resourceGroupName, name, functionName);
-        if (inner != null) {
-            return new FunctionEnvelopeImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public String getFunctionsAdminToken(String resourceGroupName, String name) {
+        return this.serviceClient().getFunctionsAdminToken(resourceGroupName, name);
     }
 
     public Response<FunctionEnvelope> getFunctionWithResponse(
@@ -1647,8 +1639,13 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public void deleteFunction(String resourceGroupName, String name, String functionName) {
-        this.serviceClient().deleteFunction(resourceGroupName, name, functionName);
+    public FunctionEnvelope getFunction(String resourceGroupName, String name, String functionName) {
+        FunctionEnvelopeInner inner = this.serviceClient().getFunction(resourceGroupName, name, functionName);
+        if (inner != null) {
+            return new FunctionEnvelopeImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> deleteFunctionWithResponse(
@@ -1656,15 +1653,8 @@ public final class WebAppsImpl implements WebApps {
         return this.serviceClient().deleteFunctionWithResponse(resourceGroupName, name, functionName, context);
     }
 
-    public KeyInfo createOrUpdateFunctionSecret(
-        String resourceGroupName, String name, String functionName, String keyName, KeyInfoInner key) {
-        KeyInfoInner inner =
-            this.serviceClient().createOrUpdateFunctionSecret(resourceGroupName, name, functionName, keyName, key);
-        if (inner != null) {
-            return new KeyInfoImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void deleteFunction(String resourceGroupName, String name, String functionName) {
+        this.serviceClient().deleteFunction(resourceGroupName, name, functionName);
     }
 
     public Response<KeyInfo> createOrUpdateFunctionSecretWithResponse(
@@ -1684,8 +1674,15 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public void deleteFunctionSecret(String resourceGroupName, String name, String functionName, String keyName) {
-        this.serviceClient().deleteFunctionSecret(resourceGroupName, name, functionName, keyName);
+    public KeyInfo createOrUpdateFunctionSecret(
+        String resourceGroupName, String name, String functionName, String keyName, KeyInfoInner key) {
+        KeyInfoInner inner =
+            this.serviceClient().createOrUpdateFunctionSecret(resourceGroupName, name, functionName, keyName, key);
+        if (inner != null) {
+            return new KeyInfoImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> deleteFunctionSecretWithResponse(
@@ -1695,13 +1692,8 @@ public final class WebAppsImpl implements WebApps {
             .deleteFunctionSecretWithResponse(resourceGroupName, name, functionName, keyName, context);
     }
 
-    public StringDictionary listFunctionKeys(String resourceGroupName, String name, String functionName) {
-        StringDictionaryInner inner = this.serviceClient().listFunctionKeys(resourceGroupName, name, functionName);
-        if (inner != null) {
-            return new StringDictionaryImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void deleteFunctionSecret(String resourceGroupName, String name, String functionName, String keyName) {
+        this.serviceClient().deleteFunctionSecret(resourceGroupName, name, functionName, keyName);
     }
 
     public Response<StringDictionary> listFunctionKeysWithResponse(
@@ -1719,10 +1711,10 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public FunctionSecrets listFunctionSecrets(String resourceGroupName, String name, String functionName) {
-        FunctionSecretsInner inner = this.serviceClient().listFunctionSecrets(resourceGroupName, name, functionName);
+    public StringDictionary listFunctionKeys(String resourceGroupName, String name, String functionName) {
+        StringDictionaryInner inner = this.serviceClient().listFunctionKeys(resourceGroupName, name, functionName);
         if (inner != null) {
-            return new FunctionSecretsImpl(inner, this.manager());
+            return new StringDictionaryImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -1743,10 +1735,10 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public HostKeys listHostKeys(String resourceGroupName, String name) {
-        HostKeysInner inner = this.serviceClient().listHostKeys(resourceGroupName, name);
+    public FunctionSecrets listFunctionSecrets(String resourceGroupName, String name, String functionName) {
+        FunctionSecretsInner inner = this.serviceClient().listFunctionSecrets(resourceGroupName, name, functionName);
         if (inner != null) {
-            return new HostKeysImpl(inner, this.manager());
+            return new FunctionSecretsImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -1765,31 +1757,29 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public void listSyncStatus(String resourceGroupName, String name) {
-        this.serviceClient().listSyncStatus(resourceGroupName, name);
+    public HostKeys listHostKeys(String resourceGroupName, String name) {
+        HostKeysInner inner = this.serviceClient().listHostKeys(resourceGroupName, name);
+        if (inner != null) {
+            return new HostKeysImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> listSyncStatusWithResponse(String resourceGroupName, String name, Context context) {
         return this.serviceClient().listSyncStatusWithResponse(resourceGroupName, name, context);
     }
 
-    public void syncFunctions(String resourceGroupName, String name) {
-        this.serviceClient().syncFunctions(resourceGroupName, name);
+    public void listSyncStatus(String resourceGroupName, String name) {
+        this.serviceClient().listSyncStatus(resourceGroupName, name);
     }
 
     public Response<Void> syncFunctionsWithResponse(String resourceGroupName, String name, Context context) {
         return this.serviceClient().syncFunctionsWithResponse(resourceGroupName, name, context);
     }
 
-    public KeyInfo createOrUpdateHostSecret(
-        String resourceGroupName, String name, String keyType, String keyName, KeyInfoInner key) {
-        KeyInfoInner inner =
-            this.serviceClient().createOrUpdateHostSecret(resourceGroupName, name, keyType, keyName, key);
-        if (inner != null) {
-            return new KeyInfoImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void syncFunctions(String resourceGroupName, String name) {
+        this.serviceClient().syncFunctions(resourceGroupName, name);
     }
 
     public Response<KeyInfo> createOrUpdateHostSecretWithResponse(
@@ -1809,13 +1799,24 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public void deleteHostSecret(String resourceGroupName, String name, String keyType, String keyName) {
-        this.serviceClient().deleteHostSecret(resourceGroupName, name, keyType, keyName);
+    public KeyInfo createOrUpdateHostSecret(
+        String resourceGroupName, String name, String keyType, String keyName, KeyInfoInner key) {
+        KeyInfoInner inner =
+            this.serviceClient().createOrUpdateHostSecret(resourceGroupName, name, keyType, keyName, key);
+        if (inner != null) {
+            return new KeyInfoImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> deleteHostSecretWithResponse(
         String resourceGroupName, String name, String keyType, String keyName, Context context) {
         return this.serviceClient().deleteHostSecretWithResponse(resourceGroupName, name, keyType, keyName, context);
+    }
+
+    public void deleteHostSecret(String resourceGroupName, String name, String keyType, String keyName) {
+        this.serviceClient().deleteHostSecret(resourceGroupName, name, keyType, keyName);
     }
 
     public PagedIterable<HostnameBinding> listHostnameBindings(String resourceGroupName, String name) {
@@ -1827,15 +1828,6 @@ public final class WebAppsImpl implements WebApps {
         PagedIterable<HostnameBindingInner> inner =
             this.serviceClient().listHostnameBindings(resourceGroupName, name, context);
         return Utils.mapPage(inner, inner1 -> new HostnameBindingImpl(inner1, this.manager()));
-    }
-
-    public HostnameBinding getHostnameBinding(String resourceGroupName, String name, String hostname) {
-        HostnameBindingInner inner = this.serviceClient().getHostnameBinding(resourceGroupName, name, hostname);
-        if (inner != null) {
-            return new HostnameBindingImpl(inner, this.manager());
-        } else {
-            return null;
-        }
     }
 
     public Response<HostnameBinding> getHostnameBindingWithResponse(
@@ -1853,8 +1845,13 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public void deleteHostnameBinding(String resourceGroupName, String name, String hostname) {
-        this.serviceClient().deleteHostnameBinding(resourceGroupName, name, hostname);
+    public HostnameBinding getHostnameBinding(String resourceGroupName, String name, String hostname) {
+        HostnameBindingInner inner = this.serviceClient().getHostnameBinding(resourceGroupName, name, hostname);
+        if (inner != null) {
+            return new HostnameBindingImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> deleteHostnameBindingWithResponse(
@@ -1862,15 +1859,8 @@ public final class WebAppsImpl implements WebApps {
         return this.serviceClient().deleteHostnameBindingWithResponse(resourceGroupName, name, hostname, context);
     }
 
-    public HybridConnection getHybridConnection(
-        String resourceGroupName, String name, String namespaceName, String relayName) {
-        HybridConnectionInner inner =
-            this.serviceClient().getHybridConnection(resourceGroupName, name, namespaceName, relayName);
-        if (inner != null) {
-            return new HybridConnectionImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void deleteHostnameBinding(String resourceGroupName, String name, String hostname) {
+        this.serviceClient().deleteHostnameBinding(resourceGroupName, name, hostname);
     }
 
     public Response<HybridConnection> getHybridConnectionWithResponse(
@@ -1890,8 +1880,15 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public void deleteHybridConnection(String resourceGroupName, String name, String namespaceName, String relayName) {
-        this.serviceClient().deleteHybridConnection(resourceGroupName, name, namespaceName, relayName);
+    public HybridConnection getHybridConnection(
+        String resourceGroupName, String name, String namespaceName, String relayName) {
+        HybridConnectionInner inner =
+            this.serviceClient().getHybridConnection(resourceGroupName, name, namespaceName, relayName);
+        if (inner != null) {
+            return new HybridConnectionImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> deleteHybridConnectionWithResponse(
@@ -1901,13 +1898,8 @@ public final class WebAppsImpl implements WebApps {
             .deleteHybridConnectionWithResponse(resourceGroupName, name, namespaceName, relayName, context);
     }
 
-    public HybridConnection listHybridConnections(String resourceGroupName, String name) {
-        HybridConnectionInner inner = this.serviceClient().listHybridConnections(resourceGroupName, name);
-        if (inner != null) {
-            return new HybridConnectionImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void deleteHybridConnection(String resourceGroupName, String name, String namespaceName, String relayName) {
+        this.serviceClient().deleteHybridConnection(resourceGroupName, name, namespaceName, relayName);
     }
 
     public Response<HybridConnection> listHybridConnectionsWithResponse(
@@ -1925,11 +1917,10 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public RelayServiceConnectionEntity listRelayServiceConnections(String resourceGroupName, String name) {
-        RelayServiceConnectionEntityInner inner =
-            this.serviceClient().listRelayServiceConnections(resourceGroupName, name);
+    public HybridConnection listHybridConnections(String resourceGroupName, String name) {
+        HybridConnectionInner inner = this.serviceClient().listHybridConnections(resourceGroupName, name);
         if (inner != null) {
-            return new RelayServiceConnectionEntityImpl(inner, this.manager());
+            return new HybridConnectionImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -1950,10 +1941,9 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public RelayServiceConnectionEntity getRelayServiceConnection(
-        String resourceGroupName, String name, String entityName) {
+    public RelayServiceConnectionEntity listRelayServiceConnections(String resourceGroupName, String name) {
         RelayServiceConnectionEntityInner inner =
-            this.serviceClient().getRelayServiceConnection(resourceGroupName, name, entityName);
+            this.serviceClient().listRelayServiceConnections(resourceGroupName, name);
         if (inner != null) {
             return new RelayServiceConnectionEntityImpl(inner, this.manager());
         } else {
@@ -1976,8 +1966,15 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public void deleteRelayServiceConnection(String resourceGroupName, String name, String entityName) {
-        this.serviceClient().deleteRelayServiceConnection(resourceGroupName, name, entityName);
+    public RelayServiceConnectionEntity getRelayServiceConnection(
+        String resourceGroupName, String name, String entityName) {
+        RelayServiceConnectionEntityInner inner =
+            this.serviceClient().getRelayServiceConnection(resourceGroupName, name, entityName);
+        if (inner != null) {
+            return new RelayServiceConnectionEntityImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> deleteRelayServiceConnectionWithResponse(
@@ -1985,6 +1982,10 @@ public final class WebAppsImpl implements WebApps {
         return this
             .serviceClient()
             .deleteRelayServiceConnectionWithResponse(resourceGroupName, name, entityName, context);
+    }
+
+    public void deleteRelayServiceConnection(String resourceGroupName, String name, String entityName) {
+        this.serviceClient().deleteRelayServiceConnection(resourceGroupName, name, entityName);
     }
 
     public PagedIterable<WebSiteInstanceStatus> listInstanceIdentifiers(String resourceGroupName, String name) {
@@ -1998,15 +1999,6 @@ public final class WebAppsImpl implements WebApps {
         PagedIterable<WebSiteInstanceStatusInner> inner =
             this.serviceClient().listInstanceIdentifiers(resourceGroupName, name, context);
         return Utils.mapPage(inner, inner1 -> new WebSiteInstanceStatusImpl(inner1, this.manager()));
-    }
-
-    public WebSiteInstanceStatus getInstanceInfo(String resourceGroupName, String name, String instanceId) {
-        WebSiteInstanceStatusInner inner = this.serviceClient().getInstanceInfo(resourceGroupName, name, instanceId);
-        if (inner != null) {
-            return new WebSiteInstanceStatusImpl(inner, this.manager());
-        } else {
-            return null;
-        }
     }
 
     public Response<WebSiteInstanceStatus> getInstanceInfoWithResponse(
@@ -2024,10 +2016,10 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public MSDeployStatus getInstanceMsDeployStatus(String resourceGroupName, String name, String instanceId) {
-        MSDeployStatusInner inner = this.serviceClient().getInstanceMsDeployStatus(resourceGroupName, name, instanceId);
+    public WebSiteInstanceStatus getInstanceInfo(String resourceGroupName, String name, String instanceId) {
+        WebSiteInstanceStatusInner inner = this.serviceClient().getInstanceInfo(resourceGroupName, name, instanceId);
         if (inner != null) {
-            return new MSDeployStatusImpl(inner, this.manager());
+            return new WebSiteInstanceStatusImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -2043,6 +2035,15 @@ public final class WebAppsImpl implements WebApps {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new MSDeployStatusImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public MSDeployStatus getInstanceMsDeployStatus(String resourceGroupName, String name, String instanceId) {
+        MSDeployStatusInner inner = this.serviceClient().getInstanceMsDeployStatus(resourceGroupName, name, instanceId);
+        if (inner != null) {
+            return new MSDeployStatusImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -2072,15 +2073,6 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public MSDeployLog getInstanceMSDeployLog(String resourceGroupName, String name, String instanceId) {
-        MSDeployLogInner inner = this.serviceClient().getInstanceMSDeployLog(resourceGroupName, name, instanceId);
-        if (inner != null) {
-            return new MSDeployLogImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<MSDeployLog> getInstanceMSDeployLogWithResponse(
         String resourceGroupName, String name, String instanceId, Context context) {
         Response<MSDeployLogInner> inner =
@@ -2091,6 +2083,15 @@ public final class WebAppsImpl implements WebApps {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new MSDeployLogImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public MSDeployLog getInstanceMSDeployLog(String resourceGroupName, String name, String instanceId) {
+        MSDeployLogInner inner = this.serviceClient().getInstanceMSDeployLog(resourceGroupName, name, instanceId);
+        if (inner != null) {
+            return new MSDeployLogImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -2107,16 +2108,6 @@ public final class WebAppsImpl implements WebApps {
         PagedIterable<ProcessInfoInner> inner =
             this.serviceClient().listInstanceProcesses(resourceGroupName, name, instanceId, context);
         return Utils.mapPage(inner, inner1 -> new ProcessInfoImpl(inner1, this.manager()));
-    }
-
-    public ProcessInfo getInstanceProcess(String resourceGroupName, String name, String processId, String instanceId) {
-        ProcessInfoInner inner =
-            this.serviceClient().getInstanceProcess(resourceGroupName, name, processId, instanceId);
-        if (inner != null) {
-            return new ProcessInfoImpl(inner, this.manager());
-        } else {
-            return null;
-        }
     }
 
     public Response<ProcessInfo> getInstanceProcessWithResponse(
@@ -2136,8 +2127,14 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public void deleteInstanceProcess(String resourceGroupName, String name, String processId, String instanceId) {
-        this.serviceClient().deleteInstanceProcess(resourceGroupName, name, processId, instanceId);
+    public ProcessInfo getInstanceProcess(String resourceGroupName, String name, String processId, String instanceId) {
+        ProcessInfoInner inner =
+            this.serviceClient().getInstanceProcess(resourceGroupName, name, processId, instanceId);
+        if (inner != null) {
+            return new ProcessInfoImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> deleteInstanceProcessWithResponse(
@@ -2147,16 +2144,20 @@ public final class WebAppsImpl implements WebApps {
             .deleteInstanceProcessWithResponse(resourceGroupName, name, processId, instanceId, context);
     }
 
-    public InputStream getInstanceProcessDump(
-        String resourceGroupName, String name, String processId, String instanceId) {
-        return this.serviceClient().getInstanceProcessDump(resourceGroupName, name, processId, instanceId);
+    public void deleteInstanceProcess(String resourceGroupName, String name, String processId, String instanceId) {
+        this.serviceClient().deleteInstanceProcess(resourceGroupName, name, processId, instanceId);
     }
 
-    public StreamResponse getInstanceProcessDumpWithResponse(
+    public Response<InputStream> getInstanceProcessDumpWithResponse(
         String resourceGroupName, String name, String processId, String instanceId, Context context) {
         return this
             .serviceClient()
             .getInstanceProcessDumpWithResponse(resourceGroupName, name, processId, instanceId, context);
+    }
+
+    public InputStream getInstanceProcessDump(
+        String resourceGroupName, String name, String processId, String instanceId) {
+        return this.serviceClient().getInstanceProcessDump(resourceGroupName, name, processId, instanceId);
     }
 
     public PagedIterable<ProcessModuleInfo> listInstanceProcessModules(
@@ -2171,17 +2172,6 @@ public final class WebAppsImpl implements WebApps {
         PagedIterable<ProcessModuleInfoInner> inner =
             this.serviceClient().listInstanceProcessModules(resourceGroupName, name, processId, instanceId, context);
         return Utils.mapPage(inner, inner1 -> new ProcessModuleInfoImpl(inner1, this.manager()));
-    }
-
-    public ProcessModuleInfo getInstanceProcessModule(
-        String resourceGroupName, String name, String processId, String baseAddress, String instanceId) {
-        ProcessModuleInfoInner inner =
-            this.serviceClient().getInstanceProcessModule(resourceGroupName, name, processId, baseAddress, instanceId);
-        if (inner != null) {
-            return new ProcessModuleInfoImpl(inner, this.manager());
-        } else {
-            return null;
-        }
     }
 
     public Response<ProcessModuleInfo> getInstanceProcessModuleWithResponse(
@@ -2207,6 +2197,17 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
+    public ProcessModuleInfo getInstanceProcessModule(
+        String resourceGroupName, String name, String processId, String baseAddress, String instanceId) {
+        ProcessModuleInfoInner inner =
+            this.serviceClient().getInstanceProcessModule(resourceGroupName, name, processId, baseAddress, instanceId);
+        if (inner != null) {
+            return new ProcessModuleInfoImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
     public PagedIterable<ProcessThreadInfo> listInstanceProcessThreads(
         String resourceGroupName, String name, String processId, String instanceId) {
         PagedIterable<ProcessThreadInfoInner> inner =
@@ -2219,15 +2220,6 @@ public final class WebAppsImpl implements WebApps {
         PagedIterable<ProcessThreadInfoInner> inner =
             this.serviceClient().listInstanceProcessThreads(resourceGroupName, name, processId, instanceId, context);
         return Utils.mapPage(inner, inner1 -> new ProcessThreadInfoImpl(inner1, this.manager()));
-    }
-
-    public SiteCloneability isCloneable(String resourceGroupName, String name) {
-        SiteCloneabilityInner inner = this.serviceClient().isCloneable(resourceGroupName, name);
-        if (inner != null) {
-            return new SiteCloneabilityImpl(inner, this.manager());
-        } else {
-            return null;
-        }
     }
 
     public Response<SiteCloneability> isCloneableWithResponse(String resourceGroupName, String name, Context context) {
@@ -2244,6 +2236,15 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
+    public SiteCloneability isCloneable(String resourceGroupName, String name) {
+        SiteCloneabilityInner inner = this.serviceClient().isCloneable(resourceGroupName, name);
+        if (inner != null) {
+            return new SiteCloneabilityImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
     public PagedIterable<BackupItem> listSiteBackups(String resourceGroupName, String name) {
         PagedIterable<BackupItemInner> inner = this.serviceClient().listSiteBackups(resourceGroupName, name);
         return Utils.mapPage(inner, inner1 -> new BackupItemImpl(inner1, this.manager()));
@@ -2252,15 +2253,6 @@ public final class WebAppsImpl implements WebApps {
     public PagedIterable<BackupItem> listSiteBackups(String resourceGroupName, String name, Context context) {
         PagedIterable<BackupItemInner> inner = this.serviceClient().listSiteBackups(resourceGroupName, name, context);
         return Utils.mapPage(inner, inner1 -> new BackupItemImpl(inner1, this.manager()));
-    }
-
-    public FunctionSecrets listSyncFunctionTriggers(String resourceGroupName, String name) {
-        FunctionSecretsInner inner = this.serviceClient().listSyncFunctionTriggers(resourceGroupName, name);
-        if (inner != null) {
-            return new FunctionSecretsImpl(inner, this.manager());
-        } else {
-            return null;
-        }
     }
 
     public Response<FunctionSecrets> listSyncFunctionTriggersWithResponse(
@@ -2273,6 +2265,15 @@ public final class WebAppsImpl implements WebApps {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new FunctionSecretsImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public FunctionSecrets listSyncFunctionTriggers(String resourceGroupName, String name) {
+        FunctionSecretsInner inner = this.serviceClient().listSyncFunctionTriggers(resourceGroupName, name);
+        if (inner != null) {
+            return new FunctionSecretsImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -2324,15 +2325,6 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public MigrateMySqlStatus getMigrateMySqlStatus(String resourceGroupName, String name) {
-        MigrateMySqlStatusInner inner = this.serviceClient().getMigrateMySqlStatus(resourceGroupName, name);
-        if (inner != null) {
-            return new MigrateMySqlStatusImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<MigrateMySqlStatus> getMigrateMySqlStatusWithResponse(
         String resourceGroupName, String name, Context context) {
         Response<MigrateMySqlStatusInner> inner =
@@ -2348,10 +2340,10 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public SwiftVirtualNetwork getSwiftVirtualNetworkConnection(String resourceGroupName, String name) {
-        SwiftVirtualNetworkInner inner = this.serviceClient().getSwiftVirtualNetworkConnection(resourceGroupName, name);
+    public MigrateMySqlStatus getMigrateMySqlStatus(String resourceGroupName, String name) {
+        MigrateMySqlStatusInner inner = this.serviceClient().getMigrateMySqlStatus(resourceGroupName, name);
         if (inner != null) {
-            return new SwiftVirtualNetworkImpl(inner, this.manager());
+            return new MigrateMySqlStatusImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -2372,12 +2364,8 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public SwiftVirtualNetwork createOrUpdateSwiftVirtualNetworkConnectionWithCheck(
-        String resourceGroupName, String name, SwiftVirtualNetworkInner connectionEnvelope) {
-        SwiftVirtualNetworkInner inner =
-            this
-                .serviceClient()
-                .createOrUpdateSwiftVirtualNetworkConnectionWithCheck(resourceGroupName, name, connectionEnvelope);
+    public SwiftVirtualNetwork getSwiftVirtualNetworkConnection(String resourceGroupName, String name) {
+        SwiftVirtualNetworkInner inner = this.serviceClient().getSwiftVirtualNetworkConnection(resourceGroupName, name);
         if (inner != null) {
             return new SwiftVirtualNetworkImpl(inner, this.manager());
         } else {
@@ -2403,8 +2391,17 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public void deleteSwiftVirtualNetwork(String resourceGroupName, String name) {
-        this.serviceClient().deleteSwiftVirtualNetwork(resourceGroupName, name);
+    public SwiftVirtualNetwork createOrUpdateSwiftVirtualNetworkConnectionWithCheck(
+        String resourceGroupName, String name, SwiftVirtualNetworkInner connectionEnvelope) {
+        SwiftVirtualNetworkInner inner =
+            this
+                .serviceClient()
+                .createOrUpdateSwiftVirtualNetworkConnectionWithCheck(resourceGroupName, name, connectionEnvelope);
+        if (inner != null) {
+            return new SwiftVirtualNetworkImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> deleteSwiftVirtualNetworkWithResponse(
@@ -2412,17 +2409,8 @@ public final class WebAppsImpl implements WebApps {
         return this.serviceClient().deleteSwiftVirtualNetworkWithResponse(resourceGroupName, name, context);
     }
 
-    public SwiftVirtualNetwork updateSwiftVirtualNetworkConnectionWithCheck(
-        String resourceGroupName, String name, SwiftVirtualNetworkInner connectionEnvelope) {
-        SwiftVirtualNetworkInner inner =
-            this
-                .serviceClient()
-                .updateSwiftVirtualNetworkConnectionWithCheck(resourceGroupName, name, connectionEnvelope);
-        if (inner != null) {
-            return new SwiftVirtualNetworkImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void deleteSwiftVirtualNetwork(String resourceGroupName, String name) {
+        this.serviceClient().deleteSwiftVirtualNetwork(resourceGroupName, name);
     }
 
     public Response<SwiftVirtualNetwork> updateSwiftVirtualNetworkConnectionWithCheckWithResponse(
@@ -2443,10 +2431,14 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public NetworkFeatures listNetworkFeatures(String resourceGroupName, String name, String view) {
-        NetworkFeaturesInner inner = this.serviceClient().listNetworkFeatures(resourceGroupName, name, view);
+    public SwiftVirtualNetwork updateSwiftVirtualNetworkConnectionWithCheck(
+        String resourceGroupName, String name, SwiftVirtualNetworkInner connectionEnvelope) {
+        SwiftVirtualNetworkInner inner =
+            this
+                .serviceClient()
+                .updateSwiftVirtualNetworkConnectionWithCheck(resourceGroupName, name, connectionEnvelope);
         if (inner != null) {
-            return new NetworkFeaturesImpl(inner, this.manager());
+            return new SwiftVirtualNetworkImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -2467,8 +2459,13 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public Object getNetworkTraceOperation(String resourceGroupName, String name, String operationId) {
-        return this.serviceClient().getNetworkTraceOperation(resourceGroupName, name, operationId);
+    public NetworkFeatures listNetworkFeatures(String resourceGroupName, String name, String view) {
+        NetworkFeaturesInner inner = this.serviceClient().listNetworkFeatures(resourceGroupName, name, view);
+        if (inner != null) {
+            return new NetworkFeaturesImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Object> getNetworkTraceOperationWithResponse(
@@ -2476,8 +2473,8 @@ public final class WebAppsImpl implements WebApps {
         return this.serviceClient().getNetworkTraceOperationWithResponse(resourceGroupName, name, operationId, context);
     }
 
-    public String startWebSiteNetworkTrace(String resourceGroupName, String name) {
-        return this.serviceClient().startWebSiteNetworkTrace(resourceGroupName, name);
+    public Object getNetworkTraceOperation(String resourceGroupName, String name, String operationId) {
+        return this.serviceClient().getNetworkTraceOperation(resourceGroupName, name, operationId);
     }
 
     public Response<String> startWebSiteNetworkTraceWithResponse(
@@ -2491,6 +2488,10 @@ public final class WebAppsImpl implements WebApps {
             .serviceClient()
             .startWebSiteNetworkTraceWithResponse(
                 resourceGroupName, name, durationInSeconds, maxFrameLength, sasUrl, context);
+    }
+
+    public String startWebSiteNetworkTrace(String resourceGroupName, String name) {
+        return this.serviceClient().startWebSiteNetworkTrace(resourceGroupName, name);
     }
 
     public Object startWebSiteNetworkTraceOperation(
@@ -2517,26 +2518,12 @@ public final class WebAppsImpl implements WebApps {
                 resourceGroupName, name, durationInSeconds, maxFrameLength, sasUrl, context);
     }
 
-    public void stopWebSiteNetworkTrace(String resourceGroupName, String name) {
-        this.serviceClient().stopWebSiteNetworkTrace(resourceGroupName, name);
-    }
-
     public Response<Void> stopWebSiteNetworkTraceWithResponse(String resourceGroupName, String name, Context context) {
         return this.serviceClient().stopWebSiteNetworkTraceWithResponse(resourceGroupName, name, context);
     }
 
-    public List<NetworkTrace> getNetworkTraces(String resourceGroupName, String name, String operationId) {
-        List<NetworkTraceInner> inner = this.serviceClient().getNetworkTraces(resourceGroupName, name, operationId);
-        if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new NetworkTraceImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
-        } else {
-            return Collections.emptyList();
-        }
+    public void stopWebSiteNetworkTrace(String resourceGroupName, String name) {
+        this.serviceClient().stopWebSiteNetworkTrace(resourceGroupName, name);
     }
 
     public Response<List<NetworkTrace>> getNetworkTracesWithResponse(
@@ -2558,19 +2545,8 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public Object getNetworkTraceOperationV2(String resourceGroupName, String name, String operationId) {
-        return this.serviceClient().getNetworkTraceOperationV2(resourceGroupName, name, operationId);
-    }
-
-    public Response<Object> getNetworkTraceOperationV2WithResponse(
-        String resourceGroupName, String name, String operationId, Context context) {
-        return this
-            .serviceClient()
-            .getNetworkTraceOperationV2WithResponse(resourceGroupName, name, operationId, context);
-    }
-
-    public List<NetworkTrace> getNetworkTracesV2(String resourceGroupName, String name, String operationId) {
-        List<NetworkTraceInner> inner = this.serviceClient().getNetworkTracesV2(resourceGroupName, name, operationId);
+    public List<NetworkTrace> getNetworkTraces(String resourceGroupName, String name, String operationId) {
+        List<NetworkTraceInner> inner = this.serviceClient().getNetworkTraces(resourceGroupName, name, operationId);
         if (inner != null) {
             return Collections
                 .unmodifiableList(
@@ -2581,6 +2557,17 @@ public final class WebAppsImpl implements WebApps {
         } else {
             return Collections.emptyList();
         }
+    }
+
+    public Response<Object> getNetworkTraceOperationV2WithResponse(
+        String resourceGroupName, String name, String operationId, Context context) {
+        return this
+            .serviceClient()
+            .getNetworkTraceOperationV2WithResponse(resourceGroupName, name, operationId, context);
+    }
+
+    public Object getNetworkTraceOperationV2(String resourceGroupName, String name, String operationId) {
+        return this.serviceClient().getNetworkTraceOperationV2(resourceGroupName, name, operationId);
     }
 
     public Response<List<NetworkTrace>> getNetworkTracesV2WithResponse(
@@ -2602,13 +2589,27 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public void generateNewSitePublishingPassword(String resourceGroupName, String name) {
-        this.serviceClient().generateNewSitePublishingPassword(resourceGroupName, name);
+    public List<NetworkTrace> getNetworkTracesV2(String resourceGroupName, String name, String operationId) {
+        List<NetworkTraceInner> inner = this.serviceClient().getNetworkTracesV2(resourceGroupName, name, operationId);
+        if (inner != null) {
+            return Collections
+                .unmodifiableList(
+                    inner
+                        .stream()
+                        .map(inner1 -> new NetworkTraceImpl(inner1, this.manager()))
+                        .collect(Collectors.toList()));
+        } else {
+            return Collections.emptyList();
+        }
     }
 
     public Response<Void> generateNewSitePublishingPasswordWithResponse(
         String resourceGroupName, String name, Context context) {
         return this.serviceClient().generateNewSitePublishingPasswordWithResponse(resourceGroupName, name, context);
+    }
+
+    public void generateNewSitePublishingPassword(String resourceGroupName, String name) {
+        this.serviceClient().generateNewSitePublishingPassword(resourceGroupName, name);
     }
 
     public PagedIterable<PerfMonResponse> listPerfMonCounters(String resourceGroupName, String name) {
@@ -2621,15 +2622,6 @@ public final class WebAppsImpl implements WebApps {
         PagedIterable<PerfMonResponseInner> inner =
             this.serviceClient().listPerfMonCounters(resourceGroupName, name, filter, context);
         return Utils.mapPage(inner, inner1 -> new PerfMonResponseImpl(inner1, this.manager()));
-    }
-
-    public SitePhpErrorLogFlag getSitePhpErrorLogFlag(String resourceGroupName, String name) {
-        SitePhpErrorLogFlagInner inner = this.serviceClient().getSitePhpErrorLogFlag(resourceGroupName, name);
-        if (inner != null) {
-            return new SitePhpErrorLogFlagImpl(inner, this.manager());
-        } else {
-            return null;
-        }
     }
 
     public Response<SitePhpErrorLogFlag> getSitePhpErrorLogFlagWithResponse(
@@ -2647,10 +2639,10 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public PremierAddOn listPremierAddOns(String resourceGroupName, String name) {
-        PremierAddOnInner inner = this.serviceClient().listPremierAddOns(resourceGroupName, name);
+    public SitePhpErrorLogFlag getSitePhpErrorLogFlag(String resourceGroupName, String name) {
+        SitePhpErrorLogFlagInner inner = this.serviceClient().getSitePhpErrorLogFlag(resourceGroupName, name);
         if (inner != null) {
-            return new PremierAddOnImpl(inner, this.manager());
+            return new SitePhpErrorLogFlagImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -2671,8 +2663,8 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public PremierAddOn getPremierAddOn(String resourceGroupName, String name, String premierAddOnName) {
-        PremierAddOnInner inner = this.serviceClient().getPremierAddOn(resourceGroupName, name, premierAddOnName);
+    public PremierAddOn listPremierAddOns(String resourceGroupName, String name) {
+        PremierAddOnInner inner = this.serviceClient().listPremierAddOns(resourceGroupName, name);
         if (inner != null) {
             return new PremierAddOnImpl(inner, this.manager());
         } else {
@@ -2695,8 +2687,13 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public void deletePremierAddOn(String resourceGroupName, String name, String premierAddOnName) {
-        this.serviceClient().deletePremierAddOn(resourceGroupName, name, premierAddOnName);
+    public PremierAddOn getPremierAddOn(String resourceGroupName, String name, String premierAddOnName) {
+        PremierAddOnInner inner = this.serviceClient().getPremierAddOn(resourceGroupName, name, premierAddOnName);
+        if (inner != null) {
+            return new PremierAddOnImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> deletePremierAddOnWithResponse(
@@ -2704,13 +2701,8 @@ public final class WebAppsImpl implements WebApps {
         return this.serviceClient().deletePremierAddOnWithResponse(resourceGroupName, name, premierAddOnName, context);
     }
 
-    public PrivateAccess getPrivateAccess(String resourceGroupName, String name) {
-        PrivateAccessInner inner = this.serviceClient().getPrivateAccess(resourceGroupName, name);
-        if (inner != null) {
-            return new PrivateAccessImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void deletePremierAddOn(String resourceGroupName, String name, String premierAddOnName) {
+        this.serviceClient().deletePremierAddOn(resourceGroupName, name, premierAddOnName);
     }
 
     public Response<PrivateAccess> getPrivateAccessWithResponse(
@@ -2728,8 +2720,8 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public PrivateAccess putPrivateAccessVnet(String resourceGroupName, String name, PrivateAccessInner access) {
-        PrivateAccessInner inner = this.serviceClient().putPrivateAccessVnet(resourceGroupName, name, access);
+    public PrivateAccess getPrivateAccess(String resourceGroupName, String name) {
+        PrivateAccessInner inner = this.serviceClient().getPrivateAccess(resourceGroupName, name);
         if (inner != null) {
             return new PrivateAccessImpl(inner, this.manager());
         } else {
@@ -2752,6 +2744,15 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
+    public PrivateAccess putPrivateAccessVnet(String resourceGroupName, String name, PrivateAccessInner access) {
+        PrivateAccessInner inner = this.serviceClient().putPrivateAccessVnet(resourceGroupName, name, access);
+        if (inner != null) {
+            return new PrivateAccessImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
     public PagedIterable<RemotePrivateEndpointConnectionArmResource> getPrivateEndpointConnectionList(
         String resourceGroupName, String name) {
         PagedIterable<RemotePrivateEndpointConnectionArmResourceInner> inner =
@@ -2768,17 +2769,6 @@ public final class WebAppsImpl implements WebApps {
             .mapPage(inner, inner1 -> new RemotePrivateEndpointConnectionArmResourceImpl(inner1, this.manager()));
     }
 
-    public RemotePrivateEndpointConnectionArmResource getPrivateEndpointConnection(
-        String resourceGroupName, String name, String privateEndpointConnectionName) {
-        RemotePrivateEndpointConnectionArmResourceInner inner =
-            this.serviceClient().getPrivateEndpointConnection(resourceGroupName, name, privateEndpointConnectionName);
-        if (inner != null) {
-            return new RemotePrivateEndpointConnectionArmResourceImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<RemotePrivateEndpointConnectionArmResource> getPrivateEndpointConnectionWithResponse(
         String resourceGroupName, String name, String privateEndpointConnectionName, Context context) {
         Response<RemotePrivateEndpointConnectionArmResourceInner> inner =
@@ -2792,6 +2782,17 @@ public final class WebAppsImpl implements WebApps {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new RemotePrivateEndpointConnectionArmResourceImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public RemotePrivateEndpointConnectionArmResource getPrivateEndpointConnection(
+        String resourceGroupName, String name, String privateEndpointConnectionName) {
+        RemotePrivateEndpointConnectionArmResourceInner inner =
+            this.serviceClient().getPrivateEndpointConnection(resourceGroupName, name, privateEndpointConnectionName);
+        if (inner != null) {
+            return new RemotePrivateEndpointConnectionArmResourceImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -2846,15 +2847,6 @@ public final class WebAppsImpl implements WebApps {
             .deletePrivateEndpointConnection(resourceGroupName, name, privateEndpointConnectionName, context);
     }
 
-    public PrivateLinkResourcesWrapper getPrivateLinkResources(String resourceGroupName, String name) {
-        PrivateLinkResourcesWrapperInner inner = this.serviceClient().getPrivateLinkResources(resourceGroupName, name);
-        if (inner != null) {
-            return new PrivateLinkResourcesWrapperImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<PrivateLinkResourcesWrapper> getPrivateLinkResourcesWithResponse(
         String resourceGroupName, String name, Context context) {
         Response<PrivateLinkResourcesWrapperInner> inner =
@@ -2870,6 +2862,15 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
+    public PrivateLinkResourcesWrapper getPrivateLinkResources(String resourceGroupName, String name) {
+        PrivateLinkResourcesWrapperInner inner = this.serviceClient().getPrivateLinkResources(resourceGroupName, name);
+        if (inner != null) {
+            return new PrivateLinkResourcesWrapperImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
     public PagedIterable<ProcessInfo> listProcesses(String resourceGroupName, String name) {
         PagedIterable<ProcessInfoInner> inner = this.serviceClient().listProcesses(resourceGroupName, name);
         return Utils.mapPage(inner, inner1 -> new ProcessInfoImpl(inner1, this.manager()));
@@ -2878,15 +2879,6 @@ public final class WebAppsImpl implements WebApps {
     public PagedIterable<ProcessInfo> listProcesses(String resourceGroupName, String name, Context context) {
         PagedIterable<ProcessInfoInner> inner = this.serviceClient().listProcesses(resourceGroupName, name, context);
         return Utils.mapPage(inner, inner1 -> new ProcessInfoImpl(inner1, this.manager()));
-    }
-
-    public ProcessInfo getProcess(String resourceGroupName, String name, String processId) {
-        ProcessInfoInner inner = this.serviceClient().getProcess(resourceGroupName, name, processId);
-        if (inner != null) {
-            return new ProcessInfoImpl(inner, this.manager());
-        } else {
-            return null;
-        }
     }
 
     public Response<ProcessInfo> getProcessWithResponse(
@@ -2904,8 +2896,13 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public void deleteProcess(String resourceGroupName, String name, String processId) {
-        this.serviceClient().deleteProcess(resourceGroupName, name, processId);
+    public ProcessInfo getProcess(String resourceGroupName, String name, String processId) {
+        ProcessInfoInner inner = this.serviceClient().getProcess(resourceGroupName, name, processId);
+        if (inner != null) {
+            return new ProcessInfoImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> deleteProcessWithResponse(
@@ -2913,13 +2910,17 @@ public final class WebAppsImpl implements WebApps {
         return this.serviceClient().deleteProcessWithResponse(resourceGroupName, name, processId, context);
     }
 
-    public InputStream getProcessDump(String resourceGroupName, String name, String processId) {
-        return this.serviceClient().getProcessDump(resourceGroupName, name, processId);
+    public void deleteProcess(String resourceGroupName, String name, String processId) {
+        this.serviceClient().deleteProcess(resourceGroupName, name, processId);
     }
 
-    public StreamResponse getProcessDumpWithResponse(
+    public Response<InputStream> getProcessDumpWithResponse(
         String resourceGroupName, String name, String processId, Context context) {
         return this.serviceClient().getProcessDumpWithResponse(resourceGroupName, name, processId, context);
+    }
+
+    public InputStream getProcessDump(String resourceGroupName, String name, String processId) {
+        return this.serviceClient().getProcessDump(resourceGroupName, name, processId);
     }
 
     public PagedIterable<ProcessModuleInfo> listProcessModules(
@@ -2936,17 +2937,6 @@ public final class WebAppsImpl implements WebApps {
         return Utils.mapPage(inner, inner1 -> new ProcessModuleInfoImpl(inner1, this.manager()));
     }
 
-    public ProcessModuleInfo getProcessModule(
-        String resourceGroupName, String name, String processId, String baseAddress) {
-        ProcessModuleInfoInner inner =
-            this.serviceClient().getProcessModule(resourceGroupName, name, processId, baseAddress);
-        if (inner != null) {
-            return new ProcessModuleInfoImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<ProcessModuleInfo> getProcessModuleWithResponse(
         String resourceGroupName, String name, String processId, String baseAddress, Context context) {
         Response<ProcessModuleInfoInner> inner =
@@ -2957,6 +2947,17 @@ public final class WebAppsImpl implements WebApps {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new ProcessModuleInfoImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public ProcessModuleInfo getProcessModule(
+        String resourceGroupName, String name, String processId, String baseAddress) {
+        ProcessModuleInfoInner inner =
+            this.serviceClient().getProcessModule(resourceGroupName, name, processId, baseAddress);
+        if (inner != null) {
+            return new ProcessModuleInfoImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -2989,16 +2990,6 @@ public final class WebAppsImpl implements WebApps {
         return Utils.mapPage(inner, inner1 -> new PublicCertificateImpl(inner1, this.manager()));
     }
 
-    public PublicCertificate getPublicCertificate(String resourceGroupName, String name, String publicCertificateName) {
-        PublicCertificateInner inner =
-            this.serviceClient().getPublicCertificate(resourceGroupName, name, publicCertificateName);
-        if (inner != null) {
-            return new PublicCertificateImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<PublicCertificate> getPublicCertificateWithResponse(
         String resourceGroupName, String name, String publicCertificateName, Context context) {
         Response<PublicCertificateInner> inner =
@@ -3016,8 +3007,14 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public void deletePublicCertificate(String resourceGroupName, String name, String publicCertificateName) {
-        this.serviceClient().deletePublicCertificate(resourceGroupName, name, publicCertificateName);
+    public PublicCertificate getPublicCertificate(String resourceGroupName, String name, String publicCertificateName) {
+        PublicCertificateInner inner =
+            this.serviceClient().getPublicCertificate(resourceGroupName, name, publicCertificateName);
+        if (inner != null) {
+            return new PublicCertificateImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> deletePublicCertificateWithResponse(
@@ -3027,14 +3024,11 @@ public final class WebAppsImpl implements WebApps {
             .deletePublicCertificateWithResponse(resourceGroupName, name, publicCertificateName, context);
     }
 
-    public InputStream listPublishingProfileXmlWithSecrets(
-        String resourceGroupName, String name, CsmPublishingProfileOptions publishingProfileOptions) {
-        return this
-            .serviceClient()
-            .listPublishingProfileXmlWithSecrets(resourceGroupName, name, publishingProfileOptions);
+    public void deletePublicCertificate(String resourceGroupName, String name, String publicCertificateName) {
+        this.serviceClient().deletePublicCertificate(resourceGroupName, name, publicCertificateName);
     }
 
-    public StreamResponse listPublishingProfileXmlWithSecretsWithResponse(
+    public Response<InputStream> listPublishingProfileXmlWithSecretsWithResponse(
         String resourceGroupName, String name, CsmPublishingProfileOptions publishingProfileOptions, Context context) {
         return this
             .serviceClient()
@@ -3042,8 +3036,11 @@ public final class WebAppsImpl implements WebApps {
                 resourceGroupName, name, publishingProfileOptions, context);
     }
 
-    public void resetProductionSlotConfig(String resourceGroupName, String name) {
-        this.serviceClient().resetProductionSlotConfig(resourceGroupName, name);
+    public InputStream listPublishingProfileXmlWithSecrets(
+        String resourceGroupName, String name, CsmPublishingProfileOptions publishingProfileOptions) {
+        return this
+            .serviceClient()
+            .listPublishingProfileXmlWithSecrets(resourceGroupName, name, publishingProfileOptions);
     }
 
     public Response<Void> resetProductionSlotConfigWithResponse(
@@ -3051,13 +3048,17 @@ public final class WebAppsImpl implements WebApps {
         return this.serviceClient().resetProductionSlotConfigWithResponse(resourceGroupName, name, context);
     }
 
-    public void restart(String resourceGroupName, String name) {
-        this.serviceClient().restart(resourceGroupName, name);
+    public void resetProductionSlotConfig(String resourceGroupName, String name) {
+        this.serviceClient().resetProductionSlotConfig(resourceGroupName, name);
     }
 
     public Response<Void> restartWithResponse(
         String resourceGroupName, String name, Boolean softRestart, Boolean synchronous, Context context) {
         return this.serviceClient().restartWithResponse(resourceGroupName, name, softRestart, synchronous, context);
+    }
+
+    public void restart(String resourceGroupName, String name) {
+        this.serviceClient().restart(resourceGroupName, name);
     }
 
     public void restoreFromBackupBlob(String resourceGroupName, String name, RestoreRequestInner request) {
@@ -3098,15 +3099,6 @@ public final class WebAppsImpl implements WebApps {
         return Utils.mapPage(inner, inner1 -> new SiteExtensionInfoImpl(inner1, this.manager()));
     }
 
-    public SiteExtensionInfo getSiteExtension(String resourceGroupName, String name, String siteExtensionId) {
-        SiteExtensionInfoInner inner = this.serviceClient().getSiteExtension(resourceGroupName, name, siteExtensionId);
-        if (inner != null) {
-            return new SiteExtensionInfoImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<SiteExtensionInfo> getSiteExtensionWithResponse(
         String resourceGroupName, String name, String siteExtensionId, Context context) {
         Response<SiteExtensionInfoInner> inner =
@@ -3117,6 +3109,15 @@ public final class WebAppsImpl implements WebApps {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new SiteExtensionInfoImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public SiteExtensionInfo getSiteExtension(String resourceGroupName, String name, String siteExtensionId) {
+        SiteExtensionInfoInner inner = this.serviceClient().getSiteExtension(resourceGroupName, name, siteExtensionId);
+        if (inner != null) {
+            return new SiteExtensionInfoImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -3143,13 +3144,13 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public void deleteSiteExtension(String resourceGroupName, String name, String siteExtensionId) {
-        this.serviceClient().deleteSiteExtension(resourceGroupName, name, siteExtensionId);
-    }
-
     public Response<Void> deleteSiteExtensionWithResponse(
         String resourceGroupName, String name, String siteExtensionId, Context context) {
         return this.serviceClient().deleteSiteExtensionWithResponse(resourceGroupName, name, siteExtensionId, context);
+    }
+
+    public void deleteSiteExtension(String resourceGroupName, String name, String siteExtensionId) {
+        this.serviceClient().deleteSiteExtension(resourceGroupName, name, siteExtensionId);
     }
 
     public PagedIterable<Site> listSlots(String resourceGroupName, String name) {
@@ -3162,15 +3163,6 @@ public final class WebAppsImpl implements WebApps {
         return Utils.mapPage(inner, inner1 -> new SiteImpl(inner1, this.manager()));
     }
 
-    public Site getSlot(String resourceGroupName, String name, String slot) {
-        SiteInner inner = this.serviceClient().getSlot(resourceGroupName, name, slot);
-        if (inner != null) {
-            return new SiteImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<Site> getSlotWithResponse(String resourceGroupName, String name, String slot, Context context) {
         Response<SiteInner> inner = this.serviceClient().getSlotWithResponse(resourceGroupName, name, slot, context);
         if (inner != null) {
@@ -3179,6 +3171,15 @@ public final class WebAppsImpl implements WebApps {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new SiteImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public Site getSlot(String resourceGroupName, String name, String slot) {
+        SiteInner inner = this.serviceClient().getSlot(resourceGroupName, name, slot);
+        if (inner != null) {
+            return new SiteImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -3203,10 +3204,6 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public void deleteSlot(String resourceGroupName, String name, String slot) {
-        this.serviceClient().deleteSlot(resourceGroupName, name, slot);
-    }
-
     public Response<Void> deleteSlotWithResponse(
         String resourceGroupName,
         String name,
@@ -3219,13 +3216,8 @@ public final class WebAppsImpl implements WebApps {
             .deleteSlotWithResponse(resourceGroupName, name, slot, deleteMetrics, deleteEmptyServerFarm, context);
     }
 
-    public Site updateSlot(String resourceGroupName, String name, String slot, SitePatchResourceInner siteEnvelope) {
-        SiteInner inner = this.serviceClient().updateSlot(resourceGroupName, name, slot, siteEnvelope);
-        if (inner != null) {
-            return new SiteImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void deleteSlot(String resourceGroupName, String name, String slot) {
+        this.serviceClient().deleteSlot(resourceGroupName, name, slot);
     }
 
     public Response<Site> updateSlotWithResponse(
@@ -3243,11 +3235,10 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public CustomHostnameAnalysisResult analyzeCustomHostnameSlot(String resourceGroupName, String name, String slot) {
-        CustomHostnameAnalysisResultInner inner =
-            this.serviceClient().analyzeCustomHostnameSlot(resourceGroupName, name, slot);
+    public Site updateSlot(String resourceGroupName, String name, String slot, SitePatchResourceInner siteEnvelope) {
+        SiteInner inner = this.serviceClient().updateSlot(resourceGroupName, name, slot, siteEnvelope);
         if (inner != null) {
-            return new CustomHostnameAnalysisResultImpl(inner, this.manager());
+            return new SiteImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -3270,9 +3261,14 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public void applySlotConfigurationSlot(
-        String resourceGroupName, String name, String slot, CsmSlotEntity slotSwapEntity) {
-        this.serviceClient().applySlotConfigurationSlot(resourceGroupName, name, slot, slotSwapEntity);
+    public CustomHostnameAnalysisResult analyzeCustomHostnameSlot(String resourceGroupName, String name, String slot) {
+        CustomHostnameAnalysisResultInner inner =
+            this.serviceClient().analyzeCustomHostnameSlot(resourceGroupName, name, slot);
+        if (inner != null) {
+            return new CustomHostnameAnalysisResultImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> applySlotConfigurationSlotWithResponse(
@@ -3282,13 +3278,9 @@ public final class WebAppsImpl implements WebApps {
             .applySlotConfigurationSlotWithResponse(resourceGroupName, name, slot, slotSwapEntity, context);
     }
 
-    public BackupItem backupSlot(String resourceGroupName, String name, String slot, BackupRequestInner request) {
-        BackupItemInner inner = this.serviceClient().backupSlot(resourceGroupName, name, slot, request);
-        if (inner != null) {
-            return new BackupItemImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void applySlotConfigurationSlot(
+        String resourceGroupName, String name, String slot, CsmSlotEntity slotSwapEntity) {
+        this.serviceClient().applySlotConfigurationSlot(resourceGroupName, name, slot, slotSwapEntity);
     }
 
     public Response<BackupItem> backupSlotWithResponse(
@@ -3306,6 +3298,15 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
+    public BackupItem backupSlot(String resourceGroupName, String name, String slot, BackupRequestInner request) {
+        BackupItemInner inner = this.serviceClient().backupSlot(resourceGroupName, name, slot, request);
+        if (inner != null) {
+            return new BackupItemImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
     public PagedIterable<BackupItem> listBackupsSlot(String resourceGroupName, String name, String slot) {
         PagedIterable<BackupItemInner> inner = this.serviceClient().listBackupsSlot(resourceGroupName, name, slot);
         return Utils.mapPage(inner, inner1 -> new BackupItemImpl(inner1, this.manager()));
@@ -3316,15 +3317,6 @@ public final class WebAppsImpl implements WebApps {
         PagedIterable<BackupItemInner> inner =
             this.serviceClient().listBackupsSlot(resourceGroupName, name, slot, context);
         return Utils.mapPage(inner, inner1 -> new BackupItemImpl(inner1, this.manager()));
-    }
-
-    public BackupItem getBackupStatusSlot(String resourceGroupName, String name, String backupId, String slot) {
-        BackupItemInner inner = this.serviceClient().getBackupStatusSlot(resourceGroupName, name, backupId, slot);
-        if (inner != null) {
-            return new BackupItemImpl(inner, this.manager());
-        } else {
-            return null;
-        }
     }
 
     public Response<BackupItem> getBackupStatusSlotWithResponse(
@@ -3342,8 +3334,13 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public void deleteBackupSlot(String resourceGroupName, String name, String backupId, String slot) {
-        this.serviceClient().deleteBackupSlot(resourceGroupName, name, backupId, slot);
+    public BackupItem getBackupStatusSlot(String resourceGroupName, String name, String backupId, String slot) {
+        BackupItemInner inner = this.serviceClient().getBackupStatusSlot(resourceGroupName, name, backupId, slot);
+        if (inner != null) {
+            return new BackupItemImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> deleteBackupSlotWithResponse(
@@ -3351,15 +3348,8 @@ public final class WebAppsImpl implements WebApps {
         return this.serviceClient().deleteBackupSlotWithResponse(resourceGroupName, name, backupId, slot, context);
     }
 
-    public BackupItem listBackupStatusSecretsSlot(
-        String resourceGroupName, String name, String backupId, String slot, BackupRequestInner request) {
-        BackupItemInner inner =
-            this.serviceClient().listBackupStatusSecretsSlot(resourceGroupName, name, backupId, slot, request);
-        if (inner != null) {
-            return new BackupItemImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void deleteBackupSlot(String resourceGroupName, String name, String backupId, String slot) {
+        this.serviceClient().deleteBackupSlot(resourceGroupName, name, backupId, slot);
     }
 
     public Response<BackupItem> listBackupStatusSecretsSlotWithResponse(
@@ -3379,6 +3369,17 @@ public final class WebAppsImpl implements WebApps {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new BackupItemImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public BackupItem listBackupStatusSecretsSlot(
+        String resourceGroupName, String name, String backupId, String slot, BackupRequestInner request) {
+        BackupItemInner inner =
+            this.serviceClient().listBackupStatusSecretsSlot(resourceGroupName, name, backupId, slot, request);
+        if (inner != null) {
+            return new BackupItemImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -3413,17 +3414,6 @@ public final class WebAppsImpl implements WebApps {
         return Utils.mapPage(inner, inner1 -> new CsmPublishingCredentialsPoliciesEntityImpl(inner1, this.manager()));
     }
 
-    public CsmPublishingCredentialsPoliciesEntity getFtpAllowedSlot(
-        String resourceGroupName, String name, String slot) {
-        CsmPublishingCredentialsPoliciesEntityInner inner =
-            this.serviceClient().getFtpAllowedSlot(resourceGroupName, name, slot);
-        if (inner != null) {
-            return new CsmPublishingCredentialsPoliciesEntityImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<CsmPublishingCredentialsPoliciesEntity> getFtpAllowedSlotWithResponse(
         String resourceGroupName, String name, String slot, Context context) {
         Response<CsmPublishingCredentialsPoliciesEntityInner> inner =
@@ -3439,13 +3429,10 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public CsmPublishingCredentialsPoliciesEntity updateFtpAllowedSlot(
-        String resourceGroupName,
-        String name,
-        String slot,
-        CsmPublishingCredentialsPoliciesEntityInner csmPublishingAccessPoliciesEntity) {
+    public CsmPublishingCredentialsPoliciesEntity getFtpAllowedSlot(
+        String resourceGroupName, String name, String slot) {
         CsmPublishingCredentialsPoliciesEntityInner inner =
-            this.serviceClient().updateFtpAllowedSlot(resourceGroupName, name, slot, csmPublishingAccessPoliciesEntity);
+            this.serviceClient().getFtpAllowedSlot(resourceGroupName, name, slot);
         if (inner != null) {
             return new CsmPublishingCredentialsPoliciesEntityImpl(inner, this.manager());
         } else {
@@ -3475,10 +3462,13 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public CsmPublishingCredentialsPoliciesEntity getScmAllowedSlot(
-        String resourceGroupName, String name, String slot) {
+    public CsmPublishingCredentialsPoliciesEntity updateFtpAllowedSlot(
+        String resourceGroupName,
+        String name,
+        String slot,
+        CsmPublishingCredentialsPoliciesEntityInner csmPublishingAccessPoliciesEntity) {
         CsmPublishingCredentialsPoliciesEntityInner inner =
-            this.serviceClient().getScmAllowedSlot(resourceGroupName, name, slot);
+            this.serviceClient().updateFtpAllowedSlot(resourceGroupName, name, slot, csmPublishingAccessPoliciesEntity);
         if (inner != null) {
             return new CsmPublishingCredentialsPoliciesEntityImpl(inner, this.manager());
         } else {
@@ -3501,13 +3491,10 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public CsmPublishingCredentialsPoliciesEntity updateScmAllowedSlot(
-        String resourceGroupName,
-        String name,
-        String slot,
-        CsmPublishingCredentialsPoliciesEntityInner csmPublishingAccessPoliciesEntity) {
+    public CsmPublishingCredentialsPoliciesEntity getScmAllowedSlot(
+        String resourceGroupName, String name, String slot) {
         CsmPublishingCredentialsPoliciesEntityInner inner =
-            this.serviceClient().updateScmAllowedSlot(resourceGroupName, name, slot, csmPublishingAccessPoliciesEntity);
+            this.serviceClient().getScmAllowedSlot(resourceGroupName, name, slot);
         if (inner != null) {
             return new CsmPublishingCredentialsPoliciesEntityImpl(inner, this.manager());
         } else {
@@ -3537,6 +3524,20 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
+    public CsmPublishingCredentialsPoliciesEntity updateScmAllowedSlot(
+        String resourceGroupName,
+        String name,
+        String slot,
+        CsmPublishingCredentialsPoliciesEntityInner csmPublishingAccessPoliciesEntity) {
+        CsmPublishingCredentialsPoliciesEntityInner inner =
+            this.serviceClient().updateScmAllowedSlot(resourceGroupName, name, slot, csmPublishingAccessPoliciesEntity);
+        if (inner != null) {
+            return new CsmPublishingCredentialsPoliciesEntityImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
     public PagedIterable<SiteConfigResource> listConfigurationsSlot(
         String resourceGroupName, String name, String slot) {
         PagedIterable<SiteConfigResourceInner> inner =
@@ -3549,17 +3550,6 @@ public final class WebAppsImpl implements WebApps {
         PagedIterable<SiteConfigResourceInner> inner =
             this.serviceClient().listConfigurationsSlot(resourceGroupName, name, slot, context);
         return Utils.mapPage(inner, inner1 -> new SiteConfigResourceImpl(inner1, this.manager()));
-    }
-
-    public StringDictionary updateApplicationSettingsSlot(
-        String resourceGroupName, String name, String slot, StringDictionaryInner appSettings) {
-        StringDictionaryInner inner =
-            this.serviceClient().updateApplicationSettingsSlot(resourceGroupName, name, slot, appSettings);
-        if (inner != null) {
-            return new StringDictionaryImpl(inner, this.manager());
-        } else {
-            return null;
-        }
     }
 
     public Response<StringDictionary> updateApplicationSettingsSlotWithResponse(
@@ -3579,8 +3569,10 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public StringDictionary listApplicationSettingsSlot(String resourceGroupName, String name, String slot) {
-        StringDictionaryInner inner = this.serviceClient().listApplicationSettingsSlot(resourceGroupName, name, slot);
+    public StringDictionary updateApplicationSettingsSlot(
+        String resourceGroupName, String name, String slot, StringDictionaryInner appSettings) {
+        StringDictionaryInner inner =
+            this.serviceClient().updateApplicationSettingsSlot(resourceGroupName, name, slot, appSettings);
         if (inner != null) {
             return new StringDictionaryImpl(inner, this.manager());
         } else {
@@ -3603,12 +3595,10 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public SiteAuthSettings updateAuthSettingsSlot(
-        String resourceGroupName, String name, String slot, SiteAuthSettingsInner siteAuthSettings) {
-        SiteAuthSettingsInner inner =
-            this.serviceClient().updateAuthSettingsSlot(resourceGroupName, name, slot, siteAuthSettings);
+    public StringDictionary listApplicationSettingsSlot(String resourceGroupName, String name, String slot) {
+        StringDictionaryInner inner = this.serviceClient().listApplicationSettingsSlot(resourceGroupName, name, slot);
         if (inner != null) {
-            return new SiteAuthSettingsImpl(inner, this.manager());
+            return new StringDictionaryImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -3631,8 +3621,10 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public SiteAuthSettings getAuthSettingsSlot(String resourceGroupName, String name, String slot) {
-        SiteAuthSettingsInner inner = this.serviceClient().getAuthSettingsSlot(resourceGroupName, name, slot);
+    public SiteAuthSettings updateAuthSettingsSlot(
+        String resourceGroupName, String name, String slot, SiteAuthSettingsInner siteAuthSettings) {
+        SiteAuthSettingsInner inner =
+            this.serviceClient().updateAuthSettingsSlot(resourceGroupName, name, slot, siteAuthSettings);
         if (inner != null) {
             return new SiteAuthSettingsImpl(inner, this.manager());
         } else {
@@ -3655,11 +3647,10 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public SiteAuthSettingsV2 getAuthSettingsV2WithoutSecretsSlot(String resourceGroupName, String name, String slot) {
-        SiteAuthSettingsV2Inner inner =
-            this.serviceClient().getAuthSettingsV2WithoutSecretsSlot(resourceGroupName, name, slot);
+    public SiteAuthSettings getAuthSettingsSlot(String resourceGroupName, String name, String slot) {
+        SiteAuthSettingsInner inner = this.serviceClient().getAuthSettingsSlot(resourceGroupName, name, slot);
         if (inner != null) {
-            return new SiteAuthSettingsV2Impl(inner, this.manager());
+            return new SiteAuthSettingsImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -3682,10 +3673,9 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public SiteAuthSettingsV2 updateAuthSettingsV2Slot(
-        String resourceGroupName, String name, String slot, SiteAuthSettingsV2Inner siteAuthSettingsV2) {
+    public SiteAuthSettingsV2 getAuthSettingsV2WithoutSecretsSlot(String resourceGroupName, String name, String slot) {
         SiteAuthSettingsV2Inner inner =
-            this.serviceClient().updateAuthSettingsV2Slot(resourceGroupName, name, slot, siteAuthSettingsV2);
+            this.serviceClient().getAuthSettingsV2WithoutSecretsSlot(resourceGroupName, name, slot);
         if (inner != null) {
             return new SiteAuthSettingsV2Impl(inner, this.manager());
         } else {
@@ -3714,8 +3704,10 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public SiteAuthSettingsV2 getAuthSettingsV2Slot(String resourceGroupName, String name, String slot) {
-        SiteAuthSettingsV2Inner inner = this.serviceClient().getAuthSettingsV2Slot(resourceGroupName, name, slot);
+    public SiteAuthSettingsV2 updateAuthSettingsV2Slot(
+        String resourceGroupName, String name, String slot, SiteAuthSettingsV2Inner siteAuthSettingsV2) {
+        SiteAuthSettingsV2Inner inner =
+            this.serviceClient().updateAuthSettingsV2Slot(resourceGroupName, name, slot, siteAuthSettingsV2);
         if (inner != null) {
             return new SiteAuthSettingsV2Impl(inner, this.manager());
         } else {
@@ -3738,15 +3730,10 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public AzureStoragePropertyDictionaryResource updateAzureStorageAccountsSlot(
-        String resourceGroupName,
-        String name,
-        String slot,
-        AzureStoragePropertyDictionaryResourceInner azureStorageAccounts) {
-        AzureStoragePropertyDictionaryResourceInner inner =
-            this.serviceClient().updateAzureStorageAccountsSlot(resourceGroupName, name, slot, azureStorageAccounts);
+    public SiteAuthSettingsV2 getAuthSettingsV2Slot(String resourceGroupName, String name, String slot) {
+        SiteAuthSettingsV2Inner inner = this.serviceClient().getAuthSettingsV2Slot(resourceGroupName, name, slot);
         if (inner != null) {
-            return new AzureStoragePropertyDictionaryResourceImpl(inner, this.manager());
+            return new SiteAuthSettingsV2Impl(inner, this.manager());
         } else {
             return null;
         }
@@ -3774,10 +3761,13 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public AzureStoragePropertyDictionaryResource listAzureStorageAccountsSlot(
-        String resourceGroupName, String name, String slot) {
+    public AzureStoragePropertyDictionaryResource updateAzureStorageAccountsSlot(
+        String resourceGroupName,
+        String name,
+        String slot,
+        AzureStoragePropertyDictionaryResourceInner azureStorageAccounts) {
         AzureStoragePropertyDictionaryResourceInner inner =
-            this.serviceClient().listAzureStorageAccountsSlot(resourceGroupName, name, slot);
+            this.serviceClient().updateAzureStorageAccountsSlot(resourceGroupName, name, slot, azureStorageAccounts);
         if (inner != null) {
             return new AzureStoragePropertyDictionaryResourceImpl(inner, this.manager());
         } else {
@@ -3800,12 +3790,12 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public BackupRequest updateBackupConfigurationSlot(
-        String resourceGroupName, String name, String slot, BackupRequestInner request) {
-        BackupRequestInner inner =
-            this.serviceClient().updateBackupConfigurationSlot(resourceGroupName, name, slot, request);
+    public AzureStoragePropertyDictionaryResource listAzureStorageAccountsSlot(
+        String resourceGroupName, String name, String slot) {
+        AzureStoragePropertyDictionaryResourceInner inner =
+            this.serviceClient().listAzureStorageAccountsSlot(resourceGroupName, name, slot);
         if (inner != null) {
-            return new BackupRequestImpl(inner, this.manager());
+            return new AzureStoragePropertyDictionaryResourceImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -3828,8 +3818,15 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public void deleteBackupConfigurationSlot(String resourceGroupName, String name, String slot) {
-        this.serviceClient().deleteBackupConfigurationSlot(resourceGroupName, name, slot);
+    public BackupRequest updateBackupConfigurationSlot(
+        String resourceGroupName, String name, String slot, BackupRequestInner request) {
+        BackupRequestInner inner =
+            this.serviceClient().updateBackupConfigurationSlot(resourceGroupName, name, slot, request);
+        if (inner != null) {
+            return new BackupRequestImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> deleteBackupConfigurationSlotWithResponse(
@@ -3837,13 +3834,8 @@ public final class WebAppsImpl implements WebApps {
         return this.serviceClient().deleteBackupConfigurationSlotWithResponse(resourceGroupName, name, slot, context);
     }
 
-    public BackupRequest getBackupConfigurationSlot(String resourceGroupName, String name, String slot) {
-        BackupRequestInner inner = this.serviceClient().getBackupConfigurationSlot(resourceGroupName, name, slot);
-        if (inner != null) {
-            return new BackupRequestImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void deleteBackupConfigurationSlot(String resourceGroupName, String name, String slot) {
+        this.serviceClient().deleteBackupConfigurationSlot(resourceGroupName, name, slot);
     }
 
     public Response<BackupRequest> getBackupConfigurationSlotWithResponse(
@@ -3856,6 +3848,15 @@ public final class WebAppsImpl implements WebApps {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new BackupRequestImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public BackupRequest getBackupConfigurationSlot(String resourceGroupName, String name, String slot) {
+        BackupRequestInner inner = this.serviceClient().getBackupConfigurationSlot(resourceGroupName, name, slot);
+        if (inner != null) {
+            return new BackupRequestImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -3875,17 +3876,6 @@ public final class WebAppsImpl implements WebApps {
         return Utils.mapPage(inner, inner1 -> new ApiKVReferenceImpl(inner1, this.manager()));
     }
 
-    public ApiKVReference getAppSettingKeyVaultReferenceSlot(
-        String resourceGroupName, String name, String appSettingKey, String slot) {
-        ApiKVReferenceInner inner =
-            this.serviceClient().getAppSettingKeyVaultReferenceSlot(resourceGroupName, name, appSettingKey, slot);
-        if (inner != null) {
-            return new ApiKVReferenceImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<ApiKVReference> getAppSettingKeyVaultReferenceSlotWithResponse(
         String resourceGroupName, String name, String appSettingKey, String slot, Context context) {
         Response<ApiKVReferenceInner> inner =
@@ -3903,6 +3893,17 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
+    public ApiKVReference getAppSettingKeyVaultReferenceSlot(
+        String resourceGroupName, String name, String appSettingKey, String slot) {
+        ApiKVReferenceInner inner =
+            this.serviceClient().getAppSettingKeyVaultReferenceSlot(resourceGroupName, name, appSettingKey, slot);
+        if (inner != null) {
+            return new ApiKVReferenceImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
     public PagedIterable<ApiKVReference> getSiteConnectionStringKeyVaultReferencesSlot(
         String resourceGroupName, String name, String slot) {
         PagedIterable<ApiKVReferenceInner> inner =
@@ -3915,19 +3916,6 @@ public final class WebAppsImpl implements WebApps {
         PagedIterable<ApiKVReferenceInner> inner =
             this.serviceClient().getSiteConnectionStringKeyVaultReferencesSlot(resourceGroupName, name, slot, context);
         return Utils.mapPage(inner, inner1 -> new ApiKVReferenceImpl(inner1, this.manager()));
-    }
-
-    public ApiKVReference getSiteConnectionStringKeyVaultReferenceSlot(
-        String resourceGroupName, String name, String connectionStringKey, String slot) {
-        ApiKVReferenceInner inner =
-            this
-                .serviceClient()
-                .getSiteConnectionStringKeyVaultReferenceSlot(resourceGroupName, name, connectionStringKey, slot);
-        if (inner != null) {
-            return new ApiKVReferenceImpl(inner, this.manager());
-        } else {
-            return null;
-        }
     }
 
     public Response<ApiKVReference> getSiteConnectionStringKeyVaultReferenceSlotWithResponse(
@@ -3948,12 +3936,14 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public ConnectionStringDictionary updateConnectionStringsSlot(
-        String resourceGroupName, String name, String slot, ConnectionStringDictionaryInner connectionStrings) {
-        ConnectionStringDictionaryInner inner =
-            this.serviceClient().updateConnectionStringsSlot(resourceGroupName, name, slot, connectionStrings);
+    public ApiKVReference getSiteConnectionStringKeyVaultReferenceSlot(
+        String resourceGroupName, String name, String connectionStringKey, String slot) {
+        ApiKVReferenceInner inner =
+            this
+                .serviceClient()
+                .getSiteConnectionStringKeyVaultReferenceSlot(resourceGroupName, name, connectionStringKey, slot);
         if (inner != null) {
-            return new ConnectionStringDictionaryImpl(inner, this.manager());
+            return new ApiKVReferenceImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -3980,9 +3970,10 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public ConnectionStringDictionary listConnectionStringsSlot(String resourceGroupName, String name, String slot) {
+    public ConnectionStringDictionary updateConnectionStringsSlot(
+        String resourceGroupName, String name, String slot, ConnectionStringDictionaryInner connectionStrings) {
         ConnectionStringDictionaryInner inner =
-            this.serviceClient().listConnectionStringsSlot(resourceGroupName, name, slot);
+            this.serviceClient().updateConnectionStringsSlot(resourceGroupName, name, slot, connectionStrings);
         if (inner != null) {
             return new ConnectionStringDictionaryImpl(inner, this.manager());
         } else {
@@ -4005,11 +3996,11 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public SiteLogsConfig getDiagnosticLogsConfigurationSlot(String resourceGroupName, String name, String slot) {
-        SiteLogsConfigInner inner =
-            this.serviceClient().getDiagnosticLogsConfigurationSlot(resourceGroupName, name, slot);
+    public ConnectionStringDictionary listConnectionStringsSlot(String resourceGroupName, String name, String slot) {
+        ConnectionStringDictionaryInner inner =
+            this.serviceClient().listConnectionStringsSlot(resourceGroupName, name, slot);
         if (inner != null) {
-            return new SiteLogsConfigImpl(inner, this.manager());
+            return new ConnectionStringDictionaryImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -4030,10 +4021,9 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public SiteLogsConfig updateDiagnosticLogsConfigSlot(
-        String resourceGroupName, String name, String slot, SiteLogsConfigInner siteLogsConfig) {
+    public SiteLogsConfig getDiagnosticLogsConfigurationSlot(String resourceGroupName, String name, String slot) {
         SiteLogsConfigInner inner =
-            this.serviceClient().updateDiagnosticLogsConfigSlot(resourceGroupName, name, slot, siteLogsConfig);
+            this.serviceClient().getDiagnosticLogsConfigurationSlot(resourceGroupName, name, slot);
         if (inner != null) {
             return new SiteLogsConfigImpl(inner, this.manager());
         } else {
@@ -4058,11 +4048,12 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public StringDictionary updateMetadataSlot(
-        String resourceGroupName, String name, String slot, StringDictionaryInner metadata) {
-        StringDictionaryInner inner = this.serviceClient().updateMetadataSlot(resourceGroupName, name, slot, metadata);
+    public SiteLogsConfig updateDiagnosticLogsConfigSlot(
+        String resourceGroupName, String name, String slot, SiteLogsConfigInner siteLogsConfig) {
+        SiteLogsConfigInner inner =
+            this.serviceClient().updateDiagnosticLogsConfigSlot(resourceGroupName, name, slot, siteLogsConfig);
         if (inner != null) {
-            return new StringDictionaryImpl(inner, this.manager());
+            return new SiteLogsConfigImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -4083,8 +4074,9 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public StringDictionary listMetadataSlot(String resourceGroupName, String name, String slot) {
-        StringDictionaryInner inner = this.serviceClient().listMetadataSlot(resourceGroupName, name, slot);
+    public StringDictionary updateMetadataSlot(
+        String resourceGroupName, String name, String slot, StringDictionaryInner metadata) {
+        StringDictionaryInner inner = this.serviceClient().updateMetadataSlot(resourceGroupName, name, slot, metadata);
         if (inner != null) {
             return new StringDictionaryImpl(inner, this.manager());
         } else {
@@ -4102,6 +4094,15 @@ public final class WebAppsImpl implements WebApps {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new StringDictionaryImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public StringDictionary listMetadataSlot(String resourceGroupName, String name, String slot) {
+        StringDictionaryInner inner = this.serviceClient().listMetadataSlot(resourceGroupName, name, slot);
+        if (inner != null) {
+            return new StringDictionaryImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -4125,17 +4126,6 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public PushSettings updateSitePushSettingsSlot(
-        String resourceGroupName, String name, String slot, PushSettingsInner pushSettings) {
-        PushSettingsInner inner =
-            this.serviceClient().updateSitePushSettingsSlot(resourceGroupName, name, slot, pushSettings);
-        if (inner != null) {
-            return new PushSettingsImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<PushSettings> updateSitePushSettingsSlotWithResponse(
         String resourceGroupName, String name, String slot, PushSettingsInner pushSettings, Context context) {
         Response<PushSettingsInner> inner =
@@ -4153,8 +4143,10 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public PushSettings listSitePushSettingsSlot(String resourceGroupName, String name, String slot) {
-        PushSettingsInner inner = this.serviceClient().listSitePushSettingsSlot(resourceGroupName, name, slot);
+    public PushSettings updateSitePushSettingsSlot(
+        String resourceGroupName, String name, String slot, PushSettingsInner pushSettings) {
+        PushSettingsInner inner =
+            this.serviceClient().updateSitePushSettingsSlot(resourceGroupName, name, slot, pushSettings);
         if (inner != null) {
             return new PushSettingsImpl(inner, this.manager());
         } else {
@@ -4177,10 +4169,10 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public SiteConfigResource getConfigurationSlot(String resourceGroupName, String name, String slot) {
-        SiteConfigResourceInner inner = this.serviceClient().getConfigurationSlot(resourceGroupName, name, slot);
+    public PushSettings listSitePushSettingsSlot(String resourceGroupName, String name, String slot) {
+        PushSettingsInner inner = this.serviceClient().listSitePushSettingsSlot(resourceGroupName, name, slot);
         if (inner != null) {
-            return new SiteConfigResourceImpl(inner, this.manager());
+            return new PushSettingsImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -4201,10 +4193,8 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public SiteConfigResource createOrUpdateConfigurationSlot(
-        String resourceGroupName, String name, String slot, SiteConfigResourceInner siteConfig) {
-        SiteConfigResourceInner inner =
-            this.serviceClient().createOrUpdateConfigurationSlot(resourceGroupName, name, slot, siteConfig);
+    public SiteConfigResource getConfigurationSlot(String resourceGroupName, String name, String slot) {
+        SiteConfigResourceInner inner = this.serviceClient().getConfigurationSlot(resourceGroupName, name, slot);
         if (inner != null) {
             return new SiteConfigResourceImpl(inner, this.manager());
         } else {
@@ -4229,10 +4219,10 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public SiteConfigResource updateConfigurationSlot(
+    public SiteConfigResource createOrUpdateConfigurationSlot(
         String resourceGroupName, String name, String slot, SiteConfigResourceInner siteConfig) {
         SiteConfigResourceInner inner =
-            this.serviceClient().updateConfigurationSlot(resourceGroupName, name, slot, siteConfig);
+            this.serviceClient().createOrUpdateConfigurationSlot(resourceGroupName, name, slot, siteConfig);
         if (inner != null) {
             return new SiteConfigResourceImpl(inner, this.manager());
         } else {
@@ -4257,6 +4247,17 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
+    public SiteConfigResource updateConfigurationSlot(
+        String resourceGroupName, String name, String slot, SiteConfigResourceInner siteConfig) {
+        SiteConfigResourceInner inner =
+            this.serviceClient().updateConfigurationSlot(resourceGroupName, name, slot, siteConfig);
+        if (inner != null) {
+            return new SiteConfigResourceImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
     public PagedIterable<SiteConfigurationSnapshotInfo> listConfigurationSnapshotInfoSlot(
         String resourceGroupName, String name, String slot) {
         PagedIterable<SiteConfigurationSnapshotInfoInner> inner =
@@ -4269,17 +4270,6 @@ public final class WebAppsImpl implements WebApps {
         PagedIterable<SiteConfigurationSnapshotInfoInner> inner =
             this.serviceClient().listConfigurationSnapshotInfoSlot(resourceGroupName, name, slot, context);
         return Utils.mapPage(inner, inner1 -> new SiteConfigurationSnapshotInfoImpl(inner1, this.manager()));
-    }
-
-    public SiteConfigResource getConfigurationSnapshotSlot(
-        String resourceGroupName, String name, String snapshotId, String slot) {
-        SiteConfigResourceInner inner =
-            this.serviceClient().getConfigurationSnapshotSlot(resourceGroupName, name, snapshotId, slot);
-        if (inner != null) {
-            return new SiteConfigResourceImpl(inner, this.manager());
-        } else {
-            return null;
-        }
     }
 
     public Response<SiteConfigResource> getConfigurationSnapshotSlotWithResponse(
@@ -4299,9 +4289,15 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public void recoverSiteConfigurationSnapshotSlot(
+    public SiteConfigResource getConfigurationSnapshotSlot(
         String resourceGroupName, String name, String snapshotId, String slot) {
-        this.serviceClient().recoverSiteConfigurationSnapshotSlot(resourceGroupName, name, snapshotId, slot);
+        SiteConfigResourceInner inner =
+            this.serviceClient().getConfigurationSnapshotSlot(resourceGroupName, name, snapshotId, slot);
+        if (inner != null) {
+            return new SiteConfigResourceImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> recoverSiteConfigurationSnapshotSlotWithResponse(
@@ -4311,22 +4307,27 @@ public final class WebAppsImpl implements WebApps {
             .recoverSiteConfigurationSnapshotSlotWithResponse(resourceGroupName, name, snapshotId, slot, context);
     }
 
-    public InputStream getWebSiteContainerLogsSlot(String resourceGroupName, String name, String slot) {
-        return this.serviceClient().getWebSiteContainerLogsSlot(resourceGroupName, name, slot);
+    public void recoverSiteConfigurationSnapshotSlot(
+        String resourceGroupName, String name, String snapshotId, String slot) {
+        this.serviceClient().recoverSiteConfigurationSnapshotSlot(resourceGroupName, name, snapshotId, slot);
     }
 
-    public StreamResponse getWebSiteContainerLogsSlotWithResponse(
+    public Response<InputStream> getWebSiteContainerLogsSlotWithResponse(
         String resourceGroupName, String name, String slot, Context context) {
         return this.serviceClient().getWebSiteContainerLogsSlotWithResponse(resourceGroupName, name, slot, context);
     }
 
-    public InputStream getContainerLogsZipSlot(String resourceGroupName, String name, String slot) {
-        return this.serviceClient().getContainerLogsZipSlot(resourceGroupName, name, slot);
+    public InputStream getWebSiteContainerLogsSlot(String resourceGroupName, String name, String slot) {
+        return this.serviceClient().getWebSiteContainerLogsSlot(resourceGroupName, name, slot);
     }
 
-    public StreamResponse getContainerLogsZipSlotWithResponse(
+    public Response<InputStream> getContainerLogsZipSlotWithResponse(
         String resourceGroupName, String name, String slot, Context context) {
         return this.serviceClient().getContainerLogsZipSlotWithResponse(resourceGroupName, name, slot, context);
+    }
+
+    public InputStream getContainerLogsZipSlot(String resourceGroupName, String name, String slot) {
+        return this.serviceClient().getContainerLogsZipSlot(resourceGroupName, name, slot);
     }
 
     public PagedIterable<ContinuousWebJob> listContinuousWebJobsSlot(
@@ -4341,17 +4342,6 @@ public final class WebAppsImpl implements WebApps {
         PagedIterable<ContinuousWebJobInner> inner =
             this.serviceClient().listContinuousWebJobsSlot(resourceGroupName, name, slot, context);
         return Utils.mapPage(inner, inner1 -> new ContinuousWebJobImpl(inner1, this.manager()));
-    }
-
-    public ContinuousWebJob getContinuousWebJobSlot(
-        String resourceGroupName, String name, String webJobName, String slot) {
-        ContinuousWebJobInner inner =
-            this.serviceClient().getContinuousWebJobSlot(resourceGroupName, name, webJobName, slot);
-        if (inner != null) {
-            return new ContinuousWebJobImpl(inner, this.manager());
-        } else {
-            return null;
-        }
     }
 
     public Response<ContinuousWebJob> getContinuousWebJobSlotWithResponse(
@@ -4371,8 +4361,15 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public void deleteContinuousWebJobSlot(String resourceGroupName, String name, String webJobName, String slot) {
-        this.serviceClient().deleteContinuousWebJobSlot(resourceGroupName, name, webJobName, slot);
+    public ContinuousWebJob getContinuousWebJobSlot(
+        String resourceGroupName, String name, String webJobName, String slot) {
+        ContinuousWebJobInner inner =
+            this.serviceClient().getContinuousWebJobSlot(resourceGroupName, name, webJobName, slot);
+        if (inner != null) {
+            return new ContinuousWebJobImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> deleteContinuousWebJobSlotWithResponse(
@@ -4382,8 +4379,8 @@ public final class WebAppsImpl implements WebApps {
             .deleteContinuousWebJobSlotWithResponse(resourceGroupName, name, webJobName, slot, context);
     }
 
-    public void startContinuousWebJobSlot(String resourceGroupName, String name, String webJobName, String slot) {
-        this.serviceClient().startContinuousWebJobSlot(resourceGroupName, name, webJobName, slot);
+    public void deleteContinuousWebJobSlot(String resourceGroupName, String name, String webJobName, String slot) {
+        this.serviceClient().deleteContinuousWebJobSlot(resourceGroupName, name, webJobName, slot);
     }
 
     public Response<Void> startContinuousWebJobSlotWithResponse(
@@ -4393,8 +4390,8 @@ public final class WebAppsImpl implements WebApps {
             .startContinuousWebJobSlotWithResponse(resourceGroupName, name, webJobName, slot, context);
     }
 
-    public void stopContinuousWebJobSlot(String resourceGroupName, String name, String webJobName, String slot) {
-        this.serviceClient().stopContinuousWebJobSlot(resourceGroupName, name, webJobName, slot);
+    public void startContinuousWebJobSlot(String resourceGroupName, String name, String webJobName, String slot) {
+        this.serviceClient().startContinuousWebJobSlot(resourceGroupName, name, webJobName, slot);
     }
 
     public Response<Void> stopContinuousWebJobSlotWithResponse(
@@ -4402,6 +4399,10 @@ public final class WebAppsImpl implements WebApps {
         return this
             .serviceClient()
             .stopContinuousWebJobSlotWithResponse(resourceGroupName, name, webJobName, slot, context);
+    }
+
+    public void stopContinuousWebJobSlot(String resourceGroupName, String name, String webJobName, String slot) {
+        this.serviceClient().stopContinuousWebJobSlot(resourceGroupName, name, webJobName, slot);
     }
 
     public PagedIterable<CsmDeploymentStatus> listSlotSiteDeploymentStatusesSlot(
@@ -4454,15 +4455,6 @@ public final class WebAppsImpl implements WebApps {
         return Utils.mapPage(inner, inner1 -> new DeploymentImpl(inner1, this.manager()));
     }
 
-    public Deployment getDeploymentSlot(String resourceGroupName, String name, String id, String slot) {
-        DeploymentInner inner = this.serviceClient().getDeploymentSlot(resourceGroupName, name, id, slot);
-        if (inner != null) {
-            return new DeploymentImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<Deployment> getDeploymentSlotWithResponse(
         String resourceGroupName, String name, String id, String slot, Context context) {
         Response<DeploymentInner> inner =
@@ -4478,10 +4470,8 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public Deployment createDeploymentSlot(
-        String resourceGroupName, String name, String id, String slot, DeploymentInner deployment) {
-        DeploymentInner inner =
-            this.serviceClient().createDeploymentSlot(resourceGroupName, name, id, slot, deployment);
+    public Deployment getDeploymentSlot(String resourceGroupName, String name, String id, String slot) {
+        DeploymentInner inner = this.serviceClient().getDeploymentSlot(resourceGroupName, name, id, slot);
         if (inner != null) {
             return new DeploymentImpl(inner, this.manager());
         } else {
@@ -4506,8 +4496,15 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public void deleteDeploymentSlot(String resourceGroupName, String name, String id, String slot) {
-        this.serviceClient().deleteDeploymentSlot(resourceGroupName, name, id, slot);
+    public Deployment createDeploymentSlot(
+        String resourceGroupName, String name, String id, String slot, DeploymentInner deployment) {
+        DeploymentInner inner =
+            this.serviceClient().createDeploymentSlot(resourceGroupName, name, id, slot, deployment);
+        if (inner != null) {
+            return new DeploymentImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> deleteDeploymentSlotWithResponse(
@@ -4515,13 +4512,8 @@ public final class WebAppsImpl implements WebApps {
         return this.serviceClient().deleteDeploymentSlotWithResponse(resourceGroupName, name, id, slot, context);
     }
 
-    public Deployment listDeploymentLogSlot(String resourceGroupName, String name, String id, String slot) {
-        DeploymentInner inner = this.serviceClient().listDeploymentLogSlot(resourceGroupName, name, id, slot);
-        if (inner != null) {
-            return new DeploymentImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void deleteDeploymentSlot(String resourceGroupName, String name, String id, String slot) {
+        this.serviceClient().deleteDeploymentSlot(resourceGroupName, name, id, slot);
     }
 
     public Response<Deployment> listDeploymentLogSlotWithResponse(
@@ -4539,11 +4531,10 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public RestoreRequest discoverBackupSlot(
-        String resourceGroupName, String name, String slot, RestoreRequestInner request) {
-        RestoreRequestInner inner = this.serviceClient().discoverBackupSlot(resourceGroupName, name, slot, request);
+    public Deployment listDeploymentLogSlot(String resourceGroupName, String name, String id, String slot) {
+        DeploymentInner inner = this.serviceClient().listDeploymentLogSlot(resourceGroupName, name, id, slot);
         if (inner != null) {
-            return new RestoreRequestImpl(inner, this.manager());
+            return new DeploymentImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -4564,6 +4555,16 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
+    public RestoreRequest discoverBackupSlot(
+        String resourceGroupName, String name, String slot, RestoreRequestInner request) {
+        RestoreRequestInner inner = this.serviceClient().discoverBackupSlot(resourceGroupName, name, slot, request);
+        if (inner != null) {
+            return new RestoreRequestImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
     public PagedIterable<Identifier> listDomainOwnershipIdentifiersSlot(
         String resourceGroupName, String name, String slot) {
         PagedIterable<IdentifierInner> inner =
@@ -4576,19 +4577,6 @@ public final class WebAppsImpl implements WebApps {
         PagedIterable<IdentifierInner> inner =
             this.serviceClient().listDomainOwnershipIdentifiersSlot(resourceGroupName, name, slot, context);
         return Utils.mapPage(inner, inner1 -> new IdentifierImpl(inner1, this.manager()));
-    }
-
-    public Identifier getDomainOwnershipIdentifierSlot(
-        String resourceGroupName, String name, String domainOwnershipIdentifierName, String slot) {
-        IdentifierInner inner =
-            this
-                .serviceClient()
-                .getDomainOwnershipIdentifierSlot(resourceGroupName, name, domainOwnershipIdentifierName, slot);
-        if (inner != null) {
-            return new IdentifierImpl(inner, this.manager());
-        } else {
-            return null;
-        }
     }
 
     public Response<Identifier> getDomainOwnershipIdentifierSlotWithResponse(
@@ -4609,17 +4597,12 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public Identifier createOrUpdateDomainOwnershipIdentifierSlot(
-        String resourceGroupName,
-        String name,
-        String domainOwnershipIdentifierName,
-        String slot,
-        IdentifierInner domainOwnershipIdentifier) {
+    public Identifier getDomainOwnershipIdentifierSlot(
+        String resourceGroupName, String name, String domainOwnershipIdentifierName, String slot) {
         IdentifierInner inner =
             this
                 .serviceClient()
-                .createOrUpdateDomainOwnershipIdentifierSlot(
-                    resourceGroupName, name, domainOwnershipIdentifierName, slot, domainOwnershipIdentifier);
+                .getDomainOwnershipIdentifierSlot(resourceGroupName, name, domainOwnershipIdentifierName, slot);
         if (inner != null) {
             return new IdentifierImpl(inner, this.manager());
         } else {
@@ -4650,11 +4633,22 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public void deleteDomainOwnershipIdentifierSlot(
-        String resourceGroupName, String name, String domainOwnershipIdentifierName, String slot) {
-        this
-            .serviceClient()
-            .deleteDomainOwnershipIdentifierSlot(resourceGroupName, name, domainOwnershipIdentifierName, slot);
+    public Identifier createOrUpdateDomainOwnershipIdentifierSlot(
+        String resourceGroupName,
+        String name,
+        String domainOwnershipIdentifierName,
+        String slot,
+        IdentifierInner domainOwnershipIdentifier) {
+        IdentifierInner inner =
+            this
+                .serviceClient()
+                .createOrUpdateDomainOwnershipIdentifierSlot(
+                    resourceGroupName, name, domainOwnershipIdentifierName, slot, domainOwnershipIdentifier);
+        if (inner != null) {
+            return new IdentifierImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> deleteDomainOwnershipIdentifierSlotWithResponse(
@@ -4665,22 +4659,11 @@ public final class WebAppsImpl implements WebApps {
                 resourceGroupName, name, domainOwnershipIdentifierName, slot, context);
     }
 
-    public Identifier updateDomainOwnershipIdentifierSlot(
-        String resourceGroupName,
-        String name,
-        String domainOwnershipIdentifierName,
-        String slot,
-        IdentifierInner domainOwnershipIdentifier) {
-        IdentifierInner inner =
-            this
-                .serviceClient()
-                .updateDomainOwnershipIdentifierSlot(
-                    resourceGroupName, name, domainOwnershipIdentifierName, slot, domainOwnershipIdentifier);
-        if (inner != null) {
-            return new IdentifierImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void deleteDomainOwnershipIdentifierSlot(
+        String resourceGroupName, String name, String domainOwnershipIdentifierName, String slot) {
+        this
+            .serviceClient()
+            .deleteDomainOwnershipIdentifierSlot(resourceGroupName, name, domainOwnershipIdentifierName, slot);
     }
 
     public Response<Identifier> updateDomainOwnershipIdentifierSlotWithResponse(
@@ -4706,10 +4689,19 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public MSDeployStatus getMSDeployStatusSlot(String resourceGroupName, String name, String slot) {
-        MSDeployStatusInner inner = this.serviceClient().getMSDeployStatusSlot(resourceGroupName, name, slot);
+    public Identifier updateDomainOwnershipIdentifierSlot(
+        String resourceGroupName,
+        String name,
+        String domainOwnershipIdentifierName,
+        String slot,
+        IdentifierInner domainOwnershipIdentifier) {
+        IdentifierInner inner =
+            this
+                .serviceClient()
+                .updateDomainOwnershipIdentifierSlot(
+                    resourceGroupName, name, domainOwnershipIdentifierName, slot, domainOwnershipIdentifier);
         if (inner != null) {
-            return new MSDeployStatusImpl(inner, this.manager());
+            return new IdentifierImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -4725,6 +4717,15 @@ public final class WebAppsImpl implements WebApps {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new MSDeployStatusImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public MSDeployStatus getMSDeployStatusSlot(String resourceGroupName, String name, String slot) {
+        MSDeployStatusInner inner = this.serviceClient().getMSDeployStatusSlot(resourceGroupName, name, slot);
+        if (inner != null) {
+            return new MSDeployStatusImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -4752,15 +4753,6 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public MSDeployLog getMSDeployLogSlot(String resourceGroupName, String name, String slot) {
-        MSDeployLogInner inner = this.serviceClient().getMSDeployLogSlot(resourceGroupName, name, slot);
-        if (inner != null) {
-            return new MSDeployLogImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<MSDeployLog> getMSDeployLogSlotWithResponse(
         String resourceGroupName, String name, String slot, Context context) {
         Response<MSDeployLogInner> inner =
@@ -4771,6 +4763,15 @@ public final class WebAppsImpl implements WebApps {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new MSDeployLogImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public MSDeployLog getMSDeployLogSlot(String resourceGroupName, String name, String slot) {
+        MSDeployLogInner inner = this.serviceClient().getMSDeployLogSlot(resourceGroupName, name, slot);
+        if (inner != null) {
+            return new MSDeployLogImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -4790,24 +4791,13 @@ public final class WebAppsImpl implements WebApps {
         return Utils.mapPage(inner, inner1 -> new FunctionEnvelopeImpl(inner1, this.manager()));
     }
 
-    public String getFunctionsAdminTokenSlot(String resourceGroupName, String name, String slot) {
-        return this.serviceClient().getFunctionsAdminTokenSlot(resourceGroupName, name, slot);
-    }
-
     public Response<String> getFunctionsAdminTokenSlotWithResponse(
         String resourceGroupName, String name, String slot, Context context) {
         return this.serviceClient().getFunctionsAdminTokenSlotWithResponse(resourceGroupName, name, slot, context);
     }
 
-    public FunctionEnvelope getInstanceFunctionSlot(
-        String resourceGroupName, String name, String functionName, String slot) {
-        FunctionEnvelopeInner inner =
-            this.serviceClient().getInstanceFunctionSlot(resourceGroupName, name, functionName, slot);
-        if (inner != null) {
-            return new FunctionEnvelopeImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public String getFunctionsAdminTokenSlot(String resourceGroupName, String name, String slot) {
+        return this.serviceClient().getFunctionsAdminTokenSlot(resourceGroupName, name, slot);
     }
 
     public Response<FunctionEnvelope> getInstanceFunctionSlotWithResponse(
@@ -4822,6 +4812,17 @@ public final class WebAppsImpl implements WebApps {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new FunctionEnvelopeImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public FunctionEnvelope getInstanceFunctionSlot(
+        String resourceGroupName, String name, String functionName, String slot) {
+        FunctionEnvelopeInner inner =
+            this.serviceClient().getInstanceFunctionSlot(resourceGroupName, name, functionName, slot);
+        if (inner != null) {
+            return new FunctionEnvelopeImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -4862,10 +4863,6 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public void deleteInstanceFunctionSlot(String resourceGroupName, String name, String functionName, String slot) {
-        this.serviceClient().deleteInstanceFunctionSlot(resourceGroupName, name, functionName, slot);
-    }
-
     public Response<Void> deleteInstanceFunctionSlotWithResponse(
         String resourceGroupName, String name, String functionName, String slot, Context context) {
         return this
@@ -4873,17 +4870,8 @@ public final class WebAppsImpl implements WebApps {
             .deleteInstanceFunctionSlotWithResponse(resourceGroupName, name, functionName, slot, context);
     }
 
-    public KeyInfo createOrUpdateFunctionSecretSlot(
-        String resourceGroupName, String name, String functionName, String keyName, String slot, KeyInfoInner key) {
-        KeyInfoInner inner =
-            this
-                .serviceClient()
-                .createOrUpdateFunctionSecretSlot(resourceGroupName, name, functionName, keyName, slot, key);
-        if (inner != null) {
-            return new KeyInfoImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void deleteInstanceFunctionSlot(String resourceGroupName, String name, String functionName, String slot) {
+        this.serviceClient().deleteInstanceFunctionSlot(resourceGroupName, name, functionName, slot);
     }
 
     public Response<KeyInfo> createOrUpdateFunctionSecretSlotWithResponse(
@@ -4910,9 +4898,17 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public void deleteFunctionSecretSlot(
-        String resourceGroupName, String name, String functionName, String keyName, String slot) {
-        this.serviceClient().deleteFunctionSecretSlot(resourceGroupName, name, functionName, keyName, slot);
+    public KeyInfo createOrUpdateFunctionSecretSlot(
+        String resourceGroupName, String name, String functionName, String keyName, String slot, KeyInfoInner key) {
+        KeyInfoInner inner =
+            this
+                .serviceClient()
+                .createOrUpdateFunctionSecretSlot(resourceGroupName, name, functionName, keyName, slot, key);
+        if (inner != null) {
+            return new KeyInfoImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> deleteFunctionSecretSlotWithResponse(
@@ -4922,15 +4918,9 @@ public final class WebAppsImpl implements WebApps {
             .deleteFunctionSecretSlotWithResponse(resourceGroupName, name, functionName, keyName, slot, context);
     }
 
-    public StringDictionary listFunctionKeysSlot(
-        String resourceGroupName, String name, String functionName, String slot) {
-        StringDictionaryInner inner =
-            this.serviceClient().listFunctionKeysSlot(resourceGroupName, name, functionName, slot);
-        if (inner != null) {
-            return new StringDictionaryImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void deleteFunctionSecretSlot(
+        String resourceGroupName, String name, String functionName, String keyName, String slot) {
+        this.serviceClient().deleteFunctionSecretSlot(resourceGroupName, name, functionName, keyName, slot);
     }
 
     public Response<StringDictionary> listFunctionKeysSlotWithResponse(
@@ -4948,12 +4938,12 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public FunctionSecrets listFunctionSecretsSlot(
+    public StringDictionary listFunctionKeysSlot(
         String resourceGroupName, String name, String functionName, String slot) {
-        FunctionSecretsInner inner =
-            this.serviceClient().listFunctionSecretsSlot(resourceGroupName, name, functionName, slot);
+        StringDictionaryInner inner =
+            this.serviceClient().listFunctionKeysSlot(resourceGroupName, name, functionName, slot);
         if (inner != null) {
-            return new FunctionSecretsImpl(inner, this.manager());
+            return new StringDictionaryImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -4976,10 +4966,12 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public HostKeys listHostKeysSlot(String resourceGroupName, String name, String slot) {
-        HostKeysInner inner = this.serviceClient().listHostKeysSlot(resourceGroupName, name, slot);
+    public FunctionSecrets listFunctionSecretsSlot(
+        String resourceGroupName, String name, String functionName, String slot) {
+        FunctionSecretsInner inner =
+            this.serviceClient().listFunctionSecretsSlot(resourceGroupName, name, functionName, slot);
         if (inner != null) {
-            return new HostKeysImpl(inner, this.manager());
+            return new FunctionSecretsImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -5000,8 +4992,13 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public void listSyncStatusSlot(String resourceGroupName, String name, String slot) {
-        this.serviceClient().listSyncStatusSlot(resourceGroupName, name, slot);
+    public HostKeys listHostKeysSlot(String resourceGroupName, String name, String slot) {
+        HostKeysInner inner = this.serviceClient().listHostKeysSlot(resourceGroupName, name, slot);
+        if (inner != null) {
+            return new HostKeysImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> listSyncStatusSlotWithResponse(
@@ -5009,8 +5006,8 @@ public final class WebAppsImpl implements WebApps {
         return this.serviceClient().listSyncStatusSlotWithResponse(resourceGroupName, name, slot, context);
     }
 
-    public void syncFunctionsSlot(String resourceGroupName, String name, String slot) {
-        this.serviceClient().syncFunctionsSlot(resourceGroupName, name, slot);
+    public void listSyncStatusSlot(String resourceGroupName, String name, String slot) {
+        this.serviceClient().listSyncStatusSlot(resourceGroupName, name, slot);
     }
 
     public Response<Void> syncFunctionsSlotWithResponse(
@@ -5018,15 +5015,8 @@ public final class WebAppsImpl implements WebApps {
         return this.serviceClient().syncFunctionsSlotWithResponse(resourceGroupName, name, slot, context);
     }
 
-    public KeyInfo createOrUpdateHostSecretSlot(
-        String resourceGroupName, String name, String keyType, String keyName, String slot, KeyInfoInner key) {
-        KeyInfoInner inner =
-            this.serviceClient().createOrUpdateHostSecretSlot(resourceGroupName, name, keyType, keyName, slot, key);
-        if (inner != null) {
-            return new KeyInfoImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void syncFunctionsSlot(String resourceGroupName, String name, String slot) {
+        this.serviceClient().syncFunctionsSlot(resourceGroupName, name, slot);
     }
 
     public Response<KeyInfo> createOrUpdateHostSecretSlotWithResponse(
@@ -5053,9 +5043,15 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public void deleteHostSecretSlot(
-        String resourceGroupName, String name, String keyType, String keyName, String slot) {
-        this.serviceClient().deleteHostSecretSlot(resourceGroupName, name, keyType, keyName, slot);
+    public KeyInfo createOrUpdateHostSecretSlot(
+        String resourceGroupName, String name, String keyType, String keyName, String slot, KeyInfoInner key) {
+        KeyInfoInner inner =
+            this.serviceClient().createOrUpdateHostSecretSlot(resourceGroupName, name, keyType, keyName, slot, key);
+        if (inner != null) {
+            return new KeyInfoImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> deleteHostSecretSlotWithResponse(
@@ -5063,6 +5059,11 @@ public final class WebAppsImpl implements WebApps {
         return this
             .serviceClient()
             .deleteHostSecretSlotWithResponse(resourceGroupName, name, keyType, keyName, slot, context);
+    }
+
+    public void deleteHostSecretSlot(
+        String resourceGroupName, String name, String keyType, String keyName, String slot) {
+        this.serviceClient().deleteHostSecretSlot(resourceGroupName, name, keyType, keyName, slot);
     }
 
     public PagedIterable<HostnameBinding> listHostnameBindingsSlot(String resourceGroupName, String name, String slot) {
@@ -5076,16 +5077,6 @@ public final class WebAppsImpl implements WebApps {
         PagedIterable<HostnameBindingInner> inner =
             this.serviceClient().listHostnameBindingsSlot(resourceGroupName, name, slot, context);
         return Utils.mapPage(inner, inner1 -> new HostnameBindingImpl(inner1, this.manager()));
-    }
-
-    public HostnameBinding getHostnameBindingSlot(String resourceGroupName, String name, String slot, String hostname) {
-        HostnameBindingInner inner =
-            this.serviceClient().getHostnameBindingSlot(resourceGroupName, name, slot, hostname);
-        if (inner != null) {
-            return new HostnameBindingImpl(inner, this.manager());
-        } else {
-            return null;
-        }
     }
 
     public Response<HostnameBinding> getHostnameBindingSlotWithResponse(
@@ -5103,12 +5094,9 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public HostnameBinding createOrUpdateHostnameBindingSlot(
-        String resourceGroupName, String name, String hostname, String slot, HostnameBindingInner hostnameBinding) {
+    public HostnameBinding getHostnameBindingSlot(String resourceGroupName, String name, String slot, String hostname) {
         HostnameBindingInner inner =
-            this
-                .serviceClient()
-                .createOrUpdateHostnameBindingSlot(resourceGroupName, name, hostname, slot, hostnameBinding);
+            this.serviceClient().getHostnameBindingSlot(resourceGroupName, name, slot, hostname);
         if (inner != null) {
             return new HostnameBindingImpl(inner, this.manager());
         } else {
@@ -5139,8 +5127,17 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public void deleteHostnameBindingSlot(String resourceGroupName, String name, String slot, String hostname) {
-        this.serviceClient().deleteHostnameBindingSlot(resourceGroupName, name, slot, hostname);
+    public HostnameBinding createOrUpdateHostnameBindingSlot(
+        String resourceGroupName, String name, String hostname, String slot, HostnameBindingInner hostnameBinding) {
+        HostnameBindingInner inner =
+            this
+                .serviceClient()
+                .createOrUpdateHostnameBindingSlot(resourceGroupName, name, hostname, slot, hostnameBinding);
+        if (inner != null) {
+            return new HostnameBindingImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> deleteHostnameBindingSlotWithResponse(
@@ -5150,15 +5147,8 @@ public final class WebAppsImpl implements WebApps {
             .deleteHostnameBindingSlotWithResponse(resourceGroupName, name, slot, hostname, context);
     }
 
-    public HybridConnection getHybridConnectionSlot(
-        String resourceGroupName, String name, String namespaceName, String relayName, String slot) {
-        HybridConnectionInner inner =
-            this.serviceClient().getHybridConnectionSlot(resourceGroupName, name, namespaceName, relayName, slot);
-        if (inner != null) {
-            return new HybridConnectionImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void deleteHostnameBindingSlot(String resourceGroupName, String name, String slot, String hostname) {
+        this.serviceClient().deleteHostnameBindingSlot(resourceGroupName, name, slot, hostname);
     }
 
     public Response<HybridConnection> getHybridConnectionSlotWithResponse(
@@ -5178,18 +5168,10 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public HybridConnection createOrUpdateHybridConnectionSlot(
-        String resourceGroupName,
-        String name,
-        String namespaceName,
-        String relayName,
-        String slot,
-        HybridConnectionInner connectionEnvelope) {
+    public HybridConnection getHybridConnectionSlot(
+        String resourceGroupName, String name, String namespaceName, String relayName, String slot) {
         HybridConnectionInner inner =
-            this
-                .serviceClient()
-                .createOrUpdateHybridConnectionSlot(
-                    resourceGroupName, name, namespaceName, relayName, slot, connectionEnvelope);
+            this.serviceClient().getHybridConnectionSlot(resourceGroupName, name, namespaceName, relayName, slot);
         if (inner != null) {
             return new HybridConnectionImpl(inner, this.manager());
         } else {
@@ -5221,19 +5203,7 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public void deleteHybridConnectionSlot(
-        String resourceGroupName, String name, String namespaceName, String relayName, String slot) {
-        this.serviceClient().deleteHybridConnectionSlot(resourceGroupName, name, namespaceName, relayName, slot);
-    }
-
-    public Response<Void> deleteHybridConnectionSlotWithResponse(
-        String resourceGroupName, String name, String namespaceName, String relayName, String slot, Context context) {
-        return this
-            .serviceClient()
-            .deleteHybridConnectionSlotWithResponse(resourceGroupName, name, namespaceName, relayName, slot, context);
-    }
-
-    public HybridConnection updateHybridConnectionSlot(
+    public HybridConnection createOrUpdateHybridConnectionSlot(
         String resourceGroupName,
         String name,
         String namespaceName,
@@ -5243,13 +5213,25 @@ public final class WebAppsImpl implements WebApps {
         HybridConnectionInner inner =
             this
                 .serviceClient()
-                .updateHybridConnectionSlot(
+                .createOrUpdateHybridConnectionSlot(
                     resourceGroupName, name, namespaceName, relayName, slot, connectionEnvelope);
         if (inner != null) {
             return new HybridConnectionImpl(inner, this.manager());
         } else {
             return null;
         }
+    }
+
+    public Response<Void> deleteHybridConnectionSlotWithResponse(
+        String resourceGroupName, String name, String namespaceName, String relayName, String slot, Context context) {
+        return this
+            .serviceClient()
+            .deleteHybridConnectionSlotWithResponse(resourceGroupName, name, namespaceName, relayName, slot, context);
+    }
+
+    public void deleteHybridConnectionSlot(
+        String resourceGroupName, String name, String namespaceName, String relayName, String slot) {
+        this.serviceClient().deleteHybridConnectionSlot(resourceGroupName, name, namespaceName, relayName, slot);
     }
 
     public Response<HybridConnection> updateHybridConnectionSlotWithResponse(
@@ -5276,8 +5258,18 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public HybridConnection listHybridConnectionsSlot(String resourceGroupName, String name, String slot) {
-        HybridConnectionInner inner = this.serviceClient().listHybridConnectionsSlot(resourceGroupName, name, slot);
+    public HybridConnection updateHybridConnectionSlot(
+        String resourceGroupName,
+        String name,
+        String namespaceName,
+        String relayName,
+        String slot,
+        HybridConnectionInner connectionEnvelope) {
+        HybridConnectionInner inner =
+            this
+                .serviceClient()
+                .updateHybridConnectionSlot(
+                    resourceGroupName, name, namespaceName, relayName, slot, connectionEnvelope);
         if (inner != null) {
             return new HybridConnectionImpl(inner, this.manager());
         } else {
@@ -5300,12 +5292,10 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public RelayServiceConnectionEntity listRelayServiceConnectionsSlot(
-        String resourceGroupName, String name, String slot) {
-        RelayServiceConnectionEntityInner inner =
-            this.serviceClient().listRelayServiceConnectionsSlot(resourceGroupName, name, slot);
+    public HybridConnection listHybridConnectionsSlot(String resourceGroupName, String name, String slot) {
+        HybridConnectionInner inner = this.serviceClient().listHybridConnectionsSlot(resourceGroupName, name, slot);
         if (inner != null) {
-            return new RelayServiceConnectionEntityImpl(inner, this.manager());
+            return new HybridConnectionImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -5326,10 +5316,10 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public RelayServiceConnectionEntity getRelayServiceConnectionSlot(
-        String resourceGroupName, String name, String entityName, String slot) {
+    public RelayServiceConnectionEntity listRelayServiceConnectionsSlot(
+        String resourceGroupName, String name, String slot) {
         RelayServiceConnectionEntityInner inner =
-            this.serviceClient().getRelayServiceConnectionSlot(resourceGroupName, name, entityName, slot);
+            this.serviceClient().listRelayServiceConnectionsSlot(resourceGroupName, name, slot);
         if (inner != null) {
             return new RelayServiceConnectionEntityImpl(inner, this.manager());
         } else {
@@ -5354,17 +5344,10 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public RelayServiceConnectionEntity createOrUpdateRelayServiceConnectionSlot(
-        String resourceGroupName,
-        String name,
-        String entityName,
-        String slot,
-        RelayServiceConnectionEntityInner connectionEnvelope) {
+    public RelayServiceConnectionEntity getRelayServiceConnectionSlot(
+        String resourceGroupName, String name, String entityName, String slot) {
         RelayServiceConnectionEntityInner inner =
-            this
-                .serviceClient()
-                .createOrUpdateRelayServiceConnectionSlot(
-                    resourceGroupName, name, entityName, slot, connectionEnvelope);
+            this.serviceClient().getRelayServiceConnectionSlot(resourceGroupName, name, entityName, slot);
         if (inner != null) {
             return new RelayServiceConnectionEntityImpl(inner, this.manager());
         } else {
@@ -5395,9 +5378,22 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public void deleteRelayServiceConnectionSlot(
-        String resourceGroupName, String name, String entityName, String slot) {
-        this.serviceClient().deleteRelayServiceConnectionSlot(resourceGroupName, name, entityName, slot);
+    public RelayServiceConnectionEntity createOrUpdateRelayServiceConnectionSlot(
+        String resourceGroupName,
+        String name,
+        String entityName,
+        String slot,
+        RelayServiceConnectionEntityInner connectionEnvelope) {
+        RelayServiceConnectionEntityInner inner =
+            this
+                .serviceClient()
+                .createOrUpdateRelayServiceConnectionSlot(
+                    resourceGroupName, name, entityName, slot, connectionEnvelope);
+        if (inner != null) {
+            return new RelayServiceConnectionEntityImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> deleteRelayServiceConnectionSlotWithResponse(
@@ -5407,21 +5403,9 @@ public final class WebAppsImpl implements WebApps {
             .deleteRelayServiceConnectionSlotWithResponse(resourceGroupName, name, entityName, slot, context);
     }
 
-    public RelayServiceConnectionEntity updateRelayServiceConnectionSlot(
-        String resourceGroupName,
-        String name,
-        String entityName,
-        String slot,
-        RelayServiceConnectionEntityInner connectionEnvelope) {
-        RelayServiceConnectionEntityInner inner =
-            this
-                .serviceClient()
-                .updateRelayServiceConnectionSlot(resourceGroupName, name, entityName, slot, connectionEnvelope);
-        if (inner != null) {
-            return new RelayServiceConnectionEntityImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void deleteRelayServiceConnectionSlot(
+        String resourceGroupName, String name, String entityName, String slot) {
+        this.serviceClient().deleteRelayServiceConnectionSlot(resourceGroupName, name, entityName, slot);
     }
 
     public Response<RelayServiceConnectionEntity> updateRelayServiceConnectionSlotWithResponse(
@@ -5447,6 +5431,23 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
+    public RelayServiceConnectionEntity updateRelayServiceConnectionSlot(
+        String resourceGroupName,
+        String name,
+        String entityName,
+        String slot,
+        RelayServiceConnectionEntityInner connectionEnvelope) {
+        RelayServiceConnectionEntityInner inner =
+            this
+                .serviceClient()
+                .updateRelayServiceConnectionSlot(resourceGroupName, name, entityName, slot, connectionEnvelope);
+        if (inner != null) {
+            return new RelayServiceConnectionEntityImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
     public PagedIterable<WebSiteInstanceStatus> listInstanceIdentifiersSlot(
         String resourceGroupName, String name, String slot) {
         PagedIterable<WebSiteInstanceStatusInner> inner =
@@ -5459,17 +5460,6 @@ public final class WebAppsImpl implements WebApps {
         PagedIterable<WebSiteInstanceStatusInner> inner =
             this.serviceClient().listInstanceIdentifiersSlot(resourceGroupName, name, slot, context);
         return Utils.mapPage(inner, inner1 -> new WebSiteInstanceStatusImpl(inner1, this.manager()));
-    }
-
-    public WebSiteInstanceStatus getInstanceInfoSlot(
-        String resourceGroupName, String name, String instanceId, String slot) {
-        WebSiteInstanceStatusInner inner =
-            this.serviceClient().getInstanceInfoSlot(resourceGroupName, name, instanceId, slot);
-        if (inner != null) {
-            return new WebSiteInstanceStatusImpl(inner, this.manager());
-        } else {
-            return null;
-        }
     }
 
     public Response<WebSiteInstanceStatus> getInstanceInfoSlotWithResponse(
@@ -5487,12 +5477,12 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public MSDeployStatus getInstanceMsDeployStatusSlot(
-        String resourceGroupName, String name, String slot, String instanceId) {
-        MSDeployStatusInner inner =
-            this.serviceClient().getInstanceMsDeployStatusSlot(resourceGroupName, name, slot, instanceId);
+    public WebSiteInstanceStatus getInstanceInfoSlot(
+        String resourceGroupName, String name, String instanceId, String slot) {
+        WebSiteInstanceStatusInner inner =
+            this.serviceClient().getInstanceInfoSlot(resourceGroupName, name, instanceId, slot);
         if (inner != null) {
-            return new MSDeployStatusImpl(inner, this.manager());
+            return new WebSiteInstanceStatusImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -5510,6 +5500,17 @@ public final class WebAppsImpl implements WebApps {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new MSDeployStatusImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public MSDeployStatus getInstanceMsDeployStatusSlot(
+        String resourceGroupName, String name, String slot, String instanceId) {
+        MSDeployStatusInner inner =
+            this.serviceClient().getInstanceMsDeployStatusSlot(resourceGroupName, name, slot, instanceId);
+        if (inner != null) {
+            return new MSDeployStatusImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -5541,17 +5542,6 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public MSDeployLog getInstanceMSDeployLogSlot(
-        String resourceGroupName, String name, String slot, String instanceId) {
-        MSDeployLogInner inner =
-            this.serviceClient().getInstanceMSDeployLogSlot(resourceGroupName, name, slot, instanceId);
-        if (inner != null) {
-            return new MSDeployLogImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<MSDeployLog> getInstanceMSDeployLogSlotWithResponse(
         String resourceGroupName, String name, String slot, String instanceId, Context context) {
         Response<MSDeployLogInner> inner =
@@ -5564,6 +5554,17 @@ public final class WebAppsImpl implements WebApps {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new MSDeployLogImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public MSDeployLog getInstanceMSDeployLogSlot(
+        String resourceGroupName, String name, String slot, String instanceId) {
+        MSDeployLogInner inner =
+            this.serviceClient().getInstanceMSDeployLogSlot(resourceGroupName, name, slot, instanceId);
+        if (inner != null) {
+            return new MSDeployLogImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -5583,17 +5584,6 @@ public final class WebAppsImpl implements WebApps {
         return Utils.mapPage(inner, inner1 -> new ProcessInfoImpl(inner1, this.manager()));
     }
 
-    public ProcessInfo getInstanceProcessSlot(
-        String resourceGroupName, String name, String processId, String slot, String instanceId) {
-        ProcessInfoInner inner =
-            this.serviceClient().getInstanceProcessSlot(resourceGroupName, name, processId, slot, instanceId);
-        if (inner != null) {
-            return new ProcessInfoImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<ProcessInfo> getInstanceProcessSlotWithResponse(
         String resourceGroupName, String name, String processId, String slot, String instanceId, Context context) {
         Response<ProcessInfoInner> inner =
@@ -5611,9 +5601,15 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public void deleteInstanceProcessSlot(
+    public ProcessInfo getInstanceProcessSlot(
         String resourceGroupName, String name, String processId, String slot, String instanceId) {
-        this.serviceClient().deleteInstanceProcessSlot(resourceGroupName, name, processId, slot, instanceId);
+        ProcessInfoInner inner =
+            this.serviceClient().getInstanceProcessSlot(resourceGroupName, name, processId, slot, instanceId);
+        if (inner != null) {
+            return new ProcessInfoImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> deleteInstanceProcessSlotWithResponse(
@@ -5623,16 +5619,21 @@ public final class WebAppsImpl implements WebApps {
             .deleteInstanceProcessSlotWithResponse(resourceGroupName, name, processId, slot, instanceId, context);
     }
 
-    public InputStream getInstanceProcessDumpSlot(
+    public void deleteInstanceProcessSlot(
         String resourceGroupName, String name, String processId, String slot, String instanceId) {
-        return this.serviceClient().getInstanceProcessDumpSlot(resourceGroupName, name, processId, slot, instanceId);
+        this.serviceClient().deleteInstanceProcessSlot(resourceGroupName, name, processId, slot, instanceId);
     }
 
-    public StreamResponse getInstanceProcessDumpSlotWithResponse(
+    public Response<InputStream> getInstanceProcessDumpSlotWithResponse(
         String resourceGroupName, String name, String processId, String slot, String instanceId, Context context) {
         return this
             .serviceClient()
             .getInstanceProcessDumpSlotWithResponse(resourceGroupName, name, processId, slot, instanceId, context);
+    }
+
+    public InputStream getInstanceProcessDumpSlot(
+        String resourceGroupName, String name, String processId, String slot, String instanceId) {
+        return this.serviceClient().getInstanceProcessDumpSlot(resourceGroupName, name, processId, slot, instanceId);
     }
 
     public PagedIterable<ProcessModuleInfo> listInstanceProcessModulesSlot(
@@ -5649,19 +5650,6 @@ public final class WebAppsImpl implements WebApps {
                 .serviceClient()
                 .listInstanceProcessModulesSlot(resourceGroupName, name, processId, slot, instanceId, context);
         return Utils.mapPage(inner, inner1 -> new ProcessModuleInfoImpl(inner1, this.manager()));
-    }
-
-    public ProcessModuleInfo getInstanceProcessModuleSlot(
-        String resourceGroupName, String name, String processId, String baseAddress, String slot, String instanceId) {
-        ProcessModuleInfoInner inner =
-            this
-                .serviceClient()
-                .getInstanceProcessModuleSlot(resourceGroupName, name, processId, baseAddress, slot, instanceId);
-        if (inner != null) {
-            return new ProcessModuleInfoImpl(inner, this.manager());
-        } else {
-            return null;
-        }
     }
 
     public Response<ProcessModuleInfo> getInstanceProcessModuleSlotWithResponse(
@@ -5688,6 +5676,19 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
+    public ProcessModuleInfo getInstanceProcessModuleSlot(
+        String resourceGroupName, String name, String processId, String baseAddress, String slot, String instanceId) {
+        ProcessModuleInfoInner inner =
+            this
+                .serviceClient()
+                .getInstanceProcessModuleSlot(resourceGroupName, name, processId, baseAddress, slot, instanceId);
+        if (inner != null) {
+            return new ProcessModuleInfoImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
     public PagedIterable<ProcessThreadInfo> listInstanceProcessThreadsSlot(
         String resourceGroupName, String name, String processId, String slot, String instanceId) {
         PagedIterable<ProcessThreadInfoInner> inner =
@@ -5702,15 +5703,6 @@ public final class WebAppsImpl implements WebApps {
                 .serviceClient()
                 .listInstanceProcessThreadsSlot(resourceGroupName, name, processId, slot, instanceId, context);
         return Utils.mapPage(inner, inner1 -> new ProcessThreadInfoImpl(inner1, this.manager()));
-    }
-
-    public SiteCloneability isCloneableSlot(String resourceGroupName, String name, String slot) {
-        SiteCloneabilityInner inner = this.serviceClient().isCloneableSlot(resourceGroupName, name, slot);
-        if (inner != null) {
-            return new SiteCloneabilityImpl(inner, this.manager());
-        } else {
-            return null;
-        }
     }
 
     public Response<SiteCloneability> isCloneableSlotWithResponse(
@@ -5728,6 +5720,15 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
+    public SiteCloneability isCloneableSlot(String resourceGroupName, String name, String slot) {
+        SiteCloneabilityInner inner = this.serviceClient().isCloneableSlot(resourceGroupName, name, slot);
+        if (inner != null) {
+            return new SiteCloneabilityImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
     public PagedIterable<BackupItem> listSiteBackupsSlot(String resourceGroupName, String name, String slot) {
         PagedIterable<BackupItemInner> inner = this.serviceClient().listSiteBackupsSlot(resourceGroupName, name, slot);
         return Utils.mapPage(inner, inner1 -> new BackupItemImpl(inner1, this.manager()));
@@ -5738,15 +5739,6 @@ public final class WebAppsImpl implements WebApps {
         PagedIterable<BackupItemInner> inner =
             this.serviceClient().listSiteBackupsSlot(resourceGroupName, name, slot, context);
         return Utils.mapPage(inner, inner1 -> new BackupItemImpl(inner1, this.manager()));
-    }
-
-    public FunctionSecrets listSyncFunctionTriggersSlot(String resourceGroupName, String name, String slot) {
-        FunctionSecretsInner inner = this.serviceClient().listSyncFunctionTriggersSlot(resourceGroupName, name, slot);
-        if (inner != null) {
-            return new FunctionSecretsImpl(inner, this.manager());
-        } else {
-            return null;
-        }
     }
 
     public Response<FunctionSecrets> listSyncFunctionTriggersSlotWithResponse(
@@ -5764,10 +5756,10 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public MigrateMySqlStatus getMigrateMySqlStatusSlot(String resourceGroupName, String name, String slot) {
-        MigrateMySqlStatusInner inner = this.serviceClient().getMigrateMySqlStatusSlot(resourceGroupName, name, slot);
+    public FunctionSecrets listSyncFunctionTriggersSlot(String resourceGroupName, String name, String slot) {
+        FunctionSecretsInner inner = this.serviceClient().listSyncFunctionTriggersSlot(resourceGroupName, name, slot);
         if (inner != null) {
-            return new MigrateMySqlStatusImpl(inner, this.manager());
+            return new FunctionSecretsImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -5788,12 +5780,10 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public SwiftVirtualNetwork getSwiftVirtualNetworkConnectionSlot(
-        String resourceGroupName, String name, String slot) {
-        SwiftVirtualNetworkInner inner =
-            this.serviceClient().getSwiftVirtualNetworkConnectionSlot(resourceGroupName, name, slot);
+    public MigrateMySqlStatus getMigrateMySqlStatusSlot(String resourceGroupName, String name, String slot) {
+        MigrateMySqlStatusInner inner = this.serviceClient().getMigrateMySqlStatusSlot(resourceGroupName, name, slot);
         if (inner != null) {
-            return new SwiftVirtualNetworkImpl(inner, this.manager());
+            return new MigrateMySqlStatusImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -5816,13 +5806,10 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public SwiftVirtualNetwork createOrUpdateSwiftVirtualNetworkConnectionWithCheckSlot(
-        String resourceGroupName, String name, String slot, SwiftVirtualNetworkInner connectionEnvelope) {
+    public SwiftVirtualNetwork getSwiftVirtualNetworkConnectionSlot(
+        String resourceGroupName, String name, String slot) {
         SwiftVirtualNetworkInner inner =
-            this
-                .serviceClient()
-                .createOrUpdateSwiftVirtualNetworkConnectionWithCheckSlot(
-                    resourceGroupName, name, slot, connectionEnvelope);
+            this.serviceClient().getSwiftVirtualNetworkConnectionSlot(resourceGroupName, name, slot);
         if (inner != null) {
             return new SwiftVirtualNetworkImpl(inner, this.manager());
         } else {
@@ -5852,8 +5839,18 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public void deleteSwiftVirtualNetworkSlot(String resourceGroupName, String name, String slot) {
-        this.serviceClient().deleteSwiftVirtualNetworkSlot(resourceGroupName, name, slot);
+    public SwiftVirtualNetwork createOrUpdateSwiftVirtualNetworkConnectionWithCheckSlot(
+        String resourceGroupName, String name, String slot, SwiftVirtualNetworkInner connectionEnvelope) {
+        SwiftVirtualNetworkInner inner =
+            this
+                .serviceClient()
+                .createOrUpdateSwiftVirtualNetworkConnectionWithCheckSlot(
+                    resourceGroupName, name, slot, connectionEnvelope);
+        if (inner != null) {
+            return new SwiftVirtualNetworkImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> deleteSwiftVirtualNetworkSlotWithResponse(
@@ -5861,17 +5858,8 @@ public final class WebAppsImpl implements WebApps {
         return this.serviceClient().deleteSwiftVirtualNetworkSlotWithResponse(resourceGroupName, name, slot, context);
     }
 
-    public SwiftVirtualNetwork updateSwiftVirtualNetworkConnectionWithCheckSlot(
-        String resourceGroupName, String name, String slot, SwiftVirtualNetworkInner connectionEnvelope) {
-        SwiftVirtualNetworkInner inner =
-            this
-                .serviceClient()
-                .updateSwiftVirtualNetworkConnectionWithCheckSlot(resourceGroupName, name, slot, connectionEnvelope);
-        if (inner != null) {
-            return new SwiftVirtualNetworkImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void deleteSwiftVirtualNetworkSlot(String resourceGroupName, String name, String slot) {
+        this.serviceClient().deleteSwiftVirtualNetworkSlot(resourceGroupName, name, slot);
     }
 
     public Response<SwiftVirtualNetwork> updateSwiftVirtualNetworkConnectionWithCheckSlotWithResponse(
@@ -5896,10 +5884,14 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public NetworkFeatures listNetworkFeaturesSlot(String resourceGroupName, String name, String view, String slot) {
-        NetworkFeaturesInner inner = this.serviceClient().listNetworkFeaturesSlot(resourceGroupName, name, view, slot);
+    public SwiftVirtualNetwork updateSwiftVirtualNetworkConnectionWithCheckSlot(
+        String resourceGroupName, String name, String slot, SwiftVirtualNetworkInner connectionEnvelope) {
+        SwiftVirtualNetworkInner inner =
+            this
+                .serviceClient()
+                .updateSwiftVirtualNetworkConnectionWithCheckSlot(resourceGroupName, name, slot, connectionEnvelope);
         if (inner != null) {
-            return new NetworkFeaturesImpl(inner, this.manager());
+            return new SwiftVirtualNetworkImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -5920,8 +5912,13 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public Object getNetworkTraceOperationSlot(String resourceGroupName, String name, String operationId, String slot) {
-        return this.serviceClient().getNetworkTraceOperationSlot(resourceGroupName, name, operationId, slot);
+    public NetworkFeatures listNetworkFeaturesSlot(String resourceGroupName, String name, String view, String slot) {
+        NetworkFeaturesInner inner = this.serviceClient().listNetworkFeaturesSlot(resourceGroupName, name, view, slot);
+        if (inner != null) {
+            return new NetworkFeaturesImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Object> getNetworkTraceOperationSlotWithResponse(
@@ -5931,8 +5928,8 @@ public final class WebAppsImpl implements WebApps {
             .getNetworkTraceOperationSlotWithResponse(resourceGroupName, name, operationId, slot, context);
     }
 
-    public String startWebSiteNetworkTraceSlot(String resourceGroupName, String name, String slot) {
-        return this.serviceClient().startWebSiteNetworkTraceSlot(resourceGroupName, name, slot);
+    public Object getNetworkTraceOperationSlot(String resourceGroupName, String name, String operationId, String slot) {
+        return this.serviceClient().getNetworkTraceOperationSlot(resourceGroupName, name, operationId, slot);
     }
 
     public Response<String> startWebSiteNetworkTraceSlotWithResponse(
@@ -5947,6 +5944,10 @@ public final class WebAppsImpl implements WebApps {
             .serviceClient()
             .startWebSiteNetworkTraceSlotWithResponse(
                 resourceGroupName, name, slot, durationInSeconds, maxFrameLength, sasUrl, context);
+    }
+
+    public String startWebSiteNetworkTraceSlot(String resourceGroupName, String name, String slot) {
+        return this.serviceClient().startWebSiteNetworkTraceSlot(resourceGroupName, name, slot);
     }
 
     public Object startWebSiteNetworkTraceOperationSlot(
@@ -5980,29 +5981,13 @@ public final class WebAppsImpl implements WebApps {
                 resourceGroupName, name, slot, durationInSeconds, maxFrameLength, sasUrl, context);
     }
 
-    public void stopWebSiteNetworkTraceSlot(String resourceGroupName, String name, String slot) {
-        this.serviceClient().stopWebSiteNetworkTraceSlot(resourceGroupName, name, slot);
-    }
-
     public Response<Void> stopWebSiteNetworkTraceSlotWithResponse(
         String resourceGroupName, String name, String slot, Context context) {
         return this.serviceClient().stopWebSiteNetworkTraceSlotWithResponse(resourceGroupName, name, slot, context);
     }
 
-    public List<NetworkTrace> getNetworkTracesSlot(
-        String resourceGroupName, String name, String operationId, String slot) {
-        List<NetworkTraceInner> inner =
-            this.serviceClient().getNetworkTracesSlot(resourceGroupName, name, operationId, slot);
-        if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new NetworkTraceImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
-        } else {
-            return Collections.emptyList();
-        }
+    public void stopWebSiteNetworkTraceSlot(String resourceGroupName, String name, String slot) {
+        this.serviceClient().stopWebSiteNetworkTraceSlot(resourceGroupName, name, slot);
     }
 
     public Response<List<NetworkTrace>> getNetworkTracesSlotWithResponse(
@@ -6024,22 +6009,10 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public Object getNetworkTraceOperationSlotV2(
-        String resourceGroupName, String name, String operationId, String slot) {
-        return this.serviceClient().getNetworkTraceOperationSlotV2(resourceGroupName, name, operationId, slot);
-    }
-
-    public Response<Object> getNetworkTraceOperationSlotV2WithResponse(
-        String resourceGroupName, String name, String operationId, String slot, Context context) {
-        return this
-            .serviceClient()
-            .getNetworkTraceOperationSlotV2WithResponse(resourceGroupName, name, operationId, slot, context);
-    }
-
-    public List<NetworkTrace> getNetworkTracesSlotV2(
+    public List<NetworkTrace> getNetworkTracesSlot(
         String resourceGroupName, String name, String operationId, String slot) {
         List<NetworkTraceInner> inner =
-            this.serviceClient().getNetworkTracesSlotV2(resourceGroupName, name, operationId, slot);
+            this.serviceClient().getNetworkTracesSlot(resourceGroupName, name, operationId, slot);
         if (inner != null) {
             return Collections
                 .unmodifiableList(
@@ -6050,6 +6023,18 @@ public final class WebAppsImpl implements WebApps {
         } else {
             return Collections.emptyList();
         }
+    }
+
+    public Response<Object> getNetworkTraceOperationSlotV2WithResponse(
+        String resourceGroupName, String name, String operationId, String slot, Context context) {
+        return this
+            .serviceClient()
+            .getNetworkTraceOperationSlotV2WithResponse(resourceGroupName, name, operationId, slot, context);
+    }
+
+    public Object getNetworkTraceOperationSlotV2(
+        String resourceGroupName, String name, String operationId, String slot) {
+        return this.serviceClient().getNetworkTraceOperationSlotV2(resourceGroupName, name, operationId, slot);
     }
 
     public Response<List<NetworkTrace>> getNetworkTracesSlotV2WithResponse(
@@ -6073,8 +6058,20 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public void generateNewSitePublishingPasswordSlot(String resourceGroupName, String name, String slot) {
-        this.serviceClient().generateNewSitePublishingPasswordSlot(resourceGroupName, name, slot);
+    public List<NetworkTrace> getNetworkTracesSlotV2(
+        String resourceGroupName, String name, String operationId, String slot) {
+        List<NetworkTraceInner> inner =
+            this.serviceClient().getNetworkTracesSlotV2(resourceGroupName, name, operationId, slot);
+        if (inner != null) {
+            return Collections
+                .unmodifiableList(
+                    inner
+                        .stream()
+                        .map(inner1 -> new NetworkTraceImpl(inner1, this.manager()))
+                        .collect(Collectors.toList()));
+        } else {
+            return Collections.emptyList();
+        }
     }
 
     public Response<Void> generateNewSitePublishingPasswordSlotWithResponse(
@@ -6082,6 +6079,10 @@ public final class WebAppsImpl implements WebApps {
         return this
             .serviceClient()
             .generateNewSitePublishingPasswordSlotWithResponse(resourceGroupName, name, slot, context);
+    }
+
+    public void generateNewSitePublishingPasswordSlot(String resourceGroupName, String name, String slot) {
+        this.serviceClient().generateNewSitePublishingPasswordSlot(resourceGroupName, name, slot);
     }
 
     public PagedIterable<PerfMonResponse> listPerfMonCountersSlot(String resourceGroupName, String name, String slot) {
@@ -6095,15 +6096,6 @@ public final class WebAppsImpl implements WebApps {
         PagedIterable<PerfMonResponseInner> inner =
             this.serviceClient().listPerfMonCountersSlot(resourceGroupName, name, slot, filter, context);
         return Utils.mapPage(inner, inner1 -> new PerfMonResponseImpl(inner1, this.manager()));
-    }
-
-    public SitePhpErrorLogFlag getSitePhpErrorLogFlagSlot(String resourceGroupName, String name, String slot) {
-        SitePhpErrorLogFlagInner inner = this.serviceClient().getSitePhpErrorLogFlagSlot(resourceGroupName, name, slot);
-        if (inner != null) {
-            return new SitePhpErrorLogFlagImpl(inner, this.manager());
-        } else {
-            return null;
-        }
     }
 
     public Response<SitePhpErrorLogFlag> getSitePhpErrorLogFlagSlotWithResponse(
@@ -6121,10 +6113,10 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public PremierAddOn listPremierAddOnsSlot(String resourceGroupName, String name, String slot) {
-        PremierAddOnInner inner = this.serviceClient().listPremierAddOnsSlot(resourceGroupName, name, slot);
+    public SitePhpErrorLogFlag getSitePhpErrorLogFlagSlot(String resourceGroupName, String name, String slot) {
+        SitePhpErrorLogFlagInner inner = this.serviceClient().getSitePhpErrorLogFlagSlot(resourceGroupName, name, slot);
         if (inner != null) {
-            return new PremierAddOnImpl(inner, this.manager());
+            return new SitePhpErrorLogFlagImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -6145,10 +6137,8 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public PremierAddOn getPremierAddOnSlot(
-        String resourceGroupName, String name, String premierAddOnName, String slot) {
-        PremierAddOnInner inner =
-            this.serviceClient().getPremierAddOnSlot(resourceGroupName, name, premierAddOnName, slot);
+    public PremierAddOn listPremierAddOnsSlot(String resourceGroupName, String name, String slot) {
+        PremierAddOnInner inner = this.serviceClient().listPremierAddOnsSlot(resourceGroupName, name, slot);
         if (inner != null) {
             return new PremierAddOnImpl(inner, this.manager());
         } else {
@@ -6173,10 +6163,10 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public PremierAddOn addPremierAddOnSlot(
-        String resourceGroupName, String name, String premierAddOnName, String slot, PremierAddOnInner premierAddOn) {
+    public PremierAddOn getPremierAddOnSlot(
+        String resourceGroupName, String name, String premierAddOnName, String slot) {
         PremierAddOnInner inner =
-            this.serviceClient().addPremierAddOnSlot(resourceGroupName, name, premierAddOnName, slot, premierAddOn);
+            this.serviceClient().getPremierAddOnSlot(resourceGroupName, name, premierAddOnName, slot);
         if (inner != null) {
             return new PremierAddOnImpl(inner, this.manager());
         } else {
@@ -6207,8 +6197,15 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public void deletePremierAddOnSlot(String resourceGroupName, String name, String premierAddOnName, String slot) {
-        this.serviceClient().deletePremierAddOnSlot(resourceGroupName, name, premierAddOnName, slot);
+    public PremierAddOn addPremierAddOnSlot(
+        String resourceGroupName, String name, String premierAddOnName, String slot, PremierAddOnInner premierAddOn) {
+        PremierAddOnInner inner =
+            this.serviceClient().addPremierAddOnSlot(resourceGroupName, name, premierAddOnName, slot, premierAddOn);
+        if (inner != null) {
+            return new PremierAddOnImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> deletePremierAddOnSlotWithResponse(
@@ -6218,19 +6215,8 @@ public final class WebAppsImpl implements WebApps {
             .deletePremierAddOnSlotWithResponse(resourceGroupName, name, premierAddOnName, slot, context);
     }
 
-    public PremierAddOn updatePremierAddOnSlot(
-        String resourceGroupName,
-        String name,
-        String premierAddOnName,
-        String slot,
-        PremierAddOnPatchResource premierAddOn) {
-        PremierAddOnInner inner =
-            this.serviceClient().updatePremierAddOnSlot(resourceGroupName, name, premierAddOnName, slot, premierAddOn);
-        if (inner != null) {
-            return new PremierAddOnImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void deletePremierAddOnSlot(String resourceGroupName, String name, String premierAddOnName, String slot) {
+        this.serviceClient().deletePremierAddOnSlot(resourceGroupName, name, premierAddOnName, slot);
     }
 
     public Response<PremierAddOn> updatePremierAddOnSlotWithResponse(
@@ -6256,10 +6242,16 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public PrivateAccess getPrivateAccessSlot(String resourceGroupName, String name, String slot) {
-        PrivateAccessInner inner = this.serviceClient().getPrivateAccessSlot(resourceGroupName, name, slot);
+    public PremierAddOn updatePremierAddOnSlot(
+        String resourceGroupName,
+        String name,
+        String premierAddOnName,
+        String slot,
+        PremierAddOnPatchResource premierAddOn) {
+        PremierAddOnInner inner =
+            this.serviceClient().updatePremierAddOnSlot(resourceGroupName, name, premierAddOnName, slot, premierAddOn);
         if (inner != null) {
-            return new PrivateAccessImpl(inner, this.manager());
+            return new PremierAddOnImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -6280,9 +6272,8 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public PrivateAccess putPrivateAccessVnetSlot(
-        String resourceGroupName, String name, String slot, PrivateAccessInner access) {
-        PrivateAccessInner inner = this.serviceClient().putPrivateAccessVnetSlot(resourceGroupName, name, slot, access);
+    public PrivateAccess getPrivateAccessSlot(String resourceGroupName, String name, String slot) {
+        PrivateAccessInner inner = this.serviceClient().getPrivateAccessSlot(resourceGroupName, name, slot);
         if (inner != null) {
             return new PrivateAccessImpl(inner, this.manager());
         } else {
@@ -6305,6 +6296,16 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
+    public PrivateAccess putPrivateAccessVnetSlot(
+        String resourceGroupName, String name, String slot, PrivateAccessInner access) {
+        PrivateAccessInner inner = this.serviceClient().putPrivateAccessVnetSlot(resourceGroupName, name, slot, access);
+        if (inner != null) {
+            return new PrivateAccessImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
     public PagedIterable<RemotePrivateEndpointConnectionArmResource> getPrivateEndpointConnectionListSlot(
         String resourceGroupName, String name, String slot) {
         PagedIterable<RemotePrivateEndpointConnectionArmResourceInner> inner =
@@ -6321,19 +6322,6 @@ public final class WebAppsImpl implements WebApps {
             .mapPage(inner, inner1 -> new RemotePrivateEndpointConnectionArmResourceImpl(inner1, this.manager()));
     }
 
-    public RemotePrivateEndpointConnectionArmResource getPrivateEndpointConnectionSlot(
-        String resourceGroupName, String name, String privateEndpointConnectionName, String slot) {
-        RemotePrivateEndpointConnectionArmResourceInner inner =
-            this
-                .serviceClient()
-                .getPrivateEndpointConnectionSlot(resourceGroupName, name, privateEndpointConnectionName, slot);
-        if (inner != null) {
-            return new RemotePrivateEndpointConnectionArmResourceImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<RemotePrivateEndpointConnectionArmResource> getPrivateEndpointConnectionSlotWithResponse(
         String resourceGroupName, String name, String privateEndpointConnectionName, String slot, Context context) {
         Response<RemotePrivateEndpointConnectionArmResourceInner> inner =
@@ -6347,6 +6335,19 @@ public final class WebAppsImpl implements WebApps {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new RemotePrivateEndpointConnectionArmResourceImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public RemotePrivateEndpointConnectionArmResource getPrivateEndpointConnectionSlot(
+        String resourceGroupName, String name, String privateEndpointConnectionName, String slot) {
+        RemotePrivateEndpointConnectionArmResourceInner inner =
+            this
+                .serviceClient()
+                .getPrivateEndpointConnectionSlot(resourceGroupName, name, privateEndpointConnectionName, slot);
+        if (inner != null) {
+            return new RemotePrivateEndpointConnectionArmResourceImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -6403,16 +6404,6 @@ public final class WebAppsImpl implements WebApps {
             .deletePrivateEndpointConnectionSlot(resourceGroupName, name, privateEndpointConnectionName, slot, context);
     }
 
-    public PrivateLinkResourcesWrapper getPrivateLinkResourcesSlot(String resourceGroupName, String name, String slot) {
-        PrivateLinkResourcesWrapperInner inner =
-            this.serviceClient().getPrivateLinkResourcesSlot(resourceGroupName, name, slot);
-        if (inner != null) {
-            return new PrivateLinkResourcesWrapperImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<PrivateLinkResourcesWrapper> getPrivateLinkResourcesSlotWithResponse(
         String resourceGroupName, String name, String slot, Context context) {
         Response<PrivateLinkResourcesWrapperInner> inner =
@@ -6423,6 +6414,16 @@ public final class WebAppsImpl implements WebApps {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new PrivateLinkResourcesWrapperImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public PrivateLinkResourcesWrapper getPrivateLinkResourcesSlot(String resourceGroupName, String name, String slot) {
+        PrivateLinkResourcesWrapperInner inner =
+            this.serviceClient().getPrivateLinkResourcesSlot(resourceGroupName, name, slot);
+        if (inner != null) {
+            return new PrivateLinkResourcesWrapperImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -6440,15 +6441,6 @@ public final class WebAppsImpl implements WebApps {
         return Utils.mapPage(inner, inner1 -> new ProcessInfoImpl(inner1, this.manager()));
     }
 
-    public ProcessInfo getProcessSlot(String resourceGroupName, String name, String processId, String slot) {
-        ProcessInfoInner inner = this.serviceClient().getProcessSlot(resourceGroupName, name, processId, slot);
-        if (inner != null) {
-            return new ProcessInfoImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<ProcessInfo> getProcessSlotWithResponse(
         String resourceGroupName, String name, String processId, String slot, Context context) {
         Response<ProcessInfoInner> inner =
@@ -6464,8 +6456,13 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public void deleteProcessSlot(String resourceGroupName, String name, String processId, String slot) {
-        this.serviceClient().deleteProcessSlot(resourceGroupName, name, processId, slot);
+    public ProcessInfo getProcessSlot(String resourceGroupName, String name, String processId, String slot) {
+        ProcessInfoInner inner = this.serviceClient().getProcessSlot(resourceGroupName, name, processId, slot);
+        if (inner != null) {
+            return new ProcessInfoImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> deleteProcessSlotWithResponse(
@@ -6473,13 +6470,17 @@ public final class WebAppsImpl implements WebApps {
         return this.serviceClient().deleteProcessSlotWithResponse(resourceGroupName, name, processId, slot, context);
     }
 
-    public InputStream getProcessDumpSlot(String resourceGroupName, String name, String processId, String slot) {
-        return this.serviceClient().getProcessDumpSlot(resourceGroupName, name, processId, slot);
+    public void deleteProcessSlot(String resourceGroupName, String name, String processId, String slot) {
+        this.serviceClient().deleteProcessSlot(resourceGroupName, name, processId, slot);
     }
 
-    public StreamResponse getProcessDumpSlotWithResponse(
+    public Response<InputStream> getProcessDumpSlotWithResponse(
         String resourceGroupName, String name, String processId, String slot, Context context) {
         return this.serviceClient().getProcessDumpSlotWithResponse(resourceGroupName, name, processId, slot, context);
+    }
+
+    public InputStream getProcessDumpSlot(String resourceGroupName, String name, String processId, String slot) {
+        return this.serviceClient().getProcessDumpSlot(resourceGroupName, name, processId, slot);
     }
 
     public PagedIterable<ProcessModuleInfo> listProcessModulesSlot(
@@ -6496,17 +6497,6 @@ public final class WebAppsImpl implements WebApps {
         return Utils.mapPage(inner, inner1 -> new ProcessModuleInfoImpl(inner1, this.manager()));
     }
 
-    public ProcessModuleInfo getProcessModuleSlot(
-        String resourceGroupName, String name, String processId, String baseAddress, String slot) {
-        ProcessModuleInfoInner inner =
-            this.serviceClient().getProcessModuleSlot(resourceGroupName, name, processId, baseAddress, slot);
-        if (inner != null) {
-            return new ProcessModuleInfoImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<ProcessModuleInfo> getProcessModuleSlotWithResponse(
         String resourceGroupName, String name, String processId, String baseAddress, String slot, Context context) {
         Response<ProcessModuleInfoInner> inner =
@@ -6519,6 +6509,17 @@ public final class WebAppsImpl implements WebApps {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new ProcessModuleInfoImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public ProcessModuleInfo getProcessModuleSlot(
+        String resourceGroupName, String name, String processId, String baseAddress, String slot) {
+        ProcessModuleInfoInner inner =
+            this.serviceClient().getProcessModuleSlot(resourceGroupName, name, processId, baseAddress, slot);
+        if (inner != null) {
+            return new ProcessModuleInfoImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -6552,17 +6553,6 @@ public final class WebAppsImpl implements WebApps {
         return Utils.mapPage(inner, inner1 -> new PublicCertificateImpl(inner1, this.manager()));
     }
 
-    public PublicCertificate getPublicCertificateSlot(
-        String resourceGroupName, String name, String slot, String publicCertificateName) {
-        PublicCertificateInner inner =
-            this.serviceClient().getPublicCertificateSlot(resourceGroupName, name, slot, publicCertificateName);
-        if (inner != null) {
-            return new PublicCertificateImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<PublicCertificate> getPublicCertificateSlotWithResponse(
         String resourceGroupName, String name, String slot, String publicCertificateName, Context context) {
         Response<PublicCertificateInner> inner =
@@ -6580,17 +6570,10 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public PublicCertificate createOrUpdatePublicCertificateSlot(
-        String resourceGroupName,
-        String name,
-        String publicCertificateName,
-        String slot,
-        PublicCertificateInner publicCertificate) {
+    public PublicCertificate getPublicCertificateSlot(
+        String resourceGroupName, String name, String slot, String publicCertificateName) {
         PublicCertificateInner inner =
-            this
-                .serviceClient()
-                .createOrUpdatePublicCertificateSlot(
-                    resourceGroupName, name, publicCertificateName, slot, publicCertificate);
+            this.serviceClient().getPublicCertificateSlot(resourceGroupName, name, slot, publicCertificateName);
         if (inner != null) {
             return new PublicCertificateImpl(inner, this.manager());
         } else {
@@ -6621,9 +6604,22 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public void deletePublicCertificateSlot(
-        String resourceGroupName, String name, String slot, String publicCertificateName) {
-        this.serviceClient().deletePublicCertificateSlot(resourceGroupName, name, slot, publicCertificateName);
+    public PublicCertificate createOrUpdatePublicCertificateSlot(
+        String resourceGroupName,
+        String name,
+        String publicCertificateName,
+        String slot,
+        PublicCertificateInner publicCertificate) {
+        PublicCertificateInner inner =
+            this
+                .serviceClient()
+                .createOrUpdatePublicCertificateSlot(
+                    resourceGroupName, name, publicCertificateName, slot, publicCertificate);
+        if (inner != null) {
+            return new PublicCertificateImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> deletePublicCertificateSlotWithResponse(
@@ -6633,14 +6629,12 @@ public final class WebAppsImpl implements WebApps {
             .deletePublicCertificateSlotWithResponse(resourceGroupName, name, slot, publicCertificateName, context);
     }
 
-    public InputStream listPublishingProfileXmlWithSecretsSlot(
-        String resourceGroupName, String name, String slot, CsmPublishingProfileOptions publishingProfileOptions) {
-        return this
-            .serviceClient()
-            .listPublishingProfileXmlWithSecretsSlot(resourceGroupName, name, slot, publishingProfileOptions);
+    public void deletePublicCertificateSlot(
+        String resourceGroupName, String name, String slot, String publicCertificateName) {
+        this.serviceClient().deletePublicCertificateSlot(resourceGroupName, name, slot, publicCertificateName);
     }
 
-    public StreamResponse listPublishingProfileXmlWithSecretsSlotWithResponse(
+    public Response<InputStream> listPublishingProfileXmlWithSecretsSlotWithResponse(
         String resourceGroupName,
         String name,
         String slot,
@@ -6652,8 +6646,11 @@ public final class WebAppsImpl implements WebApps {
                 resourceGroupName, name, slot, publishingProfileOptions, context);
     }
 
-    public void resetSlotConfigurationSlot(String resourceGroupName, String name, String slot) {
-        this.serviceClient().resetSlotConfigurationSlot(resourceGroupName, name, slot);
+    public InputStream listPublishingProfileXmlWithSecretsSlot(
+        String resourceGroupName, String name, String slot, CsmPublishingProfileOptions publishingProfileOptions) {
+        return this
+            .serviceClient()
+            .listPublishingProfileXmlWithSecretsSlot(resourceGroupName, name, slot, publishingProfileOptions);
     }
 
     public Response<Void> resetSlotConfigurationSlotWithResponse(
@@ -6661,8 +6658,8 @@ public final class WebAppsImpl implements WebApps {
         return this.serviceClient().resetSlotConfigurationSlotWithResponse(resourceGroupName, name, slot, context);
     }
 
-    public void restartSlot(String resourceGroupName, String name, String slot) {
-        this.serviceClient().restartSlot(resourceGroupName, name, slot);
+    public void resetSlotConfigurationSlot(String resourceGroupName, String name, String slot) {
+        this.serviceClient().resetSlotConfigurationSlot(resourceGroupName, name, slot);
     }
 
     public Response<Void> restartSlotWithResponse(
@@ -6670,6 +6667,10 @@ public final class WebAppsImpl implements WebApps {
         return this
             .serviceClient()
             .restartSlotWithResponse(resourceGroupName, name, slot, softRestart, synchronous, context);
+    }
+
+    public void restartSlot(String resourceGroupName, String name, String slot) {
+        this.serviceClient().restartSlot(resourceGroupName, name, slot);
     }
 
     public void restoreFromBackupBlobSlot(
@@ -6715,17 +6716,6 @@ public final class WebAppsImpl implements WebApps {
         return Utils.mapPage(inner, inner1 -> new SiteExtensionInfoImpl(inner1, this.manager()));
     }
 
-    public SiteExtensionInfo getSiteExtensionSlot(
-        String resourceGroupName, String name, String siteExtensionId, String slot) {
-        SiteExtensionInfoInner inner =
-            this.serviceClient().getSiteExtensionSlot(resourceGroupName, name, siteExtensionId, slot);
-        if (inner != null) {
-            return new SiteExtensionInfoImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<SiteExtensionInfo> getSiteExtensionSlotWithResponse(
         String resourceGroupName, String name, String siteExtensionId, String slot, Context context) {
         Response<SiteExtensionInfoInner> inner =
@@ -6738,6 +6728,17 @@ public final class WebAppsImpl implements WebApps {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new SiteExtensionInfoImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public SiteExtensionInfo getSiteExtensionSlot(
+        String resourceGroupName, String name, String siteExtensionId, String slot) {
+        SiteExtensionInfoInner inner =
+            this.serviceClient().getSiteExtensionSlot(resourceGroupName, name, siteExtensionId, slot);
+        if (inner != null) {
+            return new SiteExtensionInfoImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -6765,15 +6766,15 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public void deleteSiteExtensionSlot(String resourceGroupName, String name, String siteExtensionId, String slot) {
-        this.serviceClient().deleteSiteExtensionSlot(resourceGroupName, name, siteExtensionId, slot);
-    }
-
     public Response<Void> deleteSiteExtensionSlotWithResponse(
         String resourceGroupName, String name, String siteExtensionId, String slot, Context context) {
         return this
             .serviceClient()
             .deleteSiteExtensionSlotWithResponse(resourceGroupName, name, siteExtensionId, slot, context);
+    }
+
+    public void deleteSiteExtensionSlot(String resourceGroupName, String name, String siteExtensionId, String slot) {
+        this.serviceClient().deleteSiteExtensionSlot(resourceGroupName, name, siteExtensionId, slot);
     }
 
     public PagedIterable<SlotDifference> listSlotDifferencesSlot(
@@ -6825,15 +6826,6 @@ public final class WebAppsImpl implements WebApps {
         return Utils.mapPage(inner, inner1 -> new SnapshotImpl(inner1, this.manager()));
     }
 
-    public SiteSourceControl getSourceControlSlot(String resourceGroupName, String name, String slot) {
-        SiteSourceControlInner inner = this.serviceClient().getSourceControlSlot(resourceGroupName, name, slot);
-        if (inner != null) {
-            return new SiteSourceControlImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<SiteSourceControl> getSourceControlSlotWithResponse(
         String resourceGroupName, String name, String slot, Context context) {
         Response<SiteSourceControlInner> inner =
@@ -6844,6 +6836,15 @@ public final class WebAppsImpl implements WebApps {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new SiteSourceControlImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public SiteSourceControl getSourceControlSlot(String resourceGroupName, String name, String slot) {
+        SiteSourceControlInner inner = this.serviceClient().getSourceControlSlot(resourceGroupName, name, slot);
+        if (inner != null) {
+            return new SiteSourceControlImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -6873,10 +6874,6 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public void deleteSourceControlSlot(String resourceGroupName, String name, String slot) {
-        this.serviceClient().deleteSourceControlSlot(resourceGroupName, name, slot);
-    }
-
     public Response<Void> deleteSourceControlSlotWithResponse(
         String resourceGroupName, String name, String slot, String additionalFlags, Context context) {
         return this
@@ -6884,15 +6881,8 @@ public final class WebAppsImpl implements WebApps {
             .deleteSourceControlSlotWithResponse(resourceGroupName, name, slot, additionalFlags, context);
     }
 
-    public SiteSourceControl updateSourceControlSlot(
-        String resourceGroupName, String name, String slot, SiteSourceControlInner siteSourceControl) {
-        SiteSourceControlInner inner =
-            this.serviceClient().updateSourceControlSlot(resourceGroupName, name, slot, siteSourceControl);
-        if (inner != null) {
-            return new SiteSourceControlImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void deleteSourceControlSlot(String resourceGroupName, String name, String slot) {
+        this.serviceClient().deleteSourceControlSlot(resourceGroupName, name, slot);
     }
 
     public Response<SiteSourceControl> updateSourceControlSlotWithResponse(
@@ -6912,12 +6902,23 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public void startSlot(String resourceGroupName, String name, String slot) {
-        this.serviceClient().startSlot(resourceGroupName, name, slot);
+    public SiteSourceControl updateSourceControlSlot(
+        String resourceGroupName, String name, String slot, SiteSourceControlInner siteSourceControl) {
+        SiteSourceControlInner inner =
+            this.serviceClient().updateSourceControlSlot(resourceGroupName, name, slot, siteSourceControl);
+        if (inner != null) {
+            return new SiteSourceControlImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> startSlotWithResponse(String resourceGroupName, String name, String slot, Context context) {
         return this.serviceClient().startSlotWithResponse(resourceGroupName, name, slot, context);
+    }
+
+    public void startSlot(String resourceGroupName, String name, String slot) {
+        this.serviceClient().startSlot(resourceGroupName, name, slot);
     }
 
     public Object startNetworkTraceSlot(
@@ -6949,16 +6950,12 @@ public final class WebAppsImpl implements WebApps {
             .startNetworkTraceSlot(resourceGroupName, name, slot, durationInSeconds, maxFrameLength, sasUrl, context);
     }
 
-    public void stopSlot(String resourceGroupName, String name, String slot) {
-        this.serviceClient().stopSlot(resourceGroupName, name, slot);
-    }
-
     public Response<Void> stopSlotWithResponse(String resourceGroupName, String name, String slot, Context context) {
         return this.serviceClient().stopSlotWithResponse(resourceGroupName, name, slot, context);
     }
 
-    public void stopNetworkTraceSlot(String resourceGroupName, String name, String slot) {
-        this.serviceClient().stopNetworkTraceSlot(resourceGroupName, name, slot);
+    public void stopSlot(String resourceGroupName, String name, String slot) {
+        this.serviceClient().stopSlot(resourceGroupName, name, slot);
     }
 
     public Response<Void> stopNetworkTraceSlotWithResponse(
@@ -6966,8 +6963,8 @@ public final class WebAppsImpl implements WebApps {
         return this.serviceClient().stopNetworkTraceSlotWithResponse(resourceGroupName, name, slot, context);
     }
 
-    public void syncRepositorySlot(String resourceGroupName, String name, String slot) {
-        this.serviceClient().syncRepositorySlot(resourceGroupName, name, slot);
+    public void stopNetworkTraceSlot(String resourceGroupName, String name, String slot) {
+        this.serviceClient().stopNetworkTraceSlot(resourceGroupName, name, slot);
     }
 
     public Response<Void> syncRepositorySlotWithResponse(
@@ -6975,13 +6972,17 @@ public final class WebAppsImpl implements WebApps {
         return this.serviceClient().syncRepositorySlotWithResponse(resourceGroupName, name, slot, context);
     }
 
-    public void syncFunctionTriggersSlot(String resourceGroupName, String name, String slot) {
-        this.serviceClient().syncFunctionTriggersSlot(resourceGroupName, name, slot);
+    public void syncRepositorySlot(String resourceGroupName, String name, String slot) {
+        this.serviceClient().syncRepositorySlot(resourceGroupName, name, slot);
     }
 
     public Response<Void> syncFunctionTriggersSlotWithResponse(
         String resourceGroupName, String name, String slot, Context context) {
         return this.serviceClient().syncFunctionTriggersSlotWithResponse(resourceGroupName, name, slot, context);
+    }
+
+    public void syncFunctionTriggersSlot(String resourceGroupName, String name, String slot) {
+        this.serviceClient().syncFunctionTriggersSlot(resourceGroupName, name, slot);
     }
 
     public PagedIterable<TriggeredWebJob> listTriggeredWebJobsSlot(String resourceGroupName, String name, String slot) {
@@ -6995,17 +6996,6 @@ public final class WebAppsImpl implements WebApps {
         PagedIterable<TriggeredWebJobInner> inner =
             this.serviceClient().listTriggeredWebJobsSlot(resourceGroupName, name, slot, context);
         return Utils.mapPage(inner, inner1 -> new TriggeredWebJobImpl(inner1, this.manager()));
-    }
-
-    public TriggeredWebJob getTriggeredWebJobSlot(
-        String resourceGroupName, String name, String webJobName, String slot) {
-        TriggeredWebJobInner inner =
-            this.serviceClient().getTriggeredWebJobSlot(resourceGroupName, name, webJobName, slot);
-        if (inner != null) {
-            return new TriggeredWebJobImpl(inner, this.manager());
-        } else {
-            return null;
-        }
     }
 
     public Response<TriggeredWebJob> getTriggeredWebJobSlotWithResponse(
@@ -7023,8 +7013,15 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public void deleteTriggeredWebJobSlot(String resourceGroupName, String name, String webJobName, String slot) {
-        this.serviceClient().deleteTriggeredWebJobSlot(resourceGroupName, name, webJobName, slot);
+    public TriggeredWebJob getTriggeredWebJobSlot(
+        String resourceGroupName, String name, String webJobName, String slot) {
+        TriggeredWebJobInner inner =
+            this.serviceClient().getTriggeredWebJobSlot(resourceGroupName, name, webJobName, slot);
+        if (inner != null) {
+            return new TriggeredWebJobImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> deleteTriggeredWebJobSlotWithResponse(
@@ -7032,6 +7029,10 @@ public final class WebAppsImpl implements WebApps {
         return this
             .serviceClient()
             .deleteTriggeredWebJobSlotWithResponse(resourceGroupName, name, webJobName, slot, context);
+    }
+
+    public void deleteTriggeredWebJobSlot(String resourceGroupName, String name, String webJobName, String slot) {
+        this.serviceClient().deleteTriggeredWebJobSlot(resourceGroupName, name, webJobName, slot);
     }
 
     public PagedIterable<TriggeredJobHistory> listTriggeredWebJobHistorySlot(
@@ -7046,17 +7047,6 @@ public final class WebAppsImpl implements WebApps {
         PagedIterable<TriggeredJobHistoryInner> inner =
             this.serviceClient().listTriggeredWebJobHistorySlot(resourceGroupName, name, webJobName, slot, context);
         return Utils.mapPage(inner, inner1 -> new TriggeredJobHistoryImpl(inner1, this.manager()));
-    }
-
-    public TriggeredJobHistory getTriggeredWebJobHistorySlot(
-        String resourceGroupName, String name, String webJobName, String id, String slot) {
-        TriggeredJobHistoryInner inner =
-            this.serviceClient().getTriggeredWebJobHistorySlot(resourceGroupName, name, webJobName, id, slot);
-        if (inner != null) {
-            return new TriggeredJobHistoryImpl(inner, this.manager());
-        } else {
-            return null;
-        }
     }
 
     public Response<TriggeredJobHistory> getTriggeredWebJobHistorySlotWithResponse(
@@ -7076,8 +7066,15 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public void runTriggeredWebJobSlot(String resourceGroupName, String name, String webJobName, String slot) {
-        this.serviceClient().runTriggeredWebJobSlot(resourceGroupName, name, webJobName, slot);
+    public TriggeredJobHistory getTriggeredWebJobHistorySlot(
+        String resourceGroupName, String name, String webJobName, String id, String slot) {
+        TriggeredJobHistoryInner inner =
+            this.serviceClient().getTriggeredWebJobHistorySlot(resourceGroupName, name, webJobName, id, slot);
+        if (inner != null) {
+            return new TriggeredJobHistoryImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> runTriggeredWebJobSlotWithResponse(
@@ -7085,6 +7082,10 @@ public final class WebAppsImpl implements WebApps {
         return this
             .serviceClient()
             .runTriggeredWebJobSlotWithResponse(resourceGroupName, name, webJobName, slot, context);
+    }
+
+    public void runTriggeredWebJobSlot(String resourceGroupName, String name, String webJobName, String slot) {
+        this.serviceClient().runTriggeredWebJobSlot(resourceGroupName, name, webJobName, slot);
     }
 
     public PagedIterable<CsmUsageQuota> listUsagesSlot(String resourceGroupName, String name, String slot) {
@@ -7097,20 +7098,6 @@ public final class WebAppsImpl implements WebApps {
         PagedIterable<CsmUsageQuotaInner> inner =
             this.serviceClient().listUsagesSlot(resourceGroupName, name, slot, filter, context);
         return Utils.mapPage(inner, inner1 -> new CsmUsageQuotaImpl(inner1, this.manager()));
-    }
-
-    public List<VnetInfoResource> listVnetConnectionsSlot(String resourceGroupName, String name, String slot) {
-        List<VnetInfoResourceInner> inner = this.serviceClient().listVnetConnectionsSlot(resourceGroupName, name, slot);
-        if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new VnetInfoResourceImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
-        } else {
-            return Collections.emptyList();
-        }
     }
 
     public Response<List<VnetInfoResource>> listVnetConnectionsSlotWithResponse(
@@ -7132,13 +7119,17 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public VnetInfoResource getVnetConnectionSlot(String resourceGroupName, String name, String vnetName, String slot) {
-        VnetInfoResourceInner inner =
-            this.serviceClient().getVnetConnectionSlot(resourceGroupName, name, vnetName, slot);
+    public List<VnetInfoResource> listVnetConnectionsSlot(String resourceGroupName, String name, String slot) {
+        List<VnetInfoResourceInner> inner = this.serviceClient().listVnetConnectionsSlot(resourceGroupName, name, slot);
         if (inner != null) {
-            return new VnetInfoResourceImpl(inner, this.manager());
+            return Collections
+                .unmodifiableList(
+                    inner
+                        .stream()
+                        .map(inner1 -> new VnetInfoResourceImpl(inner1, this.manager()))
+                        .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -7157,8 +7148,14 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public void deleteVnetConnectionSlot(String resourceGroupName, String name, String vnetName, String slot) {
-        this.serviceClient().deleteVnetConnectionSlot(resourceGroupName, name, vnetName, slot);
+    public VnetInfoResource getVnetConnectionSlot(String resourceGroupName, String name, String vnetName, String slot) {
+        VnetInfoResourceInner inner =
+            this.serviceClient().getVnetConnectionSlot(resourceGroupName, name, vnetName, slot);
+        if (inner != null) {
+            return new VnetInfoResourceImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> deleteVnetConnectionSlotWithResponse(
@@ -7168,15 +7165,8 @@ public final class WebAppsImpl implements WebApps {
             .deleteVnetConnectionSlotWithResponse(resourceGroupName, name, vnetName, slot, context);
     }
 
-    public VnetGateway getVnetConnectionGatewaySlot(
-        String resourceGroupName, String name, String vnetName, String gatewayName, String slot) {
-        VnetGatewayInner inner =
-            this.serviceClient().getVnetConnectionGatewaySlot(resourceGroupName, name, vnetName, gatewayName, slot);
-        if (inner != null) {
-            return new VnetGatewayImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void deleteVnetConnectionSlot(String resourceGroupName, String name, String vnetName, String slot) {
+        this.serviceClient().deleteVnetConnectionSlot(resourceGroupName, name, vnetName, slot);
     }
 
     public Response<VnetGateway> getVnetConnectionGatewaySlotWithResponse(
@@ -7197,6 +7187,17 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
+    public VnetGateway getVnetConnectionGatewaySlot(
+        String resourceGroupName, String name, String vnetName, String gatewayName, String slot) {
+        VnetGatewayInner inner =
+            this.serviceClient().getVnetConnectionGatewaySlot(resourceGroupName, name, vnetName, gatewayName, slot);
+        if (inner != null) {
+            return new VnetGatewayImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
     public PagedIterable<WebJob> listWebJobsSlot(String resourceGroupName, String name, String slot) {
         PagedIterable<WebJobInner> inner = this.serviceClient().listWebJobsSlot(resourceGroupName, name, slot);
         return Utils.mapPage(inner, inner1 -> new WebJobImpl(inner1, this.manager()));
@@ -7205,15 +7206,6 @@ public final class WebAppsImpl implements WebApps {
     public PagedIterable<WebJob> listWebJobsSlot(String resourceGroupName, String name, String slot, Context context) {
         PagedIterable<WebJobInner> inner = this.serviceClient().listWebJobsSlot(resourceGroupName, name, slot, context);
         return Utils.mapPage(inner, inner1 -> new WebJobImpl(inner1, this.manager()));
-    }
-
-    public WebJob getWebJobSlot(String resourceGroupName, String name, String webJobName, String slot) {
-        WebJobInner inner = this.serviceClient().getWebJobSlot(resourceGroupName, name, webJobName, slot);
-        if (inner != null) {
-            return new WebJobImpl(inner, this.manager());
-        } else {
-            return null;
-        }
     }
 
     public Response<WebJob> getWebJobSlotWithResponse(
@@ -7226,6 +7218,15 @@ public final class WebAppsImpl implements WebApps {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new WebJobImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public WebJob getWebJobSlot(String resourceGroupName, String name, String webJobName, String slot) {
+        WebJobInner inner = this.serviceClient().getWebJobSlot(resourceGroupName, name, webJobName, slot);
+        if (inner != null) {
+            return new WebJobImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -7276,15 +7277,6 @@ public final class WebAppsImpl implements WebApps {
         return Utils.mapPage(inner, inner1 -> new SnapshotImpl(inner1, this.manager()));
     }
 
-    public SiteSourceControl getSourceControl(String resourceGroupName, String name) {
-        SiteSourceControlInner inner = this.serviceClient().getSourceControl(resourceGroupName, name);
-        if (inner != null) {
-            return new SiteSourceControlImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<SiteSourceControl> getSourceControlWithResponse(
         String resourceGroupName, String name, Context context) {
         Response<SiteSourceControlInner> inner =
@@ -7295,6 +7287,15 @@ public final class WebAppsImpl implements WebApps {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new SiteSourceControlImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public SiteSourceControl getSourceControl(String resourceGroupName, String name) {
+        SiteSourceControlInner inner = this.serviceClient().getSourceControl(resourceGroupName, name);
+        if (inner != null) {
+            return new SiteSourceControlImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -7322,24 +7323,13 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public void deleteSourceControl(String resourceGroupName, String name) {
-        this.serviceClient().deleteSourceControl(resourceGroupName, name);
-    }
-
     public Response<Void> deleteSourceControlWithResponse(
         String resourceGroupName, String name, String additionalFlags, Context context) {
         return this.serviceClient().deleteSourceControlWithResponse(resourceGroupName, name, additionalFlags, context);
     }
 
-    public SiteSourceControl updateSourceControl(
-        String resourceGroupName, String name, SiteSourceControlInner siteSourceControl) {
-        SiteSourceControlInner inner =
-            this.serviceClient().updateSourceControl(resourceGroupName, name, siteSourceControl);
-        if (inner != null) {
-            return new SiteSourceControlImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void deleteSourceControl(String resourceGroupName, String name) {
+        this.serviceClient().deleteSourceControl(resourceGroupName, name);
     }
 
     public Response<SiteSourceControl> updateSourceControlWithResponse(
@@ -7357,12 +7347,23 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public void start(String resourceGroupName, String name) {
-        this.serviceClient().start(resourceGroupName, name);
+    public SiteSourceControl updateSourceControl(
+        String resourceGroupName, String name, SiteSourceControlInner siteSourceControl) {
+        SiteSourceControlInner inner =
+            this.serviceClient().updateSourceControl(resourceGroupName, name, siteSourceControl);
+        if (inner != null) {
+            return new SiteSourceControlImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> startWithResponse(String resourceGroupName, String name, Context context) {
         return this.serviceClient().startWithResponse(resourceGroupName, name, context);
+    }
+
+    public void start(String resourceGroupName, String name) {
+        this.serviceClient().start(resourceGroupName, name);
     }
 
     public Object startNetworkTrace(
@@ -7388,36 +7389,36 @@ public final class WebAppsImpl implements WebApps {
             .startNetworkTrace(resourceGroupName, name, durationInSeconds, maxFrameLength, sasUrl, context);
     }
 
-    public void stop(String resourceGroupName, String name) {
-        this.serviceClient().stop(resourceGroupName, name);
-    }
-
     public Response<Void> stopWithResponse(String resourceGroupName, String name, Context context) {
         return this.serviceClient().stopWithResponse(resourceGroupName, name, context);
     }
 
-    public void stopNetworkTrace(String resourceGroupName, String name) {
-        this.serviceClient().stopNetworkTrace(resourceGroupName, name);
+    public void stop(String resourceGroupName, String name) {
+        this.serviceClient().stop(resourceGroupName, name);
     }
 
     public Response<Void> stopNetworkTraceWithResponse(String resourceGroupName, String name, Context context) {
         return this.serviceClient().stopNetworkTraceWithResponse(resourceGroupName, name, context);
     }
 
-    public void syncRepository(String resourceGroupName, String name) {
-        this.serviceClient().syncRepository(resourceGroupName, name);
+    public void stopNetworkTrace(String resourceGroupName, String name) {
+        this.serviceClient().stopNetworkTrace(resourceGroupName, name);
     }
 
     public Response<Void> syncRepositoryWithResponse(String resourceGroupName, String name, Context context) {
         return this.serviceClient().syncRepositoryWithResponse(resourceGroupName, name, context);
     }
 
-    public void syncFunctionTriggers(String resourceGroupName, String name) {
-        this.serviceClient().syncFunctionTriggers(resourceGroupName, name);
+    public void syncRepository(String resourceGroupName, String name) {
+        this.serviceClient().syncRepository(resourceGroupName, name);
     }
 
     public Response<Void> syncFunctionTriggersWithResponse(String resourceGroupName, String name, Context context) {
         return this.serviceClient().syncFunctionTriggersWithResponse(resourceGroupName, name, context);
+    }
+
+    public void syncFunctionTriggers(String resourceGroupName, String name) {
+        this.serviceClient().syncFunctionTriggers(resourceGroupName, name);
     }
 
     public PagedIterable<TriggeredWebJob> listTriggeredWebJobs(String resourceGroupName, String name) {
@@ -7429,15 +7430,6 @@ public final class WebAppsImpl implements WebApps {
         PagedIterable<TriggeredWebJobInner> inner =
             this.serviceClient().listTriggeredWebJobs(resourceGroupName, name, context);
         return Utils.mapPage(inner, inner1 -> new TriggeredWebJobImpl(inner1, this.manager()));
-    }
-
-    public TriggeredWebJob getTriggeredWebJob(String resourceGroupName, String name, String webJobName) {
-        TriggeredWebJobInner inner = this.serviceClient().getTriggeredWebJob(resourceGroupName, name, webJobName);
-        if (inner != null) {
-            return new TriggeredWebJobImpl(inner, this.manager());
-        } else {
-            return null;
-        }
     }
 
     public Response<TriggeredWebJob> getTriggeredWebJobWithResponse(
@@ -7455,13 +7447,22 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public void deleteTriggeredWebJob(String resourceGroupName, String name, String webJobName) {
-        this.serviceClient().deleteTriggeredWebJob(resourceGroupName, name, webJobName);
+    public TriggeredWebJob getTriggeredWebJob(String resourceGroupName, String name, String webJobName) {
+        TriggeredWebJobInner inner = this.serviceClient().getTriggeredWebJob(resourceGroupName, name, webJobName);
+        if (inner != null) {
+            return new TriggeredWebJobImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> deleteTriggeredWebJobWithResponse(
         String resourceGroupName, String name, String webJobName, Context context) {
         return this.serviceClient().deleteTriggeredWebJobWithResponse(resourceGroupName, name, webJobName, context);
+    }
+
+    public void deleteTriggeredWebJob(String resourceGroupName, String name, String webJobName) {
+        this.serviceClient().deleteTriggeredWebJob(resourceGroupName, name, webJobName);
     }
 
     public PagedIterable<TriggeredJobHistory> listTriggeredWebJobHistory(
@@ -7476,17 +7477,6 @@ public final class WebAppsImpl implements WebApps {
         PagedIterable<TriggeredJobHistoryInner> inner =
             this.serviceClient().listTriggeredWebJobHistory(resourceGroupName, name, webJobName, context);
         return Utils.mapPage(inner, inner1 -> new TriggeredJobHistoryImpl(inner1, this.manager()));
-    }
-
-    public TriggeredJobHistory getTriggeredWebJobHistory(
-        String resourceGroupName, String name, String webJobName, String id) {
-        TriggeredJobHistoryInner inner =
-            this.serviceClient().getTriggeredWebJobHistory(resourceGroupName, name, webJobName, id);
-        if (inner != null) {
-            return new TriggeredJobHistoryImpl(inner, this.manager());
-        } else {
-            return null;
-        }
     }
 
     public Response<TriggeredJobHistory> getTriggeredWebJobHistoryWithResponse(
@@ -7506,13 +7496,24 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public void runTriggeredWebJob(String resourceGroupName, String name, String webJobName) {
-        this.serviceClient().runTriggeredWebJob(resourceGroupName, name, webJobName);
+    public TriggeredJobHistory getTriggeredWebJobHistory(
+        String resourceGroupName, String name, String webJobName, String id) {
+        TriggeredJobHistoryInner inner =
+            this.serviceClient().getTriggeredWebJobHistory(resourceGroupName, name, webJobName, id);
+        if (inner != null) {
+            return new TriggeredJobHistoryImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> runTriggeredWebJobWithResponse(
         String resourceGroupName, String name, String webJobName, Context context) {
         return this.serviceClient().runTriggeredWebJobWithResponse(resourceGroupName, name, webJobName, context);
+    }
+
+    public void runTriggeredWebJob(String resourceGroupName, String name, String webJobName) {
+        this.serviceClient().runTriggeredWebJob(resourceGroupName, name, webJobName);
     }
 
     public PagedIterable<CsmUsageQuota> listUsages(String resourceGroupName, String name) {
@@ -7525,20 +7526,6 @@ public final class WebAppsImpl implements WebApps {
         PagedIterable<CsmUsageQuotaInner> inner =
             this.serviceClient().listUsages(resourceGroupName, name, filter, context);
         return Utils.mapPage(inner, inner1 -> new CsmUsageQuotaImpl(inner1, this.manager()));
-    }
-
-    public List<VnetInfoResource> listVnetConnections(String resourceGroupName, String name) {
-        List<VnetInfoResourceInner> inner = this.serviceClient().listVnetConnections(resourceGroupName, name);
-        if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new VnetInfoResourceImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
-        } else {
-            return Collections.emptyList();
-        }
     }
 
     public Response<List<VnetInfoResource>> listVnetConnectionsWithResponse(
@@ -7560,12 +7547,17 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public VnetInfoResource getVnetConnection(String resourceGroupName, String name, String vnetName) {
-        VnetInfoResourceInner inner = this.serviceClient().getVnetConnection(resourceGroupName, name, vnetName);
+    public List<VnetInfoResource> listVnetConnections(String resourceGroupName, String name) {
+        List<VnetInfoResourceInner> inner = this.serviceClient().listVnetConnections(resourceGroupName, name);
         if (inner != null) {
-            return new VnetInfoResourceImpl(inner, this.manager());
+            return Collections
+                .unmodifiableList(
+                    inner
+                        .stream()
+                        .map(inner1 -> new VnetInfoResourceImpl(inner1, this.manager()))
+                        .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -7584,10 +7576,8 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public VnetInfoResource createOrUpdateVnetConnection(
-        String resourceGroupName, String name, String vnetName, VnetInfoResourceInner connectionEnvelope) {
-        VnetInfoResourceInner inner =
-            this.serviceClient().createOrUpdateVnetConnection(resourceGroupName, name, vnetName, connectionEnvelope);
+    public VnetInfoResource getVnetConnection(String resourceGroupName, String name, String vnetName) {
+        VnetInfoResourceInner inner = this.serviceClient().getVnetConnection(resourceGroupName, name, vnetName);
         if (inner != null) {
             return new VnetInfoResourceImpl(inner, this.manager());
         } else {
@@ -7617,8 +7607,15 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public void deleteVnetConnection(String resourceGroupName, String name, String vnetName) {
-        this.serviceClient().deleteVnetConnection(resourceGroupName, name, vnetName);
+    public VnetInfoResource createOrUpdateVnetConnection(
+        String resourceGroupName, String name, String vnetName, VnetInfoResourceInner connectionEnvelope) {
+        VnetInfoResourceInner inner =
+            this.serviceClient().createOrUpdateVnetConnection(resourceGroupName, name, vnetName, connectionEnvelope);
+        if (inner != null) {
+            return new VnetInfoResourceImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> deleteVnetConnectionWithResponse(
@@ -7626,15 +7623,8 @@ public final class WebAppsImpl implements WebApps {
         return this.serviceClient().deleteVnetConnectionWithResponse(resourceGroupName, name, vnetName, context);
     }
 
-    public VnetInfoResource updateVnetConnection(
-        String resourceGroupName, String name, String vnetName, VnetInfoResourceInner connectionEnvelope) {
-        VnetInfoResourceInner inner =
-            this.serviceClient().updateVnetConnection(resourceGroupName, name, vnetName, connectionEnvelope);
-        if (inner != null) {
-            return new VnetInfoResourceImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+    public void deleteVnetConnection(String resourceGroupName, String name, String vnetName) {
+        this.serviceClient().deleteVnetConnection(resourceGroupName, name, vnetName);
     }
 
     public Response<VnetInfoResource> updateVnetConnectionWithResponse(
@@ -7658,12 +7648,12 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public VnetGateway getVnetConnectionGateway(
-        String resourceGroupName, String name, String vnetName, String gatewayName) {
-        VnetGatewayInner inner =
-            this.serviceClient().getVnetConnectionGateway(resourceGroupName, name, vnetName, gatewayName);
+    public VnetInfoResource updateVnetConnection(
+        String resourceGroupName, String name, String vnetName, VnetInfoResourceInner connectionEnvelope) {
+        VnetInfoResourceInner inner =
+            this.serviceClient().updateVnetConnection(resourceGroupName, name, vnetName, connectionEnvelope);
         if (inner != null) {
-            return new VnetGatewayImpl(inner, this.manager());
+            return new VnetInfoResourceImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -7686,17 +7676,10 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public VnetGateway createOrUpdateVnetConnectionGateway(
-        String resourceGroupName,
-        String name,
-        String vnetName,
-        String gatewayName,
-        VnetGatewayInner connectionEnvelope) {
+    public VnetGateway getVnetConnectionGateway(
+        String resourceGroupName, String name, String vnetName, String gatewayName) {
         VnetGatewayInner inner =
-            this
-                .serviceClient()
-                .createOrUpdateVnetConnectionGateway(
-                    resourceGroupName, name, vnetName, gatewayName, connectionEnvelope);
+            this.serviceClient().getVnetConnectionGateway(resourceGroupName, name, vnetName, gatewayName);
         if (inner != null) {
             return new VnetGatewayImpl(inner, this.manager());
         } else {
@@ -7727,7 +7710,7 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public VnetGateway updateVnetConnectionGateway(
+    public VnetGateway createOrUpdateVnetConnectionGateway(
         String resourceGroupName,
         String name,
         String vnetName,
@@ -7736,7 +7719,8 @@ public final class WebAppsImpl implements WebApps {
         VnetGatewayInner inner =
             this
                 .serviceClient()
-                .updateVnetConnectionGateway(resourceGroupName, name, vnetName, gatewayName, connectionEnvelope);
+                .createOrUpdateVnetConnectionGateway(
+                    resourceGroupName, name, vnetName, gatewayName, connectionEnvelope);
         if (inner != null) {
             return new VnetGatewayImpl(inner, this.manager());
         } else {
@@ -7767,6 +7751,23 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
+    public VnetGateway updateVnetConnectionGateway(
+        String resourceGroupName,
+        String name,
+        String vnetName,
+        String gatewayName,
+        VnetGatewayInner connectionEnvelope) {
+        VnetGatewayInner inner =
+            this
+                .serviceClient()
+                .updateVnetConnectionGateway(resourceGroupName, name, vnetName, gatewayName, connectionEnvelope);
+        if (inner != null) {
+            return new VnetGatewayImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
     public PagedIterable<WebJob> listWebJobs(String resourceGroupName, String name) {
         PagedIterable<WebJobInner> inner = this.serviceClient().listWebJobs(resourceGroupName, name);
         return Utils.mapPage(inner, inner1 -> new WebJobImpl(inner1, this.manager()));
@@ -7775,15 +7776,6 @@ public final class WebAppsImpl implements WebApps {
     public PagedIterable<WebJob> listWebJobs(String resourceGroupName, String name, Context context) {
         PagedIterable<WebJobInner> inner = this.serviceClient().listWebJobs(resourceGroupName, name, context);
         return Utils.mapPage(inner, inner1 -> new WebJobImpl(inner1, this.manager()));
-    }
-
-    public WebJob getWebJob(String resourceGroupName, String name, String webJobName) {
-        WebJobInner inner = this.serviceClient().getWebJob(resourceGroupName, name, webJobName);
-        if (inner != null) {
-            return new WebJobImpl(inner, this.manager());
-        } else {
-            return null;
-        }
     }
 
     public Response<WebJob> getWebJobWithResponse(
@@ -7796,6 +7788,15 @@ public final class WebAppsImpl implements WebApps {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new WebJobImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public WebJob getWebJob(String resourceGroupName, String name, String webJobName) {
+        WebJobInner inner = this.serviceClient().getWebJob(resourceGroupName, name, webJobName);
+        if (inner != null) {
+            return new WebJobImpl(inner, this.manager());
         } else {
             return null;
         }

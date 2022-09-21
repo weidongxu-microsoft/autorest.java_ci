@@ -70,6 +70,10 @@ public final class VmSizeProperty {
     @JsonProperty(value = "webWorkerResourceDiskSizeInMb")
     private Long webWorkerResourceDiskSizeInMb;
 
+    /** Creates an instance of VmSizeProperty class. */
+    public VmSizeProperty() {
+    }
+
     /**
      * Get the name property: The vm size name.
      *

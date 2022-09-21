@@ -40,6 +40,10 @@ public final class VaultInner extends Resource {
     @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;
 
+    /** Creates an instance of VaultInner class. */
+    public VaultInner() {
+    }
+
     /**
      * Get the identity property: Identity for the resource.
      *

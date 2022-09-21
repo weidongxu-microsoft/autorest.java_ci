@@ -18,19 +18,6 @@ public interface DiagnosticSettingsOperationsClient {
      *
      * @param resourceUri The identifier of the resource.
      * @param name The name of the diagnostic setting.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the active diagnostic settings for the specified resource.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    DiagnosticSettingsResourceInner get(String resourceUri, String name);
-
-    /**
-     * Gets the active diagnostic settings for the specified resource.
-     *
-     * @param resourceUri The identifier of the resource.
-     * @param name The name of the diagnostic setting.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -41,19 +28,17 @@ public interface DiagnosticSettingsOperationsClient {
     Response<DiagnosticSettingsResourceInner> getWithResponse(String resourceUri, String name, Context context);
 
     /**
-     * Creates or updates diagnostic settings for the specified resource.
+     * Gets the active diagnostic settings for the specified resource.
      *
      * @param resourceUri The identifier of the resource.
      * @param name The name of the diagnostic setting.
-     * @param parameters Parameters supplied to the operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the diagnostic setting resource.
+     * @return the active diagnostic settings for the specified resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    DiagnosticSettingsResourceInner createOrUpdate(
-        String resourceUri, String name, DiagnosticSettingsResourceInner parameters);
+    DiagnosticSettingsResourceInner get(String resourceUri, String name);
 
     /**
      * Creates or updates diagnostic settings for the specified resource.
@@ -72,16 +57,19 @@ public interface DiagnosticSettingsOperationsClient {
         String resourceUri, String name, DiagnosticSettingsResourceInner parameters, Context context);
 
     /**
-     * Deletes existing diagnostic settings for the specified resource.
+     * Creates or updates diagnostic settings for the specified resource.
      *
      * @param resourceUri The identifier of the resource.
      * @param name The name of the diagnostic setting.
+     * @param parameters Parameters supplied to the operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the diagnostic setting resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    void delete(String resourceUri, String name);
+    DiagnosticSettingsResourceInner createOrUpdate(
+        String resourceUri, String name, DiagnosticSettingsResourceInner parameters);
 
     /**
      * Deletes existing diagnostic settings for the specified resource.
@@ -98,16 +86,16 @@ public interface DiagnosticSettingsOperationsClient {
     Response<Void> deleteWithResponse(String resourceUri, String name, Context context);
 
     /**
-     * Gets the active diagnostic settings list for the specified resource.
+     * Deletes existing diagnostic settings for the specified resource.
      *
      * @param resourceUri The identifier of the resource.
+     * @param name The name of the diagnostic setting.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the active diagnostic settings list for the specified resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    DiagnosticSettingsResourceCollectionInner list(String resourceUri);
+    void delete(String resourceUri, String name);
 
     /**
      * Gets the active diagnostic settings list for the specified resource.
@@ -121,4 +109,16 @@ public interface DiagnosticSettingsOperationsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<DiagnosticSettingsResourceCollectionInner> listWithResponse(String resourceUri, Context context);
+
+    /**
+     * Gets the active diagnostic settings list for the specified resource.
+     *
+     * @param resourceUri The identifier of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the active diagnostic settings list for the specified resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    DiagnosticSettingsResourceCollectionInner list(String resourceUri);
 }

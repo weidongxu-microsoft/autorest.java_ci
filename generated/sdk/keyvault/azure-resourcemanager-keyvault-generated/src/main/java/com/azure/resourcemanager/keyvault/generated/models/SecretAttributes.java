@@ -9,6 +9,10 @@ import com.azure.core.annotation.Fluent;
 /** The secret management attributes. */
 @Fluent
 public final class SecretAttributes extends Attributes {
+    /** Creates an instance of SecretAttributes class. */
+    public SecretAttributes() {
+    }
+
     /** {@inheritDoc} */
     @Override
     public SecretAttributes withEnabled(Boolean enabled) {

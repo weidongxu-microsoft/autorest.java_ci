@@ -14,17 +14,6 @@ public interface WebCategories {
      * Gets the specified Azure Web Category.
      *
      * @param name The name of the azureWebCategory.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Azure Web Category.
-     */
-    AzureWebCategory get(String name);
-
-    /**
-     * Gets the specified Azure Web Category.
-     *
-     * @param name The name of the azureWebCategory.
      * @param expand Expands resourceIds back referenced by the azureWebCategory resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -33,6 +22,17 @@ public interface WebCategories {
      * @return the specified Azure Web Category along with {@link Response}.
      */
     Response<AzureWebCategory> getWithResponse(String name, String expand, Context context);
+
+    /**
+     * Gets the specified Azure Web Category.
+     *
+     * @param name The name of the azureWebCategory.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified Azure Web Category.
+     */
+    AzureWebCategory get(String name);
 
     /**
      * Gets all the Azure Web Categories in a subscription.

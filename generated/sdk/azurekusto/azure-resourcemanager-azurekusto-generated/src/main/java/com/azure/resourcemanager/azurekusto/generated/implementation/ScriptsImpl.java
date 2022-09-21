@@ -43,15 +43,6 @@ public final class ScriptsImpl implements Scripts {
         return Utils.mapPage(inner, inner1 -> new ScriptImpl(inner1, this.manager()));
     }
 
-    public Script get(String resourceGroupName, String clusterName, String databaseName, String scriptName) {
-        ScriptInner inner = this.serviceClient().get(resourceGroupName, clusterName, databaseName, scriptName);
-        if (inner != null) {
-            return new ScriptImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<Script> getWithResponse(
         String resourceGroupName, String clusterName, String databaseName, String scriptName, Context context) {
         Response<ScriptInner> inner =
@@ -67,6 +58,15 @@ public final class ScriptsImpl implements Scripts {
         }
     }
 
+    public Script get(String resourceGroupName, String clusterName, String databaseName, String scriptName) {
+        ScriptInner inner = this.serviceClient().get(resourceGroupName, clusterName, databaseName, scriptName);
+        if (inner != null) {
+            return new ScriptImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
     public void delete(String resourceGroupName, String clusterName, String databaseName, String scriptName) {
         this.serviceClient().delete(resourceGroupName, clusterName, databaseName, scriptName);
     }
@@ -74,17 +74,6 @@ public final class ScriptsImpl implements Scripts {
     public void delete(
         String resourceGroupName, String clusterName, String databaseName, String scriptName, Context context) {
         this.serviceClient().delete(resourceGroupName, clusterName, databaseName, scriptName, context);
-    }
-
-    public CheckNameResult checkNameAvailability(
-        String resourceGroupName, String clusterName, String databaseName, ScriptCheckNameRequest scriptName) {
-        CheckNameResultInner inner =
-            this.serviceClient().checkNameAvailability(resourceGroupName, clusterName, databaseName, scriptName);
-        if (inner != null) {
-            return new CheckNameResultImpl(inner, this.manager());
-        } else {
-            return null;
-        }
     }
 
     public Response<CheckNameResult> checkNameAvailabilityWithResponse(
@@ -103,6 +92,17 @@ public final class ScriptsImpl implements Scripts {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new CheckNameResultImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public CheckNameResult checkNameAvailability(
+        String resourceGroupName, String clusterName, String databaseName, ScriptCheckNameRequest scriptName) {
+        CheckNameResultInner inner =
+            this.serviceClient().checkNameAvailability(resourceGroupName, clusterName, databaseName, scriptName);
+        if (inner != null) {
+            return new CheckNameResultImpl(inner, this.manager());
         } else {
             return null;
         }

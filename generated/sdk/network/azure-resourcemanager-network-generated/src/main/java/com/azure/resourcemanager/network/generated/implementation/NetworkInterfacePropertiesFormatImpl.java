@@ -108,6 +108,10 @@ public final class NetworkInterfacePropertiesFormatImpl implements NetworkInterf
         return this.innerModel().enableAcceleratedNetworking();
     }
 
+    public Boolean disableTcpStateTracking() {
+        return this.innerModel().disableTcpStateTracking();
+    }
+
     public Boolean enableIpForwarding() {
         return this.innerModel().enableIpForwarding();
     }

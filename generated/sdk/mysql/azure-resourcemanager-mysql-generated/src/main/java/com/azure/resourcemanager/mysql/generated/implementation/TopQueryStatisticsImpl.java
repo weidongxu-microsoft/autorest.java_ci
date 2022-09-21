@@ -28,15 +28,6 @@ public final class TopQueryStatisticsImpl implements TopQueryStatistics {
         this.serviceManager = serviceManager;
     }
 
-    public QueryStatistic get(String resourceGroupName, String serverName, String queryStatisticId) {
-        QueryStatisticInner inner = this.serviceClient().get(resourceGroupName, serverName, queryStatisticId);
-        if (inner != null) {
-            return new QueryStatisticImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<QueryStatistic> getWithResponse(
         String resourceGroupName, String serverName, String queryStatisticId, Context context) {
         Response<QueryStatisticInner> inner =
@@ -47,6 +38,15 @@ public final class TopQueryStatisticsImpl implements TopQueryStatistics {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new QueryStatisticImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public QueryStatistic get(String resourceGroupName, String serverName, String queryStatisticId) {
+        QueryStatisticInner inner = this.serviceClient().get(resourceGroupName, serverName, queryStatisticId);
+        if (inner != null) {
+            return new QueryStatisticImpl(inner, this.manager());
         } else {
             return null;
         }

@@ -22,20 +22,6 @@ public interface NetworkGroupsClient {
      * @param resourceGroupName The name of the resource group.
      * @param networkManagerName The name of the network manager.
      * @param networkGroupName The name of the network group.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network group.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    NetworkGroupInner get(String resourceGroupName, String networkManagerName, String networkGroupName);
-
-    /**
-     * Gets the specified network group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param networkManagerName The name of the network manager.
-     * @param networkGroupName The name of the network group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -47,20 +33,18 @@ public interface NetworkGroupsClient {
         String resourceGroupName, String networkManagerName, String networkGroupName, Context context);
 
     /**
-     * Creates or updates a network group.
+     * Gets the specified network group.
      *
      * @param resourceGroupName The name of the resource group.
      * @param networkManagerName The name of the network manager.
      * @param networkGroupName The name of the network group.
-     * @param parameters Parameters supplied to the specify which network group need to create.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the network group resource.
+     * @return the specified network group.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    NetworkGroupInner createOrUpdate(
-        String resourceGroupName, String networkManagerName, String networkGroupName, NetworkGroupInner parameters);
+    NetworkGroupInner get(String resourceGroupName, String networkManagerName, String networkGroupName);
 
     /**
      * Creates or updates a network group.
@@ -85,6 +69,22 @@ public interface NetworkGroupsClient {
         NetworkGroupInner parameters,
         String ifMatch,
         Context context);
+
+    /**
+     * Creates or updates a network group.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param networkManagerName The name of the network manager.
+     * @param networkGroupName The name of the network group.
+     * @param parameters Parameters supplied to the specify which network group need to create.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the network group resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    NetworkGroupInner createOrUpdate(
+        String resourceGroupName, String networkManagerName, String networkGroupName, NetworkGroupInner parameters);
 
     /**
      * Deletes a network group.

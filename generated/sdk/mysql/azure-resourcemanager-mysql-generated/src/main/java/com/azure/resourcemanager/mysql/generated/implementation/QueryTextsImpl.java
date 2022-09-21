@@ -28,15 +28,6 @@ public final class QueryTextsImpl implements QueryTexts {
         this.serviceManager = serviceManager;
     }
 
-    public QueryText get(String resourceGroupName, String serverName, String queryId) {
-        QueryTextInner inner = this.serviceClient().get(resourceGroupName, serverName, queryId);
-        if (inner != null) {
-            return new QueryTextImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<QueryText> getWithResponse(
         String resourceGroupName, String serverName, String queryId, Context context) {
         Response<QueryTextInner> inner =
@@ -47,6 +38,15 @@ public final class QueryTextsImpl implements QueryTexts {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new QueryTextImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public QueryText get(String resourceGroupName, String serverName, String queryId) {
+        QueryTextInner inner = this.serviceClient().get(resourceGroupName, serverName, queryId);
+        if (inner != null) {
+            return new QueryTextImpl(inner, this.manager());
         } else {
             return null;
         }

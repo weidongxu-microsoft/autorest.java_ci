@@ -220,11 +220,11 @@ public final class RoleDefinitionsClientImpl implements RoleDefinitionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return role definition.
+     * @return role definition along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public RoleDefinitionInner delete(String scope, String roleDefinitionId) {
-        return deleteAsync(scope, roleDefinitionId).block();
+    public Response<RoleDefinitionInner> deleteWithResponse(String scope, String roleDefinitionId) {
+        return deleteWithResponseAsync(scope, roleDefinitionId).block();
     }
 
     /**
@@ -241,6 +241,21 @@ public final class RoleDefinitionsClientImpl implements RoleDefinitionsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<RoleDefinitionInner> deleteWithResponse(String scope, String roleDefinitionId, Context context) {
         return deleteWithResponseAsync(scope, roleDefinitionId, context).block();
+    }
+
+    /**
+     * Deletes a role definition.
+     *
+     * @param scope The scope of the role definition.
+     * @param roleDefinitionId The ID of the role definition to delete.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return role definition.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public RoleDefinitionInner delete(String scope, String roleDefinitionId) {
+        return deleteWithResponse(scope, roleDefinitionId, Context.NONE).getValue();
     }
 
     /**
@@ -332,11 +347,11 @@ public final class RoleDefinitionsClientImpl implements RoleDefinitionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return role definition by name (GUID).
+     * @return role definition by name (GUID) along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public RoleDefinitionInner get(String scope, String roleDefinitionId) {
-        return getAsync(scope, roleDefinitionId).block();
+    public Response<RoleDefinitionInner> getWithResponse(String scope, String roleDefinitionId) {
+        return getWithResponseAsync(scope, roleDefinitionId).block();
     }
 
     /**
@@ -353,6 +368,21 @@ public final class RoleDefinitionsClientImpl implements RoleDefinitionsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<RoleDefinitionInner> getWithResponse(String scope, String roleDefinitionId, Context context) {
         return getWithResponseAsync(scope, roleDefinitionId, context).block();
+    }
+
+    /**
+     * Get role definition by name (GUID).
+     *
+     * @param scope The scope of the role definition.
+     * @param roleDefinitionId The ID of the role definition.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return role definition by name (GUID).
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public RoleDefinitionInner get(String scope, String roleDefinitionId) {
+        return getWithResponse(scope, roleDefinitionId, Context.NONE).getValue();
     }
 
     /**
@@ -472,12 +502,12 @@ public final class RoleDefinitionsClientImpl implements RoleDefinitionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return role definition.
+     * @return role definition along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public RoleDefinitionInner createOrUpdate(
+    public Response<RoleDefinitionInner> createOrUpdateWithResponse(
         String scope, String roleDefinitionId, RoleDefinitionInner roleDefinition) {
-        return createOrUpdateAsync(scope, roleDefinitionId, roleDefinition).block();
+        return createOrUpdateWithResponseAsync(scope, roleDefinitionId, roleDefinition).block();
     }
 
     /**
@@ -496,6 +526,23 @@ public final class RoleDefinitionsClientImpl implements RoleDefinitionsClient {
     public Response<RoleDefinitionInner> createOrUpdateWithResponse(
         String scope, String roleDefinitionId, RoleDefinitionInner roleDefinition, Context context) {
         return createOrUpdateWithResponseAsync(scope, roleDefinitionId, roleDefinition, context).block();
+    }
+
+    /**
+     * Creates or updates a role definition.
+     *
+     * @param scope The scope of the role definition.
+     * @param roleDefinitionId The ID of the role definition.
+     * @param roleDefinition The values for the role definition.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return role definition.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public RoleDefinitionInner createOrUpdate(
+        String scope, String roleDefinitionId, RoleDefinitionInner roleDefinition) {
+        return createOrUpdateWithResponse(scope, roleDefinitionId, roleDefinition, Context.NONE).getValue();
     }
 
     /**
@@ -747,11 +794,11 @@ public final class RoleDefinitionsClientImpl implements RoleDefinitionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a role definition by ID.
+     * @return a role definition by ID along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public RoleDefinitionInner getById(String roleId) {
-        return getByIdAsync(roleId).block();
+    public Response<RoleDefinitionInner> getByIdWithResponse(String roleId) {
+        return getByIdWithResponseAsync(roleId).block();
     }
 
     /**
@@ -770,6 +817,23 @@ public final class RoleDefinitionsClientImpl implements RoleDefinitionsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<RoleDefinitionInner> getByIdWithResponse(String roleId, Context context) {
         return getByIdWithResponseAsync(roleId, context).block();
+    }
+
+    /**
+     * Gets a role definition by ID.
+     *
+     * @param roleId The fully qualified role definition ID. Use the format,
+     *     /subscriptions/{guid}/providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId} for subscription
+     *     level role definitions, or /providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId} for tenant
+     *     level role definitions.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a role definition by ID.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public RoleDefinitionInner getById(String roleId) {
+        return getByIdWithResponse(roleId, Context.NONE).getValue();
     }
 
     /**

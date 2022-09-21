@@ -34,6 +34,10 @@ public final class Usage {
     @JsonProperty(value = "name", access = JsonProperty.Access.WRITE_ONLY)
     private LocalizedName name;
 
+    /** Creates an instance of Usage class. */
+    public Usage() {
+    }
+
     /**
      * Get the unit property: The type of measurement for usage.
      *

@@ -334,11 +334,11 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of a domain.
+     * @return properties of a domain along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public DomainInner getByResourceGroup(String resourceGroupName, String domainName) {
-        return getByResourceGroupAsync(resourceGroupName, domainName).block();
+    public Response<DomainInner> getByResourceGroupWithResponse(String resourceGroupName, String domainName) {
+        return getByResourceGroupWithResponseAsync(resourceGroupName, domainName).block();
     }
 
     /**
@@ -358,6 +358,23 @@ public final class DomainsClientImpl implements DomainsClient {
     public Response<DomainInner> getByResourceGroupWithResponse(
         String resourceGroupName, String domainName, Context context) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, domainName, context).block();
+    }
+
+    /**
+     * Get a domain.
+     *
+     * <p>Get properties of a domain.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription.
+     * @param domainName Name of the domain.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return properties of a domain.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public DomainInner getByResourceGroup(String resourceGroupName, String domainName) {
+        return getByResourceGroupWithResponse(resourceGroupName, domainName, Context.NONE).getValue();
     }
 
     /**
@@ -1764,11 +1781,12 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return shared access keys of the Domain.
+     * @return shared access keys of the Domain along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public DomainSharedAccessKeysInner listSharedAccessKeys(String resourceGroupName, String domainName) {
-        return listSharedAccessKeysAsync(resourceGroupName, domainName).block();
+    public Response<DomainSharedAccessKeysInner> listSharedAccessKeysWithResponse(
+        String resourceGroupName, String domainName) {
+        return listSharedAccessKeysWithResponseAsync(resourceGroupName, domainName).block();
     }
 
     /**
@@ -1788,6 +1806,23 @@ public final class DomainsClientImpl implements DomainsClient {
     public Response<DomainSharedAccessKeysInner> listSharedAccessKeysWithResponse(
         String resourceGroupName, String domainName, Context context) {
         return listSharedAccessKeysWithResponseAsync(resourceGroupName, domainName, context).block();
+    }
+
+    /**
+     * List keys for a domain.
+     *
+     * <p>List the two keys used to publish to a domain.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription.
+     * @param domainName Name of the domain.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return shared access keys of the Domain.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public DomainSharedAccessKeysInner listSharedAccessKeys(String resourceGroupName, String domainName) {
+        return listSharedAccessKeysWithResponse(resourceGroupName, domainName, Context.NONE).getValue();
     }
 
     /**
@@ -1935,12 +1970,12 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return shared access keys of the Domain.
+     * @return shared access keys of the Domain along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public DomainSharedAccessKeysInner regenerateKey(
+    public Response<DomainSharedAccessKeysInner> regenerateKeyWithResponse(
         String resourceGroupName, String domainName, DomainRegenerateKeyRequest regenerateKeyRequest) {
-        return regenerateKeyAsync(resourceGroupName, domainName, regenerateKeyRequest).block();
+        return regenerateKeyWithResponseAsync(resourceGroupName, domainName, regenerateKeyRequest).block();
     }
 
     /**
@@ -1961,6 +1996,25 @@ public final class DomainsClientImpl implements DomainsClient {
     public Response<DomainSharedAccessKeysInner> regenerateKeyWithResponse(
         String resourceGroupName, String domainName, DomainRegenerateKeyRequest regenerateKeyRequest, Context context) {
         return regenerateKeyWithResponseAsync(resourceGroupName, domainName, regenerateKeyRequest, context).block();
+    }
+
+    /**
+     * Regenerate key for a domain.
+     *
+     * <p>Regenerate a shared access key for a domain.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription.
+     * @param domainName Name of the domain.
+     * @param regenerateKeyRequest Request body to regenerate key.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return shared access keys of the Domain.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public DomainSharedAccessKeysInner regenerateKey(
+        String resourceGroupName, String domainName, DomainRegenerateKeyRequest regenerateKeyRequest) {
+        return regenerateKeyWithResponse(resourceGroupName, domainName, regenerateKeyRequest, Context.NONE).getValue();
     }
 
     /**

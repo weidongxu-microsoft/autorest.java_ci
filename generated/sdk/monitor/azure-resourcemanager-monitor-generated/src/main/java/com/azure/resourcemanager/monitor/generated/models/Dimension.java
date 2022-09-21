@@ -30,6 +30,10 @@ public final class Dimension {
     @JsonProperty(value = "values", required = true)
     private List<String> values;
 
+    /** Creates an instance of Dimension class. */
+    public Dimension() {
+    }
+
     /**
      * Get the name property: Name of the dimension.
      *

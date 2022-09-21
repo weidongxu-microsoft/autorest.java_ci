@@ -38,15 +38,6 @@ public final class ZonesImpl implements Zones {
         this.serviceClient().delete(resourceGroupName, zoneName, ifMatch, context);
     }
 
-    public Zone getByResourceGroup(String resourceGroupName, String zoneName) {
-        ZoneInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, zoneName);
-        if (inner != null) {
-            return new ZoneImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<Zone> getByResourceGroupWithResponse(String resourceGroupName, String zoneName, Context context) {
         Response<ZoneInner> inner =
             this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, zoneName, context);
@@ -56,6 +47,15 @@ public final class ZonesImpl implements Zones {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new ZoneImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public Zone getByResourceGroup(String resourceGroupName, String zoneName) {
+        ZoneInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, zoneName);
+        if (inner != null) {
+            return new ZoneImpl(inner, this.manager());
         } else {
             return null;
         }

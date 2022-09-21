@@ -635,11 +635,11 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Kubernetes cluster specialized for web workloads by Azure App Service.
+     * @return a Kubernetes cluster specialized for web workloads by Azure App Service along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public KubeEnvironmentInner getByResourceGroup(String resourceGroupName, String name) {
-        return getByResourceGroupAsync(resourceGroupName, name).block();
+    public Response<KubeEnvironmentInner> getByResourceGroupWithResponse(String resourceGroupName, String name) {
+        return getByResourceGroupWithResponseAsync(resourceGroupName, name).block();
     }
 
     /**
@@ -659,6 +659,23 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     public Response<KubeEnvironmentInner> getByResourceGroupWithResponse(
         String resourceGroupName, String name, Context context) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, name, context).block();
+    }
+
+    /**
+     * Get the properties of a Kubernetes Environment.
+     *
+     * <p>Description for Get the properties of a Kubernetes Environment.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the Kubernetes Environment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a Kubernetes cluster specialized for web workloads by Azure App Service.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public KubeEnvironmentInner getByResourceGroup(String resourceGroupName, String name) {
+        return getByResourceGroupWithResponse(resourceGroupName, name, Context.NONE).getValue();
     }
 
     /**
@@ -1354,12 +1371,12 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Kubernetes cluster specialized for web workloads by Azure App Service.
+     * @return a Kubernetes cluster specialized for web workloads by Azure App Service along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public KubeEnvironmentInner update(
+    public Response<KubeEnvironmentInner> updateWithResponse(
         String resourceGroupName, String name, KubeEnvironmentPatchResource kubeEnvironmentEnvelope) {
-        return updateAsync(resourceGroupName, name, kubeEnvironmentEnvelope).block();
+        return updateWithResponseAsync(resourceGroupName, name, kubeEnvironmentEnvelope).block();
     }
 
     /**
@@ -1380,6 +1397,25 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     public Response<KubeEnvironmentInner> updateWithResponse(
         String resourceGroupName, String name, KubeEnvironmentPatchResource kubeEnvironmentEnvelope, Context context) {
         return updateWithResponseAsync(resourceGroupName, name, kubeEnvironmentEnvelope, context).block();
+    }
+
+    /**
+     * Creates or updates a Kubernetes Environment.
+     *
+     * <p>Description for Creates or updates a Kubernetes Environment.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the Kubernetes Environment.
+     * @param kubeEnvironmentEnvelope Configuration details of the Kubernetes Environment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a Kubernetes cluster specialized for web workloads by Azure App Service.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public KubeEnvironmentInner update(
+        String resourceGroupName, String name, KubeEnvironmentPatchResource kubeEnvironmentEnvelope) {
+        return updateWithResponse(resourceGroupName, name, kubeEnvironmentEnvelope, Context.NONE).getValue();
     }
 
     /**

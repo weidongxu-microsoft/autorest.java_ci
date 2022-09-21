@@ -28,15 +28,6 @@ public final class AdminKeysImpl implements AdminKeys {
         this.serviceManager = serviceManager;
     }
 
-    public AdminKeyResult get(String resourceGroupName, String searchServiceName) {
-        AdminKeyResultInner inner = this.serviceClient().get(resourceGroupName, searchServiceName);
-        if (inner != null) {
-            return new AdminKeyResultImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<AdminKeyResult> getWithResponse(
         String resourceGroupName, String searchServiceName, UUID clientRequestId, Context context) {
         Response<AdminKeyResultInner> inner =
@@ -52,8 +43,8 @@ public final class AdminKeysImpl implements AdminKeys {
         }
     }
 
-    public AdminKeyResult regenerate(String resourceGroupName, String searchServiceName, AdminKeyKind keyKind) {
-        AdminKeyResultInner inner = this.serviceClient().regenerate(resourceGroupName, searchServiceName, keyKind);
+    public AdminKeyResult get(String resourceGroupName, String searchServiceName) {
+        AdminKeyResultInner inner = this.serviceClient().get(resourceGroupName, searchServiceName);
         if (inner != null) {
             return new AdminKeyResultImpl(inner, this.manager());
         } else {
@@ -77,6 +68,15 @@ public final class AdminKeysImpl implements AdminKeys {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new AdminKeyResultImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public AdminKeyResult regenerate(String resourceGroupName, String searchServiceName, AdminKeyKind keyKind) {
+        AdminKeyResultInner inner = this.serviceClient().regenerate(resourceGroupName, searchServiceName, keyKind);
+        if (inner != null) {
+            return new AdminKeyResultImpl(inner, this.manager());
         } else {
             return null;
         }

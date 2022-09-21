@@ -211,7 +211,7 @@ public final class ImagesClientImpl implements ImagesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -269,7 +269,7 @@ public final class ImagesClientImpl implements ImagesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -476,7 +476,7 @@ public final class ImagesClientImpl implements ImagesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -534,7 +534,7 @@ public final class ImagesClientImpl implements ImagesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -731,7 +731,7 @@ public final class ImagesClientImpl implements ImagesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -781,7 +781,7 @@ public final class ImagesClientImpl implements ImagesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -961,7 +961,7 @@ public final class ImagesClientImpl implements ImagesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1013,7 +1013,7 @@ public final class ImagesClientImpl implements ImagesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1026,23 +1026,6 @@ public final class ImagesClientImpl implements ImagesClient {
                 this.client.getSubscriptionId(),
                 accept,
                 context);
-    }
-
-    /**
-     * Gets an image.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param imageName The name of the image.
-     * @param expand The expand expression to apply on the operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ApiErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an image on successful completion of {@link Mono}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<ImageInner> getByResourceGroupAsync(String resourceGroupName, String imageName, String expand) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, imageName, expand)
-            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -1067,15 +1050,16 @@ public final class ImagesClientImpl implements ImagesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param imageName The name of the image.
+     * @param expand The expand expression to apply on the operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an image.
+     * @return an image along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ImageInner getByResourceGroup(String resourceGroupName, String imageName) {
-        final String expand = null;
-        return getByResourceGroupAsync(resourceGroupName, imageName, expand).block();
+    public Response<ImageInner> getByResourceGroupWithResponse(
+        String resourceGroupName, String imageName, String expand) {
+        return getByResourceGroupWithResponseAsync(resourceGroupName, imageName, expand).block();
     }
 
     /**
@@ -1094,6 +1078,22 @@ public final class ImagesClientImpl implements ImagesClient {
     public Response<ImageInner> getByResourceGroupWithResponse(
         String resourceGroupName, String imageName, String expand, Context context) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, imageName, expand, context).block();
+    }
+
+    /**
+     * Gets an image.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param imageName The name of the image.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ApiErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return an image.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ImageInner getByResourceGroup(String resourceGroupName, String imageName) {
+        final String expand = null;
+        return getByResourceGroupWithResponse(resourceGroupName, imageName, expand, Context.NONE).getValue();
     }
 
     /**
@@ -1124,7 +1124,7 @@ public final class ImagesClientImpl implements ImagesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1179,7 +1179,7 @@ public final class ImagesClientImpl implements ImagesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1286,7 +1286,7 @@ public final class ImagesClientImpl implements ImagesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1330,7 +1330,7 @@ public final class ImagesClientImpl implements ImagesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-03-01";
+        final String apiVersion = "2022-08-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service

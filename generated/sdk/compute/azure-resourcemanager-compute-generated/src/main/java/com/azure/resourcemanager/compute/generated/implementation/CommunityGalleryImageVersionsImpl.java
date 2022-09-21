@@ -28,17 +28,6 @@ public final class CommunityGalleryImageVersionsImpl implements CommunityGallery
         this.serviceManager = serviceManager;
     }
 
-    public CommunityGalleryImageVersion get(
-        String location, String publicGalleryName, String galleryImageName, String galleryImageVersionName) {
-        CommunityGalleryImageVersionInner inner =
-            this.serviceClient().get(location, publicGalleryName, galleryImageName, galleryImageVersionName);
-        if (inner != null) {
-            return new CommunityGalleryImageVersionImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<CommunityGalleryImageVersion> getWithResponse(
         String location,
         String publicGalleryName,
@@ -55,6 +44,17 @@ public final class CommunityGalleryImageVersionsImpl implements CommunityGallery
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new CommunityGalleryImageVersionImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public CommunityGalleryImageVersion get(
+        String location, String publicGalleryName, String galleryImageName, String galleryImageVersionName) {
+        CommunityGalleryImageVersionInner inner =
+            this.serviceClient().get(location, publicGalleryName, galleryImageName, galleryImageVersionName);
+        if (inner != null) {
+            return new CommunityGalleryImageVersionImpl(inner, this.manager());
         } else {
             return null;
         }

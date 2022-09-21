@@ -21,6 +21,10 @@ public final class ExportProperties extends CommonExportProperties {
     @JsonProperty(value = "schedule")
     private ExportSchedule schedule;
 
+    /** Creates an instance of ExportProperties class. */
+    public ExportProperties() {
+    }
+
     /**
      * Get the schedule property: Has schedule information for the export.
      *

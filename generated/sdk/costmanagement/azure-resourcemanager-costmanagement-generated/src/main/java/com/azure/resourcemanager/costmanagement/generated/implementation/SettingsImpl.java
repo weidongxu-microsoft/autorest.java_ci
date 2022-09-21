@@ -38,15 +38,6 @@ public final class SettingsImpl implements Settings {
         return Utils.mapPage(inner, inner1 -> new SettingImpl(inner1, this.manager()));
     }
 
-    public Setting get(String settingName) {
-        SettingInner inner = this.serviceClient().get(settingName);
-        if (inner != null) {
-            return new SettingImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<Setting> getWithResponse(String settingName, Context context) {
         Response<SettingInner> inner = this.serviceClient().getWithResponse(settingName, context);
         if (inner != null) {
@@ -60,8 +51,8 @@ public final class SettingsImpl implements Settings {
         }
     }
 
-    public Setting createOrUpdate(String settingName, SettingInner parameters) {
-        SettingInner inner = this.serviceClient().createOrUpdate(settingName, parameters);
+    public Setting get(String settingName) {
+        SettingInner inner = this.serviceClient().get(settingName);
         if (inner != null) {
             return new SettingImpl(inner, this.manager());
         } else {
@@ -83,12 +74,21 @@ public final class SettingsImpl implements Settings {
         }
     }
 
-    public void delete(String settingName) {
-        this.serviceClient().delete(settingName);
+    public Setting createOrUpdate(String settingName, SettingInner parameters) {
+        SettingInner inner = this.serviceClient().createOrUpdate(settingName, parameters);
+        if (inner != null) {
+            return new SettingImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public Response<Void> deleteWithResponse(String settingName, Context context) {
         return this.serviceClient().deleteWithResponse(settingName, context);
+    }
+
+    public void delete(String settingName) {
+        this.serviceClient().delete(settingName);
     }
 
     private SettingsClient serviceClient() {

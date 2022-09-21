@@ -34,6 +34,10 @@ public final class StorageProfile {
     @JsonProperty(value = "storageAutogrow")
     private StorageAutogrow storageAutogrow;
 
+    /** Creates an instance of StorageProfile class. */
+    public StorageProfile() {
+    }
+
     /**
      * Get the backupRetentionDays property: Backup retention days for the server.
      *

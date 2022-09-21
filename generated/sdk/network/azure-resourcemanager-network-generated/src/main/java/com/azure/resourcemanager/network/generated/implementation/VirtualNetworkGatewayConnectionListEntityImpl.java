@@ -170,6 +170,10 @@ public final class VirtualNetworkGatewayConnectionListEntityImpl implements Virt
         return this.innerModel().expressRouteGatewayBypass();
     }
 
+    public Boolean enablePrivateLinkFastPath() {
+        return this.innerModel().enablePrivateLinkFastPath();
+    }
+
     public VirtualNetworkGatewayConnectionListEntityInner innerModel() {
         return this.innerObject;
     }

@@ -42,6 +42,10 @@ public final class ResourcesHistoryRequestOptions {
     @JsonProperty(value = "resultFormat")
     private ResultFormat resultFormat;
 
+    /** Creates an instance of ResourcesHistoryRequestOptions class. */
+    public ResourcesHistoryRequestOptions() {
+    }
+
     /**
      * Get the interval property: The time interval used to fetch history.
      *

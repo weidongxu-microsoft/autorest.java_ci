@@ -68,6 +68,10 @@ public final class LatencyScorecardProperties {
     @JsonProperty(value = "latencyMetrics")
     private List<LatencyMetric> latencyMetrics;
 
+    /** Creates an instance of LatencyScorecardProperties class. */
+    public LatencyScorecardProperties() {
+    }
+
     /**
      * Get the id property: The unique identifier of the Latency Scorecard.
      *

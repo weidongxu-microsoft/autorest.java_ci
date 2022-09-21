@@ -37,6 +37,10 @@ public final class DatabaseBackupSetting {
     @JsonProperty(value = "connectionString")
     private String connectionString;
 
+    /** Creates an instance of DatabaseBackupSetting class. */
+    public DatabaseBackupSetting() {
+    }
+
     /**
      * Get the databaseType property: Database type (e.g. SqlAzure / MySql).
      *

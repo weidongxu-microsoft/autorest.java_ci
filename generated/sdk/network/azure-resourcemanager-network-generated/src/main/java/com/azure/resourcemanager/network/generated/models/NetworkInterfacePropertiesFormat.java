@@ -83,6 +83,13 @@ public interface NetworkInterfacePropertiesFormat {
     Boolean enableAcceleratedNetworking();
 
     /**
+     * Gets the disableTcpStateTracking property: Indicates whether to disable tcp state tracking.
+     *
+     * @return the disableTcpStateTracking value.
+     */
+    Boolean disableTcpStateTracking();
+
+    /**
      * Gets the enableIpForwarding property: Indicates whether IP forwarding is enabled on this network interface.
      *
      * @return the enableIpForwarding value.

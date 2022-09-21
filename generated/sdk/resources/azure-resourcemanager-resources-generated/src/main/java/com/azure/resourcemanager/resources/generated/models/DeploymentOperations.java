@@ -16,19 +16,6 @@ public interface DeploymentOperations {
      * @param scope The resource scope.
      * @param deploymentName The name of the deployment.
      * @param operationId The ID of the operation to get.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployments operation.
-     */
-    DeploymentOperation getAtScope(String scope, String deploymentName, String operationId);
-
-    /**
-     * Gets a deployments operation.
-     *
-     * @param scope The resource scope.
-     * @param deploymentName The name of the deployment.
-     * @param operationId The ID of the operation to get.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -37,6 +24,19 @@ public interface DeploymentOperations {
      */
     Response<DeploymentOperation> getAtScopeWithResponse(
         String scope, String deploymentName, String operationId, Context context);
+
+    /**
+     * Gets a deployments operation.
+     *
+     * @param scope The resource scope.
+     * @param deploymentName The name of the deployment.
+     * @param operationId The ID of the operation to get.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a deployments operation.
+     */
+    DeploymentOperation getAtScope(String scope, String deploymentName, String operationId);
 
     /**
      * Gets all deployments operations for a deployment.
@@ -69,18 +69,6 @@ public interface DeploymentOperations {
      *
      * @param deploymentName The name of the deployment.
      * @param operationId The ID of the operation to get.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployments operation.
-     */
-    DeploymentOperation getAtTenantScope(String deploymentName, String operationId);
-
-    /**
-     * Gets a deployments operation.
-     *
-     * @param deploymentName The name of the deployment.
-     * @param operationId The ID of the operation to get.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -89,6 +77,18 @@ public interface DeploymentOperations {
      */
     Response<DeploymentOperation> getAtTenantScopeWithResponse(
         String deploymentName, String operationId, Context context);
+
+    /**
+     * Gets a deployments operation.
+     *
+     * @param deploymentName The name of the deployment.
+     * @param operationId The ID of the operation to get.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a deployments operation.
+     */
+    DeploymentOperation getAtTenantScope(String deploymentName, String operationId);
 
     /**
      * Gets all deployments operations for a deployment.
@@ -120,19 +120,6 @@ public interface DeploymentOperations {
      * @param groupId The management group ID.
      * @param deploymentName The name of the deployment.
      * @param operationId The ID of the operation to get.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployments operation.
-     */
-    DeploymentOperation getAtManagementGroupScope(String groupId, String deploymentName, String operationId);
-
-    /**
-     * Gets a deployments operation.
-     *
-     * @param groupId The management group ID.
-     * @param deploymentName The name of the deployment.
-     * @param operationId The ID of the operation to get.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -141,6 +128,19 @@ public interface DeploymentOperations {
      */
     Response<DeploymentOperation> getAtManagementGroupScopeWithResponse(
         String groupId, String deploymentName, String operationId, Context context);
+
+    /**
+     * Gets a deployments operation.
+     *
+     * @param groupId The management group ID.
+     * @param deploymentName The name of the deployment.
+     * @param operationId The ID of the operation to get.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a deployments operation.
+     */
+    DeploymentOperation getAtManagementGroupScope(String groupId, String deploymentName, String operationId);
 
     /**
      * Gets all deployments operations for a deployment.
@@ -174,18 +174,6 @@ public interface DeploymentOperations {
      *
      * @param deploymentName The name of the deployment.
      * @param operationId The ID of the operation to get.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployments operation.
-     */
-    DeploymentOperation getAtSubscriptionScope(String deploymentName, String operationId);
-
-    /**
-     * Gets a deployments operation.
-     *
-     * @param deploymentName The name of the deployment.
-     * @param operationId The ID of the operation to get.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -194,6 +182,18 @@ public interface DeploymentOperations {
      */
     Response<DeploymentOperation> getAtSubscriptionScopeWithResponse(
         String deploymentName, String operationId, Context context);
+
+    /**
+     * Gets a deployments operation.
+     *
+     * @param deploymentName The name of the deployment.
+     * @param operationId The ID of the operation to get.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a deployments operation.
+     */
+    DeploymentOperation getAtSubscriptionScope(String deploymentName, String operationId);
 
     /**
      * Gets all deployments operations for a deployment.
@@ -225,19 +225,6 @@ public interface DeploymentOperations {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param deploymentName The name of the deployment.
      * @param operationId The ID of the operation to get.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployments operation.
-     */
-    DeploymentOperation get(String resourceGroupName, String deploymentName, String operationId);
-
-    /**
-     * Gets a deployments operation.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param deploymentName The name of the deployment.
-     * @param operationId The ID of the operation to get.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -246,6 +233,19 @@ public interface DeploymentOperations {
      */
     Response<DeploymentOperation> getWithResponse(
         String resourceGroupName, String deploymentName, String operationId, Context context);
+
+    /**
+     * Gets a deployments operation.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param deploymentName The name of the deployment.
+     * @param operationId The ID of the operation to get.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a deployments operation.
+     */
+    DeploymentOperation get(String resourceGroupName, String deploymentName, String operationId);
 
     /**
      * Gets all deployments operations for a deployment.

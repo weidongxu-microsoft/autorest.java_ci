@@ -18,6 +18,10 @@ public final class StaticSiteUserProvidedFunctionAppArmResourceInner extends Pro
     @JsonProperty(value = "properties")
     private StaticSiteUserProvidedFunctionAppArmResourceProperties innerProperties;
 
+    /** Creates an instance of StaticSiteUserProvidedFunctionAppArmResourceInner class. */
+    public StaticSiteUserProvidedFunctionAppArmResourceInner() {
+    }
+
     /**
      * Get the innerProperties property: StaticSiteUserProvidedFunctionAppARMResource resource specific properties.
      *

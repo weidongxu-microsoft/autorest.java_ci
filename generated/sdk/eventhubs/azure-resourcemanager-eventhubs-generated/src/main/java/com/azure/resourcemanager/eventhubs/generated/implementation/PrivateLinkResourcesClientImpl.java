@@ -187,11 +187,12 @@ public final class PrivateLinkResourcesClientImpl implements PrivateLinkResource
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return lists of resources that supports Privatelinks.
+     * @return lists of resources that supports Privatelinks along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public PrivateLinkResourcesListResultInner get(String resourceGroupName, String namespaceName) {
-        return getAsync(resourceGroupName, namespaceName).block();
+    public Response<PrivateLinkResourcesListResultInner> getWithResponse(
+        String resourceGroupName, String namespaceName) {
+        return getWithResponseAsync(resourceGroupName, namespaceName).block();
     }
 
     /**
@@ -209,5 +210,20 @@ public final class PrivateLinkResourcesClientImpl implements PrivateLinkResource
     public Response<PrivateLinkResourcesListResultInner> getWithResponse(
         String resourceGroupName, String namespaceName, Context context) {
         return getWithResponseAsync(resourceGroupName, namespaceName, context).block();
+    }
+
+    /**
+     * Gets lists of resources that supports Privatelinks.
+     *
+     * @param resourceGroupName Name of the resource group within the azure subscription.
+     * @param namespaceName The Namespace name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return lists of resources that supports Privatelinks.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public PrivateLinkResourcesListResultInner get(String resourceGroupName, String namespaceName) {
+        return getWithResponse(resourceGroupName, namespaceName, Context.NONE).getValue();
     }
 }

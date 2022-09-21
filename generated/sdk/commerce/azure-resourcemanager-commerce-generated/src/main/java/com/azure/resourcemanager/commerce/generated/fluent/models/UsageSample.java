@@ -85,6 +85,10 @@ public final class UsageSample {
     @JsonProperty(value = "instanceData")
     private String instanceData;
 
+    /** Creates an instance of UsageSample class. */
+    public UsageSample() {
+    }
+
     /**
      * Get the subscriptionId property: The subscription identifier for the Azure user.
      *

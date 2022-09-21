@@ -223,12 +223,12 @@ public final class PrivateLinkResourcesClientImpl implements PrivateLinkResource
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a description for the specified Private Endpoint Connection name.
+     * @return a description for the specified Private Endpoint Connection name along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public PrivateLinkResourceInner get(
+    public Response<PrivateLinkResourceInner> getWithResponse(
         String resourceGroupName, String namespaceName, String privateLinkResourceName) {
-        return getAsync(resourceGroupName, namespaceName, privateLinkResourceName).block();
+        return getWithResponseAsync(resourceGroupName, namespaceName, privateLinkResourceName).block();
     }
 
     /**
@@ -247,6 +247,23 @@ public final class PrivateLinkResourcesClientImpl implements PrivateLinkResource
     public Response<PrivateLinkResourceInner> getWithResponse(
         String resourceGroupName, String namespaceName, String privateLinkResourceName, Context context) {
         return getWithResponseAsync(resourceGroupName, namespaceName, privateLinkResourceName, context).block();
+    }
+
+    /**
+     * Gets a description for the specified Private Endpoint Connection name.
+     *
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param namespaceName The namespace name.
+     * @param privateLinkResourceName The PrivateLinkResource name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a description for the specified Private Endpoint Connection name.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public PrivateLinkResourceInner get(
+        String resourceGroupName, String namespaceName, String privateLinkResourceName) {
+        return getWithResponse(resourceGroupName, namespaceName, privateLinkResourceName, Context.NONE).getValue();
     }
 
     /**
@@ -368,11 +385,12 @@ public final class PrivateLinkResourcesClientImpl implements PrivateLinkResource
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return lists of resources that supports Privatelinks.
+     * @return lists of resources that supports Privatelinks along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public PrivateLinkResourcesListResultInner list(String resourceGroupName, String namespaceName) {
-        return listAsync(resourceGroupName, namespaceName).block();
+    public Response<PrivateLinkResourcesListResultInner> listWithResponse(
+        String resourceGroupName, String namespaceName) {
+        return listWithResponseAsync(resourceGroupName, namespaceName).block();
     }
 
     /**
@@ -390,5 +408,20 @@ public final class PrivateLinkResourcesClientImpl implements PrivateLinkResource
     public Response<PrivateLinkResourcesListResultInner> listWithResponse(
         String resourceGroupName, String namespaceName, Context context) {
         return listWithResponseAsync(resourceGroupName, namespaceName, context).block();
+    }
+
+    /**
+     * Gets lists of resources that supports Privatelinks.
+     *
+     * @param resourceGroupName Name of the Resource group within the Azure subscription.
+     * @param namespaceName The namespace name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return lists of resources that supports Privatelinks.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public PrivateLinkResourcesListResultInner list(String resourceGroupName, String namespaceName) {
+        return listWithResponse(resourceGroupName, namespaceName, Context.NONE).getValue();
     }
 }

@@ -22,6 +22,10 @@ public final class TimeseriesDataPoint {
     @JsonProperty(value = "value")
     private Float value;
 
+    /** Creates an instance of TimeseriesDataPoint class. */
+    public TimeseriesDataPoint() {
+    }
+
     /**
      * Get the dateTimeUtc property: The DateTime of the Timeseries data point in UTC.
      *

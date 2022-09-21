@@ -27,15 +27,6 @@ public final class PrivateLinkResourcesImpl implements PrivateLinkResources {
         this.serviceManager = serviceManager;
     }
 
-    public PrivateLinkResourceListResult listByVault(String resourceGroupName, String vaultName) {
-        PrivateLinkResourceListResultInner inner = this.serviceClient().listByVault(resourceGroupName, vaultName);
-        if (inner != null) {
-            return new PrivateLinkResourceListResultImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<PrivateLinkResourceListResult> listByVaultWithResponse(
         String resourceGroupName, String vaultName, Context context) {
         Response<PrivateLinkResourceListResultInner> inner =
@@ -46,6 +37,15 @@ public final class PrivateLinkResourcesImpl implements PrivateLinkResources {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new PrivateLinkResourceListResultImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public PrivateLinkResourceListResult listByVault(String resourceGroupName, String vaultName) {
+        PrivateLinkResourceListResultInner inner = this.serviceClient().listByVault(resourceGroupName, vaultName);
+        if (inner != null) {
+            return new PrivateLinkResourceListResultImpl(inner, this.manager());
         } else {
             return null;
         }

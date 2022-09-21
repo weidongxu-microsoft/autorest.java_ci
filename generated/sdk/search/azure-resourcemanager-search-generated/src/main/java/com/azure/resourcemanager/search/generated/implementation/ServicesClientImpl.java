@@ -759,59 +759,38 @@ public final class ServicesClientImpl implements ServicesClient {
      *     value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure Cognitive Search service to update.
      * @param serviceParam The definition of the search service to update.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return describes an Azure Cognitive Search service and its current state on successful completion of {@link
+     *     Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<SearchServiceInner> updateAsync(
+        String resourceGroupName, String searchServiceName, SearchServiceUpdate serviceParam) {
+        final UUID clientRequestId = null;
+        return updateWithResponseAsync(resourceGroupName, searchServiceName, serviceParam, clientRequestId)
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
+    }
+
+    /**
+     * Updates an existing search service in the given resource group.
+     *
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     *     value from the Azure Resource Manager API or the portal.
+     * @param searchServiceName The name of the Azure Cognitive Search service to update.
+     * @param serviceParam The definition of the search service to update.
      * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
      *     included in response information as a way to track the request.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes an Azure Cognitive Search service and its current state on successful completion of {@link
-     *     Mono}.
+     * @return describes an Azure Cognitive Search service and its current state along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<SearchServiceInner> updateAsync(
+    public Response<SearchServiceInner> updateWithResponse(
         String resourceGroupName, String searchServiceName, SearchServiceUpdate serviceParam, UUID clientRequestId) {
-        return updateWithResponseAsync(resourceGroupName, searchServiceName, serviceParam, clientRequestId)
-            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Updates an existing search service in the given resource group.
-     *
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
-     *     value from the Azure Resource Manager API or the portal.
-     * @param searchServiceName The name of the Azure Cognitive Search service to update.
-     * @param serviceParam The definition of the search service to update.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes an Azure Cognitive Search service and its current state on successful completion of {@link
-     *     Mono}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<SearchServiceInner> updateAsync(
-        String resourceGroupName, String searchServiceName, SearchServiceUpdate serviceParam) {
-        final UUID clientRequestId = null;
-        return updateWithResponseAsync(resourceGroupName, searchServiceName, serviceParam, clientRequestId)
-            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Updates an existing search service in the given resource group.
-     *
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
-     *     value from the Azure Resource Manager API or the portal.
-     * @param searchServiceName The name of the Azure Cognitive Search service to update.
-     * @param serviceParam The definition of the search service to update.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes an Azure Cognitive Search service and its current state.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public SearchServiceInner update(
-        String resourceGroupName, String searchServiceName, SearchServiceUpdate serviceParam) {
-        final UUID clientRequestId = null;
-        return updateAsync(resourceGroupName, searchServiceName, serviceParam, clientRequestId).block();
+        return updateWithResponseAsync(resourceGroupName, searchServiceName, serviceParam, clientRequestId).block();
     }
 
     /**
@@ -838,6 +817,26 @@ public final class ServicesClientImpl implements ServicesClient {
         Context context) {
         return updateWithResponseAsync(resourceGroupName, searchServiceName, serviceParam, clientRequestId, context)
             .block();
+    }
+
+    /**
+     * Updates an existing search service in the given resource group.
+     *
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     *     value from the Azure Resource Manager API or the portal.
+     * @param searchServiceName The name of the Azure Cognitive Search service to update.
+     * @param serviceParam The definition of the search service to update.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return describes an Azure Cognitive Search service and its current state.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public SearchServiceInner update(
+        String resourceGroupName, String searchServiceName, SearchServiceUpdate serviceParam) {
+        final UUID clientRequestId = null;
+        return updateWithResponse(resourceGroupName, searchServiceName, serviceParam, clientRequestId, Context.NONE)
+            .getValue();
     }
 
     /**
@@ -955,28 +954,6 @@ public final class ServicesClientImpl implements ServicesClient {
      *     value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure Cognitive Search service associated with the specified resource
      *     group.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
-     *     included in response information as a way to track the request.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the search service with the given name in the given resource group on successful completion of {@link
-     *     Mono}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<SearchServiceInner> getByResourceGroupAsync(
-        String resourceGroupName, String searchServiceName, UUID clientRequestId) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, searchServiceName, clientRequestId)
-            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets the search service with the given name in the given resource group.
-     *
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
-     *     value from the Azure Resource Manager API or the portal.
-     * @param searchServiceName The name of the Azure Cognitive Search service associated with the specified resource
-     *     group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -997,15 +974,17 @@ public final class ServicesClientImpl implements ServicesClient {
      *     value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure Cognitive Search service associated with the specified resource
      *     group.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
+     *     included in response information as a way to track the request.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the search service with the given name in the given resource group.
+     * @return the search service with the given name in the given resource group along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public SearchServiceInner getByResourceGroup(String resourceGroupName, String searchServiceName) {
-        final UUID clientRequestId = null;
-        return getByResourceGroupAsync(resourceGroupName, searchServiceName, clientRequestId).block();
+    public Response<SearchServiceInner> getByResourceGroupWithResponse(
+        String resourceGroupName, String searchServiceName, UUID clientRequestId) {
+        return getByResourceGroupWithResponseAsync(resourceGroupName, searchServiceName, clientRequestId).block();
     }
 
     /**
@@ -1028,6 +1007,25 @@ public final class ServicesClientImpl implements ServicesClient {
         String resourceGroupName, String searchServiceName, UUID clientRequestId, Context context) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, searchServiceName, clientRequestId, context)
             .block();
+    }
+
+    /**
+     * Gets the search service with the given name in the given resource group.
+     *
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     *     value from the Azure Resource Manager API or the portal.
+     * @param searchServiceName The name of the Azure Cognitive Search service associated with the specified resource
+     *     group.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the search service with the given name in the given resource group.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public SearchServiceInner getByResourceGroup(String resourceGroupName, String searchServiceName) {
+        final UUID clientRequestId = null;
+        return getByResourceGroupWithResponse(resourceGroupName, searchServiceName, clientRequestId, Context.NONE)
+            .getValue();
     }
 
     /**
@@ -1143,26 +1141,6 @@ public final class ServicesClientImpl implements ServicesClient {
      *     value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure Cognitive Search service associated with the specified resource
      *     group.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
-     *     included in response information as a way to track the request.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return A {@link Mono} that completes when a successful response is received.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Void> deleteAsync(String resourceGroupName, String searchServiceName, UUID clientRequestId) {
-        return deleteWithResponseAsync(resourceGroupName, searchServiceName, clientRequestId)
-            .flatMap(ignored -> Mono.empty());
-    }
-
-    /**
-     * Deletes a search service in the given resource group, along with its associated resources.
-     *
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
-     *     value from the Azure Resource Manager API or the portal.
-     * @param searchServiceName The name of the Azure Cognitive Search service associated with the specified resource
-     *     group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1182,14 +1160,16 @@ public final class ServicesClientImpl implements ServicesClient {
      *     value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure Cognitive Search service associated with the specified resource
      *     group.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
+     *     included in response information as a way to track the request.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public void delete(String resourceGroupName, String searchServiceName) {
-        final UUID clientRequestId = null;
-        deleteAsync(resourceGroupName, searchServiceName, clientRequestId).block();
+    public Response<Void> deleteWithResponse(String resourceGroupName, String searchServiceName, UUID clientRequestId) {
+        return deleteWithResponseAsync(resourceGroupName, searchServiceName, clientRequestId).block();
     }
 
     /**
@@ -1211,6 +1191,23 @@ public final class ServicesClientImpl implements ServicesClient {
     public Response<Void> deleteWithResponse(
         String resourceGroupName, String searchServiceName, UUID clientRequestId, Context context) {
         return deleteWithResponseAsync(resourceGroupName, searchServiceName, clientRequestId, context).block();
+    }
+
+    /**
+     * Deletes a search service in the given resource group, along with its associated resources.
+     *
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     *     value from the Azure Resource Manager API or the portal.
+     * @param searchServiceName The name of the Azure Cognitive Search service associated with the specified resource
+     *     group.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public void delete(String resourceGroupName, String searchServiceName) {
+        final UUID clientRequestId = null;
+        deleteWithResponse(resourceGroupName, searchServiceName, clientRequestId, Context.NONE);
     }
 
     /**
@@ -1702,53 +1699,35 @@ public final class ServicesClientImpl implements ServicesClient {
      * unique since they are part of the service URI (https://&lt;name&gt;.search.windows.net).
      *
      * @param checkNameAvailabilityInput The resource name and type to check.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return output of check name availability API on successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<CheckNameAvailabilityOutputInner> checkNameAvailabilityAsync(
+        CheckNameAvailabilityInput checkNameAvailabilityInput) {
+        final UUID clientRequestId = null;
+        return checkNameAvailabilityWithResponseAsync(checkNameAvailabilityInput, clientRequestId)
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
+    }
+
+    /**
+     * Checks whether or not the given search service name is available for use. Search service names must be globally
+     * unique since they are part of the service URI (https://&lt;name&gt;.search.windows.net).
+     *
+     * @param checkNameAvailabilityInput The resource name and type to check.
      * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
      *     included in response information as a way to track the request.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return output of check name availability API on successful completion of {@link Mono}.
+     * @return output of check name availability API along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<CheckNameAvailabilityOutputInner> checkNameAvailabilityAsync(
+    public Response<CheckNameAvailabilityOutputInner> checkNameAvailabilityWithResponse(
         CheckNameAvailabilityInput checkNameAvailabilityInput, UUID clientRequestId) {
-        return checkNameAvailabilityWithResponseAsync(checkNameAvailabilityInput, clientRequestId)
-            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Checks whether or not the given search service name is available for use. Search service names must be globally
-     * unique since they are part of the service URI (https://&lt;name&gt;.search.windows.net).
-     *
-     * @param checkNameAvailabilityInput The resource name and type to check.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return output of check name availability API on successful completion of {@link Mono}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<CheckNameAvailabilityOutputInner> checkNameAvailabilityAsync(
-        CheckNameAvailabilityInput checkNameAvailabilityInput) {
-        final UUID clientRequestId = null;
-        return checkNameAvailabilityWithResponseAsync(checkNameAvailabilityInput, clientRequestId)
-            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Checks whether or not the given search service name is available for use. Search service names must be globally
-     * unique since they are part of the service URI (https://&lt;name&gt;.search.windows.net).
-     *
-     * @param checkNameAvailabilityInput The resource name and type to check.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return output of check name availability API.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public CheckNameAvailabilityOutputInner checkNameAvailability(
-        CheckNameAvailabilityInput checkNameAvailabilityInput) {
-        final UUID clientRequestId = null;
-        return checkNameAvailabilityAsync(checkNameAvailabilityInput, clientRequestId).block();
+        return checkNameAvailabilityWithResponseAsync(checkNameAvailabilityInput, clientRequestId).block();
     }
 
     /**
@@ -1768,6 +1747,23 @@ public final class ServicesClientImpl implements ServicesClient {
     public Response<CheckNameAvailabilityOutputInner> checkNameAvailabilityWithResponse(
         CheckNameAvailabilityInput checkNameAvailabilityInput, UUID clientRequestId, Context context) {
         return checkNameAvailabilityWithResponseAsync(checkNameAvailabilityInput, clientRequestId, context).block();
+    }
+
+    /**
+     * Checks whether or not the given search service name is available for use. Search service names must be globally
+     * unique since they are part of the service URI (https://&lt;name&gt;.search.windows.net).
+     *
+     * @param checkNameAvailabilityInput The resource name and type to check.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return output of check name availability API.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public CheckNameAvailabilityOutputInner checkNameAvailability(
+        CheckNameAvailabilityInput checkNameAvailabilityInput) {
+        final UUID clientRequestId = null;
+        return checkNameAvailabilityWithResponse(checkNameAvailabilityInput, clientRequestId, Context.NONE).getValue();
     }
 
     /**

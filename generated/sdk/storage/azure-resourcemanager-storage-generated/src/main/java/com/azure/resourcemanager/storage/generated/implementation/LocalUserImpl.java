@@ -178,24 +178,24 @@ public final class LocalUserImpl implements LocalUser, LocalUser.Definition, Loc
         return this;
     }
 
-    public LocalUserKeys listKeys() {
-        return serviceManager.localUsersOperations().listKeys(resourceGroupName, accountName, username);
-    }
-
     public Response<LocalUserKeys> listKeysWithResponse(Context context) {
         return serviceManager
             .localUsersOperations()
             .listKeysWithResponse(resourceGroupName, accountName, username, context);
     }
 
-    public LocalUserRegeneratePasswordResult regeneratePassword() {
-        return serviceManager.localUsersOperations().regeneratePassword(resourceGroupName, accountName, username);
+    public LocalUserKeys listKeys() {
+        return serviceManager.localUsersOperations().listKeys(resourceGroupName, accountName, username);
     }
 
     public Response<LocalUserRegeneratePasswordResult> regeneratePasswordWithResponse(Context context) {
         return serviceManager
             .localUsersOperations()
             .regeneratePasswordWithResponse(resourceGroupName, accountName, username, context);
+    }
+
+    public LocalUserRegeneratePasswordResult regeneratePassword() {
+        return serviceManager.localUsersOperations().regeneratePassword(resourceGroupName, accountName, username);
     }
 
     public LocalUserImpl withPermissionScopes(List<PermissionScope> permissionScopes) {

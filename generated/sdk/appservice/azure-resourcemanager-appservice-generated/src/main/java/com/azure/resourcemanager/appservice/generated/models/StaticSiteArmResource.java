@@ -630,21 +630,6 @@ public interface StaticSiteArmResource {
      * <p>Description for Creates an invitation link for a user with the role.
      *
      * @param staticSiteUserRolesInvitationEnvelope Static sites user roles invitation resource.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static sites user roles invitation link resource.
-     */
-    StaticSiteUserInvitationResponseResource createUserRolesInvitationLink(
-        StaticSiteUserInvitationRequestResource staticSiteUserRolesInvitationEnvelope);
-
-    /**
-     * Creates an invitation link for a user with the role
-     *
-     * <p>Description for Creates an invitation link for a user with the role.
-     *
-     * @param staticSiteUserRolesInvitationEnvelope Static sites user roles invitation resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -654,6 +639,21 @@ public interface StaticSiteArmResource {
      */
     Response<StaticSiteUserInvitationResponseResource> createUserRolesInvitationLinkWithResponse(
         StaticSiteUserInvitationRequestResource staticSiteUserRolesInvitationEnvelope, Context context);
+
+    /**
+     * Creates an invitation link for a user with the role
+     *
+     * <p>Description for Creates an invitation link for a user with the role.
+     *
+     * @param staticSiteUserRolesInvitationEnvelope Static sites user roles invitation resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static sites user roles invitation link resource.
+     */
+    StaticSiteUserInvitationResponseResource createUserRolesInvitationLink(
+        StaticSiteUserInvitationRequestResource staticSiteUserRolesInvitationEnvelope);
 
     /**
      * Detaches a static site.
@@ -684,18 +684,6 @@ public interface StaticSiteArmResource {
      *
      * <p>Description for Gets the application settings of a static site.
      *
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource.
-     */
-    StringDictionary listStaticSiteAppSettings();
-
-    /**
-     * Gets the application settings of a static site.
-     *
-     * <p>Description for Gets the application settings of a static site.
-     *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -706,16 +694,16 @@ public interface StaticSiteArmResource {
     Response<StringDictionary> listStaticSiteAppSettingsWithResponse(Context context);
 
     /**
-     * Lists the roles configured for the static site.
+     * Gets the application settings of a static site.
      *
-     * <p>Description for Lists the roles configured for the static site.
+     * <p>Description for Gets the application settings of a static site.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string list resource.
+     * @return string dictionary resource.
      */
-    StringList listStaticSiteConfiguredRoles();
+    StringDictionary listStaticSiteAppSettings();
 
     /**
      * Lists the roles configured for the static site.
@@ -732,16 +720,16 @@ public interface StaticSiteArmResource {
     Response<StringList> listStaticSiteConfiguredRolesWithResponse(Context context);
 
     /**
-     * Gets the application settings of a static site.
+     * Lists the roles configured for the static site.
      *
-     * <p>Description for Gets the application settings of a static site.
+     * <p>Description for Lists the roles configured for the static site.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource.
+     * @return string list resource.
      */
-    StringDictionary listStaticSiteFunctionAppSettings();
+    StringList listStaticSiteConfiguredRoles();
 
     /**
      * Gets the application settings of a static site.
@@ -758,16 +746,16 @@ public interface StaticSiteArmResource {
     Response<StringDictionary> listStaticSiteFunctionAppSettingsWithResponse(Context context);
 
     /**
-     * Lists the secrets for an existing static site.
+     * Gets the application settings of a static site.
      *
-     * <p>Description for Lists the secrets for an existing static site.
+     * <p>Description for Gets the application settings of a static site.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return string dictionary resource.
      */
-    StringDictionary listStaticSiteSecrets();
+    StringDictionary listStaticSiteFunctionAppSettings();
 
     /**
      * Lists the secrets for an existing static site.
@@ -784,17 +772,16 @@ public interface StaticSiteArmResource {
     Response<StringDictionary> listStaticSiteSecretsWithResponse(Context context);
 
     /**
-     * Resets the api key for an existing static site.
+     * Lists the secrets for an existing static site.
      *
-     * <p>Description for Resets the api key for an existing static site.
+     * <p>Description for Lists the secrets for an existing static site.
      *
-     * @param resetPropertiesEnvelope Static Site Reset Properties ARM resource.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return string dictionary resource.
      */
-    void resetStaticSiteApiKey(StaticSiteResetPropertiesArmResource resetPropertiesEnvelope);
+    StringDictionary listStaticSiteSecrets();
 
     /**
      * Resets the api key for an existing static site.
@@ -811,6 +798,19 @@ public interface StaticSiteArmResource {
      */
     Response<Void> resetStaticSiteApiKeyWithResponse(
         StaticSiteResetPropertiesArmResource resetPropertiesEnvelope, Context context);
+
+    /**
+     * Resets the api key for an existing static site.
+     *
+     * <p>Description for Resets the api key for an existing static site.
+     *
+     * @param resetPropertiesEnvelope Static Site Reset Properties ARM resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void resetStaticSiteApiKey(StaticSiteResetPropertiesArmResource resetPropertiesEnvelope);
 
     /**
      * Deploys zipped content to a static site.

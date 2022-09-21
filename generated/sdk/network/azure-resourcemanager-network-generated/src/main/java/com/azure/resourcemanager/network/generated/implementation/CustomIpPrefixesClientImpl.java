@@ -208,7 +208,7 @@ public final class CustomIpPrefixesClientImpl implements CustomIpPrefixesClient 
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -259,7 +259,7 @@ public final class CustomIpPrefixesClientImpl implements CustomIpPrefixesClient 
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -444,7 +444,7 @@ public final class CustomIpPrefixesClientImpl implements CustomIpPrefixesClient 
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -498,7 +498,7 @@ public final class CustomIpPrefixesClientImpl implements CustomIpPrefixesClient 
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -511,24 +511,6 @@ public final class CustomIpPrefixesClientImpl implements CustomIpPrefixesClient 
                 expand,
                 accept,
                 context);
-    }
-
-    /**
-     * Gets the specified custom IP prefix in a specified resource group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param customIpPrefixName The name of the custom IP prefix.
-     * @param expand Expands referenced resources.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified custom IP prefix in a specified resource group on successful completion of {@link Mono}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<CustomIpPrefixInner> getByResourceGroupAsync(
-        String resourceGroupName, String customIpPrefixName, String expand) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, customIpPrefixName, expand)
-            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
@@ -553,15 +535,16 @@ public final class CustomIpPrefixesClientImpl implements CustomIpPrefixesClient 
      *
      * @param resourceGroupName The name of the resource group.
      * @param customIpPrefixName The name of the custom IP prefix.
+     * @param expand Expands referenced resources.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified custom IP prefix in a specified resource group.
+     * @return the specified custom IP prefix in a specified resource group along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public CustomIpPrefixInner getByResourceGroup(String resourceGroupName, String customIpPrefixName) {
-        final String expand = null;
-        return getByResourceGroupAsync(resourceGroupName, customIpPrefixName, expand).block();
+    public Response<CustomIpPrefixInner> getByResourceGroupWithResponse(
+        String resourceGroupName, String customIpPrefixName, String expand) {
+        return getByResourceGroupWithResponseAsync(resourceGroupName, customIpPrefixName, expand).block();
     }
 
     /**
@@ -580,6 +563,22 @@ public final class CustomIpPrefixesClientImpl implements CustomIpPrefixesClient 
     public Response<CustomIpPrefixInner> getByResourceGroupWithResponse(
         String resourceGroupName, String customIpPrefixName, String expand, Context context) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, customIpPrefixName, expand, context).block();
+    }
+
+    /**
+     * Gets the specified custom IP prefix in a specified resource group.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param customIpPrefixName The name of the custom IP prefix.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified custom IP prefix in a specified resource group.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public CustomIpPrefixInner getByResourceGroup(String resourceGroupName, String customIpPrefixName) {
+        final String expand = null;
+        return getByResourceGroupWithResponse(resourceGroupName, customIpPrefixName, expand, Context.NONE).getValue();
     }
 
     /**
@@ -621,7 +620,7 @@ public final class CustomIpPrefixesClientImpl implements CustomIpPrefixesClient 
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -679,7 +678,7 @@ public final class CustomIpPrefixesClientImpl implements CustomIpPrefixesClient 
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -892,7 +891,7 @@ public final class CustomIpPrefixesClientImpl implements CustomIpPrefixesClient 
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -950,7 +949,7 @@ public final class CustomIpPrefixesClientImpl implements CustomIpPrefixesClient 
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -992,11 +991,12 @@ public final class CustomIpPrefixesClientImpl implements CustomIpPrefixesClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return custom IP prefix resource.
+     * @return custom IP prefix resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public CustomIpPrefixInner updateTags(String resourceGroupName, String customIpPrefixName, TagsObject parameters) {
-        return updateTagsAsync(resourceGroupName, customIpPrefixName, parameters).block();
+    public Response<CustomIpPrefixInner> updateTagsWithResponse(
+        String resourceGroupName, String customIpPrefixName, TagsObject parameters) {
+        return updateTagsWithResponseAsync(resourceGroupName, customIpPrefixName, parameters).block();
     }
 
     /**
@@ -1015,6 +1015,22 @@ public final class CustomIpPrefixesClientImpl implements CustomIpPrefixesClient 
     public Response<CustomIpPrefixInner> updateTagsWithResponse(
         String resourceGroupName, String customIpPrefixName, TagsObject parameters, Context context) {
         return updateTagsWithResponseAsync(resourceGroupName, customIpPrefixName, parameters, context).block();
+    }
+
+    /**
+     * Updates custom IP prefix tags.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param customIpPrefixName The name of the custom IP prefix.
+     * @param parameters Parameters supplied to update custom IP prefix tags.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return custom IP prefix resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public CustomIpPrefixInner updateTags(String resourceGroupName, String customIpPrefixName, TagsObject parameters) {
+        return updateTagsWithResponse(resourceGroupName, customIpPrefixName, parameters, Context.NONE).getValue();
     }
 
     /**
@@ -1039,7 +1055,7 @@ public final class CustomIpPrefixesClientImpl implements CustomIpPrefixesClient 
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1082,7 +1098,7 @@ public final class CustomIpPrefixesClientImpl implements CustomIpPrefixesClient 
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1179,7 +1195,7 @@ public final class CustomIpPrefixesClientImpl implements CustomIpPrefixesClient 
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1234,7 +1250,7 @@ public final class CustomIpPrefixesClientImpl implements CustomIpPrefixesClient 
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-01";
+        final String apiVersion = "2022-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service

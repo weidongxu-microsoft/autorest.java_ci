@@ -23,21 +23,6 @@ public interface PartnerTopicsClient {
      *
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerTopicName Name of the partner topic.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of a partner topic.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    PartnerTopicInner getByResourceGroup(String resourceGroupName, String partnerTopicName);
-
-    /**
-     * Get a partner topic.
-     *
-     * <p>Get properties of a partner topic.
-     *
-     * @param resourceGroupName The name of the resource group within the user's subscription.
-     * @param partnerTopicName Name of the partner topic.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -49,21 +34,19 @@ public interface PartnerTopicsClient {
         String resourceGroupName, String partnerTopicName, Context context);
 
     /**
-     * Create a partner topic.
+     * Get a partner topic.
      *
-     * <p>Asynchronously creates a new partner topic with the specified parameters.
+     * <p>Get properties of a partner topic.
      *
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerTopicName Name of the partner topic.
-     * @param partnerTopicInfo Partner Topic information.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return event Grid Partner Topic.
+     * @return properties of a partner topic.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    PartnerTopicInner createOrUpdate(
-        String resourceGroupName, String partnerTopicName, PartnerTopicInner partnerTopicInfo);
+    PartnerTopicInner getByResourceGroup(String resourceGroupName, String partnerTopicName);
 
     /**
      * Create a partner topic.
@@ -82,6 +65,23 @@ public interface PartnerTopicsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<PartnerTopicInner> createOrUpdateWithResponse(
         String resourceGroupName, String partnerTopicName, PartnerTopicInner partnerTopicInfo, Context context);
+
+    /**
+     * Create a partner topic.
+     *
+     * <p>Asynchronously creates a new partner topic with the specified parameters.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription.
+     * @param partnerTopicName Name of the partner topic.
+     * @param partnerTopicInfo Partner Topic information.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return event Grid Partner Topic.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    PartnerTopicInner createOrUpdate(
+        String resourceGroupName, String partnerTopicName, PartnerTopicInner partnerTopicInfo);
 
     /**
      * Delete a partner topic.
@@ -151,23 +151,6 @@ public interface PartnerTopicsClient {
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerTopicName Name of the partner topic.
      * @param partnerTopicUpdateParameters PartnerTopic update information.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    PartnerTopicInner update(
-        String resourceGroupName, String partnerTopicName, PartnerTopicUpdateParameters partnerTopicUpdateParameters);
-
-    /**
-     * Update a partner topic.
-     *
-     * <p>Asynchronously updates a partner topic with the specified parameters.
-     *
-     * @param resourceGroupName The name of the resource group within the user's subscription.
-     * @param partnerTopicName Name of the partner topic.
-     * @param partnerTopicUpdateParameters PartnerTopic update information.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -180,6 +163,23 @@ public interface PartnerTopicsClient {
         String partnerTopicName,
         PartnerTopicUpdateParameters partnerTopicUpdateParameters,
         Context context);
+
+    /**
+     * Update a partner topic.
+     *
+     * <p>Asynchronously updates a partner topic with the specified parameters.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription.
+     * @param partnerTopicName Name of the partner topic.
+     * @param partnerTopicUpdateParameters PartnerTopic update information.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    PartnerTopicInner update(
+        String resourceGroupName, String partnerTopicName, PartnerTopicUpdateParameters partnerTopicUpdateParameters);
 
     /**
      * List partner topics under an Azure subscription.
@@ -260,21 +260,6 @@ public interface PartnerTopicsClient {
      *
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerTopicName Name of the partner topic.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return event Grid Partner Topic.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    PartnerTopicInner activate(String resourceGroupName, String partnerTopicName);
-
-    /**
-     * Activate a partner topic.
-     *
-     * <p>Activate a newly created partner topic.
-     *
-     * @param resourceGroupName The name of the resource group within the user's subscription.
-     * @param partnerTopicName Name of the partner topic.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -286,9 +271,9 @@ public interface PartnerTopicsClient {
         String resourceGroupName, String partnerTopicName, Context context);
 
     /**
-     * Deactivate a partner topic.
+     * Activate a partner topic.
      *
-     * <p>Deactivate specific partner topic.
+     * <p>Activate a newly created partner topic.
      *
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerTopicName Name of the partner topic.
@@ -298,7 +283,7 @@ public interface PartnerTopicsClient {
      * @return event Grid Partner Topic.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    PartnerTopicInner deactivate(String resourceGroupName, String partnerTopicName);
+    PartnerTopicInner activate(String resourceGroupName, String partnerTopicName);
 
     /**
      * Deactivate a partner topic.
@@ -316,4 +301,19 @@ public interface PartnerTopicsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<PartnerTopicInner> deactivateWithResponse(
         String resourceGroupName, String partnerTopicName, Context context);
+
+    /**
+     * Deactivate a partner topic.
+     *
+     * <p>Deactivate specific partner topic.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription.
+     * @param partnerTopicName Name of the partner topic.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return event Grid Partner Topic.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    PartnerTopicInner deactivate(String resourceGroupName, String partnerTopicName);
 }

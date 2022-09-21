@@ -25,6 +25,10 @@ public final class AzureActiveDirectoryLogin {
     @JsonProperty(value = "disableWWWAuthenticate")
     private Boolean disableWwwAuthenticate;
 
+    /** Creates an instance of AzureActiveDirectoryLogin class. */
+    public AzureActiveDirectoryLogin() {
+    }
+
     /**
      * Get the loginParameters property: Login parameters to send to the OpenID Connect authorization endpoint when a
      * user logs in. Each parameter must be in the form "key=value".

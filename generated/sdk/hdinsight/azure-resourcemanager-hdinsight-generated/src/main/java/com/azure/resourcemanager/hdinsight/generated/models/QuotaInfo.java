@@ -16,6 +16,10 @@ public final class QuotaInfo {
     @JsonProperty(value = "coresUsed")
     private Integer coresUsed;
 
+    /** Creates an instance of QuotaInfo class. */
+    public QuotaInfo() {
+    }
+
     /**
      * Get the coresUsed property: The cores used by the cluster.
      *

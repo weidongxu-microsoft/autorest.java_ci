@@ -33,6 +33,10 @@ public final class UserProperties {
     @JsonProperty(value = "userType", required = true)
     private UserType userType;
 
+    /** Creates an instance of UserProperties class. */
+    public UserProperties() {
+    }
+
     /**
      * Get the encryptedPassword property: The password details.
      *

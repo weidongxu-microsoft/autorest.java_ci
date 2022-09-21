@@ -307,12 +307,12 @@ public final class ManagedPrivateEndpointsClientImpl implements ManagedPrivateEn
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the result returned from a check name availability request.
+     * @return the result returned from a check name availability request along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public CheckNameResultInner checkNameAvailability(
+    public Response<CheckNameResultInner> checkNameAvailabilityWithResponse(
         String resourceGroupName, String clusterName, ManagedPrivateEndpointsCheckNameRequest resourceName) {
-        return checkNameAvailabilityAsync(resourceGroupName, clusterName, resourceName).block();
+        return checkNameAvailabilityWithResponseAsync(resourceGroupName, clusterName, resourceName).block();
     }
 
     /**
@@ -334,6 +334,23 @@ public final class ManagedPrivateEndpointsClientImpl implements ManagedPrivateEn
         ManagedPrivateEndpointsCheckNameRequest resourceName,
         Context context) {
         return checkNameAvailabilityWithResponseAsync(resourceGroupName, clusterName, resourceName, context).block();
+    }
+
+    /**
+     * Checks that the managed private endpoints resource name is valid and is not already in use.
+     *
+     * @param resourceGroupName The name of the resource group containing the Kusto cluster.
+     * @param clusterName The name of the Kusto cluster.
+     * @param resourceName The name of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the result returned from a check name availability request.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public CheckNameResultInner checkNameAvailability(
+        String resourceGroupName, String clusterName, ManagedPrivateEndpointsCheckNameRequest resourceName) {
+        return checkNameAvailabilityWithResponse(resourceGroupName, clusterName, resourceName, Context.NONE).getValue();
     }
 
     /**
@@ -641,12 +658,12 @@ public final class ManagedPrivateEndpointsClientImpl implements ManagedPrivateEn
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a managed private endpoint.
+     * @return a managed private endpoint along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ManagedPrivateEndpointInner get(
+    public Response<ManagedPrivateEndpointInner> getWithResponse(
         String resourceGroupName, String clusterName, String managedPrivateEndpointName) {
-        return getAsync(resourceGroupName, clusterName, managedPrivateEndpointName).block();
+        return getWithResponseAsync(resourceGroupName, clusterName, managedPrivateEndpointName).block();
     }
 
     /**
@@ -665,6 +682,23 @@ public final class ManagedPrivateEndpointsClientImpl implements ManagedPrivateEn
     public Response<ManagedPrivateEndpointInner> getWithResponse(
         String resourceGroupName, String clusterName, String managedPrivateEndpointName, Context context) {
         return getWithResponseAsync(resourceGroupName, clusterName, managedPrivateEndpointName, context).block();
+    }
+
+    /**
+     * Gets a managed private endpoint.
+     *
+     * @param resourceGroupName The name of the resource group containing the Kusto cluster.
+     * @param clusterName The name of the Kusto cluster.
+     * @param managedPrivateEndpointName The name of the managed private endpoint.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a managed private endpoint.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ManagedPrivateEndpointInner get(
+        String resourceGroupName, String clusterName, String managedPrivateEndpointName) {
+        return getWithResponse(resourceGroupName, clusterName, managedPrivateEndpointName, Context.NONE).getValue();
     }
 
     /**

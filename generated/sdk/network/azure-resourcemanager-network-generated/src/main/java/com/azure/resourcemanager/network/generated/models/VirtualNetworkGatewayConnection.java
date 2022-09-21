@@ -241,6 +241,14 @@ public interface VirtualNetworkGatewayConnection {
     Boolean expressRouteGatewayBypass();
 
     /**
+     * Gets the enablePrivateLinkFastPath property: Bypass the ExpressRoute gateway when accessing private-links.
+     * ExpressRoute FastPath (expressRouteGatewayBypass) must be enabled.
+     *
+     * @return the enablePrivateLinkFastPath value.
+     */
+    Boolean enablePrivateLinkFastPath();
+
+    /**
      * Gets the region of the resource.
      *
      * @return the region of the resource.
@@ -354,7 +362,8 @@ public interface VirtualNetworkGatewayConnection {
                 DefinitionStages.WithUsePolicyBasedTrafficSelectors,
                 DefinitionStages.WithIpsecPolicies,
                 DefinitionStages.WithTrafficSelectorPolicies,
-                DefinitionStages.WithExpressRouteGatewayBypass {
+                DefinitionStages.WithExpressRouteGatewayBypass,
+                DefinitionStages.WithEnablePrivateLinkFastPath {
             /**
              * Executes the create request.
              *
@@ -570,6 +579,20 @@ public interface VirtualNetworkGatewayConnection {
              * @return the next definition stage.
              */
             WithCreate withExpressRouteGatewayBypass(Boolean expressRouteGatewayBypass);
+        }
+        /**
+         * The stage of the VirtualNetworkGatewayConnection definition allowing to specify enablePrivateLinkFastPath.
+         */
+        interface WithEnablePrivateLinkFastPath {
+            /**
+             * Specifies the enablePrivateLinkFastPath property: Bypass the ExpressRoute gateway when accessing
+             * private-links. ExpressRoute FastPath (expressRouteGatewayBypass) must be enabled..
+             *
+             * @param enablePrivateLinkFastPath Bypass the ExpressRoute gateway when accessing private-links.
+             *     ExpressRoute FastPath (expressRouteGatewayBypass) must be enabled.
+             * @return the next definition stage.
+             */
+            WithCreate withEnablePrivateLinkFastPath(Boolean enablePrivateLinkFastPath);
         }
     }
     /**

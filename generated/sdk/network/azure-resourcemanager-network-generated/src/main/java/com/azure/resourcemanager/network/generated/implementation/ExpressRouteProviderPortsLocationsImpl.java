@@ -27,15 +27,6 @@ public final class ExpressRouteProviderPortsLocationsImpl implements ExpressRout
         this.serviceManager = serviceManager;
     }
 
-    public ExpressRouteProviderPortListResult list() {
-        ExpressRouteProviderPortListResultInner inner = this.serviceClient().list();
-        if (inner != null) {
-            return new ExpressRouteProviderPortListResultImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<ExpressRouteProviderPortListResult> listWithResponse(String filter, Context context) {
         Response<ExpressRouteProviderPortListResultInner> inner =
             this.serviceClient().listWithResponse(filter, context);
@@ -45,6 +36,15 @@ public final class ExpressRouteProviderPortsLocationsImpl implements ExpressRout
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new ExpressRouteProviderPortListResultImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public ExpressRouteProviderPortListResult list() {
+        ExpressRouteProviderPortListResultInner inner = this.serviceClient().list();
+        if (inner != null) {
+            return new ExpressRouteProviderPortListResultImpl(inner, this.manager());
         } else {
             return null;
         }

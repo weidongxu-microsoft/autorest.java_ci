@@ -35,15 +35,6 @@ public final class FirewallPoliciesImpl implements FirewallPolicies {
         this.serviceClient().delete(resourceGroupName, firewallPolicyName, context);
     }
 
-    public FirewallPolicy getByResourceGroup(String resourceGroupName, String firewallPolicyName) {
-        FirewallPolicyInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, firewallPolicyName);
-        if (inner != null) {
-            return new FirewallPolicyImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<FirewallPolicy> getByResourceGroupWithResponse(
         String resourceGroupName, String firewallPolicyName, String expand, Context context) {
         Response<FirewallPolicyInner> inner =
@@ -54,6 +45,15 @@ public final class FirewallPoliciesImpl implements FirewallPolicies {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new FirewallPolicyImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public FirewallPolicy getByResourceGroup(String resourceGroupName, String firewallPolicyName) {
+        FirewallPolicyInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, firewallPolicyName);
+        if (inner != null) {
+            return new FirewallPolicyImpl(inner, this.manager());
         } else {
             return null;
         }

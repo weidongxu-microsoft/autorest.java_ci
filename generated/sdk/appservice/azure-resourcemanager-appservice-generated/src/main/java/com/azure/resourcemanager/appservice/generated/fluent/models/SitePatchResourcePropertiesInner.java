@@ -285,6 +285,10 @@ public final class SitePatchResourcePropertiesInner {
     @JsonProperty(value = "virtualNetworkSubnetId")
     private String virtualNetworkSubnetId;
 
+    /** Creates an instance of SitePatchResourcePropertiesInner class. */
+    public SitePatchResourcePropertiesInner() {
+    }
+
     /**
      * Get the state property: Current state of the app.
      *

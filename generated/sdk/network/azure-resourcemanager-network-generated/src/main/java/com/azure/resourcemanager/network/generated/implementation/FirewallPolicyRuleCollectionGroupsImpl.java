@@ -37,17 +37,6 @@ public final class FirewallPolicyRuleCollectionGroupsImpl implements FirewallPol
         this.serviceClient().delete(resourceGroupName, firewallPolicyName, ruleCollectionGroupName, context);
     }
 
-    public FirewallPolicyRuleCollectionGroup get(
-        String resourceGroupName, String firewallPolicyName, String ruleCollectionGroupName) {
-        FirewallPolicyRuleCollectionGroupInner inner =
-            this.serviceClient().get(resourceGroupName, firewallPolicyName, ruleCollectionGroupName);
-        if (inner != null) {
-            return new FirewallPolicyRuleCollectionGroupImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<FirewallPolicyRuleCollectionGroup> getWithResponse(
         String resourceGroupName, String firewallPolicyName, String ruleCollectionGroupName, Context context) {
         Response<FirewallPolicyRuleCollectionGroupInner> inner =
@@ -60,6 +49,17 @@ public final class FirewallPolicyRuleCollectionGroupsImpl implements FirewallPol
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new FirewallPolicyRuleCollectionGroupImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public FirewallPolicyRuleCollectionGroup get(
+        String resourceGroupName, String firewallPolicyName, String ruleCollectionGroupName) {
+        FirewallPolicyRuleCollectionGroupInner inner =
+            this.serviceClient().get(resourceGroupName, firewallPolicyName, ruleCollectionGroupName);
+        if (inner != null) {
+            return new FirewallPolicyRuleCollectionGroupImpl(inner, this.manager());
         } else {
             return null;
         }

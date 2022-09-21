@@ -36,6 +36,10 @@ public final class PrivateAccessVirtualNetwork {
     @JsonProperty(value = "subnets")
     private List<PrivateAccessSubnet> subnets;
 
+    /** Creates an instance of PrivateAccessVirtualNetwork class. */
+    public PrivateAccessVirtualNetwork() {
+    }
+
     /**
      * Get the name property: The name of the Virtual Network.
      *

@@ -49,17 +49,6 @@ public final class AdminRuleCollectionsImpl implements AdminRuleCollections {
         return Utils.mapPage(inner, inner1 -> new AdminRuleCollectionImpl(inner1, this.manager()));
     }
 
-    public AdminRuleCollection get(
-        String resourceGroupName, String networkManagerName, String configurationName, String ruleCollectionName) {
-        AdminRuleCollectionInner inner =
-            this.serviceClient().get(resourceGroupName, networkManagerName, configurationName, ruleCollectionName);
-        if (inner != null) {
-            return new AdminRuleCollectionImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<AdminRuleCollection> getWithResponse(
         String resourceGroupName,
         String networkManagerName,
@@ -76,6 +65,17 @@ public final class AdminRuleCollectionsImpl implements AdminRuleCollections {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new AdminRuleCollectionImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public AdminRuleCollection get(
+        String resourceGroupName, String networkManagerName, String configurationName, String ruleCollectionName) {
+        AdminRuleCollectionInner inner =
+            this.serviceClient().get(resourceGroupName, networkManagerName, configurationName, ruleCollectionName);
+        if (inner != null) {
+            return new AdminRuleCollectionImpl(inner, this.manager());
         } else {
             return null;
         }

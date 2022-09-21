@@ -23,6 +23,10 @@ public final class ShareAccessRight {
     @JsonProperty(value = "accessType", required = true)
     private ShareAccessType accessType;
 
+    /** Creates an instance of ShareAccessRight class. */
+    public ShareAccessRight() {
+    }
+
     /**
      * Get the shareId property: The share ID.
      *

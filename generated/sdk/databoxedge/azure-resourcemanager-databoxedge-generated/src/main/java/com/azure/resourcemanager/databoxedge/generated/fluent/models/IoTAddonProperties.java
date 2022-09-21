@@ -51,6 +51,10 @@ public final class IoTAddonProperties {
     @JsonProperty(value = "provisioningState", access = JsonProperty.Access.WRITE_ONLY)
     private AddonState provisioningState;
 
+    /** Creates an instance of IoTAddonProperties class. */
+    public IoTAddonProperties() {
+    }
+
     /**
      * Get the ioTDeviceDetails property: IoT device metadata to which appliance needs to be connected.
      *

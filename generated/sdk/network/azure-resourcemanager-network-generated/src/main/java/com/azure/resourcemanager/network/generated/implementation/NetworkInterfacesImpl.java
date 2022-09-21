@@ -67,20 +67,6 @@ public final class NetworkInterfacesImpl implements NetworkInterfaces {
         return Utils.mapPage(inner, inner1 -> new NetworkInterfaceImpl(inner1, this.manager()));
     }
 
-    public NetworkInterface getCloudServiceNetworkInterface(
-        String resourceGroupName, String cloudServiceName, String roleInstanceName, String networkInterfaceName) {
-        NetworkInterfaceInner inner =
-            this
-                .serviceClient()
-                .getCloudServiceNetworkInterface(
-                    resourceGroupName, cloudServiceName, roleInstanceName, networkInterfaceName);
-        if (inner != null) {
-            return new NetworkInterfaceImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<NetworkInterface> getCloudServiceNetworkInterfaceWithResponse(
         String resourceGroupName,
         String cloudServiceName,
@@ -104,21 +90,26 @@ public final class NetworkInterfacesImpl implements NetworkInterfaces {
         }
     }
 
+    public NetworkInterface getCloudServiceNetworkInterface(
+        String resourceGroupName, String cloudServiceName, String roleInstanceName, String networkInterfaceName) {
+        NetworkInterfaceInner inner =
+            this
+                .serviceClient()
+                .getCloudServiceNetworkInterface(
+                    resourceGroupName, cloudServiceName, roleInstanceName, networkInterfaceName);
+        if (inner != null) {
+            return new NetworkInterfaceImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
     public void deleteByResourceGroup(String resourceGroupName, String networkInterfaceName) {
         this.serviceClient().delete(resourceGroupName, networkInterfaceName);
     }
 
     public void delete(String resourceGroupName, String networkInterfaceName, Context context) {
         this.serviceClient().delete(resourceGroupName, networkInterfaceName, context);
-    }
-
-    public NetworkInterface getByResourceGroup(String resourceGroupName, String networkInterfaceName) {
-        NetworkInterfaceInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, networkInterfaceName);
-        if (inner != null) {
-            return new NetworkInterfaceImpl(inner, this.manager());
-        } else {
-            return null;
-        }
     }
 
     public Response<NetworkInterface> getByResourceGroupWithResponse(
@@ -133,6 +124,15 @@ public final class NetworkInterfacesImpl implements NetworkInterfaces {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new NetworkInterfaceImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public NetworkInterface getByResourceGroup(String resourceGroupName, String networkInterfaceName) {
+        NetworkInterfaceInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, networkInterfaceName);
+        if (inner != null) {
+            return new NetworkInterfaceImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -240,23 +240,6 @@ public final class NetworkInterfacesImpl implements NetworkInterfaces {
         return Utils.mapPage(inner, inner1 -> new NetworkInterfaceImpl(inner1, this.manager()));
     }
 
-    public NetworkInterface getVirtualMachineScaleSetNetworkInterface(
-        String resourceGroupName,
-        String virtualMachineScaleSetName,
-        String virtualmachineIndex,
-        String networkInterfaceName) {
-        NetworkInterfaceInner inner =
-            this
-                .serviceClient()
-                .getVirtualMachineScaleSetNetworkInterface(
-                    resourceGroupName, virtualMachineScaleSetName, virtualmachineIndex, networkInterfaceName);
-        if (inner != null) {
-            return new NetworkInterfaceImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<NetworkInterface> getVirtualMachineScaleSetNetworkInterfaceWithResponse(
         String resourceGroupName,
         String virtualMachineScaleSetName,
@@ -285,6 +268,23 @@ public final class NetworkInterfacesImpl implements NetworkInterfaces {
         }
     }
 
+    public NetworkInterface getVirtualMachineScaleSetNetworkInterface(
+        String resourceGroupName,
+        String virtualMachineScaleSetName,
+        String virtualmachineIndex,
+        String networkInterfaceName) {
+        NetworkInterfaceInner inner =
+            this
+                .serviceClient()
+                .getVirtualMachineScaleSetNetworkInterface(
+                    resourceGroupName, virtualMachineScaleSetName, virtualmachineIndex, networkInterfaceName);
+        if (inner != null) {
+            return new NetworkInterfaceImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
     public PagedIterable<NetworkInterfaceIpConfiguration> listVirtualMachineScaleSetIpConfigurations(
         String resourceGroupName,
         String virtualMachineScaleSetName,
@@ -318,28 +318,6 @@ public final class NetworkInterfacesImpl implements NetworkInterfaces {
         return Utils.mapPage(inner, inner1 -> new NetworkInterfaceIpConfigurationImpl(inner1, this.manager()));
     }
 
-    public NetworkInterfaceIpConfiguration getVirtualMachineScaleSetIpConfiguration(
-        String resourceGroupName,
-        String virtualMachineScaleSetName,
-        String virtualmachineIndex,
-        String networkInterfaceName,
-        String ipConfigurationName) {
-        NetworkInterfaceIpConfigurationInner inner =
-            this
-                .serviceClient()
-                .getVirtualMachineScaleSetIpConfiguration(
-                    resourceGroupName,
-                    virtualMachineScaleSetName,
-                    virtualmachineIndex,
-                    networkInterfaceName,
-                    ipConfigurationName);
-        if (inner != null) {
-            return new NetworkInterfaceIpConfigurationImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<NetworkInterfaceIpConfiguration> getVirtualMachineScaleSetIpConfigurationWithResponse(
         String resourceGroupName,
         String virtualMachineScaleSetName,
@@ -365,6 +343,28 @@ public final class NetworkInterfacesImpl implements NetworkInterfaces {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new NetworkInterfaceIpConfigurationImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public NetworkInterfaceIpConfiguration getVirtualMachineScaleSetIpConfiguration(
+        String resourceGroupName,
+        String virtualMachineScaleSetName,
+        String virtualmachineIndex,
+        String networkInterfaceName,
+        String ipConfigurationName) {
+        NetworkInterfaceIpConfigurationInner inner =
+            this
+                .serviceClient()
+                .getVirtualMachineScaleSetIpConfiguration(
+                    resourceGroupName,
+                    virtualMachineScaleSetName,
+                    virtualmachineIndex,
+                    networkInterfaceName,
+                    ipConfigurationName);
+        if (inner != null) {
+            return new NetworkInterfaceIpConfigurationImpl(inner, this.manager());
         } else {
             return null;
         }

@@ -38,15 +38,6 @@ public final class ExperimentsImpl implements Experiments {
         return Utils.mapPage(inner, inner1 -> new ExperimentImpl(inner1, this.manager()));
     }
 
-    public Experiment get(String resourceGroupName, String profileName, String experimentName) {
-        ExperimentInner inner = this.serviceClient().get(resourceGroupName, profileName, experimentName);
-        if (inner != null) {
-            return new ExperimentImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<Experiment> getWithResponse(
         String resourceGroupName, String profileName, String experimentName, Context context) {
         Response<ExperimentInner> inner =
@@ -57,6 +48,15 @@ public final class ExperimentsImpl implements Experiments {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new ExperimentImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public Experiment get(String resourceGroupName, String profileName, String experimentName) {
+        ExperimentInner inner = this.serviceClient().get(resourceGroupName, profileName, experimentName);
+        if (inner != null) {
+            return new ExperimentImpl(inner, this.manager());
         } else {
             return null;
         }

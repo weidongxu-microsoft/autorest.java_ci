@@ -64,6 +64,10 @@ public final class UpdateDetails {
     @JsonProperty(value = "status")
     private UpdateStatus status;
 
+    /** Creates an instance of UpdateDetails class. */
+    public UpdateDetails() {
+    }
+
     /**
      * Get the updateTitle property: Title of the Update.
      *

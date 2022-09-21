@@ -35,6 +35,10 @@ public final class DenyAssignmentPermission {
     @JsonProperty(value = "notDataActions")
     private List<String> notDataActions;
 
+    /** Creates an instance of DenyAssignmentPermission class. */
+    public DenyAssignmentPermission() {
+    }
+
     /**
      * Get the actions property: Actions to which the deny assignment does not grant access.
      *

@@ -35,6 +35,10 @@ public final class PreconfiguredEndpointProperties {
     @JsonProperty(value = "backend")
     private String backend;
 
+    /** Creates an instance of PreconfiguredEndpointProperties class. */
+    public PreconfiguredEndpointProperties() {
+    }
+
     /**
      * Get the description property: The description of the endpoint.
      *

@@ -37,15 +37,6 @@ public final class ServerKeysImpl implements ServerKeys {
         return Utils.mapPage(inner, inner1 -> new ServerKeyImpl(inner1, this.manager()));
     }
 
-    public ServerKey get(String resourceGroupName, String serverName, String keyName) {
-        ServerKeyInner inner = this.serviceClient().get(resourceGroupName, serverName, keyName);
-        if (inner != null) {
-            return new ServerKeyImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<ServerKey> getWithResponse(
         String resourceGroupName, String serverName, String keyName, Context context) {
         Response<ServerKeyInner> inner =
@@ -56,6 +47,15 @@ public final class ServerKeysImpl implements ServerKeys {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new ServerKeyImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public ServerKey get(String resourceGroupName, String serverName, String keyName) {
+        ServerKeyInner inner = this.serviceClient().get(resourceGroupName, serverName, keyName);
+        if (inner != null) {
+            return new ServerKeyImpl(inner, this.manager());
         } else {
             return null;
         }

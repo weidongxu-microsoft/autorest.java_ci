@@ -17,6 +17,10 @@ public final class RoleSinkInfo {
     @JsonProperty(value = "roleId", required = true)
     private String roleId;
 
+    /** Creates an instance of RoleSinkInfo class. */
+    public RoleSinkInfo() {
+    }
+
     /**
      * Get the roleId property: Compute role ID.
      *

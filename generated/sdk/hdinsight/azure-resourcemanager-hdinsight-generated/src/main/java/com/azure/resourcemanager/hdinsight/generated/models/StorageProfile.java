@@ -17,6 +17,10 @@ public final class StorageProfile {
     @JsonProperty(value = "storageaccounts")
     private List<StorageAccount> storageaccounts;
 
+    /** Creates an instance of StorageProfile class. */
+    public StorageProfile() {
+    }
+
     /**
      * Get the storageaccounts property: The list of storage accounts in the cluster.
      *

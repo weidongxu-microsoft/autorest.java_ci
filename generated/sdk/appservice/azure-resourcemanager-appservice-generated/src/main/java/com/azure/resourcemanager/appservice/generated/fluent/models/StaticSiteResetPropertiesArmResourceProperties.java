@@ -22,6 +22,10 @@ public final class StaticSiteResetPropertiesArmResourceProperties {
     @JsonProperty(value = "shouldUpdateRepository")
     private Boolean shouldUpdateRepository;
 
+    /** Creates an instance of StaticSiteResetPropertiesArmResourceProperties class. */
+    public StaticSiteResetPropertiesArmResourceProperties() {
+    }
+
     /**
      * Get the repositoryToken property: The token which proves admin privileges to the repository.
      *

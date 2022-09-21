@@ -59,6 +59,10 @@ public final class WindowsJavaContainerSettings {
     @JsonProperty(value = "isEarlyAccess", access = JsonProperty.Access.WRITE_ONLY)
     private Boolean isEarlyAccess;
 
+    /** Creates an instance of WindowsJavaContainerSettings class. */
+    public WindowsJavaContainerSettings() {
+    }
+
     /**
      * Get the javaContainer property: Java container (runtime only).
      *

@@ -18,6 +18,10 @@ public final class NetworkSettingsProperties {
     @JsonProperty(value = "networkAdapters", access = JsonProperty.Access.WRITE_ONLY)
     private List<NetworkAdapter> networkAdapters;
 
+    /** Creates an instance of NetworkSettingsProperties class. */
+    public NetworkSettingsProperties() {
+    }
+
     /**
      * Get the networkAdapters property: The network adapter list on the device.
      *

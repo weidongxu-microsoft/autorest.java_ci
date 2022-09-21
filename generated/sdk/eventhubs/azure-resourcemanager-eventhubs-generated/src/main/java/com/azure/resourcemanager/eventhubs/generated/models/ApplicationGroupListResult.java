@@ -24,6 +24,10 @@ public final class ApplicationGroupListResult {
     @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
 
+    /** Creates an instance of ApplicationGroupListResult class. */
+    public ApplicationGroupListResult() {
+    }
+
     /**
      * Get the value property: Result of the List Application Groups operation.
      *

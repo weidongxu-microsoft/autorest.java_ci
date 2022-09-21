@@ -1160,25 +1160,6 @@ public final class SqlVirtualMachinesClientImpl implements SqlVirtualMachinesCli
      * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
      *     the Azure Resource Manager API or the portal.
      * @param sqlVirtualMachineName Name of the SQL virtual machine.
-     * @param expand The child resources to include in the response.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a SQL virtual machine on successful completion of {@link Mono}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<SqlVirtualMachineInner> getByResourceGroupAsync(
-        String resourceGroupName, String sqlVirtualMachineName, String expand) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, sqlVirtualMachineName, expand)
-            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets a SQL virtual machine.
-     *
-     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
-     *     the Azure Resource Manager API or the portal.
-     * @param sqlVirtualMachineName Name of the SQL virtual machine.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1198,15 +1179,16 @@ public final class SqlVirtualMachinesClientImpl implements SqlVirtualMachinesCli
      * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
      *     the Azure Resource Manager API or the portal.
      * @param sqlVirtualMachineName Name of the SQL virtual machine.
+     * @param expand The child resources to include in the response.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a SQL virtual machine.
+     * @return a SQL virtual machine along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public SqlVirtualMachineInner getByResourceGroup(String resourceGroupName, String sqlVirtualMachineName) {
-        final String expand = null;
-        return getByResourceGroupAsync(resourceGroupName, sqlVirtualMachineName, expand).block();
+    public Response<SqlVirtualMachineInner> getByResourceGroupWithResponse(
+        String resourceGroupName, String sqlVirtualMachineName, String expand) {
+        return getByResourceGroupWithResponseAsync(resourceGroupName, sqlVirtualMachineName, expand).block();
     }
 
     /**
@@ -1226,6 +1208,24 @@ public final class SqlVirtualMachinesClientImpl implements SqlVirtualMachinesCli
     public Response<SqlVirtualMachineInner> getByResourceGroupWithResponse(
         String resourceGroupName, String sqlVirtualMachineName, String expand, Context context) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, sqlVirtualMachineName, expand, context).block();
+    }
+
+    /**
+     * Gets a SQL virtual machine.
+     *
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
+     *     the Azure Resource Manager API or the portal.
+     * @param sqlVirtualMachineName Name of the SQL virtual machine.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a SQL virtual machine.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public SqlVirtualMachineInner getByResourceGroup(String resourceGroupName, String sqlVirtualMachineName) {
+        final String expand = null;
+        return getByResourceGroupWithResponse(resourceGroupName, sqlVirtualMachineName, expand, Context.NONE)
+            .getValue();
     }
 
     /**

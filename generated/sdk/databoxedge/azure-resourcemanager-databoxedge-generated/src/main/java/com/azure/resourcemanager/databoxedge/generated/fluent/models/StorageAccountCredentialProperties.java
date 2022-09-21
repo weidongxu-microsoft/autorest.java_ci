@@ -62,6 +62,10 @@ public final class StorageAccountCredentialProperties {
     @JsonProperty(value = "storageAccountId")
     private String storageAccountId;
 
+    /** Creates an instance of StorageAccountCredentialProperties class. */
+    public StorageAccountCredentialProperties() {
+    }
+
     /**
      * Get the alias property: Alias for the storage account.
      *

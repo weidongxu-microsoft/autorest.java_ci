@@ -16,6 +16,7 @@ import com.azure.resourcemanager.compute.generated.models.ExtendedLocation;
 import com.azure.resourcemanager.compute.generated.models.OrchestrationMode;
 import com.azure.resourcemanager.compute.generated.models.OrchestrationServiceStateInput;
 import com.azure.resourcemanager.compute.generated.models.Plan;
+import com.azure.resourcemanager.compute.generated.models.PriorityMixPolicy;
 import com.azure.resourcemanager.compute.generated.models.ScaleInPolicy;
 import com.azure.resourcemanager.compute.generated.models.Sku;
 import com.azure.resourcemanager.compute.generated.models.SpotRestorePolicy;
@@ -152,6 +153,10 @@ public final class VirtualMachineScaleSetImpl
 
     public SpotRestorePolicy spotRestorePolicy() {
         return this.innerModel().spotRestorePolicy();
+    }
+
+    public PriorityMixPolicy priorityMixPolicy() {
+        return this.innerModel().priorityMixPolicy();
     }
 
     public OffsetDateTime timeCreated() {
@@ -398,17 +403,17 @@ public final class VirtualMachineScaleSetImpl
         serviceManager.virtualMachineScaleSets().reimageAll(resourceGroupName, vmScaleSetName, vmInstanceIDs, context);
     }
 
-    public void convertToSinglePlacementGroup(VMScaleSetConvertToSinglePlacementGroupInput parameters) {
-        serviceManager
-            .virtualMachineScaleSets()
-            .convertToSinglePlacementGroup(resourceGroupName, vmScaleSetName, parameters);
-    }
-
     public Response<Void> convertToSinglePlacementGroupWithResponse(
         VMScaleSetConvertToSinglePlacementGroupInput parameters, Context context) {
         return serviceManager
             .virtualMachineScaleSets()
             .convertToSinglePlacementGroupWithResponse(resourceGroupName, vmScaleSetName, parameters, context);
+    }
+
+    public void convertToSinglePlacementGroup(VMScaleSetConvertToSinglePlacementGroupInput parameters) {
+        serviceManager
+            .virtualMachineScaleSets()
+            .convertToSinglePlacementGroup(resourceGroupName, vmScaleSetName, parameters);
     }
 
     public void setOrchestrationServiceState(OrchestrationServiceStateInput parameters) {
@@ -591,6 +596,11 @@ public final class VirtualMachineScaleSetImpl
 
     public VirtualMachineScaleSetImpl withSpotRestorePolicy(SpotRestorePolicy spotRestorePolicy) {
         this.innerModel().withSpotRestorePolicy(spotRestorePolicy);
+        return this;
+    }
+
+    public VirtualMachineScaleSetImpl withPriorityMixPolicy(PriorityMixPolicy priorityMixPolicy) {
+        this.innerModel().withPriorityMixPolicy(priorityMixPolicy);
         return this;
     }
 

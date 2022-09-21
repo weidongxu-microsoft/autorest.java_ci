@@ -39,6 +39,10 @@ public class ManagedServiceIdentity {
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, UserAssignedIdentity> userAssignedIdentities;
 
+    /** Creates an instance of ManagedServiceIdentity class. */
+    public ManagedServiceIdentity() {
+    }
+
     /**
      * Get the type property: Type of managed service identity.
      *

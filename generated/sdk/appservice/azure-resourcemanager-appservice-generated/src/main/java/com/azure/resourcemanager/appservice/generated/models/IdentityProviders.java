@@ -71,6 +71,10 @@ public final class IdentityProviders {
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, CustomOpenIdConnectProvider> customOpenIdConnectProviders;
 
+    /** Creates an instance of IdentityProviders class. */
+    public IdentityProviders() {
+    }
+
     /**
      * Get the azureActiveDirectory property: The configuration settings of the Azure Active directory provider.
      *

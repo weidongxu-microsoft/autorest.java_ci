@@ -38,18 +38,6 @@ public interface RouteTables {
      *
      * @param resourceGroupName The name of the resource group.
      * @param routeTableName The name of the route table.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified route table.
-     */
-    RouteTable getByResourceGroup(String resourceGroupName, String routeTableName);
-
-    /**
-     * Gets the specified route table.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param routeTableName The name of the route table.
      * @param expand Expands referenced resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -59,6 +47,18 @@ public interface RouteTables {
      */
     Response<RouteTable> getByResourceGroupWithResponse(
         String resourceGroupName, String routeTableName, String expand, Context context);
+
+    /**
+     * Gets the specified route table.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param routeTableName The name of the route table.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified route table.
+     */
+    RouteTable getByResourceGroup(String resourceGroupName, String routeTableName);
 
     /**
      * Gets all route tables in a resource group.

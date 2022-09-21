@@ -235,11 +235,12 @@ public final class WaitStatisticsClientImpl implements WaitStatisticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a Wait Statistic.
+     * @return represents a Wait Statistic along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public WaitStatisticInner get(String resourceGroupName, String serverName, String waitStatisticsId) {
-        return getAsync(resourceGroupName, serverName, waitStatisticsId).block();
+    public Response<WaitStatisticInner> getWithResponse(
+        String resourceGroupName, String serverName, String waitStatisticsId) {
+        return getWithResponseAsync(resourceGroupName, serverName, waitStatisticsId).block();
     }
 
     /**
@@ -258,6 +259,22 @@ public final class WaitStatisticsClientImpl implements WaitStatisticsClient {
     public Response<WaitStatisticInner> getWithResponse(
         String resourceGroupName, String serverName, String waitStatisticsId, Context context) {
         return getWithResponseAsync(resourceGroupName, serverName, waitStatisticsId, context).block();
+    }
+
+    /**
+     * Retrieve wait statistics for specified identifier.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param serverName The name of the server.
+     * @param waitStatisticsId The Wait Statistic identifier.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return represents a Wait Statistic.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public WaitStatisticInner get(String resourceGroupName, String serverName, String waitStatisticsId) {
+        return getWithResponse(resourceGroupName, serverName, waitStatisticsId, Context.NONE).getValue();
     }
 
     /**

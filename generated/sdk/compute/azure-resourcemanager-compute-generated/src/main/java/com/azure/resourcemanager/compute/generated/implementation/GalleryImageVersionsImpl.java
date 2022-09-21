@@ -29,17 +29,6 @@ public final class GalleryImageVersionsImpl implements GalleryImageVersions {
         this.serviceManager = serviceManager;
     }
 
-    public GalleryImageVersion get(
-        String resourceGroupName, String galleryName, String galleryImageName, String galleryImageVersionName) {
-        GalleryImageVersionInner inner =
-            this.serviceClient().get(resourceGroupName, galleryName, galleryImageName, galleryImageVersionName);
-        if (inner != null) {
-            return new GalleryImageVersionImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<GalleryImageVersion> getWithResponse(
         String resourceGroupName,
         String galleryName,
@@ -58,6 +47,17 @@ public final class GalleryImageVersionsImpl implements GalleryImageVersions {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new GalleryImageVersionImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public GalleryImageVersion get(
+        String resourceGroupName, String galleryName, String galleryImageName, String galleryImageVersionName) {
+        GalleryImageVersionInner inner =
+            this.serviceClient().get(resourceGroupName, galleryName, galleryImageName, galleryImageVersionName);
+        if (inner != null) {
+            return new GalleryImageVersionImpl(inner, this.manager());
         } else {
             return null;
         }

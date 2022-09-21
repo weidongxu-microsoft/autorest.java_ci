@@ -972,11 +972,11 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a disk access resource.
+     * @return information about a disk access resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public DiskAccessInner getByResourceGroup(String resourceGroupName, String diskAccessName) {
-        return getByResourceGroupAsync(resourceGroupName, diskAccessName).block();
+    public Response<DiskAccessInner> getByResourceGroupWithResponse(String resourceGroupName, String diskAccessName) {
+        return getByResourceGroupWithResponseAsync(resourceGroupName, diskAccessName).block();
     }
 
     /**
@@ -996,6 +996,23 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
     public Response<DiskAccessInner> getByResourceGroupWithResponse(
         String resourceGroupName, String diskAccessName, Context context) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, diskAccessName, context).block();
+    }
+
+    /**
+     * Gets information about a disk access resource.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
+     *     the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
+     *     name length is 80 characters.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ApiErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return information about a disk access resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public DiskAccessInner getByResourceGroup(String resourceGroupName, String diskAccessName) {
+        return getByResourceGroupWithResponse(resourceGroupName, diskAccessName, Context.NONE).getValue();
     }
 
     /**
@@ -1681,11 +1698,12 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the private link resources possible under disk access resource.
+     * @return the private link resources possible under disk access resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public PrivateLinkResourceListResultInner getPrivateLinkResources(String resourceGroupName, String diskAccessName) {
-        return getPrivateLinkResourcesAsync(resourceGroupName, diskAccessName).block();
+    public Response<PrivateLinkResourceListResultInner> getPrivateLinkResourcesWithResponse(
+        String resourceGroupName, String diskAccessName) {
+        return getPrivateLinkResourcesWithResponseAsync(resourceGroupName, diskAccessName).block();
     }
 
     /**
@@ -1705,6 +1723,23 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
     public Response<PrivateLinkResourceListResultInner> getPrivateLinkResourcesWithResponse(
         String resourceGroupName, String diskAccessName, Context context) {
         return getPrivateLinkResourcesWithResponseAsync(resourceGroupName, diskAccessName, context).block();
+    }
+
+    /**
+     * Gets the private link resources possible under disk access resource.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
+     *     the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
+     *     name length is 80 characters.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the private link resources possible under disk access resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public PrivateLinkResourceListResultInner getPrivateLinkResources(String resourceGroupName, String diskAccessName) {
+        return getPrivateLinkResourcesWithResponse(resourceGroupName, diskAccessName, Context.NONE).getValue();
     }
 
     /**
@@ -2254,12 +2289,13 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a private endpoint connection under a disk access resource.
+     * @return information about a private endpoint connection under a disk access resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public PrivateEndpointConnectionInner getAPrivateEndpointConnection(
+    public Response<PrivateEndpointConnectionInner> getAPrivateEndpointConnectionWithResponse(
         String resourceGroupName, String diskAccessName, String privateEndpointConnectionName) {
-        return getAPrivateEndpointConnectionAsync(resourceGroupName, diskAccessName, privateEndpointConnectionName)
+        return getAPrivateEndpointConnectionWithResponseAsync(
+                resourceGroupName, diskAccessName, privateEndpointConnectionName)
             .block();
     }
 
@@ -2283,6 +2319,27 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
         return getAPrivateEndpointConnectionWithResponseAsync(
                 resourceGroupName, diskAccessName, privateEndpointConnectionName, context)
             .block();
+    }
+
+    /**
+     * Gets information about a private endpoint connection under a disk access resource.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
+     *     the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
+     *     name length is 80 characters.
+     * @param privateEndpointConnectionName The name of the private endpoint connection.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ApiErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return information about a private endpoint connection under a disk access resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public PrivateEndpointConnectionInner getAPrivateEndpointConnection(
+        String resourceGroupName, String diskAccessName, String privateEndpointConnectionName) {
+        return getAPrivateEndpointConnectionWithResponse(
+                resourceGroupName, diskAccessName, privateEndpointConnectionName, Context.NONE)
+            .getValue();
     }
 
     /**

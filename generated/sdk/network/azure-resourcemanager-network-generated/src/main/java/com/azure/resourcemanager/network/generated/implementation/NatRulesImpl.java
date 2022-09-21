@@ -27,15 +27,6 @@ public final class NatRulesImpl implements NatRules {
         this.serviceManager = serviceManager;
     }
 
-    public VpnGatewayNatRule get(String resourceGroupName, String gatewayName, String natRuleName) {
-        VpnGatewayNatRuleInner inner = this.serviceClient().get(resourceGroupName, gatewayName, natRuleName);
-        if (inner != null) {
-            return new VpnGatewayNatRuleImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<VpnGatewayNatRule> getWithResponse(
         String resourceGroupName, String gatewayName, String natRuleName, Context context) {
         Response<VpnGatewayNatRuleInner> inner =
@@ -46,6 +37,15 @@ public final class NatRulesImpl implements NatRules {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new VpnGatewayNatRuleImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public VpnGatewayNatRule get(String resourceGroupName, String gatewayName, String natRuleName) {
+        VpnGatewayNatRuleInner inner = this.serviceClient().get(resourceGroupName, gatewayName, natRuleName);
+        if (inner != null) {
+            return new VpnGatewayNatRuleImpl(inner, this.manager());
         } else {
             return null;
         }

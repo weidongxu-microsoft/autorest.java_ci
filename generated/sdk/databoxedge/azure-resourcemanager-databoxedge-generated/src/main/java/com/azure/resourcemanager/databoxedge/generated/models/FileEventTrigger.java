@@ -23,6 +23,10 @@ public final class FileEventTrigger extends TriggerInner {
     @JsonProperty(value = "properties", required = true)
     private FileTriggerProperties innerProperties = new FileTriggerProperties();
 
+    /** Creates an instance of FileEventTrigger class. */
+    public FileEventTrigger() {
+    }
+
     /**
      * Get the innerProperties property: File trigger properties.
      *

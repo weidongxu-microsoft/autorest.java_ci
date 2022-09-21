@@ -37,6 +37,10 @@ public final class Operation {
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, Object> properties;
 
+    /** Creates an instance of Operation class. */
+    public Operation() {
+    }
+
     /**
      * Get the name property: The name of the operation being performed on this particular object.
      *

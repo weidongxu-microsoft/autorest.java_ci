@@ -28,6 +28,10 @@ public final class SkuCost {
     @JsonProperty(value = "extendedUnit", access = JsonProperty.Access.WRITE_ONLY)
     private String extendedUnit;
 
+    /** Creates an instance of SkuCost class. */
+    public SkuCost() {
+    }
+
     /**
      * Get the meterId property: Used for querying price from commerce.
      *

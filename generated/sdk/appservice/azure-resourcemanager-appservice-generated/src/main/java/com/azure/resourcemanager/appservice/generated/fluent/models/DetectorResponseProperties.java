@@ -46,6 +46,10 @@ public final class DetectorResponseProperties {
     @JsonProperty(value = "suggestedUtterances")
     private QueryUtterancesResults suggestedUtterances;
 
+    /** Creates an instance of DetectorResponseProperties class. */
+    public DetectorResponseProperties() {
+    }
+
     /**
      * Get the metadata property: metadata for the detector.
      *

@@ -26,6 +26,8 @@ import com.azure.resourcemanager.network.generated.fluent.AdminRuleCollectionsCl
 import com.azure.resourcemanager.network.generated.fluent.AdminRulesClient;
 import com.azure.resourcemanager.network.generated.fluent.ApplicationGatewayPrivateEndpointConnectionsClient;
 import com.azure.resourcemanager.network.generated.fluent.ApplicationGatewayPrivateLinkResourcesClient;
+import com.azure.resourcemanager.network.generated.fluent.ApplicationGatewayWafDynamicManifestsClient;
+import com.azure.resourcemanager.network.generated.fluent.ApplicationGatewayWafDynamicManifestsDefaultsClient;
 import com.azure.resourcemanager.network.generated.fluent.ApplicationGatewaysClient;
 import com.azure.resourcemanager.network.generated.fluent.ApplicationSecurityGroupsClient;
 import com.azure.resourcemanager.network.generated.fluent.AvailableDelegationsClient;
@@ -108,6 +110,7 @@ import com.azure.resourcemanager.network.generated.fluent.ResourceNavigationLink
 import com.azure.resourcemanager.network.generated.fluent.ResourceProvidersClient;
 import com.azure.resourcemanager.network.generated.fluent.RouteFilterRulesClient;
 import com.azure.resourcemanager.network.generated.fluent.RouteFiltersClient;
+import com.azure.resourcemanager.network.generated.fluent.RouteMapsClient;
 import com.azure.resourcemanager.network.generated.fluent.RouteTablesClient;
 import com.azure.resourcemanager.network.generated.fluent.RoutesClient;
 import com.azure.resourcemanager.network.generated.fluent.RoutingIntentsClient;
@@ -124,6 +127,7 @@ import com.azure.resourcemanager.network.generated.fluent.StaticMembersClient;
 import com.azure.resourcemanager.network.generated.fluent.SubnetsClient;
 import com.azure.resourcemanager.network.generated.fluent.SubscriptionNetworkManagerConnectionsClient;
 import com.azure.resourcemanager.network.generated.fluent.UsagesClient;
+import com.azure.resourcemanager.network.generated.fluent.VipSwapsClient;
 import com.azure.resourcemanager.network.generated.fluent.VirtualApplianceSitesClient;
 import com.azure.resourcemanager.network.generated.fluent.VirtualApplianceSkusClient;
 import com.azure.resourcemanager.network.generated.fluent.VirtualHubBgpConnectionsClient;
@@ -260,6 +264,30 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
      */
     public ApplicationGatewayPrivateEndpointConnectionsClient getApplicationGatewayPrivateEndpointConnections() {
         return this.applicationGatewayPrivateEndpointConnections;
+    }
+
+    /** The ApplicationGatewayWafDynamicManifestsDefaultsClient object to access its operations. */
+    private final ApplicationGatewayWafDynamicManifestsDefaultsClient applicationGatewayWafDynamicManifestsDefaults;
+
+    /**
+     * Gets the ApplicationGatewayWafDynamicManifestsDefaultsClient object to access its operations.
+     *
+     * @return the ApplicationGatewayWafDynamicManifestsDefaultsClient object.
+     */
+    public ApplicationGatewayWafDynamicManifestsDefaultsClient getApplicationGatewayWafDynamicManifestsDefaults() {
+        return this.applicationGatewayWafDynamicManifestsDefaults;
+    }
+
+    /** The ApplicationGatewayWafDynamicManifestsClient object to access its operations. */
+    private final ApplicationGatewayWafDynamicManifestsClient applicationGatewayWafDynamicManifests;
+
+    /**
+     * Gets the ApplicationGatewayWafDynamicManifestsClient object to access its operations.
+     *
+     * @return the ApplicationGatewayWafDynamicManifestsClient object.
+     */
+    public ApplicationGatewayWafDynamicManifestsClient getApplicationGatewayWafDynamicManifests() {
+        return this.applicationGatewayWafDynamicManifests;
     }
 
     /** The ApplicationSecurityGroupsClient object to access its operations. */
@@ -596,6 +624,18 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
      */
     public ExpressRoutePortAuthorizationsClient getExpressRoutePortAuthorizations() {
         return this.expressRoutePortAuthorizations;
+    }
+
+    /** The ExpressRouteProviderPortsLocationsClient object to access its operations. */
+    private final ExpressRouteProviderPortsLocationsClient expressRouteProviderPortsLocations;
+
+    /**
+     * Gets the ExpressRouteProviderPortsLocationsClient object to access its operations.
+     *
+     * @return the ExpressRouteProviderPortsLocationsClient object.
+     */
+    public ExpressRouteProviderPortsLocationsClient getExpressRouteProviderPortsLocations() {
+        return this.expressRouteProviderPortsLocations;
     }
 
     /** The FirewallPoliciesClient object to access its operations. */
@@ -1546,6 +1586,18 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
         return this.virtualHubs;
     }
 
+    /** The RouteMapsClient object to access its operations. */
+    private final RouteMapsClient routeMaps;
+
+    /**
+     * Gets the RouteMapsClient object to access its operations.
+     *
+     * @return the RouteMapsClient object.
+     */
+    public RouteMapsClient getRouteMaps() {
+        return this.routeMaps;
+    }
+
     /** The HubVirtualNetworkConnectionsClient object to access its operations. */
     private final HubVirtualNetworkConnectionsClient hubVirtualNetworkConnections;
 
@@ -1740,16 +1792,16 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
         return this.webApplicationFirewallPolicies;
     }
 
-    /** The ExpressRouteProviderPortsLocationsClient object to access its operations. */
-    private final ExpressRouteProviderPortsLocationsClient expressRouteProviderPortsLocations;
+    /** The VipSwapsClient object to access its operations. */
+    private final VipSwapsClient vipSwaps;
 
     /**
-     * Gets the ExpressRouteProviderPortsLocationsClient object to access its operations.
+     * Gets the VipSwapsClient object to access its operations.
      *
-     * @return the ExpressRouteProviderPortsLocationsClient object.
+     * @return the VipSwapsClient object.
      */
-    public ExpressRouteProviderPortsLocationsClient getExpressRouteProviderPortsLocations() {
-        return this.expressRouteProviderPortsLocations;
+    public VipSwapsClient getVipSwaps() {
+        return this.vipSwaps;
     }
 
     /**
@@ -1779,6 +1831,9 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
         this.applicationGatewayPrivateLinkResources = new ApplicationGatewayPrivateLinkResourcesClientImpl(this);
         this.applicationGatewayPrivateEndpointConnections =
             new ApplicationGatewayPrivateEndpointConnectionsClientImpl(this);
+        this.applicationGatewayWafDynamicManifestsDefaults =
+            new ApplicationGatewayWafDynamicManifestsDefaultsClientImpl(this);
+        this.applicationGatewayWafDynamicManifests = new ApplicationGatewayWafDynamicManifestsClientImpl(this);
         this.applicationSecurityGroups = new ApplicationSecurityGroupsClientImpl(this);
         this.availableDelegations = new AvailableDelegationsClientImpl(this);
         this.availableResourceGroupDelegations = new AvailableResourceGroupDelegationsClientImpl(this);
@@ -1807,6 +1862,7 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
         this.expressRoutePorts = new ExpressRoutePortsClientImpl(this);
         this.expressRouteLinks = new ExpressRouteLinksClientImpl(this);
         this.expressRoutePortAuthorizations = new ExpressRoutePortAuthorizationsClientImpl(this);
+        this.expressRouteProviderPortsLocations = new ExpressRouteProviderPortsLocationsClientImpl(this);
         this.firewallPolicies = new FirewallPoliciesClientImpl(this);
         this.firewallPolicyRuleCollectionGroups = new FirewallPolicyRuleCollectionGroupsClientImpl(this);
         this.firewallPolicyIdpsSignatures = new FirewallPolicyIdpsSignaturesClientImpl(this);
@@ -1886,6 +1942,7 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
         this.vpnServerConfigurations = new VpnServerConfigurationsClientImpl(this);
         this.configurationPolicyGroups = new ConfigurationPolicyGroupsClientImpl(this);
         this.virtualHubs = new VirtualHubsClientImpl(this);
+        this.routeMaps = new RouteMapsClientImpl(this);
         this.hubVirtualNetworkConnections = new HubVirtualNetworkConnectionsClientImpl(this);
         this.vpnGateways = new VpnGatewaysClientImpl(this);
         this.vpnLinkConnections = new VpnLinkConnectionsClientImpl(this);
@@ -1903,7 +1960,7 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
         this.hubRouteTables = new HubRouteTablesClientImpl(this);
         this.routingIntents = new RoutingIntentsClientImpl(this);
         this.webApplicationFirewallPolicies = new WebApplicationFirewallPoliciesClientImpl(this);
-        this.expressRouteProviderPortsLocations = new ExpressRouteProviderPortsLocationsClientImpl(this);
+        this.vipSwaps = new VipSwapsClientImpl(this);
     }
 
     /**

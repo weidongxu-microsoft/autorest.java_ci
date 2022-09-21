@@ -59,6 +59,10 @@ public class MSDeployCore {
     @JsonProperty(value = "appOffline")
     private Boolean appOffline;
 
+    /** Creates an instance of MSDeployCore class. */
+    public MSDeployCore() {
+    }
+
     /**
      * Get the packageUri property: Package URI.
      *

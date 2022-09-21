@@ -43,6 +43,10 @@ public final class ArmDisasterRecoveryProperties {
     @JsonProperty(value = "pendingReplicationOperationsCount", access = JsonProperty.Access.WRITE_ONLY)
     private Long pendingReplicationOperationsCount;
 
+    /** Creates an instance of ArmDisasterRecoveryProperties class. */
+    public ArmDisasterRecoveryProperties() {
+    }
+
     /**
      * Get the provisioningState property: Provisioning state of the Alias(Disaster Recovery configuration) - possible
      * values 'Accepted' or 'Succeeded' or 'Failed'.

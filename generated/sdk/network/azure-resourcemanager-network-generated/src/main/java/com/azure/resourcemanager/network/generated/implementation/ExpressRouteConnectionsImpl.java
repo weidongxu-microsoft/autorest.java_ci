@@ -68,16 +68,6 @@ public final class ExpressRouteConnectionsImpl implements ExpressRouteConnection
         }
     }
 
-    public ExpressRouteConnection get(String resourceGroupName, String expressRouteGatewayName, String connectionName) {
-        ExpressRouteConnectionInner inner =
-            this.serviceClient().get(resourceGroupName, expressRouteGatewayName, connectionName);
-        if (inner != null) {
-            return new ExpressRouteConnectionImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<ExpressRouteConnection> getWithResponse(
         String resourceGroupName, String expressRouteGatewayName, String connectionName, Context context) {
         Response<ExpressRouteConnectionInner> inner =
@@ -93,6 +83,16 @@ public final class ExpressRouteConnectionsImpl implements ExpressRouteConnection
         }
     }
 
+    public ExpressRouteConnection get(String resourceGroupName, String expressRouteGatewayName, String connectionName) {
+        ExpressRouteConnectionInner inner =
+            this.serviceClient().get(resourceGroupName, expressRouteGatewayName, connectionName);
+        if (inner != null) {
+            return new ExpressRouteConnectionImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
     public void delete(String resourceGroupName, String expressRouteGatewayName, String connectionName) {
         this.serviceClient().delete(resourceGroupName, expressRouteGatewayName, connectionName);
     }
@@ -100,15 +100,6 @@ public final class ExpressRouteConnectionsImpl implements ExpressRouteConnection
     public void delete(
         String resourceGroupName, String expressRouteGatewayName, String connectionName, Context context) {
         this.serviceClient().delete(resourceGroupName, expressRouteGatewayName, connectionName, context);
-    }
-
-    public ExpressRouteConnectionList list(String resourceGroupName, String expressRouteGatewayName) {
-        ExpressRouteConnectionListInner inner = this.serviceClient().list(resourceGroupName, expressRouteGatewayName);
-        if (inner != null) {
-            return new ExpressRouteConnectionListImpl(inner, this.manager());
-        } else {
-            return null;
-        }
     }
 
     public Response<ExpressRouteConnectionList> listWithResponse(
@@ -121,6 +112,15 @@ public final class ExpressRouteConnectionsImpl implements ExpressRouteConnection
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new ExpressRouteConnectionListImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public ExpressRouteConnectionList list(String resourceGroupName, String expressRouteGatewayName) {
+        ExpressRouteConnectionListInner inner = this.serviceClient().list(resourceGroupName, expressRouteGatewayName);
+        if (inner != null) {
+            return new ExpressRouteConnectionListImpl(inner, this.manager());
         } else {
             return null;
         }

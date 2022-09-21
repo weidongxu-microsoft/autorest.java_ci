@@ -35,6 +35,10 @@ public final class RoleAssignmentInner {
     @JsonProperty(value = "properties")
     private RoleAssignmentPropertiesWithScope innerProperties;
 
+    /** Creates an instance of RoleAssignmentInner class. */
+    public RoleAssignmentInner() {
+    }
+
     /**
      * Get the id property: The role assignment ID.
      *

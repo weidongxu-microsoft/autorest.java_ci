@@ -17,6 +17,10 @@ public final class DiagnosticSettingsCategory {
     @JsonProperty(value = "categoryType")
     private CategoryType categoryType;
 
+    /** Creates an instance of DiagnosticSettingsCategory class. */
+    public DiagnosticSettingsCategory() {
+    }
+
     /**
      * Get the categoryType property: The type of the diagnostic settings category.
      *

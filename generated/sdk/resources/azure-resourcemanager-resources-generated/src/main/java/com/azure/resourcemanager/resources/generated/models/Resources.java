@@ -163,29 +163,6 @@ public interface Resources {
      * @param resourceType The resource type.
      * @param resourceName The name of the resource to check whether it exists.
      * @param apiVersion The API version to use for the operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return whether resource exists.
-     */
-    boolean checkExistence(
-        String resourceGroupName,
-        String resourceProviderNamespace,
-        String parentResourcePath,
-        String resourceType,
-        String resourceName,
-        String apiVersion);
-
-    /**
-     * Checks whether a resource exists.
-     *
-     * @param resourceGroupName The name of the resource group containing the resource to check. The name is case
-     *     insensitive.
-     * @param resourceProviderNamespace The resource provider of the resource to check.
-     * @param parentResourcePath The parent resource identity.
-     * @param resourceType The resource type.
-     * @param resourceName The name of the resource to check whether it exists.
-     * @param apiVersion The API version to use for the operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -202,6 +179,29 @@ public interface Resources {
         Context context);
 
     /**
+     * Checks whether a resource exists.
+     *
+     * @param resourceGroupName The name of the resource group containing the resource to check. The name is case
+     *     insensitive.
+     * @param resourceProviderNamespace The resource provider of the resource to check.
+     * @param parentResourcePath The parent resource identity.
+     * @param resourceType The resource type.
+     * @param resourceName The name of the resource to check whether it exists.
+     * @param apiVersion The API version to use for the operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return whether resource exists.
+     */
+    boolean checkExistence(
+        String resourceGroupName,
+        String resourceProviderNamespace,
+        String parentResourcePath,
+        String resourceType,
+        String resourceName,
+        String apiVersion);
+
+    /**
      * Deletes a resource.
      *
      * @param resourceGroupName The name of the resource group that contains the resource to delete. The name is case
@@ -346,29 +346,6 @@ public interface Resources {
         String apiVersion,
         GenericResourceInner parameters,
         Context context);
-
-    /**
-     * Gets a resource.
-     *
-     * @param resourceGroupName The name of the resource group containing the resource to get. The name is case
-     *     insensitive.
-     * @param resourceProviderNamespace The namespace of the resource provider.
-     * @param parentResourcePath The parent resource identity.
-     * @param resourceType The resource type of the resource.
-     * @param resourceName The name of the resource to get.
-     * @param apiVersion The API version to use for the operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a resource.
-     */
-    GenericResource get(
-        String resourceGroupName,
-        String resourceProviderNamespace,
-        String parentResourcePath,
-        String resourceType,
-        String resourceName,
-        String apiVersion);
 
     /**
      * Gets a resource.
@@ -396,18 +373,27 @@ public interface Resources {
         Context context);
 
     /**
-     * Checks by ID whether a resource exists.
+     * Gets a resource.
      *
-     * @param resourceId The fully qualified ID of the resource, including the resource name and resource type. Use the
-     *     format,
-     *     /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
+     * @param resourceGroupName The name of the resource group containing the resource to get. The name is case
+     *     insensitive.
+     * @param resourceProviderNamespace The namespace of the resource provider.
+     * @param parentResourcePath The parent resource identity.
+     * @param resourceType The resource type of the resource.
+     * @param resourceName The name of the resource to get.
      * @param apiVersion The API version to use for the operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return whether resource exists.
+     * @return a resource.
      */
-    boolean checkExistenceById(String resourceId, String apiVersion);
+    GenericResource get(
+        String resourceGroupName,
+        String resourceProviderNamespace,
+        String parentResourcePath,
+        String resourceType,
+        String resourceName,
+        String apiVersion);
 
     /**
      * Checks by ID whether a resource exists.
@@ -423,6 +409,20 @@ public interface Resources {
      * @return whether resource exists along with {@link Response}.
      */
     Response<Boolean> checkExistenceByIdWithResponse(String resourceId, String apiVersion, Context context);
+
+    /**
+     * Checks by ID whether a resource exists.
+     *
+     * @param resourceId The fully qualified ID of the resource, including the resource name and resource type. Use the
+     *     format,
+     *     /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
+     * @param apiVersion The API version to use for the operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return whether resource exists.
+     */
+    boolean checkExistenceById(String resourceId, String apiVersion);
 
     /**
      * Deletes a resource by ID.
@@ -521,12 +521,13 @@ public interface Resources {
      *     format,
      *     /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
      * @param apiVersion The API version to use for the operation.
+     * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a resource by ID.
+     * @return a resource by ID along with {@link Response}.
      */
-    GenericResource getById(String resourceId, String apiVersion);
+    Response<GenericResource> getByIdWithResponse(String resourceId, String apiVersion, Context context);
 
     /**
      * Gets a resource by ID.
@@ -535,11 +536,10 @@ public interface Resources {
      *     format,
      *     /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
      * @param apiVersion The API version to use for the operation.
-     * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a resource by ID along with {@link Response}.
+     * @return a resource by ID.
      */
-    Response<GenericResource> getByIdWithResponse(String resourceId, String apiVersion, Context context);
+    GenericResource getById(String resourceId, String apiVersion);
 }

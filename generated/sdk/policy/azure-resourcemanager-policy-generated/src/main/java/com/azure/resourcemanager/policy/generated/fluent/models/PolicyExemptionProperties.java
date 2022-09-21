@@ -58,6 +58,10 @@ public final class PolicyExemptionProperties {
     @JsonProperty(value = "metadata")
     private Object metadata;
 
+    /** Creates an instance of PolicyExemptionProperties class. */
+    public PolicyExemptionProperties() {
+    }
+
     /**
      * Get the policyAssignmentId property: The ID of the policy assignment that is being exempted.
      *

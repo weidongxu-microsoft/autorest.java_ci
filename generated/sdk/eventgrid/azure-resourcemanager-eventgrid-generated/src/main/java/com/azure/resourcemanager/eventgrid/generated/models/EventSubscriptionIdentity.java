@@ -23,6 +23,10 @@ public class EventSubscriptionIdentity {
     @JsonProperty(value = "userAssignedIdentity")
     private String userAssignedIdentity;
 
+    /** Creates an instance of EventSubscriptionIdentity class. */
+    public EventSubscriptionIdentity() {
+    }
+
     /**
      * Get the type property: The type of managed identity used. The type 'SystemAssigned, UserAssigned' includes both
      * an implicitly created identity and a set of user-assigned identities. The type 'None' will remove any identity.

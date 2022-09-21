@@ -17,36 +17,24 @@ public interface Vaults {
      *
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param vaultName The name of the vault to delete.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void deleteByResourceGroup(String resourceGroupName, String vaultName);
-
-    /**
-     * Deletes the specified Azure key vault.
-     *
-     * @param resourceGroupName The name of the Resource Group to which the vault belongs.
-     * @param vaultName The name of the vault to delete.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
-    Response<Void> deleteWithResponse(String resourceGroupName, String vaultName, Context context);
+    Response<Void> deleteByResourceGroupWithResponse(String resourceGroupName, String vaultName, Context context);
 
     /**
-     * Gets the specified Azure key vault.
+     * Deletes the specified Azure key vault.
      *
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
-     * @param vaultName The name of the vault.
+     * @param vaultName The name of the vault to delete.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Azure key vault.
      */
-    Vault getByResourceGroup(String resourceGroupName, String vaultName);
+    void deleteByResourceGroup(String resourceGroupName, String vaultName);
 
     /**
      * Gets the specified Azure key vault.
@@ -62,22 +50,16 @@ public interface Vaults {
     Response<Vault> getByResourceGroupWithResponse(String resourceGroupName, String vaultName, Context context);
 
     /**
-     * Update access policies in a key vault in the specified subscription.
+     * Gets the specified Azure key vault.
      *
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
-     * @param vaultName Name of the vault.
-     * @param operationKind Name of the operation.
-     * @param parameters Access policy to merge into the vault.
+     * @param vaultName The name of the vault.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return parameters for updating the access policy in a vault.
+     * @return the specified Azure key vault.
      */
-    VaultAccessPolicyParameters updateAccessPolicy(
-        String resourceGroupName,
-        String vaultName,
-        AccessPolicyUpdateKind operationKind,
-        VaultAccessPolicyParametersInner parameters);
+    Vault getByResourceGroup(String resourceGroupName, String vaultName);
 
     /**
      * Update access policies in a key vault in the specified subscription.
@@ -98,6 +80,24 @@ public interface Vaults {
         AccessPolicyUpdateKind operationKind,
         VaultAccessPolicyParametersInner parameters,
         Context context);
+
+    /**
+     * Update access policies in a key vault in the specified subscription.
+     *
+     * @param resourceGroupName The name of the Resource Group to which the vault belongs.
+     * @param vaultName Name of the vault.
+     * @param operationKind Name of the operation.
+     * @param parameters Access policy to merge into the vault.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return parameters for updating the access policy in a vault.
+     */
+    VaultAccessPolicyParameters updateAccessPolicy(
+        String resourceGroupName,
+        String vaultName,
+        AccessPolicyUpdateKind operationKind,
+        VaultAccessPolicyParametersInner parameters);
 
     /**
      * The List operation gets information about the vaults associated with the subscription and within the specified
@@ -171,18 +171,6 @@ public interface Vaults {
      *
      * @param vaultName The name of the vault.
      * @param location The location of the deleted vault.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the deleted Azure key vault.
-     */
-    DeletedVault getDeleted(String vaultName, String location);
-
-    /**
-     * Gets the deleted Azure key vault.
-     *
-     * @param vaultName The name of the vault.
-     * @param location The location of the deleted vault.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -190,6 +178,18 @@ public interface Vaults {
      * @return the deleted Azure key vault along with {@link Response}.
      */
     Response<DeletedVault> getDeletedWithResponse(String vaultName, String location, Context context);
+
+    /**
+     * Gets the deleted Azure key vault.
+     *
+     * @param vaultName The name of the vault.
+     * @param location The location of the deleted vault.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the deleted Azure key vault.
+     */
+    DeletedVault getDeleted(String vaultName, String location);
 
     /**
      * Permanently deletes the specified vault. aka Purges the deleted Azure key vault.
@@ -239,17 +239,6 @@ public interface Vaults {
      * Checks that the vault name is valid and is not already in use.
      *
      * @param vaultName The name of the vault.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the CheckNameAvailability operation response.
-     */
-    CheckNameAvailabilityResult checkNameAvailability(VaultCheckNameAvailabilityParameters vaultName);
-
-    /**
-     * Checks that the vault name is valid and is not already in use.
-     *
-     * @param vaultName The name of the vault.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -258,6 +247,17 @@ public interface Vaults {
      */
     Response<CheckNameAvailabilityResult> checkNameAvailabilityWithResponse(
         VaultCheckNameAvailabilityParameters vaultName, Context context);
+
+    /**
+     * Checks that the vault name is valid and is not already in use.
+     *
+     * @param vaultName The name of the vault.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the CheckNameAvailability operation response.
+     */
+    CheckNameAvailabilityResult checkNameAvailability(VaultCheckNameAvailabilityParameters vaultName);
 
     /**
      * Gets the specified Azure key vault.

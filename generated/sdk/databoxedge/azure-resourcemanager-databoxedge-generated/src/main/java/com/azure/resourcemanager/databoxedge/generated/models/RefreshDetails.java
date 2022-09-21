@@ -39,6 +39,10 @@ public final class RefreshDetails {
     @JsonProperty(value = "lastJob")
     private String lastJob;
 
+    /** Creates an instance of RefreshDetails class. */
+    public RefreshDetails() {
+    }
+
     /**
      * Get the inProgressRefreshJobId property: If a refresh job is currently in progress on this share or container,
      * this field indicates the ARM resource ID of that job. The field is empty if no job is in progress.

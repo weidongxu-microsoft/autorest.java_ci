@@ -38,15 +38,6 @@ public final class SharesImpl implements Shares {
         return Utils.mapPage(inner, inner1 -> new ShareImpl(inner1, this.manager()));
     }
 
-    public Share get(String deviceName, String name, String resourceGroupName) {
-        ShareInner inner = this.serviceClient().get(deviceName, name, resourceGroupName);
-        if (inner != null) {
-            return new ShareImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Response<Share> getWithResponse(String deviceName, String name, String resourceGroupName, Context context) {
         Response<ShareInner> inner = this.serviceClient().getWithResponse(deviceName, name, resourceGroupName, context);
         if (inner != null) {
@@ -55,6 +46,15 @@ public final class SharesImpl implements Shares {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new ShareImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public Share get(String deviceName, String name, String resourceGroupName) {
+        ShareInner inner = this.serviceClient().get(deviceName, name, resourceGroupName);
+        if (inner != null) {
+            return new ShareImpl(inner, this.manager());
         } else {
             return null;
         }

@@ -243,11 +243,11 @@ public final class LocationsClientImpl implements LocationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the capabilities for the specified location.
+     * @return the capabilities for the specified location along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public CapabilitiesResultInner getCapabilities(String location) {
-        return getCapabilitiesAsync(location).block();
+    public Response<CapabilitiesResultInner> getCapabilitiesWithResponse(String location) {
+        return getCapabilitiesWithResponseAsync(location).block();
     }
 
     /**
@@ -263,6 +263,20 @@ public final class LocationsClientImpl implements LocationsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<CapabilitiesResultInner> getCapabilitiesWithResponse(String location, Context context) {
         return getCapabilitiesWithResponseAsync(location, context).block();
+    }
+
+    /**
+     * Gets the capabilities for the specified location.
+     *
+     * @param location The Azure location (region) for which to make the request.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the capabilities for the specified location.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public CapabilitiesResultInner getCapabilities(String location) {
+        return getCapabilitiesWithResponse(location, Context.NONE).getValue();
     }
 
     /**
@@ -369,11 +383,11 @@ public final class LocationsClientImpl implements LocationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response for the operation to get regional usages for a subscription.
+     * @return the response for the operation to get regional usages for a subscription along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public UsagesListResultInner listUsages(String location) {
-        return listUsagesAsync(location).block();
+    public Response<UsagesListResultInner> listUsagesWithResponse(String location) {
+        return listUsagesWithResponseAsync(location).block();
     }
 
     /**
@@ -389,6 +403,20 @@ public final class LocationsClientImpl implements LocationsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<UsagesListResultInner> listUsagesWithResponse(String location, Context context) {
         return listUsagesWithResponseAsync(location, context).block();
+    }
+
+    /**
+     * Lists the usages for the specified location.
+     *
+     * @param location The Azure location (region) for which to make the request.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response for the operation to get regional usages for a subscription.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public UsagesListResultInner listUsages(String location) {
+        return listUsagesWithResponse(location, Context.NONE).getValue();
     }
 
     /**
@@ -496,11 +524,12 @@ public final class LocationsClientImpl implements LocationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response for the operation to get regional billingSpecs for a subscription.
+     * @return the response for the operation to get regional billingSpecs for a subscription along with {@link
+     *     Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public BillingResponseListResultInner listBillingSpecs(String location) {
-        return listBillingSpecsAsync(location).block();
+    public Response<BillingResponseListResultInner> listBillingSpecsWithResponse(String location) {
+        return listBillingSpecsWithResponseAsync(location).block();
     }
 
     /**
@@ -517,6 +546,20 @@ public final class LocationsClientImpl implements LocationsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<BillingResponseListResultInner> listBillingSpecsWithResponse(String location, Context context) {
         return listBillingSpecsWithResponseAsync(location, context).block();
+    }
+
+    /**
+     * Lists the billingSpecs for the specified subscription and location.
+     *
+     * @param location The Azure location (region) for which to make the request.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response for the operation to get regional billingSpecs for a subscription.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public BillingResponseListResultInner listBillingSpecs(String location) {
+        return listBillingSpecsWithResponse(location, Context.NONE).getValue();
     }
 
     /**
@@ -635,11 +678,12 @@ public final class LocationsClientImpl implements LocationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the async operation status.
+     * @return the async operation status along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public AsyncOperationResultInner getAzureAsyncOperationStatus(String location, String operationId) {
-        return getAzureAsyncOperationStatusAsync(location, operationId).block();
+    public Response<AsyncOperationResultInner> getAzureAsyncOperationStatusWithResponse(
+        String location, String operationId) {
+        return getAzureAsyncOperationStatusWithResponseAsync(location, operationId).block();
     }
 
     /**
@@ -657,6 +701,21 @@ public final class LocationsClientImpl implements LocationsClient {
     public Response<AsyncOperationResultInner> getAzureAsyncOperationStatusWithResponse(
         String location, String operationId, Context context) {
         return getAzureAsyncOperationStatusWithResponseAsync(location, operationId, context).block();
+    }
+
+    /**
+     * Get the async operation status.
+     *
+     * @param location The Azure location (region) for which to make the request.
+     * @param operationId The long running operation id.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the async operation status.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public AsyncOperationResultInner getAzureAsyncOperationStatus(String location, String operationId) {
+        return getAzureAsyncOperationStatusWithResponse(location, operationId, Context.NONE).getValue();
     }
 
     /**
@@ -782,12 +841,12 @@ public final class LocationsClientImpl implements LocationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response spec of checking name availability.
+     * @return the response spec of checking name availability along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public NameAvailabilityCheckResultInner checkNameAvailability(
+    public Response<NameAvailabilityCheckResultInner> checkNameAvailabilityWithResponse(
         String location, NameAvailabilityCheckRequestParameters parameters) {
-        return checkNameAvailabilityAsync(location, parameters).block();
+        return checkNameAvailabilityWithResponseAsync(location, parameters).block();
     }
 
     /**
@@ -805,6 +864,22 @@ public final class LocationsClientImpl implements LocationsClient {
     public Response<NameAvailabilityCheckResultInner> checkNameAvailabilityWithResponse(
         String location, NameAvailabilityCheckRequestParameters parameters, Context context) {
         return checkNameAvailabilityWithResponseAsync(location, parameters, context).block();
+    }
+
+    /**
+     * Check the cluster name is available or not.
+     *
+     * @param location The Azure location (region) for which to make the request.
+     * @param parameters The request spec of checking name availability.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response spec of checking name availability.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public NameAvailabilityCheckResultInner checkNameAvailability(
+        String location, NameAvailabilityCheckRequestParameters parameters) {
+        return checkNameAvailabilityWithResponse(location, parameters, Context.NONE).getValue();
     }
 
     /**
@@ -930,12 +1005,12 @@ public final class LocationsClientImpl implements LocationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of cluster create request validation.
+     * @return the response of cluster create request validation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ClusterCreateValidationResultInner validateClusterCreateRequest(
+    public Response<ClusterCreateValidationResultInner> validateClusterCreateRequestWithResponse(
         String location, ClusterCreateRequestValidationParameters parameters) {
-        return validateClusterCreateRequestAsync(location, parameters).block();
+        return validateClusterCreateRequestWithResponseAsync(location, parameters).block();
     }
 
     /**
@@ -953,5 +1028,21 @@ public final class LocationsClientImpl implements LocationsClient {
     public Response<ClusterCreateValidationResultInner> validateClusterCreateRequestWithResponse(
         String location, ClusterCreateRequestValidationParameters parameters, Context context) {
         return validateClusterCreateRequestWithResponseAsync(location, parameters, context).block();
+    }
+
+    /**
+     * Validate the cluster create request spec is valid or not.
+     *
+     * @param location The Azure location (region) for which to make the request.
+     * @param parameters The cluster create request specification.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response of cluster create request validation.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ClusterCreateValidationResultInner validateClusterCreateRequest(
+        String location, ClusterCreateRequestValidationParameters parameters) {
+        return validateClusterCreateRequestWithResponse(location, parameters, Context.NONE).getValue();
     }
 }

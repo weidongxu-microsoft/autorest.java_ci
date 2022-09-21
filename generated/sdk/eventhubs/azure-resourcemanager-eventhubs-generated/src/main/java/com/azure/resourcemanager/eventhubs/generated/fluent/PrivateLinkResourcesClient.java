@@ -17,19 +17,6 @@ public interface PrivateLinkResourcesClient {
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return lists of resources that supports Privatelinks.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    PrivateLinkResourcesListResultInner get(String resourceGroupName, String namespaceName);
-
-    /**
-     * Gets lists of resources that supports Privatelinks.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param namespaceName The Namespace name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -39,4 +26,17 @@ public interface PrivateLinkResourcesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<PrivateLinkResourcesListResultInner> getWithResponse(
         String resourceGroupName, String namespaceName, Context context);
+
+    /**
+     * Gets lists of resources that supports Privatelinks.
+     *
+     * @param resourceGroupName Name of the resource group within the azure subscription.
+     * @param namespaceName The Namespace name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return lists of resources that supports Privatelinks.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    PrivateLinkResourcesListResultInner get(String resourceGroupName, String namespaceName);
 }
