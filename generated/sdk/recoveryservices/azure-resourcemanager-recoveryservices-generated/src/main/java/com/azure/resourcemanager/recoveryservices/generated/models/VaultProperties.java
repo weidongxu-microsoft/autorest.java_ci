@@ -77,6 +77,12 @@ public final class VaultProperties {
     @JsonProperty(value = "redundancySettings")
     private VaultPropertiesRedundancySettings redundancySettings;
 
+    /*
+     * Security Settings of the vault
+     */
+    @JsonProperty(value = "securitySettings")
+    private SecuritySettings securitySettings;
+
     /** Creates an instance of VaultProperties class. */
     public VaultProperties() {
     }
@@ -236,6 +242,26 @@ public final class VaultProperties {
     }
 
     /**
+     * Get the securitySettings property: Security Settings of the vault.
+     *
+     * @return the securitySettings value.
+     */
+    public SecuritySettings securitySettings() {
+        return this.securitySettings;
+    }
+
+    /**
+     * Set the securitySettings property: Security Settings of the vault.
+     *
+     * @param securitySettings the securitySettings value to set.
+     * @return the VaultProperties object itself.
+     */
+    public VaultProperties withSecuritySettings(SecuritySettings securitySettings) {
+        this.securitySettings = securitySettings;
+        return this;
+    }
+
+    /**
      * Validates the instance.
      *
      * @throws IllegalArgumentException thrown if the instance is not valid.
@@ -258,6 +284,9 @@ public final class VaultProperties {
         }
         if (redundancySettings() != null) {
             redundancySettings().validate();
+        }
+        if (securitySettings() != null) {
+            securitySettings().validate();
         }
     }
 }
