@@ -224,21 +224,6 @@ public final class ConfigurationsClientImpl implements ConfigurationsClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param clusterName The name of the cluster.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all configuration information for an HDI cluster along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ClusterConfigurationsInner> listWithResponse(String resourceGroupName, String clusterName) {
-        return listWithResponseAsync(resourceGroupName, clusterName).block();
-    }
-
-    /**
-     * Gets all configuration information for an HDI cluster.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param clusterName The name of the cluster.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -699,25 +684,6 @@ public final class ConfigurationsClientImpl implements ConfigurationsClient {
     private Mono<Map<String, String>> getAsync(String resourceGroupName, String clusterName, String configurationName) {
         return getWithResponseAsync(resourceGroupName, clusterName, configurationName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * The configuration object for the specified cluster. This API is not recommended and might be removed in the
-     * future. Please consider using List configurations API instead.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param clusterName The name of the cluster.
-     * @param configurationName The name of the cluster configuration.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the configuration object for the specified configuration for the specified cluster along with {@link
-     *     Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Map<String, String>> getWithResponse(
-        String resourceGroupName, String clusterName, String configurationName) {
-        return getWithResponseAsync(resourceGroupName, clusterName, configurationName).block();
     }
 
     /**

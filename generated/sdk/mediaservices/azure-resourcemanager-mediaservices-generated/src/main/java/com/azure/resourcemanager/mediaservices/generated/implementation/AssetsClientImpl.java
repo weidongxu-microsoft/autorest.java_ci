@@ -593,24 +593,6 @@ public final class AssetsClientImpl implements AssetsClient {
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param assetName The Asset name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the details of an Asset in the Media Services account along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<AssetInner> getWithResponse(String resourceGroupName, String accountName, String assetName) {
-        return getWithResponseAsync(resourceGroupName, accountName, assetName).block();
-    }
-
-    /**
-     * Get an Asset
-     *
-     * <p>Get the details of an Asset in the Media Services account.
-     *
-     * @param resourceGroupName The name of the resource group within the Azure subscription.
-     * @param accountName The Media Services account name.
-     * @param assetName The Asset name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -795,26 +777,6 @@ public final class AssetsClientImpl implements AssetsClient {
      * @param accountName The Media Services account name.
      * @param assetName The Asset name.
      * @param parameters The request parameters.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Asset along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<AssetInner> createOrUpdateWithResponse(
-        String resourceGroupName, String accountName, String assetName, AssetInner parameters) {
-        return createOrUpdateWithResponseAsync(resourceGroupName, accountName, assetName, parameters).block();
-    }
-
-    /**
-     * Create or update an Asset
-     *
-     * <p>Creates or updates an Asset in the Media Services account.
-     *
-     * @param resourceGroupName The name of the resource group within the Azure subscription.
-     * @param accountName The Media Services account name.
-     * @param assetName The Asset name.
-     * @param parameters The request parameters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -974,24 +936,6 @@ public final class AssetsClientImpl implements AssetsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String accountName, String assetName) {
         return deleteWithResponseAsync(resourceGroupName, accountName, assetName).flatMap(ignored -> Mono.empty());
-    }
-
-    /**
-     * Delete an Asset.
-     *
-     * <p>Deletes an Asset in the Media Services account.
-     *
-     * @param resourceGroupName The name of the resource group within the Azure subscription.
-     * @param accountName The Media Services account name.
-     * @param assetName The Asset name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> deleteWithResponse(String resourceGroupName, String accountName, String assetName) {
-        return deleteWithResponseAsync(resourceGroupName, accountName, assetName).block();
     }
 
     /**
@@ -1174,26 +1118,6 @@ public final class AssetsClientImpl implements AssetsClient {
         String resourceGroupName, String accountName, String assetName, AssetInner parameters) {
         return updateWithResponseAsync(resourceGroupName, accountName, assetName, parameters)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Update an Asset
-     *
-     * <p>Updates an existing Asset in the Media Services account.
-     *
-     * @param resourceGroupName The name of the resource group within the Azure subscription.
-     * @param accountName The Media Services account name.
-     * @param assetName The Asset name.
-     * @param parameters The request parameters.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Asset along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<AssetInner> updateWithResponse(
-        String resourceGroupName, String accountName, String assetName, AssetInner parameters) {
-        return updateWithResponseAsync(resourceGroupName, accountName, assetName, parameters).block();
     }
 
     /**
@@ -1400,27 +1324,6 @@ public final class AssetsClientImpl implements AssetsClient {
      * @param accountName The Media Services account name.
      * @param assetName The Asset name.
      * @param parameters The request parameters.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Asset Storage container SAS URLs along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<AssetContainerSasInner> listContainerSasWithResponse(
-        String resourceGroupName, String accountName, String assetName, ListContainerSasInput parameters) {
-        return listContainerSasWithResponseAsync(resourceGroupName, accountName, assetName, parameters).block();
-    }
-
-    /**
-     * List the Asset URLs
-     *
-     * <p>Lists storage container URLs with shared access signatures (SAS) for uploading and downloading Asset content.
-     * The signatures are derived from the storage account keys.
-     *
-     * @param resourceGroupName The name of the resource group within the Azure subscription.
-     * @param accountName The Media Services account name.
-     * @param assetName The Asset name.
-     * @param parameters The request parameters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1601,26 +1504,6 @@ public final class AssetsClientImpl implements AssetsClient {
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param assetName The Asset name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Asset storage encryption keys used to decrypt content created by version 2 of the Media Services API
-     *     along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<StorageEncryptedAssetDecryptionDataInner> getEncryptionKeyWithResponse(
-        String resourceGroupName, String accountName, String assetName) {
-        return getEncryptionKeyWithResponseAsync(resourceGroupName, accountName, assetName).block();
-    }
-
-    /**
-     * Gets the Asset storage key
-     *
-     * <p>Gets the Asset storage encryption keys used to decrypt content created by version 2 of the Media Services API.
-     *
-     * @param resourceGroupName The name of the resource group within the Azure subscription.
-     * @param accountName The Media Services account name.
-     * @param assetName The Asset name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1783,25 +1666,6 @@ public final class AssetsClientImpl implements AssetsClient {
         String resourceGroupName, String accountName, String assetName) {
         return listStreamingLocatorsWithResponseAsync(resourceGroupName, accountName, assetName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * List Streaming Locators
-     *
-     * <p>Lists Streaming Locators which are associated with this asset.
-     *
-     * @param resourceGroupName The name of the resource group within the Azure subscription.
-     * @param accountName The Media Services account name.
-     * @param assetName The Asset name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Streaming Locators associated with this Asset along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ListStreamingLocatorsResponseInner> listStreamingLocatorsWithResponse(
-        String resourceGroupName, String accountName, String assetName) {
-        return listStreamingLocatorsWithResponseAsync(resourceGroupName, accountName, assetName).block();
     }
 
     /**

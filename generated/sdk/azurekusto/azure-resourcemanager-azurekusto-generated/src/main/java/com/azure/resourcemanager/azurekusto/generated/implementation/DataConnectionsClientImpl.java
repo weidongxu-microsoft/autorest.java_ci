@@ -858,28 +858,6 @@ public final class DataConnectionsClientImpl implements DataConnectionsClient {
      * @param clusterName The name of the Kusto cluster.
      * @param databaseName The name of the database in the Kusto cluster.
      * @param dataConnectionName The name of the data connection.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the result returned from a check name availability request along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<CheckNameResultInner> checkNameAvailabilityWithResponse(
-        String resourceGroupName,
-        String clusterName,
-        String databaseName,
-        DataConnectionCheckNameRequest dataConnectionName) {
-        return checkNameAvailabilityWithResponseAsync(resourceGroupName, clusterName, databaseName, dataConnectionName)
-            .block();
-    }
-
-    /**
-     * Checks that the data connection name is valid and is not already in use.
-     *
-     * @param resourceGroupName The name of the resource group containing the Kusto cluster.
-     * @param clusterName The name of the Kusto cluster.
-     * @param databaseName The name of the database in the Kusto cluster.
-     * @param dataConnectionName The name of the data connection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1056,24 +1034,6 @@ public final class DataConnectionsClientImpl implements DataConnectionsClient {
         String resourceGroupName, String clusterName, String databaseName, String dataConnectionName) {
         return getWithResponseAsync(resourceGroupName, clusterName, databaseName, dataConnectionName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Returns a data connection.
-     *
-     * @param resourceGroupName The name of the resource group containing the Kusto cluster.
-     * @param clusterName The name of the Kusto cluster.
-     * @param databaseName The name of the database in the Kusto cluster.
-     * @param dataConnectionName The name of the data connection.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing an data connection along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<DataConnectionInner> getWithResponse(
-        String resourceGroupName, String clusterName, String databaseName, String dataConnectionName) {
-        return getWithResponseAsync(resourceGroupName, clusterName, databaseName, dataConnectionName).block();
     }
 
     /**

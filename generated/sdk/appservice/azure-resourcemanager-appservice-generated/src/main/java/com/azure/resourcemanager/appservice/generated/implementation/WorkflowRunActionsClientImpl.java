@@ -561,25 +561,6 @@ public final class WorkflowRunActionsClientImpl implements WorkflowRunActionsCli
      * @param workflowName The workflow name.
      * @param runName The workflow run name.
      * @param actionName The workflow action name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a workflow run action along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<WorkflowRunActionInner> getWithResponse(
-        String resourceGroupName, String name, String workflowName, String runName, String actionName) {
-        return getWithResponseAsync(resourceGroupName, name, workflowName, runName, actionName).block();
-    }
-
-    /**
-     * Gets a workflow run action.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Site name.
-     * @param workflowName The workflow name.
-     * @param runName The workflow run name.
-     * @param actionName The workflow action name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

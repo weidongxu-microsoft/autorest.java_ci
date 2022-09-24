@@ -232,23 +232,6 @@ public final class TopQueryStatisticsClientImpl implements TopQueryStatisticsCli
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param queryStatisticId The Query Statistic identifier.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a Query Statistic along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<QueryStatisticInner> getWithResponse(
-        String resourceGroupName, String serverName, String queryStatisticId) {
-        return getWithResponseAsync(resourceGroupName, serverName, queryStatisticId).block();
-    }
-
-    /**
-     * Retrieve the query statistic for specified identifier.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param serverName The name of the server.
-     * @param queryStatisticId The Query Statistic identifier.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

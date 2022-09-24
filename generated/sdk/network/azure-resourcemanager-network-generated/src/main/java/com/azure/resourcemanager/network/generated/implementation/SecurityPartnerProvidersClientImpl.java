@@ -542,22 +542,6 @@ public final class SecurityPartnerProvidersClientImpl implements SecurityPartner
      *
      * @param resourceGroupName The name of the resource group.
      * @param securityPartnerProviderName The name of the Security Partner Provider.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Security Partner Provider along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<SecurityPartnerProviderInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String securityPartnerProviderName) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, securityPartnerProviderName).block();
-    }
-
-    /**
-     * Gets the specified Security Partner Provider.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param securityPartnerProviderName The name of the Security Partner Provider.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1013,23 +997,6 @@ public final class SecurityPartnerProvidersClientImpl implements SecurityPartner
         String resourceGroupName, String securityPartnerProviderName, TagsObject parameters) {
         return updateTagsWithResponseAsync(resourceGroupName, securityPartnerProviderName, parameters)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Updates tags of a Security Partner Provider resource.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param securityPartnerProviderName The name of the Security Partner Provider.
-     * @param parameters Parameters supplied to update Security Partner Provider tags.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return security Partner Provider resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<SecurityPartnerProviderInner> updateTagsWithResponse(
-        String resourceGroupName, String securityPartnerProviderName, TagsObject parameters) {
-        return updateTagsWithResponseAsync(resourceGroupName, securityPartnerProviderName, parameters).block();
     }
 
     /**

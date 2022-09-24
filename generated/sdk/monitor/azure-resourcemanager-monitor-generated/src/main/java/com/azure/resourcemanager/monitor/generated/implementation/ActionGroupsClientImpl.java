@@ -303,23 +303,6 @@ public final class ActionGroupsClientImpl implements ActionGroupsClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param actionGroupName The name of the action group.
      * @param actionGroup The action group to create or use for the update.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an action group resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ActionGroupResourceInner> createOrUpdateWithResponse(
-        String resourceGroupName, String actionGroupName, ActionGroupResourceInner actionGroup) {
-        return createOrUpdateWithResponseAsync(resourceGroupName, actionGroupName, actionGroup).block();
-    }
-
-    /**
-     * Create a new action group or update an existing one.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param actionGroupName The name of the action group.
-     * @param actionGroup The action group to create or use for the update.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -468,22 +451,6 @@ public final class ActionGroupsClientImpl implements ActionGroupsClient {
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param actionGroupName The name of the action group.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an action group along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ActionGroupResourceInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String actionGroupName) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, actionGroupName).block();
-    }
-
-    /**
-     * Get an action group.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param actionGroupName The name of the action group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -621,21 +588,6 @@ public final class ActionGroupsClientImpl implements ActionGroupsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String actionGroupName) {
         return deleteWithResponseAsync(resourceGroupName, actionGroupName).flatMap(ignored -> Mono.empty());
-    }
-
-    /**
-     * Delete an action group.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param actionGroupName The name of the action group.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> deleteWithResponse(String resourceGroupName, String actionGroupName) {
-        return deleteWithResponseAsync(resourceGroupName, actionGroupName).block();
     }
 
     /**
@@ -798,23 +750,6 @@ public final class ActionGroupsClientImpl implements ActionGroupsClient {
         String resourceGroupName, String actionGroupName, ActionGroupPatchBody actionGroupPatch) {
         return updateWithResponseAsync(resourceGroupName, actionGroupName, actionGroupPatch)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Updates an existing action group's tags. To update other fields use the CreateOrUpdate method.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param actionGroupName The name of the action group.
-     * @param actionGroupPatch Parameters supplied to the operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an action group resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ActionGroupResourceInner> updateWithResponse(
-        String resourceGroupName, String actionGroupName, ActionGroupPatchBody actionGroupPatch) {
-        return updateWithResponseAsync(resourceGroupName, actionGroupName, actionGroupPatch).block();
     }
 
     /**
@@ -1259,24 +1194,6 @@ public final class ActionGroupsClientImpl implements ActionGroupsClient {
         String resourceGroupName, String actionGroupName, EnableRequest enableRequest) {
         return enableReceiverWithResponseAsync(resourceGroupName, actionGroupName, enableRequest)
             .flatMap(ignored -> Mono.empty());
-    }
-
-    /**
-     * Enable a receiver in an action group. This changes the receiver's status from Disabled to Enabled. This operation
-     * is only supported for Email or SMS receivers.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param actionGroupName The name of the action group.
-     * @param enableRequest The receiver to re-enable.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> enableReceiverWithResponse(
-        String resourceGroupName, String actionGroupName, EnableRequest enableRequest) {
-        return enableReceiverWithResponseAsync(resourceGroupName, actionGroupName, enableRequest).block();
     }
 
     /**

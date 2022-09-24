@@ -870,23 +870,6 @@ public final class QueriesClientImpl implements QueriesClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param queryPackName The name of the Log Analytics QueryPack resource.
      * @param id The id of a specific query defined in the Log Analytics QueryPack.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a specific Log Analytics Query defined within a Log Analytics QueryPack along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<LogAnalyticsQueryPackQueryInner> getWithResponse(
-        String resourceGroupName, String queryPackName, String id) {
-        return getWithResponseAsync(resourceGroupName, queryPackName, id).block();
-    }
-
-    /**
-     * Gets a specific Log Analytics Query defined within a Log Analytics QueryPack.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param queryPackName The name of the Log Analytics QueryPack resource.
-     * @param id The id of a specific query defined in the Log Analytics QueryPack.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1061,25 +1044,6 @@ public final class QueriesClientImpl implements QueriesClient {
         String resourceGroupName, String queryPackName, String id, LogAnalyticsQueryPackQueryInner queryPayload) {
         return putWithResponseAsync(resourceGroupName, queryPackName, id, queryPayload)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Adds or Updates a specific Query within a Log Analytics QueryPack.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param queryPackName The name of the Log Analytics QueryPack resource.
-     * @param id The id of a specific query defined in the Log Analytics QueryPack.
-     * @param queryPayload Properties that need to be specified to create a new query and add it to a Log Analytics
-     *     QueryPack.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Log Analytics QueryPack-Query definition along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<LogAnalyticsQueryPackQueryInner> putWithResponse(
-        String resourceGroupName, String queryPackName, String id, LogAnalyticsQueryPackQueryInner queryPayload) {
-        return putWithResponseAsync(resourceGroupName, queryPackName, id, queryPayload).block();
     }
 
     /**
@@ -1281,25 +1245,6 @@ public final class QueriesClientImpl implements QueriesClient {
      * @param id The id of a specific query defined in the Log Analytics QueryPack.
      * @param queryPayload Properties that need to be specified to create a new query and add it to a Log Analytics
      *     QueryPack.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Log Analytics QueryPack-Query definition along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<LogAnalyticsQueryPackQueryInner> updateWithResponse(
-        String resourceGroupName, String queryPackName, String id, LogAnalyticsQueryPackQueryInner queryPayload) {
-        return updateWithResponseAsync(resourceGroupName, queryPackName, id, queryPayload).block();
-    }
-
-    /**
-     * Adds or Updates a specific Query within a Log Analytics QueryPack.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param queryPackName The name of the Log Analytics QueryPack resource.
-     * @param id The id of a specific query defined in the Log Analytics QueryPack.
-     * @param queryPayload Properties that need to be specified to create a new query and add it to a Log Analytics
-     *     QueryPack.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1454,22 +1399,6 @@ public final class QueriesClientImpl implements QueriesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String queryPackName, String id) {
         return deleteWithResponseAsync(resourceGroupName, queryPackName, id).flatMap(ignored -> Mono.empty());
-    }
-
-    /**
-     * Deletes a specific Query defined within an Log Analytics QueryPack.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param queryPackName The name of the Log Analytics QueryPack resource.
-     * @param id The id of a specific query defined in the Log Analytics QueryPack.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> deleteWithResponse(String resourceGroupName, String queryPackName, String id) {
-        return deleteWithResponseAsync(resourceGroupName, queryPackName, id).block();
     }
 
     /**

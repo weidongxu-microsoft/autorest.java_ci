@@ -192,21 +192,6 @@ public final class DiagnosticSettingsOperationsClientImpl implements DiagnosticS
      *
      * @param resourceUri The identifier of the resource.
      * @param name The name of the diagnostic setting.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the active diagnostic settings for the specified resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<DiagnosticSettingsResourceInner> getWithResponse(String resourceUri, String name) {
-        return getWithResponseAsync(resourceUri, name).block();
-    }
-
-    /**
-     * Gets the active diagnostic settings for the specified resource.
-     *
-     * @param resourceUri The identifier of the resource.
-     * @param name The name of the diagnostic setting.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -338,23 +323,6 @@ public final class DiagnosticSettingsOperationsClientImpl implements DiagnosticS
      * @param resourceUri The identifier of the resource.
      * @param name The name of the diagnostic setting.
      * @param parameters Parameters supplied to the operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the diagnostic setting resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<DiagnosticSettingsResourceInner> createOrUpdateWithResponse(
-        String resourceUri, String name, DiagnosticSettingsResourceInner parameters) {
-        return createOrUpdateWithResponseAsync(resourceUri, name, parameters).block();
-    }
-
-    /**
-     * Creates or updates diagnostic settings for the specified resource.
-     *
-     * @param resourceUri The identifier of the resource.
-     * @param name The name of the diagnostic setting.
-     * @param parameters Parameters supplied to the operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -467,21 +435,6 @@ public final class DiagnosticSettingsOperationsClientImpl implements DiagnosticS
      *
      * @param resourceUri The identifier of the resource.
      * @param name The name of the diagnostic setting.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> deleteWithResponse(String resourceUri, String name) {
-        return deleteWithResponseAsync(resourceUri, name).block();
-    }
-
-    /**
-     * Deletes existing diagnostic settings for the specified resource.
-     *
-     * @param resourceUri The identifier of the resource.
-     * @param name The name of the diagnostic setting.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -576,20 +529,6 @@ public final class DiagnosticSettingsOperationsClientImpl implements DiagnosticS
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DiagnosticSettingsResourceCollectionInner> listAsync(String resourceUri) {
         return listWithResponseAsync(resourceUri).flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets the active diagnostic settings list for the specified resource.
-     *
-     * @param resourceUri The identifier of the resource.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the active diagnostic settings list for the specified resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<DiagnosticSettingsResourceCollectionInner> listWithResponse(String resourceUri) {
-        return listWithResponseAsync(resourceUri).block();
     }
 
     /**

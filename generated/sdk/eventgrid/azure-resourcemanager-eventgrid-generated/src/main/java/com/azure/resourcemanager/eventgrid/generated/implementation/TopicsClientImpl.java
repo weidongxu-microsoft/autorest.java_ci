@@ -349,23 +349,6 @@ public final class TopicsClientImpl implements TopicsClient {
      *
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param topicName Name of the topic.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of a topic along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<TopicInner> getByResourceGroupWithResponse(String resourceGroupName, String topicName) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, topicName).block();
-    }
-
-    /**
-     * Get a topic.
-     *
-     * <p>Get properties of a topic.
-     *
-     * @param resourceGroupName The name of the resource group within the user's subscription.
-     * @param topicName Name of the topic.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1783,24 +1766,6 @@ public final class TopicsClientImpl implements TopicsClient {
     private Mono<TopicSharedAccessKeysInner> listSharedAccessKeysAsync(String resourceGroupName, String topicName) {
         return listSharedAccessKeysWithResponseAsync(resourceGroupName, topicName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * List keys for a topic.
-     *
-     * <p>List the two keys used to publish to a topic.
-     *
-     * @param resourceGroupName The name of the resource group within the user's subscription.
-     * @param topicName Name of the topic.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return shared access keys of the Topic along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<TopicSharedAccessKeysInner> listSharedAccessKeysWithResponse(
-        String resourceGroupName, String topicName) {
-        return listSharedAccessKeysWithResponseAsync(resourceGroupName, topicName).block();
     }
 
     /**

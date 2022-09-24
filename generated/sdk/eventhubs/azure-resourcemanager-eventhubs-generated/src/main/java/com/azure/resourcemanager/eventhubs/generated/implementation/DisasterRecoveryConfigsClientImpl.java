@@ -592,25 +592,6 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
      * @param namespaceName The Namespace name.
      * @param alias The Disaster Recovery configuration name.
      * @param authorizationRuleName The authorization rule name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an AuthorizationRule for a Namespace by rule name along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<AuthorizationRuleInner> getAuthorizationRuleWithResponse(
-        String resourceGroupName, String namespaceName, String alias, String authorizationRuleName) {
-        return getAuthorizationRuleWithResponseAsync(resourceGroupName, namespaceName, alias, authorizationRuleName)
-            .block();
-    }
-
-    /**
-     * Gets an AuthorizationRule for a Namespace by rule name.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param namespaceName The Namespace name.
-     * @param alias The Disaster Recovery configuration name.
-     * @param authorizationRuleName The authorization rule name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -789,24 +770,6 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
      * @param namespaceName The Namespace name.
      * @param alias The Disaster Recovery configuration name.
      * @param authorizationRuleName The authorization rule name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the primary and secondary connection strings for the Namespace along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<AccessKeysInner> listKeysWithResponse(
-        String resourceGroupName, String namespaceName, String alias, String authorizationRuleName) {
-        return listKeysWithResponseAsync(resourceGroupName, namespaceName, alias, authorizationRuleName).block();
-    }
-
-    /**
-     * Gets the primary and secondary connection strings for the Namespace.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param namespaceName The Namespace name.
-     * @param alias The Disaster Recovery configuration name.
-     * @param authorizationRuleName The authorization rule name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -965,23 +928,6 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
         String resourceGroupName, String namespaceName, CheckNameAvailabilityParameter parameters) {
         return checkNameAvailabilityWithResponseAsync(resourceGroupName, namespaceName, parameters)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Check the give Namespace name availability.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param namespaceName The Namespace name.
-     * @param parameters Parameters to check availability of the given Alias name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Result of the CheckNameAvailability operation along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<CheckNameAvailabilityResultInner> checkNameAvailabilityWithResponse(
-        String resourceGroupName, String namespaceName, CheckNameAvailabilityParameter parameters) {
-        return checkNameAvailabilityWithResponseAsync(resourceGroupName, namespaceName, parameters).block();
     }
 
     /**
@@ -1351,24 +1297,6 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
      * @param namespaceName The Namespace name.
      * @param alias The Disaster Recovery configuration name.
      * @param parameters Parameters required to create an Alias(Disaster Recovery configuration).
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in List or Get Alias(Disaster Recovery configuration) operation along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ArmDisasterRecoveryInner> createOrUpdateWithResponse(
-        String resourceGroupName, String namespaceName, String alias, ArmDisasterRecoveryInner parameters) {
-        return createOrUpdateWithResponseAsync(resourceGroupName, namespaceName, alias, parameters).block();
-    }
-
-    /**
-     * Creates or updates a new Alias(Disaster Recovery configuration).
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param namespaceName The Namespace name.
-     * @param alias The Disaster Recovery configuration name.
-     * @param parameters Parameters required to create an Alias(Disaster Recovery configuration).
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1520,22 +1448,6 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String namespaceName, String alias) {
         return deleteWithResponseAsync(resourceGroupName, namespaceName, alias).flatMap(ignored -> Mono.empty());
-    }
-
-    /**
-     * Deletes an Alias(Disaster Recovery configuration).
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param namespaceName The Namespace name.
-     * @param alias The Disaster Recovery configuration name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> deleteWithResponse(String resourceGroupName, String namespaceName, String alias) {
-        return deleteWithResponseAsync(resourceGroupName, namespaceName, alias).block();
     }
 
     /**
@@ -1701,23 +1613,6 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param alias The Disaster Recovery configuration name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in List or Get Alias(Disaster Recovery configuration) operation along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ArmDisasterRecoveryInner> getWithResponse(
-        String resourceGroupName, String namespaceName, String alias) {
-        return getWithResponseAsync(resourceGroupName, namespaceName, alias).block();
-    }
-
-    /**
-     * Retrieves Alias(Disaster Recovery configuration) for primary or secondary namespace.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param namespaceName The Namespace name.
-     * @param alias The Disaster Recovery configuration name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1872,22 +1767,6 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param alias The Disaster Recovery configuration name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> breakPairingWithResponse(String resourceGroupName, String namespaceName, String alias) {
-        return breakPairingWithResponseAsync(resourceGroupName, namespaceName, alias).block();
-    }
-
-    /**
-     * This operation disables the Disaster Recovery and stops replicating changes from primary to secondary namespaces.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param namespaceName The Namespace name.
-     * @param alias The Disaster Recovery configuration name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -2033,22 +1912,6 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> failOverAsync(String resourceGroupName, String namespaceName, String alias) {
         return failOverWithResponseAsync(resourceGroupName, namespaceName, alias).flatMap(ignored -> Mono.empty());
-    }
-
-    /**
-     * Invokes GEO DR failover and reconfigure the alias to point to the secondary namespace.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param namespaceName The Namespace name.
-     * @param alias The Disaster Recovery configuration name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> failOverWithResponse(String resourceGroupName, String namespaceName, String alias) {
-        return failOverWithResponseAsync(resourceGroupName, namespaceName, alias).block();
     }
 
     /**

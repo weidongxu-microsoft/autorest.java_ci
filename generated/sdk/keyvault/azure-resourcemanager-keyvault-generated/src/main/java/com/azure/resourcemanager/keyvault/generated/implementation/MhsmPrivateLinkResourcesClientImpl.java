@@ -186,22 +186,6 @@ public final class MhsmPrivateLinkResourcesClientImpl implements MhsmPrivateLink
      *
      * @param resourceGroupName Name of the resource group that contains the managed HSM pool.
      * @param name Name of the managed HSM Pool.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the private link resources supported for the managed hsm pool along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<MhsmPrivateLinkResourceListResultInner> listByMhsmResourceWithResponse(
-        String resourceGroupName, String name) {
-        return listByMhsmResourceWithResponseAsync(resourceGroupName, name).block();
-    }
-
-    /**
-     * Gets the private link resources supported for the managed hsm pool.
-     *
-     * @param resourceGroupName Name of the resource group that contains the managed HSM pool.
-     * @param name Name of the managed HSM Pool.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

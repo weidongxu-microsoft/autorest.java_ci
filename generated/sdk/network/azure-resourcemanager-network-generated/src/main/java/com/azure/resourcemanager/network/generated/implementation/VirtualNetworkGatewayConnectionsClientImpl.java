@@ -714,22 +714,6 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
      *
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayConnectionName The name of the virtual network gateway connection.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified virtual network gateway connection by resource group along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<VirtualNetworkGatewayConnectionInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String virtualNetworkGatewayConnectionName) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, virtualNetworkGatewayConnectionName).block();
-    }
-
-    /**
-     * Gets the specified virtual network gateway connection by resource group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param virtualNetworkGatewayConnectionName The name of the virtual network gateway connection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1734,23 +1718,6 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
         String resourceGroupName, String virtualNetworkGatewayConnectionName) {
         return getSharedKeyWithResponseAsync(resourceGroupName, virtualNetworkGatewayConnectionName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * The Get VirtualNetworkGatewayConnectionSharedKey operation retrieves information about the specified virtual
-     * network gateway connection shared key through Network resource provider.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param virtualNetworkGatewayConnectionName The virtual network gateway connection shared key name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for GetConnectionSharedKey API service call along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ConnectionSharedKeyInner> getSharedKeyWithResponse(
-        String resourceGroupName, String virtualNetworkGatewayConnectionName) {
-        return getSharedKeyWithResponseAsync(resourceGroupName, virtualNetworkGatewayConnectionName).block();
     }
 
     /**

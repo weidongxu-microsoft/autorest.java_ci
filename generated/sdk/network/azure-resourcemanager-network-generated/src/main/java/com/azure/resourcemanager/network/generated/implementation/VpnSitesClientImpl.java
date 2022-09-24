@@ -288,21 +288,6 @@ public final class VpnSitesClientImpl implements VpnSitesClient {
      *
      * @param resourceGroupName The resource group name of the VpnSite.
      * @param vpnSiteName The name of the VpnSite being retrieved.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpnSite Resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<VpnSiteInner> getByResourceGroupWithResponse(String resourceGroupName, String vpnSiteName) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, vpnSiteName).block();
-    }
-
-    /**
-     * Retrieves the details of a VPN site.
-     *
-     * @param resourceGroupName The resource group name of the VpnSite.
-     * @param vpnSiteName The name of the VpnSite being retrieved.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -724,23 +709,6 @@ public final class VpnSitesClientImpl implements VpnSitesClient {
         String resourceGroupName, String vpnSiteName, TagsObject vpnSiteParameters) {
         return updateTagsWithResponseAsync(resourceGroupName, vpnSiteName, vpnSiteParameters)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Updates VpnSite tags.
-     *
-     * @param resourceGroupName The resource group name of the VpnSite.
-     * @param vpnSiteName The name of the VpnSite being updated.
-     * @param vpnSiteParameters Parameters supplied to update VpnSite tags.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpnSite Resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<VpnSiteInner> updateTagsWithResponse(
-        String resourceGroupName, String vpnSiteName, TagsObject vpnSiteParameters) {
-        return updateTagsWithResponseAsync(resourceGroupName, vpnSiteName, vpnSiteParameters).block();
     }
 
     /**

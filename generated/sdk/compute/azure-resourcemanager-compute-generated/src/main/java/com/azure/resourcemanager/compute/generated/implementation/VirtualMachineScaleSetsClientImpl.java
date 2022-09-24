@@ -1612,24 +1612,6 @@ public final class VirtualMachineScaleSetsClientImpl implements VirtualMachineSc
      * @param vmScaleSetName The name of the VM scale set.
      * @param expand The expand expression to apply on the operation. 'UserData' retrieves the UserData property of the
      *     VM scale set that was provided by the user during the VM scale set Create/Update operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ApiErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Virtual Machine Scale Set along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<VirtualMachineScaleSetInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String vmScaleSetName, ExpandTypesForGetVMScaleSets expand) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, vmScaleSetName, expand).block();
-    }
-
-    /**
-     * Display information about a virtual machine scale set.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param vmScaleSetName The name of the VM scale set.
-     * @param expand The expand expression to apply on the operation. 'UserData' retrieves the UserData property of the
-     *     VM scale set that was provided by the user during the VM scale set Create/Update operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -2447,22 +2429,6 @@ public final class VirtualMachineScaleSetsClientImpl implements VirtualMachineSc
         String resourceGroupName, String vmScaleSetName) {
         return getInstanceViewWithResponseAsync(resourceGroupName, vmScaleSetName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets the status of a VM scale set instance.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param vmScaleSetName The name of the VM scale set.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ApiErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the status of a VM scale set instance along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<VirtualMachineScaleSetInstanceViewInner> getInstanceViewWithResponse(
-        String resourceGroupName, String vmScaleSetName) {
-        return getInstanceViewWithResponseAsync(resourceGroupName, vmScaleSetName).block();
     }
 
     /**
@@ -5912,31 +5878,6 @@ public final class VirtualMachineScaleSetsClientImpl implements VirtualMachineSc
      * @param platformUpdateDomain The platform update domain for which a manual recovery walk is requested.
      * @param zone The zone in which the manual recovery walk is requested for cross zone virtual machine scale set.
      * @param placementGroupId The placement group id for which the manual recovery walk is requested.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ApiErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response after calling a manual recovery walk along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<RecoveryWalkResponseInner> forceRecoveryServiceFabricPlatformUpdateDomainWalkWithResponse(
-        String resourceGroupName,
-        String vmScaleSetName,
-        int platformUpdateDomain,
-        String zone,
-        String placementGroupId) {
-        return forceRecoveryServiceFabricPlatformUpdateDomainWalkWithResponseAsync(
-                resourceGroupName, vmScaleSetName, platformUpdateDomain, zone, placementGroupId)
-            .block();
-    }
-
-    /**
-     * Manual platform update domain walk to update virtual machines in a service fabric virtual machine scale set.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param vmScaleSetName The name of the VM scale set.
-     * @param platformUpdateDomain The platform update domain for which a manual recovery walk is requested.
-     * @param zone The zone in which the manual recovery walk is requested for cross zone virtual machine scale set.
-     * @param placementGroupId The placement group id for which the manual recovery walk is requested.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -6106,23 +6047,6 @@ public final class VirtualMachineScaleSetsClientImpl implements VirtualMachineSc
         String resourceGroupName, String vmScaleSetName, VMScaleSetConvertToSinglePlacementGroupInput parameters) {
         return convertToSinglePlacementGroupWithResponseAsync(resourceGroupName, vmScaleSetName, parameters)
             .flatMap(ignored -> Mono.empty());
-    }
-
-    /**
-     * Converts SinglePlacementGroup property to false for a existing virtual machine scale set.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param vmScaleSetName The name of the virtual machine scale set to create or update.
-     * @param parameters The input object for ConvertToSinglePlacementGroup API.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ApiErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> convertToSinglePlacementGroupWithResponse(
-        String resourceGroupName, String vmScaleSetName, VMScaleSetConvertToSinglePlacementGroupInput parameters) {
-        return convertToSinglePlacementGroupWithResponseAsync(resourceGroupName, vmScaleSetName, parameters).block();
     }
 
     /**

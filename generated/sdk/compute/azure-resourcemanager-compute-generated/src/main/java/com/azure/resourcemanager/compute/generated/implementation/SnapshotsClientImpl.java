@@ -903,23 +903,6 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
      *     is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80
      *     characters.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a snapshot along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<SnapshotInner> getByResourceGroupWithResponse(String resourceGroupName, String snapshotName) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, snapshotName).block();
-    }
-
-    /**
-     * Gets information about a snapshot.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
-     *     is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80
-     *     characters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

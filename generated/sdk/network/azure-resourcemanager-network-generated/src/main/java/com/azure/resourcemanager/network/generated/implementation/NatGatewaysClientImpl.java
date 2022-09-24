@@ -531,23 +531,6 @@ public final class NatGatewaysClientImpl implements NatGatewaysClient {
      * @param resourceGroupName The name of the resource group.
      * @param natGatewayName The name of the nat gateway.
      * @param expand Expands referenced resources.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified nat gateway in a specified resource group along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<NatGatewayInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String natGatewayName, String expand) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, natGatewayName, expand).block();
-    }
-
-    /**
-     * Gets the specified nat gateway in a specified resource group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param natGatewayName The name of the nat gateway.
-     * @param expand Expands referenced resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -970,23 +953,6 @@ public final class NatGatewaysClientImpl implements NatGatewaysClient {
         String resourceGroupName, String natGatewayName, TagsObject parameters) {
         return updateTagsWithResponseAsync(resourceGroupName, natGatewayName, parameters)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Updates nat gateway tags.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param natGatewayName The name of the nat gateway.
-     * @param parameters Parameters supplied to update nat gateway tags.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return nat Gateway resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<NatGatewayInner> updateTagsWithResponse(
-        String resourceGroupName, String natGatewayName, TagsObject parameters) {
-        return updateTagsWithResponseAsync(resourceGroupName, natGatewayName, parameters).block();
     }
 
     /**

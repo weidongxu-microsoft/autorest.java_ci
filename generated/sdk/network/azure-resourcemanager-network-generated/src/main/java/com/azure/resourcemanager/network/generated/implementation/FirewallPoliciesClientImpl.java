@@ -534,23 +534,6 @@ public final class FirewallPoliciesClientImpl implements FirewallPoliciesClient 
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
      * @param expand Expands referenced resources.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Firewall Policy along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<FirewallPolicyInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String firewallPolicyName, String expand) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, firewallPolicyName, expand).block();
-    }
-
-    /**
-     * Gets the specified Firewall Policy.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param firewallPolicyName The name of the Firewall Policy.
-     * @param expand Expands referenced resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -978,23 +961,6 @@ public final class FirewallPoliciesClientImpl implements FirewallPoliciesClient 
         String resourceGroupName, String firewallPolicyName, TagsObject parameters) {
         return updateTagsWithResponseAsync(resourceGroupName, firewallPolicyName, parameters)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Updates tags of a Azure Firewall Policy resource.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param firewallPolicyName The name of the Firewall Policy.
-     * @param parameters Parameters supplied to update Azure Firewall Policy tags.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return firewallPolicy Resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<FirewallPolicyInner> updateTagsWithResponse(
-        String resourceGroupName, String firewallPolicyName, TagsObject parameters) {
-        return updateTagsWithResponseAsync(resourceGroupName, firewallPolicyName, parameters).block();
     }
 
     /**

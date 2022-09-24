@@ -516,23 +516,6 @@ public final class VirtualRoutersClientImpl implements VirtualRoutersClient {
      * @param resourceGroupName The name of the resource group.
      * @param virtualRouterName The name of the Virtual Router.
      * @param expand Expands referenced resources.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Virtual Router along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<VirtualRouterInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String virtualRouterName, String expand) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, virtualRouterName, expand).block();
-    }
-
-    /**
-     * Gets the specified Virtual Router.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param virtualRouterName The name of the Virtual Router.
-     * @param expand Expands referenced resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.

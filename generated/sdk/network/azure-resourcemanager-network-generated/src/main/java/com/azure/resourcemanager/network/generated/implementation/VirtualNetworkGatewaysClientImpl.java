@@ -865,22 +865,6 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
      *
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified virtual network gateway by resource group along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<VirtualNetworkGatewayInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String virtualNetworkGatewayName) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, virtualNetworkGatewayName).block();
-    }
-
-    /**
-     * Gets the specified virtual network gateway by resource group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param virtualNetworkGatewayName The name of the virtual network gateway.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -3595,22 +3579,6 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
      *
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a xml format representation for supported vpn devices along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<String> supportedVpnDevicesWithResponse(
-        String resourceGroupName, String virtualNetworkGatewayName) {
-        return supportedVpnDevicesWithResponseAsync(resourceGroupName, virtualNetworkGatewayName).block();
-    }
-
-    /**
-     * Gets a xml format representation for supported vpn devices.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param virtualNetworkGatewayName The name of the virtual network gateway.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -4942,26 +4910,6 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
         return vpnDeviceConfigurationScriptWithResponseAsync(
                 resourceGroupName, virtualNetworkGatewayConnectionName, parameters)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets a xml format representation for vpn device configuration script.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param virtualNetworkGatewayConnectionName The name of the virtual network gateway connection for which the
-     *     configuration script is generated.
-     * @param parameters Parameters supplied to the generate vpn device script operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a xml format representation for vpn device configuration script along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<String> vpnDeviceConfigurationScriptWithResponse(
-        String resourceGroupName, String virtualNetworkGatewayConnectionName, VpnDeviceScriptParameters parameters) {
-        return vpnDeviceConfigurationScriptWithResponseAsync(
-                resourceGroupName, virtualNetworkGatewayConnectionName, parameters)
-            .block();
     }
 
     /**

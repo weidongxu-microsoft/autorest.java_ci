@@ -537,26 +537,6 @@ public final class LiveOutputsClientImpl implements LiveOutputsClient {
      * @param accountName The Media Services account name.
      * @param liveEventName The name of the live event, maximum length is 32.
      * @param liveOutputName The name of the live output.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a live output along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<LiveOutputInner> getWithResponse(
-        String resourceGroupName, String accountName, String liveEventName, String liveOutputName) {
-        return getWithResponseAsync(resourceGroupName, accountName, liveEventName, liveOutputName).block();
-    }
-
-    /**
-     * Get Live Output
-     *
-     * <p>Gets a live output.
-     *
-     * @param resourceGroupName The name of the resource group within the Azure subscription.
-     * @param accountName The Media Services account name.
-     * @param liveEventName The name of the live event, maximum length is 32.
-     * @param liveOutputName The name of the live output.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1394,25 +1374,6 @@ public final class LiveOutputsClientImpl implements LiveOutputsClient {
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param operationId The ID of an ongoing async operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Live Output operation status along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<AsyncOperationResultInner> asyncOperationWithResponse(
-        String resourceGroupName, String accountName, String operationId) {
-        return asyncOperationWithResponseAsync(resourceGroupName, accountName, operationId).block();
-    }
-
-    /**
-     * Get operation status.
-     *
-     * <p>Get a Live Output operation status.
-     *
-     * @param resourceGroupName The name of the resource group within the Azure subscription.
-     * @param accountName The Media Services account name.
-     * @param operationId The ID of an ongoing async operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1599,29 +1560,6 @@ public final class LiveOutputsClientImpl implements LiveOutputsClient {
         return operationLocationWithResponseAsync(
                 resourceGroupName, accountName, liveEventName, liveOutputName, operationId)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Get operation status.
-     *
-     * <p>Get a Live Output operation status.
-     *
-     * @param resourceGroupName The name of the resource group within the Azure subscription.
-     * @param accountName The Media Services account name.
-     * @param liveEventName The name of the live event, maximum length is 32.
-     * @param liveOutputName The name of the live output.
-     * @param operationId The ID of an ongoing async operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Live Output operation status along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<LiveOutputInner> operationLocationWithResponse(
-        String resourceGroupName, String accountName, String liveEventName, String liveOutputName, String operationId) {
-        return operationLocationWithResponseAsync(
-                resourceGroupName, accountName, liveEventName, liveOutputName, operationId)
-            .block();
     }
 
     /**

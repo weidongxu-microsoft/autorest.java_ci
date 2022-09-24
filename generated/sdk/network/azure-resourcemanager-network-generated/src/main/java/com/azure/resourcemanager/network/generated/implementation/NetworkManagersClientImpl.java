@@ -298,22 +298,6 @@ public final class NetworkManagersClientImpl implements NetworkManagersClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param networkManagerName The name of the network manager.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Network Manager along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<NetworkManagerInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String networkManagerName) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, networkManagerName).block();
-    }
-
-    /**
-     * Gets the specified Network Manager.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param networkManagerName The name of the network manager.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -469,23 +453,6 @@ public final class NetworkManagersClientImpl implements NetworkManagersClient {
         String resourceGroupName, String networkManagerName, NetworkManagerInner parameters) {
         return createOrUpdateWithResponseAsync(resourceGroupName, networkManagerName, parameters)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Creates or updates a Network Manager.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param networkManagerName The name of the network manager.
-     * @param parameters Parameters supplied to specify which network manager is.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Managed Network resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<NetworkManagerInner> createOrUpdateWithResponse(
-        String resourceGroupName, String networkManagerName, NetworkManagerInner parameters) {
-        return createOrUpdateWithResponseAsync(resourceGroupName, networkManagerName, parameters).block();
     }
 
     /**
@@ -944,23 +911,6 @@ public final class NetworkManagersClientImpl implements NetworkManagersClient {
         String resourceGroupName, String networkManagerName, PatchObject parameters) {
         return patchWithResponseAsync(resourceGroupName, networkManagerName, parameters)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Patch NetworkManager.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param networkManagerName The name of the network manager.
-     * @param parameters Parameters supplied to specify which network manager is.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Managed Network resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<NetworkManagerInner> patchWithResponse(
-        String resourceGroupName, String networkManagerName, PatchObject parameters) {
-        return patchWithResponseAsync(resourceGroupName, networkManagerName, parameters).block();
     }
 
     /**

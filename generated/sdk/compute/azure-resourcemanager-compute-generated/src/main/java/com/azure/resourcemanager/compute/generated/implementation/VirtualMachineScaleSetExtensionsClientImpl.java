@@ -1242,24 +1242,6 @@ public final class VirtualMachineScaleSetExtensionsClientImpl implements Virtual
      * @param vmScaleSetName The name of the VM scale set containing the extension.
      * @param vmssExtensionName The name of the VM scale set extension.
      * @param expand The expand expression to apply on the operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ApiErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Virtual Machine Scale Set Extension along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<VirtualMachineScaleSetExtensionInner> getWithResponse(
-        String resourceGroupName, String vmScaleSetName, String vmssExtensionName, String expand) {
-        return getWithResponseAsync(resourceGroupName, vmScaleSetName, vmssExtensionName, expand).block();
-    }
-
-    /**
-     * The operation to get the extension.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param vmScaleSetName The name of the VM scale set containing the extension.
-     * @param vmssExtensionName The name of the VM scale set extension.
-     * @param expand The expand expression to apply on the operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.

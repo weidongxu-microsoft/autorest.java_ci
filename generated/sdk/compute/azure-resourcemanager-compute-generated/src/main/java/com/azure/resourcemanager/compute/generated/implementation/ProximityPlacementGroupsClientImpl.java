@@ -316,23 +316,6 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
      * @param resourceGroupName The name of the resource group.
      * @param proximityPlacementGroupName The name of the proximity placement group.
      * @param parameters Parameters supplied to the Create Proximity Placement Group operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ApiErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the proximity placement group along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ProximityPlacementGroupInner> createOrUpdateWithResponse(
-        String resourceGroupName, String proximityPlacementGroupName, ProximityPlacementGroupInner parameters) {
-        return createOrUpdateWithResponseAsync(resourceGroupName, proximityPlacementGroupName, parameters).block();
-    }
-
-    /**
-     * Create or update a proximity placement group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param proximityPlacementGroupName The name of the proximity placement group.
-     * @param parameters Parameters supplied to the Create Proximity Placement Group operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -512,23 +495,6 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
      * @param resourceGroupName The name of the resource group.
      * @param proximityPlacementGroupName The name of the proximity placement group.
      * @param parameters Parameters supplied to the Update Proximity Placement Group operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ApiErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the proximity placement group along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ProximityPlacementGroupInner> updateWithResponse(
-        String resourceGroupName, String proximityPlacementGroupName, ProximityPlacementGroupUpdate parameters) {
-        return updateWithResponseAsync(resourceGroupName, proximityPlacementGroupName, parameters).block();
-    }
-
-    /**
-     * Update a proximity placement group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param proximityPlacementGroupName The name of the proximity placement group.
-     * @param parameters Parameters supplied to the Update Proximity Placement Group operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -675,21 +641,6 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String proximityPlacementGroupName) {
         return deleteWithResponseAsync(resourceGroupName, proximityPlacementGroupName).flatMap(ignored -> Mono.empty());
-    }
-
-    /**
-     * Delete a proximity placement group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param proximityPlacementGroupName The name of the proximity placement group.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ApiErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> deleteWithResponse(String resourceGroupName, String proximityPlacementGroupName) {
-        return deleteWithResponseAsync(resourceGroupName, proximityPlacementGroupName).block();
     }
 
     /**
@@ -850,26 +801,6 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
         return getByResourceGroupWithResponseAsync(
                 resourceGroupName, proximityPlacementGroupName, includeColocationStatus)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Retrieves information about a proximity placement group .
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param proximityPlacementGroupName The name of the proximity placement group.
-     * @param includeColocationStatus includeColocationStatus=true enables fetching the colocation status of all the
-     *     resources in the proximity placement group.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ApiErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the proximity placement group along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ProximityPlacementGroupInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String proximityPlacementGroupName, String includeColocationStatus) {
-        return getByResourceGroupWithResponseAsync(
-                resourceGroupName, proximityPlacementGroupName, includeColocationStatus)
-            .block();
     }
 
     /**

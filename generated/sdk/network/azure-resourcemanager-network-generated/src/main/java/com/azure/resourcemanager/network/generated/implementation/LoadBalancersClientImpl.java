@@ -570,23 +570,6 @@ public final class LoadBalancersClientImpl implements LoadBalancersClient {
      * @param resourceGroupName The name of the resource group.
      * @param loadBalancerName The name of the load balancer.
      * @param expand Expands referenced resources.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified load balancer along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<LoadBalancerInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String loadBalancerName, String expand) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, loadBalancerName, expand).block();
-    }
-
-    /**
-     * Gets the specified load balancer.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param loadBalancerName The name of the load balancer.
-     * @param expand Expands referenced resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1014,23 +997,6 @@ public final class LoadBalancersClientImpl implements LoadBalancersClient {
         String resourceGroupName, String loadBalancerName, TagsObject parameters) {
         return updateTagsWithResponseAsync(resourceGroupName, loadBalancerName, parameters)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Updates a load balancer tags.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param loadBalancerName The name of the load balancer.
-     * @param parameters Parameters supplied to update load balancer tags.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return loadBalancer resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<LoadBalancerInner> updateTagsWithResponse(
-        String resourceGroupName, String loadBalancerName, TagsObject parameters) {
-        return updateTagsWithResponseAsync(resourceGroupName, loadBalancerName, parameters).block();
     }
 
     /**

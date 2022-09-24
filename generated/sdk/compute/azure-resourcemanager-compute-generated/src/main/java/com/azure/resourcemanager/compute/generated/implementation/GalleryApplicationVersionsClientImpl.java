@@ -1269,33 +1269,6 @@ public final class GalleryApplicationVersionsClientImpl implements GalleryApplic
      *     resides.
      * @param galleryApplicationVersionName The name of the gallery Application Version to be retrieved.
      * @param expand The expand expression to apply on the operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ApiErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the gallery Application Version that you want to create or update along with
-     *     {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<GalleryApplicationVersionInner> getWithResponse(
-        String resourceGroupName,
-        String galleryName,
-        String galleryApplicationName,
-        String galleryApplicationVersionName,
-        ReplicationStatusTypes expand) {
-        return getWithResponseAsync(
-                resourceGroupName, galleryName, galleryApplicationName, galleryApplicationVersionName, expand)
-            .block();
-    }
-
-    /**
-     * Retrieves information about a gallery Application Version.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Application Gallery in which the Application Definition resides.
-     * @param galleryApplicationName The name of the gallery Application Definition in which the Application Version
-     *     resides.
-     * @param galleryApplicationVersionName The name of the gallery Application Version to be retrieved.
-     * @param expand The expand expression to apply on the operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.

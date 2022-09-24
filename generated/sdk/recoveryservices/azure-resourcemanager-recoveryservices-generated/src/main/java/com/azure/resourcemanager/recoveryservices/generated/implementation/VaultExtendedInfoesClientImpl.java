@@ -216,21 +216,6 @@ public final class VaultExtendedInfoesClientImpl implements VaultExtendedInfoesC
      *
      * @param resourceGroupName The name of the resource group where the recovery services vault is present.
      * @param vaultName The name of the recovery services vault.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the vault extended info along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<VaultExtendedInfoResourceInner> getWithResponse(String resourceGroupName, String vaultName) {
-        return getWithResponseAsync(resourceGroupName, vaultName).block();
-    }
-
-    /**
-     * Get the vault extended info.
-     *
-     * @param resourceGroupName The name of the resource group where the recovery services vault is present.
-     * @param vaultName The name of the recovery services vault.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -391,23 +376,6 @@ public final class VaultExtendedInfoesClientImpl implements VaultExtendedInfoesC
         String resourceGroupName, String vaultName, VaultExtendedInfoResourceInner resourceExtendedInfoDetails) {
         return createOrUpdateWithResponseAsync(resourceGroupName, vaultName, resourceExtendedInfoDetails)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Create vault extended info.
-     *
-     * @param resourceGroupName The name of the resource group where the recovery services vault is present.
-     * @param vaultName The name of the recovery services vault.
-     * @param resourceExtendedInfoDetails Details of ResourceExtendedInfo.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vault extended information along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<VaultExtendedInfoResourceInner> createOrUpdateWithResponse(
-        String resourceGroupName, String vaultName, VaultExtendedInfoResourceInner resourceExtendedInfoDetails) {
-        return createOrUpdateWithResponseAsync(resourceGroupName, vaultName, resourceExtendedInfoDetails).block();
     }
 
     /**
@@ -583,23 +551,6 @@ public final class VaultExtendedInfoesClientImpl implements VaultExtendedInfoesC
         String resourceGroupName, String vaultName, VaultExtendedInfoResourceInner resourceExtendedInfoDetails) {
         return updateWithResponseAsync(resourceGroupName, vaultName, resourceExtendedInfoDetails)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Update vault extended info.
-     *
-     * @param resourceGroupName The name of the resource group where the recovery services vault is present.
-     * @param vaultName The name of the recovery services vault.
-     * @param resourceExtendedInfoDetails Details of ResourceExtendedInfo.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vault extended information along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<VaultExtendedInfoResourceInner> updateWithResponse(
-        String resourceGroupName, String vaultName, VaultExtendedInfoResourceInner resourceExtendedInfoDetails) {
-        return updateWithResponseAsync(resourceGroupName, vaultName, resourceExtendedInfoDetails).block();
     }
 
     /**

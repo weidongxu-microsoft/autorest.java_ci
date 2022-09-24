@@ -298,24 +298,6 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
      * @param ipGroupsName The name of the ipGroups.
      * @param expand Expands resourceIds (of Firewalls/Network Security Groups etc.) back referenced by the IpGroups
      *     resource.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified ipGroups along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<IpGroupInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String ipGroupsName, String expand) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, ipGroupsName, expand).block();
-    }
-
-    /**
-     * Gets the specified ipGroups.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param ipGroupsName The name of the ipGroups.
-     * @param expand Expands resourceIds (of Firewalls/Network Security Groups etc.) back referenced by the IpGroups
-     *     resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
@@ -733,23 +715,6 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
     private Mono<IpGroupInner> updateGroupsAsync(String resourceGroupName, String ipGroupsName, TagsObject parameters) {
         return updateGroupsWithResponseAsync(resourceGroupName, ipGroupsName, parameters)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Updates tags of an IpGroups resource.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param ipGroupsName The name of the ipGroups.
-     * @param parameters Parameters supplied to the update ipGroups operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the IpGroups resource information along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<IpGroupInner> updateGroupsWithResponse(
-        String resourceGroupName, String ipGroupsName, TagsObject parameters) {
-        return updateGroupsWithResponseAsync(resourceGroupName, ipGroupsName, parameters).block();
     }
 
     /**

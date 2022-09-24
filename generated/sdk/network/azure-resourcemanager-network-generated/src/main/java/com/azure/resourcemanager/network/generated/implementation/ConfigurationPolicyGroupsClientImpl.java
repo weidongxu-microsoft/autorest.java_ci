@@ -980,24 +980,6 @@ public final class ConfigurationPolicyGroupsClientImpl implements ConfigurationP
      * @param resourceGroupName The resource group name of the VpnServerConfiguration.
      * @param vpnServerConfigurationName The name of the VpnServerConfiguration.
      * @param configurationPolicyGroupName The name of the ConfigurationPolicyGroup being retrieved.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpnServerConfigurationPolicyGroup Resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<VpnServerConfigurationPolicyGroupInner> getWithResponse(
-        String resourceGroupName, String vpnServerConfigurationName, String configurationPolicyGroupName) {
-        return getWithResponseAsync(resourceGroupName, vpnServerConfigurationName, configurationPolicyGroupName)
-            .block();
-    }
-
-    /**
-     * Retrieves the details of a ConfigurationPolicyGroup.
-     *
-     * @param resourceGroupName The resource group name of the VpnServerConfiguration.
-     * @param vpnServerConfigurationName The name of the VpnServerConfiguration.
-     * @param configurationPolicyGroupName The name of the ConfigurationPolicyGroup being retrieved.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

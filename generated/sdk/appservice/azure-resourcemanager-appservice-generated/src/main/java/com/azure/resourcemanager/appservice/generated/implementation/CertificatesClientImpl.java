@@ -648,23 +648,6 @@ public final class CertificatesClientImpl implements CertificatesClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return sSL certificate for an app along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<CertificateInner> getByResourceGroupWithResponse(String resourceGroupName, String name) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, name).block();
-    }
-
-    /**
-     * Get a certificate.
-     *
-     * <p>Description for Get a certificate.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the certificate.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -836,25 +819,6 @@ public final class CertificatesClientImpl implements CertificatesClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate.
      * @param certificateEnvelope Details of certificate, if it exists already.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return sSL certificate for an app along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<CertificateInner> createOrUpdateWithResponse(
-        String resourceGroupName, String name, CertificateInner certificateEnvelope) {
-        return createOrUpdateWithResponseAsync(resourceGroupName, name, certificateEnvelope).block();
-    }
-
-    /**
-     * Create or update a certificate.
-     *
-     * <p>Description for Create or update a certificate.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the certificate.
-     * @param certificateEnvelope Details of certificate, if it exists already.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -997,23 +961,6 @@ public final class CertificatesClientImpl implements CertificatesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String name) {
         return deleteWithResponseAsync(resourceGroupName, name).flatMap(ignored -> Mono.empty());
-    }
-
-    /**
-     * Delete a certificate.
-     *
-     * <p>Description for Delete a certificate.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the certificate.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> deleteWithResponse(String resourceGroupName, String name) {
-        return deleteWithResponseAsync(resourceGroupName, name).block();
     }
 
     /**
@@ -1182,25 +1129,6 @@ public final class CertificatesClientImpl implements CertificatesClient {
         String resourceGroupName, String name, CertificatePatchResource certificateEnvelope) {
         return updateWithResponseAsync(resourceGroupName, name, certificateEnvelope)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Create or update a certificate.
-     *
-     * <p>Description for Create or update a certificate.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the certificate.
-     * @param certificateEnvelope Details of certificate, if it exists already.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return sSL certificate for an app along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<CertificateInner> updateWithResponse(
-        String resourceGroupName, String name, CertificatePatchResource certificateEnvelope) {
-        return updateWithResponseAsync(resourceGroupName, name, certificateEnvelope).block();
     }
 
     /**

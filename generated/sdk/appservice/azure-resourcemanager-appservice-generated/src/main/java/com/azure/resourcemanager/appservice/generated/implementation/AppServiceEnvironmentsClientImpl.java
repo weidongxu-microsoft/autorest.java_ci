@@ -1520,24 +1520,6 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return app Service Environment ARM resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<AppServiceEnvironmentResourceInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String name) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, name).block();
-    }
-
-    /**
-     * Get the properties of an App Service Environment.
-     *
-     * <p>Description for Get the properties of an App Service Environment.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the App Service Environment.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -2346,25 +2328,6 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @param hostingEnvironmentEnvelope Configuration details of the App Service Environment.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return app Service Environment ARM resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<AppServiceEnvironmentResourceInner> updateWithResponse(
-        String resourceGroupName, String name, AppServiceEnvironmentPatchResourceInner hostingEnvironmentEnvelope) {
-        return updateWithResponseAsync(resourceGroupName, name, hostingEnvironmentEnvelope).block();
-    }
-
-    /**
-     * Create or update an App Service Environment.
-     *
-     * <p>Description for Create or update an App Service Environment.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the App Service Environment.
-     * @param hostingEnvironmentEnvelope Configuration details of the App Service Environment.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -2703,23 +2666,6 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AddressResponseInner> getVipInfoAsync(String resourceGroupName, String name) {
         return getVipInfoWithResponseAsync(resourceGroupName, name).flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Get IP addresses assigned to an App Service Environment.
-     *
-     * <p>Description for Get IP addresses assigned to an App Service Environment.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the App Service Environment.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes main public IP address and any extra virtual IPs along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<AddressResponseInner> getVipInfoWithResponse(String resourceGroupName, String name) {
-        return getVipInfoWithResponseAsync(resourceGroupName, name).block();
     }
 
     /**
@@ -3114,22 +3060,6 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return custom Dns Suffix configuration of an App Service Environment along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<CustomDnsSuffixConfigurationInner> getAseCustomDnsSuffixConfigurationWithResponse(
-        String resourceGroupName, String name) {
-        return getAseCustomDnsSuffixConfigurationWithResponseAsync(resourceGroupName, name).block();
-    }
-
-    /**
-     * Get Custom Dns Suffix configuration of an App Service Environment.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the App Service Environment.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -3301,25 +3231,6 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @param customDnsSuffixConfiguration Full view of the custom domain suffix configuration for ASEv3.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return full view of the custom domain suffix configuration for ASEv3 along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<CustomDnsSuffixConfigurationInner> updateAseCustomDnsSuffixConfigurationWithResponse(
-        String resourceGroupName, String name, CustomDnsSuffixConfigurationInner customDnsSuffixConfiguration) {
-        return updateAseCustomDnsSuffixConfigurationWithResponseAsync(
-                resourceGroupName, name, customDnsSuffixConfiguration)
-            .block();
-    }
-
-    /**
-     * Update Custom Dns Suffix configuration of an App Service Environment.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the App Service Environment.
-     * @param customDnsSuffixConfiguration Full view of the custom domain suffix configuration for ASEv3.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -3471,21 +3382,6 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return any object along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Object> deleteAseCustomDnsSuffixConfigurationWithResponse(String resourceGroupName, String name) {
-        return deleteAseCustomDnsSuffixConfigurationWithResponseAsync(resourceGroupName, name).block();
-    }
-
-    /**
-     * Delete Custom Dns Suffix configuration of an App Service Environment.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the App Service Environment.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -3630,24 +3526,6 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
         String resourceGroupName, String name) {
         return getAseV3NetworkingConfigurationWithResponseAsync(resourceGroupName, name)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Get networking configuration of an App Service Environment
-     *
-     * <p>Description for Get networking configuration of an App Service Environment.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the App Service Environment.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return full view of networking configuration for an ASE along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<AseV3NetworkingConfigurationInner> getAseV3NetworkingConfigurationWithResponse(
-        String resourceGroupName, String name) {
-        return getAseV3NetworkingConfigurationWithResponseAsync(resourceGroupName, name).block();
     }
 
     /**
@@ -3837,26 +3715,6 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @param aseNetworkingConfiguration Full view of networking configuration for an ASE.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return full view of networking configuration for an ASE along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<AseV3NetworkingConfigurationInner> updateAseNetworkingConfigurationWithResponse(
-        String resourceGroupName, String name, AseV3NetworkingConfigurationInner aseNetworkingConfiguration) {
-        return updateAseNetworkingConfigurationWithResponseAsync(resourceGroupName, name, aseNetworkingConfiguration)
-            .block();
-    }
-
-    /**
-     * Update networking configuration of an App Service Environment
-     *
-     * <p>Description for Update networking configuration of an App Service Environment.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the App Service Environment.
-     * @param aseNetworkingConfiguration Full view of networking configuration for an ASE.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -4011,24 +3869,6 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     private Mono<List<HostingEnvironmentDiagnosticsInner>> listDiagnosticsAsync(String resourceGroupName, String name) {
         return listDiagnosticsWithResponseAsync(resourceGroupName, name)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Get diagnostic information for an App Service Environment.
-     *
-     * <p>Description for Get diagnostic information for an App Service Environment.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the App Service Environment.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of HostingEnvironmentDiagnostics along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<List<HostingEnvironmentDiagnosticsInner>> listDiagnosticsWithResponse(
-        String resourceGroupName, String name) {
-        return listDiagnosticsWithResponseAsync(resourceGroupName, name).block();
     }
 
     /**
@@ -4197,25 +4037,6 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
         String resourceGroupName, String name, String diagnosticsName) {
         return getDiagnosticsItemWithResponseAsync(resourceGroupName, name, diagnosticsName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Get a diagnostics item for an App Service Environment.
-     *
-     * <p>Description for Get a diagnostics item for an App Service Environment.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the App Service Environment.
-     * @param diagnosticsName Name of the diagnostics item.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return diagnostics for an App Service Environment along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<HostingEnvironmentDiagnosticsInner> getDiagnosticsItemWithResponse(
-        String resourceGroupName, String name, String diagnosticsName) {
-        return getDiagnosticsItemWithResponseAsync(resourceGroupName, name, diagnosticsName).block();
     }
 
     /**
@@ -4770,23 +4591,6 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return worker pool of an App Service Environment ARM resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<WorkerPoolResourceInner> getMultiRolePoolWithResponse(String resourceGroupName, String name) {
-        return getMultiRolePoolWithResponseAsync(resourceGroupName, name).block();
-    }
-
-    /**
-     * Get properties of a multi-role pool.
-     *
-     * <p>Description for Get properties of a multi-role pool.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the App Service Environment.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -5248,25 +5052,6 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
         String resourceGroupName, String name, WorkerPoolResourceInner multiRolePoolEnvelope) {
         return updateMultiRolePoolWithResponseAsync(resourceGroupName, name, multiRolePoolEnvelope)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Create or update a multi-role pool.
-     *
-     * <p>Description for Create or update a multi-role pool.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the App Service Environment.
-     * @param multiRolePoolEnvelope Properties of the multi-role pool.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return worker pool of an App Service Environment ARM resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<WorkerPoolResourceInner> updateMultiRolePoolWithResponse(
-        String resourceGroupName, String name, WorkerPoolResourceInner multiRolePoolEnvelope) {
-        return updateMultiRolePoolWithResponseAsync(resourceGroupName, name, multiRolePoolEnvelope).block();
     }
 
     /**
@@ -6028,21 +5813,6 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> testUpgradeAvailableNotificationWithResponse(String resourceGroupName, String name) {
-        return testUpgradeAvailableNotificationWithResponseAsync(resourceGroupName, name).block();
-    }
-
-    /**
-     * Send a test notification that an upgrade is available for this App Service Environment.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the App Service Environment.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -6627,23 +6397,6 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of Operation along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<List<OperationInner>> listOperationsWithResponse(String resourceGroupName, String name) {
-        return listOperationsWithResponseAsync(resourceGroupName, name).block();
-    }
-
-    /**
-     * List all currently running operations on the App Service Environment.
-     *
-     * <p>Description for List all currently running operations on the App Service Environment.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the App Service Environment.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -7199,26 +6952,6 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
         String resourceGroupName, String name, String privateEndpointConnectionName) {
         return getPrivateEndpointConnectionWithResponseAsync(resourceGroupName, name, privateEndpointConnectionName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets a private endpoint connection
-     *
-     * <p>Description for Gets a private endpoint connection.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the App Service Environment.
-     * @param privateEndpointConnectionName Name of the private endpoint connection.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return remote Private Endpoint Connection ARM resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<RemotePrivateEndpointConnectionArmResourceInner> getPrivateEndpointConnectionWithResponse(
-        String resourceGroupName, String name, String privateEndpointConnectionName) {
-        return getPrivateEndpointConnectionWithResponseAsync(resourceGroupName, name, privateEndpointConnectionName)
-            .block();
     }
 
     /**
@@ -8061,24 +7794,6 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return wrapper for a collection of private link resources along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<PrivateLinkResourcesWrapperInner> getPrivateLinkResourcesWithResponse(
-        String resourceGroupName, String name) {
-        return getPrivateLinkResourcesWithResponseAsync(resourceGroupName, name).block();
-    }
-
-    /**
-     * Gets the private link resources
-     *
-     * <p>Description for Gets the private link resources.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the App Service Environment.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -8219,23 +7934,6 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> rebootAsync(String resourceGroupName, String name) {
         return rebootWithResponseAsync(resourceGroupName, name).flatMap(ignored -> Mono.empty());
-    }
-
-    /**
-     * Reboot all machines in an App Service Environment.
-     *
-     * <p>Description for Reboot all machines in an App Service Environment.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the App Service Environment.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> rebootWithResponse(String resourceGroupName, String name) {
-        return rebootWithResponseAsync(resourceGroupName, name).block();
     }
 
     /**
@@ -9676,25 +9374,6 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @param workerPoolName Name of the worker pool.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return worker pool of an App Service Environment ARM resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<WorkerPoolResourceInner> getWorkerPoolWithResponse(
-        String resourceGroupName, String name, String workerPoolName) {
-        return getWorkerPoolWithResponseAsync(resourceGroupName, name, workerPoolName).block();
-    }
-
-    /**
-     * Get properties of a worker pool.
-     *
-     * <p>Description for Get properties of a worker pool.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the App Service Environment.
-     * @param workerPoolName Name of the worker pool.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -10211,26 +9890,6 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
         String resourceGroupName, String name, String workerPoolName, WorkerPoolResourceInner workerPoolEnvelope) {
         return updateWorkerPoolWithResponseAsync(resourceGroupName, name, workerPoolName, workerPoolEnvelope)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Create or update a worker pool.
-     *
-     * <p>Description for Create or update a worker pool.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the App Service Environment.
-     * @param workerPoolName Name of the worker pool.
-     * @param workerPoolEnvelope Properties of the worker pool.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return worker pool of an App Service Environment ARM resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<WorkerPoolResourceInner> updateWorkerPoolWithResponse(
-        String resourceGroupName, String name, String workerPoolName, WorkerPoolResourceInner workerPoolEnvelope) {
-        return updateWorkerPoolWithResponseAsync(resourceGroupName, name, workerPoolName, workerPoolEnvelope).block();
     }
 
     /**

@@ -497,24 +497,6 @@ public final class WorkflowRunsClientImpl implements WorkflowRunsClient {
      * @param name Site name.
      * @param workflowName The workflow name.
      * @param runName The workflow run name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a workflow run along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<WorkflowRunInner> getWithResponse(
-        String resourceGroupName, String name, String workflowName, String runName) {
-        return getWithResponseAsync(resourceGroupName, name, workflowName, runName).block();
-    }
-
-    /**
-     * Gets a workflow run.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Site name.
-     * @param workflowName The workflow name.
-     * @param runName The workflow run name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -673,24 +655,6 @@ public final class WorkflowRunsClientImpl implements WorkflowRunsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> cancelAsync(String resourceGroupName, String name, String workflowName, String runName) {
         return cancelWithResponseAsync(resourceGroupName, name, workflowName, runName).flatMap(ignored -> Mono.empty());
-    }
-
-    /**
-     * Cancels a workflow run.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Site name.
-     * @param workflowName The workflow name.
-     * @param runName The workflow run name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> cancelWithResponse(
-        String resourceGroupName, String name, String workflowName, String runName) {
-        return cancelWithResponseAsync(resourceGroupName, name, workflowName, runName).block();
     }
 
     /**

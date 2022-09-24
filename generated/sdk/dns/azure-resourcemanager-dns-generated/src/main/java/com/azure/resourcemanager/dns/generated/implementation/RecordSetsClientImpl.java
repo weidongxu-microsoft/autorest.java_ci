@@ -404,35 +404,6 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @param parameters Parameters supplied to the Update operation.
      * @param ifMatch The etag of the record set. Omit this value to always overwrite the current record set. Specify
      *     the last-seen etag value to prevent accidentally overwriting concurrent changes.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a DNS record set (a collection of DNS records with the same name and type) along with {@link
-     *     Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<RecordSetInner> updateWithResponse(
-        String resourceGroupName,
-        String zoneName,
-        String relativeRecordSetName,
-        RecordType recordType,
-        RecordSetInner parameters,
-        String ifMatch) {
-        return updateWithResponseAsync(
-                resourceGroupName, zoneName, relativeRecordSetName, recordType, parameters, ifMatch)
-            .block();
-    }
-
-    /**
-     * Updates a record set within a DNS zone.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param relativeRecordSetName The name of the record set, relative to the name of the zone.
-     * @param recordType The type of DNS record in this record set.
-     * @param parameters Parameters supplied to the Update operation.
-     * @param ifMatch The etag of the record set. Omit this value to always overwrite the current record set. Specify
-     *     the last-seen etag value to prevent accidentally overwriting concurrent changes.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -681,39 +652,6 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      *     the last-seen etag value to prevent accidentally overwriting any concurrent changes.
      * @param ifNoneMatch Set to '*' to allow a new record set to be created, but to prevent updating an existing record
      *     set. Other values will be ignored.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a DNS record set (a collection of DNS records with the same name and type) along with {@link
-     *     Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<RecordSetInner> createOrUpdateWithResponse(
-        String resourceGroupName,
-        String zoneName,
-        String relativeRecordSetName,
-        RecordType recordType,
-        RecordSetInner parameters,
-        String ifMatch,
-        String ifNoneMatch) {
-        return createOrUpdateWithResponseAsync(
-                resourceGroupName, zoneName, relativeRecordSetName, recordType, parameters, ifMatch, ifNoneMatch)
-            .block();
-    }
-
-    /**
-     * Creates or updates a record set within a DNS zone.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param relativeRecordSetName The name of the record set, relative to the name of the zone.
-     * @param recordType The type of DNS record in this record set. Record sets of type SOA can be updated but not
-     *     created (they are created when the DNS zone is created).
-     * @param parameters Parameters supplied to the CreateOrUpdate operation.
-     * @param ifMatch The etag of the record set. Omit this value to always overwrite the current record set. Specify
-     *     the last-seen etag value to prevent accidentally overwriting any concurrent changes.
-     * @param ifNoneMatch Set to '*' to allow a new record set to be created, but to prevent updating an existing record
-     *     set. Other values will be ignored.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -942,31 +880,6 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      *     deleted when the DNS zone is deleted).
      * @param ifMatch The etag of the record set. Omit this value to always delete the current record set. Specify the
      *     last-seen etag value to prevent accidentally deleting any concurrent changes.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> deleteWithResponse(
-        String resourceGroupName,
-        String zoneName,
-        String relativeRecordSetName,
-        RecordType recordType,
-        String ifMatch) {
-        return deleteWithResponseAsync(resourceGroupName, zoneName, relativeRecordSetName, recordType, ifMatch).block();
-    }
-
-    /**
-     * Deletes a record set from a DNS zone. This operation cannot be undone.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param relativeRecordSetName The name of the record set, relative to the name of the zone.
-     * @param recordType The type of DNS record in this record set. Record sets of type SOA cannot be deleted (they are
-     *     deleted when the DNS zone is deleted).
-     * @param ifMatch The etag of the record set. Omit this value to always delete the current record set. Specify the
-     *     last-seen etag value to prevent accidentally deleting any concurrent changes.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1140,24 +1053,6 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
         String resourceGroupName, String zoneName, String relativeRecordSetName, RecordType recordType) {
         return getWithResponseAsync(resourceGroupName, zoneName, relativeRecordSetName, recordType)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets a record set.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param relativeRecordSetName The name of the record set, relative to the name of the zone.
-     * @param recordType The type of DNS record in this record set.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a record set along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<RecordSetInner> getWithResponse(
-        String resourceGroupName, String zoneName, String relativeRecordSetName, RecordType recordType) {
-        return getWithResponseAsync(resourceGroupName, zoneName, relativeRecordSetName, recordType).block();
     }
 
     /**

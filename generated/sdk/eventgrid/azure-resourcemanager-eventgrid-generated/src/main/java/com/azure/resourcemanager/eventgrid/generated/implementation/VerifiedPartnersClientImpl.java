@@ -179,22 +179,6 @@ public final class VerifiedPartnersClientImpl implements VerifiedPartnersClient 
      * <p>Get properties of a verified partner.
      *
      * @param verifiedPartnerName Name of the verified partner.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of a verified partner along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<VerifiedPartnerInner> getWithResponse(String verifiedPartnerName) {
-        return getWithResponseAsync(verifiedPartnerName).block();
-    }
-
-    /**
-     * Get a verified partner.
-     *
-     * <p>Get properties of a verified partner.
-     *
-     * @param verifiedPartnerName Name of the verified partner.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

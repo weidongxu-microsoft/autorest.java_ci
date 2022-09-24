@@ -1323,25 +1323,6 @@ public final class VirtualMachineScaleSetVMRunCommandsClientImpl implements Virt
      * @param instanceId The instance ID of the virtual machine.
      * @param runCommandName The name of the virtual machine run command.
      * @param expand The expand expression to apply on the operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ApiErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Virtual Machine run command along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<VirtualMachineRunCommandInner> getWithResponse(
-        String resourceGroupName, String vmScaleSetName, String instanceId, String runCommandName, String expand) {
-        return getWithResponseAsync(resourceGroupName, vmScaleSetName, instanceId, runCommandName, expand).block();
-    }
-
-    /**
-     * The operation to get the VMSS VM run command.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param vmScaleSetName The name of the VM scale set.
-     * @param instanceId The instance ID of the virtual machine.
-     * @param runCommandName The name of the virtual machine run command.
-     * @param expand The expand expression to apply on the operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.

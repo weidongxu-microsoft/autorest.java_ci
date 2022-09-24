@@ -536,22 +536,6 @@ public final class DdosProtectionPlansClientImpl implements DdosProtectionPlansC
      *
      * @param resourceGroupName The name of the resource group.
      * @param ddosProtectionPlanName The name of the DDoS protection plan.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the specified DDoS protection plan along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<DdosProtectionPlanInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String ddosProtectionPlanName) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, ddosProtectionPlanName).block();
-    }
-
-    /**
-     * Gets information about the specified DDoS protection plan.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param ddosProtectionPlanName The name of the DDoS protection plan.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -990,23 +974,6 @@ public final class DdosProtectionPlansClientImpl implements DdosProtectionPlansC
         String resourceGroupName, String ddosProtectionPlanName, TagsObject parameters) {
         return updateTagsWithResponseAsync(resourceGroupName, ddosProtectionPlanName, parameters)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Update a DDoS protection plan tags.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param ddosProtectionPlanName The name of the DDoS protection plan.
-     * @param parameters Parameters supplied to the update DDoS protection plan resource tags.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a DDoS protection plan in a resource group along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<DdosProtectionPlanInner> updateTagsWithResponse(
-        String resourceGroupName, String ddosProtectionPlanName, TagsObject parameters) {
-        return updateTagsWithResponseAsync(resourceGroupName, ddosProtectionPlanName, parameters).block();
     }
 
     /**

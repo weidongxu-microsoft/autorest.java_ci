@@ -285,23 +285,6 @@ public final class ScheduledQueryRulesClientImpl implements ScheduledQueryRulesC
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @param parameters The parameters of the rule to create or update.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Log Search Rule resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<LogSearchRuleResourceInner> createOrUpdateWithResponse(
-        String resourceGroupName, String ruleName, LogSearchRuleResourceInner parameters) {
-        return createOrUpdateWithResponseAsync(resourceGroupName, ruleName, parameters).block();
-    }
-
-    /**
-     * Creates or updates an log search rule.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param ruleName The name of the rule.
-     * @param parameters The parameters of the rule to create or update.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -441,22 +424,6 @@ public final class ScheduledQueryRulesClientImpl implements ScheduledQueryRulesC
     private Mono<LogSearchRuleResourceInner> getByResourceGroupAsync(String resourceGroupName, String ruleName) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, ruleName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets an Log Search rule.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param ruleName The name of the rule.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Log Search rule along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<LogSearchRuleResourceInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String ruleName) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, ruleName).block();
     }
 
     /**
@@ -625,23 +592,6 @@ public final class ScheduledQueryRulesClientImpl implements ScheduledQueryRulesC
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @param parameters The parameters of the rule to update.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Log Search Rule resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<LogSearchRuleResourceInner> updateWithResponse(
-        String resourceGroupName, String ruleName, LogSearchRuleResourcePatch parameters) {
-        return updateWithResponseAsync(resourceGroupName, ruleName, parameters).block();
-    }
-
-    /**
-     * Update log search Rule.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param ruleName The name of the rule.
-     * @param parameters The parameters of the rule to update.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -778,21 +728,6 @@ public final class ScheduledQueryRulesClientImpl implements ScheduledQueryRulesC
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String ruleName) {
         return deleteWithResponseAsync(resourceGroupName, ruleName).flatMap(ignored -> Mono.empty());
-    }
-
-    /**
-     * Deletes a Log Search rule.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param ruleName The name of the rule.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> deleteWithResponse(String resourceGroupName, String ruleName) {
-        return deleteWithResponseAsync(resourceGroupName, ruleName).block();
     }
 
     /**

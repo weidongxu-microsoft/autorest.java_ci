@@ -849,34 +849,6 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
      *     Search service within the specified resource group.
      * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
      *     included in response information as a way to track the request.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the details of the shared private link resource managed by the search service in the given resource group
-     *     along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<SharedPrivateLinkResourceInner> getWithResponse(
-        String resourceGroupName,
-        String searchServiceName,
-        String sharedPrivateLinkResourceName,
-        UUID clientRequestId) {
-        return getWithResponseAsync(
-                resourceGroupName, searchServiceName, sharedPrivateLinkResourceName, clientRequestId)
-            .block();
-    }
-
-    /**
-     * Gets the details of the shared private link resource managed by the search service in the given resource group.
-     *
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
-     *     value from the Azure Resource Manager API or the portal.
-     * @param searchServiceName The name of the Azure Cognitive Search service associated with the specified resource
-     *     group.
-     * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure Cognitive
-     *     Search service within the specified resource group.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
-     *     included in response information as a way to track the request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

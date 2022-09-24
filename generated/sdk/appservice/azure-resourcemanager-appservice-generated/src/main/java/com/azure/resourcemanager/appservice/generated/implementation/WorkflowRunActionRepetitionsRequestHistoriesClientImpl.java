@@ -593,35 +593,6 @@ public final class WorkflowRunActionRepetitionsRequestHistoriesClientImpl
      * @param actionName The workflow action name.
      * @param repetitionName The workflow repetition.
      * @param requestHistoryName The request history name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a workflow run repetition request history along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<RequestHistoryInner> getWithResponse(
-        String resourceGroupName,
-        String name,
-        String workflowName,
-        String runName,
-        String actionName,
-        String repetitionName,
-        String requestHistoryName) {
-        return getWithResponseAsync(
-                resourceGroupName, name, workflowName, runName, actionName, repetitionName, requestHistoryName)
-            .block();
-    }
-
-    /**
-     * Gets a workflow run repetition request history.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Site name.
-     * @param workflowName The workflow name.
-     * @param runName The workflow run name.
-     * @param actionName The workflow action name.
-     * @param repetitionName The workflow repetition.
-     * @param requestHistoryName The request history name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

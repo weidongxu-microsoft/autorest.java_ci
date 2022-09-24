@@ -330,21 +330,6 @@ public final class ExpressRoutePortsLocationsClientImpl implements ExpressRouteP
      * said peering location.
      *
      * @param locationName Name of the requested ExpressRoutePort peering location.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return expressRoutePorts Peering Location along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ExpressRoutePortsLocationInner> getWithResponse(String locationName) {
-        return getWithResponseAsync(locationName).block();
-    }
-
-    /**
-     * Retrieves a single ExpressRoutePort peering location, including the list of available bandwidths available at
-     * said peering location.
-     *
-     * @param locationName Name of the requested ExpressRoutePort peering location.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

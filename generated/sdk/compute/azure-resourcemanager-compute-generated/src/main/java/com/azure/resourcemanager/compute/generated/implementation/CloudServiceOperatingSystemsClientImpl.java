@@ -255,23 +255,6 @@ public final class CloudServiceOperatingSystemsClientImpl implements CloudServic
      *
      * @param location Name of the location that the OS version pertains to.
      * @param osVersionName Name of the OS version.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ApiErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of a guest operating system version that can be specified in the XML service configuration
-     *     (.cscfg) for a cloud service along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<OSVersionInner> getOSVersionWithResponse(String location, String osVersionName) {
-        return getOSVersionWithResponseAsync(location, osVersionName).block();
-    }
-
-    /**
-     * Gets properties of a guest operating system version that can be specified in the XML service configuration
-     * (.cscfg) for a cloud service.
-     *
-     * @param location Name of the location that the OS version pertains to.
-     * @param osVersionName Name of the OS version.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -587,23 +570,6 @@ public final class CloudServiceOperatingSystemsClientImpl implements CloudServic
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<OSFamilyInner> getOSFamilyAsync(String location, String osFamilyName) {
         return getOSFamilyWithResponseAsync(location, osFamilyName).flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets properties of a guest operating system family that can be specified in the XML service configuration
-     * (.cscfg) for a cloud service.
-     *
-     * @param location Name of the location that the OS family pertains to.
-     * @param osFamilyName Name of the OS family.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ApiErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of a guest operating system family that can be specified in the XML service configuration
-     *     (.cscfg) for a cloud service along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<OSFamilyInner> getOSFamilyWithResponse(String location, String osFamilyName) {
-        return getOSFamilyWithResponseAsync(location, osFamilyName).block();
     }
 
     /**

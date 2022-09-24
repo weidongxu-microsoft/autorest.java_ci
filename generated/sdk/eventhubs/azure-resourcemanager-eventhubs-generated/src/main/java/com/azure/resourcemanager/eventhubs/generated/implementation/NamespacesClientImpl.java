@@ -1277,21 +1277,6 @@ public final class NamespacesClientImpl implements NamespacesClient {
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the description of the specified namespace along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<EHNamespaceInner> getByResourceGroupWithResponse(String resourceGroupName, String namespaceName) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, namespaceName).block();
-    }
-
-    /**
-     * Gets the description of the specified namespace.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param namespaceName The Namespace name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1448,24 +1433,6 @@ public final class NamespacesClientImpl implements NamespacesClient {
         String resourceGroupName, String namespaceName, EHNamespaceInner parameters) {
         return updateWithResponseAsync(resourceGroupName, namespaceName, parameters)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Creates or updates a namespace. Once created, this namespace's resource manifest is immutable. This operation is
-     * idempotent.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param namespaceName The Namespace name.
-     * @param parameters Parameters for updating a namespace resource.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single Namespace item in List or Get Operation along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<EHNamespaceInner> updateWithResponse(
-        String resourceGroupName, String namespaceName, EHNamespaceInner parameters) {
-        return updateWithResponseAsync(resourceGroupName, namespaceName, parameters).block();
     }
 
     /**
@@ -1636,23 +1603,6 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param parameters The Namespace IpFilterRule.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of topic resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<NetworkRuleSetInner> createOrUpdateNetworkRuleSetWithResponse(
-        String resourceGroupName, String namespaceName, NetworkRuleSetInner parameters) {
-        return createOrUpdateNetworkRuleSetWithResponseAsync(resourceGroupName, namespaceName, parameters).block();
-    }
-
-    /**
-     * Create or update NetworkRuleSet for a Namespace.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param namespaceName The Namespace name.
-     * @param parameters The Namespace IpFilterRule.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1799,21 +1749,6 @@ public final class NamespacesClientImpl implements NamespacesClient {
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return networkRuleSet for a Namespace along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<NetworkRuleSetInner> getNetworkRuleSetWithResponse(String resourceGroupName, String namespaceName) {
-        return getNetworkRuleSetWithResponseAsync(resourceGroupName, namespaceName).block();
-    }
-
-    /**
-     * Gets NetworkRuleSet for a Namespace.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param namespaceName The Namespace name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1950,22 +1885,6 @@ public final class NamespacesClientImpl implements NamespacesClient {
         String resourceGroupName, String namespaceName) {
         return listNetworkRuleSetWithResponseAsync(resourceGroupName, namespaceName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets NetworkRuleSet for a Namespace.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param namespaceName The Namespace name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return networkRuleSet for a Namespace along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<NetworkRuleSetListResultInner> listNetworkRuleSetWithResponse(
-        String resourceGroupName, String namespaceName) {
-        return listNetworkRuleSetWithResponseAsync(resourceGroupName, namespaceName).block();
     }
 
     /**
@@ -2343,29 +2262,6 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @param namespaceName The Namespace name.
      * @param authorizationRuleName The authorization rule name.
      * @param parameters The shared access AuthorizationRule.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in a List or Get AuthorizationRule operation along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<AuthorizationRuleInner> createOrUpdateAuthorizationRuleWithResponse(
-        String resourceGroupName,
-        String namespaceName,
-        String authorizationRuleName,
-        AuthorizationRuleInner parameters) {
-        return createOrUpdateAuthorizationRuleWithResponseAsync(
-                resourceGroupName, namespaceName, authorizationRuleName, parameters)
-            .block();
-    }
-
-    /**
-     * Creates or updates an AuthorizationRule for a Namespace.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param namespaceName The Namespace name.
-     * @param authorizationRuleName The authorization rule name.
-     * @param parameters The shared access AuthorizationRule.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -2537,24 +2433,6 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param authorizationRuleName The authorization rule name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> deleteAuthorizationRuleWithResponse(
-        String resourceGroupName, String namespaceName, String authorizationRuleName) {
-        return deleteAuthorizationRuleWithResponseAsync(resourceGroupName, namespaceName, authorizationRuleName)
-            .block();
-    }
-
-    /**
-     * Deletes an AuthorizationRule for a Namespace.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param namespaceName The Namespace name.
-     * @param authorizationRuleName The authorization rule name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -2708,23 +2586,6 @@ public final class NamespacesClientImpl implements NamespacesClient {
         String resourceGroupName, String namespaceName, String authorizationRuleName) {
         return getAuthorizationRuleWithResponseAsync(resourceGroupName, namespaceName, authorizationRuleName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets an AuthorizationRule for a Namespace by rule name.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param namespaceName The Namespace name.
-     * @param authorizationRuleName The authorization rule name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an AuthorizationRule for a Namespace by rule name along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<AuthorizationRuleInner> getAuthorizationRuleWithResponse(
-        String resourceGroupName, String namespaceName, String authorizationRuleName) {
-        return getAuthorizationRuleWithResponseAsync(resourceGroupName, namespaceName, authorizationRuleName).block();
     }
 
     /**
@@ -2888,23 +2749,6 @@ public final class NamespacesClientImpl implements NamespacesClient {
         String resourceGroupName, String namespaceName, String authorizationRuleName) {
         return listKeysWithResponseAsync(resourceGroupName, namespaceName, authorizationRuleName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets the primary and secondary connection strings for the Namespace.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param namespaceName The Namespace name.
-     * @param authorizationRuleName The authorization rule name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the primary and secondary connection strings for the Namespace along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<AccessKeysInner> listKeysWithResponse(
-        String resourceGroupName, String namespaceName, String authorizationRuleName) {
-        return listKeysWithResponseAsync(resourceGroupName, namespaceName, authorizationRuleName).block();
     }
 
     /**
@@ -3099,28 +2943,6 @@ public final class NamespacesClientImpl implements NamespacesClient {
      * @param namespaceName The Namespace name.
      * @param authorizationRuleName The authorization rule name.
      * @param parameters Parameters required to regenerate the connection string.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return namespace/EventHub Connection String along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<AccessKeysInner> regenerateKeysWithResponse(
-        String resourceGroupName,
-        String namespaceName,
-        String authorizationRuleName,
-        RegenerateAccessKeyParameters parameters) {
-        return regenerateKeysWithResponseAsync(resourceGroupName, namespaceName, authorizationRuleName, parameters)
-            .block();
-    }
-
-    /**
-     * Regenerates the primary or secondary connection strings for the specified Namespace.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param namespaceName The Namespace name.
-     * @param authorizationRuleName The authorization rule name.
-     * @param parameters Parameters required to regenerate the connection string.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -3263,21 +3085,6 @@ public final class NamespacesClientImpl implements NamespacesClient {
     private Mono<CheckNameAvailabilityResultInner> checkNameAvailabilityAsync(
         CheckNameAvailabilityParameter parameters) {
         return checkNameAvailabilityWithResponseAsync(parameters).flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Check the give Namespace name availability.
-     *
-     * @param parameters Parameters to check availability of the given Namespace name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Result of the CheckNameAvailability operation along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<CheckNameAvailabilityResultInner> checkNameAvailabilityWithResponse(
-        CheckNameAvailabilityParameter parameters) {
-        return checkNameAvailabilityWithResponseAsync(parameters).block();
     }
 
     /**

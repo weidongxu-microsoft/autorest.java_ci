@@ -470,21 +470,6 @@ public final class ClustersClientImpl implements ClustersClient {
      *
      * @param resourceGroupName The name of the resource group containing the Kusto cluster.
      * @param clusterName The name of the Kusto cluster.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Kusto cluster along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ClusterInner> getByResourceGroupWithResponse(String resourceGroupName, String clusterName) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, clusterName).block();
-    }
-
-    /**
-     * Gets a Kusto cluster.
-     *
-     * @param resourceGroupName The name of the resource group containing the Kusto cluster.
-     * @param clusterName The name of the Kusto cluster.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -3109,22 +3094,6 @@ public final class ClustersClientImpl implements ClustersClient {
         String location, ClusterCheckNameRequest clusterName) {
         return checkNameAvailabilityWithResponseAsync(location, clusterName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Checks that the cluster name is valid and is not already in use.
-     *
-     * @param location Azure location (region) name.
-     * @param clusterName The name of the cluster.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the result returned from a check name availability request along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<CheckNameResultInner> checkNameAvailabilityWithResponse(
-        String location, ClusterCheckNameRequest clusterName) {
-        return checkNameAvailabilityWithResponseAsync(location, clusterName).block();
     }
 
     /**

@@ -316,29 +316,6 @@ public final class PolicyExemptionsClientImpl implements PolicyExemptionsClient 
      *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}', or resource (format:
      *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/[{parentResourcePath}/]{resourceType}/{resourceName}'.
      * @param policyExemptionName The name of the policy exemption to delete.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> deleteWithResponse(String scope, String policyExemptionName) {
-        return deleteWithResponseAsync(scope, policyExemptionName).block();
-    }
-
-    /**
-     * Deletes a policy exemption.
-     *
-     * <p>This operation deletes a policy exemption, given its name and the scope it was created in. The scope of a
-     * policy exemption is the part of its ID preceding
-     * '/providers/Microsoft.Authorization/policyExemptions/{policyExemptionName}'.
-     *
-     * @param scope The scope of the policy exemption. Valid scopes are: management group (format:
-     *     '/providers/Microsoft.Management/managementGroups/{managementGroup}'), subscription (format:
-     *     '/subscriptions/{subscriptionId}'), resource group (format:
-     *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}', or resource (format:
-     *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/[{parentResourcePath}/]{resourceType}/{resourceName}'.
-     * @param policyExemptionName The name of the policy exemption to delete.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -522,32 +499,6 @@ public final class PolicyExemptionsClientImpl implements PolicyExemptionsClient 
      *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/[{parentResourcePath}/]{resourceType}/{resourceName}'.
      * @param policyExemptionName The name of the policy exemption to delete.
      * @param parameters Parameters for the policy exemption.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy exemption along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<PolicyExemptionInner> createOrUpdateWithResponse(
-        String scope, String policyExemptionName, PolicyExemptionInner parameters) {
-        return createOrUpdateWithResponseAsync(scope, policyExemptionName, parameters).block();
-    }
-
-    /**
-     * Creates or updates a policy exemption.
-     *
-     * <p>This operation creates or updates a policy exemption with the given scope and name. Policy exemptions apply to
-     * all resources contained within their scope. For example, when you create a policy exemption at resource group
-     * scope for a policy assignment at the same or above level, the exemption exempts to all applicable resources in
-     * the resource group.
-     *
-     * @param scope The scope of the policy exemption. Valid scopes are: management group (format:
-     *     '/providers/Microsoft.Management/managementGroups/{managementGroup}'), subscription (format:
-     *     '/subscriptions/{subscriptionId}'), resource group (format:
-     *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}', or resource (format:
-     *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/[{parentResourcePath}/]{resourceType}/{resourceName}'.
-     * @param policyExemptionName The name of the policy exemption to delete.
-     * @param parameters Parameters for the policy exemption.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -684,27 +635,6 @@ public final class PolicyExemptionsClientImpl implements PolicyExemptionsClient 
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PolicyExemptionInner> getAsync(String scope, String policyExemptionName) {
         return getWithResponseAsync(scope, policyExemptionName).flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Retrieves a policy exemption.
-     *
-     * <p>This operation retrieves a single policy exemption, given its name and the scope it was created at.
-     *
-     * @param scope The scope of the policy exemption. Valid scopes are: management group (format:
-     *     '/providers/Microsoft.Management/managementGroups/{managementGroup}'), subscription (format:
-     *     '/subscriptions/{subscriptionId}'), resource group (format:
-     *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}', or resource (format:
-     *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/[{parentResourcePath}/]{resourceType}/{resourceName}'.
-     * @param policyExemptionName The name of the policy exemption to delete.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy exemption along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<PolicyExemptionInner> getWithResponse(String scope, String policyExemptionName) {
-        return getWithResponseAsync(scope, policyExemptionName).block();
     }
 
     /**

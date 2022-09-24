@@ -549,23 +549,6 @@ public final class NetworkVirtualAppliancesClientImpl implements NetworkVirtualA
      * @param resourceGroupName The name of the resource group.
      * @param networkVirtualApplianceName The name of Network Virtual Appliance.
      * @param expand Expands referenced resources.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Network Virtual Appliance along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<NetworkVirtualApplianceInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String networkVirtualApplianceName, String expand) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, networkVirtualApplianceName, expand).block();
-    }
-
-    /**
-     * Gets the specified Network Virtual Appliance.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param networkVirtualApplianceName The name of Network Virtual Appliance.
-     * @param expand Expands referenced resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -729,23 +712,6 @@ public final class NetworkVirtualAppliancesClientImpl implements NetworkVirtualA
         String resourceGroupName, String networkVirtualApplianceName, TagsObject parameters) {
         return updateTagsWithResponseAsync(resourceGroupName, networkVirtualApplianceName, parameters)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Updates a Network Virtual Appliance.
-     *
-     * @param resourceGroupName The resource group name of Network Virtual Appliance.
-     * @param networkVirtualApplianceName The name of Network Virtual Appliance being updated.
-     * @param parameters Parameters supplied to Update Network Virtual Appliance Tags.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return networkVirtualAppliance Resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<NetworkVirtualApplianceInner> updateTagsWithResponse(
-        String resourceGroupName, String networkVirtualApplianceName, TagsObject parameters) {
-        return updateTagsWithResponseAsync(resourceGroupName, networkVirtualApplianceName, parameters).block();
     }
 
     /**

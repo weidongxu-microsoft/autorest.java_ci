@@ -540,23 +540,6 @@ public final class ExpressRoutePortAuthorizationsClientImpl implements ExpressRo
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of the express route port.
      * @param authorizationName The name of the authorization.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified authorization from the specified express route port along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ExpressRoutePortAuthorizationInner> getWithResponse(
-        String resourceGroupName, String expressRoutePortName, String authorizationName) {
-        return getWithResponseAsync(resourceGroupName, expressRoutePortName, authorizationName).block();
-    }
-
-    /**
-     * Gets the specified authorization from the specified express route port.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param expressRoutePortName The name of the express route port.
-     * @param authorizationName The name of the authorization.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

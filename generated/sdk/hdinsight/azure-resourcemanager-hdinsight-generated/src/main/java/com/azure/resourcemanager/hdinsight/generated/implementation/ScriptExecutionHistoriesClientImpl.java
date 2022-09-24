@@ -411,22 +411,6 @@ public final class ScriptExecutionHistoriesClientImpl implements ScriptExecution
      * @param resourceGroupName The name of the resource group.
      * @param clusterName The name of the cluster.
      * @param scriptExecutionId The script execution Id.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> promoteWithResponse(String resourceGroupName, String clusterName, String scriptExecutionId) {
-        return promoteWithResponseAsync(resourceGroupName, clusterName, scriptExecutionId).block();
-    }
-
-    /**
-     * Promotes the specified ad-hoc script execution to a persisted script.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param clusterName The name of the cluster.
-     * @param scriptExecutionId The script execution Id.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

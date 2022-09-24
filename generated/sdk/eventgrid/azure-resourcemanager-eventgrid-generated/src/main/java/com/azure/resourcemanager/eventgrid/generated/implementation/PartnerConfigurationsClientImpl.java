@@ -305,22 +305,6 @@ public final class PartnerConfigurationsClientImpl implements PartnerConfigurati
      * <p>Get properties of a partner configuration.
      *
      * @param resourceGroupName The name of the resource group within the user's subscription.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of a partner configuration along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<PartnerConfigurationInner> getByResourceGroupWithResponse(String resourceGroupName) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName).block();
-    }
-
-    /**
-     * Get a partner configuration.
-     *
-     * <p>Get properties of a partner configuration.
-     *
-     * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1648,24 +1632,6 @@ public final class PartnerConfigurationsClientImpl implements PartnerConfigurati
      *
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerInfo The information of the partner to be authorized.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return partner configuration information along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<PartnerConfigurationInner> authorizePartnerWithResponse(
-        String resourceGroupName, Partner partnerInfo) {
-        return authorizePartnerWithResponseAsync(resourceGroupName, partnerInfo).block();
-    }
-
-    /**
-     * Authorize a partner.
-     *
-     * <p>Authorize a single partner either by partner registration immutable Id or by partner name.
-     *
-     * @param resourceGroupName The name of the resource group within the user's subscription.
-     * @param partnerInfo The information of the partner to be authorized.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1813,24 +1779,6 @@ public final class PartnerConfigurationsClientImpl implements PartnerConfigurati
     private Mono<PartnerConfigurationInner> unauthorizePartnerAsync(String resourceGroupName, Partner partnerInfo) {
         return unauthorizePartnerWithResponseAsync(resourceGroupName, partnerInfo)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Unauthorize a partner.
-     *
-     * <p>Unauthorize a single partner either by partner registration immutable Id or by partner name.
-     *
-     * @param resourceGroupName The name of the resource group within the user's subscription.
-     * @param partnerInfo The information of the partner to be unauthorized.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return partner configuration information along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<PartnerConfigurationInner> unauthorizePartnerWithResponse(
-        String resourceGroupName, Partner partnerInfo) {
-        return unauthorizePartnerWithResponseAsync(resourceGroupName, partnerInfo).block();
     }
 
     /**

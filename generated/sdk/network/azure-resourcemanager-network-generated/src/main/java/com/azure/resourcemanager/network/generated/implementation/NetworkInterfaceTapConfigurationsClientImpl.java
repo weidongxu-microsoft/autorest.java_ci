@@ -541,23 +541,6 @@ public final class NetworkInterfaceTapConfigurationsClientImpl implements Networ
      * @param resourceGroupName The name of the resource group.
      * @param networkInterfaceName The name of the network interface.
      * @param tapConfigurationName The name of the tap configuration.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified tap configuration on a network interface along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<NetworkInterfaceTapConfigurationInner> getWithResponse(
-        String resourceGroupName, String networkInterfaceName, String tapConfigurationName) {
-        return getWithResponseAsync(resourceGroupName, networkInterfaceName, tapConfigurationName).block();
-    }
-
-    /**
-     * Get the specified tap configuration on a network interface.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param networkInterfaceName The name of the network interface.
-     * @param tapConfigurationName The name of the tap configuration.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

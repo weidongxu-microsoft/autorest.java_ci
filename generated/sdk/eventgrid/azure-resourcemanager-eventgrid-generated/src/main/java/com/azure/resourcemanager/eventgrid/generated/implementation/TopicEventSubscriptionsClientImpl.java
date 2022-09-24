@@ -335,25 +335,6 @@ public final class TopicEventSubscriptionsClientImpl implements TopicEventSubscr
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param topicName Name of the domain topic.
      * @param eventSubscriptionName Name of the event subscription.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all delivery attributes for an event subscription for topic along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<DeliveryAttributeListResultInner> getDeliveryAttributesWithResponse(
-        String resourceGroupName, String topicName, String eventSubscriptionName) {
-        return getDeliveryAttributesWithResponseAsync(resourceGroupName, topicName, eventSubscriptionName).block();
-    }
-
-    /**
-     * Get delivery attributes for an event subscription for topic.
-     *
-     * <p>Get all delivery attributes for an event subscription for topic.
-     *
-     * @param resourceGroupName The name of the resource group within the user's subscription.
-     * @param topicName Name of the domain topic.
-     * @param eventSubscriptionName Name of the event subscription.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -520,26 +501,6 @@ public final class TopicEventSubscriptionsClientImpl implements TopicEventSubscr
         String resourceGroupName, String topicName, String eventSubscriptionName) {
         return getWithResponseAsync(resourceGroupName, topicName, eventSubscriptionName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Get an event subscription of a topic.
-     *
-     * <p>Get properties of an event subscription of a topic.
-     *
-     * @param resourceGroupName The name of the resource group within the user's subscription.
-     * @param topicName Name of the partner topic.
-     * @param eventSubscriptionName Name of the event subscription to be found. Event subscription names must be between
-     *     3 and 100 characters in length and use alphanumeric letters only.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of an event subscription of a topic along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<EventSubscriptionInner> getWithResponse(
-        String resourceGroupName, String topicName, String eventSubscriptionName) {
-        return getWithResponseAsync(resourceGroupName, topicName, eventSubscriptionName).block();
     }
 
     /**
@@ -1718,25 +1679,6 @@ public final class TopicEventSubscriptionsClientImpl implements TopicEventSubscr
         String resourceGroupName, String topicName, String eventSubscriptionName) {
         return getFullUrlWithResponseAsync(resourceGroupName, topicName, eventSubscriptionName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Get full URL of an event subscription for topic.
-     *
-     * <p>Get the full endpoint URL for an event subscription for topic.
-     *
-     * @param resourceGroupName The name of the resource group within the user's subscription.
-     * @param topicName Name of the domain topic.
-     * @param eventSubscriptionName Name of the event subscription.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the full endpoint URL for an event subscription for topic along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<EventSubscriptionFullUrlInner> getFullUrlWithResponse(
-        String resourceGroupName, String topicName, String eventSubscriptionName) {
-        return getFullUrlWithResponseAsync(resourceGroupName, topicName, eventSubscriptionName).block();
     }
 
     /**

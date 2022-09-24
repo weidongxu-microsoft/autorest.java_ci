@@ -690,23 +690,6 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * <p>Description for Validate information for a certificate order.
      *
      * @param appServiceCertificateOrder Information for a certificate order.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> validatePurchaseInformationWithResponse(
-        AppServiceCertificateOrderInner appServiceCertificateOrder) {
-        return validatePurchaseInformationWithResponseAsync(appServiceCertificateOrder).block();
-    }
-
-    /**
-     * Validate information for a certificate order.
-     *
-     * <p>Description for Validate information for a certificate order.
-     *
-     * @param appServiceCertificateOrder Information for a certificate order.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -1031,24 +1014,6 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
         String resourceGroupName, String certificateOrderName) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, certificateOrderName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Get a certificate order.
-     *
-     * <p>Description for Get a certificate order.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param certificateOrderName Name of the certificate order..
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return sSL certificate purchase order along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<AppServiceCertificateOrderInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String certificateOrderName) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, certificateOrderName).block();
     }
 
     /**
@@ -1540,23 +1505,6 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> deleteWithResponse(String resourceGroupName, String certificateOrderName) {
-        return deleteWithResponseAsync(resourceGroupName, certificateOrderName).block();
-    }
-
-    /**
-     * Delete an existing certificate order.
-     *
-     * <p>Description for Delete an existing certificate order.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param certificateOrderName Name of the certificate order.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -1729,27 +1677,6 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
         AppServiceCertificateOrderPatchResource certificateDistinguishedName) {
         return updateWithResponseAsync(resourceGroupName, certificateOrderName, certificateDistinguishedName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Create or update a certificate purchase order.
-     *
-     * <p>Description for Create or update a certificate purchase order.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param certificateOrderName Name of the certificate order.
-     * @param certificateDistinguishedName Distinguished name to use for the certificate order.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return sSL certificate purchase order along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<AppServiceCertificateOrderInner> updateWithResponse(
-        String resourceGroupName,
-        String certificateOrderName,
-        AppServiceCertificateOrderPatchResource certificateDistinguishedName) {
-        return updateWithResponseAsync(resourceGroupName, certificateOrderName, certificateDistinguishedName).block();
     }
 
     /**
@@ -2127,26 +2054,6 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
         String resourceGroupName, String certificateOrderName, String name) {
         return getCertificateWithResponseAsync(resourceGroupName, certificateOrderName, name)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Get the certificate associated with a certificate order.
-     *
-     * <p>Description for Get the certificate associated with a certificate order.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param certificateOrderName Name of the certificate order.
-     * @param name Name of the certificate.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return key Vault container ARM resource for a certificate that is purchased through Azure along with {@link
-     *     Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<AppServiceCertificateResourceInner> getCertificateWithResponse(
-        String resourceGroupName, String certificateOrderName, String name) {
-        return getCertificateWithResponseAsync(resourceGroupName, certificateOrderName, name).block();
     }
 
     /**
@@ -2695,25 +2602,6 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
      * @param name Name of the certificate.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> deleteCertificateWithResponse(
-        String resourceGroupName, String certificateOrderName, String name) {
-        return deleteCertificateWithResponseAsync(resourceGroupName, certificateOrderName, name).block();
-    }
-
-    /**
-     * Delete the certificate associated with a certificate order.
-     *
-     * <p>Description for Delete the certificate associated with a certificate order.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param certificateOrderName Name of the certificate order.
-     * @param name Name of the certificate.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -2901,31 +2789,6 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
         AppServiceCertificatePatchResource keyVaultCertificate) {
         return updateCertificateWithResponseAsync(resourceGroupName, certificateOrderName, name, keyVaultCertificate)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Creates or updates a certificate and associates with key vault secret.
-     *
-     * <p>Description for Creates or updates a certificate and associates with key vault secret.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param certificateOrderName Name of the certificate order.
-     * @param name Name of the certificate.
-     * @param keyVaultCertificate Key vault certificate resource Id.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return key Vault container ARM resource for a certificate that is purchased through Azure along with {@link
-     *     Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<AppServiceCertificateResourceInner> updateCertificateWithResponse(
-        String resourceGroupName,
-        String certificateOrderName,
-        String name,
-        AppServiceCertificatePatchResource keyVaultCertificate) {
-        return updateCertificateWithResponseAsync(resourceGroupName, certificateOrderName, name, keyVaultCertificate)
-            .block();
     }
 
     /**
@@ -3136,28 +2999,6 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
      * @param reissueCertificateOrderRequest Parameters for the reissue.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> reissueWithResponse(
-        String resourceGroupName,
-        String certificateOrderName,
-        ReissueCertificateOrderRequest reissueCertificateOrderRequest) {
-        return reissueWithResponseAsync(resourceGroupName, certificateOrderName, reissueCertificateOrderRequest)
-            .block();
-    }
-
-    /**
-     * Reissue an existing certificate order.
-     *
-     * <p>Description for Reissue an existing certificate order.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param certificateOrderName Name of the certificate order.
-     * @param reissueCertificateOrderRequest Parameters for the reissue.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -3350,27 +3191,6 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
      * @param renewCertificateOrderRequest Renew parameters.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> renewWithResponse(
-        String resourceGroupName,
-        String certificateOrderName,
-        RenewCertificateOrderRequest renewCertificateOrderRequest) {
-        return renewWithResponseAsync(resourceGroupName, certificateOrderName, renewCertificateOrderRequest).block();
-    }
-
-    /**
-     * Renew an existing certificate order.
-     *
-     * <p>Description for Renew an existing certificate order.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param certificateOrderName Name of the certificate order.
-     * @param renewCertificateOrderRequest Renew parameters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -3521,23 +3341,6 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> resendEmailAsync(String resourceGroupName, String certificateOrderName) {
         return resendEmailWithResponseAsync(resourceGroupName, certificateOrderName).flatMap(ignored -> Mono.empty());
-    }
-
-    /**
-     * Resend certificate email.
-     *
-     * <p>Description for Resend certificate email.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param certificateOrderName Name of the certificate order.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> resendEmailWithResponse(String resourceGroupName, String certificateOrderName) {
-        return resendEmailWithResponseAsync(resourceGroupName, certificateOrderName).block();
     }
 
     /**
@@ -3710,26 +3513,6 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
         String resourceGroupName, String certificateOrderName, NameIdentifierInner nameIdentifier) {
         return resendRequestEmailsWithResponseAsync(resourceGroupName, certificateOrderName, nameIdentifier)
             .flatMap(ignored -> Mono.empty());
-    }
-
-    /**
-     * Resend domain verification email to customer for this certificate order
-     *
-     * <p>Resend domain verification ownership email containing steps on how to verify a domain for a given certificate
-     * order.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param certificateOrderName Name of the certificate order.
-     * @param nameIdentifier Email address.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> resendRequestEmailsWithResponse(
-        String resourceGroupName, String certificateOrderName, NameIdentifierInner nameIdentifier) {
-        return resendRequestEmailsWithResponseAsync(resourceGroupName, certificateOrderName, nameIdentifier).block();
     }
 
     /**
@@ -3941,31 +3724,6 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
      * @param siteSealRequest Site seal request.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return site seal along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<SiteSealInner> retrieveSiteSealWithResponse(
-        String resourceGroupName, String certificateOrderName, SiteSealRequest siteSealRequest) {
-        return retrieveSiteSealWithResponseAsync(resourceGroupName, certificateOrderName, siteSealRequest).block();
-    }
-
-    /**
-     * This method is used to obtain the site seal information for an issued certificate.
-     *
-     * <p>This method is used to obtain the site seal information for an issued certificate. A site seal is a graphic
-     * that the certificate purchaser can embed on their web site to show their visitors information about their SSL
-     * certificate. If a web site visitor clicks on the site seal image, a pop-up page is displayed that contains
-     * detailed information about the SSL certificate. The site seal token is used to link the site seal graphic image
-     * to the appropriate certificate details pop-up page display when a user clicks on the site seal. The site seal
-     * images are expected to be static images and hosted by the reseller, to minimize delays for customer page load
-     * times.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param certificateOrderName Name of the certificate order.
-     * @param siteSealRequest Site seal request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -4130,23 +3888,6 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> verifyDomainOwnershipWithResponse(String resourceGroupName, String certificateOrderName) {
-        return verifyDomainOwnershipWithResponseAsync(resourceGroupName, certificateOrderName).block();
-    }
-
-    /**
-     * Verify domain ownership for this certificate order.
-     *
-     * <p>Description for Verify domain ownership for this certificate order.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param certificateOrderName Name of the certificate order.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -4290,24 +4031,6 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
         String resourceGroupName, String name) {
         return retrieveCertificateActionsWithResponseAsync(resourceGroupName, name)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Retrieve the list of certificate actions.
-     *
-     * <p>Description for Retrieve the list of certificate actions.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the certificate order.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of CertificateOrderAction along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<List<CertificateOrderActionInner>> retrieveCertificateActionsWithResponse(
-        String resourceGroupName, String name) {
-        return retrieveCertificateActionsWithResponseAsync(resourceGroupName, name).block();
     }
 
     /**
@@ -4461,24 +4184,6 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
         String resourceGroupName, String name) {
         return retrieveCertificateEmailHistoryWithResponseAsync(resourceGroupName, name)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Retrieve email history.
-     *
-     * <p>Description for Retrieve email history.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the certificate order.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of CertificateEmail along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<List<CertificateEmailInner>> retrieveCertificateEmailHistoryWithResponse(
-        String resourceGroupName, String name) {
-        return retrieveCertificateEmailHistoryWithResponseAsync(resourceGroupName, name).block();
     }
 
     /**

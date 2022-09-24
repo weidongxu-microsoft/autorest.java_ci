@@ -380,22 +380,6 @@ public final class TopLevelDomainsClientImpl implements TopLevelDomainsClient {
      * <p>Description for Get details of a top-level domain.
      *
      * @param name Name of the top-level domain.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a top level domain object along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<TopLevelDomainInner> getWithResponse(String name) {
-        return getWithResponseAsync(name).block();
-    }
-
-    /**
-     * Get details of a top-level domain.
-     *
-     * <p>Description for Get details of a top-level domain.
-     *
-     * @param name Name of the top-level domain.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.

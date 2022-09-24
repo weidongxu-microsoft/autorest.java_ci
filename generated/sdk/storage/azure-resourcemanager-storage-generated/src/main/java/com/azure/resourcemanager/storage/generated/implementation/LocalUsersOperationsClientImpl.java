@@ -478,25 +478,6 @@ public final class LocalUsersOperationsClientImpl implements LocalUsersOperation
      *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be
      *     unique only within the storage account.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the local user of the storage account by username along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<LocalUserInner> getWithResponse(String resourceGroupName, String accountName, String username) {
-        return getWithResponseAsync(resourceGroupName, accountName, username).block();
-    }
-
-    /**
-     * Get the local user of the storage account by username.
-     *
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     *     insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be
-     *     unique only within the storage account.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -686,27 +667,6 @@ public final class LocalUsersOperationsClientImpl implements LocalUsersOperation
      * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be
      *     unique only within the storage account.
      * @param properties The local user associated with a storage account.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the local user associated with the storage accounts along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<LocalUserInner> createOrUpdateWithResponse(
-        String resourceGroupName, String accountName, String username, LocalUserInner properties) {
-        return createOrUpdateWithResponseAsync(resourceGroupName, accountName, username, properties).block();
-    }
-
-    /**
-     * Create or update the properties of a local user associated with the storage account.
-     *
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     *     insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be
-     *     unique only within the storage account.
-     * @param properties The local user associated with a storage account.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -868,25 +828,6 @@ public final class LocalUsersOperationsClientImpl implements LocalUsersOperation
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String accountName, String username) {
         return deleteWithResponseAsync(resourceGroupName, accountName, username).flatMap(ignored -> Mono.empty());
-    }
-
-    /**
-     * Deletes the local user associated with the specified storage account.
-     *
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     *     insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be
-     *     unique only within the storage account.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> deleteWithResponse(String resourceGroupName, String accountName, String username) {
-        return deleteWithResponseAsync(resourceGroupName, accountName, username).block();
     }
 
     /**
@@ -1067,26 +1008,6 @@ public final class LocalUsersOperationsClientImpl implements LocalUsersOperation
      *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be
      *     unique only within the storage account.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Storage Account Local User keys along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<LocalUserKeysInner> listKeysWithResponse(
-        String resourceGroupName, String accountName, String username) {
-        return listKeysWithResponseAsync(resourceGroupName, accountName, username).block();
-    }
-
-    /**
-     * List SSH authorized keys and shared key of the local user.
-     *
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     *     insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be
-     *     unique only within the storage account.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1249,26 +1170,6 @@ public final class LocalUsersOperationsClientImpl implements LocalUsersOperation
         String resourceGroupName, String accountName, String username) {
         return regeneratePasswordWithResponseAsync(resourceGroupName, accountName, username)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Regenerate the local user SSH password.
-     *
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     *     insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be
-     *     unique only within the storage account.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the secrets of Storage Account Local User along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<LocalUserRegeneratePasswordResultInner> regeneratePasswordWithResponse(
-        String resourceGroupName, String accountName, String username) {
-        return regeneratePasswordWithResponseAsync(resourceGroupName, accountName, username).block();
     }
 
     /**

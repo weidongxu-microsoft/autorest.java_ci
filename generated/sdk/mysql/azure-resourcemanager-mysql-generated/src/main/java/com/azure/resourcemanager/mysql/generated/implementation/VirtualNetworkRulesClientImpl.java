@@ -272,23 +272,6 @@ public final class VirtualNetworkRulesClientImpl implements VirtualNetworkRulesC
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param virtualNetworkRuleName The name of the virtual network rule.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a virtual network rule along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<VirtualNetworkRuleInner> getWithResponse(
-        String resourceGroupName, String serverName, String virtualNetworkRuleName) {
-        return getWithResponseAsync(resourceGroupName, serverName, virtualNetworkRuleName).block();
-    }
-
-    /**
-     * Gets a virtual network rule.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param serverName The name of the server.
-     * @param virtualNetworkRuleName The name of the virtual network rule.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

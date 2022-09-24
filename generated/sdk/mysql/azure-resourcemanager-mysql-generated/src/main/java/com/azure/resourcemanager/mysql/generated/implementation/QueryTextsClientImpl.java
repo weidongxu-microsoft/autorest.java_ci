@@ -231,22 +231,6 @@ public final class QueryTextsClientImpl implements QueryTextsClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param queryId The Query-Store query identifier.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a Query Text along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<QueryTextInner> getWithResponse(String resourceGroupName, String serverName, String queryId) {
-        return getWithResponseAsync(resourceGroupName, serverName, queryId).block();
-    }
-
-    /**
-     * Retrieve the Query-Store query texts for the queryId.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param serverName The name of the server.
-     * @param queryId The Query-Store query identifier.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

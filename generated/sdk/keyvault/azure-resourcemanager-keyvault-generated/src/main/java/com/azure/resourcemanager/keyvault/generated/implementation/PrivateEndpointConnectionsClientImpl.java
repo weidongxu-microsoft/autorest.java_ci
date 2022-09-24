@@ -279,23 +279,6 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @param resourceGroupName Name of the resource group that contains the key vault.
      * @param vaultName The name of the key vault.
      * @param privateEndpointConnectionName Name of the private endpoint connection associated with the key vault.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified private endpoint connection associated with the key vault along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<PrivateEndpointConnectionInner> getWithResponse(
-        String resourceGroupName, String vaultName, String privateEndpointConnectionName) {
-        return getWithResponseAsync(resourceGroupName, vaultName, privateEndpointConnectionName).block();
-    }
-
-    /**
-     * Gets the specified private endpoint connection associated with the key vault.
-     *
-     * @param resourceGroupName Name of the resource group that contains the key vault.
-     * @param vaultName The name of the key vault.
-     * @param privateEndpointConnectionName Name of the private endpoint connection associated with the key vault.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -476,27 +459,6 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
         PrivateEndpointConnectionInner properties) {
         return putWithResponseAsync(resourceGroupName, vaultName, privateEndpointConnectionName, properties)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Updates the specified private endpoint connection associated with the key vault.
-     *
-     * @param resourceGroupName Name of the resource group that contains the key vault.
-     * @param vaultName The name of the key vault.
-     * @param privateEndpointConnectionName Name of the private endpoint connection associated with the key vault.
-     * @param properties The intended state of private endpoint connection.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return private endpoint connection resource.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public PrivateEndpointConnectionsPutResponse putWithResponse(
-        String resourceGroupName,
-        String vaultName,
-        String privateEndpointConnectionName,
-        PrivateEndpointConnectionInner properties) {
-        return putWithResponseAsync(resourceGroupName, vaultName, privateEndpointConnectionName, properties).block();
     }
 
     /**

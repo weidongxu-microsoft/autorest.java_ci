@@ -278,23 +278,6 @@ public final class NetworkGroupsClientImpl implements NetworkGroupsClient {
      * @param resourceGroupName The name of the resource group.
      * @param networkManagerName The name of the network manager.
      * @param networkGroupName The name of the network group.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network group along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<NetworkGroupInner> getWithResponse(
-        String resourceGroupName, String networkManagerName, String networkGroupName) {
-        return getWithResponseAsync(resourceGroupName, networkManagerName, networkGroupName).block();
-    }
-
-    /**
-     * Gets the specified network group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param networkManagerName The name of the network manager.
-     * @param networkGroupName The name of the network group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -481,32 +464,6 @@ public final class NetworkGroupsClientImpl implements NetworkGroupsClient {
         return createOrUpdateWithResponseAsync(
                 resourceGroupName, networkManagerName, networkGroupName, parameters, ifMatch)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Creates or updates a network group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param networkManagerName The name of the network manager.
-     * @param networkGroupName The name of the network group.
-     * @param parameters Parameters supplied to the specify which network group need to create.
-     * @param ifMatch The ETag of the transformation. Omit this value to always overwrite the current resource. Specify
-     *     the last-seen ETag value to prevent accidentally overwriting concurrent changes.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the network group resource.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public NetworkGroupsCreateOrUpdateResponse createOrUpdateWithResponse(
-        String resourceGroupName,
-        String networkManagerName,
-        String networkGroupName,
-        NetworkGroupInner parameters,
-        String ifMatch) {
-        return createOrUpdateWithResponseAsync(
-                resourceGroupName, networkManagerName, networkGroupName, parameters, ifMatch)
-            .block();
     }
 
     /**

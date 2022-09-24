@@ -359,23 +359,6 @@ public final class DeploymentOperationsClientImpl implements DeploymentOperation
      * @param scope The resource scope.
      * @param deploymentName The name of the deployment.
      * @param operationId The ID of the operation to get.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployments operation along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<DeploymentOperationInner> getAtScopeWithResponse(
-        String scope, String deploymentName, String operationId) {
-        return getAtScopeWithResponseAsync(scope, deploymentName, operationId).block();
-    }
-
-    /**
-     * Gets a deployments operation.
-     *
-     * @param scope The resource scope.
-     * @param deploymentName The name of the deployment.
-     * @param operationId The ID of the operation to get.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -677,21 +660,6 @@ public final class DeploymentOperationsClientImpl implements DeploymentOperation
     private Mono<DeploymentOperationInner> getAtTenantScopeAsync(String deploymentName, String operationId) {
         return getAtTenantScopeWithResponseAsync(deploymentName, operationId)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets a deployments operation.
-     *
-     * @param deploymentName The name of the deployment.
-     * @param operationId The ID of the operation to get.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployments operation along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<DeploymentOperationInner> getAtTenantScopeWithResponse(String deploymentName, String operationId) {
-        return getAtTenantScopeWithResponseAsync(deploymentName, operationId).block();
     }
 
     /**
@@ -1002,23 +970,6 @@ public final class DeploymentOperationsClientImpl implements DeploymentOperation
         String groupId, String deploymentName, String operationId) {
         return getAtManagementGroupScopeWithResponseAsync(groupId, deploymentName, operationId)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets a deployments operation.
-     *
-     * @param groupId The management group ID.
-     * @param deploymentName The name of the deployment.
-     * @param operationId The ID of the operation to get.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployments operation along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<DeploymentOperationInner> getAtManagementGroupScopeWithResponse(
-        String groupId, String deploymentName, String operationId) {
-        return getAtManagementGroupScopeWithResponseAsync(groupId, deploymentName, operationId).block();
     }
 
     /**
@@ -1349,22 +1300,6 @@ public final class DeploymentOperationsClientImpl implements DeploymentOperation
     private Mono<DeploymentOperationInner> getAtSubscriptionScopeAsync(String deploymentName, String operationId) {
         return getAtSubscriptionScopeWithResponseAsync(deploymentName, operationId)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets a deployments operation.
-     *
-     * @param deploymentName The name of the deployment.
-     * @param operationId The ID of the operation to get.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployments operation along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<DeploymentOperationInner> getAtSubscriptionScopeWithResponse(
-        String deploymentName, String operationId) {
-        return getAtSubscriptionScopeWithResponseAsync(deploymentName, operationId).block();
     }
 
     /**
@@ -1710,23 +1645,6 @@ public final class DeploymentOperationsClientImpl implements DeploymentOperation
         String resourceGroupName, String deploymentName, String operationId) {
         return getWithResponseAsync(resourceGroupName, deploymentName, operationId)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets a deployments operation.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param deploymentName The name of the deployment.
-     * @param operationId The ID of the operation to get.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deployments operation along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<DeploymentOperationInner> getWithResponse(
-        String resourceGroupName, String deploymentName, String operationId) {
-        return getWithResponseAsync(resourceGroupName, deploymentName, operationId).block();
     }
 
     /**

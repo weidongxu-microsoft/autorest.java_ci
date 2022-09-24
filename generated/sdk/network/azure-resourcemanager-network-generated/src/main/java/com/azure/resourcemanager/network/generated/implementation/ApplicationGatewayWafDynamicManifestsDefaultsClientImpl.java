@@ -171,20 +171,6 @@ public final class ApplicationGatewayWafDynamicManifestsDefaultsClientImpl
      * Gets the regional application gateway waf manifest.
      *
      * @param location The region where the nrp are located at.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the regional application gateway waf manifest along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ApplicationGatewayWafDynamicManifestResultInner> getWithResponse(String location) {
-        return getWithResponseAsync(location).block();
-    }
-
-    /**
-     * Gets the regional application gateway waf manifest.
-     *
-     * @param location The region where the nrp are located at.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

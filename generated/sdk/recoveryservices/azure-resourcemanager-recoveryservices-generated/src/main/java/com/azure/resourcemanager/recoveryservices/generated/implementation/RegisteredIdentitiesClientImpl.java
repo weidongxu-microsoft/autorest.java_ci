@@ -188,22 +188,6 @@ public final class RegisteredIdentitiesClientImpl implements RegisteredIdentitie
      * @param resourceGroupName The name of the resource group where the recovery services vault is present.
      * @param vaultName The name of the recovery services vault.
      * @param identityName Name of the protection container to unregister.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> deleteWithResponse(String resourceGroupName, String vaultName, String identityName) {
-        return deleteWithResponseAsync(resourceGroupName, vaultName, identityName).block();
-    }
-
-    /**
-     * Unregisters the given container from your Recovery Services vault.
-     *
-     * @param resourceGroupName The name of the resource group where the recovery services vault is present.
-     * @param vaultName The name of the recovery services vault.
-     * @param identityName Name of the protection container to unregister.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

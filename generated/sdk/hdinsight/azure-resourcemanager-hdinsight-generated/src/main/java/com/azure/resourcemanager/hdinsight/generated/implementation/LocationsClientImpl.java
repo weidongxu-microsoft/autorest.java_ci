@@ -240,20 +240,6 @@ public final class LocationsClientImpl implements LocationsClient {
      * Gets the capabilities for the specified location.
      *
      * @param location The Azure location (region) for which to make the request.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the capabilities for the specified location along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<CapabilitiesResultInner> getCapabilitiesWithResponse(String location) {
-        return getCapabilitiesWithResponseAsync(location).block();
-    }
-
-    /**
-     * Gets the capabilities for the specified location.
-     *
-     * @param location The Azure location (region) for which to make the request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -374,20 +360,6 @@ public final class LocationsClientImpl implements LocationsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<UsagesListResultInner> listUsagesAsync(String location) {
         return listUsagesWithResponseAsync(location).flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Lists the usages for the specified location.
-     *
-     * @param location The Azure location (region) for which to make the request.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response for the operation to get regional usages for a subscription along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<UsagesListResultInner> listUsagesWithResponse(String location) {
-        return listUsagesWithResponseAsync(location).block();
     }
 
     /**
@@ -515,21 +487,6 @@ public final class LocationsClientImpl implements LocationsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<BillingResponseListResultInner> listBillingSpecsAsync(String location) {
         return listBillingSpecsWithResponseAsync(location).flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Lists the billingSpecs for the specified subscription and location.
-     *
-     * @param location The Azure location (region) for which to make the request.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response for the operation to get regional billingSpecs for a subscription along with {@link
-     *     Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<BillingResponseListResultInner> listBillingSpecsWithResponse(String location) {
-        return listBillingSpecsWithResponseAsync(location).block();
     }
 
     /**
@@ -668,22 +625,6 @@ public final class LocationsClientImpl implements LocationsClient {
     private Mono<AsyncOperationResultInner> getAzureAsyncOperationStatusAsync(String location, String operationId) {
         return getAzureAsyncOperationStatusWithResponseAsync(location, operationId)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Get the async operation status.
-     *
-     * @param location The Azure location (region) for which to make the request.
-     * @param operationId The long running operation id.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the async operation status along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<AsyncOperationResultInner> getAzureAsyncOperationStatusWithResponse(
-        String location, String operationId) {
-        return getAzureAsyncOperationStatusWithResponseAsync(location, operationId).block();
     }
 
     /**
@@ -838,22 +779,6 @@ public final class LocationsClientImpl implements LocationsClient {
      *
      * @param location The Azure location (region) for which to make the request.
      * @param parameters The request spec of checking name availability.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response spec of checking name availability along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<NameAvailabilityCheckResultInner> checkNameAvailabilityWithResponse(
-        String location, NameAvailabilityCheckRequestParameters parameters) {
-        return checkNameAvailabilityWithResponseAsync(location, parameters).block();
-    }
-
-    /**
-     * Check the cluster name is available or not.
-     *
-     * @param location The Azure location (region) for which to make the request.
-     * @param parameters The request spec of checking name availability.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -995,22 +920,6 @@ public final class LocationsClientImpl implements LocationsClient {
         String location, ClusterCreateRequestValidationParameters parameters) {
         return validateClusterCreateRequestWithResponseAsync(location, parameters)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Validate the cluster create request spec is valid or not.
-     *
-     * @param location The Azure location (region) for which to make the request.
-     * @param parameters The cluster create request specification.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of cluster create request validation along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ClusterCreateValidationResultInner> validateClusterCreateRequestWithResponse(
-        String location, ClusterCreateRequestValidationParameters parameters) {
-        return validateClusterCreateRequestWithResponseAsync(location, parameters).block();
     }
 
     /**

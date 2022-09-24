@@ -595,21 +595,6 @@ public final class VaultsClientImpl implements VaultsClient {
      *
      * @param resourceGroupName The name of the resource group where the recovery services vault is present.
      * @param vaultName The name of the recovery services vault.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Vault details along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<VaultInner> getByResourceGroupWithResponse(String resourceGroupName, String vaultName) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, vaultName).block();
-    }
-
-    /**
-     * Get the Vault details.
-     *
-     * @param resourceGroupName The name of the resource group where the recovery services vault is present.
-     * @param vaultName The name of the recovery services vault.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1003,21 +988,6 @@ public final class VaultsClientImpl implements VaultsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String vaultName) {
         return deleteWithResponseAsync(resourceGroupName, vaultName).flatMap(ignored -> Mono.empty());
-    }
-
-    /**
-     * Deletes a vault.
-     *
-     * @param resourceGroupName The name of the resource group where the recovery services vault is present.
-     * @param vaultName The name of the recovery services vault.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> deleteWithResponse(String resourceGroupName, String vaultName) {
-        return deleteWithResponseAsync(resourceGroupName, vaultName).block();
     }
 
     /**

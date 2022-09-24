@@ -224,23 +224,6 @@ public final class QueueServicesClientImpl implements QueueServicesClient {
      *     insensitive.
      * @param accountName The name of the storage account within the specified resource group. Storage account names
      *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response body along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ListQueueServicesInner> listWithResponse(String resourceGroupName, String accountName) {
-        return listWithResponseAsync(resourceGroupName, accountName).block();
-    }
-
-    /**
-     * List all queue services for the storage account.
-     *
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     *     insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -424,27 +407,6 @@ public final class QueueServicesClientImpl implements QueueServicesClient {
      *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param parameters The properties of a storage account’s Queue service, only properties for Storage Analytics and
      *     CORS (Cross-Origin Resource Sharing) rules can be specified.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the properties of a storage account’s Queue service along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<QueueServicePropertiesInner> setServicePropertiesWithResponse(
-        String resourceGroupName, String accountName, QueueServicePropertiesInner parameters) {
-        return setServicePropertiesWithResponseAsync(resourceGroupName, accountName, parameters).block();
-    }
-
-    /**
-     * Sets the properties of a storage account’s Queue service, including properties for Storage Analytics and CORS
-     * (Cross-Origin Resource Sharing) rules.
-     *
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     *     insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param parameters The properties of a storage account’s Queue service, only properties for Storage Analytics and
-     *     CORS (Cross-Origin Resource Sharing) rules can be specified.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -602,26 +564,6 @@ public final class QueueServicesClientImpl implements QueueServicesClient {
     private Mono<QueueServicePropertiesInner> getServicePropertiesAsync(String resourceGroupName, String accountName) {
         return getServicePropertiesWithResponseAsync(resourceGroupName, accountName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets the properties of a storage account’s Queue service, including properties for Storage Analytics and CORS
-     * (Cross-Origin Resource Sharing) rules.
-     *
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     *     insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the properties of a storage account’s Queue service, including properties for Storage Analytics and CORS
-     *     (Cross-Origin Resource Sharing) rules along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<QueueServicePropertiesInner> getServicePropertiesWithResponse(
-        String resourceGroupName, String accountName) {
-        return getServicePropertiesWithResponseAsync(resourceGroupName, accountName).block();
     }
 
     /**

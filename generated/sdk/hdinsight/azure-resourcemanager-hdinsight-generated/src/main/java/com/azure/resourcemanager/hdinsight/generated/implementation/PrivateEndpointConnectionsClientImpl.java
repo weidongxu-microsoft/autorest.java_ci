@@ -797,23 +797,6 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @param resourceGroupName The name of the resource group.
      * @param clusterName The name of the cluster.
      * @param privateEndpointConnectionName The name of the private endpoint connection.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specific private endpoint connection along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<PrivateEndpointConnectionInner> getWithResponse(
-        String resourceGroupName, String clusterName, String privateEndpointConnectionName) {
-        return getWithResponseAsync(resourceGroupName, clusterName, privateEndpointConnectionName).block();
-    }
-
-    /**
-     * Gets the specific private endpoint connection.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param clusterName The name of the cluster.
-     * @param privateEndpointConnectionName The name of the private endpoint connection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

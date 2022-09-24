@@ -301,20 +301,6 @@ public final class SettingsClientImpl implements SettingsClient {
      * Retrieves the current value for a specific setting.
      *
      * @param settingName Name of the setting. Allowed values: myscope.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return state of the myscope setting along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<SettingInner> getWithResponse(String settingName) {
-        return getWithResponseAsync(settingName).block();
-    }
-
-    /**
-     * Retrieves the current value for a specific setting.
-     *
-     * @param settingName Name of the setting. Allowed values: myscope.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -437,21 +423,6 @@ public final class SettingsClientImpl implements SettingsClient {
      *
      * @param settingName Name of the setting. Allowed values: myscope.
      * @param parameters Body supplied to the CreateOrUpdate setting operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return state of the myscope setting along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<SettingInner> createOrUpdateWithResponse(String settingName, SettingInner parameters) {
-        return createOrUpdateWithResponseAsync(settingName, parameters).block();
-    }
-
-    /**
-     * Sets a new value for a specific setting.
-     *
-     * @param settingName Name of the setting. Allowed values: myscope.
-     * @param parameters Body supplied to the CreateOrUpdate setting operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -546,20 +517,6 @@ public final class SettingsClientImpl implements SettingsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String settingName) {
         return deleteWithResponseAsync(settingName).flatMap(ignored -> Mono.empty());
-    }
-
-    /**
-     * Remove the current value for a specific setting and reverts back to the default value, if applicable.
-     *
-     * @param settingName Name of the setting. Allowed values: myscope.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> deleteWithResponse(String settingName) {
-        return deleteWithResponseAsync(settingName).block();
     }
 
     /**

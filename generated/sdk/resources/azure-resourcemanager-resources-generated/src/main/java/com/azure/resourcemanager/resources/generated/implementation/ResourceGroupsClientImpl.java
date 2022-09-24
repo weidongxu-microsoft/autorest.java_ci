@@ -270,20 +270,6 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
      * Checks whether a resource group exists.
      *
      * @param resourceGroupName The name of the resource group to check. The name is case insensitive.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return whether resource exists along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Boolean> checkExistenceWithResponse(String resourceGroupName) {
-        return checkExistenceWithResponseAsync(resourceGroupName).block();
-    }
-
-    /**
-     * Checks whether a resource group exists.
-     *
-     * @param resourceGroupName The name of the resource group to check. The name is case insensitive.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -427,24 +413,6 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
     private Mono<ResourceGroupInner> createOrUpdateAsync(String resourceGroupName, ResourceGroupInner parameters) {
         return createOrUpdateWithResponseAsync(resourceGroupName, parameters)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Creates or updates a resource group.
-     *
-     * @param resourceGroupName The name of the resource group to create or update. Can include alphanumeric,
-     *     underscore, parentheses, hyphen, period (except at end), and Unicode characters that match the allowed
-     *     characters.
-     * @param parameters Parameters supplied to the create or update a resource group.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource group information along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ResourceGroupInner> createOrUpdateWithResponse(
-        String resourceGroupName, ResourceGroupInner parameters) {
-        return createOrUpdateWithResponseAsync(resourceGroupName, parameters).block();
     }
 
     /**
@@ -884,20 +852,6 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
      * Gets a resource group.
      *
      * @param resourceGroupName The name of the resource group to get. The name is case insensitive.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a resource group along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ResourceGroupInner> getWithResponse(String resourceGroupName) {
-        return getWithResponseAsync(resourceGroupName).block();
-    }
-
-    /**
-     * Gets a resource group.
-     *
-     * @param resourceGroupName The name of the resource group to get. The name is case insensitive.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1043,25 +997,6 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ResourceGroupInner> updateAsync(String resourceGroupName, ResourceGroupPatchable parameters) {
         return updateWithResponseAsync(resourceGroupName, parameters).flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Updates a resource group.
-     *
-     * <p>Resource groups can be updated through a simple PATCH operation to a group address. The format of the request
-     * is the same as that for creating a resource group. If a field is unspecified, the current value is retained.
-     *
-     * @param resourceGroupName The name of the resource group to update. The name is case insensitive.
-     * @param parameters Parameters supplied to update a resource group.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource group information along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ResourceGroupInner> updateWithResponse(
-        String resourceGroupName, ResourceGroupPatchable parameters) {
-        return updateWithResponseAsync(resourceGroupName, parameters).block();
     }
 
     /**

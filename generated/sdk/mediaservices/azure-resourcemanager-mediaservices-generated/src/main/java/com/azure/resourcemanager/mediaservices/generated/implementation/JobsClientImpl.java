@@ -588,26 +588,6 @@ public final class JobsClientImpl implements JobsClient {
      * @param accountName The Media Services account name.
      * @param transformName The Transform name.
      * @param jobName The Job name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Job along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<JobInner> getWithResponse(
-        String resourceGroupName, String accountName, String transformName, String jobName) {
-        return getWithResponseAsync(resourceGroupName, accountName, transformName, jobName).block();
-    }
-
-    /**
-     * Get Job
-     *
-     * <p>Gets a Job.
-     *
-     * @param resourceGroupName The name of the resource group within the Azure subscription.
-     * @param accountName The Media Services account name.
-     * @param transformName The Transform name.
-     * @param jobName The Job name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -810,27 +790,6 @@ public final class JobsClientImpl implements JobsClient {
      * @param transformName The Transform name.
      * @param jobName The Job name.
      * @param parameters The request parameters.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Job resource type along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<JobInner> createWithResponse(
-        String resourceGroupName, String accountName, String transformName, String jobName, JobInner parameters) {
-        return createWithResponseAsync(resourceGroupName, accountName, transformName, jobName, parameters).block();
-    }
-
-    /**
-     * Create Job
-     *
-     * <p>Creates a Job.
-     *
-     * @param resourceGroupName The name of the resource group within the Azure subscription.
-     * @param accountName The Media Services account name.
-     * @param transformName The Transform name.
-     * @param jobName The Job name.
-     * @param parameters The request parameters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1009,26 +968,6 @@ public final class JobsClientImpl implements JobsClient {
     private Mono<Void> deleteAsync(String resourceGroupName, String accountName, String transformName, String jobName) {
         return deleteWithResponseAsync(resourceGroupName, accountName, transformName, jobName)
             .flatMap(ignored -> Mono.empty());
-    }
-
-    /**
-     * Delete Job
-     *
-     * <p>Deletes a Job.
-     *
-     * @param resourceGroupName The name of the resource group within the Azure subscription.
-     * @param accountName The Media Services account name.
-     * @param transformName The Transform name.
-     * @param jobName The Job name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> deleteWithResponse(
-        String resourceGroupName, String accountName, String transformName, String jobName) {
-        return deleteWithResponseAsync(resourceGroupName, accountName, transformName, jobName).block();
     }
 
     /**
@@ -1245,28 +1184,6 @@ public final class JobsClientImpl implements JobsClient {
      * @param transformName The Transform name.
      * @param jobName The Job name.
      * @param parameters The request parameters.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Job resource type along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<JobInner> updateWithResponse(
-        String resourceGroupName, String accountName, String transformName, String jobName, JobInner parameters) {
-        return updateWithResponseAsync(resourceGroupName, accountName, transformName, jobName, parameters).block();
-    }
-
-    /**
-     * Update Job
-     *
-     * <p>Update is only supported for description and priority. Updating Priority will take effect when the Job state
-     * is Queued or Scheduled and depending on the timing the priority update may be ignored.
-     *
-     * @param resourceGroupName The name of the resource group within the Azure subscription.
-     * @param accountName The Media Services account name.
-     * @param transformName The Transform name.
-     * @param jobName The Job name.
-     * @param parameters The request parameters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1447,26 +1364,6 @@ public final class JobsClientImpl implements JobsClient {
         String resourceGroupName, String accountName, String transformName, String jobName) {
         return cancelJobWithResponseAsync(resourceGroupName, accountName, transformName, jobName)
             .flatMap(ignored -> Mono.empty());
-    }
-
-    /**
-     * Cancel Job
-     *
-     * <p>Cancel a Job.
-     *
-     * @param resourceGroupName The name of the resource group within the Azure subscription.
-     * @param accountName The Media Services account name.
-     * @param transformName The Transform name.
-     * @param jobName The Job name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> cancelJobWithResponse(
-        String resourceGroupName, String accountName, String transformName, String jobName) {
-        return cancelJobWithResponseAsync(resourceGroupName, accountName, transformName, jobName).block();
     }
 
     /**

@@ -1130,21 +1130,6 @@ public final class WorkspacesClientImpl implements WorkspacesClient {
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param workspaceName The name of the workspace.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a workspace instance along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<WorkspaceInner> getByResourceGroupWithResponse(String resourceGroupName, String workspaceName) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, workspaceName).block();
-    }
-
-    /**
-     * Gets a workspace instance.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param workspaceName The name of the workspace.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1300,23 +1285,6 @@ public final class WorkspacesClientImpl implements WorkspacesClient {
         String resourceGroupName, String workspaceName, WorkspacePatch parameters) {
         return updateWithResponseAsync(resourceGroupName, workspaceName, parameters)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Updates a workspace.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param workspaceName The name of the workspace.
-     * @param parameters The parameters required to patch a workspace.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the top level Workspace resource container along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<WorkspaceInner> updateWithResponse(
-        String resourceGroupName, String workspaceName, WorkspacePatch parameters) {
-        return updateWithResponseAsync(resourceGroupName, workspaceName, parameters).block();
     }
 
     /**

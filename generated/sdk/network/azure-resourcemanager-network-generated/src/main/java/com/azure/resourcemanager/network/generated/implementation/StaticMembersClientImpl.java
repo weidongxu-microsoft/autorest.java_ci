@@ -295,24 +295,6 @@ public final class StaticMembersClientImpl implements StaticMembersClient {
      * @param networkManagerName The name of the network manager.
      * @param networkGroupName The name of the network group.
      * @param staticMemberName The name of the static member.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified static member along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<StaticMemberInner> getWithResponse(
-        String resourceGroupName, String networkManagerName, String networkGroupName, String staticMemberName) {
-        return getWithResponseAsync(resourceGroupName, networkManagerName, networkGroupName, staticMemberName).block();
-    }
-
-    /**
-     * Gets the specified static member.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param networkManagerName The name of the network manager.
-     * @param networkGroupName The name of the network group.
-     * @param staticMemberName The name of the static member.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -527,31 +509,6 @@ public final class StaticMembersClientImpl implements StaticMembersClient {
      * @param networkGroupName The name of the network group.
      * @param staticMemberName The name of the static member.
      * @param parameters Parameters supplied to the specify the static member to create.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return staticMember Item along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<StaticMemberInner> createOrUpdateWithResponse(
-        String resourceGroupName,
-        String networkManagerName,
-        String networkGroupName,
-        String staticMemberName,
-        StaticMemberInner parameters) {
-        return createOrUpdateWithResponseAsync(
-                resourceGroupName, networkManagerName, networkGroupName, staticMemberName, parameters)
-            .block();
-    }
-
-    /**
-     * Creates or updates a static member.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param networkManagerName The name of the network manager.
-     * @param networkGroupName The name of the network group.
-     * @param staticMemberName The name of the static member.
-     * @param parameters Parameters supplied to the specify the static member to create.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -739,25 +696,6 @@ public final class StaticMembersClientImpl implements StaticMembersClient {
         String resourceGroupName, String networkManagerName, String networkGroupName, String staticMemberName) {
         return deleteWithResponseAsync(resourceGroupName, networkManagerName, networkGroupName, staticMemberName)
             .flatMap(ignored -> Mono.empty());
-    }
-
-    /**
-     * Deletes a static member.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param networkManagerName The name of the network manager.
-     * @param networkGroupName The name of the network group.
-     * @param staticMemberName The name of the static member.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> deleteWithResponse(
-        String resourceGroupName, String networkManagerName, String networkGroupName, String staticMemberName) {
-        return deleteWithResponseAsync(resourceGroupName, networkManagerName, networkGroupName, staticMemberName)
-            .block();
     }
 
     /**

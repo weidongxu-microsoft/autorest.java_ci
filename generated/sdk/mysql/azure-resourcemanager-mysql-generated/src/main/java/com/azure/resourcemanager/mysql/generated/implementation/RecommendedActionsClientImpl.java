@@ -249,24 +249,6 @@ public final class RecommendedActionsClientImpl implements RecommendedActionsCli
      * @param serverName The name of the server.
      * @param advisorName The advisor name for recommendation action.
      * @param recommendedActionName The recommended action name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a Recommendation Action along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<RecommendationActionInner> getWithResponse(
-        String resourceGroupName, String serverName, String advisorName, String recommendedActionName) {
-        return getWithResponseAsync(resourceGroupName, serverName, advisorName, recommendedActionName).block();
-    }
-
-    /**
-     * Retrieve recommended actions from the advisor.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param serverName The name of the server.
-     * @param advisorName The advisor name for recommendation action.
-     * @param recommendedActionName The recommended action name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

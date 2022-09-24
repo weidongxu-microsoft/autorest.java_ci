@@ -229,18 +229,6 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
     /**
      * Lists ExpressRoute gateways under a given subscription.
      *
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of ExpressRoute gateways along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ExpressRouteGatewayListInner> listBySubscriptionWithResponse() {
-        return listBySubscriptionWithResponseAsync().block();
-    }
-
-    /**
-     * Lists ExpressRoute gateways under a given subscription.
-     *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -362,20 +350,6 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ExpressRouteGatewayListInner> listByResourceGroupAsync(String resourceGroupName) {
         return listByResourceGroupWithResponseAsync(resourceGroupName).flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Lists ExpressRoute gateways in a given resource group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of ExpressRoute gateways along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ExpressRouteGatewayListInner> listByResourceGroupWithResponse(String resourceGroupName) {
-        return listByResourceGroupWithResponseAsync(resourceGroupName).block();
     }
 
     /**
@@ -1142,22 +1116,6 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
         String resourceGroupName, String expressRouteGatewayName) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, expressRouteGatewayName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Fetches the details of a ExpressRoute gateway in a resource group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param expressRouteGatewayName The name of the ExpressRoute gateway.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return expressRoute gateway resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ExpressRouteGatewayInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String expressRouteGatewayName) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, expressRouteGatewayName).block();
     }
 
     /**

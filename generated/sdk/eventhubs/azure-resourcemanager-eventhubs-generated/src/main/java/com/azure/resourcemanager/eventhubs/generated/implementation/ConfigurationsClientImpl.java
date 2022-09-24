@@ -226,24 +226,6 @@ public final class ConfigurationsClientImpl implements ConfigurationsClient {
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param clusterName The name of the Event Hubs Cluster.
      * @param parameters Parameters for creating an Event Hubs Cluster resource.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return contains all settings for the cluster along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ClusterQuotaConfigurationPropertiesInner> patchWithResponse(
-        String resourceGroupName, String clusterName, ClusterQuotaConfigurationPropertiesInner parameters) {
-        return patchWithResponseAsync(resourceGroupName, clusterName, parameters).block();
-    }
-
-    /**
-     * Replace all specified Event Hubs Cluster settings with those contained in the request body. Leaves the settings
-     * not specified in the request body unmodified.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param clusterName The name of the Event Hubs Cluster.
-     * @param parameters Parameters for creating an Event Hubs Cluster resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -390,24 +372,6 @@ public final class ConfigurationsClientImpl implements ConfigurationsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ClusterQuotaConfigurationPropertiesInner> getAsync(String resourceGroupName, String clusterName) {
         return getWithResponseAsync(resourceGroupName, clusterName).flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Get all Event Hubs Cluster settings - a collection of key/value pairs which represent the quotas and settings
-     * imposed on the cluster.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param clusterName The name of the Event Hubs Cluster.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all Event Hubs Cluster settings - a collection of key/value pairs which represent the quotas and settings
-     *     imposed on the cluster along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ClusterQuotaConfigurationPropertiesInner> getWithResponse(
-        String resourceGroupName, String clusterName) {
-        return getWithResponseAsync(resourceGroupName, clusterName).block();
     }
 
     /**

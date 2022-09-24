@@ -470,23 +470,6 @@ public final class ApplicationsClientImpl implements ApplicationsClient {
      * @param resourceGroupName The name of the resource group.
      * @param clusterName The name of the cluster.
      * @param applicationName The constant value for the application name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of the specified application along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ApplicationInner> getWithResponse(
-        String resourceGroupName, String clusterName, String applicationName) {
-        return getWithResponseAsync(resourceGroupName, clusterName, applicationName).block();
-    }
-
-    /**
-     * Gets properties of the specified application.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param clusterName The name of the cluster.
-     * @param applicationName The constant value for the application name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1211,26 +1194,6 @@ public final class ApplicationsClientImpl implements ApplicationsClient {
         return getAzureAsyncOperationStatusWithResponseAsync(
                 resourceGroupName, clusterName, applicationName, operationId)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets the async operation status.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param clusterName The name of the cluster.
-     * @param applicationName The constant value for the application name.
-     * @param operationId The long running operation id.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the async operation status along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<AsyncOperationResultInner> getAzureAsyncOperationStatusWithResponse(
-        String resourceGroupName, String clusterName, String applicationName, String operationId) {
-        return getAzureAsyncOperationStatusWithResponseAsync(
-                resourceGroupName, clusterName, applicationName, operationId)
-            .block();
     }
 
     /**

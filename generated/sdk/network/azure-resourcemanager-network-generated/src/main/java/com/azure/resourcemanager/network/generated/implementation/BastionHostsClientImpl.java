@@ -526,21 +526,6 @@ public final class BastionHostsClientImpl implements BastionHostsClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param bastionHostname The name of the Bastion Host.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Bastion Host along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<BastionHostInner> getByResourceGroupWithResponse(String resourceGroupName, String bastionHostname) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, bastionHostname).block();
-    }
-
-    /**
-     * Gets the specified Bastion Host.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param bastionHostname The name of the Bastion Host.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

@@ -1064,23 +1064,6 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return app Service plan along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<AppServicePlanInner> getByResourceGroupWithResponse(String resourceGroupName, String name) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, name).block();
-    }
-
-    /**
-     * Get an App Service plan.
-     *
-     * <p>Description for Get an App Service plan.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the App Service plan.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1517,23 +1500,6 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> deleteWithResponse(String resourceGroupName, String name) {
-        return deleteWithResponseAsync(resourceGroupName, name).block();
-    }
-
-    /**
-     * Delete an App Service plan.
-     *
-     * <p>Description for Delete an App Service plan.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the App Service plan.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -1701,25 +1667,6 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
      * @param appServicePlan Details of the App Service plan.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return app Service plan along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<AppServicePlanInner> updateWithResponse(
-        String resourceGroupName, String name, AppServicePlanPatchResource appServicePlan) {
-        return updateWithResponseAsync(resourceGroupName, name, appServicePlan).block();
-    }
-
-    /**
-     * Creates or updates an App Service Plan.
-     *
-     * <p>Description for Creates or updates an App Service Plan.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the App Service plan.
-     * @param appServicePlan Details of the App Service plan.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -1865,23 +1812,6 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     private Mono<List<CapabilityInner>> listCapabilitiesAsync(String resourceGroupName, String name) {
         return listCapabilitiesWithResponseAsync(resourceGroupName, name)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * List all capabilities of an App Service plan.
-     *
-     * <p>Description for List all capabilities of an App Service plan.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the App Service plan.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of Capability along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<List<CapabilityInner>> listCapabilitiesWithResponse(String resourceGroupName, String name) {
-        return listCapabilitiesWithResponseAsync(resourceGroupName, name).block();
     }
 
     /**
@@ -2057,26 +1987,6 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
         String resourceGroupName, String name, String namespaceName, String relayName) {
         return getHybridConnectionWithResponseAsync(resourceGroupName, name, namespaceName, relayName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Retrieve a Hybrid Connection in use in an App Service plan.
-     *
-     * <p>Description for Retrieve a Hybrid Connection in use in an App Service plan.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the App Service plan.
-     * @param namespaceName Name of the Service Bus namespace.
-     * @param relayName Name of the Service Bus relay.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return hybrid Connection contract along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<HybridConnectionInner> getHybridConnectionWithResponse(
-        String resourceGroupName, String name, String namespaceName, String relayName) {
-        return getHybridConnectionWithResponseAsync(resourceGroupName, name, namespaceName, relayName).block();
     }
 
     /**
@@ -2269,26 +2179,6 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @param name Name of the App Service plan.
      * @param namespaceName Name of the Service Bus namespace.
      * @param relayName Name of the Service Bus relay.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> deleteHybridConnectionWithResponse(
-        String resourceGroupName, String name, String namespaceName, String relayName) {
-        return deleteHybridConnectionWithResponseAsync(resourceGroupName, name, namespaceName, relayName).block();
-    }
-
-    /**
-     * Delete a Hybrid Connection in use in an App Service plan.
-     *
-     * <p>Description for Delete a Hybrid Connection in use in an App Service plan.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the App Service plan.
-     * @param namespaceName Name of the Service Bus namespace.
-     * @param relayName Name of the Service Bus relay.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -2457,26 +2347,6 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
         String resourceGroupName, String name, String namespaceName, String relayName) {
         return listHybridConnectionKeysWithResponseAsync(resourceGroupName, name, namespaceName, relayName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Get the send key name and value of a Hybrid Connection.
-     *
-     * <p>Description for Get the send key name and value of a Hybrid Connection.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the App Service plan.
-     * @param namespaceName The name of the Service Bus namespace.
-     * @param relayName The name of the Service Bus relay.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return hybrid Connection key contract along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<HybridConnectionKeyInner> listHybridConnectionKeysWithResponse(
-        String resourceGroupName, String name, String namespaceName, String relayName) {
-        return listHybridConnectionKeysWithResponseAsync(resourceGroupName, name, namespaceName, relayName).block();
     }
 
     /**
@@ -2871,24 +2741,6 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return hybrid Connection limits contract along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<HybridConnectionLimitsInner> getHybridConnectionPlanLimitWithResponse(
-        String resourceGroupName, String name) {
-        return getHybridConnectionPlanLimitWithResponseAsync(resourceGroupName, name).block();
-    }
-
-    /**
-     * Get the maximum number of Hybrid Connections allowed in an App Service plan.
-     *
-     * <p>Description for Get the maximum number of Hybrid Connections allowed in an App Service plan.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the App Service plan.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -3234,26 +3086,6 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     private Mono<Void> restartWebAppsAsync(String resourceGroupName, String name) {
         final Boolean softRestart = null;
         return restartWebAppsWithResponseAsync(resourceGroupName, name, softRestart).flatMap(ignored -> Mono.empty());
-    }
-
-    /**
-     * Restart all apps in an App Service plan.
-     *
-     * <p>Description for Restart all apps in an App Service plan.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the App Service plan.
-     * @param softRestart Specify &lt;code&gt;true&lt;/code&gt; to perform a soft restart, applies the configuration
-     *     settings and restarts the apps if necessary. The default is &lt;code&gt;false&lt;/code&gt;, which always
-     *     restarts and reprovisions the apps.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> restartWebAppsWithResponse(String resourceGroupName, String name, Boolean softRestart) {
-        return restartWebAppsWithResponseAsync(resourceGroupName, name, softRestart).block();
     }
 
     /**
@@ -3666,23 +3498,6 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of App Service Plan.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return any object along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Object> getServerFarmSkusWithResponse(String resourceGroupName, String name) {
-        return getServerFarmSkusWithResponseAsync(resourceGroupName, name).block();
-    }
-
-    /**
-     * Gets all selectable SKUs for a given App Service Plan
-     *
-     * <p>Description for Gets all selectable SKUs for a given App Service Plan.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of App Service Plan.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -4058,23 +3873,6 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of VnetInfoResource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<List<VnetInfoResourceInner>> listVnetsWithResponse(String resourceGroupName, String name) {
-        return listVnetsWithResponseAsync(resourceGroupName, name).block();
-    }
-
-    /**
-     * Get all Virtual Networks associated with an App Service plan.
-     *
-     * <p>Description for Get all Virtual Networks associated with an App Service plan.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the App Service plan.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -4232,25 +4030,6 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
         String resourceGroupName, String name, String vnetName) {
         return getVnetFromServerFarmWithResponseAsync(resourceGroupName, name, vnetName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Get a Virtual Network associated with an App Service plan.
-     *
-     * <p>Description for Get a Virtual Network associated with an App Service plan.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the App Service plan.
-     * @param vnetName Name of the Virtual Network.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtual Network information ARM resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<VnetInfoResourceInner> getVnetFromServerFarmWithResponse(
-        String resourceGroupName, String name, String vnetName) {
-        return getVnetFromServerFarmWithResponseAsync(resourceGroupName, name, vnetName).block();
     }
 
     /**
@@ -4430,26 +4209,6 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
         String resourceGroupName, String name, String vnetName, String gatewayName) {
         return getVnetGatewayWithResponseAsync(resourceGroupName, name, vnetName, gatewayName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Get a Virtual Network gateway.
-     *
-     * <p>Description for Get a Virtual Network gateway.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the App Service plan.
-     * @param vnetName Name of the Virtual Network.
-     * @param gatewayName Name of the gateway. Only the 'primary' gateway is supported.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Virtual Network gateway contract along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<VnetGatewayInner> getVnetGatewayWithResponse(
-        String resourceGroupName, String name, String vnetName, String gatewayName) {
-        return getVnetGatewayWithResponseAsync(resourceGroupName, name, vnetName, gatewayName).block();
     }
 
     /**
@@ -4673,32 +4432,6 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @param vnetName Name of the Virtual Network.
      * @param gatewayName Name of the gateway. Only the 'primary' gateway is supported.
      * @param connectionEnvelope Definition of the gateway.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Virtual Network gateway contract along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<VnetGatewayInner> updateVnetGatewayWithResponse(
-        String resourceGroupName,
-        String name,
-        String vnetName,
-        String gatewayName,
-        VnetGatewayInner connectionEnvelope) {
-        return updateVnetGatewayWithResponseAsync(resourceGroupName, name, vnetName, gatewayName, connectionEnvelope)
-            .block();
-    }
-
-    /**
-     * Update a Virtual Network gateway.
-     *
-     * <p>Description for Update a Virtual Network gateway.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the App Service plan.
-     * @param vnetName Name of the Virtual Network.
-     * @param gatewayName Name of the gateway. Only the 'primary' gateway is supported.
-     * @param connectionEnvelope Definition of the gateway.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -4880,25 +4613,6 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
      * @param vnetName Name of the Virtual Network.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of VnetRoute along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<List<VnetRouteInner>> listRoutesForVnetWithResponse(
-        String resourceGroupName, String name, String vnetName) {
-        return listRoutesForVnetWithResponseAsync(resourceGroupName, name, vnetName).block();
-    }
-
-    /**
-     * Get all routes that are associated with a Virtual Network in an App Service plan.
-     *
-     * <p>Description for Get all routes that are associated with a Virtual Network in an App Service plan.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the App Service plan.
-     * @param vnetName Name of the Virtual Network.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -5066,26 +4780,6 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
         String resourceGroupName, String name, String vnetName, String routeName) {
         return getRouteForVnetWithResponseAsync(resourceGroupName, name, vnetName, routeName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Get a Virtual Network route in an App Service plan.
-     *
-     * <p>Description for Get a Virtual Network route in an App Service plan.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the App Service plan.
-     * @param vnetName Name of the Virtual Network.
-     * @param routeName Name of the Virtual Network route.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of VnetRoute along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<List<VnetRouteInner>> getRouteForVnetWithResponse(
-        String resourceGroupName, String name, String vnetName, String routeName) {
-        return getRouteForVnetWithResponseAsync(resourceGroupName, name, vnetName, routeName).block();
     }
 
     /**
@@ -5301,28 +4995,6 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @param vnetName Name of the Virtual Network.
      * @param routeName Name of the Virtual Network route.
      * @param route Definition of the Virtual Network route.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtual Network route contract used to pass routing information for a Virtual Network along with {@link
-     *     Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<VnetRouteInner> createOrUpdateVnetRouteWithResponse(
-        String resourceGroupName, String name, String vnetName, String routeName, VnetRouteInner route) {
-        return createOrUpdateVnetRouteWithResponseAsync(resourceGroupName, name, vnetName, routeName, route).block();
-    }
-
-    /**
-     * Create or update a Virtual Network route in an App Service plan.
-     *
-     * <p>Description for Create or update a Virtual Network route in an App Service plan.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the App Service plan.
-     * @param vnetName Name of the Virtual Network.
-     * @param routeName Name of the Virtual Network route.
-     * @param route Definition of the Virtual Network route.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -5500,26 +5172,6 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     private Mono<Void> deleteVnetRouteAsync(String resourceGroupName, String name, String vnetName, String routeName) {
         return deleteVnetRouteWithResponseAsync(resourceGroupName, name, vnetName, routeName)
             .flatMap(ignored -> Mono.empty());
-    }
-
-    /**
-     * Delete a Virtual Network route in an App Service plan.
-     *
-     * <p>Description for Delete a Virtual Network route in an App Service plan.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the App Service plan.
-     * @param vnetName Name of the Virtual Network.
-     * @param routeName Name of the Virtual Network route.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> deleteVnetRouteWithResponse(
-        String resourceGroupName, String name, String vnetName, String routeName) {
-        return deleteVnetRouteWithResponseAsync(resourceGroupName, name, vnetName, routeName).block();
     }
 
     /**
@@ -5733,28 +5385,6 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @param vnetName Name of the Virtual Network.
      * @param routeName Name of the Virtual Network route.
      * @param route Definition of the Virtual Network route.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtual Network route contract used to pass routing information for a Virtual Network along with {@link
-     *     Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<VnetRouteInner> updateVnetRouteWithResponse(
-        String resourceGroupName, String name, String vnetName, String routeName, VnetRouteInner route) {
-        return updateVnetRouteWithResponseAsync(resourceGroupName, name, vnetName, routeName, route).block();
-    }
-
-    /**
-     * Create or update a Virtual Network route in an App Service plan.
-     *
-     * <p>Description for Create or update a Virtual Network route in an App Service plan.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the App Service plan.
-     * @param vnetName Name of the Virtual Network.
-     * @param routeName Name of the Virtual Network route.
-     * @param route Definition of the Virtual Network route.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -5919,24 +5549,6 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> rebootWorkerAsync(String resourceGroupName, String name, String workerName) {
         return rebootWorkerWithResponseAsync(resourceGroupName, name, workerName).flatMap(ignored -> Mono.empty());
-    }
-
-    /**
-     * Reboot a worker machine in an App Service plan.
-     *
-     * <p>Description for Reboot a worker machine in an App Service plan.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the App Service plan.
-     * @param workerName Name of worker machine, which typically starts with RD.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> rebootWorkerWithResponse(String resourceGroupName, String name, String workerName) {
-        return rebootWorkerWithResponseAsync(resourceGroupName, name, workerName).block();
     }
 
     /**

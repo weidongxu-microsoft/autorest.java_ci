@@ -580,25 +580,6 @@ public final class AdminRuleCollectionsClientImpl implements AdminRuleCollection
      * @param networkManagerName The name of the network manager.
      * @param configurationName The name of the network manager Security Configuration.
      * @param ruleCollectionName The name of the network manager security Configuration rule collection.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a network manager security admin configuration rule collection along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<AdminRuleCollectionInner> getWithResponse(
-        String resourceGroupName, String networkManagerName, String configurationName, String ruleCollectionName) {
-        return getWithResponseAsync(resourceGroupName, networkManagerName, configurationName, ruleCollectionName)
-            .block();
-    }
-
-    /**
-     * Gets a network manager security admin configuration rule collection.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param networkManagerName The name of the network manager.
-     * @param configurationName The name of the network manager Security Configuration.
-     * @param ruleCollectionName The name of the network manager security Configuration rule collection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -805,31 +786,6 @@ public final class AdminRuleCollectionsClientImpl implements AdminRuleCollection
         return createOrUpdateWithResponseAsync(
                 resourceGroupName, networkManagerName, configurationName, ruleCollectionName, ruleCollection)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Creates or updates an admin rule collection.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param networkManagerName The name of the network manager.
-     * @param configurationName The name of the network manager Security Configuration.
-     * @param ruleCollectionName The name of the network manager security Configuration rule collection.
-     * @param ruleCollection The Rule Collection to create or update.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return defines the admin rule collection along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<AdminRuleCollectionInner> createOrUpdateWithResponse(
-        String resourceGroupName,
-        String networkManagerName,
-        String configurationName,
-        String ruleCollectionName,
-        AdminRuleCollectionInner ruleCollection) {
-        return createOrUpdateWithResponseAsync(
-                resourceGroupName, networkManagerName, configurationName, ruleCollectionName, ruleCollection)
-            .block();
     }
 
     /**

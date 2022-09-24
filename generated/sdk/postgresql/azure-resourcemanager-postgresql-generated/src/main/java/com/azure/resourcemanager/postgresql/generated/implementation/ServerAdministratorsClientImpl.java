@@ -245,21 +245,6 @@ public final class ServerAdministratorsClientImpl implements ServerAdministrator
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a AAD server administrator along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ServerAdministratorResourceInner> getWithResponse(String resourceGroupName, String serverName) {
-        return getWithResponseAsync(resourceGroupName, serverName).block();
-    }
-
-    /**
-     * Gets information about a AAD server administrator.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param serverName The name of the server.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

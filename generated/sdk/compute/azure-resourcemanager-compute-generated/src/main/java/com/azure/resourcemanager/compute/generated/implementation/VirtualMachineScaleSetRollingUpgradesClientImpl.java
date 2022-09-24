@@ -967,22 +967,6 @@ public final class VirtualMachineScaleSetRollingUpgradesClientImpl
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ApiErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the status of the latest virtual machine scale set rolling upgrade along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<RollingUpgradeStatusInfoInner> getLatestWithResponse(
-        String resourceGroupName, String vmScaleSetName) {
-        return getLatestWithResponseAsync(resourceGroupName, vmScaleSetName).block();
-    }
-
-    /**
-     * Gets the status of the latest virtual machine scale set rolling upgrade.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param vmScaleSetName The name of the VM scale set.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.

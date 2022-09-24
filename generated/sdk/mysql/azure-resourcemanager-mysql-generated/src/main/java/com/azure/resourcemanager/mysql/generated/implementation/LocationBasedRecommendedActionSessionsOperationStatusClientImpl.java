@@ -192,22 +192,6 @@ public final class LocationBasedRecommendedActionSessionsOperationStatusClientIm
      *
      * @param locationName The name of the location.
      * @param operationId The operation identifier.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return recommendation action session operation status along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<RecommendedActionSessionsOperationStatusInner> getWithResponse(
-        String locationName, String operationId) {
-        return getWithResponseAsync(locationName, operationId).block();
-    }
-
-    /**
-     * Recommendation action session operation status.
-     *
-     * @param locationName The name of the location.
-     * @param operationId The operation identifier.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

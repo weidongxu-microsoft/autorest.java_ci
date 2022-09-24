@@ -336,24 +336,6 @@ public final class PartnerNamespacesClientImpl implements PartnerNamespacesClien
      *
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerNamespaceName Name of the partner namespace.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of a partner namespace along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<PartnerNamespaceInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String partnerNamespaceName) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, partnerNamespaceName).block();
-    }
-
-    /**
-     * Get a partner namespace.
-     *
-     * <p>Get properties of a partner namespace.
-     *
-     * @param resourceGroupName The name of the resource group within the user's subscription.
-     * @param partnerNamespaceName Name of the partner namespace.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1858,24 +1840,6 @@ public final class PartnerNamespacesClientImpl implements PartnerNamespacesClien
      *
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerNamespaceName Name of the partner namespace.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return shared access keys of the partner namespace along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<PartnerNamespaceSharedAccessKeysInner> listSharedAccessKeysWithResponse(
-        String resourceGroupName, String partnerNamespaceName) {
-        return listSharedAccessKeysWithResponseAsync(resourceGroupName, partnerNamespaceName).block();
-    }
-
-    /**
-     * List keys for a partner namespace.
-     *
-     * <p>List the two keys used to publish to a partner namespace.
-     *
-     * @param resourceGroupName The name of the resource group within the user's subscription.
-     * @param partnerNamespaceName Name of the partner namespace.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -2049,27 +2013,6 @@ public final class PartnerNamespacesClientImpl implements PartnerNamespacesClien
         PartnerNamespaceRegenerateKeyRequest regenerateKeyRequest) {
         return regenerateKeyWithResponseAsync(resourceGroupName, partnerNamespaceName, regenerateKeyRequest)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Regenerate key for a partner namespace.
-     *
-     * <p>Regenerate a shared access key for a partner namespace.
-     *
-     * @param resourceGroupName The name of the resource group within the user's subscription.
-     * @param partnerNamespaceName Name of the partner namespace.
-     * @param regenerateKeyRequest Request body to regenerate key.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return shared access keys of the partner namespace along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<PartnerNamespaceSharedAccessKeysInner> regenerateKeyWithResponse(
-        String resourceGroupName,
-        String partnerNamespaceName,
-        PartnerNamespaceRegenerateKeyRequest regenerateKeyRequest) {
-        return regenerateKeyWithResponseAsync(resourceGroupName, partnerNamespaceName, regenerateKeyRequest).block();
     }
 
     /**

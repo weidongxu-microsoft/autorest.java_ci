@@ -829,22 +829,6 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Azure Monitor PrivateLinkScope definition along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<AzureMonitorPrivateLinkScopeInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String scopeName) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, scopeName).block();
-    }
-
-    /**
-     * Returns a Azure Monitor PrivateLinkScope.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1029,28 +1013,6 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
      * @param azureMonitorPrivateLinkScopePayload Properties that need to be specified to create or update a Azure
      *     Monitor PrivateLinkScope.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Azure Monitor PrivateLinkScope definition along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<AzureMonitorPrivateLinkScopeInner> createOrUpdateWithResponse(
-        String resourceGroupName,
-        String scopeName,
-        AzureMonitorPrivateLinkScopeInner azureMonitorPrivateLinkScopePayload) {
-        return createOrUpdateWithResponseAsync(resourceGroupName, scopeName, azureMonitorPrivateLinkScopePayload)
-            .block();
-    }
-
-    /**
-     * Creates (or updates) a Azure Monitor PrivateLinkScope. Note: You cannot specify a different value for
-     * InstrumentationKey nor AppId in the Put operation.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
-     * @param azureMonitorPrivateLinkScopePayload Properties that need to be specified to create or update a Azure
-     *     Monitor PrivateLinkScope.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1221,23 +1183,6 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
         String resourceGroupName, String scopeName, TagsResource privateLinkScopeTags) {
         return updateTagsWithResponseAsync(resourceGroupName, scopeName, privateLinkScopeTags)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Updates an existing PrivateLinkScope's tags. To update other fields use the CreateOrUpdate method.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
-     * @param privateLinkScopeTags Updated tag information to set into the PrivateLinkScope instance.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Azure Monitor PrivateLinkScope definition along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<AzureMonitorPrivateLinkScopeInner> updateTagsWithResponse(
-        String resourceGroupName, String scopeName, TagsResource privateLinkScopeTags) {
-        return updateTagsWithResponseAsync(resourceGroupName, scopeName, privateLinkScopeTags).block();
     }
 
     /**

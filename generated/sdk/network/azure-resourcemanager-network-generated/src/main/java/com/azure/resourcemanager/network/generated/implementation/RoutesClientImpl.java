@@ -522,22 +522,6 @@ public final class RoutesClientImpl implements RoutesClient {
      * @param resourceGroupName The name of the resource group.
      * @param routeTableName The name of the route table.
      * @param routeName The name of the route.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified route from a route table along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<RouteInner> getWithResponse(String resourceGroupName, String routeTableName, String routeName) {
-        return getWithResponseAsync(resourceGroupName, routeTableName, routeName).block();
-    }
-
-    /**
-     * Gets the specified route from a route table.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param routeTableName The name of the route table.
-     * @param routeName The name of the route.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

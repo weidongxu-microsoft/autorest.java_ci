@@ -288,25 +288,6 @@ public final class StorageInsightConfigsClientImpl implements StorageInsightConf
      * @param workspaceName The name of the workspace.
      * @param storageInsightName Name of the storageInsightsConfigs resource.
      * @param parameters The parameters required to create or update a storage insight.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the top level storage insight resource container along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<StorageInsightInner> createOrUpdateWithResponse(
-        String resourceGroupName, String workspaceName, String storageInsightName, StorageInsightInner parameters) {
-        return createOrUpdateWithResponseAsync(resourceGroupName, workspaceName, storageInsightName, parameters)
-            .block();
-    }
-
-    /**
-     * Create or update a storage insight.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param workspaceName The name of the workspace.
-     * @param storageInsightName Name of the storageInsightsConfigs resource.
-     * @param parameters The parameters required to create or update a storage insight.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -477,23 +458,6 @@ public final class StorageInsightConfigsClientImpl implements StorageInsightConf
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param workspaceName The name of the workspace.
      * @param storageInsightName Name of the storageInsightsConfigs resource.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a storage insight instance along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<StorageInsightInner> getWithResponse(
-        String resourceGroupName, String workspaceName, String storageInsightName) {
-        return getWithResponseAsync(resourceGroupName, workspaceName, storageInsightName).block();
-    }
-
-    /**
-     * Gets a storage insight instance.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param workspaceName The name of the workspace.
-     * @param storageInsightName Name of the storageInsightsConfigs resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -641,23 +605,6 @@ public final class StorageInsightConfigsClientImpl implements StorageInsightConf
     private Mono<Void> deleteAsync(String resourceGroupName, String workspaceName, String storageInsightName) {
         return deleteWithResponseAsync(resourceGroupName, workspaceName, storageInsightName)
             .flatMap(ignored -> Mono.empty());
-    }
-
-    /**
-     * Deletes a storageInsightsConfigs resource.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param workspaceName The name of the workspace.
-     * @param storageInsightName Name of the storageInsightsConfigs resource.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> deleteWithResponse(
-        String resourceGroupName, String workspaceName, String storageInsightName) {
-        return deleteWithResponseAsync(resourceGroupName, workspaceName, storageInsightName).block();
     }
 
     /**

@@ -290,22 +290,6 @@ public final class TopicTypesClientImpl implements TopicTypesClient {
      * <p>Get information about a topic type.
      *
      * @param topicTypeName Name of the topic type.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a topic type along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<TopicTypeInfoInner> getWithResponse(String topicTypeName) {
-        return getWithResponseAsync(topicTypeName).block();
-    }
-
-    /**
-     * Get a topic type.
-     *
-     * <p>Get information about a topic type.
-     *
-     * @param topicTypeName Name of the topic type.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

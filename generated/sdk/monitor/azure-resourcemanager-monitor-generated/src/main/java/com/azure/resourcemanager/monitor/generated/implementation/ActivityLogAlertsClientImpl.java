@@ -290,23 +290,6 @@ public final class ActivityLogAlertsClientImpl implements ActivityLogAlertsClien
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param activityLogAlertName The name of the activity log alert.
      * @param activityLogAlert The activity log alert to create or use for the update.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an activity log alert resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ActivityLogAlertResourceInner> createOrUpdateWithResponse(
-        String resourceGroupName, String activityLogAlertName, ActivityLogAlertResourceInner activityLogAlert) {
-        return createOrUpdateWithResponseAsync(resourceGroupName, activityLogAlertName, activityLogAlert).block();
-    }
-
-    /**
-     * Create a new activity log alert or update an existing one.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param activityLogAlertName The name of the activity log alert.
-     * @param activityLogAlert The activity log alert to create or use for the update.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -461,22 +444,6 @@ public final class ActivityLogAlertsClientImpl implements ActivityLogAlertsClien
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param activityLogAlertName The name of the activity log alert.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an activity log alert along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ActivityLogAlertResourceInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String activityLogAlertName) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, activityLogAlertName).block();
-    }
-
-    /**
-     * Get an activity log alert.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param activityLogAlertName The name of the activity log alert.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -614,21 +581,6 @@ public final class ActivityLogAlertsClientImpl implements ActivityLogAlertsClien
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String activityLogAlertName) {
         return deleteWithResponseAsync(resourceGroupName, activityLogAlertName).flatMap(ignored -> Mono.empty());
-    }
-
-    /**
-     * Delete an activity log alert.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param activityLogAlertName The name of the activity log alert.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> deleteWithResponse(String resourceGroupName, String activityLogAlertName) {
-        return deleteWithResponseAsync(resourceGroupName, activityLogAlertName).block();
     }
 
     /**
@@ -794,23 +746,6 @@ public final class ActivityLogAlertsClientImpl implements ActivityLogAlertsClien
         String resourceGroupName, String activityLogAlertName, ActivityLogAlertPatchBody activityLogAlertPatch) {
         return updateWithResponseAsync(resourceGroupName, activityLogAlertName, activityLogAlertPatch)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Updates an existing ActivityLogAlertResource's tags. To update other fields use the CreateOrUpdate method.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param activityLogAlertName The name of the activity log alert.
-     * @param activityLogAlertPatch Parameters supplied to the operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an activity log alert resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ActivityLogAlertResourceInner> updateWithResponse(
-        String resourceGroupName, String activityLogAlertName, ActivityLogAlertPatchBody activityLogAlertPatch) {
-        return updateWithResponseAsync(resourceGroupName, activityLogAlertName, activityLogAlertPatch).block();
     }
 
     /**

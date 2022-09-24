@@ -197,22 +197,6 @@ public final class OperationsStatusClientImpl implements OperationsStatusClient 
      * @param deviceName The device name.
      * @param name The job name.
      * @param resourceGroupName The resource group name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the details of a specified job on a Data Box Edge/Data Box Gateway device along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<JobInner> getWithResponse(String deviceName, String name, String resourceGroupName) {
-        return getWithResponseAsync(deviceName, name, resourceGroupName).block();
-    }
-
-    /**
-     * Gets the details of a specified job on a Data Box Edge/Data Box Gateway device.
-     *
-     * @param deviceName The device name.
-     * @param name The job name.
-     * @param resourceGroupName The resource group name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

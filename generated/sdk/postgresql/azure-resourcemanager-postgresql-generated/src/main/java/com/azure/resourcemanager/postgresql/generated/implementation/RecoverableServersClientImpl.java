@@ -183,21 +183,6 @@ public final class RecoverableServersClientImpl implements RecoverableServersCli
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a recoverable PostgreSQL Server along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<RecoverableServerResourceInner> getWithResponse(String resourceGroupName, String serverName) {
-        return getWithResponseAsync(resourceGroupName, serverName).block();
-    }
-
-    /**
-     * Gets a recoverable PostgreSQL Server.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param serverName The name of the server.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

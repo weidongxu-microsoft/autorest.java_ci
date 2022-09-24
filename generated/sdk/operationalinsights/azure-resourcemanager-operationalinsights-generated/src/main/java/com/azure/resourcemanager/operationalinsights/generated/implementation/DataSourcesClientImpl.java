@@ -285,24 +285,6 @@ public final class DataSourcesClientImpl implements DataSourcesClient {
      * @param workspaceName The name of the workspace.
      * @param dataSourceName The name of the datasource resource.
      * @param parameters The parameters required to create or update a datasource.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return datasources under OMS Workspace along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<DataSourceInner> createOrUpdateWithResponse(
-        String resourceGroupName, String workspaceName, String dataSourceName, DataSourceInner parameters) {
-        return createOrUpdateWithResponseAsync(resourceGroupName, workspaceName, dataSourceName, parameters).block();
-    }
-
-    /**
-     * Create or update a data source.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param workspaceName The name of the workspace.
-     * @param dataSourceName The name of the datasource resource.
-     * @param parameters The parameters required to create or update a datasource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -464,22 +446,6 @@ public final class DataSourcesClientImpl implements DataSourcesClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param workspaceName The name of the workspace.
      * @param dataSourceName Name of the datasource.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> deleteWithResponse(String resourceGroupName, String workspaceName, String dataSourceName) {
-        return deleteWithResponseAsync(resourceGroupName, workspaceName, dataSourceName).block();
-    }
-
-    /**
-     * Deletes a data source instance.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param workspaceName The name of the workspace.
-     * @param dataSourceName Name of the datasource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -628,23 +594,6 @@ public final class DataSourcesClientImpl implements DataSourcesClient {
     private Mono<DataSourceInner> getAsync(String resourceGroupName, String workspaceName, String dataSourceName) {
         return getWithResponseAsync(resourceGroupName, workspaceName, dataSourceName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets a datasource instance.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param workspaceName The name of the workspace.
-     * @param dataSourceName Name of the datasource.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a datasource instance along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<DataSourceInner> getWithResponse(
-        String resourceGroupName, String workspaceName, String dataSourceName) {
-        return getWithResponseAsync(resourceGroupName, workspaceName, dataSourceName).block();
     }
 
     /**

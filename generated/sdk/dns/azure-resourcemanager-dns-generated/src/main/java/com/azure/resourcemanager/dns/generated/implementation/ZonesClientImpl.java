@@ -331,27 +331,6 @@ public final class ZonesClientImpl implements ZonesClient {
      *     last-seen etag value to prevent accidentally overwriting any concurrent changes.
      * @param ifNoneMatch Set to '*' to allow a new DNS zone to be created, but to prevent updating an existing zone.
      *     Other values will be ignored.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a DNS zone along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ZoneInner> createOrUpdateWithResponse(
-        String resourceGroupName, String zoneName, ZoneInner parameters, String ifMatch, String ifNoneMatch) {
-        return createOrUpdateWithResponseAsync(resourceGroupName, zoneName, parameters, ifMatch, ifNoneMatch).block();
-    }
-
-    /**
-     * Creates or updates a DNS zone. Does not modify DNS records within the zone.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param parameters Parameters supplied to the CreateOrUpdate operation.
-     * @param ifMatch The etag of the DNS zone. Omit this value to always overwrite the current zone. Specify the
-     *     last-seen etag value to prevent accidentally overwriting any concurrent changes.
-     * @param ifNoneMatch Set to '*' to allow a new DNS zone to be created, but to prevent updating an existing zone.
-     *     Other values will be ignored.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -789,21 +768,6 @@ public final class ZonesClientImpl implements ZonesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a DNS zone along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ZoneInner> getByResourceGroupWithResponse(String resourceGroupName, String zoneName) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, zoneName).block();
-    }
-
-    /**
-     * Gets a DNS zone. Retrieves the zone properties, but not the record sets within the zone.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -961,25 +925,6 @@ public final class ZonesClientImpl implements ZonesClient {
         final String ifMatch = null;
         return updateWithResponseAsync(resourceGroupName, zoneName, parameters, ifMatch)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Updates a DNS zone. Does not modify DNS records within the zone.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param parameters Parameters supplied to the Update operation.
-     * @param ifMatch The etag of the DNS zone. Omit this value to always overwrite the current zone. Specify the
-     *     last-seen etag value to prevent accidentally overwriting any concurrent changes.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a DNS zone along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ZoneInner> updateWithResponse(
-        String resourceGroupName, String zoneName, ZoneUpdate parameters, String ifMatch) {
-        return updateWithResponseAsync(resourceGroupName, zoneName, parameters, ifMatch).block();
     }
 
     /**

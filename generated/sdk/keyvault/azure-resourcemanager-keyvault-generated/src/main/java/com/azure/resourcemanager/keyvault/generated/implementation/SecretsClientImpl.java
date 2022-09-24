@@ -295,26 +295,6 @@ public final class SecretsClientImpl implements SecretsClient {
      * @param secretName Name of the secret. The value you provide may be copied globally for the purpose of running the
      *     service. The value provided should not include personally identifiable or sensitive information.
      * @param parameters Parameters to create or update the secret.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<SecretInner> createOrUpdateWithResponse(
-        String resourceGroupName, String vaultName, String secretName, SecretCreateOrUpdateParameters parameters) {
-        return createOrUpdateWithResponseAsync(resourceGroupName, vaultName, secretName, parameters).block();
-    }
-
-    /**
-     * Create or update a secret in a key vault in the specified subscription. NOTE: This API is intended for internal
-     * use in ARM deployments. Users should use the data-plane REST service for interaction with vault secrets.
-     *
-     * @param resourceGroupName The name of the Resource Group to which the vault belongs.
-     * @param vaultName Name of the vault.
-     * @param secretName Name of the secret. The value you provide may be copied globally for the purpose of running the
-     *     service. The value provided should not include personally identifiable or sensitive information.
-     * @param parameters Parameters to create or update the secret.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -506,25 +486,6 @@ public final class SecretsClientImpl implements SecretsClient {
      * @param vaultName Name of the vault.
      * @param secretName Name of the secret.
      * @param parameters Parameters to patch the secret.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<SecretInner> updateWithResponse(
-        String resourceGroupName, String vaultName, String secretName, SecretPatchParameters parameters) {
-        return updateWithResponseAsync(resourceGroupName, vaultName, secretName, parameters).block();
-    }
-
-    /**
-     * Update a secret in the specified subscription. NOTE: This API is intended for internal use in ARM deployments.
-     * Users should use the data-plane REST service for interaction with vault secrets.
-     *
-     * @param resourceGroupName The name of the Resource Group to which the vault belongs.
-     * @param vaultName Name of the vault.
-     * @param secretName Name of the secret.
-     * @param parameters Parameters to patch the secret.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -682,23 +643,6 @@ public final class SecretsClientImpl implements SecretsClient {
     private Mono<SecretInner> getAsync(String resourceGroupName, String vaultName, String secretName) {
         return getWithResponseAsync(resourceGroupName, vaultName, secretName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets the specified secret. NOTE: This API is intended for internal use in ARM deployments. Users should use the
-     * data-plane REST service for interaction with vault secrets.
-     *
-     * @param resourceGroupName The name of the Resource Group to which the vault belongs.
-     * @param vaultName The name of the vault.
-     * @param secretName The name of the secret.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified secret along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<SecretInner> getWithResponse(String resourceGroupName, String vaultName, String secretName) {
-        return getWithResponseAsync(resourceGroupName, vaultName, secretName).block();
     }
 
     /**

@@ -631,32 +631,6 @@ public final class EventHubsClientImpl implements EventHubsClient {
      * @param eventHubName The Event Hub name.
      * @param authorizationRuleName The authorization rule name.
      * @param parameters The shared access AuthorizationRule.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in a List or Get AuthorizationRule operation along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<AuthorizationRuleInner> createOrUpdateAuthorizationRuleWithResponse(
-        String resourceGroupName,
-        String namespaceName,
-        String eventHubName,
-        String authorizationRuleName,
-        AuthorizationRuleInner parameters) {
-        return createOrUpdateAuthorizationRuleWithResponseAsync(
-                resourceGroupName, namespaceName, eventHubName, authorizationRuleName, parameters)
-            .block();
-    }
-
-    /**
-     * Creates or updates an AuthorizationRule for the specified Event Hub. Creation/update of the AuthorizationRule
-     * will take a few seconds to take effect.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param namespaceName The Namespace name.
-     * @param eventHubName The Event Hub name.
-     * @param authorizationRuleName The authorization rule name.
-     * @param parameters The shared access AuthorizationRule.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -851,26 +825,6 @@ public final class EventHubsClientImpl implements EventHubsClient {
      * @param namespaceName The Namespace name.
      * @param eventHubName The Event Hub name.
      * @param authorizationRuleName The authorization rule name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an AuthorizationRule for an Event Hub by rule name along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<AuthorizationRuleInner> getAuthorizationRuleWithResponse(
-        String resourceGroupName, String namespaceName, String eventHubName, String authorizationRuleName) {
-        return getAuthorizationRuleWithResponseAsync(
-                resourceGroupName, namespaceName, eventHubName, authorizationRuleName)
-            .block();
-    }
-
-    /**
-     * Gets an AuthorizationRule for an Event Hub by rule name.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param namespaceName The Namespace name.
-     * @param eventHubName The Event Hub name.
-     * @param authorizationRuleName The authorization rule name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1056,26 +1010,6 @@ public final class EventHubsClientImpl implements EventHubsClient {
      * @param namespaceName The Namespace name.
      * @param eventHubName The Event Hub name.
      * @param authorizationRuleName The authorization rule name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> deleteAuthorizationRuleWithResponse(
-        String resourceGroupName, String namespaceName, String eventHubName, String authorizationRuleName) {
-        return deleteAuthorizationRuleWithResponseAsync(
-                resourceGroupName, namespaceName, eventHubName, authorizationRuleName)
-            .block();
-    }
-
-    /**
-     * Deletes an Event Hub AuthorizationRule.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param namespaceName The Namespace name.
-     * @param eventHubName The Event Hub name.
-     * @param authorizationRuleName The authorization rule name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1251,24 +1185,6 @@ public final class EventHubsClientImpl implements EventHubsClient {
         String resourceGroupName, String namespaceName, String eventHubName, String authorizationRuleName) {
         return listKeysWithResponseAsync(resourceGroupName, namespaceName, eventHubName, authorizationRuleName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets the ACS and SAS connection strings for the Event Hub.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param namespaceName The Namespace name.
-     * @param eventHubName The Event Hub name.
-     * @param authorizationRuleName The authorization rule name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the ACS and SAS connection strings for the Event Hub along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<AccessKeysInner> listKeysWithResponse(
-        String resourceGroupName, String namespaceName, String eventHubName, String authorizationRuleName) {
-        return listKeysWithResponseAsync(resourceGroupName, namespaceName, eventHubName, authorizationRuleName).block();
     }
 
     /**
@@ -1478,31 +1394,6 @@ public final class EventHubsClientImpl implements EventHubsClient {
         return regenerateKeysWithResponseAsync(
                 resourceGroupName, namespaceName, eventHubName, authorizationRuleName, parameters)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Regenerates the ACS and SAS connection strings for the Event Hub.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param namespaceName The Namespace name.
-     * @param eventHubName The Event Hub name.
-     * @param authorizationRuleName The authorization rule name.
-     * @param parameters Parameters supplied to regenerate the AuthorizationRule Keys (PrimaryKey/SecondaryKey).
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return namespace/EventHub Connection String along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<AccessKeysInner> regenerateKeysWithResponse(
-        String resourceGroupName,
-        String namespaceName,
-        String eventHubName,
-        String authorizationRuleName,
-        RegenerateAccessKeyParameters parameters) {
-        return regenerateKeysWithResponseAsync(
-                resourceGroupName, namespaceName, eventHubName, authorizationRuleName, parameters)
-            .block();
     }
 
     /**
@@ -1935,24 +1826,6 @@ public final class EventHubsClientImpl implements EventHubsClient {
      * @param namespaceName The Namespace name.
      * @param eventHubName The Event Hub name.
      * @param parameters Parameters supplied to create an Event Hub resource.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in List or Get Event Hub operation along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<EventhubInner> createOrUpdateWithResponse(
-        String resourceGroupName, String namespaceName, String eventHubName, EventhubInner parameters) {
-        return createOrUpdateWithResponseAsync(resourceGroupName, namespaceName, eventHubName, parameters).block();
-    }
-
-    /**
-     * Creates or updates a new Event Hub as a nested resource within a Namespace.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param namespaceName The Namespace name.
-     * @param eventHubName The Event Hub name.
-     * @param parameters Parameters supplied to create an Event Hub resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -2115,22 +1988,6 @@ public final class EventHubsClientImpl implements EventHubsClient {
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param eventHubName The Event Hub name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> deleteWithResponse(String resourceGroupName, String namespaceName, String eventHubName) {
-        return deleteWithResponseAsync(resourceGroupName, namespaceName, eventHubName).block();
-    }
-
-    /**
-     * Deletes an Event Hub from the specified Namespace and resource group.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param namespaceName The Namespace name.
-     * @param eventHubName The Event Hub name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -2279,23 +2136,6 @@ public final class EventHubsClientImpl implements EventHubsClient {
     private Mono<EventhubInner> getAsync(String resourceGroupName, String namespaceName, String eventHubName) {
         return getWithResponseAsync(resourceGroupName, namespaceName, eventHubName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets an Event Hubs description for the specified Event Hub.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param namespaceName The Namespace name.
-     * @param eventHubName The Event Hub name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Event Hubs description for the specified Event Hub along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<EventhubInner> getWithResponse(
-        String resourceGroupName, String namespaceName, String eventHubName) {
-        return getWithResponseAsync(resourceGroupName, namespaceName, eventHubName).block();
     }
 
     /**

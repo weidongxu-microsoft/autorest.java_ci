@@ -226,23 +226,6 @@ public final class IntelligencePacksClientImpl implements IntelligencePacksClien
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param workspaceName The name of the workspace.
      * @param intelligencePackName The name of the intelligence pack to be disabled.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> disableWithResponse(
-        String resourceGroupName, String workspaceName, String intelligencePackName) {
-        return disableWithResponseAsync(resourceGroupName, workspaceName, intelligencePackName).block();
-    }
-
-    /**
-     * Disables an intelligence pack for a given workspace.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param workspaceName The name of the workspace.
-     * @param intelligencePackName The name of the intelligence pack to be disabled.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -397,23 +380,6 @@ public final class IntelligencePacksClientImpl implements IntelligencePacksClien
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param workspaceName The name of the workspace.
      * @param intelligencePackName The name of the intelligence pack to be enabled.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> enableWithResponse(
-        String resourceGroupName, String workspaceName, String intelligencePackName) {
-        return enableWithResponseAsync(resourceGroupName, workspaceName, intelligencePackName).block();
-    }
-
-    /**
-     * Enables an intelligence pack for a given workspace.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param workspaceName The name of the workspace.
-     * @param intelligencePackName The name of the intelligence pack to be enabled.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -550,21 +516,6 @@ public final class IntelligencePacksClientImpl implements IntelligencePacksClien
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<List<IntelligencePackInner>> listAsync(String resourceGroupName, String workspaceName) {
         return listWithResponseAsync(resourceGroupName, workspaceName).flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Lists all the intelligence packs possible and whether they are enabled or disabled for a given workspace.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param workspaceName The name of the workspace.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of IntelligencePack along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<List<IntelligencePackInner>> listWithResponse(String resourceGroupName, String workspaceName) {
-        return listWithResponseAsync(resourceGroupName, workspaceName).block();
     }
 
     /**

@@ -427,23 +427,6 @@ public final class DefaultSecurityRulesClientImpl implements DefaultSecurityRule
      * @param resourceGroupName The name of the resource group.
      * @param networkSecurityGroupName The name of the network security group.
      * @param defaultSecurityRuleName The name of the default security rule.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified default network security rule along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<SecurityRuleInner> getWithResponse(
-        String resourceGroupName, String networkSecurityGroupName, String defaultSecurityRuleName) {
-        return getWithResponseAsync(resourceGroupName, networkSecurityGroupName, defaultSecurityRuleName).block();
-    }
-
-    /**
-     * Get the specified default network security rule.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param networkSecurityGroupName The name of the network security group.
-     * @param defaultSecurityRuleName The name of the default security rule.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

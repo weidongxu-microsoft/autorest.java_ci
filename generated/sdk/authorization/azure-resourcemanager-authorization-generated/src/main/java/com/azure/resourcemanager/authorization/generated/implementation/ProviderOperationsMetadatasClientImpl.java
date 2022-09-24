@@ -182,21 +182,6 @@ public final class ProviderOperationsMetadatasClientImpl implements ProviderOper
      *
      * @param resourceProviderNamespace The namespace of the resource provider.
      * @param expand Specifies whether to expand the values.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return provider operations metadata for the specified resource provider along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ProviderOperationsMetadataInner> getWithResponse(String resourceProviderNamespace, String expand) {
-        return getWithResponseAsync(resourceProviderNamespace, expand).block();
-    }
-
-    /**
-     * Gets provider operations metadata for the specified resource provider.
-     *
-     * @param resourceProviderNamespace The namespace of the resource provider.
-     * @param expand Specifies whether to expand the values.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

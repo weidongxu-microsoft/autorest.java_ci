@@ -410,22 +410,6 @@ public final class LoadBalancerProbesClientImpl implements LoadBalancerProbesCli
      * @param resourceGroupName The name of the resource group.
      * @param loadBalancerName The name of the load balancer.
      * @param probeName The name of the probe.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return load balancer probe along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ProbeInner> getWithResponse(String resourceGroupName, String loadBalancerName, String probeName) {
-        return getWithResponseAsync(resourceGroupName, loadBalancerName, probeName).block();
-    }
-
-    /**
-     * Gets load balancer probe.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param loadBalancerName The name of the load balancer.
-     * @param probeName The name of the probe.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

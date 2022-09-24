@@ -747,23 +747,6 @@ public final class ConnectionMonitorsClientImpl implements ConnectionMonitorsCli
      * @param resourceGroupName The name of the resource group containing Network Watcher.
      * @param networkWatcherName The name of the Network Watcher resource.
      * @param connectionMonitorName The name of the connection monitor.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a connection monitor by name along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ConnectionMonitorResultInner> getWithResponse(
-        String resourceGroupName, String networkWatcherName, String connectionMonitorName) {
-        return getWithResponseAsync(resourceGroupName, networkWatcherName, connectionMonitorName).block();
-    }
-
-    /**
-     * Gets a connection monitor by name.
-     *
-     * @param resourceGroupName The name of the resource group containing Network Watcher.
-     * @param networkWatcherName The name of the Network Watcher resource.
-     * @param connectionMonitorName The name of the connection monitor.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1200,25 +1183,6 @@ public final class ConnectionMonitorsClientImpl implements ConnectionMonitorsCli
         String resourceGroupName, String networkWatcherName, String connectionMonitorName, TagsObject parameters) {
         return updateTagsWithResponseAsync(resourceGroupName, networkWatcherName, connectionMonitorName, parameters)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Update tags of the specified connection monitor.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param networkWatcherName The name of the network watcher.
-     * @param connectionMonitorName The name of the connection monitor.
-     * @param parameters Parameters supplied to update connection monitor tags.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the connection monitor along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ConnectionMonitorResultInner> updateTagsWithResponse(
-        String resourceGroupName, String networkWatcherName, String connectionMonitorName, TagsObject parameters) {
-        return updateTagsWithResponseAsync(resourceGroupName, networkWatcherName, connectionMonitorName, parameters)
-            .block();
     }
 
     /**

@@ -867,21 +867,6 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
      *
      * @param scope The scope of the role assignment to delete.
      * @param roleAssignmentName The name of the role assignment to delete.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return role Assignments along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<RoleAssignmentInner> deleteWithResponse(String scope, String roleAssignmentName) {
-        return deleteWithResponseAsync(scope, roleAssignmentName).block();
-    }
-
-    /**
-     * Deletes a role assignment.
-     *
-     * @param scope The scope of the role assignment to delete.
-     * @param roleAssignmentName The name of the role assignment to delete.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1041,28 +1026,6 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
      * @param roleAssignmentName A GUID for the role assignment to create. The name must be unique and different for
      *     each role assignment.
      * @param parameters Parameters for the role assignment.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return role Assignments along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<RoleAssignmentInner> createWithResponse(
-        String scope, String roleAssignmentName, RoleAssignmentCreateParameters parameters) {
-        return createWithResponseAsync(scope, roleAssignmentName, parameters).block();
-    }
-
-    /**
-     * Creates a role assignment.
-     *
-     * @param scope The scope of the role assignment to create. The scope can be any REST resource instance. For
-     *     example, use '/subscriptions/{subscription-id}/' for a subscription,
-     *     '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}' for a resource group, and
-     *     '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/{resource-provider}/{resource-type}/{resource-name}'
-     *     for a resource.
-     * @param roleAssignmentName A GUID for the role assignment to create. The name must be unique and different for
-     *     each role assignment.
-     * @param parameters Parameters for the role assignment.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1184,21 +1147,6 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
      *
      * @param scope The scope of the role assignment.
      * @param roleAssignmentName The name of the role assignment to get.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified role assignment along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<RoleAssignmentInner> getWithResponse(String scope, String roleAssignmentName) {
-        return getWithResponseAsync(scope, roleAssignmentName).block();
-    }
-
-    /**
-     * Get the specified role assignment.
-     *
-     * @param scope The scope of the role assignment.
-     * @param roleAssignmentName The name of the role assignment to get.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1291,20 +1239,6 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<RoleAssignmentInner> deleteByIdAsync(String roleId) {
         return deleteByIdWithResponseAsync(roleId).flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Deletes a role assignment.
-     *
-     * @param roleId The ID of the role assignment to delete.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return role Assignments along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<RoleAssignmentInner> deleteByIdWithResponse(String roleId) {
-        return deleteByIdWithResponseAsync(roleId).block();
     }
 
     /**
@@ -1426,22 +1360,6 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
      *
      * @param roleId The ID of the role assignment to create.
      * @param parameters Parameters for the role assignment.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return role Assignments along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<RoleAssignmentInner> createByIdWithResponse(
-        String roleId, RoleAssignmentCreateParameters parameters) {
-        return createByIdWithResponseAsync(roleId, parameters).block();
-    }
-
-    /**
-     * Creates a role assignment by ID.
-     *
-     * @param roleId The ID of the role assignment to create.
-     * @param parameters Parameters for the role assignment.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1535,20 +1453,6 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<RoleAssignmentInner> getByIdAsync(String roleId) {
         return getByIdWithResponseAsync(roleId).flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets a role assignment by ID.
-     *
-     * @param roleId The ID of the role assignment to get.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a role assignment by ID along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<RoleAssignmentInner> getByIdWithResponse(String roleId) {
-        return getByIdWithResponseAsync(roleId).block();
     }
 
     /**

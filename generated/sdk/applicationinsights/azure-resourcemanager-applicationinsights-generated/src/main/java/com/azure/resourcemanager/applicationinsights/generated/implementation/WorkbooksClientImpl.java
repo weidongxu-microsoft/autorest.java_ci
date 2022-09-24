@@ -488,21 +488,6 @@ public final class WorkbooksClientImpl implements WorkbooksClient {
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceName The name of the Application Insights component resource.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a single workbook by its resourceName along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<WorkbookInner> getByResourceGroupWithResponse(String resourceGroupName, String resourceName) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, resourceName).block();
-    }
-
-    /**
-     * Get a single workbook by its resourceName.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param resourceName The name of the Application Insights component resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -638,21 +623,6 @@ public final class WorkbooksClientImpl implements WorkbooksClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String resourceName) {
         return deleteWithResponseAsync(resourceGroupName, resourceName).flatMap(ignored -> Mono.empty());
-    }
-
-    /**
-     * Delete a workbook.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param resourceName The name of the Application Insights component resource.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> deleteWithResponse(String resourceGroupName, String resourceName) {
-        return deleteWithResponseAsync(resourceGroupName, resourceName).block();
     }
 
     /**
@@ -823,23 +793,6 @@ public final class WorkbooksClientImpl implements WorkbooksClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceName The name of the Application Insights component resource.
      * @param workbookProperties Properties that need to be specified to create a new workbook.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Application Insights workbook definition along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<WorkbookInner> createOrUpdateWithResponse(
-        String resourceGroupName, String resourceName, WorkbookInner workbookProperties) {
-        return createOrUpdateWithResponseAsync(resourceGroupName, resourceName, workbookProperties).block();
-    }
-
-    /**
-     * Create a new workbook.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param resourceName The name of the Application Insights component resource.
-     * @param workbookProperties Properties that need to be specified to create a new workbook.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -999,23 +952,6 @@ public final class WorkbooksClientImpl implements WorkbooksClient {
         String resourceGroupName, String resourceName, WorkbookInner workbookProperties) {
         return updateWithResponseAsync(resourceGroupName, resourceName, workbookProperties)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Updates a workbook that has already been added.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param resourceName The name of the Application Insights component resource.
-     * @param workbookProperties Properties that need to be specified to create a new workbook.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Application Insights workbook definition along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<WorkbookInner> updateWithResponse(
-        String resourceGroupName, String resourceName, WorkbookInner workbookProperties) {
-        return updateWithResponseAsync(resourceGroupName, resourceName, workbookProperties).block();
     }
 
     /**

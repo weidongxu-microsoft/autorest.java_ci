@@ -271,23 +271,6 @@ public final class VirtualHubRouteTableV2SClientImpl implements VirtualHubRouteT
      * @param resourceGroupName The resource group name of the VirtualHubRouteTableV2.
      * @param virtualHubName The name of the VirtualHub.
      * @param routeTableName The name of the VirtualHubRouteTableV2.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtualHubRouteTableV2 Resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<VirtualHubRouteTableV2Inner> getWithResponse(
-        String resourceGroupName, String virtualHubName, String routeTableName) {
-        return getWithResponseAsync(resourceGroupName, virtualHubName, routeTableName).block();
-    }
-
-    /**
-     * Retrieves the details of a VirtualHubRouteTableV2.
-     *
-     * @param resourceGroupName The resource group name of the VirtualHubRouteTableV2.
-     * @param virtualHubName The name of the VirtualHub.
-     * @param routeTableName The name of the VirtualHubRouteTableV2.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.

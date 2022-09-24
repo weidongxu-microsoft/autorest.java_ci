@@ -229,23 +229,6 @@ public final class VpnSiteLinksClientImpl implements VpnSiteLinksClient {
      * @param resourceGroupName The resource group name of the VpnSite.
      * @param vpnSiteName The name of the VpnSite.
      * @param vpnSiteLinkName The name of the VpnSiteLink being retrieved.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpnSiteLink Resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<VpnSiteLinkInner> getWithResponse(
-        String resourceGroupName, String vpnSiteName, String vpnSiteLinkName) {
-        return getWithResponseAsync(resourceGroupName, vpnSiteName, vpnSiteLinkName).block();
-    }
-
-    /**
-     * Retrieves the details of a VPN site link.
-     *
-     * @param resourceGroupName The resource group name of the VpnSite.
-     * @param vpnSiteName The name of the VpnSite.
-     * @param vpnSiteLinkName The name of the VpnSiteLink being retrieved.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

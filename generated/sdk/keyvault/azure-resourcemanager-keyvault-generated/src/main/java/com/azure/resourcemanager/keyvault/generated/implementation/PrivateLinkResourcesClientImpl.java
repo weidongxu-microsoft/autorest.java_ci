@@ -185,22 +185,6 @@ public final class PrivateLinkResourcesClientImpl implements PrivateLinkResource
      *
      * @param resourceGroupName Name of the resource group that contains the key vault.
      * @param vaultName The name of the key vault.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the private link resources supported for the key vault along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<PrivateLinkResourceListResultInner> listByVaultWithResponse(
-        String resourceGroupName, String vaultName) {
-        return listByVaultWithResponseAsync(resourceGroupName, vaultName).block();
-    }
-
-    /**
-     * Gets the private link resources supported for the key vault.
-     *
-     * @param resourceGroupName Name of the resource group that contains the key vault.
-     * @param vaultName The name of the key vault.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

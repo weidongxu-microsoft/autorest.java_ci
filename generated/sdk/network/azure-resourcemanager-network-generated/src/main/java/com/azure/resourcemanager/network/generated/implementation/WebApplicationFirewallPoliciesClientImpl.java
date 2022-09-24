@@ -589,22 +589,6 @@ public final class WebApplicationFirewallPoliciesClientImpl implements WebApplic
      *
      * @param resourceGroupName The name of the resource group.
      * @param policyName The name of the policy.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return defines web application firewall policy along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<WebApplicationFirewallPolicyInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String policyName) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, policyName).block();
-    }
-
-    /**
-     * Retrieve protection policy with specified name within a resource group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param policyName The name of the policy.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -760,23 +744,6 @@ public final class WebApplicationFirewallPoliciesClientImpl implements WebApplic
         String resourceGroupName, String policyName, WebApplicationFirewallPolicyInner parameters) {
         return createOrUpdateWithResponseAsync(resourceGroupName, policyName, parameters)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Creates or update policy with specified rule set name within a resource group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param policyName The name of the policy.
-     * @param parameters Policy to be created.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return defines web application firewall policy along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<WebApplicationFirewallPolicyInner> createOrUpdateWithResponse(
-        String resourceGroupName, String policyName, WebApplicationFirewallPolicyInner parameters) {
-        return createOrUpdateWithResponseAsync(resourceGroupName, policyName, parameters).block();
     }
 
     /**

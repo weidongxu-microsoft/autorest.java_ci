@@ -190,21 +190,6 @@ public final class WebCategoriesClientImpl implements WebCategoriesClient {
      *
      * @param name The name of the azureWebCategory.
      * @param expand Expands resourceIds back referenced by the azureWebCategory resource.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Azure Web Category along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<AzureWebCategoryInner> getWithResponse(String name, String expand) {
-        return getWithResponseAsync(name, expand).block();
-    }
-
-    /**
-     * Gets the specified Azure Web Category.
-     *
-     * @param name The name of the azureWebCategory.
-     * @param expand Expands resourceIds back referenced by the azureWebCategory resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

@@ -835,23 +835,6 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return used for getting ResourceHealthCheck settings along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ResourceHealthMetadataInner> getBySiteWithResponse(String resourceGroupName, String name) {
-        return getBySiteWithResponseAsync(resourceGroupName, name).block();
-    }
-
-    /**
-     * Gets the category of ResourceHealthMetadata to use for the given site
-     *
-     * <p>Description for Gets the category of ResourceHealthMetadata to use for the given site.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of web app.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -1218,25 +1201,6 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
     private Mono<ResourceHealthMetadataInner> getBySiteSlotAsync(String resourceGroupName, String name, String slot) {
         return getBySiteSlotWithResponseAsync(resourceGroupName, name, slot)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets the category of ResourceHealthMetadata to use for the given site
-     *
-     * <p>Description for Gets the category of ResourceHealthMetadata to use for the given site.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of web app.
-     * @param slot Name of web app slot. If not specified then will default to production slot.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return used for getting ResourceHealthCheck settings along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ResourceHealthMetadataInner> getBySiteSlotWithResponse(
-        String resourceGroupName, String name, String slot) {
-        return getBySiteSlotWithResponseAsync(resourceGroupName, name, slot).block();
     }
 
     /**

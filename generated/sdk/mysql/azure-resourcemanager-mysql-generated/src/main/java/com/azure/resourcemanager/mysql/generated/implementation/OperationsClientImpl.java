@@ -123,18 +123,6 @@ public final class OperationsClientImpl implements OperationsClient {
     /**
      * Lists all of the available REST API operations.
      *
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of resource provider operations along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<OperationListResultInner> listWithResponse() {
-        return listWithResponseAsync().block();
-    }
-
-    /**
-     * Lists all of the available REST API operations.
-     *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

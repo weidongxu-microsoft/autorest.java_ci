@@ -700,22 +700,6 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
      *
      * @param resourceGroupName The name of the resource group.
      * @param applicationGatewayName The name of the application gateway.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified application gateway along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ApplicationGatewayInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String applicationGatewayName) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, applicationGatewayName).block();
-    }
-
-    /**
-     * Gets the specified application gateway.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param applicationGatewayName The name of the application gateway.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1150,23 +1134,6 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
         String resourceGroupName, String applicationGatewayName, TagsObject parameters) {
         return updateTagsWithResponseAsync(resourceGroupName, applicationGatewayName, parameters)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Updates the specified application gateway tags.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param applicationGatewayName The name of the application gateway.
-     * @param parameters Parameters supplied to update application gateway tags.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return application gateway resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ApplicationGatewayInner> updateTagsWithResponse(
-        String resourceGroupName, String applicationGatewayName, TagsObject parameters) {
-        return updateTagsWithResponseAsync(resourceGroupName, applicationGatewayName, parameters).block();
     }
 
     /**
@@ -2770,18 +2737,6 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
     /**
      * Lists all available server variables.
      *
-     * @throws ErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ApplicationGatewayAvailableServerVariables API service call along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<List<String>> listAvailableServerVariablesWithResponse() {
-        return listAvailableServerVariablesWithResponseAsync().block();
-    }
-
-    /**
-     * Lists all available server variables.
-     *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
@@ -2886,18 +2841,6 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
     /**
      * Lists all available request headers.
      *
-     * @throws ErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ApplicationGatewayAvailableRequestHeaders API service call along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<List<String>> listAvailableRequestHeadersWithResponse() {
-        return listAvailableRequestHeadersWithResponseAsync().block();
-    }
-
-    /**
-     * Lists all available request headers.
-     *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
@@ -2997,18 +2940,6 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<List<String>> listAvailableResponseHeadersAsync() {
         return listAvailableResponseHeadersWithResponseAsync().flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Lists all available response headers.
-     *
-     * @throws ErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ApplicationGatewayAvailableResponseHeaders API service call along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<List<String>> listAvailableResponseHeadersWithResponse() {
-        return listAvailableResponseHeadersWithResponseAsync().block();
     }
 
     /**
@@ -3120,18 +3051,6 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
     /**
      * Lists all available web application firewall rule sets.
      *
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ApplicationGatewayAvailableWafRuleSets API service call along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ApplicationGatewayAvailableWafRuleSetsResultInner> listAvailableWafRuleSetsWithResponse() {
-        return listAvailableWafRuleSetsWithResponseAsync().block();
-    }
-
-    /**
-     * Lists all available web application firewall rule sets.
-     *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -3233,18 +3152,6 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ApplicationGatewayAvailableSslOptionsInner> listAvailableSslOptionsAsync() {
         return listAvailableSslOptionsWithResponseAsync().flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Lists available Ssl options for configuring Ssl policy.
-     *
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ApplicationGatewayAvailableSslOptions API service call along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ApplicationGatewayAvailableSslOptionsInner> listAvailableSslOptionsWithResponse() {
-        return listAvailableSslOptionsWithResponseAsync().block();
     }
 
     /**
@@ -3521,21 +3428,6 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
     private Mono<ApplicationGatewaySslPredefinedPolicyInner> getSslPredefinedPolicyAsync(String predefinedPolicyName) {
         return getSslPredefinedPolicyWithResponseAsync(predefinedPolicyName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets Ssl predefined policy with the specified policy name.
-     *
-     * @param predefinedPolicyName Name of Ssl predefined policy.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return ssl predefined policy with the specified policy name along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ApplicationGatewaySslPredefinedPolicyInner> getSslPredefinedPolicyWithResponse(
-        String predefinedPolicyName) {
-        return getSslPredefinedPolicyWithResponseAsync(predefinedPolicyName).block();
     }
 
     /**

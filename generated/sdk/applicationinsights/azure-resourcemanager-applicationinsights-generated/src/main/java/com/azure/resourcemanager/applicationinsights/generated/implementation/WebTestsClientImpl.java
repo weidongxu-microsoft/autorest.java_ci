@@ -480,21 +480,6 @@ public final class WebTestsClientImpl implements WebTestsClient {
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param webTestName The name of the Application Insights webtest resource.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a specific Application Insights web test definition along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<WebTestInner> getByResourceGroupWithResponse(String resourceGroupName, String webTestName) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, webTestName).block();
-    }
-
-    /**
-     * Get a specific Application Insights web test definition.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param webTestName The name of the Application Insights webtest resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -655,24 +640,6 @@ public final class WebTestsClientImpl implements WebTestsClient {
         String resourceGroupName, String webTestName, WebTestInner webTestDefinition) {
         return createOrUpdateWithResponseAsync(resourceGroupName, webTestName, webTestDefinition)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Creates or updates an Application Insights web test definition.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param webTestName The name of the Application Insights webtest resource.
-     * @param webTestDefinition Properties that need to be specified to create or update an Application Insights web
-     *     test definition.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Application Insights web test definition along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<WebTestInner> createOrUpdateWithResponse(
-        String resourceGroupName, String webTestName, WebTestInner webTestDefinition) {
-        return createOrUpdateWithResponseAsync(resourceGroupName, webTestName, webTestDefinition).block();
     }
 
     /**
@@ -846,23 +813,6 @@ public final class WebTestsClientImpl implements WebTestsClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param webTestName The name of the Application Insights webtest resource.
      * @param webTestTags Updated tag information to set into the web test instance.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Application Insights web test definition along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<WebTestInner> updateTagsWithResponse(
-        String resourceGroupName, String webTestName, TagsResource webTestTags) {
-        return updateTagsWithResponseAsync(resourceGroupName, webTestName, webTestTags).block();
-    }
-
-    /**
-     * Creates or updates an Application Insights web test definition.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param webTestName The name of the Application Insights webtest resource.
-     * @param webTestTags Updated tag information to set into the web test instance.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -995,21 +945,6 @@ public final class WebTestsClientImpl implements WebTestsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String webTestName) {
         return deleteWithResponseAsync(resourceGroupName, webTestName).flatMap(ignored -> Mono.empty());
-    }
-
-    /**
-     * Deletes an Application Insights web test.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param webTestName The name of the Application Insights webtest resource.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> deleteWithResponse(String resourceGroupName, String webTestName) {
-        return deleteWithResponseAsync(resourceGroupName, webTestName).block();
     }
 
     /**

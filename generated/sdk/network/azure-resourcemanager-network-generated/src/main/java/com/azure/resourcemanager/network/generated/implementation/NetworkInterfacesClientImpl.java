@@ -970,31 +970,6 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @param roleInstanceName The name of role instance.
      * @param networkInterfaceName The name of the network interface.
      * @param expand Expands referenced resources.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network interface in a cloud service along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<NetworkInterfaceInner> getCloudServiceNetworkInterfaceWithResponse(
-        String resourceGroupName,
-        String cloudServiceName,
-        String roleInstanceName,
-        String networkInterfaceName,
-        String expand) {
-        return getCloudServiceNetworkInterfaceWithResponseAsync(
-                resourceGroupName, cloudServiceName, roleInstanceName, networkInterfaceName, expand)
-            .block();
-    }
-
-    /**
-     * Get the specified network interface in a cloud service.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param cloudServiceName The name of the cloud service.
-     * @param roleInstanceName The name of role instance.
-     * @param networkInterfaceName The name of the network interface.
-     * @param expand Expands referenced resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1389,23 +1364,6 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
         final String expand = null;
         return getByResourceGroupWithResponseAsync(resourceGroupName, networkInterfaceName, expand)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets information about the specified network interface.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param networkInterfaceName The name of the network interface.
-     * @param expand Expands referenced resources.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the specified network interface along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<NetworkInterfaceInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String networkInterfaceName, String expand) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, networkInterfaceName, expand).block();
     }
 
     /**
@@ -1845,23 +1803,6 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
         String resourceGroupName, String networkInterfaceName, TagsObject parameters) {
         return updateTagsWithResponseAsync(resourceGroupName, networkInterfaceName, parameters)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Updates a network interface tags.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param networkInterfaceName The name of the network interface.
-     * @param parameters Parameters supplied to update network interface tags.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a network interface in a resource group along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<NetworkInterfaceInner> updateTagsWithResponse(
-        String resourceGroupName, String networkInterfaceName, TagsObject parameters) {
-        return updateTagsWithResponseAsync(resourceGroupName, networkInterfaceName, parameters).block();
     }
 
     /**
@@ -3306,31 +3247,6 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
      * @param virtualmachineIndex The virtual machine index.
      * @param networkInterfaceName The name of the network interface.
      * @param expand Expands referenced resources.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network interface in a virtual machine scale set along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<NetworkInterfaceInner> getVirtualMachineScaleSetNetworkInterfaceWithResponse(
-        String resourceGroupName,
-        String virtualMachineScaleSetName,
-        String virtualmachineIndex,
-        String networkInterfaceName,
-        String expand) {
-        return getVirtualMachineScaleSetNetworkInterfaceWithResponseAsync(
-                resourceGroupName, virtualMachineScaleSetName, virtualmachineIndex, networkInterfaceName, expand)
-            .block();
-    }
-
-    /**
-     * Get the specified network interface in a virtual machine scale set.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param virtualMachineScaleSetName The name of the virtual machine scale set.
-     * @param virtualmachineIndex The virtual machine index.
-     * @param networkInterfaceName The name of the network interface.
-     * @param expand Expands referenced resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -3880,39 +3796,6 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
                 ipConfigurationName,
                 expand)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Get the specified network interface ip configuration in a virtual machine scale set.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param virtualMachineScaleSetName The name of the virtual machine scale set.
-     * @param virtualmachineIndex The virtual machine index.
-     * @param networkInterfaceName The name of the network interface.
-     * @param ipConfigurationName The name of the ip configuration.
-     * @param expand Expands referenced resources.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network interface ip configuration in a virtual machine scale set along with {@link
-     *     Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<NetworkInterfaceIpConfigurationInner> getVirtualMachineScaleSetIpConfigurationWithResponse(
-        String resourceGroupName,
-        String virtualMachineScaleSetName,
-        String virtualmachineIndex,
-        String networkInterfaceName,
-        String ipConfigurationName,
-        String expand) {
-        return getVirtualMachineScaleSetIpConfigurationWithResponseAsync(
-                resourceGroupName,
-                virtualMachineScaleSetName,
-                virtualmachineIndex,
-                networkInterfaceName,
-                ipConfigurationName,
-                expand)
-            .block();
     }
 
     /**

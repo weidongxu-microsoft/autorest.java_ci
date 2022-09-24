@@ -121,18 +121,6 @@ public final class GlobalAdministratorsClientImpl implements GlobalAdministrator
     /**
      * Elevates access for a Global Administrator.
      *
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> elevateAccessWithResponse() {
-        return elevateAccessWithResponseAsync().block();
-    }
-
-    /**
-     * Elevates access for a Global Administrator.
-     *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

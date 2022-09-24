@@ -184,21 +184,6 @@ public final class CommunityGalleriesClientImpl implements CommunityGalleriesCli
      *
      * @param location Resource location.
      * @param publicGalleryName The public name of the community gallery.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ApiErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a community gallery by gallery public name along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<CommunityGalleryInner> getWithResponse(String location, String publicGalleryName) {
-        return getWithResponseAsync(location, publicGalleryName).block();
-    }
-
-    /**
-     * Get a community gallery by gallery public name.
-     *
-     * @param location Resource location.
-     * @param publicGalleryName The public name of the community gallery.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.

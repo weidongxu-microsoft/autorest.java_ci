@@ -304,23 +304,6 @@ public final class ManagedPrivateEndpointsClientImpl implements ManagedPrivateEn
      * @param resourceGroupName The name of the resource group containing the Kusto cluster.
      * @param clusterName The name of the Kusto cluster.
      * @param resourceName The name of the resource.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the result returned from a check name availability request along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<CheckNameResultInner> checkNameAvailabilityWithResponse(
-        String resourceGroupName, String clusterName, ManagedPrivateEndpointsCheckNameRequest resourceName) {
-        return checkNameAvailabilityWithResponseAsync(resourceGroupName, clusterName, resourceName).block();
-    }
-
-    /**
-     * Checks that the managed private endpoints resource name is valid and is not already in use.
-     *
-     * @param resourceGroupName The name of the resource group containing the Kusto cluster.
-     * @param clusterName The name of the Kusto cluster.
-     * @param resourceName The name of the resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -647,23 +630,6 @@ public final class ManagedPrivateEndpointsClientImpl implements ManagedPrivateEn
         String resourceGroupName, String clusterName, String managedPrivateEndpointName) {
         return getWithResponseAsync(resourceGroupName, clusterName, managedPrivateEndpointName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets a managed private endpoint.
-     *
-     * @param resourceGroupName The name of the resource group containing the Kusto cluster.
-     * @param clusterName The name of the Kusto cluster.
-     * @param managedPrivateEndpointName The name of the managed private endpoint.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a managed private endpoint along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ManagedPrivateEndpointInner> getWithResponse(
-        String resourceGroupName, String clusterName, String managedPrivateEndpointName) {
-        return getWithResponseAsync(resourceGroupName, clusterName, managedPrivateEndpointName).block();
     }
 
     /**

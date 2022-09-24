@@ -515,26 +515,6 @@ public final class TracksClientImpl implements TracksClient {
      * @param accountName The Media Services account name.
      * @param assetName The Asset name.
      * @param trackName The Asset Track name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the details of a Track in the Asset along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<AssetTrackInner> getWithResponse(
-        String resourceGroupName, String accountName, String assetName, String trackName) {
-        return getWithResponseAsync(resourceGroupName, accountName, assetName, trackName).block();
-    }
-
-    /**
-     * Get a Track
-     *
-     * <p>Get the details of a Track in the Asset.
-     *
-     * @param resourceGroupName The name of the resource group within the Azure subscription.
-     * @param accountName The Media Services account name.
-     * @param assetName The Asset name.
-     * @param trackName The Asset Track name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

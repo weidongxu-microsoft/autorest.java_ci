@@ -461,22 +461,6 @@ public final class DomainsClientImpl implements DomainsClient {
      * <p>Description for Check if a domain is available for registration.
      *
      * @param identifier Name of the domain.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return domain availability check result along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<DomainAvailabilityCheckResultInner> checkAvailabilityWithResponse(NameIdentifierInner identifier) {
-        return checkAvailabilityWithResponseAsync(identifier).block();
-    }
-
-    /**
-     * Check if a domain is available for registration.
-     *
-     * <p>Description for Check if a domain is available for registration.
-     *
-     * @param identifier Name of the domain.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -745,20 +729,6 @@ public final class DomainsClientImpl implements DomainsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DomainControlCenterSsoRequestInner> getControlCenterSsoRequestAsync() {
         return getControlCenterSsoRequestWithResponseAsync().flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Generate a single sign-on request for the domain management portal.
-     *
-     * <p>Description for Generate a single sign-on request for the domain management portal.
-     *
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single sign-on request information for domain management along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<DomainControlCenterSsoRequestInner> getControlCenterSsoRequestWithResponse() {
-        return getControlCenterSsoRequestWithResponseAsync().block();
     }
 
     /**
@@ -1271,23 +1241,6 @@ public final class DomainsClientImpl implements DomainsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a domain along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<DomainInner> getByResourceGroupWithResponse(String resourceGroupName, String domainName) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, domainName).block();
-    }
-
-    /**
-     * Get a domain.
-     *
-     * <p>Description for Get a domain.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param domainName Name of the domain.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -1729,26 +1682,6 @@ public final class DomainsClientImpl implements DomainsClient {
      * @param domainName Name of the domain.
      * @param forceHardDeleteDomain Specify &lt;code&gt;true&lt;/code&gt; to delete the domain immediately. The default
      *     is &lt;code&gt;false&lt;/code&gt; which deletes the domain after 24 hours.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> deleteWithResponse(
-        String resourceGroupName, String domainName, Boolean forceHardDeleteDomain) {
-        return deleteWithResponseAsync(resourceGroupName, domainName, forceHardDeleteDomain).block();
-    }
-
-    /**
-     * Delete a domain.
-     *
-     * <p>Description for Delete a domain.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param domainName Name of the domain.
-     * @param forceHardDeleteDomain Specify &lt;code&gt;true&lt;/code&gt; to delete the domain immediately. The default
-     *     is &lt;code&gt;false&lt;/code&gt; which deletes the domain after 24 hours.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -1907,25 +1840,6 @@ public final class DomainsClientImpl implements DomainsClient {
     private Mono<DomainInner> updateAsync(String resourceGroupName, String domainName, DomainPatchResource domain) {
         return updateWithResponseAsync(resourceGroupName, domainName, domain)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Creates or updates a domain.
-     *
-     * <p>Description for Creates or updates a domain.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param domainName Name of the domain.
-     * @param domain Domain registration information.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a domain along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<DomainInner> updateWithResponse(
-        String resourceGroupName, String domainName, DomainPatchResource domain) {
-        return updateWithResponseAsync(resourceGroupName, domainName, domain).block();
     }
 
     /**
@@ -2298,25 +2212,6 @@ public final class DomainsClientImpl implements DomainsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
      * @param name Name of identifier.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return domain ownership Identifier along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<DomainOwnershipIdentifierInner> getOwnershipIdentifierWithResponse(
-        String resourceGroupName, String domainName, String name) {
-        return getOwnershipIdentifierWithResponseAsync(resourceGroupName, domainName, name).block();
-    }
-
-    /**
-     * Get ownership identifier for domain
-     *
-     * <p>Description for Get ownership identifier for domain.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param domainName Name of domain.
-     * @param name Name of identifier.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -2521,32 +2416,6 @@ public final class DomainsClientImpl implements DomainsClient {
      * @param domainName Name of domain.
      * @param name Name of identifier.
      * @param domainOwnershipIdentifier A JSON representation of the domain ownership properties.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return domain ownership Identifier along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<DomainOwnershipIdentifierInner> createOrUpdateOwnershipIdentifierWithResponse(
-        String resourceGroupName,
-        String domainName,
-        String name,
-        DomainOwnershipIdentifierInner domainOwnershipIdentifier) {
-        return createOrUpdateOwnershipIdentifierWithResponseAsync(
-                resourceGroupName, domainName, name, domainOwnershipIdentifier)
-            .block();
-    }
-
-    /**
-     * Creates an ownership identifier for a domain or updates identifier details for an existing identifier
-     *
-     * <p>Description for Creates an ownership identifier for a domain or updates identifier details for an existing
-     * identifier.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param domainName Name of domain.
-     * @param name Name of identifier.
-     * @param domainOwnershipIdentifier A JSON representation of the domain ownership properties.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -2716,25 +2585,6 @@ public final class DomainsClientImpl implements DomainsClient {
     private Mono<Void> deleteOwnershipIdentifierAsync(String resourceGroupName, String domainName, String name) {
         return deleteOwnershipIdentifierWithResponseAsync(resourceGroupName, domainName, name)
             .flatMap(ignored -> Mono.empty());
-    }
-
-    /**
-     * Delete ownership identifier for domain
-     *
-     * <p>Description for Delete ownership identifier for domain.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param domainName Name of domain.
-     * @param name Name of identifier.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> deleteOwnershipIdentifierWithResponse(
-        String resourceGroupName, String domainName, String name) {
-        return deleteOwnershipIdentifierWithResponseAsync(resourceGroupName, domainName, name).block();
     }
 
     /**
@@ -2947,32 +2797,6 @@ public final class DomainsClientImpl implements DomainsClient {
      * @param domainName Name of domain.
      * @param name Name of identifier.
      * @param domainOwnershipIdentifier A JSON representation of the domain ownership properties.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return domain ownership Identifier along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<DomainOwnershipIdentifierInner> updateOwnershipIdentifierWithResponse(
-        String resourceGroupName,
-        String domainName,
-        String name,
-        DomainOwnershipIdentifierInner domainOwnershipIdentifier) {
-        return updateOwnershipIdentifierWithResponseAsync(
-                resourceGroupName, domainName, name, domainOwnershipIdentifier)
-            .block();
-    }
-
-    /**
-     * Creates an ownership identifier for a domain or updates identifier details for an existing identifier
-     *
-     * <p>Description for Creates an ownership identifier for a domain or updates identifier details for an existing
-     * identifier.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param domainName Name of domain.
-     * @param name Name of identifier.
-     * @param domainOwnershipIdentifier A JSON representation of the domain ownership properties.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -3137,23 +2961,6 @@ public final class DomainsClientImpl implements DomainsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> renewWithResponse(String resourceGroupName, String domainName) {
-        return renewWithResponseAsync(resourceGroupName, domainName).block();
-    }
-
-    /**
-     * Renew a domain.
-     *
-     * <p>Description for Renew a domain.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param domainName Name of the domain.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -3288,21 +3095,6 @@ public final class DomainsClientImpl implements DomainsClient {
     private Mono<DomainInner> transferOutAsync(String resourceGroupName, String domainName) {
         return transferOutWithResponseAsync(resourceGroupName, domainName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Transfer out domain to another registrar.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param domainName Name of domain.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a domain along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<DomainInner> transferOutWithResponse(String resourceGroupName, String domainName) {
-        return transferOutWithResponseAsync(resourceGroupName, domainName).block();
     }
 
     /**

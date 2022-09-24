@@ -219,22 +219,6 @@ public final class AlertRuleIncidentsClientImpl implements AlertRuleIncidentsCli
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @param incidentName The name of the incident to retrieve.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an incident associated to an alert rule along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<IncidentInner> getWithResponse(String resourceGroupName, String ruleName, String incidentName) {
-        return getWithResponseAsync(resourceGroupName, ruleName, incidentName).block();
-    }
-
-    /**
-     * Gets an incident associated to an alert rule.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param ruleName The name of the rule.
-     * @param incidentName The name of the incident to retrieve.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

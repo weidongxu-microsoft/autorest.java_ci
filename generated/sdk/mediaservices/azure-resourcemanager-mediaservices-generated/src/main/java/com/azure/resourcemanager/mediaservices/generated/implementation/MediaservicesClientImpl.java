@@ -515,23 +515,6 @@ public final class MediaservicesClientImpl implements MediaservicesClient {
      *
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the details of a Media Services account along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<MediaServiceInner> getByResourceGroupWithResponse(String resourceGroupName, String accountName) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, accountName).block();
-    }
-
-    /**
-     * Get a Media Services account
-     *
-     * <p>Get the details of a Media Services account.
-     *
-     * @param resourceGroupName The name of the resource group within the Azure subscription.
-     * @param accountName The Media Services account name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -964,23 +947,6 @@ public final class MediaservicesClientImpl implements MediaservicesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String accountName) {
         return deleteWithResponseAsync(resourceGroupName, accountName).flatMap(ignored -> Mono.empty());
-    }
-
-    /**
-     * Delete a Media Services account.
-     *
-     * <p>Deletes a Media Services account.
-     *
-     * @param resourceGroupName The name of the resource group within the Azure subscription.
-     * @param accountName The Media Services account name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> deleteWithResponse(String resourceGroupName, String accountName) {
-        return deleteWithResponseAsync(resourceGroupName, accountName).block();
     }
 
     /**
@@ -1446,25 +1412,6 @@ public final class MediaservicesClientImpl implements MediaservicesClient {
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param parameters The request parameters.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> syncStorageKeysWithResponse(
-        String resourceGroupName, String accountName, SyncStorageKeysInput parameters) {
-        return syncStorageKeysWithResponseAsync(resourceGroupName, accountName, parameters).block();
-    }
-
-    /**
-     * Synchronizes Storage Account Keys
-     *
-     * <p>Synchronizes storage account keys for a storage account associated with the Media Service account.
-     *
-     * @param resourceGroupName The name of the resource group within the Azure subscription.
-     * @param accountName The Media Services account name.
-     * @param parameters The request parameters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1626,25 +1573,6 @@ public final class MediaservicesClientImpl implements MediaservicesClient {
         String resourceGroupName, String accountName, ListEdgePoliciesInput parameters) {
         return listEdgePoliciesWithResponseAsync(resourceGroupName, accountName, parameters)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * List the media edge policies associated with the Media Services account.
-     *
-     * <p>List all the media edge policies associated with the Media Services account.
-     *
-     * @param resourceGroupName The name of the resource group within the Azure subscription.
-     * @param accountName The Media Services account name.
-     * @param parameters The request parameters.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response body along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<EdgePoliciesInner> listEdgePoliciesWithResponse(
-        String resourceGroupName, String accountName, ListEdgePoliciesInput parameters) {
-        return listEdgePoliciesWithResponseAsync(resourceGroupName, accountName, parameters).block();
     }
 
     /**

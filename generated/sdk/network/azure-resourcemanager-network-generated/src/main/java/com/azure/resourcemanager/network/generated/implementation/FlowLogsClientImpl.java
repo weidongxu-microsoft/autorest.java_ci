@@ -615,24 +615,6 @@ public final class FlowLogsClientImpl implements FlowLogsClient {
      * @param networkWatcherName The name of the network watcher.
      * @param flowLogName The name of the flow log.
      * @param parameters Parameters supplied to update flow log tags.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a flow log resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<FlowLogInner> updateTagsWithResponse(
-        String resourceGroupName, String networkWatcherName, String flowLogName, TagsObject parameters) {
-        return updateTagsWithResponseAsync(resourceGroupName, networkWatcherName, flowLogName, parameters).block();
-    }
-
-    /**
-     * Update tags of the specified flow log.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param networkWatcherName The name of the network watcher.
-     * @param flowLogName The name of the flow log.
-     * @param parameters Parameters supplied to update flow log tags.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -792,23 +774,6 @@ public final class FlowLogsClientImpl implements FlowLogsClient {
     private Mono<FlowLogInner> getAsync(String resourceGroupName, String networkWatcherName, String flowLogName) {
         return getWithResponseAsync(resourceGroupName, networkWatcherName, flowLogName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets a flow log resource by name.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param networkWatcherName The name of the network watcher.
-     * @param flowLogName The name of the flow log resource.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a flow log resource by name along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<FlowLogInner> getWithResponse(
-        String resourceGroupName, String networkWatcherName, String flowLogName) {
-        return getWithResponseAsync(resourceGroupName, networkWatcherName, flowLogName).block();
     }
 
     /**

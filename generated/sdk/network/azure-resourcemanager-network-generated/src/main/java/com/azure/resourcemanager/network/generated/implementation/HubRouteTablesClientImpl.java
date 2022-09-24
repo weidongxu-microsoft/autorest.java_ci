@@ -602,23 +602,6 @@ public final class HubRouteTablesClientImpl implements HubRouteTablesClient {
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
      * @param routeTableName The name of the RouteTable.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return routeTable resource in a virtual hub along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<HubRouteTableInner> getWithResponse(
-        String resourceGroupName, String virtualHubName, String routeTableName) {
-        return getWithResponseAsync(resourceGroupName, virtualHubName, routeTableName).block();
-    }
-
-    /**
-     * Retrieves the details of a RouteTable.
-     *
-     * @param resourceGroupName The resource group name of the VirtualHub.
-     * @param virtualHubName The name of the VirtualHub.
-     * @param routeTableName The name of the RouteTable.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

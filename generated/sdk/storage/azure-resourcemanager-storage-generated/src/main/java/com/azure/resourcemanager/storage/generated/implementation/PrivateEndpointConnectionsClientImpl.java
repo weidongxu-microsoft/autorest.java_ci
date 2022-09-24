@@ -459,27 +459,6 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param privateEndpointConnectionName The name of the private endpoint connection associated with the Azure
      *     resource.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified private endpoint connection associated with the storage account along with {@link
-     *     Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<PrivateEndpointConnectionInner> getWithResponse(
-        String resourceGroupName, String accountName, String privateEndpointConnectionName) {
-        return getWithResponseAsync(resourceGroupName, accountName, privateEndpointConnectionName).block();
-    }
-
-    /**
-     * Gets the specified private endpoint connection associated with the storage account.
-     *
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     *     insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param privateEndpointConnectionName The name of the private endpoint connection associated with the Azure
-     *     resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -687,30 +666,6 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @param privateEndpointConnectionName The name of the private endpoint connection associated with the Azure
      *     resource.
      * @param properties The private endpoint connection properties.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Private Endpoint Connection resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<PrivateEndpointConnectionInner> putWithResponse(
-        String resourceGroupName,
-        String accountName,
-        String privateEndpointConnectionName,
-        PrivateEndpointConnectionInner properties) {
-        return putWithResponseAsync(resourceGroupName, accountName, privateEndpointConnectionName, properties).block();
-    }
-
-    /**
-     * Update the state of specified private endpoint connection associated with the storage account.
-     *
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     *     insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param privateEndpointConnectionName The name of the private endpoint connection associated with the Azure
-     *     resource.
-     * @param properties The private endpoint connection properties.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -887,26 +842,6 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     private Mono<Void> deleteAsync(String resourceGroupName, String accountName, String privateEndpointConnectionName) {
         return deleteWithResponseAsync(resourceGroupName, accountName, privateEndpointConnectionName)
             .flatMap(ignored -> Mono.empty());
-    }
-
-    /**
-     * Deletes the specified private endpoint connection associated with the storage account.
-     *
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     *     insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param privateEndpointConnectionName The name of the private endpoint connection associated with the Azure
-     *     resource.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> deleteWithResponse(
-        String resourceGroupName, String accountName, String privateEndpointConnectionName) {
-        return deleteWithResponseAsync(resourceGroupName, accountName, privateEndpointConnectionName).block();
     }
 
     /**

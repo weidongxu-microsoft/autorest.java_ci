@@ -1113,21 +1113,6 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      *
      * @param resourceGroupName Name of the resource group that contains the managed HSM pool.
      * @param name The name of the managed HSM Pool.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified managed HSM Pool along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ManagedHsmInner> getByResourceGroupWithResponse(String resourceGroupName, String name) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, name).block();
-    }
-
-    /**
-     * Gets the specified managed HSM Pool.
-     *
-     * @param resourceGroupName Name of the resource group that contains the managed HSM pool.
-     * @param name The name of the managed HSM Pool.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
@@ -1772,21 +1757,6 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      *
      * @param name The name of the deleted managed HSM.
      * @param location The location of the deleted managed HSM.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified deleted managed HSM along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<DeletedManagedHsmInner> getDeletedWithResponse(String name, String location) {
-        return getDeletedWithResponseAsync(name, location).block();
-    }
-
-    /**
-     * Gets the specified deleted managed HSM.
-     *
-     * @param name The name of the deleted managed HSM.
-     * @param location The location of the deleted managed HSM.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
@@ -2135,21 +2105,6 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
     private Mono<CheckMhsmNameAvailabilityResultInner> checkMhsmNameAvailabilityAsync(
         CheckMhsmNameAvailabilityParameters mhsmName) {
         return checkMhsmNameAvailabilityWithResponseAsync(mhsmName).flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Checks that the managed hsm name is valid and is not already in use.
-     *
-     * @param mhsmName The name of the managed hsm.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the CheckMhsmNameAvailability operation response along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<CheckMhsmNameAvailabilityResultInner> checkMhsmNameAvailabilityWithResponse(
-        CheckMhsmNameAvailabilityParameters mhsmName) {
-        return checkMhsmNameAvailabilityWithResponseAsync(mhsmName).block();
     }
 
     /**

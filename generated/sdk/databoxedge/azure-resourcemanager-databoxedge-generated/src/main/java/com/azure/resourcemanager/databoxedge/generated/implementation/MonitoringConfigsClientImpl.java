@@ -466,23 +466,6 @@ public final class MonitoringConfigsClientImpl implements MonitoringConfigsClien
      * @param deviceName The device name.
      * @param roleName The role name.
      * @param resourceGroupName The resource group name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a metric configuration of a role along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<MonitoringMetricConfigurationInner> getWithResponse(
-        String deviceName, String roleName, String resourceGroupName) {
-        return getWithResponseAsync(deviceName, roleName, resourceGroupName).block();
-    }
-
-    /**
-     * Gets a metric configuration of a role.
-     *
-     * @param deviceName The device name.
-     * @param roleName The role name.
-     * @param resourceGroupName The resource group name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

@@ -1048,25 +1048,6 @@ public final class GalleryApplicationsClientImpl implements GalleryApplicationsC
      * @param galleryName The name of the Shared Application Gallery from which the Application Definitions are to be
      *     retrieved.
      * @param galleryApplicationName The name of the gallery Application Definition to be retrieved.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ApiErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the gallery Application Definition that you want to create or update along
-     *     with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<GalleryApplicationInner> getWithResponse(
-        String resourceGroupName, String galleryName, String galleryApplicationName) {
-        return getWithResponseAsync(resourceGroupName, galleryName, galleryApplicationName).block();
-    }
-
-    /**
-     * Retrieves information about a gallery Application Definition.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Application Gallery from which the Application Definitions are to be
-     *     retrieved.
-     * @param galleryApplicationName The name of the gallery Application Definition to be retrieved.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.

@@ -446,22 +446,6 @@ public final class ServerKeysClientImpl implements ServerKeysClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param keyName The name of the PostgreSQL Server key to be retrieved.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a PostgreSQL Server key along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ServerKeyInner> getWithResponse(String resourceGroupName, String serverName, String keyName) {
-        return getWithResponseAsync(resourceGroupName, serverName, keyName).block();
-    }
-
-    /**
-     * Gets a PostgreSQL Server key.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param serverName The name of the server.
-     * @param keyName The name of the PostgreSQL Server key to be retrieved.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

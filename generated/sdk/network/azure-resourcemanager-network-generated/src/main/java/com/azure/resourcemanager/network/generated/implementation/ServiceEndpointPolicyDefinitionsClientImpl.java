@@ -586,25 +586,6 @@ public final class ServiceEndpointPolicyDefinitionsClientImpl implements Service
      * @param resourceGroupName The name of the resource group.
      * @param serviceEndpointPolicyName The name of the service endpoint policy name.
      * @param serviceEndpointPolicyDefinitionName The name of the service endpoint policy definition name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified service endpoint policy definitions from service endpoint policy along with {@link
-     *     Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ServiceEndpointPolicyDefinitionInner> getWithResponse(
-        String resourceGroupName, String serviceEndpointPolicyName, String serviceEndpointPolicyDefinitionName) {
-        return getWithResponseAsync(resourceGroupName, serviceEndpointPolicyName, serviceEndpointPolicyDefinitionName)
-            .block();
-    }
-
-    /**
-     * Get the specified service endpoint policy definitions from service endpoint policy.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param serviceEndpointPolicyName The name of the service endpoint policy name.
-     * @param serviceEndpointPolicyDefinitionName The name of the service endpoint policy definition name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

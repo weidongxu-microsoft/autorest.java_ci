@@ -1286,25 +1286,6 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @param location Location where you plan to create the static site.
      * @param staticSitesWorkflowPreviewRequest A JSON representation of the StaticSitesWorkflowPreviewRequest
      *     properties. See example.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return preview for the Static Site Workflow to be generated along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<StaticSitesWorkflowPreviewInner> previewWorkflowWithResponse(
-        String location, StaticSitesWorkflowPreviewRequest staticSitesWorkflowPreviewRequest) {
-        return previewWorkflowWithResponseAsync(location, staticSitesWorkflowPreviewRequest).block();
-    }
-
-    /**
-     * Generates a preview workflow file for the static site
-     *
-     * <p>Description for Generates a preview workflow file for the static site.
-     *
-     * @param location Location where you plan to create the static site.
-     * @param staticSitesWorkflowPreviewRequest A JSON representation of the StaticSitesWorkflowPreviewRequest
-     *     properties. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -1778,23 +1759,6 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     private Mono<StaticSiteArmResourceInner> getByResourceGroupAsync(String resourceGroupName, String name) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, name)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets the details of a static site.
-     *
-     * <p>Description for Gets the details of a static site.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the static site.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site ARM resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<StaticSiteArmResourceInner> getByResourceGroupWithResponse(String resourceGroupName, String name) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, name).block();
     }
 
     /**
@@ -2514,25 +2478,6 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to create or update.
      * @param staticSiteEnvelope A JSON representation of the staticsite properties. See example.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site ARM resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<StaticSiteArmResourceInner> updateStaticSiteWithResponse(
-        String resourceGroupName, String name, StaticSitePatchResource staticSiteEnvelope) {
-        return updateStaticSiteWithResponseAsync(resourceGroupName, name, staticSiteEnvelope).block();
-    }
-
-    /**
-     * Creates a new static site in an existing resource group, or updates an existing static site.
-     *
-     * <p>Description for Creates a new static site in an existing resource group, or updates an existing static site.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the static site to create or update.
-     * @param staticSiteEnvelope A JSON representation of the staticsite properties. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -2922,26 +2867,6 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @param name Name of the staticsite.
      * @param authprovider The auth provider for this user.
      * @param userid The user id of the user.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> deleteStaticSiteUserWithResponse(
-        String resourceGroupName, String name, String authprovider, String userid) {
-        return deleteStaticSiteUserWithResponseAsync(resourceGroupName, name, authprovider, userid).block();
-    }
-
-    /**
-     * Deletes the user entry from the static site.
-     *
-     * <p>Description for Deletes the user entry from the static site.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the staticsite.
-     * @param authprovider The auth provider for this user.
-     * @param userid The user id of the user.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -3142,33 +3067,6 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
         return updateStaticSiteUserWithResponseAsync(
                 resourceGroupName, name, authprovider, userid, staticSiteUserEnvelope)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Updates a user entry with the listed roles
-     *
-     * <p>Description for Updates a user entry with the listed roles.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the static site.
-     * @param authprovider The auth provider for this user.
-     * @param userid The user id of the user.
-     * @param staticSiteUserEnvelope A JSON representation of the StaticSiteUser properties. See example.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site User ARM resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<StaticSiteUserArmResourceInner> updateStaticSiteUserWithResponse(
-        String resourceGroupName,
-        String name,
-        String authprovider,
-        String userid,
-        StaticSiteUserArmResourceInner staticSiteUserEnvelope) {
-        return updateStaticSiteUserWithResponseAsync(
-                resourceGroupName, name, authprovider, userid, staticSiteUserEnvelope)
-            .block();
     }
 
     /**
@@ -3549,25 +3447,6 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
         String resourceGroupName, String name, String environmentName) {
         return getStaticSiteBuildWithResponseAsync(resourceGroupName, name, environmentName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets the details of a static site build.
-     *
-     * <p>Description for Gets the details of a static site build.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the static site.
-     * @param environmentName The stage site identifier.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site Build ARM resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<StaticSiteBuildArmResourceInner> getStaticSiteBuildWithResponse(
-        String resourceGroupName, String name, String environmentName) {
-        return getStaticSiteBuildWithResponseAsync(resourceGroupName, name, environmentName).block();
     }
 
     /**
@@ -4043,28 +3922,6 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @param name Name of the static site.
      * @param environmentName The stage site identifier.
      * @param appSettings The dictionary containing the static site app settings to update.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<StringDictionaryInner> createOrUpdateStaticSiteBuildAppSettingsWithResponse(
-        String resourceGroupName, String name, String environmentName, StringDictionaryInner appSettings) {
-        return createOrUpdateStaticSiteBuildAppSettingsWithResponseAsync(
-                resourceGroupName, name, environmentName, appSettings)
-            .block();
-    }
-
-    /**
-     * Creates or updates the app settings of a static site build.
-     *
-     * <p>Description for Creates or updates the app settings of a static site build.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the static site.
-     * @param environmentName The stage site identifier.
-     * @param appSettings The dictionary containing the static site app settings to update.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -4253,28 +4110,6 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
         return createOrUpdateStaticSiteBuildFunctionAppSettingsWithResponseAsync(
                 resourceGroupName, name, environmentName, appSettings)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Creates or updates the function app settings of a static site build.
-     *
-     * <p>Description for Creates or updates the function app settings of a static site build.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the static site.
-     * @param environmentName The stage site identifier.
-     * @param appSettings The dictionary containing the static site function app settings to update.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<StringDictionaryInner> createOrUpdateStaticSiteBuildFunctionAppSettingsWithResponse(
-        String resourceGroupName, String name, String environmentName, StringDictionaryInner appSettings) {
-        return createOrUpdateStaticSiteBuildFunctionAppSettingsWithResponseAsync(
-                resourceGroupName, name, environmentName, appSettings)
-            .block();
     }
 
     /**
@@ -4677,25 +4512,6 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
      * @param environmentName The stage site identifier.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<StringDictionaryInner> listStaticSiteBuildAppSettingsWithResponse(
-        String resourceGroupName, String name, String environmentName) {
-        return listStaticSiteBuildAppSettingsWithResponseAsync(resourceGroupName, name, environmentName).block();
-    }
-
-    /**
-     * Gets the application settings of a static site build.
-     *
-     * <p>Description for Gets the application settings of a static site build.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the static site.
-     * @param environmentName The stage site identifier.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -4857,26 +4673,6 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
         String resourceGroupName, String name, String environmentName) {
         return listStaticSiteBuildFunctionAppSettingsWithResponseAsync(resourceGroupName, name, environmentName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets the application settings of a static site build.
-     *
-     * <p>Description for Gets the application settings of a static site build.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the static site.
-     * @param environmentName The stage site identifier.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<StringDictionaryInner> listStaticSiteBuildFunctionAppSettingsWithResponse(
-        String resourceGroupName, String name, String environmentName) {
-        return listStaticSiteBuildFunctionAppSettingsWithResponseAsync(resourceGroupName, name, environmentName)
-            .block();
     }
 
     /**
@@ -5290,29 +5086,6 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
         return getUserProvidedFunctionAppForStaticSiteBuildWithResponseAsync(
                 resourceGroupName, name, environmentName, functionAppName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets the details of the user provided function app registered with a static site build
-     *
-     * <p>Description for Gets the details of the user provided function app registered with a static site build.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the static site.
-     * @param environmentName The stage site identifier.
-     * @param functionAppName Name of the function app registered with the static site build.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site User Provided Function App ARM resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<StaticSiteUserProvidedFunctionAppArmResourceInner>
-        getUserProvidedFunctionAppForStaticSiteBuildWithResponse(
-            String resourceGroupName, String name, String environmentName, String functionAppName) {
-        return getUserProvidedFunctionAppForStaticSiteBuildWithResponseAsync(
-                resourceGroupName, name, environmentName, functionAppName)
-            .block();
     }
 
     /**
@@ -6092,28 +5865,6 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @param name Name of the static site.
      * @param environmentName The stage site identifier.
      * @param functionAppName Name of the function app registered with the static site build.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> detachUserProvidedFunctionAppFromStaticSiteBuildWithResponse(
-        String resourceGroupName, String name, String environmentName, String functionAppName) {
-        return detachUserProvidedFunctionAppFromStaticSiteBuildWithResponseAsync(
-                resourceGroupName, name, environmentName, functionAppName)
-            .block();
-    }
-
-    /**
-     * Detach the user provided function app from the static site build
-     *
-     * <p>Description for Detach the user provided function app from the static site build.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the static site.
-     * @param environmentName The stage site identifier.
-     * @param functionAppName Name of the function app registered with the static site build.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -6651,25 +6402,6 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
      * @param appSettings The dictionary containing the static site app settings to update.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<StringDictionaryInner> createOrUpdateStaticSiteAppSettingsWithResponse(
-        String resourceGroupName, String name, StringDictionaryInner appSettings) {
-        return createOrUpdateStaticSiteAppSettingsWithResponseAsync(resourceGroupName, name, appSettings).block();
-    }
-
-    /**
-     * Creates or updates the app settings of a static site.
-     *
-     * <p>Description for Creates or updates the app settings of a static site.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the static site.
-     * @param appSettings The dictionary containing the static site app settings to update.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -6833,26 +6565,6 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
         String resourceGroupName, String name, StringDictionaryInner appSettings) {
         return createOrUpdateStaticSiteFunctionAppSettingsWithResponseAsync(resourceGroupName, name, appSettings)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Creates or updates the function app settings of a static site.
-     *
-     * <p>Description for Creates or updates the function app settings of a static site.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the static site.
-     * @param appSettings The dictionary containing the static site function app settings to update.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<StringDictionaryInner> createOrUpdateStaticSiteFunctionAppSettingsWithResponse(
-        String resourceGroupName, String name, StringDictionaryInner appSettings) {
-        return createOrUpdateStaticSiteFunctionAppSettingsWithResponseAsync(resourceGroupName, name, appSettings)
-            .block();
     }
 
     /**
@@ -7046,29 +6758,6 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
         return createUserRolesInvitationLinkWithResponseAsync(
                 resourceGroupName, name, staticSiteUserRolesInvitationEnvelope)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Creates an invitation link for a user with the role
-     *
-     * <p>Description for Creates an invitation link for a user with the role.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the static site.
-     * @param staticSiteUserRolesInvitationEnvelope Static sites user roles invitation resource.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static sites user roles invitation link resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<StaticSiteUserInvitationResponseResourceInner> createUserRolesInvitationLinkWithResponse(
-        String resourceGroupName,
-        String name,
-        StaticSiteUserInvitationRequestResource staticSiteUserRolesInvitationEnvelope) {
-        return createUserRolesInvitationLinkWithResponseAsync(
-                resourceGroupName, name, staticSiteUserRolesInvitationEnvelope)
-            .block();
     }
 
     /**
@@ -7443,25 +7132,6 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
         String resourceGroupName, String name, String domainName) {
         return getStaticSiteCustomDomainWithResponseAsync(resourceGroupName, name, domainName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets an existing custom domain for a particular static site.
-     *
-     * <p>Description for Gets an existing custom domain for a particular static site.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the static site resource to search in.
-     * @param domainName The custom domain name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site Custom Domain Overview ARM resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<StaticSiteCustomDomainOverviewArmResourceInner> getStaticSiteCustomDomainWithResponse(
-        String resourceGroupName, String name, String domainName) {
-        return getStaticSiteCustomDomainWithResponseAsync(resourceGroupName, name, domainName).block();
     }
 
     /**
@@ -9090,24 +8760,6 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<StringDictionaryInner> listStaticSiteAppSettingsWithResponse(
-        String resourceGroupName, String name) {
-        return listStaticSiteAppSettingsWithResponseAsync(resourceGroupName, name).block();
-    }
-
-    /**
-     * Gets the application settings of a static site.
-     *
-     * <p>Description for Gets the application settings of a static site.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the static site.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -9251,23 +8903,6 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     private Mono<StringListInner> listStaticSiteConfiguredRolesAsync(String resourceGroupName, String name) {
         return listStaticSiteConfiguredRolesWithResponseAsync(resourceGroupName, name)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Lists the roles configured for the static site.
-     *
-     * <p>Description for Lists the roles configured for the static site.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the static site.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string list resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<StringListInner> listStaticSiteConfiguredRolesWithResponse(String resourceGroupName, String name) {
-        return listStaticSiteConfiguredRolesWithResponseAsync(resourceGroupName, name).block();
     }
 
     /**
@@ -9429,24 +9064,6 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<StringDictionaryInner> listStaticSiteFunctionAppSettingsWithResponse(
-        String resourceGroupName, String name) {
-        return listStaticSiteFunctionAppSettingsWithResponseAsync(resourceGroupName, name).block();
-    }
-
-    /**
-     * Gets the application settings of a static site.
-     *
-     * <p>Description for Gets the application settings of a static site.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the static site.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -9590,23 +9207,6 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     private Mono<StringDictionaryInner> listStaticSiteSecretsAsync(String resourceGroupName, String name) {
         return listStaticSiteSecretsWithResponseAsync(resourceGroupName, name)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Lists the secrets for an existing static site.
-     *
-     * <p>Description for Lists the secrets for an existing static site.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the static site.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<StringDictionaryInner> listStaticSiteSecretsWithResponse(String resourceGroupName, String name) {
-        return listStaticSiteSecretsWithResponseAsync(resourceGroupName, name).block();
     }
 
     /**
@@ -9975,26 +9575,6 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
         String resourceGroupName, String name, String privateEndpointConnectionName) {
         return getPrivateEndpointConnectionWithResponseAsync(resourceGroupName, name, privateEndpointConnectionName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets a private endpoint connection
-     *
-     * <p>Description for Gets a private endpoint connection.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the static site.
-     * @param privateEndpointConnectionName Name of the private endpoint connection.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return remote Private Endpoint Connection ARM resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<RemotePrivateEndpointConnectionArmResourceInner> getPrivateEndpointConnectionWithResponse(
-        String resourceGroupName, String name, String privateEndpointConnectionName) {
-        return getPrivateEndpointConnectionWithResponseAsync(resourceGroupName, name, privateEndpointConnectionName)
-            .block();
     }
 
     /**
@@ -10837,24 +10417,6 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the site.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return wrapper for a collection of private link resources along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<PrivateLinkResourcesWrapperInner> getPrivateLinkResourcesWithResponse(
-        String resourceGroupName, String name) {
-        return getPrivateLinkResourcesWithResponseAsync(resourceGroupName, name).block();
-    }
-
-    /**
-     * Gets the private link resources
-     *
-     * <p>Description for Gets the private link resources.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the site.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -11021,25 +10583,6 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
         String resourceGroupName, String name, StaticSiteResetPropertiesArmResource resetPropertiesEnvelope) {
         return resetStaticSiteApiKeyWithResponseAsync(resourceGroupName, name, resetPropertiesEnvelope)
             .flatMap(ignored -> Mono.empty());
-    }
-
-    /**
-     * Resets the api key for an existing static site.
-     *
-     * <p>Description for Resets the api key for an existing static site.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the static site.
-     * @param resetPropertiesEnvelope Static Site Reset Properties ARM resource.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> resetStaticSiteApiKeyWithResponse(
-        String resourceGroupName, String name, StaticSiteResetPropertiesArmResource resetPropertiesEnvelope) {
-        return resetStaticSiteApiKeyWithResponseAsync(resourceGroupName, name, resetPropertiesEnvelope).block();
     }
 
     /**
@@ -11413,27 +10956,6 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
         String resourceGroupName, String name, String functionAppName) {
         return getUserProvidedFunctionAppForStaticSiteWithResponseAsync(resourceGroupName, name, functionAppName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets the details of the user provided function app registered with a static site
-     *
-     * <p>Description for Gets the details of the user provided function app registered with a static site.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the static site.
-     * @param functionAppName Name of the function app registered with the static site.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site User Provided Function App ARM resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<StaticSiteUserProvidedFunctionAppArmResourceInner>
-        getUserProvidedFunctionAppForStaticSiteWithResponse(
-            String resourceGroupName, String name, String functionAppName) {
-        return getUserProvidedFunctionAppForStaticSiteWithResponseAsync(resourceGroupName, name, functionAppName)
-            .block();
     }
 
     /**
@@ -12095,26 +11617,6 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
         String resourceGroupName, String name, String functionAppName) {
         return detachUserProvidedFunctionAppFromStaticSiteWithResponseAsync(resourceGroupName, name, functionAppName)
             .flatMap(ignored -> Mono.empty());
-    }
-
-    /**
-     * Detach the user provided function app from the static site
-     *
-     * <p>Description for Detach the user provided function app from the static site.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the static site.
-     * @param functionAppName Name of the function app registered with the static site.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> detachUserProvidedFunctionAppFromStaticSiteWithResponse(
-        String resourceGroupName, String name, String functionAppName) {
-        return detachUserProvidedFunctionAppFromStaticSiteWithResponseAsync(resourceGroupName, name, functionAppName)
-            .block();
     }
 
     /**
@@ -13681,23 +13183,6 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site.
      * @param linkedBackendName Name of the linked backend that should be retrieved.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site Linked Backend ARM resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<StaticSiteLinkedBackendArmResourceInner> getLinkedBackendWithResponse(
-        String resourceGroupName, String name, String linkedBackendName) {
-        return getLinkedBackendWithResponseAsync(resourceGroupName, name, linkedBackendName).block();
-    }
-
-    /**
-     * Returns the details of a linked backend linked to a static site by name.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the static site.
-     * @param linkedBackendName Name of the linked backend that should be retrieved.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -14210,24 +13695,6 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @param name Name of the static site.
      * @param linkedBackendName Name of the backend linked to the static site.
      * @param isCleaningAuthConfig Decides if Easy Auth configuration will be removed from backend configuration.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> unlinkBackendWithResponse(
-        String resourceGroupName, String name, String linkedBackendName, Boolean isCleaningAuthConfig) {
-        return unlinkBackendWithResponseAsync(resourceGroupName, name, linkedBackendName, isCleaningAuthConfig).block();
-    }
-
-    /**
-     * Unlink a backend from a static site.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the static site.
-     * @param linkedBackendName Name of the backend linked to the static site.
-     * @param isCleaningAuthConfig Decides if Easy Auth configuration will be removed from backend configuration.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -14398,25 +13865,6 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
         String resourceGroupName, String name, String environmentName, String linkedBackendName) {
         return getLinkedBackendForBuildWithResponseAsync(resourceGroupName, name, environmentName, linkedBackendName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Returns the details of a linked backend linked to a static site build by name.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the static site.
-     * @param environmentName The stage site identifier.
-     * @param linkedBackendName Name of the linked backend that should be retrieved.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site Linked Backend ARM resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<StaticSiteLinkedBackendArmResourceInner> getLinkedBackendForBuildWithResponse(
-        String resourceGroupName, String name, String environmentName, String linkedBackendName) {
-        return getLinkedBackendForBuildWithResponseAsync(resourceGroupName, name, environmentName, linkedBackendName)
-            .block();
     }
 
     /**
@@ -14990,31 +14438,6 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
         return unlinkBackendFromBuildWithResponseAsync(
                 resourceGroupName, name, environmentName, linkedBackendName, isCleaningAuthConfig)
             .flatMap(ignored -> Mono.empty());
-    }
-
-    /**
-     * Unlink a backend from a static site build.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the static site.
-     * @param environmentName The stage site identifier.
-     * @param linkedBackendName Name of the backend linked to the static site.
-     * @param isCleaningAuthConfig Decides if auth will be removed from backend configuration.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> unlinkBackendFromBuildWithResponse(
-        String resourceGroupName,
-        String name,
-        String environmentName,
-        String linkedBackendName,
-        Boolean isCleaningAuthConfig) {
-        return unlinkBackendFromBuildWithResponseAsync(
-                resourceGroupName, name, environmentName, linkedBackendName, isCleaningAuthConfig)
-            .block();
     }
 
     /**

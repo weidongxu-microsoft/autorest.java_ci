@@ -270,23 +270,6 @@ public final class RouteMapsClientImpl implements RouteMapsClient {
      * @param resourceGroupName The resource group name of the RouteMap's resource group.
      * @param virtualHubName The name of the VirtualHub containing the RouteMap.
      * @param routeMapName The name of the RouteMap.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the RouteMap child resource of a Virtual hub along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<RouteMapInner> getWithResponse(
-        String resourceGroupName, String virtualHubName, String routeMapName) {
-        return getWithResponseAsync(resourceGroupName, virtualHubName, routeMapName).block();
-    }
-
-    /**
-     * Retrieves the details of a RouteMap.
-     *
-     * @param resourceGroupName The resource group name of the RouteMap's resource group.
-     * @param virtualHubName The name of the VirtualHub containing the RouteMap.
-     * @param routeMapName The name of the RouteMap.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

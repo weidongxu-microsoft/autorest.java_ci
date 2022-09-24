@@ -536,23 +536,6 @@ public final class CustomIpPrefixesClientImpl implements CustomIpPrefixesClient 
      * @param resourceGroupName The name of the resource group.
      * @param customIpPrefixName The name of the custom IP prefix.
      * @param expand Expands referenced resources.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified custom IP prefix in a specified resource group along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<CustomIpPrefixInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String customIpPrefixName, String expand) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, customIpPrefixName, expand).block();
-    }
-
-    /**
-     * Gets the specified custom IP prefix in a specified resource group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param customIpPrefixName The name of the custom IP prefix.
-     * @param expand Expands referenced resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -980,23 +963,6 @@ public final class CustomIpPrefixesClientImpl implements CustomIpPrefixesClient 
         String resourceGroupName, String customIpPrefixName, TagsObject parameters) {
         return updateTagsWithResponseAsync(resourceGroupName, customIpPrefixName, parameters)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Updates custom IP prefix tags.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param customIpPrefixName The name of the custom IP prefix.
-     * @param parameters Parameters supplied to update custom IP prefix tags.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return custom IP prefix resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<CustomIpPrefixInner> updateTagsWithResponse(
-        String resourceGroupName, String customIpPrefixName, TagsObject parameters) {
-        return updateTagsWithResponseAsync(resourceGroupName, customIpPrefixName, parameters).block();
     }
 
     /**

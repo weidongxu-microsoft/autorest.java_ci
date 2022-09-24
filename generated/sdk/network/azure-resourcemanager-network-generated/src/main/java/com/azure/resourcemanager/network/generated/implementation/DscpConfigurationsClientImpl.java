@@ -795,22 +795,6 @@ public final class DscpConfigurationsClientImpl implements DscpConfigurationsCli
      *
      * @param resourceGroupName The name of the resource group.
      * @param dscpConfigurationName The name of the resource.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a DSCP Configuration along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<DscpConfigurationInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String dscpConfigurationName) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, dscpConfigurationName).block();
-    }
-
-    /**
-     * Gets a DSCP Configuration.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param dscpConfigurationName The name of the resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

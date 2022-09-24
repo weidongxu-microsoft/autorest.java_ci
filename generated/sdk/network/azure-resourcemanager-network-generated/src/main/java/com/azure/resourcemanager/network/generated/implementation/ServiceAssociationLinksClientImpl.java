@@ -203,23 +203,6 @@ public final class ServiceAssociationLinksClientImpl implements ServiceAssociati
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of service association links for a subnet along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ServiceAssociationLinksListResultInner> listWithResponse(
-        String resourceGroupName, String virtualNetworkName, String subnetName) {
-        return listWithResponseAsync(resourceGroupName, virtualNetworkName, subnetName).block();
-    }
-
-    /**
-     * Gets a list of service association links for a subnet.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param virtualNetworkName The name of the virtual network.
-     * @param subnetName The name of the subnet.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

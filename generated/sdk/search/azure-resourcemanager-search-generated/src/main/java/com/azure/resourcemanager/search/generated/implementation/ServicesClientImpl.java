@@ -782,26 +782,6 @@ public final class ServicesClientImpl implements ServicesClient {
      * @param serviceParam The definition of the search service to update.
      * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
      *     included in response information as a way to track the request.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes an Azure Cognitive Search service and its current state along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<SearchServiceInner> updateWithResponse(
-        String resourceGroupName, String searchServiceName, SearchServiceUpdate serviceParam, UUID clientRequestId) {
-        return updateWithResponseAsync(resourceGroupName, searchServiceName, serviceParam, clientRequestId).block();
-    }
-
-    /**
-     * Updates an existing search service in the given resource group.
-     *
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
-     *     value from the Azure Resource Manager API or the portal.
-     * @param searchServiceName The name of the Azure Cognitive Search service to update.
-     * @param serviceParam The definition of the search service to update.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
-     *     included in response information as a way to track the request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -976,26 +956,6 @@ public final class ServicesClientImpl implements ServicesClient {
      *     group.
      * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
      *     included in response information as a way to track the request.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the search service with the given name in the given resource group along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<SearchServiceInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String searchServiceName, UUID clientRequestId) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, searchServiceName, clientRequestId).block();
-    }
-
-    /**
-     * Gets the search service with the given name in the given resource group.
-     *
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
-     *     value from the Azure Resource Manager API or the portal.
-     * @param searchServiceName The name of the Azure Cognitive Search service associated with the specified resource
-     *     group.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
-     *     included in response information as a way to track the request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1151,25 +1111,6 @@ public final class ServicesClientImpl implements ServicesClient {
         final UUID clientRequestId = null;
         return deleteWithResponseAsync(resourceGroupName, searchServiceName, clientRequestId)
             .flatMap(ignored -> Mono.empty());
-    }
-
-    /**
-     * Deletes a search service in the given resource group, along with its associated resources.
-     *
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
-     *     value from the Azure Resource Manager API or the portal.
-     * @param searchServiceName The name of the Azure Cognitive Search service associated with the specified resource
-     *     group.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
-     *     included in response information as a way to track the request.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> deleteWithResponse(String resourceGroupName, String searchServiceName, UUID clientRequestId) {
-        return deleteWithResponseAsync(resourceGroupName, searchServiceName, clientRequestId).block();
     }
 
     /**
@@ -1710,24 +1651,6 @@ public final class ServicesClientImpl implements ServicesClient {
         final UUID clientRequestId = null;
         return checkNameAvailabilityWithResponseAsync(checkNameAvailabilityInput, clientRequestId)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Checks whether or not the given search service name is available for use. Search service names must be globally
-     * unique since they are part of the service URI (https://&lt;name&gt;.search.windows.net).
-     *
-     * @param checkNameAvailabilityInput The resource name and type to check.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
-     *     included in response information as a way to track the request.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return output of check name availability API along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<CheckNameAvailabilityOutputInner> checkNameAvailabilityWithResponse(
-        CheckNameAvailabilityInput checkNameAvailabilityInput, UUID clientRequestId) {
-        return checkNameAvailabilityWithResponseAsync(checkNameAvailabilityInput, clientRequestId).block();
     }
 
     /**

@@ -1031,41 +1031,6 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
      * @param ipConfigurationName The name of the IP configuration.
      * @param publicIpAddressName The name of the public IP Address.
      * @param expand Expands referenced resources.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified public IP address in a cloud service along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<PublicIpAddressInner> getCloudServicePublicIpAddressWithResponse(
-        String resourceGroupName,
-        String cloudServiceName,
-        String roleInstanceName,
-        String networkInterfaceName,
-        String ipConfigurationName,
-        String publicIpAddressName,
-        String expand) {
-        return getCloudServicePublicIpAddressWithResponseAsync(
-                resourceGroupName,
-                cloudServiceName,
-                roleInstanceName,
-                networkInterfaceName,
-                ipConfigurationName,
-                publicIpAddressName,
-                expand)
-            .block();
-    }
-
-    /**
-     * Get the specified public IP address in a cloud service.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param cloudServiceName The name of the cloud service.
-     * @param roleInstanceName The role instance name.
-     * @param networkInterfaceName The name of the network interface.
-     * @param ipConfigurationName The name of the IP configuration.
-     * @param publicIpAddressName The name of the public IP Address.
-     * @param expand Expands referenced resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1483,23 +1448,6 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
         final String expand = null;
         return getByResourceGroupWithResponseAsync(resourceGroupName, publicIpAddressName, expand)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets the specified public IP address in a specified resource group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param publicIpAddressName The name of the public IP address.
-     * @param expand Expands referenced resources.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified public IP address in a specified resource group along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<PublicIpAddressInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String publicIpAddressName, String expand) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, publicIpAddressName, expand).block();
     }
 
     /**
@@ -1935,23 +1883,6 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
         String resourceGroupName, String publicIpAddressName, TagsObject parameters) {
         return updateTagsWithResponseAsync(resourceGroupName, publicIpAddressName, parameters)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Updates public IP address tags.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param publicIpAddressName The name of the public IP address.
-     * @param parameters Parameters supplied to update public IP address tags.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return public IP address resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<PublicIpAddressInner> updateTagsWithResponse(
-        String resourceGroupName, String publicIpAddressName, TagsObject parameters) {
-        return updateTagsWithResponseAsync(resourceGroupName, publicIpAddressName, parameters).block();
     }
 
     /**
@@ -3250,41 +3181,6 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
                 publicIpAddressName,
                 expand)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Get the specified public IP address in a virtual machine scale set.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param virtualMachineScaleSetName The name of the virtual machine scale set.
-     * @param virtualmachineIndex The virtual machine index.
-     * @param networkInterfaceName The name of the network interface.
-     * @param ipConfigurationName The name of the IP configuration.
-     * @param publicIpAddressName The name of the public IP Address.
-     * @param expand Expands referenced resources.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified public IP address in a virtual machine scale set along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<PublicIpAddressInner> getVirtualMachineScaleSetPublicIpAddressWithResponse(
-        String resourceGroupName,
-        String virtualMachineScaleSetName,
-        String virtualmachineIndex,
-        String networkInterfaceName,
-        String ipConfigurationName,
-        String publicIpAddressName,
-        String expand) {
-        return getVirtualMachineScaleSetPublicIpAddressWithResponseAsync(
-                resourceGroupName,
-                virtualMachineScaleSetName,
-                virtualmachineIndex,
-                networkInterfaceName,
-                ipConfigurationName,
-                publicIpAddressName,
-                expand)
-            .block();
     }
 
     /**

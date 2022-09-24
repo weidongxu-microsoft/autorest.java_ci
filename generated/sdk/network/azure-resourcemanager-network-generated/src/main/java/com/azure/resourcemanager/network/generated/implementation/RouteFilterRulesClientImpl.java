@@ -527,23 +527,6 @@ public final class RouteFilterRulesClientImpl implements RouteFilterRulesClient 
      * @param resourceGroupName The name of the resource group.
      * @param routeFilterName The name of the route filter.
      * @param ruleName The name of the rule.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified rule from a route filter along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<RouteFilterRuleInner> getWithResponse(
-        String resourceGroupName, String routeFilterName, String ruleName) {
-        return getWithResponseAsync(resourceGroupName, routeFilterName, ruleName).block();
-    }
-
-    /**
-     * Gets the specified rule from a route filter.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param routeFilterName The name of the route filter.
-     * @param ruleName The name of the rule.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

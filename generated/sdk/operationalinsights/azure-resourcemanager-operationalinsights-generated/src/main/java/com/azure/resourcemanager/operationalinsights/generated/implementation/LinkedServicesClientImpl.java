@@ -842,23 +842,6 @@ public final class LinkedServicesClientImpl implements LinkedServicesClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param workspaceName The name of the workspace.
      * @param linkedServiceName Name of the linked service.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a linked service instance along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<LinkedServiceInner> getWithResponse(
-        String resourceGroupName, String workspaceName, String linkedServiceName) {
-        return getWithResponseAsync(resourceGroupName, workspaceName, linkedServiceName).block();
-    }
-
-    /**
-     * Gets a linked service instance.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param workspaceName The name of the workspace.
-     * @param linkedServiceName Name of the linked service.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

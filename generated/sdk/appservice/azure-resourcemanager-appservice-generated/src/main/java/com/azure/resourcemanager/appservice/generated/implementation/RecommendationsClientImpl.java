@@ -641,20 +641,6 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
      *
      * <p>Description for Reset all recommendation opt-out settings for a subscription.
      *
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> resetAllFiltersWithResponse() {
-        return resetAllFiltersWithResponseAsync().block();
-    }
-
-    /**
-     * Reset all recommendation opt-out settings for a subscription.
-     *
-     * <p>Description for Reset all recommendation opt-out settings for a subscription.
-     *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -777,22 +763,6 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> disableRecommendationForSubscriptionAsync(String name) {
         return disableRecommendationForSubscriptionWithResponseAsync(name).flatMap(ignored -> Mono.empty());
-    }
-
-    /**
-     * Disables the specified rule so it will not apply to a subscription in the future.
-     *
-     * <p>Description for Disables the specified rule so it will not apply to a subscription in the future.
-     *
-     * @param name Rule name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> disableRecommendationForSubscriptionWithResponse(String name) {
-        return disableRecommendationForSubscriptionWithResponseAsync(name).block();
     }
 
     /**
@@ -1486,27 +1456,6 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param environmentName Name of the app.
      * @param hostingEnvironmentName The hostingEnvironmentName parameter.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> disableAllForHostingEnvironmentWithResponse(
-        String resourceGroupName, String environmentName, String hostingEnvironmentName) {
-        return disableAllForHostingEnvironmentWithResponseAsync(
-                resourceGroupName, environmentName, hostingEnvironmentName)
-            .block();
-    }
-
-    /**
-     * Disable all recommendations for an app.
-     *
-     * <p>Description for Disable all recommendations for an app.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param environmentName Name of the app.
-     * @param hostingEnvironmentName The hostingEnvironmentName parameter.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -1673,27 +1622,6 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
         return resetAllFiltersForHostingEnvironmentWithResponseAsync(
                 resourceGroupName, environmentName, hostingEnvironmentName)
             .flatMap(ignored -> Mono.empty());
-    }
-
-    /**
-     * Reset all recommendation opt-out settings for an app.
-     *
-     * <p>Description for Reset all recommendation opt-out settings for an app.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param environmentName Name of the app.
-     * @param hostingEnvironmentName The hostingEnvironmentName parameter.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> resetAllFiltersForHostingEnvironmentWithResponse(
-        String resourceGroupName, String environmentName, String hostingEnvironmentName) {
-        return resetAllFiltersForHostingEnvironmentWithResponseAsync(
-                resourceGroupName, environmentName, hostingEnvironmentName)
-            .block();
     }
 
     /**
@@ -1908,35 +1836,6 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
      *     object.
      * @param recommendationId The GUID of the recommendation object if you query an expired one. You don't need to
      *     specify it to query an active entry.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a recommendation rule that the recommendation engine can perform along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<RecommendationRuleInner> getRuleDetailsByHostingEnvironmentWithResponse(
-        String resourceGroupName,
-        String hostingEnvironmentName,
-        String name,
-        Boolean updateSeen,
-        String recommendationId) {
-        return getRuleDetailsByHostingEnvironmentWithResponseAsync(
-                resourceGroupName, hostingEnvironmentName, name, updateSeen, recommendationId)
-            .block();
-    }
-
-    /**
-     * Get a recommendation rule for an app.
-     *
-     * <p>Description for Get a recommendation rule for an app.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param hostingEnvironmentName Name of the hosting environment.
-     * @param name Name of the recommendation.
-     * @param updateSeen Specify &lt;code&gt;true&lt;/code&gt; to update the last-seen timestamp of the recommendation
-     *     object.
-     * @param recommendationId The GUID of the recommendation object if you query an expired one. You don't need to
-     *     specify it to query an active entry.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -2123,28 +2022,6 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
         return disableRecommendationForHostingEnvironmentWithResponseAsync(
                 resourceGroupName, environmentName, name, hostingEnvironmentName)
             .flatMap(ignored -> Mono.empty());
-    }
-
-    /**
-     * Disables the specific rule for a web site permanently.
-     *
-     * <p>Description for Disables the specific rule for a web site permanently.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param environmentName Site name.
-     * @param name Rule name.
-     * @param hostingEnvironmentName The hostingEnvironmentName parameter.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> disableRecommendationForHostingEnvironmentWithResponse(
-        String resourceGroupName, String environmentName, String name, String hostingEnvironmentName) {
-        return disableRecommendationForHostingEnvironmentWithResponseAsync(
-                resourceGroupName, environmentName, name, hostingEnvironmentName)
-            .block();
     }
 
     /**
@@ -2799,23 +2676,6 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param siteName Name of the app.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> disableAllForWebAppWithResponse(String resourceGroupName, String siteName) {
-        return disableAllForWebAppWithResponseAsync(resourceGroupName, siteName).block();
-    }
-
-    /**
-     * Disable all recommendations for an app.
-     *
-     * <p>Description for Disable all recommendations for an app.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param siteName Name of the app.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -2955,23 +2815,6 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> resetAllFiltersForWebAppAsync(String resourceGroupName, String siteName) {
         return resetAllFiltersForWebAppWithResponseAsync(resourceGroupName, siteName).flatMap(ignored -> Mono.empty());
-    }
-
-    /**
-     * Reset all recommendation opt-out settings for an app.
-     *
-     * <p>Description for Reset all recommendation opt-out settings for an app.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param siteName Name of the app.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> resetAllFiltersForWebAppWithResponse(String resourceGroupName, String siteName) {
-        return resetAllFiltersForWebAppWithResponseAsync(resourceGroupName, siteName).block();
     }
 
     /**
@@ -3171,30 +3014,6 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
      *     object.
      * @param recommendationId The GUID of the recommendation object if you query an expired one. You don't need to
      *     specify it to query an active entry.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a recommendation rule that the recommendation engine can perform along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<RecommendationRuleInner> getRuleDetailsByWebAppWithResponse(
-        String resourceGroupName, String siteName, String name, Boolean updateSeen, String recommendationId) {
-        return getRuleDetailsByWebAppWithResponseAsync(resourceGroupName, siteName, name, updateSeen, recommendationId)
-            .block();
-    }
-
-    /**
-     * Get a recommendation rule for an app.
-     *
-     * <p>Description for Get a recommendation rule for an app.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param siteName Name of the app.
-     * @param name Name of the recommendation.
-     * @param updateSeen Specify &lt;code&gt;true&lt;/code&gt; to update the last-seen timestamp of the recommendation
-     *     object.
-     * @param recommendationId The GUID of the recommendation object if you query an expired one. You don't need to
-     *     specify it to query an active entry.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -3361,25 +3180,6 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     private Mono<Void> disableRecommendationForSiteAsync(String resourceGroupName, String siteName, String name) {
         return disableRecommendationForSiteWithResponseAsync(resourceGroupName, siteName, name)
             .flatMap(ignored -> Mono.empty());
-    }
-
-    /**
-     * Disables the specific rule for a web site permanently.
-     *
-     * <p>Description for Disables the specific rule for a web site permanently.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param siteName Site name.
-     * @param name Rule name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> disableRecommendationForSiteWithResponse(
-        String resourceGroupName, String siteName, String name) {
-        return disableRecommendationForSiteWithResponseAsync(resourceGroupName, siteName, name).block();
     }
 
     /**

@@ -480,22 +480,6 @@ public final class DdosCustomPoliciesClientImpl implements DdosCustomPoliciesCli
      *
      * @param resourceGroupName The name of the resource group.
      * @param ddosCustomPolicyName The name of the DDoS custom policy.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the specified DDoS custom policy along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<DdosCustomPolicyInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String ddosCustomPolicyName) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, ddosCustomPolicyName).block();
-    }
-
-    /**
-     * Gets information about the specified DDoS custom policy.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param ddosCustomPolicyName The name of the DDoS custom policy.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -926,23 +910,6 @@ public final class DdosCustomPoliciesClientImpl implements DdosCustomPoliciesCli
         String resourceGroupName, String ddosCustomPolicyName, TagsObject parameters) {
         return updateTagsWithResponseAsync(resourceGroupName, ddosCustomPolicyName, parameters)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Update a DDoS custom policy tags.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param ddosCustomPolicyName The name of the DDoS custom policy.
-     * @param parameters Parameters supplied to update DDoS custom policy resource tags.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a DDoS custom policy in a resource group along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<DdosCustomPolicyInner> updateTagsWithResponse(
-        String resourceGroupName, String ddosCustomPolicyName, TagsObject parameters) {
-        return updateTagsWithResponseAsync(resourceGroupName, ddosCustomPolicyName, parameters).block();
     }
 
     /**

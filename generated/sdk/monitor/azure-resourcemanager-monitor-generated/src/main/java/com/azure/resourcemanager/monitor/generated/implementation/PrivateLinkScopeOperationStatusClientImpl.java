@@ -193,23 +193,6 @@ public final class PrivateLinkScopeOperationStatusClientImpl implements PrivateL
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param asyncOperationId The operation Id.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the status of an azure asynchronous operation associated with a private link scope operation along with
-     *     {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<OperationStatusInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String asyncOperationId) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, asyncOperationId).block();
-    }
-
-    /**
-     * Get the status of an azure asynchronous operation associated with a private link scope operation.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param asyncOperationId The operation Id.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

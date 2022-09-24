@@ -178,21 +178,6 @@ public final class OperationsResultsClientImpl implements OperationsResultsClien
      *
      * @param location Azure location (region) name.
      * @param operationId The Guid of the operation ID.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return operation Result Entity along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<OperationResultInner> getWithResponse(String location, String operationId) {
-        return getWithResponseAsync(location, operationId).block();
-    }
-
-    /**
-     * Returns operation results.
-     *
-     * @param location Azure location (region) name.
-     * @param operationId The Guid of the operation ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

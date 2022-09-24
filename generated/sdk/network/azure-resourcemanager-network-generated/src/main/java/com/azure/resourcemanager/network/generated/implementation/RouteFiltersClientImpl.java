@@ -533,23 +533,6 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
      * @param resourceGroupName The name of the resource group.
      * @param routeFilterName The name of the route filter.
      * @param expand Expands referenced express route bgp peering resources.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified route filter along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<RouteFilterInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String routeFilterName, String expand) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, routeFilterName, expand).block();
-    }
-
-    /**
-     * Gets the specified route filter.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param routeFilterName The name of the route filter.
-     * @param expand Expands referenced express route bgp peering resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -980,23 +963,6 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
         String resourceGroupName, String routeFilterName, TagsObject parameters) {
         return updateTagsWithResponseAsync(resourceGroupName, routeFilterName, parameters)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Updates tags of a route filter.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param routeFilterName The name of the route filter.
-     * @param parameters Parameters supplied to update route filter tags.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return route Filter Resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<RouteFilterInner> updateTagsWithResponse(
-        String resourceGroupName, String routeFilterName, TagsObject parameters) {
-        return updateTagsWithResponseAsync(resourceGroupName, routeFilterName, parameters).block();
     }
 
     /**

@@ -209,23 +209,6 @@ public final class PrivateLinkResourcesClientImpl implements PrivateLinkResource
      *
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of private link resources along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<PrivateLinkResourceListResultInner> listWithResponse(String resourceGroupName, String accountName) {
-        return listWithResponseAsync(resourceGroupName, accountName).block();
-    }
-
-    /**
-     * Get list of group IDs.
-     *
-     * <p>List supported group IDs.
-     *
-     * @param resourceGroupName The name of the resource group within the Azure subscription.
-     * @param accountName The Media Services account name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -382,25 +365,6 @@ public final class PrivateLinkResourcesClientImpl implements PrivateLinkResource
     private Mono<PrivateLinkResourceInner> getAsync(String resourceGroupName, String accountName, String name) {
         return getWithResponseAsync(resourceGroupName, accountName, name)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Get group ID.
-     *
-     * <p>Get details of a group ID.
-     *
-     * @param resourceGroupName The name of the resource group within the Azure subscription.
-     * @param accountName The Media Services account name.
-     * @param name The name parameter.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return details of a group ID along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<PrivateLinkResourceInner> getWithResponse(
-        String resourceGroupName, String accountName, String name) {
-        return getWithResponseAsync(resourceGroupName, accountName, name).block();
     }
 
     /**

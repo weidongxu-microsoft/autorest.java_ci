@@ -865,28 +865,6 @@ public final class RestorePointsClientImpl implements RestorePointsClient {
      * @param restorePointName The name of the restore point.
      * @param expand The expand expression to apply on the operation. 'InstanceView' retrieves information about the
      *     run-time state of a restore point.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ApiErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return restore Point details along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<RestorePointInner> getWithResponse(
-        String resourceGroupName,
-        String restorePointCollectionName,
-        String restorePointName,
-        RestorePointExpandOptions expand) {
-        return getWithResponseAsync(resourceGroupName, restorePointCollectionName, restorePointName, expand).block();
-    }
-
-    /**
-     * The operation to get the restore point.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param restorePointCollectionName The name of the restore point collection.
-     * @param restorePointName The name of the restore point.
-     * @param expand The expand expression to apply on the operation. 'InstanceView' retrieves information about the
-     *     run-time state of a restore point.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.

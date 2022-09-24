@@ -969,23 +969,6 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
      *     the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
      *     name length is 80 characters.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ApiErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a disk access resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<DiskAccessInner> getByResourceGroupWithResponse(String resourceGroupName, String diskAccessName) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, diskAccessName).block();
-    }
-
-    /**
-     * Gets information about a disk access resource.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     *     the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     *     name length is 80 characters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -1695,24 +1678,6 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
      *     the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
      *     name length is 80 characters.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the private link resources possible under disk access resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<PrivateLinkResourceListResultInner> getPrivateLinkResourcesWithResponse(
-        String resourceGroupName, String diskAccessName) {
-        return getPrivateLinkResourcesWithResponseAsync(resourceGroupName, diskAccessName).block();
-    }
-
-    /**
-     * Gets the private link resources possible under disk access resource.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     *     the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     *     name length is 80 characters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -2276,27 +2241,6 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
         return getAPrivateEndpointConnectionWithResponseAsync(
                 resourceGroupName, diskAccessName, privateEndpointConnectionName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets information about a private endpoint connection under a disk access resource.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
-     *     the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum
-     *     name length is 80 characters.
-     * @param privateEndpointConnectionName The name of the private endpoint connection.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ApiErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a private endpoint connection under a disk access resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<PrivateEndpointConnectionInner> getAPrivateEndpointConnectionWithResponse(
-        String resourceGroupName, String diskAccessName, String privateEndpointConnectionName) {
-        return getAPrivateEndpointConnectionWithResponseAsync(
-                resourceGroupName, diskAccessName, privateEndpointConnectionName)
-            .block();
     }
 
     /**

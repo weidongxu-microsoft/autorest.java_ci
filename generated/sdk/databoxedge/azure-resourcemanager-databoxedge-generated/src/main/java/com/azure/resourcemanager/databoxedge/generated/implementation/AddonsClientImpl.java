@@ -481,24 +481,6 @@ public final class AddonsClientImpl implements AddonsClient {
      * @param roleName The role name.
      * @param addonName The addon name.
      * @param resourceGroupName The resource group name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a specific addon by name along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<AddonInner> getWithResponse(
-        String deviceName, String roleName, String addonName, String resourceGroupName) {
-        return getWithResponseAsync(deviceName, roleName, addonName, resourceGroupName).block();
-    }
-
-    /**
-     * Gets a specific addon by name.
-     *
-     * @param deviceName The device name.
-     * @param roleName The role name.
-     * @param addonName The addon name.
-     * @param resourceGroupName The resource group name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

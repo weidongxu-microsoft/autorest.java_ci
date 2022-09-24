@@ -333,24 +333,6 @@ public final class PartnerTopicsClientImpl implements PartnerTopicsClient {
      *
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerTopicName Name of the partner topic.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of a partner topic along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<PartnerTopicInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String partnerTopicName) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, partnerTopicName).block();
-    }
-
-    /**
-     * Get a partner topic.
-     *
-     * <p>Get properties of a partner topic.
-     *
-     * @param resourceGroupName The name of the resource group within the user's subscription.
-     * @param partnerTopicName Name of the partner topic.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -514,25 +496,6 @@ public final class PartnerTopicsClientImpl implements PartnerTopicsClient {
         String resourceGroupName, String partnerTopicName, PartnerTopicInner partnerTopicInfo) {
         return createOrUpdateWithResponseAsync(resourceGroupName, partnerTopicName, partnerTopicInfo)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Create a partner topic.
-     *
-     * <p>Asynchronously creates a new partner topic with the specified parameters.
-     *
-     * @param resourceGroupName The name of the resource group within the user's subscription.
-     * @param partnerTopicName Name of the partner topic.
-     * @param partnerTopicInfo Partner Topic information.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return event Grid Partner Topic along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<PartnerTopicInner> createOrUpdateWithResponse(
-        String resourceGroupName, String partnerTopicName, PartnerTopicInner partnerTopicInfo) {
-        return createOrUpdateWithResponseAsync(resourceGroupName, partnerTopicName, partnerTopicInfo).block();
     }
 
     /**
@@ -964,25 +927,6 @@ public final class PartnerTopicsClientImpl implements PartnerTopicsClient {
         String resourceGroupName, String partnerTopicName, PartnerTopicUpdateParameters partnerTopicUpdateParameters) {
         return updateWithResponseAsync(resourceGroupName, partnerTopicName, partnerTopicUpdateParameters)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Update a partner topic.
-     *
-     * <p>Asynchronously updates a partner topic with the specified parameters.
-     *
-     * @param resourceGroupName The name of the resource group within the user's subscription.
-     * @param partnerTopicName Name of the partner topic.
-     * @param partnerTopicUpdateParameters PartnerTopic update information.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response body along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<PartnerTopicInner> updateWithResponse(
-        String resourceGroupName, String partnerTopicName, PartnerTopicUpdateParameters partnerTopicUpdateParameters) {
-        return updateWithResponseAsync(resourceGroupName, partnerTopicName, partnerTopicUpdateParameters).block();
     }
 
     /**
@@ -1622,23 +1566,6 @@ public final class PartnerTopicsClientImpl implements PartnerTopicsClient {
      *
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerTopicName Name of the partner topic.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return event Grid Partner Topic along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<PartnerTopicInner> activateWithResponse(String resourceGroupName, String partnerTopicName) {
-        return activateWithResponseAsync(resourceGroupName, partnerTopicName).block();
-    }
-
-    /**
-     * Activate a partner topic.
-     *
-     * <p>Activate a newly created partner topic.
-     *
-     * @param resourceGroupName The name of the resource group within the user's subscription.
-     * @param partnerTopicName Name of the partner topic.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1784,23 +1711,6 @@ public final class PartnerTopicsClientImpl implements PartnerTopicsClient {
     private Mono<PartnerTopicInner> deactivateAsync(String resourceGroupName, String partnerTopicName) {
         return deactivateWithResponseAsync(resourceGroupName, partnerTopicName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Deactivate a partner topic.
-     *
-     * <p>Deactivate specific partner topic.
-     *
-     * @param resourceGroupName The name of the resource group within the user's subscription.
-     * @param partnerTopicName Name of the partner topic.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return event Grid Partner Topic along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<PartnerTopicInner> deactivateWithResponse(String resourceGroupName, String partnerTopicName) {
-        return deactivateWithResponseAsync(resourceGroupName, partnerTopicName).block();
     }
 
     /**

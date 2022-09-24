@@ -267,23 +267,6 @@ public final class ManagementGroupNetworkManagerConnectionsClientImpl
      * @param managementGroupId The management group Id which uniquely identify the Microsoft Azure management group.
      * @param networkManagerConnectionName Name for the network manager connection.
      * @param parameters Network manager connection to be created/updated.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Network Manager Connection resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<NetworkManagerConnectionInner> createOrUpdateWithResponse(
-        String managementGroupId, String networkManagerConnectionName, NetworkManagerConnectionInner parameters) {
-        return createOrUpdateWithResponseAsync(managementGroupId, networkManagerConnectionName, parameters).block();
-    }
-
-    /**
-     * Create a network manager connection on this management group.
-     *
-     * @param managementGroupId The management group Id which uniquely identify the Microsoft Azure management group.
-     * @param networkManagerConnectionName Name for the network manager connection.
-     * @param parameters Network manager connection to be created/updated.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -430,22 +413,6 @@ public final class ManagementGroupNetworkManagerConnectionsClientImpl
      *
      * @param managementGroupId The management group Id which uniquely identify the Microsoft Azure management group.
      * @param networkManagerConnectionName Name for the network manager connection.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a specified connection created by this management group along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<NetworkManagerConnectionInner> getWithResponse(
-        String managementGroupId, String networkManagerConnectionName) {
-        return getWithResponseAsync(managementGroupId, networkManagerConnectionName).block();
-    }
-
-    /**
-     * Get a specified connection created by this management group.
-     *
-     * @param managementGroupId The management group Id which uniquely identify the Microsoft Azure management group.
-     * @param networkManagerConnectionName Name for the network manager connection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -575,21 +542,6 @@ public final class ManagementGroupNetworkManagerConnectionsClientImpl
     private Mono<Void> deleteAsync(String managementGroupId, String networkManagerConnectionName) {
         return deleteWithResponseAsync(managementGroupId, networkManagerConnectionName)
             .flatMap(ignored -> Mono.empty());
-    }
-
-    /**
-     * Delete specified pending connection created by this management group.
-     *
-     * @param managementGroupId The management group Id which uniquely identify the Microsoft Azure management group.
-     * @param networkManagerConnectionName Name for the network manager connection.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> deleteWithResponse(String managementGroupId, String networkManagerConnectionName) {
-        return deleteWithResponseAsync(managementGroupId, networkManagerConnectionName).block();
     }
 
     /**

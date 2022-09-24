@@ -610,23 +610,6 @@ public final class VirtualNetworksClientImpl implements VirtualNetworksClient {
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param expand Expands referenced resources.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified virtual network by resource group along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<VirtualNetworkInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String virtualNetworkName, String expand) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, virtualNetworkName, expand).block();
-    }
-
-    /**
-     * Gets the specified virtual network by resource group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param virtualNetworkName The name of the virtual network.
-     * @param expand Expands referenced resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1054,23 +1037,6 @@ public final class VirtualNetworksClientImpl implements VirtualNetworksClient {
         String resourceGroupName, String virtualNetworkName, TagsObject parameters) {
         return updateTagsWithResponseAsync(resourceGroupName, virtualNetworkName, parameters)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Updates a virtual network tags.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param virtualNetworkName The name of the virtual network.
-     * @param parameters Parameters supplied to update virtual network tags.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtual Network resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<VirtualNetworkInner> updateTagsWithResponse(
-        String resourceGroupName, String virtualNetworkName, TagsObject parameters) {
-        return updateTagsWithResponseAsync(resourceGroupName, virtualNetworkName, parameters).block();
     }
 
     /**
@@ -1533,23 +1499,6 @@ public final class VirtualNetworksClientImpl implements VirtualNetworksClient {
         String resourceGroupName, String virtualNetworkName, String ipAddress) {
         return checkIpAddressAvailabilityWithResponseAsync(resourceGroupName, virtualNetworkName, ipAddress)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Checks whether a private IP address is available for use.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param virtualNetworkName The name of the virtual network.
-     * @param ipAddress The private IP address to be verified.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for CheckIPAddressAvailability API service call along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<IpAddressAvailabilityResultInner> checkIpAddressAvailabilityWithResponse(
-        String resourceGroupName, String virtualNetworkName, String ipAddress) {
-        return checkIpAddressAvailabilityWithResponseAsync(resourceGroupName, virtualNetworkName, ipAddress).block();
     }
 
     /**

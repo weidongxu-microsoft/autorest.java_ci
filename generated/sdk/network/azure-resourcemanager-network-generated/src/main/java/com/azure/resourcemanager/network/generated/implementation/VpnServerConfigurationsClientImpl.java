@@ -299,22 +299,6 @@ public final class VpnServerConfigurationsClientImpl implements VpnServerConfigu
      *
      * @param resourceGroupName The resource group name of the VpnServerConfiguration.
      * @param vpnServerConfigurationName The name of the VpnServerConfiguration being retrieved.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpnServerConfiguration Resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<VpnServerConfigurationInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String vpnServerConfigurationName) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, vpnServerConfigurationName).block();
-    }
-
-    /**
-     * Retrieves the details of a VpnServerConfiguration.
-     *
-     * @param resourceGroupName The resource group name of the VpnServerConfiguration.
-     * @param vpnServerConfigurationName The name of the VpnServerConfiguration being retrieved.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -803,25 +787,6 @@ public final class VpnServerConfigurationsClientImpl implements VpnServerConfigu
         return updateTagsWithResponseAsync(
                 resourceGroupName, vpnServerConfigurationName, vpnServerConfigurationParameters)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Updates VpnServerConfiguration tags.
-     *
-     * @param resourceGroupName The resource group name of the VpnServerConfiguration.
-     * @param vpnServerConfigurationName The name of the VpnServerConfiguration being updated.
-     * @param vpnServerConfigurationParameters Parameters supplied to update VpnServerConfiguration tags.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpnServerConfiguration Resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<VpnServerConfigurationInner> updateTagsWithResponse(
-        String resourceGroupName, String vpnServerConfigurationName, TagsObject vpnServerConfigurationParameters) {
-        return updateTagsWithResponseAsync(
-                resourceGroupName, vpnServerConfigurationName, vpnServerConfigurationParameters)
-            .block();
     }
 
     /**

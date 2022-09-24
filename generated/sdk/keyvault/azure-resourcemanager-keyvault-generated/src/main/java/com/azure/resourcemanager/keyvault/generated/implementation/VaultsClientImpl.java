@@ -684,23 +684,6 @@ public final class VaultsClientImpl implements VaultsClient {
      * @param resourceGroupName The name of the Resource Group to which the server belongs.
      * @param vaultName Name of the vault.
      * @param parameters Parameters to patch the vault.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<VaultInner> updateWithResponse(
-        String resourceGroupName, String vaultName, VaultPatchParameters parameters) {
-        return updateWithResponseAsync(resourceGroupName, vaultName, parameters).block();
-    }
-
-    /**
-     * Update a key vault in the specified subscription.
-     *
-     * @param resourceGroupName The name of the Resource Group to which the server belongs.
-     * @param vaultName Name of the vault.
-     * @param parameters Parameters to patch the vault.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -841,21 +824,6 @@ public final class VaultsClientImpl implements VaultsClient {
      *
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param vaultName The name of the vault to delete.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> deleteWithResponse(String resourceGroupName, String vaultName) {
-        return deleteWithResponseAsync(resourceGroupName, vaultName).block();
-    }
-
-    /**
-     * Deletes the specified Azure key vault.
-     *
-     * @param resourceGroupName The name of the Resource Group to which the vault belongs.
-     * @param vaultName The name of the vault to delete.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -988,21 +956,6 @@ public final class VaultsClientImpl implements VaultsClient {
     private Mono<VaultInner> getByResourceGroupAsync(String resourceGroupName, String vaultName) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, vaultName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets the specified Azure key vault.
-     *
-     * @param resourceGroupName The name of the Resource Group to which the vault belongs.
-     * @param vaultName The name of the vault.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Azure key vault along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<VaultInner> getByResourceGroupWithResponse(String resourceGroupName, String vaultName) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, vaultName).block();
     }
 
     /**
@@ -1184,27 +1137,6 @@ public final class VaultsClientImpl implements VaultsClient {
         VaultAccessPolicyParametersInner parameters) {
         return updateAccessPolicyWithResponseAsync(resourceGroupName, vaultName, operationKind, parameters)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Update access policies in a key vault in the specified subscription.
-     *
-     * @param resourceGroupName The name of the Resource Group to which the vault belongs.
-     * @param vaultName Name of the vault.
-     * @param operationKind Name of the operation.
-     * @param parameters Access policy to merge into the vault.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return parameters for updating the access policy in a vault along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<VaultAccessPolicyParametersInner> updateAccessPolicyWithResponse(
-        String resourceGroupName,
-        String vaultName,
-        AccessPolicyUpdateKind operationKind,
-        VaultAccessPolicyParametersInner parameters) {
-        return updateAccessPolicyWithResponseAsync(resourceGroupName, vaultName, operationKind, parameters).block();
     }
 
     /**
@@ -1868,21 +1800,6 @@ public final class VaultsClientImpl implements VaultsClient {
      *
      * @param vaultName The name of the vault.
      * @param location The location of the deleted vault.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the deleted Azure key vault along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<DeletedVaultInner> getDeletedWithResponse(String vaultName, String location) {
-        return getDeletedWithResponseAsync(vaultName, location).block();
-    }
-
-    /**
-     * Gets the deleted Azure key vault.
-     *
-     * @param vaultName The name of the vault.
-     * @param location The location of the deleted vault.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -2396,21 +2313,6 @@ public final class VaultsClientImpl implements VaultsClient {
     private Mono<CheckNameAvailabilityResultInner> checkNameAvailabilityAsync(
         VaultCheckNameAvailabilityParameters vaultName) {
         return checkNameAvailabilityWithResponseAsync(vaultName).flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Checks that the vault name is valid and is not already in use.
-     *
-     * @param vaultName The name of the vault.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the CheckNameAvailability operation response along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<CheckNameAvailabilityResultInner> checkNameAvailabilityWithResponse(
-        VaultCheckNameAvailabilityParameters vaultName) {
-        return checkNameAvailabilityWithResponseAsync(vaultName).block();
     }
 
     /**

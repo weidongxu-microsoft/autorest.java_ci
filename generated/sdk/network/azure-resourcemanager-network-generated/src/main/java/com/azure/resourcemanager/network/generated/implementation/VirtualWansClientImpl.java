@@ -291,21 +291,6 @@ public final class VirtualWansClientImpl implements VirtualWansClient {
      *
      * @param resourceGroupName The resource group name of the VirtualWan.
      * @param virtualWanName The name of the VirtualWAN being retrieved.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtualWAN Resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<VirtualWanInner> getByResourceGroupWithResponse(String resourceGroupName, String virtualWanName) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, virtualWanName).block();
-    }
-
-    /**
-     * Retrieves the details of a VirtualWAN.
-     *
-     * @param resourceGroupName The resource group name of the VirtualWan.
-     * @param virtualWanName The name of the VirtualWAN being retrieved.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -728,23 +713,6 @@ public final class VirtualWansClientImpl implements VirtualWansClient {
         String resourceGroupName, String virtualWanName, TagsObject wanParameters) {
         return updateTagsWithResponseAsync(resourceGroupName, virtualWanName, wanParameters)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Updates a VirtualWAN tags.
-     *
-     * @param resourceGroupName The resource group name of the VirtualWan.
-     * @param virtualWanName The name of the VirtualWAN being updated.
-     * @param wanParameters Parameters supplied to Update VirtualWAN tags.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtualWAN Resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<VirtualWanInner> updateTagsWithResponse(
-        String resourceGroupName, String virtualWanName, TagsObject wanParameters) {
-        return updateTagsWithResponseAsync(resourceGroupName, virtualWanName, wanParameters).block();
     }
 
     /**

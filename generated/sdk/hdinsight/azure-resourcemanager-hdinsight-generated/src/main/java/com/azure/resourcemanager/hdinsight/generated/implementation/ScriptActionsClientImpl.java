@@ -258,22 +258,6 @@ public final class ScriptActionsClientImpl implements ScriptActionsClient {
      * @param resourceGroupName The name of the resource group.
      * @param clusterName The name of the cluster.
      * @param scriptName The name of the script.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> deleteWithResponse(String resourceGroupName, String clusterName, String scriptName) {
-        return deleteWithResponseAsync(resourceGroupName, clusterName, scriptName).block();
-    }
-
-    /**
-     * Deletes a specified persisted script action of the cluster.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param clusterName The name of the cluster.
-     * @param scriptName The name of the script.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -615,23 +599,6 @@ public final class ScriptActionsClientImpl implements ScriptActionsClient {
      * @param resourceGroupName The name of the resource group.
      * @param clusterName The name of the cluster.
      * @param scriptExecutionId The script execution Id.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the script execution detail for the given script execution ID along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<RuntimeScriptActionDetailInner> getExecutionDetailWithResponse(
-        String resourceGroupName, String clusterName, String scriptExecutionId) {
-        return getExecutionDetailWithResponseAsync(resourceGroupName, clusterName, scriptExecutionId).block();
-    }
-
-    /**
-     * Gets the script execution detail for the given script execution ID.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param clusterName The name of the cluster.
-     * @param scriptExecutionId The script execution Id.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -784,23 +751,6 @@ public final class ScriptActionsClientImpl implements ScriptActionsClient {
         String resourceGroupName, String clusterName, String operationId) {
         return getExecutionAsyncOperationStatusWithResponseAsync(resourceGroupName, clusterName, operationId)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets the async operation status of execution operation.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param clusterName The name of the cluster.
-     * @param operationId The long running operation id.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the async operation status of execution operation along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<AsyncOperationResultInner> getExecutionAsyncOperationStatusWithResponse(
-        String resourceGroupName, String clusterName, String operationId) {
-        return getExecutionAsyncOperationStatusWithResponseAsync(resourceGroupName, clusterName, operationId).block();
     }
 
     /**

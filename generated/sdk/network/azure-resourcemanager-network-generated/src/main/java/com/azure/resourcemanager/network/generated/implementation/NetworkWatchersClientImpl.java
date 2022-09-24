@@ -504,23 +504,6 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param parameters Parameters that define the network watcher resource.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return network watcher in a resource group along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<NetworkWatcherInner> createOrUpdateWithResponse(
-        String resourceGroupName, String networkWatcherName, NetworkWatcherInner parameters) {
-        return createOrUpdateWithResponseAsync(resourceGroupName, networkWatcherName, parameters).block();
-    }
-
-    /**
-     * Creates or updates a network watcher in the specified resource group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param networkWatcherName The name of the network watcher.
-     * @param parameters Parameters that define the network watcher resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -664,22 +647,6 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
     private Mono<NetworkWatcherInner> getByResourceGroupAsync(String resourceGroupName, String networkWatcherName) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, networkWatcherName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets the specified network watcher by resource group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param networkWatcherName The name of the network watcher.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network watcher by resource group along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<NetworkWatcherInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String networkWatcherName) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, networkWatcherName).block();
     }
 
     /**
@@ -1076,23 +1043,6 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
         String resourceGroupName, String networkWatcherName, TagsObject parameters) {
         return updateTagsWithResponseAsync(resourceGroupName, networkWatcherName, parameters)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Updates a network watcher tags.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param networkWatcherName The name of the network watcher.
-     * @param parameters Parameters supplied to update network watcher tags.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return network watcher in a resource group along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<NetworkWatcherInner> updateTagsWithResponse(
-        String resourceGroupName, String networkWatcherName, TagsObject parameters) {
-        return updateTagsWithResponseAsync(resourceGroupName, networkWatcherName, parameters).block();
     }
 
     /**
@@ -1535,23 +1485,6 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
         String resourceGroupName, String networkWatcherName, TopologyParameters parameters) {
         return getTopologyWithResponseAsync(resourceGroupName, networkWatcherName, parameters)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets the current network topology by resource group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param networkWatcherName The name of the network watcher.
-     * @param parameters Parameters that define the representation of topology.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the current network topology by resource group along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<TopologyInner> getTopologyWithResponse(
-        String resourceGroupName, String networkWatcherName, TopologyParameters parameters) {
-        return getTopologyWithResponseAsync(resourceGroupName, networkWatcherName, parameters).block();
     }
 
     /**

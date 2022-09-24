@@ -467,22 +467,6 @@ public final class SharesClientImpl implements SharesClient {
      * @param deviceName The device name.
      * @param name The share name.
      * @param resourceGroupName The resource group name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a share by name along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ShareInner> getWithResponse(String deviceName, String name, String resourceGroupName) {
-        return getWithResponseAsync(deviceName, name, resourceGroupName).block();
-    }
-
-    /**
-     * Gets a share by name.
-     *
-     * @param deviceName The device name.
-     * @param name The share name.
-     * @param resourceGroupName The resource group name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

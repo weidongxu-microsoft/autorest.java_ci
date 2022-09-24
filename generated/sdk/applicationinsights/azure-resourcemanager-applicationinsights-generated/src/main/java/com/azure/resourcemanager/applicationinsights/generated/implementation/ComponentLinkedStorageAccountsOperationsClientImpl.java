@@ -265,23 +265,6 @@ public final class ComponentLinkedStorageAccountsOperationsClientImpl
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceName The name of the Application Insights component resource.
      * @param storageType The type of the Application Insights component data source for the linked storage account.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Application Insights component linked storage accounts along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ComponentLinkedStorageAccountsInner> getWithResponse(
-        String resourceGroupName, String resourceName, StorageType storageType) {
-        return getWithResponseAsync(resourceGroupName, resourceName, storageType).block();
-    }
-
-    /**
-     * Returns the current linked storage settings for an Application Insights component.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param resourceName The name of the Application Insights component resource.
-     * @param storageType The type of the Application Insights component data source for the linked storage account.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -470,30 +453,6 @@ public final class ComponentLinkedStorageAccountsOperationsClientImpl
         return createAndUpdateWithResponseAsync(
                 resourceGroupName, resourceName, storageType, linkedStorageAccountsProperties)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Replace current linked storage account for an Application Insights component.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param resourceName The name of the Application Insights component resource.
-     * @param storageType The type of the Application Insights component data source for the linked storage account.
-     * @param linkedStorageAccountsProperties Properties that need to be specified to update linked storage accounts for
-     *     an Application Insights component.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Application Insights component linked storage accounts along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ComponentLinkedStorageAccountsInner> createAndUpdateWithResponse(
-        String resourceGroupName,
-        String resourceName,
-        StorageType storageType,
-        ComponentLinkedStorageAccountsInner linkedStorageAccountsProperties) {
-        return createAndUpdateWithResponseAsync(
-                resourceGroupName, resourceName, storageType, linkedStorageAccountsProperties)
-            .block();
     }
 
     /**
@@ -714,29 +673,6 @@ public final class ComponentLinkedStorageAccountsOperationsClientImpl
      * @param storageType The type of the Application Insights component data source for the linked storage account.
      * @param linkedStorageAccountsProperties Properties that need to be specified to update a linked storage accounts
      *     for an Application Insights component.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Application Insights component linked storage accounts along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ComponentLinkedStorageAccountsInner> updateWithResponse(
-        String resourceGroupName,
-        String resourceName,
-        StorageType storageType,
-        ComponentLinkedStorageAccountsPatch linkedStorageAccountsProperties) {
-        return updateWithResponseAsync(resourceGroupName, resourceName, storageType, linkedStorageAccountsProperties)
-            .block();
-    }
-
-    /**
-     * Update linked storage accounts for an Application Insights component.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param resourceName The name of the Application Insights component resource.
-     * @param storageType The type of the Application Insights component data source for the linked storage account.
-     * @param linkedStorageAccountsProperties Properties that need to be specified to update a linked storage accounts
-     *     for an Application Insights component.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -899,22 +835,6 @@ public final class ComponentLinkedStorageAccountsOperationsClientImpl
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String resourceName, StorageType storageType) {
         return deleteWithResponseAsync(resourceGroupName, resourceName, storageType).flatMap(ignored -> Mono.empty());
-    }
-
-    /**
-     * Delete linked storage accounts for an Application Insights component.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param resourceName The name of the Application Insights component resource.
-     * @param storageType The type of the Application Insights component data source for the linked storage account.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> deleteWithResponse(String resourceGroupName, String resourceName, StorageType storageType) {
-        return deleteWithResponseAsync(resourceGroupName, resourceName, storageType).block();
     }
 
     /**

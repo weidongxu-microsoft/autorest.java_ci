@@ -648,24 +648,6 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ErrorDetailsException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the non-security related metadata of an IoT hub along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<IotHubDescriptionInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String resourceName) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, resourceName).block();
-    }
-
-    /**
-     * Get the non-security related metadata of an IoT hub
-     *
-     * <p>Get the non-security related metadata of an IoT hub.
-     *
-     * @param resourceGroupName The name of the resource group that contains the IoT hub.
-     * @param resourceName The name of the IoT hub.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
@@ -2101,23 +2083,6 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ErrorDetailsException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the statistics from an IoT hub along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<RegistryStatisticsInner> getStatsWithResponse(String resourceGroupName, String resourceName) {
-        return getStatsWithResponseAsync(resourceGroupName, resourceName).block();
-    }
-
-    /**
-     * Get the statistics from an IoT hub
-     *
-     * <p>Get the statistics from an IoT hub.
-     *
-     * @param resourceGroupName The name of the resource group that contains the IoT hub.
-     * @param resourceName The name of the IoT hub.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
@@ -2714,28 +2679,6 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * @param resourceName The name of the IoT hub.
      * @param eventHubEndpointName The name of the Event Hub-compatible endpoint in the IoT hub.
      * @param name The name of the consumer group to retrieve.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ErrorDetailsException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a consumer group from the Event Hub-compatible device-to-cloud endpoint for an IoT hub along with {@link
-     *     Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<EventHubConsumerGroupInfoInner> getEventHubConsumerGroupWithResponse(
-        String resourceGroupName, String resourceName, String eventHubEndpointName, String name) {
-        return getEventHubConsumerGroupWithResponseAsync(resourceGroupName, resourceName, eventHubEndpointName, name)
-            .block();
-    }
-
-    /**
-     * Get a consumer group from the Event Hub-compatible device-to-cloud endpoint for an IoT hub
-     *
-     * <p>Get a consumer group from the Event Hub-compatible device-to-cloud endpoint for an IoT hub.
-     *
-     * @param resourceGroupName The name of the resource group that contains the IoT hub.
-     * @param resourceName The name of the IoT hub.
-     * @param eventHubEndpointName The name of the Event Hub-compatible endpoint in the IoT hub.
-     * @param name The name of the consumer group to retrieve.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
@@ -2957,33 +2900,6 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * @param eventHubEndpointName The name of the Event Hub-compatible endpoint in the IoT hub.
      * @param name The name of the consumer group to add.
      * @param consumerGroupBody The consumer group to add.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ErrorDetailsException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the properties of the EventHubConsumerGroupInfo object along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<EventHubConsumerGroupInfoInner> createEventHubConsumerGroupWithResponse(
-        String resourceGroupName,
-        String resourceName,
-        String eventHubEndpointName,
-        String name,
-        EventHubConsumerGroupBodyDescription consumerGroupBody) {
-        return createEventHubConsumerGroupWithResponseAsync(
-                resourceGroupName, resourceName, eventHubEndpointName, name, consumerGroupBody)
-            .block();
-    }
-
-    /**
-     * Add a consumer group to an Event Hub-compatible endpoint in an IoT hub
-     *
-     * <p>Add a consumer group to an Event Hub-compatible endpoint in an IoT hub.
-     *
-     * @param resourceGroupName The name of the resource group that contains the IoT hub.
-     * @param resourceName The name of the IoT hub.
-     * @param eventHubEndpointName The name of the Event Hub-compatible endpoint in the IoT hub.
-     * @param name The name of the consumer group to add.
-     * @param consumerGroupBody The consumer group to add.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
@@ -3169,27 +3085,6 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
         String resourceGroupName, String resourceName, String eventHubEndpointName, String name) {
         return deleteEventHubConsumerGroupWithResponseAsync(resourceGroupName, resourceName, eventHubEndpointName, name)
             .flatMap(ignored -> Mono.empty());
-    }
-
-    /**
-     * Delete a consumer group from an Event Hub-compatible endpoint in an IoT hub
-     *
-     * <p>Delete a consumer group from an Event Hub-compatible endpoint in an IoT hub.
-     *
-     * @param resourceGroupName The name of the resource group that contains the IoT hub.
-     * @param resourceName The name of the IoT hub.
-     * @param eventHubEndpointName The name of the Event Hub-compatible endpoint in the IoT hub.
-     * @param name The name of the consumer group to delete.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ErrorDetailsException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> deleteEventHubConsumerGroupWithResponse(
-        String resourceGroupName, String resourceName, String eventHubEndpointName, String name) {
-        return deleteEventHubConsumerGroupWithResponseAsync(resourceGroupName, resourceName, eventHubEndpointName, name)
-            .block();
     }
 
     /**
@@ -3572,26 +3467,6 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     private Mono<JobResponseInner> getJobAsync(String resourceGroupName, String resourceName, String jobId) {
         return getJobWithResponseAsync(resourceGroupName, resourceName, jobId)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Get the details of a job from an IoT hub. For more information, see:
-     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry
-     *
-     * <p>Get the details of a job from an IoT hub. For more information, see:
-     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry.
-     *
-     * @param resourceGroupName The name of the resource group that contains the IoT hub.
-     * @param resourceName The name of the IoT hub.
-     * @param jobId The job identifier.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ErrorDetailsException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the details of a job from an IoT hub along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<JobResponseInner> getJobWithResponse(String resourceGroupName, String resourceName, String jobId) {
-        return getJobWithResponseAsync(resourceGroupName, resourceName, jobId).block();
     }
 
     /**
@@ -4145,24 +4020,6 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      *
      * @param operationInputs Set the name parameter in the OperationInputs structure to the name of the IoT hub to
      *     check.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ErrorDetailsException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the properties indicating whether a given IoT hub name is available along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<IotHubNameAvailabilityInfoInner> checkNameAvailabilityWithResponse(
-        OperationInputs operationInputs) {
-        return checkNameAvailabilityWithResponseAsync(operationInputs).block();
-    }
-
-    /**
-     * Check if an IoT hub name is available
-     *
-     * <p>Check if an IoT hub name is available.
-     *
-     * @param operationInputs Set the name parameter in the OperationInputs structure to the name of the IoT hub to
-     *     check.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
@@ -4322,25 +4179,6 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
         String iotHubName, String resourceGroupName, TestAllRoutesInput input) {
         return testAllRoutesWithResponseAsync(iotHubName, resourceGroupName, input)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Test all routes
-     *
-     * <p>Test all routes configured in this Iot Hub.
-     *
-     * @param iotHubName IotHub to be tested.
-     * @param resourceGroupName resource group which Iot Hub belongs to.
-     * @param input Input for testing all routes.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ErrorDetailsException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of testing all routes along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<TestAllRoutesResultInner> testAllRoutesWithResponse(
-        String iotHubName, String resourceGroupName, TestAllRoutesInput input) {
-        return testAllRoutesWithResponseAsync(iotHubName, resourceGroupName, input).block();
     }
 
     /**
@@ -4512,25 +4350,6 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
         String iotHubName, String resourceGroupName, TestRouteInput input) {
         return testRouteWithResponseAsync(iotHubName, resourceGroupName, input)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Test the new route
-     *
-     * <p>Test the new route for this Iot Hub.
-     *
-     * @param iotHubName IotHub to be tested.
-     * @param resourceGroupName resource group which Iot Hub belongs to.
-     * @param input Route that needs to be tested.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ErrorDetailsException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of testing one route along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<TestRouteResultInner> testRouteWithResponse(
-        String iotHubName, String resourceGroupName, TestRouteInput input) {
-        return testRouteWithResponseAsync(iotHubName, resourceGroupName, input).block();
     }
 
     /**
@@ -4925,27 +4744,6 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
      * @param keyName The name of the shared access policy.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ErrorDetailsException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a shared access policy by name from an IoT hub along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<SharedAccessSignatureAuthorizationRuleInner> getKeysForKeyNameWithResponse(
-        String resourceGroupName, String resourceName, String keyName) {
-        return getKeysForKeyNameWithResponseAsync(resourceGroupName, resourceName, keyName).block();
-    }
-
-    /**
-     * Get a shared access policy by name from an IoT hub. For more information, see:
-     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security
-     *
-     * <p>Get a shared access policy by name from an IoT hub. For more information, see:
-     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security.
-     *
-     * @param resourceGroupName The name of the resource group that contains the IoT hub.
-     * @param resourceName The name of the IoT hub.
-     * @param keyName The name of the shared access policy.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
@@ -5127,29 +4925,6 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
         String resourceGroupName, String resourceName, ExportDevicesRequest exportDevicesParameters) {
         return exportDevicesWithResponseAsync(resourceGroupName, resourceName, exportDevicesParameters)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Exports all the device identities in the IoT hub identity registry to an Azure Storage blob container. For more
-     * information, see:
-     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities
-     *
-     * <p>Exports all the device identities in the IoT hub identity registry to an Azure Storage blob container. For
-     * more information, see:
-     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities.
-     *
-     * @param resourceGroupName The name of the resource group that contains the IoT hub.
-     * @param resourceName The name of the IoT hub.
-     * @param exportDevicesParameters The parameters that specify the export devices operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ErrorDetailsException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the properties of the Job Response object along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<JobResponseInner> exportDevicesWithResponse(
-        String resourceGroupName, String resourceName, ExportDevicesRequest exportDevicesParameters) {
-        return exportDevicesWithResponseAsync(resourceGroupName, resourceName, exportDevicesParameters).block();
     }
 
     /**
@@ -5349,29 +5124,6 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
         String resourceGroupName, String resourceName, ImportDevicesRequest importDevicesParameters) {
         return importDevicesWithResponseAsync(resourceGroupName, resourceName, importDevicesParameters)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Import, update, or delete device identities in the IoT hub identity registry from a blob. For more information,
-     * see:
-     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities
-     *
-     * <p>Import, update, or delete device identities in the IoT hub identity registry from a blob. For more
-     * information, see:
-     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities.
-     *
-     * @param resourceGroupName The name of the resource group that contains the IoT hub.
-     * @param resourceName The name of the IoT hub.
-     * @param importDevicesParameters The parameters that specify the import devices operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ErrorDetailsException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the properties of the Job Response object along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<JobResponseInner> importDevicesWithResponse(
-        String resourceGroupName, String resourceName, ImportDevicesRequest importDevicesParameters) {
-        return importDevicesWithResponseAsync(resourceGroupName, resourceName, importDevicesParameters).block();
     }
 
     /**

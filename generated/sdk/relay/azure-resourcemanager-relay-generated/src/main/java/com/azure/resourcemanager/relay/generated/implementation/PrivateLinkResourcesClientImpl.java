@@ -220,23 +220,6 @@ public final class PrivateLinkResourcesClientImpl implements PrivateLinkResource
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param namespaceName The namespace name.
      * @param privateLinkResourceName The PrivateLinkResource name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a description for the specified Private Endpoint Connection name along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<PrivateLinkResourceInner> getWithResponse(
-        String resourceGroupName, String namespaceName, String privateLinkResourceName) {
-        return getWithResponseAsync(resourceGroupName, namespaceName, privateLinkResourceName).block();
-    }
-
-    /**
-     * Gets a description for the specified Private Endpoint Connection name.
-     *
-     * @param resourceGroupName Name of the Resource group within the Azure subscription.
-     * @param namespaceName The namespace name.
-     * @param privateLinkResourceName The PrivateLinkResource name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -375,22 +358,6 @@ public final class PrivateLinkResourcesClientImpl implements PrivateLinkResource
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PrivateLinkResourcesListResultInner> listAsync(String resourceGroupName, String namespaceName) {
         return listWithResponseAsync(resourceGroupName, namespaceName).flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets lists of resources that supports Privatelinks.
-     *
-     * @param resourceGroupName Name of the Resource group within the Azure subscription.
-     * @param namespaceName The namespace name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return lists of resources that supports Privatelinks along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<PrivateLinkResourcesListResultInner> listWithResponse(
-        String resourceGroupName, String namespaceName) {
-        return listWithResponseAsync(resourceGroupName, namespaceName).block();
     }
 
     /**

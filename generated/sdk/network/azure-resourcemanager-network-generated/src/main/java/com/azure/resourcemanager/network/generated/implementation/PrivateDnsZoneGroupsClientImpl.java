@@ -544,23 +544,6 @@ public final class PrivateDnsZoneGroupsClientImpl implements PrivateDnsZoneGroup
      * @param resourceGroupName The name of the resource group.
      * @param privateEndpointName The name of the private endpoint.
      * @param privateDnsZoneGroupName The name of the private dns zone group.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the private dns zone group resource by specified private dns zone group name along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<PrivateDnsZoneGroupInner> getWithResponse(
-        String resourceGroupName, String privateEndpointName, String privateDnsZoneGroupName) {
-        return getWithResponseAsync(resourceGroupName, privateEndpointName, privateDnsZoneGroupName).block();
-    }
-
-    /**
-     * Gets the private dns zone group resource by specified private dns zone group name.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param privateEndpointName The name of the private endpoint.
-     * @param privateDnsZoneGroupName The name of the private dns zone group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

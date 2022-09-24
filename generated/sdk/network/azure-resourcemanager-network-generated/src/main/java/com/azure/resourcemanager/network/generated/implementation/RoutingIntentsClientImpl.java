@@ -612,23 +612,6 @@ public final class RoutingIntentsClientImpl implements RoutingIntentsClient {
      * @param resourceGroupName The resource group name of the RoutingIntent.
      * @param virtualHubName The name of the VirtualHub.
      * @param routingIntentName The name of the RoutingIntent.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the routing intent child resource of a Virtual hub along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<RoutingIntentInner> getWithResponse(
-        String resourceGroupName, String virtualHubName, String routingIntentName) {
-        return getWithResponseAsync(resourceGroupName, virtualHubName, routingIntentName).block();
-    }
-
-    /**
-     * Retrieves the details of a RoutingIntent.
-     *
-     * @param resourceGroupName The resource group name of the RoutingIntent.
-     * @param virtualHubName The name of the VirtualHub.
-     * @param routingIntentName The name of the RoutingIntent.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

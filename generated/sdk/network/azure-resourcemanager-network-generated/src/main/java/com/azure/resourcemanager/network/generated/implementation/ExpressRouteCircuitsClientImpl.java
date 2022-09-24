@@ -610,22 +610,6 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
      *
      * @param resourceGroupName The name of the resource group.
      * @param circuitName The name of express route circuit.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the specified express route circuit along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ExpressRouteCircuitInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String circuitName) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, circuitName).block();
-    }
-
-    /**
-     * Gets information about the specified express route circuit.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param circuitName The name of express route circuit.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1052,23 +1036,6 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
         String resourceGroupName, String circuitName, TagsObject parameters) {
         return updateTagsWithResponseAsync(resourceGroupName, circuitName, parameters)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Updates an express route circuit tags.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param circuitName The name of the circuit.
-     * @param parameters Parameters supplied to update express route circuit tags.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return expressRouteCircuit resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ExpressRouteCircuitInner> updateTagsWithResponse(
-        String resourceGroupName, String circuitName, TagsObject parameters) {
-        return updateTagsWithResponseAsync(resourceGroupName, circuitName, parameters).block();
     }
 
     /**
@@ -2144,21 +2111,6 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
      *
      * @param resourceGroupName The name of the resource group.
      * @param circuitName The name of the express route circuit.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the stats from an express route circuit in a resource group along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ExpressRouteCircuitStatsInner> getStatsWithResponse(String resourceGroupName, String circuitName) {
-        return getStatsWithResponseAsync(resourceGroupName, circuitName).block();
-    }
-
-    /**
-     * Gets all the stats from an express route circuit in a resource group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param circuitName The name of the express route circuit.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -2310,23 +2262,6 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
         String resourceGroupName, String circuitName, String peeringName) {
         return getPeeringStatsWithResponseAsync(resourceGroupName, circuitName, peeringName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets all stats from an express route circuit in a resource group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param circuitName The name of the express route circuit.
-     * @param peeringName The name of the peering.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all stats from an express route circuit in a resource group along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ExpressRouteCircuitStatsInner> getPeeringStatsWithResponse(
-        String resourceGroupName, String circuitName, String peeringName) {
-        return getPeeringStatsWithResponseAsync(resourceGroupName, circuitName, peeringName).block();
     }
 
     /**

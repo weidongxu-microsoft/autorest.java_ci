@@ -360,24 +360,6 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
      *
      * @param policySetDefinitionName The name of the policy set definition to create.
      * @param parameters The policy set definition properties.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy set definition along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<PolicySetDefinitionInner> createOrUpdateWithResponse(
-        String policySetDefinitionName, PolicySetDefinitionInner parameters) {
-        return createOrUpdateWithResponseAsync(policySetDefinitionName, parameters).block();
-    }
-
-    /**
-     * Creates or updates a policy set definition.
-     *
-     * <p>This operation creates or updates a policy set definition in the given subscription with the given name.
-     *
-     * @param policySetDefinitionName The name of the policy set definition to create.
-     * @param parameters The policy set definition properties.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -512,22 +494,6 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String policySetDefinitionName) {
         return deleteWithResponseAsync(policySetDefinitionName).flatMap(ignored -> Mono.empty());
-    }
-
-    /**
-     * Deletes a policy set definition.
-     *
-     * <p>This operation deletes the policy set definition in the given subscription with the given name.
-     *
-     * @param policySetDefinitionName The name of the policy set definition to delete.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> deleteWithResponse(String policySetDefinitionName) {
-        return deleteWithResponseAsync(policySetDefinitionName).block();
     }
 
     /**
@@ -675,22 +641,6 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
      * <p>This operation retrieves the policy set definition in the given subscription with the given name.
      *
      * @param policySetDefinitionName The name of the policy set definition to get.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy set definition along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<PolicySetDefinitionInner> getWithResponse(String policySetDefinitionName) {
-        return getWithResponseAsync(policySetDefinitionName).block();
-    }
-
-    /**
-     * Retrieves a policy set definition.
-     *
-     * <p>This operation retrieves the policy set definition in the given subscription with the given name.
-     *
-     * @param policySetDefinitionName The name of the policy set definition to get.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -797,22 +747,6 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PolicySetDefinitionInner> getBuiltInAsync(String policySetDefinitionName) {
         return getBuiltInWithResponseAsync(policySetDefinitionName).flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Retrieves a built in policy set definition.
-     *
-     * <p>This operation retrieves the built-in policy set definition with the given name.
-     *
-     * @param policySetDefinitionName The name of the policy set definition to get.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy set definition along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<PolicySetDefinitionInner> getBuiltInWithResponse(String policySetDefinitionName) {
-        return getBuiltInWithResponseAsync(policySetDefinitionName).block();
     }
 
     /**
@@ -1459,26 +1393,6 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
      * @param policySetDefinitionName The name of the policy set definition to create.
      * @param managementGroupId The ID of the management group.
      * @param parameters The policy set definition properties.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy set definition along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<PolicySetDefinitionInner> createOrUpdateAtManagementGroupWithResponse(
-        String policySetDefinitionName, String managementGroupId, PolicySetDefinitionInner parameters) {
-        return createOrUpdateAtManagementGroupWithResponseAsync(policySetDefinitionName, managementGroupId, parameters)
-            .block();
-    }
-
-    /**
-     * Creates or updates a policy set definition.
-     *
-     * <p>This operation creates or updates a policy set definition in the given management group with the given name.
-     *
-     * @param policySetDefinitionName The name of the policy set definition to create.
-     * @param managementGroupId The ID of the management group.
-     * @param parameters The policy set definition properties.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1627,24 +1541,6 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
      *
      * @param policySetDefinitionName The name of the policy set definition to delete.
      * @param managementGroupId The ID of the management group.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> deleteAtManagementGroupWithResponse(
-        String policySetDefinitionName, String managementGroupId) {
-        return deleteAtManagementGroupWithResponseAsync(policySetDefinitionName, managementGroupId).block();
-    }
-
-    /**
-     * Deletes a policy set definition.
-     *
-     * <p>This operation deletes the policy set definition in the given management group with the given name.
-     *
-     * @param policySetDefinitionName The name of the policy set definition to delete.
-     * @param managementGroupId The ID of the management group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1775,24 +1671,6 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
         String policySetDefinitionName, String managementGroupId) {
         return getAtManagementGroupWithResponseAsync(policySetDefinitionName, managementGroupId)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Retrieves a policy set definition.
-     *
-     * <p>This operation retrieves the policy set definition in the given management group with the given name.
-     *
-     * @param policySetDefinitionName The name of the policy set definition to get.
-     * @param managementGroupId The ID of the management group.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy set definition along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<PolicySetDefinitionInner> getAtManagementGroupWithResponse(
-        String policySetDefinitionName, String managementGroupId) {
-        return getAtManagementGroupWithResponseAsync(policySetDefinitionName, managementGroupId).block();
     }
 
     /**

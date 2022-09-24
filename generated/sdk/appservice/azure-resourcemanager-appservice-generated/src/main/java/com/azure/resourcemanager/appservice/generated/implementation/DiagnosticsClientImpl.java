@@ -907,35 +907,6 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @param startTime Start Time.
      * @param endTime End Time.
      * @param timeGrain Time Grain.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing Response from Detector along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<DetectorResponseInner> getHostingEnvironmentDetectorResponseWithResponse(
-        String resourceGroupName,
-        String name,
-        String detectorName,
-        OffsetDateTime startTime,
-        OffsetDateTime endTime,
-        String timeGrain) {
-        return getHostingEnvironmentDetectorResponseWithResponseAsync(
-                resourceGroupName, name, detectorName, startTime, endTime, timeGrain)
-            .block();
-    }
-
-    /**
-     * Get Hosting Environment Detector Response
-     *
-     * <p>Description for Get Hosting Environment Detector Response.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name App Service Environment Name.
-     * @param detectorName Detector Resource Name.
-     * @param startTime Start Time.
-     * @param endTime End Time.
-     * @param timeGrain Time Grain.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -1342,35 +1313,6 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @param startTime Start Time.
      * @param endTime End Time.
      * @param timeGrain Time Grain.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing Response from Detector along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<DetectorResponseInner> getSiteDetectorResponseWithResponse(
-        String resourceGroupName,
-        String siteName,
-        String detectorName,
-        OffsetDateTime startTime,
-        OffsetDateTime endTime,
-        String timeGrain) {
-        return getSiteDetectorResponseWithResponseAsync(
-                resourceGroupName, siteName, detectorName, startTime, endTime, timeGrain)
-            .block();
-    }
-
-    /**
-     * Get site detector response
-     *
-     * <p>Description for Get site detector response.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param siteName Site Name.
-     * @param detectorName Detector Resource Name.
-     * @param startTime Start Time.
-     * @param endTime End Time.
-     * @param timeGrain Time Grain.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -1741,25 +1683,6 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
         String resourceGroupName, String siteName, String diagnosticCategory) {
         return getSiteDiagnosticCategoryWithResponseAsync(resourceGroupName, siteName, diagnosticCategory)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Get Diagnostics Category
-     *
-     * <p>Description for Get Diagnostics Category.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param siteName Site Name.
-     * @param diagnosticCategory Diagnostic Category.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing detector definition along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<DiagnosticCategoryInner> getSiteDiagnosticCategoryWithResponse(
-        String resourceGroupName, String siteName, String diagnosticCategory) {
-        return getSiteDiagnosticCategoryWithResponseAsync(resourceGroupName, siteName, diagnosticCategory).block();
     }
 
     /**
@@ -2165,26 +2088,6 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @param siteName Site Name.
      * @param diagnosticCategory Diagnostic Category.
      * @param analysisName Analysis Name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return definition of Analysis along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<AnalysisDefinitionInner> getSiteAnalysisWithResponse(
-        String resourceGroupName, String siteName, String diagnosticCategory, String analysisName) {
-        return getSiteAnalysisWithResponseAsync(resourceGroupName, siteName, diagnosticCategory, analysisName).block();
-    }
-
-    /**
-     * Get Site Analysis
-     *
-     * <p>Description for Get Site Analysis.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param siteName Site Name.
-     * @param diagnosticCategory Diagnostic Category.
-     * @param analysisName Analysis Name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -2389,37 +2292,6 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
         return executeSiteAnalysisWithResponseAsync(
                 resourceGroupName, siteName, diagnosticCategory, analysisName, startTime, endTime, timeGrain)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Execute Analysis
-     *
-     * <p>Description for Execute Analysis.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param siteName Site Name.
-     * @param diagnosticCategory Category Name.
-     * @param analysisName Analysis Resource Name.
-     * @param startTime Start Time.
-     * @param endTime End Time.
-     * @param timeGrain Time Grain.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing a diagnostic analysis done on an application along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<DiagnosticAnalysisInner> executeSiteAnalysisWithResponse(
-        String resourceGroupName,
-        String siteName,
-        String diagnosticCategory,
-        String analysisName,
-        OffsetDateTime startTime,
-        OffsetDateTime endTime,
-        String timeGrain) {
-        return executeSiteAnalysisWithResponseAsync(
-                resourceGroupName, siteName, diagnosticCategory, analysisName, startTime, endTime, timeGrain)
-            .block();
     }
 
     /**
@@ -2851,26 +2723,6 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @param siteName Site Name.
      * @param diagnosticCategory Diagnostic Category.
      * @param detectorName Detector Name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return aRM resource for a detector definition along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<DetectorDefinitionResourceInner> getSiteDetectorWithResponse(
-        String resourceGroupName, String siteName, String diagnosticCategory, String detectorName) {
-        return getSiteDetectorWithResponseAsync(resourceGroupName, siteName, diagnosticCategory, detectorName).block();
-    }
-
-    /**
-     * Get Detector
-     *
-     * <p>Description for Get Detector.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param siteName Site Name.
-     * @param diagnosticCategory Diagnostic Category.
-     * @param detectorName Detector Name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -3075,37 +2927,6 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
         return executeSiteDetectorWithResponseAsync(
                 resourceGroupName, siteName, detectorName, diagnosticCategory, startTime, endTime, timeGrain)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Execute Detector
-     *
-     * <p>Description for Execute Detector.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param siteName Site Name.
-     * @param detectorName Detector Resource Name.
-     * @param diagnosticCategory Category Name.
-     * @param startTime Start Time.
-     * @param endTime End Time.
-     * @param timeGrain Time Grain.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing Response from Diagnostic Detectors along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<DiagnosticDetectorResponseInner> executeSiteDetectorWithResponse(
-        String resourceGroupName,
-        String siteName,
-        String detectorName,
-        String diagnosticCategory,
-        OffsetDateTime startTime,
-        OffsetDateTime endTime,
-        String timeGrain) {
-        return executeSiteDetectorWithResponseAsync(
-                resourceGroupName, siteName, detectorName, diagnosticCategory, startTime, endTime, timeGrain)
-            .block();
     }
 
     /**
@@ -3565,37 +3386,6 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @param startTime Start Time.
      * @param endTime End Time.
      * @param timeGrain Time Grain.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing Response from Detector along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<DetectorResponseInner> getSiteDetectorResponseSlotWithResponse(
-        String resourceGroupName,
-        String siteName,
-        String detectorName,
-        String slot,
-        OffsetDateTime startTime,
-        OffsetDateTime endTime,
-        String timeGrain) {
-        return getSiteDetectorResponseSlotWithResponseAsync(
-                resourceGroupName, siteName, detectorName, slot, startTime, endTime, timeGrain)
-            .block();
-    }
-
-    /**
-     * Get site detector response
-     *
-     * <p>Description for Get site detector response.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param siteName Site Name.
-     * @param detectorName Detector Resource Name.
-     * @param slot Slot Name.
-     * @param startTime Start Time.
-     * @param endTime End Time.
-     * @param timeGrain Time Grain.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -3993,27 +3783,6 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
         String resourceGroupName, String siteName, String diagnosticCategory, String slot) {
         return getSiteDiagnosticCategorySlotWithResponseAsync(resourceGroupName, siteName, diagnosticCategory, slot)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Get Diagnostics Category
-     *
-     * <p>Description for Get Diagnostics Category.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param siteName Site Name.
-     * @param diagnosticCategory Diagnostic Category.
-     * @param slot Slot Name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing detector definition along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<DiagnosticCategoryInner> getSiteDiagnosticCategorySlotWithResponse(
-        String resourceGroupName, String siteName, String diagnosticCategory, String slot) {
-        return getSiteDiagnosticCategorySlotWithResponseAsync(resourceGroupName, siteName, diagnosticCategory, slot)
-            .block();
     }
 
     /**
@@ -4455,28 +4224,6 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @param diagnosticCategory Diagnostic Category.
      * @param analysisName Analysis Name.
      * @param slot Slot - optional.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return definition of Analysis along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<AnalysisDefinitionInner> getSiteAnalysisSlotWithResponse(
-        String resourceGroupName, String siteName, String diagnosticCategory, String analysisName, String slot) {
-        return getSiteAnalysisSlotWithResponseAsync(resourceGroupName, siteName, diagnosticCategory, analysisName, slot)
-            .block();
-    }
-
-    /**
-     * Get Site Analysis
-     *
-     * <p>Description for Get Site Analysis.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param siteName Site Name.
-     * @param diagnosticCategory Diagnostic Category.
-     * @param analysisName Analysis Name.
-     * @param slot Slot - optional.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -4702,39 +4449,6 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
         return executeSiteAnalysisSlotWithResponseAsync(
                 resourceGroupName, siteName, diagnosticCategory, analysisName, slot, startTime, endTime, timeGrain)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Execute Analysis
-     *
-     * <p>Description for Execute Analysis.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param siteName Site Name.
-     * @param diagnosticCategory Category Name.
-     * @param analysisName Analysis Resource Name.
-     * @param slot Slot Name.
-     * @param startTime Start Time.
-     * @param endTime End Time.
-     * @param timeGrain Time Grain.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing a diagnostic analysis done on an application along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<DiagnosticAnalysisInner> executeSiteAnalysisSlotWithResponse(
-        String resourceGroupName,
-        String siteName,
-        String diagnosticCategory,
-        String analysisName,
-        String slot,
-        OffsetDateTime startTime,
-        OffsetDateTime endTime,
-        String timeGrain) {
-        return executeSiteAnalysisSlotWithResponseAsync(
-                resourceGroupName, siteName, diagnosticCategory, analysisName, slot, startTime, endTime, timeGrain)
-            .block();
     }
 
     /**
@@ -5210,28 +4924,6 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @param diagnosticCategory Diagnostic Category.
      * @param detectorName Detector Name.
      * @param slot Slot Name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return aRM resource for a detector definition along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<DetectorDefinitionResourceInner> getSiteDetectorSlotWithResponse(
-        String resourceGroupName, String siteName, String diagnosticCategory, String detectorName, String slot) {
-        return getSiteDetectorSlotWithResponseAsync(resourceGroupName, siteName, diagnosticCategory, detectorName, slot)
-            .block();
-    }
-
-    /**
-     * Get Detector
-     *
-     * <p>Description for Get Detector.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param siteName Site Name.
-     * @param diagnosticCategory Diagnostic Category.
-     * @param detectorName Detector Name.
-     * @param slot Slot Name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -5457,39 +5149,6 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
         return executeSiteDetectorSlotWithResponseAsync(
                 resourceGroupName, siteName, detectorName, diagnosticCategory, slot, startTime, endTime, timeGrain)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Execute Detector
-     *
-     * <p>Description for Execute Detector.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param siteName Site Name.
-     * @param detectorName Detector Resource Name.
-     * @param diagnosticCategory Category Name.
-     * @param slot Slot Name.
-     * @param startTime Start Time.
-     * @param endTime End Time.
-     * @param timeGrain Time Grain.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing Response from Diagnostic Detectors along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<DiagnosticDetectorResponseInner> executeSiteDetectorSlotWithResponse(
-        String resourceGroupName,
-        String siteName,
-        String detectorName,
-        String diagnosticCategory,
-        String slot,
-        OffsetDateTime startTime,
-        OffsetDateTime endTime,
-        String timeGrain) {
-        return executeSiteDetectorSlotWithResponseAsync(
-                resourceGroupName, siteName, detectorName, diagnosticCategory, slot, startTime, endTime, timeGrain)
-            .block();
     }
 
     /**

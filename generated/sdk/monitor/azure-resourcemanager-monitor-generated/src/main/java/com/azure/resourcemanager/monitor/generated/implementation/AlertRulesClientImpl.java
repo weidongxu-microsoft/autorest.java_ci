@@ -283,23 +283,6 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @param parameters The parameters of the rule to create or update.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the alert rule resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<AlertRuleResourceInner> createOrUpdateWithResponse(
-        String resourceGroupName, String ruleName, AlertRuleResourceInner parameters) {
-        return createOrUpdateWithResponseAsync(resourceGroupName, ruleName, parameters).block();
-    }
-
-    /**
-     * Creates or updates a classic metric alert rule.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param ruleName The name of the rule.
-     * @param parameters The parameters of the rule to create or update.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -443,21 +426,6 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> deleteWithResponse(String resourceGroupName, String ruleName) {
-        return deleteWithResponseAsync(resourceGroupName, ruleName).block();
-    }
-
-    /**
-     * Deletes a classic metric alert rule.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param ruleName The name of the rule.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -593,21 +561,6 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
     private Mono<AlertRuleResourceInner> getByResourceGroupAsync(String resourceGroupName, String ruleName) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, ruleName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets a classic metric alert rule.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param ruleName The name of the rule.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a classic metric alert rule along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<AlertRuleResourceInner> getByResourceGroupWithResponse(String resourceGroupName, String ruleName) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, ruleName).block();
     }
 
     /**
@@ -770,23 +723,6 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
         String resourceGroupName, String ruleName, AlertRuleResourcePatch alertRulesResource) {
         return updateWithResponseAsync(resourceGroupName, ruleName, alertRulesResource)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Updates an existing classic metric AlertRuleResource. To update other fields use the CreateOrUpdate method.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param ruleName The name of the rule.
-     * @param alertRulesResource Parameters supplied to the operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the alert rule resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<AlertRuleResourceInner> updateWithResponse(
-        String resourceGroupName, String ruleName, AlertRuleResourcePatch alertRulesResource) {
-        return updateWithResponseAsync(resourceGroupName, ruleName, alertRulesResource).block();
     }
 
     /**

@@ -531,23 +531,6 @@ public final class VirtualRouterPeeringsClientImpl implements VirtualRouterPeeri
      * @param resourceGroupName The name of the resource group.
      * @param virtualRouterName The name of the Virtual Router.
      * @param peeringName The name of the Virtual Router Peering.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Virtual Router Peering along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<VirtualRouterPeeringInner> getWithResponse(
-        String resourceGroupName, String virtualRouterName, String peeringName) {
-        return getWithResponseAsync(resourceGroupName, virtualRouterName, peeringName).block();
-    }
-
-    /**
-     * Gets the specified Virtual Router Peering.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param virtualRouterName The name of the Virtual Router.
-     * @param peeringName The name of the Virtual Router Peering.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.

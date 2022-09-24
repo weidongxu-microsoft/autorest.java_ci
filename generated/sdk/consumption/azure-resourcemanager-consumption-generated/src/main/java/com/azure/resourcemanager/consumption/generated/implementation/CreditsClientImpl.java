@@ -167,21 +167,6 @@ public final class CreditsClientImpl implements CreditsClient {
      *
      * @param billingAccountId BillingAccount ID.
      * @param billingProfileId Azure Billing Profile ID.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a credit summary resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<CreditSummaryInner> getWithResponse(String billingAccountId, String billingProfileId) {
-        return getWithResponseAsync(billingAccountId, billingProfileId).block();
-    }
-
-    /**
-     * The credit summary by billingAccountId and billingProfileId.
-     *
-     * @param billingAccountId BillingAccount ID.
-     * @param billingProfileId Azure Billing Profile ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

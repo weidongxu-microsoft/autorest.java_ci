@@ -209,22 +209,6 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of Query Performance Insight data reset along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<QueryPerformanceInsightResetDataResultInner> resetQueryPerformanceInsightDataWithResponse(
-        String resourceGroupName, String serverName) {
-        return resetQueryPerformanceInsightDataWithResponseAsync(resourceGroupName, serverName).block();
-    }
-
-    /**
-     * Reset data for Query Performance Insight.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param serverName The name of the server.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

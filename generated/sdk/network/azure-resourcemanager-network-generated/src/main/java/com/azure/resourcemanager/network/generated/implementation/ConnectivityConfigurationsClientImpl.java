@@ -285,25 +285,6 @@ public final class ConnectivityConfigurationsClientImpl implements ConnectivityC
      * @param resourceGroupName The name of the resource group.
      * @param networkManagerName The name of the network manager.
      * @param configurationName The name of the network manager connectivity configuration.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Network Connectivity Configuration, specified by the resource group, network manager name, and
-     *     connectivity Configuration name along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ConnectivityConfigurationInner> getWithResponse(
-        String resourceGroupName, String networkManagerName, String configurationName) {
-        return getWithResponseAsync(resourceGroupName, networkManagerName, configurationName).block();
-    }
-
-    /**
-     * Gets a Network Connectivity Configuration, specified by the resource group, network manager name, and
-     * connectivity Configuration name.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param networkManagerName The name of the network manager.
-     * @param configurationName The name of the network manager connectivity configuration.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -499,30 +480,6 @@ public final class ConnectivityConfigurationsClientImpl implements ConnectivityC
         return createOrUpdateWithResponseAsync(
                 resourceGroupName, networkManagerName, configurationName, connectivityConfiguration)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Creates/Updates a new network manager connectivity configuration.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param networkManagerName The name of the network manager.
-     * @param configurationName The name of the network manager connectivity configuration.
-     * @param connectivityConfiguration Parameters supplied to create/update a network manager connectivity
-     *     configuration.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the network manager connectivity configuration resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ConnectivityConfigurationInner> createOrUpdateWithResponse(
-        String resourceGroupName,
-        String networkManagerName,
-        String configurationName,
-        ConnectivityConfigurationInner connectivityConfiguration) {
-        return createOrUpdateWithResponseAsync(
-                resourceGroupName, networkManagerName, configurationName, connectivityConfiguration)
-            .block();
     }
 
     /**

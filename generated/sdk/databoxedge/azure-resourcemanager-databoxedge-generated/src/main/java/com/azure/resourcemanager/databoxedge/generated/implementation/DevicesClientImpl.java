@@ -835,22 +835,6 @@ public final class DevicesClientImpl implements DevicesClient {
      *
      * @param resourceGroupName The resource group name.
      * @param deviceName The device name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the properties of the Data Box Edge/Data Box Gateway device along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<DataBoxEdgeDeviceInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String deviceName) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, deviceName).block();
-    }
-
-    /**
-     * Gets the properties of the Data Box Edge/Data Box Gateway device.
-     *
-     * @param resourceGroupName The resource group name.
-     * @param deviceName The device name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1004,23 +988,6 @@ public final class DevicesClientImpl implements DevicesClient {
         String deviceName, String resourceGroupName, DataBoxEdgeDeviceInner dataBoxEdgeDevice) {
         return createOrUpdateWithResponseAsync(deviceName, resourceGroupName, dataBoxEdgeDevice)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Creates or updates a Data Box Edge/Data Box Gateway resource.
-     *
-     * @param deviceName The device name.
-     * @param resourceGroupName The resource group name.
-     * @param dataBoxEdgeDevice The resource object.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Data Box Edge/Gateway device along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<DataBoxEdgeDeviceInner> createOrUpdateWithResponse(
-        String deviceName, String resourceGroupName, DataBoxEdgeDeviceInner dataBoxEdgeDevice) {
-        return createOrUpdateWithResponseAsync(deviceName, resourceGroupName, dataBoxEdgeDevice).block();
     }
 
     /**
@@ -1417,23 +1384,6 @@ public final class DevicesClientImpl implements DevicesClient {
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param parameters The resource parameters.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Data Box Edge/Gateway device along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<DataBoxEdgeDeviceInner> updateWithResponse(
-        String deviceName, String resourceGroupName, DataBoxEdgeDevicePatch parameters) {
-        return updateWithResponseAsync(deviceName, resourceGroupName, parameters).block();
-    }
-
-    /**
-     * Modifies a Data Box Edge/Data Box Gateway resource.
-     *
-     * @param deviceName The device name.
-     * @param resourceGroupName The resource group name.
-     * @param parameters The resource parameters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1811,22 +1761,6 @@ public final class DevicesClientImpl implements DevicesClient {
      *
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return used in activation key generation flow along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<GenerateCertResponseInner> generateCertificateWithResponse(
-        String deviceName, String resourceGroupName) {
-        return generateCertificateWithResponseAsync(deviceName, resourceGroupName).block();
-    }
-
-    /**
-     * Generates certificate for activation key.
-     *
-     * @param deviceName The device name.
-     * @param resourceGroupName The resource group name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1966,23 +1900,6 @@ public final class DevicesClientImpl implements DevicesClient {
         String deviceName, String resourceGroupName) {
         return getExtendedInformationWithResponseAsync(deviceName, resourceGroupName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets additional information for the specified Azure Stack Edge/Data Box Gateway device.
-     *
-     * @param deviceName The device name.
-     * @param resourceGroupName The resource group name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return additional information for the specified Azure Stack Edge/Data Box Gateway device along with {@link
-     *     Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<DataBoxEdgeDeviceExtendedInfoInner> getExtendedInformationWithResponse(
-        String deviceName, String resourceGroupName) {
-        return getExtendedInformationWithResponseAsync(deviceName, resourceGroupName).block();
     }
 
     /**
@@ -2359,21 +2276,6 @@ public final class DevicesClientImpl implements DevicesClient {
     private Mono<NetworkSettingsInner> getNetworkSettingsAsync(String deviceName, String resourceGroupName) {
         return getNetworkSettingsWithResponseAsync(deviceName, resourceGroupName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets the network settings of the specified Data Box Edge/Data Box Gateway device.
-     *
-     * @param deviceName The device name.
-     * @param resourceGroupName The resource group name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the network settings of the specified Data Box Edge/Data Box Gateway device along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<NetworkSettingsInner> getNetworkSettingsWithResponse(String deviceName, String resourceGroupName) {
-        return getNetworkSettingsWithResponseAsync(deviceName, resourceGroupName).block();
     }
 
     /**
@@ -3037,24 +2939,6 @@ public final class DevicesClientImpl implements DevicesClient {
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param parameters The patch object.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return additional information for the specified Data Box Edge/Data Box Gateway device along with {@link
-     *     Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<DataBoxEdgeDeviceExtendedInfoInner> updateExtendedInformationWithResponse(
-        String deviceName, String resourceGroupName, DataBoxEdgeDeviceExtendedInfoPatch parameters) {
-        return updateExtendedInformationWithResponseAsync(deviceName, resourceGroupName, parameters).block();
-    }
-
-    /**
-     * Gets additional information for the specified Data Box Edge/Data Box Gateway device.
-     *
-     * @param deviceName The device name.
-     * @param resourceGroupName The resource group name.
-     * @param parameters The patch object.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -3200,23 +3084,6 @@ public final class DevicesClientImpl implements DevicesClient {
     private Mono<UpdateSummaryInner> getUpdateSummaryAsync(String deviceName, String resourceGroupName) {
         return getUpdateSummaryWithResponseAsync(deviceName, resourceGroupName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets information about the availability of updates based on the last scan of the device. It also gets information
-     * about any ongoing download or install jobs on the device.
-     *
-     * @param deviceName The device name.
-     * @param resourceGroupName The resource group name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the availability of updates based on the last scan of the device along with {@link
-     *     Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<UpdateSummaryInner> getUpdateSummaryWithResponse(String deviceName, String resourceGroupName) {
-        return getUpdateSummaryWithResponseAsync(deviceName, resourceGroupName).block();
     }
 
     /**
@@ -3380,23 +3247,6 @@ public final class DevicesClientImpl implements DevicesClient {
         String deviceName, String resourceGroupName, UploadCertificateRequest parameters) {
         return uploadCertificateWithResponseAsync(deviceName, resourceGroupName, parameters)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Uploads registration certificate for the device.
-     *
-     * @param deviceName The device name.
-     * @param resourceGroupName The resource group name.
-     * @param parameters The upload certificate request.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the upload registration certificate response along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<UploadCertificateResponseInner> uploadCertificateWithResponse(
-        String deviceName, String resourceGroupName, UploadCertificateRequest parameters) {
-        return uploadCertificateWithResponseAsync(deviceName, resourceGroupName, parameters).block();
     }
 
     /**

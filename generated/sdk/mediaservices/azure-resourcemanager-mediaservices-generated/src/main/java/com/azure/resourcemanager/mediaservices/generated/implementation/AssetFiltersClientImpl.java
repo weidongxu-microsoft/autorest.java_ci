@@ -520,26 +520,6 @@ public final class AssetFiltersClientImpl implements AssetFiltersClient {
      * @param accountName The Media Services account name.
      * @param assetName The Asset name.
      * @param filterName The Asset Filter name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the details of an Asset Filter associated with the specified Asset along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<AssetFilterInner> getWithResponse(
-        String resourceGroupName, String accountName, String assetName, String filterName) {
-        return getWithResponseAsync(resourceGroupName, accountName, assetName, filterName).block();
-    }
-
-    /**
-     * Get an Asset Filter.
-     *
-     * <p>Get the details of an Asset Filter associated with the specified Asset.
-     *
-     * @param resourceGroupName The name of the resource group within the Azure subscription.
-     * @param accountName The Media Services account name.
-     * @param assetName The Asset name.
-     * @param filterName The Asset Filter name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -750,32 +730,6 @@ public final class AssetFiltersClientImpl implements AssetFiltersClient {
      * @param assetName The Asset name.
      * @param filterName The Asset Filter name.
      * @param parameters The request parameters.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Asset Filter along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<AssetFilterInner> createOrUpdateWithResponse(
-        String resourceGroupName,
-        String accountName,
-        String assetName,
-        String filterName,
-        AssetFilterInner parameters) {
-        return createOrUpdateWithResponseAsync(resourceGroupName, accountName, assetName, filterName, parameters)
-            .block();
-    }
-
-    /**
-     * Create or update an Asset Filter
-     *
-     * <p>Creates or updates an Asset Filter associated with the specified Asset.
-     *
-     * @param resourceGroupName The name of the resource group within the Azure subscription.
-     * @param accountName The Media Services account name.
-     * @param assetName The Asset name.
-     * @param filterName The Asset Filter name.
-     * @param parameters The request parameters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -960,26 +914,6 @@ public final class AssetFiltersClientImpl implements AssetFiltersClient {
     private Mono<Void> deleteAsync(String resourceGroupName, String accountName, String assetName, String filterName) {
         return deleteWithResponseAsync(resourceGroupName, accountName, assetName, filterName)
             .flatMap(ignored -> Mono.empty());
-    }
-
-    /**
-     * Delete an Asset Filter.
-     *
-     * <p>Deletes an Asset Filter associated with the specified Asset.
-     *
-     * @param resourceGroupName The name of the resource group within the Azure subscription.
-     * @param accountName The Media Services account name.
-     * @param assetName The Asset name.
-     * @param filterName The Asset Filter name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> deleteWithResponse(
-        String resourceGroupName, String accountName, String assetName, String filterName) {
-        return deleteWithResponseAsync(resourceGroupName, accountName, assetName, filterName).block();
     }
 
     /**
@@ -1188,31 +1122,6 @@ public final class AssetFiltersClientImpl implements AssetFiltersClient {
         AssetFilterInner parameters) {
         return updateWithResponseAsync(resourceGroupName, accountName, assetName, filterName, parameters)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Update an Asset Filter
-     *
-     * <p>Updates an existing Asset Filter associated with the specified Asset.
-     *
-     * @param resourceGroupName The name of the resource group within the Azure subscription.
-     * @param accountName The Media Services account name.
-     * @param assetName The Asset name.
-     * @param filterName The Asset Filter name.
-     * @param parameters The request parameters.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Asset Filter along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<AssetFilterInner> updateWithResponse(
-        String resourceGroupName,
-        String accountName,
-        String assetName,
-        String filterName,
-        AssetFilterInner parameters) {
-        return updateWithResponseAsync(resourceGroupName, accountName, assetName, filterName, parameters).block();
     }
 
     /**

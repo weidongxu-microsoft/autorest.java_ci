@@ -626,23 +626,6 @@ public final class ExpressRouteConnectionsClientImpl implements ExpressRouteConn
      * @param resourceGroupName The name of the resource group.
      * @param expressRouteGatewayName The name of the ExpressRoute gateway.
      * @param connectionName The name of the ExpressRoute connection.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified ExpressRouteConnection along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ExpressRouteConnectionInner> getWithResponse(
-        String resourceGroupName, String expressRouteGatewayName, String connectionName) {
-        return getWithResponseAsync(resourceGroupName, expressRouteGatewayName, connectionName).block();
-    }
-
-    /**
-     * Gets the specified ExpressRouteConnection.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param expressRouteGatewayName The name of the ExpressRoute gateway.
-     * @param connectionName The name of the ExpressRoute connection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1046,22 +1029,6 @@ public final class ExpressRouteConnectionsClientImpl implements ExpressRouteConn
     private Mono<ExpressRouteConnectionListInner> listAsync(String resourceGroupName, String expressRouteGatewayName) {
         return listWithResponseAsync(resourceGroupName, expressRouteGatewayName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Lists ExpressRouteConnections.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param expressRouteGatewayName The name of the ExpressRoute gateway.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return expressRouteConnection list along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ExpressRouteConnectionListInner> listWithResponse(
-        String resourceGroupName, String expressRouteGatewayName) {
-        return listWithResponseAsync(resourceGroupName, expressRouteGatewayName).block();
     }
 
     /**

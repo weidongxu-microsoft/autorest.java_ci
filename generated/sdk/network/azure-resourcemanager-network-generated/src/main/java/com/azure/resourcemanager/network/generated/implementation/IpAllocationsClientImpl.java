@@ -536,23 +536,6 @@ public final class IpAllocationsClientImpl implements IpAllocationsClient {
      * @param resourceGroupName The name of the resource group.
      * @param ipAllocationName The name of the IpAllocation.
      * @param expand Expands referenced resources.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified IpAllocation by resource group along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<IpAllocationInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String ipAllocationName, String expand) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, ipAllocationName, expand).block();
-    }
-
-    /**
-     * Gets the specified IpAllocation by resource group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param ipAllocationName The name of the IpAllocation.
-     * @param expand Expands referenced resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -980,23 +963,6 @@ public final class IpAllocationsClientImpl implements IpAllocationsClient {
         String resourceGroupName, String ipAllocationName, TagsObject parameters) {
         return updateTagsWithResponseAsync(resourceGroupName, ipAllocationName, parameters)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Updates a IpAllocation tags.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param ipAllocationName The name of the IpAllocation.
-     * @param parameters Parameters supplied to update IpAllocation tags.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return ipAllocation resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<IpAllocationInner> updateTagsWithResponse(
-        String resourceGroupName, String ipAllocationName, TagsObject parameters) {
-        return updateTagsWithResponseAsync(resourceGroupName, ipAllocationName, parameters).block();
     }
 
     /**

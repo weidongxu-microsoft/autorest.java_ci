@@ -281,23 +281,6 @@ public final class VirtualNetworkGatewayNatRulesClientImpl implements VirtualNet
      * @param resourceGroupName The resource group name of the Virtual Network Gateway.
      * @param virtualNetworkGatewayName The name of the gateway.
      * @param natRuleName The name of the nat rule.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtualNetworkGatewayNatRule Resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<VirtualNetworkGatewayNatRuleInner> getWithResponse(
-        String resourceGroupName, String virtualNetworkGatewayName, String natRuleName) {
-        return getWithResponseAsync(resourceGroupName, virtualNetworkGatewayName, natRuleName).block();
-    }
-
-    /**
-     * Retrieves the details of a nat rule.
-     *
-     * @param resourceGroupName The resource group name of the Virtual Network Gateway.
-     * @param virtualNetworkGatewayName The name of the gateway.
-     * @param natRuleName The name of the nat rule.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

@@ -461,23 +461,6 @@ public final class ContainerAppsRevisionsClientImpl implements ContainerAppsRevi
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param containerAppName Name of the Container App.
      * @param name Name of the Container App Revision.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a revision of a Container App along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<RevisionInner> getRevisionWithResponse(
-        String resourceGroupName, String containerAppName, String name) {
-        return getRevisionWithResponseAsync(resourceGroupName, containerAppName, name).block();
-    }
-
-    /**
-     * Get a revision of a Container App.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param containerAppName Name of the Container App.
-     * @param name Name of the Container App Revision.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -627,22 +610,6 @@ public final class ContainerAppsRevisionsClientImpl implements ContainerAppsRevi
     private Mono<Void> activateRevisionAsync(String resourceGroupName, String containerAppName, String name) {
         return activateRevisionWithResponseAsync(resourceGroupName, containerAppName, name)
             .flatMap(ignored -> Mono.empty());
-    }
-
-    /**
-     * Activates a revision for a Container App.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param containerAppName Name of the Container App.
-     * @param name Name of the Container App Revision to activate.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> activateRevisionWithResponse(String resourceGroupName, String containerAppName, String name) {
-        return activateRevisionWithResponseAsync(resourceGroupName, containerAppName, name).block();
     }
 
     /**
@@ -807,23 +774,6 @@ public final class ContainerAppsRevisionsClientImpl implements ContainerAppsRevi
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param containerAppName Name of the Container App.
      * @param name Name of the Container App Revision to deactivate.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> deactivateRevisionWithResponse(
-        String resourceGroupName, String containerAppName, String name) {
-        return deactivateRevisionWithResponseAsync(resourceGroupName, containerAppName, name).block();
-    }
-
-    /**
-     * Deactivates a revision for a Container App.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param containerAppName Name of the Container App.
-     * @param name Name of the Container App Revision to deactivate.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -972,22 +922,6 @@ public final class ContainerAppsRevisionsClientImpl implements ContainerAppsRevi
     private Mono<Void> restartRevisionAsync(String resourceGroupName, String containerAppName, String name) {
         return restartRevisionWithResponseAsync(resourceGroupName, containerAppName, name)
             .flatMap(ignored -> Mono.empty());
-    }
-
-    /**
-     * Restarts a revision for a Container App.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param containerAppName Name of the Container App.
-     * @param name Name of the Container App Revision to restart.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> restartRevisionWithResponse(String resourceGroupName, String containerAppName, String name) {
-        return restartRevisionWithResponseAsync(resourceGroupName, containerAppName, name).block();
     }
 
     /**

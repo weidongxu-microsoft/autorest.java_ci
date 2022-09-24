@@ -305,27 +305,6 @@ public final class TablesClientImpl implements TablesClient {
      * @param tableName A table name must be unique within a storage account and must be between 3 and 63 characters.The
      *     name must comprise of only alphanumeric characters and it cannot begin with a numeric character.
      * @param parameters The parameters to provide to create a table.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of the table, including Id, resource name, resource type along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<TableInner> createWithResponse(
-        String resourceGroupName, String accountName, String tableName, TableInner parameters) {
-        return createWithResponseAsync(resourceGroupName, accountName, tableName, parameters).block();
-    }
-
-    /**
-     * Creates a new table with the specified table name, under the specified account.
-     *
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     *     insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param tableName A table name must be unique within a storage account and must be between 3 and 63 characters.The
-     *     name must comprise of only alphanumeric characters and it cannot begin with a numeric character.
-     * @param parameters The parameters to provide to create a table.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -512,27 +491,6 @@ public final class TablesClientImpl implements TablesClient {
      * @param tableName A table name must be unique within a storage account and must be between 3 and 63 characters.The
      *     name must comprise of only alphanumeric characters and it cannot begin with a numeric character.
      * @param parameters The parameters to provide to create a table.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of the table, including Id, resource name, resource type along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<TableInner> updateWithResponse(
-        String resourceGroupName, String accountName, String tableName, TableInner parameters) {
-        return updateWithResponseAsync(resourceGroupName, accountName, tableName, parameters).block();
-    }
-
-    /**
-     * Creates a new table with the specified table name, under the specified account.
-     *
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     *     insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param tableName A table name must be unique within a storage account and must be between 3 and 63 characters.The
-     *     name must comprise of only alphanumeric characters and it cannot begin with a numeric character.
-     * @param parameters The parameters to provide to create a table.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -707,26 +665,6 @@ public final class TablesClientImpl implements TablesClient {
      *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param tableName A table name must be unique within a storage account and must be between 3 and 63 characters.The
      *     name must comprise of only alphanumeric characters and it cannot begin with a numeric character.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the table with the specified table name, under the specified account if it exists along with {@link
-     *     Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<TableInner> getWithResponse(String resourceGroupName, String accountName, String tableName) {
-        return getWithResponseAsync(resourceGroupName, accountName, tableName).block();
-    }
-
-    /**
-     * Gets the table with the specified table name, under the specified account if it exists.
-     *
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     *     insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param tableName A table name must be unique within a storage account and must be between 3 and 63 characters.The
-     *     name must comprise of only alphanumeric characters and it cannot begin with a numeric character.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -886,25 +824,6 @@ public final class TablesClientImpl implements TablesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String accountName, String tableName) {
         return deleteWithResponseAsync(resourceGroupName, accountName, tableName).flatMap(ignored -> Mono.empty());
-    }
-
-    /**
-     * Deletes the table with the specified table name, under the specified account if it exists.
-     *
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-     *     insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names
-     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param tableName A table name must be unique within a storage account and must be between 3 and 63 characters.The
-     *     name must comprise of only alphanumeric characters and it cannot begin with a numeric character.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> deleteWithResponse(String resourceGroupName, String accountName, String tableName) {
-        return deleteWithResponseAsync(resourceGroupName, accountName, tableName).block();
     }
 
     /**

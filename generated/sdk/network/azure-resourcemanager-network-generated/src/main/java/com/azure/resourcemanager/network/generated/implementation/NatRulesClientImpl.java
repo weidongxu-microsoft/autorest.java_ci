@@ -267,23 +267,6 @@ public final class NatRulesClientImpl implements NatRulesClient {
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
      * @param natRuleName The name of the nat rule.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpnGatewayNatRule Resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<VpnGatewayNatRuleInner> getWithResponse(
-        String resourceGroupName, String gatewayName, String natRuleName) {
-        return getWithResponseAsync(resourceGroupName, gatewayName, natRuleName).block();
-    }
-
-    /**
-     * Retrieves the details of a nat ruleGet.
-     *
-     * @param resourceGroupName The resource group name of the VpnGateway.
-     * @param gatewayName The name of the gateway.
-     * @param natRuleName The name of the nat rule.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

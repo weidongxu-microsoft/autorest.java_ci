@@ -295,25 +295,6 @@ public final class ClusterPrincipalAssignmentsClientImpl implements ClusterPrinc
      * @param resourceGroupName The name of the resource group containing the Kusto cluster.
      * @param clusterName The name of the Kusto cluster.
      * @param principalAssignmentName The name of the principal assignment.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the result returned from a check name availability request along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<CheckNameResultInner> checkNameAvailabilityWithResponse(
-        String resourceGroupName,
-        String clusterName,
-        ClusterPrincipalAssignmentCheckNameRequest principalAssignmentName) {
-        return checkNameAvailabilityWithResponseAsync(resourceGroupName, clusterName, principalAssignmentName).block();
-    }
-
-    /**
-     * Checks that the principal assignment name is valid and is not already in use.
-     *
-     * @param resourceGroupName The name of the resource group containing the Kusto cluster.
-     * @param clusterName The name of the Kusto cluster.
-     * @param principalAssignmentName The name of the principal assignment.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -474,23 +455,6 @@ public final class ClusterPrincipalAssignmentsClientImpl implements ClusterPrinc
         String resourceGroupName, String clusterName, String principalAssignmentName) {
         return getWithResponseAsync(resourceGroupName, clusterName, principalAssignmentName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets a Kusto cluster principalAssignment.
-     *
-     * @param resourceGroupName The name of the resource group containing the Kusto cluster.
-     * @param clusterName The name of the Kusto cluster.
-     * @param principalAssignmentName The name of the Kusto principalAssignment.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Kusto cluster principalAssignment along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ClusterPrincipalAssignmentInner> getWithResponse(
-        String resourceGroupName, String clusterName, String principalAssignmentName) {
-        return getWithResponseAsync(resourceGroupName, clusterName, principalAssignmentName).block();
     }
 
     /**

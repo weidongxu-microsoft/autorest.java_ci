@@ -308,24 +308,6 @@ public final class PartnerRegistrationsClientImpl implements PartnerRegistration
      *
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerRegistrationName Name of the partner registration.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a partner registration with the specified parameters along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<PartnerRegistrationInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String partnerRegistrationName) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, partnerRegistrationName).block();
-    }
-
-    /**
-     * Get a partner registration.
-     *
-     * <p>Gets a partner registration with the specified parameters.
-     *
-     * @param resourceGroupName The name of the resource group within the user's subscription.
-     * @param partnerRegistrationName Name of the partner registration.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

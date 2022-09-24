@@ -632,23 +632,6 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Kubernetes Environment.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Kubernetes cluster specialized for web workloads by Azure App Service along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<KubeEnvironmentInner> getByResourceGroupWithResponse(String resourceGroupName, String name) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, name).block();
-    }
-
-    /**
-     * Get the properties of a Kubernetes Environment.
-     *
-     * <p>Description for Get the properties of a Kubernetes Environment.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the Kubernetes Environment.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -1358,25 +1341,6 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
         String resourceGroupName, String name, KubeEnvironmentPatchResource kubeEnvironmentEnvelope) {
         return updateWithResponseAsync(resourceGroupName, name, kubeEnvironmentEnvelope)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Creates or updates a Kubernetes Environment.
-     *
-     * <p>Description for Creates or updates a Kubernetes Environment.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the Kubernetes Environment.
-     * @param kubeEnvironmentEnvelope Configuration details of the Kubernetes Environment.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Kubernetes cluster specialized for web workloads by Azure App Service along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<KubeEnvironmentInner> updateWithResponse(
-        String resourceGroupName, String name, KubeEnvironmentPatchResource kubeEnvironmentEnvelope) {
-        return updateWithResponseAsync(resourceGroupName, name, kubeEnvironmentEnvelope).block();
     }
 
     /**

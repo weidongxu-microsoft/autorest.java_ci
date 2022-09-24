@@ -304,25 +304,6 @@ public final class VirtualMachineImagesClientImpl implements VirtualMachineImage
      * @param offer A valid image publisher offer.
      * @param skus A valid image SKU.
      * @param version A valid image SKU version.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ApiErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a virtual machine image along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<VirtualMachineImageInner> getWithResponse(
-        String location, String publisherName, String offer, String skus, String version) {
-        return getWithResponseAsync(location, publisherName, offer, skus, version).block();
-    }
-
-    /**
-     * Gets a virtual machine image.
-     *
-     * @param location The name of a supported Azure region.
-     * @param publisherName A valid image publisher.
-     * @param offer A valid image publisher offer.
-     * @param skus A valid image SKU.
-     * @param version A valid image SKU version.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -522,28 +503,6 @@ public final class VirtualMachineImagesClientImpl implements VirtualMachineImage
      * @param expand The expand expression to apply on the operation.
      * @param top The top parameter.
      * @param orderby The orderby parameter.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ApiErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all virtual machine image versions for the specified location, publisher, offer, and SKU along
-     *     with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<List<VirtualMachineImageResourceInner>> listWithResponse(
-        String location, String publisherName, String offer, String skus, String expand, Integer top, String orderby) {
-        return listWithResponseAsync(location, publisherName, offer, skus, expand, top, orderby).block();
-    }
-
-    /**
-     * Gets a list of all virtual machine image versions for the specified location, publisher, offer, and SKU.
-     *
-     * @param location The name of a supported Azure region.
-     * @param publisherName A valid image publisher.
-     * @param offer A valid image publisher offer.
-     * @param skus A valid image SKU.
-     * @param expand The expand expression to apply on the operation.
-     * @param top The top parameter.
-     * @param orderby The orderby parameter.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -702,23 +661,6 @@ public final class VirtualMachineImagesClientImpl implements VirtualMachineImage
      *
      * @param location The name of a supported Azure region.
      * @param publisherName A valid image publisher.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ApiErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of virtual machine image offers for the specified location and publisher along with {@link
-     *     Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<List<VirtualMachineImageResourceInner>> listOffersWithResponse(
-        String location, String publisherName) {
-        return listOffersWithResponseAsync(location, publisherName).block();
-    }
-
-    /**
-     * Gets a list of virtual machine image offers for the specified location and publisher.
-     *
-     * @param location The name of a supported Azure region.
-     * @param publisherName A valid image publisher.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -840,20 +782,6 @@ public final class VirtualMachineImagesClientImpl implements VirtualMachineImage
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<List<VirtualMachineImageResourceInner>> listPublishersAsync(String location) {
         return listPublishersWithResponseAsync(location).flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets a list of virtual machine image publishers for the specified Azure location.
-     *
-     * @param location The name of a supported Azure region.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ApiErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of virtual machine image publishers for the specified Azure location along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<List<VirtualMachineImageResourceInner>> listPublishersWithResponse(String location) {
-        return listPublishersWithResponseAsync(location).block();
     }
 
     /**
@@ -1017,24 +945,6 @@ public final class VirtualMachineImagesClientImpl implements VirtualMachineImage
      * @param location The name of a supported Azure region.
      * @param publisherName A valid image publisher.
      * @param offer A valid image publisher offer.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ApiErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of virtual machine image SKUs for the specified location, publisher, and offer along with {@link
-     *     Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<List<VirtualMachineImageResourceInner>> listSkusWithResponse(
-        String location, String publisherName, String offer) {
-        return listSkusWithResponseAsync(location, publisherName, offer).block();
-    }
-
-    /**
-     * Gets a list of virtual machine image SKUs for the specified location, publisher, and offer.
-     *
-     * @param location The name of a supported Azure region.
-     * @param publisherName A valid image publisher.
-     * @param offer A valid image publisher offer.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -1174,21 +1084,6 @@ public final class VirtualMachineImagesClientImpl implements VirtualMachineImage
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VmImagesInEdgeZoneListResultInner> listByEdgeZoneAsync(String location, String edgeZone) {
         return listByEdgeZoneWithResponseAsync(location, edgeZone).flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets a list of all virtual machine image versions for the specified edge zone.
-     *
-     * @param location The name of a supported Azure region.
-     * @param edgeZone The name of the edge zone.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ApiErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all virtual machine image versions for the specified edge zone along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<VmImagesInEdgeZoneListResultInner> listByEdgeZoneWithResponse(String location, String edgeZone) {
-        return listByEdgeZoneWithResponseAsync(location, edgeZone).block();
     }
 
     /**

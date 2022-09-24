@@ -1051,23 +1051,6 @@ public final class ImagesClientImpl implements ImagesClient {
      * @param resourceGroupName The name of the resource group.
      * @param imageName The name of the image.
      * @param expand The expand expression to apply on the operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ApiErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an image along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ImageInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String imageName, String expand) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, imageName, expand).block();
-    }
-
-    /**
-     * Gets an image.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param imageName The name of the image.
-     * @param expand The expand expression to apply on the operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.

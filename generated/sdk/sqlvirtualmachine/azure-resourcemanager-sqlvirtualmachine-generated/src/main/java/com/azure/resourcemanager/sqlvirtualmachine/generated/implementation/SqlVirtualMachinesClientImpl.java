@@ -1180,24 +1180,6 @@ public final class SqlVirtualMachinesClientImpl implements SqlVirtualMachinesCli
      *     the Azure Resource Manager API or the portal.
      * @param sqlVirtualMachineName Name of the SQL virtual machine.
      * @param expand The child resources to include in the response.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a SQL virtual machine along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<SqlVirtualMachineInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String sqlVirtualMachineName, String expand) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, sqlVirtualMachineName, expand).block();
-    }
-
-    /**
-     * Gets a SQL virtual machine.
-     *
-     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
-     *     the Azure Resource Manager API or the portal.
-     * @param sqlVirtualMachineName Name of the SQL virtual machine.
-     * @param expand The child resources to include in the response.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

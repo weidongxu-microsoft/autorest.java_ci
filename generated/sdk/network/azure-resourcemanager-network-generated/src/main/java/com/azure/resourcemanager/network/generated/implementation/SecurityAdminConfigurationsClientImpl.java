@@ -517,23 +517,6 @@ public final class SecurityAdminConfigurationsClientImpl implements SecurityAdmi
      * @param resourceGroupName The name of the resource group.
      * @param networkManagerName The name of the network manager.
      * @param configurationName The name of the network manager Security Configuration.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return defines the security admin configuration along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<SecurityAdminConfigurationInner> getWithResponse(
-        String resourceGroupName, String networkManagerName, String configurationName) {
-        return getWithResponseAsync(resourceGroupName, networkManagerName, configurationName).block();
-    }
-
-    /**
-     * Retrieves a network manager security admin configuration.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param networkManagerName The name of the network manager.
-     * @param configurationName The name of the network manager Security Configuration.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -723,29 +706,6 @@ public final class SecurityAdminConfigurationsClientImpl implements SecurityAdmi
         return createOrUpdateWithResponseAsync(
                 resourceGroupName, networkManagerName, configurationName, securityAdminConfiguration)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Creates or updates a network manager security admin configuration.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param networkManagerName The name of the network manager.
-     * @param configurationName The name of the network manager Security Configuration.
-     * @param securityAdminConfiguration The security admin configuration to create or update.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return defines the security admin configuration along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<SecurityAdminConfigurationInner> createOrUpdateWithResponse(
-        String resourceGroupName,
-        String networkManagerName,
-        String configurationName,
-        SecurityAdminConfigurationInner securityAdminConfiguration) {
-        return createOrUpdateWithResponseAsync(
-                resourceGroupName, networkManagerName, configurationName, securityAdminConfiguration)
-            .block();
     }
 
     /**

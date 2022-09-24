@@ -572,24 +572,6 @@ public final class SubnetsClientImpl implements SubnetsClient {
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
      * @param expand Expands referenced resources.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified subnet by virtual network and resource group along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<SubnetInner> getWithResponse(
-        String resourceGroupName, String virtualNetworkName, String subnetName, String expand) {
-        return getWithResponseAsync(resourceGroupName, virtualNetworkName, subnetName, expand).block();
-    }
-
-    /**
-     * Gets the specified subnet by virtual network and resource group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param virtualNetworkName The name of the virtual network.
-     * @param subnetName The name of the subnet.
-     * @param expand Expands referenced resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

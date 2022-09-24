@@ -232,23 +232,6 @@ public final class WaitStatisticsClientImpl implements WaitStatisticsClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param waitStatisticsId The Wait Statistic identifier.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a Wait Statistic along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<WaitStatisticInner> getWithResponse(
-        String resourceGroupName, String serverName, String waitStatisticsId) {
-        return getWithResponseAsync(resourceGroupName, serverName, waitStatisticsId).block();
-    }
-
-    /**
-     * Retrieve wait statistics for specified identifier.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param serverName The name of the server.
-     * @param waitStatisticsId The Wait Statistic identifier.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

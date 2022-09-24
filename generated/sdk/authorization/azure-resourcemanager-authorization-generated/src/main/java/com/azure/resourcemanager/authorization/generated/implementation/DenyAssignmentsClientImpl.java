@@ -1060,21 +1060,6 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      *
      * @param scope The scope of the deny assignment.
      * @param denyAssignmentId The ID of the deny assignment to get.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified deny assignment along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<DenyAssignmentInner> getWithResponse(String scope, String denyAssignmentId) {
-        return getWithResponseAsync(scope, denyAssignmentId).block();
-    }
-
-    /**
-     * Get the specified deny assignment.
-     *
-     * @param scope The scope of the deny assignment.
-     * @param denyAssignmentId The ID of the deny assignment to get.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1179,23 +1164,6 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DenyAssignmentInner> getByIdAsync(String denyAssignmentId) {
         return getByIdWithResponseAsync(denyAssignmentId).flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets a deny assignment by ID.
-     *
-     * @param denyAssignmentId The fully qualified deny assignment ID. For example, use the format,
-     *     /subscriptions/{guid}/providers/Microsoft.Authorization/denyAssignments/{denyAssignmentId} for subscription
-     *     level deny assignments, or /providers/Microsoft.Authorization/denyAssignments/{denyAssignmentId} for tenant
-     *     level deny assignments.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a deny assignment by ID along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<DenyAssignmentInner> getByIdWithResponse(String denyAssignmentId) {
-        return getByIdWithResponseAsync(denyAssignmentId).block();
     }
 
     /**

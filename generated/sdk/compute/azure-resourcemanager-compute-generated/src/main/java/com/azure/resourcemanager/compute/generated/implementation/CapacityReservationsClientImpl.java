@@ -1336,30 +1336,6 @@ public final class CapacityReservationsClientImpl implements CapacityReservation
      * @param expand The expand expression to apply on the operation. 'InstanceView' retrieves a snapshot of the runtime
      *     properties of the capacity reservation that is managed by the platform and can change outside of control
      *     plane operations.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ApiErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the capacity reservation along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<CapacityReservationInner> getWithResponse(
-        String resourceGroupName,
-        String capacityReservationGroupName,
-        String capacityReservationName,
-        CapacityReservationInstanceViewTypes expand) {
-        return getWithResponseAsync(resourceGroupName, capacityReservationGroupName, capacityReservationName, expand)
-            .block();
-    }
-
-    /**
-     * The operation that retrieves information about the capacity reservation.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param capacityReservationGroupName The name of the capacity reservation group.
-     * @param capacityReservationName The name of the capacity reservation.
-     * @param expand The expand expression to apply on the operation. 'InstanceView' retrieves a snapshot of the runtime
-     *     properties of the capacity reservation that is managed by the platform and can change outside of control
-     *     plane operations.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.

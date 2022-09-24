@@ -591,25 +591,6 @@ public final class StreamingEndpointsClientImpl implements StreamingEndpointsCli
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param streamingEndpointName The name of the streaming endpoint, maximum length is 24.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a streaming endpoint along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<StreamingEndpointInner> getWithResponse(
-        String resourceGroupName, String accountName, String streamingEndpointName) {
-        return getWithResponseAsync(resourceGroupName, accountName, streamingEndpointName).block();
-    }
-
-    /**
-     * Get StreamingEndpoint
-     *
-     * <p>Gets a streaming endpoint.
-     *
-     * @param resourceGroupName The name of the resource group within the Azure subscription.
-     * @param accountName The Media Services account name.
-     * @param streamingEndpointName The name of the streaming endpoint, maximum length is 24.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1809,25 +1790,6 @@ public final class StreamingEndpointsClientImpl implements StreamingEndpointsCli
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param streamingEndpointName The name of the streaming endpoint, maximum length is 24.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response body along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<StreamingEndpointSkuInfoListResultInner> skusWithResponse(
-        String resourceGroupName, String accountName, String streamingEndpointName) {
-        return skusWithResponseAsync(resourceGroupName, accountName, streamingEndpointName).block();
-    }
-
-    /**
-     * List StreamingEndpoint skus
-     *
-     * <p>List streaming endpoint supported skus.
-     *
-     * @param resourceGroupName The name of the resource group within the Azure subscription.
-     * @param accountName The Media Services account name.
-     * @param streamingEndpointName The name of the streaming endpoint, maximum length is 24.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -2891,25 +2853,6 @@ public final class StreamingEndpointsClientImpl implements StreamingEndpointsCli
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param operationId The ID of an ongoing async operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a streaming endpoint operation status along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<AsyncOperationResultInner> asyncOperationWithResponse(
-        String resourceGroupName, String accountName, String operationId) {
-        return asyncOperationWithResponseAsync(resourceGroupName, accountName, operationId).block();
-    }
-
-    /**
-     * Get operation status.
-     *
-     * <p>Get a streaming endpoint operation status.
-     *
-     * @param resourceGroupName The name of the resource group within the Azure subscription.
-     * @param accountName The Media Services account name.
-     * @param operationId The ID of an ongoing async operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -3087,27 +3030,6 @@ public final class StreamingEndpointsClientImpl implements StreamingEndpointsCli
         String resourceGroupName, String accountName, String streamingEndpointName, String operationId) {
         return operationLocationWithResponseAsync(resourceGroupName, accountName, streamingEndpointName, operationId)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Get operation status.
-     *
-     * <p>Get a streaming endpoint operation status.
-     *
-     * @param resourceGroupName The name of the resource group within the Azure subscription.
-     * @param accountName The Media Services account name.
-     * @param streamingEndpointName The name of the streaming endpoint, maximum length is 24.
-     * @param operationId The ID of an ongoing async operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a streaming endpoint operation status along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<StreamingEndpointInner> operationLocationWithResponse(
-        String resourceGroupName, String accountName, String streamingEndpointName, String operationId) {
-        return operationLocationWithResponseAsync(resourceGroupName, accountName, streamingEndpointName, operationId)
-            .block();
     }
 
     /**

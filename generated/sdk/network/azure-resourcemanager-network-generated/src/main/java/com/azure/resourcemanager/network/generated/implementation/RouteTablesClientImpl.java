@@ -529,23 +529,6 @@ public final class RouteTablesClientImpl implements RouteTablesClient {
      * @param resourceGroupName The name of the resource group.
      * @param routeTableName The name of the route table.
      * @param expand Expands referenced resources.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified route table along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<RouteTableInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String routeTableName, String expand) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, routeTableName, expand).block();
-    }
-
-    /**
-     * Gets the specified route table.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param routeTableName The name of the route table.
-     * @param expand Expands referenced resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -968,23 +951,6 @@ public final class RouteTablesClientImpl implements RouteTablesClient {
         String resourceGroupName, String routeTableName, TagsObject parameters) {
         return updateTagsWithResponseAsync(resourceGroupName, routeTableName, parameters)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Updates a route table tags.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param routeTableName The name of the route table.
-     * @param parameters Parameters supplied to update route table tags.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return route table resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<RouteTableInner> updateTagsWithResponse(
-        String resourceGroupName, String routeTableName, TagsObject parameters) {
-        return updateTagsWithResponseAsync(resourceGroupName, routeTableName, parameters).block();
     }
 
     /**

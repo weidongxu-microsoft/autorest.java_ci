@@ -271,22 +271,6 @@ public final class PrivateLinkScopedResourcesClientImpl implements PrivateLinkSc
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
      * @param name The name of the scoped resource object.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a scoped resource in a private link scope along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ScopedResourceInner> getWithResponse(String resourceGroupName, String scopeName, String name) {
-        return getWithResponseAsync(resourceGroupName, scopeName, name).block();
-    }
-
-    /**
-     * Gets a scoped resource in a private link scope.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
-     * @param name The name of the scoped resource object.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

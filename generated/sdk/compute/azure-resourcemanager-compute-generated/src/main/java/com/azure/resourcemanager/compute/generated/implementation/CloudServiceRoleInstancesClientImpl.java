@@ -620,24 +620,6 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
      * @param expand The expand expression to apply to the operation. 'UserData' is not supported for cloud services.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ApiErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a role instance from a cloud service along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<RoleInstanceInner> getWithResponse(
-        String roleInstanceName, String resourceGroupName, String cloudServiceName, InstanceViewTypes expand) {
-        return getWithResponseAsync(roleInstanceName, resourceGroupName, cloudServiceName, expand).block();
-    }
-
-    /**
-     * Gets a role instance from a cloud service.
-     *
-     * @param roleInstanceName Name of the role instance.
-     * @param resourceGroupName Name of the resource group.
-     * @param cloudServiceName Name of the cloud service.
-     * @param expand The expand expression to apply to the operation. 'UserData' is not supported for cloud services.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -799,23 +781,6 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
         String roleInstanceName, String resourceGroupName, String cloudServiceName) {
         return getInstanceViewWithResponseAsync(roleInstanceName, resourceGroupName, cloudServiceName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Retrieves information about the run-time state of a role instance in a cloud service.
-     *
-     * @param roleInstanceName Name of the role instance.
-     * @param resourceGroupName Name of the resource group.
-     * @param cloudServiceName Name of the cloud service.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ApiErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the instance view of the role instance along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<RoleInstanceViewInner> getInstanceViewWithResponse(
-        String roleInstanceName, String resourceGroupName, String cloudServiceName) {
-        return getInstanceViewWithResponseAsync(roleInstanceName, resourceGroupName, cloudServiceName).block();
     }
 
     /**
@@ -2007,46 +1972,6 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
         String roleInstanceName, String resourceGroupName, String cloudServiceName) {
         return getRemoteDesktopFileWithResponseAsync(roleInstanceName, resourceGroupName, cloudServiceName)
             .flatMapMany(Response::getValue);
-    }
-
-    /**
-     * Gets a remote desktop file for a role instance in a cloud service.
-     *
-     * @param roleInstanceName Name of the role instance.
-     * @param resourceGroupName Name of the resource group.
-     * @param cloudServiceName Name of the cloud service.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a remote desktop file for a role instance in a cloud service along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<InputStream> getRemoteDesktopFileWithResponse(
-        String roleInstanceName, String resourceGroupName, String cloudServiceName) {
-        return getRemoteDesktopFileWithResponseAsync(roleInstanceName, resourceGroupName, cloudServiceName)
-            .map(
-                response -> {
-                    Iterator<ByteBufferBackedInputStream> iterator =
-                        response.getValue().map(ByteBufferBackedInputStream::new).toStream().iterator();
-                    Enumeration<InputStream> enumeration =
-                        new Enumeration<InputStream>() {
-                            @Override
-                            public boolean hasMoreElements() {
-                                return iterator.hasNext();
-                            }
-
-                            @Override
-                            public InputStream nextElement() {
-                                return iterator.next();
-                            }
-                        };
-                    return new SimpleResponse<InputStream>(
-                        response.getRequest(),
-                        response.getStatusCode(),
-                        response.getHeaders(),
-                        new SequenceInputStream(enumeration));
-                })
-            .block();
     }
 
     /**

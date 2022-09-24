@@ -573,22 +573,6 @@ public final class LocalNetworkGatewaysClientImpl implements LocalNetworkGateway
      *
      * @param resourceGroupName The name of the resource group.
      * @param localNetworkGatewayName The name of the local network gateway.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified local network gateway in a resource group along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<LocalNetworkGatewayInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String localNetworkGatewayName) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, localNetworkGatewayName).block();
-    }
-
-    /**
-     * Gets the specified local network gateway in a resource group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param localNetworkGatewayName The name of the local network gateway.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -986,23 +970,6 @@ public final class LocalNetworkGatewaysClientImpl implements LocalNetworkGateway
         String resourceGroupName, String localNetworkGatewayName, TagsObject parameters) {
         return updateTagsWithResponseAsync(resourceGroupName, localNetworkGatewayName, parameters)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Updates a local network gateway tags.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param localNetworkGatewayName The name of the local network gateway.
-     * @param parameters Parameters supplied to update local network gateway tags.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a common class for general resource information along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<LocalNetworkGatewayInner> updateTagsWithResponse(
-        String resourceGroupName, String localNetworkGatewayName, TagsObject parameters) {
-        return updateTagsWithResponseAsync(resourceGroupName, localNetworkGatewayName, parameters).block();
     }
 
     /**

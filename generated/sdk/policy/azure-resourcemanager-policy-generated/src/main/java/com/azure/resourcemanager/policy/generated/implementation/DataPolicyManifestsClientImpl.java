@@ -171,22 +171,6 @@ public final class DataPolicyManifestsClientImpl implements DataPolicyManifestsC
      * <p>This operation retrieves the data policy manifest with the given policy mode.
      *
      * @param policyMode The policy mode of the data policy manifest to get.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the data policy manifest along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<DataPolicyManifestInner> getByPolicyModeWithResponse(String policyMode) {
-        return getByPolicyModeWithResponseAsync(policyMode).block();
-    }
-
-    /**
-     * Retrieves a data policy manifest.
-     *
-     * <p>This operation retrieves the data policy manifest with the given policy mode.
-     *
-     * @param policyMode The policy mode of the data policy manifest to get.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

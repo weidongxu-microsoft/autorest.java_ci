@@ -296,28 +296,6 @@ public final class ScopeConnectionsClientImpl implements ScopeConnectionsClient 
      * @param networkManagerName The name of the network manager.
      * @param scopeConnectionName Name for the cross-tenant connection.
      * @param parameters Scope connection to be created/updated.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Scope Connections resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ScopeConnectionInner> createOrUpdateWithResponse(
-        String resourceGroupName,
-        String networkManagerName,
-        String scopeConnectionName,
-        ScopeConnectionInner parameters) {
-        return createOrUpdateWithResponseAsync(resourceGroupName, networkManagerName, scopeConnectionName, parameters)
-            .block();
-    }
-
-    /**
-     * Creates or updates scope connection from Network Manager.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param networkManagerName The name of the network manager.
-     * @param scopeConnectionName Name for the cross-tenant connection.
-     * @param parameters Scope connection to be created/updated.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -495,23 +473,6 @@ public final class ScopeConnectionsClientImpl implements ScopeConnectionsClient 
      * @param resourceGroupName The name of the resource group.
      * @param networkManagerName The name of the network manager.
      * @param scopeConnectionName Name for the cross-tenant connection.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specified scope connection created by this Network Manager along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ScopeConnectionInner> getWithResponse(
-        String resourceGroupName, String networkManagerName, String scopeConnectionName) {
-        return getWithResponseAsync(resourceGroupName, networkManagerName, scopeConnectionName).block();
-    }
-
-    /**
-     * Get specified scope connection created by this Network Manager.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param networkManagerName The name of the network manager.
-     * @param scopeConnectionName Name for the cross-tenant connection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -665,23 +626,6 @@ public final class ScopeConnectionsClientImpl implements ScopeConnectionsClient 
     private Mono<Void> deleteAsync(String resourceGroupName, String networkManagerName, String scopeConnectionName) {
         return deleteWithResponseAsync(resourceGroupName, networkManagerName, scopeConnectionName)
             .flatMap(ignored -> Mono.empty());
-    }
-
-    /**
-     * Delete the pending scope connection created by this network manager.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param networkManagerName The name of the network manager.
-     * @param scopeConnectionName Name for the cross-tenant connection.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> deleteWithResponse(
-        String resourceGroupName, String networkManagerName, String scopeConnectionName) {
-        return deleteWithResponseAsync(resourceGroupName, networkManagerName, scopeConnectionName).block();
     }
 
     /**

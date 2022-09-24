@@ -200,22 +200,6 @@ public final class PrivateLinkResourcesClientImpl implements PrivateLinkResource
      *
      * @param resourceGroupName The name of the resource group.
      * @param clusterName The name of the cluster.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of private link resources along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<PrivateLinkResourceListResultInner> listByClusterWithResponse(
-        String resourceGroupName, String clusterName) {
-        return listByClusterWithResponseAsync(resourceGroupName, clusterName).block();
-    }
-
-    /**
-     * Lists the private link resources in a HDInsight cluster.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param clusterName The name of the cluster.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -367,23 +351,6 @@ public final class PrivateLinkResourcesClientImpl implements PrivateLinkResource
         String resourceGroupName, String clusterName, String privateLinkResourceName) {
         return getWithResponseAsync(resourceGroupName, clusterName, privateLinkResourceName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets the specific private link resource.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param clusterName The name of the cluster.
-     * @param privateLinkResourceName The name of the private link resource.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specific private link resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<PrivateLinkResourceInner> getWithResponse(
-        String resourceGroupName, String clusterName, String privateLinkResourceName) {
-        return getWithResponseAsync(resourceGroupName, clusterName, privateLinkResourceName).block();
     }
 
     /**

@@ -284,18 +284,6 @@ public final class ClustersClientImpl implements ClustersClient {
     /**
      * List the quantity of available pre-provisioned Event Hubs Clusters, indexed by Azure region.
      *
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the List Available Clusters operation along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<AvailableClustersListInner> listAvailableClusterRegionWithResponse() {
-        return listAvailableClusterRegionWithResponseAsync().block();
-    }
-
-    /**
-     * List the quantity of available pre-provisioned Event Hubs Clusters, indexed by Azure region.
-     *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -737,21 +725,6 @@ public final class ClustersClientImpl implements ClustersClient {
     private Mono<ClusterInner> getByResourceGroupAsync(String resourceGroupName, String clusterName) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, clusterName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets the resource description of the specified Event Hubs Cluster.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param clusterName The name of the Event Hubs Cluster.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the resource description of the specified Event Hubs Cluster along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ClusterInner> getByResourceGroupWithResponse(String resourceGroupName, String clusterName) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, clusterName).block();
     }
 
     /**
@@ -1648,22 +1621,6 @@ public final class ClustersClientImpl implements ClustersClient {
     private Mono<EHNamespaceIdListResultInner> listNamespacesAsync(String resourceGroupName, String clusterName) {
         return listNamespacesWithResponseAsync(resourceGroupName, clusterName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * List all Event Hubs Namespace IDs in an Event Hubs Dedicated Cluster.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param clusterName The name of the Event Hubs Cluster.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the List Namespace IDs operation along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<EHNamespaceIdListResultInner> listNamespacesWithResponse(
-        String resourceGroupName, String clusterName) {
-        return listNamespacesWithResponseAsync(resourceGroupName, clusterName).block();
     }
 
     /**

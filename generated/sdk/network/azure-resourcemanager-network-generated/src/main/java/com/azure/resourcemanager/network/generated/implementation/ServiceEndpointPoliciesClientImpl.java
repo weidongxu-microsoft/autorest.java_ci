@@ -549,23 +549,6 @@ public final class ServiceEndpointPoliciesClientImpl implements ServiceEndpointP
      * @param resourceGroupName The name of the resource group.
      * @param serviceEndpointPolicyName The name of the service endpoint policy.
      * @param expand Expands referenced resources.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified service Endpoint Policies in a specified resource group along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ServiceEndpointPolicyInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String serviceEndpointPolicyName, String expand) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, serviceEndpointPolicyName, expand).block();
-    }
-
-    /**
-     * Gets the specified service Endpoint Policies in a specified resource group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param serviceEndpointPolicyName The name of the service endpoint policy.
-     * @param expand Expands referenced resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1023,23 +1006,6 @@ public final class ServiceEndpointPoliciesClientImpl implements ServiceEndpointP
         String resourceGroupName, String serviceEndpointPolicyName, TagsObject parameters) {
         return updateTagsWithResponseAsync(resourceGroupName, serviceEndpointPolicyName, parameters)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Updates tags of a service endpoint policy.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param serviceEndpointPolicyName The name of the service endpoint policy.
-     * @param parameters Parameters supplied to update service endpoint policy tags.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return service End point policy resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ServiceEndpointPolicyInner> updateTagsWithResponse(
-        String resourceGroupName, String serviceEndpointPolicyName, TagsObject parameters) {
-        return updateTagsWithResponseAsync(resourceGroupName, serviceEndpointPolicyName, parameters).block();
     }
 
     /**

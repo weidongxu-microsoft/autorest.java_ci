@@ -544,22 +544,6 @@ public final class AzureFirewallsClientImpl implements AzureFirewallsClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param azureFirewallName The name of the Azure Firewall.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Azure Firewall along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<AzureFirewallInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String azureFirewallName) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, azureFirewallName).block();
-    }
-
-    /**
-     * Gets the specified Azure Firewall.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param azureFirewallName The name of the Azure Firewall.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

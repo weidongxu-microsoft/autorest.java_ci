@@ -225,21 +225,6 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param clusterName The name of the cluster.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list cluster hosts along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<List<HostInfoInner>> listHostsWithResponse(String resourceGroupName, String clusterName) {
-        return listHostsWithResponseAsync(resourceGroupName, clusterName).block();
-    }
-
-    /**
-     * Lists the HDInsight clusters hosts.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param clusterName The name of the cluster.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -639,23 +624,6 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
         String resourceGroupName, String clusterName, String operationId) {
         return getAsyncOperationStatusWithResponseAsync(resourceGroupName, clusterName, operationId)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets the async operation status.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param clusterName The name of the cluster.
-     * @param operationId The long running operation id.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the async operation status along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<AsyncOperationResultInner> getAsyncOperationStatusWithResponse(
-        String resourceGroupName, String clusterName, String operationId) {
-        return getAsyncOperationStatusWithResponseAsync(resourceGroupName, clusterName, operationId).block();
     }
 
     /**

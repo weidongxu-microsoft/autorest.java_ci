@@ -1585,23 +1585,6 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @param location The location of the domain name.
      * @param domainNameLabel The domain name to be verified. It must conform to the following regular expression:
      *     ^[a-z][a-z0-9-]{1,61}[a-z0-9]$.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the CheckDnsNameAvailability API service call along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<DnsNameAvailabilityResultInner> checkDnsNameAvailabilityWithResponse(
-        String location, String domainNameLabel) {
-        return checkDnsNameAvailabilityWithResponseAsync(location, domainNameLabel).block();
-    }
-
-    /**
-     * Checks whether a domain name in the cloudapp.azure.com zone is available for use.
-     *
-     * @param location The location of the domain name.
-     * @param domainNameLabel The domain name to be verified. It must conform to the following regular expression:
-     *     ^[a-z][a-z0-9-]{1,61}[a-z0-9]$.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1721,20 +1704,6 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ExpressRouteProviderPortInner> expressRouteProviderPortAsync(String providerport) {
         return expressRouteProviderPortWithResponseAsync(providerport).flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Retrieves detail of a provider port.
-     *
-     * @param providerport The name of the provider port.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return expressRouteProviderPort resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ExpressRouteProviderPortInner> expressRouteProviderPortWithResponse(String providerport) {
-        return expressRouteProviderPortWithResponseAsync(providerport).block();
     }
 
     /**
@@ -1912,27 +1881,6 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
         return listActiveConnectivityConfigurationsWithResponseAsync(
                 resourceGroupName, networkManagerName, parameters, top)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Lists active connectivity configurations in a network manager.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param networkManagerName The name of the network manager.
-     * @param parameters Active Configuration Parameter.
-     * @param top An optional query parameter which specifies the maximum number of records to be returned by the
-     *     server.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list active connectivity configurations along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ActiveConnectivityConfigurationsListResultInner> listActiveConnectivityConfigurationsWithResponse(
-        String resourceGroupName, String networkManagerName, ActiveConfigurationParameter parameters, Integer top) {
-        return listActiveConnectivityConfigurationsWithResponseAsync(
-                resourceGroupName, networkManagerName, parameters, top)
-            .block();
     }
 
     /**
@@ -2132,26 +2080,6 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @param parameters Active Configuration Parameter.
      * @param top An optional query parameter which specifies the maximum number of records to be returned by the
      *     server.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list active security admin rules along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ActiveSecurityAdminRulesListResultInner> listActiveSecurityAdminRulesWithResponse(
-        String resourceGroupName, String networkManagerName, ActiveConfigurationParameter parameters, Integer top) {
-        return listActiveSecurityAdminRulesWithResponseAsync(resourceGroupName, networkManagerName, parameters, top)
-            .block();
-    }
-
-    /**
-     * Lists active security admin rules in a network manager.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param networkManagerName The name of the network manager.
-     * @param parameters Active Configuration Parameter.
-     * @param top An optional query parameter which specifies the maximum number of records to be returned by the
-     *     server.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -2336,29 +2264,6 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
         return listNetworkManagerEffectiveConnectivityConfigurationsWithResponseAsync(
                 resourceGroupName, virtualNetworkName, parameters, top)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * List all effective connectivity configurations applied on a virtual network.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param virtualNetworkName The name of the virtual network.
-     * @param parameters Parameters supplied to list correct page.
-     * @param top An optional query parameter which specifies the maximum number of records to be returned by the
-     *     server.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list networkManagerEffectiveConnectivityConfiguration along with {@link
-     *     Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<NetworkManagerEffectiveConnectivityConfigurationListResultInner>
-        listNetworkManagerEffectiveConnectivityConfigurationsWithResponse(
-            String resourceGroupName, String virtualNetworkName, QueryRequestOptions parameters, Integer top) {
-        return listNetworkManagerEffectiveConnectivityConfigurationsWithResponseAsync(
-                resourceGroupName, virtualNetworkName, parameters, top)
-            .block();
     }
 
     /**
@@ -2566,28 +2471,6 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @param parameters Parameters supplied to list correct page.
      * @param top An optional query parameter which specifies the maximum number of records to be returned by the
      *     server.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list networkManagerEffectiveSecurityAdminRules along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<NetworkManagerEffectiveSecurityAdminRulesListResultInner>
-        listNetworkManagerEffectiveSecurityAdminRulesWithResponse(
-            String resourceGroupName, String virtualNetworkName, QueryRequestOptions parameters, Integer top) {
-        return listNetworkManagerEffectiveSecurityAdminRulesWithResponseAsync(
-                resourceGroupName, virtualNetworkName, parameters, top)
-            .block();
-    }
-
-    /**
-     * List all effective security admin rules applied on a virtual network.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param virtualNetworkName The name of the virtual network.
-     * @param parameters Parameters supplied to list correct page.
-     * @param top An optional query parameter which specifies the maximum number of records to be returned by the
-     *     server.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -2738,22 +2621,6 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
         String resourceGroupName, String virtualWanName) {
         return supportedSecurityProvidersWithResponseAsync(resourceGroupName, virtualWanName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gives the supported security providers for the virtual wan.
-     *
-     * @param resourceGroupName The resource group name.
-     * @param virtualWanName The name of the VirtualWAN for which supported security providers are needed.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of SecurityProviders along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<VirtualWanSecurityProvidersInner> supportedSecurityProvidersWithResponse(
-        String resourceGroupName, String virtualWanName) {
-        return supportedSecurityProvidersWithResponseAsync(resourceGroupName, virtualWanName).block();
     }
 
     /**

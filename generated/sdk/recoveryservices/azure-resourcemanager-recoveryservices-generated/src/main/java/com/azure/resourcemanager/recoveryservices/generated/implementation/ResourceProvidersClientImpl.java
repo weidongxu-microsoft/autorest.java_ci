@@ -213,23 +213,6 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @param resourceGroupName The name of the resource group where the recovery services vault is present.
      * @param vaultName The name of the recovery services vault.
      * @param operationId The operationId parameter.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the operation status for a resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<OperationResourceInner> getOperationStatusWithResponse(
-        String resourceGroupName, String vaultName, String operationId) {
-        return getOperationStatusWithResponseAsync(resourceGroupName, vaultName, operationId).block();
-    }
-
-    /**
-     * Gets the operation status for a resource.
-     *
-     * @param resourceGroupName The name of the resource group where the recovery services vault is present.
-     * @param vaultName The name of the recovery services vault.
-     * @param operationId The operationId parameter.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -377,23 +360,6 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     private Mono<VaultInner> getOperationResultAsync(String resourceGroupName, String vaultName, String operationId) {
         return getOperationResultWithResponseAsync(resourceGroupName, vaultName, operationId)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets the operation result for a resource.
-     *
-     * @param resourceGroupName The name of the resource group where the recovery services vault is present.
-     * @param vaultName The name of the recovery services vault.
-     * @param operationId The operationId parameter.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the operation result for a resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<VaultInner> getOperationResultWithResponse(
-        String resourceGroupName, String vaultName, String operationId) {
-        return getOperationResultWithResponseAsync(resourceGroupName, vaultName, operationId).block();
     }
 
     /**

@@ -544,22 +544,6 @@ public final class ApplicationSecurityGroupsClientImpl implements ApplicationSec
      *
      * @param resourceGroupName The name of the resource group.
      * @param applicationSecurityGroupName The name of the application security group.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the specified application security group along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ApplicationSecurityGroupInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String applicationSecurityGroupName) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, applicationSecurityGroupName).block();
-    }
-
-    /**
-     * Gets information about the specified application security group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param applicationSecurityGroupName The name of the application security group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1021,23 +1005,6 @@ public final class ApplicationSecurityGroupsClientImpl implements ApplicationSec
         String resourceGroupName, String applicationSecurityGroupName, TagsObject parameters) {
         return updateTagsWithResponseAsync(resourceGroupName, applicationSecurityGroupName, parameters)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Updates an application security group's tags.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param applicationSecurityGroupName The name of the application security group.
-     * @param parameters Parameters supplied to update application security group tags.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an application security group in a resource group along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ApplicationSecurityGroupInner> updateTagsWithResponse(
-        String resourceGroupName, String applicationSecurityGroupName, TagsObject parameters) {
-        return updateTagsWithResponseAsync(resourceGroupName, applicationSecurityGroupName, parameters).block();
     }
 
     /**

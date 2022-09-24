@@ -343,21 +343,6 @@ public final class VirtualHubsClientImpl implements VirtualHubsClient {
      *
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtualHub Resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<VirtualHubInner> getByResourceGroupWithResponse(String resourceGroupName, String virtualHubName) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, virtualHubName).block();
-    }
-
-    /**
-     * Retrieves the details of a VirtualHub.
-     *
-     * @param resourceGroupName The resource group name of the VirtualHub.
-     * @param virtualHubName The name of the VirtualHub.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -785,23 +770,6 @@ public final class VirtualHubsClientImpl implements VirtualHubsClient {
         String resourceGroupName, String virtualHubName, TagsObject virtualHubParameters) {
         return updateTagsWithResponseAsync(resourceGroupName, virtualHubName, virtualHubParameters)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Updates VirtualHub tags.
-     *
-     * @param resourceGroupName The resource group name of the VirtualHub.
-     * @param virtualHubName The name of the VirtualHub.
-     * @param virtualHubParameters Parameters supplied to update VirtualHub tags.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtualHub Resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<VirtualHubInner> updateTagsWithResponse(
-        String resourceGroupName, String virtualHubName, TagsObject virtualHubParameters) {
-        return updateTagsWithResponseAsync(resourceGroupName, virtualHubName, virtualHubParameters).block();
     }
 
     /**

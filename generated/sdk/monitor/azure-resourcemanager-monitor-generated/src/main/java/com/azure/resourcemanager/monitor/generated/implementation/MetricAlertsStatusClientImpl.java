@@ -201,21 +201,6 @@ public final class MetricAlertsStatusClientImpl implements MetricAlertsStatusCli
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of alert rule resources along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<MetricAlertStatusCollectionInner> listWithResponse(String resourceGroupName, String ruleName) {
-        return listWithResponseAsync(resourceGroupName, ruleName).block();
-    }
-
-    /**
-     * Retrieve an alert rule status.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param ruleName The name of the rule.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -367,23 +352,6 @@ public final class MetricAlertsStatusClientImpl implements MetricAlertsStatusCli
         String resourceGroupName, String ruleName, String statusName) {
         return listByNameWithResponseAsync(resourceGroupName, ruleName, statusName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Retrieve an alert rule status.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param ruleName The name of the rule.
-     * @param statusName The name of the status.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of alert rule resources along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<MetricAlertStatusCollectionInner> listByNameWithResponse(
-        String resourceGroupName, String ruleName, String statusName) {
-        return listByNameWithResponseAsync(resourceGroupName, ruleName, statusName).block();
     }
 
     /**

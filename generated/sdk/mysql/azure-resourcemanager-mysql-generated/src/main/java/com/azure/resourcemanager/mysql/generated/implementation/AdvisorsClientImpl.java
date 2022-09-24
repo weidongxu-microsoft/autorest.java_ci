@@ -226,22 +226,6 @@ public final class AdvisorsClientImpl implements AdvisorsClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param advisorName The advisor name for recommendation action.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a recommendation action advisor along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<AdvisorInner> getWithResponse(String resourceGroupName, String serverName, String advisorName) {
-        return getWithResponseAsync(resourceGroupName, serverName, advisorName).block();
-    }
-
-    /**
-     * Get a recommendation action advisor.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param serverName The name of the server.
-     * @param advisorName The advisor name for recommendation action.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

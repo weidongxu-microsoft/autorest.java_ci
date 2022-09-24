@@ -165,21 +165,6 @@ public final class DiagnosticSettingsCategoriesClientImpl implements DiagnosticS
      *
      * @param resourceUri The identifier of the resource.
      * @param name The name of the diagnostic setting.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the diagnostic settings category for the specified resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<DiagnosticSettingsCategoryResourceInner> getWithResponse(String resourceUri, String name) {
-        return getWithResponseAsync(resourceUri, name).block();
-    }
-
-    /**
-     * Gets the diagnostic settings category for the specified resource.
-     *
-     * @param resourceUri The identifier of the resource.
-     * @param name The name of the diagnostic setting.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -278,20 +263,6 @@ public final class DiagnosticSettingsCategoriesClientImpl implements DiagnosticS
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DiagnosticSettingsCategoryResourceCollectionInner> listAsync(String resourceUri) {
         return listWithResponseAsync(resourceUri).flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Lists the diagnostic settings categories for the specified resource.
-     *
-     * @param resourceUri The identifier of the resource.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of diagnostic setting category resources along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<DiagnosticSettingsCategoryResourceCollectionInner> listWithResponse(String resourceUri) {
-        return listWithResponseAsync(resourceUri).block();
     }
 
     /**

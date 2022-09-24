@@ -1209,24 +1209,6 @@ public final class VirtualMachineExtensionsClientImpl implements VirtualMachineE
      * @param vmName The name of the virtual machine containing the extension.
      * @param vmExtensionName The name of the virtual machine extension.
      * @param expand The expand expression to apply on the operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ApiErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Virtual Machine Extension along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<VirtualMachineExtensionInner> getWithResponse(
-        String resourceGroupName, String vmName, String vmExtensionName, String expand) {
-        return getWithResponseAsync(resourceGroupName, vmName, vmExtensionName, expand).block();
-    }
-
-    /**
-     * The operation to get the extension.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param vmName The name of the virtual machine containing the extension.
-     * @param vmExtensionName The name of the virtual machine extension.
-     * @param expand The expand expression to apply on the operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -1373,23 +1355,6 @@ public final class VirtualMachineExtensionsClientImpl implements VirtualMachineE
         final String expand = null;
         return listWithResponseAsync(resourceGroupName, vmName, expand)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * The operation to get all extensions of a Virtual Machine.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param vmName The name of the virtual machine containing the extension.
-     * @param expand The expand expression to apply on the operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ApiErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Extension operation response along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<VirtualMachineExtensionsListResultInner> listWithResponse(
-        String resourceGroupName, String vmName, String expand) {
-        return listWithResponseAsync(resourceGroupName, vmName, expand).block();
     }
 
     /**

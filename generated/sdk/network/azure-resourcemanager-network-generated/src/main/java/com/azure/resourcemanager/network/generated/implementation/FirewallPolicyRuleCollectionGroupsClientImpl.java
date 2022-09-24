@@ -547,23 +547,6 @@ public final class FirewallPolicyRuleCollectionGroupsClientImpl implements Firew
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
      * @param ruleCollectionGroupName The name of the FirewallPolicyRuleCollectionGroup.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified FirewallPolicyRuleCollectionGroup along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<FirewallPolicyRuleCollectionGroupInner> getWithResponse(
-        String resourceGroupName, String firewallPolicyName, String ruleCollectionGroupName) {
-        return getWithResponseAsync(resourceGroupName, firewallPolicyName, ruleCollectionGroupName).block();
-    }
-
-    /**
-     * Gets the specified FirewallPolicyRuleCollectionGroup.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param firewallPolicyName The name of the Firewall Policy.
-     * @param ruleCollectionGroupName The name of the FirewallPolicyRuleCollectionGroup.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

@@ -567,25 +567,6 @@ public final class ExpressRouteCircuitConnectionsClientImpl implements ExpressRo
      * @param circuitName The name of the express route circuit.
      * @param peeringName The name of the peering.
      * @param connectionName The name of the express route circuit connection.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Express Route Circuit Connection from the specified express route circuit along with {@link
-     *     Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ExpressRouteCircuitConnectionInner> getWithResponse(
-        String resourceGroupName, String circuitName, String peeringName, String connectionName) {
-        return getWithResponseAsync(resourceGroupName, circuitName, peeringName, connectionName).block();
-    }
-
-    /**
-     * Gets the specified Express Route Circuit Connection from the specified express route circuit.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param circuitName The name of the express route circuit.
-     * @param peeringName The name of the peering.
-     * @param connectionName The name of the express route circuit connection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

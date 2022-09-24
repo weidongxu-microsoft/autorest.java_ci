@@ -341,21 +341,6 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      *
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpnGateway Resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<VpnGatewayInner> getByResourceGroupWithResponse(String resourceGroupName, String gatewayName) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, gatewayName).block();
-    }
-
-    /**
-     * Retrieves the details of a virtual wan vpn gateway.
-     *
-     * @param resourceGroupName The resource group name of the VpnGateway.
-     * @param gatewayName The name of the gateway.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

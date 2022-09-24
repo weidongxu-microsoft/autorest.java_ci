@@ -1996,25 +1996,6 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param instanceId The instance ID of the virtual machine.
      * @param expand The expand expression to apply on the operation. 'InstanceView' will retrieve the instance view of
      *     the virtual machine. 'UserData' will retrieve the UserData of the virtual machine.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ApiErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a virtual machine from a VM scale set along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<VirtualMachineScaleSetVMInner> getWithResponse(
-        String resourceGroupName, String vmScaleSetName, String instanceId, InstanceViewTypes expand) {
-        return getWithResponseAsync(resourceGroupName, vmScaleSetName, instanceId, expand).block();
-    }
-
-    /**
-     * Gets a virtual machine from a VM scale set.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param vmScaleSetName The name of the VM scale set.
-     * @param instanceId The instance ID of the virtual machine.
-     * @param expand The expand expression to apply on the operation. 'InstanceView' will retrieve the instance view of
-     *     the virtual machine. 'UserData' will retrieve the UserData of the virtual machine.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -2168,23 +2149,6 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
         String resourceGroupName, String vmScaleSetName, String instanceId) {
         return getInstanceViewWithResponseAsync(resourceGroupName, vmScaleSetName, instanceId)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Gets the status of a virtual machine from a VM scale set.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param vmScaleSetName The name of the VM scale set.
-     * @param instanceId The instance ID of the virtual machine.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ApiErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the status of a virtual machine from a VM scale set along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<VirtualMachineScaleSetVMInstanceViewInner> getInstanceViewWithResponse(
-        String resourceGroupName, String vmScaleSetName, String instanceId) {
-        return getInstanceViewWithResponseAsync(resourceGroupName, vmScaleSetName, instanceId).block();
     }
 
     /**
@@ -3727,28 +3691,6 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param sasUriExpirationTimeInMinutes Expiration duration in minutes for the SAS URIs with a value between 1 to
      *     1440 minutes. &lt;br&gt;&lt;br&gt;NOTE: If not specified, SAS URIs will be generated with a default
      *     expiration duration of 120 minutes.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ApiErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the SAS URIs of the console screenshot and serial log blobs along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<RetrieveBootDiagnosticsDataResultInner> retrieveBootDiagnosticsDataWithResponse(
-        String resourceGroupName, String vmScaleSetName, String instanceId, Integer sasUriExpirationTimeInMinutes) {
-        return retrieveBootDiagnosticsDataWithResponseAsync(
-                resourceGroupName, vmScaleSetName, instanceId, sasUriExpirationTimeInMinutes)
-            .block();
-    }
-
-    /**
-     * The operation to retrieve SAS URIs of boot diagnostic logs for a virtual machine in a VM scale set.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param vmScaleSetName The name of the VM scale set.
-     * @param instanceId The instance ID of the virtual machine.
-     * @param sasUriExpirationTimeInMinutes Expiration duration in minutes for the SAS URIs with a value between 1 to
-     *     1440 minutes. &lt;br&gt;&lt;br&gt;NOTE: If not specified, SAS URIs will be generated with a default
-     *     expiration duration of 120 minutes.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -4164,23 +4106,6 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
     private Mono<Void> simulateEvictionAsync(String resourceGroupName, String vmScaleSetName, String instanceId) {
         return simulateEvictionWithResponseAsync(resourceGroupName, vmScaleSetName, instanceId)
             .flatMap(ignored -> Mono.empty());
-    }
-
-    /**
-     * The operation to simulate the eviction of spot virtual machine in a VM scale set.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param vmScaleSetName The name of the VM scale set.
-     * @param instanceId The instance ID of the virtual machine.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ApiErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> simulateEvictionWithResponse(
-        String resourceGroupName, String vmScaleSetName, String instanceId) {
-        return simulateEvictionWithResponseAsync(resourceGroupName, vmScaleSetName, instanceId).block();
     }
 
     /**

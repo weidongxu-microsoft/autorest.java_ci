@@ -325,20 +325,6 @@ public final class VirtualApplianceSkusClientImpl implements VirtualApplianceSku
      * Retrieves a single available sku for network virtual appliance.
      *
      * @param skuName Name of the Sku.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return available NetworkVirtualApplianceSkus along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<NetworkVirtualApplianceSkuInner> getWithResponse(String skuName) {
-        return getWithResponseAsync(skuName).block();
-    }
-
-    /**
-     * Retrieves a single available sku for network virtual appliance.
-     *
-     * @param skuName Name of the Sku.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

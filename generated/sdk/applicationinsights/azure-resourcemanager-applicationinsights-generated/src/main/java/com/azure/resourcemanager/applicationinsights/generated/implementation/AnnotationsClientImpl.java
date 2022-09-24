@@ -470,24 +470,6 @@ public final class AnnotationsClientImpl implements AnnotationsClient {
      * @param resourceName The name of the Application Insights component resource.
      * @param annotationProperties Properties that need to be specified to create an annotation of a Application
      *     Insights component.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws AnnotationErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of Annotation along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<List<AnnotationInner>> createWithResponse(
-        String resourceGroupName, String resourceName, AnnotationInner annotationProperties) {
-        return createWithResponseAsync(resourceGroupName, resourceName, annotationProperties).block();
-    }
-
-    /**
-     * Create an Annotation of an Application Insights component.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param resourceName The name of the Application Insights component resource.
-     * @param annotationProperties Properties that need to be specified to create an annotation of a Application
-     *     Insights component.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws AnnotationErrorException thrown if the request is rejected by server.
@@ -634,22 +616,6 @@ public final class AnnotationsClientImpl implements AnnotationsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String resourceName, String annotationId) {
         return deleteWithResponseAsync(resourceGroupName, resourceName, annotationId).flatMap(ignored -> Mono.empty());
-    }
-
-    /**
-     * Delete an Annotation of an Application Insights component.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param resourceName The name of the Application Insights component resource.
-     * @param annotationId The unique annotation ID. This is unique within a Application Insights component.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> deleteWithResponse(String resourceGroupName, String resourceName, String annotationId) {
-        return deleteWithResponseAsync(resourceGroupName, resourceName, annotationId).block();
     }
 
     /**
@@ -806,23 +772,6 @@ public final class AnnotationsClientImpl implements AnnotationsClient {
     private Mono<List<AnnotationInner>> getAsync(String resourceGroupName, String resourceName, String annotationId) {
         return getWithResponseAsync(resourceGroupName, resourceName, annotationId)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Get the annotation for given id.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param resourceName The name of the Application Insights component resource.
-     * @param annotationId The unique annotation ID. This is unique within a Application Insights component.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws AnnotationErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the annotation for given id along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<List<AnnotationInner>> getWithResponse(
-        String resourceGroupName, String resourceName, String annotationId) {
-        return getWithResponseAsync(resourceGroupName, resourceName, annotationId).block();
     }
 
     /**

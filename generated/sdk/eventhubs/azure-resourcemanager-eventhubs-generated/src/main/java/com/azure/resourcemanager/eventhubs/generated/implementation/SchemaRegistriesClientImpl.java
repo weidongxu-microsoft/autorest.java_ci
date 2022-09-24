@@ -516,24 +516,6 @@ public final class SchemaRegistriesClientImpl implements SchemaRegistriesClient 
      * @param namespaceName The Namespace name.
      * @param schemaGroupName The Schema Group name.
      * @param parameters Parameters supplied to create an Event Hub resource.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in List or Get Schema Group operation along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<SchemaGroupInner> createOrUpdateWithResponse(
-        String resourceGroupName, String namespaceName, String schemaGroupName, SchemaGroupInner parameters) {
-        return createOrUpdateWithResponseAsync(resourceGroupName, namespaceName, schemaGroupName, parameters).block();
-    }
-
-    /**
-     * The createOrUpdate operation.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param namespaceName The Namespace name.
-     * @param schemaGroupName The Schema Group name.
-     * @param parameters Parameters supplied to create an Event Hub resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -699,22 +681,6 @@ public final class SchemaRegistriesClientImpl implements SchemaRegistriesClient 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param schemaGroupName The Schema Group name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> deleteWithResponse(String resourceGroupName, String namespaceName, String schemaGroupName) {
-        return deleteWithResponseAsync(resourceGroupName, namespaceName, schemaGroupName).block();
-    }
-
-    /**
-     * The delete operation.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param namespaceName The Namespace name.
-     * @param schemaGroupName The Schema Group name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -865,23 +831,6 @@ public final class SchemaRegistriesClientImpl implements SchemaRegistriesClient 
     private Mono<SchemaGroupInner> getAsync(String resourceGroupName, String namespaceName, String schemaGroupName) {
         return getWithResponseAsync(resourceGroupName, namespaceName, schemaGroupName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * The get operation.
-     *
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param namespaceName The Namespace name.
-     * @param schemaGroupName The Schema Group name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in List or Get Schema Group operation along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<SchemaGroupInner> getWithResponse(
-        String resourceGroupName, String namespaceName, String schemaGroupName) {
-        return getWithResponseAsync(resourceGroupName, namespaceName, schemaGroupName).block();
     }
 
     /**

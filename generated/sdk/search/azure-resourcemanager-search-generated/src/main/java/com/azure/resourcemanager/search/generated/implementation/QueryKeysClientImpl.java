@@ -270,28 +270,6 @@ public final class QueryKeysClientImpl implements QueryKeysClient {
      * @param name The name of the new query API key.
      * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
      *     included in response information as a way to track the request.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes an API key for a given Azure Cognitive Search service that has permissions for query operations
-     *     only along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<QueryKeyInner> createWithResponse(
-        String resourceGroupName, String searchServiceName, String name, UUID clientRequestId) {
-        return createWithResponseAsync(resourceGroupName, searchServiceName, name, clientRequestId).block();
-    }
-
-    /**
-     * Generates a new query key for the specified search service. You can create up to 50 query keys per service.
-     *
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
-     *     value from the Azure Resource Manager API or the portal.
-     * @param searchServiceName The name of the Azure Cognitive Search service associated with the specified resource
-     *     group.
-     * @param name The name of the new query API key.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
-     *     included in response information as a way to track the request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -698,28 +676,6 @@ public final class QueryKeysClientImpl implements QueryKeysClient {
         final UUID clientRequestId = null;
         return deleteWithResponseAsync(resourceGroupName, searchServiceName, key, clientRequestId)
             .flatMap(ignored -> Mono.empty());
-    }
-
-    /**
-     * Deletes the specified query key. Unlike admin keys, query keys are not regenerated. The process for regenerating
-     * a query key is to delete and then recreate it.
-     *
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
-     *     value from the Azure Resource Manager API or the portal.
-     * @param searchServiceName The name of the Azure Cognitive Search service associated with the specified resource
-     *     group.
-     * @param key The query key to be deleted. Query keys are identified by value, not by name.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
-     *     included in response information as a way to track the request.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> deleteWithResponse(
-        String resourceGroupName, String searchServiceName, String key, UUID clientRequestId) {
-        return deleteWithResponseAsync(resourceGroupName, searchServiceName, key, clientRequestId).block();
     }
 
     /**

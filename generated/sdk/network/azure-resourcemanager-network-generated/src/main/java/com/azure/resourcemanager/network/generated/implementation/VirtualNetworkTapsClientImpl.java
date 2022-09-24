@@ -521,21 +521,6 @@ public final class VirtualNetworkTapsClientImpl implements VirtualNetworkTapsCli
      *
      * @param resourceGroupName The name of the resource group.
      * @param tapName The name of virtual network tap.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the specified virtual network tap along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<VirtualNetworkTapInner> getByResourceGroupWithResponse(String resourceGroupName, String tapName) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, tapName).block();
-    }
-
-    /**
-     * Gets information about the specified virtual network tap.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param tapName The name of virtual network tap.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -961,23 +946,6 @@ public final class VirtualNetworkTapsClientImpl implements VirtualNetworkTapsCli
         String resourceGroupName, String tapName, TagsObject tapParameters) {
         return updateTagsWithResponseAsync(resourceGroupName, tapName, tapParameters)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
-    }
-
-    /**
-     * Updates an VirtualNetworkTap tags.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param tapName The name of the tap.
-     * @param tapParameters Parameters supplied to update VirtualNetworkTap tags.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtual Network Tap resource along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<VirtualNetworkTapInner> updateTagsWithResponse(
-        String resourceGroupName, String tapName, TagsObject tapParameters) {
-        return updateTagsWithResponseAsync(resourceGroupName, tapName, tapParameters).block();
     }
 
     /**

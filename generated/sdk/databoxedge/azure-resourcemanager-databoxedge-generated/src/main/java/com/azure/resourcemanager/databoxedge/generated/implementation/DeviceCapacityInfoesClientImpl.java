@@ -185,22 +185,6 @@ public final class DeviceCapacityInfoesClientImpl implements DeviceCapacityInfoe
      *
      * @param resourceGroupName The resource group name.
      * @param deviceName The device name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the properties of the specified device capacity info along with {@link Response}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<DeviceCapacityInfoInner> getDeviceCapacityInfoWithResponse(
-        String resourceGroupName, String deviceName) {
-        return getDeviceCapacityInfoWithResponseAsync(resourceGroupName, deviceName).block();
-    }
-
-    /**
-     * Gets the properties of the specified device capacity info.
-     *
-     * @param resourceGroupName The resource group name.
-     * @param deviceName The device name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
