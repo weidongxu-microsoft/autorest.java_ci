@@ -171,6 +171,31 @@ public final class ExpressRouteGatewayInner extends Resource {
     }
 
     /**
+     * Get the allowNonVirtualWanTraffic property: Configures this gateway to accept traffic from non Virtual WAN
+     * networks.
+     *
+     * @return the allowNonVirtualWanTraffic value.
+     */
+    public Boolean allowNonVirtualWanTraffic() {
+        return this.innerProperties() == null ? null : this.innerProperties().allowNonVirtualWanTraffic();
+    }
+
+    /**
+     * Set the allowNonVirtualWanTraffic property: Configures this gateway to accept traffic from non Virtual WAN
+     * networks.
+     *
+     * @param allowNonVirtualWanTraffic the allowNonVirtualWanTraffic value to set.
+     * @return the ExpressRouteGatewayInner object itself.
+     */
+    public ExpressRouteGatewayInner withAllowNonVirtualWanTraffic(Boolean allowNonVirtualWanTraffic) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new ExpressRouteGatewayProperties();
+        }
+        this.innerProperties().withAllowNonVirtualWanTraffic(allowNonVirtualWanTraffic);
+        return this;
+    }
+
+    /**
      * Validates the instance.
      *
      * @throws IllegalArgumentException thrown if the instance is not valid.

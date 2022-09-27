@@ -587,6 +587,56 @@ public final class VirtualNetworkGatewayInner extends Resource {
     }
 
     /**
+     * Get the allowVirtualWanTraffic property: Configures this gateway to accept traffic from remote Virtual WAN
+     * networks.
+     *
+     * @return the allowVirtualWanTraffic value.
+     */
+    public Boolean allowVirtualWanTraffic() {
+        return this.innerProperties() == null ? null : this.innerProperties().allowVirtualWanTraffic();
+    }
+
+    /**
+     * Set the allowVirtualWanTraffic property: Configures this gateway to accept traffic from remote Virtual WAN
+     * networks.
+     *
+     * @param allowVirtualWanTraffic the allowVirtualWanTraffic value to set.
+     * @return the VirtualNetworkGatewayInner object itself.
+     */
+    public VirtualNetworkGatewayInner withAllowVirtualWanTraffic(Boolean allowVirtualWanTraffic) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new VirtualNetworkGatewayPropertiesFormat();
+        }
+        this.innerProperties().withAllowVirtualWanTraffic(allowVirtualWanTraffic);
+        return this;
+    }
+
+    /**
+     * Get the allowRemoteVnetTraffic property: Configure this gateway to accept traffic from other Azure Virtual
+     * Networks. This configuration does not support connectivity to Azure Virtual WAN.
+     *
+     * @return the allowRemoteVnetTraffic value.
+     */
+    public Boolean allowRemoteVnetTraffic() {
+        return this.innerProperties() == null ? null : this.innerProperties().allowRemoteVnetTraffic();
+    }
+
+    /**
+     * Set the allowRemoteVnetTraffic property: Configure this gateway to accept traffic from other Azure Virtual
+     * Networks. This configuration does not support connectivity to Azure Virtual WAN.
+     *
+     * @param allowRemoteVnetTraffic the allowRemoteVnetTraffic value to set.
+     * @return the VirtualNetworkGatewayInner object itself.
+     */
+    public VirtualNetworkGatewayInner withAllowRemoteVnetTraffic(Boolean allowRemoteVnetTraffic) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new VirtualNetworkGatewayPropertiesFormat();
+        }
+        this.innerProperties().withAllowRemoteVnetTraffic(allowRemoteVnetTraffic);
+        return this;
+    }
+
+    /**
      * Validates the instance.
      *
      * @throws IllegalArgumentException thrown if the instance is not valid.

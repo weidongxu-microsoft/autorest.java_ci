@@ -222,6 +222,22 @@ public interface VirtualNetworkGateway {
     Boolean enableBgpRouteTranslationForNat();
 
     /**
+     * Gets the allowVirtualWanTraffic property: Configures this gateway to accept traffic from remote Virtual WAN
+     * networks.
+     *
+     * @return the allowVirtualWanTraffic value.
+     */
+    Boolean allowVirtualWanTraffic();
+
+    /**
+     * Gets the allowRemoteVnetTraffic property: Configure this gateway to accept traffic from other Azure Virtual
+     * Networks. This configuration does not support connectivity to Azure Virtual WAN.
+     *
+     * @return the allowRemoteVnetTraffic value.
+     */
+    Boolean allowRemoteVnetTraffic();
+
+    /**
      * Gets the region of the resource.
      *
      * @return the region of the resource.
@@ -313,7 +329,9 @@ public interface VirtualNetworkGateway {
                 DefinitionStages.WithEnableDnsForwarding,
                 DefinitionStages.WithVNetExtendedLocationResourceId,
                 DefinitionStages.WithNatRules,
-                DefinitionStages.WithEnableBgpRouteTranslationForNat {
+                DefinitionStages.WithEnableBgpRouteTranslationForNat,
+                DefinitionStages.WithAllowVirtualWanTraffic,
+                DefinitionStages.WithAllowRemoteVnetTraffic {
             /**
              * Executes the create request.
              *
@@ -548,6 +566,29 @@ public interface VirtualNetworkGateway {
              * @return the next definition stage.
              */
             WithCreate withEnableBgpRouteTranslationForNat(Boolean enableBgpRouteTranslationForNat);
+        }
+        /** The stage of the VirtualNetworkGateway definition allowing to specify allowVirtualWanTraffic. */
+        interface WithAllowVirtualWanTraffic {
+            /**
+             * Specifies the allowVirtualWanTraffic property: Configures this gateway to accept traffic from remote
+             * Virtual WAN networks..
+             *
+             * @param allowVirtualWanTraffic Configures this gateway to accept traffic from remote Virtual WAN networks.
+             * @return the next definition stage.
+             */
+            WithCreate withAllowVirtualWanTraffic(Boolean allowVirtualWanTraffic);
+        }
+        /** The stage of the VirtualNetworkGateway definition allowing to specify allowRemoteVnetTraffic. */
+        interface WithAllowRemoteVnetTraffic {
+            /**
+             * Specifies the allowRemoteVnetTraffic property: Configure this gateway to accept traffic from other Azure
+             * Virtual Networks. This configuration does not support connectivity to Azure Virtual WAN..
+             *
+             * @param allowRemoteVnetTraffic Configure this gateway to accept traffic from other Azure Virtual Networks.
+             *     This configuration does not support connectivity to Azure Virtual WAN.
+             * @return the next definition stage.
+             */
+            WithCreate withAllowRemoteVnetTraffic(Boolean allowRemoteVnetTraffic);
         }
     }
     /**

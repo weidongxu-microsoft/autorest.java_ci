@@ -80,6 +80,10 @@ public final class ExpressRouteGatewayImpl
         return this.innerModel().virtualHub();
     }
 
+    public Boolean allowNonVirtualWanTraffic() {
+        return this.innerModel().allowNonVirtualWanTraffic();
+    }
+
     public Region region() {
         return Region.fromName(this.regionName());
     }
@@ -222,6 +226,11 @@ public final class ExpressRouteGatewayImpl
 
     public ExpressRouteGatewayImpl withVirtualHub(VirtualHubId virtualHub) {
         this.innerModel().withVirtualHub(virtualHub);
+        return this;
+    }
+
+    public ExpressRouteGatewayImpl withAllowNonVirtualWanTraffic(Boolean allowNonVirtualWanTraffic) {
+        this.innerModel().withAllowNonVirtualWanTraffic(allowNonVirtualWanTraffic);
         return this;
     }
 

@@ -84,6 +84,14 @@ public interface ExpressRouteGateway {
     VirtualHubId virtualHub();
 
     /**
+     * Gets the allowNonVirtualWanTraffic property: Configures this gateway to accept traffic from non Virtual WAN
+     * networks.
+     *
+     * @return the allowNonVirtualWanTraffic value.
+     */
+    Boolean allowNonVirtualWanTraffic();
+
+    /**
      * Gets the region of the resource.
      *
      * @return the region of the resource.
@@ -159,7 +167,8 @@ public interface ExpressRouteGateway {
             extends DefinitionStages.WithTags,
                 DefinitionStages.WithAutoScaleConfiguration,
                 DefinitionStages.WithExpressRouteConnections,
-                DefinitionStages.WithVirtualHub {
+                DefinitionStages.WithVirtualHub,
+                DefinitionStages.WithAllowNonVirtualWanTraffic {
             /**
              * Executes the create request.
              *
@@ -217,6 +226,17 @@ public interface ExpressRouteGateway {
              * @return the next definition stage.
              */
             WithCreate withVirtualHub(VirtualHubId virtualHub);
+        }
+        /** The stage of the ExpressRouteGateway definition allowing to specify allowNonVirtualWanTraffic. */
+        interface WithAllowNonVirtualWanTraffic {
+            /**
+             * Specifies the allowNonVirtualWanTraffic property: Configures this gateway to accept traffic from non
+             * Virtual WAN networks..
+             *
+             * @param allowNonVirtualWanTraffic Configures this gateway to accept traffic from non Virtual WAN networks.
+             * @return the next definition stage.
+             */
+            WithCreate withAllowNonVirtualWanTraffic(Boolean allowNonVirtualWanTraffic);
         }
     }
     /**

@@ -181,6 +181,14 @@ public final class VirtualNetworkGatewayImpl
         return this.innerModel().enableBgpRouteTranslationForNat();
     }
 
+    public Boolean allowVirtualWanTraffic() {
+        return this.innerModel().allowVirtualWanTraffic();
+    }
+
+    public Boolean allowRemoteVnetTraffic() {
+        return this.innerModel().allowRemoteVnetTraffic();
+    }
+
     public Region region() {
         return Region.fromName(this.regionName());
     }
@@ -577,6 +585,16 @@ public final class VirtualNetworkGatewayImpl
 
     public VirtualNetworkGatewayImpl withEnableBgpRouteTranslationForNat(Boolean enableBgpRouteTranslationForNat) {
         this.innerModel().withEnableBgpRouteTranslationForNat(enableBgpRouteTranslationForNat);
+        return this;
+    }
+
+    public VirtualNetworkGatewayImpl withAllowVirtualWanTraffic(Boolean allowVirtualWanTraffic) {
+        this.innerModel().withAllowVirtualWanTraffic(allowVirtualWanTraffic);
+        return this;
+    }
+
+    public VirtualNetworkGatewayImpl withAllowRemoteVnetTraffic(Boolean allowRemoteVnetTraffic) {
+        this.innerModel().withAllowRemoteVnetTraffic(allowRemoteVnetTraffic);
         return this;
     }
 

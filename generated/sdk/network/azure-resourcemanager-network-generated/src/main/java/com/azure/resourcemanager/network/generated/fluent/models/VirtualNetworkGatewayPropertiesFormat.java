@@ -152,6 +152,19 @@ public final class VirtualNetworkGatewayPropertiesFormat {
     @JsonProperty(value = "enableBgpRouteTranslationForNat")
     private Boolean enableBgpRouteTranslationForNat;
 
+    /*
+     * Configures this gateway to accept traffic from remote Virtual WAN networks.
+     */
+    @JsonProperty(value = "allowVirtualWanTraffic")
+    private Boolean allowVirtualWanTraffic;
+
+    /*
+     * Configure this gateway to accept traffic from other Azure Virtual Networks. This configuration does not support
+     * connectivity to Azure Virtual WAN.
+     */
+    @JsonProperty(value = "allowRemoteVnetTraffic")
+    private Boolean allowRemoteVnetTraffic;
+
     /** Creates an instance of VirtualNetworkGatewayPropertiesFormat class. */
     public VirtualNetworkGatewayPropertiesFormat() {
     }
@@ -563,6 +576,50 @@ public final class VirtualNetworkGatewayPropertiesFormat {
     public VirtualNetworkGatewayPropertiesFormat withEnableBgpRouteTranslationForNat(
         Boolean enableBgpRouteTranslationForNat) {
         this.enableBgpRouteTranslationForNat = enableBgpRouteTranslationForNat;
+        return this;
+    }
+
+    /**
+     * Get the allowVirtualWanTraffic property: Configures this gateway to accept traffic from remote Virtual WAN
+     * networks.
+     *
+     * @return the allowVirtualWanTraffic value.
+     */
+    public Boolean allowVirtualWanTraffic() {
+        return this.allowVirtualWanTraffic;
+    }
+
+    /**
+     * Set the allowVirtualWanTraffic property: Configures this gateway to accept traffic from remote Virtual WAN
+     * networks.
+     *
+     * @param allowVirtualWanTraffic the allowVirtualWanTraffic value to set.
+     * @return the VirtualNetworkGatewayPropertiesFormat object itself.
+     */
+    public VirtualNetworkGatewayPropertiesFormat withAllowVirtualWanTraffic(Boolean allowVirtualWanTraffic) {
+        this.allowVirtualWanTraffic = allowVirtualWanTraffic;
+        return this;
+    }
+
+    /**
+     * Get the allowRemoteVnetTraffic property: Configure this gateway to accept traffic from other Azure Virtual
+     * Networks. This configuration does not support connectivity to Azure Virtual WAN.
+     *
+     * @return the allowRemoteVnetTraffic value.
+     */
+    public Boolean allowRemoteVnetTraffic() {
+        return this.allowRemoteVnetTraffic;
+    }
+
+    /**
+     * Set the allowRemoteVnetTraffic property: Configure this gateway to accept traffic from other Azure Virtual
+     * Networks. This configuration does not support connectivity to Azure Virtual WAN.
+     *
+     * @param allowRemoteVnetTraffic the allowRemoteVnetTraffic value to set.
+     * @return the VirtualNetworkGatewayPropertiesFormat object itself.
+     */
+    public VirtualNetworkGatewayPropertiesFormat withAllowRemoteVnetTraffic(Boolean allowRemoteVnetTraffic) {
+        this.allowRemoteVnetTraffic = allowRemoteVnetTraffic;
         return this;
     }
 
