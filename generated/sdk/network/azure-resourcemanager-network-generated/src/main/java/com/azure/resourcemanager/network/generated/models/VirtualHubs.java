@@ -107,19 +107,6 @@ public interface VirtualHubs {
      *
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
-     * @param effectiveRoutesParameters Parameters supplied to get the effective routes for a specific resource.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void getEffectiveVirtualHubRoutes(
-        String resourceGroupName, String virtualHubName, EffectiveRoutesParameters effectiveRoutesParameters);
-
-    /**
-     * Gets the effective routes configured for the Virtual Hub resource or the specified resource .
-     *
-     * @param resourceGroupName The resource group name of the VirtualHub.
-     * @param virtualHubName The name of the VirtualHub.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.

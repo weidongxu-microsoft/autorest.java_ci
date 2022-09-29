@@ -1609,6 +1609,26 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ApiErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link PollerFlux} for polling of long-running operation.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(String resourceGroupName, String vmName) {
+        final Boolean forceDeletion = null;
+        Mono<Response<Flux<ByteBuffer>>> mono = deleteWithResponseAsync(resourceGroupName, vmName, forceDeletion);
+        return this
+            .client
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
+    }
+
+    /**
+     * The operation to delete a virtual machine.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param vmName The name of the virtual machine.
      * @param forceDeletion Optional parameter to force delete virtual machines.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1632,15 +1652,14 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param forceDeletion Optional parameter to force delete virtual machines.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    public SyncPoller<PollResult<Void>, Void> beginDelete(
-        String resourceGroupName, String vmName, Boolean forceDeletion) {
+    public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String vmName) {
+        final Boolean forceDeletion = null;
         return beginDeleteAsync(resourceGroupName, vmName, forceDeletion).getSyncPoller();
     }
 
@@ -1715,21 +1734,6 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
         return beginDeleteAsync(resourceGroupName, vmName, forceDeletion, context)
             .last()
             .flatMap(this.client::getLroFinalResultOrError);
-    }
-
-    /**
-     * The operation to delete a virtual machine.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param vmName The name of the virtual machine.
-     * @param forceDeletion Optional parameter to force delete virtual machines.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ApiErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public void delete(String resourceGroupName, String vmName, Boolean forceDeletion) {
-        deleteAsync(resourceGroupName, vmName, forceDeletion).block();
     }
 
     /**
@@ -2443,6 +2447,27 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ApiErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link PollerFlux} for polling of long-running operation.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    private PollerFlux<PollResult<Void>, Void> beginDeallocateAsync(String resourceGroupName, String vmName) {
+        final Boolean hibernate = null;
+        Mono<Response<Flux<ByteBuffer>>> mono = deallocateWithResponseAsync(resourceGroupName, vmName, hibernate);
+        return this
+            .client
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
+    }
+
+    /**
+     * Shuts down the virtual machine and releases the compute resources. You are not billed for the compute resources
+     * that this virtual machine uses.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param vmName The name of the virtual machine.
      * @param hibernate Optional parameter to hibernate a virtual machine. (Feature in Preview).
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -2467,15 +2492,14 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param hibernate Optional parameter to hibernate a virtual machine. (Feature in Preview).
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    public SyncPoller<PollResult<Void>, Void> beginDeallocate(
-        String resourceGroupName, String vmName, Boolean hibernate) {
+    public SyncPoller<PollResult<Void>, Void> beginDeallocate(String resourceGroupName, String vmName) {
+        final Boolean hibernate = null;
         return beginDeallocateAsync(resourceGroupName, vmName, hibernate).getSyncPoller();
     }
 
@@ -2554,22 +2578,6 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
         return beginDeallocateAsync(resourceGroupName, vmName, hibernate, context)
             .last()
             .flatMap(this.client::getLroFinalResultOrError);
-    }
-
-    /**
-     * Shuts down the virtual machine and releases the compute resources. You are not billed for the compute resources
-     * that this virtual machine uses.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param vmName The name of the virtual machine.
-     * @param hibernate Optional parameter to hibernate a virtual machine. (Feature in Preview).
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ApiErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public void deallocate(String resourceGroupName, String vmName, Boolean hibernate) {
-        deallocateAsync(resourceGroupName, vmName, hibernate).block();
     }
 
     /**
@@ -3479,6 +3487,27 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ApiErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link PollerFlux} for polling of long-running operation.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    private PollerFlux<PollResult<Void>, Void> beginPowerOffAsync(String resourceGroupName, String vmName) {
+        final Boolean skipShutdown = null;
+        Mono<Response<Flux<ByteBuffer>>> mono = powerOffWithResponseAsync(resourceGroupName, vmName, skipShutdown);
+        return this
+            .client
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
+    }
+
+    /**
+     * The operation to power off (stop) a virtual machine. The virtual machine can be restarted with the same
+     * provisioned resources. You are still charged for this virtual machine.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param vmName The name of the virtual machine.
      * @param skipShutdown The parameter to request non-graceful VM shutdown. True value for this flag indicates
      *     non-graceful shutdown whereas false indicates otherwise. Default value for this flag is false if not
      *     specified.
@@ -3505,17 +3534,14 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param skipShutdown The parameter to request non-graceful VM shutdown. True value for this flag indicates
-     *     non-graceful shutdown whereas false indicates otherwise. Default value for this flag is false if not
-     *     specified.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    public SyncPoller<PollResult<Void>, Void> beginPowerOff(
-        String resourceGroupName, String vmName, Boolean skipShutdown) {
+    public SyncPoller<PollResult<Void>, Void> beginPowerOff(String resourceGroupName, String vmName) {
+        final Boolean skipShutdown = null;
         return beginPowerOffAsync(resourceGroupName, vmName, skipShutdown).getSyncPoller();
     }
 
@@ -3600,24 +3626,6 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
         return beginPowerOffAsync(resourceGroupName, vmName, skipShutdown, context)
             .last()
             .flatMap(this.client::getLroFinalResultOrError);
-    }
-
-    /**
-     * The operation to power off (stop) a virtual machine. The virtual machine can be restarted with the same
-     * provisioned resources. You are still charged for this virtual machine.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param vmName The name of the virtual machine.
-     * @param skipShutdown The parameter to request non-graceful VM shutdown. True value for this flag indicates
-     *     non-graceful shutdown whereas false indicates otherwise. Default value for this flag is false if not
-     *     specified.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ApiErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public void powerOff(String resourceGroupName, String vmName, Boolean skipShutdown) {
-        powerOffAsync(resourceGroupName, vmName, skipShutdown).block();
     }
 
     /**
@@ -4699,6 +4707,26 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ApiErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link PollerFlux} for polling of long-running operation.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    private PollerFlux<PollResult<Void>, Void> beginReimageAsync(String resourceGroupName, String vmName) {
+        final VirtualMachineReimageParameters parameters = null;
+        Mono<Response<Flux<ByteBuffer>>> mono = reimageWithResponseAsync(resourceGroupName, vmName, parameters);
+        return this
+            .client
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
+    }
+
+    /**
+     * Reimages the virtual machine which has an ephemeral OS disk back to its initial state.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param vmName The name of the virtual machine.
      * @param parameters Parameters supplied to the Reimage Virtual Machine operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -4722,15 +4750,14 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param parameters Parameters supplied to the Reimage Virtual Machine operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    public SyncPoller<PollResult<Void>, Void> beginReimage(
-        String resourceGroupName, String vmName, VirtualMachineReimageParameters parameters) {
+    public SyncPoller<PollResult<Void>, Void> beginReimage(String resourceGroupName, String vmName) {
+        final VirtualMachineReimageParameters parameters = null;
         return beginReimageAsync(resourceGroupName, vmName, parameters).getSyncPoller();
     }
 
@@ -4807,21 +4834,6 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
         return beginReimageAsync(resourceGroupName, vmName, parameters, context)
             .last()
             .flatMap(this.client::getLroFinalResultOrError);
-    }
-
-    /**
-     * Reimages the virtual machine which has an ephemeral OS disk back to its initial state.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param vmName The name of the virtual machine.
-     * @param parameters Parameters supplied to the Reimage Virtual Machine operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ApiErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public void reimage(String resourceGroupName, String vmName, VirtualMachineReimageParameters parameters) {
-        reimageAsync(resourceGroupName, vmName, parameters).block();
     }
 
     /**

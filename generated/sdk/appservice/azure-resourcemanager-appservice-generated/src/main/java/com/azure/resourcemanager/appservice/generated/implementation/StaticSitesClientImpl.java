@@ -5359,6 +5359,52 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @param functionAppName Name of the function app to register with the static site build.
      * @param staticSiteUserProvidedFunctionEnvelope A JSON representation of the user provided function app properties.
      *     See example.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link PollerFlux} for polling of static Site User Provided Function App ARM resource.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    private PollerFlux<
+            PollResult<StaticSiteUserProvidedFunctionAppArmResourceInner>,
+            StaticSiteUserProvidedFunctionAppArmResourceInner>
+        beginRegisterUserProvidedFunctionAppWithStaticSiteBuildAsync(
+            String resourceGroupName,
+            String name,
+            String environmentName,
+            String functionAppName,
+            StaticSiteUserProvidedFunctionAppArmResourceInner staticSiteUserProvidedFunctionEnvelope) {
+        final Boolean isForced = null;
+        Mono<Response<Flux<ByteBuffer>>> mono =
+            registerUserProvidedFunctionAppWithStaticSiteBuildWithResponseAsync(
+                resourceGroupName,
+                name,
+                environmentName,
+                functionAppName,
+                staticSiteUserProvidedFunctionEnvelope,
+                isForced);
+        return this
+            .client
+            .<StaticSiteUserProvidedFunctionAppArmResourceInner, StaticSiteUserProvidedFunctionAppArmResourceInner>
+                getLroResult(
+                    mono,
+                    this.client.getHttpPipeline(),
+                    StaticSiteUserProvidedFunctionAppArmResourceInner.class,
+                    StaticSiteUserProvidedFunctionAppArmResourceInner.class,
+                    this.client.getContext());
+    }
+
+    /**
+     * Register a user provided function app with a static site build
+     *
+     * <p>Description for Register a user provided function app with a static site build.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param environmentName The stage site identifier.
+     * @param functionAppName Name of the function app to register with the static site build.
+     * @param staticSiteUserProvidedFunctionEnvelope A JSON representation of the user provided function app properties.
+     *     See example.
      * @param isForced Specify &lt;code&gt;true&lt;/code&gt; to force the update of the auth configuration on the
      *     function app even if an AzureStaticWebApps provider is already configured on the function app. The default is
      *     &lt;code&gt;false&lt;/code&gt;.
@@ -5412,9 +5458,6 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @param functionAppName Name of the function app to register with the static site build.
      * @param staticSiteUserProvidedFunctionEnvelope A JSON representation of the user provided function app properties.
      *     See example.
-     * @param isForced Specify &lt;code&gt;true&lt;/code&gt; to force the update of the auth configuration on the
-     *     function app even if an AzureStaticWebApps provider is already configured on the function app. The default is
-     *     &lt;code&gt;false&lt;/code&gt;.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -5429,8 +5472,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
             String name,
             String environmentName,
             String functionAppName,
-            StaticSiteUserProvidedFunctionAppArmResourceInner staticSiteUserProvidedFunctionEnvelope,
-            Boolean isForced) {
+            StaticSiteUserProvidedFunctionAppArmResourceInner staticSiteUserProvidedFunctionEnvelope) {
+        final Boolean isForced = null;
         return beginRegisterUserProvidedFunctionAppWithStaticSiteBuildAsync(
                 resourceGroupName,
                 name,
@@ -5599,43 +5642,6 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
                 context)
             .last()
             .flatMap(this.client::getLroFinalResultOrError);
-    }
-
-    /**
-     * Register a user provided function app with a static site build
-     *
-     * <p>Description for Register a user provided function app with a static site build.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the static site.
-     * @param environmentName The stage site identifier.
-     * @param functionAppName Name of the function app to register with the static site build.
-     * @param staticSiteUserProvidedFunctionEnvelope A JSON representation of the user provided function app properties.
-     *     See example.
-     * @param isForced Specify &lt;code&gt;true&lt;/code&gt; to force the update of the auth configuration on the
-     *     function app even if an AzureStaticWebApps provider is already configured on the function app. The default is
-     *     &lt;code&gt;false&lt;/code&gt;.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site User Provided Function App ARM resource.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public StaticSiteUserProvidedFunctionAppArmResourceInner registerUserProvidedFunctionAppWithStaticSiteBuild(
-        String resourceGroupName,
-        String name,
-        String environmentName,
-        String functionAppName,
-        StaticSiteUserProvidedFunctionAppArmResourceInner staticSiteUserProvidedFunctionEnvelope,
-        Boolean isForced) {
-        return registerUserProvidedFunctionAppWithStaticSiteBuildAsync(
-                resourceGroupName,
-                name,
-                environmentName,
-                functionAppName,
-                staticSiteUserProvidedFunctionEnvelope,
-                isForced)
-            .block();
     }
 
     /**
@@ -11205,6 +11211,45 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @param functionAppName Name of the function app to register with the static site.
      * @param staticSiteUserProvidedFunctionEnvelope A JSON representation of the user provided function app properties.
      *     See example.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link PollerFlux} for polling of static Site User Provided Function App ARM resource.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    private PollerFlux<
+            PollResult<StaticSiteUserProvidedFunctionAppArmResourceInner>,
+            StaticSiteUserProvidedFunctionAppArmResourceInner>
+        beginRegisterUserProvidedFunctionAppWithStaticSiteAsync(
+            String resourceGroupName,
+            String name,
+            String functionAppName,
+            StaticSiteUserProvidedFunctionAppArmResourceInner staticSiteUserProvidedFunctionEnvelope) {
+        final Boolean isForced = null;
+        Mono<Response<Flux<ByteBuffer>>> mono =
+            registerUserProvidedFunctionAppWithStaticSiteWithResponseAsync(
+                resourceGroupName, name, functionAppName, staticSiteUserProvidedFunctionEnvelope, isForced);
+        return this
+            .client
+            .<StaticSiteUserProvidedFunctionAppArmResourceInner, StaticSiteUserProvidedFunctionAppArmResourceInner>
+                getLroResult(
+                    mono,
+                    this.client.getHttpPipeline(),
+                    StaticSiteUserProvidedFunctionAppArmResourceInner.class,
+                    StaticSiteUserProvidedFunctionAppArmResourceInner.class,
+                    this.client.getContext());
+    }
+
+    /**
+     * Register a user provided function app with a static site
+     *
+     * <p>Description for Register a user provided function app with a static site.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param functionAppName Name of the function app to register with the static site.
+     * @param staticSiteUserProvidedFunctionEnvelope A JSON representation of the user provided function app properties.
+     *     See example.
      * @param isForced Specify &lt;code&gt;true&lt;/code&gt; to force the update of the auth configuration on the
      *     function app even if an AzureStaticWebApps provider is already configured on the function app. The default is
      *     &lt;code&gt;false&lt;/code&gt;.
@@ -11250,9 +11295,6 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @param functionAppName Name of the function app to register with the static site.
      * @param staticSiteUserProvidedFunctionEnvelope A JSON representation of the user provided function app properties.
      *     See example.
-     * @param isForced Specify &lt;code&gt;true&lt;/code&gt; to force the update of the auth configuration on the
-     *     function app even if an AzureStaticWebApps provider is already configured on the function app. The default is
-     *     &lt;code&gt;false&lt;/code&gt;.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -11266,8 +11308,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
             String resourceGroupName,
             String name,
             String functionAppName,
-            StaticSiteUserProvidedFunctionAppArmResourceInner staticSiteUserProvidedFunctionEnvelope,
-            Boolean isForced) {
+            StaticSiteUserProvidedFunctionAppArmResourceInner staticSiteUserProvidedFunctionEnvelope) {
+        final Boolean isForced = null;
         return beginRegisterUserProvidedFunctionAppWithStaticSiteAsync(
                 resourceGroupName, name, functionAppName, staticSiteUserProvidedFunctionEnvelope, isForced)
             .getSyncPoller();
@@ -11398,36 +11440,6 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
                 resourceGroupName, name, functionAppName, staticSiteUserProvidedFunctionEnvelope, isForced, context)
             .last()
             .flatMap(this.client::getLroFinalResultOrError);
-    }
-
-    /**
-     * Register a user provided function app with a static site
-     *
-     * <p>Description for Register a user provided function app with a static site.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the static site.
-     * @param functionAppName Name of the function app to register with the static site.
-     * @param staticSiteUserProvidedFunctionEnvelope A JSON representation of the user provided function app properties.
-     *     See example.
-     * @param isForced Specify &lt;code&gt;true&lt;/code&gt; to force the update of the auth configuration on the
-     *     function app even if an AzureStaticWebApps provider is already configured on the function app. The default is
-     *     &lt;code&gt;false&lt;/code&gt;.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return static Site User Provided Function App ARM resource.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public StaticSiteUserProvidedFunctionAppArmResourceInner registerUserProvidedFunctionAppWithStaticSite(
-        String resourceGroupName,
-        String name,
-        String functionAppName,
-        StaticSiteUserProvidedFunctionAppArmResourceInner staticSiteUserProvidedFunctionEnvelope,
-        Boolean isForced) {
-        return registerUserProvidedFunctionAppWithStaticSiteAsync(
-                resourceGroupName, name, functionAppName, staticSiteUserProvidedFunctionEnvelope, isForced)
-            .block();
     }
 
     /**

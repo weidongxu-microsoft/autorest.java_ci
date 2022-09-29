@@ -17,24 +17,6 @@ public interface VirtualMachineScaleSetVMs {
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
-     * @param vmScaleSetVMReimageInput Parameters for the Reimaging Virtual machine in ScaleSet.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void reimage(
-        String resourceGroupName,
-        String vmScaleSetName,
-        String instanceId,
-        VirtualMachineScaleSetVMReimageParameters vmScaleSetVMReimageInput);
-
-    /**
-     * Reimages (upgrade the operating system) a specific virtual machine in a VM scale set.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param vmScaleSetName The name of the VM scale set.
-     * @param instanceId The instance ID of the virtual machine.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
@@ -156,21 +138,6 @@ public interface VirtualMachineScaleSetVMs {
         String instanceId,
         VirtualMachineScaleSetVMInner parameters,
         Context context);
-
-    /**
-     * Deletes a virtual machine from a VM scale set.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param vmScaleSetName The name of the VM scale set.
-     * @param instanceId The instance ID of the virtual machine.
-     * @param forceDeletion Optional parameter to force delete a virtual machine from a VM scale set. (Feature in
-     *     Preview).
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void delete(String resourceGroupName, String vmScaleSetName, String instanceId, Boolean forceDeletion);
 
     /**
      * Deletes a virtual machine from a VM scale set.
@@ -301,23 +268,6 @@ public interface VirtualMachineScaleSetVMs {
         String select,
         String expand,
         Context context);
-
-    /**
-     * Power off (stop) a virtual machine in a VM scale set. Note that resources are still attached and you are getting
-     * charged for the resources. Instead, use deallocate to release resources and avoid charges.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param vmScaleSetName The name of the VM scale set.
-     * @param instanceId The instance ID of the virtual machine.
-     * @param skipShutdown The parameter to request non-graceful VM shutdown. True value for this flag indicates
-     *     non-graceful shutdown whereas false indicates otherwise. Default value for this flag is false if not
-     *     specified.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void powerOff(String resourceGroupName, String vmScaleSetName, String instanceId, Boolean skipShutdown);
 
     /**
      * Power off (stop) a virtual machine in a VM scale set. Note that resources are still attached and you are getting

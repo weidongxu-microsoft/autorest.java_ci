@@ -290,12 +290,6 @@ public final class VirtualHubImpl implements VirtualHub, VirtualHub.Definition, 
         return this;
     }
 
-    public void getEffectiveVirtualHubRoutes(EffectiveRoutesParameters effectiveRoutesParameters) {
-        serviceManager
-            .virtualHubs()
-            .getEffectiveVirtualHubRoutes(resourceGroupName, virtualHubName, effectiveRoutesParameters);
-    }
-
     public void getEffectiveVirtualHubRoutes() {
         serviceManager.virtualHubs().getEffectiveVirtualHubRoutes(resourceGroupName, virtualHubName);
     }

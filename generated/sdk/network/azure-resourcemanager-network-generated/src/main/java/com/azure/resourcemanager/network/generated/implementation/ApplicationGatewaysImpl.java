@@ -111,17 +111,6 @@ public final class ApplicationGatewaysImpl implements ApplicationGateways {
         this.serviceClient().stop(resourceGroupName, applicationGatewayName, context);
     }
 
-    public ApplicationGatewayBackendHealth backendHealth(
-        String resourceGroupName, String applicationGatewayName, String expand) {
-        ApplicationGatewayBackendHealthInner inner =
-            this.serviceClient().backendHealth(resourceGroupName, applicationGatewayName, expand);
-        if (inner != null) {
-            return new ApplicationGatewayBackendHealthImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public ApplicationGatewayBackendHealth backendHealth(String resourceGroupName, String applicationGatewayName) {
         ApplicationGatewayBackendHealthInner inner =
             this.serviceClient().backendHealth(resourceGroupName, applicationGatewayName);
@@ -138,20 +127,6 @@ public final class ApplicationGatewaysImpl implements ApplicationGateways {
             this.serviceClient().backendHealth(resourceGroupName, applicationGatewayName, expand, context);
         if (inner != null) {
             return new ApplicationGatewayBackendHealthImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
-    public ApplicationGatewayBackendHealthOnDemand backendHealthOnDemand(
-        String resourceGroupName,
-        String applicationGatewayName,
-        ApplicationGatewayOnDemandProbe probeRequest,
-        String expand) {
-        ApplicationGatewayBackendHealthOnDemandInner inner =
-            this.serviceClient().backendHealthOnDemand(resourceGroupName, applicationGatewayName, probeRequest, expand);
-        if (inner != null) {
-            return new ApplicationGatewayBackendHealthOnDemandImpl(inner, this.manager());
         } else {
             return null;
         }

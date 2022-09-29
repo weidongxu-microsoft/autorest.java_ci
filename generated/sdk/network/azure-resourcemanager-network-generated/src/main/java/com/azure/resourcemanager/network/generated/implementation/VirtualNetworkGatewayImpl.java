@@ -296,10 +296,6 @@ public final class VirtualNetworkGatewayImpl
         return this;
     }
 
-    public VirtualNetworkGateway reset(String gatewayVip) {
-        return serviceManager.virtualNetworkGateways().reset(resourceGroupName, virtualNetworkGatewayName, gatewayVip);
-    }
-
     public VirtualNetworkGateway reset() {
         return serviceManager.virtualNetworkGateways().reset(resourceGroupName, virtualNetworkGatewayName);
     }
@@ -354,12 +350,6 @@ public final class VirtualNetworkGatewayImpl
         return serviceManager
             .virtualNetworkGateways()
             .getVpnProfilePackageUrl(resourceGroupName, virtualNetworkGatewayName, context);
-    }
-
-    public BgpPeerStatusListResult getBgpPeerStatus(String peer) {
-        return serviceManager
-            .virtualNetworkGateways()
-            .getBgpPeerStatus(resourceGroupName, virtualNetworkGatewayName, peer);
     }
 
     public BgpPeerStatusListResult getBgpPeerStatus() {
@@ -417,12 +407,6 @@ public final class VirtualNetworkGatewayImpl
         return serviceManager
             .virtualNetworkGateways()
             .getVpnclientIpsecParameters(resourceGroupName, virtualNetworkGatewayName, context);
-    }
-
-    public String startPacketCapture(VpnPacketCaptureStartParameters parameters) {
-        return serviceManager
-            .virtualNetworkGateways()
-            .startPacketCapture(resourceGroupName, virtualNetworkGatewayName, parameters);
     }
 
     public String startPacketCapture() {

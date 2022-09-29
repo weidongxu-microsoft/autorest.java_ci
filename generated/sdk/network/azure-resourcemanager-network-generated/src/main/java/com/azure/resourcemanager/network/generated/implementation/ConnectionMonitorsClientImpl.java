@@ -379,6 +379,38 @@ public final class ConnectionMonitorsClientImpl implements ConnectionMonitorsCli
      * @param networkWatcherName The name of the Network Watcher resource.
      * @param connectionMonitorName The name of the connection monitor.
      * @param parameters Parameters that define the operation to create a connection monitor.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link PollerFlux} for polling of information about the connection monitor.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    private PollerFlux<PollResult<ConnectionMonitorResultInner>, ConnectionMonitorResultInner> beginCreateOrUpdateAsync(
+        String resourceGroupName,
+        String networkWatcherName,
+        String connectionMonitorName,
+        ConnectionMonitor parameters) {
+        final String migrate = null;
+        Mono<Response<Flux<ByteBuffer>>> mono =
+            createOrUpdateWithResponseAsync(
+                resourceGroupName, networkWatcherName, connectionMonitorName, parameters, migrate);
+        return this
+            .client
+            .<ConnectionMonitorResultInner, ConnectionMonitorResultInner>getLroResult(
+                mono,
+                this.client.getHttpPipeline(),
+                ConnectionMonitorResultInner.class,
+                ConnectionMonitorResultInner.class,
+                this.client.getContext());
+    }
+
+    /**
+     * Create or update a connection monitor.
+     *
+     * @param resourceGroupName The name of the resource group containing Network Watcher.
+     * @param networkWatcherName The name of the Network Watcher resource.
+     * @param connectionMonitorName The name of the connection monitor.
+     * @param parameters Parameters that define the operation to create a connection monitor.
      * @param migrate Value indicating whether connection monitor V1 should be migrated to V2 format.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -415,7 +447,6 @@ public final class ConnectionMonitorsClientImpl implements ConnectionMonitorsCli
      * @param networkWatcherName The name of the Network Watcher resource.
      * @param connectionMonitorName The name of the connection monitor.
      * @param parameters Parameters that define the operation to create a connection monitor.
-     * @param migrate Value indicating whether connection monitor V1 should be migrated to V2 format.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -426,8 +457,8 @@ public final class ConnectionMonitorsClientImpl implements ConnectionMonitorsCli
         String resourceGroupName,
         String networkWatcherName,
         String connectionMonitorName,
-        ConnectionMonitor parameters,
-        String migrate) {
+        ConnectionMonitor parameters) {
+        final String migrate = null;
         return beginCreateOrUpdateAsync(
                 resourceGroupName, networkWatcherName, connectionMonitorName, parameters, migrate)
             .getSyncPoller();
@@ -537,30 +568,6 @@ public final class ConnectionMonitorsClientImpl implements ConnectionMonitorsCli
                 resourceGroupName, networkWatcherName, connectionMonitorName, parameters, migrate, context)
             .last()
             .flatMap(this.client::getLroFinalResultOrError);
-    }
-
-    /**
-     * Create or update a connection monitor.
-     *
-     * @param resourceGroupName The name of the resource group containing Network Watcher.
-     * @param networkWatcherName The name of the Network Watcher resource.
-     * @param connectionMonitorName The name of the connection monitor.
-     * @param parameters Parameters that define the operation to create a connection monitor.
-     * @param migrate Value indicating whether connection monitor V1 should be migrated to V2 format.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the connection monitor.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public ConnectionMonitorResultInner createOrUpdate(
-        String resourceGroupName,
-        String networkWatcherName,
-        String connectionMonitorName,
-        ConnectionMonitor parameters,
-        String migrate) {
-        return createOrUpdateAsync(resourceGroupName, networkWatcherName, connectionMonitorName, parameters, migrate)
-            .block();
     }
 
     /**

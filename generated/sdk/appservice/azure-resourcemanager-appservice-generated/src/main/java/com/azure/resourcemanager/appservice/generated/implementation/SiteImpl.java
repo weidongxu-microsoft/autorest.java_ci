@@ -552,12 +552,6 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
         serviceManager.webApps().start(resourceGroupName, name);
     }
 
-    public Object startNetworkTrace(Integer durationInSeconds, Integer maxFrameLength, String sasUrl) {
-        return serviceManager
-            .webApps()
-            .startNetworkTrace(resourceGroupName, name, durationInSeconds, maxFrameLength, sasUrl);
-    }
-
     public Object startNetworkTrace() {
         return serviceManager.webApps().startNetworkTrace(resourceGroupName, name);
     }

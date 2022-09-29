@@ -42,19 +42,6 @@ public interface VirtualMachineScaleSets {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
-     * @param forceDeletion Optional parameter to force delete a VM scale set. (Feature in Preview).
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void delete(String resourceGroupName, String vmScaleSetName, Boolean forceDeletion);
-
-    /**
-     * Deletes a VM scale set.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param vmScaleSetName The name of the VM scale set.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
@@ -112,20 +99,6 @@ public interface VirtualMachineScaleSets {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
-     * @param vmInstanceIDs A list of virtual machine instance IDs from the VM scale set.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void deallocate(String resourceGroupName, String vmScaleSetName, VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs);
-
-    /**
-     * Deallocates specific virtual machines in a VM scale set. Shuts down the virtual machines and releases the compute
-     * resources. You are not billed for the compute resources that this virtual machine scale set deallocates.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param vmScaleSetName The name of the VM scale set.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
@@ -151,25 +124,6 @@ public interface VirtualMachineScaleSets {
         String vmScaleSetName,
         VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs,
         Context context);
-
-    /**
-     * Deletes virtual machines in a VM scale set.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param vmScaleSetName The name of the VM scale set.
-     * @param vmInstanceIDs A list of virtual machine instance IDs from the VM scale set.
-     * @param forceDeletion Optional parameter to force delete virtual machines from the VM scale set. (Feature in
-     *     Preview).
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void deleteInstances(
-        String resourceGroupName,
-        String vmScaleSetName,
-        VirtualMachineScaleSetVMInstanceRequiredIDs vmInstanceIDs,
-        Boolean forceDeletion);
 
     /**
      * Deletes virtual machines in a VM scale set.
@@ -353,27 +307,6 @@ public interface VirtualMachineScaleSets {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
-     * @param skipShutdown The parameter to request non-graceful VM shutdown. True value for this flag indicates
-     *     non-graceful shutdown whereas false indicates otherwise. Default value for this flag is false if not
-     *     specified.
-     * @param vmInstanceIDs A list of virtual machine instance IDs from the VM scale set.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void powerOff(
-        String resourceGroupName,
-        String vmScaleSetName,
-        Boolean skipShutdown,
-        VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs);
-
-    /**
-     * Power off (stop) one or more virtual machines in a VM scale set. Note that resources are still attached and you
-     * are getting charged for the resources. Instead, use deallocate to release resources and avoid charges.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param vmScaleSetName The name of the VM scale set.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
@@ -409,19 +342,6 @@ public interface VirtualMachineScaleSets {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
-     * @param vmInstanceIDs A list of virtual machine instance IDs from the VM scale set.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void restart(String resourceGroupName, String vmScaleSetName, VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs);
-
-    /**
-     * Restarts one or more virtual machines in a VM scale set.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param vmScaleSetName The name of the VM scale set.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
@@ -446,19 +366,6 @@ public interface VirtualMachineScaleSets {
         String vmScaleSetName,
         VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs,
         Context context);
-
-    /**
-     * Starts one or more virtual machines in a VM scale set.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param vmScaleSetName The name of the VM scale set.
-     * @param vmInstanceIDs A list of virtual machine instance IDs from the VM scale set.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void start(String resourceGroupName, String vmScaleSetName, VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs);
 
     /**
      * Starts one or more virtual machines in a VM scale set.
@@ -496,20 +403,6 @@ public interface VirtualMachineScaleSets {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
-     * @param vmInstanceIDs A list of virtual machine instance IDs from the VM scale set.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void redeploy(String resourceGroupName, String vmScaleSetName, VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs);
-
-    /**
-     * Shuts down all the virtual machines in the virtual machine scale set, moves them to a new node, and powers them
-     * back on.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param vmScaleSetName The name of the VM scale set.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
@@ -535,22 +428,6 @@ public interface VirtualMachineScaleSets {
         String vmScaleSetName,
         VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs,
         Context context);
-
-    /**
-     * Perform maintenance on one or more virtual machines in a VM scale set. Operation on instances which are not
-     * eligible for perform maintenance will be failed. Please refer to best practices for more details:
-     * https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-maintenance-notifications.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param vmScaleSetName The name of the VM scale set.
-     * @param vmInstanceIDs A list of virtual machine instance IDs from the VM scale set.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void performMaintenance(
-        String resourceGroupName, String vmScaleSetName, VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs);
 
     /**
      * Perform maintenance on one or more virtual machines in a VM scale set. Operation on instances which are not
@@ -625,24 +502,6 @@ public interface VirtualMachineScaleSets {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
-     * @param vmScaleSetReimageInput Parameters for Reimaging VM ScaleSet.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void reimage(
-        String resourceGroupName,
-        String vmScaleSetName,
-        VirtualMachineScaleSetReimageParameters vmScaleSetReimageInput);
-
-    /**
-     * Reimages (upgrade the operating system) one or more virtual machines in a VM scale set which don't have a
-     * ephemeral OS disk, for virtual machines who have a ephemeral OS disk the virtual machine is reset to initial
-     * state.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param vmScaleSetName The name of the VM scale set.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
@@ -669,20 +528,6 @@ public interface VirtualMachineScaleSets {
         String vmScaleSetName,
         VirtualMachineScaleSetReimageParameters vmScaleSetReimageInput,
         Context context);
-
-    /**
-     * Reimages all the disks ( including data disks ) in the virtual machines in a VM scale set. This operation is only
-     * supported for managed disks.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param vmScaleSetName The name of the VM scale set.
-     * @param vmInstanceIDs A list of virtual machine instance IDs from the VM scale set.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void reimageAll(String resourceGroupName, String vmScaleSetName, VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs);
 
     /**
      * Reimages all the disks ( including data disks ) in the virtual machines in a VM scale set. This operation is only

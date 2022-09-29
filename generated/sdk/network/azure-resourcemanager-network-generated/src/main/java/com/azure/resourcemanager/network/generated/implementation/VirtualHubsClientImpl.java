@@ -1478,6 +1478,29 @@ public final class VirtualHubsClientImpl implements VirtualHubsClient {
      *
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link PollerFlux} for polling of the effective routes configured for the Virtual Hub resource or the
+     *     specified resource.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    private PollerFlux<PollResult<Void>, Void> beginGetEffectiveVirtualHubRoutesAsync(
+        String resourceGroupName, String virtualHubName) {
+        final EffectiveRoutesParameters effectiveRoutesParameters = null;
+        Mono<Response<Flux<ByteBuffer>>> mono =
+            getEffectiveVirtualHubRoutesWithResponseAsync(resourceGroupName, virtualHubName, effectiveRoutesParameters);
+        return this
+            .client
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
+    }
+
+    /**
+     * Gets the effective routes configured for the Virtual Hub resource or the specified resource .
+     *
+     * @param resourceGroupName The resource group name of the VirtualHub.
+     * @param virtualHubName The name of the VirtualHub.
      * @param effectiveRoutesParameters Parameters supplied to get the effective routes for a specific resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1506,7 +1529,6 @@ public final class VirtualHubsClientImpl implements VirtualHubsClient {
      *
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
-     * @param effectiveRoutesParameters Parameters supplied to get the effective routes for a specific resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1515,7 +1537,8 @@ public final class VirtualHubsClientImpl implements VirtualHubsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginGetEffectiveVirtualHubRoutes(
-        String resourceGroupName, String virtualHubName, EffectiveRoutesParameters effectiveRoutesParameters) {
+        String resourceGroupName, String virtualHubName) {
+        final EffectiveRoutesParameters effectiveRoutesParameters = null;
         return beginGetEffectiveVirtualHubRoutesAsync(resourceGroupName, virtualHubName, effectiveRoutesParameters)
             .getSyncPoller();
     }
@@ -1606,22 +1629,6 @@ public final class VirtualHubsClientImpl implements VirtualHubsClient {
                 resourceGroupName, virtualHubName, effectiveRoutesParameters, context)
             .last()
             .flatMap(this.client::getLroFinalResultOrError);
-    }
-
-    /**
-     * Gets the effective routes configured for the Virtual Hub resource or the specified resource .
-     *
-     * @param resourceGroupName The resource group name of the VirtualHub.
-     * @param virtualHubName The name of the VirtualHub.
-     * @param effectiveRoutesParameters Parameters supplied to get the effective routes for a specific resource.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public void getEffectiveVirtualHubRoutes(
-        String resourceGroupName, String virtualHubName, EffectiveRoutesParameters effectiveRoutesParameters) {
-        getEffectiveVirtualHubRoutesAsync(resourceGroupName, virtualHubName, effectiveRoutesParameters).block();
     }
 
     /**

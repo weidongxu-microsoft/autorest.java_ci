@@ -190,8 +190,6 @@ public interface VpnConnectionsClient {
      * @param resourceGroupName The name of the resource group.
      * @param gatewayName The name of the gateway.
      * @param vpnConnectionName The name of the vpn connection.
-     * @param parameters Vpn Connection packet capture parameters supplied to start packet capture on gateway
-     *     connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -199,10 +197,7 @@ public interface VpnConnectionsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<String>, String> beginStartPacketCapture(
-        String resourceGroupName,
-        String gatewayName,
-        String vpnConnectionName,
-        VpnConnectionPacketCaptureStartParameters parameters);
+        String resourceGroupName, String gatewayName, String vpnConnectionName);
 
     /**
      * Starts packet capture on Vpn connection in the specified resource group.
@@ -225,26 +220,6 @@ public interface VpnConnectionsClient {
         String vpnConnectionName,
         VpnConnectionPacketCaptureStartParameters parameters,
         Context context);
-
-    /**
-     * Starts packet capture on Vpn connection in the specified resource group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param gatewayName The name of the gateway.
-     * @param vpnConnectionName The name of the vpn connection.
-     * @param parameters Vpn Connection packet capture parameters supplied to start packet capture on gateway
-     *     connection.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    String startPacketCapture(
-        String resourceGroupName,
-        String gatewayName,
-        String vpnConnectionName,
-        VpnConnectionPacketCaptureStartParameters parameters);
 
     /**
      * Starts packet capture on Vpn connection in the specified resource group.
@@ -288,7 +263,6 @@ public interface VpnConnectionsClient {
      * @param resourceGroupName The name of the resource group.
      * @param gatewayName The name of the gateway.
      * @param vpnConnectionName The name of the vpn connection.
-     * @param parameters Vpn Connection packet capture parameters supplied to stop packet capture on gateway connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -296,10 +270,7 @@ public interface VpnConnectionsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<String>, String> beginStopPacketCapture(
-        String resourceGroupName,
-        String gatewayName,
-        String vpnConnectionName,
-        VpnConnectionPacketCaptureStopParameters parameters);
+        String resourceGroupName, String gatewayName, String vpnConnectionName);
 
     /**
      * Stops packet capture on Vpn connection in the specified resource group.
@@ -321,25 +292,6 @@ public interface VpnConnectionsClient {
         String vpnConnectionName,
         VpnConnectionPacketCaptureStopParameters parameters,
         Context context);
-
-    /**
-     * Stops packet capture on Vpn connection in the specified resource group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param gatewayName The name of the gateway.
-     * @param vpnConnectionName The name of the vpn connection.
-     * @param parameters Vpn Connection packet capture parameters supplied to stop packet capture on gateway connection.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    String stopPacketCapture(
-        String resourceGroupName,
-        String gatewayName,
-        String vpnConnectionName,
-        VpnConnectionPacketCaptureStopParameters parameters);
 
     /**
      * Stops packet capture on Vpn connection in the specified resource group.

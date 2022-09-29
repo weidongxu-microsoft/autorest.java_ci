@@ -88,6 +88,14 @@ public final class SharedGalleryImageImpl implements SharedGalleryImage {
         return this.innerModel().architecture();
     }
 
+    public String privacyStatementUri() {
+        return this.innerModel().privacyStatementUri();
+    }
+
+    public String eula() {
+        return this.innerModel().eula();
+    }
+
     public SharedGalleryImageInner innerModel() {
         return this.innerObject;
     }

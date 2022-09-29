@@ -76,8 +76,6 @@ public interface IotHubResourcesClient {
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
      * @param iotHubDescription The IoT hub metadata and security metadata.
-     * @param ifMatch ETag of the IoT Hub. Do not specify for creating a brand new IoT Hub. Required to update an
-     *     existing IoT Hub.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected
      *     by server.
@@ -86,7 +84,7 @@ public interface IotHubResourcesClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<IotHubDescriptionInner>, IotHubDescriptionInner> beginCreateOrUpdate(
-        String resourceGroupName, String resourceName, IotHubDescriptionInner iotHubDescription, String ifMatch);
+        String resourceGroupName, String resourceName, IotHubDescriptionInner iotHubDescription);
 
     /**
      * Create or update the metadata of an IoT hub.
@@ -114,28 +112,6 @@ public interface IotHubResourcesClient {
         IotHubDescriptionInner iotHubDescription,
         String ifMatch,
         Context context);
-
-    /**
-     * Create or update the metadata of an IoT hub.
-     *
-     * <p>Create or update the metadata of an Iot hub. The usual pattern to modify a property is to retrieve the IoT hub
-     * metadata and security metadata, and then combine them with the modified values in a new body to update the IoT
-     * hub.
-     *
-     * @param resourceGroupName The name of the resource group that contains the IoT hub.
-     * @param resourceName The name of the IoT hub.
-     * @param iotHubDescription The IoT hub metadata and security metadata.
-     * @param ifMatch ETag of the IoT Hub. Do not specify for creating a brand new IoT Hub. Required to update an
-     *     existing IoT Hub.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected
-     *     by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the description of the IoT hub.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    IotHubDescriptionInner createOrUpdate(
-        String resourceGroupName, String resourceName, IotHubDescriptionInner iotHubDescription, String ifMatch);
 
     /**
      * Create or update the metadata of an IoT hub.

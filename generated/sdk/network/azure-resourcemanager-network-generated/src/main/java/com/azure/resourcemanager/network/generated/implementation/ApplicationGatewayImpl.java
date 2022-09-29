@@ -483,10 +483,6 @@ public final class ApplicationGatewayImpl
         serviceManager.applicationGateways().stop(resourceGroupName, applicationGatewayName, context);
     }
 
-    public ApplicationGatewayBackendHealth backendHealth(String expand) {
-        return serviceManager.applicationGateways().backendHealth(resourceGroupName, applicationGatewayName, expand);
-    }
-
     public ApplicationGatewayBackendHealth backendHealth() {
         return serviceManager.applicationGateways().backendHealth(resourceGroupName, applicationGatewayName);
     }
@@ -495,13 +491,6 @@ public final class ApplicationGatewayImpl
         return serviceManager
             .applicationGateways()
             .backendHealth(resourceGroupName, applicationGatewayName, expand, context);
-    }
-
-    public ApplicationGatewayBackendHealthOnDemand backendHealthOnDemand(
-        ApplicationGatewayOnDemandProbe probeRequest, String expand) {
-        return serviceManager
-            .applicationGateways()
-            .backendHealthOnDemand(resourceGroupName, applicationGatewayName, probeRequest, expand);
     }
 
     public ApplicationGatewayBackendHealthOnDemand backendHealthOnDemand(ApplicationGatewayOnDemandProbe probeRequest) {

@@ -166,15 +166,6 @@ public final class VirtualNetworkGatewayConnectionsImpl implements VirtualNetwor
         }
     }
 
-    public String startPacketCapture(
-        String resourceGroupName,
-        String virtualNetworkGatewayConnectionName,
-        VpnPacketCaptureStartParameters parameters) {
-        return this
-            .serviceClient()
-            .startPacketCapture(resourceGroupName, virtualNetworkGatewayConnectionName, parameters);
-    }
-
     public String startPacketCapture(String resourceGroupName, String virtualNetworkGatewayConnectionName) {
         return this.serviceClient().startPacketCapture(resourceGroupName, virtualNetworkGatewayConnectionName);
     }

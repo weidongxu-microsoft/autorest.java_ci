@@ -1329,6 +1329,27 @@ public final class VirtualMachineScaleSetsClientImpl implements VirtualMachineSc
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ApiErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link PollerFlux} for polling of long-running operation.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(String resourceGroupName, String vmScaleSetName) {
+        final Boolean forceDeletion = null;
+        Mono<Response<Flux<ByteBuffer>>> mono =
+            deleteWithResponseAsync(resourceGroupName, vmScaleSetName, forceDeletion);
+        return this
+            .client
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
+    }
+
+    /**
+     * Deletes a VM scale set.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param vmScaleSetName The name of the VM scale set.
      * @param forceDeletion Optional parameter to force delete a VM scale set. (Feature in Preview).
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1352,15 +1373,14 @@ public final class VirtualMachineScaleSetsClientImpl implements VirtualMachineSc
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
-     * @param forceDeletion Optional parameter to force delete a VM scale set. (Feature in Preview).
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    public SyncPoller<PollResult<Void>, Void> beginDelete(
-        String resourceGroupName, String vmScaleSetName, Boolean forceDeletion) {
+    public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String vmScaleSetName) {
+        final Boolean forceDeletion = null;
         return beginDeleteAsync(resourceGroupName, vmScaleSetName, forceDeletion).getSyncPoller();
     }
 
@@ -1436,21 +1456,6 @@ public final class VirtualMachineScaleSetsClientImpl implements VirtualMachineSc
         return beginDeleteAsync(resourceGroupName, vmScaleSetName, forceDeletion, context)
             .last()
             .flatMap(this.client::getLroFinalResultOrError);
-    }
-
-    /**
-     * Deletes a VM scale set.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param vmScaleSetName The name of the VM scale set.
-     * @param forceDeletion Optional parameter to force delete a VM scale set. (Feature in Preview).
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ApiErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public void delete(String resourceGroupName, String vmScaleSetName, Boolean forceDeletion) {
-        deleteAsync(resourceGroupName, vmScaleSetName, forceDeletion).block();
     }
 
     /**
@@ -1780,6 +1785,28 @@ public final class VirtualMachineScaleSetsClientImpl implements VirtualMachineSc
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ApiErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link PollerFlux} for polling of long-running operation.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    private PollerFlux<PollResult<Void>, Void> beginDeallocateAsync(String resourceGroupName, String vmScaleSetName) {
+        final VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs = null;
+        Mono<Response<Flux<ByteBuffer>>> mono =
+            deallocateWithResponseAsync(resourceGroupName, vmScaleSetName, vmInstanceIDs);
+        return this
+            .client
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
+    }
+
+    /**
+     * Deallocates specific virtual machines in a VM scale set. Shuts down the virtual machines and releases the compute
+     * resources. You are not billed for the compute resources that this virtual machine scale set deallocates.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param vmScaleSetName The name of the VM scale set.
      * @param vmInstanceIDs A list of virtual machine instance IDs from the VM scale set.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1807,15 +1834,14 @@ public final class VirtualMachineScaleSetsClientImpl implements VirtualMachineSc
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
-     * @param vmInstanceIDs A list of virtual machine instance IDs from the VM scale set.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    public SyncPoller<PollResult<Void>, Void> beginDeallocate(
-        String resourceGroupName, String vmScaleSetName, VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs) {
+    public SyncPoller<PollResult<Void>, Void> beginDeallocate(String resourceGroupName, String vmScaleSetName) {
+        final VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs = null;
         return beginDeallocateAsync(resourceGroupName, vmScaleSetName, vmInstanceIDs).getSyncPoller();
     }
 
@@ -1902,23 +1928,6 @@ public final class VirtualMachineScaleSetsClientImpl implements VirtualMachineSc
         return beginDeallocateAsync(resourceGroupName, vmScaleSetName, vmInstanceIDs, context)
             .last()
             .flatMap(this.client::getLroFinalResultOrError);
-    }
-
-    /**
-     * Deallocates specific virtual machines in a VM scale set. Shuts down the virtual machines and releases the compute
-     * resources. You are not billed for the compute resources that this virtual machine scale set deallocates.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param vmScaleSetName The name of the VM scale set.
-     * @param vmInstanceIDs A list of virtual machine instance IDs from the VM scale set.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ApiErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public void deallocate(
-        String resourceGroupName, String vmScaleSetName, VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs) {
-        deallocateAsync(resourceGroupName, vmScaleSetName, vmInstanceIDs).block();
     }
 
     /**
@@ -2114,6 +2123,29 @@ public final class VirtualMachineScaleSetsClientImpl implements VirtualMachineSc
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param vmInstanceIDs A list of virtual machine instance IDs from the VM scale set.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ApiErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link PollerFlux} for polling of long-running operation.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    private PollerFlux<PollResult<Void>, Void> beginDeleteInstancesAsync(
+        String resourceGroupName, String vmScaleSetName, VirtualMachineScaleSetVMInstanceRequiredIDs vmInstanceIDs) {
+        final Boolean forceDeletion = null;
+        Mono<Response<Flux<ByteBuffer>>> mono =
+            deleteInstancesWithResponseAsync(resourceGroupName, vmScaleSetName, vmInstanceIDs, forceDeletion);
+        return this
+            .client
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
+    }
+
+    /**
+     * Deletes virtual machines in a VM scale set.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param vmScaleSetName The name of the VM scale set.
+     * @param vmInstanceIDs A list of virtual machine instance IDs from the VM scale set.
      * @param forceDeletion Optional parameter to force delete virtual machines from the VM scale set. (Feature in
      *     Preview).
      * @param context The context to associate with this operation.
@@ -2143,8 +2175,6 @@ public final class VirtualMachineScaleSetsClientImpl implements VirtualMachineSc
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param vmInstanceIDs A list of virtual machine instance IDs from the VM scale set.
-     * @param forceDeletion Optional parameter to force delete virtual machines from the VM scale set. (Feature in
-     *     Preview).
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2152,10 +2182,8 @@ public final class VirtualMachineScaleSetsClientImpl implements VirtualMachineSc
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDeleteInstances(
-        String resourceGroupName,
-        String vmScaleSetName,
-        VirtualMachineScaleSetVMInstanceRequiredIDs vmInstanceIDs,
-        Boolean forceDeletion) {
+        String resourceGroupName, String vmScaleSetName, VirtualMachineScaleSetVMInstanceRequiredIDs vmInstanceIDs) {
+        final Boolean forceDeletion = null;
         return beginDeleteInstancesAsync(resourceGroupName, vmScaleSetName, vmInstanceIDs, forceDeletion)
             .getSyncPoller();
     }
@@ -2253,27 +2281,6 @@ public final class VirtualMachineScaleSetsClientImpl implements VirtualMachineSc
         return beginDeleteInstancesAsync(resourceGroupName, vmScaleSetName, vmInstanceIDs, forceDeletion, context)
             .last()
             .flatMap(this.client::getLroFinalResultOrError);
-    }
-
-    /**
-     * Deletes virtual machines in a VM scale set.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param vmScaleSetName The name of the VM scale set.
-     * @param vmInstanceIDs A list of virtual machine instance IDs from the VM scale set.
-     * @param forceDeletion Optional parameter to force delete virtual machines from the VM scale set. (Feature in
-     *     Preview).
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ApiErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public void deleteInstances(
-        String resourceGroupName,
-        String vmScaleSetName,
-        VirtualMachineScaleSetVMInstanceRequiredIDs vmInstanceIDs,
-        Boolean forceDeletion) {
-        deleteInstancesAsync(resourceGroupName, vmScaleSetName, vmInstanceIDs, forceDeletion).block();
     }
 
     /**
@@ -3318,6 +3325,29 @@ public final class VirtualMachineScaleSetsClientImpl implements VirtualMachineSc
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ApiErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link PollerFlux} for polling of long-running operation.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    private PollerFlux<PollResult<Void>, Void> beginPowerOffAsync(String resourceGroupName, String vmScaleSetName) {
+        final Boolean skipShutdown = null;
+        final VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs = null;
+        Mono<Response<Flux<ByteBuffer>>> mono =
+            powerOffWithResponseAsync(resourceGroupName, vmScaleSetName, skipShutdown, vmInstanceIDs);
+        return this
+            .client
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
+    }
+
+    /**
+     * Power off (stop) one or more virtual machines in a VM scale set. Note that resources are still attached and you
+     * are getting charged for the resources. Instead, use deallocate to release resources and avoid charges.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param vmScaleSetName The name of the VM scale set.
      * @param skipShutdown The parameter to request non-graceful VM shutdown. True value for this flag indicates
      *     non-graceful shutdown whereas false indicates otherwise. Default value for this flag is false if not
      *     specified.
@@ -3349,21 +3379,15 @@ public final class VirtualMachineScaleSetsClientImpl implements VirtualMachineSc
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
-     * @param skipShutdown The parameter to request non-graceful VM shutdown. True value for this flag indicates
-     *     non-graceful shutdown whereas false indicates otherwise. Default value for this flag is false if not
-     *     specified.
-     * @param vmInstanceIDs A list of virtual machine instance IDs from the VM scale set.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    public SyncPoller<PollResult<Void>, Void> beginPowerOff(
-        String resourceGroupName,
-        String vmScaleSetName,
-        Boolean skipShutdown,
-        VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs) {
+    public SyncPoller<PollResult<Void>, Void> beginPowerOff(String resourceGroupName, String vmScaleSetName) {
+        final Boolean skipShutdown = null;
+        final VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs = null;
         return beginPowerOffAsync(resourceGroupName, vmScaleSetName, skipShutdown, vmInstanceIDs).getSyncPoller();
     }
 
@@ -3466,29 +3490,6 @@ public final class VirtualMachineScaleSetsClientImpl implements VirtualMachineSc
         return beginPowerOffAsync(resourceGroupName, vmScaleSetName, skipShutdown, vmInstanceIDs, context)
             .last()
             .flatMap(this.client::getLroFinalResultOrError);
-    }
-
-    /**
-     * Power off (stop) one or more virtual machines in a VM scale set. Note that resources are still attached and you
-     * are getting charged for the resources. Instead, use deallocate to release resources and avoid charges.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param vmScaleSetName The name of the VM scale set.
-     * @param skipShutdown The parameter to request non-graceful VM shutdown. True value for this flag indicates
-     *     non-graceful shutdown whereas false indicates otherwise. Default value for this flag is false if not
-     *     specified.
-     * @param vmInstanceIDs A list of virtual machine instance IDs from the VM scale set.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ApiErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public void powerOff(
-        String resourceGroupName,
-        String vmScaleSetName,
-        Boolean skipShutdown,
-        VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs) {
-        powerOffAsync(resourceGroupName, vmScaleSetName, skipShutdown, vmInstanceIDs).block();
     }
 
     /**
@@ -3669,6 +3670,27 @@ public final class VirtualMachineScaleSetsClientImpl implements VirtualMachineSc
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ApiErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link PollerFlux} for polling of long-running operation.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    private PollerFlux<PollResult<Void>, Void> beginRestartAsync(String resourceGroupName, String vmScaleSetName) {
+        final VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs = null;
+        Mono<Response<Flux<ByteBuffer>>> mono =
+            restartWithResponseAsync(resourceGroupName, vmScaleSetName, vmInstanceIDs);
+        return this
+            .client
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
+    }
+
+    /**
+     * Restarts one or more virtual machines in a VM scale set.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param vmScaleSetName The name of the VM scale set.
      * @param vmInstanceIDs A list of virtual machine instance IDs from the VM scale set.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -3695,15 +3717,14 @@ public final class VirtualMachineScaleSetsClientImpl implements VirtualMachineSc
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
-     * @param vmInstanceIDs A list of virtual machine instance IDs from the VM scale set.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    public SyncPoller<PollResult<Void>, Void> beginRestart(
-        String resourceGroupName, String vmScaleSetName, VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs) {
+    public SyncPoller<PollResult<Void>, Void> beginRestart(String resourceGroupName, String vmScaleSetName) {
+        final VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs = null;
         return beginRestartAsync(resourceGroupName, vmScaleSetName, vmInstanceIDs).getSyncPoller();
     }
 
@@ -3786,22 +3807,6 @@ public final class VirtualMachineScaleSetsClientImpl implements VirtualMachineSc
         return beginRestartAsync(resourceGroupName, vmScaleSetName, vmInstanceIDs, context)
             .last()
             .flatMap(this.client::getLroFinalResultOrError);
-    }
-
-    /**
-     * Restarts one or more virtual machines in a VM scale set.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param vmScaleSetName The name of the VM scale set.
-     * @param vmInstanceIDs A list of virtual machine instance IDs from the VM scale set.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ApiErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public void restart(
-        String resourceGroupName, String vmScaleSetName, VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs) {
-        restartAsync(resourceGroupName, vmScaleSetName, vmInstanceIDs).block();
     }
 
     /**
@@ -3975,6 +3980,27 @@ public final class VirtualMachineScaleSetsClientImpl implements VirtualMachineSc
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ApiErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link PollerFlux} for polling of long-running operation.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    private PollerFlux<PollResult<Void>, Void> beginStartAsync(String resourceGroupName, String vmScaleSetName) {
+        final VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs = null;
+        Mono<Response<Flux<ByteBuffer>>> mono =
+            startWithResponseAsync(resourceGroupName, vmScaleSetName, vmInstanceIDs);
+        return this
+            .client
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
+    }
+
+    /**
+     * Starts one or more virtual machines in a VM scale set.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param vmScaleSetName The name of the VM scale set.
      * @param vmInstanceIDs A list of virtual machine instance IDs from the VM scale set.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -4001,15 +4027,14 @@ public final class VirtualMachineScaleSetsClientImpl implements VirtualMachineSc
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
-     * @param vmInstanceIDs A list of virtual machine instance IDs from the VM scale set.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    public SyncPoller<PollResult<Void>, Void> beginStart(
-        String resourceGroupName, String vmScaleSetName, VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs) {
+    public SyncPoller<PollResult<Void>, Void> beginStart(String resourceGroupName, String vmScaleSetName) {
+        final VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs = null;
         return beginStartAsync(resourceGroupName, vmScaleSetName, vmInstanceIDs).getSyncPoller();
     }
 
@@ -4092,22 +4117,6 @@ public final class VirtualMachineScaleSetsClientImpl implements VirtualMachineSc
         return beginStartAsync(resourceGroupName, vmScaleSetName, vmInstanceIDs, context)
             .last()
             .flatMap(this.client::getLroFinalResultOrError);
-    }
-
-    /**
-     * Starts one or more virtual machines in a VM scale set.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param vmScaleSetName The name of the VM scale set.
-     * @param vmInstanceIDs A list of virtual machine instance IDs from the VM scale set.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ApiErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public void start(
-        String resourceGroupName, String vmScaleSetName, VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs) {
-        startAsync(resourceGroupName, vmScaleSetName, vmInstanceIDs).block();
     }
 
     /**
@@ -4285,6 +4294,28 @@ public final class VirtualMachineScaleSetsClientImpl implements VirtualMachineSc
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ApiErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link PollerFlux} for polling of long-running operation.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    private PollerFlux<PollResult<Void>, Void> beginRedeployAsync(String resourceGroupName, String vmScaleSetName) {
+        final VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs = null;
+        Mono<Response<Flux<ByteBuffer>>> mono =
+            redeployWithResponseAsync(resourceGroupName, vmScaleSetName, vmInstanceIDs);
+        return this
+            .client
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
+    }
+
+    /**
+     * Shuts down all the virtual machines in the virtual machine scale set, moves them to a new node, and powers them
+     * back on.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param vmScaleSetName The name of the VM scale set.
      * @param vmInstanceIDs A list of virtual machine instance IDs from the VM scale set.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -4312,15 +4343,14 @@ public final class VirtualMachineScaleSetsClientImpl implements VirtualMachineSc
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
-     * @param vmInstanceIDs A list of virtual machine instance IDs from the VM scale set.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    public SyncPoller<PollResult<Void>, Void> beginRedeploy(
-        String resourceGroupName, String vmScaleSetName, VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs) {
+    public SyncPoller<PollResult<Void>, Void> beginRedeploy(String resourceGroupName, String vmScaleSetName) {
+        final VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs = null;
         return beginRedeployAsync(resourceGroupName, vmScaleSetName, vmInstanceIDs).getSyncPoller();
     }
 
@@ -4407,23 +4437,6 @@ public final class VirtualMachineScaleSetsClientImpl implements VirtualMachineSc
         return beginRedeployAsync(resourceGroupName, vmScaleSetName, vmInstanceIDs, context)
             .last()
             .flatMap(this.client::getLroFinalResultOrError);
-    }
-
-    /**
-     * Shuts down all the virtual machines in the virtual machine scale set, moves them to a new node, and powers them
-     * back on.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param vmScaleSetName The name of the VM scale set.
-     * @param vmInstanceIDs A list of virtual machine instance IDs from the VM scale set.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ApiErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public void redeploy(
-        String resourceGroupName, String vmScaleSetName, VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs) {
-        redeployAsync(resourceGroupName, vmScaleSetName, vmInstanceIDs).block();
     }
 
     /**
@@ -4607,6 +4620,30 @@ public final class VirtualMachineScaleSetsClientImpl implements VirtualMachineSc
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ApiErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link PollerFlux} for polling of long-running operation.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    private PollerFlux<PollResult<Void>, Void> beginPerformMaintenanceAsync(
+        String resourceGroupName, String vmScaleSetName) {
+        final VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs = null;
+        Mono<Response<Flux<ByteBuffer>>> mono =
+            performMaintenanceWithResponseAsync(resourceGroupName, vmScaleSetName, vmInstanceIDs);
+        return this
+            .client
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
+    }
+
+    /**
+     * Perform maintenance on one or more virtual machines in a VM scale set. Operation on instances which are not
+     * eligible for perform maintenance will be failed. Please refer to best practices for more details:
+     * https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-maintenance-notifications.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param vmScaleSetName The name of the VM scale set.
      * @param vmInstanceIDs A list of virtual machine instance IDs from the VM scale set.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -4635,15 +4672,14 @@ public final class VirtualMachineScaleSetsClientImpl implements VirtualMachineSc
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
-     * @param vmInstanceIDs A list of virtual machine instance IDs from the VM scale set.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    public SyncPoller<PollResult<Void>, Void> beginPerformMaintenance(
-        String resourceGroupName, String vmScaleSetName, VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs) {
+    public SyncPoller<PollResult<Void>, Void> beginPerformMaintenance(String resourceGroupName, String vmScaleSetName) {
+        final VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs = null;
         return beginPerformMaintenanceAsync(resourceGroupName, vmScaleSetName, vmInstanceIDs).getSyncPoller();
     }
 
@@ -4734,24 +4770,6 @@ public final class VirtualMachineScaleSetsClientImpl implements VirtualMachineSc
         return beginPerformMaintenanceAsync(resourceGroupName, vmScaleSetName, vmInstanceIDs, context)
             .last()
             .flatMap(this.client::getLroFinalResultOrError);
-    }
-
-    /**
-     * Perform maintenance on one or more virtual machines in a VM scale set. Operation on instances which are not
-     * eligible for perform maintenance will be failed. Please refer to best practices for more details:
-     * https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-maintenance-notifications.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param vmScaleSetName The name of the VM scale set.
-     * @param vmInstanceIDs A list of virtual machine instance IDs from the VM scale set.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ApiErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public void performMaintenance(
-        String resourceGroupName, String vmScaleSetName, VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs) {
-        performMaintenanceAsync(resourceGroupName, vmScaleSetName, vmInstanceIDs).block();
     }
 
     /**
@@ -5218,6 +5236,29 @@ public final class VirtualMachineScaleSetsClientImpl implements VirtualMachineSc
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ApiErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link PollerFlux} for polling of long-running operation.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    private PollerFlux<PollResult<Void>, Void> beginReimageAsync(String resourceGroupName, String vmScaleSetName) {
+        final VirtualMachineScaleSetReimageParameters vmScaleSetReimageInput = null;
+        Mono<Response<Flux<ByteBuffer>>> mono =
+            reimageWithResponseAsync(resourceGroupName, vmScaleSetName, vmScaleSetReimageInput);
+        return this
+            .client
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
+    }
+
+    /**
+     * Reimages (upgrade the operating system) one or more virtual machines in a VM scale set which don't have a
+     * ephemeral OS disk, for virtual machines who have a ephemeral OS disk the virtual machine is reset to initial
+     * state.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param vmScaleSetName The name of the VM scale set.
      * @param vmScaleSetReimageInput Parameters for Reimaging VM ScaleSet.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -5246,17 +5287,14 @@ public final class VirtualMachineScaleSetsClientImpl implements VirtualMachineSc
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
-     * @param vmScaleSetReimageInput Parameters for Reimaging VM ScaleSet.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    public SyncPoller<PollResult<Void>, Void> beginReimage(
-        String resourceGroupName,
-        String vmScaleSetName,
-        VirtualMachineScaleSetReimageParameters vmScaleSetReimageInput) {
+    public SyncPoller<PollResult<Void>, Void> beginReimage(String resourceGroupName, String vmScaleSetName) {
+        final VirtualMachineScaleSetReimageParameters vmScaleSetReimageInput = null;
         return beginReimageAsync(resourceGroupName, vmScaleSetName, vmScaleSetReimageInput).getSyncPoller();
     }
 
@@ -5349,26 +5387,6 @@ public final class VirtualMachineScaleSetsClientImpl implements VirtualMachineSc
         return beginReimageAsync(resourceGroupName, vmScaleSetName, vmScaleSetReimageInput, context)
             .last()
             .flatMap(this.client::getLroFinalResultOrError);
-    }
-
-    /**
-     * Reimages (upgrade the operating system) one or more virtual machines in a VM scale set which don't have a
-     * ephemeral OS disk, for virtual machines who have a ephemeral OS disk the virtual machine is reset to initial
-     * state.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param vmScaleSetName The name of the VM scale set.
-     * @param vmScaleSetReimageInput Parameters for Reimaging VM ScaleSet.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ApiErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public void reimage(
-        String resourceGroupName,
-        String vmScaleSetName,
-        VirtualMachineScaleSetReimageParameters vmScaleSetReimageInput) {
-        reimageAsync(resourceGroupName, vmScaleSetName, vmScaleSetReimageInput).block();
     }
 
     /**
@@ -5550,6 +5568,28 @@ public final class VirtualMachineScaleSetsClientImpl implements VirtualMachineSc
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ApiErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link PollerFlux} for polling of long-running operation.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    private PollerFlux<PollResult<Void>, Void> beginReimageAllAsync(String resourceGroupName, String vmScaleSetName) {
+        final VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs = null;
+        Mono<Response<Flux<ByteBuffer>>> mono =
+            reimageAllWithResponseAsync(resourceGroupName, vmScaleSetName, vmInstanceIDs);
+        return this
+            .client
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
+    }
+
+    /**
+     * Reimages all the disks ( including data disks ) in the virtual machines in a VM scale set. This operation is only
+     * supported for managed disks.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param vmScaleSetName The name of the VM scale set.
      * @param vmInstanceIDs A list of virtual machine instance IDs from the VM scale set.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -5577,15 +5617,14 @@ public final class VirtualMachineScaleSetsClientImpl implements VirtualMachineSc
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
-     * @param vmInstanceIDs A list of virtual machine instance IDs from the VM scale set.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    public SyncPoller<PollResult<Void>, Void> beginReimageAll(
-        String resourceGroupName, String vmScaleSetName, VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs) {
+    public SyncPoller<PollResult<Void>, Void> beginReimageAll(String resourceGroupName, String vmScaleSetName) {
+        final VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs = null;
         return beginReimageAllAsync(resourceGroupName, vmScaleSetName, vmInstanceIDs).getSyncPoller();
     }
 
@@ -5672,23 +5711,6 @@ public final class VirtualMachineScaleSetsClientImpl implements VirtualMachineSc
         return beginReimageAllAsync(resourceGroupName, vmScaleSetName, vmInstanceIDs, context)
             .last()
             .flatMap(this.client::getLroFinalResultOrError);
-    }
-
-    /**
-     * Reimages all the disks ( including data disks ) in the virtual machines in a VM scale set. This operation is only
-     * supported for managed disks.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param vmScaleSetName The name of the VM scale set.
-     * @param vmInstanceIDs A list of virtual machine instance IDs from the VM scale set.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ApiErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public void reimageAll(
-        String resourceGroupName, String vmScaleSetName, VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs) {
-        reimageAllAsync(resourceGroupName, vmScaleSetName, vmInstanceIDs).block();
     }
 
     /**

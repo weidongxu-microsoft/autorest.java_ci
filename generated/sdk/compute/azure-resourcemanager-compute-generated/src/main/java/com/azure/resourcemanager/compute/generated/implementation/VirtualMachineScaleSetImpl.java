@@ -272,22 +272,12 @@ public final class VirtualMachineScaleSetImpl
         return this;
     }
 
-    public void deallocate(VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs) {
-        serviceManager.virtualMachineScaleSets().deallocate(resourceGroupName, vmScaleSetName, vmInstanceIDs);
-    }
-
     public void deallocate() {
         serviceManager.virtualMachineScaleSets().deallocate(resourceGroupName, vmScaleSetName);
     }
 
     public void deallocate(VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs, Context context) {
         serviceManager.virtualMachineScaleSets().deallocate(resourceGroupName, vmScaleSetName, vmInstanceIDs, context);
-    }
-
-    public void deleteInstances(VirtualMachineScaleSetVMInstanceRequiredIDs vmInstanceIDs, Boolean forceDeletion) {
-        serviceManager
-            .virtualMachineScaleSets()
-            .deleteInstances(resourceGroupName, vmScaleSetName, vmInstanceIDs, forceDeletion);
     }
 
     public void deleteInstances(VirtualMachineScaleSetVMInstanceRequiredIDs vmInstanceIDs) {
@@ -301,12 +291,6 @@ public final class VirtualMachineScaleSetImpl
             .deleteInstances(resourceGroupName, vmScaleSetName, vmInstanceIDs, forceDeletion, context);
     }
 
-    public void powerOff(Boolean skipShutdown, VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs) {
-        serviceManager
-            .virtualMachineScaleSets()
-            .powerOff(resourceGroupName, vmScaleSetName, skipShutdown, vmInstanceIDs);
-    }
-
     public void powerOff() {
         serviceManager.virtualMachineScaleSets().powerOff(resourceGroupName, vmScaleSetName);
     }
@@ -317,20 +301,12 @@ public final class VirtualMachineScaleSetImpl
             .powerOff(resourceGroupName, vmScaleSetName, skipShutdown, vmInstanceIDs, context);
     }
 
-    public void restart(VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs) {
-        serviceManager.virtualMachineScaleSets().restart(resourceGroupName, vmScaleSetName, vmInstanceIDs);
-    }
-
     public void restart() {
         serviceManager.virtualMachineScaleSets().restart(resourceGroupName, vmScaleSetName);
     }
 
     public void restart(VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs, Context context) {
         serviceManager.virtualMachineScaleSets().restart(resourceGroupName, vmScaleSetName, vmInstanceIDs, context);
-    }
-
-    public void start(VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs) {
-        serviceManager.virtualMachineScaleSets().start(resourceGroupName, vmScaleSetName, vmInstanceIDs);
     }
 
     public void start() {
@@ -341,20 +317,12 @@ public final class VirtualMachineScaleSetImpl
         serviceManager.virtualMachineScaleSets().start(resourceGroupName, vmScaleSetName, vmInstanceIDs, context);
     }
 
-    public void redeploy(VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs) {
-        serviceManager.virtualMachineScaleSets().redeploy(resourceGroupName, vmScaleSetName, vmInstanceIDs);
-    }
-
     public void redeploy() {
         serviceManager.virtualMachineScaleSets().redeploy(resourceGroupName, vmScaleSetName);
     }
 
     public void redeploy(VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs, Context context) {
         serviceManager.virtualMachineScaleSets().redeploy(resourceGroupName, vmScaleSetName, vmInstanceIDs, context);
-    }
-
-    public void performMaintenance(VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs) {
-        serviceManager.virtualMachineScaleSets().performMaintenance(resourceGroupName, vmScaleSetName, vmInstanceIDs);
     }
 
     public void performMaintenance() {
@@ -377,10 +345,6 @@ public final class VirtualMachineScaleSetImpl
             .updateInstances(resourceGroupName, vmScaleSetName, vmInstanceIDs, context);
     }
 
-    public void reimage(VirtualMachineScaleSetReimageParameters vmScaleSetReimageInput) {
-        serviceManager.virtualMachineScaleSets().reimage(resourceGroupName, vmScaleSetName, vmScaleSetReimageInput);
-    }
-
     public void reimage() {
         serviceManager.virtualMachineScaleSets().reimage(resourceGroupName, vmScaleSetName);
     }
@@ -389,10 +353,6 @@ public final class VirtualMachineScaleSetImpl
         serviceManager
             .virtualMachineScaleSets()
             .reimage(resourceGroupName, vmScaleSetName, vmScaleSetReimageInput, context);
-    }
-
-    public void reimageAll(VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs) {
-        serviceManager.virtualMachineScaleSets().reimageAll(resourceGroupName, vmScaleSetName, vmInstanceIDs);
     }
 
     public void reimageAll() {

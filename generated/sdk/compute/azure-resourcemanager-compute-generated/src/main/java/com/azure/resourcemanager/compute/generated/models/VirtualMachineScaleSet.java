@@ -802,18 +802,6 @@ public interface VirtualMachineScaleSet {
      * Deallocates specific virtual machines in a VM scale set. Shuts down the virtual machines and releases the compute
      * resources. You are not billed for the compute resources that this virtual machine scale set deallocates.
      *
-     * @param vmInstanceIDs A list of virtual machine instance IDs from the VM scale set.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void deallocate(VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs);
-
-    /**
-     * Deallocates specific virtual machines in a VM scale set. Shuts down the virtual machines and releases the compute
-     * resources. You are not billed for the compute resources that this virtual machine scale set deallocates.
-     *
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -832,19 +820,6 @@ public interface VirtualMachineScaleSet {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deallocate(VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs, Context context);
-
-    /**
-     * Deletes virtual machines in a VM scale set.
-     *
-     * @param vmInstanceIDs A list of virtual machine instance IDs from the VM scale set.
-     * @param forceDeletion Optional parameter to force delete virtual machines from the VM scale set. (Feature in
-     *     Preview).
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void deleteInstances(VirtualMachineScaleSetVMInstanceRequiredIDs vmInstanceIDs, Boolean forceDeletion);
 
     /**
      * Deletes virtual machines in a VM scale set.
@@ -876,21 +851,6 @@ public interface VirtualMachineScaleSet {
      * Power off (stop) one or more virtual machines in a VM scale set. Note that resources are still attached and you
      * are getting charged for the resources. Instead, use deallocate to release resources and avoid charges.
      *
-     * @param skipShutdown The parameter to request non-graceful VM shutdown. True value for this flag indicates
-     *     non-graceful shutdown whereas false indicates otherwise. Default value for this flag is false if not
-     *     specified.
-     * @param vmInstanceIDs A list of virtual machine instance IDs from the VM scale set.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void powerOff(Boolean skipShutdown, VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs);
-
-    /**
-     * Power off (stop) one or more virtual machines in a VM scale set. Note that resources are still attached and you
-     * are getting charged for the resources. Instead, use deallocate to release resources and avoid charges.
-     *
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -916,17 +876,6 @@ public interface VirtualMachineScaleSet {
     /**
      * Restarts one or more virtual machines in a VM scale set.
      *
-     * @param vmInstanceIDs A list of virtual machine instance IDs from the VM scale set.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void restart(VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs);
-
-    /**
-     * Restarts one or more virtual machines in a VM scale set.
-     *
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -944,17 +893,6 @@ public interface VirtualMachineScaleSet {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void restart(VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs, Context context);
-
-    /**
-     * Starts one or more virtual machines in a VM scale set.
-     *
-     * @param vmInstanceIDs A list of virtual machine instance IDs from the VM scale set.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void start(VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs);
 
     /**
      * Starts one or more virtual machines in a VM scale set.
@@ -981,18 +919,6 @@ public interface VirtualMachineScaleSet {
      * Shuts down all the virtual machines in the virtual machine scale set, moves them to a new node, and powers them
      * back on.
      *
-     * @param vmInstanceIDs A list of virtual machine instance IDs from the VM scale set.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void redeploy(VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs);
-
-    /**
-     * Shuts down all the virtual machines in the virtual machine scale set, moves them to a new node, and powers them
-     * back on.
-     *
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1011,19 +937,6 @@ public interface VirtualMachineScaleSet {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void redeploy(VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs, Context context);
-
-    /**
-     * Perform maintenance on one or more virtual machines in a VM scale set. Operation on instances which are not
-     * eligible for perform maintenance will be failed. Please refer to best practices for more details:
-     * https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-maintenance-notifications.
-     *
-     * @param vmInstanceIDs A list of virtual machine instance IDs from the VM scale set.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void performMaintenance(VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs);
 
     /**
      * Perform maintenance on one or more virtual machines in a VM scale set. Operation on instances which are not
@@ -1078,19 +991,6 @@ public interface VirtualMachineScaleSet {
      * ephemeral OS disk, for virtual machines who have a ephemeral OS disk the virtual machine is reset to initial
      * state.
      *
-     * @param vmScaleSetReimageInput Parameters for Reimaging VM ScaleSet.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void reimage(VirtualMachineScaleSetReimageParameters vmScaleSetReimageInput);
-
-    /**
-     * Reimages (upgrade the operating system) one or more virtual machines in a VM scale set which don't have a
-     * ephemeral OS disk, for virtual machines who have a ephemeral OS disk the virtual machine is reset to initial
-     * state.
-     *
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1110,18 +1010,6 @@ public interface VirtualMachineScaleSet {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void reimage(VirtualMachineScaleSetReimageParameters vmScaleSetReimageInput, Context context);
-
-    /**
-     * Reimages all the disks ( including data disks ) in the virtual machines in a VM scale set. This operation is only
-     * supported for managed disks.
-     *
-     * @param vmInstanceIDs A list of virtual machine instance IDs from the VM scale set.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void reimageAll(VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs);
 
     /**
      * Reimages all the disks ( including data disks ) in the virtual machines in a VM scale set. This operation is only

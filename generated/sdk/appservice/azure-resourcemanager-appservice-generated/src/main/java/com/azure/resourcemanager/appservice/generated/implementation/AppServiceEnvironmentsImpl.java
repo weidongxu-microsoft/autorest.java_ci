@@ -112,10 +112,6 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         }
     }
 
-    public void delete(String resourceGroupName, String name, Boolean forceDelete) {
-        this.serviceClient().delete(resourceGroupName, name, forceDelete);
-    }
-
     public void delete(String resourceGroupName, String name) {
         this.serviceClient().delete(resourceGroupName, name);
     }

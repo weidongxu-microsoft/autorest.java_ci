@@ -9,6 +9,7 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.compute.generated.fluent.models.GalleryApplicationVersionInner;
 import com.azure.resourcemanager.compute.generated.models.GalleryApplicationVersion;
 import com.azure.resourcemanager.compute.generated.models.GalleryApplicationVersionPublishingProfile;
+import com.azure.resourcemanager.compute.generated.models.GalleryApplicationVersionSafetyProfile;
 import com.azure.resourcemanager.compute.generated.models.GalleryApplicationVersionUpdate;
 import com.azure.resourcemanager.compute.generated.models.GalleryProvisioningState;
 import com.azure.resourcemanager.compute.generated.models.ReplicationStatus;
@@ -49,6 +50,10 @@ public final class GalleryApplicationVersionImpl
 
     public GalleryApplicationVersionPublishingProfile publishingProfile() {
         return this.innerModel().publishingProfile();
+    }
+
+    public GalleryApplicationVersionSafetyProfile safetyProfile() {
+        return this.innerModel().safetyProfile();
     }
 
     public GalleryProvisioningState provisioningState() {
@@ -241,6 +246,16 @@ public final class GalleryApplicationVersionImpl
             return this;
         } else {
             this.updateGalleryApplicationVersion.withPublishingProfile(publishingProfile);
+            return this;
+        }
+    }
+
+    public GalleryApplicationVersionImpl withSafetyProfile(GalleryApplicationVersionSafetyProfile safetyProfile) {
+        if (isInCreateMode()) {
+            this.innerModel().withSafetyProfile(safetyProfile);
+            return this;
+        } else {
+            this.updateGalleryApplicationVersion.withSafetyProfile(safetyProfile);
             return this;
         }
     }

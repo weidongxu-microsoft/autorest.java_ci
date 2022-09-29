@@ -100,21 +100,6 @@ public final class DatabasesImpl implements Databases {
     }
 
     public Database createOrUpdate(
-        String resourceGroupName,
-        String clusterName,
-        String databaseName,
-        DatabaseInner parameters,
-        CallerRole callerRole) {
-        DatabaseInner inner =
-            this.serviceClient().createOrUpdate(resourceGroupName, clusterName, databaseName, parameters, callerRole);
-        if (inner != null) {
-            return new DatabaseImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
-    public Database createOrUpdate(
         String resourceGroupName, String clusterName, String databaseName, DatabaseInner parameters) {
         DatabaseInner inner =
             this.serviceClient().createOrUpdate(resourceGroupName, clusterName, databaseName, parameters);
@@ -136,21 +121,6 @@ public final class DatabasesImpl implements Databases {
             this
                 .serviceClient()
                 .createOrUpdate(resourceGroupName, clusterName, databaseName, parameters, callerRole, context);
-        if (inner != null) {
-            return new DatabaseImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
-    public Database update(
-        String resourceGroupName,
-        String clusterName,
-        String databaseName,
-        DatabaseInner parameters,
-        CallerRole callerRole) {
-        DatabaseInner inner =
-            this.serviceClient().update(resourceGroupName, clusterName, databaseName, parameters, callerRole);
         if (inner != null) {
             return new DatabaseImpl(inner, this.manager());
         } else {

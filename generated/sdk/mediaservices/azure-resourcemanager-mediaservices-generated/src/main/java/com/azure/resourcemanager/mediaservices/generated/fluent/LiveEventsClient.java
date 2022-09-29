@@ -91,7 +91,6 @@ public interface LiveEventsClient {
      * @param accountName The Media Services account name.
      * @param liveEventName The name of the live event, maximum length is 32.
      * @param parameters Live event properties needed for creation.
-     * @param autoStart The flag indicates if the resource should be automatically started on creation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -99,11 +98,7 @@ public interface LiveEventsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<LiveEventInner>, LiveEventInner> beginCreate(
-        String resourceGroupName,
-        String accountName,
-        String liveEventName,
-        LiveEventInner parameters,
-        Boolean autoStart);
+        String resourceGroupName, String accountName, String liveEventName, LiveEventInner parameters);
 
     /**
      * Create Live Event
@@ -129,29 +124,6 @@ public interface LiveEventsClient {
         LiveEventInner parameters,
         Boolean autoStart,
         Context context);
-
-    /**
-     * Create Live Event
-     *
-     * <p>Creates a new live event.
-     *
-     * @param resourceGroupName The name of the resource group within the Azure subscription.
-     * @param accountName The Media Services account name.
-     * @param liveEventName The name of the live event, maximum length is 32.
-     * @param parameters Live event properties needed for creation.
-     * @param autoStart The flag indicates if the resource should be automatically started on creation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the live event.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    LiveEventInner create(
-        String resourceGroupName,
-        String accountName,
-        String liveEventName,
-        LiveEventInner parameters,
-        Boolean autoStart);
 
     /**
      * Create Live Event

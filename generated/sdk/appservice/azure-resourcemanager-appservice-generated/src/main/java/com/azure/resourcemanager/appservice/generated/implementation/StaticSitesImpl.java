@@ -947,24 +947,6 @@ public final class StaticSitesImpl implements StaticSites {
         String resourceGroupName,
         String name,
         String functionAppName,
-        StaticSiteUserProvidedFunctionAppArmResourceInner staticSiteUserProvidedFunctionEnvelope,
-        Boolean isForced) {
-        StaticSiteUserProvidedFunctionAppArmResourceInner inner =
-            this
-                .serviceClient()
-                .registerUserProvidedFunctionAppWithStaticSite(
-                    resourceGroupName, name, functionAppName, staticSiteUserProvidedFunctionEnvelope, isForced);
-        if (inner != null) {
-            return new StaticSiteUserProvidedFunctionAppArmResourceImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
-    public StaticSiteUserProvidedFunctionAppArmResource registerUserProvidedFunctionAppWithStaticSite(
-        String resourceGroupName,
-        String name,
-        String functionAppName,
         StaticSiteUserProvidedFunctionAppArmResourceInner staticSiteUserProvidedFunctionEnvelope) {
         StaticSiteUserProvidedFunctionAppArmResourceInner inner =
             this

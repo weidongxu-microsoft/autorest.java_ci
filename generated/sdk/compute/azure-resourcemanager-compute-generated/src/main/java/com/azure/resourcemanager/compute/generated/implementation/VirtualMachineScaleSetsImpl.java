@@ -52,10 +52,6 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
         return Utils.mapPage(inner, inner1 -> new VirtualMachineScaleSetImpl(inner1, this.manager()));
     }
 
-    public void delete(String resourceGroupName, String vmScaleSetName, Boolean forceDeletion) {
-        this.serviceClient().delete(resourceGroupName, vmScaleSetName, forceDeletion);
-    }
-
     public void delete(String resourceGroupName, String vmScaleSetName) {
         this.serviceClient().delete(resourceGroupName, vmScaleSetName);
     }
@@ -88,11 +84,6 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
         }
     }
 
-    public void deallocate(
-        String resourceGroupName, String vmScaleSetName, VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs) {
-        this.serviceClient().deallocate(resourceGroupName, vmScaleSetName, vmInstanceIDs);
-    }
-
     public void deallocate(String resourceGroupName, String vmScaleSetName) {
         this.serviceClient().deallocate(resourceGroupName, vmScaleSetName);
     }
@@ -103,14 +94,6 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
         VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs,
         Context context) {
         this.serviceClient().deallocate(resourceGroupName, vmScaleSetName, vmInstanceIDs, context);
-    }
-
-    public void deleteInstances(
-        String resourceGroupName,
-        String vmScaleSetName,
-        VirtualMachineScaleSetVMInstanceRequiredIDs vmInstanceIDs,
-        Boolean forceDeletion) {
-        this.serviceClient().deleteInstances(resourceGroupName, vmScaleSetName, vmInstanceIDs, forceDeletion);
     }
 
     public void deleteInstances(
@@ -200,14 +183,6 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
         return Utils.mapPage(inner, inner1 -> new UpgradeOperationHistoricalStatusInfoImpl(inner1, this.manager()));
     }
 
-    public void powerOff(
-        String resourceGroupName,
-        String vmScaleSetName,
-        Boolean skipShutdown,
-        VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs) {
-        this.serviceClient().powerOff(resourceGroupName, vmScaleSetName, skipShutdown, vmInstanceIDs);
-    }
-
     public void powerOff(String resourceGroupName, String vmScaleSetName) {
         this.serviceClient().powerOff(resourceGroupName, vmScaleSetName);
     }
@@ -219,11 +194,6 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
         VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs,
         Context context) {
         this.serviceClient().powerOff(resourceGroupName, vmScaleSetName, skipShutdown, vmInstanceIDs, context);
-    }
-
-    public void restart(
-        String resourceGroupName, String vmScaleSetName, VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs) {
-        this.serviceClient().restart(resourceGroupName, vmScaleSetName, vmInstanceIDs);
     }
 
     public void restart(String resourceGroupName, String vmScaleSetName) {
@@ -238,11 +208,6 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
         this.serviceClient().restart(resourceGroupName, vmScaleSetName, vmInstanceIDs, context);
     }
 
-    public void start(
-        String resourceGroupName, String vmScaleSetName, VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs) {
-        this.serviceClient().start(resourceGroupName, vmScaleSetName, vmInstanceIDs);
-    }
-
     public void start(String resourceGroupName, String vmScaleSetName) {
         this.serviceClient().start(resourceGroupName, vmScaleSetName);
     }
@@ -255,11 +220,6 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
         this.serviceClient().start(resourceGroupName, vmScaleSetName, vmInstanceIDs, context);
     }
 
-    public void redeploy(
-        String resourceGroupName, String vmScaleSetName, VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs) {
-        this.serviceClient().redeploy(resourceGroupName, vmScaleSetName, vmInstanceIDs);
-    }
-
     public void redeploy(String resourceGroupName, String vmScaleSetName) {
         this.serviceClient().redeploy(resourceGroupName, vmScaleSetName);
     }
@@ -270,11 +230,6 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
         VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs,
         Context context) {
         this.serviceClient().redeploy(resourceGroupName, vmScaleSetName, vmInstanceIDs, context);
-    }
-
-    public void performMaintenance(
-        String resourceGroupName, String vmScaleSetName, VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs) {
-        this.serviceClient().performMaintenance(resourceGroupName, vmScaleSetName, vmInstanceIDs);
     }
 
     public void performMaintenance(String resourceGroupName, String vmScaleSetName) {
@@ -302,13 +257,6 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
         this.serviceClient().updateInstances(resourceGroupName, vmScaleSetName, vmInstanceIDs, context);
     }
 
-    public void reimage(
-        String resourceGroupName,
-        String vmScaleSetName,
-        VirtualMachineScaleSetReimageParameters vmScaleSetReimageInput) {
-        this.serviceClient().reimage(resourceGroupName, vmScaleSetName, vmScaleSetReimageInput);
-    }
-
     public void reimage(String resourceGroupName, String vmScaleSetName) {
         this.serviceClient().reimage(resourceGroupName, vmScaleSetName);
     }
@@ -319,11 +267,6 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
         VirtualMachineScaleSetReimageParameters vmScaleSetReimageInput,
         Context context) {
         this.serviceClient().reimage(resourceGroupName, vmScaleSetName, vmScaleSetReimageInput, context);
-    }
-
-    public void reimageAll(
-        String resourceGroupName, String vmScaleSetName, VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs) {
-        this.serviceClient().reimageAll(resourceGroupName, vmScaleSetName, vmInstanceIDs);
     }
 
     public void reimageAll(String resourceGroupName, String vmScaleSetName) {

@@ -650,19 +650,6 @@ public interface VirtualNetworkGatewayConnection {
     /**
      * Starts packet capture on virtual network gateway connection in the specified resource group.
      *
-     * @param parameters Virtual network gateway packet capture parameters supplied to start packet capture on gateway
-     *     connection.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
-     */
-    String startPacketCapture(VpnPacketCaptureStartParameters parameters);
-
-    /**
-     * Starts packet capture on virtual network gateway connection in the specified resource group.
-     *
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.

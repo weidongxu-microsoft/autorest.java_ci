@@ -8,10 +8,12 @@ import com.azure.core.management.Region;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.compute.generated.fluent.models.GalleryApplicationInner;
 import com.azure.resourcemanager.compute.generated.models.GalleryApplication;
+import com.azure.resourcemanager.compute.generated.models.GalleryApplicationCustomAction;
 import com.azure.resourcemanager.compute.generated.models.GalleryApplicationUpdate;
 import com.azure.resourcemanager.compute.generated.models.OperatingSystemTypes;
 import java.time.OffsetDateTime;
 import java.util.Collections;
+import java.util.List;
 import java.util.Map;
 
 public final class GalleryApplicationImpl
@@ -67,6 +69,15 @@ public final class GalleryApplicationImpl
 
     public OperatingSystemTypes supportedOSType() {
         return this.innerModel().supportedOSType();
+    }
+
+    public List<GalleryApplicationCustomAction> customActions() {
+        List<GalleryApplicationCustomAction> inner = this.innerModel().customActions();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
     }
 
     public Region region() {
@@ -257,6 +268,16 @@ public final class GalleryApplicationImpl
             return this;
         } else {
             this.updateGalleryApplication.withSupportedOSType(supportedOSType);
+            return this;
+        }
+    }
+
+    public GalleryApplicationImpl withCustomActions(List<GalleryApplicationCustomAction> customActions) {
+        if (isInCreateMode()) {
+            this.innerModel().withCustomActions(customActions);
+            return this;
+        } else {
+            this.updateGalleryApplication.withCustomActions(customActions);
             return this;
         }
     }

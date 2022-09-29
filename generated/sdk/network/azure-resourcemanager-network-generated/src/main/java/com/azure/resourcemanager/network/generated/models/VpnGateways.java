@@ -88,20 +88,6 @@ public interface VpnGateways {
      *
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
-     * @param parameters Vpn gateway packet capture parameters supplied to start packet capture on vpn gateway.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
-     */
-    String startPacketCapture(
-        String resourceGroupName, String gatewayName, VpnGatewayPacketCaptureStartParameters parameters);
-
-    /**
-     * Starts packet capture on vpn gateway in the specified resource group.
-     *
-     * @param resourceGroupName The resource group name of the VpnGateway.
-     * @param gatewayName The name of the gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -126,20 +112,6 @@ public interface VpnGateways {
         String gatewayName,
         VpnGatewayPacketCaptureStartParameters parameters,
         Context context);
-
-    /**
-     * Stops packet capture on vpn gateway in the specified resource group.
-     *
-     * @param resourceGroupName The resource group name of the VpnGateway.
-     * @param gatewayName The name of the gateway.
-     * @param parameters Vpn gateway packet capture parameters supplied to stop packet capture on vpn gateway.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
-     */
-    String stopPacketCapture(
-        String resourceGroupName, String gatewayName, VpnGatewayPacketCaptureStopParameters parameters);
 
     /**
      * Stops packet capture on vpn gateway in the specified resource group.

@@ -5189,9 +5189,6 @@ public interface WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
-     * @param durationInSeconds The duration to keep capturing in seconds.
-     * @param maxFrameLength The maximum frame length in bytes (Optional).
-     * @param sasUrl The Blob URL to store capture file.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -5200,7 +5197,7 @@ public interface WebAppsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Object>, Object> beginStartWebSiteNetworkTraceOperation(
-        String resourceGroupName, String name, Integer durationInSeconds, Integer maxFrameLength, String sasUrl);
+        String resourceGroupName, String name);
 
     /**
      * Start capturing network packets for the site.
@@ -5227,26 +5224,6 @@ public interface WebAppsClient {
         Integer maxFrameLength,
         String sasUrl,
         Context context);
-
-    /**
-     * Start capturing network packets for the site.
-     *
-     * <p>Description for Start capturing network packets for the site.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name The name of the web app.
-     * @param durationInSeconds The duration to keep capturing in seconds.
-     * @param maxFrameLength The maximum frame length in bytes (Optional).
-     * @param sasUrl The Blob URL to store capture file.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of NetworkTrace.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    Object startWebSiteNetworkTraceOperation(
-        String resourceGroupName, String name, Integer durationInSeconds, Integer maxFrameLength, String sasUrl);
 
     /**
      * Start capturing network packets for the site.
@@ -12288,9 +12265,6 @@ public interface WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
      * @param slot The name of the slot for this web app.
-     * @param durationInSeconds The duration to keep capturing in seconds.
-     * @param maxFrameLength The maximum frame length in bytes (Optional).
-     * @param sasUrl The Blob URL to store capture file.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -12299,12 +12273,7 @@ public interface WebAppsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Object>, Object> beginStartWebSiteNetworkTraceOperationSlot(
-        String resourceGroupName,
-        String name,
-        String slot,
-        Integer durationInSeconds,
-        Integer maxFrameLength,
-        String sasUrl);
+        String resourceGroupName, String name, String slot);
 
     /**
      * Start capturing network packets for the site.
@@ -12333,32 +12302,6 @@ public interface WebAppsClient {
         Integer maxFrameLength,
         String sasUrl,
         Context context);
-
-    /**
-     * Start capturing network packets for the site.
-     *
-     * <p>Description for Start capturing network packets for the site.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name The name of the web app.
-     * @param slot The name of the slot for this web app.
-     * @param durationInSeconds The duration to keep capturing in seconds.
-     * @param maxFrameLength The maximum frame length in bytes (Optional).
-     * @param sasUrl The Blob URL to store capture file.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of NetworkTrace.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    Object startWebSiteNetworkTraceOperationSlot(
-        String resourceGroupName,
-        String name,
-        String slot,
-        Integer durationInSeconds,
-        Integer maxFrameLength,
-        String sasUrl);
 
     /**
      * Start capturing network packets for the site.
@@ -14685,9 +14628,6 @@ public interface WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
      * @param slot The name of the slot for this web app.
-     * @param durationInSeconds The duration to keep capturing in seconds.
-     * @param maxFrameLength The maximum frame length in bytes (Optional).
-     * @param sasUrl The Blob URL to store capture file.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -14696,12 +14636,7 @@ public interface WebAppsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Object>, Object> beginStartNetworkTraceSlot(
-        String resourceGroupName,
-        String name,
-        String slot,
-        Integer durationInSeconds,
-        Integer maxFrameLength,
-        String sasUrl);
+        String resourceGroupName, String name, String slot);
 
     /**
      * Start capturing network packets for the site.
@@ -14730,32 +14665,6 @@ public interface WebAppsClient {
         Integer maxFrameLength,
         String sasUrl,
         Context context);
-
-    /**
-     * Start capturing network packets for the site.
-     *
-     * <p>Description for Start capturing network packets for the site.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name The name of the web app.
-     * @param slot The name of the slot for this web app.
-     * @param durationInSeconds The duration to keep capturing in seconds.
-     * @param maxFrameLength The maximum frame length in bytes (Optional).
-     * @param sasUrl The Blob URL to store capture file.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of NetworkTrace.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    Object startNetworkTraceSlot(
-        String resourceGroupName,
-        String name,
-        String slot,
-        Integer durationInSeconds,
-        Integer maxFrameLength,
-        String sasUrl);
 
     /**
      * Start capturing network packets for the site.
@@ -16047,9 +15956,6 @@ public interface WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
-     * @param durationInSeconds The duration to keep capturing in seconds.
-     * @param maxFrameLength The maximum frame length in bytes (Optional).
-     * @param sasUrl The Blob URL to store capture file.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -16057,8 +15963,7 @@ public interface WebAppsClient {
      * @return the {@link SyncPoller} for polling of array of NetworkTrace.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<Object>, Object> beginStartNetworkTrace(
-        String resourceGroupName, String name, Integer durationInSeconds, Integer maxFrameLength, String sasUrl);
+    SyncPoller<PollResult<Object>, Object> beginStartNetworkTrace(String resourceGroupName, String name);
 
     /**
      * Start capturing network packets for the site.
@@ -16085,26 +15990,6 @@ public interface WebAppsClient {
         Integer maxFrameLength,
         String sasUrl,
         Context context);
-
-    /**
-     * Start capturing network packets for the site.
-     *
-     * <p>Description for Start capturing network packets for the site.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name The name of the web app.
-     * @param durationInSeconds The duration to keep capturing in seconds.
-     * @param maxFrameLength The maximum frame length in bytes (Optional).
-     * @param sasUrl The Blob URL to store capture file.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of NetworkTrace.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    Object startNetworkTrace(
-        String resourceGroupName, String name, Integer durationInSeconds, Integer maxFrameLength, String sasUrl);
 
     /**
      * Start capturing network packets for the site.

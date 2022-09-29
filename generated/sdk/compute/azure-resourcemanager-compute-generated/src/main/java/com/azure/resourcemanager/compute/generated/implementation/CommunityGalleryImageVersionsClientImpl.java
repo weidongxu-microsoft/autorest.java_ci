@@ -149,7 +149,7 @@ public final class CommunityGalleryImageVersionsClientImpl implements CommunityG
                 .error(
                     new IllegalArgumentException("Parameter galleryImageVersionName is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-03";
+        final String apiVersion = "2022-03-03";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -218,7 +218,7 @@ public final class CommunityGalleryImageVersionsClientImpl implements CommunityG
                 .error(
                     new IllegalArgumentException("Parameter galleryImageVersionName is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-03";
+        final String apiVersion = "2022-03-03";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -340,7 +340,7 @@ public final class CommunityGalleryImageVersionsClientImpl implements CommunityG
             return Mono
                 .error(new IllegalArgumentException("Parameter galleryImageName is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-03";
+        final String apiVersion = "2022-03-03";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -406,7 +406,7 @@ public final class CommunityGalleryImageVersionsClientImpl implements CommunityG
             return Mono
                 .error(new IllegalArgumentException("Parameter galleryImageName is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-03";
+        final String apiVersion = "2022-03-03";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service

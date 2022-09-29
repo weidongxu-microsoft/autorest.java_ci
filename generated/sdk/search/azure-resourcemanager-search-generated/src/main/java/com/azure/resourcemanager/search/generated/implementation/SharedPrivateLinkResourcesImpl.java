@@ -62,16 +62,6 @@ public final class SharedPrivateLinkResourcesImpl implements SharedPrivateLinkRe
         }
     }
 
-    public void delete(
-        String resourceGroupName,
-        String searchServiceName,
-        String sharedPrivateLinkResourceName,
-        UUID clientRequestId) {
-        this
-            .serviceClient()
-            .delete(resourceGroupName, searchServiceName, sharedPrivateLinkResourceName, clientRequestId);
-    }
-
     public void delete(String resourceGroupName, String searchServiceName, String sharedPrivateLinkResourceName) {
         this.serviceClient().delete(resourceGroupName, searchServiceName, sharedPrivateLinkResourceName);
     }

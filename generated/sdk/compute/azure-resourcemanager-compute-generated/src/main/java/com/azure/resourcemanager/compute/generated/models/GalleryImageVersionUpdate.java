@@ -96,6 +96,29 @@ public final class GalleryImageVersionUpdate extends UpdateResourceDefinition {
     }
 
     /**
+     * Get the safetyProfile property: This is the safety profile of the Gallery Image Version.
+     *
+     * @return the safetyProfile value.
+     */
+    public GalleryImageVersionSafetyProfile safetyProfile() {
+        return this.innerProperties() == null ? null : this.innerProperties().safetyProfile();
+    }
+
+    /**
+     * Set the safetyProfile property: This is the safety profile of the Gallery Image Version.
+     *
+     * @param safetyProfile the safetyProfile value to set.
+     * @return the GalleryImageVersionUpdate object itself.
+     */
+    public GalleryImageVersionUpdate withSafetyProfile(GalleryImageVersionSafetyProfile safetyProfile) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new GalleryImageVersionProperties();
+        }
+        this.innerProperties().withSafetyProfile(safetyProfile);
+        return this;
+    }
+
+    /**
      * Get the replicationStatus property: This is the replication status of the gallery image version.
      *
      * @return the replicationStatus value.

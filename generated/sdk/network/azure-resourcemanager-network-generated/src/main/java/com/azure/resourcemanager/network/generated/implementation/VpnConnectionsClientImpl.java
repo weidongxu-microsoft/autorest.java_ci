@@ -1079,6 +1079,29 @@ public final class VpnConnectionsClientImpl implements VpnConnectionsClient {
      * @param resourceGroupName The name of the resource group.
      * @param gatewayName The name of the gateway.
      * @param vpnConnectionName The name of the vpn connection.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link PollerFlux} for polling of long-running operation.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    private PollerFlux<PollResult<String>, String> beginStartPacketCaptureAsync(
+        String resourceGroupName, String gatewayName, String vpnConnectionName) {
+        final VpnConnectionPacketCaptureStartParameters parameters = null;
+        Mono<Response<Flux<ByteBuffer>>> mono =
+            startPacketCaptureWithResponseAsync(resourceGroupName, gatewayName, vpnConnectionName, parameters);
+        return this
+            .client
+            .<String, String>getLroResult(
+                mono, this.client.getHttpPipeline(), String.class, String.class, this.client.getContext());
+    }
+
+    /**
+     * Starts packet capture on Vpn connection in the specified resource group.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param gatewayName The name of the gateway.
+     * @param vpnConnectionName The name of the vpn connection.
      * @param parameters Vpn Connection packet capture parameters supplied to start packet capture on gateway
      *     connection.
      * @param context The context to associate with this operation.
@@ -1108,8 +1131,6 @@ public final class VpnConnectionsClientImpl implements VpnConnectionsClient {
      * @param resourceGroupName The name of the resource group.
      * @param gatewayName The name of the gateway.
      * @param vpnConnectionName The name of the vpn connection.
-     * @param parameters Vpn Connection packet capture parameters supplied to start packet capture on gateway
-     *     connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1117,10 +1138,8 @@ public final class VpnConnectionsClientImpl implements VpnConnectionsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<String>, String> beginStartPacketCapture(
-        String resourceGroupName,
-        String gatewayName,
-        String vpnConnectionName,
-        VpnConnectionPacketCaptureStartParameters parameters) {
+        String resourceGroupName, String gatewayName, String vpnConnectionName) {
+        final VpnConnectionPacketCaptureStartParameters parameters = null;
         return beginStartPacketCaptureAsync(resourceGroupName, gatewayName, vpnConnectionName, parameters)
             .getSyncPoller();
     }
@@ -1218,28 +1237,6 @@ public final class VpnConnectionsClientImpl implements VpnConnectionsClient {
         return beginStartPacketCaptureAsync(resourceGroupName, gatewayName, vpnConnectionName, parameters, context)
             .last()
             .flatMap(this.client::getLroFinalResultOrError);
-    }
-
-    /**
-     * Starts packet capture on Vpn connection in the specified resource group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param gatewayName The name of the gateway.
-     * @param vpnConnectionName The name of the vpn connection.
-     * @param parameters Vpn Connection packet capture parameters supplied to start packet capture on gateway
-     *     connection.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public String startPacketCapture(
-        String resourceGroupName,
-        String gatewayName,
-        String vpnConnectionName,
-        VpnConnectionPacketCaptureStartParameters parameters) {
-        return startPacketCaptureAsync(resourceGroupName, gatewayName, vpnConnectionName, parameters).block();
     }
 
     /**
@@ -1440,6 +1437,29 @@ public final class VpnConnectionsClientImpl implements VpnConnectionsClient {
      * @param resourceGroupName The name of the resource group.
      * @param gatewayName The name of the gateway.
      * @param vpnConnectionName The name of the vpn connection.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link PollerFlux} for polling of long-running operation.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    private PollerFlux<PollResult<String>, String> beginStopPacketCaptureAsync(
+        String resourceGroupName, String gatewayName, String vpnConnectionName) {
+        final VpnConnectionPacketCaptureStopParameters parameters = null;
+        Mono<Response<Flux<ByteBuffer>>> mono =
+            stopPacketCaptureWithResponseAsync(resourceGroupName, gatewayName, vpnConnectionName, parameters);
+        return this
+            .client
+            .<String, String>getLroResult(
+                mono, this.client.getHttpPipeline(), String.class, String.class, this.client.getContext());
+    }
+
+    /**
+     * Stops packet capture on Vpn connection in the specified resource group.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param gatewayName The name of the gateway.
+     * @param vpnConnectionName The name of the vpn connection.
      * @param parameters Vpn Connection packet capture parameters supplied to stop packet capture on gateway connection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1468,7 +1488,6 @@ public final class VpnConnectionsClientImpl implements VpnConnectionsClient {
      * @param resourceGroupName The name of the resource group.
      * @param gatewayName The name of the gateway.
      * @param vpnConnectionName The name of the vpn connection.
-     * @param parameters Vpn Connection packet capture parameters supplied to stop packet capture on gateway connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1476,10 +1495,8 @@ public final class VpnConnectionsClientImpl implements VpnConnectionsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<String>, String> beginStopPacketCapture(
-        String resourceGroupName,
-        String gatewayName,
-        String vpnConnectionName,
-        VpnConnectionPacketCaptureStopParameters parameters) {
+        String resourceGroupName, String gatewayName, String vpnConnectionName) {
+        final VpnConnectionPacketCaptureStopParameters parameters = null;
         return beginStopPacketCaptureAsync(resourceGroupName, gatewayName, vpnConnectionName, parameters)
             .getSyncPoller();
     }
@@ -1574,27 +1591,6 @@ public final class VpnConnectionsClientImpl implements VpnConnectionsClient {
         return beginStopPacketCaptureAsync(resourceGroupName, gatewayName, vpnConnectionName, parameters, context)
             .last()
             .flatMap(this.client::getLroFinalResultOrError);
-    }
-
-    /**
-     * Stops packet capture on Vpn connection in the specified resource group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param gatewayName The name of the gateway.
-     * @param vpnConnectionName The name of the vpn connection.
-     * @param parameters Vpn Connection packet capture parameters supplied to stop packet capture on gateway connection.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public String stopPacketCapture(
-        String resourceGroupName,
-        String gatewayName,
-        String vpnConnectionName,
-        VpnConnectionPacketCaptureStopParameters parameters) {
-        return stopPacketCaptureAsync(resourceGroupName, gatewayName, vpnConnectionName, parameters).block();
     }
 
     /**

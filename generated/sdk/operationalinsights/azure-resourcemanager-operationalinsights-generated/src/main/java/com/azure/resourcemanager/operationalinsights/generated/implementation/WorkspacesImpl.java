@@ -48,10 +48,6 @@ public final class WorkspacesImpl implements Workspaces {
         return Utils.mapPage(inner, inner1 -> new WorkspaceImpl(inner1, this.manager()));
     }
 
-    public void delete(String resourceGroupName, String workspaceName, Boolean force) {
-        this.serviceClient().delete(resourceGroupName, workspaceName, force);
-    }
-
     public void delete(String resourceGroupName, String workspaceName) {
         this.serviceClient().delete(resourceGroupName, workspaceName);
     }

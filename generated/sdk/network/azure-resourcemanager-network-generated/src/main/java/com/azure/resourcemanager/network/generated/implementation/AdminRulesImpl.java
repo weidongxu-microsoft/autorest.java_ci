@@ -150,18 +150,6 @@ public final class AdminRulesImpl implements AdminRules {
         String networkManagerName,
         String configurationName,
         String ruleCollectionName,
-        String ruleName,
-        Boolean force) {
-        this
-            .serviceClient()
-            .delete(resourceGroupName, networkManagerName, configurationName, ruleCollectionName, ruleName, force);
-    }
-
-    public void delete(
-        String resourceGroupName,
-        String networkManagerName,
-        String configurationName,
-        String ruleCollectionName,
         String ruleName) {
         this
             .serviceClient()

@@ -115,20 +115,6 @@ public interface VirtualNetworkGateways {
      *
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param gatewayVip Virtual network gateway vip address supplied to the begin reset of the active-active feature
-     *     enabled gateway.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a common class for general resource information.
-     */
-    VirtualNetworkGateway reset(String resourceGroupName, String virtualNetworkGatewayName, String gatewayVip);
-
-    /**
-     * Resets the primary of the virtual network gateway in the specified resource group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param virtualNetworkGatewayName The name of the virtual network gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -261,19 +247,6 @@ public interface VirtualNetworkGateways {
      * @return pre-generated VPN profile for P2S client of the virtual network gateway in the specified resource group.
      */
     String getVpnProfilePackageUrl(String resourceGroupName, String virtualNetworkGatewayName, Context context);
-
-    /**
-     * The GetBgpPeerStatus operation retrieves the status of all BGP peers.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param peer The IP address of the peer to retrieve the status of.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for list BGP peer status API service call.
-     */
-    BgpPeerStatusListResult getBgpPeerStatus(String resourceGroupName, String virtualNetworkGatewayName, String peer);
 
     /**
      * The GetBgpPeerStatus operation retrieves the status of all BGP peers.
@@ -481,21 +454,6 @@ public interface VirtualNetworkGateways {
      */
     String vpnDeviceConfigurationScript(
         String resourceGroupName, String virtualNetworkGatewayConnectionName, VpnDeviceScriptParameters parameters);
-
-    /**
-     * Starts packet capture on virtual network gateway in the specified resource group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param parameters Virtual network gateway packet capture parameters supplied to start packet capture on gateway.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
-     */
-    String startPacketCapture(
-        String resourceGroupName, String virtualNetworkGatewayName, VpnPacketCaptureStartParameters parameters);
 
     /**
      * Starts packet capture on virtual network gateway in the specified resource group.

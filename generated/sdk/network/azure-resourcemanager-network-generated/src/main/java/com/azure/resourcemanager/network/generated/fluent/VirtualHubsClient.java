@@ -243,7 +243,6 @@ public interface VirtualHubsClient {
      *
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
-     * @param effectiveRoutesParameters Parameters supplied to get the effective routes for a specific resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -252,7 +251,7 @@ public interface VirtualHubsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginGetEffectiveVirtualHubRoutes(
-        String resourceGroupName, String virtualHubName, EffectiveRoutesParameters effectiveRoutesParameters);
+        String resourceGroupName, String virtualHubName);
 
     /**
      * Gets the effective routes configured for the Virtual Hub resource or the specified resource .
@@ -273,20 +272,6 @@ public interface VirtualHubsClient {
         String virtualHubName,
         EffectiveRoutesParameters effectiveRoutesParameters,
         Context context);
-
-    /**
-     * Gets the effective routes configured for the Virtual Hub resource or the specified resource .
-     *
-     * @param resourceGroupName The resource group name of the VirtualHub.
-     * @param virtualHubName The name of the VirtualHub.
-     * @param effectiveRoutesParameters Parameters supplied to get the effective routes for a specific resource.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    void getEffectiveVirtualHubRoutes(
-        String resourceGroupName, String virtualHubName, EffectiveRoutesParameters effectiveRoutesParameters);
 
     /**
      * Gets the effective routes configured for the Virtual Hub resource or the specified resource .

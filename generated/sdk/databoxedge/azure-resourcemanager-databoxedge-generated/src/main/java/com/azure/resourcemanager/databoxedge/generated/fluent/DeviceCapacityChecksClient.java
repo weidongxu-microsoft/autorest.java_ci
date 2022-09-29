@@ -19,7 +19,6 @@ public interface DeviceCapacityChecksClient {
      * @param resourceGroupName The resource group name.
      * @param deviceName The device name.
      * @param deviceCapacityRequestInfo The device capacity request info.
-     * @param capacityName The capacity name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -27,10 +26,7 @@ public interface DeviceCapacityChecksClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginCheckResourceCreationFeasibility(
-        String resourceGroupName,
-        String deviceName,
-        DeviceCapacityRequestInfo deviceCapacityRequestInfo,
-        String capacityName);
+        String resourceGroupName, String deviceName, DeviceCapacityRequestInfo deviceCapacityRequestInfo);
 
     /**
      * Posts the device capacity request info to check feasibility.
@@ -52,24 +48,6 @@ public interface DeviceCapacityChecksClient {
         DeviceCapacityRequestInfo deviceCapacityRequestInfo,
         String capacityName,
         Context context);
-
-    /**
-     * Posts the device capacity request info to check feasibility.
-     *
-     * @param resourceGroupName The resource group name.
-     * @param deviceName The device name.
-     * @param deviceCapacityRequestInfo The device capacity request info.
-     * @param capacityName The capacity name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    void checkResourceCreationFeasibility(
-        String resourceGroupName,
-        String deviceName,
-        DeviceCapacityRequestInfo deviceCapacityRequestInfo,
-        String capacityName);
 
     /**
      * Posts the device capacity request info to check feasibility.

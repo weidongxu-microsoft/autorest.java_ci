@@ -25,16 +25,6 @@ public final class DeviceCapacityChecksImpl implements DeviceCapacityChecks {
     }
 
     public void checkResourceCreationFeasibility(
-        String resourceGroupName,
-        String deviceName,
-        DeviceCapacityRequestInfo deviceCapacityRequestInfo,
-        String capacityName) {
-        this
-            .serviceClient()
-            .checkResourceCreationFeasibility(resourceGroupName, deviceName, deviceCapacityRequestInfo, capacityName);
-    }
-
-    public void checkResourceCreationFeasibility(
         String resourceGroupName, String deviceName, DeviceCapacityRequestInfo deviceCapacityRequestInfo) {
         this.serviceClient().checkResourceCreationFeasibility(resourceGroupName, deviceName, deviceCapacityRequestInfo);
     }

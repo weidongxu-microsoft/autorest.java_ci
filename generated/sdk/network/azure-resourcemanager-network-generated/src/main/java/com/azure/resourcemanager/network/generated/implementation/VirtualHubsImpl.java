@@ -82,11 +82,6 @@ public final class VirtualHubsImpl implements VirtualHubs {
         return Utils.mapPage(inner, inner1 -> new VirtualHubImpl(inner1, this.manager()));
     }
 
-    public void getEffectiveVirtualHubRoutes(
-        String resourceGroupName, String virtualHubName, EffectiveRoutesParameters effectiveRoutesParameters) {
-        this.serviceClient().getEffectiveVirtualHubRoutes(resourceGroupName, virtualHubName, effectiveRoutesParameters);
-    }
-
     public void getEffectiveVirtualHubRoutes(String resourceGroupName, String virtualHubName) {
         this.serviceClient().getEffectiveVirtualHubRoutes(resourceGroupName, virtualHubName);
     }

@@ -2084,6 +2084,33 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
      *
      * @param resourceGroupName The name of the resource group.
      * @param applicationGatewayName The name of the application gateway.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link PollerFlux} for polling of the backend health of the specified application gateway in a
+     *     resource group.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    private PollerFlux<PollResult<ApplicationGatewayBackendHealthInner>, ApplicationGatewayBackendHealthInner>
+        beginBackendHealthAsync(String resourceGroupName, String applicationGatewayName) {
+        final String expand = null;
+        Mono<Response<Flux<ByteBuffer>>> mono =
+            backendHealthWithResponseAsync(resourceGroupName, applicationGatewayName, expand);
+        return this
+            .client
+            .<ApplicationGatewayBackendHealthInner, ApplicationGatewayBackendHealthInner>getLroResult(
+                mono,
+                this.client.getHttpPipeline(),
+                ApplicationGatewayBackendHealthInner.class,
+                ApplicationGatewayBackendHealthInner.class,
+                this.client.getContext());
+    }
+
+    /**
+     * Gets the backend health of the specified application gateway in a resource group.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param applicationGatewayName The name of the application gateway.
      * @param expand Expands BackendAddressPool and BackendHttpSettings referenced in backend health.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -2114,7 +2141,6 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
      *
      * @param resourceGroupName The name of the resource group.
      * @param applicationGatewayName The name of the application gateway.
-     * @param expand Expands BackendAddressPool and BackendHttpSettings referenced in backend health.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2123,7 +2149,8 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ApplicationGatewayBackendHealthInner>, ApplicationGatewayBackendHealthInner>
-        beginBackendHealth(String resourceGroupName, String applicationGatewayName, String expand) {
+        beginBackendHealth(String resourceGroupName, String applicationGatewayName) {
+        final String expand = null;
         return beginBackendHealthAsync(resourceGroupName, applicationGatewayName, expand).getSyncPoller();
     }
 
@@ -2205,23 +2232,6 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
         return beginBackendHealthAsync(resourceGroupName, applicationGatewayName, expand, context)
             .last()
             .flatMap(this.client::getLroFinalResultOrError);
-    }
-
-    /**
-     * Gets the backend health of the specified application gateway in a resource group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param applicationGatewayName The name of the application gateway.
-     * @param expand Expands BackendAddressPool and BackendHttpSettings referenced in backend health.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the backend health of the specified application gateway in a resource group.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public ApplicationGatewayBackendHealthInner backendHealth(
-        String resourceGroupName, String applicationGatewayName, String expand) {
-        return backendHealthAsync(resourceGroupName, applicationGatewayName, expand).block();
     }
 
     /**
@@ -2428,6 +2438,37 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
      * @param resourceGroupName The name of the resource group.
      * @param applicationGatewayName The name of the application gateway.
      * @param probeRequest Request body for on-demand test probe operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link PollerFlux} for polling of the backend health for given combination of backend pool and http
+     *     setting of the specified application gateway in a resource group.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    private PollerFlux<
+            PollResult<ApplicationGatewayBackendHealthOnDemandInner>, ApplicationGatewayBackendHealthOnDemandInner>
+        beginBackendHealthOnDemandAsync(
+            String resourceGroupName, String applicationGatewayName, ApplicationGatewayOnDemandProbe probeRequest) {
+        final String expand = null;
+        Mono<Response<Flux<ByteBuffer>>> mono =
+            backendHealthOnDemandWithResponseAsync(resourceGroupName, applicationGatewayName, probeRequest, expand);
+        return this
+            .client
+            .<ApplicationGatewayBackendHealthOnDemandInner, ApplicationGatewayBackendHealthOnDemandInner>getLroResult(
+                mono,
+                this.client.getHttpPipeline(),
+                ApplicationGatewayBackendHealthOnDemandInner.class,
+                ApplicationGatewayBackendHealthOnDemandInner.class,
+                this.client.getContext());
+    }
+
+    /**
+     * Gets the backend health for given combination of backend pool and http setting of the specified application
+     * gateway in a resource group.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param applicationGatewayName The name of the application gateway.
+     * @param probeRequest Request body for on-demand test probe operation.
      * @param expand Expands BackendAddressPool and BackendHttpSettings referenced in backend health.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -2466,7 +2507,6 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
      * @param resourceGroupName The name of the resource group.
      * @param applicationGatewayName The name of the application gateway.
      * @param probeRequest Request body for on-demand test probe operation.
-     * @param expand Expands BackendAddressPool and BackendHttpSettings referenced in backend health.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2477,10 +2517,8 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
     public SyncPoller<
             PollResult<ApplicationGatewayBackendHealthOnDemandInner>, ApplicationGatewayBackendHealthOnDemandInner>
         beginBackendHealthOnDemand(
-            String resourceGroupName,
-            String applicationGatewayName,
-            ApplicationGatewayOnDemandProbe probeRequest,
-            String expand) {
+            String resourceGroupName, String applicationGatewayName, ApplicationGatewayOnDemandProbe probeRequest) {
+        final String expand = null;
         return beginBackendHealthOnDemandAsync(resourceGroupName, applicationGatewayName, probeRequest, expand)
             .getSyncPoller();
     }
@@ -2585,29 +2623,6 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
         return beginBackendHealthOnDemandAsync(resourceGroupName, applicationGatewayName, probeRequest, expand, context)
             .last()
             .flatMap(this.client::getLroFinalResultOrError);
-    }
-
-    /**
-     * Gets the backend health for given combination of backend pool and http setting of the specified application
-     * gateway in a resource group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param applicationGatewayName The name of the application gateway.
-     * @param probeRequest Request body for on-demand test probe operation.
-     * @param expand Expands BackendAddressPool and BackendHttpSettings referenced in backend health.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the backend health for given combination of backend pool and http setting of the specified application
-     *     gateway in a resource group.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public ApplicationGatewayBackendHealthOnDemandInner backendHealthOnDemand(
-        String resourceGroupName,
-        String applicationGatewayName,
-        ApplicationGatewayOnDemandProbe probeRequest,
-        String expand) {
-        return backendHealthOnDemandAsync(resourceGroupName, applicationGatewayName, probeRequest, expand).block();
     }
 
     /**

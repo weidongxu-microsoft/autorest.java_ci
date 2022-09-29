@@ -82,17 +82,6 @@ public final class AdminRuleCollectionsImpl implements AdminRuleCollections {
     }
 
     public void delete(
-        String resourceGroupName,
-        String networkManagerName,
-        String configurationName,
-        String ruleCollectionName,
-        Boolean force) {
-        this
-            .serviceClient()
-            .delete(resourceGroupName, networkManagerName, configurationName, ruleCollectionName, force);
-    }
-
-    public void delete(
         String resourceGroupName, String networkManagerName, String configurationName, String ruleCollectionName) {
         this.serviceClient().delete(resourceGroupName, networkManagerName, configurationName, ruleCollectionName);
     }

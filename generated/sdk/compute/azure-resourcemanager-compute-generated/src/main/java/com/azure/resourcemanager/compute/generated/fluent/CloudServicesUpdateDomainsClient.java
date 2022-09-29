@@ -22,7 +22,6 @@ public interface CloudServicesUpdateDomainsClient {
      * @param cloudServiceName Name of the cloud service.
      * @param updateDomain Specifies an integer value that identifies the update domain. Update domains are identified
      *     with a zero-based index: the first update domain has an ID of 0, the second has an ID of 1, and so on.
-     * @param parameters The update domain object.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
@@ -31,7 +30,7 @@ public interface CloudServicesUpdateDomainsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginWalkUpdateDomain(
-        String resourceGroupName, String cloudServiceName, int updateDomain, UpdateDomainInner parameters);
+        String resourceGroupName, String cloudServiceName, int updateDomain);
 
     /**
      * Updates the role instances in the specified update domain.
@@ -55,23 +54,6 @@ public interface CloudServicesUpdateDomainsClient {
         int updateDomain,
         UpdateDomainInner parameters,
         Context context);
-
-    /**
-     * Updates the role instances in the specified update domain.
-     *
-     * @param resourceGroupName Name of the resource group.
-     * @param cloudServiceName Name of the cloud service.
-     * @param updateDomain Specifies an integer value that identifies the update domain. Update domains are identified
-     *     with a zero-based index: the first update domain has an ID of 0, the second has an ID of 1, and so on.
-     * @param parameters The update domain object.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    void walkUpdateDomain(
-        String resourceGroupName, String cloudServiceName, int updateDomain, UpdateDomainInner parameters);
 
     /**
      * Updates the role instances in the specified update domain.

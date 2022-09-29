@@ -22,7 +22,7 @@ public final class GalleryOSDiskImage extends GalleryDiskImage {
 
     /** {@inheritDoc} */
     @Override
-    public GalleryOSDiskImage withSource(GalleryArtifactVersionSource source) {
+    public GalleryOSDiskImage withSource(GalleryDiskImageSource source) {
         super.withSource(source);
         return this;
     }

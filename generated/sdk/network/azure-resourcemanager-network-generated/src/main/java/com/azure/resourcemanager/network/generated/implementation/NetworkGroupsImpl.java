@@ -51,10 +51,6 @@ public final class NetworkGroupsImpl implements NetworkGroups {
         }
     }
 
-    public void delete(String resourceGroupName, String networkManagerName, String networkGroupName, Boolean force) {
-        this.serviceClient().delete(resourceGroupName, networkManagerName, networkGroupName, force);
-    }
-
     public void delete(String resourceGroupName, String networkManagerName, String networkGroupName) {
         this.serviceClient().delete(resourceGroupName, networkManagerName, networkGroupName);
     }

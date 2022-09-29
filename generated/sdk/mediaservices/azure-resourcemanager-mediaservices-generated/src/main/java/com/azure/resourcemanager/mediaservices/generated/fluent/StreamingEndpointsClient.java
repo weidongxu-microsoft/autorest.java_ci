@@ -92,7 +92,6 @@ public interface StreamingEndpointsClient {
      * @param accountName The Media Services account name.
      * @param streamingEndpointName The name of the streaming endpoint, maximum length is 24.
      * @param parameters Streaming endpoint properties needed for creation.
-     * @param autoStart The flag indicates if the resource should be automatically started on creation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -100,11 +99,7 @@ public interface StreamingEndpointsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<StreamingEndpointInner>, StreamingEndpointInner> beginCreate(
-        String resourceGroupName,
-        String accountName,
-        String streamingEndpointName,
-        StreamingEndpointInner parameters,
-        Boolean autoStart);
+        String resourceGroupName, String accountName, String streamingEndpointName, StreamingEndpointInner parameters);
 
     /**
      * Create StreamingEndpoint
@@ -130,29 +125,6 @@ public interface StreamingEndpointsClient {
         StreamingEndpointInner parameters,
         Boolean autoStart,
         Context context);
-
-    /**
-     * Create StreamingEndpoint
-     *
-     * <p>Creates a streaming endpoint.
-     *
-     * @param resourceGroupName The name of the resource group within the Azure subscription.
-     * @param accountName The Media Services account name.
-     * @param streamingEndpointName The name of the streaming endpoint, maximum length is 24.
-     * @param parameters Streaming endpoint properties needed for creation.
-     * @param autoStart The flag indicates if the resource should be automatically started on creation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the streaming endpoint.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    StreamingEndpointInner create(
-        String resourceGroupName,
-        String accountName,
-        String streamingEndpointName,
-        StreamingEndpointInner parameters,
-        Boolean autoStart);
 
     /**
      * Create StreamingEndpoint

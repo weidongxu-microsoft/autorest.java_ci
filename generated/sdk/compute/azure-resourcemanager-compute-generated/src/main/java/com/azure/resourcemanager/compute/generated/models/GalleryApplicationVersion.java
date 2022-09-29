@@ -54,6 +54,13 @@ public interface GalleryApplicationVersion {
     GalleryApplicationVersionPublishingProfile publishingProfile();
 
     /**
+     * Gets the safetyProfile property: The safety profile of the Gallery Application Version.
+     *
+     * @return the safetyProfile value.
+     */
+    GalleryApplicationVersionSafetyProfile safetyProfile();
+
+    /**
      * Gets the provisioningState property: The current state of the gallery or gallery artifact.
      *
      * <p>The provisioning state, which only appears in the response.
@@ -146,7 +153,10 @@ public interface GalleryApplicationVersion {
          * The stage of the GalleryApplicationVersion definition which contains all the minimum required properties for
          * the resource to be created, but also allows for any other optional properties to be specified.
          */
-        interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithPublishingProfile {
+        interface WithCreate
+            extends DefinitionStages.WithTags,
+                DefinitionStages.WithPublishingProfile,
+                DefinitionStages.WithSafetyProfile {
             /**
              * Executes the create request.
              *
@@ -182,6 +192,16 @@ public interface GalleryApplicationVersion {
              */
             WithCreate withPublishingProfile(GalleryApplicationVersionPublishingProfile publishingProfile);
         }
+        /** The stage of the GalleryApplicationVersion definition allowing to specify safetyProfile. */
+        interface WithSafetyProfile {
+            /**
+             * Specifies the safetyProfile property: The safety profile of the Gallery Application Version..
+             *
+             * @param safetyProfile The safety profile of the Gallery Application Version.
+             * @return the next definition stage.
+             */
+            WithCreate withSafetyProfile(GalleryApplicationVersionSafetyProfile safetyProfile);
+        }
     }
     /**
      * Begins update for the GalleryApplicationVersion resource.
@@ -191,7 +211,7 @@ public interface GalleryApplicationVersion {
     GalleryApplicationVersion.Update update();
 
     /** The template for GalleryApplicationVersion update. */
-    interface Update extends UpdateStages.WithTags, UpdateStages.WithPublishingProfile {
+    interface Update extends UpdateStages.WithTags, UpdateStages.WithPublishingProfile, UpdateStages.WithSafetyProfile {
         /**
          * Executes the update request.
          *
@@ -228,6 +248,16 @@ public interface GalleryApplicationVersion {
              * @return the next definition stage.
              */
             Update withPublishingProfile(GalleryApplicationVersionPublishingProfile publishingProfile);
+        }
+        /** The stage of the GalleryApplicationVersion update allowing to specify safetyProfile. */
+        interface WithSafetyProfile {
+            /**
+             * Specifies the safetyProfile property: The safety profile of the Gallery Application Version..
+             *
+             * @param safetyProfile The safety profile of the Gallery Application Version.
+             * @return the next definition stage.
+             */
+            Update withSafetyProfile(GalleryApplicationVersionSafetyProfile safetyProfile);
         }
     }
     /**

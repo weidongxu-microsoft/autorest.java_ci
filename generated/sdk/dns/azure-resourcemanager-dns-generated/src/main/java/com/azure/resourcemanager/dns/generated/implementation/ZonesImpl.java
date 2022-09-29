@@ -26,10 +26,6 @@ public final class ZonesImpl implements Zones {
         this.serviceManager = serviceManager;
     }
 
-    public void delete(String resourceGroupName, String zoneName, String ifMatch) {
-        this.serviceClient().delete(resourceGroupName, zoneName, ifMatch);
-    }
-
     public void delete(String resourceGroupName, String zoneName) {
         this.serviceClient().delete(resourceGroupName, zoneName);
     }

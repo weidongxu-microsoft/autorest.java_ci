@@ -109,6 +109,20 @@ public interface SharedGalleryImage {
     Architecture architecture();
 
     /**
+     * Gets the privacyStatementUri property: Privacy statement uri for the current community gallery image.
+     *
+     * @return the privacyStatementUri value.
+     */
+    String privacyStatementUri();
+
+    /**
+     * Gets the eula property: End-user license agreement for the current community gallery image.
+     *
+     * @return the eula value.
+     */
+    String eula();
+
+    /**
      * Gets the inner com.azure.resourcemanager.compute.generated.fluent.models.SharedGalleryImageInner object.
      *
      * @return the inner object.

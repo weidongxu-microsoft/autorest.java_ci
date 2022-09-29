@@ -345,10 +345,6 @@ public final class VirtualMachineImpl implements VirtualMachine, VirtualMachine.
         serviceManager.virtualMachines().convertToManagedDisks(resourceGroupName, vmName, context);
     }
 
-    public void deallocate(Boolean hibernate) {
-        serviceManager.virtualMachines().deallocate(resourceGroupName, vmName, hibernate);
-    }
-
     public void deallocate() {
         serviceManager.virtualMachines().deallocate(resourceGroupName, vmName);
     }
@@ -363,10 +359,6 @@ public final class VirtualMachineImpl implements VirtualMachine, VirtualMachine.
 
     public void generalize() {
         serviceManager.virtualMachines().generalize(resourceGroupName, vmName);
-    }
-
-    public void powerOff(Boolean skipShutdown) {
-        serviceManager.virtualMachines().powerOff(resourceGroupName, vmName, skipShutdown);
     }
 
     public void powerOff() {
@@ -407,10 +399,6 @@ public final class VirtualMachineImpl implements VirtualMachine, VirtualMachine.
 
     public void redeploy(Context context) {
         serviceManager.virtualMachines().redeploy(resourceGroupName, vmName, context);
-    }
-
-    public void reimage(VirtualMachineReimageParameters parameters) {
-        serviceManager.virtualMachines().reimage(resourceGroupName, vmName, parameters);
     }
 
     public void reimage() {

@@ -28,11 +28,6 @@ public final class CloudServicesUpdateDomainsImpl implements CloudServicesUpdate
         this.serviceManager = serviceManager;
     }
 
-    public void walkUpdateDomain(
-        String resourceGroupName, String cloudServiceName, int updateDomain, UpdateDomainInner parameters) {
-        this.serviceClient().walkUpdateDomain(resourceGroupName, cloudServiceName, updateDomain, parameters);
-    }
-
     public void walkUpdateDomain(String resourceGroupName, String cloudServiceName, int updateDomain) {
         this.serviceClient().walkUpdateDomain(resourceGroupName, cloudServiceName, updateDomain);
     }

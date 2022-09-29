@@ -39,11 +39,7 @@ public final class ResourceGroupsImpl implements ResourceGroups {
         return this.serviceClient().checkExistence(resourceGroupName);
     }
 
-    public void deleteByResourceGroup(String resourceGroupName, String forceDeletionTypes) {
-        this.serviceClient().delete(resourceGroupName, forceDeletionTypes);
-    }
-
-    public void delete(String resourceGroupName) {
+    public void deleteByResourceGroup(String resourceGroupName) {
         this.serviceClient().delete(resourceGroupName);
     }
 

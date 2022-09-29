@@ -796,6 +796,36 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
      * @param accountName The Media Services account name.
      * @param liveEventName The name of the live event, maximum length is 32.
      * @param parameters Live event properties needed for creation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link PollerFlux} for polling of the live event.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    private PollerFlux<PollResult<LiveEventInner>, LiveEventInner> beginCreateAsync(
+        String resourceGroupName, String accountName, String liveEventName, LiveEventInner parameters) {
+        final Boolean autoStart = null;
+        Mono<Response<Flux<ByteBuffer>>> mono =
+            createWithResponseAsync(resourceGroupName, accountName, liveEventName, parameters, autoStart);
+        return this
+            .client
+            .<LiveEventInner, LiveEventInner>getLroResult(
+                mono,
+                this.client.getHttpPipeline(),
+                LiveEventInner.class,
+                LiveEventInner.class,
+                this.client.getContext());
+    }
+
+    /**
+     * Create Live Event
+     *
+     * <p>Creates a new live event.
+     *
+     * @param resourceGroupName The name of the resource group within the Azure subscription.
+     * @param accountName The Media Services account name.
+     * @param liveEventName The name of the live event, maximum length is 32.
+     * @param parameters Live event properties needed for creation.
      * @param autoStart The flag indicates if the resource should be automatically started on creation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -829,7 +859,6 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
      * @param accountName The Media Services account name.
      * @param liveEventName The name of the live event, maximum length is 32.
      * @param parameters Live event properties needed for creation.
-     * @param autoStart The flag indicates if the resource should be automatically started on creation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -837,11 +866,8 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<LiveEventInner>, LiveEventInner> beginCreate(
-        String resourceGroupName,
-        String accountName,
-        String liveEventName,
-        LiveEventInner parameters,
-        Boolean autoStart) {
+        String resourceGroupName, String accountName, String liveEventName, LiveEventInner parameters) {
+        final Boolean autoStart = null;
         return beginCreateAsync(resourceGroupName, accountName, liveEventName, parameters, autoStart).getSyncPoller();
     }
 
@@ -950,31 +976,6 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
         return beginCreateAsync(resourceGroupName, accountName, liveEventName, parameters, autoStart, context)
             .last()
             .flatMap(this.client::getLroFinalResultOrError);
-    }
-
-    /**
-     * Create Live Event
-     *
-     * <p>Creates a new live event.
-     *
-     * @param resourceGroupName The name of the resource group within the Azure subscription.
-     * @param accountName The Media Services account name.
-     * @param liveEventName The name of the live event, maximum length is 32.
-     * @param parameters Live event properties needed for creation.
-     * @param autoStart The flag indicates if the resource should be automatically started on creation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the live event.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public LiveEventInner create(
-        String resourceGroupName,
-        String accountName,
-        String liveEventName,
-        LiveEventInner parameters,
-        Boolean autoStart) {
-        return createAsync(resourceGroupName, accountName, liveEventName, parameters, autoStart).block();
     }
 
     /**

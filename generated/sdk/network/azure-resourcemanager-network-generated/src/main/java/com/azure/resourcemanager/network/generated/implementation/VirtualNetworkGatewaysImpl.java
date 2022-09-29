@@ -103,16 +103,6 @@ public final class VirtualNetworkGatewaysImpl implements VirtualNetworkGateways 
             .mapPage(inner, inner1 -> new VirtualNetworkGatewayConnectionListEntityImpl(inner1, this.manager()));
     }
 
-    public VirtualNetworkGateway reset(String resourceGroupName, String virtualNetworkGatewayName, String gatewayVip) {
-        VirtualNetworkGatewayInner inner =
-            this.serviceClient().reset(resourceGroupName, virtualNetworkGatewayName, gatewayVip);
-        if (inner != null) {
-            return new VirtualNetworkGatewayImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public VirtualNetworkGateway reset(String resourceGroupName, String virtualNetworkGatewayName) {
         VirtualNetworkGatewayInner inner = this.serviceClient().reset(resourceGroupName, virtualNetworkGatewayName);
         if (inner != null) {
@@ -171,17 +161,6 @@ public final class VirtualNetworkGatewaysImpl implements VirtualNetworkGateways 
 
     public String getVpnProfilePackageUrl(String resourceGroupName, String virtualNetworkGatewayName, Context context) {
         return this.serviceClient().getVpnProfilePackageUrl(resourceGroupName, virtualNetworkGatewayName, context);
-    }
-
-    public BgpPeerStatusListResult getBgpPeerStatus(
-        String resourceGroupName, String virtualNetworkGatewayName, String peer) {
-        BgpPeerStatusListResultInner inner =
-            this.serviceClient().getBgpPeerStatus(resourceGroupName, virtualNetworkGatewayName, peer);
-        if (inner != null) {
-            return new BgpPeerStatusListResultImpl(inner, this.manager());
-        } else {
-            return null;
-        }
     }
 
     public BgpPeerStatusListResult getBgpPeerStatus(String resourceGroupName, String virtualNetworkGatewayName) {
@@ -329,11 +308,6 @@ public final class VirtualNetworkGatewaysImpl implements VirtualNetworkGateways 
         return this
             .serviceClient()
             .vpnDeviceConfigurationScript(resourceGroupName, virtualNetworkGatewayConnectionName, parameters);
-    }
-
-    public String startPacketCapture(
-        String resourceGroupName, String virtualNetworkGatewayName, VpnPacketCaptureStartParameters parameters) {
-        return this.serviceClient().startPacketCapture(resourceGroupName, virtualNetworkGatewayName, parameters);
     }
 
     public String startPacketCapture(String resourceGroupName, String virtualNetworkGatewayName) {

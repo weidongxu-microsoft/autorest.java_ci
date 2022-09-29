@@ -234,6 +234,30 @@ public final class DeviceCapacityChecksClientImpl implements DeviceCapacityCheck
      * @param resourceGroupName The resource group name.
      * @param deviceName The device name.
      * @param deviceCapacityRequestInfo The device capacity request info.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link PollerFlux} for polling of long-running operation.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    private PollerFlux<PollResult<Void>, Void> beginCheckResourceCreationFeasibilityAsync(
+        String resourceGroupName, String deviceName, DeviceCapacityRequestInfo deviceCapacityRequestInfo) {
+        final String capacityName = null;
+        Mono<Response<Flux<ByteBuffer>>> mono =
+            checkResourceCreationFeasibilityWithResponseAsync(
+                resourceGroupName, deviceName, deviceCapacityRequestInfo, capacityName);
+        return this
+            .client
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
+    }
+
+    /**
+     * Posts the device capacity request info to check feasibility.
+     *
+     * @param resourceGroupName The resource group name.
+     * @param deviceName The device name.
+     * @param deviceCapacityRequestInfo The device capacity request info.
      * @param capacityName The capacity name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -263,7 +287,6 @@ public final class DeviceCapacityChecksClientImpl implements DeviceCapacityCheck
      * @param resourceGroupName The resource group name.
      * @param deviceName The device name.
      * @param deviceCapacityRequestInfo The device capacity request info.
-     * @param capacityName The capacity name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -271,10 +294,8 @@ public final class DeviceCapacityChecksClientImpl implements DeviceCapacityCheck
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginCheckResourceCreationFeasibility(
-        String resourceGroupName,
-        String deviceName,
-        DeviceCapacityRequestInfo deviceCapacityRequestInfo,
-        String capacityName) {
+        String resourceGroupName, String deviceName, DeviceCapacityRequestInfo deviceCapacityRequestInfo) {
+        final String capacityName = null;
         return beginCheckResourceCreationFeasibilityAsync(
                 resourceGroupName, deviceName, deviceCapacityRequestInfo, capacityName)
             .getSyncPoller();
@@ -374,27 +395,6 @@ public final class DeviceCapacityChecksClientImpl implements DeviceCapacityCheck
                 resourceGroupName, deviceName, deviceCapacityRequestInfo, capacityName, context)
             .last()
             .flatMap(this.client::getLroFinalResultOrError);
-    }
-
-    /**
-     * Posts the device capacity request info to check feasibility.
-     *
-     * @param resourceGroupName The resource group name.
-     * @param deviceName The device name.
-     * @param deviceCapacityRequestInfo The device capacity request info.
-     * @param capacityName The capacity name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public void checkResourceCreationFeasibility(
-        String resourceGroupName,
-        String deviceName,
-        DeviceCapacityRequestInfo deviceCapacityRequestInfo,
-        String capacityName) {
-        checkResourceCreationFeasibilityAsync(resourceGroupName, deviceName, deviceCapacityRequestInfo, capacityName)
-            .block();
     }
 
     /**

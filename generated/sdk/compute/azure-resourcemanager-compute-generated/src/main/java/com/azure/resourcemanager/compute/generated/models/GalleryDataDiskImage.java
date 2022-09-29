@@ -54,7 +54,7 @@ public final class GalleryDataDiskImage extends GalleryDiskImage {
 
     /** {@inheritDoc} */
     @Override
-    public GalleryDataDiskImage withSource(GalleryArtifactVersionSource source) {
+    public GalleryDataDiskImage withSource(GalleryDiskImageSource source) {
         super.withSource(source);
         return this;
     }

@@ -40,26 +40,11 @@ public interface ResourceGroups {
      * of its template deployments and currently stored operations.
      *
      * @param resourceGroupName The name of the resource group to delete. The name is case insensitive.
-     * @param forceDeletionTypes The resource types you want to force delete. Currently, only the following is
-     *     supported: forceDeletionTypes=Microsoft.Compute/virtualMachines,Microsoft.Compute/virtualMachineScaleSets.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
-    void deleteByResourceGroup(String resourceGroupName, String forceDeletionTypes);
-
-    /**
-     * Deletes a resource group.
-     *
-     * <p>When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all
-     * of its template deployments and currently stored operations.
-     *
-     * @param resourceGroupName The name of the resource group to delete. The name is case insensitive.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void delete(String resourceGroupName);
+    void deleteByResourceGroup(String resourceGroupName);
 
     /**
      * Deletes a resource group.

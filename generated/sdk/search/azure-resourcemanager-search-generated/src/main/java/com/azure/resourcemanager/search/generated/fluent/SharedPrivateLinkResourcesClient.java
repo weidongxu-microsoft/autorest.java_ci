@@ -27,8 +27,6 @@ public interface SharedPrivateLinkResourcesClient {
      * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure Cognitive
      *     Search service within the specified resource group.
      * @param sharedPrivateLinkResource The definition of the shared private link resource to create or update.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
-     *     included in response information as a way to track the request.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -40,8 +38,7 @@ public interface SharedPrivateLinkResourcesClient {
         String resourceGroupName,
         String searchServiceName,
         String sharedPrivateLinkResourceName,
-        SharedPrivateLinkResourceInner sharedPrivateLinkResource,
-        UUID clientRequestId);
+        SharedPrivateLinkResourceInner sharedPrivateLinkResource);
 
     /**
      * Initiates the creation or update of a shared private link resource managed by the search service in the given
@@ -71,32 +68,6 @@ public interface SharedPrivateLinkResourcesClient {
         SharedPrivateLinkResourceInner sharedPrivateLinkResource,
         UUID clientRequestId,
         Context context);
-
-    /**
-     * Initiates the creation or update of a shared private link resource managed by the search service in the given
-     * resource group.
-     *
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
-     *     value from the Azure Resource Manager API or the portal.
-     * @param searchServiceName The name of the Azure Cognitive Search service associated with the specified resource
-     *     group.
-     * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure Cognitive
-     *     Search service within the specified resource group.
-     * @param sharedPrivateLinkResource The definition of the shared private link resource to create or update.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
-     *     included in response information as a way to track the request.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Shared Private Link Resource managed by the Azure Cognitive Search service.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    SharedPrivateLinkResourceInner createOrUpdate(
-        String resourceGroupName,
-        String searchServiceName,
-        String sharedPrivateLinkResourceName,
-        SharedPrivateLinkResourceInner sharedPrivateLinkResource,
-        UUID clientRequestId);
 
     /**
      * Initiates the creation or update of a shared private link resource managed by the search service in the given
@@ -203,8 +174,6 @@ public interface SharedPrivateLinkResourcesClient {
      *     group.
      * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure Cognitive
      *     Search service within the specified resource group.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
-     *     included in response information as a way to track the request.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -212,7 +181,7 @@ public interface SharedPrivateLinkResourcesClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(
-        String resourceGroupName, String searchServiceName, String sharedPrivateLinkResourceName, UUID clientRequestId);
+        String resourceGroupName, String searchServiceName, String sharedPrivateLinkResourceName);
 
     /**
      * Initiates the deletion of the shared private link resource from the search service.
@@ -238,25 +207,6 @@ public interface SharedPrivateLinkResourcesClient {
         String sharedPrivateLinkResourceName,
         UUID clientRequestId,
         Context context);
-
-    /**
-     * Initiates the deletion of the shared private link resource from the search service.
-     *
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
-     *     value from the Azure Resource Manager API or the portal.
-     * @param searchServiceName The name of the Azure Cognitive Search service associated with the specified resource
-     *     group.
-     * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure Cognitive
-     *     Search service within the specified resource group.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
-     *     included in response information as a way to track the request.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    void delete(
-        String resourceGroupName, String searchServiceName, String sharedPrivateLinkResourceName, UUID clientRequestId);
 
     /**
      * Initiates the deletion of the shared private link resource from the search service.

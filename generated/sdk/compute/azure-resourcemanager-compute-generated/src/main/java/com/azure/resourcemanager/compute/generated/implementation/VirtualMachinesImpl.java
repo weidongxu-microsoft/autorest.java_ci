@@ -77,10 +77,6 @@ public final class VirtualMachinesImpl implements VirtualMachines {
         }
     }
 
-    public void delete(String resourceGroupName, String vmName, Boolean forceDeletion) {
-        this.serviceClient().delete(resourceGroupName, vmName, forceDeletion);
-    }
-
     public void delete(String resourceGroupName, String vmName) {
         this.serviceClient().delete(resourceGroupName, vmName);
     }
@@ -145,10 +141,6 @@ public final class VirtualMachinesImpl implements VirtualMachines {
         this.serviceClient().convertToManagedDisks(resourceGroupName, vmName, context);
     }
 
-    public void deallocate(String resourceGroupName, String vmName, Boolean hibernate) {
-        this.serviceClient().deallocate(resourceGroupName, vmName, hibernate);
-    }
-
     public void deallocate(String resourceGroupName, String vmName) {
         this.serviceClient().deallocate(resourceGroupName, vmName);
     }
@@ -199,10 +191,6 @@ public final class VirtualMachinesImpl implements VirtualMachines {
         return Utils.mapPage(inner, inner1 -> new VirtualMachineSizeImpl(inner1, this.manager()));
     }
 
-    public void powerOff(String resourceGroupName, String vmName, Boolean skipShutdown) {
-        this.serviceClient().powerOff(resourceGroupName, vmName, skipShutdown);
-    }
-
     public void powerOff(String resourceGroupName, String vmName) {
         this.serviceClient().powerOff(resourceGroupName, vmName);
     }
@@ -241,10 +229,6 @@ public final class VirtualMachinesImpl implements VirtualMachines {
 
     public void redeploy(String resourceGroupName, String vmName, Context context) {
         this.serviceClient().redeploy(resourceGroupName, vmName, context);
-    }
-
-    public void reimage(String resourceGroupName, String vmName, VirtualMachineReimageParameters parameters) {
-        this.serviceClient().reimage(resourceGroupName, vmName, parameters);
     }
 
     public void reimage(String resourceGroupName, String vmName) {

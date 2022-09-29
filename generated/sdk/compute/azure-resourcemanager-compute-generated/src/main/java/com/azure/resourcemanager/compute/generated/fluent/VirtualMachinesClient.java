@@ -266,7 +266,6 @@ public interface VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param forceDeletion Optional parameter to force delete virtual machines.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
@@ -274,7 +273,7 @@ public interface VirtualMachinesClient {
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String vmName, Boolean forceDeletion);
+    SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String vmName);
 
     /**
      * The operation to delete a virtual machine.
@@ -292,20 +291,6 @@ public interface VirtualMachinesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String vmName, Boolean forceDeletion, Context context);
-
-    /**
-     * The operation to delete a virtual machine.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param vmName The name of the virtual machine.
-     * @param forceDeletion Optional parameter to force delete virtual machines.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    void delete(String resourceGroupName, String vmName, Boolean forceDeletion);
 
     /**
      * The operation to delete a virtual machine.
@@ -466,7 +451,6 @@ public interface VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param hibernate Optional parameter to hibernate a virtual machine. (Feature in Preview).
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
@@ -474,7 +458,7 @@ public interface VirtualMachinesClient {
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<Void>, Void> beginDeallocate(String resourceGroupName, String vmName, Boolean hibernate);
+    SyncPoller<PollResult<Void>, Void> beginDeallocate(String resourceGroupName, String vmName);
 
     /**
      * Shuts down the virtual machine and releases the compute resources. You are not billed for the compute resources
@@ -493,21 +477,6 @@ public interface VirtualMachinesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDeallocate(
         String resourceGroupName, String vmName, Boolean hibernate, Context context);
-
-    /**
-     * Shuts down the virtual machine and releases the compute resources. You are not billed for the compute resources
-     * that this virtual machine uses.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param vmName The name of the virtual machine.
-     * @param hibernate Optional parameter to hibernate a virtual machine. (Feature in Preview).
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    void deallocate(String resourceGroupName, String vmName, Boolean hibernate);
 
     /**
      * Shuts down the virtual machine and releases the compute resources. You are not billed for the compute resources
@@ -672,9 +641,6 @@ public interface VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param skipShutdown The parameter to request non-graceful VM shutdown. True value for this flag indicates
-     *     non-graceful shutdown whereas false indicates otherwise. Default value for this flag is false if not
-     *     specified.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
@@ -682,7 +648,7 @@ public interface VirtualMachinesClient {
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<Void>, Void> beginPowerOff(String resourceGroupName, String vmName, Boolean skipShutdown);
+    SyncPoller<PollResult<Void>, Void> beginPowerOff(String resourceGroupName, String vmName);
 
     /**
      * The operation to power off (stop) a virtual machine. The virtual machine can be restarted with the same
@@ -703,23 +669,6 @@ public interface VirtualMachinesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginPowerOff(
         String resourceGroupName, String vmName, Boolean skipShutdown, Context context);
-
-    /**
-     * The operation to power off (stop) a virtual machine. The virtual machine can be restarted with the same
-     * provisioned resources. You are still charged for this virtual machine.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param vmName The name of the virtual machine.
-     * @param skipShutdown The parameter to request non-graceful VM shutdown. True value for this flag indicates
-     *     non-graceful shutdown whereas false indicates otherwise. Default value for this flag is false if not
-     *     specified.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    void powerOff(String resourceGroupName, String vmName, Boolean skipShutdown);
 
     /**
      * The operation to power off (stop) a virtual machine. The virtual machine can be restarted with the same
@@ -982,7 +931,6 @@ public interface VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param parameters Parameters supplied to the Reimage Virtual Machine operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
@@ -990,8 +938,7 @@ public interface VirtualMachinesClient {
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<Void>, Void> beginReimage(
-        String resourceGroupName, String vmName, VirtualMachineReimageParameters parameters);
+    SyncPoller<PollResult<Void>, Void> beginReimage(String resourceGroupName, String vmName);
 
     /**
      * Reimages the virtual machine which has an ephemeral OS disk back to its initial state.
@@ -1009,20 +956,6 @@ public interface VirtualMachinesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginReimage(
         String resourceGroupName, String vmName, VirtualMachineReimageParameters parameters, Context context);
-
-    /**
-     * Reimages the virtual machine which has an ephemeral OS disk back to its initial state.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param vmName The name of the virtual machine.
-     * @param parameters Parameters supplied to the Reimage Virtual Machine operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    void reimage(String resourceGroupName, String vmName, VirtualMachineReimageParameters parameters);
 
     /**
      * Reimages the virtual machine which has an ephemeral OS disk back to its initial state.

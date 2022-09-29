@@ -278,17 +278,6 @@ public interface CloudService {
     /**
      * Restarts one or more role instances in a cloud service.
      *
-     * @param parameters List of cloud service role instance names.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void restart(RoleInstances parameters);
-
-    /**
-     * Restarts one or more role instances in a cloud service.
-     *
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -306,17 +295,6 @@ public interface CloudService {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void restart(RoleInstances parameters, Context context);
-
-    /**
-     * Reimage asynchronous operation reinstalls the operating system on instances of web roles or worker roles.
-     *
-     * @param parameters List of cloud service role instance names.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void reimage(RoleInstances parameters);
 
     /**
      * Reimage asynchronous operation reinstalls the operating system on instances of web roles or worker roles.
@@ -344,19 +322,6 @@ public interface CloudService {
      * the storage resources that are used by them. If you do not want to initialize storage resources, you can use
      * Reimage Role Instances.
      *
-     * @param parameters List of cloud service role instance names.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void rebuild(RoleInstances parameters);
-
-    /**
-     * Rebuild Role Instances reinstalls the operating system on instances of web roles or worker roles and initializes
-     * the storage resources that are used by them. If you do not want to initialize storage resources, you can use
-     * Reimage Role Instances.
-     *
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -376,17 +341,6 @@ public interface CloudService {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void rebuild(RoleInstances parameters, Context context);
-
-    /**
-     * Deletes role instances in a cloud service.
-     *
-     * @param parameters List of cloud service role instance names.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void deleteInstances(RoleInstances parameters);
 
     /**
      * Deletes role instances in a cloud service.

@@ -378,6 +378,39 @@ public final class ServicesClientImpl implements ServicesClient {
      *     service names must be globally unique since they are part of the service URI
      *     (https://&lt;name&gt;.search.windows.net). You cannot change the service name after the service is created.
      * @param serviceParam The definition of the search service to create or update.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link PollerFlux} for polling of describes an Azure Cognitive Search service and its current state.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    private PollerFlux<PollResult<SearchServiceInner>, SearchServiceInner> beginCreateOrUpdateAsync(
+        String resourceGroupName, String searchServiceName, SearchServiceInner serviceParam) {
+        final UUID clientRequestId = null;
+        Mono<Response<Flux<ByteBuffer>>> mono =
+            createOrUpdateWithResponseAsync(resourceGroupName, searchServiceName, serviceParam, clientRequestId);
+        return this
+            .client
+            .<SearchServiceInner, SearchServiceInner>getLroResult(
+                mono,
+                this.client.getHttpPipeline(),
+                SearchServiceInner.class,
+                SearchServiceInner.class,
+                this.client.getContext());
+    }
+
+    /**
+     * Creates or updates a search service in the given resource group. If the search service already exists, all
+     * properties will be updated with the given values.
+     *
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     *     value from the Azure Resource Manager API or the portal.
+     * @param searchServiceName The name of the Azure Cognitive Search service to create or update. Search service names
+     *     must only contain lowercase letters, digits or dashes, cannot use dash as the first two or last one
+     *     characters, cannot contain consecutive dashes, and must be between 2 and 60 characters in length. Search
+     *     service names must be globally unique since they are part of the service URI
+     *     (https://&lt;name&gt;.search.windows.net). You cannot change the service name after the service is created.
+     * @param serviceParam The definition of the search service to create or update.
      * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
      *     included in response information as a way to track the request.
      * @param context The context to associate with this operation.
@@ -415,8 +448,6 @@ public final class ServicesClientImpl implements ServicesClient {
      *     service names must be globally unique since they are part of the service URI
      *     (https://&lt;name&gt;.search.windows.net). You cannot change the service name after the service is created.
      * @param serviceParam The definition of the search service to create or update.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
-     *     included in response information as a way to track the request.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -424,7 +455,8 @@ public final class ServicesClientImpl implements ServicesClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<SearchServiceInner>, SearchServiceInner> beginCreateOrUpdate(
-        String resourceGroupName, String searchServiceName, SearchServiceInner serviceParam, UUID clientRequestId) {
+        String resourceGroupName, String searchServiceName, SearchServiceInner serviceParam) {
+        final UUID clientRequestId = null;
         return beginCreateOrUpdateAsync(resourceGroupName, searchServiceName, serviceParam, clientRequestId)
             .getSyncPoller();
     }
@@ -546,31 +578,6 @@ public final class ServicesClientImpl implements ServicesClient {
         return beginCreateOrUpdateAsync(resourceGroupName, searchServiceName, serviceParam, clientRequestId, context)
             .last()
             .flatMap(this.client::getLroFinalResultOrError);
-    }
-
-    /**
-     * Creates or updates a search service in the given resource group. If the search service already exists, all
-     * properties will be updated with the given values.
-     *
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
-     *     value from the Azure Resource Manager API or the portal.
-     * @param searchServiceName The name of the Azure Cognitive Search service to create or update. Search service names
-     *     must only contain lowercase letters, digits or dashes, cannot use dash as the first two or last one
-     *     characters, cannot contain consecutive dashes, and must be between 2 and 60 characters in length. Search
-     *     service names must be globally unique since they are part of the service URI
-     *     (https://&lt;name&gt;.search.windows.net). You cannot change the service name after the service is created.
-     * @param serviceParam The definition of the search service to create or update.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
-     *     included in response information as a way to track the request.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes an Azure Cognitive Search service and its current state.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public SearchServiceInner createOrUpdate(
-        String resourceGroupName, String searchServiceName, SearchServiceInner serviceParam, UUID clientRequestId) {
-        return createOrUpdateAsync(resourceGroupName, searchServiceName, serviceParam, clientRequestId).block();
     }
 
     /**

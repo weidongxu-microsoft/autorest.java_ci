@@ -51,10 +51,6 @@ public final class NetworkManagersImpl implements NetworkManagers {
         }
     }
 
-    public void delete(String resourceGroupName, String networkManagerName, Boolean force) {
-        this.serviceClient().delete(resourceGroupName, networkManagerName, force);
-    }
-
     public void delete(String resourceGroupName, String networkManagerName) {
         this.serviceClient().delete(resourceGroupName, networkManagerName);
     }

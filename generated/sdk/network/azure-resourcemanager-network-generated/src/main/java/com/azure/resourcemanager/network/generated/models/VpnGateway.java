@@ -376,17 +376,6 @@ public interface VpnGateway {
     /**
      * Starts packet capture on vpn gateway in the specified resource group.
      *
-     * @param parameters Vpn gateway packet capture parameters supplied to start packet capture on vpn gateway.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
-     */
-    String startPacketCapture(VpnGatewayPacketCaptureStartParameters parameters);
-
-    /**
-     * Starts packet capture on vpn gateway in the specified resource group.
-     *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the response.
@@ -404,17 +393,6 @@ public interface VpnGateway {
      * @return the response.
      */
     String startPacketCapture(VpnGatewayPacketCaptureStartParameters parameters, Context context);
-
-    /**
-     * Stops packet capture on vpn gateway in the specified resource group.
-     *
-     * @param parameters Vpn gateway packet capture parameters supplied to stop packet capture on vpn gateway.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
-     */
-    String stopPacketCapture(VpnGatewayPacketCaptureStopParameters parameters);
 
     /**
      * Stops packet capture on vpn gateway in the specified resource group.

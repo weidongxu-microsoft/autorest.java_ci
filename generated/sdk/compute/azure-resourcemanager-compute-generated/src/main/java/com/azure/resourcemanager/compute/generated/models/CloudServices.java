@@ -203,19 +203,6 @@ public interface CloudServices {
      *
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
-     * @param parameters List of cloud service role instance names.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void restart(String resourceGroupName, String cloudServiceName, RoleInstances parameters);
-
-    /**
-     * Restarts one or more role instances in a cloud service.
-     *
-     * @param resourceGroupName Name of the resource group.
-     * @param cloudServiceName Name of the cloud service.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
@@ -236,19 +223,6 @@ public interface CloudServices {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void restart(String resourceGroupName, String cloudServiceName, RoleInstances parameters, Context context);
-
-    /**
-     * Reimage asynchronous operation reinstalls the operating system on instances of web roles or worker roles.
-     *
-     * @param resourceGroupName Name of the resource group.
-     * @param cloudServiceName Name of the cloud service.
-     * @param parameters List of cloud service role instance names.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void reimage(String resourceGroupName, String cloudServiceName, RoleInstances parameters);
 
     /**
      * Reimage asynchronous operation reinstalls the operating system on instances of web roles or worker roles.
@@ -283,21 +257,6 @@ public interface CloudServices {
      *
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
-     * @param parameters List of cloud service role instance names.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void rebuild(String resourceGroupName, String cloudServiceName, RoleInstances parameters);
-
-    /**
-     * Rebuild Role Instances reinstalls the operating system on instances of web roles or worker roles and initializes
-     * the storage resources that are used by them. If you do not want to initialize storage resources, you can use
-     * Reimage Role Instances.
-     *
-     * @param resourceGroupName Name of the resource group.
-     * @param cloudServiceName Name of the cloud service.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
@@ -320,19 +279,6 @@ public interface CloudServices {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void rebuild(String resourceGroupName, String cloudServiceName, RoleInstances parameters, Context context);
-
-    /**
-     * Deletes role instances in a cloud service.
-     *
-     * @param resourceGroupName Name of the resource group.
-     * @param cloudServiceName Name of the cloud service.
-     * @param parameters List of cloud service role instance names.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void deleteInstances(String resourceGroupName, String cloudServiceName, RoleInstances parameters);
 
     /**
      * Deletes role instances in a cloud service.

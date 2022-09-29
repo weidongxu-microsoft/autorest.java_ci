@@ -1297,18 +1297,6 @@ public interface VirtualMachine {
      * Shuts down the virtual machine and releases the compute resources. You are not billed for the compute resources
      * that this virtual machine uses.
      *
-     * @param hibernate Optional parameter to hibernate a virtual machine. (Feature in Preview).
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void deallocate(Boolean hibernate);
-
-    /**
-     * Shuts down the virtual machine and releases the compute resources. You are not billed for the compute resources
-     * that this virtual machine uses.
-     *
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1356,20 +1344,6 @@ public interface VirtualMachine {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void generalize();
-
-    /**
-     * The operation to power off (stop) a virtual machine. The virtual machine can be restarted with the same
-     * provisioned resources. You are still charged for this virtual machine.
-     *
-     * @param skipShutdown The parameter to request non-graceful VM shutdown. True value for this flag indicates
-     *     non-graceful shutdown whereas false indicates otherwise. Default value for this flag is false if not
-     *     specified.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void powerOff(Boolean skipShutdown);
 
     /**
      * The operation to power off (stop) a virtual machine. The virtual machine can be restarted with the same
@@ -1475,17 +1449,6 @@ public interface VirtualMachine {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void redeploy(Context context);
-
-    /**
-     * Reimages the virtual machine which has an ephemeral OS disk back to its initial state.
-     *
-     * @param parameters Parameters supplied to the Reimage Virtual Machine operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void reimage(VirtualMachineReimageParameters parameters);
 
     /**
      * Reimages the virtual machine which has an ephemeral OS disk back to its initial state.

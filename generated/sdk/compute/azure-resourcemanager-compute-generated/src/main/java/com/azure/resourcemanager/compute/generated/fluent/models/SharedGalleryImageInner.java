@@ -291,6 +291,52 @@ public final class SharedGalleryImageInner extends PirSharedGalleryResource {
     }
 
     /**
+     * Get the privacyStatementUri property: Privacy statement uri for the current community gallery image.
+     *
+     * @return the privacyStatementUri value.
+     */
+    public String privacyStatementUri() {
+        return this.innerProperties() == null ? null : this.innerProperties().privacyStatementUri();
+    }
+
+    /**
+     * Set the privacyStatementUri property: Privacy statement uri for the current community gallery image.
+     *
+     * @param privacyStatementUri the privacyStatementUri value to set.
+     * @return the SharedGalleryImageInner object itself.
+     */
+    public SharedGalleryImageInner withPrivacyStatementUri(String privacyStatementUri) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new SharedGalleryImageProperties();
+        }
+        this.innerProperties().withPrivacyStatementUri(privacyStatementUri);
+        return this;
+    }
+
+    /**
+     * Get the eula property: End-user license agreement for the current community gallery image.
+     *
+     * @return the eula value.
+     */
+    public String eula() {
+        return this.innerProperties() == null ? null : this.innerProperties().eula();
+    }
+
+    /**
+     * Set the eula property: End-user license agreement for the current community gallery image.
+     *
+     * @param eula the eula value to set.
+     * @return the SharedGalleryImageInner object itself.
+     */
+    public SharedGalleryImageInner withEula(String eula) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new SharedGalleryImageProperties();
+        }
+        this.innerProperties().withEula(eula);
+        return this;
+    }
+
+    /**
      * Validates the instance.
      *
      * @throws IllegalArgumentException thrown if the instance is not valid.

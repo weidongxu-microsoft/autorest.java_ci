@@ -7,6 +7,7 @@ package com.azure.resourcemanager.compute.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.compute.generated.models.GalleryImageVersionPublishingProfile;
+import com.azure.resourcemanager.compute.generated.models.GalleryImageVersionSafetyProfile;
 import com.azure.resourcemanager.compute.generated.models.GalleryImageVersionStorageProfile;
 import com.azure.resourcemanager.compute.generated.models.GalleryProvisioningState;
 import com.azure.resourcemanager.compute.generated.models.ReplicationStatus;
@@ -34,6 +35,12 @@ public final class GalleryImageVersionProperties {
      */
     @JsonProperty(value = "storageProfile", required = true)
     private GalleryImageVersionStorageProfile storageProfile;
+
+    /*
+     * This is the safety profile of the Gallery Image Version.
+     */
+    @JsonProperty(value = "safetyProfile")
+    private GalleryImageVersionSafetyProfile safetyProfile;
 
     /*
      * This is the replication status of the gallery image version.
@@ -97,6 +104,26 @@ public final class GalleryImageVersionProperties {
     }
 
     /**
+     * Get the safetyProfile property: This is the safety profile of the Gallery Image Version.
+     *
+     * @return the safetyProfile value.
+     */
+    public GalleryImageVersionSafetyProfile safetyProfile() {
+        return this.safetyProfile;
+    }
+
+    /**
+     * Set the safetyProfile property: This is the safety profile of the Gallery Image Version.
+     *
+     * @param safetyProfile the safetyProfile value to set.
+     * @return the GalleryImageVersionProperties object itself.
+     */
+    public GalleryImageVersionProperties withSafetyProfile(GalleryImageVersionSafetyProfile safetyProfile) {
+        this.safetyProfile = safetyProfile;
+        return this;
+    }
+
+    /**
      * Get the replicationStatus property: This is the replication status of the gallery image version.
      *
      * @return the replicationStatus value.
@@ -121,6 +148,9 @@ public final class GalleryImageVersionProperties {
                         "Missing required property storageProfile in model GalleryImageVersionProperties"));
         } else {
             storageProfile().validate();
+        }
+        if (safetyProfile() != null) {
+            safetyProfile().validate();
         }
         if (replicationStatus() != null) {
             replicationStatus().validate();

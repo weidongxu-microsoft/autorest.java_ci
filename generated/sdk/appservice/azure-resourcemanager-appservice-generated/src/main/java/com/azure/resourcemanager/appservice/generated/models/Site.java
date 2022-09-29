@@ -1695,22 +1695,6 @@ public interface Site {
      *
      * <p>Description for Start capturing network packets for the site.
      *
-     * @param durationInSeconds The duration to keep capturing in seconds.
-     * @param maxFrameLength The maximum frame length in bytes (Optional).
-     * @param sasUrl The Blob URL to store capture file.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of NetworkTrace.
-     */
-    Object startNetworkTrace(Integer durationInSeconds, Integer maxFrameLength, String sasUrl);
-
-    /**
-     * Start capturing network packets for the site.
-     *
-     * <p>Description for Start capturing network packets for the site.
-     *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.

@@ -2494,13 +2494,6 @@ public final class WebAppsImpl implements WebApps {
         return this.serviceClient().startWebSiteNetworkTrace(resourceGroupName, name);
     }
 
-    public Object startWebSiteNetworkTraceOperation(
-        String resourceGroupName, String name, Integer durationInSeconds, Integer maxFrameLength, String sasUrl) {
-        return this
-            .serviceClient()
-            .startWebSiteNetworkTraceOperation(resourceGroupName, name, durationInSeconds, maxFrameLength, sasUrl);
-    }
-
     public Object startWebSiteNetworkTraceOperation(String resourceGroupName, String name) {
         return this.serviceClient().startWebSiteNetworkTraceOperation(resourceGroupName, name);
     }
@@ -5950,19 +5943,6 @@ public final class WebAppsImpl implements WebApps {
         return this.serviceClient().startWebSiteNetworkTraceSlot(resourceGroupName, name, slot);
     }
 
-    public Object startWebSiteNetworkTraceOperationSlot(
-        String resourceGroupName,
-        String name,
-        String slot,
-        Integer durationInSeconds,
-        Integer maxFrameLength,
-        String sasUrl) {
-        return this
-            .serviceClient()
-            .startWebSiteNetworkTraceOperationSlot(
-                resourceGroupName, name, slot, durationInSeconds, maxFrameLength, sasUrl);
-    }
-
     public Object startWebSiteNetworkTraceOperationSlot(String resourceGroupName, String name, String slot) {
         return this.serviceClient().startWebSiteNetworkTraceOperationSlot(resourceGroupName, name, slot);
     }
@@ -6921,18 +6901,6 @@ public final class WebAppsImpl implements WebApps {
         this.serviceClient().startSlot(resourceGroupName, name, slot);
     }
 
-    public Object startNetworkTraceSlot(
-        String resourceGroupName,
-        String name,
-        String slot,
-        Integer durationInSeconds,
-        Integer maxFrameLength,
-        String sasUrl) {
-        return this
-            .serviceClient()
-            .startNetworkTraceSlot(resourceGroupName, name, slot, durationInSeconds, maxFrameLength, sasUrl);
-    }
-
     public Object startNetworkTraceSlot(String resourceGroupName, String name, String slot) {
         return this.serviceClient().startNetworkTraceSlot(resourceGroupName, name, slot);
     }
@@ -7364,13 +7332,6 @@ public final class WebAppsImpl implements WebApps {
 
     public void start(String resourceGroupName, String name) {
         this.serviceClient().start(resourceGroupName, name);
-    }
-
-    public Object startNetworkTrace(
-        String resourceGroupName, String name, Integer durationInSeconds, Integer maxFrameLength, String sasUrl) {
-        return this
-            .serviceClient()
-            .startNetworkTrace(resourceGroupName, name, durationInSeconds, maxFrameLength, sasUrl);
     }
 
     public Object startNetworkTrace(String resourceGroupName, String name) {

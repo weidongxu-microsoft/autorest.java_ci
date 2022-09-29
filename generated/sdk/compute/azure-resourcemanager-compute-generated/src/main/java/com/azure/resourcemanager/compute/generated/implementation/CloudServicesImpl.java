@@ -122,20 +122,12 @@ public final class CloudServicesImpl implements CloudServices {
         this.serviceClient().powerOff(resourceGroupName, cloudServiceName, context);
     }
 
-    public void restart(String resourceGroupName, String cloudServiceName, RoleInstances parameters) {
-        this.serviceClient().restart(resourceGroupName, cloudServiceName, parameters);
-    }
-
     public void restart(String resourceGroupName, String cloudServiceName) {
         this.serviceClient().restart(resourceGroupName, cloudServiceName);
     }
 
     public void restart(String resourceGroupName, String cloudServiceName, RoleInstances parameters, Context context) {
         this.serviceClient().restart(resourceGroupName, cloudServiceName, parameters, context);
-    }
-
-    public void reimage(String resourceGroupName, String cloudServiceName, RoleInstances parameters) {
-        this.serviceClient().reimage(resourceGroupName, cloudServiceName, parameters);
     }
 
     public void reimage(String resourceGroupName, String cloudServiceName) {
@@ -146,20 +138,12 @@ public final class CloudServicesImpl implements CloudServices {
         this.serviceClient().reimage(resourceGroupName, cloudServiceName, parameters, context);
     }
 
-    public void rebuild(String resourceGroupName, String cloudServiceName, RoleInstances parameters) {
-        this.serviceClient().rebuild(resourceGroupName, cloudServiceName, parameters);
-    }
-
     public void rebuild(String resourceGroupName, String cloudServiceName) {
         this.serviceClient().rebuild(resourceGroupName, cloudServiceName);
     }
 
     public void rebuild(String resourceGroupName, String cloudServiceName, RoleInstances parameters, Context context) {
         this.serviceClient().rebuild(resourceGroupName, cloudServiceName, parameters, context);
-    }
-
-    public void deleteInstances(String resourceGroupName, String cloudServiceName, RoleInstances parameters) {
-        this.serviceClient().deleteInstances(resourceGroupName, cloudServiceName, parameters);
     }
 
     public void deleteInstances(String resourceGroupName, String cloudServiceName) {

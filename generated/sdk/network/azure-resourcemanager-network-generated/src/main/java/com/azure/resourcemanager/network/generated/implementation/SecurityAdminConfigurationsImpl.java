@@ -67,10 +67,6 @@ public final class SecurityAdminConfigurationsImpl implements SecurityAdminConfi
         }
     }
 
-    public void delete(String resourceGroupName, String networkManagerName, String configurationName, Boolean force) {
-        this.serviceClient().delete(resourceGroupName, networkManagerName, configurationName, force);
-    }
-
     public void delete(String resourceGroupName, String networkManagerName, String configurationName) {
         this.serviceClient().delete(resourceGroupName, networkManagerName, configurationName);
     }

@@ -59,10 +59,6 @@ public interface ClustersClient {
      * @param resourceGroupName The name of the resource group containing the Kusto cluster.
      * @param clusterName The name of the Kusto cluster.
      * @param parameters The Kusto cluster parameters supplied to the CreateOrUpdate operation.
-     * @param ifMatch The ETag of the cluster. Omit this value to always overwrite the current cluster. Specify the
-     *     last-seen ETag value to prevent accidentally overwriting concurrent changes.
-     * @param ifNoneMatch Set to '*' to allow a new cluster to be created, but to prevent updating an existing cluster.
-     *     Other values will result in a 412 Pre-condition Failed response.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -70,7 +66,7 @@ public interface ClustersClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<ClusterInner>, ClusterInner> beginCreateOrUpdate(
-        String resourceGroupName, String clusterName, ClusterInner parameters, String ifMatch, String ifNoneMatch);
+        String resourceGroupName, String clusterName, ClusterInner parameters);
 
     /**
      * Create or update a Kusto cluster.
@@ -96,25 +92,6 @@ public interface ClustersClient {
         String ifMatch,
         String ifNoneMatch,
         Context context);
-
-    /**
-     * Create or update a Kusto cluster.
-     *
-     * @param resourceGroupName The name of the resource group containing the Kusto cluster.
-     * @param clusterName The name of the Kusto cluster.
-     * @param parameters The Kusto cluster parameters supplied to the CreateOrUpdate operation.
-     * @param ifMatch The ETag of the cluster. Omit this value to always overwrite the current cluster. Specify the
-     *     last-seen ETag value to prevent accidentally overwriting concurrent changes.
-     * @param ifNoneMatch Set to '*' to allow a new cluster to be created, but to prevent updating an existing cluster.
-     *     Other values will result in a 412 Pre-condition Failed response.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing a Kusto cluster.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    ClusterInner createOrUpdate(
-        String resourceGroupName, String clusterName, ClusterInner parameters, String ifMatch, String ifNoneMatch);
 
     /**
      * Create or update a Kusto cluster.
@@ -161,8 +138,6 @@ public interface ClustersClient {
      * @param resourceGroupName The name of the resource group containing the Kusto cluster.
      * @param clusterName The name of the Kusto cluster.
      * @param parameters The Kusto cluster parameters supplied to the Update operation.
-     * @param ifMatch The ETag of the cluster. Omit this value to always overwrite the current cluster. Specify the
-     *     last-seen ETag value to prevent accidentally overwriting concurrent changes.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -170,7 +145,7 @@ public interface ClustersClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<ClusterInner>, ClusterInner> beginUpdate(
-        String resourceGroupName, String clusterName, ClusterUpdate parameters, String ifMatch);
+        String resourceGroupName, String clusterName, ClusterUpdate parameters);
 
     /**
      * Update a Kusto cluster.
@@ -189,22 +164,6 @@ public interface ClustersClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<ClusterInner>, ClusterInner> beginUpdate(
         String resourceGroupName, String clusterName, ClusterUpdate parameters, String ifMatch, Context context);
-
-    /**
-     * Update a Kusto cluster.
-     *
-     * @param resourceGroupName The name of the resource group containing the Kusto cluster.
-     * @param clusterName The name of the Kusto cluster.
-     * @param parameters The Kusto cluster parameters supplied to the Update operation.
-     * @param ifMatch The ETag of the cluster. Omit this value to always overwrite the current cluster. Specify the
-     *     last-seen ETag value to prevent accidentally overwriting concurrent changes.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing a Kusto cluster.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    ClusterInner update(String resourceGroupName, String clusterName, ClusterUpdate parameters, String ifMatch);
 
     /**
      * Update a Kusto cluster.

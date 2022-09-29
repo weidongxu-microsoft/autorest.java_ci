@@ -9,6 +9,7 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.compute.generated.fluent.models.GalleryImageVersionInner;
 import com.azure.resourcemanager.compute.generated.models.GalleryImageVersion;
 import com.azure.resourcemanager.compute.generated.models.GalleryImageVersionPublishingProfile;
+import com.azure.resourcemanager.compute.generated.models.GalleryImageVersionSafetyProfile;
 import com.azure.resourcemanager.compute.generated.models.GalleryImageVersionStorageProfile;
 import com.azure.resourcemanager.compute.generated.models.GalleryImageVersionUpdate;
 import com.azure.resourcemanager.compute.generated.models.GalleryProvisioningState;
@@ -58,6 +59,10 @@ public final class GalleryImageVersionImpl
 
     public GalleryImageVersionStorageProfile storageProfile() {
         return this.innerModel().storageProfile();
+    }
+
+    public GalleryImageVersionSafetyProfile safetyProfile() {
+        return this.innerModel().safetyProfile();
     }
 
     public ReplicationStatus replicationStatus() {
@@ -249,6 +254,16 @@ public final class GalleryImageVersionImpl
             return this;
         } else {
             this.updateGalleryImageVersion.withStorageProfile(storageProfile);
+            return this;
+        }
+    }
+
+    public GalleryImageVersionImpl withSafetyProfile(GalleryImageVersionSafetyProfile safetyProfile) {
+        if (isInCreateMode()) {
+            this.innerModel().withSafetyProfile(safetyProfile);
+            return this;
+        } else {
+            this.updateGalleryImageVersion.withSafetyProfile(safetyProfile);
             return this;
         }
     }

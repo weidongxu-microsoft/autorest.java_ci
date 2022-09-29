@@ -1914,6 +1914,32 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
      *
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link PollerFlux} for polling of a common class for general resource information.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    private PollerFlux<PollResult<VirtualNetworkGatewayInner>, VirtualNetworkGatewayInner> beginResetAsync(
+        String resourceGroupName, String virtualNetworkGatewayName) {
+        final String gatewayVip = null;
+        Mono<Response<Flux<ByteBuffer>>> mono =
+            resetWithResponseAsync(resourceGroupName, virtualNetworkGatewayName, gatewayVip);
+        return this
+            .client
+            .<VirtualNetworkGatewayInner, VirtualNetworkGatewayInner>getLroResult(
+                mono,
+                this.client.getHttpPipeline(),
+                VirtualNetworkGatewayInner.class,
+                VirtualNetworkGatewayInner.class,
+                this.client.getContext());
+    }
+
+    /**
+     * Resets the primary of the virtual network gateway in the specified resource group.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param virtualNetworkGatewayName The name of the virtual network gateway.
      * @param gatewayVip Virtual network gateway vip address supplied to the begin reset of the active-active feature
      *     enabled gateway.
      * @param context The context to associate with this operation.
@@ -1943,8 +1969,6 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
      *
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param gatewayVip Virtual network gateway vip address supplied to the begin reset of the active-active feature
-     *     enabled gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1952,7 +1976,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<VirtualNetworkGatewayInner>, VirtualNetworkGatewayInner> beginReset(
-        String resourceGroupName, String virtualNetworkGatewayName, String gatewayVip) {
+        String resourceGroupName, String virtualNetworkGatewayName) {
+        final String gatewayVip = null;
         return beginResetAsync(resourceGroupName, virtualNetworkGatewayName, gatewayVip).getSyncPoller();
     }
 
@@ -2032,24 +2057,6 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
         return beginResetAsync(resourceGroupName, virtualNetworkGatewayName, gatewayVip, context)
             .last()
             .flatMap(this.client::getLroFinalResultOrError);
-    }
-
-    /**
-     * Resets the primary of the virtual network gateway in the specified resource group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param gatewayVip Virtual network gateway vip address supplied to the begin reset of the active-active feature
-     *     enabled gateway.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a common class for general resource information.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public VirtualNetworkGatewayInner reset(
-        String resourceGroupName, String virtualNetworkGatewayName, String gatewayVip) {
-        return resetAsync(resourceGroupName, virtualNetworkGatewayName, gatewayVip).block();
     }
 
     /**
@@ -3286,6 +3293,32 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
      *
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link PollerFlux} for polling of response for list BGP peer status API service call.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    private PollerFlux<PollResult<BgpPeerStatusListResultInner>, BgpPeerStatusListResultInner>
+        beginGetBgpPeerStatusAsync(String resourceGroupName, String virtualNetworkGatewayName) {
+        final String peer = null;
+        Mono<Response<Flux<ByteBuffer>>> mono =
+            getBgpPeerStatusWithResponseAsync(resourceGroupName, virtualNetworkGatewayName, peer);
+        return this
+            .client
+            .<BgpPeerStatusListResultInner, BgpPeerStatusListResultInner>getLroResult(
+                mono,
+                this.client.getHttpPipeline(),
+                BgpPeerStatusListResultInner.class,
+                BgpPeerStatusListResultInner.class,
+                this.client.getContext());
+    }
+
+    /**
+     * The GetBgpPeerStatus operation retrieves the status of all BGP peers.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param virtualNetworkGatewayName The name of the virtual network gateway.
      * @param peer The IP address of the peer to retrieve the status of.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -3315,7 +3348,6 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
      *
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param peer The IP address of the peer to retrieve the status of.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -3323,7 +3355,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<BgpPeerStatusListResultInner>, BgpPeerStatusListResultInner> beginGetBgpPeerStatus(
-        String resourceGroupName, String virtualNetworkGatewayName, String peer) {
+        String resourceGroupName, String virtualNetworkGatewayName) {
+        final String peer = null;
         return beginGetBgpPeerStatusAsync(resourceGroupName, virtualNetworkGatewayName, peer).getSyncPoller();
     }
 
@@ -3401,23 +3434,6 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
         return beginGetBgpPeerStatusAsync(resourceGroupName, virtualNetworkGatewayName, peer, context)
             .last()
             .flatMap(this.client::getLroFinalResultOrError);
-    }
-
-    /**
-     * The GetBgpPeerStatus operation retrieves the status of all BGP peers.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param peer The IP address of the peer to retrieve the status of.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for list BGP peer status API service call.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public BgpPeerStatusListResultInner getBgpPeerStatus(
-        String resourceGroupName, String virtualNetworkGatewayName, String peer) {
-        return getBgpPeerStatusAsync(resourceGroupName, virtualNetworkGatewayName, peer).block();
     }
 
     /**
@@ -5098,6 +5114,28 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
      *
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link PollerFlux} for polling of long-running operation.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    private PollerFlux<PollResult<String>, String> beginStartPacketCaptureAsync(
+        String resourceGroupName, String virtualNetworkGatewayName) {
+        final VpnPacketCaptureStartParameters parameters = null;
+        Mono<Response<Flux<ByteBuffer>>> mono =
+            startPacketCaptureWithResponseAsync(resourceGroupName, virtualNetworkGatewayName, parameters);
+        return this
+            .client
+            .<String, String>getLroResult(
+                mono, this.client.getHttpPipeline(), String.class, String.class, this.client.getContext());
+    }
+
+    /**
+     * Starts packet capture on virtual network gateway in the specified resource group.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param virtualNetworkGatewayName The name of the virtual network gateway.
      * @param parameters Virtual network gateway packet capture parameters supplied to start packet capture on gateway.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -5124,7 +5162,6 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
      *
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param parameters Virtual network gateway packet capture parameters supplied to start packet capture on gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -5132,7 +5169,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<String>, String> beginStartPacketCapture(
-        String resourceGroupName, String virtualNetworkGatewayName, VpnPacketCaptureStartParameters parameters) {
+        String resourceGroupName, String virtualNetworkGatewayName) {
+        final VpnPacketCaptureStartParameters parameters = null;
         return beginStartPacketCaptureAsync(resourceGroupName, virtualNetworkGatewayName, parameters).getSyncPoller();
     }
 
@@ -5216,23 +5254,6 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
         return beginStartPacketCaptureAsync(resourceGroupName, virtualNetworkGatewayName, parameters, context)
             .last()
             .flatMap(this.client::getLroFinalResultOrError);
-    }
-
-    /**
-     * Starts packet capture on virtual network gateway in the specified resource group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param parameters Virtual network gateway packet capture parameters supplied to start packet capture on gateway.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public String startPacketCapture(
-        String resourceGroupName, String virtualNetworkGatewayName, VpnPacketCaptureStartParameters parameters) {
-        return startPacketCaptureAsync(resourceGroupName, virtualNetworkGatewayName, parameters).block();
     }
 
     /**

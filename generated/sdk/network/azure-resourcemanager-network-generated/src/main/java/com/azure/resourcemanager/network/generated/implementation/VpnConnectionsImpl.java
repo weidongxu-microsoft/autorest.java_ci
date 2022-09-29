@@ -94,14 +94,6 @@ public final class VpnConnectionsImpl implements VpnConnections {
         this.serviceClient().delete(resourceGroupName, gatewayName, connectionName, context);
     }
 
-    public String startPacketCapture(
-        String resourceGroupName,
-        String gatewayName,
-        String vpnConnectionName,
-        VpnConnectionPacketCaptureStartParameters parameters) {
-        return this.serviceClient().startPacketCapture(resourceGroupName, gatewayName, vpnConnectionName, parameters);
-    }
-
     public String startPacketCapture(String resourceGroupName, String gatewayName, String vpnConnectionName) {
         return this.serviceClient().startPacketCapture(resourceGroupName, gatewayName, vpnConnectionName);
     }
@@ -115,14 +107,6 @@ public final class VpnConnectionsImpl implements VpnConnections {
         return this
             .serviceClient()
             .startPacketCapture(resourceGroupName, gatewayName, vpnConnectionName, parameters, context);
-    }
-
-    public String stopPacketCapture(
-        String resourceGroupName,
-        String gatewayName,
-        String vpnConnectionName,
-        VpnConnectionPacketCaptureStopParameters parameters) {
-        return this.serviceClient().stopPacketCapture(resourceGroupName, gatewayName, vpnConnectionName, parameters);
     }
 
     public String stopPacketCapture(String resourceGroupName, String gatewayName, String vpnConnectionName) {

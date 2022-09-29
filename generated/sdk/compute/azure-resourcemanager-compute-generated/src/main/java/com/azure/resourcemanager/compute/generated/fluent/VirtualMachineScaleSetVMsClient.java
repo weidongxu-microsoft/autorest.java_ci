@@ -27,7 +27,6 @@ public interface VirtualMachineScaleSetVMsClient {
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
-     * @param vmScaleSetVMReimageInput Parameters for the Reimaging Virtual machine in ScaleSet.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
@@ -35,11 +34,7 @@ public interface VirtualMachineScaleSetVMsClient {
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<Void>, Void> beginReimage(
-        String resourceGroupName,
-        String vmScaleSetName,
-        String instanceId,
-        VirtualMachineScaleSetVMReimageParameters vmScaleSetVMReimageInput);
+    SyncPoller<PollResult<Void>, Void> beginReimage(String resourceGroupName, String vmScaleSetName, String instanceId);
 
     /**
      * Reimages (upgrade the operating system) a specific virtual machine in a VM scale set.
@@ -62,25 +57,6 @@ public interface VirtualMachineScaleSetVMsClient {
         String instanceId,
         VirtualMachineScaleSetVMReimageParameters vmScaleSetVMReimageInput,
         Context context);
-
-    /**
-     * Reimages (upgrade the operating system) a specific virtual machine in a VM scale set.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param vmScaleSetName The name of the VM scale set.
-     * @param instanceId The instance ID of the virtual machine.
-     * @param vmScaleSetVMReimageInput Parameters for the Reimaging Virtual machine in ScaleSet.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    void reimage(
-        String resourceGroupName,
-        String vmScaleSetName,
-        String instanceId,
-        VirtualMachineScaleSetVMReimageParameters vmScaleSetVMReimageInput);
 
     /**
      * Reimages (upgrade the operating system) a specific virtual machine in a VM scale set.
@@ -333,8 +309,6 @@ public interface VirtualMachineScaleSetVMsClient {
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
-     * @param forceDeletion Optional parameter to force delete a virtual machine from a VM scale set. (Feature in
-     *     Preview).
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
@@ -342,8 +316,7 @@ public interface VirtualMachineScaleSetVMsClient {
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<Void>, Void> beginDelete(
-        String resourceGroupName, String vmScaleSetName, String instanceId, Boolean forceDeletion);
+    SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String vmScaleSetName, String instanceId);
 
     /**
      * Deletes a virtual machine from a VM scale set.
@@ -363,22 +336,6 @@ public interface VirtualMachineScaleSetVMsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String vmScaleSetName, String instanceId, Boolean forceDeletion, Context context);
-
-    /**
-     * Deletes a virtual machine from a VM scale set.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param vmScaleSetName The name of the VM scale set.
-     * @param instanceId The instance ID of the virtual machine.
-     * @param forceDeletion Optional parameter to force delete a virtual machine from a VM scale set. (Feature in
-     *     Preview).
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    void delete(String resourceGroupName, String vmScaleSetName, String instanceId, Boolean forceDeletion);
 
     /**
      * Deletes a virtual machine from a VM scale set.
@@ -525,9 +482,6 @@ public interface VirtualMachineScaleSetVMsClient {
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
-     * @param skipShutdown The parameter to request non-graceful VM shutdown. True value for this flag indicates
-     *     non-graceful shutdown whereas false indicates otherwise. Default value for this flag is false if not
-     *     specified.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
@@ -536,7 +490,7 @@ public interface VirtualMachineScaleSetVMsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginPowerOff(
-        String resourceGroupName, String vmScaleSetName, String instanceId, Boolean skipShutdown);
+        String resourceGroupName, String vmScaleSetName, String instanceId);
 
     /**
      * Power off (stop) a virtual machine in a VM scale set. Note that resources are still attached and you are getting
@@ -558,24 +512,6 @@ public interface VirtualMachineScaleSetVMsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<Void>, Void> beginPowerOff(
         String resourceGroupName, String vmScaleSetName, String instanceId, Boolean skipShutdown, Context context);
-
-    /**
-     * Power off (stop) a virtual machine in a VM scale set. Note that resources are still attached and you are getting
-     * charged for the resources. Instead, use deallocate to release resources and avoid charges.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param vmScaleSetName The name of the VM scale set.
-     * @param instanceId The instance ID of the virtual machine.
-     * @param skipShutdown The parameter to request non-graceful VM shutdown. True value for this flag indicates
-     *     non-graceful shutdown whereas false indicates otherwise. Default value for this flag is false if not
-     *     specified.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    void powerOff(String resourceGroupName, String vmScaleSetName, String instanceId, Boolean skipShutdown);
 
     /**
      * Power off (stop) a virtual machine in a VM scale set. Note that resources are still attached and you are getting

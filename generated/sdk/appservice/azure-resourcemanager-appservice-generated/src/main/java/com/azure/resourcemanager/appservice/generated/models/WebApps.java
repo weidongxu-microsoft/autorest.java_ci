@@ -4067,25 +4067,6 @@ public interface WebApps {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
-     * @param durationInSeconds The duration to keep capturing in seconds.
-     * @param maxFrameLength The maximum frame length in bytes (Optional).
-     * @param sasUrl The Blob URL to store capture file.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of NetworkTrace.
-     */
-    Object startWebSiteNetworkTraceOperation(
-        String resourceGroupName, String name, Integer durationInSeconds, Integer maxFrameLength, String sasUrl);
-
-    /**
-     * Start capturing network packets for the site.
-     *
-     * <p>Description for Start capturing network packets for the site.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name The name of the web app.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -10117,31 +10098,6 @@ public interface WebApps {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
      * @param slot The name of the slot for this web app.
-     * @param durationInSeconds The duration to keep capturing in seconds.
-     * @param maxFrameLength The maximum frame length in bytes (Optional).
-     * @param sasUrl The Blob URL to store capture file.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of NetworkTrace.
-     */
-    Object startWebSiteNetworkTraceOperationSlot(
-        String resourceGroupName,
-        String name,
-        String slot,
-        Integer durationInSeconds,
-        Integer maxFrameLength,
-        String sasUrl);
-
-    /**
-     * Start capturing network packets for the site.
-     *
-     * <p>Description for Start capturing network packets for the site.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name The name of the web app.
-     * @param slot The name of the slot for this web app.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -12021,31 +11977,6 @@ public interface WebApps {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
      * @param slot The name of the slot for this web app.
-     * @param durationInSeconds The duration to keep capturing in seconds.
-     * @param maxFrameLength The maximum frame length in bytes (Optional).
-     * @param sasUrl The Blob URL to store capture file.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of NetworkTrace.
-     */
-    Object startNetworkTraceSlot(
-        String resourceGroupName,
-        String name,
-        String slot,
-        Integer durationInSeconds,
-        Integer maxFrameLength,
-        String sasUrl);
-
-    /**
-     * Start capturing network packets for the site.
-     *
-     * <p>Description for Start capturing network packets for the site.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name The name of the web app.
-     * @param slot The name of the slot for this web app.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -12979,25 +12910,6 @@ public interface WebApps {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void start(String resourceGroupName, String name);
-
-    /**
-     * Start capturing network packets for the site.
-     *
-     * <p>Description for Start capturing network packets for the site.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name The name of the web app.
-     * @param durationInSeconds The duration to keep capturing in seconds.
-     * @param maxFrameLength The maximum frame length in bytes (Optional).
-     * @param sasUrl The Blob URL to store capture file.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return array of NetworkTrace.
-     */
-    Object startNetworkTrace(
-        String resourceGroupName, String name, Integer durationInSeconds, Integer maxFrameLength, String sasUrl);
 
     /**
      * Start capturing network packets for the site.

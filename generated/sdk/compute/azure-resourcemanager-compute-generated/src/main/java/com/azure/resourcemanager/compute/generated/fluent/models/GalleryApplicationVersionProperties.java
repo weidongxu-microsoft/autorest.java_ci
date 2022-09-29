@@ -7,6 +7,7 @@ package com.azure.resourcemanager.compute.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.compute.generated.models.GalleryApplicationVersionPublishingProfile;
+import com.azure.resourcemanager.compute.generated.models.GalleryApplicationVersionSafetyProfile;
 import com.azure.resourcemanager.compute.generated.models.GalleryProvisioningState;
 import com.azure.resourcemanager.compute.generated.models.ReplicationStatus;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -19,6 +20,12 @@ public final class GalleryApplicationVersionProperties {
      */
     @JsonProperty(value = "publishingProfile", required = true)
     private GalleryApplicationVersionPublishingProfile publishingProfile;
+
+    /*
+     * The safety profile of the Gallery Application Version.
+     */
+    @JsonProperty(value = "safetyProfile")
+    private GalleryApplicationVersionSafetyProfile safetyProfile;
 
     /*
      * The current state of the gallery or gallery artifact.
@@ -60,6 +67,26 @@ public final class GalleryApplicationVersionProperties {
     }
 
     /**
+     * Get the safetyProfile property: The safety profile of the Gallery Application Version.
+     *
+     * @return the safetyProfile value.
+     */
+    public GalleryApplicationVersionSafetyProfile safetyProfile() {
+        return this.safetyProfile;
+    }
+
+    /**
+     * Set the safetyProfile property: The safety profile of the Gallery Application Version.
+     *
+     * @param safetyProfile the safetyProfile value to set.
+     * @return the GalleryApplicationVersionProperties object itself.
+     */
+    public GalleryApplicationVersionProperties withSafetyProfile(GalleryApplicationVersionSafetyProfile safetyProfile) {
+        this.safetyProfile = safetyProfile;
+        return this;
+    }
+
+    /**
      * Get the provisioningState property: The current state of the gallery or gallery artifact.
      *
      * <p>The provisioning state, which only appears in the response.
@@ -92,6 +119,9 @@ public final class GalleryApplicationVersionProperties {
                         "Missing required property publishingProfile in model GalleryApplicationVersionProperties"));
         } else {
             publishingProfile().validate();
+        }
+        if (safetyProfile() != null) {
+            safetyProfile().validate();
         }
         if (replicationStatus() != null) {
             replicationStatus().validate();

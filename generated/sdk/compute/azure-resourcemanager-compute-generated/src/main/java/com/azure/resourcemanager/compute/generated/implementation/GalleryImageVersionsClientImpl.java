@@ -223,7 +223,7 @@ public final class GalleryImageVersionsClientImpl implements GalleryImageVersion
         } else {
             galleryImageVersion.validate();
         }
-        final String apiVersion = "2022-01-03";
+        final String apiVersion = "2022-03-03";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -302,7 +302,7 @@ public final class GalleryImageVersionsClientImpl implements GalleryImageVersion
         } else {
             galleryImageVersion.validate();
         }
-        final String apiVersion = "2022-01-03";
+        final String apiVersion = "2022-03-03";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -630,7 +630,7 @@ public final class GalleryImageVersionsClientImpl implements GalleryImageVersion
         } else {
             galleryImageVersion.validate();
         }
-        final String apiVersion = "2022-01-03";
+        final String apiVersion = "2022-03-03";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -709,7 +709,7 @@ public final class GalleryImageVersionsClientImpl implements GalleryImageVersion
         } else {
             galleryImageVersion.validate();
         }
-        final String apiVersion = "2022-01-03";
+        final String apiVersion = "2022-03-03";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1029,7 +1029,7 @@ public final class GalleryImageVersionsClientImpl implements GalleryImageVersion
                 .error(
                     new IllegalArgumentException("Parameter galleryImageVersionName is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-03";
+        final String apiVersion = "2022-03-03";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1100,7 +1100,7 @@ public final class GalleryImageVersionsClientImpl implements GalleryImageVersion
                 .error(
                     new IllegalArgumentException("Parameter galleryImageVersionName is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-03";
+        final String apiVersion = "2022-03-03";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1230,7 +1230,7 @@ public final class GalleryImageVersionsClientImpl implements GalleryImageVersion
                 .error(
                     new IllegalArgumentException("Parameter galleryImageVersionName is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-03";
+        final String apiVersion = "2022-03-03";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1297,7 +1297,7 @@ public final class GalleryImageVersionsClientImpl implements GalleryImageVersion
                 .error(
                     new IllegalArgumentException("Parameter galleryImageVersionName is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-03";
+        final String apiVersion = "2022-03-03";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1530,7 +1530,7 @@ public final class GalleryImageVersionsClientImpl implements GalleryImageVersion
             return Mono
                 .error(new IllegalArgumentException("Parameter galleryImageName is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-03";
+        final String apiVersion = "2022-03-03";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1597,7 +1597,7 @@ public final class GalleryImageVersionsClientImpl implements GalleryImageVersion
             return Mono
                 .error(new IllegalArgumentException("Parameter galleryImageName is required and cannot be null."));
         }
-        final String apiVersion = "2022-01-03";
+        final String apiVersion = "2022-03-03";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service

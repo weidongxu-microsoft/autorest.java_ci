@@ -79,11 +79,6 @@ public final class VpnGatewaysImpl implements VpnGateways {
         }
     }
 
-    public String startPacketCapture(
-        String resourceGroupName, String gatewayName, VpnGatewayPacketCaptureStartParameters parameters) {
-        return this.serviceClient().startPacketCapture(resourceGroupName, gatewayName, parameters);
-    }
-
     public String startPacketCapture(String resourceGroupName, String gatewayName) {
         return this.serviceClient().startPacketCapture(resourceGroupName, gatewayName);
     }
@@ -94,11 +89,6 @@ public final class VpnGatewaysImpl implements VpnGateways {
         VpnGatewayPacketCaptureStartParameters parameters,
         Context context) {
         return this.serviceClient().startPacketCapture(resourceGroupName, gatewayName, parameters, context);
-    }
-
-    public String stopPacketCapture(
-        String resourceGroupName, String gatewayName, VpnGatewayPacketCaptureStopParameters parameters) {
-        return this.serviceClient().stopPacketCapture(resourceGroupName, gatewayName, parameters);
     }
 
     public String stopPacketCapture(String resourceGroupName, String gatewayName) {

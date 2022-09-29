@@ -7,6 +7,7 @@ package com.azure.resourcemanager.compute.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.Resource;
 import com.azure.resourcemanager.compute.generated.models.GalleryImageVersionPublishingProfile;
+import com.azure.resourcemanager.compute.generated.models.GalleryImageVersionSafetyProfile;
 import com.azure.resourcemanager.compute.generated.models.GalleryImageVersionStorageProfile;
 import com.azure.resourcemanager.compute.generated.models.GalleryProvisioningState;
 import com.azure.resourcemanager.compute.generated.models.ReplicationStatus;
@@ -103,6 +104,29 @@ public final class GalleryImageVersionInner extends Resource {
             this.innerProperties = new GalleryImageVersionProperties();
         }
         this.innerProperties().withStorageProfile(storageProfile);
+        return this;
+    }
+
+    /**
+     * Get the safetyProfile property: This is the safety profile of the Gallery Image Version.
+     *
+     * @return the safetyProfile value.
+     */
+    public GalleryImageVersionSafetyProfile safetyProfile() {
+        return this.innerProperties() == null ? null : this.innerProperties().safetyProfile();
+    }
+
+    /**
+     * Set the safetyProfile property: This is the safety profile of the Gallery Image Version.
+     *
+     * @param safetyProfile the safetyProfile value to set.
+     * @return the GalleryImageVersionInner object itself.
+     */
+    public GalleryImageVersionInner withSafetyProfile(GalleryImageVersionSafetyProfile safetyProfile) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new GalleryImageVersionProperties();
+        }
+        this.innerProperties().withSafetyProfile(safetyProfile);
         return this;
     }
 

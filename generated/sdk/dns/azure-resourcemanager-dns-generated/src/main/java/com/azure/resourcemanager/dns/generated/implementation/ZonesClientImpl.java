@@ -495,6 +495,26 @@ public final class ZonesClientImpl implements ZonesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param zoneName The name of the DNS zone (without a terminating dot).
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link PollerFlux} for polling of long-running operation.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(String resourceGroupName, String zoneName) {
+        final String ifMatch = null;
+        Mono<Response<Flux<ByteBuffer>>> mono = deleteWithResponseAsync(resourceGroupName, zoneName, ifMatch);
+        return this
+            .client
+            .<Void, Void>getLroResult(
+                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
+    }
+
+    /**
+     * Deletes a DNS zone. WARNING: All DNS records in the zone will also be deleted. This operation cannot be undone.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param ifMatch The etag of the DNS zone. Omit this value to always delete the current zone. Specify the last-seen
      *     etag value to prevent accidentally deleting any concurrent changes.
      * @param context The context to associate with this operation.
@@ -518,15 +538,14 @@ public final class ZonesClientImpl implements ZonesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param ifMatch The etag of the DNS zone. Omit this value to always delete the current zone. Specify the last-seen
-     *     etag value to prevent accidentally deleting any concurrent changes.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String zoneName, String ifMatch) {
+    public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String zoneName) {
+        final String ifMatch = null;
         return beginDeleteAsync(resourceGroupName, zoneName, ifMatch).getSyncPoller();
     }
 
@@ -604,22 +623,6 @@ public final class ZonesClientImpl implements ZonesClient {
         return beginDeleteAsync(resourceGroupName, zoneName, ifMatch, context)
             .last()
             .flatMap(this.client::getLroFinalResultOrError);
-    }
-
-    /**
-     * Deletes a DNS zone. WARNING: All DNS records in the zone will also be deleted. This operation cannot be undone.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param ifMatch The etag of the DNS zone. Omit this value to always delete the current zone. Specify the last-seen
-     *     etag value to prevent accidentally deleting any concurrent changes.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public void delete(String resourceGroupName, String zoneName, String ifMatch) {
-        deleteAsync(resourceGroupName, zoneName, ifMatch).block();
     }
 
     /**

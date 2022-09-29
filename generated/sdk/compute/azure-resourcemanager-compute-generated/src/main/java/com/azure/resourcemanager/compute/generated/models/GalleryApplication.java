@@ -8,6 +8,7 @@ import com.azure.core.management.Region;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.compute.generated.fluent.models.GalleryApplicationInner;
 import java.time.OffsetDateTime;
+import java.util.List;
 import java.util.Map;
 
 /** An immutable client-side representation of GalleryApplication. */
@@ -94,6 +95,14 @@ public interface GalleryApplication {
     OperatingSystemTypes supportedOSType();
 
     /**
+     * Gets the customActions property: A list of custom actions that can be performed with all of the Gallery
+     * Application Versions within this Gallery Application.
+     *
+     * @return the customActions value.
+     */
+    List<GalleryApplicationCustomAction> customActions();
+
+    /**
      * Gets the region of the resource.
      *
      * @return the region of the resource.
@@ -174,7 +183,8 @@ public interface GalleryApplication {
                 DefinitionStages.WithPrivacyStatementUri,
                 DefinitionStages.WithReleaseNoteUri,
                 DefinitionStages.WithEndOfLifeDate,
-                DefinitionStages.WithSupportedOSType {
+                DefinitionStages.WithSupportedOSType,
+                DefinitionStages.WithCustomActions {
             /**
              * Executes the create request.
              *
@@ -268,6 +278,18 @@ public interface GalleryApplication {
              */
             WithCreate withSupportedOSType(OperatingSystemTypes supportedOSType);
         }
+        /** The stage of the GalleryApplication definition allowing to specify customActions. */
+        interface WithCustomActions {
+            /**
+             * Specifies the customActions property: A list of custom actions that can be performed with all of the
+             * Gallery Application Versions within this Gallery Application..
+             *
+             * @param customActions A list of custom actions that can be performed with all of the Gallery Application
+             *     Versions within this Gallery Application.
+             * @return the next definition stage.
+             */
+            WithCreate withCustomActions(List<GalleryApplicationCustomAction> customActions);
+        }
     }
     /**
      * Begins update for the GalleryApplication resource.
@@ -284,7 +306,8 @@ public interface GalleryApplication {
             UpdateStages.WithPrivacyStatementUri,
             UpdateStages.WithReleaseNoteUri,
             UpdateStages.WithEndOfLifeDate,
-            UpdateStages.WithSupportedOSType {
+            UpdateStages.WithSupportedOSType,
+            UpdateStages.WithCustomActions {
         /**
          * Executes the update request.
          *
@@ -379,6 +402,18 @@ public interface GalleryApplication {
              * @return the next definition stage.
              */
             Update withSupportedOSType(OperatingSystemTypes supportedOSType);
+        }
+        /** The stage of the GalleryApplication update allowing to specify customActions. */
+        interface WithCustomActions {
+            /**
+             * Specifies the customActions property: A list of custom actions that can be performed with all of the
+             * Gallery Application Versions within this Gallery Application..
+             *
+             * @param customActions A list of custom actions that can be performed with all of the Gallery Application
+             *     Versions within this Gallery Application.
+             * @return the next definition stage.
+             */
+            Update withCustomActions(List<GalleryApplicationCustomAction> customActions);
         }
     }
     /**

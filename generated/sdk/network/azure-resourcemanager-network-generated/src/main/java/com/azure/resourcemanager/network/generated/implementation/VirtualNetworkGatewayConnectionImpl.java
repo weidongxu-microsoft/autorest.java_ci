@@ -328,12 +328,6 @@ public final class VirtualNetworkGatewayConnectionImpl
         return this;
     }
 
-    public String startPacketCapture(VpnPacketCaptureStartParameters parameters) {
-        return serviceManager
-            .virtualNetworkGatewayConnections()
-            .startPacketCapture(resourceGroupName, virtualNetworkGatewayConnectionName, parameters);
-    }
-
     public String startPacketCapture() {
         return serviceManager
             .virtualNetworkGatewayConnections()

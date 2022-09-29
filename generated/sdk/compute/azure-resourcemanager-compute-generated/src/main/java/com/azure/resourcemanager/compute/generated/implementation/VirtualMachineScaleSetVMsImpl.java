@@ -37,14 +37,6 @@ public final class VirtualMachineScaleSetVMsImpl implements VirtualMachineScaleS
         this.serviceManager = serviceManager;
     }
 
-    public void reimage(
-        String resourceGroupName,
-        String vmScaleSetName,
-        String instanceId,
-        VirtualMachineScaleSetVMReimageParameters vmScaleSetVMReimageInput) {
-        this.serviceClient().reimage(resourceGroupName, vmScaleSetName, instanceId, vmScaleSetVMReimageInput);
-    }
-
     public void reimage(String resourceGroupName, String vmScaleSetName, String instanceId) {
         this.serviceClient().reimage(resourceGroupName, vmScaleSetName, instanceId);
     }
@@ -98,10 +90,6 @@ public final class VirtualMachineScaleSetVMsImpl implements VirtualMachineScaleS
         } else {
             return null;
         }
-    }
-
-    public void delete(String resourceGroupName, String vmScaleSetName, String instanceId, Boolean forceDeletion) {
-        this.serviceClient().delete(resourceGroupName, vmScaleSetName, instanceId, forceDeletion);
     }
 
     public void delete(String resourceGroupName, String vmScaleSetName, String instanceId) {
@@ -179,10 +167,6 @@ public final class VirtualMachineScaleSetVMsImpl implements VirtualMachineScaleS
         PagedIterable<VirtualMachineScaleSetVMInner> inner =
             this.serviceClient().list(resourceGroupName, virtualMachineScaleSetName, filter, select, expand, context);
         return Utils.mapPage(inner, inner1 -> new VirtualMachineScaleSetVMImpl(inner1, this.manager()));
-    }
-
-    public void powerOff(String resourceGroupName, String vmScaleSetName, String instanceId, Boolean skipShutdown) {
-        this.serviceClient().powerOff(resourceGroupName, vmScaleSetName, instanceId, skipShutdown);
     }
 
     public void powerOff(String resourceGroupName, String vmScaleSetName, String instanceId) {
