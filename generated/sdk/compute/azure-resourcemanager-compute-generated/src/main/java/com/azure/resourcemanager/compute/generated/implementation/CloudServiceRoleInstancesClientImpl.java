@@ -1971,7 +1971,7 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
     private Flux<ByteBuffer> getRemoteDesktopFileAsync(
         String roleInstanceName, String resourceGroupName, String cloudServiceName) {
         return getRemoteDesktopFileWithResponseAsync(roleInstanceName, resourceGroupName, cloudServiceName)
-            .flatMapMany(Response::getValue);
+            .flatMapMany(fluxByteBufferResponse -> fluxByteBufferResponse.getValue());
     }
 
     /**
