@@ -4,7 +4,7 @@
 
 package com.azure.resourcemanager.consumption.generated.models;
 
-import com.azure.core.annotation.Fluent;
+import com.azure.core.annotation.Immutable;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.consumption.generated.fluent.models.LegacyChargeSummaryProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -15,7 +15,7 @@ import java.math.BigDecimal;
 /** Legacy charge summary. */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "kind")
 @JsonTypeName("legacy")
-@Fluent
+@Immutable
 public final class LegacyChargeSummary extends ChargeSummary {
     /*
      * Properties for legacy charge summary
@@ -34,13 +34,6 @@ public final class LegacyChargeSummary extends ChargeSummary {
      */
     private LegacyChargeSummaryProperties innerProperties() {
         return this.innerProperties;
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    public LegacyChargeSummary withEtag(String etag) {
-        super.withEtag(etag);
-        return this;
     }
 
     /**
@@ -89,12 +82,12 @@ public final class LegacyChargeSummary extends ChargeSummary {
     }
 
     /**
-     * Get the marketplaceCharges property: Marketplace Charges.
+     * Get the azureMarketplaceCharges property: Marketplace Charges.
      *
-     * @return the marketplaceCharges value.
+     * @return the azureMarketplaceCharges value.
      */
-    public BigDecimal marketplaceCharges() {
-        return this.innerProperties() == null ? null : this.innerProperties().marketplaceCharges();
+    public BigDecimal azureMarketplaceCharges() {
+        return this.innerProperties() == null ? null : this.innerProperties().azureMarketplaceCharges();
     }
 
     /**

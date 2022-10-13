@@ -44,8 +44,8 @@ public final class LegacyChargeSummaryProperties {
     /*
      * Marketplace Charges.
      */
-    @JsonProperty(value = "marketplaceCharges", access = JsonProperty.Access.WRITE_ONLY)
-    private BigDecimal marketplaceCharges;
+    @JsonProperty(value = "azureMarketplaceCharges", access = JsonProperty.Access.WRITE_ONLY)
+    private BigDecimal azureMarketplaceCharges;
 
     /*
      * Currency Code
@@ -103,12 +103,12 @@ public final class LegacyChargeSummaryProperties {
     }
 
     /**
-     * Get the marketplaceCharges property: Marketplace Charges.
+     * Get the azureMarketplaceCharges property: Marketplace Charges.
      *
-     * @return the marketplaceCharges value.
+     * @return the azureMarketplaceCharges value.
      */
-    public BigDecimal marketplaceCharges() {
-        return this.marketplaceCharges;
+    public BigDecimal azureMarketplaceCharges() {
+        return this.azureMarketplaceCharges;
     }
 
     /**

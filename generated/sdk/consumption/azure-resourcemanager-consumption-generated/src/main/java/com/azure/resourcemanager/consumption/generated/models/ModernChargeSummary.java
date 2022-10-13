@@ -4,7 +4,7 @@
 
 package com.azure.resourcemanager.consumption.generated.models;
 
-import com.azure.core.annotation.Fluent;
+import com.azure.core.annotation.Immutable;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.consumption.generated.fluent.models.ModernChargeSummaryProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 /** Modern charge summary. */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "kind")
 @JsonTypeName("modern")
-@Fluent
+@Immutable
 public final class ModernChargeSummary extends ChargeSummary {
     /*
      * Properties for modern charge summary
@@ -33,13 +33,6 @@ public final class ModernChargeSummary extends ChargeSummary {
      */
     private ModernChargeSummaryProperties innerProperties() {
         return this.innerProperties;
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    public ModernChargeSummary withEtag(String etag) {
-        super.withEtag(etag);
-        return this;
     }
 
     /**
