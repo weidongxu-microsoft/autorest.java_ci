@@ -10,10 +10,19 @@ import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.resourcegraph.generated.fluent.ResourceProvidersClient;
 import com.azure.resourcemanager.resourcegraph.generated.fluent.models.QueryResponseInner;
+import com.azure.resourcemanager.resourcegraph.generated.fluent.models.ResourceChangeDataInner;
+import com.azure.resourcemanager.resourcegraph.generated.fluent.models.ResourceChangeListInner;
 import com.azure.resourcemanager.resourcegraph.generated.models.QueryRequest;
 import com.azure.resourcemanager.resourcegraph.generated.models.QueryResponse;
+import com.azure.resourcemanager.resourcegraph.generated.models.ResourceChangeData;
+import com.azure.resourcemanager.resourcegraph.generated.models.ResourceChangeDetailsRequestParameters;
+import com.azure.resourcemanager.resourcegraph.generated.models.ResourceChangeList;
+import com.azure.resourcemanager.resourcegraph.generated.models.ResourceChangesRequestParameters;
 import com.azure.resourcemanager.resourcegraph.generated.models.ResourceProviders;
 import com.azure.resourcemanager.resourcegraph.generated.models.ResourcesHistoryRequest;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public final class ResourceProvidersImpl implements ResourceProviders {
     private static final ClientLogger LOGGER = new ClientLogger(ResourceProvidersImpl.class);
@@ -57,6 +66,62 @@ public final class ResourceProvidersImpl implements ResourceProviders {
 
     public Object resourcesHistory(ResourcesHistoryRequest request) {
         return this.serviceClient().resourcesHistory(request);
+    }
+
+    public Response<ResourceChangeList> resourceChangesWithResponse(
+        ResourceChangesRequestParameters parameters, Context context) {
+        Response<ResourceChangeListInner> inner = this.serviceClient().resourceChangesWithResponse(parameters, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new ResourceChangeListImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public ResourceChangeList resourceChanges(ResourceChangesRequestParameters parameters) {
+        ResourceChangeListInner inner = this.serviceClient().resourceChanges(parameters);
+        if (inner != null) {
+            return new ResourceChangeListImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<List<ResourceChangeData>> resourceChangeDetailsWithResponse(
+        ResourceChangeDetailsRequestParameters parameters, Context context) {
+        Response<List<ResourceChangeDataInner>> inner =
+            this.serviceClient().resourceChangeDetailsWithResponse(parameters, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                inner
+                    .getValue()
+                    .stream()
+                    .map(inner1 -> new ResourceChangeDataImpl(inner1, this.manager()))
+                    .collect(Collectors.toList()));
+        } else {
+            return null;
+        }
+    }
+
+    public List<ResourceChangeData> resourceChangeDetails(ResourceChangeDetailsRequestParameters parameters) {
+        List<ResourceChangeDataInner> inner = this.serviceClient().resourceChangeDetails(parameters);
+        if (inner != null) {
+            return Collections
+                .unmodifiableList(
+                    inner
+                        .stream()
+                        .map(inner1 -> new ResourceChangeDataImpl(inner1, this.manager()))
+                        .collect(Collectors.toList()));
+        } else {
+            return Collections.emptyList();
+        }
     }
 
     private ResourceProvidersClient serviceClient() {

@@ -23,8 +23,13 @@ import com.azure.core.util.Context;
 import com.azure.core.util.FluxUtil;
 import com.azure.resourcemanager.resourcegraph.generated.fluent.ResourceProvidersClient;
 import com.azure.resourcemanager.resourcegraph.generated.fluent.models.QueryResponseInner;
+import com.azure.resourcemanager.resourcegraph.generated.fluent.models.ResourceChangeDataInner;
+import com.azure.resourcemanager.resourcegraph.generated.fluent.models.ResourceChangeListInner;
 import com.azure.resourcemanager.resourcegraph.generated.models.QueryRequest;
+import com.azure.resourcemanager.resourcegraph.generated.models.ResourceChangeDetailsRequestParameters;
+import com.azure.resourcemanager.resourcegraph.generated.models.ResourceChangesRequestParameters;
 import com.azure.resourcemanager.resourcegraph.generated.models.ResourcesHistoryRequest;
+import java.util.List;
 import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in ResourceProvidersClient. */
@@ -74,6 +79,28 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
             @BodyParam("application/json") ResourcesHistoryRequest request,
             @HeaderParam("Accept") String accept,
             Context context);
+
+        @Headers({"Content-Type: application/json"})
+        @Post("/providers/Microsoft.ResourceGraph/resourceChanges")
+        @ExpectedResponses({200})
+        @UnexpectedResponseExceptionType(ManagementException.class)
+        Mono<Response<ResourceChangeListInner>> resourceChanges(
+            @HostParam("$host") String endpoint,
+            @QueryParam("api-version") String apiVersion,
+            @BodyParam("application/json") ResourceChangesRequestParameters parameters,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
+        @Headers({"Content-Type: application/json"})
+        @Post("/providers/Microsoft.ResourceGraph/resourceChangeDetails")
+        @ExpectedResponses({200})
+        @UnexpectedResponseExceptionType(ManagementException.class)
+        Mono<Response<List<ResourceChangeDataInner>>> resourceChangeDetails(
+            @HostParam("$host") String endpoint,
+            @QueryParam("api-version") String apiVersion,
+            @BodyParam("application/json") ResourceChangeDetailsRequestParameters parameters,
+            @HeaderParam("Accept") String accept,
+            Context context);
     }
 
     /**
@@ -98,11 +125,10 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
         } else {
             query.validate();
         }
+        final String apiVersion = "2022-10-01";
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service.resources(this.client.getEndpoint(), this.client.getApiVersion(), query, accept, context))
+            .withContext(context -> service.resources(this.client.getEndpoint(), apiVersion, query, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
@@ -129,9 +155,10 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
         } else {
             query.validate();
         }
+        final String apiVersion = "2022-10-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service.resources(this.client.getEndpoint(), this.client.getApiVersion(), query, accept, context);
+        return service.resources(this.client.getEndpoint(), apiVersion, query, accept, context);
     }
 
     /**
@@ -199,13 +226,11 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
         } else {
             request.validate();
         }
+        final String apiVersion = "2021-06-01-preview";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
-                context ->
-                    service
-                        .resourcesHistory(
-                            this.client.getEndpoint(), this.client.getApiVersion(), request, accept, context))
+                context -> service.resourcesHistory(this.client.getEndpoint(), apiVersion, request, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
@@ -232,10 +257,10 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
         } else {
             request.validate();
         }
+        final String apiVersion = "2021-06-01-preview";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .resourcesHistory(this.client.getEndpoint(), this.client.getApiVersion(), request, accept, context);
+        return service.resourcesHistory(this.client.getEndpoint(), apiVersion, request, accept, context);
     }
 
     /**
@@ -279,5 +304,220 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Object resourcesHistory(ResourcesHistoryRequest request) {
         return resourcesHistoryWithResponse(request, Context.NONE).getValue();
+    }
+
+    /**
+     * List changes to a resource for a given time interval.
+     *
+     * @param parameters the parameters for this request for changes.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a list of changes associated with a resource over a specific time interval along with {@link Response} on
+     *     successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<ResourceChangeListInner>> resourceChangesWithResponseAsync(
+        ResourceChangesRequestParameters parameters) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (parameters == null) {
+            return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
+        } else {
+            parameters.validate();
+        }
+        final String apiVersion = "2020-09-01-preview";
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(
+                context -> service.resourceChanges(this.client.getEndpoint(), apiVersion, parameters, accept, context))
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
+    }
+
+    /**
+     * List changes to a resource for a given time interval.
+     *
+     * @param parameters the parameters for this request for changes.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a list of changes associated with a resource over a specific time interval along with {@link Response} on
+     *     successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<ResourceChangeListInner>> resourceChangesWithResponseAsync(
+        ResourceChangesRequestParameters parameters, Context context) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (parameters == null) {
+            return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
+        } else {
+            parameters.validate();
+        }
+        final String apiVersion = "2020-09-01-preview";
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service.resourceChanges(this.client.getEndpoint(), apiVersion, parameters, accept, context);
+    }
+
+    /**
+     * List changes to a resource for a given time interval.
+     *
+     * @param parameters the parameters for this request for changes.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a list of changes associated with a resource over a specific time interval on successful completion of
+     *     {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<ResourceChangeListInner> resourceChangesAsync(ResourceChangesRequestParameters parameters) {
+        return resourceChangesWithResponseAsync(parameters).flatMap(res -> Mono.justOrEmpty(res.getValue()));
+    }
+
+    /**
+     * List changes to a resource for a given time interval.
+     *
+     * @param parameters the parameters for this request for changes.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a list of changes associated with a resource over a specific time interval along with {@link Response}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public Response<ResourceChangeListInner> resourceChangesWithResponse(
+        ResourceChangesRequestParameters parameters, Context context) {
+        return resourceChangesWithResponseAsync(parameters, context).block();
+    }
+
+    /**
+     * List changes to a resource for a given time interval.
+     *
+     * @param parameters the parameters for this request for changes.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a list of changes associated with a resource over a specific time interval.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public ResourceChangeListInner resourceChanges(ResourceChangesRequestParameters parameters) {
+        return resourceChangesWithResponse(parameters, Context.NONE).getValue();
+    }
+
+    /**
+     * Get resource change details.
+     *
+     * @param parameters The parameters for this request for resource change details.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return resource change details along with {@link Response} on successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<List<ResourceChangeDataInner>>> resourceChangeDetailsWithResponseAsync(
+        ResourceChangeDetailsRequestParameters parameters) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (parameters == null) {
+            return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
+        } else {
+            parameters.validate();
+        }
+        final String apiVersion = "2020-09-01-preview";
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(
+                context ->
+                    service.resourceChangeDetails(this.client.getEndpoint(), apiVersion, parameters, accept, context))
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
+    }
+
+    /**
+     * Get resource change details.
+     *
+     * @param parameters The parameters for this request for resource change details.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return resource change details along with {@link Response} on successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<List<ResourceChangeDataInner>>> resourceChangeDetailsWithResponseAsync(
+        ResourceChangeDetailsRequestParameters parameters, Context context) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (parameters == null) {
+            return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
+        } else {
+            parameters.validate();
+        }
+        final String apiVersion = "2020-09-01-preview";
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service.resourceChangeDetails(this.client.getEndpoint(), apiVersion, parameters, accept, context);
+    }
+
+    /**
+     * Get resource change details.
+     *
+     * @param parameters The parameters for this request for resource change details.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return resource change details on successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<List<ResourceChangeDataInner>> resourceChangeDetailsAsync(
+        ResourceChangeDetailsRequestParameters parameters) {
+        return resourceChangeDetailsWithResponseAsync(parameters).flatMap(res -> Mono.justOrEmpty(res.getValue()));
+    }
+
+    /**
+     * Get resource change details.
+     *
+     * @param parameters The parameters for this request for resource change details.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return resource change details along with {@link Response}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public Response<List<ResourceChangeDataInner>> resourceChangeDetailsWithResponse(
+        ResourceChangeDetailsRequestParameters parameters, Context context) {
+        return resourceChangeDetailsWithResponseAsync(parameters, context).block();
+    }
+
+    /**
+     * Get resource change details.
+     *
+     * @param parameters The parameters for this request for resource change details.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return resource change details.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public List<ResourceChangeDataInner> resourceChangeDetails(ResourceChangeDetailsRequestParameters parameters) {
+        return resourceChangeDetailsWithResponse(parameters, Context.NONE).getValue();
     }
 }

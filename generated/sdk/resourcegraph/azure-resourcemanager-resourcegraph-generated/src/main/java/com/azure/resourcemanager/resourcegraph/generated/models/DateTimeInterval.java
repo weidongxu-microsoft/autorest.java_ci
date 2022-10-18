@@ -11,7 +11,7 @@ import java.time.OffsetDateTime;
 
 /** An interval in time specifying the date and time for the inclusive start and exclusive end, i.e. `[start, end)`. */
 @Fluent
-public final class DateTimeInterval {
+public class DateTimeInterval {
     /*
      * A datetime indicating the inclusive/closed start of the time interval, i.e. `[`**`start`**`, end)`. Specifying a
      * `start` that occurs chronologically after `end` will result in an error.
