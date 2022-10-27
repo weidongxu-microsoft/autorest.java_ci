@@ -131,6 +131,15 @@ public final class ModernReservationRecommendation extends ReservationRecommenda
     }
 
     /**
+     * Get the resourceType property: Resource type.
+     *
+     * @return the resourceType value.
+     */
+    public String resourceType() {
+        return this.innerProperties() == null ? null : this.innerProperties().resourceType();
+    }
+
+    /**
      * Get the totalCostWithReservedInstances property: The total amount of cost with reserved instances.
      *
      * @return the totalCostWithReservedInstances value.
@@ -182,6 +191,15 @@ public final class ModernReservationRecommendation extends ReservationRecommenda
      */
     public String skuName() {
         return this.innerProperties() == null ? null : this.innerProperties().skuName();
+    }
+
+    /**
+     * Get the subscriptionId property: Subscription ID.
+     *
+     * @return the subscriptionId value.
+     */
+    public UUID subscriptionId() {
+        return this.innerProperties() == null ? null : this.innerProperties().subscriptionId();
     }
 
     /**

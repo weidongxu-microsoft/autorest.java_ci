@@ -77,6 +77,12 @@ public final class ModernReservationRecommendationProperties {
     private BigDecimal recommendedQuantity;
 
     /*
+     * Resource type.
+     */
+    @JsonProperty(value = "resourceType", access = JsonProperty.Access.WRITE_ONLY)
+    private String resourceType;
+
+    /*
      * The total amount of cost with reserved instances.
      */
     @JsonProperty(value = "totalCostWithReservedInstances", access = JsonProperty.Access.WRITE_ONLY)
@@ -111,6 +117,12 @@ public final class ModernReservationRecommendationProperties {
      */
     @JsonProperty(value = "skuName", access = JsonProperty.Access.WRITE_ONLY)
     private String skuName;
+
+    /*
+     * Subscription ID
+     */
+    @JsonProperty(value = "subscriptionId", access = JsonProperty.Access.WRITE_ONLY)
+    private UUID subscriptionId;
 
     /** Creates an instance of ModernReservationRecommendationProperties class. */
     public ModernReservationRecommendationProperties() {
@@ -207,6 +219,15 @@ public final class ModernReservationRecommendationProperties {
     }
 
     /**
+     * Get the resourceType property: Resource type.
+     *
+     * @return the resourceType value.
+     */
+    public String resourceType() {
+        return this.resourceType;
+    }
+
+    /**
      * Get the totalCostWithReservedInstances property: The total amount of cost with reserved instances.
      *
      * @return the totalCostWithReservedInstances value.
@@ -258,6 +279,15 @@ public final class ModernReservationRecommendationProperties {
      */
     public String skuName() {
         return this.skuName;
+    }
+
+    /**
+     * Get the subscriptionId property: Subscription ID.
+     *
+     * @return the subscriptionId value.
+     */
+    public UUID subscriptionId() {
+        return this.subscriptionId;
     }
 
     /**
