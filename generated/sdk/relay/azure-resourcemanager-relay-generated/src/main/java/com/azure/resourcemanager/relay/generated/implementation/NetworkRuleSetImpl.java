@@ -9,6 +9,7 @@ import com.azure.resourcemanager.relay.generated.fluent.models.NetworkRuleSetInn
 import com.azure.resourcemanager.relay.generated.models.DefaultAction;
 import com.azure.resourcemanager.relay.generated.models.NWRuleSetIpRules;
 import com.azure.resourcemanager.relay.generated.models.NetworkRuleSet;
+import com.azure.resourcemanager.relay.generated.models.PublicNetworkAccess;
 import java.util.Collections;
 import java.util.List;
 
@@ -41,6 +42,10 @@ public final class NetworkRuleSetImpl implements NetworkRuleSet {
 
     public DefaultAction defaultAction() {
         return this.innerModel().defaultAction();
+    }
+
+    public PublicNetworkAccess publicNetworkAccess() {
+        return this.innerModel().publicNetworkAccess();
     }
 
     public List<NWRuleSetIpRules> ipRules() {

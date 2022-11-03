@@ -46,6 +46,14 @@ public interface NetworkRuleSet {
     DefaultAction defaultAction();
 
     /**
+     * Gets the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it
+     * is enabled.
+     *
+     * @return the publicNetworkAccess value.
+     */
+    PublicNetworkAccess publicNetworkAccess();
+
+    /**
      * Gets the ipRules property: List of IpRules.
      *
      * @return the ipRules value.

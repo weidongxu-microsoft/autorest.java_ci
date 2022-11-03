@@ -16,7 +16,7 @@ import java.util.List;
 @Immutable
 public final class OperationListResult {
     /*
-     * List of Relay operations supported by the Microsoft.EventHub resource provider.
+     * List of Relay operations supported by the Microsoft.Relay resource provider.
      */
     @JsonProperty(value = "value", access = JsonProperty.Access.WRITE_ONLY)
     private List<OperationInner> value;
@@ -32,7 +32,7 @@ public final class OperationListResult {
     }
 
     /**
-     * Get the value property: List of Relay operations supported by the Microsoft.EventHub resource provider.
+     * Get the value property: List of Relay operations supported by the Microsoft.Relay resource provider.
      *
      * @return the value value.
      */

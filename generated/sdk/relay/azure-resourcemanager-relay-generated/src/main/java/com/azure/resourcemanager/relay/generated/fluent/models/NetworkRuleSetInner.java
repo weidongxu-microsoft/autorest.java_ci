@@ -9,6 +9,7 @@ import com.azure.core.management.ProxyResource;
 import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.relay.generated.models.DefaultAction;
 import com.azure.resourcemanager.relay.generated.models.NWRuleSetIpRules;
+import com.azure.resourcemanager.relay.generated.models.PublicNetworkAccess;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
@@ -69,6 +70,31 @@ public final class NetworkRuleSetInner extends ProxyResource {
             this.innerProperties = new NetworkRuleSetProperties();
         }
         this.innerProperties().withDefaultAction(defaultAction);
+        return this;
+    }
+
+    /**
+     * Get the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is
+     * enabled.
+     *
+     * @return the publicNetworkAccess value.
+     */
+    public PublicNetworkAccess publicNetworkAccess() {
+        return this.innerProperties() == null ? null : this.innerProperties().publicNetworkAccess();
+    }
+
+    /**
+     * Set the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is
+     * enabled.
+     *
+     * @param publicNetworkAccess the publicNetworkAccess value to set.
+     * @return the NetworkRuleSetInner object itself.
+     */
+    public NetworkRuleSetInner withPublicNetworkAccess(PublicNetworkAccess publicNetworkAccess) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new NetworkRuleSetProperties();
+        }
+        this.innerProperties().withPublicNetworkAccess(publicNetworkAccess);
         return this;
     }
 

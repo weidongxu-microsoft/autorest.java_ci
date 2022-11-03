@@ -7,6 +7,7 @@ package com.azure.resourcemanager.relay.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.resourcemanager.relay.generated.models.DefaultAction;
 import com.azure.resourcemanager.relay.generated.models.NWRuleSetIpRules;
+import com.azure.resourcemanager.relay.generated.models.PublicNetworkAccess;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
@@ -18,6 +19,12 @@ public final class NetworkRuleSetProperties {
      */
     @JsonProperty(value = "defaultAction")
     private DefaultAction defaultAction;
+
+    /*
+     * This determines if traffic is allowed over public network. By default it is enabled
+     */
+    @JsonProperty(value = "publicNetworkAccess")
+    private PublicNetworkAccess publicNetworkAccess;
 
     /*
      * List of IpRules
@@ -46,6 +53,28 @@ public final class NetworkRuleSetProperties {
      */
     public NetworkRuleSetProperties withDefaultAction(DefaultAction defaultAction) {
         this.defaultAction = defaultAction;
+        return this;
+    }
+
+    /**
+     * Get the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is
+     * enabled.
+     *
+     * @return the publicNetworkAccess value.
+     */
+    public PublicNetworkAccess publicNetworkAccess() {
+        return this.publicNetworkAccess;
+    }
+
+    /**
+     * Set the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is
+     * enabled.
+     *
+     * @param publicNetworkAccess the publicNetworkAccess value to set.
+     * @return the NetworkRuleSetProperties object itself.
+     */
+    public NetworkRuleSetProperties withPublicNetworkAccess(PublicNetworkAccess publicNetworkAccess) {
+        this.publicNetworkAccess = publicNetworkAccess;
         return this;
     }
 
