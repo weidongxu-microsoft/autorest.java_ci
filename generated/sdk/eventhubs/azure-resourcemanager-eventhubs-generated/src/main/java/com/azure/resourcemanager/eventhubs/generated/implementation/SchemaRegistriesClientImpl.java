@@ -58,7 +58,7 @@ public final class SchemaRegistriesClientImpl implements SchemaRegistriesClient 
      */
     @Host("{$host}")
     @ServiceInterface(name = "EventHubManagementCl")
-    private interface SchemaRegistriesService {
+    public interface SchemaRegistriesService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventHub/namespaces"

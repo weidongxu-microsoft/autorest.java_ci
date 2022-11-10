@@ -53,7 +53,7 @@ public final class TableServicesClientImpl implements TableServicesClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "StorageManagementCli")
-    private interface TableServicesService {
+    public interface TableServicesService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage"

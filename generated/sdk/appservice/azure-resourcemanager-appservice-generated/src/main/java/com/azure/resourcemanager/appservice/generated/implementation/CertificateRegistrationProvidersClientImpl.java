@@ -61,7 +61,7 @@ public final class CertificateRegistrationProvidersClientImpl implements Certifi
      */
     @Host("{$host}")
     @ServiceInterface(name = "WebSiteManagementCli")
-    private interface CertificateRegistrationProvidersService {
+    public interface CertificateRegistrationProvidersService {
         @Headers({"Content-Type: application/json"})
         @Get("/providers/Microsoft.CertificateRegistration/operations")
         @ExpectedResponses({200})

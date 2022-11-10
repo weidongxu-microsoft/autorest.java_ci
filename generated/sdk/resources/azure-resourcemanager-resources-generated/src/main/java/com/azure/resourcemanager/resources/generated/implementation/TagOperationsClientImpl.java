@@ -62,7 +62,7 @@ public final class TagOperationsClientImpl implements TagOperationsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "ResourceManagementCl")
-    private interface TagOperationsService {
+    public interface TagOperationsService {
         @Headers({"Content-Type: application/json"})
         @Delete("/subscriptions/{subscriptionId}/tagNames/{tagName}/tagValues/{tagValue}")
         @ExpectedResponses({200, 204})

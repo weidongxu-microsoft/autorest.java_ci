@@ -8,11 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.azure.resourcemanager.operationalinsights.generated.models.ProvisioningStateEnum;
 import com.azure.resourcemanager.operationalinsights.generated.models.RestoredLogs;
 import com.azure.resourcemanager.operationalinsights.generated.models.ResultStatistics;
-import com.azure.resourcemanager.operationalinsights.generated.models.RetentionInDaysAsDefault;
 import com.azure.resourcemanager.operationalinsights.generated.models.Schema;
 import com.azure.resourcemanager.operationalinsights.generated.models.SearchResults;
 import com.azure.resourcemanager.operationalinsights.generated.models.TablePlanEnum;
-import com.azure.resourcemanager.operationalinsights.generated.models.TotalRetentionInDaysAsDefault;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Table properties. */
@@ -85,13 +83,13 @@ public final class TableProperties {
      * True - Value originates from workspace retention in days, False - Customer specific.
      */
     @JsonProperty(value = "retentionInDaysAsDefault", access = JsonProperty.Access.WRITE_ONLY)
-    private RetentionInDaysAsDefault retentionInDaysAsDefault;
+    private Boolean retentionInDaysAsDefault;
 
     /*
      * True - Value originates from retention in days, False - Customer specific.
      */
     @JsonProperty(value = "totalRetentionInDaysAsDefault", access = JsonProperty.Access.WRITE_ONLY)
-    private TotalRetentionInDaysAsDefault totalRetentionInDaysAsDefault;
+    private Boolean totalRetentionInDaysAsDefault;
 
     /** Creates an instance of TableProperties class. */
     public TableProperties() {
@@ -266,7 +264,7 @@ public final class TableProperties {
      *
      * @return the retentionInDaysAsDefault value.
      */
-    public RetentionInDaysAsDefault retentionInDaysAsDefault() {
+    public Boolean retentionInDaysAsDefault() {
         return this.retentionInDaysAsDefault;
     }
 
@@ -276,7 +274,7 @@ public final class TableProperties {
      *
      * @return the totalRetentionInDaysAsDefault value.
      */
-    public TotalRetentionInDaysAsDefault totalRetentionInDaysAsDefault() {
+    public Boolean totalRetentionInDaysAsDefault() {
         return this.totalRetentionInDaysAsDefault;
     }
 

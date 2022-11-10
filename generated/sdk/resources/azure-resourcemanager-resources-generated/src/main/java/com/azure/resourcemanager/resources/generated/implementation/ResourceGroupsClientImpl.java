@@ -69,7 +69,7 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "ResourceManagementCl")
-    private interface ResourceGroupsService {
+    public interface ResourceGroupsService {
         @Headers({"Content-Type: application/json"})
         @Head("/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}")
         @ExpectedResponses({204, 404})

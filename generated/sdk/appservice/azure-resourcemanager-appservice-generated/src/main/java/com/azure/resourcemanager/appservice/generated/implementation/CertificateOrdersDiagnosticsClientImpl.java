@@ -58,7 +58,7 @@ public final class CertificateOrdersDiagnosticsClientImpl implements Certificate
      */
     @Host("{$host}")
     @ServiceInterface(name = "WebSiteManagementCli")
-    private interface CertificateOrdersDiagnosticsService {
+    public interface CertificateOrdersDiagnosticsService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers"

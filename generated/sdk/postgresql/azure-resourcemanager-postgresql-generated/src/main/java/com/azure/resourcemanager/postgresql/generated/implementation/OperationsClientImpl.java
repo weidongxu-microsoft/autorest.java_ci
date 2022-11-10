@@ -49,7 +49,7 @@ public final class OperationsClientImpl implements OperationsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "PostgreSqlManagement")
-    private interface OperationsService {
+    public interface OperationsService {
         @Headers({"Content-Type: application/json"})
         @Get("/providers/Microsoft.DBforPostgreSQL/operations")
         @ExpectedResponses({200})

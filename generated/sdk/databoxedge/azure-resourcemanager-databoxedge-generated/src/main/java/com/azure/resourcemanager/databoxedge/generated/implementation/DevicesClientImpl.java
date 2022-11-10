@@ -73,7 +73,7 @@ public final class DevicesClientImpl implements DevicesClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "DataBoxEdgeManagemen")
-    private interface DevicesService {
+    public interface DevicesService {
         @Headers({"Content-Type: application/json"})
         @Get("/subscriptions/{subscriptionId}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices")
         @ExpectedResponses({200})

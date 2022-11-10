@@ -57,7 +57,7 @@ public final class ReservationRecommendationsClientImpl implements ReservationRe
      */
     @Host("{$host}")
     @ServiceInterface(name = "ConsumptionManagemen")
-    private interface ReservationRecommendationsService {
+    public interface ReservationRecommendationsService {
         @Headers({"Content-Type: application/json"})
         @Get("/{resourceScope}/providers/Microsoft.Consumption/reservationRecommendations")
         @ExpectedResponses({200, 204})

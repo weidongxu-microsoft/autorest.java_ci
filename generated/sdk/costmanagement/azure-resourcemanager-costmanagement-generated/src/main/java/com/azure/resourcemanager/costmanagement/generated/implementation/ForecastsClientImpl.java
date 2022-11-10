@@ -53,7 +53,7 @@ public final class ForecastsClientImpl implements ForecastsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "CostManagementClient")
-    private interface ForecastsService {
+    public interface ForecastsService {
         @Headers({"Content-Type: application/json"})
         @Post("/{scope}/providers/Microsoft.CostManagement/forecast")
         @ExpectedResponses({200, 204})

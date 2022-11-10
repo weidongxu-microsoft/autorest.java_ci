@@ -60,7 +60,7 @@ public final class ActivityLogAlertsClientImpl implements ActivityLogAlertsClien
      */
     @Host("{$host}")
     @ServiceInterface(name = "MonitorClientActivit")
-    private interface ActivityLogAlertsService {
+    public interface ActivityLogAlertsService {
         @Headers({"Content-Type: application/json"})
         @Put(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.insights"

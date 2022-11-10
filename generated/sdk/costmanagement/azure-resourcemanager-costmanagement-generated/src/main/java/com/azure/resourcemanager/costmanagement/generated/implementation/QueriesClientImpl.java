@@ -52,7 +52,7 @@ public final class QueriesClientImpl implements QueriesClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "CostManagementClient")
-    private interface QueriesService {
+    public interface QueriesService {
         @Headers({"Content-Type: application/json"})
         @Post("/{scope}/providers/Microsoft.CostManagement/query")
         @ExpectedResponses({200, 204})

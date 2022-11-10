@@ -81,7 +81,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "WebSiteManagementCli")
-    private interface AppServicePlansService {
+    public interface AppServicePlansService {
         @Headers({"Content-Type: application/json"})
         @Get("/subscriptions/{subscriptionId}/providers/Microsoft.Web/serverfarms")
         @ExpectedResponses({200})

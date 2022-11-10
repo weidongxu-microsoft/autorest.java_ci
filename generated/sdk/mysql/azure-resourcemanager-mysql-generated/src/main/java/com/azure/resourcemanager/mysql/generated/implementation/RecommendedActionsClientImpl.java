@@ -55,7 +55,7 @@ public final class RecommendedActionsClientImpl implements RecommendedActionsCli
      */
     @Host("{$host}")
     @ServiceInterface(name = "MySqlManagementClien")
-    private interface RecommendedActionsService {
+    public interface RecommendedActionsService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforMySQL/servers"

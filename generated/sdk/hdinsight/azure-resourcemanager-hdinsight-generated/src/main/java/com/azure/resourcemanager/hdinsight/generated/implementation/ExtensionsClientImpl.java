@@ -63,7 +63,7 @@ public final class ExtensionsClientImpl implements ExtensionsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "HDInsightManagementC")
-    private interface ExtensionsService {
+    public interface ExtensionsService {
         @Headers({"Content-Type: application/json"})
         @Put(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HDInsight/clusters"

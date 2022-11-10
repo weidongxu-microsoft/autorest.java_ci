@@ -68,7 +68,7 @@ public final class PartnerNamespacesClientImpl implements PartnerNamespacesClien
      */
     @Host("{$host}")
     @ServiceInterface(name = "EventGridManagementC")
-    private interface PartnerNamespacesService {
+    public interface PartnerNamespacesService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventGrid"

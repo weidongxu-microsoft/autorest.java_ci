@@ -59,7 +59,7 @@ public final class FavoritesClientImpl implements FavoritesClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "ApplicationInsightsM")
-    private interface FavoritesService {
+    public interface FavoritesService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/components"

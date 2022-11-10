@@ -80,7 +80,7 @@ public final class VirtualMachineScaleSetsClientImpl implements VirtualMachineSc
      */
     @Host("{$host}")
     @ServiceInterface(name = "ComputeManagementCli")
-    private interface VirtualMachineScaleSetsService {
+    public interface VirtualMachineScaleSetsService {
         @Headers({"Content-Type: application/json"})
         @Get("/subscriptions/{subscriptionId}/providers/Microsoft.Compute/locations/{location}/virtualMachineScaleSets")
         @ExpectedResponses({200})

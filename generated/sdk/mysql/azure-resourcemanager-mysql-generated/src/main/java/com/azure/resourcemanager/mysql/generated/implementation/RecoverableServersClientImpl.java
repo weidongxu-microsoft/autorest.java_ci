@@ -50,7 +50,7 @@ public final class RecoverableServersClientImpl implements RecoverableServersCli
      */
     @Host("{$host}")
     @ServiceInterface(name = "MySqlManagementClien")
-    private interface RecoverableServersService {
+    public interface RecoverableServersService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforMySQL/servers"

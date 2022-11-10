@@ -66,7 +66,7 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
      */
     @Host("{$host}")
     @ServiceInterface(name = "SearchManagementClie")
-    private interface SharedPrivateLinkResourcesService {
+    public interface SharedPrivateLinkResourcesService {
         @Headers({"Content-Type: application/json"})
         @Put(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Search"

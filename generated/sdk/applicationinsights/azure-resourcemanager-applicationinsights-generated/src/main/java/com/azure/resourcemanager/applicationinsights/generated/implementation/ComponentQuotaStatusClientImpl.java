@@ -51,7 +51,7 @@ public final class ComponentQuotaStatusClientImpl implements ComponentQuotaStatu
      */
     @Host("{$host}")
     @ServiceInterface(name = "ApplicationInsightsM")
-    private interface ComponentQuotaStatusService {
+    public interface ComponentQuotaStatusService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/components"

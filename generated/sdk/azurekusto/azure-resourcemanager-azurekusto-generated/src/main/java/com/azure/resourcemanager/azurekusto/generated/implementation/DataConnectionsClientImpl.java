@@ -69,7 +69,7 @@ public final class DataConnectionsClientImpl implements DataConnectionsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "KustoManagementClien")
-    private interface DataConnectionsService {
+    public interface DataConnectionsService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Kusto/clusters"

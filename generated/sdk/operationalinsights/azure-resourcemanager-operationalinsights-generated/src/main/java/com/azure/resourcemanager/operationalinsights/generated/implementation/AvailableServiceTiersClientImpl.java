@@ -52,7 +52,7 @@ public final class AvailableServiceTiersClientImpl implements AvailableServiceTi
      */
     @Host("{$host}")
     @ServiceInterface(name = "OperationalInsightsM")
-    private interface AvailableServiceTiersService {
+    public interface AvailableServiceTiersService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.OperationalInsights"

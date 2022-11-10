@@ -64,7 +64,7 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
-    private interface IpGroupsService {
+    public interface IpGroupsService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/ipGroups"
@@ -206,7 +206,7 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-05-01";
+        final String apiVersion = "2022-07-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -259,7 +259,7 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-05-01";
+        final String apiVersion = "2022-07-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -364,7 +364,7 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-05-01";
+        final String apiVersion = "2022-07-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -421,7 +421,7 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-05-01";
+        final String apiVersion = "2022-07-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -628,7 +628,7 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-05-01";
+        final String apiVersion = "2022-07-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -685,7 +685,7 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-05-01";
+        final String apiVersion = "2022-07-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -782,7 +782,7 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-05-01";
+        final String apiVersion = "2022-07-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -832,7 +832,7 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-05-01";
+        final String apiVersion = "2022-07-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1008,7 +1008,7 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-05-01";
+        final String apiVersion = "2022-07-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1063,7 +1063,7 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-05-01";
+        final String apiVersion = "2022-07-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1168,7 +1168,7 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-05-01";
+        final String apiVersion = "2022-07-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1210,7 +1210,7 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-05-01";
+        final String apiVersion = "2022-07-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service

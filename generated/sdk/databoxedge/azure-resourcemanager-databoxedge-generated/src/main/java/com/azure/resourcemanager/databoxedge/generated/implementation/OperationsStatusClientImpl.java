@@ -50,7 +50,7 @@ public final class OperationsStatusClientImpl implements OperationsStatusClient 
      */
     @Host("{$host}")
     @ServiceInterface(name = "DataBoxEdgeManagemen")
-    private interface OperationsStatusService {
+    public interface OperationsStatusService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge"

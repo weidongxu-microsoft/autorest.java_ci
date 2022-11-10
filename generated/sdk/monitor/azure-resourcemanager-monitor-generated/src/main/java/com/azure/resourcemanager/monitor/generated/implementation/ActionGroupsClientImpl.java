@@ -62,7 +62,7 @@ public final class ActionGroupsClientImpl implements ActionGroupsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "MonitorClientActionG")
-    private interface ActionGroupsService {
+    public interface ActionGroupsService {
         @Headers({"Content-Type: application/json"})
         @Put(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.insights"

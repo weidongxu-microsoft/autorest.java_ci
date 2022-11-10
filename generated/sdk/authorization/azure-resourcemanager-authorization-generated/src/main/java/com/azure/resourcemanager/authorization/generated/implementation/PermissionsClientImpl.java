@@ -55,7 +55,7 @@ public final class PermissionsClientImpl implements PermissionsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "AuthorizationManagem")
-    private interface PermissionsService {
+    public interface PermissionsService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Authorization"

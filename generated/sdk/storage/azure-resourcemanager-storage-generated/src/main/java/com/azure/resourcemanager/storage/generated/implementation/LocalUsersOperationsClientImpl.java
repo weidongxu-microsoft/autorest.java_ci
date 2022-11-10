@@ -62,7 +62,7 @@ public final class LocalUsersOperationsClientImpl implements LocalUsersOperation
      */
     @Host("{$host}")
     @ServiceInterface(name = "StorageManagementCli")
-    private interface LocalUsersOperationsService {
+    public interface LocalUsersOperationsService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage"

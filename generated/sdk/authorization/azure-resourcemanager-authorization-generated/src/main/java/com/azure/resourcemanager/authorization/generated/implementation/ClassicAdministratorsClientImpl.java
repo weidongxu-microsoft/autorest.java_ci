@@ -56,7 +56,7 @@ public final class ClassicAdministratorsClientImpl implements ClassicAdministrat
      */
     @Host("{$host}")
     @ServiceInterface(name = "AuthorizationManagem")
-    private interface ClassicAdministratorsService {
+    public interface ClassicAdministratorsService {
         @Headers({"Content-Type: application/json"})
         @Get("/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/classicAdministrators")
         @ExpectedResponses({200})

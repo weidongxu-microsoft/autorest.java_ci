@@ -57,7 +57,7 @@ public final class SettingsClientImpl implements SettingsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "CostManagementClient")
-    private interface SettingsService {
+    public interface SettingsService {
         @Headers({"Content-Type: application/json"})
         @Get("/providers/Microsoft.CostManagement/settings")
         @ExpectedResponses({200})

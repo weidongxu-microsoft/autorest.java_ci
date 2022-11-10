@@ -7,6 +7,7 @@ package com.azure.resourcemanager.appservice.generated.implementation;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
+import com.azure.core.util.BinaryData;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.fluent.WebAppsClient;
@@ -139,7 +140,6 @@ import com.azure.resourcemanager.appservice.generated.models.VnetInfoResource;
 import com.azure.resourcemanager.appservice.generated.models.WebApps;
 import com.azure.resourcemanager.appservice.generated.models.WebJob;
 import com.azure.resourcemanager.appservice.generated.models.WebSiteInstanceStatus;
-import java.io.InputStream;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -1255,21 +1255,21 @@ public final class WebAppsImpl implements WebApps {
         this.serviceClient().recoverSiteConfigurationSnapshot(resourceGroupName, name, snapshotId);
     }
 
-    public Response<InputStream> getWebSiteContainerLogsWithResponse(
+    public Response<BinaryData> getWebSiteContainerLogsWithResponse(
         String resourceGroupName, String name, Context context) {
         return this.serviceClient().getWebSiteContainerLogsWithResponse(resourceGroupName, name, context);
     }
 
-    public InputStream getWebSiteContainerLogs(String resourceGroupName, String name) {
+    public BinaryData getWebSiteContainerLogs(String resourceGroupName, String name) {
         return this.serviceClient().getWebSiteContainerLogs(resourceGroupName, name);
     }
 
-    public Response<InputStream> getContainerLogsZipWithResponse(
+    public Response<BinaryData> getContainerLogsZipWithResponse(
         String resourceGroupName, String name, Context context) {
         return this.serviceClient().getContainerLogsZipWithResponse(resourceGroupName, name, context);
     }
 
-    public InputStream getContainerLogsZip(String resourceGroupName, String name) {
+    public BinaryData getContainerLogsZip(String resourceGroupName, String name) {
         return this.serviceClient().getContainerLogsZip(resourceGroupName, name);
     }
 
@@ -2148,14 +2148,14 @@ public final class WebAppsImpl implements WebApps {
         this.serviceClient().deleteInstanceProcess(resourceGroupName, name, processId, instanceId);
     }
 
-    public Response<InputStream> getInstanceProcessDumpWithResponse(
+    public Response<BinaryData> getInstanceProcessDumpWithResponse(
         String resourceGroupName, String name, String processId, String instanceId, Context context) {
         return this
             .serviceClient()
             .getInstanceProcessDumpWithResponse(resourceGroupName, name, processId, instanceId, context);
     }
 
-    public InputStream getInstanceProcessDump(
+    public BinaryData getInstanceProcessDump(
         String resourceGroupName, String name, String processId, String instanceId) {
         return this.serviceClient().getInstanceProcessDump(resourceGroupName, name, processId, instanceId);
     }
@@ -2907,12 +2907,12 @@ public final class WebAppsImpl implements WebApps {
         this.serviceClient().deleteProcess(resourceGroupName, name, processId);
     }
 
-    public Response<InputStream> getProcessDumpWithResponse(
+    public Response<BinaryData> getProcessDumpWithResponse(
         String resourceGroupName, String name, String processId, Context context) {
         return this.serviceClient().getProcessDumpWithResponse(resourceGroupName, name, processId, context);
     }
 
-    public InputStream getProcessDump(String resourceGroupName, String name, String processId) {
+    public BinaryData getProcessDump(String resourceGroupName, String name, String processId) {
         return this.serviceClient().getProcessDump(resourceGroupName, name, processId);
     }
 
@@ -3021,7 +3021,7 @@ public final class WebAppsImpl implements WebApps {
         this.serviceClient().deletePublicCertificate(resourceGroupName, name, publicCertificateName);
     }
 
-    public Response<InputStream> listPublishingProfileXmlWithSecretsWithResponse(
+    public Response<BinaryData> listPublishingProfileXmlWithSecretsWithResponse(
         String resourceGroupName, String name, CsmPublishingProfileOptions publishingProfileOptions, Context context) {
         return this
             .serviceClient()
@@ -3029,7 +3029,7 @@ public final class WebAppsImpl implements WebApps {
                 resourceGroupName, name, publishingProfileOptions, context);
     }
 
-    public InputStream listPublishingProfileXmlWithSecrets(
+    public BinaryData listPublishingProfileXmlWithSecrets(
         String resourceGroupName, String name, CsmPublishingProfileOptions publishingProfileOptions) {
         return this
             .serviceClient()
@@ -4305,21 +4305,21 @@ public final class WebAppsImpl implements WebApps {
         this.serviceClient().recoverSiteConfigurationSnapshotSlot(resourceGroupName, name, snapshotId, slot);
     }
 
-    public Response<InputStream> getWebSiteContainerLogsSlotWithResponse(
+    public Response<BinaryData> getWebSiteContainerLogsSlotWithResponse(
         String resourceGroupName, String name, String slot, Context context) {
         return this.serviceClient().getWebSiteContainerLogsSlotWithResponse(resourceGroupName, name, slot, context);
     }
 
-    public InputStream getWebSiteContainerLogsSlot(String resourceGroupName, String name, String slot) {
+    public BinaryData getWebSiteContainerLogsSlot(String resourceGroupName, String name, String slot) {
         return this.serviceClient().getWebSiteContainerLogsSlot(resourceGroupName, name, slot);
     }
 
-    public Response<InputStream> getContainerLogsZipSlotWithResponse(
+    public Response<BinaryData> getContainerLogsZipSlotWithResponse(
         String resourceGroupName, String name, String slot, Context context) {
         return this.serviceClient().getContainerLogsZipSlotWithResponse(resourceGroupName, name, slot, context);
     }
 
-    public InputStream getContainerLogsZipSlot(String resourceGroupName, String name, String slot) {
+    public BinaryData getContainerLogsZipSlot(String resourceGroupName, String name, String slot) {
         return this.serviceClient().getContainerLogsZipSlot(resourceGroupName, name, slot);
     }
 
@@ -5617,14 +5617,14 @@ public final class WebAppsImpl implements WebApps {
         this.serviceClient().deleteInstanceProcessSlot(resourceGroupName, name, processId, slot, instanceId);
     }
 
-    public Response<InputStream> getInstanceProcessDumpSlotWithResponse(
+    public Response<BinaryData> getInstanceProcessDumpSlotWithResponse(
         String resourceGroupName, String name, String processId, String slot, String instanceId, Context context) {
         return this
             .serviceClient()
             .getInstanceProcessDumpSlotWithResponse(resourceGroupName, name, processId, slot, instanceId, context);
     }
 
-    public InputStream getInstanceProcessDumpSlot(
+    public BinaryData getInstanceProcessDumpSlot(
         String resourceGroupName, String name, String processId, String slot, String instanceId) {
         return this.serviceClient().getInstanceProcessDumpSlot(resourceGroupName, name, processId, slot, instanceId);
     }
@@ -6454,12 +6454,12 @@ public final class WebAppsImpl implements WebApps {
         this.serviceClient().deleteProcessSlot(resourceGroupName, name, processId, slot);
     }
 
-    public Response<InputStream> getProcessDumpSlotWithResponse(
+    public Response<BinaryData> getProcessDumpSlotWithResponse(
         String resourceGroupName, String name, String processId, String slot, Context context) {
         return this.serviceClient().getProcessDumpSlotWithResponse(resourceGroupName, name, processId, slot, context);
     }
 
-    public InputStream getProcessDumpSlot(String resourceGroupName, String name, String processId, String slot) {
+    public BinaryData getProcessDumpSlot(String resourceGroupName, String name, String processId, String slot) {
         return this.serviceClient().getProcessDumpSlot(resourceGroupName, name, processId, slot);
     }
 
@@ -6614,7 +6614,7 @@ public final class WebAppsImpl implements WebApps {
         this.serviceClient().deletePublicCertificateSlot(resourceGroupName, name, slot, publicCertificateName);
     }
 
-    public Response<InputStream> listPublishingProfileXmlWithSecretsSlotWithResponse(
+    public Response<BinaryData> listPublishingProfileXmlWithSecretsSlotWithResponse(
         String resourceGroupName,
         String name,
         String slot,
@@ -6626,7 +6626,7 @@ public final class WebAppsImpl implements WebApps {
                 resourceGroupName, name, slot, publishingProfileOptions, context);
     }
 
-    public InputStream listPublishingProfileXmlWithSecretsSlot(
+    public BinaryData listPublishingProfileXmlWithSecretsSlot(
         String resourceGroupName, String name, String slot, CsmPublishingProfileOptions publishingProfileOptions) {
         return this
             .serviceClient()

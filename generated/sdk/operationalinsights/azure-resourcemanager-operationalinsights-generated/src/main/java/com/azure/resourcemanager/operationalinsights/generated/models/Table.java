@@ -119,7 +119,7 @@ public interface Table {
      *
      * @return the retentionInDaysAsDefault value.
      */
-    RetentionInDaysAsDefault retentionInDaysAsDefault();
+    Boolean retentionInDaysAsDefault();
 
     /**
      * Gets the totalRetentionInDaysAsDefault property: True - Value originates from retention in days, False - Customer
@@ -127,7 +127,7 @@ public interface Table {
      *
      * @return the totalRetentionInDaysAsDefault value.
      */
-    TotalRetentionInDaysAsDefault totalRetentionInDaysAsDefault();
+    Boolean totalRetentionInDaysAsDefault();
 
     /**
      * Gets the name of the resource group.

@@ -49,7 +49,7 @@ public final class TagsClientImpl implements TagsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "ConsumptionManagemen")
-    private interface TagsService {
+    public interface TagsService {
         @Headers({"Content-Type: application/json"})
         @Get("/{scope}/providers/Microsoft.Consumption/tags")
         @ExpectedResponses({200, 204})

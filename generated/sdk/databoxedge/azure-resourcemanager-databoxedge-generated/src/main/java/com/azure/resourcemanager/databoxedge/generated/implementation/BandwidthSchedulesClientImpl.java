@@ -63,7 +63,7 @@ public final class BandwidthSchedulesClientImpl implements BandwidthSchedulesCli
      */
     @Host("{$host}")
     @ServiceInterface(name = "DataBoxEdgeManagemen")
-    private interface BandwidthSchedulesService {
+    public interface BandwidthSchedulesService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge"

@@ -115,6 +115,10 @@ public final class BackendAddressPoolImpl
         return this.innerModel().drainPeriodInSeconds();
     }
 
+    public SubResource virtualNetwork() {
+        return this.innerModel().virtualNetwork();
+    }
+
     public Region region() {
         return Region.fromName(this.regionName());
     }
@@ -255,6 +259,11 @@ public final class BackendAddressPoolImpl
 
     public BackendAddressPoolImpl withDrainPeriodInSeconds(Integer drainPeriodInSeconds) {
         this.innerModel().withDrainPeriodInSeconds(drainPeriodInSeconds);
+        return this;
+    }
+
+    public BackendAddressPoolImpl withVirtualNetwork(SubResource virtualNetwork) {
+        this.innerModel().withVirtualNetwork(virtualNetwork);
         return this;
     }
 }

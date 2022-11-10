@@ -59,7 +59,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "HDInsightManagementC")
-    private interface VirtualMachinesService {
+    public interface VirtualMachinesService {
         @Headers({"Content-Type: application/json"})
         @Post(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HDInsight/clusters"

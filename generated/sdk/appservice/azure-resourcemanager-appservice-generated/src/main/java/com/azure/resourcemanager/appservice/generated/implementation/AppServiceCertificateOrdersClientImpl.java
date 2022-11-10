@@ -79,7 +79,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      */
     @Host("{$host}")
     @ServiceInterface(name = "WebSiteManagementCli")
-    private interface AppServiceCertificateOrdersService {
+    public interface AppServiceCertificateOrdersService {
         @Headers({"Content-Type: application/json"})
         @Get("/subscriptions/{subscriptionId}/providers/Microsoft.CertificateRegistration/certificateOrders")
         @ExpectedResponses({200})

@@ -61,7 +61,7 @@ public final class DedicatedHostGroupsClientImpl implements DedicatedHostGroupsC
      */
     @Host("{$host}")
     @ServiceInterface(name = "ComputeManagementCli")
-    private interface DedicatedHostGroupsService {
+    public interface DedicatedHostGroupsService {
         @Headers({"Content-Type: application/json"})
         @Put(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/hostGroups"

@@ -69,7 +69,7 @@ public final class DomainEventSubscriptionsClientImpl implements DomainEventSubs
      */
     @Host("{$host}")
     @ServiceInterface(name = "EventGridManagementC")
-    private interface DomainEventSubscriptionsService {
+    public interface DomainEventSubscriptionsService {
         @Headers({"Content-Type: application/json"})
         @Post(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventGrid/domains"

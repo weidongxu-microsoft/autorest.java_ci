@@ -64,7 +64,7 @@ public final class ContainersClientImpl implements ContainersClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "DataBoxEdgeManagemen")
-    private interface ContainersService {
+    public interface ContainersService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge"

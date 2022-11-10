@@ -57,7 +57,7 @@ public final class UsageAggregatesClientImpl implements UsageAggregatesClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "UsageManagementClien")
-    private interface UsageAggregatesService {
+    public interface UsageAggregatesService {
         @Headers({"Content-Type: application/json"})
         @Get("/subscriptions/{subscriptionId}/providers/Microsoft.Commerce/UsageAggregates")
         @ExpectedResponses({200})

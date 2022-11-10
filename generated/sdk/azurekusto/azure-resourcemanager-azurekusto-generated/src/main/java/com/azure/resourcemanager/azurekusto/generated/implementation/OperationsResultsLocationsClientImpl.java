@@ -50,7 +50,7 @@ public final class OperationsResultsLocationsClientImpl implements OperationsRes
      */
     @Host("{$host}")
     @ServiceInterface(name = "KustoManagementClien")
-    private interface OperationsResultsLocationsService {
+    public interface OperationsResultsLocationsService {
         @Headers({"Accept: application/json;q=0.9", "Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/providers/Microsoft.Kusto/locations/{location}/operationResults"

@@ -63,7 +63,7 @@ public final class MonitoringConfigsClientImpl implements MonitoringConfigsClien
      */
     @Host("{$host}")
     @ServiceInterface(name = "DataBoxEdgeManagemen")
-    private interface MonitoringConfigsService {
+    public interface MonitoringConfigsService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge"

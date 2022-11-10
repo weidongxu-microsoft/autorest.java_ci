@@ -57,7 +57,7 @@ public final class ViewsClientImpl implements ViewsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "CostManagementClient")
-    private interface ViewsService {
+    public interface ViewsService {
         @Headers({"Content-Type: application/json"})
         @Get("/providers/Microsoft.CostManagement/views")
         @ExpectedResponses({200, 204})

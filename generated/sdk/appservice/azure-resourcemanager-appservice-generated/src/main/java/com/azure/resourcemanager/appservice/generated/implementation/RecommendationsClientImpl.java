@@ -57,7 +57,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "WebSiteManagementCli")
-    private interface RecommendationsService {
+    public interface RecommendationsService {
         @Headers({"Content-Type: application/json"})
         @Get("/subscriptions/{subscriptionId}/providers/Microsoft.Web/recommendations")
         @ExpectedResponses({200})

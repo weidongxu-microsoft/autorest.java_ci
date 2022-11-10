@@ -7,6 +7,7 @@ package com.azure.resourcemanager.appservice.generated.implementation;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
+import com.azure.core.util.BinaryData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.fluent.models.BackupRequestInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.RestoreRequestInner;
@@ -36,7 +37,6 @@ import com.azure.resourcemanager.appservice.generated.models.SlotDifference;
 import com.azure.resourcemanager.appservice.generated.models.SlotSwapStatus;
 import com.azure.resourcemanager.appservice.generated.models.SnapshotRestoreRequest;
 import com.azure.resourcemanager.appservice.generated.models.UsageState;
-import java.io.InputStream;
 import java.time.OffsetDateTime;
 import java.util.Collections;
 import java.util.List;
@@ -415,11 +415,11 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
         return serviceManager.webApps().backup(resourceGroupName, name, request);
     }
 
-    public Response<InputStream> getWebSiteContainerLogsWithResponse(Context context) {
+    public Response<BinaryData> getWebSiteContainerLogsWithResponse(Context context) {
         return serviceManager.webApps().getWebSiteContainerLogsWithResponse(resourceGroupName, name, context);
     }
 
-    public InputStream getWebSiteContainerLogs() {
+    public BinaryData getWebSiteContainerLogs() {
         return serviceManager.webApps().getWebSiteContainerLogs(resourceGroupName, name);
     }
 
@@ -471,7 +471,7 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
         serviceManager.webApps().generateNewSitePublishingPassword(resourceGroupName, name);
     }
 
-    public Response<InputStream> listPublishingProfileXmlWithSecretsWithResponse(
+    public Response<BinaryData> listPublishingProfileXmlWithSecretsWithResponse(
         CsmPublishingProfileOptions publishingProfileOptions, Context context) {
         return serviceManager
             .webApps()
@@ -479,7 +479,7 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
                 resourceGroupName, name, publishingProfileOptions, context);
     }
 
-    public InputStream listPublishingProfileXmlWithSecrets(CsmPublishingProfileOptions publishingProfileOptions) {
+    public BinaryData listPublishingProfileXmlWithSecrets(CsmPublishingProfileOptions publishingProfileOptions) {
         return serviceManager
             .webApps()
             .listPublishingProfileXmlWithSecrets(resourceGroupName, name, publishingProfileOptions);

@@ -57,7 +57,7 @@ public final class BudgetsClientImpl implements BudgetsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "ConsumptionManagemen")
-    private interface BudgetsService {
+    public interface BudgetsService {
         @Headers({"Content-Type: application/json"})
         @Get("/{scope}/providers/Microsoft.Consumption/budgets")
         @ExpectedResponses({200})

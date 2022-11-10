@@ -62,7 +62,7 @@ public final class SshPublicKeysClientImpl implements SshPublicKeysClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "ComputeManagementCli")
-    private interface SshPublicKeysService {
+    public interface SshPublicKeysService {
         @Headers({"Content-Type: application/json"})
         @Get("/subscriptions/{subscriptionId}/providers/Microsoft.Compute/sshPublicKeys")
         @ExpectedResponses({200})

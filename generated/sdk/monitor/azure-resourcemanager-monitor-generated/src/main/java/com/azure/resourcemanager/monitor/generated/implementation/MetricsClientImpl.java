@@ -51,7 +51,7 @@ public final class MetricsClientImpl implements MetricsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "MonitorClientMetrics")
-    private interface MetricsService {
+    public interface MetricsService {
         @Headers({"Content-Type: application/json"})
         @Get("/{resourceUri}/providers/Microsoft.Insights/metrics")
         @ExpectedResponses({200})

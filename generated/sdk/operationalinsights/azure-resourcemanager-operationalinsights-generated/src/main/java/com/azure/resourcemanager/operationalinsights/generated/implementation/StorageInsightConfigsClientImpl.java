@@ -59,7 +59,7 @@ public final class StorageInsightConfigsClientImpl implements StorageInsightConf
      */
     @Host("{$host}")
     @ServiceInterface(name = "OperationalInsightsM")
-    private interface StorageInsightConfigsService {
+    public interface StorageInsightConfigsService {
         @Headers({"Content-Type: application/json"})
         @Put(
             "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.OperationalInsights"

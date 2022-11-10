@@ -65,7 +65,7 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
-    private interface RouteFiltersService {
+    public interface RouteFiltersService {
         @Headers({"Content-Type: application/json"})
         @Delete(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network"
@@ -207,7 +207,7 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-05-01";
+        final String apiVersion = "2022-07-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -258,7 +258,7 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-05-01";
+        final String apiVersion = "2022-07-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -442,7 +442,7 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-05-01";
+        final String apiVersion = "2022-07-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -495,7 +495,7 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-05-01";
+        final String apiVersion = "2022-07-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -601,7 +601,7 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
         } else {
             routeFilterParameters.validate();
         }
-        final String apiVersion = "2022-05-01";
+        final String apiVersion = "2022-07-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -660,7 +660,7 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
         } else {
             routeFilterParameters.validate();
         }
-        final String apiVersion = "2022-05-01";
+        final String apiVersion = "2022-07-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -874,7 +874,7 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-05-01";
+        final String apiVersion = "2022-07-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -932,7 +932,7 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-05-01";
+        final String apiVersion = "2022-07-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1027,7 +1027,7 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-05-01";
+        final String apiVersion = "2022-07-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1082,7 +1082,7 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-05-01";
+        final String apiVersion = "2022-07-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1188,7 +1188,7 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-05-01";
+        final String apiVersion = "2022-07-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1231,7 +1231,7 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-05-01";
+        final String apiVersion = "2022-07-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service

@@ -55,7 +55,7 @@ public final class EventsOperationsClientImpl implements EventsOperationsClient 
      */
     @Host("{$host}")
     @ServiceInterface(name = "ConsumptionManagemen")
-    private interface EventsOperationsService {
+    public interface EventsOperationsService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}"

@@ -59,7 +59,7 @@ public final class WebTestsClientImpl implements WebTestsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "ApplicationInsightsM")
-    private interface WebTestsService {
+    public interface WebTestsService {
         @Headers({"Content-Type: application/json"})
         @Get("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/webtests")
         @ExpectedResponses({200})

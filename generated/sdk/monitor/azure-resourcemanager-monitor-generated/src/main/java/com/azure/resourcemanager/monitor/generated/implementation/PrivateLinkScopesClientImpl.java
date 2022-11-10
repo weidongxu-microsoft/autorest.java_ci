@@ -65,7 +65,7 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
      */
     @Host("{$host}")
     @ServiceInterface(name = "MonitorClientPrivate")
-    private interface PrivateLinkScopesService {
+    public interface PrivateLinkScopesService {
         @Headers({"Content-Type: application/json"})
         @Get("/subscriptions/{subscriptionId}/providers/microsoft.insights/privateLinkScopes")
         @ExpectedResponses({200})

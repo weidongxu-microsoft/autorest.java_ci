@@ -51,7 +51,7 @@ public final class DeviceCapacityInfoesClientImpl implements DeviceCapacityInfoe
      */
     @Host("{$host}")
     @ServiceInterface(name = "DataBoxEdgeManagemen")
-    private interface DeviceCapacityInfoesService {
+    public interface DeviceCapacityInfoesService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge"

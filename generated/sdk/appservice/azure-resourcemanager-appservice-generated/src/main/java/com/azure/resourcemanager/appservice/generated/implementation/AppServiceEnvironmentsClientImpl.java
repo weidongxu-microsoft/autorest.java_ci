@@ -98,7 +98,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      */
     @Host("{$host}")
     @ServiceInterface(name = "WebSiteManagementCli")
-    private interface AppServiceEnvironmentsService {
+    public interface AppServiceEnvironmentsService {
         @Headers({"Content-Type: application/json"})
         @Get("/subscriptions/{subscriptionId}/providers/Microsoft.Web/hostingEnvironments")
         @ExpectedResponses({200})

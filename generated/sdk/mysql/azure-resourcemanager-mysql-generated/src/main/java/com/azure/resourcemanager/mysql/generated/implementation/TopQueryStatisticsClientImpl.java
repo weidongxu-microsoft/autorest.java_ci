@@ -57,7 +57,7 @@ public final class TopQueryStatisticsClientImpl implements TopQueryStatisticsCli
      */
     @Host("{$host}")
     @ServiceInterface(name = "MySqlManagementClien")
-    private interface TopQueryStatisticsService {
+    public interface TopQueryStatisticsService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforMySQL/servers"

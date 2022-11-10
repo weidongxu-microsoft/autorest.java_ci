@@ -53,7 +53,7 @@ public final class DiagnosticSettingsCategoriesClientImpl implements DiagnosticS
      */
     @Host("{$host}")
     @ServiceInterface(name = "MonitorClientDiagnos")
-    private interface DiagnosticSettingsCategoriesService {
+    public interface DiagnosticSettingsCategoriesService {
         @Headers({"Content-Type: application/json"})
         @Get("/{resourceUri}/providers/Microsoft.Insights/diagnosticSettingsCategories/{name}")
         @ExpectedResponses({200})

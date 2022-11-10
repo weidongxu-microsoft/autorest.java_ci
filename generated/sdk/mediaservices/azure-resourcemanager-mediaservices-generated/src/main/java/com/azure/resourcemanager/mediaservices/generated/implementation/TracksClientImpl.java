@@ -64,7 +64,7 @@ public final class TracksClientImpl implements TracksClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "AzureMediaServicesTr")
-    private interface TracksService {
+    public interface TracksService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Media/mediaServices"

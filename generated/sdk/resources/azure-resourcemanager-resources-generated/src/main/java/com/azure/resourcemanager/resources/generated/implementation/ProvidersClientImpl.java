@@ -56,7 +56,7 @@ public final class ProvidersClientImpl implements ProvidersClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "ResourceManagementCl")
-    private interface ProvidersService {
+    public interface ProvidersService {
         @Headers({"Content-Type: application/json"})
         @Post("/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/unregister")
         @ExpectedResponses({200})

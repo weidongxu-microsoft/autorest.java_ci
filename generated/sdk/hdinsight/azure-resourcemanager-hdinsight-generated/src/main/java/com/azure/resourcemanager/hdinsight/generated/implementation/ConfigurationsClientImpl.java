@@ -58,7 +58,7 @@ public final class ConfigurationsClientImpl implements ConfigurationsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "HDInsightManagementC")
-    private interface ConfigurationsService {
+    public interface ConfigurationsService {
         @Headers({"Content-Type: application/json"})
         @Post(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HDInsight/clusters"

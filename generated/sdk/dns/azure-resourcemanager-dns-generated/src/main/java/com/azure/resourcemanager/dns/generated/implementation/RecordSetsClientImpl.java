@@ -60,7 +60,7 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "DnsManagementClientR")
-    private interface RecordSetsService {
+    public interface RecordSetsService {
         @Headers({"Content-Type: application/json"})
         @Patch(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/dnsZones"

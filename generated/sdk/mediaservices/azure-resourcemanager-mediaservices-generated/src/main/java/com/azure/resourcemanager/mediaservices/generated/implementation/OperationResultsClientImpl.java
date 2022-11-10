@@ -50,7 +50,7 @@ public final class OperationResultsClientImpl implements OperationResultsClient 
      */
     @Host("{$host}")
     @ServiceInterface(name = "AzureMediaServicesOp")
-    private interface OperationResultsService {
+    public interface OperationResultsService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Media/mediaServices"

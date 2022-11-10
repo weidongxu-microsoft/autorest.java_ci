@@ -55,7 +55,7 @@ public final class ManagedRuleSetsClientImpl implements ManagedRuleSetsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "FrontDoorManagementC")
-    private interface ManagedRuleSetsService {
+    public interface ManagedRuleSetsService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/providers/Microsoft.Network"

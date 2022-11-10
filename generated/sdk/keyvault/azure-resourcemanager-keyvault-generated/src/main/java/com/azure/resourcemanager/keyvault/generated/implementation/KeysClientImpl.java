@@ -57,7 +57,7 @@ public final class KeysClientImpl implements KeysClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "KeyVaultManagementCl")
-    private interface KeysService {
+    public interface KeysService {
         @Headers({"Content-Type: application/json"})
         @Put(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.KeyVault/vaults"

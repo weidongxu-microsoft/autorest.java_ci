@@ -47,7 +47,7 @@ public final class GatewaysClientImpl implements GatewaysClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "OperationalInsightsM")
-    private interface GatewaysService {
+    public interface GatewaysService {
         @Headers({"Accept: application/json;q=0.9", "Content-Type: application/json"})
         @Delete(
             "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.OperationalInsights"

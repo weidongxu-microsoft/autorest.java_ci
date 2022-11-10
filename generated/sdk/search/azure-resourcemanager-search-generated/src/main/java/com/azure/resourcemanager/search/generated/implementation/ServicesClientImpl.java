@@ -68,7 +68,7 @@ public final class ServicesClientImpl implements ServicesClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "SearchManagementClie")
-    private interface ServicesService {
+    public interface ServicesService {
         @Headers({"Content-Type: application/json"})
         @Put(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Search"

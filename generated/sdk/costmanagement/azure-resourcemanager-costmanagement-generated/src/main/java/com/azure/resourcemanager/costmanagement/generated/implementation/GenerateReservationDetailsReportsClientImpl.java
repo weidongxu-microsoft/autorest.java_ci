@@ -61,7 +61,7 @@ public final class GenerateReservationDetailsReportsClientImpl implements Genera
      */
     @Host("{$host}")
     @ServiceInterface(name = "CostManagementClient")
-    private interface GenerateReservationDetailsReportsService {
+    public interface GenerateReservationDetailsReportsService {
         @Headers({"Content-Type: application/json"})
         @Post(
             "/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/providers/Microsoft.CostManagement"

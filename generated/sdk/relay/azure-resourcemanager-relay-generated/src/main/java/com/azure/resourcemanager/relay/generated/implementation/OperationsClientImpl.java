@@ -55,7 +55,7 @@ public final class OperationsClientImpl implements OperationsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "RelayApiOperations")
-    private interface OperationsService {
+    public interface OperationsService {
         @Headers({"Content-Type: application/json"})
         @Get("/providers/Microsoft.Relay/operations")
         @ExpectedResponses({200})

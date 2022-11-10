@@ -58,7 +58,7 @@ public final class ApplicationGroupsClientImpl implements ApplicationGroupsClien
      */
     @Host("{$host}")
     @ServiceInterface(name = "EventHubManagementCl")
-    private interface ApplicationGroupsService {
+    public interface ApplicationGroupsService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventHub/namespaces"

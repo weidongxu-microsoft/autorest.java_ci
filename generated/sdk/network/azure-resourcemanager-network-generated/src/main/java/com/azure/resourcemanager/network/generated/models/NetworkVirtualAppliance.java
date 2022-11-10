@@ -105,7 +105,8 @@ public interface NetworkVirtualAppliance {
     String cloudInitConfiguration();
 
     /**
-     * Gets the virtualApplianceAsn property: VirtualAppliance ASN.
+     * Gets the virtualApplianceAsn property: VirtualAppliance ASN. Microsoft private, public and IANA reserved ASN are
+     * not supported.
      *
      * @return the virtualApplianceAsn value.
      */
@@ -145,6 +146,27 @@ public interface NetworkVirtualAppliance {
      * @return the provisioningState value.
      */
     ProvisioningState provisioningState();
+
+    /**
+     * Gets the deploymentType property: The deployment type. PartnerManaged for the SaaS NVA.
+     *
+     * @return the deploymentType value.
+     */
+    String deploymentType();
+
+    /**
+     * Gets the delegation property: The delegation for the Virtual Appliance.
+     *
+     * @return the delegation value.
+     */
+    DelegationProperties delegation();
+
+    /**
+     * Gets the partnerManagedResource property: The delegation for the Virtual Appliance.
+     *
+     * @return the partnerManagedResource value.
+     */
+    PartnerManagedResourceProperties partnerManagedResource();
 
     /**
      * Gets the region of the resource.
@@ -227,7 +249,9 @@ public interface NetworkVirtualAppliance {
                 DefinitionStages.WithCloudInitConfigurationBlobs,
                 DefinitionStages.WithCloudInitConfiguration,
                 DefinitionStages.WithVirtualApplianceAsn,
-                DefinitionStages.WithSshPublicKey {
+                DefinitionStages.WithSshPublicKey,
+                DefinitionStages.WithDelegation,
+                DefinitionStages.WithPartnerManagedResource {
             /**
              * Executes the create request.
              *
@@ -317,9 +341,11 @@ public interface NetworkVirtualAppliance {
         /** The stage of the NetworkVirtualAppliance definition allowing to specify virtualApplianceAsn. */
         interface WithVirtualApplianceAsn {
             /**
-             * Specifies the virtualApplianceAsn property: VirtualAppliance ASN..
+             * Specifies the virtualApplianceAsn property: VirtualAppliance ASN. Microsoft private, public and IANA
+             * reserved ASN are not supported..
              *
-             * @param virtualApplianceAsn VirtualAppliance ASN.
+             * @param virtualApplianceAsn VirtualAppliance ASN. Microsoft private, public and IANA reserved ASN are not
+             *     supported.
              * @return the next definition stage.
              */
             WithCreate withVirtualApplianceAsn(Long virtualApplianceAsn);
@@ -333,6 +359,26 @@ public interface NetworkVirtualAppliance {
              * @return the next definition stage.
              */
             WithCreate withSshPublicKey(String sshPublicKey);
+        }
+        /** The stage of the NetworkVirtualAppliance definition allowing to specify delegation. */
+        interface WithDelegation {
+            /**
+             * Specifies the delegation property: The delegation for the Virtual Appliance.
+             *
+             * @param delegation The delegation for the Virtual Appliance.
+             * @return the next definition stage.
+             */
+            WithCreate withDelegation(DelegationProperties delegation);
+        }
+        /** The stage of the NetworkVirtualAppliance definition allowing to specify partnerManagedResource. */
+        interface WithPartnerManagedResource {
+            /**
+             * Specifies the partnerManagedResource property: The delegation for the Virtual Appliance.
+             *
+             * @param partnerManagedResource The delegation for the Virtual Appliance.
+             * @return the next definition stage.
+             */
+            WithCreate withPartnerManagedResource(PartnerManagedResourceProperties partnerManagedResource);
         }
     }
     /**

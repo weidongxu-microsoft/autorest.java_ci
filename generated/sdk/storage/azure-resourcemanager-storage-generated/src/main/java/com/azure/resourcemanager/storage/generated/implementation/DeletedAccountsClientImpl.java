@@ -55,7 +55,7 @@ public final class DeletedAccountsClientImpl implements DeletedAccountsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "StorageManagementCli")
-    private interface DeletedAccountsService {
+    public interface DeletedAccountsService {
         @Headers({"Content-Type: application/json"})
         @Get("/subscriptions/{subscriptionId}/providers/Microsoft.Storage/deletedAccounts")
         @ExpectedResponses({200})

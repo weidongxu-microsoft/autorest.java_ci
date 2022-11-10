@@ -7,12 +7,12 @@ package com.azure.resourcemanager.appservice.generated.models;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
+import com.azure.core.util.BinaryData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.fluent.models.BackupRequestInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.RestoreRequestInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteConfigInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteInner;
-import java.io.InputStream;
 import java.time.OffsetDateTime;
 import java.util.List;
 import java.util.Map;
@@ -1258,7 +1258,7 @@ public interface Site {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the response body along with {@link Response}.
      */
-    Response<InputStream> getWebSiteContainerLogsWithResponse(Context context);
+    Response<BinaryData> getWebSiteContainerLogsWithResponse(Context context);
 
     /**
      * Gets the last lines of docker logs for the given site
@@ -1269,7 +1269,7 @@ public interface Site {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the response.
      */
-    InputStream getWebSiteContainerLogs();
+    BinaryData getWebSiteContainerLogs();
 
     /**
      * Discovers an existing app backup that can be restored from a blob in Azure storage. Use this to get information
@@ -1450,7 +1450,7 @@ public interface Site {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the response body along with {@link Response}.
      */
-    Response<InputStream> listPublishingProfileXmlWithSecretsWithResponse(
+    Response<BinaryData> listPublishingProfileXmlWithSecretsWithResponse(
         CsmPublishingProfileOptions publishingProfileOptions, Context context);
 
     /**
@@ -1466,7 +1466,7 @@ public interface Site {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the response.
      */
-    InputStream listPublishingProfileXmlWithSecrets(CsmPublishingProfileOptions publishingProfileOptions);
+    BinaryData listPublishingProfileXmlWithSecrets(CsmPublishingProfileOptions publishingProfileOptions);
 
     /**
      * Resets the configuration settings of the current slot if they were previously modified by calling the API with

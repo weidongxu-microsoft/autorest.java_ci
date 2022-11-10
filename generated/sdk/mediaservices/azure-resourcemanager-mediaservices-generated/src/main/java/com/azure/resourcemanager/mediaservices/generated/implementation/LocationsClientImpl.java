@@ -52,7 +52,7 @@ public final class LocationsClientImpl implements LocationsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "AzureMediaServicesLo")
-    private interface LocationsService {
+    public interface LocationsService {
         @Headers({"Content-Type: application/json"})
         @Post(
             "/subscriptions/{subscriptionId}/providers/Microsoft.Media/locations/{locationName}/checkNameAvailability")

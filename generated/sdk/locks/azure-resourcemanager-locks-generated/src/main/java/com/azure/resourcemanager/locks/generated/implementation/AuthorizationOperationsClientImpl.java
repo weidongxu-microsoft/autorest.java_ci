@@ -56,7 +56,7 @@ public final class AuthorizationOperationsClientImpl implements AuthorizationOpe
      */
     @Host("{$host}")
     @ServiceInterface(name = "ManagementLockClient")
-    private interface AuthorizationOperationsService {
+    public interface AuthorizationOperationsService {
         @Headers({"Content-Type: application/json"})
         @Get("/providers/Microsoft.Authorization/operations")
         @ExpectedResponses({200})

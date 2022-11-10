@@ -52,7 +52,7 @@ public final class VaultCertificatesClientImpl implements VaultCertificatesClien
      */
     @Host("{$host}")
     @ServiceInterface(name = "RecoveryServicesMana")
-    private interface VaultCertificatesService {
+    public interface VaultCertificatesService {
         @Headers({"Content-Type: application/json"})
         @Put(
             "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices"

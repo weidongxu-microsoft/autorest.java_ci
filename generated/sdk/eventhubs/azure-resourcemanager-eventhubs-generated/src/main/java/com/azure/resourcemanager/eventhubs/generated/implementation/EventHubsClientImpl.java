@@ -63,7 +63,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "EventHubManagementCl")
-    private interface EventHubsService {
+    public interface EventHubsService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventHub/namespaces"

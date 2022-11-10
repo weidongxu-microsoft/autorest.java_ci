@@ -56,7 +56,7 @@ public final class ComponentCurrentBillingFeaturesClientImpl implements Componen
      */
     @Host("{$host}")
     @ServiceInterface(name = "ApplicationInsightsM")
-    private interface ComponentCurrentBillingFeaturesService {
+    public interface ComponentCurrentBillingFeaturesService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/components"

@@ -55,7 +55,7 @@ public final class DeletedWebAppsClientImpl implements DeletedWebAppsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "WebSiteManagementCli")
-    private interface DeletedWebAppsService {
+    public interface DeletedWebAppsService {
         @Headers({"Content-Type: application/json"})
         @Get("/subscriptions/{subscriptionId}/providers/Microsoft.Web/deletedSites")
         @ExpectedResponses({200})

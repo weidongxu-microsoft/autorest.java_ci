@@ -57,7 +57,7 @@ public final class ServerBasedPerformanceTiersClientImpl implements ServerBasedP
      */
     @Host("{$host}")
     @ServiceInterface(name = "PostgreSqlManagement")
-    private interface ServerBasedPerformanceTiersService {
+    public interface ServerBasedPerformanceTiersService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforPostgreSQL"

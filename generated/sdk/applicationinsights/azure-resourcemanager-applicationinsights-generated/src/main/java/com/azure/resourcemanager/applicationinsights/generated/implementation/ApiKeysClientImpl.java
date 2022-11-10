@@ -58,7 +58,7 @@ public final class ApiKeysClientImpl implements ApiKeysClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "ApplicationInsightsM")
-    private interface ApiKeysService {
+    public interface ApiKeysService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/components"

@@ -66,7 +66,7 @@ public final class FrontDoorsClientImpl implements FrontDoorsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "FrontDoorManagementC")
-    private interface FrontDoorsService {
+    public interface FrontDoorsService {
         @Headers({"Content-Type: application/json"})
         @Get("/subscriptions/{subscriptionId}/providers/Microsoft.Network/frontDoors")
         @ExpectedResponses({200})

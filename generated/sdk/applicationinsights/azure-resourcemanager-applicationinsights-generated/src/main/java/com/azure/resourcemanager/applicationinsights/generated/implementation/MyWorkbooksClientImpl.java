@@ -63,7 +63,7 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "ApplicationInsightsM")
-    private interface MyWorkbooksService {
+    public interface MyWorkbooksService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights"

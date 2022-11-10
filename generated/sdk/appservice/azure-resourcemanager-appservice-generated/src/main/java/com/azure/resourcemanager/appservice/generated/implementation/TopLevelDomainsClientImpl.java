@@ -60,7 +60,7 @@ public final class TopLevelDomainsClientImpl implements TopLevelDomainsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "WebSiteManagementCli")
-    private interface TopLevelDomainsService {
+    public interface TopLevelDomainsService {
         @Headers({"Content-Type: application/json"})
         @Get("/subscriptions/{subscriptionId}/providers/Microsoft.DomainRegistration/topLevelDomains")
         @ExpectedResponses({200})

@@ -55,7 +55,7 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "AuthorizationManagem")
-    private interface DenyAssignmentsService {
+    public interface DenyAssignmentsService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}"

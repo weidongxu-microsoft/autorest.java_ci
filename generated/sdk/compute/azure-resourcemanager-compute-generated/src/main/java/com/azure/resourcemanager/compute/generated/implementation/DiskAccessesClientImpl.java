@@ -69,7 +69,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "ComputeManagementCli")
-    private interface DiskAccessesService {
+    public interface DiskAccessesService {
         @Headers({"Content-Type: application/json"})
         @Put(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute"

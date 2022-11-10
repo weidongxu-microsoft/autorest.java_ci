@@ -52,7 +52,7 @@ public final class AdminKeysClientImpl implements AdminKeysClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "SearchManagementClie")
-    private interface AdminKeysService {
+    public interface AdminKeysService {
         @Headers({"Content-Type: application/json"})
         @Post(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Search"

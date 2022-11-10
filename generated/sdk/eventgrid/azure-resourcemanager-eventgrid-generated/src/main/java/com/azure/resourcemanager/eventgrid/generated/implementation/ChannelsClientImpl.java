@@ -66,7 +66,7 @@ public final class ChannelsClientImpl implements ChannelsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "EventGridManagementC")
-    private interface ChannelsService {
+    public interface ChannelsService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventGrid"

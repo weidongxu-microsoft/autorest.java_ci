@@ -73,7 +73,7 @@ public final class DomainsClientImpl implements DomainsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "WebSiteManagementCli")
-    private interface DomainsService {
+    public interface DomainsService {
         @Headers({"Content-Type: application/json"})
         @Post("/subscriptions/{subscriptionId}/providers/Microsoft.DomainRegistration/checkDomainAvailability")
         @ExpectedResponses({200})

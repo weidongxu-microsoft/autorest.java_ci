@@ -63,7 +63,7 @@ public final class NetworkSecurityPerimeterConfigurationsOperationsClientImpl
      */
     @Host("{$host}")
     @ServiceInterface(name = "EventHubManagementCl")
-    private interface NetworkSecurityPerimeterConfigurationsOperationsService {
+    public interface NetworkSecurityPerimeterConfigurationsOperationsService {
         @Headers({"Content-Type: application/json"})
         @Post(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventHub/namespaces"

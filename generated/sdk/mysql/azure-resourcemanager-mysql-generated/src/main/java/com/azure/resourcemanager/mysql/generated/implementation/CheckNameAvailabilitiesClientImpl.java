@@ -53,7 +53,7 @@ public final class CheckNameAvailabilitiesClientImpl implements CheckNameAvailab
      */
     @Host("{$host}")
     @ServiceInterface(name = "MySqlManagementClien")
-    private interface CheckNameAvailabilitiesService {
+    public interface CheckNameAvailabilitiesService {
         @Headers({"Content-Type: application/json"})
         @Post("/subscriptions/{subscriptionId}/providers/Microsoft.DBforMySQL/checkNameAvailability")
         @ExpectedResponses({200})

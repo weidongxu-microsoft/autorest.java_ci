@@ -80,7 +80,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      */
     @Host("{$host}")
     @ServiceInterface(name = "WebSiteManagementCli")
-    private interface ResourceProvidersService {
+    public interface ResourceProvidersService {
         @Headers({"Content-Type: application/json"})
         @Get("/providers/Microsoft.Web/publishingUsers/web")
         @ExpectedResponses({200})

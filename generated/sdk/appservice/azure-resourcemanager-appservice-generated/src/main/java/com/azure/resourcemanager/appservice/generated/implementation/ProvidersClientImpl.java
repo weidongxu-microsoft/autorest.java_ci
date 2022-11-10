@@ -63,7 +63,7 @@ public final class ProvidersClientImpl implements ProvidersClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "WebSiteManagementCli")
-    private interface ProvidersService {
+    public interface ProvidersService {
         @Headers({"Content-Type: application/json"})
         @Get("/providers/Microsoft.Web/availableStacks")
         @ExpectedResponses({200})

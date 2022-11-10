@@ -69,7 +69,7 @@ public final class TopicEventSubscriptionsClientImpl implements TopicEventSubscr
      */
     @Host("{$host}")
     @ServiceInterface(name = "EventGridManagementC")
-    private interface TopicEventSubscriptionsService {
+    public interface TopicEventSubscriptionsService {
         @Headers({"Content-Type: application/json"})
         @Post(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventGrid/topics"

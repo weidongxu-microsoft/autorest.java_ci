@@ -64,7 +64,7 @@ public final class ApplicationsClientImpl implements ApplicationsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "HDInsightManagementC")
-    private interface ApplicationsService {
+    public interface ApplicationsService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HDInsight/clusters"

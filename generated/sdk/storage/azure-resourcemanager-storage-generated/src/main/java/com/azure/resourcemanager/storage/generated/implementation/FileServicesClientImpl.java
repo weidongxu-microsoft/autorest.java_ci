@@ -53,7 +53,7 @@ public final class FileServicesClientImpl implements FileServicesClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "StorageManagementCli")
-    private interface FileServicesService {
+    public interface FileServicesService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage"

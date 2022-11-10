@@ -56,7 +56,7 @@ public final class ServerParametersClientImpl implements ServerParametersClient 
      */
     @Host("{$host}")
     @ServiceInterface(name = "PostgreSqlManagement")
-    private interface ServerParametersService {
+    public interface ServerParametersService {
         @Headers({"Content-Type: application/json"})
         @Post(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforPostgreSQL"

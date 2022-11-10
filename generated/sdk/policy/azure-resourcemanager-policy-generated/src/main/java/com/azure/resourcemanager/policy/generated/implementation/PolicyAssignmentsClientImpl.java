@@ -58,7 +58,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
      */
     @Host("{$host}")
     @ServiceInterface(name = "PolicyClientPolicyAs")
-    private interface PolicyAssignmentsService {
+    public interface PolicyAssignmentsService {
         @Headers({"Content-Type: application/json"})
         @Delete("/{scope}/providers/Microsoft.Authorization/policyAssignments/{policyAssignmentName}")
         @ExpectedResponses({200, 204})

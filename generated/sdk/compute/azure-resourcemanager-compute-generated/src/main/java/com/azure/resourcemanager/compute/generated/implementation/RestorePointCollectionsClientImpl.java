@@ -67,7 +67,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
      */
     @Host("{$host}")
     @ServiceInterface(name = "ComputeManagementCli")
-    private interface RestorePointCollectionsService {
+    public interface RestorePointCollectionsService {
         @Headers({"Content-Type: application/json"})
         @Put(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute"

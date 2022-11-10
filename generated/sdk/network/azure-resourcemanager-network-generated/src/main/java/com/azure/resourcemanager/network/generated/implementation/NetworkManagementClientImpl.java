@@ -422,6 +422,18 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
         return this.publicIpAddresses;
     }
 
+    /** The VipSwapsClient object to access its operations. */
+    private final VipSwapsClient vipSwaps;
+
+    /**
+     * Gets the VipSwapsClient object to access its operations.
+     *
+     * @return the VipSwapsClient object.
+     */
+    public VipSwapsClient getVipSwaps() {
+        return this.vipSwaps;
+    }
+
     /** The CustomIpPrefixesClient object to access its operations. */
     private final CustomIpPrefixesClient customIpPrefixes;
 
@@ -1792,18 +1804,6 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
         return this.webApplicationFirewallPolicies;
     }
 
-    /** The VipSwapsClient object to access its operations. */
-    private final VipSwapsClient vipSwaps;
-
-    /**
-     * Gets the VipSwapsClient object to access its operations.
-     *
-     * @return the VipSwapsClient object.
-     */
-    public VipSwapsClient getVipSwaps() {
-        return this.vipSwaps;
-    }
-
     /**
      * Initializes an instance of NetworkManagementClient client.
      *
@@ -1845,6 +1845,7 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
         this.resourceProviders = new ResourceProvidersClientImpl(this);
         this.networkInterfaces = new NetworkInterfacesClientImpl(this);
         this.publicIpAddresses = new PublicIpAddressesClientImpl(this);
+        this.vipSwaps = new VipSwapsClientImpl(this);
         this.customIpPrefixes = new CustomIpPrefixesClientImpl(this);
         this.ddosCustomPolicies = new DdosCustomPoliciesClientImpl(this);
         this.ddosProtectionPlans = new DdosProtectionPlansClientImpl(this);
@@ -1960,7 +1961,6 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
         this.hubRouteTables = new HubRouteTablesClientImpl(this);
         this.routingIntents = new RoutingIntentsClientImpl(this);
         this.webApplicationFirewallPolicies = new WebApplicationFirewallPoliciesClientImpl(this);
-        this.vipSwaps = new VipSwapsClientImpl(this);
     }
 
     /**

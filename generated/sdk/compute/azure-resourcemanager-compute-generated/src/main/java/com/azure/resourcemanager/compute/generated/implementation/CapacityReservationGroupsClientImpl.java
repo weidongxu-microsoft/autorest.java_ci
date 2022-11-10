@@ -64,7 +64,7 @@ public final class CapacityReservationGroupsClientImpl implements CapacityReserv
      */
     @Host("{$host}")
     @ServiceInterface(name = "ComputeManagementCli")
-    private interface CapacityReservationGroupsService {
+    public interface CapacityReservationGroupsService {
         @Headers({"Content-Type: application/json"})
         @Put(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute"

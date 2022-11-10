@@ -51,7 +51,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      */
     @Host("{$host}")
     @ServiceInterface(name = "RecoveryServicesMana")
-    private interface ResourceProvidersService {
+    public interface ResourceProvidersService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices"

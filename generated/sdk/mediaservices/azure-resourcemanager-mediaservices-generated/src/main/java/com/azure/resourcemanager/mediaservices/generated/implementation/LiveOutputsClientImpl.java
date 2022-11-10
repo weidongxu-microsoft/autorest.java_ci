@@ -64,7 +64,7 @@ public final class LiveOutputsClientImpl implements LiveOutputsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "AzureMediaServicesLi")
-    private interface LiveOutputsService {
+    public interface LiveOutputsService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Media/mediaservices"

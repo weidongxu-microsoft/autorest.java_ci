@@ -58,7 +58,7 @@ public final class QueryKeysClientImpl implements QueryKeysClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "SearchManagementClie")
-    private interface QueryKeysService {
+    public interface QueryKeysService {
         @Headers({"Content-Type: application/json"})
         @Post(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Search"

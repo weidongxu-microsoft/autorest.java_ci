@@ -53,7 +53,7 @@ public final class FrontDoorNameAvailabilitiesClientImpl implements FrontDoorNam
      */
     @Host("{$host}")
     @ServiceInterface(name = "FrontDoorManagementC")
-    private interface FrontDoorNameAvailabilitiesService {
+    public interface FrontDoorNameAvailabilitiesService {
         @Headers({"Content-Type: application/json"})
         @Post("/providers/Microsoft.Network/checkFrontDoorNameAvailability")
         @ExpectedResponses({200})

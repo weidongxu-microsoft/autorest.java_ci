@@ -59,7 +59,7 @@ public final class LocationBasedPerformanceTiersClientImpl implements LocationBa
      */
     @Host("{$host}")
     @ServiceInterface(name = "PostgreSqlManagement")
-    private interface LocationBasedPerformanceTiersService {
+    public interface LocationBasedPerformanceTiersService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/providers/Microsoft.DBforPostgreSQL/locations/{locationName}"

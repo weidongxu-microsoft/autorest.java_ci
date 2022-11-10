@@ -56,7 +56,7 @@ public final class UsageDetailsClientImpl implements UsageDetailsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "ConsumptionManagemen")
-    private interface UsageDetailsService {
+    public interface UsageDetailsService {
         @Headers({"Content-Type: application/json"})
         @Get("/{scope}/providers/Microsoft.Consumption/usageDetails")
         @ExpectedResponses({200, 204})

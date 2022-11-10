@@ -68,7 +68,7 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "ComputeManagementCli")
-    private interface SnapshotsService {
+    public interface SnapshotsService {
         @Headers({"Content-Type: application/json"})
         @Put(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/snapshots"

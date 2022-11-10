@@ -65,7 +65,7 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
      */
     @Host("{$host}")
     @ServiceInterface(name = "WebSiteManagementCli")
-    private interface KubeEnvironmentsService {
+    public interface KubeEnvironmentsService {
         @Headers({"Content-Type: application/json"})
         @Get("/subscriptions/{subscriptionId}/providers/Microsoft.Web/kubeEnvironments")
         @ExpectedResponses({200})

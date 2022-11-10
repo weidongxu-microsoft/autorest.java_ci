@@ -52,7 +52,7 @@ public final class IntelligencePacksClientImpl implements IntelligencePacksClien
      */
     @Host("{$host}")
     @ServiceInterface(name = "OperationalInsightsM")
-    private interface IntelligencePacksService {
+    public interface IntelligencePacksService {
         @Headers({"Accept: application/json;q=0.9", "Content-Type: application/json"})
         @Post(
             "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.OperationalInsights"

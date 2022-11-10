@@ -50,7 +50,7 @@ public final class PriceSheetsClientImpl implements PriceSheetsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "ConsumptionManagemen")
-    private interface PriceSheetsService {
+    public interface PriceSheetsService {
         @Headers({"Content-Type: application/json"})
         @Get("/subscriptions/{subscriptionId}/providers/Microsoft.Consumption/pricesheets/default")
         @ExpectedResponses({200})

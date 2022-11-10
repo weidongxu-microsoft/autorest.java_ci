@@ -63,7 +63,7 @@ public final class WorkflowTriggersClientImpl implements WorkflowTriggersClient 
      */
     @Host("{$host}")
     @ServiceInterface(name = "WebSiteManagementCli")
-    private interface WorkflowTriggersService {
+    public interface WorkflowTriggersService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}"

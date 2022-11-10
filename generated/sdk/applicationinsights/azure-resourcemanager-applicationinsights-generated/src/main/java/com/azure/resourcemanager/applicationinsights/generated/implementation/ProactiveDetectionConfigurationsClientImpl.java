@@ -59,7 +59,7 @@ public final class ProactiveDetectionConfigurationsClientImpl implements Proacti
      */
     @Host("{$host}")
     @ServiceInterface(name = "ApplicationInsightsM")
-    private interface ProactiveDetectionConfigurationsService {
+    public interface ProactiveDetectionConfigurationsService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/components"

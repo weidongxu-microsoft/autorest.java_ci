@@ -57,7 +57,7 @@ public final class ProviderOperationsMetadatasClientImpl implements ProviderOper
      */
     @Host("{$host}")
     @ServiceInterface(name = "AuthorizationManagem")
-    private interface ProviderOperationsMetadatasService {
+    public interface ProviderOperationsMetadatasService {
         @Headers({"Content-Type: application/json"})
         @Get("/providers/Microsoft.Authorization/providerOperations/{resourceProviderNamespace}")
         @ExpectedResponses({200})

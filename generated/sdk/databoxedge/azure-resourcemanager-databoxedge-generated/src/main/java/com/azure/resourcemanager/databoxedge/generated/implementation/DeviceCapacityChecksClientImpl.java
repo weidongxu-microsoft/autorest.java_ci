@@ -57,7 +57,7 @@ public final class DeviceCapacityChecksClientImpl implements DeviceCapacityCheck
      */
     @Host("{$host}")
     @ServiceInterface(name = "DataBoxEdgeManagemen")
-    private interface DeviceCapacityChecksService {
+    public interface DeviceCapacityChecksService {
         @Headers({"Content-Type: application/json"})
         @Post(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge"

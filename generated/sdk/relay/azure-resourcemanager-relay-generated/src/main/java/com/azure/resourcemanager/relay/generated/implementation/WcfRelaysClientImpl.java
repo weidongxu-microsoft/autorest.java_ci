@@ -63,7 +63,7 @@ public final class WcfRelaysClientImpl implements WcfRelaysClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "RelayApiWcfRelays")
-    private interface WcfRelaysService {
+    public interface WcfRelaysService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces"

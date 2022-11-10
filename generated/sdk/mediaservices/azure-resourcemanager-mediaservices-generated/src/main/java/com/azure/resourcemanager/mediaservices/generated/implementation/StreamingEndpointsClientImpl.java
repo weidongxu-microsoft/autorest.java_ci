@@ -68,7 +68,7 @@ public final class StreamingEndpointsClientImpl implements StreamingEndpointsCli
      */
     @Host("{$host}")
     @ServiceInterface(name = "AzureMediaServicesSt")
-    private interface StreamingEndpointsService {
+    public interface StreamingEndpointsService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Media/mediaservices"

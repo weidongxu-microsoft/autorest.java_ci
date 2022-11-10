@@ -49,7 +49,7 @@ public final class BalancesClientImpl implements BalancesClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "ConsumptionManagemen")
-    private interface BalancesService {
+    public interface BalancesService {
         @Headers({"Content-Type: application/json"})
         @Get("/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/providers/Microsoft.Consumption/balances")
         @ExpectedResponses({200})

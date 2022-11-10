@@ -55,7 +55,7 @@ public final class ReservationsDetailsClientImpl implements ReservationsDetailsC
      */
     @Host("{$host}")
     @ServiceInterface(name = "ConsumptionManagemen")
-    private interface ReservationsDetailsService {
+    public interface ReservationsDetailsService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/providers/Microsoft.Capacity/reservationorders/{reservationOrderId}/providers/Microsoft.Consumption"

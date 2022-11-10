@@ -66,7 +66,7 @@ public final class ScriptsClientImpl implements ScriptsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "KustoManagementClien")
-    private interface ScriptsService {
+    public interface ScriptsService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Kusto/clusters"

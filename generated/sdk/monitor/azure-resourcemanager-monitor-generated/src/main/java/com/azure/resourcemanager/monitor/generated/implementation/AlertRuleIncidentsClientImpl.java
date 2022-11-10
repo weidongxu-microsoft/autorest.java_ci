@@ -55,7 +55,7 @@ public final class AlertRuleIncidentsClientImpl implements AlertRuleIncidentsCli
      */
     @Host("{$host}")
     @ServiceInterface(name = "MonitorClientAlertRu")
-    private interface AlertRuleIncidentsService {
+    public interface AlertRuleIncidentsService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/microsoft.insights/alertrules"

@@ -65,7 +65,7 @@ public final class ComponentLinkedStorageAccountsOperationsClientImpl
      */
     @Host("{$host}")
     @ServiceInterface(name = "ApplicationInsightsM")
-    private interface ComponentLinkedStorageAccountsOperationsService {
+    public interface ComponentLinkedStorageAccountsOperationsService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.insights/components"

@@ -68,7 +68,7 @@ public final class DatabasePrincipalAssignmentsClientImpl implements DatabasePri
      */
     @Host("{$host}")
     @ServiceInterface(name = "KustoManagementClien")
-    private interface DatabasePrincipalAssignmentsService {
+    public interface DatabasePrincipalAssignmentsService {
         @Headers({"Content-Type: application/json"})
         @Post(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Kusto/clusters"

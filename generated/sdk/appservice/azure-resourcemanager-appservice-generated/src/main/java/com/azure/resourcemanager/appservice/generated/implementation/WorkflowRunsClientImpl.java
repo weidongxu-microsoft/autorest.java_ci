@@ -56,7 +56,7 @@ public final class WorkflowRunsClientImpl implements WorkflowRunsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "WebSiteManagementCli")
-    private interface WorkflowRunsService {
+    public interface WorkflowRunsService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}"

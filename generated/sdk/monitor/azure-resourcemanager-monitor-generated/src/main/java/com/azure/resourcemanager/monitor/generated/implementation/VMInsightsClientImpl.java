@@ -50,7 +50,7 @@ public final class VMInsightsClientImpl implements VMInsightsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "MonitorClientVMInsig")
-    private interface VMInsightsService {
+    public interface VMInsightsService {
         @Headers({"Content-Type: application/json"})
         @Get("/{resourceUri}/providers/Microsoft.Insights/vmInsightsOnboardingStatuses/default")
         @ExpectedResponses({200})

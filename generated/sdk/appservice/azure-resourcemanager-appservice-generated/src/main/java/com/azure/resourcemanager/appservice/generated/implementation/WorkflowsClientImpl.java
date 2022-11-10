@@ -52,7 +52,7 @@ public final class WorkflowsClientImpl implements WorkflowsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "WebSiteManagementCli")
-    private interface WorkflowsService {
+    public interface WorkflowsService {
         @Headers({"Content-Type: application/json"})
         @Post(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}"

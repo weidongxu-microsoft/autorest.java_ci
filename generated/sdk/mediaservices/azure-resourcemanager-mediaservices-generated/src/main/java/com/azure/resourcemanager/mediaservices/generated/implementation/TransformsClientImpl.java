@@ -59,7 +59,7 @@ public final class TransformsClientImpl implements TransformsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "AzureMediaServicesTr")
-    private interface TransformsService {
+    public interface TransformsService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Media/mediaServices"

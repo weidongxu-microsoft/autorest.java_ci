@@ -78,7 +78,7 @@ public final class ClustersClientImpl implements ClustersClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "KustoManagementClien")
-    private interface ClustersService {
+    public interface ClustersService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Kusto/clusters"

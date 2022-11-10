@@ -58,7 +58,7 @@ public final class QueryTextsClientImpl implements QueryTextsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "MySqlManagementClien")
-    private interface QueryTextsService {
+    public interface QueryTextsService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforMySQL/servers"

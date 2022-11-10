@@ -58,7 +58,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "ManagementLockClient")
-    private interface ManagementLocksService {
+    public interface ManagementLocksService {
         @Headers({"Content-Type: application/json"})
         @Put(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Authorization/locks"

@@ -70,7 +70,7 @@ public final class AttachedDatabaseConfigurationsClientImpl implements AttachedD
      */
     @Host("{$host}")
     @ServiceInterface(name = "KustoManagementClien")
-    private interface AttachedDatabaseConfigurationsService {
+    public interface AttachedDatabaseConfigurationsService {
         @Headers({"Content-Type: application/json"})
         @Post(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Kusto/clusters"

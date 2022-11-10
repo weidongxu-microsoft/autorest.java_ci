@@ -65,7 +65,7 @@ public final class FileSharesClientImpl implements FileSharesClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "StorageManagementCli")
-    private interface FileSharesService {
+    public interface FileSharesService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage"

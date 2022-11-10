@@ -69,7 +69,7 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
      */
     @Host("{$host}")
     @ServiceInterface(name = "KeyVaultManagementCl")
-    private interface MhsmPrivateEndpointConnectionsService {
+    public interface MhsmPrivateEndpointConnectionsService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.KeyVault"

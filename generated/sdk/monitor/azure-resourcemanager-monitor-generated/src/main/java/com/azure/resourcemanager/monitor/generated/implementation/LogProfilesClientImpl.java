@@ -60,7 +60,7 @@ public final class LogProfilesClientImpl implements LogProfilesClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "MonitorClientLogProf")
-    private interface LogProfilesService {
+    public interface LogProfilesService {
         @Headers({"Accept: application/json;q=0.9", "Content-Type: application/json"})
         @Delete("/subscriptions/{subscriptionId}/providers/Microsoft.Insights/logprofiles/{logProfileName}")
         @ExpectedResponses({200})

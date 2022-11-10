@@ -58,7 +58,7 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
      */
     @Host("{$host}")
     @ServiceInterface(name = "ConsumptionManagemen")
-    private interface ReservationTransactionsService {
+    public interface ReservationTransactionsService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/providers/Microsoft.Consumption"

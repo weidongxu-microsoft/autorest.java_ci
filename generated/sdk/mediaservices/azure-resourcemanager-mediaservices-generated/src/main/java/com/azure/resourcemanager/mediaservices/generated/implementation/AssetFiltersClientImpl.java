@@ -59,7 +59,7 @@ public final class AssetFiltersClientImpl implements AssetFiltersClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "AzureMediaServicesAs")
-    private interface AssetFiltersService {
+    public interface AssetFiltersService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Media/mediaServices"

@@ -50,7 +50,7 @@ public final class ExtensionTopicsClientImpl implements ExtensionTopicsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "EventGridManagementC")
-    private interface ExtensionTopicsService {
+    public interface ExtensionTopicsService {
         @Headers({"Content-Type: application/json"})
         @Get("/{scope}/providers/Microsoft.EventGrid/extensionTopics/default")
         @ExpectedResponses({200})

@@ -59,7 +59,7 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "AuthorizationManagem")
-    private interface RoleAssignmentsService {
+    public interface RoleAssignmentsService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}"

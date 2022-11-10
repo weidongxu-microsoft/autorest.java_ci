@@ -70,7 +70,7 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "KeyVaultManagementCl")
-    private interface ManagedHsmsService {
+    public interface ManagedHsmsService {
         @Headers({"Content-Type: application/json"})
         @Put(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.KeyVault"

@@ -66,7 +66,7 @@ public final class PartnerTopicsClientImpl implements PartnerTopicsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "EventGridManagementC")
-    private interface PartnerTopicsService {
+    public interface PartnerTopicsService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventGrid"

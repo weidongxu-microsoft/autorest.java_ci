@@ -55,7 +55,7 @@ public final class ReplicationUsagesClientImpl implements ReplicationUsagesClien
      */
     @Host("{$host}")
     @ServiceInterface(name = "RecoveryServicesMana")
-    private interface ReplicationUsagesService {
+    public interface ReplicationUsagesService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices"

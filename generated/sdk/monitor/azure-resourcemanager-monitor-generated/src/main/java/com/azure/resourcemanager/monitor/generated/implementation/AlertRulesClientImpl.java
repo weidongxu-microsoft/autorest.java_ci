@@ -60,7 +60,7 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "MonitorClientAlertRu")
-    private interface AlertRulesService {
+    public interface AlertRulesService {
         @Headers({"Content-Type: application/json"})
         @Put(
             "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Insights/alertrules"

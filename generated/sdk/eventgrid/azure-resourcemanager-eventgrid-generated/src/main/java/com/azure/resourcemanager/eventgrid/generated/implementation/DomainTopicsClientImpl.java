@@ -62,7 +62,7 @@ public final class DomainTopicsClientImpl implements DomainTopicsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "EventGridManagementC")
-    private interface DomainTopicsService {
+    public interface DomainTopicsService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventGrid/domains"

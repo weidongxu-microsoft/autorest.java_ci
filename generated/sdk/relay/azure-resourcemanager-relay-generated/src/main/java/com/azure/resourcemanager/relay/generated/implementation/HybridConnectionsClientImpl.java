@@ -63,7 +63,7 @@ public final class HybridConnectionsClientImpl implements HybridConnectionsClien
      */
     @Host("{$host}")
     @ServiceInterface(name = "RelayApiHybridConnec")
-    private interface HybridConnectionsService {
+    public interface HybridConnectionsService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces"

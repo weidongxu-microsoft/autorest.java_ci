@@ -64,7 +64,7 @@ public final class TablesClientImpl implements TablesClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "OperationalInsightsM")
-    private interface TablesService {
+    public interface TablesService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights"

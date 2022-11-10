@@ -64,7 +64,7 @@ public final class ZonesClientImpl implements ZonesClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "DnsManagementClientZ")
-    private interface ZonesService {
+    public interface ZonesService {
         @Headers({"Content-Type: application/json"})
         @Put(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/dnsZones"

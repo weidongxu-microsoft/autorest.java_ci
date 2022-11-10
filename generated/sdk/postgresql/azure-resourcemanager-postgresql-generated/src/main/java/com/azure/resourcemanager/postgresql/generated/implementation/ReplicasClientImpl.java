@@ -54,7 +54,7 @@ public final class ReplicasClientImpl implements ReplicasClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "PostgreSqlManagement")
-    private interface ReplicasService {
+    public interface ReplicasService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforPostgreSQL"

@@ -89,7 +89,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "IotHubClientIotHubRe")
-    private interface IotHubResourcesService {
+    public interface IotHubResourcesService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs"

@@ -67,7 +67,7 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "AzureMediaServicesLi")
-    private interface LiveEventsService {
+    public interface LiveEventsService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Media/mediaservices"

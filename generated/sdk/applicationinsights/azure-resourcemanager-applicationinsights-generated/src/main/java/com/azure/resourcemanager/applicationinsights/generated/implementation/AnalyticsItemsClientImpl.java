@@ -57,7 +57,7 @@ public final class AnalyticsItemsClientImpl implements AnalyticsItemsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "ApplicationInsightsM")
-    private interface AnalyticsItemsService {
+    public interface AnalyticsItemsService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.insights/components"

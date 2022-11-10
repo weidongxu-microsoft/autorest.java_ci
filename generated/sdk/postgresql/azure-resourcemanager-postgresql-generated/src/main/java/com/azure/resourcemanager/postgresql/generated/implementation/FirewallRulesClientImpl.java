@@ -63,7 +63,7 @@ public final class FirewallRulesClientImpl implements FirewallRulesClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "PostgreSqlManagement")
-    private interface FirewallRulesService {
+    public interface FirewallRulesService {
         @Headers({"Content-Type: application/json"})
         @Put(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforPostgreSQL"

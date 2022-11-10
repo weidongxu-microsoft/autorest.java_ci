@@ -65,7 +65,7 @@ public final class AvailabilityGroupListenersClientImpl implements AvailabilityG
      */
     @Host("{$host}")
     @ServiceInterface(name = "SqlVirtualMachineMan")
-    private interface AvailabilityGroupListenersService {
+    public interface AvailabilityGroupListenersService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.SqlVirtualMachine"

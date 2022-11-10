@@ -58,7 +58,7 @@ public final class ConsumerGroupsClientImpl implements ConsumerGroupsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "EventHubManagementCl")
-    private interface ConsumerGroupsService {
+    public interface ConsumerGroupsService {
         @Headers({"Content-Type: application/json"})
         @Put(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventHub/namespaces"

@@ -53,7 +53,7 @@ public final class QueueServicesClientImpl implements QueueServicesClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "StorageManagementCli")
-    private interface QueueServicesService {
+    public interface QueueServicesService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage"

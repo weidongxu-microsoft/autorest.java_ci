@@ -65,7 +65,7 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
      */
     @Host("{$host}")
     @ServiceInterface(name = "EventHubManagementCl")
-    private interface DisasterRecoveryConfigsService {
+    public interface DisasterRecoveryConfigsService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventHub/namespaces"

@@ -65,7 +65,7 @@ public final class ExperimentsClientImpl implements ExperimentsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "FrontDoorManagementC")
-    private interface ExperimentsService {
+    public interface ExperimentsService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network"

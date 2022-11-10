@@ -66,7 +66,7 @@ public final class SqlVirtualMachineGroupsClientImpl implements SqlVirtualMachin
      */
     @Host("{$host}")
     @ServiceInterface(name = "SqlVirtualMachineMan")
-    private interface SqlVirtualMachineGroupsService {
+    public interface SqlVirtualMachineGroupsService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.SqlVirtualMachine"

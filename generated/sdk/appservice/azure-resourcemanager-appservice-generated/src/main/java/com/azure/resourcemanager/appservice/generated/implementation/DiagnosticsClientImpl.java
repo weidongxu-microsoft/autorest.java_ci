@@ -65,7 +65,7 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "WebSiteManagementCli")
-    private interface DiagnosticsService {
+    public interface DiagnosticsService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web"

@@ -64,7 +64,7 @@ public final class ClustersClientImpl implements ClustersClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "OperationalInsightsM")
-    private interface ClustersService {
+    public interface ClustersService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.OperationalInsights"

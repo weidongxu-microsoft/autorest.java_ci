@@ -64,7 +64,7 @@ public final class PoliciesClientImpl implements PoliciesClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "FrontDoorManagementC")
-    private interface PoliciesService {
+    public interface PoliciesService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network"

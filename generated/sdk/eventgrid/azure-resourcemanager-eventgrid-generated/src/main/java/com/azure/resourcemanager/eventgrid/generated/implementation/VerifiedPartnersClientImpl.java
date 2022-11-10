@@ -55,7 +55,7 @@ public final class VerifiedPartnersClientImpl implements VerifiedPartnersClient 
      */
     @Host("{$host}")
     @ServiceInterface(name = "EventGridManagementC")
-    private interface VerifiedPartnersService {
+    public interface VerifiedPartnersService {
         @Headers({"Content-Type: application/json"})
         @Get("/providers/Microsoft.EventGrid/verifiedPartners/{verifiedPartnerName}")
         @ExpectedResponses({200})

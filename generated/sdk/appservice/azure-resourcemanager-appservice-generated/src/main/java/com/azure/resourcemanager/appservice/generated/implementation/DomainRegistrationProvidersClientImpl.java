@@ -57,7 +57,7 @@ public final class DomainRegistrationProvidersClientImpl implements DomainRegist
      */
     @Host("{$host}")
     @ServiceInterface(name = "WebSiteManagementCli")
-    private interface DomainRegistrationProvidersService {
+    public interface DomainRegistrationProvidersService {
         @Headers({"Content-Type: application/json"})
         @Get("/providers/Microsoft.DomainRegistration/operations")
         @ExpectedResponses({200})

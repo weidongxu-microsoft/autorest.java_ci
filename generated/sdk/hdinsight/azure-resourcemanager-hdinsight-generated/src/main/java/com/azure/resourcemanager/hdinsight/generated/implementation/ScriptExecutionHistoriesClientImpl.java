@@ -57,7 +57,7 @@ public final class ScriptExecutionHistoriesClientImpl implements ScriptExecution
      */
     @Host("{$host}")
     @ServiceInterface(name = "HDInsightManagementC")
-    private interface ScriptExecutionHistoriesService {
+    public interface ScriptExecutionHistoriesService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HDInsight/clusters"

@@ -60,7 +60,7 @@ public final class CertificatesClientImpl implements CertificatesClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "WebSiteManagementCli")
-    private interface CertificatesService {
+    public interface CertificatesService {
         @Headers({"Content-Type: application/json"})
         @Get("/subscriptions/{subscriptionId}/providers/Microsoft.Web/certificates")
         @ExpectedResponses({200})

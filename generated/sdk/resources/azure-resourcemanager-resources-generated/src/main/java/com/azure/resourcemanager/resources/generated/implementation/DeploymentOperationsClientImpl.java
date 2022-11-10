@@ -56,7 +56,7 @@ public final class DeploymentOperationsClientImpl implements DeploymentOperation
      */
     @Host("{$host}")
     @ServiceInterface(name = "ResourceManagementCl")
-    private interface DeploymentOperationsService {
+    public interface DeploymentOperationsService {
         @Headers({"Content-Type: application/json"})
         @Get("/{scope}/providers/Microsoft.Resources/deployments/{deploymentName}/operations/{operationId}")
         @ExpectedResponses({200})

@@ -56,7 +56,7 @@ public final class DimensionsClientImpl implements DimensionsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "CostManagementClient")
-    private interface DimensionsService {
+    public interface DimensionsService {
         @Headers({"Content-Type: application/json"})
         @Get("/{scope}/providers/Microsoft.CostManagement/dimensions")
         @ExpectedResponses({200, 204})

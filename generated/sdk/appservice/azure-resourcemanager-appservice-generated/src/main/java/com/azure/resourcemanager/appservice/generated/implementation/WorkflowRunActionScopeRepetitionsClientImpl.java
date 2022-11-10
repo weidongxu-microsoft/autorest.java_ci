@@ -61,7 +61,7 @@ public final class WorkflowRunActionScopeRepetitionsClientImpl implements Workfl
      */
     @Host("{$host}")
     @ServiceInterface(name = "WebSiteManagementCli")
-    private interface WorkflowRunActionScopeRepetitionsService {
+    public interface WorkflowRunActionScopeRepetitionsService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}"

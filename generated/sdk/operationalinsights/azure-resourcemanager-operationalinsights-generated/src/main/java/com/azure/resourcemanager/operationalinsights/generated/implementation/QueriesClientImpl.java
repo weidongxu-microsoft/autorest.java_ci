@@ -60,7 +60,7 @@ public final class QueriesClientImpl implements QueriesClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "OperationalInsightsM")
-    private interface QueriesService {
+    public interface QueriesService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights"

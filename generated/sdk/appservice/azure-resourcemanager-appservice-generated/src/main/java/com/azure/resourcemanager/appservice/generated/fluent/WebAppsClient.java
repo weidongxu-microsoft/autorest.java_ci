@@ -9,6 +9,7 @@ import com.azure.core.annotation.ServiceMethod;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.management.polling.PollResult;
+import com.azure.core.util.BinaryData;
 import com.azure.core.util.Context;
 import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.appservice.generated.fluent.models.ApiKVReferenceInner;
@@ -80,7 +81,6 @@ import com.azure.resourcemanager.appservice.generated.models.PremierAddOnPatchRe
 import com.azure.resourcemanager.appservice.generated.models.PrivateLinkConnectionApprovalRequestResource;
 import com.azure.resourcemanager.appservice.generated.models.SnapshotRestoreRequest;
 import com.azure.resourcemanager.appservice.generated.models.StorageMigrationOptions;
-import java.io.InputStream;
 import java.util.List;
 
 /** An instance of this class provides access to all the operations defined in WebAppsClient. */
@@ -2110,7 +2110,7 @@ public interface WebAppsClient {
      * @return the response body along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<InputStream> getWebSiteContainerLogsWithResponse(String resourceGroupName, String name, Context context);
+    Response<BinaryData> getWebSiteContainerLogsWithResponse(String resourceGroupName, String name, Context context);
 
     /**
      * Gets the last lines of docker logs for the given site
@@ -2125,7 +2125,7 @@ public interface WebAppsClient {
      * @return the response.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    InputStream getWebSiteContainerLogs(String resourceGroupName, String name);
+    BinaryData getWebSiteContainerLogs(String resourceGroupName, String name);
 
     /**
      * Gets the ZIP archived docker log files for the given site
@@ -2141,7 +2141,7 @@ public interface WebAppsClient {
      * @return the response body along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<InputStream> getContainerLogsZipWithResponse(String resourceGroupName, String name, Context context);
+    Response<BinaryData> getContainerLogsZipWithResponse(String resourceGroupName, String name, Context context);
 
     /**
      * Gets the ZIP archived docker log files for the given site
@@ -2156,7 +2156,7 @@ public interface WebAppsClient {
      * @return the response.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    InputStream getContainerLogsZip(String resourceGroupName, String name);
+    BinaryData getContainerLogsZip(String resourceGroupName, String name);
 
     /**
      * List continuous web jobs for an app, or a deployment slot.
@@ -4473,7 +4473,7 @@ public interface WebAppsClient {
      * @return the response body along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<InputStream> getInstanceProcessDumpWithResponse(
+    Response<BinaryData> getInstanceProcessDumpWithResponse(
         String resourceGroupName, String name, String processId, String instanceId, Context context);
 
     /**
@@ -4492,7 +4492,7 @@ public interface WebAppsClient {
      * @return the response.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    InputStream getInstanceProcessDump(String resourceGroupName, String name, String processId, String instanceId);
+    BinaryData getInstanceProcessDump(String resourceGroupName, String name, String processId, String instanceId);
 
     /**
      * List module information for a process by its ID for a specific scaled-out instance in a web site.
@@ -6169,7 +6169,7 @@ public interface WebAppsClient {
      * @return the response body along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<InputStream> getProcessDumpWithResponse(
+    Response<BinaryData> getProcessDumpWithResponse(
         String resourceGroupName, String name, String processId, Context context);
 
     /**
@@ -6186,7 +6186,7 @@ public interface WebAppsClient {
      * @return the response.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    InputStream getProcessDump(String resourceGroupName, String name, String processId);
+    BinaryData getProcessDump(String resourceGroupName, String name, String processId);
 
     /**
      * List module information for a process by its ID for a specific scaled-out instance in a web site.
@@ -6462,7 +6462,7 @@ public interface WebAppsClient {
      * @return the response body along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<InputStream> listPublishingProfileXmlWithSecretsWithResponse(
+    Response<BinaryData> listPublishingProfileXmlWithSecretsWithResponse(
         String resourceGroupName, String name, CsmPublishingProfileOptions publishingProfileOptions, Context context);
 
     /**
@@ -6481,7 +6481,7 @@ public interface WebAppsClient {
      * @return the response.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    InputStream listPublishingProfileXmlWithSecrets(
+    BinaryData listPublishingProfileXmlWithSecrets(
         String resourceGroupName, String name, CsmPublishingProfileOptions publishingProfileOptions);
 
     /**
@@ -9083,7 +9083,7 @@ public interface WebAppsClient {
      * @return the response body along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<InputStream> getWebSiteContainerLogsSlotWithResponse(
+    Response<BinaryData> getWebSiteContainerLogsSlotWithResponse(
         String resourceGroupName, String name, String slot, Context context);
 
     /**
@@ -9100,7 +9100,7 @@ public interface WebAppsClient {
      * @return the response.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    InputStream getWebSiteContainerLogsSlot(String resourceGroupName, String name, String slot);
+    BinaryData getWebSiteContainerLogsSlot(String resourceGroupName, String name, String slot);
 
     /**
      * Gets the ZIP archived docker log files for the given site
@@ -9117,7 +9117,7 @@ public interface WebAppsClient {
      * @return the response body along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<InputStream> getContainerLogsZipSlotWithResponse(
+    Response<BinaryData> getContainerLogsZipSlotWithResponse(
         String resourceGroupName, String name, String slot, Context context);
 
     /**
@@ -9134,7 +9134,7 @@ public interface WebAppsClient {
      * @return the response.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    InputStream getContainerLogsZipSlot(String resourceGroupName, String name, String slot);
+    BinaryData getContainerLogsZipSlot(String resourceGroupName, String name, String slot);
 
     /**
      * List continuous web jobs for an app, or a deployment slot.
@@ -11643,7 +11643,7 @@ public interface WebAppsClient {
      * @return the response body along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<InputStream> getInstanceProcessDumpSlotWithResponse(
+    Response<BinaryData> getInstanceProcessDumpSlotWithResponse(
         String resourceGroupName, String name, String processId, String slot, String instanceId, Context context);
 
     /**
@@ -11664,7 +11664,7 @@ public interface WebAppsClient {
      * @return the response.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    InputStream getInstanceProcessDumpSlot(
+    BinaryData getInstanceProcessDumpSlot(
         String resourceGroupName, String name, String processId, String slot, String instanceId);
 
     /**
@@ -13343,7 +13343,7 @@ public interface WebAppsClient {
      * @return the response body along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<InputStream> getProcessDumpSlotWithResponse(
+    Response<BinaryData> getProcessDumpSlotWithResponse(
         String resourceGroupName, String name, String processId, String slot, Context context);
 
     /**
@@ -13362,7 +13362,7 @@ public interface WebAppsClient {
      * @return the response.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    InputStream getProcessDumpSlot(String resourceGroupName, String name, String processId, String slot);
+    BinaryData getProcessDumpSlot(String resourceGroupName, String name, String processId, String slot);
 
     /**
      * List module information for a process by its ID for a specific scaled-out instance in a web site.
@@ -13677,7 +13677,7 @@ public interface WebAppsClient {
      * @return the response body along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<InputStream> listPublishingProfileXmlWithSecretsSlotWithResponse(
+    Response<BinaryData> listPublishingProfileXmlWithSecretsSlotWithResponse(
         String resourceGroupName,
         String name,
         String slot,
@@ -13702,7 +13702,7 @@ public interface WebAppsClient {
      * @return the response.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    InputStream listPublishingProfileXmlWithSecretsSlot(
+    BinaryData listPublishingProfileXmlWithSecretsSlot(
         String resourceGroupName, String name, String slot, CsmPublishingProfileOptions publishingProfileOptions);
 
     /**

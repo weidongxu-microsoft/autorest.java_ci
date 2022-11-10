@@ -53,7 +53,7 @@ public final class DnsResourceReferencesClientImpl implements DnsResourceReferen
      */
     @Host("{$host}")
     @ServiceInterface(name = "DnsManagementClientD")
-    private interface DnsResourceReferencesService {
+    public interface DnsResourceReferencesService {
         @Headers({"Content-Type: application/json"})
         @Post("/subscriptions/{subscriptionId}/providers/Microsoft.Network/getDnsResourceReference")
         @ExpectedResponses({200})

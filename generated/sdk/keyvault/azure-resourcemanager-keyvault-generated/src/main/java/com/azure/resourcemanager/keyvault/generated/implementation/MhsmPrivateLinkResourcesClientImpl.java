@@ -51,7 +51,7 @@ public final class MhsmPrivateLinkResourcesClientImpl implements MhsmPrivateLink
      */
     @Host("{$host}")
     @ServiceInterface(name = "KeyVaultManagementCl")
-    private interface MhsmPrivateLinkResourcesService {
+    public interface MhsmPrivateLinkResourcesService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.KeyVault"

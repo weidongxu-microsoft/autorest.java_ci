@@ -49,7 +49,7 @@ public final class ChargesClientImpl implements ChargesClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "ConsumptionManagemen")
-    private interface ChargesService {
+    public interface ChargesService {
         @Headers({"Content-Type: application/json"})
         @Get("/{scope}/providers/Microsoft.Consumption/charges")
         @ExpectedResponses({200})

@@ -68,7 +68,7 @@ public final class EventSubscriptionsClientImpl implements EventSubscriptionsCli
      */
     @Host("{$host}")
     @ServiceInterface(name = "EventGridManagementC")
-    private interface EventSubscriptionsService {
+    public interface EventSubscriptionsService {
         @Headers({"Content-Type: application/json"})
         @Get("/{scope}/providers/Microsoft.EventGrid/eventSubscriptions/{eventSubscriptionName}")
         @ExpectedResponses({200})

@@ -57,7 +57,7 @@ public final class TopicTypesClientImpl implements TopicTypesClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "EventGridManagementC")
-    private interface TopicTypesService {
+    public interface TopicTypesService {
         @Headers({"Content-Type: application/json"})
         @Get("/providers/Microsoft.EventGrid/topicTypes")
         @ExpectedResponses({200})

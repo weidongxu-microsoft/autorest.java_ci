@@ -51,7 +51,7 @@ public final class ResourceProviderCommonsClientImpl implements ResourceProvider
      */
     @Host("{$host}")
     @ServiceInterface(name = "IotHubClientResource")
-    private interface ResourceProviderCommonsService {
+    public interface ResourceProviderCommonsService {
         @Headers({"Content-Type: application/json"})
         @Get("/subscriptions/{subscriptionId}/providers/Microsoft.Devices/usages")
         @ExpectedResponses({200})

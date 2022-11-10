@@ -58,7 +58,7 @@ public final class EncryptionScopesClientImpl implements EncryptionScopesClient 
      */
     @Host("{$host}")
     @ServiceInterface(name = "StorageManagementCli")
-    private interface EncryptionScopesService {
+    public interface EncryptionScopesService {
         @Headers({"Content-Type: application/json"})
         @Put(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage"

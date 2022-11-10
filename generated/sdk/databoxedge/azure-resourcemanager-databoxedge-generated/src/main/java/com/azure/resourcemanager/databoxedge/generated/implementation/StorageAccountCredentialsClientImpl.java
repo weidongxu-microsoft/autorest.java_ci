@@ -65,7 +65,7 @@ public final class StorageAccountCredentialsClientImpl implements StorageAccount
      */
     @Host("{$host}")
     @ServiceInterface(name = "DataBoxEdgeManagemen")
-    private interface StorageAccountCredentialsService {
+    public interface StorageAccountCredentialsService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge"

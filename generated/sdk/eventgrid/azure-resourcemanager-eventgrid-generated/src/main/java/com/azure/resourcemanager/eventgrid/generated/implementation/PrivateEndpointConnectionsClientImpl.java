@@ -66,7 +66,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      */
     @Host("{$host}")
     @ServiceInterface(name = "EventGridManagementC")
-    private interface PrivateEndpointConnectionsService {
+    public interface PrivateEndpointConnectionsService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventGrid"

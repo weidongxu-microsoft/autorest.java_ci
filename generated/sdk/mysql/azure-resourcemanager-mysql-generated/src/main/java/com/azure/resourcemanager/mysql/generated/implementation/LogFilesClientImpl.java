@@ -54,7 +54,7 @@ public final class LogFilesClientImpl implements LogFilesClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "MySqlManagementClien")
-    private interface LogFilesService {
+    public interface LogFilesService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforMySQL/servers"

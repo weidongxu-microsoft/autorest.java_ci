@@ -58,7 +58,7 @@ public final class RoleDefinitionsClientImpl implements RoleDefinitionsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "AuthorizationManagem")
-    private interface RoleDefinitionsService {
+    public interface RoleDefinitionsService {
         @Headers({"Content-Type: application/json"})
         @Delete("/{scope}/providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId}")
         @ExpectedResponses({200, 204})

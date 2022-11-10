@@ -57,7 +57,7 @@ public final class ExportConfigurationsClientImpl implements ExportConfiguration
      */
     @Host("{$host}")
     @ServiceInterface(name = "ApplicationInsightsM")
-    private interface ExportConfigurationsService {
+    public interface ExportConfigurationsService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/components"

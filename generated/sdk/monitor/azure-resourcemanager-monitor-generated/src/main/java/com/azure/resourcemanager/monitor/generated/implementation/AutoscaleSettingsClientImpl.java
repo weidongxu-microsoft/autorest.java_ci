@@ -60,7 +60,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
      */
     @Host("{$host}")
     @ServiceInterface(name = "MonitorClientAutosca")
-    private interface AutoscaleSettingsService {
+    public interface AutoscaleSettingsService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Insights"

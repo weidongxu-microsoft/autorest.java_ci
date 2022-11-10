@@ -50,7 +50,7 @@ public final class RateCardsClientImpl implements RateCardsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "UsageManagementClien")
-    private interface RateCardsService {
+    public interface RateCardsService {
         @Headers({"Content-Type: application/json"})
         @Get("/subscriptions/{subscriptionId}/providers/Microsoft.Commerce/RateCard")
         @ExpectedResponses({200})

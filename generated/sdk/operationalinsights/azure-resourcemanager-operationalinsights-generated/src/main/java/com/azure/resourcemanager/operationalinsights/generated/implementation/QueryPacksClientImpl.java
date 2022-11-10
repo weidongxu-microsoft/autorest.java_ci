@@ -60,7 +60,7 @@ public final class QueryPacksClientImpl implements QueryPacksClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "OperationalInsightsM")
-    private interface QueryPacksService {
+    public interface QueryPacksService {
         @Headers({"Content-Type: application/json"})
         @Get("/subscriptions/{subscriptionId}/providers/Microsoft.OperationalInsights/queryPacks")
         @ExpectedResponses({200})

@@ -60,7 +60,7 @@ public final class MetricAlertsClientImpl implements MetricAlertsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "MonitorClientMetricA")
-    private interface MetricAlertsService {
+    public interface MetricAlertsService {
         @Headers({"Content-Type: application/json"})
         @Get("/subscriptions/{subscriptionId}/providers/Microsoft.Insights/metricAlerts")
         @ExpectedResponses({200})

@@ -49,7 +49,7 @@ public final class GlobalAdministratorsClientImpl implements GlobalAdministrator
      */
     @Host("{$host}")
     @ServiceInterface(name = "AuthorizationManagem")
-    private interface GlobalAdministratorsService {
+    public interface GlobalAdministratorsService {
         @Headers({"Content-Type: application/json"})
         @Post("/providers/Microsoft.Authorization/elevateAccess")
         @ExpectedResponses({200})

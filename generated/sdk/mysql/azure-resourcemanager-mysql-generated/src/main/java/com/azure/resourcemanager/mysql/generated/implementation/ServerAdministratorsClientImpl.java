@@ -64,7 +64,7 @@ public final class ServerAdministratorsClientImpl implements ServerAdministrator
      */
     @Host("{$host}")
     @ServiceInterface(name = "MySqlManagementClien")
-    private interface ServerAdministratorsService {
+    public interface ServerAdministratorsService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforMySQL/servers"

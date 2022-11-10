@@ -60,7 +60,7 @@ public final class FrontDoorNameAvailabilityWithSubscriptionsClientImpl
      */
     @Host("{$host}")
     @ServiceInterface(name = "FrontDoorManagementC")
-    private interface FrontDoorNameAvailabilityWithSubscriptionsService {
+    public interface FrontDoorNameAvailabilityWithSubscriptionsService {
         @Headers({"Content-Type: application/json"})
         @Post("/subscriptions/{subscriptionId}/providers/Microsoft.Network/checkFrontDoorNameAvailability")
         @ExpectedResponses({200})

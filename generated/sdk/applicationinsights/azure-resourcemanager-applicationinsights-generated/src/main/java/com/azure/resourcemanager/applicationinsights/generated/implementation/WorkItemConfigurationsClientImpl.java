@@ -62,7 +62,7 @@ public final class WorkItemConfigurationsClientImpl implements WorkItemConfigura
      */
     @Host("{$host}")
     @ServiceInterface(name = "ApplicationInsightsM")
-    private interface WorkItemConfigurationsService {
+    public interface WorkItemConfigurationsService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/components"

@@ -50,7 +50,7 @@ public final class OperationStatusesClientImpl implements OperationStatusesClien
      */
     @Host("{$host}")
     @ServiceInterface(name = "OperationalInsightsM")
-    private interface OperationStatusesService {
+    public interface OperationStatusesService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/providers/Microsoft.OperationalInsights/locations/{location}"

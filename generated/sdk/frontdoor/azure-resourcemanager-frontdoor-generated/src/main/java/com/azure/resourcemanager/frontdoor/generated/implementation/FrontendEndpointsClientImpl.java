@@ -63,7 +63,7 @@ public final class FrontendEndpointsClientImpl implements FrontendEndpointsClien
      */
     @Host("{$host}")
     @ServiceInterface(name = "FrontDoorManagementC")
-    private interface FrontendEndpointsService {
+    public interface FrontendEndpointsService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/frontDoors"

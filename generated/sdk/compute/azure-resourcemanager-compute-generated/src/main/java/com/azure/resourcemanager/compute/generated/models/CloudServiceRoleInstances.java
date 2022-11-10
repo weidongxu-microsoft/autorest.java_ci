@@ -6,8 +6,8 @@ package com.azure.resourcemanager.compute.generated.models;
 
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
+import com.azure.core.util.BinaryData;
 import com.azure.core.util.Context;
-import java.io.InputStream;
 
 /** Resource collection API of CloudServiceRoleInstances. */
 public interface CloudServiceRoleInstances {
@@ -233,7 +233,7 @@ public interface CloudServiceRoleInstances {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a remote desktop file for a role instance in a cloud service along with {@link Response}.
      */
-    Response<InputStream> getRemoteDesktopFileWithResponse(
+    Response<BinaryData> getRemoteDesktopFileWithResponse(
         String roleInstanceName, String resourceGroupName, String cloudServiceName, Context context);
 
     /**
@@ -247,5 +247,5 @@ public interface CloudServiceRoleInstances {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a remote desktop file for a role instance in a cloud service.
      */
-    InputStream getRemoteDesktopFile(String roleInstanceName, String resourceGroupName, String cloudServiceName);
+    BinaryData getRemoteDesktopFile(String roleInstanceName, String resourceGroupName, String cloudServiceName);
 }

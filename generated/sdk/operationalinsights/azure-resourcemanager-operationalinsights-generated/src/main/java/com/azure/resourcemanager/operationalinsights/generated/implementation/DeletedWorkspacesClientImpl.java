@@ -55,7 +55,7 @@ public final class DeletedWorkspacesClientImpl implements DeletedWorkspacesClien
      */
     @Host("{$host}")
     @ServiceInterface(name = "OperationalInsightsM")
-    private interface DeletedWorkspacesService {
+    public interface DeletedWorkspacesService {
         @Headers({"Content-Type: application/json"})
         @Get("/subscriptions/{subscriptionId}/providers/Microsoft.OperationalInsights/deletedWorkspaces")
         @ExpectedResponses({200})

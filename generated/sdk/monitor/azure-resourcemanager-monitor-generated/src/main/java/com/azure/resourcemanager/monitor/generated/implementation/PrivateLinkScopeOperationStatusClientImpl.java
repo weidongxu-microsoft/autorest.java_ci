@@ -54,7 +54,7 @@ public final class PrivateLinkScopeOperationStatusClientImpl implements PrivateL
      */
     @Host("{$host}")
     @ServiceInterface(name = "MonitorClientPrivate")
-    private interface PrivateLinkScopeOperationStatusService {
+    public interface PrivateLinkScopeOperationStatusService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.insights"

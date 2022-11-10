@@ -52,7 +52,7 @@ public final class RecoveryServicesClientImpl implements RecoveryServicesClient 
      */
     @Host("{$host}")
     @ServiceInterface(name = "RecoveryServicesMana")
-    private interface RecoveryServicesService {
+    public interface RecoveryServicesService {
         @Headers({"Content-Type: application/json"})
         @Post(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices"

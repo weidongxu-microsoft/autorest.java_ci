@@ -50,7 +50,7 @@ public final class MetricAlertsStatusClientImpl implements MetricAlertsStatusCli
      */
     @Host("{$host}")
     @ServiceInterface(name = "MonitorClientMetricA")
-    private interface MetricAlertsStatusService {
+    public interface MetricAlertsStatusService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights"

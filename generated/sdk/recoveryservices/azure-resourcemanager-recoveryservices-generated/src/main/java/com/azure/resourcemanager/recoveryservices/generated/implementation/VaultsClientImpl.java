@@ -64,7 +64,7 @@ public final class VaultsClientImpl implements VaultsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "RecoveryServicesMana")
-    private interface VaultsService {
+    public interface VaultsService {
         @Headers({"Content-Type: application/json"})
         @Get("/subscriptions/{subscriptionId}/providers/Microsoft.RecoveryServices/vaults")
         @ExpectedResponses({200})

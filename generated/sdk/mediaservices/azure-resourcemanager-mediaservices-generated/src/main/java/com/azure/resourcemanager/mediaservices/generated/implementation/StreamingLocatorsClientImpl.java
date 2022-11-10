@@ -61,7 +61,7 @@ public final class StreamingLocatorsClientImpl implements StreamingLocatorsClien
      */
     @Host("{$host}")
     @ServiceInterface(name = "AzureMediaServicesSt")
-    private interface StreamingLocatorsService {
+    public interface StreamingLocatorsService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Media/mediaServices"

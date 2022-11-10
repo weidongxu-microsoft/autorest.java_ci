@@ -54,7 +54,7 @@ public final class MediaServicesOperationResultsClientImpl implements MediaServi
      */
     @Host("{$host}")
     @ServiceInterface(name = "AzureMediaServicesMe")
-    private interface MediaServicesOperationResultsService {
+    public interface MediaServicesOperationResultsService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/providers/Microsoft.Media/locations/{locationName}"

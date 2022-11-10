@@ -54,7 +54,7 @@ public final class AlertsClientImpl implements AlertsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "CostManagementClient")
-    private interface AlertsService {
+    public interface AlertsService {
         @Headers({"Content-Type: application/json"})
         @Get("/{scope}/providers/Microsoft.CostManagement/alerts")
         @ExpectedResponses({200})

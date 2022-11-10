@@ -9,12 +9,12 @@ import com.azure.core.annotation.ServiceMethod;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.management.polling.PollResult;
+import com.azure.core.util.BinaryData;
 import com.azure.core.util.Context;
 import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.compute.generated.fluent.models.RoleInstanceInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.RoleInstanceViewInner;
 import com.azure.resourcemanager.compute.generated.models.InstanceViewTypes;
-import java.io.InputStream;
 
 /** An instance of this class provides access to all the operations defined in CloudServiceRoleInstancesClient. */
 public interface CloudServiceRoleInstancesClient {
@@ -393,7 +393,7 @@ public interface CloudServiceRoleInstancesClient {
      * @return a remote desktop file for a role instance in a cloud service along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<InputStream> getRemoteDesktopFileWithResponse(
+    Response<BinaryData> getRemoteDesktopFileWithResponse(
         String roleInstanceName, String resourceGroupName, String cloudServiceName, Context context);
 
     /**
@@ -408,5 +408,5 @@ public interface CloudServiceRoleInstancesClient {
      * @return a remote desktop file for a role instance in a cloud service.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    InputStream getRemoteDesktopFile(String roleInstanceName, String resourceGroupName, String cloudServiceName);
+    BinaryData getRemoteDesktopFile(String roleInstanceName, String resourceGroupName, String cloudServiceName);
 }

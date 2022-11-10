@@ -50,7 +50,7 @@ public final class AggregatedCostsClientImpl implements AggregatedCostsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "ConsumptionManagemen")
-    private interface AggregatedCostsService {
+    public interface AggregatedCostsService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/providers/Microsoft.Management/managementGroups/{managementGroupId}/providers/Microsoft.Consumption"

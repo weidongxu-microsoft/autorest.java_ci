@@ -55,7 +55,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      */
     @Host("{$host}")
     @ServiceInterface(name = "MySqlManagementClien")
-    private interface ResourceProvidersService {
+    public interface ResourceProvidersService {
         @Headers({"Content-Type: application/json"})
         @Post(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforMySQL/servers"

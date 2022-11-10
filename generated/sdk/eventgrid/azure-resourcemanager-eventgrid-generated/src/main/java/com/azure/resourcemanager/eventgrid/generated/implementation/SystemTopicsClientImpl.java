@@ -65,7 +65,7 @@ public final class SystemTopicsClientImpl implements SystemTopicsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "EventGridManagementC")
-    private interface SystemTopicsService {
+    public interface SystemTopicsService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventGrid"

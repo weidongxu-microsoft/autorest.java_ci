@@ -64,7 +64,7 @@ public final class ObjectReplicationPoliciesOperationsClientImpl implements Obje
      */
     @Host("{$host}")
     @ServiceInterface(name = "StorageManagementCli")
-    private interface ObjectReplicationPoliciesOperationsService {
+    public interface ObjectReplicationPoliciesOperationsService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage"

@@ -59,7 +59,7 @@ public final class PrivateLinkResourcesOperationsClientImpl implements PrivateLi
      */
     @Host("{$host}")
     @ServiceInterface(name = "RecoveryServicesMana")
-    private interface PrivateLinkResourcesOperationsService {
+    public interface PrivateLinkResourcesOperationsService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices"

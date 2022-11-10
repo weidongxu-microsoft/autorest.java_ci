@@ -55,7 +55,7 @@ public final class LotsOperationsClientImpl implements LotsOperationsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "ConsumptionManagemen")
-    private interface LotsOperationsService {
+    public interface LotsOperationsService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}"

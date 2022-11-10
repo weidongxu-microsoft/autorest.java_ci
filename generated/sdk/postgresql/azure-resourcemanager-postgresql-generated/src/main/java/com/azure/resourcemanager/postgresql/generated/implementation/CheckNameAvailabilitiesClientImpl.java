@@ -53,7 +53,7 @@ public final class CheckNameAvailabilitiesClientImpl implements CheckNameAvailab
      */
     @Host("{$host}")
     @ServiceInterface(name = "PostgreSqlManagement")
-    private interface CheckNameAvailabilitiesService {
+    public interface CheckNameAvailabilitiesService {
         @Headers({"Content-Type: application/json"})
         @Post("/subscriptions/{subscriptionId}/providers/Microsoft.DBforPostgreSQL/checkNameAvailability")
         @ExpectedResponses({200})

@@ -59,7 +59,7 @@ public final class LocationsClientImpl implements LocationsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "HDInsightManagementC")
-    private interface LocationsService {
+    public interface LocationsService {
         @Headers({"Content-Type: application/json"})
         @Get("/subscriptions/{subscriptionId}/providers/Microsoft.HDInsight/locations/{location}/capabilities")
         @ExpectedResponses({200})

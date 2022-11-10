@@ -73,7 +73,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "EventHubManagementCl")
-    private interface NamespacesService {
+    public interface NamespacesService {
         @Headers({"Content-Type: application/json"})
         @Get("/subscriptions/{subscriptionId}/providers/Microsoft.EventHub/namespaces")
         @ExpectedResponses({200})

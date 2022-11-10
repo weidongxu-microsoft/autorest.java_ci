@@ -53,7 +53,7 @@ public final class VaultExtendedInfoesClientImpl implements VaultExtendedInfoesC
      */
     @Host("{$host}")
     @ServiceInterface(name = "RecoveryServicesMana")
-    private interface VaultExtendedInfoesService {
+    public interface VaultExtendedInfoesService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices"

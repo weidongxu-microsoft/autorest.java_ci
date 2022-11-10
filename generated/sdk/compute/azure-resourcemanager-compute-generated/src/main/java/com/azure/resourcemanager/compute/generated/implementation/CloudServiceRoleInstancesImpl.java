@@ -7,6 +7,7 @@ package com.azure.resourcemanager.compute.generated.implementation;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
+import com.azure.core.util.BinaryData;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.compute.generated.fluent.CloudServiceRoleInstancesClient;
@@ -16,7 +17,6 @@ import com.azure.resourcemanager.compute.generated.models.CloudServiceRoleInstan
 import com.azure.resourcemanager.compute.generated.models.InstanceViewTypes;
 import com.azure.resourcemanager.compute.generated.models.RoleInstance;
 import com.azure.resourcemanager.compute.generated.models.RoleInstanceView;
-import java.io.InputStream;
 
 public final class CloudServiceRoleInstancesImpl implements CloudServiceRoleInstances {
     private static final ClientLogger LOGGER = new ClientLogger(CloudServiceRoleInstancesImpl.class);
@@ -134,15 +134,14 @@ public final class CloudServiceRoleInstancesImpl implements CloudServiceRoleInst
         this.serviceClient().rebuild(roleInstanceName, resourceGroupName, cloudServiceName, context);
     }
 
-    public Response<InputStream> getRemoteDesktopFileWithResponse(
+    public Response<BinaryData> getRemoteDesktopFileWithResponse(
         String roleInstanceName, String resourceGroupName, String cloudServiceName, Context context) {
         return this
             .serviceClient()
             .getRemoteDesktopFileWithResponse(roleInstanceName, resourceGroupName, cloudServiceName, context);
     }
 
-    public InputStream getRemoteDesktopFile(
-        String roleInstanceName, String resourceGroupName, String cloudServiceName) {
+    public BinaryData getRemoteDesktopFile(String roleInstanceName, String resourceGroupName, String cloudServiceName) {
         return this.serviceClient().getRemoteDesktopFile(roleInstanceName, resourceGroupName, cloudServiceName);
     }
 

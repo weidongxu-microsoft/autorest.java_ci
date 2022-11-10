@@ -57,7 +57,7 @@ public final class ServerBasedPerformanceTiersClientImpl implements ServerBasedP
      */
     @Host("{$host}")
     @ServiceInterface(name = "MySqlManagementClien")
-    private interface ServerBasedPerformanceTiersService {
+    public interface ServerBasedPerformanceTiersService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforMySQL/servers"

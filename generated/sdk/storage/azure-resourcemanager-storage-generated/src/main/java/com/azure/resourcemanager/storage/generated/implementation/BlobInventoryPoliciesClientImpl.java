@@ -60,7 +60,7 @@ public final class BlobInventoryPoliciesClientImpl implements BlobInventoryPolic
      */
     @Host("{$host}")
     @ServiceInterface(name = "StorageManagementCli")
-    private interface BlobInventoryPoliciesService {
+    public interface BlobInventoryPoliciesService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage"

@@ -62,7 +62,7 @@ public final class WorkflowTriggerHistoriesClientImpl implements WorkflowTrigger
      */
     @Host("{$host}")
     @ServiceInterface(name = "WebSiteManagementCli")
-    private interface WorkflowTriggerHistoriesService {
+    public interface WorkflowTriggerHistoriesService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}"

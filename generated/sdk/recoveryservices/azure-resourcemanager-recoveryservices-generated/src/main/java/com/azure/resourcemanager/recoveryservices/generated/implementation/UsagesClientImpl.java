@@ -54,7 +54,7 @@ public final class UsagesClientImpl implements UsagesClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "RecoveryServicesMana")
-    private interface UsagesService {
+    public interface UsagesService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices"

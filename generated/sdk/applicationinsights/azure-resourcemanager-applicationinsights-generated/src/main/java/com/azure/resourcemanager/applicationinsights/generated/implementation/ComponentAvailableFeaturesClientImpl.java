@@ -52,7 +52,7 @@ public final class ComponentAvailableFeaturesClientImpl implements ComponentAvai
      */
     @Host("{$host}")
     @ServiceInterface(name = "ApplicationInsightsM")
-    private interface ComponentAvailableFeaturesService {
+    public interface ComponentAvailableFeaturesService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/components"

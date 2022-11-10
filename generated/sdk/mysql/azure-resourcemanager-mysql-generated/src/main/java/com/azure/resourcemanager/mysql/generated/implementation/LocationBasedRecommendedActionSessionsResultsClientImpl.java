@@ -63,7 +63,7 @@ public final class LocationBasedRecommendedActionSessionsResultsClientImpl
      */
     @Host("{$host}")
     @ServiceInterface(name = "MySqlManagementClien")
-    private interface LocationBasedRecommendedActionSessionsResultsService {
+    public interface LocationBasedRecommendedActionSessionsResultsService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/providers/Microsoft.DBforMySQL/locations/{locationName}"

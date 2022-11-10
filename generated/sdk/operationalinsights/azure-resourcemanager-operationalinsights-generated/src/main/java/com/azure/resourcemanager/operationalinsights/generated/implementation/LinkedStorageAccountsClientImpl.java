@@ -60,7 +60,7 @@ public final class LinkedStorageAccountsClientImpl implements LinkedStorageAccou
      */
     @Host("{$host}")
     @ServiceInterface(name = "OperationalInsightsM")
-    private interface LinkedStorageAccountsService {
+    public interface LinkedStorageAccountsService {
         @Headers({"Content-Type: application/json"})
         @Put(
             "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.OperationalInsights"

@@ -66,7 +66,7 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "WebSiteManagementCli")
-    private interface ContainerAppsService {
+    public interface ContainerAppsService {
         @Headers({"Content-Type: application/json"})
         @Get("/subscriptions/{subscriptionId}/providers/Microsoft.Web/containerApps")
         @ExpectedResponses({200})

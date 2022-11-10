@@ -49,7 +49,7 @@ public final class OperationsClientImpl implements OperationsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "MonitorClientOperati")
-    private interface OperationsService {
+    public interface OperationsService {
         @Headers({"Content-Type: application/json"})
         @Get("/providers/Microsoft.Insights/operations")
         @ExpectedResponses({200})

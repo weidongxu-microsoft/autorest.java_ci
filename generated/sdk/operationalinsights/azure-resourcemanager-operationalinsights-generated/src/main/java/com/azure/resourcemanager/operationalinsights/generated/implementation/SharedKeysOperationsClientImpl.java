@@ -51,7 +51,7 @@ public final class SharedKeysOperationsClientImpl implements SharedKeysOperation
      */
     @Host("{$host}")
     @ServiceInterface(name = "OperationalInsightsM")
-    private interface SharedKeysOperationsService {
+    public interface SharedKeysOperationsService {
         @Headers({"Content-Type: application/json"})
         @Post(
             "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.OperationalInsights"

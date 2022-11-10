@@ -76,7 +76,7 @@ public final class BlobContainersClientImpl implements BlobContainersClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "StorageManagementCli")
-    private interface BlobContainersService {
+    public interface BlobContainersService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage"

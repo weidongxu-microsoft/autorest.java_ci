@@ -91,7 +91,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "WebSiteManagementCli")
-    private interface StaticSitesService {
+    public interface StaticSitesService {
         @Headers({"Content-Type: application/json"})
         @Post(
             "/subscriptions/{subscriptionId}/providers/Microsoft.Web/locations/{location}"

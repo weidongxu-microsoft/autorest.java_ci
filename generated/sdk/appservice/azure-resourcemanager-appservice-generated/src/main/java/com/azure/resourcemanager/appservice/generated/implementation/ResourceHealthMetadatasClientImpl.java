@@ -56,7 +56,7 @@ public final class ResourceHealthMetadatasClientImpl implements ResourceHealthMe
      */
     @Host("{$host}")
     @ServiceInterface(name = "WebSiteManagementCli")
-    private interface ResourceHealthMetadatasService {
+    public interface ResourceHealthMetadatasService {
         @Headers({"Content-Type: application/json"})
         @Get("/subscriptions/{subscriptionId}/providers/Microsoft.Web/resourceHealthMetadata")
         @ExpectedResponses({200})

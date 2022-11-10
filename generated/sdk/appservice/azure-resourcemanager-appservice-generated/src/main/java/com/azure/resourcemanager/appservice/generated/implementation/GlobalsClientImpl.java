@@ -51,7 +51,7 @@ public final class GlobalsClientImpl implements GlobalsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "WebSiteManagementCli")
-    private interface GlobalsService {
+    public interface GlobalsService {
         @Headers({"Content-Type: application/json"})
         @Get("/subscriptions/{subscriptionId}/providers/Microsoft.Web/deletedSites/{deletedSiteId}")
         @ExpectedResponses({200})

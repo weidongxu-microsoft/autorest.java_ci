@@ -55,7 +55,7 @@ public final class AvailableSkusClientImpl implements AvailableSkusClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "DataBoxEdgeManagemen")
-    private interface AvailableSkusService {
+    public interface AvailableSkusService {
         @Headers({"Content-Type: application/json"})
         @Get("/subscriptions/{subscriptionId}/providers/Microsoft.DataBoxEdge/availableSkus")
         @ExpectedResponses({200})

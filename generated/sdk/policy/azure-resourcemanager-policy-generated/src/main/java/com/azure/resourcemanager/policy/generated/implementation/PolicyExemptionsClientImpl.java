@@ -58,7 +58,7 @@ public final class PolicyExemptionsClientImpl implements PolicyExemptionsClient 
      */
     @Host("{$host}")
     @ServiceInterface(name = "PolicyClientPolicyEx")
-    private interface PolicyExemptionsService {
+    public interface PolicyExemptionsService {
         @Headers({"Content-Type: application/json"})
         @Delete("/{scope}/providers/Microsoft.Authorization/policyExemptions/{policyExemptionName}")
         @ExpectedResponses({200, 204})

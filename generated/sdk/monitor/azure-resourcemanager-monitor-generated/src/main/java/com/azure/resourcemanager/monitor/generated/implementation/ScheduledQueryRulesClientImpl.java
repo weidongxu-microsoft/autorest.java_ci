@@ -60,7 +60,7 @@ public final class ScheduledQueryRulesClientImpl implements ScheduledQueryRulesC
      */
     @Host("{$host}")
     @ServiceInterface(name = "MonitorClientSchedul")
-    private interface ScheduledQueryRulesService {
+    public interface ScheduledQueryRulesService {
         @Headers({"Content-Type: application/json"})
         @Put(
             "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Insights"

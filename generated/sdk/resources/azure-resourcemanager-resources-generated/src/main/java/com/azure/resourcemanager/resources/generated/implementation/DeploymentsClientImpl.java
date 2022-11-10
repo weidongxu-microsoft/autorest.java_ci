@@ -73,7 +73,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "ResourceManagementCl")
-    private interface DeploymentsService {
+    public interface DeploymentsService {
         @Headers({"Content-Type: application/json"})
         @Delete("/{scope}/providers/Microsoft.Resources/deployments/{deploymentName}")
         @ExpectedResponses({202, 204})

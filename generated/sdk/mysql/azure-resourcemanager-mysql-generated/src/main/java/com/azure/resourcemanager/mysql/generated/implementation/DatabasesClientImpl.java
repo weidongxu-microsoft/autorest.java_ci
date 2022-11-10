@@ -63,7 +63,7 @@ public final class DatabasesClientImpl implements DatabasesClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "MySqlManagementClien")
-    private interface DatabasesService {
+    public interface DatabasesService {
         @Headers({"Content-Type: application/json"})
         @Put(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforMySQL/servers"

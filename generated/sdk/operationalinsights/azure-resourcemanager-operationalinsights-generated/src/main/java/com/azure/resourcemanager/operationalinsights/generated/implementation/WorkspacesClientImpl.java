@@ -65,7 +65,7 @@ public final class WorkspacesClientImpl implements WorkspacesClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "OperationalInsightsM")
-    private interface WorkspacesService {
+    public interface WorkspacesService {
         @Headers({"Content-Type: application/json"})
         @Get("/subscriptions/{subscriptionId}/providers/Microsoft.OperationalInsights/workspaces")
         @ExpectedResponses({200})

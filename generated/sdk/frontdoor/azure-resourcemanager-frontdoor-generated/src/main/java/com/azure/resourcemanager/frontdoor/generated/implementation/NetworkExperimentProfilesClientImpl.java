@@ -67,7 +67,7 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
      */
     @Host("{$host}")
     @ServiceInterface(name = "FrontDoorManagementC")
-    private interface NetworkExperimentProfilesService {
+    public interface NetworkExperimentProfilesService {
         @Headers({"Content-Type: application/json"})
         @Get("/subscriptions/{subscriptionId}/providers/Microsoft.Network/NetworkExperimentProfiles")
         @ExpectedResponses({200})

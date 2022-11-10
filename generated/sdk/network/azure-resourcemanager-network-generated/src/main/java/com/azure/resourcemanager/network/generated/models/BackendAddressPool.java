@@ -115,6 +115,13 @@ public interface BackendAddressPool {
     Integer drainPeriodInSeconds();
 
     /**
+     * Gets the virtualNetwork property: A reference to a virtual network.
+     *
+     * @return the virtualNetwork value.
+     */
+    SubResource virtualNetwork();
+
+    /**
      * Gets the region of the resource.
      *
      * @return the region of the resource.
@@ -171,7 +178,8 @@ public interface BackendAddressPool {
                 DefinitionStages.WithName,
                 DefinitionStages.WithTunnelInterfaces,
                 DefinitionStages.WithLoadBalancerBackendAddresses,
-                DefinitionStages.WithDrainPeriodInSeconds {
+                DefinitionStages.WithDrainPeriodInSeconds,
+                DefinitionStages.WithVirtualNetwork {
             /**
              * Executes the create request.
              *
@@ -249,6 +257,16 @@ public interface BackendAddressPool {
              */
             WithCreate withDrainPeriodInSeconds(Integer drainPeriodInSeconds);
         }
+        /** The stage of the BackendAddressPool definition allowing to specify virtualNetwork. */
+        interface WithVirtualNetwork {
+            /**
+             * Specifies the virtualNetwork property: A reference to a virtual network..
+             *
+             * @param virtualNetwork A reference to a virtual network.
+             * @return the next definition stage.
+             */
+            WithCreate withVirtualNetwork(SubResource virtualNetwork);
+        }
     }
     /**
      * Begins update for the BackendAddressPool resource.
@@ -262,7 +280,8 @@ public interface BackendAddressPool {
         extends UpdateStages.WithName,
             UpdateStages.WithTunnelInterfaces,
             UpdateStages.WithLoadBalancerBackendAddresses,
-            UpdateStages.WithDrainPeriodInSeconds {
+            UpdateStages.WithDrainPeriodInSeconds,
+            UpdateStages.WithVirtualNetwork {
         /**
          * Executes the update request.
          *
@@ -323,6 +342,16 @@ public interface BackendAddressPool {
              * @return the next definition stage.
              */
             Update withDrainPeriodInSeconds(Integer drainPeriodInSeconds);
+        }
+        /** The stage of the BackendAddressPool update allowing to specify virtualNetwork. */
+        interface WithVirtualNetwork {
+            /**
+             * Specifies the virtualNetwork property: A reference to a virtual network..
+             *
+             * @param virtualNetwork A reference to a virtual network.
+             * @return the next definition stage.
+             */
+            Update withVirtualNetwork(SubResource virtualNetwork);
         }
     }
     /**

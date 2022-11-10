@@ -57,7 +57,7 @@ public final class ScriptActionsClientImpl implements ScriptActionsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "HDInsightManagementC")
-    private interface ScriptActionsService {
+    public interface ScriptActionsService {
         @Headers({"Content-Type: application/json"})
         @Delete(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HDInsight/clusters"

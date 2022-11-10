@@ -8,8 +8,10 @@ import com.azure.core.management.Region;
 import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.NetworkVirtualApplianceInner;
+import com.azure.resourcemanager.network.generated.models.DelegationProperties;
 import com.azure.resourcemanager.network.generated.models.ManagedServiceIdentity;
 import com.azure.resourcemanager.network.generated.models.NetworkVirtualAppliance;
+import com.azure.resourcemanager.network.generated.models.PartnerManagedResourceProperties;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.azure.resourcemanager.network.generated.models.TagsObject;
 import com.azure.resourcemanager.network.generated.models.VirtualApplianceNicProperties;
@@ -128,6 +130,18 @@ public final class NetworkVirtualApplianceImpl
 
     public ProvisioningState provisioningState() {
         return this.innerModel().provisioningState();
+    }
+
+    public String deploymentType() {
+        return this.innerModel().deploymentType();
+    }
+
+    public DelegationProperties delegation() {
+        return this.innerModel().delegation();
+    }
+
+    public PartnerManagedResourceProperties partnerManagedResource() {
+        return this.innerModel().partnerManagedResource();
     }
 
     public Region region() {
@@ -300,6 +314,17 @@ public final class NetworkVirtualApplianceImpl
 
     public NetworkVirtualApplianceImpl withSshPublicKey(String sshPublicKey) {
         this.innerModel().withSshPublicKey(sshPublicKey);
+        return this;
+    }
+
+    public NetworkVirtualApplianceImpl withDelegation(DelegationProperties delegation) {
+        this.innerModel().withDelegation(delegation);
+        return this;
+    }
+
+    public NetworkVirtualApplianceImpl withPartnerManagedResource(
+        PartnerManagedResourceProperties partnerManagedResource) {
+        this.innerModel().withPartnerManagedResource(partnerManagedResource);
         return this;
     }
 

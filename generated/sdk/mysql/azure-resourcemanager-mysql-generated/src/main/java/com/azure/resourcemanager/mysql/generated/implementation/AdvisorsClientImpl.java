@@ -54,7 +54,7 @@ public final class AdvisorsClientImpl implements AdvisorsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "MySqlManagementClien")
-    private interface AdvisorsService {
+    public interface AdvisorsService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforMySQL/servers"

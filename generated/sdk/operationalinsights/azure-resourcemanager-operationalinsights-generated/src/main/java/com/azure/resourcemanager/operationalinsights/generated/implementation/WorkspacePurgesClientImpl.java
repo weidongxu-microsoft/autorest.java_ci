@@ -55,7 +55,7 @@ public final class WorkspacePurgesClientImpl implements WorkspacePurgesClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "OperationalInsightsM")
-    private interface WorkspacePurgesService {
+    public interface WorkspacePurgesService {
         @Headers({"Content-Type: application/json"})
         @Post(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights"

@@ -64,7 +64,7 @@ public final class ComponentsClientImpl implements ComponentsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "ApplicationInsightsM")
-    private interface ComponentsService {
+    public interface ComponentsService {
         @Headers({"Content-Type: application/json"})
         @Get("/subscriptions/{subscriptionId}/providers/Microsoft.Insights/components")
         @ExpectedResponses({200})

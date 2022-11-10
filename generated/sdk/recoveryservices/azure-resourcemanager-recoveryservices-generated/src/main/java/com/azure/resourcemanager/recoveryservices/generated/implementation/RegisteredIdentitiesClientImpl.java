@@ -49,7 +49,7 @@ public final class RegisteredIdentitiesClientImpl implements RegisteredIdentitie
      */
     @Host("{$host}")
     @ServiceInterface(name = "RecoveryServicesMana")
-    private interface RegisteredIdentitiesService {
+    public interface RegisteredIdentitiesService {
         @Headers({"Accept: application/json;q=0.9", "Content-Type: application/json"})
         @Delete(
             "/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices"

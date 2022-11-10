@@ -54,7 +54,7 @@ public final class ReportsClientImpl implements ReportsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "FrontDoorManagementC")
-    private interface ReportsService {
+    public interface ReportsService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network"

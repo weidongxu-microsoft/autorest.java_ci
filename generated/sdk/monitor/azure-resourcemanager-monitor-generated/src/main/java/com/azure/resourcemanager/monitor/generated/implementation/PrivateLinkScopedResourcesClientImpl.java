@@ -65,7 +65,7 @@ public final class PrivateLinkScopedResourcesClientImpl implements PrivateLinkSc
      */
     @Host("{$host}")
     @ServiceInterface(name = "MonitorClientPrivate")
-    private interface PrivateLinkScopedResourcesService {
+    public interface PrivateLinkScopedResourcesService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights"

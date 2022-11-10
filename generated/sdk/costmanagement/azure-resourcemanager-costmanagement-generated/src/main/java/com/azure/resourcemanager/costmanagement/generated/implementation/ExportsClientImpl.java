@@ -55,7 +55,7 @@ public final class ExportsClientImpl implements ExportsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "CostManagementClient")
-    private interface ExportsService {
+    public interface ExportsService {
         @Headers({"Content-Type: application/json"})
         @Get("/{scope}/providers/Microsoft.CostManagement/exports")
         @ExpectedResponses({200})

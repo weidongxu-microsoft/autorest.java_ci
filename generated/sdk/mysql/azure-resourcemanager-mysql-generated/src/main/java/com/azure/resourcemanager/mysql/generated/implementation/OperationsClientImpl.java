@@ -49,7 +49,7 @@ public final class OperationsClientImpl implements OperationsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "MySqlManagementClien")
-    private interface OperationsService {
+    public interface OperationsService {
         @Headers({"Content-Type: application/json"})
         @Get("/providers/Microsoft.DBforMySQL/operations")
         @ExpectedResponses({200})

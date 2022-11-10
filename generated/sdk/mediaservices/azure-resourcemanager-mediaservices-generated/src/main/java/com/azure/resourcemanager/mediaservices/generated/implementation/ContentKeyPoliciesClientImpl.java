@@ -61,7 +61,7 @@ public final class ContentKeyPoliciesClientImpl implements ContentKeyPoliciesCli
      */
     @Host("{$host}")
     @ServiceInterface(name = "AzureMediaServicesCo")
-    private interface ContentKeyPoliciesService {
+    public interface ContentKeyPoliciesService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Media/mediaServices"

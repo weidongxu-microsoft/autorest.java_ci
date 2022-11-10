@@ -63,7 +63,7 @@ public final class RulesEnginesClientImpl implements RulesEnginesClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "FrontDoorManagementC")
-    private interface RulesEnginesService {
+    public interface RulesEnginesService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/frontDoors"

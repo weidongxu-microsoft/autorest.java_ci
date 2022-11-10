@@ -55,7 +55,7 @@ public final class DataPolicyManifestsClientImpl implements DataPolicyManifestsC
      */
     @Host("{$host}")
     @ServiceInterface(name = "PolicyClientDataPoli")
-    private interface DataPolicyManifestsService {
+    public interface DataPolicyManifestsService {
         @Headers({"Content-Type: application/json"})
         @Get("/providers/Microsoft.Authorization/dataPolicyManifests/{policyMode}")
         @ExpectedResponses({200})

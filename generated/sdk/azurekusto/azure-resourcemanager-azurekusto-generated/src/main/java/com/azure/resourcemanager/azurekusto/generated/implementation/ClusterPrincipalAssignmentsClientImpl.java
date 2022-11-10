@@ -68,7 +68,7 @@ public final class ClusterPrincipalAssignmentsClientImpl implements ClusterPrinc
      */
     @Host("{$host}")
     @ServiceInterface(name = "KustoManagementClien")
-    private interface ClusterPrincipalAssignmentsService {
+    public interface ClusterPrincipalAssignmentsService {
         @Headers({"Content-Type: application/json"})
         @Post(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Kusto/clusters"

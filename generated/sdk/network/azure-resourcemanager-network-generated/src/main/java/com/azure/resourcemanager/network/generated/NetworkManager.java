@@ -328,6 +328,8 @@ public final class NetworkManager {
 
     private PublicIpAddresses publicIpAddresses;
 
+    private VipSwaps vipSwaps;
+
     private CustomIpPrefixes customIpPrefixes;
 
     private DdosCustomPolicies ddosCustomPolicies;
@@ -555,8 +557,6 @@ public final class NetworkManager {
     private RoutingIntents routingIntents;
 
     private WebApplicationFirewallPolicies webApplicationFirewallPolicies;
-
-    private VipSwaps vipSwaps;
 
     private final NetworkManagementClient clientObject;
 
@@ -981,6 +981,18 @@ public final class NetworkManager {
             this.publicIpAddresses = new PublicIpAddressesImpl(clientObject.getPublicIpAddresses(), this);
         }
         return publicIpAddresses;
+    }
+
+    /**
+     * Gets the resource collection API of VipSwaps.
+     *
+     * @return Resource collection API of VipSwaps.
+     */
+    public VipSwaps vipSwaps() {
+        if (this.vipSwaps == null) {
+            this.vipSwaps = new VipSwapsImpl(clientObject.getVipSwaps(), this);
+        }
+        return vipSwaps;
     }
 
     /**
@@ -2412,18 +2424,6 @@ public final class NetworkManager {
                 new WebApplicationFirewallPoliciesImpl(clientObject.getWebApplicationFirewallPolicies(), this);
         }
         return webApplicationFirewallPolicies;
-    }
-
-    /**
-     * Gets the resource collection API of VipSwaps.
-     *
-     * @return Resource collection API of VipSwaps.
-     */
-    public VipSwaps vipSwaps() {
-        if (this.vipSwaps == null) {
-            this.vipSwaps = new VipSwapsImpl(clientObject.getVipSwaps(), this);
-        }
-        return vipSwaps;
     }
 
     /**

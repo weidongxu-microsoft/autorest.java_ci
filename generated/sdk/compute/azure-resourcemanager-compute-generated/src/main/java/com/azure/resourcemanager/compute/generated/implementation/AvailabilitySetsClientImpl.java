@@ -62,7 +62,7 @@ public final class AvailabilitySetsClientImpl implements AvailabilitySetsClient 
      */
     @Host("{$host}")
     @ServiceInterface(name = "ComputeManagementCli")
-    private interface AvailabilitySetsService {
+    public interface AvailabilitySetsService {
         @Headers({"Content-Type: application/json"})
         @Put(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute"

@@ -59,7 +59,7 @@ public final class JobsClientImpl implements JobsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "AzureMediaServicesJo")
-    private interface JobsService {
+    public interface JobsService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Media/mediaServices"

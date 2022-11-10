@@ -67,7 +67,7 @@ public final class AzureFirewallsClientImpl implements AzureFirewallsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
-    private interface AzureFirewallsService {
+    public interface AzureFirewallsService {
         @Headers({"Content-Type: application/json"})
         @Delete(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network"
@@ -224,7 +224,7 @@ public final class AzureFirewallsClientImpl implements AzureFirewallsClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-05-01";
+        final String apiVersion = "2022-07-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -275,7 +275,7 @@ public final class AzureFirewallsClientImpl implements AzureFirewallsClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-05-01";
+        final String apiVersion = "2022-07-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -458,7 +458,7 @@ public final class AzureFirewallsClientImpl implements AzureFirewallsClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-05-01";
+        final String apiVersion = "2022-07-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -509,7 +509,7 @@ public final class AzureFirewallsClientImpl implements AzureFirewallsClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-05-01";
+        final String apiVersion = "2022-07-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -610,7 +610,7 @@ public final class AzureFirewallsClientImpl implements AzureFirewallsClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-05-01";
+        final String apiVersion = "2022-07-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -668,7 +668,7 @@ public final class AzureFirewallsClientImpl implements AzureFirewallsClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-05-01";
+        final String apiVersion = "2022-07-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -881,7 +881,7 @@ public final class AzureFirewallsClientImpl implements AzureFirewallsClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-05-01";
+        final String apiVersion = "2022-07-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -939,7 +939,7 @@ public final class AzureFirewallsClientImpl implements AzureFirewallsClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-05-01";
+        final String apiVersion = "2022-07-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1140,7 +1140,7 @@ public final class AzureFirewallsClientImpl implements AzureFirewallsClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-05-01";
+        final String apiVersion = "2022-07-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1195,7 +1195,7 @@ public final class AzureFirewallsClientImpl implements AzureFirewallsClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-05-01";
+        final String apiVersion = "2022-07-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1300,7 +1300,7 @@ public final class AzureFirewallsClientImpl implements AzureFirewallsClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-05-01";
+        final String apiVersion = "2022-07-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1343,7 +1343,7 @@ public final class AzureFirewallsClientImpl implements AzureFirewallsClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-05-01";
+        final String apiVersion = "2022-07-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1446,7 +1446,7 @@ public final class AzureFirewallsClientImpl implements AzureFirewallsClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-05-01";
+        final String apiVersion = "2022-07-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1498,7 +1498,7 @@ public final class AzureFirewallsClientImpl implements AzureFirewallsClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-05-01";
+        final String apiVersion = "2022-07-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service

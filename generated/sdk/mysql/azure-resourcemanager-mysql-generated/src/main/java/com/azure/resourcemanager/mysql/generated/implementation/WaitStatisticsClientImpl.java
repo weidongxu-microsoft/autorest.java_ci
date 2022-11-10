@@ -57,7 +57,7 @@ public final class WaitStatisticsClientImpl implements WaitStatisticsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "MySqlManagementClien")
-    private interface WaitStatisticsService {
+    public interface WaitStatisticsService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforMySQL/servers"

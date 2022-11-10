@@ -54,7 +54,7 @@ public final class ManagementPoliciesClientImpl implements ManagementPoliciesCli
      */
     @Host("{$host}")
     @ServiceInterface(name = "StorageManagementCli")
-    private interface ManagementPoliciesService {
+    public interface ManagementPoliciesService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage"

@@ -71,7 +71,7 @@ public final class DatabasesClientImpl implements DatabasesClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "KustoManagementClien")
-    private interface DatabasesService {
+    public interface DatabasesService {
         @Headers({"Content-Type: application/json"})
         @Post(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Kusto/clusters"

@@ -52,7 +52,7 @@ public final class ConfigurationsClientImpl implements ConfigurationsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "EventHubManagementCl")
-    private interface ConfigurationsService {
+    public interface ConfigurationsService {
         @Headers({"Content-Type: application/json"})
         @Patch(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventHub/clusters"

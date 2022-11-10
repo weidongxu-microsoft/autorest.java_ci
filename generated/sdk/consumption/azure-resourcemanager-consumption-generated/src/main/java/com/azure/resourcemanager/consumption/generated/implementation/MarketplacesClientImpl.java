@@ -55,7 +55,7 @@ public final class MarketplacesClientImpl implements MarketplacesClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "ConsumptionManagemen")
-    private interface MarketplacesService {
+    public interface MarketplacesService {
         @Headers({"Content-Type: application/json"})
         @Get("/{scope}/providers/Microsoft.Consumption/marketplaces")
         @ExpectedResponses({200, 204})

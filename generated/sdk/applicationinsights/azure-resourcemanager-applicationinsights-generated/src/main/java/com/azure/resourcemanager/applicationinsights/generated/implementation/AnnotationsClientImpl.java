@@ -60,7 +60,7 @@ public final class AnnotationsClientImpl implements AnnotationsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "ApplicationInsightsM")
-    private interface AnnotationsService {
+    public interface AnnotationsService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/components"

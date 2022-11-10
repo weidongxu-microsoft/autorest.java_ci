@@ -49,7 +49,7 @@ public final class CreditsClientImpl implements CreditsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "ConsumptionManagemen")
-    private interface CreditsService {
+    public interface CreditsService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}"

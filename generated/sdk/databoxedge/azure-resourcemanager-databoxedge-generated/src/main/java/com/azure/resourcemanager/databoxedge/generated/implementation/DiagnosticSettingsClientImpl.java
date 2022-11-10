@@ -58,7 +58,7 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      */
     @Host("{$host}")
     @ServiceInterface(name = "DataBoxEdgeManagemen")
-    private interface DiagnosticSettingsService {
+    public interface DiagnosticSettingsService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge"

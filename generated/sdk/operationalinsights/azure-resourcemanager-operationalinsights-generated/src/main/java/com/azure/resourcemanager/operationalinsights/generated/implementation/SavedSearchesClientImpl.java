@@ -54,7 +54,7 @@ public final class SavedSearchesClientImpl implements SavedSearchesClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "OperationalInsightsM")
-    private interface SavedSearchesService {
+    public interface SavedSearchesService {
         @Headers({"Accept: application/json;q=0.9", "Content-Type: application/json"})
         @Delete(
             "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.OperationalInsights"

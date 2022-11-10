@@ -63,7 +63,7 @@ public final class WorkflowRunActionRepetitionsRequestHistoriesClientImpl
      */
     @Host("{$host}")
     @ServiceInterface(name = "WebSiteManagementCli")
-    private interface WorkflowRunActionRepetitionsRequestHistoriesService {
+    public interface WorkflowRunActionRepetitionsRequestHistoriesService {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}"

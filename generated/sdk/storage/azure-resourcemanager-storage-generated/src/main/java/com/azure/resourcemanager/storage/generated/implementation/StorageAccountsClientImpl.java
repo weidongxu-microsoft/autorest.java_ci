@@ -79,7 +79,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "StorageManagementCli")
-    private interface StorageAccountsService {
+    public interface StorageAccountsService {
         @Headers({"Content-Type: application/json"})
         @Post("/subscriptions/{subscriptionId}/providers/Microsoft.Storage/checkNameAvailability")
         @ExpectedResponses({200})

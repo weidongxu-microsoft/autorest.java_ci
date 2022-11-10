@@ -58,7 +58,7 @@ public final class DataSourcesClientImpl implements DataSourcesClient {
      */
     @Host("{$host}")
     @ServiceInterface(name = "OperationalInsightsM")
-    private interface DataSourcesService {
+    public interface DataSourcesService {
         @Headers({"Content-Type: application/json"})
         @Put(
             "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.OperationalInsights"

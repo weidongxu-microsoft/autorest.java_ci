@@ -58,7 +58,7 @@ public final class PolicyDefinitionsClientImpl implements PolicyDefinitionsClien
      */
     @Host("{$host}")
     @ServiceInterface(name = "PolicyClientPolicyDe")
-    private interface PolicyDefinitionsService {
+    public interface PolicyDefinitionsService {
         @Headers({"Content-Type: application/json"})
         @Put(
             "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/policyDefinitions"
