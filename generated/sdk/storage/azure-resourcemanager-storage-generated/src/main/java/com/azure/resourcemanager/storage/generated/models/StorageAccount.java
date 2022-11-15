@@ -1293,9 +1293,15 @@ public interface StorageAccount {
     ListServiceSasResponse listServiceSas(ServiceSasParameters parameters);
 
     /**
-     * Failover request can be triggered for a storage account in case of availability issues. The failover occurs from
-     * the storage account's primary cluster to secondary cluster for RA-GRS accounts. The secondary cluster will become
-     * primary after failover.
+     * A failover request can be triggered for a storage account in the event a primary endpoint becomes unavailable for
+     * any reason. The failover occurs from the storage account's primary cluster to the secondary cluster for RA-GRS
+     * accounts. The secondary cluster will become primary after failover and the account is converted to LRS. In the
+     * case of a Planned Failover, the primary and secondary clusters are swapped after failover and the account remains
+     * geo-replicated. Failover should continue to be used in the event of availability issues as Planned failover is
+     * only available while the primary and secondary endpoints are available. The primary use case of a Planned
+     * Failover is disaster recovery testing drills. This type of failover is invoked by setting FailoverType parameter
+     * to 'Planned'. Learn more about the failover options here-
+     * https://learn.microsoft.com/en-us/azure/storage/common/storage-disaster-recovery-guidance.
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1303,16 +1309,23 @@ public interface StorageAccount {
     void failover();
 
     /**
-     * Failover request can be triggered for a storage account in case of availability issues. The failover occurs from
-     * the storage account's primary cluster to secondary cluster for RA-GRS accounts. The secondary cluster will become
-     * primary after failover.
+     * A failover request can be triggered for a storage account in the event a primary endpoint becomes unavailable for
+     * any reason. The failover occurs from the storage account's primary cluster to the secondary cluster for RA-GRS
+     * accounts. The secondary cluster will become primary after failover and the account is converted to LRS. In the
+     * case of a Planned Failover, the primary and secondary clusters are swapped after failover and the account remains
+     * geo-replicated. Failover should continue to be used in the event of availability issues as Planned failover is
+     * only available while the primary and secondary endpoints are available. The primary use case of a Planned
+     * Failover is disaster recovery testing drills. This type of failover is invoked by setting FailoverType parameter
+     * to 'Planned'. Learn more about the failover options here-
+     * https://learn.microsoft.com/en-us/azure/storage/common/storage-disaster-recovery-guidance.
      *
+     * @param failoverType The parameter is set to 'Planned' to indicate whether a Planned failover is requested.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
-    void failover(Context context);
+    void failover(FailoverType failoverType, Context context);
 
     /**
      * Restore blobs in the specified blob ranges.

@@ -22,6 +22,7 @@ import com.azure.resourcemanager.storage.generated.models.DnsEndpointType;
 import com.azure.resourcemanager.storage.generated.models.Encryption;
 import com.azure.resourcemanager.storage.generated.models.Endpoints;
 import com.azure.resourcemanager.storage.generated.models.ExtendedLocation;
+import com.azure.resourcemanager.storage.generated.models.FailoverType;
 import com.azure.resourcemanager.storage.generated.models.GeoReplicationStats;
 import com.azure.resourcemanager.storage.generated.models.Identity;
 import com.azure.resourcemanager.storage.generated.models.ImmutableStorageAccount;
@@ -425,8 +426,8 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
         serviceManager.storageAccounts().failover(resourceGroupName, accountName);
     }
 
-    public void failover(Context context) {
-        serviceManager.storageAccounts().failover(resourceGroupName, accountName, context);
+    public void failover(FailoverType failoverType, Context context) {
+        serviceManager.storageAccounts().failover(resourceGroupName, accountName, failoverType, context);
     }
 
     public BlobRestoreStatus restoreBlobRanges(BlobRestoreParameters parameters) {

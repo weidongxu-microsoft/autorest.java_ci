@@ -19,6 +19,7 @@ import com.azure.resourcemanager.storage.generated.fluent.models.StorageAccountI
 import com.azure.resourcemanager.storage.generated.fluent.models.StorageAccountListKeysResultInner;
 import com.azure.resourcemanager.storage.generated.models.AccountSasParameters;
 import com.azure.resourcemanager.storage.generated.models.BlobRestoreParameters;
+import com.azure.resourcemanager.storage.generated.models.FailoverType;
 import com.azure.resourcemanager.storage.generated.models.ListKeyExpand;
 import com.azure.resourcemanager.storage.generated.models.ServiceSasParameters;
 import com.azure.resourcemanager.storage.generated.models.StorageAccountCheckNameAvailabilityParameters;
@@ -443,9 +444,15 @@ public interface StorageAccountsClient {
         String resourceGroupName, String accountName, ServiceSasParameters parameters);
 
     /**
-     * Failover request can be triggered for a storage account in case of availability issues. The failover occurs from
-     * the storage account's primary cluster to secondary cluster for RA-GRS accounts. The secondary cluster will become
-     * primary after failover.
+     * A failover request can be triggered for a storage account in the event a primary endpoint becomes unavailable for
+     * any reason. The failover occurs from the storage account's primary cluster to the secondary cluster for RA-GRS
+     * accounts. The secondary cluster will become primary after failover and the account is converted to LRS. In the
+     * case of a Planned Failover, the primary and secondary clusters are swapped after failover and the account remains
+     * geo-replicated. Failover should continue to be used in the event of availability issues as Planned failover is
+     * only available while the primary and secondary endpoints are available. The primary use case of a Planned
+     * Failover is disaster recovery testing drills. This type of failover is invoked by setting FailoverType parameter
+     * to 'Planned'. Learn more about the failover options here-
+     * https://learn.microsoft.com/en-us/azure/storage/common/storage-disaster-recovery-guidance.
      *
      * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
      *     insensitive.
@@ -460,14 +467,21 @@ public interface StorageAccountsClient {
     SyncPoller<PollResult<Void>, Void> beginFailover(String resourceGroupName, String accountName);
 
     /**
-     * Failover request can be triggered for a storage account in case of availability issues. The failover occurs from
-     * the storage account's primary cluster to secondary cluster for RA-GRS accounts. The secondary cluster will become
-     * primary after failover.
+     * A failover request can be triggered for a storage account in the event a primary endpoint becomes unavailable for
+     * any reason. The failover occurs from the storage account's primary cluster to the secondary cluster for RA-GRS
+     * accounts. The secondary cluster will become primary after failover and the account is converted to LRS. In the
+     * case of a Planned Failover, the primary and secondary clusters are swapped after failover and the account remains
+     * geo-replicated. Failover should continue to be used in the event of availability issues as Planned failover is
+     * only available while the primary and secondary endpoints are available. The primary use case of a Planned
+     * Failover is disaster recovery testing drills. This type of failover is invoked by setting FailoverType parameter
+     * to 'Planned'. Learn more about the failover options here-
+     * https://learn.microsoft.com/en-us/azure/storage/common/storage-disaster-recovery-guidance.
      *
      * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
      *     insensitive.
      * @param accountName The name of the storage account within the specified resource group. Storage account names
      *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param failoverType The parameter is set to 'Planned' to indicate whether a Planned failover is requested.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -475,12 +489,19 @@ public interface StorageAccountsClient {
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<Void>, Void> beginFailover(String resourceGroupName, String accountName, Context context);
+    SyncPoller<PollResult<Void>, Void> beginFailover(
+        String resourceGroupName, String accountName, FailoverType failoverType, Context context);
 
     /**
-     * Failover request can be triggered for a storage account in case of availability issues. The failover occurs from
-     * the storage account's primary cluster to secondary cluster for RA-GRS accounts. The secondary cluster will become
-     * primary after failover.
+     * A failover request can be triggered for a storage account in the event a primary endpoint becomes unavailable for
+     * any reason. The failover occurs from the storage account's primary cluster to the secondary cluster for RA-GRS
+     * accounts. The secondary cluster will become primary after failover and the account is converted to LRS. In the
+     * case of a Planned Failover, the primary and secondary clusters are swapped after failover and the account remains
+     * geo-replicated. Failover should continue to be used in the event of availability issues as Planned failover is
+     * only available while the primary and secondary endpoints are available. The primary use case of a Planned
+     * Failover is disaster recovery testing drills. This type of failover is invoked by setting FailoverType parameter
+     * to 'Planned'. Learn more about the failover options here-
+     * https://learn.microsoft.com/en-us/azure/storage/common/storage-disaster-recovery-guidance.
      *
      * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
      *     insensitive.
@@ -494,21 +515,28 @@ public interface StorageAccountsClient {
     void failover(String resourceGroupName, String accountName);
 
     /**
-     * Failover request can be triggered for a storage account in case of availability issues. The failover occurs from
-     * the storage account's primary cluster to secondary cluster for RA-GRS accounts. The secondary cluster will become
-     * primary after failover.
+     * A failover request can be triggered for a storage account in the event a primary endpoint becomes unavailable for
+     * any reason. The failover occurs from the storage account's primary cluster to the secondary cluster for RA-GRS
+     * accounts. The secondary cluster will become primary after failover and the account is converted to LRS. In the
+     * case of a Planned Failover, the primary and secondary clusters are swapped after failover and the account remains
+     * geo-replicated. Failover should continue to be used in the event of availability issues as Planned failover is
+     * only available while the primary and secondary endpoints are available. The primary use case of a Planned
+     * Failover is disaster recovery testing drills. This type of failover is invoked by setting FailoverType parameter
+     * to 'Planned'. Learn more about the failover options here-
+     * https://learn.microsoft.com/en-us/azure/storage/common/storage-disaster-recovery-guidance.
      *
      * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
      *     insensitive.
      * @param accountName The name of the storage account within the specified resource group. Storage account names
      *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param failoverType The parameter is set to 'Planned' to indicate whether a Planned failover is requested.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    void failover(String resourceGroupName, String accountName, Context context);
+    void failover(String resourceGroupName, String accountName, FailoverType failoverType, Context context);
 
     /**
      * Live Migration of storage account to enable Hns.

@@ -13,6 +13,7 @@ import com.azure.resourcemanager.storage.generated.fluent.EncryptionScopesClient
 import com.azure.resourcemanager.storage.generated.fluent.models.EncryptionScopeInner;
 import com.azure.resourcemanager.storage.generated.models.EncryptionScope;
 import com.azure.resourcemanager.storage.generated.models.EncryptionScopes;
+import com.azure.resourcemanager.storage.generated.models.ListEncryptionScopesInclude;
 
 public final class EncryptionScopesImpl implements EncryptionScopes {
     private static final ClientLogger LOGGER = new ClientLogger(EncryptionScopesImpl.class);
@@ -56,8 +57,15 @@ public final class EncryptionScopesImpl implements EncryptionScopes {
         return Utils.mapPage(inner, inner1 -> new EncryptionScopeImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<EncryptionScope> list(String resourceGroupName, String accountName, Context context) {
-        PagedIterable<EncryptionScopeInner> inner = this.serviceClient().list(resourceGroupName, accountName, context);
+    public PagedIterable<EncryptionScope> list(
+        String resourceGroupName,
+        String accountName,
+        Integer maxpagesize,
+        String filter,
+        ListEncryptionScopesInclude include,
+        Context context) {
+        PagedIterable<EncryptionScopeInner> inner =
+            this.serviceClient().list(resourceGroupName, accountName, maxpagesize, filter, include, context);
         return Utils.mapPage(inner, inner1 -> new EncryptionScopeImpl(inner1, this.manager()));
     }
 

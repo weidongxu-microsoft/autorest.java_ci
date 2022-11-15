@@ -20,6 +20,7 @@ import com.azure.resourcemanager.storage.generated.models.AccountSasParameters;
 import com.azure.resourcemanager.storage.generated.models.BlobRestoreParameters;
 import com.azure.resourcemanager.storage.generated.models.BlobRestoreStatus;
 import com.azure.resourcemanager.storage.generated.models.CheckNameAvailabilityResult;
+import com.azure.resourcemanager.storage.generated.models.FailoverType;
 import com.azure.resourcemanager.storage.generated.models.ListAccountSasResponse;
 import com.azure.resourcemanager.storage.generated.models.ListKeyExpand;
 import com.azure.resourcemanager.storage.generated.models.ListServiceSasResponse;
@@ -231,8 +232,8 @@ public final class StorageAccountsImpl implements StorageAccounts {
         this.serviceClient().failover(resourceGroupName, accountName);
     }
 
-    public void failover(String resourceGroupName, String accountName, Context context) {
-        this.serviceClient().failover(resourceGroupName, accountName, context);
+    public void failover(String resourceGroupName, String accountName, FailoverType failoverType, Context context) {
+        this.serviceClient().failover(resourceGroupName, accountName, failoverType, context);
     }
 
     public void hierarchicalNamespaceMigration(String resourceGroupName, String accountName, String requestType) {

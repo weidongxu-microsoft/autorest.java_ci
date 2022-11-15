@@ -10,6 +10,7 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.storage.generated.fluent.models.EncryptionScopeInner;
+import com.azure.resourcemanager.storage.generated.models.ListEncryptionScopesInclude;
 
 /** An instance of this class provides access to all the operations defined in EncryptionScopesClient. */
 public interface EncryptionScopesClient {
@@ -170,6 +171,10 @@ public interface EncryptionScopesClient {
      *     insensitive.
      * @param accountName The name of the storage account within the specified resource group. Storage account names
      *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param maxpagesize Optional, specifies the maximum number of encryption scopes that will be included in the list
+     *     response.
+     * @param filter Optional. When specified, only encryption scope names starting with the filter will be listed.
+     * @param include Optional, when specified, will list encryption scopes with the specific state. Defaults to All.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -178,5 +183,11 @@ public interface EncryptionScopesClient {
      *     scopes as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    PagedIterable<EncryptionScopeInner> list(String resourceGroupName, String accountName, Context context);
+    PagedIterable<EncryptionScopeInner> list(
+        String resourceGroupName,
+        String accountName,
+        Integer maxpagesize,
+        String filter,
+        ListEncryptionScopesInclude include,
+        Context context);
 }
