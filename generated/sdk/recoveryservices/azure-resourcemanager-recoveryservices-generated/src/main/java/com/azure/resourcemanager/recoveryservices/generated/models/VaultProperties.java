@@ -66,6 +66,12 @@ public final class VaultProperties {
     private BackupStorageVersion backupStorageVersion;
 
     /*
+     * property to enable or disable resource provider inbound network traffic from public clients
+     */
+    @JsonProperty(value = "publicNetworkAccess")
+    private PublicNetworkAccess publicNetworkAccess;
+
+    /*
      * Monitoring Settings of the vault
      */
     @JsonProperty(value = "monitoringSettings")
@@ -199,6 +205,28 @@ public final class VaultProperties {
      */
     public BackupStorageVersion backupStorageVersion() {
         return this.backupStorageVersion;
+    }
+
+    /**
+     * Get the publicNetworkAccess property: property to enable or disable resource provider inbound network traffic
+     * from public clients.
+     *
+     * @return the publicNetworkAccess value.
+     */
+    public PublicNetworkAccess publicNetworkAccess() {
+        return this.publicNetworkAccess;
+    }
+
+    /**
+     * Set the publicNetworkAccess property: property to enable or disable resource provider inbound network traffic
+     * from public clients.
+     *
+     * @param publicNetworkAccess the publicNetworkAccess value to set.
+     * @return the VaultProperties object itself.
+     */
+    public VaultProperties withPublicNetworkAccess(PublicNetworkAccess publicNetworkAccess) {
+        this.publicNetworkAccess = publicNetworkAccess;
+        return this;
     }
 
     /**

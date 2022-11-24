@@ -13,7 +13,7 @@ public interface VaultExtendedInfoes {
     /**
      * Get the vault extended info.
      *
-     * @param resourceGroupName The name of the resource group where the recovery services vault is present.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param vaultName The name of the recovery services vault.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -26,7 +26,7 @@ public interface VaultExtendedInfoes {
     /**
      * Get the vault extended info.
      *
-     * @param resourceGroupName The name of the resource group where the recovery services vault is present.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param vaultName The name of the recovery services vault.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -38,7 +38,7 @@ public interface VaultExtendedInfoes {
     /**
      * Create vault extended info.
      *
-     * @param resourceGroupName The name of the resource group where the recovery services vault is present.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param vaultName The name of the recovery services vault.
      * @param resourceExtendedInfoDetails Details of ResourceExtendedInfo.
      * @param context The context to associate with this operation.
@@ -56,7 +56,7 @@ public interface VaultExtendedInfoes {
     /**
      * Create vault extended info.
      *
-     * @param resourceGroupName The name of the resource group where the recovery services vault is present.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param vaultName The name of the recovery services vault.
      * @param resourceExtendedInfoDetails Details of ResourceExtendedInfo.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -70,7 +70,7 @@ public interface VaultExtendedInfoes {
     /**
      * Update vault extended info.
      *
-     * @param resourceGroupName The name of the resource group where the recovery services vault is present.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param vaultName The name of the recovery services vault.
      * @param resourceExtendedInfoDetails Details of ResourceExtendedInfo.
      * @param context The context to associate with this operation.
@@ -88,7 +88,7 @@ public interface VaultExtendedInfoes {
     /**
      * Update vault extended info.
      *
-     * @param resourceGroupName The name of the resource group where the recovery services vault is present.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param vaultName The name of the recovery services vault.
      * @param resourceExtendedInfoDetails Details of ResourceExtendedInfo.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

@@ -13,7 +13,7 @@ public interface PrivateLinkResourcesOperations {
     /**
      * Returns the list of private link resources that need to be created for Backup and SiteRecovery.
      *
-     * @param resourceGroupName The name of the resource group where the recovery services vault is present.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param vaultName The name of the recovery services vault.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -26,7 +26,7 @@ public interface PrivateLinkResourcesOperations {
     /**
      * Returns the list of private link resources that need to be created for Backup and SiteRecovery.
      *
-     * @param resourceGroupName The name of the resource group where the recovery services vault is present.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param vaultName The name of the recovery services vault.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -40,7 +40,7 @@ public interface PrivateLinkResourcesOperations {
     /**
      * Returns a specified private link resource that need to be created for Backup and SiteRecovery.
      *
-     * @param resourceGroupName The name of the resource group where the recovery services vault is present.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param vaultName The name of the recovery services vault.
      * @param privateLinkResourceName The privateLinkResourceName parameter.
      * @param context The context to associate with this operation.
@@ -55,7 +55,7 @@ public interface PrivateLinkResourcesOperations {
     /**
      * Returns a specified private link resource that need to be created for Backup and SiteRecovery.
      *
-     * @param resourceGroupName The name of the resource group where the recovery services vault is present.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param vaultName The name of the recovery services vault.
      * @param privateLinkResourceName The privateLinkResourceName parameter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

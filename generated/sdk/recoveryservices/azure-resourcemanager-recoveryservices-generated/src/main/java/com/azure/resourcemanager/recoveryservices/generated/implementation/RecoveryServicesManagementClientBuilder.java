@@ -18,12 +18,12 @@ import java.time.Duration;
 @ServiceClientBuilder(serviceClients = {RecoveryServicesManagementClientImpl.class})
 public final class RecoveryServicesManagementClientBuilder {
     /*
-     * The subscription Id.
+     * The ID of the target subscription.
      */
     private String subscriptionId;
 
     /**
-     * Sets The subscription Id.
+     * Sets The ID of the target subscription.
      *
      * @param subscriptionId the subscriptionId value.
      * @return the RecoveryServicesManagementClientBuilder.

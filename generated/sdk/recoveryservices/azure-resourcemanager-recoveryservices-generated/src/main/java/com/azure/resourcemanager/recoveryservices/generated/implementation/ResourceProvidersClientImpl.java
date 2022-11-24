@@ -88,7 +88,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     /**
      * Gets the operation status for a resource.
      *
-     * @param resourceGroupName The name of the resource group where the recovery services vault is present.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param vaultName The name of the recovery services vault.
      * @param operationId The operationId parameter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -141,7 +141,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     /**
      * Gets the operation status for a resource.
      *
-     * @param resourceGroupName The name of the resource group where the recovery services vault is present.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param vaultName The name of the recovery services vault.
      * @param operationId The operationId parameter.
      * @param context The context to associate with this operation.
@@ -192,7 +192,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     /**
      * Gets the operation status for a resource.
      *
-     * @param resourceGroupName The name of the resource group where the recovery services vault is present.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param vaultName The name of the recovery services vault.
      * @param operationId The operationId parameter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -210,7 +210,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     /**
      * Gets the operation status for a resource.
      *
-     * @param resourceGroupName The name of the resource group where the recovery services vault is present.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param vaultName The name of the recovery services vault.
      * @param operationId The operationId parameter.
      * @param context The context to associate with this operation.
@@ -228,7 +228,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     /**
      * Gets the operation status for a resource.
      *
-     * @param resourceGroupName The name of the resource group where the recovery services vault is present.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param vaultName The name of the recovery services vault.
      * @param operationId The operationId parameter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -244,7 +244,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     /**
      * Gets the operation result for a resource.
      *
-     * @param resourceGroupName The name of the resource group where the recovery services vault is present.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param vaultName The name of the recovery services vault.
      * @param operationId The operationId parameter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -297,7 +297,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     /**
      * Gets the operation result for a resource.
      *
-     * @param resourceGroupName The name of the resource group where the recovery services vault is present.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param vaultName The name of the recovery services vault.
      * @param operationId The operationId parameter.
      * @param context The context to associate with this operation.
@@ -348,7 +348,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     /**
      * Gets the operation result for a resource.
      *
-     * @param resourceGroupName The name of the resource group where the recovery services vault is present.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param vaultName The name of the recovery services vault.
      * @param operationId The operationId parameter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -365,7 +365,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     /**
      * Gets the operation result for a resource.
      *
-     * @param resourceGroupName The name of the resource group where the recovery services vault is present.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param vaultName The name of the recovery services vault.
      * @param operationId The operationId parameter.
      * @param context The context to associate with this operation.
@@ -383,7 +383,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     /**
      * Gets the operation result for a resource.
      *
-     * @param resourceGroupName The name of the resource group where the recovery services vault is present.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param vaultName The name of the recovery services vault.
      * @param operationId The operationId parameter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

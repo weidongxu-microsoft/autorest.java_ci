@@ -12,7 +12,7 @@ public interface RegisteredIdentities {
     /**
      * Unregisters the given container from your Recovery Services vault.
      *
-     * @param resourceGroupName The name of the resource group where the recovery services vault is present.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param vaultName The name of the recovery services vault.
      * @param identityName Name of the protection container to unregister.
      * @param context The context to associate with this operation.
@@ -26,7 +26,7 @@ public interface RegisteredIdentities {
     /**
      * Unregisters the given container from your Recovery Services vault.
      *
-     * @param resourceGroupName The name of the resource group where the recovery services vault is present.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param vaultName The name of the recovery services vault.
      * @param identityName Name of the protection container to unregister.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
