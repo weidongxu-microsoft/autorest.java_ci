@@ -529,7 +529,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     }
 
     /**
-     * Deletes an existing namespace. This operation also removes all associated resources under the namespace.
+     * Deletes a Private Endpoint Connection.
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -585,7 +585,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     }
 
     /**
-     * Deletes an existing namespace. This operation also removes all associated resources under the namespace.
+     * Deletes a Private Endpoint Connection.
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -639,7 +639,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     }
 
     /**
-     * Deletes an existing namespace. This operation also removes all associated resources under the namespace.
+     * Deletes a Private Endpoint Connection.
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -661,7 +661,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     }
 
     /**
-     * Deletes an existing namespace. This operation also removes all associated resources under the namespace.
+     * Deletes a Private Endpoint Connection.
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -684,7 +684,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     }
 
     /**
-     * Deletes an existing namespace. This operation also removes all associated resources under the namespace.
+     * Deletes a Private Endpoint Connection.
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -701,7 +701,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     }
 
     /**
-     * Deletes an existing namespace. This operation also removes all associated resources under the namespace.
+     * Deletes a Private Endpoint Connection.
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -720,7 +720,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     }
 
     /**
-     * Deletes an existing namespace. This operation also removes all associated resources under the namespace.
+     * Deletes a Private Endpoint Connection.
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -739,7 +739,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     }
 
     /**
-     * Deletes an existing namespace. This operation also removes all associated resources under the namespace.
+     * Deletes a Private Endpoint Connection.
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -759,7 +759,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     }
 
     /**
-     * Deletes an existing namespace. This operation also removes all associated resources under the namespace.
+     * Deletes a Private Endpoint Connection.
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -774,7 +774,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     }
 
     /**
-     * Deletes an existing namespace. This operation also removes all associated resources under the namespace.
+     * Deletes a Private Endpoint Connection.
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
