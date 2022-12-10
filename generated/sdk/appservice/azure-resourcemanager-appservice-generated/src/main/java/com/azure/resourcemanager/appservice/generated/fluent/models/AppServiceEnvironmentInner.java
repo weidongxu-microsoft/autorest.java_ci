@@ -94,7 +94,7 @@ public final class AppServiceEnvironmentInner {
     private List<NameValuePair> clusterSettings;
 
     /*
-     * User added ip ranges to whitelist on ASE db
+     * User added list of IP Ranges allowed on ASE db
      */
     @JsonProperty(value = "userWhitelistedIpRanges")
     private List<String> userWhitelistedIpRanges;
@@ -335,7 +335,7 @@ public final class AppServiceEnvironmentInner {
     }
 
     /**
-     * Get the userWhitelistedIpRanges property: User added ip ranges to whitelist on ASE db.
+     * Get the userWhitelistedIpRanges property: User added list of IP Ranges allowed on ASE db.
      *
      * @return the userWhitelistedIpRanges value.
      */
@@ -344,7 +344,7 @@ public final class AppServiceEnvironmentInner {
     }
 
     /**
-     * Set the userWhitelistedIpRanges property: User added ip ranges to whitelist on ASE db.
+     * Set the userWhitelistedIpRanges property: User added list of IP Ranges allowed on ASE db.
      *
      * @param userWhitelistedIpRanges the userWhitelistedIpRanges value to set.
      * @return the AppServiceEnvironmentInner object itself.

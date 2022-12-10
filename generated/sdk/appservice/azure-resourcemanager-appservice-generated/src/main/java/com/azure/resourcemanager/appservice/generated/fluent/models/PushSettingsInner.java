@@ -61,8 +61,8 @@ public final class PushSettingsInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the tagWhitelistJson property: Gets or sets a JSON string containing a list of tags that are whitelisted for
-     * use by the push registration endpoint.
+     * Get the tagWhitelistJson property: Gets or sets a JSON string containing a list of tags that are in the allowed
+     * list for use by the push registration endpoint.
      *
      * @return the tagWhitelistJson value.
      */
@@ -71,8 +71,8 @@ public final class PushSettingsInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the tagWhitelistJson property: Gets or sets a JSON string containing a list of tags that are whitelisted for
-     * use by the push registration endpoint.
+     * Set the tagWhitelistJson property: Gets or sets a JSON string containing a list of tags that are in the allowed
+     * list for use by the push registration endpoint.
      *
      * @param tagWhitelistJson the tagWhitelistJson value to set.
      * @return the PushSettingsInner object itself.

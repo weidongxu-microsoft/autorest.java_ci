@@ -28,10 +28,12 @@ import com.azure.resourcemanager.sqlvirtualmachine.generated.implementation.Avai
 import com.azure.resourcemanager.sqlvirtualmachine.generated.implementation.OperationsImpl;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.implementation.SqlVirtualMachineGroupsImpl;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.implementation.SqlVirtualMachineManagementClientBuilder;
+import com.azure.resourcemanager.sqlvirtualmachine.generated.implementation.SqlVirtualMachineTroubleshootsImpl;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.implementation.SqlVirtualMachinesImpl;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.AvailabilityGroupListeners;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.Operations;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.SqlVirtualMachineGroups;
+import com.azure.resourcemanager.sqlvirtualmachine.generated.models.SqlVirtualMachineTroubleshoots;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.SqlVirtualMachines;
 import java.time.Duration;
 import java.time.temporal.ChronoUnit;
@@ -54,6 +56,8 @@ public final class SqlVirtualMachineManager {
     private SqlVirtualMachineGroups sqlVirtualMachineGroups;
 
     private SqlVirtualMachines sqlVirtualMachines;
+
+    private SqlVirtualMachineTroubleshoots sqlVirtualMachineTroubleshoots;
 
     private final SqlVirtualMachineManagementClient clientObject;
 
@@ -325,6 +329,19 @@ public final class SqlVirtualMachineManager {
             this.sqlVirtualMachines = new SqlVirtualMachinesImpl(clientObject.getSqlVirtualMachines(), this);
         }
         return sqlVirtualMachines;
+    }
+
+    /**
+     * Gets the resource collection API of SqlVirtualMachineTroubleshoots.
+     *
+     * @return Resource collection API of SqlVirtualMachineTroubleshoots.
+     */
+    public SqlVirtualMachineTroubleshoots sqlVirtualMachineTroubleshoots() {
+        if (this.sqlVirtualMachineTroubleshoots == null) {
+            this.sqlVirtualMachineTroubleshoots =
+                new SqlVirtualMachineTroubleshootsImpl(clientObject.getSqlVirtualMachineTroubleshoots(), this);
+        }
+        return sqlVirtualMachineTroubleshoots;
     }
 
     /**

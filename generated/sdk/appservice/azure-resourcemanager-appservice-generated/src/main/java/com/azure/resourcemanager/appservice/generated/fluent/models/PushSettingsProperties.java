@@ -17,8 +17,8 @@ public final class PushSettingsProperties {
     private boolean isPushEnabled;
 
     /*
-     * Gets or sets a JSON string containing a list of tags that are whitelisted for use by the push registration
-     * endpoint.
+     * Gets or sets a JSON string containing a list of tags that are in the allowed list for use by the push
+     * registration endpoint.
      */
     @JsonProperty(value = "tagWhitelistJson")
     private String tagWhitelistJson;
@@ -65,8 +65,8 @@ public final class PushSettingsProperties {
     }
 
     /**
-     * Get the tagWhitelistJson property: Gets or sets a JSON string containing a list of tags that are whitelisted for
-     * use by the push registration endpoint.
+     * Get the tagWhitelistJson property: Gets or sets a JSON string containing a list of tags that are in the allowed
+     * list for use by the push registration endpoint.
      *
      * @return the tagWhitelistJson value.
      */
@@ -75,8 +75,8 @@ public final class PushSettingsProperties {
     }
 
     /**
-     * Set the tagWhitelistJson property: Gets or sets a JSON string containing a list of tags that are whitelisted for
-     * use by the push registration endpoint.
+     * Set the tagWhitelistJson property: Gets or sets a JSON string containing a list of tags that are in the allowed
+     * list for use by the push registration endpoint.
      *
      * @param tagWhitelistJson the tagWhitelistJson value to set.
      * @return the PushSettingsProperties object itself.

@@ -18,6 +18,7 @@ import com.azure.resourcemanager.sqlvirtualmachine.generated.models.SqlImageSku;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.SqlManagementMode;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.SqlServerLicenseType;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.StorageConfigurationSettings;
+import com.azure.resourcemanager.sqlvirtualmachine.generated.models.TroubleshootingStatus;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.WsfcDomainCredentials;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Map;
@@ -444,7 +445,16 @@ public final class SqlVirtualMachineInner extends Resource {
     }
 
     /**
-     * Get the assessmentSettings property: Assessment Settings.
+     * Get the troubleshootingStatus property: Troubleshooting status.
+     *
+     * @return the troubleshootingStatus value.
+     */
+    public TroubleshootingStatus troubleshootingStatus() {
+        return this.innerProperties() == null ? null : this.innerProperties().troubleshootingStatus();
+    }
+
+    /**
+     * Get the assessmentSettings property: SQL best practices Assessment Settings.
      *
      * @return the assessmentSettings value.
      */
@@ -453,7 +463,7 @@ public final class SqlVirtualMachineInner extends Resource {
     }
 
     /**
-     * Set the assessmentSettings property: Assessment Settings.
+     * Set the assessmentSettings property: SQL best practices Assessment Settings.
      *
      * @param assessmentSettings the assessmentSettings value to set.
      * @return the SqlVirtualMachineInner object itself.

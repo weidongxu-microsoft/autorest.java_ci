@@ -102,7 +102,7 @@ public final class AvailabilityGroupListenersClientImpl implements AvailabilityG
             @HeaderParam("Accept") String accept,
             Context context);
 
-        @Headers({"Accept: application/json;q=0.9", "Content-Type: application/json"})
+        @Headers({"Content-Type: application/json"})
         @Delete(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.SqlVirtualMachine"
                 + "/sqlVirtualMachineGroups/{sqlVirtualMachineGroupName}/availabilityGroupListeners"
@@ -116,6 +116,7 @@ public final class AvailabilityGroupListenersClientImpl implements AvailabilityG
             @PathParam("availabilityGroupListenerName") String availabilityGroupListenerName,
             @PathParam("subscriptionId") String subscriptionId,
             @QueryParam("api-version") String apiVersion,
+            @HeaderParam("Accept") String accept,
             Context context);
 
         @Headers({"Content-Type: application/json"})
@@ -746,6 +747,7 @@ public final class AvailabilityGroupListenersClientImpl implements AvailabilityG
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String accept = "application/json";
         return FluxUtil
             .withContext(
                 context ->
@@ -757,6 +759,7 @@ public final class AvailabilityGroupListenersClientImpl implements AvailabilityG
                             availabilityGroupListenerName,
                             this.client.getSubscriptionId(),
                             this.client.getApiVersion(),
+                            accept,
                             context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
@@ -808,6 +811,7 @@ public final class AvailabilityGroupListenersClientImpl implements AvailabilityG
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
             .delete(
@@ -817,6 +821,7 @@ public final class AvailabilityGroupListenersClientImpl implements AvailabilityG
                 availabilityGroupListenerName,
                 this.client.getSubscriptionId(),
                 this.client.getApiVersion(),
+                accept,
                 context);
     }
 

@@ -13,6 +13,7 @@ import com.azure.resourcemanager.compute.generated.models.CloudServiceProperties
 import com.azure.resourcemanager.compute.generated.models.CloudServiceUpdate;
 import com.azure.resourcemanager.compute.generated.models.RoleInstances;
 import java.util.Collections;
+import java.util.List;
 import java.util.Map;
 
 public final class CloudServiceImpl implements CloudService, CloudService.Definition, CloudService.Update {
@@ -51,6 +52,15 @@ public final class CloudServiceImpl implements CloudService, CloudService.Defini
 
     public SystemData systemData() {
         return this.innerModel().systemData();
+    }
+
+    public List<String> zones() {
+        List<String> inner = this.innerModel().zones();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
     }
 
     public Region region() {
@@ -234,6 +244,11 @@ public final class CloudServiceImpl implements CloudService, CloudService.Defini
 
     public CloudServiceImpl withSystemData(SystemData systemData) {
         this.innerModel().withSystemData(systemData);
+        return this;
+    }
+
+    public CloudServiceImpl withZones(List<String> zones) {
+        this.innerModel().withZones(zones);
         return this;
     }
 

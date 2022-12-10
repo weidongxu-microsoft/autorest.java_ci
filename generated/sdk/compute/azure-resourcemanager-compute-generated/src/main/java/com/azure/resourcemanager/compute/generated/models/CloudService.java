@@ -8,6 +8,7 @@ import com.azure.core.management.Region;
 import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.compute.generated.fluent.models.CloudServiceInner;
+import java.util.List;
 import java.util.Map;
 
 /** An immutable client-side representation of CloudService. */
@@ -60,6 +61,14 @@ public interface CloudService {
      * @return the systemData value.
      */
     SystemData systemData();
+
+    /**
+     * Gets the zones property: List of logical availability zone of the resource. List should contain only 1 zone where
+     * cloud service should be provisioned. This field is optional.
+     *
+     * @return the zones value.
+     */
+    List<String> zones();
 
     /**
      * Gets the region of the resource.
@@ -134,7 +143,10 @@ public interface CloudService {
          * to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate
-            extends DefinitionStages.WithTags, DefinitionStages.WithProperties, DefinitionStages.WithSystemData {
+            extends DefinitionStages.WithTags,
+                DefinitionStages.WithProperties,
+                DefinitionStages.WithSystemData,
+                DefinitionStages.WithZones {
             /**
              * Executes the create request.
              *
@@ -179,6 +191,18 @@ public interface CloudService {
              * @return the next definition stage.
              */
             WithCreate withSystemData(SystemData systemData);
+        }
+        /** The stage of the CloudService definition allowing to specify zones. */
+        interface WithZones {
+            /**
+             * Specifies the zones property: List of logical availability zone of the resource. List should contain only
+             * 1 zone where cloud service should be provisioned. This field is optional..
+             *
+             * @param zones List of logical availability zone of the resource. List should contain only 1 zone where
+             *     cloud service should be provisioned. This field is optional.
+             * @return the next definition stage.
+             */
+            WithCreate withZones(List<String> zones);
         }
     }
     /**
