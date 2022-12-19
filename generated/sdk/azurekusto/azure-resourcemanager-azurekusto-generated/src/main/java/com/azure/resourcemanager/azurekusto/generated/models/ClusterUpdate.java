@@ -356,6 +356,20 @@ public final class ClusterUpdate extends ProxyResource {
     }
 
     /**
+     * Set the languageExtensions property: List of the cluster's language extensions.
+     *
+     * @param languageExtensions the languageExtensions value to set.
+     * @return the ClusterUpdate object itself.
+     */
+    public ClusterUpdate withLanguageExtensions(LanguageExtensionsList languageExtensions) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new ClusterProperties();
+        }
+        this.innerProperties().withLanguageExtensions(languageExtensions);
+        return this;
+    }
+
+    /**
      * Get the enableDoubleEncryption property: A boolean value that indicates if double encryption is enabled.
      *
      * @return the enableDoubleEncryption value.

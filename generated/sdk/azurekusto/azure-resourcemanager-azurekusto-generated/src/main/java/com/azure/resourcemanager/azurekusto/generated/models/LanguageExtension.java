@@ -16,6 +16,13 @@ public interface LanguageExtension {
     LanguageExtensionName languageExtensionName();
 
     /**
+     * Gets the languageExtensionImageName property: The language extension image name.
+     *
+     * @return the languageExtensionImageName value.
+     */
+    LanguageExtensionImageName languageExtensionImageName();
+
+    /**
      * Gets the inner com.azure.resourcemanager.azurekusto.generated.fluent.models.LanguageExtensionInner object.
      *
      * @return the inner object.

@@ -6,6 +6,7 @@ package com.azure.resourcemanager.azurekusto.generated.implementation;
 
 import com.azure.resourcemanager.azurekusto.generated.fluent.models.LanguageExtensionInner;
 import com.azure.resourcemanager.azurekusto.generated.models.LanguageExtension;
+import com.azure.resourcemanager.azurekusto.generated.models.LanguageExtensionImageName;
 import com.azure.resourcemanager.azurekusto.generated.models.LanguageExtensionName;
 
 public final class LanguageExtensionImpl implements LanguageExtension {
@@ -22,6 +23,10 @@ public final class LanguageExtensionImpl implements LanguageExtension {
 
     public LanguageExtensionName languageExtensionName() {
         return this.innerModel().languageExtensionName();
+    }
+
+    public LanguageExtensionImageName languageExtensionImageName() {
+        return this.innerModel().languageExtensionImageName();
     }
 
     public LanguageExtensionInner innerModel() {

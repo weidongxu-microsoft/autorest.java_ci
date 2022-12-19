@@ -98,7 +98,7 @@ public final class ClusterProperties {
     /*
      * List of the cluster's language extensions.
      */
-    @JsonProperty(value = "languageExtensions", access = JsonProperty.Access.WRITE_ONLY)
+    @JsonProperty(value = "languageExtensions")
     private LanguageExtensionsList languageExtensions;
 
     /*
@@ -366,6 +366,17 @@ public final class ClusterProperties {
      */
     public LanguageExtensionsList languageExtensions() {
         return this.languageExtensions;
+    }
+
+    /**
+     * Set the languageExtensions property: List of the cluster's language extensions.
+     *
+     * @param languageExtensions the languageExtensions value to set.
+     * @return the ClusterProperties object itself.
+     */
+    public ClusterProperties withLanguageExtensions(LanguageExtensionsList languageExtensions) {
+        this.languageExtensions = languageExtensions;
+        return this;
     }
 
     /**

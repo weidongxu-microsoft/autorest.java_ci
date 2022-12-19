@@ -38,6 +38,7 @@ import com.azure.resourcemanager.azurekusto.generated.implementation.OperationsR
 import com.azure.resourcemanager.azurekusto.generated.implementation.PrivateEndpointConnectionsImpl;
 import com.azure.resourcemanager.azurekusto.generated.implementation.PrivateLinkResourcesImpl;
 import com.azure.resourcemanager.azurekusto.generated.implementation.ScriptsImpl;
+import com.azure.resourcemanager.azurekusto.generated.implementation.SkusImpl;
 import com.azure.resourcemanager.azurekusto.generated.models.AttachedDatabaseConfigurations;
 import com.azure.resourcemanager.azurekusto.generated.models.ClusterPrincipalAssignments;
 import com.azure.resourcemanager.azurekusto.generated.models.Clusters;
@@ -51,6 +52,7 @@ import com.azure.resourcemanager.azurekusto.generated.models.OperationsResultsLo
 import com.azure.resourcemanager.azurekusto.generated.models.PrivateEndpointConnections;
 import com.azure.resourcemanager.azurekusto.generated.models.PrivateLinkResources;
 import com.azure.resourcemanager.azurekusto.generated.models.Scripts;
+import com.azure.resourcemanager.azurekusto.generated.models.Skus;
 import java.time.Duration;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
@@ -67,6 +69,8 @@ public final class KustoManager {
     private Clusters clusters;
 
     private ClusterPrincipalAssignments clusterPrincipalAssignments;
+
+    private Skus skus;
 
     private Databases databases;
 
@@ -335,6 +339,18 @@ public final class KustoManager {
                 new ClusterPrincipalAssignmentsImpl(clientObject.getClusterPrincipalAssignments(), this);
         }
         return clusterPrincipalAssignments;
+    }
+
+    /**
+     * Gets the resource collection API of Skus.
+     *
+     * @return Resource collection API of Skus.
+     */
+    public Skus skus() {
+        if (this.skus == null) {
+            this.skus = new SkusImpl(clientObject.getSkus(), this);
+        }
+        return skus;
     }
 
     /**

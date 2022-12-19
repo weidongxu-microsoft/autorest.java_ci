@@ -6,6 +6,7 @@ package com.azure.resourcemanager.azurekusto.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.ProxyResource;
+import com.azure.resourcemanager.azurekusto.generated.models.CosmosDbDataConnection;
 import com.azure.resourcemanager.azurekusto.generated.models.EventGridDataConnection;
 import com.azure.resourcemanager.azurekusto.generated.models.EventHubDataConnection;
 import com.azure.resourcemanager.azurekusto.generated.models.IotHubDataConnection;
@@ -24,7 +25,8 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @JsonSubTypes({
     @JsonSubTypes.Type(name = "EventHub", value = EventHubDataConnection.class),
     @JsonSubTypes.Type(name = "IotHub", value = IotHubDataConnection.class),
-    @JsonSubTypes.Type(name = "EventGrid", value = EventGridDataConnection.class)
+    @JsonSubTypes.Type(name = "EventGrid", value = EventGridDataConnection.class),
+    @JsonSubTypes.Type(name = "CosmosDb", value = CosmosDbDataConnection.class)
 })
 @Fluent
 public class DataConnectionInner extends ProxyResource {
