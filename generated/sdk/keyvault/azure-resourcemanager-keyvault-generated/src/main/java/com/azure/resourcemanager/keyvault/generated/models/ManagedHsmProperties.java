@@ -96,6 +96,12 @@ public final class ManagedHsmProperties {
     @JsonProperty(value = "scheduledPurgeDate", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime scheduledPurgeDate;
 
+    /*
+     * Managed HSM security domain properties.
+     */
+    @JsonProperty(value = "securityDomainProperties", access = JsonProperty.Access.WRITE_ONLY)
+    private ManagedHsmSecurityDomainProperties securityDomainProperties;
+
     /** Creates an instance of ManagedHsmProperties class. */
     public ManagedHsmProperties() {
     }
@@ -323,6 +329,15 @@ public final class ManagedHsmProperties {
     }
 
     /**
+     * Get the securityDomainProperties property: Managed HSM security domain properties.
+     *
+     * @return the securityDomainProperties value.
+     */
+    public ManagedHsmSecurityDomainProperties securityDomainProperties() {
+        return this.securityDomainProperties;
+    }
+
+    /**
      * Validates the instance.
      *
      * @throws IllegalArgumentException thrown if the instance is not valid.
@@ -333,6 +348,9 @@ public final class ManagedHsmProperties {
         }
         if (privateEndpointConnections() != null) {
             privateEndpointConnections().forEach(e -> e.validate());
+        }
+        if (securityDomainProperties() != null) {
+            securityDomainProperties().validate();
         }
     }
 }
