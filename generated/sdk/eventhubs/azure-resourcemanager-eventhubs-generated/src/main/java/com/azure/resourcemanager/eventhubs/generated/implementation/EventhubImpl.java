@@ -11,6 +11,7 @@ import com.azure.resourcemanager.eventhubs.generated.fluent.models.EventhubInner
 import com.azure.resourcemanager.eventhubs.generated.models.CaptureDescription;
 import com.azure.resourcemanager.eventhubs.generated.models.EntityStatus;
 import com.azure.resourcemanager.eventhubs.generated.models.Eventhub;
+import com.azure.resourcemanager.eventhubs.generated.models.RetentionDescription;
 import java.time.OffsetDateTime;
 import java.util.Collections;
 import java.util.List;
@@ -71,6 +72,10 @@ public final class EventhubImpl implements Eventhub, Eventhub.Definition, Eventh
 
     public CaptureDescription captureDescription() {
         return this.innerModel().captureDescription();
+    }
+
+    public RetentionDescription retentionDescription() {
+        return this.innerModel().retentionDescription();
     }
 
     public Region region() {
@@ -203,6 +208,11 @@ public final class EventhubImpl implements Eventhub, Eventhub.Definition, Eventh
 
     public EventhubImpl withCaptureDescription(CaptureDescription captureDescription) {
         this.innerModel().withCaptureDescription(captureDescription);
+        return this;
+    }
+
+    public EventhubImpl withRetentionDescription(RetentionDescription retentionDescription) {
+        this.innerModel().withRetentionDescription(retentionDescription);
         return this;
     }
 }

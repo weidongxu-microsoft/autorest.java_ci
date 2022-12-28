@@ -41,7 +41,7 @@ public interface SchemaRegistries {
         String resourceGroupName, String namespaceName, Integer skip, Integer top, Context context);
 
     /**
-     * Deletes an EventHub schema group.
+     * The delete operation.
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -56,7 +56,7 @@ public interface SchemaRegistries {
         String resourceGroupName, String namespaceName, String schemaGroupName, Context context);
 
     /**
-     * Deletes an EventHub schema group.
+     * The delete operation.
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -68,7 +68,7 @@ public interface SchemaRegistries {
     void delete(String resourceGroupName, String namespaceName, String schemaGroupName);
 
     /**
-     * Gets the details of an EventHub schema group.
+     * The get operation.
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -77,13 +77,13 @@ public interface SchemaRegistries {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the details of an EventHub schema group along with {@link Response}.
+     * @return single item in List or Get Schema Group operation along with {@link Response}.
      */
     Response<SchemaGroup> getWithResponse(
         String resourceGroupName, String namespaceName, String schemaGroupName, Context context);
 
     /**
-     * Gets the details of an EventHub schema group.
+     * The get operation.
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -91,35 +91,35 @@ public interface SchemaRegistries {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the details of an EventHub schema group.
+     * @return single item in List or Get Schema Group operation.
      */
     SchemaGroup get(String resourceGroupName, String namespaceName, String schemaGroupName);
 
     /**
-     * Gets the details of an EventHub schema group.
+     * The get operation.
      *
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the details of an EventHub schema group along with {@link Response}.
+     * @return single item in List or Get Schema Group operation along with {@link Response}.
      */
     SchemaGroup getById(String id);
 
     /**
-     * Gets the details of an EventHub schema group.
+     * The get operation.
      *
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the details of an EventHub schema group along with {@link Response}.
+     * @return single item in List or Get Schema Group operation along with {@link Response}.
      */
     Response<SchemaGroup> getByIdWithResponse(String id, Context context);
 
     /**
-     * Deletes an EventHub schema group.
+     * The delete operation.
      *
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -129,7 +129,7 @@ public interface SchemaRegistries {
     void deleteById(String id);
 
     /**
-     * Deletes an EventHub schema group.
+     * The delete operation.
      *
      * @param id the resource ID.
      * @param context The context to associate with this operation.

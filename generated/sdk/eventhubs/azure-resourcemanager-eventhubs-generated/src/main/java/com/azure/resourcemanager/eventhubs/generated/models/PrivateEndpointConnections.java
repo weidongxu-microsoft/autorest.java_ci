@@ -38,7 +38,7 @@ public interface PrivateEndpointConnections {
     PagedIterable<PrivateEndpointConnection> list(String resourceGroupName, String namespaceName, Context context);
 
     /**
-     * Deletes a Private Endpoint Connection.
+     * Deletes an existing namespace. This operation also removes all associated resources under the namespace.
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -50,7 +50,7 @@ public interface PrivateEndpointConnections {
     void delete(String resourceGroupName, String namespaceName, String privateEndpointConnectionName);
 
     /**
-     * Deletes a Private Endpoint Connection.
+     * Deletes an existing namespace. This operation also removes all associated resources under the namespace.
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -114,7 +114,7 @@ public interface PrivateEndpointConnections {
     Response<PrivateEndpointConnection> getByIdWithResponse(String id, Context context);
 
     /**
-     * Deletes a Private Endpoint Connection.
+     * Deletes an existing namespace. This operation also removes all associated resources under the namespace.
      *
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -124,7 +124,7 @@ public interface PrivateEndpointConnections {
     void deleteById(String id);
 
     /**
-     * Deletes a Private Endpoint Connection.
+     * Deletes an existing namespace. This operation also removes all associated resources under the namespace.
      *
      * @param id the resource ID.
      * @param context The context to associate with this operation.

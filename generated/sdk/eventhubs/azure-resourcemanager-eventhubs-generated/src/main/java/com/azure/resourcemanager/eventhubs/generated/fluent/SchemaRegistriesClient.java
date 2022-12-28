@@ -46,7 +46,7 @@ public interface SchemaRegistriesClient {
         String resourceGroupName, String namespaceName, Integer skip, Integer top, Context context);
 
     /**
-     * Creates or Updates an EventHub schema group.
+     * The createOrUpdate operation.
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -67,7 +67,7 @@ public interface SchemaRegistriesClient {
         Context context);
 
     /**
-     * Creates or Updates an EventHub schema group.
+     * The createOrUpdate operation.
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -83,7 +83,7 @@ public interface SchemaRegistriesClient {
         String resourceGroupName, String namespaceName, String schemaGroupName, SchemaGroupInner parameters);
 
     /**
-     * Deletes an EventHub schema group.
+     * The delete operation.
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -99,7 +99,7 @@ public interface SchemaRegistriesClient {
         String resourceGroupName, String namespaceName, String schemaGroupName, Context context);
 
     /**
-     * Deletes an EventHub schema group.
+     * The delete operation.
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -112,7 +112,7 @@ public interface SchemaRegistriesClient {
     void delete(String resourceGroupName, String namespaceName, String schemaGroupName);
 
     /**
-     * Gets the details of an EventHub schema group.
+     * The get operation.
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -121,14 +121,14 @@ public interface SchemaRegistriesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the details of an EventHub schema group along with {@link Response}.
+     * @return single item in List or Get Schema Group operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<SchemaGroupInner> getWithResponse(
         String resourceGroupName, String namespaceName, String schemaGroupName, Context context);
 
     /**
-     * Gets the details of an EventHub schema group.
+     * The get operation.
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -136,7 +136,7 @@ public interface SchemaRegistriesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the details of an EventHub schema group.
+     * @return single item in List or Get Schema Group operation.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     SchemaGroupInner get(String resourceGroupName, String namespaceName, String schemaGroupName);

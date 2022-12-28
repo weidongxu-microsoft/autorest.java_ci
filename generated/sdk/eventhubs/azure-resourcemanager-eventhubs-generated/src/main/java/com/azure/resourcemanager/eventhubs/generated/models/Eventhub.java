@@ -100,6 +100,13 @@ public interface Eventhub {
     CaptureDescription captureDescription();
 
     /**
+     * Gets the retentionDescription property: Event Hub retention settings.
+     *
+     * @return the retentionDescription value.
+     */
+    RetentionDescription retentionDescription();
+
+    /**
      * Gets the region of the resource.
      *
      * @return the region of the resource.
@@ -155,7 +162,8 @@ public interface Eventhub {
             extends DefinitionStages.WithMessageRetentionInDays,
                 DefinitionStages.WithPartitionCount,
                 DefinitionStages.WithStatus,
-                DefinitionStages.WithCaptureDescription {
+                DefinitionStages.WithCaptureDescription,
+                DefinitionStages.WithRetentionDescription {
             /**
              * Executes the create request.
              *
@@ -215,6 +223,16 @@ public interface Eventhub {
              */
             WithCreate withCaptureDescription(CaptureDescription captureDescription);
         }
+        /** The stage of the Eventhub definition allowing to specify retentionDescription. */
+        interface WithRetentionDescription {
+            /**
+             * Specifies the retentionDescription property: Event Hub retention settings.
+             *
+             * @param retentionDescription Event Hub retention settings.
+             * @return the next definition stage.
+             */
+            WithCreate withRetentionDescription(RetentionDescription retentionDescription);
+        }
     }
     /**
      * Begins update for the Eventhub resource.
@@ -228,7 +246,8 @@ public interface Eventhub {
         extends UpdateStages.WithMessageRetentionInDays,
             UpdateStages.WithPartitionCount,
             UpdateStages.WithStatus,
-            UpdateStages.WithCaptureDescription {
+            UpdateStages.WithCaptureDescription,
+            UpdateStages.WithRetentionDescription {
         /**
          * Executes the update request.
          *
@@ -289,6 +308,16 @@ public interface Eventhub {
              * @return the next definition stage.
              */
             Update withCaptureDescription(CaptureDescription captureDescription);
+        }
+        /** The stage of the Eventhub update allowing to specify retentionDescription. */
+        interface WithRetentionDescription {
+            /**
+             * Specifies the retentionDescription property: Event Hub retention settings.
+             *
+             * @param retentionDescription Event Hub retention settings.
+             * @return the next definition stage.
+             */
+            Update withRetentionDescription(RetentionDescription retentionDescription);
         }
     }
     /**

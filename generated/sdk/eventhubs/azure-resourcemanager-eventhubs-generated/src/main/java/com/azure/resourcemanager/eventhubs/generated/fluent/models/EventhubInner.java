@@ -9,6 +9,7 @@ import com.azure.core.management.ProxyResource;
 import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.eventhubs.generated.models.CaptureDescription;
 import com.azure.resourcemanager.eventhubs.generated.models.EntityStatus;
+import com.azure.resourcemanager.eventhubs.generated.models.RetentionDescription;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -185,6 +186,29 @@ public final class EventhubInner extends ProxyResource {
             this.innerProperties = new EventhubProperties();
         }
         this.innerProperties().withCaptureDescription(captureDescription);
+        return this;
+    }
+
+    /**
+     * Get the retentionDescription property: Event Hub retention settings.
+     *
+     * @return the retentionDescription value.
+     */
+    public RetentionDescription retentionDescription() {
+        return this.innerProperties() == null ? null : this.innerProperties().retentionDescription();
+    }
+
+    /**
+     * Set the retentionDescription property: Event Hub retention settings.
+     *
+     * @param retentionDescription the retentionDescription value to set.
+     * @return the EventhubInner object itself.
+     */
+    public EventhubInner withRetentionDescription(RetentionDescription retentionDescription) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new EventhubProperties();
+        }
+        this.innerProperties().withRetentionDescription(retentionDescription);
         return this;
     }
 

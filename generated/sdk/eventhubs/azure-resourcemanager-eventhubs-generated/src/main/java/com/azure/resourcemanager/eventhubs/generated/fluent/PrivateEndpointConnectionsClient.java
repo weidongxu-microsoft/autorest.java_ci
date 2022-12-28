@@ -85,7 +85,7 @@ public interface PrivateEndpointConnectionsClient {
         PrivateEndpointConnectionInner parameters);
 
     /**
-     * Deletes a Private Endpoint Connection.
+     * Deletes an existing namespace. This operation also removes all associated resources under the namespace.
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -100,7 +100,7 @@ public interface PrivateEndpointConnectionsClient {
         String resourceGroupName, String namespaceName, String privateEndpointConnectionName);
 
     /**
-     * Deletes a Private Endpoint Connection.
+     * Deletes an existing namespace. This operation also removes all associated resources under the namespace.
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -116,7 +116,7 @@ public interface PrivateEndpointConnectionsClient {
         String resourceGroupName, String namespaceName, String privateEndpointConnectionName, Context context);
 
     /**
-     * Deletes a Private Endpoint Connection.
+     * Deletes an existing namespace. This operation also removes all associated resources under the namespace.
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -129,7 +129,7 @@ public interface PrivateEndpointConnectionsClient {
     void delete(String resourceGroupName, String namespaceName, String privateEndpointConnectionName);
 
     /**
-     * Deletes a Private Endpoint Connection.
+     * Deletes an existing namespace. This operation also removes all associated resources under the namespace.
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.

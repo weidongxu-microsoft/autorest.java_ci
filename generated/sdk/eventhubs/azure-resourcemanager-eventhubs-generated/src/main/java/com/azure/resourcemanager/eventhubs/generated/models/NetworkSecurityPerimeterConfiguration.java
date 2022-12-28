@@ -4,16 +4,15 @@
 
 package com.azure.resourcemanager.eventhubs.generated.models;
 
-import com.azure.core.annotation.Fluent;
-import com.azure.core.management.Resource;
+import com.azure.core.annotation.Immutable;
+import com.azure.core.management.ProxyResource;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.NetworkSecurityPerimeterConfigurationProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
-import java.util.Map;
 
 /** Network Security Perimeter related configurations of a given namespace. */
-@Fluent
-public final class NetworkSecurityPerimeterConfiguration extends Resource {
+@Immutable
+public final class NetworkSecurityPerimeterConfiguration extends ProxyResource {
     /*
      * Properties of the Network Security Perimeter Configuration
      */
@@ -31,20 +30,6 @@ public final class NetworkSecurityPerimeterConfiguration extends Resource {
      */
     private NetworkSecurityPerimeterConfigurationProperties innerProperties() {
         return this.innerProperties;
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    public NetworkSecurityPerimeterConfiguration withLocation(String location) {
-        super.withLocation(location);
-        return this;
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    public NetworkSecurityPerimeterConfiguration withTags(Map<String, String> tags) {
-        super.withTags(tags);
-        return this;
     }
 
     /**

@@ -7,6 +7,7 @@ package com.azure.resourcemanager.eventhubs.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.resourcemanager.eventhubs.generated.models.CaptureDescription;
 import com.azure.resourcemanager.eventhubs.generated.models.EntityStatus;
+import com.azure.resourcemanager.eventhubs.generated.models.RetentionDescription;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -55,6 +56,12 @@ public final class EventhubProperties {
      */
     @JsonProperty(value = "captureDescription")
     private CaptureDescription captureDescription;
+
+    /*
+     * Event Hub retention settings
+     */
+    @JsonProperty(value = "retentionDescription")
+    private RetentionDescription retentionDescription;
 
     /** Creates an instance of EventhubProperties class. */
     public EventhubProperties() {
@@ -172,6 +179,26 @@ public final class EventhubProperties {
     }
 
     /**
+     * Get the retentionDescription property: Event Hub retention settings.
+     *
+     * @return the retentionDescription value.
+     */
+    public RetentionDescription retentionDescription() {
+        return this.retentionDescription;
+    }
+
+    /**
+     * Set the retentionDescription property: Event Hub retention settings.
+     *
+     * @param retentionDescription the retentionDescription value to set.
+     * @return the EventhubProperties object itself.
+     */
+    public EventhubProperties withRetentionDescription(RetentionDescription retentionDescription) {
+        this.retentionDescription = retentionDescription;
+        return this;
+    }
+
+    /**
      * Validates the instance.
      *
      * @throws IllegalArgumentException thrown if the instance is not valid.
@@ -179,6 +206,9 @@ public final class EventhubProperties {
     public void validate() {
         if (captureDescription() != null) {
             captureDescription().validate();
+        }
+        if (retentionDescription() != null) {
+            retentionDescription().validate();
         }
     }
 }
