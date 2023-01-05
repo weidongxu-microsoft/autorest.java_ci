@@ -512,7 +512,8 @@ public final class VirtualNetworkRulesClientImpl implements VirtualNetworkRulesC
         String serverName,
         String virtualNetworkRuleName,
         VirtualNetworkRuleInner parameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, serverName, virtualNetworkRuleName, parameters)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, serverName, virtualNetworkRuleName, parameters)
             .getSyncPoller();
     }
 
@@ -536,7 +537,8 @@ public final class VirtualNetworkRulesClientImpl implements VirtualNetworkRulesC
         String virtualNetworkRuleName,
         VirtualNetworkRuleInner parameters,
         Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, serverName, virtualNetworkRuleName, parameters, context)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, serverName, virtualNetworkRuleName, parameters, context)
             .getSyncPoller();
     }
 
@@ -797,7 +799,7 @@ public final class VirtualNetworkRulesClientImpl implements VirtualNetworkRulesC
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String serverName, String virtualNetworkRuleName) {
-        return beginDeleteAsync(resourceGroupName, serverName, virtualNetworkRuleName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, serverName, virtualNetworkRuleName).getSyncPoller();
     }
 
     /**
@@ -815,7 +817,7 @@ public final class VirtualNetworkRulesClientImpl implements VirtualNetworkRulesC
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String serverName, String virtualNetworkRuleName, Context context) {
-        return beginDeleteAsync(resourceGroupName, serverName, virtualNetworkRuleName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, serverName, virtualNetworkRuleName, context).getSyncPoller();
     }
 
     /**

@@ -769,7 +769,8 @@ public final class TopicEventSubscriptionsClientImpl implements TopicEventSubscr
         String topicName,
         String eventSubscriptionName,
         EventSubscriptionInner eventSubscriptionInfo) {
-        return beginCreateOrUpdateAsync(resourceGroupName, topicName, eventSubscriptionName, eventSubscriptionInfo)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, topicName, eventSubscriptionName, eventSubscriptionInfo)
             .getSyncPoller();
     }
 
@@ -796,7 +797,8 @@ public final class TopicEventSubscriptionsClientImpl implements TopicEventSubscr
         String eventSubscriptionName,
         EventSubscriptionInner eventSubscriptionInfo,
         Context context) {
-        return beginCreateOrUpdateAsync(
+        return this
+            .beginCreateOrUpdateAsync(
                 resourceGroupName, topicName, eventSubscriptionName, eventSubscriptionInfo, context)
             .getSyncPoller();
     }
@@ -1083,7 +1085,7 @@ public final class TopicEventSubscriptionsClientImpl implements TopicEventSubscr
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String topicName, String eventSubscriptionName) {
-        return beginDeleteAsync(resourceGroupName, topicName, eventSubscriptionName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, topicName, eventSubscriptionName).getSyncPoller();
     }
 
     /**
@@ -1104,7 +1106,7 @@ public final class TopicEventSubscriptionsClientImpl implements TopicEventSubscr
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String topicName, String eventSubscriptionName, Context context) {
-        return beginDeleteAsync(resourceGroupName, topicName, eventSubscriptionName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, topicName, eventSubscriptionName, context).getSyncPoller();
     }
 
     /**
@@ -1414,7 +1416,8 @@ public final class TopicEventSubscriptionsClientImpl implements TopicEventSubscr
         String topicName,
         String eventSubscriptionName,
         EventSubscriptionUpdateParameters eventSubscriptionUpdateParameters) {
-        return beginUpdateAsync(resourceGroupName, topicName, eventSubscriptionName, eventSubscriptionUpdateParameters)
+        return this
+            .beginUpdateAsync(resourceGroupName, topicName, eventSubscriptionName, eventSubscriptionUpdateParameters)
             .getSyncPoller();
     }
 
@@ -1440,7 +1443,8 @@ public final class TopicEventSubscriptionsClientImpl implements TopicEventSubscr
         String eventSubscriptionName,
         EventSubscriptionUpdateParameters eventSubscriptionUpdateParameters,
         Context context) {
-        return beginUpdateAsync(
+        return this
+            .beginUpdateAsync(
                 resourceGroupName, topicName, eventSubscriptionName, eventSubscriptionUpdateParameters, context)
             .getSyncPoller();
     }

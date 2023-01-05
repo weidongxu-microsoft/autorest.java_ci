@@ -673,7 +673,7 @@ public final class NetworkManagersClientImpl implements NetworkManagersClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String networkManagerName) {
         final Boolean force = null;
-        return beginDeleteAsync(resourceGroupName, networkManagerName, force).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, networkManagerName, force).getSyncPoller();
     }
 
     /**
@@ -692,7 +692,7 @@ public final class NetworkManagersClientImpl implements NetworkManagersClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String networkManagerName, Boolean force, Context context) {
-        return beginDeleteAsync(resourceGroupName, networkManagerName, force, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, networkManagerName, force, context).getSyncPoller();
     }
 
     /**

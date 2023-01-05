@@ -494,7 +494,7 @@ public final class InboundNatRulesClientImpl implements InboundNatRulesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String loadBalancerName, String inboundNatRuleName) {
-        return beginDeleteAsync(resourceGroupName, loadBalancerName, inboundNatRuleName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, loadBalancerName, inboundNatRuleName).getSyncPoller();
     }
 
     /**
@@ -512,7 +512,7 @@ public final class InboundNatRulesClientImpl implements InboundNatRulesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String loadBalancerName, String inboundNatRuleName, Context context) {
-        return beginDeleteAsync(resourceGroupName, loadBalancerName, inboundNatRuleName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, loadBalancerName, inboundNatRuleName, context).getSyncPoller();
     }
 
     /**
@@ -972,8 +972,8 @@ public final class InboundNatRulesClientImpl implements InboundNatRulesClient {
         String loadBalancerName,
         String inboundNatRuleName,
         InboundNatRuleInner inboundNatRuleParameters) {
-        return beginCreateOrUpdateAsync(
-                resourceGroupName, loadBalancerName, inboundNatRuleName, inboundNatRuleParameters)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, loadBalancerName, inboundNatRuleName, inboundNatRuleParameters)
             .getSyncPoller();
     }
 
@@ -997,7 +997,8 @@ public final class InboundNatRulesClientImpl implements InboundNatRulesClient {
         String inboundNatRuleName,
         InboundNatRuleInner inboundNatRuleParameters,
         Context context) {
-        return beginCreateOrUpdateAsync(
+        return this
+            .beginCreateOrUpdateAsync(
                 resourceGroupName, loadBalancerName, inboundNatRuleName, inboundNatRuleParameters, context)
             .getSyncPoller();
     }

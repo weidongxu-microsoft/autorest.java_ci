@@ -711,7 +711,7 @@ public final class ChannelsClientImpl implements ChannelsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String partnerNamespaceName, String channelName) {
-        return beginDeleteAsync(resourceGroupName, partnerNamespaceName, channelName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, partnerNamespaceName, channelName).getSyncPoller();
     }
 
     /**
@@ -731,7 +731,7 @@ public final class ChannelsClientImpl implements ChannelsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String partnerNamespaceName, String channelName, Context context) {
-        return beginDeleteAsync(resourceGroupName, partnerNamespaceName, channelName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, partnerNamespaceName, channelName, context).getSyncPoller();
     }
 
     /**

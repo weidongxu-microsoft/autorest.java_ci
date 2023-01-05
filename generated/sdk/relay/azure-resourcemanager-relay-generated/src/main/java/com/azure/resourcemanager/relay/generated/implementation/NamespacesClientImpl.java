@@ -2002,7 +2002,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<RelayNamespaceInner>, RelayNamespaceInner> beginCreateOrUpdate(
         String resourceGroupName, String namespaceName, RelayNamespaceInner parameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, namespaceName, parameters).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, namespaceName, parameters).getSyncPoller();
     }
 
     /**
@@ -2020,7 +2020,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<RelayNamespaceInner>, RelayNamespaceInner> beginCreateOrUpdate(
         String resourceGroupName, String namespaceName, RelayNamespaceInner parameters, Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, namespaceName, parameters, context).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, namespaceName, parameters, context).getSyncPoller();
     }
 
     /**
@@ -2242,7 +2242,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String namespaceName) {
-        return beginDeleteAsync(resourceGroupName, namespaceName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, namespaceName).getSyncPoller();
     }
 
     /**
@@ -2259,7 +2259,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String namespaceName, Context context) {
-        return beginDeleteAsync(resourceGroupName, namespaceName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, namespaceName, context).getSyncPoller();
     }
 
     /**

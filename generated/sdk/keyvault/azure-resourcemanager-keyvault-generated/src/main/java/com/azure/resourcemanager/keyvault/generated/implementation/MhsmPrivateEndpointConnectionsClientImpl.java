@@ -892,7 +892,7 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<MhsmPrivateEndpointConnectionInner>, MhsmPrivateEndpointConnectionInner> beginDelete(
         String resourceGroupName, String name, String privateEndpointConnectionName) {
-        return beginDeleteAsync(resourceGroupName, name, privateEndpointConnectionName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, name, privateEndpointConnectionName).getSyncPoller();
     }
 
     /**
@@ -911,7 +911,7 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<MhsmPrivateEndpointConnectionInner>, MhsmPrivateEndpointConnectionInner> beginDelete(
         String resourceGroupName, String name, String privateEndpointConnectionName, Context context) {
-        return beginDeleteAsync(resourceGroupName, name, privateEndpointConnectionName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, name, privateEndpointConnectionName, context).getSyncPoller();
     }
 
     /**

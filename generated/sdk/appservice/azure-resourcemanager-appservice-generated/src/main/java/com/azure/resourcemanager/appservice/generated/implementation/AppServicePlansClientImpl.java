@@ -1275,7 +1275,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<AppServicePlanInner>, AppServicePlanInner> beginCreateOrUpdate(
         String resourceGroupName, String name, AppServicePlanInner appServicePlan) {
-        return beginCreateOrUpdateAsync(resourceGroupName, name, appServicePlan).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, name, appServicePlan).getSyncPoller();
     }
 
     /**
@@ -1295,7 +1295,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<AppServicePlanInner>, AppServicePlanInner> beginCreateOrUpdate(
         String resourceGroupName, String name, AppServicePlanInner appServicePlan, Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, name, appServicePlan, context).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, name, appServicePlan, context).getSyncPoller();
     }
 
     /**

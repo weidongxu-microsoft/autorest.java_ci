@@ -325,7 +325,7 @@ public final class ExpressRouteCircuitConnectionsClientImpl implements ExpressRo
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String circuitName, String peeringName, String connectionName) {
-        return beginDeleteAsync(resourceGroupName, circuitName, peeringName, connectionName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, circuitName, peeringName, connectionName).getSyncPoller();
     }
 
     /**
@@ -344,7 +344,9 @@ public final class ExpressRouteCircuitConnectionsClientImpl implements ExpressRo
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String circuitName, String peeringName, String connectionName, Context context) {
-        return beginDeleteAsync(resourceGroupName, circuitName, peeringName, connectionName, context).getSyncPoller();
+        return this
+            .beginDeleteAsync(resourceGroupName, circuitName, peeringName, connectionName, context)
+            .getSyncPoller();
     }
 
     /**
@@ -850,7 +852,8 @@ public final class ExpressRouteCircuitConnectionsClientImpl implements ExpressRo
             String peeringName,
             String connectionName,
             ExpressRouteCircuitConnectionInner expressRouteCircuitConnectionParameters) {
-        return beginCreateOrUpdateAsync(
+        return this
+            .beginCreateOrUpdateAsync(
                 resourceGroupName, circuitName, peeringName, connectionName, expressRouteCircuitConnectionParameters)
             .getSyncPoller();
     }
@@ -880,7 +883,8 @@ public final class ExpressRouteCircuitConnectionsClientImpl implements ExpressRo
             String connectionName,
             ExpressRouteCircuitConnectionInner expressRouteCircuitConnectionParameters,
             Context context) {
-        return beginCreateOrUpdateAsync(
+        return this
+            .beginCreateOrUpdateAsync(
                 resourceGroupName,
                 circuitName,
                 peeringName,

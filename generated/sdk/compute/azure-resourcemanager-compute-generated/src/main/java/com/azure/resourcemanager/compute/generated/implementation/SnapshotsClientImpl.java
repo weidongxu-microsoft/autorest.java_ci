@@ -388,7 +388,7 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<SnapshotInner>, SnapshotInner> beginCreateOrUpdate(
         String resourceGroupName, String snapshotName, SnapshotInner snapshot) {
-        return beginCreateOrUpdateAsync(resourceGroupName, snapshotName, snapshot).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, snapshotName, snapshot).getSyncPoller();
     }
 
     /**
@@ -408,7 +408,7 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<SnapshotInner>, SnapshotInner> beginCreateOrUpdate(
         String resourceGroupName, String snapshotName, SnapshotInner snapshot, Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, snapshotName, snapshot, context).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, snapshotName, snapshot, context).getSyncPoller();
     }
 
     /**
@@ -675,7 +675,7 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<SnapshotInner>, SnapshotInner> beginUpdate(
         String resourceGroupName, String snapshotName, SnapshotUpdate snapshot) {
-        return beginUpdateAsync(resourceGroupName, snapshotName, snapshot).getSyncPoller();
+        return this.beginUpdateAsync(resourceGroupName, snapshotName, snapshot).getSyncPoller();
     }
 
     /**
@@ -695,7 +695,7 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<SnapshotInner>, SnapshotInner> beginUpdate(
         String resourceGroupName, String snapshotName, SnapshotUpdate snapshot, Context context) {
-        return beginUpdateAsync(resourceGroupName, snapshotName, snapshot, context).getSyncPoller();
+        return this.beginUpdateAsync(resourceGroupName, snapshotName, snapshot, context).getSyncPoller();
     }
 
     /**
@@ -1085,7 +1085,7 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String snapshotName) {
-        return beginDeleteAsync(resourceGroupName, snapshotName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, snapshotName).getSyncPoller();
     }
 
     /**
@@ -1104,7 +1104,7 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String snapshotName, Context context) {
-        return beginDeleteAsync(resourceGroupName, snapshotName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, snapshotName, context).getSyncPoller();
     }
 
     /**
@@ -1664,7 +1664,7 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<AccessUriInner>, AccessUriInner> beginGrantAccess(
         String resourceGroupName, String snapshotName, GrantAccessData grantAccessData) {
-        return beginGrantAccessAsync(resourceGroupName, snapshotName, grantAccessData).getSyncPoller();
+        return this.beginGrantAccessAsync(resourceGroupName, snapshotName, grantAccessData).getSyncPoller();
     }
 
     /**
@@ -1684,7 +1684,7 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<AccessUriInner>, AccessUriInner> beginGrantAccess(
         String resourceGroupName, String snapshotName, GrantAccessData grantAccessData, Context context) {
-        return beginGrantAccessAsync(resourceGroupName, snapshotName, grantAccessData, context).getSyncPoller();
+        return this.beginGrantAccessAsync(resourceGroupName, snapshotName, grantAccessData, context).getSyncPoller();
     }
 
     /**
@@ -1922,7 +1922,7 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginRevokeAccess(String resourceGroupName, String snapshotName) {
-        return beginRevokeAccessAsync(resourceGroupName, snapshotName).getSyncPoller();
+        return this.beginRevokeAccessAsync(resourceGroupName, snapshotName).getSyncPoller();
     }
 
     /**
@@ -1941,7 +1941,7 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginRevokeAccess(
         String resourceGroupName, String snapshotName, Context context) {
-        return beginRevokeAccessAsync(resourceGroupName, snapshotName, context).getSyncPoller();
+        return this.beginRevokeAccessAsync(resourceGroupName, snapshotName, context).getSyncPoller();
     }
 
     /**

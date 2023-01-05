@@ -736,7 +736,9 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDeleteBastionShareableLink(
         String resourceGroupName, String bastionHostname, BastionShareableLinkListRequest bslRequest) {
-        return beginDeleteBastionShareableLinkAsync(resourceGroupName, bastionHostname, bslRequest).getSyncPoller();
+        return this
+            .beginDeleteBastionShareableLinkAsync(resourceGroupName, bastionHostname, bslRequest)
+            .getSyncPoller();
     }
 
     /**
@@ -754,7 +756,8 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDeleteBastionShareableLink(
         String resourceGroupName, String bastionHostname, BastionShareableLinkListRequest bslRequest, Context context) {
-        return beginDeleteBastionShareableLinkAsync(resourceGroupName, bastionHostname, bslRequest, context)
+        return this
+            .beginDeleteBastionShareableLinkAsync(resourceGroupName, bastionHostname, bslRequest, context)
             .getSyncPoller();
     }
 
@@ -2854,7 +2857,8 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     public SyncPoller<PollResult<VpnProfileResponseInner>, VpnProfileResponseInner>
         beginGeneratevirtualwanvpnserverconfigurationvpnprofile(
             String resourceGroupName, String virtualWanName, VirtualWanVpnProfileParameters vpnClientParams) {
-        return beginGeneratevirtualwanvpnserverconfigurationvpnprofileAsync(
+        return this
+            .beginGeneratevirtualwanvpnserverconfigurationvpnprofileAsync(
                 resourceGroupName, virtualWanName, vpnClientParams)
             .getSyncPoller();
     }
@@ -2879,7 +2883,8 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
             String virtualWanName,
             VirtualWanVpnProfileParameters vpnClientParams,
             Context context) {
-        return beginGeneratevirtualwanvpnserverconfigurationvpnprofileAsync(
+        return this
+            .beginGeneratevirtualwanvpnserverconfigurationvpnprofileAsync(
                 resourceGroupName, virtualWanName, vpnClientParams, context)
             .getSyncPoller();
     }

@@ -316,7 +316,7 @@ public final class ApplicationGatewayPrivateEndpointConnectionsClientImpl
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String applicationGatewayName, String connectionName) {
-        return beginDeleteAsync(resourceGroupName, applicationGatewayName, connectionName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, applicationGatewayName, connectionName).getSyncPoller();
     }
 
     /**
@@ -334,7 +334,9 @@ public final class ApplicationGatewayPrivateEndpointConnectionsClientImpl
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String applicationGatewayName, String connectionName, Context context) {
-        return beginDeleteAsync(resourceGroupName, applicationGatewayName, connectionName, context).getSyncPoller();
+        return this
+            .beginDeleteAsync(resourceGroupName, applicationGatewayName, connectionName, context)
+            .getSyncPoller();
     }
 
     /**
@@ -632,7 +634,9 @@ public final class ApplicationGatewayPrivateEndpointConnectionsClientImpl
             String applicationGatewayName,
             String connectionName,
             ApplicationGatewayPrivateEndpointConnectionInner parameters) {
-        return beginUpdateAsync(resourceGroupName, applicationGatewayName, connectionName, parameters).getSyncPoller();
+        return this
+            .beginUpdateAsync(resourceGroupName, applicationGatewayName, connectionName, parameters)
+            .getSyncPoller();
     }
 
     /**
@@ -658,7 +662,8 @@ public final class ApplicationGatewayPrivateEndpointConnectionsClientImpl
             String connectionName,
             ApplicationGatewayPrivateEndpointConnectionInner parameters,
             Context context) {
-        return beginUpdateAsync(resourceGroupName, applicationGatewayName, connectionName, parameters, context)
+        return this
+            .beginUpdateAsync(resourceGroupName, applicationGatewayName, connectionName, parameters, context)
             .getSyncPoller();
     }
 

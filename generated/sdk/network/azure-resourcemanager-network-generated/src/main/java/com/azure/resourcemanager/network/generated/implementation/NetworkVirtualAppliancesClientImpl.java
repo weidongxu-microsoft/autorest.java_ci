@@ -333,7 +333,7 @@ public final class NetworkVirtualAppliancesClientImpl implements NetworkVirtualA
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String networkVirtualApplianceName) {
-        return beginDeleteAsync(resourceGroupName, networkVirtualApplianceName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, networkVirtualApplianceName).getSyncPoller();
     }
 
     /**
@@ -350,7 +350,7 @@ public final class NetworkVirtualAppliancesClientImpl implements NetworkVirtualA
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String networkVirtualApplianceName, Context context) {
-        return beginDeleteAsync(resourceGroupName, networkVirtualApplianceName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, networkVirtualApplianceName, context).getSyncPoller();
     }
 
     /**
@@ -940,7 +940,9 @@ public final class NetworkVirtualAppliancesClientImpl implements NetworkVirtualA
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<NetworkVirtualApplianceInner>, NetworkVirtualApplianceInner> beginCreateOrUpdate(
         String resourceGroupName, String networkVirtualApplianceName, NetworkVirtualApplianceInner parameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, networkVirtualApplianceName, parameters).getSyncPoller();
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, networkVirtualApplianceName, parameters)
+            .getSyncPoller();
     }
 
     /**
@@ -961,7 +963,8 @@ public final class NetworkVirtualAppliancesClientImpl implements NetworkVirtualA
         String networkVirtualApplianceName,
         NetworkVirtualApplianceInner parameters,
         Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, networkVirtualApplianceName, parameters, context)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, networkVirtualApplianceName, parameters, context)
             .getSyncPoller();
     }
 

@@ -487,7 +487,7 @@ public final class VpnSitesClientImpl implements VpnSitesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<VpnSiteInner>, VpnSiteInner> beginCreateOrUpdate(
         String resourceGroupName, String vpnSiteName, VpnSiteInner vpnSiteParameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, vpnSiteName, vpnSiteParameters).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, vpnSiteName, vpnSiteParameters).getSyncPoller();
     }
 
     /**
@@ -505,7 +505,9 @@ public final class VpnSitesClientImpl implements VpnSitesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<VpnSiteInner>, VpnSiteInner> beginCreateOrUpdate(
         String resourceGroupName, String vpnSiteName, VpnSiteInner vpnSiteParameters, Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, vpnSiteName, vpnSiteParameters, context).getSyncPoller();
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, vpnSiteName, vpnSiteParameters, context)
+            .getSyncPoller();
     }
 
     /**
@@ -892,7 +894,7 @@ public final class VpnSitesClientImpl implements VpnSitesClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String vpnSiteName) {
-        return beginDeleteAsync(resourceGroupName, vpnSiteName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, vpnSiteName).getSyncPoller();
     }
 
     /**
@@ -909,7 +911,7 @@ public final class VpnSitesClientImpl implements VpnSitesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String vpnSiteName, Context context) {
-        return beginDeleteAsync(resourceGroupName, vpnSiteName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, vpnSiteName, context).getSyncPoller();
     }
 
     /**

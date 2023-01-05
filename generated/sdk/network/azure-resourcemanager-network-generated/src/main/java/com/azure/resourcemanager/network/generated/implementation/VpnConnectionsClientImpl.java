@@ -542,7 +542,8 @@ public final class VpnConnectionsClientImpl implements VpnConnectionsClient {
         String gatewayName,
         String connectionName,
         VpnConnectionInner vpnConnectionParameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, gatewayName, connectionName, vpnConnectionParameters)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, gatewayName, connectionName, vpnConnectionParameters)
             .getSyncPoller();
     }
 
@@ -566,8 +567,8 @@ public final class VpnConnectionsClientImpl implements VpnConnectionsClient {
         String connectionName,
         VpnConnectionInner vpnConnectionParameters,
         Context context) {
-        return beginCreateOrUpdateAsync(
-                resourceGroupName, gatewayName, connectionName, vpnConnectionParameters, context)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, gatewayName, connectionName, vpnConnectionParameters, context)
             .getSyncPoller();
     }
 
@@ -829,7 +830,7 @@ public final class VpnConnectionsClientImpl implements VpnConnectionsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String gatewayName, String connectionName) {
-        return beginDeleteAsync(resourceGroupName, gatewayName, connectionName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, gatewayName, connectionName).getSyncPoller();
     }
 
     /**
@@ -847,7 +848,7 @@ public final class VpnConnectionsClientImpl implements VpnConnectionsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String gatewayName, String connectionName, Context context) {
-        return beginDeleteAsync(resourceGroupName, gatewayName, connectionName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, gatewayName, connectionName, context).getSyncPoller();
     }
 
     /**
@@ -1140,7 +1141,8 @@ public final class VpnConnectionsClientImpl implements VpnConnectionsClient {
     public SyncPoller<PollResult<String>, String> beginStartPacketCapture(
         String resourceGroupName, String gatewayName, String vpnConnectionName) {
         final VpnConnectionPacketCaptureStartParameters parameters = null;
-        return beginStartPacketCaptureAsync(resourceGroupName, gatewayName, vpnConnectionName, parameters)
+        return this
+            .beginStartPacketCaptureAsync(resourceGroupName, gatewayName, vpnConnectionName, parameters)
             .getSyncPoller();
     }
 
@@ -1165,7 +1167,8 @@ public final class VpnConnectionsClientImpl implements VpnConnectionsClient {
         String vpnConnectionName,
         VpnConnectionPacketCaptureStartParameters parameters,
         Context context) {
-        return beginStartPacketCaptureAsync(resourceGroupName, gatewayName, vpnConnectionName, parameters, context)
+        return this
+            .beginStartPacketCaptureAsync(resourceGroupName, gatewayName, vpnConnectionName, parameters, context)
             .getSyncPoller();
     }
 
@@ -1497,7 +1500,8 @@ public final class VpnConnectionsClientImpl implements VpnConnectionsClient {
     public SyncPoller<PollResult<String>, String> beginStopPacketCapture(
         String resourceGroupName, String gatewayName, String vpnConnectionName) {
         final VpnConnectionPacketCaptureStopParameters parameters = null;
-        return beginStopPacketCaptureAsync(resourceGroupName, gatewayName, vpnConnectionName, parameters)
+        return this
+            .beginStopPacketCaptureAsync(resourceGroupName, gatewayName, vpnConnectionName, parameters)
             .getSyncPoller();
     }
 
@@ -1521,7 +1525,8 @@ public final class VpnConnectionsClientImpl implements VpnConnectionsClient {
         String vpnConnectionName,
         VpnConnectionPacketCaptureStopParameters parameters,
         Context context) {
-        return beginStopPacketCaptureAsync(resourceGroupName, gatewayName, vpnConnectionName, parameters, context)
+        return this
+            .beginStopPacketCaptureAsync(resourceGroupName, gatewayName, vpnConnectionName, parameters, context)
             .getSyncPoller();
     }
 

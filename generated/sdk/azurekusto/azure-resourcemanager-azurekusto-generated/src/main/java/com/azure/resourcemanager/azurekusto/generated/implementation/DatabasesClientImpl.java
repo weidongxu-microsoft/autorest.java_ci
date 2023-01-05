@@ -949,7 +949,8 @@ public final class DatabasesClientImpl implements DatabasesClient {
     public SyncPoller<PollResult<DatabaseInner>, DatabaseInner> beginCreateOrUpdate(
         String resourceGroupName, String clusterName, String databaseName, DatabaseInner parameters) {
         final CallerRole callerRole = null;
-        return beginCreateOrUpdateAsync(resourceGroupName, clusterName, databaseName, parameters, callerRole)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, clusterName, databaseName, parameters, callerRole)
             .getSyncPoller();
     }
 
@@ -976,7 +977,8 @@ public final class DatabasesClientImpl implements DatabasesClient {
         DatabaseInner parameters,
         CallerRole callerRole,
         Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, clusterName, databaseName, parameters, callerRole, context)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, clusterName, databaseName, parameters, callerRole, context)
             .getSyncPoller();
     }
 
@@ -1343,7 +1345,9 @@ public final class DatabasesClientImpl implements DatabasesClient {
     public SyncPoller<PollResult<DatabaseInner>, DatabaseInner> beginUpdate(
         String resourceGroupName, String clusterName, String databaseName, DatabaseInner parameters) {
         final CallerRole callerRole = null;
-        return beginUpdateAsync(resourceGroupName, clusterName, databaseName, parameters, callerRole).getSyncPoller();
+        return this
+            .beginUpdateAsync(resourceGroupName, clusterName, databaseName, parameters, callerRole)
+            .getSyncPoller();
     }
 
     /**
@@ -1369,7 +1373,8 @@ public final class DatabasesClientImpl implements DatabasesClient {
         DatabaseInner parameters,
         CallerRole callerRole,
         Context context) {
-        return beginUpdateAsync(resourceGroupName, clusterName, databaseName, parameters, callerRole, context)
+        return this
+            .beginUpdateAsync(resourceGroupName, clusterName, databaseName, parameters, callerRole, context)
             .getSyncPoller();
     }
 
@@ -1655,7 +1660,7 @@ public final class DatabasesClientImpl implements DatabasesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String clusterName, String databaseName) {
-        return beginDeleteAsync(resourceGroupName, clusterName, databaseName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, clusterName, databaseName).getSyncPoller();
     }
 
     /**
@@ -1673,7 +1678,7 @@ public final class DatabasesClientImpl implements DatabasesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String clusterName, String databaseName, Context context) {
-        return beginDeleteAsync(resourceGroupName, clusterName, databaseName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, clusterName, databaseName, context).getSyncPoller();
     }
 
     /**

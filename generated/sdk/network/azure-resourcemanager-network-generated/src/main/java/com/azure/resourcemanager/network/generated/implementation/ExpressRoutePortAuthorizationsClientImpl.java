@@ -312,7 +312,7 @@ public final class ExpressRoutePortAuthorizationsClientImpl implements ExpressRo
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String expressRoutePortName, String authorizationName) {
-        return beginDeleteAsync(resourceGroupName, expressRoutePortName, authorizationName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, expressRoutePortName, authorizationName).getSyncPoller();
     }
 
     /**
@@ -330,7 +330,9 @@ public final class ExpressRoutePortAuthorizationsClientImpl implements ExpressRo
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String expressRoutePortName, String authorizationName, Context context) {
-        return beginDeleteAsync(resourceGroupName, expressRoutePortName, authorizationName, context).getSyncPoller();
+        return this
+            .beginDeleteAsync(resourceGroupName, expressRoutePortName, authorizationName, context)
+            .getSyncPoller();
     }
 
     /**
@@ -795,7 +797,8 @@ public final class ExpressRoutePortAuthorizationsClientImpl implements ExpressRo
             String expressRoutePortName,
             String authorizationName,
             ExpressRoutePortAuthorizationInner authorizationParameters) {
-        return beginCreateOrUpdateAsync(
+        return this
+            .beginCreateOrUpdateAsync(
                 resourceGroupName, expressRoutePortName, authorizationName, authorizationParameters)
             .getSyncPoller();
     }
@@ -822,7 +825,8 @@ public final class ExpressRoutePortAuthorizationsClientImpl implements ExpressRo
             String authorizationName,
             ExpressRoutePortAuthorizationInner authorizationParameters,
             Context context) {
-        return beginCreateOrUpdateAsync(
+        return this
+            .beginCreateOrUpdateAsync(
                 resourceGroupName, expressRoutePortName, authorizationName, authorizationParameters, context)
             .getSyncPoller();
     }

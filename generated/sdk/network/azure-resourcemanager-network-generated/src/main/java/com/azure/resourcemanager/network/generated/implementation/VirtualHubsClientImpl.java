@@ -546,7 +546,7 @@ public final class VirtualHubsClientImpl implements VirtualHubsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<VirtualHubInner>, VirtualHubInner> beginCreateOrUpdate(
         String resourceGroupName, String virtualHubName, VirtualHubInner virtualHubParameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, virtualHubName, virtualHubParameters).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, virtualHubName, virtualHubParameters).getSyncPoller();
     }
 
     /**
@@ -564,7 +564,8 @@ public final class VirtualHubsClientImpl implements VirtualHubsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<VirtualHubInner>, VirtualHubInner> beginCreateOrUpdate(
         String resourceGroupName, String virtualHubName, VirtualHubInner virtualHubParameters, Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, virtualHubName, virtualHubParameters, context)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, virtualHubName, virtualHubParameters, context)
             .getSyncPoller();
     }
 
@@ -954,7 +955,7 @@ public final class VirtualHubsClientImpl implements VirtualHubsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String virtualHubName) {
-        return beginDeleteAsync(resourceGroupName, virtualHubName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, virtualHubName).getSyncPoller();
     }
 
     /**
@@ -971,7 +972,7 @@ public final class VirtualHubsClientImpl implements VirtualHubsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String virtualHubName, Context context) {
-        return beginDeleteAsync(resourceGroupName, virtualHubName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, virtualHubName, context).getSyncPoller();
     }
 
     /**
@@ -1539,7 +1540,8 @@ public final class VirtualHubsClientImpl implements VirtualHubsClient {
     public SyncPoller<PollResult<Void>, Void> beginGetEffectiveVirtualHubRoutes(
         String resourceGroupName, String virtualHubName) {
         final EffectiveRoutesParameters effectiveRoutesParameters = null;
-        return beginGetEffectiveVirtualHubRoutesAsync(resourceGroupName, virtualHubName, effectiveRoutesParameters)
+        return this
+            .beginGetEffectiveVirtualHubRoutesAsync(resourceGroupName, virtualHubName, effectiveRoutesParameters)
             .getSyncPoller();
     }
 
@@ -1562,7 +1564,8 @@ public final class VirtualHubsClientImpl implements VirtualHubsClient {
         String virtualHubName,
         EffectiveRoutesParameters effectiveRoutesParameters,
         Context context) {
-        return beginGetEffectiveVirtualHubRoutesAsync(
+        return this
+            .beginGetEffectiveVirtualHubRoutesAsync(
                 resourceGroupName, virtualHubName, effectiveRoutesParameters, context)
             .getSyncPoller();
     }
@@ -1853,7 +1856,8 @@ public final class VirtualHubsClientImpl implements VirtualHubsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginGetInboundRoutes(
         String resourceGroupName, String virtualHubName, GetInboundRoutesParameters getInboundRoutesParameters) {
-        return beginGetInboundRoutesAsync(resourceGroupName, virtualHubName, getInboundRoutesParameters)
+        return this
+            .beginGetInboundRoutesAsync(resourceGroupName, virtualHubName, getInboundRoutesParameters)
             .getSyncPoller();
     }
 
@@ -1876,7 +1880,8 @@ public final class VirtualHubsClientImpl implements VirtualHubsClient {
         String virtualHubName,
         GetInboundRoutesParameters getInboundRoutesParameters,
         Context context) {
-        return beginGetInboundRoutesAsync(resourceGroupName, virtualHubName, getInboundRoutesParameters, context)
+        return this
+            .beginGetInboundRoutesAsync(resourceGroupName, virtualHubName, getInboundRoutesParameters, context)
             .getSyncPoller();
     }
 
@@ -2146,7 +2151,8 @@ public final class VirtualHubsClientImpl implements VirtualHubsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginGetOutboundRoutes(
         String resourceGroupName, String virtualHubName, GetOutboundRoutesParameters getOutboundRoutesParameters) {
-        return beginGetOutboundRoutesAsync(resourceGroupName, virtualHubName, getOutboundRoutesParameters)
+        return this
+            .beginGetOutboundRoutesAsync(resourceGroupName, virtualHubName, getOutboundRoutesParameters)
             .getSyncPoller();
     }
 
@@ -2169,7 +2175,8 @@ public final class VirtualHubsClientImpl implements VirtualHubsClient {
         String virtualHubName,
         GetOutboundRoutesParameters getOutboundRoutesParameters,
         Context context) {
-        return beginGetOutboundRoutesAsync(resourceGroupName, virtualHubName, getOutboundRoutesParameters, context)
+        return this
+            .beginGetOutboundRoutesAsync(resourceGroupName, virtualHubName, getOutboundRoutesParameters, context)
             .getSyncPoller();
     }
 

@@ -928,7 +928,7 @@ public final class WebApplicationFirewallPoliciesClientImpl implements WebApplic
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String policyName) {
-        return beginDeleteAsync(resourceGroupName, policyName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, policyName).getSyncPoller();
     }
 
     /**
@@ -945,7 +945,7 @@ public final class WebApplicationFirewallPoliciesClientImpl implements WebApplic
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String policyName, Context context) {
-        return beginDeleteAsync(resourceGroupName, policyName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, policyName, context).getSyncPoller();
     }
 
     /**

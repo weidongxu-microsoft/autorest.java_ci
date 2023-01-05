@@ -852,7 +852,7 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<KubeEnvironmentInner>, KubeEnvironmentInner> beginCreateOrUpdate(
         String resourceGroupName, String name, KubeEnvironmentInner kubeEnvironmentEnvelope) {
-        return beginCreateOrUpdateAsync(resourceGroupName, name, kubeEnvironmentEnvelope).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, name, kubeEnvironmentEnvelope).getSyncPoller();
     }
 
     /**
@@ -873,7 +873,7 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<KubeEnvironmentInner>, KubeEnvironmentInner> beginCreateOrUpdate(
         String resourceGroupName, String name, KubeEnvironmentInner kubeEnvironmentEnvelope, Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, name, kubeEnvironmentEnvelope, context).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, name, kubeEnvironmentEnvelope, context).getSyncPoller();
     }
 
     /**
@@ -1115,7 +1115,7 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String name) {
-        return beginDeleteAsync(resourceGroupName, name).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, name).getSyncPoller();
     }
 
     /**
@@ -1133,7 +1133,7 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String name, Context context) {
-        return beginDeleteAsync(resourceGroupName, name, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, name, context).getSyncPoller();
     }
 
     /**

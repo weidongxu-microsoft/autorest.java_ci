@@ -571,7 +571,8 @@ public final class AvailabilityGroupListenersClientImpl implements AvailabilityG
         String sqlVirtualMachineGroupName,
         String availabilityGroupListenerName,
         AvailabilityGroupListenerInner parameters) {
-        return beginCreateOrUpdateAsync(
+        return this
+            .beginCreateOrUpdateAsync(
                 resourceGroupName, sqlVirtualMachineGroupName, availabilityGroupListenerName, parameters)
             .getSyncPoller();
     }
@@ -597,7 +598,8 @@ public final class AvailabilityGroupListenersClientImpl implements AvailabilityG
         String availabilityGroupListenerName,
         AvailabilityGroupListenerInner parameters,
         Context context) {
-        return beginCreateOrUpdateAsync(
+        return this
+            .beginCreateOrUpdateAsync(
                 resourceGroupName, sqlVirtualMachineGroupName, availabilityGroupListenerName, parameters, context)
             .getSyncPoller();
     }
@@ -891,7 +893,8 @@ public final class AvailabilityGroupListenersClientImpl implements AvailabilityG
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String sqlVirtualMachineGroupName, String availabilityGroupListenerName) {
-        return beginDeleteAsync(resourceGroupName, sqlVirtualMachineGroupName, availabilityGroupListenerName)
+        return this
+            .beginDeleteAsync(resourceGroupName, sqlVirtualMachineGroupName, availabilityGroupListenerName)
             .getSyncPoller();
     }
 
@@ -914,7 +917,8 @@ public final class AvailabilityGroupListenersClientImpl implements AvailabilityG
         String sqlVirtualMachineGroupName,
         String availabilityGroupListenerName,
         Context context) {
-        return beginDeleteAsync(resourceGroupName, sqlVirtualMachineGroupName, availabilityGroupListenerName, context)
+        return this
+            .beginDeleteAsync(resourceGroupName, sqlVirtualMachineGroupName, availabilityGroupListenerName, context)
             .getSyncPoller();
     }
 

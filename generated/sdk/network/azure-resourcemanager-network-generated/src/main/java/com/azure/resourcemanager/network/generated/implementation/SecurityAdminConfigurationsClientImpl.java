@@ -959,7 +959,7 @@ public final class SecurityAdminConfigurationsClientImpl implements SecurityAdmi
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String networkManagerName, String configurationName) {
         final Boolean force = null;
-        return beginDeleteAsync(resourceGroupName, networkManagerName, configurationName, force).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, networkManagerName, configurationName, force).getSyncPoller();
     }
 
     /**
@@ -979,7 +979,8 @@ public final class SecurityAdminConfigurationsClientImpl implements SecurityAdmi
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String networkManagerName, String configurationName, Boolean force, Context context) {
-        return beginDeleteAsync(resourceGroupName, networkManagerName, configurationName, force, context)
+        return this
+            .beginDeleteAsync(resourceGroupName, networkManagerName, configurationName, force, context)
             .getSyncPoller();
     }
 

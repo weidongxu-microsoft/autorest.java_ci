@@ -399,7 +399,7 @@ public final class VirtualNetworksClientImpl implements VirtualNetworksClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String virtualNetworkName) {
-        return beginDeleteAsync(resourceGroupName, virtualNetworkName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, virtualNetworkName).getSyncPoller();
     }
 
     /**
@@ -416,7 +416,7 @@ public final class VirtualNetworksClientImpl implements VirtualNetworksClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String virtualNetworkName, Context context) {
-        return beginDeleteAsync(resourceGroupName, virtualNetworkName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, virtualNetworkName, context).getSyncPoller();
     }
 
     /**
@@ -814,7 +814,7 @@ public final class VirtualNetworksClientImpl implements VirtualNetworksClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<VirtualNetworkInner>, VirtualNetworkInner> beginCreateOrUpdate(
         String resourceGroupName, String virtualNetworkName, VirtualNetworkInner parameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, virtualNetworkName, parameters).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, virtualNetworkName, parameters).getSyncPoller();
     }
 
     /**
@@ -832,7 +832,9 @@ public final class VirtualNetworksClientImpl implements VirtualNetworksClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<VirtualNetworkInner>, VirtualNetworkInner> beginCreateOrUpdate(
         String resourceGroupName, String virtualNetworkName, VirtualNetworkInner parameters, Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, virtualNetworkName, parameters, context).getSyncPoller();
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, virtualNetworkName, parameters, context)
+            .getSyncPoller();
     }
 
     /**

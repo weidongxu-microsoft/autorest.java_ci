@@ -925,7 +925,9 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     public SyncPoller<PollResult<IotHubDescriptionInner>, IotHubDescriptionInner> beginCreateOrUpdate(
         String resourceGroupName, String resourceName, IotHubDescriptionInner iotHubDescription) {
         final String ifMatch = null;
-        return beginCreateOrUpdateAsync(resourceGroupName, resourceName, iotHubDescription, ifMatch).getSyncPoller();
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, resourceName, iotHubDescription, ifMatch)
+            .getSyncPoller();
     }
 
     /**
@@ -953,7 +955,8 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
         IotHubDescriptionInner iotHubDescription,
         String ifMatch,
         Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, resourceName, iotHubDescription, ifMatch, context)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, resourceName, iotHubDescription, ifMatch, context)
             .getSyncPoller();
     }
 
@@ -1271,7 +1274,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<IotHubDescriptionInner>, IotHubDescriptionInner> beginUpdate(
         String resourceGroupName, String resourceName, TagsResource iotHubTags) {
-        return beginUpdateAsync(resourceGroupName, resourceName, iotHubTags).getSyncPoller();
+        return this.beginUpdateAsync(resourceGroupName, resourceName, iotHubTags).getSyncPoller();
     }
 
     /**
@@ -1291,7 +1294,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<IotHubDescriptionInner>, IotHubDescriptionInner> beginUpdate(
         String resourceGroupName, String resourceName, TagsResource iotHubTags, Context context) {
-        return beginUpdateAsync(resourceGroupName, resourceName, iotHubTags, context).getSyncPoller();
+        return this.beginUpdateAsync(resourceGroupName, resourceName, iotHubTags, context).getSyncPoller();
     }
 
     /**
@@ -1541,7 +1544,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<IotHubDescriptionInner>, IotHubDescriptionInner> beginDelete(
         String resourceGroupName, String resourceName) {
-        return beginDeleteAsync(resourceGroupName, resourceName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, resourceName).getSyncPoller();
     }
 
     /**
@@ -1560,7 +1563,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<IotHubDescriptionInner>, IotHubDescriptionInner> beginDelete(
         String resourceGroupName, String resourceName, Context context) {
-        return beginDeleteAsync(resourceGroupName, resourceName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, resourceName, context).getSyncPoller();
     }
 
     /**

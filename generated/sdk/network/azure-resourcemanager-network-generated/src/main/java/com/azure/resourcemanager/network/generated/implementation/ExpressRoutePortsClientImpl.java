@@ -344,7 +344,7 @@ public final class ExpressRoutePortsClientImpl implements ExpressRoutePortsClien
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String expressRoutePortName) {
-        return beginDeleteAsync(resourceGroupName, expressRoutePortName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, expressRoutePortName).getSyncPoller();
     }
 
     /**
@@ -361,7 +361,7 @@ public final class ExpressRoutePortsClientImpl implements ExpressRoutePortsClien
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String expressRoutePortName, Context context) {
-        return beginDeleteAsync(resourceGroupName, expressRoutePortName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, expressRoutePortName, context).getSyncPoller();
     }
 
     /**
@@ -750,7 +750,7 @@ public final class ExpressRoutePortsClientImpl implements ExpressRoutePortsClien
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ExpressRoutePortInner>, ExpressRoutePortInner> beginCreateOrUpdate(
         String resourceGroupName, String expressRoutePortName, ExpressRoutePortInner parameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, expressRoutePortName, parameters).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, expressRoutePortName, parameters).getSyncPoller();
     }
 
     /**
@@ -768,7 +768,9 @@ public final class ExpressRoutePortsClientImpl implements ExpressRoutePortsClien
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ExpressRoutePortInner>, ExpressRoutePortInner> beginCreateOrUpdate(
         String resourceGroupName, String expressRoutePortName, ExpressRoutePortInner parameters, Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, expressRoutePortName, parameters, context).getSyncPoller();
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, expressRoutePortName, parameters, context)
+            .getSyncPoller();
     }
 
     /**

@@ -467,7 +467,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String serviceName) {
-        return beginDeleteAsync(resourceGroupName, serviceName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, serviceName).getSyncPoller();
     }
 
     /**
@@ -484,7 +484,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String serviceName, Context context) {
-        return beginDeleteAsync(resourceGroupName, serviceName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, serviceName, context).getSyncPoller();
     }
 
     /**
@@ -880,7 +880,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<PrivateLinkServiceInner>, PrivateLinkServiceInner> beginCreateOrUpdate(
         String resourceGroupName, String serviceName, PrivateLinkServiceInner parameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, serviceName, parameters).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, serviceName, parameters).getSyncPoller();
     }
 
     /**
@@ -898,7 +898,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<PrivateLinkServiceInner>, PrivateLinkServiceInner> beginCreateOrUpdate(
         String resourceGroupName, String serviceName, PrivateLinkServiceInner parameters, Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, serviceName, parameters, context).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, serviceName, parameters, context).getSyncPoller();
     }
 
     /**
@@ -1819,7 +1819,8 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDeletePrivateEndpointConnection(
         String resourceGroupName, String serviceName, String peConnectionName) {
-        return beginDeletePrivateEndpointConnectionAsync(resourceGroupName, serviceName, peConnectionName)
+        return this
+            .beginDeletePrivateEndpointConnectionAsync(resourceGroupName, serviceName, peConnectionName)
             .getSyncPoller();
     }
 
@@ -1838,7 +1839,8 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDeletePrivateEndpointConnection(
         String resourceGroupName, String serviceName, String peConnectionName, Context context) {
-        return beginDeletePrivateEndpointConnectionAsync(resourceGroupName, serviceName, peConnectionName, context)
+        return this
+            .beginDeletePrivateEndpointConnectionAsync(resourceGroupName, serviceName, peConnectionName, context)
             .getSyncPoller();
     }
 
@@ -2273,7 +2275,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<PrivateLinkServiceVisibilityInner>, PrivateLinkServiceVisibilityInner>
         beginCheckPrivateLinkServiceVisibility(String location, CheckPrivateLinkServiceVisibilityRequest parameters) {
-        return beginCheckPrivateLinkServiceVisibilityAsync(location, parameters).getSyncPoller();
+        return this.beginCheckPrivateLinkServiceVisibilityAsync(location, parameters).getSyncPoller();
     }
 
     /**
@@ -2292,7 +2294,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
     public SyncPoller<PollResult<PrivateLinkServiceVisibilityInner>, PrivateLinkServiceVisibilityInner>
         beginCheckPrivateLinkServiceVisibility(
             String location, CheckPrivateLinkServiceVisibilityRequest parameters, Context context) {
-        return beginCheckPrivateLinkServiceVisibilityAsync(location, parameters, context).getSyncPoller();
+        return this.beginCheckPrivateLinkServiceVisibilityAsync(location, parameters, context).getSyncPoller();
     }
 
     /**
@@ -2560,7 +2562,8 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
     public SyncPoller<PollResult<PrivateLinkServiceVisibilityInner>, PrivateLinkServiceVisibilityInner>
         beginCheckPrivateLinkServiceVisibilityByResourceGroup(
             String location, String resourceGroupName, CheckPrivateLinkServiceVisibilityRequest parameters) {
-        return beginCheckPrivateLinkServiceVisibilityByResourceGroupAsync(location, resourceGroupName, parameters)
+        return this
+            .beginCheckPrivateLinkServiceVisibilityByResourceGroupAsync(location, resourceGroupName, parameters)
             .getSyncPoller();
     }
 
@@ -2584,7 +2587,8 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
             String resourceGroupName,
             CheckPrivateLinkServiceVisibilityRequest parameters,
             Context context) {
-        return beginCheckPrivateLinkServiceVisibilityByResourceGroupAsync(
+        return this
+            .beginCheckPrivateLinkServiceVisibilityByResourceGroupAsync(
                 location, resourceGroupName, parameters, context)
             .getSyncPoller();
     }

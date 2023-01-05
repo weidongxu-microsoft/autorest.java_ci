@@ -707,7 +707,8 @@ public final class ClusterPrincipalAssignmentsClientImpl implements ClusterPrinc
         String clusterName,
         String principalAssignmentName,
         ClusterPrincipalAssignmentInner parameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, clusterName, principalAssignmentName, parameters)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, clusterName, principalAssignmentName, parameters)
             .getSyncPoller();
     }
 
@@ -731,7 +732,8 @@ public final class ClusterPrincipalAssignmentsClientImpl implements ClusterPrinc
         String principalAssignmentName,
         ClusterPrincipalAssignmentInner parameters,
         Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, clusterName, principalAssignmentName, parameters, context)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, clusterName, principalAssignmentName, parameters, context)
             .getSyncPoller();
     }
 
@@ -995,7 +997,7 @@ public final class ClusterPrincipalAssignmentsClientImpl implements ClusterPrinc
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String clusterName, String principalAssignmentName) {
-        return beginDeleteAsync(resourceGroupName, clusterName, principalAssignmentName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, clusterName, principalAssignmentName).getSyncPoller();
     }
 
     /**
@@ -1013,7 +1015,7 @@ public final class ClusterPrincipalAssignmentsClientImpl implements ClusterPrinc
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String clusterName, String principalAssignmentName, Context context) {
-        return beginDeleteAsync(resourceGroupName, clusterName, principalAssignmentName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, clusterName, principalAssignmentName, context).getSyncPoller();
     }
 
     /**

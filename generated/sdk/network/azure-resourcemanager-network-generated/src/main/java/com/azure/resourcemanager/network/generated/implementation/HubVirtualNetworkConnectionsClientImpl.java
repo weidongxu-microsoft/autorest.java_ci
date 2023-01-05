@@ -367,7 +367,8 @@ public final class HubVirtualNetworkConnectionsClientImpl implements HubVirtualN
             String virtualHubName,
             String connectionName,
             HubVirtualNetworkConnectionInner hubVirtualNetworkConnectionParameters) {
-        return beginCreateOrUpdateAsync(
+        return this
+            .beginCreateOrUpdateAsync(
                 resourceGroupName, virtualHubName, connectionName, hubVirtualNetworkConnectionParameters)
             .getSyncPoller();
     }
@@ -394,7 +395,8 @@ public final class HubVirtualNetworkConnectionsClientImpl implements HubVirtualN
             String connectionName,
             HubVirtualNetworkConnectionInner hubVirtualNetworkConnectionParameters,
             Context context) {
-        return beginCreateOrUpdateAsync(
+        return this
+            .beginCreateOrUpdateAsync(
                 resourceGroupName, virtualHubName, connectionName, hubVirtualNetworkConnectionParameters, context)
             .getSyncPoller();
     }
@@ -666,7 +668,7 @@ public final class HubVirtualNetworkConnectionsClientImpl implements HubVirtualN
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String virtualHubName, String connectionName) {
-        return beginDeleteAsync(resourceGroupName, virtualHubName, connectionName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, virtualHubName, connectionName).getSyncPoller();
     }
 
     /**
@@ -684,7 +686,7 @@ public final class HubVirtualNetworkConnectionsClientImpl implements HubVirtualN
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String virtualHubName, String connectionName, Context context) {
-        return beginDeleteAsync(resourceGroupName, virtualHubName, connectionName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, virtualHubName, connectionName, context).getSyncPoller();
     }
 
     /**

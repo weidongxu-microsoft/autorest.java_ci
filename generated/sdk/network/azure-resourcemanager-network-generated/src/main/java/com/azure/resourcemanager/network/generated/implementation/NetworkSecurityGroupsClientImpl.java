@@ -330,7 +330,7 @@ public final class NetworkSecurityGroupsClientImpl implements NetworkSecurityGro
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String networkSecurityGroupName) {
-        return beginDeleteAsync(resourceGroupName, networkSecurityGroupName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, networkSecurityGroupName).getSyncPoller();
     }
 
     /**
@@ -347,7 +347,7 @@ public final class NetworkSecurityGroupsClientImpl implements NetworkSecurityGro
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String networkSecurityGroupName, Context context) {
-        return beginDeleteAsync(resourceGroupName, networkSecurityGroupName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, networkSecurityGroupName, context).getSyncPoller();
     }
 
     /**
@@ -762,7 +762,7 @@ public final class NetworkSecurityGroupsClientImpl implements NetworkSecurityGro
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<NetworkSecurityGroupInner>, NetworkSecurityGroupInner> beginCreateOrUpdate(
         String resourceGroupName, String networkSecurityGroupName, NetworkSecurityGroupInner parameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, networkSecurityGroupName, parameters).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, networkSecurityGroupName, parameters).getSyncPoller();
     }
 
     /**
@@ -783,7 +783,8 @@ public final class NetworkSecurityGroupsClientImpl implements NetworkSecurityGro
         String networkSecurityGroupName,
         NetworkSecurityGroupInner parameters,
         Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, networkSecurityGroupName, parameters, context)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, networkSecurityGroupName, parameters, context)
             .getSyncPoller();
     }
 

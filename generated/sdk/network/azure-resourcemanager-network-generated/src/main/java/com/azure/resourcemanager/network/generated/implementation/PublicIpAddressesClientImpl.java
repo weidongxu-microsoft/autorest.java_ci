@@ -1245,7 +1245,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String publicIpAddressName) {
-        return beginDeleteAsync(resourceGroupName, publicIpAddressName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, publicIpAddressName).getSyncPoller();
     }
 
     /**
@@ -1262,7 +1262,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String publicIpAddressName, Context context) {
-        return beginDeleteAsync(resourceGroupName, publicIpAddressName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, publicIpAddressName, context).getSyncPoller();
     }
 
     /**
@@ -1660,7 +1660,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<PublicIpAddressInner>, PublicIpAddressInner> beginCreateOrUpdate(
         String resourceGroupName, String publicIpAddressName, PublicIpAddressInner parameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, publicIpAddressName, parameters).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, publicIpAddressName, parameters).getSyncPoller();
     }
 
     /**
@@ -1678,7 +1678,9 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<PublicIpAddressInner>, PublicIpAddressInner> beginCreateOrUpdate(
         String resourceGroupName, String publicIpAddressName, PublicIpAddressInner parameters, Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, publicIpAddressName, parameters, context).getSyncPoller();
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, publicIpAddressName, parameters, context)
+            .getSyncPoller();
     }
 
     /**
@@ -2385,7 +2387,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<PublicIpDdosProtectionStatusResultInner>, PublicIpDdosProtectionStatusResultInner>
         beginDdosProtectionStatus(String resourceGroupName, String publicIpAddressName) {
-        return beginDdosProtectionStatusAsync(resourceGroupName, publicIpAddressName).getSyncPoller();
+        return this.beginDdosProtectionStatusAsync(resourceGroupName, publicIpAddressName).getSyncPoller();
     }
 
     /**
@@ -2402,7 +2404,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<PublicIpDdosProtectionStatusResultInner>, PublicIpDdosProtectionStatusResultInner>
         beginDdosProtectionStatus(String resourceGroupName, String publicIpAddressName, Context context) {
-        return beginDdosProtectionStatusAsync(resourceGroupName, publicIpAddressName, context).getSyncPoller();
+        return this.beginDdosProtectionStatusAsync(resourceGroupName, publicIpAddressName, context).getSyncPoller();
     }
 
     /**

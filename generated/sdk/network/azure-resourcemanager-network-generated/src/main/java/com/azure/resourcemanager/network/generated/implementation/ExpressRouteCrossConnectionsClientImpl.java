@@ -868,7 +868,7 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
     public SyncPoller<PollResult<ExpressRouteCrossConnectionInner>, ExpressRouteCrossConnectionInner>
         beginCreateOrUpdate(
             String resourceGroupName, String crossConnectionName, ExpressRouteCrossConnectionInner parameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, crossConnectionName, parameters).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, crossConnectionName, parameters).getSyncPoller();
     }
 
     /**
@@ -890,7 +890,9 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
             String crossConnectionName,
             ExpressRouteCrossConnectionInner parameters,
             Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, crossConnectionName, parameters, context).getSyncPoller();
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, crossConnectionName, parameters, context)
+            .getSyncPoller();
     }
 
     /**
@@ -1351,7 +1353,9 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
     public SyncPoller<
             PollResult<ExpressRouteCircuitsArpTableListResultInner>, ExpressRouteCircuitsArpTableListResultInner>
         beginListArpTable(String resourceGroupName, String crossConnectionName, String peeringName, String devicePath) {
-        return beginListArpTableAsync(resourceGroupName, crossConnectionName, peeringName, devicePath).getSyncPoller();
+        return this
+            .beginListArpTableAsync(resourceGroupName, crossConnectionName, peeringName, devicePath)
+            .getSyncPoller();
     }
 
     /**
@@ -1377,7 +1381,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
             String peeringName,
             String devicePath,
             Context context) {
-        return beginListArpTableAsync(resourceGroupName, crossConnectionName, peeringName, devicePath, context)
+        return this
+            .beginListArpTableAsync(resourceGroupName, crossConnectionName, peeringName, devicePath, context)
             .getSyncPoller();
     }
 
@@ -1675,7 +1680,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
             ExpressRouteCrossConnectionsRoutesTableSummaryListResultInner>
         beginListRoutesTableSummary(
             String resourceGroupName, String crossConnectionName, String peeringName, String devicePath) {
-        return beginListRoutesTableSummaryAsync(resourceGroupName, crossConnectionName, peeringName, devicePath)
+        return this
+            .beginListRoutesTableSummaryAsync(resourceGroupName, crossConnectionName, peeringName, devicePath)
             .getSyncPoller();
     }
 
@@ -1703,8 +1709,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
             String peeringName,
             String devicePath,
             Context context) {
-        return beginListRoutesTableSummaryAsync(
-                resourceGroupName, crossConnectionName, peeringName, devicePath, context)
+        return this
+            .beginListRoutesTableSummaryAsync(resourceGroupName, crossConnectionName, peeringName, devicePath, context)
             .getSyncPoller();
     }
 
@@ -2001,7 +2007,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
             PollResult<ExpressRouteCircuitsRoutesTableListResultInner>, ExpressRouteCircuitsRoutesTableListResultInner>
         beginListRoutesTable(
             String resourceGroupName, String crossConnectionName, String peeringName, String devicePath) {
-        return beginListRoutesTableAsync(resourceGroupName, crossConnectionName, peeringName, devicePath)
+        return this
+            .beginListRoutesTableAsync(resourceGroupName, crossConnectionName, peeringName, devicePath)
             .getSyncPoller();
     }
 
@@ -2029,7 +2036,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
             String peeringName,
             String devicePath,
             Context context) {
-        return beginListRoutesTableAsync(resourceGroupName, crossConnectionName, peeringName, devicePath, context)
+        return this
+            .beginListRoutesTableAsync(resourceGroupName, crossConnectionName, peeringName, devicePath, context)
             .getSyncPoller();
     }
 

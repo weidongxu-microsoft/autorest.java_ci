@@ -677,7 +677,8 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
         String clusterName,
         String privateEndpointConnectionName,
         PrivateEndpointConnectionInner parameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, clusterName, privateEndpointConnectionName, parameters)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, clusterName, privateEndpointConnectionName, parameters)
             .getSyncPoller();
     }
 
@@ -701,7 +702,8 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
         String privateEndpointConnectionName,
         PrivateEndpointConnectionInner parameters,
         Context context) {
-        return beginCreateOrUpdateAsync(
+        return this
+            .beginCreateOrUpdateAsync(
                 resourceGroupName, clusterName, privateEndpointConnectionName, parameters, context)
             .getSyncPoller();
     }
@@ -969,7 +971,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String clusterName, String privateEndpointConnectionName) {
-        return beginDeleteAsync(resourceGroupName, clusterName, privateEndpointConnectionName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, clusterName, privateEndpointConnectionName).getSyncPoller();
     }
 
     /**
@@ -987,7 +989,9 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String clusterName, String privateEndpointConnectionName, Context context) {
-        return beginDeleteAsync(resourceGroupName, clusterName, privateEndpointConnectionName, context).getSyncPoller();
+        return this
+            .beginDeleteAsync(resourceGroupName, clusterName, privateEndpointConnectionName, context)
+            .getSyncPoller();
     }
 
     /**

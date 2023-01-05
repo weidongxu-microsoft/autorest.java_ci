@@ -350,7 +350,9 @@ public final class FlowLogsClientImpl implements FlowLogsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<FlowLogInner>, FlowLogInner> beginCreateOrUpdate(
         String resourceGroupName, String networkWatcherName, String flowLogName, FlowLogInner parameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, networkWatcherName, flowLogName, parameters).getSyncPoller();
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, networkWatcherName, flowLogName, parameters)
+            .getSyncPoller();
     }
 
     /**
@@ -373,7 +375,8 @@ public final class FlowLogsClientImpl implements FlowLogsClient {
         String flowLogName,
         FlowLogInner parameters,
         Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, networkWatcherName, flowLogName, parameters, context)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, networkWatcherName, flowLogName, parameters, context)
             .getSyncPoller();
     }
 
@@ -977,7 +980,7 @@ public final class FlowLogsClientImpl implements FlowLogsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String networkWatcherName, String flowLogName) {
-        return beginDeleteAsync(resourceGroupName, networkWatcherName, flowLogName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, networkWatcherName, flowLogName).getSyncPoller();
     }
 
     /**
@@ -995,7 +998,7 @@ public final class FlowLogsClientImpl implements FlowLogsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String networkWatcherName, String flowLogName, Context context) {
-        return beginDeleteAsync(resourceGroupName, networkWatcherName, flowLogName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, networkWatcherName, flowLogName, context).getSyncPoller();
     }
 
     /**

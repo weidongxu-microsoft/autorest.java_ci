@@ -307,7 +307,7 @@ public final class VirtualRoutersClientImpl implements VirtualRoutersClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String virtualRouterName) {
-        return beginDeleteAsync(resourceGroupName, virtualRouterName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, virtualRouterName).getSyncPoller();
     }
 
     /**
@@ -324,7 +324,7 @@ public final class VirtualRoutersClientImpl implements VirtualRoutersClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String virtualRouterName, Context context) {
-        return beginDeleteAsync(resourceGroupName, virtualRouterName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, virtualRouterName, context).getSyncPoller();
     }
 
     /**
@@ -720,7 +720,7 @@ public final class VirtualRoutersClientImpl implements VirtualRoutersClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<VirtualRouterInner>, VirtualRouterInner> beginCreateOrUpdate(
         String resourceGroupName, String virtualRouterName, VirtualRouterInner parameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, virtualRouterName, parameters).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, virtualRouterName, parameters).getSyncPoller();
     }
 
     /**
@@ -738,7 +738,7 @@ public final class VirtualRoutersClientImpl implements VirtualRoutersClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<VirtualRouterInner>, VirtualRouterInner> beginCreateOrUpdate(
         String resourceGroupName, String virtualRouterName, VirtualRouterInner parameters, Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, virtualRouterName, parameters, context).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, virtualRouterName, parameters, context).getSyncPoller();
     }
 
     /**

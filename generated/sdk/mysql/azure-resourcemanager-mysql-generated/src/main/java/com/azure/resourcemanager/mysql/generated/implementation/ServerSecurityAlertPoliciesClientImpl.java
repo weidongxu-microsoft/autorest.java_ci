@@ -503,7 +503,8 @@ public final class ServerSecurityAlertPoliciesClientImpl implements ServerSecuri
         String serverName,
         SecurityAlertPolicyName securityAlertPolicyName,
         ServerSecurityAlertPolicyInner parameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, serverName, securityAlertPolicyName, parameters)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, serverName, securityAlertPolicyName, parameters)
             .getSyncPoller();
     }
 
@@ -527,7 +528,8 @@ public final class ServerSecurityAlertPoliciesClientImpl implements ServerSecuri
         SecurityAlertPolicyName securityAlertPolicyName,
         ServerSecurityAlertPolicyInner parameters,
         Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, serverName, securityAlertPolicyName, parameters, context)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, serverName, securityAlertPolicyName, parameters, context)
             .getSyncPoller();
     }
 

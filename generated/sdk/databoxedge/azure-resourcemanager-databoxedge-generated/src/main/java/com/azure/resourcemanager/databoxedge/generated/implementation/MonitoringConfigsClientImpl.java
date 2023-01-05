@@ -712,7 +712,8 @@ public final class MonitoringConfigsClientImpl implements MonitoringConfigsClien
             String roleName,
             String resourceGroupName,
             MonitoringMetricConfigurationInner monitoringMetricConfiguration) {
-        return beginCreateOrUpdateAsync(deviceName, roleName, resourceGroupName, monitoringMetricConfiguration)
+        return this
+            .beginCreateOrUpdateAsync(deviceName, roleName, resourceGroupName, monitoringMetricConfiguration)
             .getSyncPoller();
     }
 
@@ -737,7 +738,8 @@ public final class MonitoringConfigsClientImpl implements MonitoringConfigsClien
             String resourceGroupName,
             MonitoringMetricConfigurationInner monitoringMetricConfiguration,
             Context context) {
-        return beginCreateOrUpdateAsync(deviceName, roleName, resourceGroupName, monitoringMetricConfiguration, context)
+        return this
+            .beginCreateOrUpdateAsync(deviceName, roleName, resourceGroupName, monitoringMetricConfiguration, context)
             .getSyncPoller();
     }
 
@@ -996,7 +998,7 @@ public final class MonitoringConfigsClientImpl implements MonitoringConfigsClien
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String deviceName, String roleName, String resourceGroupName) {
-        return beginDeleteAsync(deviceName, roleName, resourceGroupName).getSyncPoller();
+        return this.beginDeleteAsync(deviceName, roleName, resourceGroupName).getSyncPoller();
     }
 
     /**
@@ -1014,7 +1016,7 @@ public final class MonitoringConfigsClientImpl implements MonitoringConfigsClien
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String deviceName, String roleName, String resourceGroupName, Context context) {
-        return beginDeleteAsync(deviceName, roleName, resourceGroupName, context).getSyncPoller();
+        return this.beginDeleteAsync(deviceName, roleName, resourceGroupName, context).getSyncPoller();
     }
 
     /**

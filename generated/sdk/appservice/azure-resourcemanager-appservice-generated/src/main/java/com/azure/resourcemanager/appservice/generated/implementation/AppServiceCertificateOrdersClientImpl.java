@@ -1261,7 +1261,8 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
         String resourceGroupName,
         String certificateOrderName,
         AppServiceCertificateOrderInner certificateDistinguishedName) {
-        return beginCreateOrUpdateAsync(resourceGroupName, certificateOrderName, certificateDistinguishedName)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, certificateOrderName, certificateDistinguishedName)
             .getSyncPoller();
     }
 
@@ -1285,7 +1286,8 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
         String certificateOrderName,
         AppServiceCertificateOrderInner certificateDistinguishedName,
         Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, certificateOrderName, certificateDistinguishedName, context)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, certificateOrderName, certificateDistinguishedName, context)
             .getSyncPoller();
     }
 
@@ -2326,7 +2328,8 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
             String certificateOrderName,
             String name,
             AppServiceCertificateResourceInner keyVaultCertificate) {
-        return beginCreateOrUpdateCertificateAsync(resourceGroupName, certificateOrderName, name, keyVaultCertificate)
+        return this
+            .beginCreateOrUpdateCertificateAsync(resourceGroupName, certificateOrderName, name, keyVaultCertificate)
             .getSyncPoller();
     }
 
@@ -2354,7 +2357,8 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
             String name,
             AppServiceCertificateResourceInner keyVaultCertificate,
             Context context) {
-        return beginCreateOrUpdateCertificateAsync(
+        return this
+            .beginCreateOrUpdateCertificateAsync(
                 resourceGroupName, certificateOrderName, name, keyVaultCertificate, context)
             .getSyncPoller();
     }

@@ -672,7 +672,7 @@ public final class BandwidthSchedulesClientImpl implements BandwidthSchedulesCli
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<BandwidthScheduleInner>, BandwidthScheduleInner> beginCreateOrUpdate(
         String deviceName, String name, String resourceGroupName, BandwidthScheduleInner parameters) {
-        return beginCreateOrUpdateAsync(deviceName, name, resourceGroupName, parameters).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(deviceName, name, resourceGroupName, parameters).getSyncPoller();
     }
 
     /**
@@ -691,7 +691,7 @@ public final class BandwidthSchedulesClientImpl implements BandwidthSchedulesCli
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<BandwidthScheduleInner>, BandwidthScheduleInner> beginCreateOrUpdate(
         String deviceName, String name, String resourceGroupName, BandwidthScheduleInner parameters, Context context) {
-        return beginCreateOrUpdateAsync(deviceName, name, resourceGroupName, parameters, context).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(deviceName, name, resourceGroupName, parameters, context).getSyncPoller();
     }
 
     /**
@@ -932,7 +932,7 @@ public final class BandwidthSchedulesClientImpl implements BandwidthSchedulesCli
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String deviceName, String name, String resourceGroupName) {
-        return beginDeleteAsync(deviceName, name, resourceGroupName).getSyncPoller();
+        return this.beginDeleteAsync(deviceName, name, resourceGroupName).getSyncPoller();
     }
 
     /**
@@ -950,7 +950,7 @@ public final class BandwidthSchedulesClientImpl implements BandwidthSchedulesCli
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String deviceName, String name, String resourceGroupName, Context context) {
-        return beginDeleteAsync(deviceName, name, resourceGroupName, context).getSyncPoller();
+        return this.beginDeleteAsync(deviceName, name, resourceGroupName, context).getSyncPoller();
     }
 
     /**

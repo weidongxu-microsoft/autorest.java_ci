@@ -243,7 +243,7 @@ public final class VpnSitesConfigurationsClientImpl implements VpnSitesConfigura
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDownload(
         String resourceGroupName, String virtualWanName, GetVpnSitesConfigurationRequest request) {
-        return beginDownloadAsync(resourceGroupName, virtualWanName, request).getSyncPoller();
+        return this.beginDownloadAsync(resourceGroupName, virtualWanName, request).getSyncPoller();
     }
 
     /**
@@ -261,7 +261,7 @@ public final class VpnSitesConfigurationsClientImpl implements VpnSitesConfigura
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDownload(
         String resourceGroupName, String virtualWanName, GetVpnSitesConfigurationRequest request, Context context) {
-        return beginDownloadAsync(resourceGroupName, virtualWanName, request, context).getSyncPoller();
+        return this.beginDownloadAsync(resourceGroupName, virtualWanName, request, context).getSyncPoller();
     }
 
     /**

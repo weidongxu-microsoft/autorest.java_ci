@@ -496,7 +496,7 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<IpGroupInner>, IpGroupInner> beginCreateOrUpdate(
         String resourceGroupName, String ipGroupsName, IpGroupInner parameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, ipGroupsName, parameters).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, ipGroupsName, parameters).getSyncPoller();
     }
 
     /**
@@ -514,7 +514,7 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<IpGroupInner>, IpGroupInner> beginCreateOrUpdate(
         String resourceGroupName, String ipGroupsName, IpGroupInner parameters, Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, ipGroupsName, parameters, context).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, ipGroupsName, parameters, context).getSyncPoller();
     }
 
     /**
@@ -898,7 +898,7 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String ipGroupsName) {
-        return beginDeleteAsync(resourceGroupName, ipGroupsName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, ipGroupsName).getSyncPoller();
     }
 
     /**
@@ -915,7 +915,7 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String ipGroupsName, Context context) {
-        return beginDeleteAsync(resourceGroupName, ipGroupsName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, ipGroupsName, context).getSyncPoller();
     }
 
     /**

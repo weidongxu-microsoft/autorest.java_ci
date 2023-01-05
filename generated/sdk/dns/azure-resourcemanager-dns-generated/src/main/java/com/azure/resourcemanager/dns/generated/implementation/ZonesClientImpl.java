@@ -546,7 +546,7 @@ public final class ZonesClientImpl implements ZonesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String zoneName) {
         final String ifMatch = null;
-        return beginDeleteAsync(resourceGroupName, zoneName, ifMatch).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, zoneName, ifMatch).getSyncPoller();
     }
 
     /**
@@ -565,7 +565,7 @@ public final class ZonesClientImpl implements ZonesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String zoneName, String ifMatch, Context context) {
-        return beginDeleteAsync(resourceGroupName, zoneName, ifMatch, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, zoneName, ifMatch, context).getSyncPoller();
     }
 
     /**

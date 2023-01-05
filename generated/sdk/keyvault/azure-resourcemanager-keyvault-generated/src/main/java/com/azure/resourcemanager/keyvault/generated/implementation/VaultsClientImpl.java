@@ -456,7 +456,7 @@ public final class VaultsClientImpl implements VaultsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<VaultInner>, VaultInner> beginCreateOrUpdate(
         String resourceGroupName, String vaultName, VaultCreateOrUpdateParameters parameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, vaultName, parameters).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, vaultName, parameters).getSyncPoller();
     }
 
     /**
@@ -474,7 +474,7 @@ public final class VaultsClientImpl implements VaultsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<VaultInner>, VaultInner> beginCreateOrUpdate(
         String resourceGroupName, String vaultName, VaultCreateOrUpdateParameters parameters, Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, vaultName, parameters, context).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, vaultName, parameters, context).getSyncPoller();
     }
 
     /**
@@ -1969,7 +1969,7 @@ public final class VaultsClientImpl implements VaultsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginPurgeDeleted(String vaultName, String location) {
-        return beginPurgeDeletedAsync(vaultName, location).getSyncPoller();
+        return this.beginPurgeDeletedAsync(vaultName, location).getSyncPoller();
     }
 
     /**
@@ -1985,7 +1985,7 @@ public final class VaultsClientImpl implements VaultsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginPurgeDeleted(String vaultName, String location, Context context) {
-        return beginPurgeDeletedAsync(vaultName, location, context).getSyncPoller();
+        return this.beginPurgeDeletedAsync(vaultName, location, context).getSyncPoller();
     }
 
     /**

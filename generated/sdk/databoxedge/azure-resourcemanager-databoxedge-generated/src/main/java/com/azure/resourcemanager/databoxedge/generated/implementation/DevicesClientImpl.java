@@ -1170,7 +1170,7 @@ public final class DevicesClientImpl implements DevicesClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String deviceName) {
-        return beginDeleteAsync(resourceGroupName, deviceName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, deviceName).getSyncPoller();
     }
 
     /**
@@ -1187,7 +1187,7 @@ public final class DevicesClientImpl implements DevicesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String deviceName, Context context) {
-        return beginDeleteAsync(resourceGroupName, deviceName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, deviceName, context).getSyncPoller();
     }
 
     /**
@@ -1560,7 +1560,7 @@ public final class DevicesClientImpl implements DevicesClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDownloadUpdates(String deviceName, String resourceGroupName) {
-        return beginDownloadUpdatesAsync(deviceName, resourceGroupName).getSyncPoller();
+        return this.beginDownloadUpdatesAsync(deviceName, resourceGroupName).getSyncPoller();
     }
 
     /**
@@ -1577,7 +1577,7 @@ public final class DevicesClientImpl implements DevicesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDownloadUpdates(
         String deviceName, String resourceGroupName, Context context) {
-        return beginDownloadUpdatesAsync(deviceName, resourceGroupName, context).getSyncPoller();
+        return this.beginDownloadUpdatesAsync(deviceName, resourceGroupName, context).getSyncPoller();
     }
 
     /**
@@ -2081,7 +2081,7 @@ public final class DevicesClientImpl implements DevicesClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginInstallUpdates(String deviceName, String resourceGroupName) {
-        return beginInstallUpdatesAsync(deviceName, resourceGroupName).getSyncPoller();
+        return this.beginInstallUpdatesAsync(deviceName, resourceGroupName).getSyncPoller();
     }
 
     /**
@@ -2098,7 +2098,7 @@ public final class DevicesClientImpl implements DevicesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginInstallUpdates(
         String deviceName, String resourceGroupName, Context context) {
-        return beginInstallUpdatesAsync(deviceName, resourceGroupName, context).getSyncPoller();
+        return this.beginInstallUpdatesAsync(deviceName, resourceGroupName, context).getSyncPoller();
     }
 
     /**
@@ -2456,7 +2456,7 @@ public final class DevicesClientImpl implements DevicesClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginScanForUpdates(String deviceName, String resourceGroupName) {
-        return beginScanForUpdatesAsync(deviceName, resourceGroupName).getSyncPoller();
+        return this.beginScanForUpdatesAsync(deviceName, resourceGroupName).getSyncPoller();
     }
 
     /**
@@ -2473,7 +2473,7 @@ public final class DevicesClientImpl implements DevicesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginScanForUpdates(
         String deviceName, String resourceGroupName, Context context) {
-        return beginScanForUpdatesAsync(deviceName, resourceGroupName, context).getSyncPoller();
+        return this.beginScanForUpdatesAsync(deviceName, resourceGroupName, context).getSyncPoller();
     }
 
     /**
@@ -2709,7 +2709,8 @@ public final class DevicesClientImpl implements DevicesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginCreateOrUpdateSecuritySettings(
         String deviceName, String resourceGroupName, SecuritySettings securitySettings) {
-        return beginCreateOrUpdateSecuritySettingsAsync(deviceName, resourceGroupName, securitySettings)
+        return this
+            .beginCreateOrUpdateSecuritySettingsAsync(deviceName, resourceGroupName, securitySettings)
             .getSyncPoller();
     }
 
@@ -2728,7 +2729,8 @@ public final class DevicesClientImpl implements DevicesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginCreateOrUpdateSecuritySettings(
         String deviceName, String resourceGroupName, SecuritySettings securitySettings, Context context) {
-        return beginCreateOrUpdateSecuritySettingsAsync(deviceName, resourceGroupName, securitySettings, context)
+        return this
+            .beginCreateOrUpdateSecuritySettingsAsync(deviceName, resourceGroupName, securitySettings, context)
             .getSyncPoller();
     }
 

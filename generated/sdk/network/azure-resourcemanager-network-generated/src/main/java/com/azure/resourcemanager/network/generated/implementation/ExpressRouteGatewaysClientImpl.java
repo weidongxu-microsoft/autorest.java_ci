@@ -584,7 +584,8 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
         String resourceGroupName,
         String expressRouteGatewayName,
         ExpressRouteGatewayInner putExpressRouteGatewayParameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, expressRouteGatewayName, putExpressRouteGatewayParameters)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, expressRouteGatewayName, putExpressRouteGatewayParameters)
             .getSyncPoller();
     }
 
@@ -606,7 +607,8 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
         String expressRouteGatewayName,
         ExpressRouteGatewayInner putExpressRouteGatewayParameters,
         Context context) {
-        return beginCreateOrUpdateAsync(
+        return this
+            .beginCreateOrUpdateAsync(
                 resourceGroupName, expressRouteGatewayName, putExpressRouteGatewayParameters, context)
             .getSyncPoller();
     }
@@ -894,7 +896,8 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ExpressRouteGatewayInner>, ExpressRouteGatewayInner> beginUpdateTags(
         String resourceGroupName, String expressRouteGatewayName, TagsObject expressRouteGatewayParameters) {
-        return beginUpdateTagsAsync(resourceGroupName, expressRouteGatewayName, expressRouteGatewayParameters)
+        return this
+            .beginUpdateTagsAsync(resourceGroupName, expressRouteGatewayName, expressRouteGatewayParameters)
             .getSyncPoller();
     }
 
@@ -916,7 +919,8 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
         String expressRouteGatewayName,
         TagsObject expressRouteGatewayParameters,
         Context context) {
-        return beginUpdateTagsAsync(resourceGroupName, expressRouteGatewayName, expressRouteGatewayParameters, context)
+        return this
+            .beginUpdateTagsAsync(resourceGroupName, expressRouteGatewayName, expressRouteGatewayParameters, context)
             .getSyncPoller();
     }
 
@@ -1309,7 +1313,7 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String expressRouteGatewayName) {
-        return beginDeleteAsync(resourceGroupName, expressRouteGatewayName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, expressRouteGatewayName).getSyncPoller();
     }
 
     /**
@@ -1327,7 +1331,7 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String expressRouteGatewayName, Context context) {
-        return beginDeleteAsync(resourceGroupName, expressRouteGatewayName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, expressRouteGatewayName, context).getSyncPoller();
     }
 
     /**

@@ -485,7 +485,7 @@ public final class DomainTopicsClientImpl implements DomainTopicsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<DomainTopicInner>, DomainTopicInner> beginCreateOrUpdate(
         String resourceGroupName, String domainName, String domainTopicName) {
-        return beginCreateOrUpdateAsync(resourceGroupName, domainName, domainTopicName).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, domainName, domainTopicName).getSyncPoller();
     }
 
     /**
@@ -505,7 +505,7 @@ public final class DomainTopicsClientImpl implements DomainTopicsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<DomainTopicInner>, DomainTopicInner> beginCreateOrUpdate(
         String resourceGroupName, String domainName, String domainTopicName, Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, domainName, domainTopicName, context).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, domainName, domainTopicName, context).getSyncPoller();
     }
 
     /**
@@ -759,7 +759,7 @@ public final class DomainTopicsClientImpl implements DomainTopicsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String domainName, String domainTopicName) {
-        return beginDeleteAsync(resourceGroupName, domainName, domainTopicName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, domainName, domainTopicName).getSyncPoller();
     }
 
     /**
@@ -779,7 +779,7 @@ public final class DomainTopicsClientImpl implements DomainTopicsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String domainName, String domainTopicName, Context context) {
-        return beginDeleteAsync(resourceGroupName, domainName, domainTopicName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, domainName, domainTopicName, context).getSyncPoller();
     }
 
     /**

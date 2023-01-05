@@ -880,7 +880,8 @@ public final class StreamingEndpointsClientImpl implements StreamingEndpointsCli
     public SyncPoller<PollResult<StreamingEndpointInner>, StreamingEndpointInner> beginCreate(
         String resourceGroupName, String accountName, String streamingEndpointName, StreamingEndpointInner parameters) {
         final Boolean autoStart = null;
-        return beginCreateAsync(resourceGroupName, accountName, streamingEndpointName, parameters, autoStart)
+        return this
+            .beginCreateAsync(resourceGroupName, accountName, streamingEndpointName, parameters, autoStart)
             .getSyncPoller();
     }
 
@@ -908,7 +909,8 @@ public final class StreamingEndpointsClientImpl implements StreamingEndpointsCli
         StreamingEndpointInner parameters,
         Boolean autoStart,
         Context context) {
-        return beginCreateAsync(resourceGroupName, accountName, streamingEndpointName, parameters, autoStart, context)
+        return this
+            .beginCreateAsync(resourceGroupName, accountName, streamingEndpointName, parameters, autoStart, context)
             .getSyncPoller();
     }
 
@@ -1251,7 +1253,7 @@ public final class StreamingEndpointsClientImpl implements StreamingEndpointsCli
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<StreamingEndpointInner>, StreamingEndpointInner> beginUpdate(
         String resourceGroupName, String accountName, String streamingEndpointName, StreamingEndpointInner parameters) {
-        return beginUpdateAsync(resourceGroupName, accountName, streamingEndpointName, parameters).getSyncPoller();
+        return this.beginUpdateAsync(resourceGroupName, accountName, streamingEndpointName, parameters).getSyncPoller();
     }
 
     /**
@@ -1276,7 +1278,8 @@ public final class StreamingEndpointsClientImpl implements StreamingEndpointsCli
         String streamingEndpointName,
         StreamingEndpointInner parameters,
         Context context) {
-        return beginUpdateAsync(resourceGroupName, accountName, streamingEndpointName, parameters, context)
+        return this
+            .beginUpdateAsync(resourceGroupName, accountName, streamingEndpointName, parameters, context)
             .getSyncPoller();
     }
 
@@ -1551,7 +1554,7 @@ public final class StreamingEndpointsClientImpl implements StreamingEndpointsCli
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String accountName, String streamingEndpointName) {
-        return beginDeleteAsync(resourceGroupName, accountName, streamingEndpointName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, accountName, streamingEndpointName).getSyncPoller();
     }
 
     /**
@@ -1571,7 +1574,7 @@ public final class StreamingEndpointsClientImpl implements StreamingEndpointsCli
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String accountName, String streamingEndpointName, Context context) {
-        return beginDeleteAsync(resourceGroupName, accountName, streamingEndpointName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, accountName, streamingEndpointName, context).getSyncPoller();
     }
 
     /**
@@ -1999,7 +2002,7 @@ public final class StreamingEndpointsClientImpl implements StreamingEndpointsCli
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginStart(
         String resourceGroupName, String accountName, String streamingEndpointName) {
-        return beginStartAsync(resourceGroupName, accountName, streamingEndpointName).getSyncPoller();
+        return this.beginStartAsync(resourceGroupName, accountName, streamingEndpointName).getSyncPoller();
     }
 
     /**
@@ -2019,7 +2022,7 @@ public final class StreamingEndpointsClientImpl implements StreamingEndpointsCli
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginStart(
         String resourceGroupName, String accountName, String streamingEndpointName, Context context) {
-        return beginStartAsync(resourceGroupName, accountName, streamingEndpointName, context).getSyncPoller();
+        return this.beginStartAsync(resourceGroupName, accountName, streamingEndpointName, context).getSyncPoller();
     }
 
     /**
@@ -2276,7 +2279,7 @@ public final class StreamingEndpointsClientImpl implements StreamingEndpointsCli
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginStop(
         String resourceGroupName, String accountName, String streamingEndpointName) {
-        return beginStopAsync(resourceGroupName, accountName, streamingEndpointName).getSyncPoller();
+        return this.beginStopAsync(resourceGroupName, accountName, streamingEndpointName).getSyncPoller();
     }
 
     /**
@@ -2296,7 +2299,7 @@ public final class StreamingEndpointsClientImpl implements StreamingEndpointsCli
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginStop(
         String resourceGroupName, String accountName, String streamingEndpointName, Context context) {
-        return beginStopAsync(resourceGroupName, accountName, streamingEndpointName, context).getSyncPoller();
+        return this.beginStopAsync(resourceGroupName, accountName, streamingEndpointName, context).getSyncPoller();
     }
 
     /**
@@ -2587,7 +2590,7 @@ public final class StreamingEndpointsClientImpl implements StreamingEndpointsCli
         String accountName,
         String streamingEndpointName,
         StreamingEntityScaleUnit parameters) {
-        return beginScaleAsync(resourceGroupName, accountName, streamingEndpointName, parameters).getSyncPoller();
+        return this.beginScaleAsync(resourceGroupName, accountName, streamingEndpointName, parameters).getSyncPoller();
     }
 
     /**
@@ -2612,7 +2615,8 @@ public final class StreamingEndpointsClientImpl implements StreamingEndpointsCli
         String streamingEndpointName,
         StreamingEntityScaleUnit parameters,
         Context context) {
-        return beginScaleAsync(resourceGroupName, accountName, streamingEndpointName, parameters, context)
+        return this
+            .beginScaleAsync(resourceGroupName, accountName, streamingEndpointName, parameters, context)
             .getSyncPoller();
     }
 

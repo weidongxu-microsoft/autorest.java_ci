@@ -510,7 +510,7 @@ public final class PartnerConfigurationsClientImpl implements PartnerConfigurati
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<PartnerConfigurationInner>, PartnerConfigurationInner> beginCreateOrUpdate(
         String resourceGroupName, PartnerConfigurationInner partnerConfigurationInfo) {
-        return beginCreateOrUpdateAsync(resourceGroupName, partnerConfigurationInfo).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, partnerConfigurationInfo).getSyncPoller();
     }
 
     /**
@@ -529,7 +529,7 @@ public final class PartnerConfigurationsClientImpl implements PartnerConfigurati
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<PartnerConfigurationInner>, PartnerConfigurationInner> beginCreateOrUpdate(
         String resourceGroupName, PartnerConfigurationInner partnerConfigurationInfo, Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, partnerConfigurationInfo, context).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, partnerConfigurationInfo, context).getSyncPoller();
     }
 
     /**
@@ -746,7 +746,7 @@ public final class PartnerConfigurationsClientImpl implements PartnerConfigurati
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName) {
-        return beginDeleteAsync(resourceGroupName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName).getSyncPoller();
     }
 
     /**
@@ -763,7 +763,7 @@ public final class PartnerConfigurationsClientImpl implements PartnerConfigurati
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, Context context) {
-        return beginDeleteAsync(resourceGroupName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, context).getSyncPoller();
     }
 
     /**
@@ -1013,7 +1013,7 @@ public final class PartnerConfigurationsClientImpl implements PartnerConfigurati
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<PartnerConfigurationInner>, PartnerConfigurationInner> beginUpdate(
         String resourceGroupName, PartnerConfigurationUpdateParameters partnerConfigurationUpdateParameters) {
-        return beginUpdateAsync(resourceGroupName, partnerConfigurationUpdateParameters).getSyncPoller();
+        return this.beginUpdateAsync(resourceGroupName, partnerConfigurationUpdateParameters).getSyncPoller();
     }
 
     /**
@@ -1034,7 +1034,7 @@ public final class PartnerConfigurationsClientImpl implements PartnerConfigurati
         String resourceGroupName,
         PartnerConfigurationUpdateParameters partnerConfigurationUpdateParameters,
         Context context) {
-        return beginUpdateAsync(resourceGroupName, partnerConfigurationUpdateParameters, context).getSyncPoller();
+        return this.beginUpdateAsync(resourceGroupName, partnerConfigurationUpdateParameters, context).getSyncPoller();
     }
 
     /**

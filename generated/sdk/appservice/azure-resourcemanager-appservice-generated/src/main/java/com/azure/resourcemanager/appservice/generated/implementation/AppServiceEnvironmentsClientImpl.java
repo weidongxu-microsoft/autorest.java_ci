@@ -1752,7 +1752,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     public SyncPoller<PollResult<AppServiceEnvironmentResourceInner>, AppServiceEnvironmentResourceInner>
         beginCreateOrUpdate(
             String resourceGroupName, String name, AppServiceEnvironmentResourceInner hostingEnvironmentEnvelope) {
-        return beginCreateOrUpdateAsync(resourceGroupName, name, hostingEnvironmentEnvelope).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, name, hostingEnvironmentEnvelope).getSyncPoller();
     }
 
     /**
@@ -1776,7 +1776,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
             String name,
             AppServiceEnvironmentResourceInner hostingEnvironmentEnvelope,
             Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, name, hostingEnvironmentEnvelope, context).getSyncPoller();
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, name, hostingEnvironmentEnvelope, context)
+            .getSyncPoller();
     }
 
     /**
@@ -2057,7 +2059,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String name) {
         final Boolean forceDelete = null;
-        return beginDeleteAsync(resourceGroupName, name, forceDelete).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, name, forceDelete).getSyncPoller();
     }
 
     /**
@@ -2078,7 +2080,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String name, Boolean forceDelete, Context context) {
-        return beginDeleteAsync(resourceGroupName, name, forceDelete, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, name, forceDelete, context).getSyncPoller();
     }
 
     /**
@@ -4815,7 +4817,9 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<WorkerPoolResourceInner>, WorkerPoolResourceInner> beginCreateOrUpdateMultiRolePool(
         String resourceGroupName, String name, WorkerPoolResourceInner multiRolePoolEnvelope) {
-        return beginCreateOrUpdateMultiRolePoolAsync(resourceGroupName, name, multiRolePoolEnvelope).getSyncPoller();
+        return this
+            .beginCreateOrUpdateMultiRolePoolAsync(resourceGroupName, name, multiRolePoolEnvelope)
+            .getSyncPoller();
     }
 
     /**
@@ -4835,7 +4839,8 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<WorkerPoolResourceInner>, WorkerPoolResourceInner> beginCreateOrUpdateMultiRolePool(
         String resourceGroupName, String name, WorkerPoolResourceInner multiRolePoolEnvelope, Context context) {
-        return beginCreateOrUpdateMultiRolePoolAsync(resourceGroupName, name, multiRolePoolEnvelope, context)
+        return this
+            .beginCreateOrUpdateMultiRolePoolAsync(resourceGroupName, name, multiRolePoolEnvelope, context)
             .getSyncPoller();
     }
 
@@ -5997,7 +6002,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginUpgrade(String resourceGroupName, String name) {
-        return beginUpgradeAsync(resourceGroupName, name).getSyncPoller();
+        return this.beginUpgradeAsync(resourceGroupName, name).getSyncPoller();
     }
 
     /**
@@ -6015,7 +6020,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginUpgrade(String resourceGroupName, String name, Context context) {
-        return beginUpgradeAsync(resourceGroupName, name, context).getSyncPoller();
+        return this.beginUpgradeAsync(resourceGroupName, name, context).getSyncPoller();
     }
 
     /**
@@ -7241,7 +7246,8 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
             String name,
             String privateEndpointConnectionName,
             PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper) {
-        return beginApproveOrRejectPrivateEndpointConnectionAsync(
+        return this
+            .beginApproveOrRejectPrivateEndpointConnectionAsync(
                 resourceGroupName, name, privateEndpointConnectionName, privateEndpointWrapper)
             .getSyncPoller();
     }
@@ -7271,7 +7277,8 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
             String privateEndpointConnectionName,
             PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper,
             Context context) {
-        return beginApproveOrRejectPrivateEndpointConnectionAsync(
+        return this
+            .beginApproveOrRejectPrivateEndpointConnectionAsync(
                 resourceGroupName, name, privateEndpointConnectionName, privateEndpointWrapper, context)
             .getSyncPoller();
     }
@@ -7562,7 +7569,8 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Object>, Object> beginDeletePrivateEndpointConnection(
         String resourceGroupName, String name, String privateEndpointConnectionName) {
-        return beginDeletePrivateEndpointConnectionAsync(resourceGroupName, name, privateEndpointConnectionName)
+        return this
+            .beginDeletePrivateEndpointConnectionAsync(resourceGroupName, name, privateEndpointConnectionName)
             .getSyncPoller();
     }
 
@@ -7583,8 +7591,8 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Object>, Object> beginDeletePrivateEndpointConnection(
         String resourceGroupName, String name, String privateEndpointConnectionName, Context context) {
-        return beginDeletePrivateEndpointConnectionAsync(
-                resourceGroupName, name, privateEndpointConnectionName, context)
+        return this
+            .beginDeletePrivateEndpointConnectionAsync(resourceGroupName, name, privateEndpointConnectionName, context)
             .getSyncPoller();
     }
 
@@ -9619,7 +9627,8 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<WorkerPoolResourceInner>, WorkerPoolResourceInner> beginCreateOrUpdateWorkerPool(
         String resourceGroupName, String name, String workerPoolName, WorkerPoolResourceInner workerPoolEnvelope) {
-        return beginCreateOrUpdateWorkerPoolAsync(resourceGroupName, name, workerPoolName, workerPoolEnvelope)
+        return this
+            .beginCreateOrUpdateWorkerPoolAsync(resourceGroupName, name, workerPoolName, workerPoolEnvelope)
             .getSyncPoller();
     }
 
@@ -9645,7 +9654,8 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
         String workerPoolName,
         WorkerPoolResourceInner workerPoolEnvelope,
         Context context) {
-        return beginCreateOrUpdateWorkerPoolAsync(resourceGroupName, name, workerPoolName, workerPoolEnvelope, context)
+        return this
+            .beginCreateOrUpdateWorkerPoolAsync(resourceGroupName, name, workerPoolName, workerPoolEnvelope, context)
             .getSyncPoller();
     }
 

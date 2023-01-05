@@ -661,7 +661,7 @@ public final class ServerKeysClientImpl implements ServerKeysClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ServerKeyInner>, ServerKeyInner> beginCreateOrUpdate(
         String serverName, String keyName, String resourceGroupName, ServerKeyInner parameters) {
-        return beginCreateOrUpdateAsync(serverName, keyName, resourceGroupName, parameters).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(serverName, keyName, resourceGroupName, parameters).getSyncPoller();
     }
 
     /**
@@ -680,7 +680,9 @@ public final class ServerKeysClientImpl implements ServerKeysClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ServerKeyInner>, ServerKeyInner> beginCreateOrUpdate(
         String serverName, String keyName, String resourceGroupName, ServerKeyInner parameters, Context context) {
-        return beginCreateOrUpdateAsync(serverName, keyName, resourceGroupName, parameters, context).getSyncPoller();
+        return this
+            .beginCreateOrUpdateAsync(serverName, keyName, resourceGroupName, parameters, context)
+            .getSyncPoller();
     }
 
     /**
@@ -924,7 +926,7 @@ public final class ServerKeysClientImpl implements ServerKeysClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String serverName, String keyName, String resourceGroupName) {
-        return beginDeleteAsync(serverName, keyName, resourceGroupName).getSyncPoller();
+        return this.beginDeleteAsync(serverName, keyName, resourceGroupName).getSyncPoller();
     }
 
     /**
@@ -942,7 +944,7 @@ public final class ServerKeysClientImpl implements ServerKeysClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String serverName, String keyName, String resourceGroupName, Context context) {
-        return beginDeleteAsync(serverName, keyName, resourceGroupName, context).getSyncPoller();
+        return this.beginDeleteAsync(serverName, keyName, resourceGroupName, context).getSyncPoller();
     }
 
     /**

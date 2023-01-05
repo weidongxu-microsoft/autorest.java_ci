@@ -350,7 +350,8 @@ public final class ExpressRouteConnectionsClientImpl implements ExpressRouteConn
         String expressRouteGatewayName,
         String connectionName,
         ExpressRouteConnectionInner putExpressRouteConnectionParameters) {
-        return beginCreateOrUpdateAsync(
+        return this
+            .beginCreateOrUpdateAsync(
                 resourceGroupName, expressRouteGatewayName, connectionName, putExpressRouteConnectionParameters)
             .getSyncPoller();
     }
@@ -375,7 +376,8 @@ public final class ExpressRouteConnectionsClientImpl implements ExpressRouteConn
         String connectionName,
         ExpressRouteConnectionInner putExpressRouteConnectionParameters,
         Context context) {
-        return beginCreateOrUpdateAsync(
+        return this
+            .beginCreateOrUpdateAsync(
                 resourceGroupName,
                 expressRouteGatewayName,
                 connectionName,
@@ -824,7 +826,7 @@ public final class ExpressRouteConnectionsClientImpl implements ExpressRouteConn
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String expressRouteGatewayName, String connectionName) {
-        return beginDeleteAsync(resourceGroupName, expressRouteGatewayName, connectionName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, expressRouteGatewayName, connectionName).getSyncPoller();
     }
 
     /**
@@ -842,7 +844,9 @@ public final class ExpressRouteConnectionsClientImpl implements ExpressRouteConn
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String expressRouteGatewayName, String connectionName, Context context) {
-        return beginDeleteAsync(resourceGroupName, expressRouteGatewayName, connectionName, context).getSyncPoller();
+        return this
+            .beginDeleteAsync(resourceGroupName, expressRouteGatewayName, connectionName, context)
+            .getSyncPoller();
     }
 
     /**

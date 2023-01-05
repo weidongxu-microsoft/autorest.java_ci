@@ -263,7 +263,7 @@ public final class SqlVirtualMachineTroubleshootsClientImpl implements SqlVirtua
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<SqlVmTroubleshootingInner>, SqlVmTroubleshootingInner> beginTroubleshoot(
         String resourceGroupName, String sqlVirtualMachineName, SqlVmTroubleshootingInner parameters) {
-        return beginTroubleshootAsync(resourceGroupName, sqlVirtualMachineName, parameters).getSyncPoller();
+        return this.beginTroubleshootAsync(resourceGroupName, sqlVirtualMachineName, parameters).getSyncPoller();
     }
 
     /**
@@ -282,7 +282,9 @@ public final class SqlVirtualMachineTroubleshootsClientImpl implements SqlVirtua
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<SqlVmTroubleshootingInner>, SqlVmTroubleshootingInner> beginTroubleshoot(
         String resourceGroupName, String sqlVirtualMachineName, SqlVmTroubleshootingInner parameters, Context context) {
-        return beginTroubleshootAsync(resourceGroupName, sqlVirtualMachineName, parameters, context).getSyncPoller();
+        return this
+            .beginTroubleshootAsync(resourceGroupName, sqlVirtualMachineName, parameters, context)
+            .getSyncPoller();
     }
 
     /**

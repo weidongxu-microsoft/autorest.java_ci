@@ -313,7 +313,8 @@ public final class VpnLinkConnectionsClientImpl implements VpnLinkConnectionsCli
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginResetConnection(
         String resourceGroupName, String gatewayName, String connectionName, String linkConnectionName) {
-        return beginResetConnectionAsync(resourceGroupName, gatewayName, connectionName, linkConnectionName)
+        return this
+            .beginResetConnectionAsync(resourceGroupName, gatewayName, connectionName, linkConnectionName)
             .getSyncPoller();
     }
 
@@ -337,7 +338,8 @@ public final class VpnLinkConnectionsClientImpl implements VpnLinkConnectionsCli
         String connectionName,
         String linkConnectionName,
         Context context) {
-        return beginResetConnectionAsync(resourceGroupName, gatewayName, connectionName, linkConnectionName, context)
+        return this
+            .beginResetConnectionAsync(resourceGroupName, gatewayName, connectionName, linkConnectionName, context)
             .getSyncPoller();
     }
 
@@ -613,7 +615,9 @@ public final class VpnLinkConnectionsClientImpl implements VpnLinkConnectionsCli
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<String>, String> beginGetIkeSas(
         String resourceGroupName, String gatewayName, String connectionName, String linkConnectionName) {
-        return beginGetIkeSasAsync(resourceGroupName, gatewayName, connectionName, linkConnectionName).getSyncPoller();
+        return this
+            .beginGetIkeSasAsync(resourceGroupName, gatewayName, connectionName, linkConnectionName)
+            .getSyncPoller();
     }
 
     /**
@@ -636,7 +640,8 @@ public final class VpnLinkConnectionsClientImpl implements VpnLinkConnectionsCli
         String connectionName,
         String linkConnectionName,
         Context context) {
-        return beginGetIkeSasAsync(resourceGroupName, gatewayName, connectionName, linkConnectionName, context)
+        return this
+            .beginGetIkeSasAsync(resourceGroupName, gatewayName, connectionName, linkConnectionName, context)
             .getSyncPoller();
     }
 

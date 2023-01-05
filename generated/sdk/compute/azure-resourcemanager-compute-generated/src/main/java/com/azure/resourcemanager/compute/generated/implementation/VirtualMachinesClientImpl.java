@@ -520,7 +520,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-08-01";
+        final String apiVersion = "2022-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -573,7 +573,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-08-01";
+        final String apiVersion = "2022-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -695,7 +695,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-08-01";
+        final String apiVersion = "2022-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -754,7 +754,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-08-01";
+        final String apiVersion = "2022-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -840,7 +840,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<VirtualMachineCaptureResultInner>, VirtualMachineCaptureResultInner> beginCapture(
         String resourceGroupName, String vmName, VirtualMachineCaptureParameters parameters) {
-        return beginCaptureAsync(resourceGroupName, vmName, parameters).getSyncPoller();
+        return this.beginCaptureAsync(resourceGroupName, vmName, parameters).getSyncPoller();
     }
 
     /**
@@ -859,7 +859,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<VirtualMachineCaptureResultInner>, VirtualMachineCaptureResultInner> beginCapture(
         String resourceGroupName, String vmName, VirtualMachineCaptureParameters parameters, Context context) {
-        return beginCaptureAsync(resourceGroupName, vmName, parameters, context).getSyncPoller();
+        return this.beginCaptureAsync(resourceGroupName, vmName, parameters, context).getSyncPoller();
     }
 
     /**
@@ -979,7 +979,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-08-01";
+        final String apiVersion = "2022-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1037,7 +1037,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-08-01";
+        final String apiVersion = "2022-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1118,7 +1118,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<VirtualMachineInner>, VirtualMachineInner> beginCreateOrUpdate(
         String resourceGroupName, String vmName, VirtualMachineInner parameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, vmName, parameters).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, vmName, parameters).getSyncPoller();
     }
 
     /**
@@ -1137,7 +1137,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<VirtualMachineInner>, VirtualMachineInner> beginCreateOrUpdate(
         String resourceGroupName, String vmName, VirtualMachineInner parameters, Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, vmName, parameters, context).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, vmName, parameters, context).getSyncPoller();
     }
 
     /**
@@ -1255,7 +1255,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-08-01";
+        final String apiVersion = "2022-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1312,7 +1312,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-08-01";
+        final String apiVersion = "2022-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1389,7 +1389,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<VirtualMachineInner>, VirtualMachineInner> beginUpdate(
         String resourceGroupName, String vmName, VirtualMachineUpdateInner parameters) {
-        return beginUpdateAsync(resourceGroupName, vmName, parameters).getSyncPoller();
+        return this.beginUpdateAsync(resourceGroupName, vmName, parameters).getSyncPoller();
     }
 
     /**
@@ -1407,7 +1407,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<VirtualMachineInner>, VirtualMachineInner> beginUpdate(
         String resourceGroupName, String vmName, VirtualMachineUpdateInner parameters, Context context) {
-        return beginUpdateAsync(resourceGroupName, vmName, parameters, context).getSyncPoller();
+        return this.beginUpdateAsync(resourceGroupName, vmName, parameters, context).getSyncPoller();
     }
 
     /**
@@ -1516,7 +1516,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-08-01";
+        final String apiVersion = "2022-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1568,7 +1568,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-08-01";
+        final String apiVersion = "2022-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1660,7 +1660,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String vmName) {
         final Boolean forceDeletion = null;
-        return beginDeleteAsync(resourceGroupName, vmName, forceDeletion).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, vmName, forceDeletion).getSyncPoller();
     }
 
     /**
@@ -1678,7 +1678,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String vmName, Boolean forceDeletion, Context context) {
-        return beginDeleteAsync(resourceGroupName, vmName, forceDeletion, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, vmName, forceDeletion, context).getSyncPoller();
     }
 
     /**
@@ -1803,7 +1803,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-08-01";
+        final String apiVersion = "2022-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1858,7 +1858,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-08-01";
+        final String apiVersion = "2022-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1960,7 +1960,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-08-01";
+        final String apiVersion = "2022-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -2011,7 +2011,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-08-01";
+        final String apiVersion = "2022-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -2106,7 +2106,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-08-01";
+        final String apiVersion = "2022-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -2157,7 +2157,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-08-01";
+        final String apiVersion = "2022-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -2228,7 +2228,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginConvertToManagedDisks(String resourceGroupName, String vmName) {
-        return beginConvertToManagedDisksAsync(resourceGroupName, vmName).getSyncPoller();
+        return this.beginConvertToManagedDisksAsync(resourceGroupName, vmName).getSyncPoller();
     }
 
     /**
@@ -2246,7 +2246,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginConvertToManagedDisks(
         String resourceGroupName, String vmName, Context context) {
-        return beginConvertToManagedDisksAsync(resourceGroupName, vmName, context).getSyncPoller();
+        return this.beginConvertToManagedDisksAsync(resourceGroupName, vmName, context).getSyncPoller();
     }
 
     /**
@@ -2351,7 +2351,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-08-01";
+        final String apiVersion = "2022-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -2404,7 +2404,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-08-01";
+        final String apiVersion = "2022-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -2500,7 +2500,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDeallocate(String resourceGroupName, String vmName) {
         final Boolean hibernate = null;
-        return beginDeallocateAsync(resourceGroupName, vmName, hibernate).getSyncPoller();
+        return this.beginDeallocateAsync(resourceGroupName, vmName, hibernate).getSyncPoller();
     }
 
     /**
@@ -2519,7 +2519,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDeallocate(
         String resourceGroupName, String vmName, Boolean hibernate, Context context) {
-        return beginDeallocateAsync(resourceGroupName, vmName, hibernate, context).getSyncPoller();
+        return this.beginDeallocateAsync(resourceGroupName, vmName, hibernate, context).getSyncPoller();
     }
 
     /**
@@ -2648,7 +2648,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-08-01";
+        final String apiVersion = "2022-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -2701,7 +2701,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-08-01";
+        final String apiVersion = "2022-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -2805,7 +2805,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-08-01";
+        final String apiVersion = "2022-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -2865,7 +2865,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-08-01";
+        final String apiVersion = "2022-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -3012,7 +3012,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-08-01";
+        final String apiVersion = "2022-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -3068,7 +3068,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-08-01";
+        final String apiVersion = "2022-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -3214,7 +3214,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-08-01";
+        final String apiVersion = "2022-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -3269,7 +3269,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-08-01";
+        final String apiVersion = "2022-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -3387,7 +3387,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-08-01";
+        final String apiVersion = "2022-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -3442,7 +3442,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-08-01";
+        final String apiVersion = "2022-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -3542,7 +3542,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginPowerOff(String resourceGroupName, String vmName) {
         final Boolean skipShutdown = null;
-        return beginPowerOffAsync(resourceGroupName, vmName, skipShutdown).getSyncPoller();
+        return this.beginPowerOffAsync(resourceGroupName, vmName, skipShutdown).getSyncPoller();
     }
 
     /**
@@ -3563,7 +3563,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginPowerOff(
         String resourceGroupName, String vmName, Boolean skipShutdown, Context context) {
-        return beginPowerOffAsync(resourceGroupName, vmName, skipShutdown, context).getSyncPoller();
+        return this.beginPowerOffAsync(resourceGroupName, vmName, skipShutdown, context).getSyncPoller();
     }
 
     /**
@@ -3694,7 +3694,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-08-01";
+        final String apiVersion = "2022-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -3744,7 +3744,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-08-01";
+        final String apiVersion = "2022-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -3810,7 +3810,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginReapply(String resourceGroupName, String vmName) {
-        return beginReapplyAsync(resourceGroupName, vmName).getSyncPoller();
+        return this.beginReapplyAsync(resourceGroupName, vmName).getSyncPoller();
     }
 
     /**
@@ -3826,7 +3826,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginReapply(String resourceGroupName, String vmName, Context context) {
-        return beginReapplyAsync(resourceGroupName, vmName, context).getSyncPoller();
+        return this.beginReapplyAsync(resourceGroupName, vmName, context).getSyncPoller();
     }
 
     /**
@@ -3922,7 +3922,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-08-01";
+        final String apiVersion = "2022-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -3972,7 +3972,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-08-01";
+        final String apiVersion = "2022-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -4038,7 +4038,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginRestart(String resourceGroupName, String vmName) {
-        return beginRestartAsync(resourceGroupName, vmName).getSyncPoller();
+        return this.beginRestartAsync(resourceGroupName, vmName).getSyncPoller();
     }
 
     /**
@@ -4054,7 +4054,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginRestart(String resourceGroupName, String vmName, Context context) {
-        return beginRestartAsync(resourceGroupName, vmName, context).getSyncPoller();
+        return this.beginRestartAsync(resourceGroupName, vmName, context).getSyncPoller();
     }
 
     /**
@@ -4150,7 +4150,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-08-01";
+        final String apiVersion = "2022-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -4200,7 +4200,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-08-01";
+        final String apiVersion = "2022-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -4266,7 +4266,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginStart(String resourceGroupName, String vmName) {
-        return beginStartAsync(resourceGroupName, vmName).getSyncPoller();
+        return this.beginStartAsync(resourceGroupName, vmName).getSyncPoller();
     }
 
     /**
@@ -4282,7 +4282,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginStart(String resourceGroupName, String vmName, Context context) {
-        return beginStartAsync(resourceGroupName, vmName, context).getSyncPoller();
+        return this.beginStartAsync(resourceGroupName, vmName, context).getSyncPoller();
     }
 
     /**
@@ -4378,7 +4378,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-08-01";
+        final String apiVersion = "2022-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -4428,7 +4428,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-08-01";
+        final String apiVersion = "2022-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -4494,7 +4494,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginRedeploy(String resourceGroupName, String vmName) {
-        return beginRedeployAsync(resourceGroupName, vmName).getSyncPoller();
+        return this.beginRedeployAsync(resourceGroupName, vmName).getSyncPoller();
     }
 
     /**
@@ -4510,7 +4510,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginRedeploy(String resourceGroupName, String vmName, Context context) {
-        return beginRedeployAsync(resourceGroupName, vmName, context).getSyncPoller();
+        return this.beginRedeployAsync(resourceGroupName, vmName, context).getSyncPoller();
     }
 
     /**
@@ -4576,7 +4576,11 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
     }
 
     /**
-     * Reimages the virtual machine which has an ephemeral OS disk back to its initial state.
+     * Reimages (upgrade the operating system) a virtual machine which don't have a ephemeral OS disk, for virtual
+     * machines who have a ephemeral OS disk the virtual machine is reset to initial state. NOTE: The retaining of old
+     * OS disk depends on the value of deleteOption of OS disk. If deleteOption is detach, the old OS disk will be
+     * preserved after reimage. If deleteOption is delete, the old OS disk will be deleted after reimage. The
+     * deleteOption of the OS disk should be updated accordingly before performing the reimage.
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
@@ -4611,7 +4615,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
         if (parameters != null) {
             parameters.validate();
         }
-        final String apiVersion = "2022-08-01";
+        final String apiVersion = "2022-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -4630,7 +4634,11 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
     }
 
     /**
-     * Reimages the virtual machine which has an ephemeral OS disk back to its initial state.
+     * Reimages (upgrade the operating system) a virtual machine which don't have a ephemeral OS disk, for virtual
+     * machines who have a ephemeral OS disk the virtual machine is reset to initial state. NOTE: The retaining of old
+     * OS disk depends on the value of deleteOption of OS disk. If deleteOption is detach, the old OS disk will be
+     * preserved after reimage. If deleteOption is delete, the old OS disk will be deleted after reimage. The
+     * deleteOption of the OS disk should be updated accordingly before performing the reimage.
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
@@ -4666,7 +4674,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
         if (parameters != null) {
             parameters.validate();
         }
-        final String apiVersion = "2022-08-01";
+        final String apiVersion = "2022-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -4682,7 +4690,11 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
     }
 
     /**
-     * Reimages the virtual machine which has an ephemeral OS disk back to its initial state.
+     * Reimages (upgrade the operating system) a virtual machine which don't have a ephemeral OS disk, for virtual
+     * machines who have a ephemeral OS disk the virtual machine is reset to initial state. NOTE: The retaining of old
+     * OS disk depends on the value of deleteOption of OS disk. If deleteOption is detach, the old OS disk will be
+     * preserved after reimage. If deleteOption is delete, the old OS disk will be deleted after reimage. The
+     * deleteOption of the OS disk should be updated accordingly before performing the reimage.
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
@@ -4703,7 +4715,11 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
     }
 
     /**
-     * Reimages the virtual machine which has an ephemeral OS disk back to its initial state.
+     * Reimages (upgrade the operating system) a virtual machine which don't have a ephemeral OS disk, for virtual
+     * machines who have a ephemeral OS disk the virtual machine is reset to initial state. NOTE: The retaining of old
+     * OS disk depends on the value of deleteOption of OS disk. If deleteOption is detach, the old OS disk will be
+     * preserved after reimage. If deleteOption is delete, the old OS disk will be deleted after reimage. The
+     * deleteOption of the OS disk should be updated accordingly before performing the reimage.
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
@@ -4723,7 +4739,11 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
     }
 
     /**
-     * Reimages the virtual machine which has an ephemeral OS disk back to its initial state.
+     * Reimages (upgrade the operating system) a virtual machine which don't have a ephemeral OS disk, for virtual
+     * machines who have a ephemeral OS disk the virtual machine is reset to initial state. NOTE: The retaining of old
+     * OS disk depends on the value of deleteOption of OS disk. If deleteOption is detach, the old OS disk will be
+     * preserved after reimage. If deleteOption is delete, the old OS disk will be deleted after reimage. The
+     * deleteOption of the OS disk should be updated accordingly before performing the reimage.
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
@@ -4746,7 +4766,11 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
     }
 
     /**
-     * Reimages the virtual machine which has an ephemeral OS disk back to its initial state.
+     * Reimages (upgrade the operating system) a virtual machine which don't have a ephemeral OS disk, for virtual
+     * machines who have a ephemeral OS disk the virtual machine is reset to initial state. NOTE: The retaining of old
+     * OS disk depends on the value of deleteOption of OS disk. If deleteOption is detach, the old OS disk will be
+     * preserved after reimage. If deleteOption is delete, the old OS disk will be deleted after reimage. The
+     * deleteOption of the OS disk should be updated accordingly before performing the reimage.
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
@@ -4758,11 +4782,15 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginReimage(String resourceGroupName, String vmName) {
         final VirtualMachineReimageParameters parameters = null;
-        return beginReimageAsync(resourceGroupName, vmName, parameters).getSyncPoller();
+        return this.beginReimageAsync(resourceGroupName, vmName, parameters).getSyncPoller();
     }
 
     /**
-     * Reimages the virtual machine which has an ephemeral OS disk back to its initial state.
+     * Reimages (upgrade the operating system) a virtual machine which don't have a ephemeral OS disk, for virtual
+     * machines who have a ephemeral OS disk the virtual machine is reset to initial state. NOTE: The retaining of old
+     * OS disk depends on the value of deleteOption of OS disk. If deleteOption is detach, the old OS disk will be
+     * preserved after reimage. If deleteOption is delete, the old OS disk will be deleted after reimage. The
+     * deleteOption of the OS disk should be updated accordingly before performing the reimage.
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
@@ -4776,11 +4804,15 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginReimage(
         String resourceGroupName, String vmName, VirtualMachineReimageParameters parameters, Context context) {
-        return beginReimageAsync(resourceGroupName, vmName, parameters, context).getSyncPoller();
+        return this.beginReimageAsync(resourceGroupName, vmName, parameters, context).getSyncPoller();
     }
 
     /**
-     * Reimages the virtual machine which has an ephemeral OS disk back to its initial state.
+     * Reimages (upgrade the operating system) a virtual machine which don't have a ephemeral OS disk, for virtual
+     * machines who have a ephemeral OS disk the virtual machine is reset to initial state. NOTE: The retaining of old
+     * OS disk depends on the value of deleteOption of OS disk. If deleteOption is detach, the old OS disk will be
+     * preserved after reimage. If deleteOption is delete, the old OS disk will be deleted after reimage. The
+     * deleteOption of the OS disk should be updated accordingly before performing the reimage.
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
@@ -4799,7 +4831,11 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
     }
 
     /**
-     * Reimages the virtual machine which has an ephemeral OS disk back to its initial state.
+     * Reimages (upgrade the operating system) a virtual machine which don't have a ephemeral OS disk, for virtual
+     * machines who have a ephemeral OS disk the virtual machine is reset to initial state. NOTE: The retaining of old
+     * OS disk depends on the value of deleteOption of OS disk. If deleteOption is detach, the old OS disk will be
+     * preserved after reimage. If deleteOption is delete, the old OS disk will be deleted after reimage. The
+     * deleteOption of the OS disk should be updated accordingly before performing the reimage.
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
@@ -4817,7 +4853,11 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
     }
 
     /**
-     * Reimages the virtual machine which has an ephemeral OS disk back to its initial state.
+     * Reimages (upgrade the operating system) a virtual machine which don't have a ephemeral OS disk, for virtual
+     * machines who have a ephemeral OS disk the virtual machine is reset to initial state. NOTE: The retaining of old
+     * OS disk depends on the value of deleteOption of OS disk. If deleteOption is detach, the old OS disk will be
+     * preserved after reimage. If deleteOption is delete, the old OS disk will be deleted after reimage. The
+     * deleteOption of the OS disk should be updated accordingly before performing the reimage.
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
@@ -4837,7 +4877,11 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
     }
 
     /**
-     * Reimages the virtual machine which has an ephemeral OS disk back to its initial state.
+     * Reimages (upgrade the operating system) a virtual machine which don't have a ephemeral OS disk, for virtual
+     * machines who have a ephemeral OS disk the virtual machine is reset to initial state. NOTE: The retaining of old
+     * OS disk depends on the value of deleteOption of OS disk. If deleteOption is detach, the old OS disk will be
+     * preserved after reimage. If deleteOption is delete, the old OS disk will be deleted after reimage. The
+     * deleteOption of the OS disk should be updated accordingly before performing the reimage.
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
@@ -4852,7 +4896,11 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
     }
 
     /**
-     * Reimages the virtual machine which has an ephemeral OS disk back to its initial state.
+     * Reimages (upgrade the operating system) a virtual machine which don't have a ephemeral OS disk, for virtual
+     * machines who have a ephemeral OS disk the virtual machine is reset to initial state. NOTE: The retaining of old
+     * OS disk depends on the value of deleteOption of OS disk. If deleteOption is detach, the old OS disk will be
+     * preserved after reimage. If deleteOption is delete, the old OS disk will be deleted after reimage. The
+     * deleteOption of the OS disk should be updated accordingly before performing the reimage.
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
@@ -4904,7 +4952,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-08-01";
+        final String apiVersion = "2022-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -4959,7 +5007,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-08-01";
+        final String apiVersion = "2022-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -5064,7 +5112,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-08-01";
+        final String apiVersion = "2022-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -5114,7 +5162,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-08-01";
+        final String apiVersion = "2022-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -5180,7 +5228,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginPerformMaintenance(String resourceGroupName, String vmName) {
-        return beginPerformMaintenanceAsync(resourceGroupName, vmName).getSyncPoller();
+        return this.beginPerformMaintenanceAsync(resourceGroupName, vmName).getSyncPoller();
     }
 
     /**
@@ -5197,7 +5245,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginPerformMaintenance(
         String resourceGroupName, String vmName, Context context) {
-        return beginPerformMaintenanceAsync(resourceGroupName, vmName, context).getSyncPoller();
+        return this.beginPerformMaintenanceAsync(resourceGroupName, vmName, context).getSyncPoller();
     }
 
     /**
@@ -5295,7 +5343,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-08-01";
+        final String apiVersion = "2022-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -5345,7 +5393,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-08-01";
+        final String apiVersion = "2022-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -5436,7 +5484,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-08-01";
+        final String apiVersion = "2022-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -5487,7 +5535,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2022-08-01";
+        final String apiVersion = "2022-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -5564,7 +5612,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<VirtualMachineAssessPatchesResultInner>, VirtualMachineAssessPatchesResultInner>
         beginAssessPatches(String resourceGroupName, String vmName) {
-        return beginAssessPatchesAsync(resourceGroupName, vmName).getSyncPoller();
+        return this.beginAssessPatchesAsync(resourceGroupName, vmName).getSyncPoller();
     }
 
     /**
@@ -5581,7 +5629,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<VirtualMachineAssessPatchesResultInner>, VirtualMachineAssessPatchesResultInner>
         beginAssessPatches(String resourceGroupName, String vmName, Context context) {
-        return beginAssessPatchesAsync(resourceGroupName, vmName, context).getSyncPoller();
+        return this.beginAssessPatchesAsync(resourceGroupName, vmName, context).getSyncPoller();
     }
 
     /**
@@ -5690,7 +5738,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
         } else {
             installPatchesInput.validate();
         }
-        final String apiVersion = "2022-08-01";
+        final String apiVersion = "2022-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -5752,7 +5800,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
         } else {
             installPatchesInput.validate();
         }
-        final String apiVersion = "2022-08-01";
+        final String apiVersion = "2022-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -5841,7 +5889,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
     public SyncPoller<PollResult<VirtualMachineInstallPatchesResultInner>, VirtualMachineInstallPatchesResultInner>
         beginInstallPatches(
             String resourceGroupName, String vmName, VirtualMachineInstallPatchesParameters installPatchesInput) {
-        return beginInstallPatchesAsync(resourceGroupName, vmName, installPatchesInput).getSyncPoller();
+        return this.beginInstallPatchesAsync(resourceGroupName, vmName, installPatchesInput).getSyncPoller();
     }
 
     /**
@@ -5863,7 +5911,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
             String vmName,
             VirtualMachineInstallPatchesParameters installPatchesInput,
             Context context) {
-        return beginInstallPatchesAsync(resourceGroupName, vmName, installPatchesInput, context).getSyncPoller();
+        return this.beginInstallPatchesAsync(resourceGroupName, vmName, installPatchesInput, context).getSyncPoller();
     }
 
     /**
@@ -5984,7 +6032,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-08-01";
+        final String apiVersion = "2022-11-01";
         final String accept = "application/json, text/json";
         return FluxUtil
             .withContext(
@@ -6041,7 +6089,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2022-08-01";
+        final String apiVersion = "2022-11-01";
         final String accept = "application/json, text/json";
         context = this.client.mergeContext(context);
         return service
@@ -6119,7 +6167,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<RunCommandResultInner>, RunCommandResultInner> beginRunCommand(
         String resourceGroupName, String vmName, RunCommandInput parameters) {
-        return beginRunCommandAsync(resourceGroupName, vmName, parameters).getSyncPoller();
+        return this.beginRunCommandAsync(resourceGroupName, vmName, parameters).getSyncPoller();
     }
 
     /**
@@ -6137,7 +6185,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<RunCommandResultInner>, RunCommandResultInner> beginRunCommand(
         String resourceGroupName, String vmName, RunCommandInput parameters, Context context) {
-        return beginRunCommandAsync(resourceGroupName, vmName, parameters, context).getSyncPoller();
+        return this.beginRunCommandAsync(resourceGroupName, vmName, parameters, context).getSyncPoller();
     }
 
     /**

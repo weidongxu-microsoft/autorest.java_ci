@@ -503,7 +503,9 @@ public final class VirtualHubIpConfigurationsClientImpl implements VirtualHubIpC
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<HubIpConfigurationInner>, HubIpConfigurationInner> beginCreateOrUpdate(
         String resourceGroupName, String virtualHubName, String ipConfigName, HubIpConfigurationInner parameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, virtualHubName, ipConfigName, parameters).getSyncPoller();
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, virtualHubName, ipConfigName, parameters)
+            .getSyncPoller();
     }
 
     /**
@@ -527,7 +529,8 @@ public final class VirtualHubIpConfigurationsClientImpl implements VirtualHubIpC
         String ipConfigName,
         HubIpConfigurationInner parameters,
         Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, virtualHubName, ipConfigName, parameters, context)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, virtualHubName, ipConfigName, parameters, context)
             .getSyncPoller();
     }
 
@@ -786,7 +789,7 @@ public final class VirtualHubIpConfigurationsClientImpl implements VirtualHubIpC
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String virtualHubName, String ipConfigName) {
-        return beginDeleteAsync(resourceGroupName, virtualHubName, ipConfigName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, virtualHubName, ipConfigName).getSyncPoller();
     }
 
     /**
@@ -804,7 +807,7 @@ public final class VirtualHubIpConfigurationsClientImpl implements VirtualHubIpC
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String virtualHubName, String ipConfigName, Context context) {
-        return beginDeleteAsync(resourceGroupName, virtualHubName, ipConfigName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, virtualHubName, ipConfigName, context).getSyncPoller();
     }
 
     /**

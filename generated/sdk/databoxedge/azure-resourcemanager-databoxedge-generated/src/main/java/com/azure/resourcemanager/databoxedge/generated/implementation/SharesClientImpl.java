@@ -678,7 +678,7 @@ public final class SharesClientImpl implements SharesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ShareInner>, ShareInner> beginCreateOrUpdate(
         String deviceName, String name, String resourceGroupName, ShareInner share) {
-        return beginCreateOrUpdateAsync(deviceName, name, resourceGroupName, share).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(deviceName, name, resourceGroupName, share).getSyncPoller();
     }
 
     /**
@@ -697,7 +697,7 @@ public final class SharesClientImpl implements SharesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ShareInner>, ShareInner> beginCreateOrUpdate(
         String deviceName, String name, String resourceGroupName, ShareInner share, Context context) {
-        return beginCreateOrUpdateAsync(deviceName, name, resourceGroupName, share, context).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(deviceName, name, resourceGroupName, share, context).getSyncPoller();
     }
 
     /**
@@ -937,7 +937,7 @@ public final class SharesClientImpl implements SharesClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String deviceName, String name, String resourceGroupName) {
-        return beginDeleteAsync(deviceName, name, resourceGroupName).getSyncPoller();
+        return this.beginDeleteAsync(deviceName, name, resourceGroupName).getSyncPoller();
     }
 
     /**
@@ -955,7 +955,7 @@ public final class SharesClientImpl implements SharesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String deviceName, String name, String resourceGroupName, Context context) {
-        return beginDeleteAsync(deviceName, name, resourceGroupName, context).getSyncPoller();
+        return this.beginDeleteAsync(deviceName, name, resourceGroupName, context).getSyncPoller();
     }
 
     /**
@@ -1186,7 +1186,7 @@ public final class SharesClientImpl implements SharesClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginRefresh(String deviceName, String name, String resourceGroupName) {
-        return beginRefreshAsync(deviceName, name, resourceGroupName).getSyncPoller();
+        return this.beginRefreshAsync(deviceName, name, resourceGroupName).getSyncPoller();
     }
 
     /**
@@ -1204,7 +1204,7 @@ public final class SharesClientImpl implements SharesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginRefresh(
         String deviceName, String name, String resourceGroupName, Context context) {
-        return beginRefreshAsync(deviceName, name, resourceGroupName, context).getSyncPoller();
+        return this.beginRefreshAsync(deviceName, name, resourceGroupName, context).getSyncPoller();
     }
 
     /**

@@ -882,7 +882,8 @@ public final class ManagedPrivateEndpointsClientImpl implements ManagedPrivateEn
         String clusterName,
         String managedPrivateEndpointName,
         ManagedPrivateEndpointInner parameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, clusterName, managedPrivateEndpointName, parameters)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, clusterName, managedPrivateEndpointName, parameters)
             .getSyncPoller();
     }
 
@@ -906,7 +907,8 @@ public final class ManagedPrivateEndpointsClientImpl implements ManagedPrivateEn
         String managedPrivateEndpointName,
         ManagedPrivateEndpointInner parameters,
         Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, clusterName, managedPrivateEndpointName, parameters, context)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, clusterName, managedPrivateEndpointName, parameters, context)
             .getSyncPoller();
     }
 
@@ -1217,7 +1219,9 @@ public final class ManagedPrivateEndpointsClientImpl implements ManagedPrivateEn
         String clusterName,
         String managedPrivateEndpointName,
         ManagedPrivateEndpointInner parameters) {
-        return beginUpdateAsync(resourceGroupName, clusterName, managedPrivateEndpointName, parameters).getSyncPoller();
+        return this
+            .beginUpdateAsync(resourceGroupName, clusterName, managedPrivateEndpointName, parameters)
+            .getSyncPoller();
     }
 
     /**
@@ -1240,7 +1244,8 @@ public final class ManagedPrivateEndpointsClientImpl implements ManagedPrivateEn
         String managedPrivateEndpointName,
         ManagedPrivateEndpointInner parameters,
         Context context) {
-        return beginUpdateAsync(resourceGroupName, clusterName, managedPrivateEndpointName, parameters, context)
+        return this
+            .beginUpdateAsync(resourceGroupName, clusterName, managedPrivateEndpointName, parameters, context)
             .getSyncPoller();
     }
 
@@ -1505,7 +1510,7 @@ public final class ManagedPrivateEndpointsClientImpl implements ManagedPrivateEn
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String clusterName, String managedPrivateEndpointName) {
-        return beginDeleteAsync(resourceGroupName, clusterName, managedPrivateEndpointName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, clusterName, managedPrivateEndpointName).getSyncPoller();
     }
 
     /**
@@ -1523,7 +1528,9 @@ public final class ManagedPrivateEndpointsClientImpl implements ManagedPrivateEn
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String clusterName, String managedPrivateEndpointName, Context context) {
-        return beginDeleteAsync(resourceGroupName, clusterName, managedPrivateEndpointName, context).getSyncPoller();
+        return this
+            .beginDeleteAsync(resourceGroupName, clusterName, managedPrivateEndpointName, context)
+            .getSyncPoller();
     }
 
     /**

@@ -322,7 +322,7 @@ public final class NatGatewaysClientImpl implements NatGatewaysClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String natGatewayName) {
-        return beginDeleteAsync(resourceGroupName, natGatewayName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, natGatewayName).getSyncPoller();
     }
 
     /**
@@ -339,7 +339,7 @@ public final class NatGatewaysClientImpl implements NatGatewaysClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String natGatewayName, Context context) {
-        return beginDeleteAsync(resourceGroupName, natGatewayName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, natGatewayName, context).getSyncPoller();
     }
 
     /**
@@ -733,7 +733,7 @@ public final class NatGatewaysClientImpl implements NatGatewaysClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<NatGatewayInner>, NatGatewayInner> beginCreateOrUpdate(
         String resourceGroupName, String natGatewayName, NatGatewayInner parameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, natGatewayName, parameters).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, natGatewayName, parameters).getSyncPoller();
     }
 
     /**
@@ -751,7 +751,7 @@ public final class NatGatewaysClientImpl implements NatGatewaysClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<NatGatewayInner>, NatGatewayInner> beginCreateOrUpdate(
         String resourceGroupName, String natGatewayName, NatGatewayInner parameters, Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, natGatewayName, parameters, context).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, natGatewayName, parameters, context).getSyncPoller();
     }
 
     /**

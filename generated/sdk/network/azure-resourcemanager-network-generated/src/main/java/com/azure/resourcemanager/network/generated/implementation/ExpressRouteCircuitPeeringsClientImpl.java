@@ -305,7 +305,7 @@ public final class ExpressRouteCircuitPeeringsClientImpl implements ExpressRoute
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String circuitName, String peeringName) {
-        return beginDeleteAsync(resourceGroupName, circuitName, peeringName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, circuitName, peeringName).getSyncPoller();
     }
 
     /**
@@ -323,7 +323,7 @@ public final class ExpressRouteCircuitPeeringsClientImpl implements ExpressRoute
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String circuitName, String peeringName, Context context) {
-        return beginDeleteAsync(resourceGroupName, circuitName, peeringName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, circuitName, peeringName, context).getSyncPoller();
     }
 
     /**
@@ -768,7 +768,9 @@ public final class ExpressRouteCircuitPeeringsClientImpl implements ExpressRoute
         String circuitName,
         String peeringName,
         ExpressRouteCircuitPeeringInner peeringParameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, circuitName, peeringName, peeringParameters).getSyncPoller();
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, circuitName, peeringName, peeringParameters)
+            .getSyncPoller();
     }
 
     /**
@@ -791,7 +793,8 @@ public final class ExpressRouteCircuitPeeringsClientImpl implements ExpressRoute
         String peeringName,
         ExpressRouteCircuitPeeringInner peeringParameters,
         Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, circuitName, peeringName, peeringParameters, context)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, circuitName, peeringName, peeringParameters, context)
             .getSyncPoller();
     }
 

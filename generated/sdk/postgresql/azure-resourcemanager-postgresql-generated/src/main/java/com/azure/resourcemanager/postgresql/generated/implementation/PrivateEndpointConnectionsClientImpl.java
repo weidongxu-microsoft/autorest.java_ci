@@ -542,7 +542,8 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
         String serverName,
         String privateEndpointConnectionName,
         PrivateEndpointConnectionInner parameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, serverName, privateEndpointConnectionName, parameters)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, serverName, privateEndpointConnectionName, parameters)
             .getSyncPoller();
     }
 
@@ -566,8 +567,8 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
         String privateEndpointConnectionName,
         PrivateEndpointConnectionInner parameters,
         Context context) {
-        return beginCreateOrUpdateAsync(
-                resourceGroupName, serverName, privateEndpointConnectionName, parameters, context)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, serverName, privateEndpointConnectionName, parameters, context)
             .getSyncPoller();
     }
 
@@ -836,7 +837,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String serverName, String privateEndpointConnectionName) {
-        return beginDeleteAsync(resourceGroupName, serverName, privateEndpointConnectionName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, serverName, privateEndpointConnectionName).getSyncPoller();
     }
 
     /**
@@ -854,7 +855,9 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String serverName, String privateEndpointConnectionName, Context context) {
-        return beginDeleteAsync(resourceGroupName, serverName, privateEndpointConnectionName, context).getSyncPoller();
+        return this
+            .beginDeleteAsync(resourceGroupName, serverName, privateEndpointConnectionName, context)
+            .getSyncPoller();
     }
 
     /**
@@ -1143,7 +1146,8 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<PrivateEndpointConnectionInner>, PrivateEndpointConnectionInner> beginUpdateTags(
         String resourceGroupName, String serverName, String privateEndpointConnectionName, TagsObject parameters) {
-        return beginUpdateTagsAsync(resourceGroupName, serverName, privateEndpointConnectionName, parameters)
+        return this
+            .beginUpdateTagsAsync(resourceGroupName, serverName, privateEndpointConnectionName, parameters)
             .getSyncPoller();
     }
 
@@ -1169,7 +1173,8 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
         String privateEndpointConnectionName,
         TagsObject parameters,
         Context context) {
-        return beginUpdateTagsAsync(resourceGroupName, serverName, privateEndpointConnectionName, parameters, context)
+        return this
+            .beginUpdateTagsAsync(resourceGroupName, serverName, privateEndpointConnectionName, parameters, context)
             .getSyncPoller();
     }
 

@@ -498,7 +498,8 @@ public final class RouteMapsClientImpl implements RouteMapsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<RouteMapInner>, RouteMapInner> beginCreateOrUpdate(
         String resourceGroupName, String virtualHubName, String routeMapName, RouteMapInner routeMapParameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, virtualHubName, routeMapName, routeMapParameters)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, virtualHubName, routeMapName, routeMapParameters)
             .getSyncPoller();
     }
 
@@ -522,7 +523,8 @@ public final class RouteMapsClientImpl implements RouteMapsClient {
         String routeMapName,
         RouteMapInner routeMapParameters,
         Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, virtualHubName, routeMapName, routeMapParameters, context)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, virtualHubName, routeMapName, routeMapParameters, context)
             .getSyncPoller();
     }
 
@@ -778,7 +780,7 @@ public final class RouteMapsClientImpl implements RouteMapsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String virtualHubName, String routeMapName) {
-        return beginDeleteAsync(resourceGroupName, virtualHubName, routeMapName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, virtualHubName, routeMapName).getSyncPoller();
     }
 
     /**
@@ -796,7 +798,7 @@ public final class RouteMapsClientImpl implements RouteMapsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String virtualHubName, String routeMapName, Context context) {
-        return beginDeleteAsync(resourceGroupName, virtualHubName, routeMapName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, virtualHubName, routeMapName, context).getSyncPoller();
     }
 
     /**

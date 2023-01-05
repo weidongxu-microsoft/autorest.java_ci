@@ -325,7 +325,7 @@ public final class IpAllocationsClientImpl implements IpAllocationsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String ipAllocationName) {
-        return beginDeleteAsync(resourceGroupName, ipAllocationName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, ipAllocationName).getSyncPoller();
     }
 
     /**
@@ -342,7 +342,7 @@ public final class IpAllocationsClientImpl implements IpAllocationsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String ipAllocationName, Context context) {
-        return beginDeleteAsync(resourceGroupName, ipAllocationName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, ipAllocationName, context).getSyncPoller();
     }
 
     /**
@@ -740,7 +740,7 @@ public final class IpAllocationsClientImpl implements IpAllocationsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<IpAllocationInner>, IpAllocationInner> beginCreateOrUpdate(
         String resourceGroupName, String ipAllocationName, IpAllocationInner parameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, ipAllocationName, parameters).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, ipAllocationName, parameters).getSyncPoller();
     }
 
     /**
@@ -758,7 +758,7 @@ public final class IpAllocationsClientImpl implements IpAllocationsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<IpAllocationInner>, IpAllocationInner> beginCreateOrUpdate(
         String resourceGroupName, String ipAllocationName, IpAllocationInner parameters, Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, ipAllocationName, parameters, context).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, ipAllocationName, parameters, context).getSyncPoller();
     }
 
     /**

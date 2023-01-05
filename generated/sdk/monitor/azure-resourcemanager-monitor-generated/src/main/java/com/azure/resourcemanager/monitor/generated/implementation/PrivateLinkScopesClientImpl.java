@@ -628,7 +628,7 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String scopeName) {
-        return beginDeleteAsync(resourceGroupName, scopeName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, scopeName).getSyncPoller();
     }
 
     /**
@@ -644,7 +644,7 @@ public final class PrivateLinkScopesClientImpl implements PrivateLinkScopesClien
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String scopeName, Context context) {
-        return beginDeleteAsync(resourceGroupName, scopeName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, scopeName, context).getSyncPoller();
     }
 
     /**

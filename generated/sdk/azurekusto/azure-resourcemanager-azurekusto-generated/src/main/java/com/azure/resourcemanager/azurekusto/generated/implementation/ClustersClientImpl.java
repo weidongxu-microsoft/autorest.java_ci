@@ -721,7 +721,8 @@ public final class ClustersClientImpl implements ClustersClient {
         String resourceGroupName, String clusterName, ClusterInner parameters) {
         final String ifMatch = null;
         final String ifNoneMatch = null;
-        return beginCreateOrUpdateAsync(resourceGroupName, clusterName, parameters, ifMatch, ifNoneMatch)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, clusterName, parameters, ifMatch, ifNoneMatch)
             .getSyncPoller();
     }
 
@@ -749,7 +750,8 @@ public final class ClustersClientImpl implements ClustersClient {
         String ifMatch,
         String ifNoneMatch,
         Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, clusterName, parameters, ifMatch, ifNoneMatch, context)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, clusterName, parameters, ifMatch, ifNoneMatch, context)
             .getSyncPoller();
     }
 
@@ -1073,7 +1075,7 @@ public final class ClustersClientImpl implements ClustersClient {
     public SyncPoller<PollResult<ClusterInner>, ClusterInner> beginUpdate(
         String resourceGroupName, String clusterName, ClusterUpdate parameters) {
         final String ifMatch = null;
-        return beginUpdateAsync(resourceGroupName, clusterName, parameters, ifMatch).getSyncPoller();
+        return this.beginUpdateAsync(resourceGroupName, clusterName, parameters, ifMatch).getSyncPoller();
     }
 
     /**
@@ -1093,7 +1095,7 @@ public final class ClustersClientImpl implements ClustersClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ClusterInner>, ClusterInner> beginUpdate(
         String resourceGroupName, String clusterName, ClusterUpdate parameters, String ifMatch, Context context) {
-        return beginUpdateAsync(resourceGroupName, clusterName, parameters, ifMatch, context).getSyncPoller();
+        return this.beginUpdateAsync(resourceGroupName, clusterName, parameters, ifMatch, context).getSyncPoller();
     }
 
     /**
@@ -1340,7 +1342,7 @@ public final class ClustersClientImpl implements ClustersClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String clusterName) {
-        return beginDeleteAsync(resourceGroupName, clusterName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, clusterName).getSyncPoller();
     }
 
     /**
@@ -1357,7 +1359,7 @@ public final class ClustersClientImpl implements ClustersClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String clusterName, Context context) {
-        return beginDeleteAsync(resourceGroupName, clusterName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, clusterName, context).getSyncPoller();
     }
 
     /**
@@ -1567,7 +1569,7 @@ public final class ClustersClientImpl implements ClustersClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginStop(String resourceGroupName, String clusterName) {
-        return beginStopAsync(resourceGroupName, clusterName).getSyncPoller();
+        return this.beginStopAsync(resourceGroupName, clusterName).getSyncPoller();
     }
 
     /**
@@ -1583,7 +1585,7 @@ public final class ClustersClientImpl implements ClustersClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginStop(String resourceGroupName, String clusterName, Context context) {
-        return beginStopAsync(resourceGroupName, clusterName, context).getSyncPoller();
+        return this.beginStopAsync(resourceGroupName, clusterName, context).getSyncPoller();
     }
 
     /**
@@ -1793,7 +1795,7 @@ public final class ClustersClientImpl implements ClustersClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginStart(String resourceGroupName, String clusterName) {
-        return beginStartAsync(resourceGroupName, clusterName).getSyncPoller();
+        return this.beginStartAsync(resourceGroupName, clusterName).getSyncPoller();
     }
 
     /**
@@ -1810,7 +1812,7 @@ public final class ClustersClientImpl implements ClustersClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginStart(
         String resourceGroupName, String clusterName, Context context) {
-        return beginStartAsync(resourceGroupName, clusterName, context).getSyncPoller();
+        return this.beginStartAsync(resourceGroupName, clusterName, context).getSyncPoller();
     }
 
     /**
@@ -2222,7 +2224,8 @@ public final class ClustersClientImpl implements ClustersClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDetachFollowerDatabases(
         String resourceGroupName, String clusterName, FollowerDatabaseDefinitionInner followerDatabaseToRemove) {
-        return beginDetachFollowerDatabasesAsync(resourceGroupName, clusterName, followerDatabaseToRemove)
+        return this
+            .beginDetachFollowerDatabasesAsync(resourceGroupName, clusterName, followerDatabaseToRemove)
             .getSyncPoller();
     }
 
@@ -2244,7 +2247,8 @@ public final class ClustersClientImpl implements ClustersClient {
         String clusterName,
         FollowerDatabaseDefinitionInner followerDatabaseToRemove,
         Context context) {
-        return beginDetachFollowerDatabasesAsync(resourceGroupName, clusterName, followerDatabaseToRemove, context)
+        return this
+            .beginDetachFollowerDatabasesAsync(resourceGroupName, clusterName, followerDatabaseToRemove, context)
             .getSyncPoller();
     }
 
@@ -2484,7 +2488,7 @@ public final class ClustersClientImpl implements ClustersClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<DiagnoseVirtualNetworkResultInner>, DiagnoseVirtualNetworkResultInner>
         beginDiagnoseVirtualNetwork(String resourceGroupName, String clusterName) {
-        return beginDiagnoseVirtualNetworkAsync(resourceGroupName, clusterName).getSyncPoller();
+        return this.beginDiagnoseVirtualNetworkAsync(resourceGroupName, clusterName).getSyncPoller();
     }
 
     /**
@@ -2501,7 +2505,7 @@ public final class ClustersClientImpl implements ClustersClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<DiagnoseVirtualNetworkResultInner>, DiagnoseVirtualNetworkResultInner>
         beginDiagnoseVirtualNetwork(String resourceGroupName, String clusterName, Context context) {
-        return beginDiagnoseVirtualNetworkAsync(resourceGroupName, clusterName, context).getSyncPoller();
+        return this.beginDiagnoseVirtualNetworkAsync(resourceGroupName, clusterName, context).getSyncPoller();
     }
 
     /**
@@ -3831,7 +3835,9 @@ public final class ClustersClientImpl implements ClustersClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginAddLanguageExtensions(
         String resourceGroupName, String clusterName, LanguageExtensionsList languageExtensionsToAdd) {
-        return beginAddLanguageExtensionsAsync(resourceGroupName, clusterName, languageExtensionsToAdd).getSyncPoller();
+        return this
+            .beginAddLanguageExtensionsAsync(resourceGroupName, clusterName, languageExtensionsToAdd)
+            .getSyncPoller();
     }
 
     /**
@@ -3849,7 +3855,8 @@ public final class ClustersClientImpl implements ClustersClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginAddLanguageExtensions(
         String resourceGroupName, String clusterName, LanguageExtensionsList languageExtensionsToAdd, Context context) {
-        return beginAddLanguageExtensionsAsync(resourceGroupName, clusterName, languageExtensionsToAdd, context)
+        return this
+            .beginAddLanguageExtensionsAsync(resourceGroupName, clusterName, languageExtensionsToAdd, context)
             .getSyncPoller();
     }
 
@@ -4105,7 +4112,8 @@ public final class ClustersClientImpl implements ClustersClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginRemoveLanguageExtensions(
         String resourceGroupName, String clusterName, LanguageExtensionsList languageExtensionsToRemove) {
-        return beginRemoveLanguageExtensionsAsync(resourceGroupName, clusterName, languageExtensionsToRemove)
+        return this
+            .beginRemoveLanguageExtensionsAsync(resourceGroupName, clusterName, languageExtensionsToRemove)
             .getSyncPoller();
     }
 
@@ -4127,7 +4135,8 @@ public final class ClustersClientImpl implements ClustersClient {
         String clusterName,
         LanguageExtensionsList languageExtensionsToRemove,
         Context context) {
-        return beginRemoveLanguageExtensionsAsync(resourceGroupName, clusterName, languageExtensionsToRemove, context)
+        return this
+            .beginRemoveLanguageExtensionsAsync(resourceGroupName, clusterName, languageExtensionsToRemove, context)
             .getSyncPoller();
     }
 

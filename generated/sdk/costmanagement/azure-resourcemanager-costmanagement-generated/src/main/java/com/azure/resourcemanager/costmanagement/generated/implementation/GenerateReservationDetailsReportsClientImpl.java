@@ -250,7 +250,7 @@ public final class GenerateReservationDetailsReportsClientImpl implements Genera
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<OperationStatusInner>, OperationStatusInner> beginByBillingAccountId(
         String billingAccountId, String startDate, String endDate) {
-        return beginByBillingAccountIdAsync(billingAccountId, startDate, endDate).getSyncPoller();
+        return this.beginByBillingAccountIdAsync(billingAccountId, startDate, endDate).getSyncPoller();
     }
 
     /**
@@ -268,7 +268,7 @@ public final class GenerateReservationDetailsReportsClientImpl implements Genera
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<OperationStatusInner>, OperationStatusInner> beginByBillingAccountId(
         String billingAccountId, String startDate, String endDate, Context context) {
-        return beginByBillingAccountIdAsync(billingAccountId, startDate, endDate, context).getSyncPoller();
+        return this.beginByBillingAccountIdAsync(billingAccountId, startDate, endDate, context).getSyncPoller();
     }
 
     /**
@@ -515,7 +515,9 @@ public final class GenerateReservationDetailsReportsClientImpl implements Genera
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<OperationStatusInner>, OperationStatusInner> beginByBillingProfileId(
         String billingAccountId, String billingProfileId, String startDate, String endDate) {
-        return beginByBillingProfileIdAsync(billingAccountId, billingProfileId, startDate, endDate).getSyncPoller();
+        return this
+            .beginByBillingProfileIdAsync(billingAccountId, billingProfileId, startDate, endDate)
+            .getSyncPoller();
     }
 
     /**
@@ -534,7 +536,8 @@ public final class GenerateReservationDetailsReportsClientImpl implements Genera
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<OperationStatusInner>, OperationStatusInner> beginByBillingProfileId(
         String billingAccountId, String billingProfileId, String startDate, String endDate, Context context) {
-        return beginByBillingProfileIdAsync(billingAccountId, billingProfileId, startDate, endDate, context)
+        return this
+            .beginByBillingProfileIdAsync(billingAccountId, billingProfileId, startDate, endDate, context)
             .getSyncPoller();
     }
 

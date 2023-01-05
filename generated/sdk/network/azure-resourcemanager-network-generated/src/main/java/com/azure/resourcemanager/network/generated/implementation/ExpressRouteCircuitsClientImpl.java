@@ -409,7 +409,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String circuitName) {
-        return beginDeleteAsync(resourceGroupName, circuitName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, circuitName).getSyncPoller();
     }
 
     /**
@@ -426,7 +426,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String circuitName, Context context) {
-        return beginDeleteAsync(resourceGroupName, circuitName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, circuitName, context).getSyncPoller();
     }
 
     /**
@@ -815,7 +815,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ExpressRouteCircuitInner>, ExpressRouteCircuitInner> beginCreateOrUpdate(
         String resourceGroupName, String circuitName, ExpressRouteCircuitInner parameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, circuitName, parameters).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, circuitName, parameters).getSyncPoller();
     }
 
     /**
@@ -833,7 +833,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ExpressRouteCircuitInner>, ExpressRouteCircuitInner> beginCreateOrUpdate(
         String resourceGroupName, String circuitName, ExpressRouteCircuitInner parameters, Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, circuitName, parameters, context).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, circuitName, parameters, context).getSyncPoller();
     }
 
     /**
@@ -1268,7 +1268,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
     public SyncPoller<
             PollResult<ExpressRouteCircuitsArpTableListResultInner>, ExpressRouteCircuitsArpTableListResultInner>
         beginListArpTable(String resourceGroupName, String circuitName, String peeringName, String devicePath) {
-        return beginListArpTableAsync(resourceGroupName, circuitName, peeringName, devicePath).getSyncPoller();
+        return this.beginListArpTableAsync(resourceGroupName, circuitName, peeringName, devicePath).getSyncPoller();
     }
 
     /**
@@ -1290,7 +1290,9 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
             PollResult<ExpressRouteCircuitsArpTableListResultInner>, ExpressRouteCircuitsArpTableListResultInner>
         beginListArpTable(
             String resourceGroupName, String circuitName, String peeringName, String devicePath, Context context) {
-        return beginListArpTableAsync(resourceGroupName, circuitName, peeringName, devicePath, context).getSyncPoller();
+        return this
+            .beginListArpTableAsync(resourceGroupName, circuitName, peeringName, devicePath, context)
+            .getSyncPoller();
     }
 
     /**
@@ -1571,7 +1573,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
     public SyncPoller<
             PollResult<ExpressRouteCircuitsRoutesTableListResultInner>, ExpressRouteCircuitsRoutesTableListResultInner>
         beginListRoutesTable(String resourceGroupName, String circuitName, String peeringName, String devicePath) {
-        return beginListRoutesTableAsync(resourceGroupName, circuitName, peeringName, devicePath).getSyncPoller();
+        return this.beginListRoutesTableAsync(resourceGroupName, circuitName, peeringName, devicePath).getSyncPoller();
     }
 
     /**
@@ -1593,7 +1595,8 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
             PollResult<ExpressRouteCircuitsRoutesTableListResultInner>, ExpressRouteCircuitsRoutesTableListResultInner>
         beginListRoutesTable(
             String resourceGroupName, String circuitName, String peeringName, String devicePath, Context context) {
-        return beginListRoutesTableAsync(resourceGroupName, circuitName, peeringName, devicePath, context)
+        return this
+            .beginListRoutesTableAsync(resourceGroupName, circuitName, peeringName, devicePath, context)
             .getSyncPoller();
     }
 
@@ -1882,7 +1885,8 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
             ExpressRouteCircuitsRoutesTableSummaryListResultInner>
         beginListRoutesTableSummary(
             String resourceGroupName, String circuitName, String peeringName, String devicePath) {
-        return beginListRoutesTableSummaryAsync(resourceGroupName, circuitName, peeringName, devicePath)
+        return this
+            .beginListRoutesTableSummaryAsync(resourceGroupName, circuitName, peeringName, devicePath)
             .getSyncPoller();
     }
 
@@ -1906,7 +1910,8 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
             ExpressRouteCircuitsRoutesTableSummaryListResultInner>
         beginListRoutesTableSummary(
             String resourceGroupName, String circuitName, String peeringName, String devicePath, Context context) {
-        return beginListRoutesTableSummaryAsync(resourceGroupName, circuitName, peeringName, devicePath, context)
+        return this
+            .beginListRoutesTableSummaryAsync(resourceGroupName, circuitName, peeringName, devicePath, context)
             .getSyncPoller();
     }
 

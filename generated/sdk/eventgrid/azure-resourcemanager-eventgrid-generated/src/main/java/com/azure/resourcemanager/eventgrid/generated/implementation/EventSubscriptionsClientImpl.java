@@ -792,7 +792,7 @@ public final class EventSubscriptionsClientImpl implements EventSubscriptionsCli
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<EventSubscriptionInner>, EventSubscriptionInner> beginCreateOrUpdate(
         String scope, String eventSubscriptionName, EventSubscriptionInner eventSubscriptionInfo) {
-        return beginCreateOrUpdateAsync(scope, eventSubscriptionName, eventSubscriptionInfo).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(scope, eventSubscriptionName, eventSubscriptionInfo).getSyncPoller();
     }
 
     /**
@@ -821,7 +821,9 @@ public final class EventSubscriptionsClientImpl implements EventSubscriptionsCli
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<EventSubscriptionInner>, EventSubscriptionInner> beginCreateOrUpdate(
         String scope, String eventSubscriptionName, EventSubscriptionInner eventSubscriptionInfo, Context context) {
-        return beginCreateOrUpdateAsync(scope, eventSubscriptionName, eventSubscriptionInfo, context).getSyncPoller();
+        return this
+            .beginCreateOrUpdateAsync(scope, eventSubscriptionName, eventSubscriptionInfo, context)
+            .getSyncPoller();
     }
 
     /**
@@ -1109,7 +1111,7 @@ public final class EventSubscriptionsClientImpl implements EventSubscriptionsCli
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String scope, String eventSubscriptionName) {
-        return beginDeleteAsync(scope, eventSubscriptionName).getSyncPoller();
+        return this.beginDeleteAsync(scope, eventSubscriptionName).getSyncPoller();
     }
 
     /**
@@ -1134,7 +1136,7 @@ public final class EventSubscriptionsClientImpl implements EventSubscriptionsCli
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String scope, String eventSubscriptionName, Context context) {
-        return beginDeleteAsync(scope, eventSubscriptionName, context).getSyncPoller();
+        return this.beginDeleteAsync(scope, eventSubscriptionName, context).getSyncPoller();
     }
 
     /**
@@ -1460,7 +1462,7 @@ public final class EventSubscriptionsClientImpl implements EventSubscriptionsCli
         String scope,
         String eventSubscriptionName,
         EventSubscriptionUpdateParameters eventSubscriptionUpdateParameters) {
-        return beginUpdateAsync(scope, eventSubscriptionName, eventSubscriptionUpdateParameters).getSyncPoller();
+        return this.beginUpdateAsync(scope, eventSubscriptionName, eventSubscriptionUpdateParameters).getSyncPoller();
     }
 
     /**
@@ -1490,7 +1492,8 @@ public final class EventSubscriptionsClientImpl implements EventSubscriptionsCli
         String eventSubscriptionName,
         EventSubscriptionUpdateParameters eventSubscriptionUpdateParameters,
         Context context) {
-        return beginUpdateAsync(scope, eventSubscriptionName, eventSubscriptionUpdateParameters, context)
+        return this
+            .beginUpdateAsync(scope, eventSubscriptionName, eventSubscriptionUpdateParameters, context)
             .getSyncPoller();
     }
 

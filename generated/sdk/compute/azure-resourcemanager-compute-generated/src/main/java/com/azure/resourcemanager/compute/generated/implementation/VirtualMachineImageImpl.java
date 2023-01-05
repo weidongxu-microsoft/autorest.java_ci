@@ -11,6 +11,7 @@ import com.azure.resourcemanager.compute.generated.models.DataDiskImage;
 import com.azure.resourcemanager.compute.generated.models.DisallowedConfiguration;
 import com.azure.resourcemanager.compute.generated.models.ExtendedLocation;
 import com.azure.resourcemanager.compute.generated.models.HyperVGenerationTypes;
+import com.azure.resourcemanager.compute.generated.models.ImageDeprecationStatus;
 import com.azure.resourcemanager.compute.generated.models.OSDiskImage;
 import com.azure.resourcemanager.compute.generated.models.PurchasePlan;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineImage;
@@ -96,6 +97,10 @@ public final class VirtualMachineImageImpl implements VirtualMachineImage {
 
     public ArchitectureTypes architecture() {
         return this.innerModel().architecture();
+    }
+
+    public ImageDeprecationStatus imageDeprecationStatus() {
+        return this.innerModel().imageDeprecationStatus();
     }
 
     public VirtualMachineImageInner innerModel() {

@@ -248,7 +248,7 @@ public final class NetworkSecurityPerimeterConfigurationsOperationsClientImpl
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginCreateOrUpdate(
         String resourceGroupName, String namespaceName, String resourceAssociationName) {
-        return beginCreateOrUpdateAsync(resourceGroupName, namespaceName, resourceAssociationName).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, namespaceName, resourceAssociationName).getSyncPoller();
     }
 
     /**
@@ -266,7 +266,8 @@ public final class NetworkSecurityPerimeterConfigurationsOperationsClientImpl
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginCreateOrUpdate(
         String resourceGroupName, String namespaceName, String resourceAssociationName, Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, namespaceName, resourceAssociationName, context)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, namespaceName, resourceAssociationName, context)
             .getSyncPoller();
     }
 

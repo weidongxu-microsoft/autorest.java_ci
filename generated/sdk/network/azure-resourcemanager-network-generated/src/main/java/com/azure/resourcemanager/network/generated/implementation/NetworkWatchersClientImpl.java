@@ -831,7 +831,7 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String networkWatcherName) {
-        return beginDeleteAsync(resourceGroupName, networkWatcherName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, networkWatcherName).getSyncPoller();
     }
 
     /**
@@ -848,7 +848,7 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String networkWatcherName, Context context) {
-        return beginDeleteAsync(resourceGroupName, networkWatcherName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, networkWatcherName, context).getSyncPoller();
     }
 
     /**
@@ -1704,7 +1704,7 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<VerificationIpFlowResultInner>, VerificationIpFlowResultInner> beginVerifyIpFlow(
         String resourceGroupName, String networkWatcherName, VerificationIpFlowParameters parameters) {
-        return beginVerifyIpFlowAsync(resourceGroupName, networkWatcherName, parameters).getSyncPoller();
+        return this.beginVerifyIpFlowAsync(resourceGroupName, networkWatcherName, parameters).getSyncPoller();
     }
 
     /**
@@ -1722,7 +1722,7 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<VerificationIpFlowResultInner>, VerificationIpFlowResultInner> beginVerifyIpFlow(
         String resourceGroupName, String networkWatcherName, VerificationIpFlowParameters parameters, Context context) {
-        return beginVerifyIpFlowAsync(resourceGroupName, networkWatcherName, parameters, context).getSyncPoller();
+        return this.beginVerifyIpFlowAsync(resourceGroupName, networkWatcherName, parameters, context).getSyncPoller();
     }
 
     /**
@@ -1975,7 +1975,7 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<NextHopResultInner>, NextHopResultInner> beginGetNextHop(
         String resourceGroupName, String networkWatcherName, NextHopParameters parameters) {
-        return beginGetNextHopAsync(resourceGroupName, networkWatcherName, parameters).getSyncPoller();
+        return this.beginGetNextHopAsync(resourceGroupName, networkWatcherName, parameters).getSyncPoller();
     }
 
     /**
@@ -1993,7 +1993,7 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<NextHopResultInner>, NextHopResultInner> beginGetNextHop(
         String resourceGroupName, String networkWatcherName, NextHopParameters parameters, Context context) {
-        return beginGetNextHopAsync(resourceGroupName, networkWatcherName, parameters, context).getSyncPoller();
+        return this.beginGetNextHopAsync(resourceGroupName, networkWatcherName, parameters, context).getSyncPoller();
     }
 
     /**
@@ -2260,7 +2260,7 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<SecurityGroupViewResultInner>, SecurityGroupViewResultInner> beginGetVMSecurityRules(
         String resourceGroupName, String networkWatcherName, SecurityGroupViewParameters parameters) {
-        return beginGetVMSecurityRulesAsync(resourceGroupName, networkWatcherName, parameters).getSyncPoller();
+        return this.beginGetVMSecurityRulesAsync(resourceGroupName, networkWatcherName, parameters).getSyncPoller();
     }
 
     /**
@@ -2279,7 +2279,9 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<SecurityGroupViewResultInner>, SecurityGroupViewResultInner> beginGetVMSecurityRules(
         String resourceGroupName, String networkWatcherName, SecurityGroupViewParameters parameters, Context context) {
-        return beginGetVMSecurityRulesAsync(resourceGroupName, networkWatcherName, parameters, context).getSyncPoller();
+        return this
+            .beginGetVMSecurityRulesAsync(resourceGroupName, networkWatcherName, parameters, context)
+            .getSyncPoller();
     }
 
     /**
@@ -2540,7 +2542,7 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<TroubleshootingResultInner>, TroubleshootingResultInner> beginGetTroubleshooting(
         String resourceGroupName, String networkWatcherName, TroubleshootingParameters parameters) {
-        return beginGetTroubleshootingAsync(resourceGroupName, networkWatcherName, parameters).getSyncPoller();
+        return this.beginGetTroubleshootingAsync(resourceGroupName, networkWatcherName, parameters).getSyncPoller();
     }
 
     /**
@@ -2558,7 +2560,9 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<TroubleshootingResultInner>, TroubleshootingResultInner> beginGetTroubleshooting(
         String resourceGroupName, String networkWatcherName, TroubleshootingParameters parameters, Context context) {
-        return beginGetTroubleshootingAsync(resourceGroupName, networkWatcherName, parameters, context).getSyncPoller();
+        return this
+            .beginGetTroubleshootingAsync(resourceGroupName, networkWatcherName, parameters, context)
+            .getSyncPoller();
     }
 
     /**
@@ -2825,7 +2829,9 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<TroubleshootingResultInner>, TroubleshootingResultInner> beginGetTroubleshootingResult(
         String resourceGroupName, String networkWatcherName, QueryTroubleshootingParameters parameters) {
-        return beginGetTroubleshootingResultAsync(resourceGroupName, networkWatcherName, parameters).getSyncPoller();
+        return this
+            .beginGetTroubleshootingResultAsync(resourceGroupName, networkWatcherName, parameters)
+            .getSyncPoller();
     }
 
     /**
@@ -2846,7 +2852,8 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
         String networkWatcherName,
         QueryTroubleshootingParameters parameters,
         Context context) {
-        return beginGetTroubleshootingResultAsync(resourceGroupName, networkWatcherName, parameters, context)
+        return this
+            .beginGetTroubleshootingResultAsync(resourceGroupName, networkWatcherName, parameters, context)
             .getSyncPoller();
     }
 
@@ -3117,7 +3124,9 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<FlowLogInformationInner>, FlowLogInformationInner> beginSetFlowLogConfiguration(
         String resourceGroupName, String networkWatcherName, FlowLogInformationInner parameters) {
-        return beginSetFlowLogConfigurationAsync(resourceGroupName, networkWatcherName, parameters).getSyncPoller();
+        return this
+            .beginSetFlowLogConfigurationAsync(resourceGroupName, networkWatcherName, parameters)
+            .getSyncPoller();
     }
 
     /**
@@ -3136,7 +3145,8 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<FlowLogInformationInner>, FlowLogInformationInner> beginSetFlowLogConfiguration(
         String resourceGroupName, String networkWatcherName, FlowLogInformationInner parameters, Context context) {
-        return beginSetFlowLogConfigurationAsync(resourceGroupName, networkWatcherName, parameters, context)
+        return this
+            .beginSetFlowLogConfigurationAsync(resourceGroupName, networkWatcherName, parameters, context)
             .getSyncPoller();
     }
 
@@ -3401,7 +3411,7 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<FlowLogInformationInner>, FlowLogInformationInner> beginGetFlowLogStatus(
         String resourceGroupName, String networkWatcherName, FlowLogStatusParameters parameters) {
-        return beginGetFlowLogStatusAsync(resourceGroupName, networkWatcherName, parameters).getSyncPoller();
+        return this.beginGetFlowLogStatusAsync(resourceGroupName, networkWatcherName, parameters).getSyncPoller();
     }
 
     /**
@@ -3420,7 +3430,9 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<FlowLogInformationInner>, FlowLogInformationInner> beginGetFlowLogStatus(
         String resourceGroupName, String networkWatcherName, FlowLogStatusParameters parameters, Context context) {
-        return beginGetFlowLogStatusAsync(resourceGroupName, networkWatcherName, parameters, context).getSyncPoller();
+        return this
+            .beginGetFlowLogStatusAsync(resourceGroupName, networkWatcherName, parameters, context)
+            .getSyncPoller();
     }
 
     /**
@@ -3688,7 +3700,7 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ConnectivityInformationInner>, ConnectivityInformationInner> beginCheckConnectivity(
         String resourceGroupName, String networkWatcherName, ConnectivityParameters parameters) {
-        return beginCheckConnectivityAsync(resourceGroupName, networkWatcherName, parameters).getSyncPoller();
+        return this.beginCheckConnectivityAsync(resourceGroupName, networkWatcherName, parameters).getSyncPoller();
     }
 
     /**
@@ -3707,7 +3719,9 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ConnectivityInformationInner>, ConnectivityInformationInner> beginCheckConnectivity(
         String resourceGroupName, String networkWatcherName, ConnectivityParameters parameters, Context context) {
-        return beginCheckConnectivityAsync(resourceGroupName, networkWatcherName, parameters, context).getSyncPoller();
+        return this
+            .beginCheckConnectivityAsync(resourceGroupName, networkWatcherName, parameters, context)
+            .getSyncPoller();
     }
 
     /**
@@ -3982,7 +3996,9 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
     public SyncPoller<PollResult<AzureReachabilityReportInner>, AzureReachabilityReportInner>
         beginGetAzureReachabilityReport(
             String resourceGroupName, String networkWatcherName, AzureReachabilityReportParameters parameters) {
-        return beginGetAzureReachabilityReportAsync(resourceGroupName, networkWatcherName, parameters).getSyncPoller();
+        return this
+            .beginGetAzureReachabilityReportAsync(resourceGroupName, networkWatcherName, parameters)
+            .getSyncPoller();
     }
 
     /**
@@ -4005,7 +4021,8 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
             String networkWatcherName,
             AzureReachabilityReportParameters parameters,
             Context context) {
-        return beginGetAzureReachabilityReportAsync(resourceGroupName, networkWatcherName, parameters, context)
+        return this
+            .beginGetAzureReachabilityReportAsync(resourceGroupName, networkWatcherName, parameters, context)
             .getSyncPoller();
     }
 
@@ -4288,7 +4305,7 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<AvailableProvidersListInner>, AvailableProvidersListInner> beginListAvailableProviders(
         String resourceGroupName, String networkWatcherName, AvailableProvidersListParameters parameters) {
-        return beginListAvailableProvidersAsync(resourceGroupName, networkWatcherName, parameters).getSyncPoller();
+        return this.beginListAvailableProvidersAsync(resourceGroupName, networkWatcherName, parameters).getSyncPoller();
     }
 
     /**
@@ -4310,7 +4327,8 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
         String networkWatcherName,
         AvailableProvidersListParameters parameters,
         Context context) {
-        return beginListAvailableProvidersAsync(resourceGroupName, networkWatcherName, parameters, context)
+        return this
+            .beginListAvailableProvidersAsync(resourceGroupName, networkWatcherName, parameters, context)
             .getSyncPoller();
     }
 
@@ -4611,7 +4629,8 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
             PollResult<NetworkConfigurationDiagnosticResponseInner>, NetworkConfigurationDiagnosticResponseInner>
         beginGetNetworkConfigurationDiagnostic(
             String resourceGroupName, String networkWatcherName, NetworkConfigurationDiagnosticParameters parameters) {
-        return beginGetNetworkConfigurationDiagnosticAsync(resourceGroupName, networkWatcherName, parameters)
+        return this
+            .beginGetNetworkConfigurationDiagnosticAsync(resourceGroupName, networkWatcherName, parameters)
             .getSyncPoller();
     }
 
@@ -4639,7 +4658,8 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
             String networkWatcherName,
             NetworkConfigurationDiagnosticParameters parameters,
             Context context) {
-        return beginGetNetworkConfigurationDiagnosticAsync(resourceGroupName, networkWatcherName, parameters, context)
+        return this
+            .beginGetNetworkConfigurationDiagnosticAsync(resourceGroupName, networkWatcherName, parameters, context)
             .getSyncPoller();
     }
 

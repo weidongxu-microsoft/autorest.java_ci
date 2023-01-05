@@ -1447,7 +1447,7 @@ public final class DomainsClientImpl implements DomainsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<DomainInner>, DomainInner> beginCreateOrUpdate(
         String resourceGroupName, String domainName, DomainInner domain) {
-        return beginCreateOrUpdateAsync(resourceGroupName, domainName, domain).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, domainName, domain).getSyncPoller();
     }
 
     /**
@@ -1467,7 +1467,7 @@ public final class DomainsClientImpl implements DomainsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<DomainInner>, DomainInner> beginCreateOrUpdate(
         String resourceGroupName, String domainName, DomainInner domain, Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, domainName, domain, context).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, domainName, domain, context).getSyncPoller();
     }
 
     /**

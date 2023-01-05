@@ -309,7 +309,9 @@ public final class ConfigurationsClientImpl implements ConfigurationsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ConfigurationInner>, ConfigurationInner> beginCreateOrUpdate(
         String resourceGroupName, String serverName, String configurationName, ConfigurationInner parameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, serverName, configurationName, parameters).getSyncPoller();
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, serverName, configurationName, parameters)
+            .getSyncPoller();
     }
 
     /**
@@ -332,7 +334,8 @@ public final class ConfigurationsClientImpl implements ConfigurationsClient {
         String configurationName,
         ConfigurationInner parameters,
         Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, serverName, configurationName, parameters, context)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, serverName, configurationName, parameters, context)
             .getSyncPoller();
     }
 

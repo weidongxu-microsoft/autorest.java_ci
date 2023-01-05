@@ -314,7 +314,7 @@ public final class NetworkInterfaceTapConfigurationsClientImpl implements Networ
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String networkInterfaceName, String tapConfigurationName) {
-        return beginDeleteAsync(resourceGroupName, networkInterfaceName, tapConfigurationName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, networkInterfaceName, tapConfigurationName).getSyncPoller();
     }
 
     /**
@@ -332,7 +332,9 @@ public final class NetworkInterfaceTapConfigurationsClientImpl implements Networ
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String networkInterfaceName, String tapConfigurationName, Context context) {
-        return beginDeleteAsync(resourceGroupName, networkInterfaceName, tapConfigurationName, context).getSyncPoller();
+        return this
+            .beginDeleteAsync(resourceGroupName, networkInterfaceName, tapConfigurationName, context)
+            .getSyncPoller();
     }
 
     /**
@@ -795,7 +797,8 @@ public final class NetworkInterfaceTapConfigurationsClientImpl implements Networ
             String networkInterfaceName,
             String tapConfigurationName,
             NetworkInterfaceTapConfigurationInner tapConfigurationParameters) {
-        return beginCreateOrUpdateAsync(
+        return this
+            .beginCreateOrUpdateAsync(
                 resourceGroupName, networkInterfaceName, tapConfigurationName, tapConfigurationParameters)
             .getSyncPoller();
     }
@@ -821,7 +824,8 @@ public final class NetworkInterfaceTapConfigurationsClientImpl implements Networ
             String tapConfigurationName,
             NetworkInterfaceTapConfigurationInner tapConfigurationParameters,
             Context context) {
-        return beginCreateOrUpdateAsync(
+        return this
+            .beginCreateOrUpdateAsync(
                 resourceGroupName, networkInterfaceName, tapConfigurationName, tapConfigurationParameters, context)
             .getSyncPoller();
     }

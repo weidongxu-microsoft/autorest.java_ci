@@ -914,7 +914,7 @@ public final class SqlVirtualMachinesClientImpl implements SqlVirtualMachinesCli
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<SqlVirtualMachineInner>, SqlVirtualMachineInner> beginCreateOrUpdate(
         String resourceGroupName, String sqlVirtualMachineName, SqlVirtualMachineInner parameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, sqlVirtualMachineName, parameters).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, sqlVirtualMachineName, parameters).getSyncPoller();
     }
 
     /**
@@ -933,7 +933,9 @@ public final class SqlVirtualMachinesClientImpl implements SqlVirtualMachinesCli
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<SqlVirtualMachineInner>, SqlVirtualMachineInner> beginCreateOrUpdate(
         String resourceGroupName, String sqlVirtualMachineName, SqlVirtualMachineInner parameters, Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, sqlVirtualMachineName, parameters, context).getSyncPoller();
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, sqlVirtualMachineName, parameters, context)
+            .getSyncPoller();
     }
 
     /**
@@ -1169,7 +1171,7 @@ public final class SqlVirtualMachinesClientImpl implements SqlVirtualMachinesCli
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String sqlVirtualMachineName) {
-        return beginDeleteAsync(resourceGroupName, sqlVirtualMachineName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, sqlVirtualMachineName).getSyncPoller();
     }
 
     /**
@@ -1187,7 +1189,7 @@ public final class SqlVirtualMachinesClientImpl implements SqlVirtualMachinesCli
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String sqlVirtualMachineName, Context context) {
-        return beginDeleteAsync(resourceGroupName, sqlVirtualMachineName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, sqlVirtualMachineName, context).getSyncPoller();
     }
 
     /**
@@ -1441,7 +1443,7 @@ public final class SqlVirtualMachinesClientImpl implements SqlVirtualMachinesCli
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<SqlVirtualMachineInner>, SqlVirtualMachineInner> beginUpdate(
         String resourceGroupName, String sqlVirtualMachineName, SqlVirtualMachineUpdate parameters) {
-        return beginUpdateAsync(resourceGroupName, sqlVirtualMachineName, parameters).getSyncPoller();
+        return this.beginUpdateAsync(resourceGroupName, sqlVirtualMachineName, parameters).getSyncPoller();
     }
 
     /**
@@ -1460,7 +1462,7 @@ public final class SqlVirtualMachinesClientImpl implements SqlVirtualMachinesCli
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<SqlVirtualMachineInner>, SqlVirtualMachineInner> beginUpdate(
         String resourceGroupName, String sqlVirtualMachineName, SqlVirtualMachineUpdate parameters, Context context) {
-        return beginUpdateAsync(resourceGroupName, sqlVirtualMachineName, parameters, context).getSyncPoller();
+        return this.beginUpdateAsync(resourceGroupName, sqlVirtualMachineName, parameters, context).getSyncPoller();
     }
 
     /**
@@ -1869,7 +1871,7 @@ public final class SqlVirtualMachinesClientImpl implements SqlVirtualMachinesCli
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginStartAssessment(
         String resourceGroupName, String sqlVirtualMachineName) {
-        return beginStartAssessmentAsync(resourceGroupName, sqlVirtualMachineName).getSyncPoller();
+        return this.beginStartAssessmentAsync(resourceGroupName, sqlVirtualMachineName).getSyncPoller();
     }
 
     /**
@@ -1887,7 +1889,7 @@ public final class SqlVirtualMachinesClientImpl implements SqlVirtualMachinesCli
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginStartAssessment(
         String resourceGroupName, String sqlVirtualMachineName, Context context) {
-        return beginStartAssessmentAsync(resourceGroupName, sqlVirtualMachineName, context).getSyncPoller();
+        return this.beginStartAssessmentAsync(resourceGroupName, sqlVirtualMachineName, context).getSyncPoller();
     }
 
     /**
@@ -2113,7 +2115,7 @@ public final class SqlVirtualMachinesClientImpl implements SqlVirtualMachinesCli
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginRedeploy(String resourceGroupName, String sqlVirtualMachineName) {
-        return beginRedeployAsync(resourceGroupName, sqlVirtualMachineName).getSyncPoller();
+        return this.beginRedeployAsync(resourceGroupName, sqlVirtualMachineName).getSyncPoller();
     }
 
     /**
@@ -2131,7 +2133,7 @@ public final class SqlVirtualMachinesClientImpl implements SqlVirtualMachinesCli
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginRedeploy(
         String resourceGroupName, String sqlVirtualMachineName, Context context) {
-        return beginRedeployAsync(resourceGroupName, sqlVirtualMachineName, context).getSyncPoller();
+        return this.beginRedeployAsync(resourceGroupName, sqlVirtualMachineName, context).getSyncPoller();
     }
 
     /**

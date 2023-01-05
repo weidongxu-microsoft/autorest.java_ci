@@ -307,7 +307,7 @@ public final class VirtualRouterPeeringsClientImpl implements VirtualRouterPeeri
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String virtualRouterName, String peeringName) {
-        return beginDeleteAsync(resourceGroupName, virtualRouterName, peeringName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, virtualRouterName, peeringName).getSyncPoller();
     }
 
     /**
@@ -325,7 +325,7 @@ public final class VirtualRouterPeeringsClientImpl implements VirtualRouterPeeri
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String virtualRouterName, String peeringName, Context context) {
-        return beginDeleteAsync(resourceGroupName, virtualRouterName, peeringName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, virtualRouterName, peeringName, context).getSyncPoller();
     }
 
     /**
@@ -760,7 +760,9 @@ public final class VirtualRouterPeeringsClientImpl implements VirtualRouterPeeri
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<VirtualRouterPeeringInner>, VirtualRouterPeeringInner> beginCreateOrUpdate(
         String resourceGroupName, String virtualRouterName, String peeringName, VirtualRouterPeeringInner parameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, virtualRouterName, peeringName, parameters).getSyncPoller();
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, virtualRouterName, peeringName, parameters)
+            .getSyncPoller();
     }
 
     /**
@@ -783,7 +785,8 @@ public final class VirtualRouterPeeringsClientImpl implements VirtualRouterPeeri
         String peeringName,
         VirtualRouterPeeringInner parameters,
         Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, virtualRouterName, peeringName, parameters, context)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, virtualRouterName, peeringName, parameters, context)
             .getSyncPoller();
     }
 

@@ -322,7 +322,7 @@ public final class RouteTablesClientImpl implements RouteTablesClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String routeTableName) {
-        return beginDeleteAsync(resourceGroupName, routeTableName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, routeTableName).getSyncPoller();
     }
 
     /**
@@ -339,7 +339,7 @@ public final class RouteTablesClientImpl implements RouteTablesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String routeTableName, Context context) {
-        return beginDeleteAsync(resourceGroupName, routeTableName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, routeTableName, context).getSyncPoller();
     }
 
     /**
@@ -731,7 +731,7 @@ public final class RouteTablesClientImpl implements RouteTablesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<RouteTableInner>, RouteTableInner> beginCreateOrUpdate(
         String resourceGroupName, String routeTableName, RouteTableInner parameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, routeTableName, parameters).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, routeTableName, parameters).getSyncPoller();
     }
 
     /**
@@ -749,7 +749,7 @@ public final class RouteTablesClientImpl implements RouteTablesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<RouteTableInner>, RouteTableInner> beginCreateOrUpdate(
         String resourceGroupName, String routeTableName, RouteTableInner parameters, Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, routeTableName, parameters, context).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, routeTableName, parameters, context).getSyncPoller();
     }
 
     /**

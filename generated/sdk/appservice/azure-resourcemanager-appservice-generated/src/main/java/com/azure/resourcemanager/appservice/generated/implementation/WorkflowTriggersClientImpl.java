@@ -913,7 +913,7 @@ public final class WorkflowTriggersClientImpl implements WorkflowTriggersClient 
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginRun(
         String resourceGroupName, String name, String workflowName, String triggerName) {
-        return beginRunAsync(resourceGroupName, name, workflowName, triggerName).getSyncPoller();
+        return this.beginRunAsync(resourceGroupName, name, workflowName, triggerName).getSyncPoller();
     }
 
     /**
@@ -932,7 +932,7 @@ public final class WorkflowTriggersClientImpl implements WorkflowTriggersClient 
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginRun(
         String resourceGroupName, String name, String workflowName, String triggerName, Context context) {
-        return beginRunAsync(resourceGroupName, name, workflowName, triggerName, context).getSyncPoller();
+        return this.beginRunAsync(resourceGroupName, name, workflowName, triggerName, context).getSyncPoller();
     }
 
     /**

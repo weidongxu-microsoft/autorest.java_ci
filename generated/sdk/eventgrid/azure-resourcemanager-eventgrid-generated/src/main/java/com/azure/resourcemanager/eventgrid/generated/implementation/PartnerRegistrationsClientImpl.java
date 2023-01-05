@@ -540,7 +540,8 @@ public final class PartnerRegistrationsClientImpl implements PartnerRegistration
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<PartnerRegistrationInner>, PartnerRegistrationInner> beginCreateOrUpdate(
         String resourceGroupName, String partnerRegistrationName, PartnerRegistrationInner partnerRegistrationInfo) {
-        return beginCreateOrUpdateAsync(resourceGroupName, partnerRegistrationName, partnerRegistrationInfo)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, partnerRegistrationName, partnerRegistrationInfo)
             .getSyncPoller();
     }
 
@@ -564,7 +565,8 @@ public final class PartnerRegistrationsClientImpl implements PartnerRegistration
         String partnerRegistrationName,
         PartnerRegistrationInner partnerRegistrationInfo,
         Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, partnerRegistrationName, partnerRegistrationInfo, context)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, partnerRegistrationName, partnerRegistrationInfo, context)
             .getSyncPoller();
     }
 
@@ -815,7 +817,7 @@ public final class PartnerRegistrationsClientImpl implements PartnerRegistration
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String partnerRegistrationName) {
-        return beginDeleteAsync(resourceGroupName, partnerRegistrationName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, partnerRegistrationName).getSyncPoller();
     }
 
     /**
@@ -834,7 +836,7 @@ public final class PartnerRegistrationsClientImpl implements PartnerRegistration
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String partnerRegistrationName, Context context) {
-        return beginDeleteAsync(resourceGroupName, partnerRegistrationName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, partnerRegistrationName, context).getSyncPoller();
     }
 
     /**
@@ -1118,7 +1120,8 @@ public final class PartnerRegistrationsClientImpl implements PartnerRegistration
         String resourceGroupName,
         String partnerRegistrationName,
         PartnerRegistrationUpdateParameters partnerRegistrationUpdateParameters) {
-        return beginUpdateAsync(resourceGroupName, partnerRegistrationName, partnerRegistrationUpdateParameters)
+        return this
+            .beginUpdateAsync(resourceGroupName, partnerRegistrationName, partnerRegistrationUpdateParameters)
             .getSyncPoller();
     }
 
@@ -1142,8 +1145,8 @@ public final class PartnerRegistrationsClientImpl implements PartnerRegistration
         String partnerRegistrationName,
         PartnerRegistrationUpdateParameters partnerRegistrationUpdateParameters,
         Context context) {
-        return beginUpdateAsync(
-                resourceGroupName, partnerRegistrationName, partnerRegistrationUpdateParameters, context)
+        return this
+            .beginUpdateAsync(resourceGroupName, partnerRegistrationName, partnerRegistrationUpdateParameters, context)
             .getSyncPoller();
     }
 

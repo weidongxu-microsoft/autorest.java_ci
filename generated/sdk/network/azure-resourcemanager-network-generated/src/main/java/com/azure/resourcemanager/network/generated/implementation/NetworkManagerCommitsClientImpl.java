@@ -255,7 +255,7 @@ public final class NetworkManagerCommitsClientImpl implements NetworkManagerComm
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<NetworkManagerCommitInner>, NetworkManagerCommitInner> beginPost(
         String resourceGroupName, String networkManagerName, NetworkManagerCommitInner parameters) {
-        return beginPostAsync(resourceGroupName, networkManagerName, parameters).getSyncPoller();
+        return this.beginPostAsync(resourceGroupName, networkManagerName, parameters).getSyncPoller();
     }
 
     /**
@@ -273,7 +273,7 @@ public final class NetworkManagerCommitsClientImpl implements NetworkManagerComm
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<NetworkManagerCommitInner>, NetworkManagerCommitInner> beginPost(
         String resourceGroupName, String networkManagerName, NetworkManagerCommitInner parameters, Context context) {
-        return beginPostAsync(resourceGroupName, networkManagerName, parameters, context).getSyncPoller();
+        return this.beginPostAsync(resourceGroupName, networkManagerName, parameters, context).getSyncPoller();
     }
 
     /**

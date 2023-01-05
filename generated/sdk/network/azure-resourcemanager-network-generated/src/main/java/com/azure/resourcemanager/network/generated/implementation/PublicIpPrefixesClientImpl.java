@@ -325,7 +325,7 @@ public final class PublicIpPrefixesClientImpl implements PublicIpPrefixesClient 
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String publicIpPrefixName) {
-        return beginDeleteAsync(resourceGroupName, publicIpPrefixName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, publicIpPrefixName).getSyncPoller();
     }
 
     /**
@@ -342,7 +342,7 @@ public final class PublicIpPrefixesClientImpl implements PublicIpPrefixesClient 
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String publicIpPrefixName, Context context) {
-        return beginDeleteAsync(resourceGroupName, publicIpPrefixName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, publicIpPrefixName, context).getSyncPoller();
     }
 
     /**
@@ -740,7 +740,7 @@ public final class PublicIpPrefixesClientImpl implements PublicIpPrefixesClient 
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<PublicIpPrefixInner>, PublicIpPrefixInner> beginCreateOrUpdate(
         String resourceGroupName, String publicIpPrefixName, PublicIpPrefixInner parameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, publicIpPrefixName, parameters).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, publicIpPrefixName, parameters).getSyncPoller();
     }
 
     /**
@@ -758,7 +758,9 @@ public final class PublicIpPrefixesClientImpl implements PublicIpPrefixesClient 
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<PublicIpPrefixInner>, PublicIpPrefixInner> beginCreateOrUpdate(
         String resourceGroupName, String publicIpPrefixName, PublicIpPrefixInner parameters, Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, publicIpPrefixName, parameters, context).getSyncPoller();
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, publicIpPrefixName, parameters, context)
+            .getSyncPoller();
     }
 
     /**

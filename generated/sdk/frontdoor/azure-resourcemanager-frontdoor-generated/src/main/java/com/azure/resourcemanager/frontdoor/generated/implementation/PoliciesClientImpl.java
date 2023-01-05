@@ -652,7 +652,7 @@ public final class PoliciesClientImpl implements PoliciesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<WebApplicationFirewallPolicyInner>, WebApplicationFirewallPolicyInner>
         beginCreateOrUpdate(String resourceGroupName, String policyName, WebApplicationFirewallPolicyInner parameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, policyName, parameters).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, policyName, parameters).getSyncPoller();
     }
 
     /**
@@ -674,7 +674,7 @@ public final class PoliciesClientImpl implements PoliciesClient {
             String policyName,
             WebApplicationFirewallPolicyInner parameters,
             Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, policyName, parameters, context).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, policyName, parameters, context).getSyncPoller();
     }
 
     /**
@@ -935,7 +935,7 @@ public final class PoliciesClientImpl implements PoliciesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<WebApplicationFirewallPolicyInner>, WebApplicationFirewallPolicyInner> beginUpdate(
         String resourceGroupName, String policyName, TagsObject parameters) {
-        return beginUpdateAsync(resourceGroupName, policyName, parameters).getSyncPoller();
+        return this.beginUpdateAsync(resourceGroupName, policyName, parameters).getSyncPoller();
     }
 
     /**
@@ -954,7 +954,7 @@ public final class PoliciesClientImpl implements PoliciesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<WebApplicationFirewallPolicyInner>, WebApplicationFirewallPolicyInner> beginUpdate(
         String resourceGroupName, String policyName, TagsObject parameters, Context context) {
-        return beginUpdateAsync(resourceGroupName, policyName, parameters, context).getSyncPoller();
+        return this.beginUpdateAsync(resourceGroupName, policyName, parameters, context).getSyncPoller();
     }
 
     /**
@@ -1178,7 +1178,7 @@ public final class PoliciesClientImpl implements PoliciesClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String policyName) {
-        return beginDeleteAsync(resourceGroupName, policyName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, policyName).getSyncPoller();
     }
 
     /**
@@ -1195,7 +1195,7 @@ public final class PoliciesClientImpl implements PoliciesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String policyName, Context context) {
-        return beginDeleteAsync(resourceGroupName, policyName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, policyName, context).getSyncPoller();
     }
 
     /**

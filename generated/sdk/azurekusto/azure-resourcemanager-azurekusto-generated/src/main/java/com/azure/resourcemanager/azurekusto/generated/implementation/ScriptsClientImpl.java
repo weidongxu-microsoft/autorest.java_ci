@@ -732,7 +732,8 @@ public final class ScriptsClientImpl implements ScriptsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ScriptInner>, ScriptInner> beginCreateOrUpdate(
         String resourceGroupName, String clusterName, String databaseName, String scriptName, ScriptInner parameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, clusterName, databaseName, scriptName, parameters)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, clusterName, databaseName, scriptName, parameters)
             .getSyncPoller();
     }
 
@@ -758,7 +759,8 @@ public final class ScriptsClientImpl implements ScriptsClient {
         String scriptName,
         ScriptInner parameters,
         Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, clusterName, databaseName, scriptName, parameters, context)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, clusterName, databaseName, scriptName, parameters, context)
             .getSyncPoller();
     }
 
@@ -1061,7 +1063,9 @@ public final class ScriptsClientImpl implements ScriptsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ScriptInner>, ScriptInner> beginUpdate(
         String resourceGroupName, String clusterName, String databaseName, String scriptName, ScriptInner parameters) {
-        return beginUpdateAsync(resourceGroupName, clusterName, databaseName, scriptName, parameters).getSyncPoller();
+        return this
+            .beginUpdateAsync(resourceGroupName, clusterName, databaseName, scriptName, parameters)
+            .getSyncPoller();
     }
 
     /**
@@ -1086,7 +1090,8 @@ public final class ScriptsClientImpl implements ScriptsClient {
         String scriptName,
         ScriptInner parameters,
         Context context) {
-        return beginUpdateAsync(resourceGroupName, clusterName, databaseName, scriptName, parameters, context)
+        return this
+            .beginUpdateAsync(resourceGroupName, clusterName, databaseName, scriptName, parameters, context)
             .getSyncPoller();
     }
 
@@ -1358,7 +1363,7 @@ public final class ScriptsClientImpl implements ScriptsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String clusterName, String databaseName, String scriptName) {
-        return beginDeleteAsync(resourceGroupName, clusterName, databaseName, scriptName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, clusterName, databaseName, scriptName).getSyncPoller();
     }
 
     /**
@@ -1377,7 +1382,7 @@ public final class ScriptsClientImpl implements ScriptsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String clusterName, String databaseName, String scriptName, Context context) {
-        return beginDeleteAsync(resourceGroupName, clusterName, databaseName, scriptName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, clusterName, databaseName, scriptName, context).getSyncPoller();
     }
 
     /**

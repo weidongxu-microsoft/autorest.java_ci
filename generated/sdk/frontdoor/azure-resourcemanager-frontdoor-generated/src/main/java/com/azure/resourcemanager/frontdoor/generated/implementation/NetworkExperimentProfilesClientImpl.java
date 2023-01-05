@@ -801,7 +801,7 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ProfileInner>, ProfileInner> beginCreateOrUpdate(
         String profileName, String resourceGroupName, ProfileInner parameters) {
-        return beginCreateOrUpdateAsync(profileName, resourceGroupName, parameters).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(profileName, resourceGroupName, parameters).getSyncPoller();
     }
 
     /**
@@ -819,7 +819,7 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ProfileInner>, ProfileInner> beginCreateOrUpdate(
         String profileName, String resourceGroupName, ProfileInner parameters, Context context) {
-        return beginCreateOrUpdateAsync(profileName, resourceGroupName, parameters, context).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(profileName, resourceGroupName, parameters, context).getSyncPoller();
     }
 
     /**
@@ -1076,7 +1076,7 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ProfileInner>, ProfileInner> beginUpdate(
         String resourceGroupName, String profileName, ProfileUpdateModel parameters) {
-        return beginUpdateAsync(resourceGroupName, profileName, parameters).getSyncPoller();
+        return this.beginUpdateAsync(resourceGroupName, profileName, parameters).getSyncPoller();
     }
 
     /**
@@ -1096,7 +1096,7 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ProfileInner>, ProfileInner> beginUpdate(
         String resourceGroupName, String profileName, ProfileUpdateModel parameters, Context context) {
-        return beginUpdateAsync(resourceGroupName, profileName, parameters, context).getSyncPoller();
+        return this.beginUpdateAsync(resourceGroupName, profileName, parameters, context).getSyncPoller();
     }
 
     /**
@@ -1327,7 +1327,7 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String profileName) {
-        return beginDeleteAsync(resourceGroupName, profileName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, profileName).getSyncPoller();
     }
 
     /**
@@ -1344,7 +1344,7 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String profileName, Context context) {
-        return beginDeleteAsync(resourceGroupName, profileName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, profileName, context).getSyncPoller();
     }
 
     /**

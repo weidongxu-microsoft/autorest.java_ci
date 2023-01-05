@@ -801,7 +801,8 @@ public final class LiveOutputsClientImpl implements LiveOutputsClient {
         String liveEventName,
         String liveOutputName,
         LiveOutputInner parameters) {
-        return beginCreateAsync(resourceGroupName, accountName, liveEventName, liveOutputName, parameters)
+        return this
+            .beginCreateAsync(resourceGroupName, accountName, liveEventName, liveOutputName, parameters)
             .getSyncPoller();
     }
 
@@ -829,7 +830,8 @@ public final class LiveOutputsClientImpl implements LiveOutputsClient {
         String liveOutputName,
         LiveOutputInner parameters,
         Context context) {
-        return beginCreateAsync(resourceGroupName, accountName, liveEventName, liveOutputName, parameters, context)
+        return this
+            .beginCreateAsync(resourceGroupName, accountName, liveEventName, liveOutputName, parameters, context)
             .getSyncPoller();
     }
 
@@ -1129,7 +1131,7 @@ public final class LiveOutputsClientImpl implements LiveOutputsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String accountName, String liveEventName, String liveOutputName) {
-        return beginDeleteAsync(resourceGroupName, accountName, liveEventName, liveOutputName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, accountName, liveEventName, liveOutputName).getSyncPoller();
     }
 
     /**
@@ -1150,7 +1152,9 @@ public final class LiveOutputsClientImpl implements LiveOutputsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String accountName, String liveEventName, String liveOutputName, Context context) {
-        return beginDeleteAsync(resourceGroupName, accountName, liveEventName, liveOutputName, context).getSyncPoller();
+        return this
+            .beginDeleteAsync(resourceGroupName, accountName, liveEventName, liveOutputName, context)
+            .getSyncPoller();
     }
 
     /**

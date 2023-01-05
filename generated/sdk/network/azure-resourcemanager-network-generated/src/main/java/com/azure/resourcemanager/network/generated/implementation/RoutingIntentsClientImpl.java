@@ -353,7 +353,8 @@ public final class RoutingIntentsClientImpl implements RoutingIntentsClient {
         String virtualHubName,
         String routingIntentName,
         RoutingIntentInner routingIntentParameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, virtualHubName, routingIntentName, routingIntentParameters)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, virtualHubName, routingIntentName, routingIntentParameters)
             .getSyncPoller();
     }
 
@@ -377,7 +378,8 @@ public final class RoutingIntentsClientImpl implements RoutingIntentsClient {
         String routingIntentName,
         RoutingIntentInner routingIntentParameters,
         Context context) {
-        return beginCreateOrUpdateAsync(
+        return this
+            .beginCreateOrUpdateAsync(
                 resourceGroupName, virtualHubName, routingIntentName, routingIntentParameters, context)
             .getSyncPoller();
     }
@@ -807,7 +809,7 @@ public final class RoutingIntentsClientImpl implements RoutingIntentsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String virtualHubName, String routingIntentName) {
-        return beginDeleteAsync(resourceGroupName, virtualHubName, routingIntentName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, virtualHubName, routingIntentName).getSyncPoller();
     }
 
     /**
@@ -825,7 +827,7 @@ public final class RoutingIntentsClientImpl implements RoutingIntentsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String virtualHubName, String routingIntentName, Context context) {
-        return beginDeleteAsync(resourceGroupName, virtualHubName, routingIntentName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, virtualHubName, routingIntentName, context).getSyncPoller();
     }
 
     /**

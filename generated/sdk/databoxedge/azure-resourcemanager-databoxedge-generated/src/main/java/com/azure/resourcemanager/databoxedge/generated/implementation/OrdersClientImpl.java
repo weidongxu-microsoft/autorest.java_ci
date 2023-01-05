@@ -638,7 +638,7 @@ public final class OrdersClientImpl implements OrdersClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<OrderInner>, OrderInner> beginCreateOrUpdate(
         String deviceName, String resourceGroupName, OrderInner order) {
-        return beginCreateOrUpdateAsync(deviceName, resourceGroupName, order).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(deviceName, resourceGroupName, order).getSyncPoller();
     }
 
     /**
@@ -656,7 +656,7 @@ public final class OrdersClientImpl implements OrdersClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<OrderInner>, OrderInner> beginCreateOrUpdate(
         String deviceName, String resourceGroupName, OrderInner order, Context context) {
-        return beginCreateOrUpdateAsync(deviceName, resourceGroupName, order, context).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(deviceName, resourceGroupName, order, context).getSyncPoller();
     }
 
     /**
@@ -875,7 +875,7 @@ public final class OrdersClientImpl implements OrdersClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String deviceName, String resourceGroupName) {
-        return beginDeleteAsync(deviceName, resourceGroupName).getSyncPoller();
+        return this.beginDeleteAsync(deviceName, resourceGroupName).getSyncPoller();
     }
 
     /**
@@ -892,7 +892,7 @@ public final class OrdersClientImpl implements OrdersClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String deviceName, String resourceGroupName, Context context) {
-        return beginDeleteAsync(deviceName, resourceGroupName, context).getSyncPoller();
+        return this.beginDeleteAsync(deviceName, resourceGroupName, context).getSyncPoller();
     }
 
     /**

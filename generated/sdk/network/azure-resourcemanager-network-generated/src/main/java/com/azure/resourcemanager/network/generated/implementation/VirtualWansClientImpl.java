@@ -492,7 +492,7 @@ public final class VirtualWansClientImpl implements VirtualWansClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<VirtualWanInner>, VirtualWanInner> beginCreateOrUpdate(
         String resourceGroupName, String virtualWanName, VirtualWanInner wanParameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, virtualWanName, wanParameters).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, virtualWanName, wanParameters).getSyncPoller();
     }
 
     /**
@@ -510,7 +510,7 @@ public final class VirtualWansClientImpl implements VirtualWansClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<VirtualWanInner>, VirtualWanInner> beginCreateOrUpdate(
         String resourceGroupName, String virtualWanName, VirtualWanInner wanParameters, Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, virtualWanName, wanParameters, context).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, virtualWanName, wanParameters, context).getSyncPoller();
     }
 
     /**
@@ -896,7 +896,7 @@ public final class VirtualWansClientImpl implements VirtualWansClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String virtualWanName) {
-        return beginDeleteAsync(resourceGroupName, virtualWanName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, virtualWanName).getSyncPoller();
     }
 
     /**
@@ -913,7 +913,7 @@ public final class VirtualWansClientImpl implements VirtualWansClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String virtualWanName, Context context) {
-        return beginDeleteAsync(resourceGroupName, virtualWanName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, virtualWanName, context).getSyncPoller();
     }
 
     /**

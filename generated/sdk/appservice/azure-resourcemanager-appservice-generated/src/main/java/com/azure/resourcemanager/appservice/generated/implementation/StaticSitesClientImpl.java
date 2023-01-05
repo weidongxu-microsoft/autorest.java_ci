@@ -1987,7 +1987,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<StaticSiteArmResourceInner>, StaticSiteArmResourceInner> beginCreateOrUpdateStaticSite(
         String resourceGroupName, String name, StaticSiteArmResourceInner staticSiteEnvelope) {
-        return beginCreateOrUpdateStaticSiteAsync(resourceGroupName, name, staticSiteEnvelope).getSyncPoller();
+        return this.beginCreateOrUpdateStaticSiteAsync(resourceGroupName, name, staticSiteEnvelope).getSyncPoller();
     }
 
     /**
@@ -2007,7 +2007,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<StaticSiteArmResourceInner>, StaticSiteArmResourceInner> beginCreateOrUpdateStaticSite(
         String resourceGroupName, String name, StaticSiteArmResourceInner staticSiteEnvelope, Context context) {
-        return beginCreateOrUpdateStaticSiteAsync(resourceGroupName, name, staticSiteEnvelope, context).getSyncPoller();
+        return this
+            .beginCreateOrUpdateStaticSiteAsync(resourceGroupName, name, staticSiteEnvelope, context)
+            .getSyncPoller();
     }
 
     /**
@@ -2247,7 +2249,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String name) {
-        return beginDeleteAsync(resourceGroupName, name).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, name).getSyncPoller();
     }
 
     /**
@@ -2265,7 +2267,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String name, Context context) {
-        return beginDeleteAsync(resourceGroupName, name, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, name, context).getSyncPoller();
     }
 
     /**
@@ -3663,7 +3665,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDeleteStaticSiteBuild(
         String resourceGroupName, String name, String environmentName) {
-        return beginDeleteStaticSiteBuildAsync(resourceGroupName, name, environmentName).getSyncPoller();
+        return this.beginDeleteStaticSiteBuildAsync(resourceGroupName, name, environmentName).getSyncPoller();
     }
 
     /**
@@ -3683,7 +3685,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDeleteStaticSiteBuild(
         String resourceGroupName, String name, String environmentName, Context context) {
-        return beginDeleteStaticSiteBuildAsync(resourceGroupName, name, environmentName, context).getSyncPoller();
+        return this.beginDeleteStaticSiteBuildAsync(resourceGroupName, name, environmentName, context).getSyncPoller();
     }
 
     /**
@@ -5474,7 +5476,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
             String functionAppName,
             StaticSiteUserProvidedFunctionAppArmResourceInner staticSiteUserProvidedFunctionEnvelope) {
         final Boolean isForced = null;
-        return beginRegisterUserProvidedFunctionAppWithStaticSiteBuildAsync(
+        return this
+            .beginRegisterUserProvidedFunctionAppWithStaticSiteBuildAsync(
                 resourceGroupName,
                 name,
                 environmentName,
@@ -5516,7 +5519,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
             StaticSiteUserProvidedFunctionAppArmResourceInner staticSiteUserProvidedFunctionEnvelope,
             Boolean isForced,
             Context context) {
-        return beginRegisterUserProvidedFunctionAppWithStaticSiteBuildAsync(
+        return this
+            .beginRegisterUserProvidedFunctionAppWithStaticSiteBuildAsync(
                 resourceGroupName,
                 name,
                 environmentName,
@@ -6127,7 +6131,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
         String name,
         String environmentName,
         StaticSiteZipDeploymentArmResource staticSiteZipDeploymentEnvelope) {
-        return beginCreateZipDeploymentForStaticSiteBuildAsync(
+        return this
+            .beginCreateZipDeploymentForStaticSiteBuildAsync(
                 resourceGroupName, name, environmentName, staticSiteZipDeploymentEnvelope)
             .getSyncPoller();
     }
@@ -6155,7 +6160,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
         String environmentName,
         StaticSiteZipDeploymentArmResource staticSiteZipDeploymentEnvelope,
         Context context) {
-        return beginCreateZipDeploymentForStaticSiteBuildAsync(
+        return this
+            .beginCreateZipDeploymentForStaticSiteBuildAsync(
                 resourceGroupName, name, environmentName, staticSiteZipDeploymentEnvelope, context)
             .getSyncPoller();
     }
@@ -7418,7 +7424,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
             String name,
             String domainName,
             StaticSiteCustomDomainRequestPropertiesArmResource staticSiteCustomDomainRequestPropertiesEnvelope) {
-        return beginCreateOrUpdateStaticSiteCustomDomainAsync(
+        return this
+            .beginCreateOrUpdateStaticSiteCustomDomainAsync(
                 resourceGroupName, name, domainName, staticSiteCustomDomainRequestPropertiesEnvelope)
             .getSyncPoller();
     }
@@ -7448,7 +7455,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
             String domainName,
             StaticSiteCustomDomainRequestPropertiesArmResource staticSiteCustomDomainRequestPropertiesEnvelope,
             Context context) {
-        return beginCreateOrUpdateStaticSiteCustomDomainAsync(
+        return this
+            .beginCreateOrUpdateStaticSiteCustomDomainAsync(
                 resourceGroupName, name, domainName, staticSiteCustomDomainRequestPropertiesEnvelope, context)
             .getSyncPoller();
     }
@@ -7736,7 +7744,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDeleteStaticSiteCustomDomain(
         String resourceGroupName, String name, String domainName) {
-        return beginDeleteStaticSiteCustomDomainAsync(resourceGroupName, name, domainName).getSyncPoller();
+        return this.beginDeleteStaticSiteCustomDomainAsync(resourceGroupName, name, domainName).getSyncPoller();
     }
 
     /**
@@ -7756,7 +7764,9 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDeleteStaticSiteCustomDomain(
         String resourceGroupName, String name, String domainName, Context context) {
-        return beginDeleteStaticSiteCustomDomainAsync(resourceGroupName, name, domainName, context).getSyncPoller();
+        return this
+            .beginDeleteStaticSiteCustomDomainAsync(resourceGroupName, name, domainName, context)
+            .getSyncPoller();
     }
 
     /**
@@ -8057,7 +8067,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
         String name,
         String domainName,
         StaticSiteCustomDomainRequestPropertiesArmResource staticSiteCustomDomainRequestPropertiesEnvelope) {
-        return beginValidateCustomDomainCanBeAddedToStaticSiteAsync(
+        return this
+            .beginValidateCustomDomainCanBeAddedToStaticSiteAsync(
                 resourceGroupName, name, domainName, staticSiteCustomDomainRequestPropertiesEnvelope)
             .getSyncPoller();
     }
@@ -8085,7 +8096,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
         String domainName,
         StaticSiteCustomDomainRequestPropertiesArmResource staticSiteCustomDomainRequestPropertiesEnvelope,
         Context context) {
-        return beginValidateCustomDomainCanBeAddedToStaticSiteAsync(
+        return this
+            .beginValidateCustomDomainCanBeAddedToStaticSiteAsync(
                 resourceGroupName, name, domainName, staticSiteCustomDomainRequestPropertiesEnvelope, context)
             .getSyncPoller();
     }
@@ -8353,7 +8365,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDetachStaticSite(String resourceGroupName, String name) {
-        return beginDetachStaticSiteAsync(resourceGroupName, name).getSyncPoller();
+        return this.beginDetachStaticSiteAsync(resourceGroupName, name).getSyncPoller();
     }
 
     /**
@@ -8372,7 +8384,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDetachStaticSite(
         String resourceGroupName, String name, Context context) {
-        return beginDetachStaticSiteAsync(resourceGroupName, name, context).getSyncPoller();
+        return this.beginDetachStaticSiteAsync(resourceGroupName, name, context).getSyncPoller();
     }
 
     /**
@@ -9867,7 +9879,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
             String name,
             String privateEndpointConnectionName,
             PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper) {
-        return beginApproveOrRejectPrivateEndpointConnectionAsync(
+        return this
+            .beginApproveOrRejectPrivateEndpointConnectionAsync(
                 resourceGroupName, name, privateEndpointConnectionName, privateEndpointWrapper)
             .getSyncPoller();
     }
@@ -9897,7 +9910,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
             String privateEndpointConnectionName,
             PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper,
             Context context) {
-        return beginApproveOrRejectPrivateEndpointConnectionAsync(
+        return this
+            .beginApproveOrRejectPrivateEndpointConnectionAsync(
                 resourceGroupName, name, privateEndpointConnectionName, privateEndpointWrapper, context)
             .getSyncPoller();
     }
@@ -10188,7 +10202,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Object>, Object> beginDeletePrivateEndpointConnection(
         String resourceGroupName, String name, String privateEndpointConnectionName) {
-        return beginDeletePrivateEndpointConnectionAsync(resourceGroupName, name, privateEndpointConnectionName)
+        return this
+            .beginDeletePrivateEndpointConnectionAsync(resourceGroupName, name, privateEndpointConnectionName)
             .getSyncPoller();
     }
 
@@ -10209,8 +10224,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Object>, Object> beginDeletePrivateEndpointConnection(
         String resourceGroupName, String name, String privateEndpointConnectionName, Context context) {
-        return beginDeletePrivateEndpointConnectionAsync(
-                resourceGroupName, name, privateEndpointConnectionName, context)
+        return this
+            .beginDeletePrivateEndpointConnectionAsync(resourceGroupName, name, privateEndpointConnectionName, context)
             .getSyncPoller();
     }
 
@@ -11310,7 +11325,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
             String functionAppName,
             StaticSiteUserProvidedFunctionAppArmResourceInner staticSiteUserProvidedFunctionEnvelope) {
         final Boolean isForced = null;
-        return beginRegisterUserProvidedFunctionAppWithStaticSiteAsync(
+        return this
+            .beginRegisterUserProvidedFunctionAppWithStaticSiteAsync(
                 resourceGroupName, name, functionAppName, staticSiteUserProvidedFunctionEnvelope, isForced)
             .getSyncPoller();
     }
@@ -11345,7 +11361,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
             StaticSiteUserProvidedFunctionAppArmResourceInner staticSiteUserProvidedFunctionEnvelope,
             Boolean isForced,
             Context context) {
-        return beginRegisterUserProvidedFunctionAppWithStaticSiteAsync(
+        return this
+            .beginRegisterUserProvidedFunctionAppWithStaticSiteAsync(
                 resourceGroupName, name, functionAppName, staticSiteUserProvidedFunctionEnvelope, isForced, context)
             .getSyncPoller();
     }
@@ -11866,7 +11883,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginCreateZipDeploymentForStaticSite(
         String resourceGroupName, String name, StaticSiteZipDeploymentArmResource staticSiteZipDeploymentEnvelope) {
-        return beginCreateZipDeploymentForStaticSiteAsync(resourceGroupName, name, staticSiteZipDeploymentEnvelope)
+        return this
+            .beginCreateZipDeploymentForStaticSiteAsync(resourceGroupName, name, staticSiteZipDeploymentEnvelope)
             .getSyncPoller();
     }
 
@@ -11891,7 +11909,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
         String name,
         StaticSiteZipDeploymentArmResource staticSiteZipDeploymentEnvelope,
         Context context) {
-        return beginCreateZipDeploymentForStaticSiteAsync(
+        return this
+            .beginCreateZipDeploymentForStaticSiteAsync(
                 resourceGroupName, name, staticSiteZipDeploymentEnvelope, context)
             .getSyncPoller();
     }
@@ -12195,7 +12214,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
         String name,
         String linkedBackendName,
         StaticSiteLinkedBackendArmResourceInner staticSiteLinkedBackendEnvelope) {
-        return beginValidateBackendAsync(resourceGroupName, name, linkedBackendName, staticSiteLinkedBackendEnvelope)
+        return this
+            .beginValidateBackendAsync(resourceGroupName, name, linkedBackendName, staticSiteLinkedBackendEnvelope)
             .getSyncPoller();
     }
 
@@ -12219,7 +12239,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
         String linkedBackendName,
         StaticSiteLinkedBackendArmResourceInner staticSiteLinkedBackendEnvelope,
         Context context) {
-        return beginValidateBackendAsync(
+        return this
+            .beginValidateBackendAsync(
                 resourceGroupName, name, linkedBackendName, staticSiteLinkedBackendEnvelope, context)
             .getSyncPoller();
     }
@@ -12543,7 +12564,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
         String environmentName,
         String linkedBackendName,
         StaticSiteLinkedBackendArmResourceInner staticSiteLinkedBackendEnvelope) {
-        return beginValidateBackendForBuildAsync(
+        return this
+            .beginValidateBackendForBuildAsync(
                 resourceGroupName, name, environmentName, linkedBackendName, staticSiteLinkedBackendEnvelope)
             .getSyncPoller();
     }
@@ -12570,7 +12592,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
         String linkedBackendName,
         StaticSiteLinkedBackendArmResourceInner staticSiteLinkedBackendEnvelope,
         Context context) {
-        return beginValidateBackendForBuildAsync(
+        return this
+            .beginValidateBackendForBuildAsync(
                 resourceGroupName, name, environmentName, linkedBackendName, staticSiteLinkedBackendEnvelope, context)
             .getSyncPoller();
     }
@@ -13444,7 +13467,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
             String name,
             String linkedBackendName,
             StaticSiteLinkedBackendArmResourceInner staticSiteLinkedBackendEnvelope) {
-        return beginLinkBackendAsync(resourceGroupName, name, linkedBackendName, staticSiteLinkedBackendEnvelope)
+        return this
+            .beginLinkBackendAsync(resourceGroupName, name, linkedBackendName, staticSiteLinkedBackendEnvelope)
             .getSyncPoller();
     }
 
@@ -13469,8 +13493,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
             String linkedBackendName,
             StaticSiteLinkedBackendArmResourceInner staticSiteLinkedBackendEnvelope,
             Context context) {
-        return beginLinkBackendAsync(
-                resourceGroupName, name, linkedBackendName, staticSiteLinkedBackendEnvelope, context)
+        return this
+            .beginLinkBackendAsync(resourceGroupName, name, linkedBackendName, staticSiteLinkedBackendEnvelope, context)
             .getSyncPoller();
     }
 
@@ -14161,7 +14185,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
             String environmentName,
             String linkedBackendName,
             StaticSiteLinkedBackendArmResourceInner staticSiteLinkedBackendEnvelope) {
-        return beginLinkBackendToBuildAsync(
+        return this
+            .beginLinkBackendToBuildAsync(
                 resourceGroupName, name, environmentName, linkedBackendName, staticSiteLinkedBackendEnvelope)
             .getSyncPoller();
     }
@@ -14189,7 +14214,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
             String linkedBackendName,
             StaticSiteLinkedBackendArmResourceInner staticSiteLinkedBackendEnvelope,
             Context context) {
-        return beginLinkBackendToBuildAsync(
+        return this
+            .beginLinkBackendToBuildAsync(
                 resourceGroupName, name, environmentName, linkedBackendName, staticSiteLinkedBackendEnvelope, context)
             .getSyncPoller();
     }

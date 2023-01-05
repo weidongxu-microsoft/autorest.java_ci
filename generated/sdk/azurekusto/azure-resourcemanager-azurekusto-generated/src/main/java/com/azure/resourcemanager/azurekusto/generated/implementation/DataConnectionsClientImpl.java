@@ -585,7 +585,8 @@ public final class DataConnectionsClientImpl implements DataConnectionsClient {
             String clusterName,
             String databaseName,
             DataConnectionValidationInner parameters) {
-        return beginDataConnectionValidationAsync(resourceGroupName, clusterName, databaseName, parameters)
+        return this
+            .beginDataConnectionValidationAsync(resourceGroupName, clusterName, databaseName, parameters)
             .getSyncPoller();
     }
 
@@ -610,7 +611,8 @@ public final class DataConnectionsClientImpl implements DataConnectionsClient {
             String databaseName,
             DataConnectionValidationInner parameters,
             Context context) {
-        return beginDataConnectionValidationAsync(resourceGroupName, clusterName, databaseName, parameters, context)
+        return this
+            .beginDataConnectionValidationAsync(resourceGroupName, clusterName, databaseName, parameters, context)
             .getSyncPoller();
     }
 
@@ -1300,7 +1302,8 @@ public final class DataConnectionsClientImpl implements DataConnectionsClient {
         String databaseName,
         String dataConnectionName,
         DataConnectionInner parameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, clusterName, databaseName, dataConnectionName, parameters)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, clusterName, databaseName, dataConnectionName, parameters)
             .getSyncPoller();
     }
 
@@ -1326,7 +1329,8 @@ public final class DataConnectionsClientImpl implements DataConnectionsClient {
         String dataConnectionName,
         DataConnectionInner parameters,
         Context context) {
-        return beginCreateOrUpdateAsync(
+        return this
+            .beginCreateOrUpdateAsync(
                 resourceGroupName, clusterName, databaseName, dataConnectionName, parameters, context)
             .getSyncPoller();
     }
@@ -1660,7 +1664,8 @@ public final class DataConnectionsClientImpl implements DataConnectionsClient {
         String databaseName,
         String dataConnectionName,
         DataConnectionInner parameters) {
-        return beginUpdateAsync(resourceGroupName, clusterName, databaseName, dataConnectionName, parameters)
+        return this
+            .beginUpdateAsync(resourceGroupName, clusterName, databaseName, dataConnectionName, parameters)
             .getSyncPoller();
     }
 
@@ -1686,7 +1691,8 @@ public final class DataConnectionsClientImpl implements DataConnectionsClient {
         String dataConnectionName,
         DataConnectionInner parameters,
         Context context) {
-        return beginUpdateAsync(resourceGroupName, clusterName, databaseName, dataConnectionName, parameters, context)
+        return this
+            .beginUpdateAsync(resourceGroupName, clusterName, databaseName, dataConnectionName, parameters, context)
             .getSyncPoller();
     }
 
@@ -1969,7 +1975,7 @@ public final class DataConnectionsClientImpl implements DataConnectionsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String clusterName, String databaseName, String dataConnectionName) {
-        return beginDeleteAsync(resourceGroupName, clusterName, databaseName, dataConnectionName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, clusterName, databaseName, dataConnectionName).getSyncPoller();
     }
 
     /**
@@ -1988,7 +1994,8 @@ public final class DataConnectionsClientImpl implements DataConnectionsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String clusterName, String databaseName, String dataConnectionName, Context context) {
-        return beginDeleteAsync(resourceGroupName, clusterName, databaseName, dataConnectionName, context)
+        return this
+            .beginDeleteAsync(resourceGroupName, clusterName, databaseName, dataConnectionName, context)
             .getSyncPoller();
     }
 

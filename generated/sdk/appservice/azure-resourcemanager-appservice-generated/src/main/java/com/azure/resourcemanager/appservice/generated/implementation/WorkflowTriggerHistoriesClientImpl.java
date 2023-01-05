@@ -808,7 +808,7 @@ public final class WorkflowTriggerHistoriesClientImpl implements WorkflowTrigger
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginResubmit(
         String resourceGroupName, String name, String workflowName, String triggerName, String historyName) {
-        return beginResubmitAsync(resourceGroupName, name, workflowName, triggerName, historyName).getSyncPoller();
+        return this.beginResubmitAsync(resourceGroupName, name, workflowName, triggerName, historyName).getSyncPoller();
     }
 
     /**
@@ -834,7 +834,8 @@ public final class WorkflowTriggerHistoriesClientImpl implements WorkflowTrigger
         String triggerName,
         String historyName,
         Context context) {
-        return beginResubmitAsync(resourceGroupName, name, workflowName, triggerName, historyName, context)
+        return this
+            .beginResubmitAsync(resourceGroupName, name, workflowName, triggerName, historyName, context)
             .getSyncPoller();
     }
 

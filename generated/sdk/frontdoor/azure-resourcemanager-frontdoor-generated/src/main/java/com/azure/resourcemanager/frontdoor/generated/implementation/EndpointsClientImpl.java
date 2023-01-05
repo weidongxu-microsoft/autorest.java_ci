@@ -255,7 +255,7 @@ public final class EndpointsClientImpl implements EndpointsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginPurgeContent(
         String resourceGroupName, String frontDoorName, PurgeParameters contentFilePaths) {
-        return beginPurgeContentAsync(resourceGroupName, frontDoorName, contentFilePaths).getSyncPoller();
+        return this.beginPurgeContentAsync(resourceGroupName, frontDoorName, contentFilePaths).getSyncPoller();
     }
 
     /**
@@ -275,7 +275,7 @@ public final class EndpointsClientImpl implements EndpointsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginPurgeContent(
         String resourceGroupName, String frontDoorName, PurgeParameters contentFilePaths, Context context) {
-        return beginPurgeContentAsync(resourceGroupName, frontDoorName, contentFilePaths, context).getSyncPoller();
+        return this.beginPurgeContentAsync(resourceGroupName, frontDoorName, contentFilePaths, context).getSyncPoller();
     }
 
     /**

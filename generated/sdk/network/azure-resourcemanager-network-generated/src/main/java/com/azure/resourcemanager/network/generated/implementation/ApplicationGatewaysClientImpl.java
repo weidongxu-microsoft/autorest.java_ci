@@ -494,7 +494,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String applicationGatewayName) {
-        return beginDeleteAsync(resourceGroupName, applicationGatewayName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, applicationGatewayName).getSyncPoller();
     }
 
     /**
@@ -511,7 +511,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String applicationGatewayName, Context context) {
-        return beginDeleteAsync(resourceGroupName, applicationGatewayName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, applicationGatewayName, context).getSyncPoller();
     }
 
     /**
@@ -909,7 +909,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ApplicationGatewayInner>, ApplicationGatewayInner> beginCreateOrUpdate(
         String resourceGroupName, String applicationGatewayName, ApplicationGatewayInner parameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, applicationGatewayName, parameters).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, applicationGatewayName, parameters).getSyncPoller();
     }
 
     /**
@@ -927,7 +927,9 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ApplicationGatewayInner>, ApplicationGatewayInner> beginCreateOrUpdate(
         String resourceGroupName, String applicationGatewayName, ApplicationGatewayInner parameters, Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, applicationGatewayName, parameters, context).getSyncPoller();
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, applicationGatewayName, parameters, context)
+            .getSyncPoller();
     }
 
     /**
@@ -1625,7 +1627,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginStart(String resourceGroupName, String applicationGatewayName) {
-        return beginStartAsync(resourceGroupName, applicationGatewayName).getSyncPoller();
+        return this.beginStartAsync(resourceGroupName, applicationGatewayName).getSyncPoller();
     }
 
     /**
@@ -1642,7 +1644,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginStart(
         String resourceGroupName, String applicationGatewayName, Context context) {
-        return beginStartAsync(resourceGroupName, applicationGatewayName, context).getSyncPoller();
+        return this.beginStartAsync(resourceGroupName, applicationGatewayName, context).getSyncPoller();
     }
 
     /**
@@ -1862,7 +1864,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginStop(String resourceGroupName, String applicationGatewayName) {
-        return beginStopAsync(resourceGroupName, applicationGatewayName).getSyncPoller();
+        return this.beginStopAsync(resourceGroupName, applicationGatewayName).getSyncPoller();
     }
 
     /**
@@ -1879,7 +1881,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginStop(
         String resourceGroupName, String applicationGatewayName, Context context) {
-        return beginStopAsync(resourceGroupName, applicationGatewayName, context).getSyncPoller();
+        return this.beginStopAsync(resourceGroupName, applicationGatewayName, context).getSyncPoller();
     }
 
     /**
@@ -2151,7 +2153,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
     public SyncPoller<PollResult<ApplicationGatewayBackendHealthInner>, ApplicationGatewayBackendHealthInner>
         beginBackendHealth(String resourceGroupName, String applicationGatewayName) {
         final String expand = null;
-        return beginBackendHealthAsync(resourceGroupName, applicationGatewayName, expand).getSyncPoller();
+        return this.beginBackendHealthAsync(resourceGroupName, applicationGatewayName, expand).getSyncPoller();
     }
 
     /**
@@ -2170,7 +2172,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ApplicationGatewayBackendHealthInner>, ApplicationGatewayBackendHealthInner>
         beginBackendHealth(String resourceGroupName, String applicationGatewayName, String expand, Context context) {
-        return beginBackendHealthAsync(resourceGroupName, applicationGatewayName, expand, context).getSyncPoller();
+        return this.beginBackendHealthAsync(resourceGroupName, applicationGatewayName, expand, context).getSyncPoller();
     }
 
     /**
@@ -2519,7 +2521,8 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
         beginBackendHealthOnDemand(
             String resourceGroupName, String applicationGatewayName, ApplicationGatewayOnDemandProbe probeRequest) {
         final String expand = null;
-        return beginBackendHealthOnDemandAsync(resourceGroupName, applicationGatewayName, probeRequest, expand)
+        return this
+            .beginBackendHealthOnDemandAsync(resourceGroupName, applicationGatewayName, probeRequest, expand)
             .getSyncPoller();
     }
 
@@ -2547,7 +2550,8 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
             ApplicationGatewayOnDemandProbe probeRequest,
             String expand,
             Context context) {
-        return beginBackendHealthOnDemandAsync(resourceGroupName, applicationGatewayName, probeRequest, expand, context)
+        return this
+            .beginBackendHealthOnDemandAsync(resourceGroupName, applicationGatewayName, probeRequest, expand, context)
             .getSyncPoller();
     }
 

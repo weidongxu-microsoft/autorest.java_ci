@@ -684,7 +684,7 @@ public final class TriggersClientImpl implements TriggersClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<TriggerInner>, TriggerInner> beginCreateOrUpdate(
         String deviceName, String name, String resourceGroupName, TriggerInner trigger) {
-        return beginCreateOrUpdateAsync(deviceName, name, resourceGroupName, trigger).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(deviceName, name, resourceGroupName, trigger).getSyncPoller();
     }
 
     /**
@@ -703,7 +703,7 @@ public final class TriggersClientImpl implements TriggersClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<TriggerInner>, TriggerInner> beginCreateOrUpdate(
         String deviceName, String name, String resourceGroupName, TriggerInner trigger, Context context) {
-        return beginCreateOrUpdateAsync(deviceName, name, resourceGroupName, trigger, context).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(deviceName, name, resourceGroupName, trigger, context).getSyncPoller();
     }
 
     /**
@@ -943,7 +943,7 @@ public final class TriggersClientImpl implements TriggersClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String deviceName, String name, String resourceGroupName) {
-        return beginDeleteAsync(deviceName, name, resourceGroupName).getSyncPoller();
+        return this.beginDeleteAsync(deviceName, name, resourceGroupName).getSyncPoller();
     }
 
     /**
@@ -961,7 +961,7 @@ public final class TriggersClientImpl implements TriggersClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String deviceName, String name, String resourceGroupName, Context context) {
-        return beginDeleteAsync(deviceName, name, resourceGroupName, context).getSyncPoller();
+        return this.beginDeleteAsync(deviceName, name, resourceGroupName, context).getSyncPoller();
     }
 
     /**

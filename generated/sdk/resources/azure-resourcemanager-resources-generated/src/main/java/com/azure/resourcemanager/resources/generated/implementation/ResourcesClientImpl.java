@@ -746,7 +746,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginMoveResources(
         String sourceResourceGroupName, ResourcesMoveInfo parameters) {
-        return beginMoveResourcesAsync(sourceResourceGroupName, parameters).getSyncPoller();
+        return this.beginMoveResourcesAsync(sourceResourceGroupName, parameters).getSyncPoller();
     }
 
     /**
@@ -767,7 +767,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginMoveResources(
         String sourceResourceGroupName, ResourcesMoveInfo parameters, Context context) {
-        return beginMoveResourcesAsync(sourceResourceGroupName, parameters, context).getSyncPoller();
+        return this.beginMoveResourcesAsync(sourceResourceGroupName, parameters, context).getSyncPoller();
     }
 
     /**
@@ -1037,7 +1037,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginValidateMoveResources(
         String sourceResourceGroupName, ResourcesMoveInfo parameters) {
-        return beginValidateMoveResourcesAsync(sourceResourceGroupName, parameters).getSyncPoller();
+        return this.beginValidateMoveResourcesAsync(sourceResourceGroupName, parameters).getSyncPoller();
     }
 
     /**
@@ -1060,7 +1060,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginValidateMoveResources(
         String sourceResourceGroupName, ResourcesMoveInfo parameters, Context context) {
-        return beginValidateMoveResourcesAsync(sourceResourceGroupName, parameters, context).getSyncPoller();
+        return this.beginValidateMoveResourcesAsync(sourceResourceGroupName, parameters, context).getSyncPoller();
     }
 
     /**
@@ -1916,7 +1916,8 @@ public final class ResourcesClientImpl implements ResourcesClient {
         String resourceType,
         String resourceName,
         String apiVersion) {
-        return beginDeleteAsync(
+        return this
+            .beginDeleteAsync(
                 resourceGroupName,
                 resourceProviderNamespace,
                 parentResourcePath,
@@ -1951,7 +1952,8 @@ public final class ResourcesClientImpl implements ResourcesClient {
         String resourceName,
         String apiVersion,
         Context context) {
-        return beginDeleteAsync(
+        return this
+            .beginDeleteAsync(
                 resourceGroupName,
                 resourceProviderNamespace,
                 parentResourcePath,
@@ -2377,7 +2379,8 @@ public final class ResourcesClientImpl implements ResourcesClient {
         String resourceName,
         String apiVersion,
         GenericResourceInner parameters) {
-        return beginCreateOrUpdateAsync(
+        return this
+            .beginCreateOrUpdateAsync(
                 resourceGroupName,
                 resourceProviderNamespace,
                 parentResourcePath,
@@ -2414,7 +2417,8 @@ public final class ResourcesClientImpl implements ResourcesClient {
         String apiVersion,
         GenericResourceInner parameters,
         Context context) {
-        return beginCreateOrUpdateAsync(
+        return this
+            .beginCreateOrUpdateAsync(
                 resourceGroupName,
                 resourceProviderNamespace,
                 parentResourcePath,
@@ -2851,7 +2855,8 @@ public final class ResourcesClientImpl implements ResourcesClient {
         String resourceName,
         String apiVersion,
         GenericResourceInner parameters) {
-        return beginUpdateAsync(
+        return this
+            .beginUpdateAsync(
                 resourceGroupName,
                 resourceProviderNamespace,
                 parentResourcePath,
@@ -2888,7 +2893,8 @@ public final class ResourcesClientImpl implements ResourcesClient {
         String apiVersion,
         GenericResourceInner parameters,
         Context context) {
-        return beginUpdateAsync(
+        return this
+            .beginUpdateAsync(
                 resourceGroupName,
                 resourceProviderNamespace,
                 parentResourcePath,
@@ -3548,7 +3554,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDeleteById(String resourceId, String apiVersion) {
-        return beginDeleteByIdAsync(resourceId, apiVersion).getSyncPoller();
+        return this.beginDeleteByIdAsync(resourceId, apiVersion).getSyncPoller();
     }
 
     /**
@@ -3566,7 +3572,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDeleteById(String resourceId, String apiVersion, Context context) {
-        return beginDeleteByIdAsync(resourceId, apiVersion, context).getSyncPoller();
+        return this.beginDeleteByIdAsync(resourceId, apiVersion, context).getSyncPoller();
     }
 
     /**
@@ -3791,7 +3797,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<GenericResourceInner>, GenericResourceInner> beginCreateOrUpdateById(
         String resourceId, String apiVersion, GenericResourceInner parameters) {
-        return beginCreateOrUpdateByIdAsync(resourceId, apiVersion, parameters).getSyncPoller();
+        return this.beginCreateOrUpdateByIdAsync(resourceId, apiVersion, parameters).getSyncPoller();
     }
 
     /**
@@ -3811,7 +3817,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<GenericResourceInner>, GenericResourceInner> beginCreateOrUpdateById(
         String resourceId, String apiVersion, GenericResourceInner parameters, Context context) {
-        return beginCreateOrUpdateByIdAsync(resourceId, apiVersion, parameters, context).getSyncPoller();
+        return this.beginCreateOrUpdateByIdAsync(resourceId, apiVersion, parameters, context).getSyncPoller();
     }
 
     /**
@@ -4045,7 +4051,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<GenericResourceInner>, GenericResourceInner> beginUpdateById(
         String resourceId, String apiVersion, GenericResourceInner parameters) {
-        return beginUpdateByIdAsync(resourceId, apiVersion, parameters).getSyncPoller();
+        return this.beginUpdateByIdAsync(resourceId, apiVersion, parameters).getSyncPoller();
     }
 
     /**
@@ -4065,7 +4071,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<GenericResourceInner>, GenericResourceInner> beginUpdateById(
         String resourceId, String apiVersion, GenericResourceInner parameters, Context context) {
-        return beginUpdateByIdAsync(resourceId, apiVersion, parameters, context).getSyncPoller();
+        return this.beginUpdateByIdAsync(resourceId, apiVersion, parameters, context).getSyncPoller();
     }
 
     /**

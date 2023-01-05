@@ -632,7 +632,7 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName) {
         final String forceDeletionTypes = null;
-        return beginDeleteAsync(resourceGroupName, forceDeletionTypes).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, forceDeletionTypes).getSyncPoller();
     }
 
     /**
@@ -653,7 +653,7 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String forceDeletionTypes, Context context) {
-        return beginDeleteAsync(resourceGroupName, forceDeletionTypes, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, forceDeletionTypes, context).getSyncPoller();
     }
 
     /**
@@ -1201,7 +1201,7 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ResourceGroupExportResultInner>, ResourceGroupExportResultInner> beginExportTemplate(
         String resourceGroupName, ExportTemplateRequest parameters) {
-        return beginExportTemplateAsync(resourceGroupName, parameters).getSyncPoller();
+        return this.beginExportTemplateAsync(resourceGroupName, parameters).getSyncPoller();
     }
 
     /**
@@ -1218,7 +1218,7 @@ public final class ResourceGroupsClientImpl implements ResourceGroupsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ResourceGroupExportResultInner>, ResourceGroupExportResultInner> beginExportTemplate(
         String resourceGroupName, ExportTemplateRequest parameters, Context context) {
-        return beginExportTemplateAsync(resourceGroupName, parameters, context).getSyncPoller();
+        return this.beginExportTemplateAsync(resourceGroupName, parameters, context).getSyncPoller();
     }
 
     /**

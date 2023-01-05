@@ -484,7 +484,7 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
     public SyncPoller<PollResult<CloudServiceInner>, CloudServiceInner> beginCreateOrUpdate(
         String resourceGroupName, String cloudServiceName) {
         final CloudServiceInner parameters = null;
-        return beginCreateOrUpdateAsync(resourceGroupName, cloudServiceName, parameters).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, cloudServiceName, parameters).getSyncPoller();
     }
 
     /**
@@ -502,7 +502,7 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<CloudServiceInner>, CloudServiceInner> beginCreateOrUpdate(
         String resourceGroupName, String cloudServiceName, CloudServiceInner parameters, Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, cloudServiceName, parameters, context).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, cloudServiceName, parameters, context).getSyncPoller();
     }
 
     /**
@@ -794,7 +794,7 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
     public SyncPoller<PollResult<CloudServiceInner>, CloudServiceInner> beginUpdate(
         String resourceGroupName, String cloudServiceName) {
         final CloudServiceUpdate parameters = null;
-        return beginUpdateAsync(resourceGroupName, cloudServiceName, parameters).getSyncPoller();
+        return this.beginUpdateAsync(resourceGroupName, cloudServiceName, parameters).getSyncPoller();
     }
 
     /**
@@ -812,7 +812,7 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<CloudServiceInner>, CloudServiceInner> beginUpdate(
         String resourceGroupName, String cloudServiceName, CloudServiceUpdate parameters, Context context) {
-        return beginUpdateAsync(resourceGroupName, cloudServiceName, parameters, context).getSyncPoller();
+        return this.beginUpdateAsync(resourceGroupName, cloudServiceName, parameters, context).getSyncPoller();
     }
 
     /**
@@ -1056,7 +1056,7 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String cloudServiceName) {
-        return beginDeleteAsync(resourceGroupName, cloudServiceName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, cloudServiceName).getSyncPoller();
     }
 
     /**
@@ -1073,7 +1073,7 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String cloudServiceName, Context context) {
-        return beginDeleteAsync(resourceGroupName, cloudServiceName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, cloudServiceName, context).getSyncPoller();
     }
 
     /**
@@ -1904,7 +1904,7 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginStart(String resourceGroupName, String cloudServiceName) {
-        return beginStartAsync(resourceGroupName, cloudServiceName).getSyncPoller();
+        return this.beginStartAsync(resourceGroupName, cloudServiceName).getSyncPoller();
     }
 
     /**
@@ -1921,7 +1921,7 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginStart(
         String resourceGroupName, String cloudServiceName, Context context) {
-        return beginStartAsync(resourceGroupName, cloudServiceName, context).getSyncPoller();
+        return this.beginStartAsync(resourceGroupName, cloudServiceName, context).getSyncPoller();
     }
 
     /**
@@ -2143,7 +2143,7 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginPowerOff(String resourceGroupName, String cloudServiceName) {
-        return beginPowerOffAsync(resourceGroupName, cloudServiceName).getSyncPoller();
+        return this.beginPowerOffAsync(resourceGroupName, cloudServiceName).getSyncPoller();
     }
 
     /**
@@ -2161,7 +2161,7 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginPowerOff(
         String resourceGroupName, String cloudServiceName, Context context) {
-        return beginPowerOffAsync(resourceGroupName, cloudServiceName, context).getSyncPoller();
+        return this.beginPowerOffAsync(resourceGroupName, cloudServiceName, context).getSyncPoller();
     }
 
     /**
@@ -2419,7 +2419,7 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginRestart(String resourceGroupName, String cloudServiceName) {
         final RoleInstances parameters = null;
-        return beginRestartAsync(resourceGroupName, cloudServiceName, parameters).getSyncPoller();
+        return this.beginRestartAsync(resourceGroupName, cloudServiceName, parameters).getSyncPoller();
     }
 
     /**
@@ -2437,7 +2437,7 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginRestart(
         String resourceGroupName, String cloudServiceName, RoleInstances parameters, Context context) {
-        return beginRestartAsync(resourceGroupName, cloudServiceName, parameters, context).getSyncPoller();
+        return this.beginRestartAsync(resourceGroupName, cloudServiceName, parameters, context).getSyncPoller();
     }
 
     /**
@@ -2714,7 +2714,7 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginReimage(String resourceGroupName, String cloudServiceName) {
         final RoleInstances parameters = null;
-        return beginReimageAsync(resourceGroupName, cloudServiceName, parameters).getSyncPoller();
+        return this.beginReimageAsync(resourceGroupName, cloudServiceName, parameters).getSyncPoller();
     }
 
     /**
@@ -2732,7 +2732,7 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginReimage(
         String resourceGroupName, String cloudServiceName, RoleInstances parameters, Context context) {
-        return beginReimageAsync(resourceGroupName, cloudServiceName, parameters, context).getSyncPoller();
+        return this.beginReimageAsync(resourceGroupName, cloudServiceName, parameters, context).getSyncPoller();
     }
 
     /**
@@ -3021,7 +3021,7 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginRebuild(String resourceGroupName, String cloudServiceName) {
         final RoleInstances parameters = null;
-        return beginRebuildAsync(resourceGroupName, cloudServiceName, parameters).getSyncPoller();
+        return this.beginRebuildAsync(resourceGroupName, cloudServiceName, parameters).getSyncPoller();
     }
 
     /**
@@ -3041,7 +3041,7 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginRebuild(
         String resourceGroupName, String cloudServiceName, RoleInstances parameters, Context context) {
-        return beginRebuildAsync(resourceGroupName, cloudServiceName, parameters, context).getSyncPoller();
+        return this.beginRebuildAsync(resourceGroupName, cloudServiceName, parameters, context).getSyncPoller();
     }
 
     /**
@@ -3329,7 +3329,7 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDeleteInstances(String resourceGroupName, String cloudServiceName) {
         final RoleInstances parameters = null;
-        return beginDeleteInstancesAsync(resourceGroupName, cloudServiceName, parameters).getSyncPoller();
+        return this.beginDeleteInstancesAsync(resourceGroupName, cloudServiceName, parameters).getSyncPoller();
     }
 
     /**
@@ -3347,7 +3347,7 @@ public final class CloudServicesClientImpl implements CloudServicesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDeleteInstances(
         String resourceGroupName, String cloudServiceName, RoleInstances parameters, Context context) {
-        return beginDeleteInstancesAsync(resourceGroupName, cloudServiceName, parameters, context).getSyncPoller();
+        return this.beginDeleteInstancesAsync(resourceGroupName, cloudServiceName, parameters, context).getSyncPoller();
     }
 
     /**

@@ -635,7 +635,8 @@ public final class DomainTopicEventSubscriptionsClientImpl implements DomainTopi
         String topicName,
         String eventSubscriptionName,
         EventSubscriptionInner eventSubscriptionInfo) {
-        return beginCreateOrUpdateAsync(
+        return this
+            .beginCreateOrUpdateAsync(
                 resourceGroupName, domainName, topicName, eventSubscriptionName, eventSubscriptionInfo)
             .getSyncPoller();
     }
@@ -665,7 +666,8 @@ public final class DomainTopicEventSubscriptionsClientImpl implements DomainTopi
         String eventSubscriptionName,
         EventSubscriptionInner eventSubscriptionInfo,
         Context context) {
-        return beginCreateOrUpdateAsync(
+        return this
+            .beginCreateOrUpdateAsync(
                 resourceGroupName, domainName, topicName, eventSubscriptionName, eventSubscriptionInfo, context)
             .getSyncPoller();
     }
@@ -977,7 +979,7 @@ public final class DomainTopicEventSubscriptionsClientImpl implements DomainTopi
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String domainName, String topicName, String eventSubscriptionName) {
-        return beginDeleteAsync(resourceGroupName, domainName, topicName, eventSubscriptionName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, domainName, topicName, eventSubscriptionName).getSyncPoller();
     }
 
     /**
@@ -999,7 +1001,8 @@ public final class DomainTopicEventSubscriptionsClientImpl implements DomainTopi
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String domainName, String topicName, String eventSubscriptionName, Context context) {
-        return beginDeleteAsync(resourceGroupName, domainName, topicName, eventSubscriptionName, context)
+        return this
+            .beginDeleteAsync(resourceGroupName, domainName, topicName, eventSubscriptionName, context)
             .getSyncPoller();
     }
 
@@ -1339,7 +1342,8 @@ public final class DomainTopicEventSubscriptionsClientImpl implements DomainTopi
         String topicName,
         String eventSubscriptionName,
         EventSubscriptionUpdateParameters eventSubscriptionUpdateParameters) {
-        return beginUpdateAsync(
+        return this
+            .beginUpdateAsync(
                 resourceGroupName, domainName, topicName, eventSubscriptionName, eventSubscriptionUpdateParameters)
             .getSyncPoller();
     }
@@ -1368,7 +1372,8 @@ public final class DomainTopicEventSubscriptionsClientImpl implements DomainTopi
         String eventSubscriptionName,
         EventSubscriptionUpdateParameters eventSubscriptionUpdateParameters,
         Context context) {
-        return beginUpdateAsync(
+        return this
+            .beginUpdateAsync(
                 resourceGroupName,
                 domainName,
                 topicName,

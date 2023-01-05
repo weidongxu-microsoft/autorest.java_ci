@@ -3276,7 +3276,7 @@ public final class BlobContainersClientImpl implements BlobContainersClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginObjectLevelWorm(
         String resourceGroupName, String accountName, String containerName) {
-        return beginObjectLevelWormAsync(resourceGroupName, accountName, containerName).getSyncPoller();
+        return this.beginObjectLevelWormAsync(resourceGroupName, accountName, containerName).getSyncPoller();
     }
 
     /**
@@ -3300,7 +3300,7 @@ public final class BlobContainersClientImpl implements BlobContainersClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginObjectLevelWorm(
         String resourceGroupName, String accountName, String containerName, Context context) {
-        return beginObjectLevelWormAsync(resourceGroupName, accountName, containerName, context).getSyncPoller();
+        return this.beginObjectLevelWormAsync(resourceGroupName, accountName, containerName, context).getSyncPoller();
     }
 
     /**

@@ -332,7 +332,8 @@ public final class ServiceEndpointPolicyDefinitionsClientImpl implements Service
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String serviceEndpointPolicyName, String serviceEndpointPolicyDefinitionName) {
-        return beginDeleteAsync(resourceGroupName, serviceEndpointPolicyName, serviceEndpointPolicyDefinitionName)
+        return this
+            .beginDeleteAsync(resourceGroupName, serviceEndpointPolicyName, serviceEndpointPolicyDefinitionName)
             .getSyncPoller();
     }
 
@@ -354,7 +355,8 @@ public final class ServiceEndpointPolicyDefinitionsClientImpl implements Service
         String serviceEndpointPolicyName,
         String serviceEndpointPolicyDefinitionName,
         Context context) {
-        return beginDeleteAsync(
+        return this
+            .beginDeleteAsync(
                 resourceGroupName, serviceEndpointPolicyName, serviceEndpointPolicyDefinitionName, context)
             .getSyncPoller();
     }
@@ -866,7 +868,8 @@ public final class ServiceEndpointPolicyDefinitionsClientImpl implements Service
             String serviceEndpointPolicyName,
             String serviceEndpointPolicyDefinitionName,
             ServiceEndpointPolicyDefinitionInner serviceEndpointPolicyDefinitions) {
-        return beginCreateOrUpdateAsync(
+        return this
+            .beginCreateOrUpdateAsync(
                 resourceGroupName,
                 serviceEndpointPolicyName,
                 serviceEndpointPolicyDefinitionName,
@@ -896,7 +899,8 @@ public final class ServiceEndpointPolicyDefinitionsClientImpl implements Service
             String serviceEndpointPolicyDefinitionName,
             ServiceEndpointPolicyDefinitionInner serviceEndpointPolicyDefinitions,
             Context context) {
-        return beginCreateOrUpdateAsync(
+        return this
+            .beginCreateOrUpdateAsync(
                 resourceGroupName,
                 serviceEndpointPolicyName,
                 serviceEndpointPolicyDefinitionName,

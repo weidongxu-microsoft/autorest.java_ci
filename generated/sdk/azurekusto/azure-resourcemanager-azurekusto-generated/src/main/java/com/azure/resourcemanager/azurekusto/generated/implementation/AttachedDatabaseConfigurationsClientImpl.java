@@ -880,7 +880,8 @@ public final class AttachedDatabaseConfigurationsClientImpl implements AttachedD
             String clusterName,
             String attachedDatabaseConfigurationName,
             AttachedDatabaseConfigurationInner parameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, clusterName, attachedDatabaseConfigurationName, parameters)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, clusterName, attachedDatabaseConfigurationName, parameters)
             .getSyncPoller();
     }
 
@@ -905,7 +906,8 @@ public final class AttachedDatabaseConfigurationsClientImpl implements AttachedD
             String attachedDatabaseConfigurationName,
             AttachedDatabaseConfigurationInner parameters,
             Context context) {
-        return beginCreateOrUpdateAsync(
+        return this
+            .beginCreateOrUpdateAsync(
                 resourceGroupName, clusterName, attachedDatabaseConfigurationName, parameters, context)
             .getSyncPoller();
     }
@@ -1175,7 +1177,7 @@ public final class AttachedDatabaseConfigurationsClientImpl implements AttachedD
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String clusterName, String attachedDatabaseConfigurationName) {
-        return beginDeleteAsync(resourceGroupName, clusterName, attachedDatabaseConfigurationName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, clusterName, attachedDatabaseConfigurationName).getSyncPoller();
     }
 
     /**
@@ -1193,7 +1195,8 @@ public final class AttachedDatabaseConfigurationsClientImpl implements AttachedD
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String clusterName, String attachedDatabaseConfigurationName, Context context) {
-        return beginDeleteAsync(resourceGroupName, clusterName, attachedDatabaseConfigurationName, context)
+        return this
+            .beginDeleteAsync(resourceGroupName, clusterName, attachedDatabaseConfigurationName, context)
             .getSyncPoller();
     }
 

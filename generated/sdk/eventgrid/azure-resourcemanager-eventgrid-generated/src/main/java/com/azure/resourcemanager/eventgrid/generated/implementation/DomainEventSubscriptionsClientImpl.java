@@ -770,7 +770,8 @@ public final class DomainEventSubscriptionsClientImpl implements DomainEventSubs
         String domainName,
         String eventSubscriptionName,
         EventSubscriptionInner eventSubscriptionInfo) {
-        return beginCreateOrUpdateAsync(resourceGroupName, domainName, eventSubscriptionName, eventSubscriptionInfo)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, domainName, eventSubscriptionName, eventSubscriptionInfo)
             .getSyncPoller();
     }
 
@@ -797,7 +798,8 @@ public final class DomainEventSubscriptionsClientImpl implements DomainEventSubs
         String eventSubscriptionName,
         EventSubscriptionInner eventSubscriptionInfo,
         Context context) {
-        return beginCreateOrUpdateAsync(
+        return this
+            .beginCreateOrUpdateAsync(
                 resourceGroupName, domainName, eventSubscriptionName, eventSubscriptionInfo, context)
             .getSyncPoller();
     }
@@ -1084,7 +1086,7 @@ public final class DomainEventSubscriptionsClientImpl implements DomainEventSubs
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String domainName, String eventSubscriptionName) {
-        return beginDeleteAsync(resourceGroupName, domainName, eventSubscriptionName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, domainName, eventSubscriptionName).getSyncPoller();
     }
 
     /**
@@ -1105,7 +1107,7 @@ public final class DomainEventSubscriptionsClientImpl implements DomainEventSubs
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String domainName, String eventSubscriptionName, Context context) {
-        return beginDeleteAsync(resourceGroupName, domainName, eventSubscriptionName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, domainName, eventSubscriptionName, context).getSyncPoller();
     }
 
     /**
@@ -1415,7 +1417,8 @@ public final class DomainEventSubscriptionsClientImpl implements DomainEventSubs
         String domainName,
         String eventSubscriptionName,
         EventSubscriptionUpdateParameters eventSubscriptionUpdateParameters) {
-        return beginUpdateAsync(resourceGroupName, domainName, eventSubscriptionName, eventSubscriptionUpdateParameters)
+        return this
+            .beginUpdateAsync(resourceGroupName, domainName, eventSubscriptionName, eventSubscriptionUpdateParameters)
             .getSyncPoller();
     }
 
@@ -1441,7 +1444,8 @@ public final class DomainEventSubscriptionsClientImpl implements DomainEventSubs
         String eventSubscriptionName,
         EventSubscriptionUpdateParameters eventSubscriptionUpdateParameters,
         Context context) {
-        return beginUpdateAsync(
+        return this
+            .beginUpdateAsync(
                 resourceGroupName, domainName, eventSubscriptionName, eventSubscriptionUpdateParameters, context)
             .getSyncPoller();
     }

@@ -629,7 +629,8 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
         String parentName,
         String privateEndpointConnectionName,
         PrivateEndpointConnectionInner privateEndpointConnection) {
-        return beginUpdateAsync(
+        return this
+            .beginUpdateAsync(
                 resourceGroupName, parentType, parentName, privateEndpointConnectionName, privateEndpointConnection)
             .getSyncPoller();
     }
@@ -660,7 +661,8 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
         String privateEndpointConnectionName,
         PrivateEndpointConnectionInner privateEndpointConnection,
         Context context) {
-        return beginUpdateAsync(
+        return this
+            .beginUpdateAsync(
                 resourceGroupName,
                 parentType,
                 parentName,
@@ -1017,7 +1019,8 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
         PrivateEndpointConnectionsParentType parentType,
         String parentName,
         String privateEndpointConnectionName) {
-        return beginDeleteAsync(resourceGroupName, parentType, parentName, privateEndpointConnectionName)
+        return this
+            .beginDeleteAsync(resourceGroupName, parentType, parentName, privateEndpointConnectionName)
             .getSyncPoller();
     }
 
@@ -1045,7 +1048,8 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
         String parentName,
         String privateEndpointConnectionName,
         Context context) {
-        return beginDeleteAsync(resourceGroupName, parentType, parentName, privateEndpointConnectionName, context)
+        return this
+            .beginDeleteAsync(resourceGroupName, parentType, parentName, privateEndpointConnectionName, context)
             .getSyncPoller();
     }
 

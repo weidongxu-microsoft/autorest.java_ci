@@ -478,7 +478,8 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
             String deviceName,
             String resourceGroupName,
             DiagnosticProactiveLogCollectionSettingsInner proactiveLogCollectionSettings) {
-        return beginUpdateDiagnosticProactiveLogCollectionSettingsAsync(
+        return this
+            .beginUpdateDiagnosticProactiveLogCollectionSettingsAsync(
                 deviceName, resourceGroupName, proactiveLogCollectionSettings)
             .getSyncPoller();
     }
@@ -503,7 +504,8 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
             String resourceGroupName,
             DiagnosticProactiveLogCollectionSettingsInner proactiveLogCollectionSettings,
             Context context) {
-        return beginUpdateDiagnosticProactiveLogCollectionSettingsAsync(
+        return this
+            .beginUpdateDiagnosticProactiveLogCollectionSettingsAsync(
                 deviceName, resourceGroupName, proactiveLogCollectionSettings, context)
             .getSyncPoller();
     }
@@ -947,7 +949,8 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
             String deviceName,
             String resourceGroupName,
             DiagnosticRemoteSupportSettingsInner diagnosticRemoteSupportSettings) {
-        return beginUpdateDiagnosticRemoteSupportSettingsAsync(
+        return this
+            .beginUpdateDiagnosticRemoteSupportSettingsAsync(
                 deviceName, resourceGroupName, diagnosticRemoteSupportSettings)
             .getSyncPoller();
     }
@@ -971,7 +974,8 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
             String resourceGroupName,
             DiagnosticRemoteSupportSettingsInner diagnosticRemoteSupportSettings,
             Context context) {
-        return beginUpdateDiagnosticRemoteSupportSettingsAsync(
+        return this
+            .beginUpdateDiagnosticRemoteSupportSettingsAsync(
                 deviceName, resourceGroupName, diagnosticRemoteSupportSettings, context)
             .getSyncPoller();
     }

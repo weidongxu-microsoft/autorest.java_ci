@@ -692,7 +692,7 @@ public final class PartnerTopicsClientImpl implements PartnerTopicsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String partnerTopicName) {
-        return beginDeleteAsync(resourceGroupName, partnerTopicName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, partnerTopicName).getSyncPoller();
     }
 
     /**
@@ -711,7 +711,7 @@ public final class PartnerTopicsClientImpl implements PartnerTopicsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String partnerTopicName, Context context) {
-        return beginDeleteAsync(resourceGroupName, partnerTopicName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, partnerTopicName, context).getSyncPoller();
     }
 
     /**

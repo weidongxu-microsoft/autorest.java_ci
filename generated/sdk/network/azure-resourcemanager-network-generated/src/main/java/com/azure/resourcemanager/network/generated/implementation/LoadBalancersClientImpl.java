@@ -361,7 +361,7 @@ public final class LoadBalancersClientImpl implements LoadBalancersClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String loadBalancerName) {
-        return beginDeleteAsync(resourceGroupName, loadBalancerName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, loadBalancerName).getSyncPoller();
     }
 
     /**
@@ -378,7 +378,7 @@ public final class LoadBalancersClientImpl implements LoadBalancersClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String loadBalancerName, Context context) {
-        return beginDeleteAsync(resourceGroupName, loadBalancerName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, loadBalancerName, context).getSyncPoller();
     }
 
     /**
@@ -774,7 +774,7 @@ public final class LoadBalancersClientImpl implements LoadBalancersClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<LoadBalancerInner>, LoadBalancerInner> beginCreateOrUpdate(
         String resourceGroupName, String loadBalancerName, LoadBalancerInner parameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, loadBalancerName, parameters).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, loadBalancerName, parameters).getSyncPoller();
     }
 
     /**
@@ -792,7 +792,7 @@ public final class LoadBalancersClientImpl implements LoadBalancersClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<LoadBalancerInner>, LoadBalancerInner> beginCreateOrUpdate(
         String resourceGroupName, String loadBalancerName, LoadBalancerInner parameters, Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, loadBalancerName, parameters, context).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, loadBalancerName, parameters, context).getSyncPoller();
     }
 
     /**
@@ -1485,7 +1485,7 @@ public final class LoadBalancersClientImpl implements LoadBalancersClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginSwapPublicIpAddresses(
         String location, LoadBalancerVipSwapRequest parameters) {
-        return beginSwapPublicIpAddressesAsync(location, parameters).getSyncPoller();
+        return this.beginSwapPublicIpAddressesAsync(location, parameters).getSyncPoller();
     }
 
     /**
@@ -1502,7 +1502,7 @@ public final class LoadBalancersClientImpl implements LoadBalancersClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginSwapPublicIpAddresses(
         String location, LoadBalancerVipSwapRequest parameters, Context context) {
-        return beginSwapPublicIpAddressesAsync(location, parameters, context).getSyncPoller();
+        return this.beginSwapPublicIpAddressesAsync(location, parameters, context).getSyncPoller();
     }
 
     /**
@@ -1789,7 +1789,8 @@ public final class LoadBalancersClientImpl implements LoadBalancersClient {
             String loadBalancerName,
             String backendPoolName,
             QueryInboundNatRulePortMappingRequest parameters) {
-        return beginListInboundNatRulePortMappingsAsync(groupName, loadBalancerName, backendPoolName, parameters)
+        return this
+            .beginListInboundNatRulePortMappingsAsync(groupName, loadBalancerName, backendPoolName, parameters)
             .getSyncPoller();
     }
 
@@ -1815,8 +1816,8 @@ public final class LoadBalancersClientImpl implements LoadBalancersClient {
             String backendPoolName,
             QueryInboundNatRulePortMappingRequest parameters,
             Context context) {
-        return beginListInboundNatRulePortMappingsAsync(
-                groupName, loadBalancerName, backendPoolName, parameters, context)
+        return this
+            .beginListInboundNatRulePortMappingsAsync(groupName, loadBalancerName, backendPoolName, parameters, context)
             .getSyncPoller();
     }
 

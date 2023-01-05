@@ -241,7 +241,7 @@ public final class VpnServerConfigurationsAssociatedWithVirtualWansClientImpl
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<VpnServerConfigurationsResponseInner>, VpnServerConfigurationsResponseInner> beginList(
         String resourceGroupName, String virtualWanName) {
-        return beginListAsync(resourceGroupName, virtualWanName).getSyncPoller();
+        return this.beginListAsync(resourceGroupName, virtualWanName).getSyncPoller();
     }
 
     /**
@@ -258,7 +258,7 @@ public final class VpnServerConfigurationsAssociatedWithVirtualWansClientImpl
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<VpnServerConfigurationsResponseInner>, VpnServerConfigurationsResponseInner> beginList(
         String resourceGroupName, String virtualWanName, Context context) {
-        return beginListAsync(resourceGroupName, virtualWanName, context).getSyncPoller();
+        return this.beginListAsync(resourceGroupName, virtualWanName, context).getSyncPoller();
     }
 
     /**

@@ -11,6 +11,7 @@ import com.azure.resourcemanager.compute.generated.models.DataDiskImage;
 import com.azure.resourcemanager.compute.generated.models.DisallowedConfiguration;
 import com.azure.resourcemanager.compute.generated.models.ExtendedLocation;
 import com.azure.resourcemanager.compute.generated.models.HyperVGenerationTypes;
+import com.azure.resourcemanager.compute.generated.models.ImageDeprecationStatus;
 import com.azure.resourcemanager.compute.generated.models.OSDiskImage;
 import com.azure.resourcemanager.compute.generated.models.PurchasePlan;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineImageFeature;
@@ -257,6 +258,29 @@ public final class VirtualMachineImageInner extends VirtualMachineImageResourceI
             this.innerProperties = new VirtualMachineImageProperties();
         }
         this.innerProperties().withArchitecture(architecture);
+        return this;
+    }
+
+    /**
+     * Get the imageDeprecationStatus property: Describes image deprecation status properties on the image.
+     *
+     * @return the imageDeprecationStatus value.
+     */
+    public ImageDeprecationStatus imageDeprecationStatus() {
+        return this.innerProperties() == null ? null : this.innerProperties().imageDeprecationStatus();
+    }
+
+    /**
+     * Set the imageDeprecationStatus property: Describes image deprecation status properties on the image.
+     *
+     * @param imageDeprecationStatus the imageDeprecationStatus value to set.
+     * @return the VirtualMachineImageInner object itself.
+     */
+    public VirtualMachineImageInner withImageDeprecationStatus(ImageDeprecationStatus imageDeprecationStatus) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new VirtualMachineImageProperties();
+        }
+        this.innerProperties().withImageDeprecationStatus(imageDeprecationStatus);
         return this;
     }
 

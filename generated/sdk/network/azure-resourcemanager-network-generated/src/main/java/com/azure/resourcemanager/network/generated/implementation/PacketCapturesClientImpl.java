@@ -369,7 +369,9 @@ public final class PacketCapturesClientImpl implements PacketCapturesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<PacketCaptureResultInner>, PacketCaptureResultInner> beginCreate(
         String resourceGroupName, String networkWatcherName, String packetCaptureName, PacketCapture parameters) {
-        return beginCreateAsync(resourceGroupName, networkWatcherName, packetCaptureName, parameters).getSyncPoller();
+        return this
+            .beginCreateAsync(resourceGroupName, networkWatcherName, packetCaptureName, parameters)
+            .getSyncPoller();
     }
 
     /**
@@ -392,7 +394,8 @@ public final class PacketCapturesClientImpl implements PacketCapturesClient {
         String packetCaptureName,
         PacketCapture parameters,
         Context context) {
-        return beginCreateAsync(resourceGroupName, networkWatcherName, packetCaptureName, parameters, context)
+        return this
+            .beginCreateAsync(resourceGroupName, networkWatcherName, packetCaptureName, parameters, context)
             .getSyncPoller();
     }
 
@@ -813,7 +816,7 @@ public final class PacketCapturesClientImpl implements PacketCapturesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String networkWatcherName, String packetCaptureName) {
-        return beginDeleteAsync(resourceGroupName, networkWatcherName, packetCaptureName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, networkWatcherName, packetCaptureName).getSyncPoller();
     }
 
     /**
@@ -831,7 +834,7 @@ public final class PacketCapturesClientImpl implements PacketCapturesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String networkWatcherName, String packetCaptureName, Context context) {
-        return beginDeleteAsync(resourceGroupName, networkWatcherName, packetCaptureName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, networkWatcherName, packetCaptureName, context).getSyncPoller();
     }
 
     /**
@@ -1072,7 +1075,7 @@ public final class PacketCapturesClientImpl implements PacketCapturesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginStop(
         String resourceGroupName, String networkWatcherName, String packetCaptureName) {
-        return beginStopAsync(resourceGroupName, networkWatcherName, packetCaptureName).getSyncPoller();
+        return this.beginStopAsync(resourceGroupName, networkWatcherName, packetCaptureName).getSyncPoller();
     }
 
     /**
@@ -1090,7 +1093,7 @@ public final class PacketCapturesClientImpl implements PacketCapturesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginStop(
         String resourceGroupName, String networkWatcherName, String packetCaptureName, Context context) {
-        return beginStopAsync(resourceGroupName, networkWatcherName, packetCaptureName, context).getSyncPoller();
+        return this.beginStopAsync(resourceGroupName, networkWatcherName, packetCaptureName, context).getSyncPoller();
     }
 
     /**
@@ -1341,7 +1344,7 @@ public final class PacketCapturesClientImpl implements PacketCapturesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<PacketCaptureQueryStatusResultInner>, PacketCaptureQueryStatusResultInner>
         beginGetStatus(String resourceGroupName, String networkWatcherName, String packetCaptureName) {
-        return beginGetStatusAsync(resourceGroupName, networkWatcherName, packetCaptureName).getSyncPoller();
+        return this.beginGetStatusAsync(resourceGroupName, networkWatcherName, packetCaptureName).getSyncPoller();
     }
 
     /**
@@ -1359,7 +1362,9 @@ public final class PacketCapturesClientImpl implements PacketCapturesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<PacketCaptureQueryStatusResultInner>, PacketCaptureQueryStatusResultInner>
         beginGetStatus(String resourceGroupName, String networkWatcherName, String packetCaptureName, Context context) {
-        return beginGetStatusAsync(resourceGroupName, networkWatcherName, packetCaptureName, context).getSyncPoller();
+        return this
+            .beginGetStatusAsync(resourceGroupName, networkWatcherName, packetCaptureName, context)
+            .getSyncPoller();
     }
 
     /**

@@ -334,7 +334,7 @@ public final class ApplicationSecurityGroupsClientImpl implements ApplicationSec
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String applicationSecurityGroupName) {
-        return beginDeleteAsync(resourceGroupName, applicationSecurityGroupName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, applicationSecurityGroupName).getSyncPoller();
     }
 
     /**
@@ -351,7 +351,7 @@ public final class ApplicationSecurityGroupsClientImpl implements ApplicationSec
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String applicationSecurityGroupName, Context context) {
-        return beginDeleteAsync(resourceGroupName, applicationSecurityGroupName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, applicationSecurityGroupName, context).getSyncPoller();
     }
 
     /**
@@ -766,7 +766,9 @@ public final class ApplicationSecurityGroupsClientImpl implements ApplicationSec
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ApplicationSecurityGroupInner>, ApplicationSecurityGroupInner> beginCreateOrUpdate(
         String resourceGroupName, String applicationSecurityGroupName, ApplicationSecurityGroupInner parameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, applicationSecurityGroupName, parameters).getSyncPoller();
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, applicationSecurityGroupName, parameters)
+            .getSyncPoller();
     }
 
     /**
@@ -787,7 +789,8 @@ public final class ApplicationSecurityGroupsClientImpl implements ApplicationSec
         String applicationSecurityGroupName,
         ApplicationSecurityGroupInner parameters,
         Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, applicationSecurityGroupName, parameters, context)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, applicationSecurityGroupName, parameters, context)
             .getSyncPoller();
     }
 

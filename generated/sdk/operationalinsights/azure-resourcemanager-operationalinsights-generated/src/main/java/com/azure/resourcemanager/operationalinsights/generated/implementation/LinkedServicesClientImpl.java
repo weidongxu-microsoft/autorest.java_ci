@@ -328,7 +328,8 @@ public final class LinkedServicesClientImpl implements LinkedServicesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<LinkedServiceInner>, LinkedServiceInner> beginCreateOrUpdate(
         String resourceGroupName, String workspaceName, String linkedServiceName, LinkedServiceInner parameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, workspaceName, linkedServiceName, parameters)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, workspaceName, linkedServiceName, parameters)
             .getSyncPoller();
     }
 
@@ -352,7 +353,8 @@ public final class LinkedServicesClientImpl implements LinkedServicesClient {
         String linkedServiceName,
         LinkedServiceInner parameters,
         Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, workspaceName, linkedServiceName, parameters, context)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, workspaceName, linkedServiceName, parameters, context)
             .getSyncPoller();
     }
 
@@ -616,7 +618,7 @@ public final class LinkedServicesClientImpl implements LinkedServicesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<LinkedServiceInner>, LinkedServiceInner> beginDelete(
         String resourceGroupName, String workspaceName, String linkedServiceName) {
-        return beginDeleteAsync(resourceGroupName, workspaceName, linkedServiceName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, workspaceName, linkedServiceName).getSyncPoller();
     }
 
     /**
@@ -634,7 +636,7 @@ public final class LinkedServicesClientImpl implements LinkedServicesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<LinkedServiceInner>, LinkedServiceInner> beginDelete(
         String resourceGroupName, String workspaceName, String linkedServiceName, Context context) {
-        return beginDeleteAsync(resourceGroupName, workspaceName, linkedServiceName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, workspaceName, linkedServiceName, context).getSyncPoller();
     }
 
     /**

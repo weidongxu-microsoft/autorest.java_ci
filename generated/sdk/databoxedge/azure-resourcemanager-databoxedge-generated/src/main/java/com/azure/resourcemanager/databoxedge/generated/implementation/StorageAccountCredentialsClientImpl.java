@@ -698,7 +698,9 @@ public final class StorageAccountCredentialsClientImpl implements StorageAccount
         String name,
         String resourceGroupName,
         StorageAccountCredentialInner storageAccountCredential) {
-        return beginCreateOrUpdateAsync(deviceName, name, resourceGroupName, storageAccountCredential).getSyncPoller();
+        return this
+            .beginCreateOrUpdateAsync(deviceName, name, resourceGroupName, storageAccountCredential)
+            .getSyncPoller();
     }
 
     /**
@@ -721,7 +723,8 @@ public final class StorageAccountCredentialsClientImpl implements StorageAccount
         String resourceGroupName,
         StorageAccountCredentialInner storageAccountCredential,
         Context context) {
-        return beginCreateOrUpdateAsync(deviceName, name, resourceGroupName, storageAccountCredential, context)
+        return this
+            .beginCreateOrUpdateAsync(deviceName, name, resourceGroupName, storageAccountCredential, context)
             .getSyncPoller();
     }
 
@@ -977,7 +980,7 @@ public final class StorageAccountCredentialsClientImpl implements StorageAccount
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String deviceName, String name, String resourceGroupName) {
-        return beginDeleteAsync(deviceName, name, resourceGroupName).getSyncPoller();
+        return this.beginDeleteAsync(deviceName, name, resourceGroupName).getSyncPoller();
     }
 
     /**
@@ -995,7 +998,7 @@ public final class StorageAccountCredentialsClientImpl implements StorageAccount
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String deviceName, String name, String resourceGroupName, Context context) {
-        return beginDeleteAsync(deviceName, name, resourceGroupName, context).getSyncPoller();
+        return this.beginDeleteAsync(deviceName, name, resourceGroupName, context).getSyncPoller();
     }
 
     /**

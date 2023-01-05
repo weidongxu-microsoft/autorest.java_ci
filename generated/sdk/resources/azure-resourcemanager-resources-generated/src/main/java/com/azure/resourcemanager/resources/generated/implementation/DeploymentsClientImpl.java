@@ -877,7 +877,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDeleteAtScope(String scope, String deploymentName) {
-        return beginDeleteAtScopeAsync(scope, deploymentName).getSyncPoller();
+        return this.beginDeleteAtScopeAsync(scope, deploymentName).getSyncPoller();
     }
 
     /**
@@ -900,7 +900,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDeleteAtScope(String scope, String deploymentName, Context context) {
-        return beginDeleteAtScopeAsync(scope, deploymentName, context).getSyncPoller();
+        return this.beginDeleteAtScopeAsync(scope, deploymentName, context).getSyncPoller();
     }
 
     /**
@@ -1282,7 +1282,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<DeploymentExtendedInner>, DeploymentExtendedInner> beginCreateOrUpdateAtScope(
         String scope, String deploymentName, Deployment parameters) {
-        return beginCreateOrUpdateAtScopeAsync(scope, deploymentName, parameters).getSyncPoller();
+        return this.beginCreateOrUpdateAtScopeAsync(scope, deploymentName, parameters).getSyncPoller();
     }
 
     /**
@@ -1302,7 +1302,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<DeploymentExtendedInner>, DeploymentExtendedInner> beginCreateOrUpdateAtScope(
         String scope, String deploymentName, Deployment parameters, Context context) {
-        return beginCreateOrUpdateAtScopeAsync(scope, deploymentName, parameters, context).getSyncPoller();
+        return this.beginCreateOrUpdateAtScopeAsync(scope, deploymentName, parameters, context).getSyncPoller();
     }
 
     /**
@@ -1806,7 +1806,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<DeploymentValidateResultInner>, DeploymentValidateResultInner> beginValidateAtScope(
         String scope, String deploymentName, Deployment parameters) {
-        return beginValidateAtScopeAsync(scope, deploymentName, parameters).getSyncPoller();
+        return this.beginValidateAtScopeAsync(scope, deploymentName, parameters).getSyncPoller();
     }
 
     /**
@@ -1825,7 +1825,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<DeploymentValidateResultInner>, DeploymentValidateResultInner> beginValidateAtScope(
         String scope, String deploymentName, Deployment parameters, Context context) {
-        return beginValidateAtScopeAsync(scope, deploymentName, parameters, context).getSyncPoller();
+        return this.beginValidateAtScopeAsync(scope, deploymentName, parameters, context).getSyncPoller();
     }
 
     /**
@@ -2350,7 +2350,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDeleteAtTenantScope(String deploymentName) {
-        return beginDeleteAtTenantScopeAsync(deploymentName).getSyncPoller();
+        return this.beginDeleteAtTenantScopeAsync(deploymentName).getSyncPoller();
     }
 
     /**
@@ -2372,7 +2372,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDeleteAtTenantScope(String deploymentName, Context context) {
-        return beginDeleteAtTenantScopeAsync(deploymentName, context).getSyncPoller();
+        return this.beginDeleteAtTenantScopeAsync(deploymentName, context).getSyncPoller();
     }
 
     /**
@@ -2716,7 +2716,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<DeploymentExtendedInner>, DeploymentExtendedInner> beginCreateOrUpdateAtTenantScope(
         String deploymentName, ScopedDeployment parameters) {
-        return beginCreateOrUpdateAtTenantScopeAsync(deploymentName, parameters).getSyncPoller();
+        return this.beginCreateOrUpdateAtTenantScopeAsync(deploymentName, parameters).getSyncPoller();
     }
 
     /**
@@ -2735,7 +2735,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<DeploymentExtendedInner>, DeploymentExtendedInner> beginCreateOrUpdateAtTenantScope(
         String deploymentName, ScopedDeployment parameters, Context context) {
-        return beginCreateOrUpdateAtTenantScopeAsync(deploymentName, parameters, context).getSyncPoller();
+        return this.beginCreateOrUpdateAtTenantScopeAsync(deploymentName, parameters, context).getSyncPoller();
     }
 
     /**
@@ -3184,7 +3184,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<DeploymentValidateResultInner>, DeploymentValidateResultInner>
         beginValidateAtTenantScope(String deploymentName, ScopedDeployment parameters) {
-        return beginValidateAtTenantScopeAsync(deploymentName, parameters).getSyncPoller();
+        return this.beginValidateAtTenantScopeAsync(deploymentName, parameters).getSyncPoller();
     }
 
     /**
@@ -3202,7 +3202,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<DeploymentValidateResultInner>, DeploymentValidateResultInner>
         beginValidateAtTenantScope(String deploymentName, ScopedDeployment parameters, Context context) {
-        return beginValidateAtTenantScopeAsync(deploymentName, parameters, context).getSyncPoller();
+        return this.beginValidateAtTenantScopeAsync(deploymentName, parameters, context).getSyncPoller();
     }
 
     /**
@@ -3419,7 +3419,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<WhatIfOperationResultInner>, WhatIfOperationResultInner> beginWhatIfAtTenantScope(
         String deploymentName, ScopedDeploymentWhatIf parameters) {
-        return beginWhatIfAtTenantScopeAsync(deploymentName, parameters).getSyncPoller();
+        return this.beginWhatIfAtTenantScopeAsync(deploymentName, parameters).getSyncPoller();
     }
 
     /**
@@ -3436,7 +3436,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<WhatIfOperationResultInner>, WhatIfOperationResultInner> beginWhatIfAtTenantScope(
         String deploymentName, ScopedDeploymentWhatIf parameters, Context context) {
-        return beginWhatIfAtTenantScopeAsync(deploymentName, parameters, context).getSyncPoller();
+        return this.beginWhatIfAtTenantScopeAsync(deploymentName, parameters, context).getSyncPoller();
     }
 
     /**
@@ -3935,7 +3935,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDeleteAtManagementGroupScope(String groupId, String deploymentName) {
-        return beginDeleteAtManagementGroupScopeAsync(groupId, deploymentName).getSyncPoller();
+        return this.beginDeleteAtManagementGroupScopeAsync(groupId, deploymentName).getSyncPoller();
     }
 
     /**
@@ -3959,7 +3959,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDeleteAtManagementGroupScope(
         String groupId, String deploymentName, Context context) {
-        return beginDeleteAtManagementGroupScopeAsync(groupId, deploymentName, context).getSyncPoller();
+        return this.beginDeleteAtManagementGroupScopeAsync(groupId, deploymentName, context).getSyncPoller();
     }
 
     /**
@@ -4347,7 +4347,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<DeploymentExtendedInner>, DeploymentExtendedInner>
         beginCreateOrUpdateAtManagementGroupScope(String groupId, String deploymentName, ScopedDeployment parameters) {
-        return beginCreateOrUpdateAtManagementGroupScopeAsync(groupId, deploymentName, parameters).getSyncPoller();
+        return this.beginCreateOrUpdateAtManagementGroupScopeAsync(groupId, deploymentName, parameters).getSyncPoller();
     }
 
     /**
@@ -4368,7 +4368,8 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     public SyncPoller<PollResult<DeploymentExtendedInner>, DeploymentExtendedInner>
         beginCreateOrUpdateAtManagementGroupScope(
             String groupId, String deploymentName, ScopedDeployment parameters, Context context) {
-        return beginCreateOrUpdateAtManagementGroupScopeAsync(groupId, deploymentName, parameters, context)
+        return this
+            .beginCreateOrUpdateAtManagementGroupScopeAsync(groupId, deploymentName, parameters, context)
             .getSyncPoller();
     }
 
@@ -4881,7 +4882,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<DeploymentValidateResultInner>, DeploymentValidateResultInner>
         beginValidateAtManagementGroupScope(String groupId, String deploymentName, ScopedDeployment parameters) {
-        return beginValidateAtManagementGroupScopeAsync(groupId, deploymentName, parameters).getSyncPoller();
+        return this.beginValidateAtManagementGroupScopeAsync(groupId, deploymentName, parameters).getSyncPoller();
     }
 
     /**
@@ -4901,7 +4902,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     public SyncPoller<PollResult<DeploymentValidateResultInner>, DeploymentValidateResultInner>
         beginValidateAtManagementGroupScope(
             String groupId, String deploymentName, ScopedDeployment parameters, Context context) {
-        return beginValidateAtManagementGroupScopeAsync(groupId, deploymentName, parameters, context).getSyncPoller();
+        return this
+            .beginValidateAtManagementGroupScopeAsync(groupId, deploymentName, parameters, context)
+            .getSyncPoller();
     }
 
     /**
@@ -5144,7 +5147,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<WhatIfOperationResultInner>, WhatIfOperationResultInner>
         beginWhatIfAtManagementGroupScope(String groupId, String deploymentName, ScopedDeploymentWhatIf parameters) {
-        return beginWhatIfAtManagementGroupScopeAsync(groupId, deploymentName, parameters).getSyncPoller();
+        return this.beginWhatIfAtManagementGroupScopeAsync(groupId, deploymentName, parameters).getSyncPoller();
     }
 
     /**
@@ -5163,7 +5166,9 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     public SyncPoller<PollResult<WhatIfOperationResultInner>, WhatIfOperationResultInner>
         beginWhatIfAtManagementGroupScope(
             String groupId, String deploymentName, ScopedDeploymentWhatIf parameters, Context context) {
-        return beginWhatIfAtManagementGroupScopeAsync(groupId, deploymentName, parameters, context).getSyncPoller();
+        return this
+            .beginWhatIfAtManagementGroupScopeAsync(groupId, deploymentName, parameters, context)
+            .getSyncPoller();
     }
 
     /**
@@ -5713,7 +5718,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDeleteAtSubscriptionScope(String deploymentName) {
-        return beginDeleteAtSubscriptionScopeAsync(deploymentName).getSyncPoller();
+        return this.beginDeleteAtSubscriptionScopeAsync(deploymentName).getSyncPoller();
     }
 
     /**
@@ -5735,7 +5740,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDeleteAtSubscriptionScope(String deploymentName, Context context) {
-        return beginDeleteAtSubscriptionScopeAsync(deploymentName, context).getSyncPoller();
+        return this.beginDeleteAtSubscriptionScopeAsync(deploymentName, context).getSyncPoller();
     }
 
     /**
@@ -6122,7 +6127,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<DeploymentExtendedInner>, DeploymentExtendedInner>
         beginCreateOrUpdateAtSubscriptionScope(String deploymentName, Deployment parameters) {
-        return beginCreateOrUpdateAtSubscriptionScopeAsync(deploymentName, parameters).getSyncPoller();
+        return this.beginCreateOrUpdateAtSubscriptionScopeAsync(deploymentName, parameters).getSyncPoller();
     }
 
     /**
@@ -6141,7 +6146,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<DeploymentExtendedInner>, DeploymentExtendedInner>
         beginCreateOrUpdateAtSubscriptionScope(String deploymentName, Deployment parameters, Context context) {
-        return beginCreateOrUpdateAtSubscriptionScopeAsync(deploymentName, parameters, context).getSyncPoller();
+        return this.beginCreateOrUpdateAtSubscriptionScopeAsync(deploymentName, parameters, context).getSyncPoller();
     }
 
     /**
@@ -6656,7 +6661,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<DeploymentValidateResultInner>, DeploymentValidateResultInner>
         beginValidateAtSubscriptionScope(String deploymentName, Deployment parameters) {
-        return beginValidateAtSubscriptionScopeAsync(deploymentName, parameters).getSyncPoller();
+        return this.beginValidateAtSubscriptionScopeAsync(deploymentName, parameters).getSyncPoller();
     }
 
     /**
@@ -6674,7 +6679,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<DeploymentValidateResultInner>, DeploymentValidateResultInner>
         beginValidateAtSubscriptionScope(String deploymentName, Deployment parameters, Context context) {
-        return beginValidateAtSubscriptionScopeAsync(deploymentName, parameters, context).getSyncPoller();
+        return this.beginValidateAtSubscriptionScopeAsync(deploymentName, parameters, context).getSyncPoller();
     }
 
     /**
@@ -6910,7 +6915,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<WhatIfOperationResultInner>, WhatIfOperationResultInner>
         beginWhatIfAtSubscriptionScope(String deploymentName, DeploymentWhatIf parameters) {
-        return beginWhatIfAtSubscriptionScopeAsync(deploymentName, parameters).getSyncPoller();
+        return this.beginWhatIfAtSubscriptionScopeAsync(deploymentName, parameters).getSyncPoller();
     }
 
     /**
@@ -6927,7 +6932,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<WhatIfOperationResultInner>, WhatIfOperationResultInner>
         beginWhatIfAtSubscriptionScope(String deploymentName, DeploymentWhatIf parameters, Context context) {
-        return beginWhatIfAtSubscriptionScopeAsync(deploymentName, parameters, context).getSyncPoller();
+        return this.beginWhatIfAtSubscriptionScopeAsync(deploymentName, parameters, context).getSyncPoller();
     }
 
     /**
@@ -7499,7 +7504,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String deploymentName) {
-        return beginDeleteAsync(resourceGroupName, deploymentName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, deploymentName).getSyncPoller();
     }
 
     /**
@@ -7525,7 +7530,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String deploymentName, Context context) {
-        return beginDeleteAsync(resourceGroupName, deploymentName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, deploymentName, context).getSyncPoller();
     }
 
     /**
@@ -7965,7 +7970,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<DeploymentExtendedInner>, DeploymentExtendedInner> beginCreateOrUpdate(
         String resourceGroupName, String deploymentName, Deployment parameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, deploymentName, parameters).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, deploymentName, parameters).getSyncPoller();
     }
 
     /**
@@ -7986,7 +7991,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<DeploymentExtendedInner>, DeploymentExtendedInner> beginCreateOrUpdate(
         String resourceGroupName, String deploymentName, Deployment parameters, Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, deploymentName, parameters, context).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, deploymentName, parameters, context).getSyncPoller();
     }
 
     /**
@@ -8563,7 +8568,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<DeploymentValidateResultInner>, DeploymentValidateResultInner> beginValidate(
         String resourceGroupName, String deploymentName, Deployment parameters) {
-        return beginValidateAsync(resourceGroupName, deploymentName, parameters).getSyncPoller();
+        return this.beginValidateAsync(resourceGroupName, deploymentName, parameters).getSyncPoller();
     }
 
     /**
@@ -8583,7 +8588,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<DeploymentValidateResultInner>, DeploymentValidateResultInner> beginValidate(
         String resourceGroupName, String deploymentName, Deployment parameters, Context context) {
-        return beginValidateAsync(resourceGroupName, deploymentName, parameters, context).getSyncPoller();
+        return this.beginValidateAsync(resourceGroupName, deploymentName, parameters, context).getSyncPoller();
     }
 
     /**
@@ -8848,7 +8853,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<WhatIfOperationResultInner>, WhatIfOperationResultInner> beginWhatIf(
         String resourceGroupName, String deploymentName, DeploymentWhatIf parameters) {
-        return beginWhatIfAsync(resourceGroupName, deploymentName, parameters).getSyncPoller();
+        return this.beginWhatIfAsync(resourceGroupName, deploymentName, parameters).getSyncPoller();
     }
 
     /**
@@ -8867,7 +8872,7 @@ public final class DeploymentsClientImpl implements DeploymentsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<WhatIfOperationResultInner>, WhatIfOperationResultInner> beginWhatIf(
         String resourceGroupName, String deploymentName, DeploymentWhatIf parameters, Context context) {
-        return beginWhatIfAsync(resourceGroupName, deploymentName, parameters, context).getSyncPoller();
+        return this.beginWhatIfAsync(resourceGroupName, deploymentName, parameters, context).getSyncPoller();
     }
 
     /**

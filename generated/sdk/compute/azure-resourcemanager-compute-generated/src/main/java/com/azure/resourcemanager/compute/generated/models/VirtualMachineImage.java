@@ -104,6 +104,13 @@ public interface VirtualMachineImage {
     ArchitectureTypes architecture();
 
     /**
+     * Gets the imageDeprecationStatus property: Describes image deprecation status properties on the image.
+     *
+     * @return the imageDeprecationStatus value.
+     */
+    ImageDeprecationStatus imageDeprecationStatus();
+
+    /**
      * Gets the inner com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineImageInner object.
      *
      * @return the inner object.

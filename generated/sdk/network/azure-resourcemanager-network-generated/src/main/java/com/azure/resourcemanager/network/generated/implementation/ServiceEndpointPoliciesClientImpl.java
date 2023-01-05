@@ -332,7 +332,7 @@ public final class ServiceEndpointPoliciesClientImpl implements ServiceEndpointP
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String serviceEndpointPolicyName) {
-        return beginDeleteAsync(resourceGroupName, serviceEndpointPolicyName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, serviceEndpointPolicyName).getSyncPoller();
     }
 
     /**
@@ -349,7 +349,7 @@ public final class ServiceEndpointPoliciesClientImpl implements ServiceEndpointP
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String serviceEndpointPolicyName, Context context) {
-        return beginDeleteAsync(resourceGroupName, serviceEndpointPolicyName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, serviceEndpointPolicyName, context).getSyncPoller();
     }
 
     /**
@@ -769,7 +769,7 @@ public final class ServiceEndpointPoliciesClientImpl implements ServiceEndpointP
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ServiceEndpointPolicyInner>, ServiceEndpointPolicyInner> beginCreateOrUpdate(
         String resourceGroupName, String serviceEndpointPolicyName, ServiceEndpointPolicyInner parameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, serviceEndpointPolicyName, parameters).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, serviceEndpointPolicyName, parameters).getSyncPoller();
     }
 
     /**
@@ -790,7 +790,8 @@ public final class ServiceEndpointPoliciesClientImpl implements ServiceEndpointP
         String serviceEndpointPolicyName,
         ServiceEndpointPolicyInner parameters,
         Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, serviceEndpointPolicyName, parameters, context)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, serviceEndpointPolicyName, parameters, context)
             .getSyncPoller();
     }
 

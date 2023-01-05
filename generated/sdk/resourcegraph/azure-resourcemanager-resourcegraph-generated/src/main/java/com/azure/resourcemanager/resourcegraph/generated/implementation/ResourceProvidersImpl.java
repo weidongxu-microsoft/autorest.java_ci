@@ -22,6 +22,7 @@ import com.azure.resourcemanager.resourcegraph.generated.models.ResourceProvider
 import com.azure.resourcemanager.resourcegraph.generated.models.ResourcesHistoryRequest;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public final class ResourceProvidersImpl implements ResourceProviders {
@@ -60,12 +61,18 @@ public final class ResourceProvidersImpl implements ResourceProviders {
         }
     }
 
-    public Response<Object> resourcesHistoryWithResponse(ResourcesHistoryRequest request, Context context) {
+    public Response<Map<String, Object>> resourcesHistoryWithResponse(
+        ResourcesHistoryRequest request, Context context) {
         return this.serviceClient().resourcesHistoryWithResponse(request, context);
     }
 
-    public Object resourcesHistory(ResourcesHistoryRequest request) {
-        return this.serviceClient().resourcesHistory(request);
+    public Map<String, Object> resourcesHistory(ResourcesHistoryRequest request) {
+        Map<String, Object> inner = this.serviceClient().resourcesHistory(request);
+        if (inner != null) {
+            return Collections.unmodifiableMap(inner);
+        } else {
+            return Collections.emptyMap();
+        }
     }
 
     public Response<ResourceChangeList> resourceChangesWithResponse(

@@ -457,7 +457,8 @@ public final class ServicesClientImpl implements ServicesClient {
     public SyncPoller<PollResult<SearchServiceInner>, SearchServiceInner> beginCreateOrUpdate(
         String resourceGroupName, String searchServiceName, SearchServiceInner serviceParam) {
         final UUID clientRequestId = null;
-        return beginCreateOrUpdateAsync(resourceGroupName, searchServiceName, serviceParam, clientRequestId)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, searchServiceName, serviceParam, clientRequestId)
             .getSyncPoller();
     }
 
@@ -488,7 +489,8 @@ public final class ServicesClientImpl implements ServicesClient {
         SearchServiceInner serviceParam,
         UUID clientRequestId,
         Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, searchServiceName, serviceParam, clientRequestId, context)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, searchServiceName, serviceParam, clientRequestId, context)
             .getSyncPoller();
     }
 

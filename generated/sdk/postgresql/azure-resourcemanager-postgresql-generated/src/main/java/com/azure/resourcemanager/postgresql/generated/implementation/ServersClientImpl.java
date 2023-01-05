@@ -339,7 +339,7 @@ public final class ServersClientImpl implements ServersClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ServerInner>, ServerInner> beginCreate(
         String resourceGroupName, String serverName, ServerForCreate parameters) {
-        return beginCreateAsync(resourceGroupName, serverName, parameters).getSyncPoller();
+        return this.beginCreateAsync(resourceGroupName, serverName, parameters).getSyncPoller();
     }
 
     /**
@@ -357,7 +357,7 @@ public final class ServersClientImpl implements ServersClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ServerInner>, ServerInner> beginCreate(
         String resourceGroupName, String serverName, ServerForCreate parameters, Context context) {
-        return beginCreateAsync(resourceGroupName, serverName, parameters, context).getSyncPoller();
+        return this.beginCreateAsync(resourceGroupName, serverName, parameters, context).getSyncPoller();
     }
 
     /**
@@ -606,7 +606,7 @@ public final class ServersClientImpl implements ServersClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ServerInner>, ServerInner> beginUpdate(
         String resourceGroupName, String serverName, ServerUpdateParameters parameters) {
-        return beginUpdateAsync(resourceGroupName, serverName, parameters).getSyncPoller();
+        return this.beginUpdateAsync(resourceGroupName, serverName, parameters).getSyncPoller();
     }
 
     /**
@@ -625,7 +625,7 @@ public final class ServersClientImpl implements ServersClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ServerInner>, ServerInner> beginUpdate(
         String resourceGroupName, String serverName, ServerUpdateParameters parameters, Context context) {
-        return beginUpdateAsync(resourceGroupName, serverName, parameters, context).getSyncPoller();
+        return this.beginUpdateAsync(resourceGroupName, serverName, parameters, context).getSyncPoller();
     }
 
     /**
@@ -852,7 +852,7 @@ public final class ServersClientImpl implements ServersClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String serverName) {
-        return beginDeleteAsync(resourceGroupName, serverName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, serverName).getSyncPoller();
     }
 
     /**
@@ -869,7 +869,7 @@ public final class ServersClientImpl implements ServersClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String serverName, Context context) {
-        return beginDeleteAsync(resourceGroupName, serverName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, serverName, context).getSyncPoller();
     }
 
     /**
@@ -1497,7 +1497,7 @@ public final class ServersClientImpl implements ServersClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginRestart(String resourceGroupName, String serverName) {
-        return beginRestartAsync(resourceGroupName, serverName).getSyncPoller();
+        return this.beginRestartAsync(resourceGroupName, serverName).getSyncPoller();
     }
 
     /**
@@ -1514,7 +1514,7 @@ public final class ServersClientImpl implements ServersClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginRestart(
         String resourceGroupName, String serverName, Context context) {
-        return beginRestartAsync(resourceGroupName, serverName, context).getSyncPoller();
+        return this.beginRestartAsync(resourceGroupName, serverName, context).getSyncPoller();
     }
 
     /**

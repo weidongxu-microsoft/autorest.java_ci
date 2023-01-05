@@ -344,7 +344,7 @@ public final class LocalNetworkGatewaysClientImpl implements LocalNetworkGateway
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<LocalNetworkGatewayInner>, LocalNetworkGatewayInner> beginCreateOrUpdate(
         String resourceGroupName, String localNetworkGatewayName, LocalNetworkGatewayInner parameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, localNetworkGatewayName, parameters).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, localNetworkGatewayName, parameters).getSyncPoller();
     }
 
     /**
@@ -365,7 +365,8 @@ public final class LocalNetworkGatewaysClientImpl implements LocalNetworkGateway
         String localNetworkGatewayName,
         LocalNetworkGatewayInner parameters,
         Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, localNetworkGatewayName, parameters, context)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, localNetworkGatewayName, parameters, context)
             .getSyncPoller();
     }
 
@@ -754,7 +755,7 @@ public final class LocalNetworkGatewaysClientImpl implements LocalNetworkGateway
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String localNetworkGatewayName) {
-        return beginDeleteAsync(resourceGroupName, localNetworkGatewayName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, localNetworkGatewayName).getSyncPoller();
     }
 
     /**
@@ -771,7 +772,7 @@ public final class LocalNetworkGatewaysClientImpl implements LocalNetworkGateway
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String localNetworkGatewayName, Context context) {
-        return beginDeleteAsync(resourceGroupName, localNetworkGatewayName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, localNetworkGatewayName, context).getSyncPoller();
     }
 
     /**

@@ -328,7 +328,7 @@ public final class DdosProtectionPlansClientImpl implements DdosProtectionPlansC
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String ddosProtectionPlanName) {
-        return beginDeleteAsync(resourceGroupName, ddosProtectionPlanName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, ddosProtectionPlanName).getSyncPoller();
     }
 
     /**
@@ -345,7 +345,7 @@ public final class DdosProtectionPlansClientImpl implements DdosProtectionPlansC
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String ddosProtectionPlanName, Context context) {
-        return beginDeleteAsync(resourceGroupName, ddosProtectionPlanName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, ddosProtectionPlanName, context).getSyncPoller();
     }
 
     /**
@@ -747,7 +747,7 @@ public final class DdosProtectionPlansClientImpl implements DdosProtectionPlansC
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<DdosProtectionPlanInner>, DdosProtectionPlanInner> beginCreateOrUpdate(
         String resourceGroupName, String ddosProtectionPlanName, DdosProtectionPlanInner parameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, ddosProtectionPlanName, parameters).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, ddosProtectionPlanName, parameters).getSyncPoller();
     }
 
     /**
@@ -765,7 +765,9 @@ public final class DdosProtectionPlansClientImpl implements DdosProtectionPlansC
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<DdosProtectionPlanInner>, DdosProtectionPlanInner> beginCreateOrUpdate(
         String resourceGroupName, String ddosProtectionPlanName, DdosProtectionPlanInner parameters, Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, ddosProtectionPlanName, parameters, context).getSyncPoller();
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, ddosProtectionPlanName, parameters, context)
+            .getSyncPoller();
     }
 
     /**

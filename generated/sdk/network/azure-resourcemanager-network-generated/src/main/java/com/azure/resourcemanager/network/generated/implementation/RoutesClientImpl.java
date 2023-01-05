@@ -302,7 +302,7 @@ public final class RoutesClientImpl implements RoutesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String routeTableName, String routeName) {
-        return beginDeleteAsync(resourceGroupName, routeTableName, routeName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, routeTableName, routeName).getSyncPoller();
     }
 
     /**
@@ -320,7 +320,7 @@ public final class RoutesClientImpl implements RoutesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String routeTableName, String routeName, Context context) {
-        return beginDeleteAsync(resourceGroupName, routeTableName, routeName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, routeTableName, routeName, context).getSyncPoller();
     }
 
     /**
@@ -743,7 +743,9 @@ public final class RoutesClientImpl implements RoutesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<RouteInner>, RouteInner> beginCreateOrUpdate(
         String resourceGroupName, String routeTableName, String routeName, RouteInner routeParameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, routeTableName, routeName, routeParameters).getSyncPoller();
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, routeTableName, routeName, routeParameters)
+            .getSyncPoller();
     }
 
     /**
@@ -766,7 +768,8 @@ public final class RoutesClientImpl implements RoutesClient {
         String routeName,
         RouteInner routeParameters,
         Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, routeTableName, routeName, routeParameters, context)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, routeTableName, routeName, routeParameters, context)
             .getSyncPoller();
     }
 

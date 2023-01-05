@@ -433,7 +433,7 @@ public final class VipSwapsClientImpl implements VipSwapsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginCreate(
         String groupName, String resourceName, SwapResourceInner parameters) {
-        return beginCreateAsync(groupName, resourceName, parameters).getSyncPoller();
+        return this.beginCreateAsync(groupName, resourceName, parameters).getSyncPoller();
     }
 
     /**
@@ -452,7 +452,7 @@ public final class VipSwapsClientImpl implements VipSwapsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginCreate(
         String groupName, String resourceName, SwapResourceInner parameters, Context context) {
-        return beginCreateAsync(groupName, resourceName, parameters, context).getSyncPoller();
+        return this.beginCreateAsync(groupName, resourceName, parameters, context).getSyncPoller();
     }
 
     /**

@@ -1085,7 +1085,8 @@ public final class AdminRuleCollectionsClientImpl implements AdminRuleCollection
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String networkManagerName, String configurationName, String ruleCollectionName) {
         final Boolean force = null;
-        return beginDeleteAsync(resourceGroupName, networkManagerName, configurationName, ruleCollectionName, force)
+        return this
+            .beginDeleteAsync(resourceGroupName, networkManagerName, configurationName, ruleCollectionName, force)
             .getSyncPoller();
     }
 
@@ -1112,7 +1113,8 @@ public final class AdminRuleCollectionsClientImpl implements AdminRuleCollection
         String ruleCollectionName,
         Boolean force,
         Context context) {
-        return beginDeleteAsync(
+        return this
+            .beginDeleteAsync(
                 resourceGroupName, networkManagerName, configurationName, ruleCollectionName, force, context)
             .getSyncPoller();
     }

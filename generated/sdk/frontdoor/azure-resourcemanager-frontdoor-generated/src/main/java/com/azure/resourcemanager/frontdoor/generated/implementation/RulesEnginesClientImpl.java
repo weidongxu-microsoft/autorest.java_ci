@@ -707,7 +707,8 @@ public final class RulesEnginesClientImpl implements RulesEnginesClient {
         String frontDoorName,
         String rulesEngineName,
         RulesEngineInner rulesEngineParameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, frontDoorName, rulesEngineName, rulesEngineParameters)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, frontDoorName, rulesEngineName, rulesEngineParameters)
             .getSyncPoller();
     }
 
@@ -733,8 +734,8 @@ public final class RulesEnginesClientImpl implements RulesEnginesClient {
         String rulesEngineName,
         RulesEngineInner rulesEngineParameters,
         Context context) {
-        return beginCreateOrUpdateAsync(
-                resourceGroupName, frontDoorName, rulesEngineName, rulesEngineParameters, context)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, frontDoorName, rulesEngineName, rulesEngineParameters, context)
             .getSyncPoller();
     }
 
@@ -1007,7 +1008,7 @@ public final class RulesEnginesClientImpl implements RulesEnginesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String frontDoorName, String rulesEngineName) {
-        return beginDeleteAsync(resourceGroupName, frontDoorName, rulesEngineName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, frontDoorName, rulesEngineName).getSyncPoller();
     }
 
     /**
@@ -1025,7 +1026,7 @@ public final class RulesEnginesClientImpl implements RulesEnginesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String frontDoorName, String rulesEngineName, Context context) {
-        return beginDeleteAsync(resourceGroupName, frontDoorName, rulesEngineName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, frontDoorName, rulesEngineName, context).getSyncPoller();
     }
 
     /**

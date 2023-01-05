@@ -533,7 +533,7 @@ public final class TablesClientImpl implements TablesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<TableInner>, TableInner> beginCreateOrUpdate(
         String resourceGroupName, String workspaceName, String tableName, TableInner parameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, workspaceName, tableName, parameters).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, workspaceName, tableName, parameters).getSyncPoller();
     }
 
     /**
@@ -552,7 +552,8 @@ public final class TablesClientImpl implements TablesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<TableInner>, TableInner> beginCreateOrUpdate(
         String resourceGroupName, String workspaceName, String tableName, TableInner parameters, Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, workspaceName, tableName, parameters, context)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, workspaceName, tableName, parameters, context)
             .getSyncPoller();
     }
 
@@ -817,7 +818,7 @@ public final class TablesClientImpl implements TablesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<TableInner>, TableInner> beginUpdate(
         String resourceGroupName, String workspaceName, String tableName, TableInner parameters) {
-        return beginUpdateAsync(resourceGroupName, workspaceName, tableName, parameters).getSyncPoller();
+        return this.beginUpdateAsync(resourceGroupName, workspaceName, tableName, parameters).getSyncPoller();
     }
 
     /**
@@ -836,7 +837,7 @@ public final class TablesClientImpl implements TablesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<TableInner>, TableInner> beginUpdate(
         String resourceGroupName, String workspaceName, String tableName, TableInner parameters, Context context) {
-        return beginUpdateAsync(resourceGroupName, workspaceName, tableName, parameters, context).getSyncPoller();
+        return this.beginUpdateAsync(resourceGroupName, workspaceName, tableName, parameters, context).getSyncPoller();
     }
 
     /**
@@ -1237,7 +1238,7 @@ public final class TablesClientImpl implements TablesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String workspaceName, String tableName) {
-        return beginDeleteAsync(resourceGroupName, workspaceName, tableName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, workspaceName, tableName).getSyncPoller();
     }
 
     /**
@@ -1255,7 +1256,7 @@ public final class TablesClientImpl implements TablesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String workspaceName, String tableName, Context context) {
-        return beginDeleteAsync(resourceGroupName, workspaceName, tableName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, workspaceName, tableName, context).getSyncPoller();
     }
 
     /**

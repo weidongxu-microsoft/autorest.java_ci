@@ -714,7 +714,7 @@ public final class AddonsClientImpl implements AddonsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<AddonInner>, AddonInner> beginCreateOrUpdate(
         String deviceName, String roleName, String addonName, String resourceGroupName, AddonInner addon) {
-        return beginCreateOrUpdateAsync(deviceName, roleName, addonName, resourceGroupName, addon).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(deviceName, roleName, addonName, resourceGroupName, addon).getSyncPoller();
     }
 
     /**
@@ -739,7 +739,8 @@ public final class AddonsClientImpl implements AddonsClient {
         String resourceGroupName,
         AddonInner addon,
         Context context) {
-        return beginCreateOrUpdateAsync(deviceName, roleName, addonName, resourceGroupName, addon, context)
+        return this
+            .beginCreateOrUpdateAsync(deviceName, roleName, addonName, resourceGroupName, addon, context)
             .getSyncPoller();
     }
 
@@ -1011,7 +1012,7 @@ public final class AddonsClientImpl implements AddonsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String deviceName, String roleName, String addonName, String resourceGroupName) {
-        return beginDeleteAsync(deviceName, roleName, addonName, resourceGroupName).getSyncPoller();
+        return this.beginDeleteAsync(deviceName, roleName, addonName, resourceGroupName).getSyncPoller();
     }
 
     /**
@@ -1030,7 +1031,7 @@ public final class AddonsClientImpl implements AddonsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String deviceName, String roleName, String addonName, String resourceGroupName, Context context) {
-        return beginDeleteAsync(deviceName, roleName, addonName, resourceGroupName, context).getSyncPoller();
+        return this.beginDeleteAsync(deviceName, roleName, addonName, resourceGroupName, context).getSyncPoller();
     }
 
     /**

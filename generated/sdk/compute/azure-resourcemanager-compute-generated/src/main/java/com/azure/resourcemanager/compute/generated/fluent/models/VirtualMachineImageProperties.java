@@ -10,6 +10,7 @@ import com.azure.resourcemanager.compute.generated.models.AutomaticOSUpgradeProp
 import com.azure.resourcemanager.compute.generated.models.DataDiskImage;
 import com.azure.resourcemanager.compute.generated.models.DisallowedConfiguration;
 import com.azure.resourcemanager.compute.generated.models.HyperVGenerationTypes;
+import com.azure.resourcemanager.compute.generated.models.ImageDeprecationStatus;
 import com.azure.resourcemanager.compute.generated.models.OSDiskImage;
 import com.azure.resourcemanager.compute.generated.models.PurchasePlan;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineImageFeature;
@@ -66,6 +67,12 @@ public final class VirtualMachineImageProperties {
      */
     @JsonProperty(value = "architecture")
     private ArchitectureTypes architecture;
+
+    /*
+     * Describes image deprecation status properties on the image.
+     */
+    @JsonProperty(value = "imageDeprecationStatus")
+    private ImageDeprecationStatus imageDeprecationStatus;
 
     /** Creates an instance of VirtualMachineImageProperties class. */
     public VirtualMachineImageProperties() {
@@ -233,6 +240,26 @@ public final class VirtualMachineImageProperties {
     }
 
     /**
+     * Get the imageDeprecationStatus property: Describes image deprecation status properties on the image.
+     *
+     * @return the imageDeprecationStatus value.
+     */
+    public ImageDeprecationStatus imageDeprecationStatus() {
+        return this.imageDeprecationStatus;
+    }
+
+    /**
+     * Set the imageDeprecationStatus property: Describes image deprecation status properties on the image.
+     *
+     * @param imageDeprecationStatus the imageDeprecationStatus value to set.
+     * @return the VirtualMachineImageProperties object itself.
+     */
+    public VirtualMachineImageProperties withImageDeprecationStatus(ImageDeprecationStatus imageDeprecationStatus) {
+        this.imageDeprecationStatus = imageDeprecationStatus;
+        return this;
+    }
+
+    /**
      * Validates the instance.
      *
      * @throws IllegalArgumentException thrown if the instance is not valid.
@@ -255,6 +282,9 @@ public final class VirtualMachineImageProperties {
         }
         if (features() != null) {
             features().forEach(e -> e.validate());
+        }
+        if (imageDeprecationStatus() != null) {
+            imageDeprecationStatus().validate();
         }
     }
 }

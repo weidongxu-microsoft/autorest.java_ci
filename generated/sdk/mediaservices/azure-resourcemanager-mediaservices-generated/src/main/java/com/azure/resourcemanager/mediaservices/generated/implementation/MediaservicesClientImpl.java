@@ -728,7 +728,7 @@ public final class MediaservicesClientImpl implements MediaservicesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<MediaServiceInner>, MediaServiceInner> beginCreateOrUpdate(
         String resourceGroupName, String accountName, MediaServiceInner parameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, accountName, parameters).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, accountName, parameters).getSyncPoller();
     }
 
     /**
@@ -748,7 +748,7 @@ public final class MediaservicesClientImpl implements MediaservicesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<MediaServiceInner>, MediaServiceInner> beginCreateOrUpdate(
         String resourceGroupName, String accountName, MediaServiceInner parameters, Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, accountName, parameters, context).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, accountName, parameters, context).getSyncPoller();
     }
 
     /**
@@ -1166,7 +1166,7 @@ public final class MediaservicesClientImpl implements MediaservicesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<MediaServiceInner>, MediaServiceInner> beginUpdate(
         String resourceGroupName, String accountName, MediaServiceUpdate parameters) {
-        return beginUpdateAsync(resourceGroupName, accountName, parameters).getSyncPoller();
+        return this.beginUpdateAsync(resourceGroupName, accountName, parameters).getSyncPoller();
     }
 
     /**
@@ -1186,7 +1186,7 @@ public final class MediaservicesClientImpl implements MediaservicesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<MediaServiceInner>, MediaServiceInner> beginUpdate(
         String resourceGroupName, String accountName, MediaServiceUpdate parameters, Context context) {
-        return beginUpdateAsync(resourceGroupName, accountName, parameters, context).getSyncPoller();
+        return this.beginUpdateAsync(resourceGroupName, accountName, parameters, context).getSyncPoller();
     }
 
     /**

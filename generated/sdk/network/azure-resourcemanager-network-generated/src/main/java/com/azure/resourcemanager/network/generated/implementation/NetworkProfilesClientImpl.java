@@ -325,7 +325,7 @@ public final class NetworkProfilesClientImpl implements NetworkProfilesClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String networkProfileName) {
-        return beginDeleteAsync(resourceGroupName, networkProfileName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, networkProfileName).getSyncPoller();
     }
 
     /**
@@ -342,7 +342,7 @@ public final class NetworkProfilesClientImpl implements NetworkProfilesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String networkProfileName, Context context) {
-        return beginDeleteAsync(resourceGroupName, networkProfileName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, networkProfileName, context).getSyncPoller();
     }
 
     /**

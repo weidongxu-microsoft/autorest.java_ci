@@ -348,7 +348,8 @@ public final class HubRouteTablesClientImpl implements HubRouteTablesClient {
         String virtualHubName,
         String routeTableName,
         HubRouteTableInner routeTableParameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, virtualHubName, routeTableName, routeTableParameters)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, virtualHubName, routeTableName, routeTableParameters)
             .getSyncPoller();
     }
 
@@ -372,8 +373,8 @@ public final class HubRouteTablesClientImpl implements HubRouteTablesClient {
         String routeTableName,
         HubRouteTableInner routeTableParameters,
         Context context) {
-        return beginCreateOrUpdateAsync(
-                resourceGroupName, virtualHubName, routeTableName, routeTableParameters, context)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, virtualHubName, routeTableName, routeTableParameters, context)
             .getSyncPoller();
     }
 
@@ -795,7 +796,7 @@ public final class HubRouteTablesClientImpl implements HubRouteTablesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String virtualHubName, String routeTableName) {
-        return beginDeleteAsync(resourceGroupName, virtualHubName, routeTableName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, virtualHubName, routeTableName).getSyncPoller();
     }
 
     /**
@@ -813,7 +814,7 @@ public final class HubRouteTablesClientImpl implements HubRouteTablesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String virtualHubName, String routeTableName, Context context) {
-        return beginDeleteAsync(resourceGroupName, virtualHubName, routeTableName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, virtualHubName, routeTableName, context).getSyncPoller();
     }
 
     /**

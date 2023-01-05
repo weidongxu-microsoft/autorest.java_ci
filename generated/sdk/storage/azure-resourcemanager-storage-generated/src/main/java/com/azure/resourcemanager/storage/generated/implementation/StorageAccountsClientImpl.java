@@ -676,7 +676,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<StorageAccountInner>, StorageAccountInner> beginCreate(
         String resourceGroupName, String accountName, StorageAccountCreateParameters parameters) {
-        return beginCreateAsync(resourceGroupName, accountName, parameters).getSyncPoller();
+        return this.beginCreateAsync(resourceGroupName, accountName, parameters).getSyncPoller();
     }
 
     /**
@@ -699,7 +699,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<StorageAccountInner>, StorageAccountInner> beginCreate(
         String resourceGroupName, String accountName, StorageAccountCreateParameters parameters, Context context) {
-        return beginCreateAsync(resourceGroupName, accountName, parameters, context).getSyncPoller();
+        return this.beginCreateAsync(resourceGroupName, accountName, parameters, context).getSyncPoller();
     }
 
     /**
@@ -2545,7 +2545,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginFailover(String resourceGroupName, String accountName) {
         final FailoverType failoverType = null;
-        return beginFailoverAsync(resourceGroupName, accountName, failoverType).getSyncPoller();
+        return this.beginFailoverAsync(resourceGroupName, accountName, failoverType).getSyncPoller();
     }
 
     /**
@@ -2573,7 +2573,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginFailover(
         String resourceGroupName, String accountName, FailoverType failoverType, Context context) {
-        return beginFailoverAsync(resourceGroupName, accountName, failoverType, context).getSyncPoller();
+        return this.beginFailoverAsync(resourceGroupName, accountName, failoverType, context).getSyncPoller();
     }
 
     /**
@@ -2896,7 +2896,9 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginHierarchicalNamespaceMigration(
         String resourceGroupName, String accountName, String requestType) {
-        return beginHierarchicalNamespaceMigrationAsync(resourceGroupName, accountName, requestType).getSyncPoller();
+        return this
+            .beginHierarchicalNamespaceMigrationAsync(resourceGroupName, accountName, requestType)
+            .getSyncPoller();
     }
 
     /**
@@ -2918,7 +2920,8 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginHierarchicalNamespaceMigration(
         String resourceGroupName, String accountName, String requestType, Context context) {
-        return beginHierarchicalNamespaceMigrationAsync(resourceGroupName, accountName, requestType, context)
+        return this
+            .beginHierarchicalNamespaceMigrationAsync(resourceGroupName, accountName, requestType, context)
             .getSyncPoller();
     }
 
@@ -3169,7 +3172,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginAbortHierarchicalNamespaceMigration(
         String resourceGroupName, String accountName) {
-        return beginAbortHierarchicalNamespaceMigrationAsync(resourceGroupName, accountName).getSyncPoller();
+        return this.beginAbortHierarchicalNamespaceMigrationAsync(resourceGroupName, accountName).getSyncPoller();
     }
 
     /**
@@ -3188,7 +3191,9 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginAbortHierarchicalNamespaceMigration(
         String resourceGroupName, String accountName, Context context) {
-        return beginAbortHierarchicalNamespaceMigrationAsync(resourceGroupName, accountName, context).getSyncPoller();
+        return this
+            .beginAbortHierarchicalNamespaceMigrationAsync(resourceGroupName, accountName, context)
+            .getSyncPoller();
     }
 
     /**
@@ -3450,7 +3455,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<BlobRestoreStatusInner>, BlobRestoreStatusInner> beginRestoreBlobRanges(
         String resourceGroupName, String accountName, BlobRestoreParameters parameters) {
-        return beginRestoreBlobRangesAsync(resourceGroupName, accountName, parameters).getSyncPoller();
+        return this.beginRestoreBlobRangesAsync(resourceGroupName, accountName, parameters).getSyncPoller();
     }
 
     /**
@@ -3470,7 +3475,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<BlobRestoreStatusInner>, BlobRestoreStatusInner> beginRestoreBlobRanges(
         String resourceGroupName, String accountName, BlobRestoreParameters parameters, Context context) {
-        return beginRestoreBlobRangesAsync(resourceGroupName, accountName, parameters, context).getSyncPoller();
+        return this.beginRestoreBlobRangesAsync(resourceGroupName, accountName, parameters, context).getSyncPoller();
     }
 
     /**

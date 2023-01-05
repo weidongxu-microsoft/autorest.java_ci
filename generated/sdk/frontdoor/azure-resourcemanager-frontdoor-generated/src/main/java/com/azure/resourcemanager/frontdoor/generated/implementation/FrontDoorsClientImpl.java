@@ -804,7 +804,7 @@ public final class FrontDoorsClientImpl implements FrontDoorsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<FrontDoorInner>, FrontDoorInner> beginCreateOrUpdate(
         String resourceGroupName, String frontDoorName, FrontDoorInner frontDoorParameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, frontDoorName, frontDoorParameters).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, frontDoorName, frontDoorParameters).getSyncPoller();
     }
 
     /**
@@ -823,7 +823,9 @@ public final class FrontDoorsClientImpl implements FrontDoorsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<FrontDoorInner>, FrontDoorInner> beginCreateOrUpdate(
         String resourceGroupName, String frontDoorName, FrontDoorInner frontDoorParameters, Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, frontDoorName, frontDoorParameters, context).getSyncPoller();
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, frontDoorName, frontDoorParameters, context)
+            .getSyncPoller();
     }
 
     /**
@@ -1051,7 +1053,7 @@ public final class FrontDoorsClientImpl implements FrontDoorsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String frontDoorName) {
-        return beginDeleteAsync(resourceGroupName, frontDoorName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, frontDoorName).getSyncPoller();
     }
 
     /**
@@ -1068,7 +1070,7 @@ public final class FrontDoorsClientImpl implements FrontDoorsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String frontDoorName, Context context) {
-        return beginDeleteAsync(resourceGroupName, frontDoorName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, frontDoorName, context).getSyncPoller();
     }
 
     /**

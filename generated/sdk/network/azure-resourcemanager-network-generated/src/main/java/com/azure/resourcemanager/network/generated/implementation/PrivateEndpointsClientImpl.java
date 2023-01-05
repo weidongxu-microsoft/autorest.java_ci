@@ -308,7 +308,7 @@ public final class PrivateEndpointsClientImpl implements PrivateEndpointsClient 
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String privateEndpointName) {
-        return beginDeleteAsync(resourceGroupName, privateEndpointName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, privateEndpointName).getSyncPoller();
     }
 
     /**
@@ -325,7 +325,7 @@ public final class PrivateEndpointsClientImpl implements PrivateEndpointsClient 
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String privateEndpointName, Context context) {
-        return beginDeleteAsync(resourceGroupName, privateEndpointName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, privateEndpointName, context).getSyncPoller();
     }
 
     /**
@@ -723,7 +723,7 @@ public final class PrivateEndpointsClientImpl implements PrivateEndpointsClient 
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<PrivateEndpointInner>, PrivateEndpointInner> beginCreateOrUpdate(
         String resourceGroupName, String privateEndpointName, PrivateEndpointInner parameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, privateEndpointName, parameters).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, privateEndpointName, parameters).getSyncPoller();
     }
 
     /**
@@ -741,7 +741,9 @@ public final class PrivateEndpointsClientImpl implements PrivateEndpointsClient 
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<PrivateEndpointInner>, PrivateEndpointInner> beginCreateOrUpdate(
         String resourceGroupName, String privateEndpointName, PrivateEndpointInner parameters, Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, privateEndpointName, parameters, context).getSyncPoller();
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, privateEndpointName, parameters, context)
+            .getSyncPoller();
     }
 
     /**

@@ -254,7 +254,7 @@ public final class ServerParametersClientImpl implements ServerParametersClient 
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ConfigurationListResultInner>, ConfigurationListResultInner>
         beginListUpdateConfigurations(String resourceGroupName, String serverName, ConfigurationListResultInner value) {
-        return beginListUpdateConfigurationsAsync(resourceGroupName, serverName, value).getSyncPoller();
+        return this.beginListUpdateConfigurationsAsync(resourceGroupName, serverName, value).getSyncPoller();
     }
 
     /**
@@ -273,7 +273,7 @@ public final class ServerParametersClientImpl implements ServerParametersClient 
     public SyncPoller<PollResult<ConfigurationListResultInner>, ConfigurationListResultInner>
         beginListUpdateConfigurations(
             String resourceGroupName, String serverName, ConfigurationListResultInner value, Context context) {
-        return beginListUpdateConfigurationsAsync(resourceGroupName, serverName, value, context).getSyncPoller();
+        return this.beginListUpdateConfigurationsAsync(resourceGroupName, serverName, value, context).getSyncPoller();
     }
 
     /**

@@ -335,7 +335,8 @@ public final class CloudServicesUpdateDomainsClientImpl implements CloudServices
     public SyncPoller<PollResult<Void>, Void> beginWalkUpdateDomain(
         String resourceGroupName, String cloudServiceName, int updateDomain) {
         final UpdateDomainInner parameters = null;
-        return beginWalkUpdateDomainAsync(resourceGroupName, cloudServiceName, updateDomain, parameters)
+        return this
+            .beginWalkUpdateDomainAsync(resourceGroupName, cloudServiceName, updateDomain, parameters)
             .getSyncPoller();
     }
 
@@ -360,7 +361,8 @@ public final class CloudServicesUpdateDomainsClientImpl implements CloudServices
         int updateDomain,
         UpdateDomainInner parameters,
         Context context) {
-        return beginWalkUpdateDomainAsync(resourceGroupName, cloudServiceName, updateDomain, parameters, context)
+        return this
+            .beginWalkUpdateDomainAsync(resourceGroupName, cloudServiceName, updateDomain, parameters, context)
             .getSyncPoller();
     }
 

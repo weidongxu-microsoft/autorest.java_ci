@@ -766,7 +766,8 @@ public final class ContainersClientImpl implements ContainersClient {
         String containerName,
         String resourceGroupName,
         ContainerInner container) {
-        return beginCreateOrUpdateAsync(deviceName, storageAccountName, containerName, resourceGroupName, container)
+        return this
+            .beginCreateOrUpdateAsync(deviceName, storageAccountName, containerName, resourceGroupName, container)
             .getSyncPoller();
     }
 
@@ -792,7 +793,8 @@ public final class ContainersClientImpl implements ContainersClient {
         String resourceGroupName,
         ContainerInner container,
         Context context) {
-        return beginCreateOrUpdateAsync(
+        return this
+            .beginCreateOrUpdateAsync(
                 deviceName, storageAccountName, containerName, resourceGroupName, container, context)
             .getSyncPoller();
     }
@@ -1077,7 +1079,7 @@ public final class ContainersClientImpl implements ContainersClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String deviceName, String storageAccountName, String containerName, String resourceGroupName) {
-        return beginDeleteAsync(deviceName, storageAccountName, containerName, resourceGroupName).getSyncPoller();
+        return this.beginDeleteAsync(deviceName, storageAccountName, containerName, resourceGroupName).getSyncPoller();
     }
 
     /**
@@ -1096,7 +1098,8 @@ public final class ContainersClientImpl implements ContainersClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String deviceName, String storageAccountName, String containerName, String resourceGroupName, Context context) {
-        return beginDeleteAsync(deviceName, storageAccountName, containerName, resourceGroupName, context)
+        return this
+            .beginDeleteAsync(deviceName, storageAccountName, containerName, resourceGroupName, context)
             .getSyncPoller();
     }
 
@@ -1353,7 +1356,7 @@ public final class ContainersClientImpl implements ContainersClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginRefresh(
         String deviceName, String storageAccountName, String containerName, String resourceGroupName) {
-        return beginRefreshAsync(deviceName, storageAccountName, containerName, resourceGroupName).getSyncPoller();
+        return this.beginRefreshAsync(deviceName, storageAccountName, containerName, resourceGroupName).getSyncPoller();
     }
 
     /**
@@ -1372,7 +1375,8 @@ public final class ContainersClientImpl implements ContainersClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginRefresh(
         String deviceName, String storageAccountName, String containerName, String resourceGroupName, Context context) {
-        return beginRefreshAsync(deviceName, storageAccountName, containerName, resourceGroupName, context)
+        return this
+            .beginRefreshAsync(deviceName, storageAccountName, containerName, resourceGroupName, context)
             .getSyncPoller();
     }
 

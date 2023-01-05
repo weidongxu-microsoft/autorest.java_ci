@@ -778,8 +778,8 @@ public final class DatabasePrincipalAssignmentsClientImpl implements DatabasePri
             String databaseName,
             String principalAssignmentName,
             DatabasePrincipalAssignmentInner parameters) {
-        return beginCreateOrUpdateAsync(
-                resourceGroupName, clusterName, databaseName, principalAssignmentName, parameters)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, clusterName, databaseName, principalAssignmentName, parameters)
             .getSyncPoller();
     }
 
@@ -806,7 +806,8 @@ public final class DatabasePrincipalAssignmentsClientImpl implements DatabasePri
             String principalAssignmentName,
             DatabasePrincipalAssignmentInner parameters,
             Context context) {
-        return beginCreateOrUpdateAsync(
+        return this
+            .beginCreateOrUpdateAsync(
                 resourceGroupName, clusterName, databaseName, principalAssignmentName, parameters, context)
             .getSyncPoller();
     }
@@ -1104,7 +1105,9 @@ public final class DatabasePrincipalAssignmentsClientImpl implements DatabasePri
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String clusterName, String databaseName, String principalAssignmentName) {
-        return beginDeleteAsync(resourceGroupName, clusterName, databaseName, principalAssignmentName).getSyncPoller();
+        return this
+            .beginDeleteAsync(resourceGroupName, clusterName, databaseName, principalAssignmentName)
+            .getSyncPoller();
     }
 
     /**
@@ -1127,7 +1130,8 @@ public final class DatabasePrincipalAssignmentsClientImpl implements DatabasePri
         String databaseName,
         String principalAssignmentName,
         Context context) {
-        return beginDeleteAsync(resourceGroupName, clusterName, databaseName, principalAssignmentName, context)
+        return this
+            .beginDeleteAsync(resourceGroupName, clusterName, databaseName, principalAssignmentName, context)
             .getSyncPoller();
     }
 

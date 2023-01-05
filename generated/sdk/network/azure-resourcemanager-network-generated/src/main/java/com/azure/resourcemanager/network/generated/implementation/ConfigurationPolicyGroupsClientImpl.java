@@ -390,7 +390,8 @@ public final class ConfigurationPolicyGroupsClientImpl implements ConfigurationP
             String vpnServerConfigurationName,
             String configurationPolicyGroupName,
             VpnServerConfigurationPolicyGroupInner vpnServerConfigurationPolicyGroupParameters) {
-        return beginCreateOrUpdateAsync(
+        return this
+            .beginCreateOrUpdateAsync(
                 resourceGroupName,
                 vpnServerConfigurationName,
                 configurationPolicyGroupName,
@@ -420,7 +421,8 @@ public final class ConfigurationPolicyGroupsClientImpl implements ConfigurationP
             String configurationPolicyGroupName,
             VpnServerConfigurationPolicyGroupInner vpnServerConfigurationPolicyGroupParameters,
             Context context) {
-        return beginCreateOrUpdateAsync(
+        return this
+            .beginCreateOrUpdateAsync(
                 resourceGroupName,
                 vpnServerConfigurationName,
                 configurationPolicyGroupName,
@@ -729,7 +731,8 @@ public final class ConfigurationPolicyGroupsClientImpl implements ConfigurationP
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String vpnServerConfigurationName, String configurationPolicyGroupName) {
-        return beginDeleteAsync(resourceGroupName, vpnServerConfigurationName, configurationPolicyGroupName)
+        return this
+            .beginDeleteAsync(resourceGroupName, vpnServerConfigurationName, configurationPolicyGroupName)
             .getSyncPoller();
     }
 
@@ -751,7 +754,8 @@ public final class ConfigurationPolicyGroupsClientImpl implements ConfigurationP
         String vpnServerConfigurationName,
         String configurationPolicyGroupName,
         Context context) {
-        return beginDeleteAsync(resourceGroupName, vpnServerConfigurationName, configurationPolicyGroupName, context)
+        return this
+            .beginDeleteAsync(resourceGroupName, vpnServerConfigurationName, configurationPolicyGroupName, context)
             .getSyncPoller();
     }
 

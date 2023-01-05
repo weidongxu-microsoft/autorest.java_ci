@@ -868,7 +868,9 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
     public SyncPoller<PollResult<LiveEventInner>, LiveEventInner> beginCreate(
         String resourceGroupName, String accountName, String liveEventName, LiveEventInner parameters) {
         final Boolean autoStart = null;
-        return beginCreateAsync(resourceGroupName, accountName, liveEventName, parameters, autoStart).getSyncPoller();
+        return this
+            .beginCreateAsync(resourceGroupName, accountName, liveEventName, parameters, autoStart)
+            .getSyncPoller();
     }
 
     /**
@@ -895,7 +897,8 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
         LiveEventInner parameters,
         Boolean autoStart,
         Context context) {
-        return beginCreateAsync(resourceGroupName, accountName, liveEventName, parameters, autoStart, context)
+        return this
+            .beginCreateAsync(resourceGroupName, accountName, liveEventName, parameters, autoStart, context)
             .getSyncPoller();
     }
 
@@ -1221,7 +1224,7 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<LiveEventInner>, LiveEventInner> beginUpdate(
         String resourceGroupName, String accountName, String liveEventName, LiveEventInner parameters) {
-        return beginUpdateAsync(resourceGroupName, accountName, liveEventName, parameters).getSyncPoller();
+        return this.beginUpdateAsync(resourceGroupName, accountName, liveEventName, parameters).getSyncPoller();
     }
 
     /**
@@ -1244,7 +1247,9 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
         String liveEventName,
         LiveEventInner parameters,
         Context context) {
-        return beginUpdateAsync(resourceGroupName, accountName, liveEventName, parameters, context).getSyncPoller();
+        return this
+            .beginUpdateAsync(resourceGroupName, accountName, liveEventName, parameters, context)
+            .getSyncPoller();
     }
 
     /**
@@ -1507,7 +1512,7 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String accountName, String liveEventName) {
-        return beginDeleteAsync(resourceGroupName, accountName, liveEventName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, accountName, liveEventName).getSyncPoller();
     }
 
     /**
@@ -1527,7 +1532,7 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String accountName, String liveEventName, Context context) {
-        return beginDeleteAsync(resourceGroupName, accountName, liveEventName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, accountName, liveEventName, context).getSyncPoller();
     }
 
     /**
@@ -1782,7 +1787,7 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginAllocate(
         String resourceGroupName, String accountName, String liveEventName) {
-        return beginAllocateAsync(resourceGroupName, accountName, liveEventName).getSyncPoller();
+        return this.beginAllocateAsync(resourceGroupName, accountName, liveEventName).getSyncPoller();
     }
 
     /**
@@ -1802,7 +1807,7 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginAllocate(
         String resourceGroupName, String accountName, String liveEventName, Context context) {
-        return beginAllocateAsync(resourceGroupName, accountName, liveEventName, context).getSyncPoller();
+        return this.beginAllocateAsync(resourceGroupName, accountName, liveEventName, context).getSyncPoller();
     }
 
     /**
@@ -2056,7 +2061,7 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginStart(
         String resourceGroupName, String accountName, String liveEventName) {
-        return beginStartAsync(resourceGroupName, accountName, liveEventName).getSyncPoller();
+        return this.beginStartAsync(resourceGroupName, accountName, liveEventName).getSyncPoller();
     }
 
     /**
@@ -2076,7 +2081,7 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginStart(
         String resourceGroupName, String accountName, String liveEventName, Context context) {
-        return beginStartAsync(resourceGroupName, accountName, liveEventName, context).getSyncPoller();
+        return this.beginStartAsync(resourceGroupName, accountName, liveEventName, context).getSyncPoller();
     }
 
     /**
@@ -2355,7 +2360,7 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginStop(
         String resourceGroupName, String accountName, String liveEventName, LiveEventActionInput parameters) {
-        return beginStopAsync(resourceGroupName, accountName, liveEventName, parameters).getSyncPoller();
+        return this.beginStopAsync(resourceGroupName, accountName, liveEventName, parameters).getSyncPoller();
     }
 
     /**
@@ -2380,7 +2385,7 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
         String liveEventName,
         LiveEventActionInput parameters,
         Context context) {
-        return beginStopAsync(resourceGroupName, accountName, liveEventName, parameters, context).getSyncPoller();
+        return this.beginStopAsync(resourceGroupName, accountName, liveEventName, parameters, context).getSyncPoller();
     }
 
     /**
@@ -2659,7 +2664,7 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginReset(
         String resourceGroupName, String accountName, String liveEventName) {
-        return beginResetAsync(resourceGroupName, accountName, liveEventName).getSyncPoller();
+        return this.beginResetAsync(resourceGroupName, accountName, liveEventName).getSyncPoller();
     }
 
     /**
@@ -2681,7 +2686,7 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginReset(
         String resourceGroupName, String accountName, String liveEventName, Context context) {
-        return beginResetAsync(resourceGroupName, accountName, liveEventName, context).getSyncPoller();
+        return this.beginResetAsync(resourceGroupName, accountName, liveEventName, context).getSyncPoller();
     }
 
     /**

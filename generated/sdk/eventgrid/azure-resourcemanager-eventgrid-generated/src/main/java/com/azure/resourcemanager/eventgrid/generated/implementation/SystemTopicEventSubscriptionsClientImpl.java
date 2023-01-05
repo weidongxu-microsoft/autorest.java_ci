@@ -607,8 +607,8 @@ public final class SystemTopicEventSubscriptionsClientImpl implements SystemTopi
         String systemTopicName,
         String eventSubscriptionName,
         EventSubscriptionInner eventSubscriptionInfo) {
-        return beginCreateOrUpdateAsync(
-                resourceGroupName, systemTopicName, eventSubscriptionName, eventSubscriptionInfo)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, systemTopicName, eventSubscriptionName, eventSubscriptionInfo)
             .getSyncPoller();
     }
 
@@ -636,7 +636,8 @@ public final class SystemTopicEventSubscriptionsClientImpl implements SystemTopi
         String eventSubscriptionName,
         EventSubscriptionInner eventSubscriptionInfo,
         Context context) {
-        return beginCreateOrUpdateAsync(
+        return this
+            .beginCreateOrUpdateAsync(
                 resourceGroupName, systemTopicName, eventSubscriptionName, eventSubscriptionInfo, context)
             .getSyncPoller();
     }
@@ -932,7 +933,7 @@ public final class SystemTopicEventSubscriptionsClientImpl implements SystemTopi
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String systemTopicName, String eventSubscriptionName) {
-        return beginDeleteAsync(resourceGroupName, systemTopicName, eventSubscriptionName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, systemTopicName, eventSubscriptionName).getSyncPoller();
     }
 
     /**
@@ -953,7 +954,9 @@ public final class SystemTopicEventSubscriptionsClientImpl implements SystemTopi
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String systemTopicName, String eventSubscriptionName, Context context) {
-        return beginDeleteAsync(resourceGroupName, systemTopicName, eventSubscriptionName, context).getSyncPoller();
+        return this
+            .beginDeleteAsync(resourceGroupName, systemTopicName, eventSubscriptionName, context)
+            .getSyncPoller();
     }
 
     /**
@@ -1271,7 +1274,8 @@ public final class SystemTopicEventSubscriptionsClientImpl implements SystemTopi
         String systemTopicName,
         String eventSubscriptionName,
         EventSubscriptionUpdateParameters eventSubscriptionUpdateParameters) {
-        return beginUpdateAsync(
+        return this
+            .beginUpdateAsync(
                 resourceGroupName, systemTopicName, eventSubscriptionName, eventSubscriptionUpdateParameters)
             .getSyncPoller();
     }
@@ -1299,7 +1303,8 @@ public final class SystemTopicEventSubscriptionsClientImpl implements SystemTopi
         String eventSubscriptionName,
         EventSubscriptionUpdateParameters eventSubscriptionUpdateParameters,
         Context context) {
-        return beginUpdateAsync(
+        return this
+            .beginUpdateAsync(
                 resourceGroupName, systemTopicName, eventSubscriptionName, eventSubscriptionUpdateParameters, context)
             .getSyncPoller();
     }

@@ -332,7 +332,7 @@ public final class SecurityPartnerProvidersClientImpl implements SecurityPartner
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String securityPartnerProviderName) {
-        return beginDeleteAsync(resourceGroupName, securityPartnerProviderName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, securityPartnerProviderName).getSyncPoller();
     }
 
     /**
@@ -349,7 +349,7 @@ public final class SecurityPartnerProvidersClientImpl implements SecurityPartner
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String securityPartnerProviderName, Context context) {
-        return beginDeleteAsync(resourceGroupName, securityPartnerProviderName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, securityPartnerProviderName, context).getSyncPoller();
     }
 
     /**
@@ -760,7 +760,9 @@ public final class SecurityPartnerProvidersClientImpl implements SecurityPartner
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<SecurityPartnerProviderInner>, SecurityPartnerProviderInner> beginCreateOrUpdate(
         String resourceGroupName, String securityPartnerProviderName, SecurityPartnerProviderInner parameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, securityPartnerProviderName, parameters).getSyncPoller();
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, securityPartnerProviderName, parameters)
+            .getSyncPoller();
     }
 
     /**
@@ -781,7 +783,8 @@ public final class SecurityPartnerProvidersClientImpl implements SecurityPartner
         String securityPartnerProviderName,
         SecurityPartnerProviderInner parameters,
         Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, securityPartnerProviderName, parameters, context)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, securityPartnerProviderName, parameters, context)
             .getSyncPoller();
     }
 

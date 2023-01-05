@@ -254,7 +254,8 @@ public final class SupportPackagesClientImpl implements SupportPackagesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginTriggerSupportPackage(
         String deviceName, String resourceGroupName, TriggerSupportPackageRequest triggerSupportPackageRequest) {
-        return beginTriggerSupportPackageAsync(deviceName, resourceGroupName, triggerSupportPackageRequest)
+        return this
+            .beginTriggerSupportPackageAsync(deviceName, resourceGroupName, triggerSupportPackageRequest)
             .getSyncPoller();
     }
 
@@ -276,7 +277,8 @@ public final class SupportPackagesClientImpl implements SupportPackagesClient {
         String resourceGroupName,
         TriggerSupportPackageRequest triggerSupportPackageRequest,
         Context context) {
-        return beginTriggerSupportPackageAsync(deviceName, resourceGroupName, triggerSupportPackageRequest, context)
+        return this
+            .beginTriggerSupportPackageAsync(deviceName, resourceGroupName, triggerSupportPackageRequest, context)
             .getSyncPoller();
     }
 

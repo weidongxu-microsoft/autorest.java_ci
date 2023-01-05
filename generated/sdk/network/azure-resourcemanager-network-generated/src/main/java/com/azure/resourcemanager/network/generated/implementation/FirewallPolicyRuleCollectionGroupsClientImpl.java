@@ -316,7 +316,7 @@ public final class FirewallPolicyRuleCollectionGroupsClientImpl implements Firew
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String firewallPolicyName, String ruleCollectionGroupName) {
-        return beginDeleteAsync(resourceGroupName, firewallPolicyName, ruleCollectionGroupName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, firewallPolicyName, ruleCollectionGroupName).getSyncPoller();
     }
 
     /**
@@ -334,7 +334,8 @@ public final class FirewallPolicyRuleCollectionGroupsClientImpl implements Firew
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String firewallPolicyName, String ruleCollectionGroupName, Context context) {
-        return beginDeleteAsync(resourceGroupName, firewallPolicyName, ruleCollectionGroupName, context)
+        return this
+            .beginDeleteAsync(resourceGroupName, firewallPolicyName, ruleCollectionGroupName, context)
             .getSyncPoller();
     }
 
@@ -794,7 +795,8 @@ public final class FirewallPolicyRuleCollectionGroupsClientImpl implements Firew
             String firewallPolicyName,
             String ruleCollectionGroupName,
             FirewallPolicyRuleCollectionGroupInner parameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, firewallPolicyName, ruleCollectionGroupName, parameters)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, firewallPolicyName, ruleCollectionGroupName, parameters)
             .getSyncPoller();
     }
 
@@ -819,7 +821,8 @@ public final class FirewallPolicyRuleCollectionGroupsClientImpl implements Firew
             String ruleCollectionGroupName,
             FirewallPolicyRuleCollectionGroupInner parameters,
             Context context) {
-        return beginCreateOrUpdateAsync(
+        return this
+            .beginCreateOrUpdateAsync(
                 resourceGroupName, firewallPolicyName, ruleCollectionGroupName, parameters, context)
             .getSyncPoller();
     }

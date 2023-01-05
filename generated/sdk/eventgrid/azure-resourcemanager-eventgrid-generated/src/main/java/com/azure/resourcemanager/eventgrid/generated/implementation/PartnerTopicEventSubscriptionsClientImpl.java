@@ -609,8 +609,8 @@ public final class PartnerTopicEventSubscriptionsClientImpl implements PartnerTo
         String partnerTopicName,
         String eventSubscriptionName,
         EventSubscriptionInner eventSubscriptionInfo) {
-        return beginCreateOrUpdateAsync(
-                resourceGroupName, partnerTopicName, eventSubscriptionName, eventSubscriptionInfo)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, partnerTopicName, eventSubscriptionName, eventSubscriptionInfo)
             .getSyncPoller();
     }
 
@@ -638,7 +638,8 @@ public final class PartnerTopicEventSubscriptionsClientImpl implements PartnerTo
         String eventSubscriptionName,
         EventSubscriptionInner eventSubscriptionInfo,
         Context context) {
-        return beginCreateOrUpdateAsync(
+        return this
+            .beginCreateOrUpdateAsync(
                 resourceGroupName, partnerTopicName, eventSubscriptionName, eventSubscriptionInfo, context)
             .getSyncPoller();
     }
@@ -934,7 +935,7 @@ public final class PartnerTopicEventSubscriptionsClientImpl implements PartnerTo
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String partnerTopicName, String eventSubscriptionName) {
-        return beginDeleteAsync(resourceGroupName, partnerTopicName, eventSubscriptionName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, partnerTopicName, eventSubscriptionName).getSyncPoller();
     }
 
     /**
@@ -955,7 +956,9 @@ public final class PartnerTopicEventSubscriptionsClientImpl implements PartnerTo
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String partnerTopicName, String eventSubscriptionName, Context context) {
-        return beginDeleteAsync(resourceGroupName, partnerTopicName, eventSubscriptionName, context).getSyncPoller();
+        return this
+            .beginDeleteAsync(resourceGroupName, partnerTopicName, eventSubscriptionName, context)
+            .getSyncPoller();
     }
 
     /**
@@ -1273,7 +1276,8 @@ public final class PartnerTopicEventSubscriptionsClientImpl implements PartnerTo
         String partnerTopicName,
         String eventSubscriptionName,
         EventSubscriptionUpdateParameters eventSubscriptionUpdateParameters) {
-        return beginUpdateAsync(
+        return this
+            .beginUpdateAsync(
                 resourceGroupName, partnerTopicName, eventSubscriptionName, eventSubscriptionUpdateParameters)
             .getSyncPoller();
     }
@@ -1301,7 +1305,8 @@ public final class PartnerTopicEventSubscriptionsClientImpl implements PartnerTo
         String eventSubscriptionName,
         EventSubscriptionUpdateParameters eventSubscriptionUpdateParameters,
         Context context) {
-        return beginUpdateAsync(
+        return this
+            .beginUpdateAsync(
                 resourceGroupName, partnerTopicName, eventSubscriptionName, eventSubscriptionUpdateParameters, context)
             .getSyncPoller();
     }

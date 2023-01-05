@@ -459,7 +459,7 @@ public final class ServerAdministratorsClientImpl implements ServerAdministrator
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ServerAdministratorResourceInner>, ServerAdministratorResourceInner>
         beginCreateOrUpdate(String resourceGroupName, String serverName, ServerAdministratorResourceInner properties) {
-        return beginCreateOrUpdateAsync(resourceGroupName, serverName, properties).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, serverName, properties).getSyncPoller();
     }
 
     /**
@@ -479,7 +479,7 @@ public final class ServerAdministratorsClientImpl implements ServerAdministrator
     public SyncPoller<PollResult<ServerAdministratorResourceInner>, ServerAdministratorResourceInner>
         beginCreateOrUpdate(
             String resourceGroupName, String serverName, ServerAdministratorResourceInner properties, Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, serverName, properties, context).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, serverName, properties, context).getSyncPoller();
     }
 
     /**
@@ -707,7 +707,7 @@ public final class ServerAdministratorsClientImpl implements ServerAdministrator
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String serverName) {
-        return beginDeleteAsync(resourceGroupName, serverName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, serverName).getSyncPoller();
     }
 
     /**
@@ -724,7 +724,7 @@ public final class ServerAdministratorsClientImpl implements ServerAdministrator
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String serverName, Context context) {
-        return beginDeleteAsync(resourceGroupName, serverName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, serverName, context).getSyncPoller();
     }
 
     /**

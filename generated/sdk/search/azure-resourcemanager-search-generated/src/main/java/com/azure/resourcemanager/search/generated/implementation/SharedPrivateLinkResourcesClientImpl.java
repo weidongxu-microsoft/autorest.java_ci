@@ -462,7 +462,8 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
         String sharedPrivateLinkResourceName,
         SharedPrivateLinkResourceInner sharedPrivateLinkResource) {
         final UUID clientRequestId = null;
-        return beginCreateOrUpdateAsync(
+        return this
+            .beginCreateOrUpdateAsync(
                 resourceGroupName,
                 searchServiceName,
                 sharedPrivateLinkResourceName,
@@ -499,7 +500,8 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
         SharedPrivateLinkResourceInner sharedPrivateLinkResource,
         UUID clientRequestId,
         Context context) {
-        return beginCreateOrUpdateAsync(
+        return this
+            .beginCreateOrUpdateAsync(
                 resourceGroupName,
                 searchServiceName,
                 sharedPrivateLinkResourceName,
@@ -1138,7 +1140,8 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String searchServiceName, String sharedPrivateLinkResourceName) {
         final UUID clientRequestId = null;
-        return beginDeleteAsync(resourceGroupName, searchServiceName, sharedPrivateLinkResourceName, clientRequestId)
+        return this
+            .beginDeleteAsync(resourceGroupName, searchServiceName, sharedPrivateLinkResourceName, clientRequestId)
             .getSyncPoller();
     }
 
@@ -1166,7 +1169,8 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
         String sharedPrivateLinkResourceName,
         UUID clientRequestId,
         Context context) {
-        return beginDeleteAsync(
+        return this
+            .beginDeleteAsync(
                 resourceGroupName, searchServiceName, sharedPrivateLinkResourceName, clientRequestId, context)
             .getSyncPoller();
     }

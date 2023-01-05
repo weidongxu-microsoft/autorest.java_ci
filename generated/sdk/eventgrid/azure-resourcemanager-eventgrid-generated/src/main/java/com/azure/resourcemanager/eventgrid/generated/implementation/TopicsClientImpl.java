@@ -556,7 +556,7 @@ public final class TopicsClientImpl implements TopicsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<TopicInner>, TopicInner> beginCreateOrUpdate(
         String resourceGroupName, String topicName, TopicInner topicInfo) {
-        return beginCreateOrUpdateAsync(resourceGroupName, topicName, topicInfo).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, topicName, topicInfo).getSyncPoller();
     }
 
     /**
@@ -576,7 +576,7 @@ public final class TopicsClientImpl implements TopicsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<TopicInner>, TopicInner> beginCreateOrUpdate(
         String resourceGroupName, String topicName, TopicInner topicInfo, Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, topicName, topicInfo, context).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, topicName, topicInfo, context).getSyncPoller();
     }
 
     /**
@@ -810,7 +810,7 @@ public final class TopicsClientImpl implements TopicsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String topicName) {
-        return beginDeleteAsync(resourceGroupName, topicName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, topicName).getSyncPoller();
     }
 
     /**
@@ -828,7 +828,7 @@ public final class TopicsClientImpl implements TopicsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String topicName, Context context) {
-        return beginDeleteAsync(resourceGroupName, topicName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, topicName, context).getSyncPoller();
     }
 
     /**
@@ -1081,7 +1081,7 @@ public final class TopicsClientImpl implements TopicsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<TopicInner>, TopicInner> beginUpdate(
         String resourceGroupName, String topicName, TopicUpdateParameters topicUpdateParameters) {
-        return beginUpdateAsync(resourceGroupName, topicName, topicUpdateParameters).getSyncPoller();
+        return this.beginUpdateAsync(resourceGroupName, topicName, topicUpdateParameters).getSyncPoller();
     }
 
     /**
@@ -1101,7 +1101,7 @@ public final class TopicsClientImpl implements TopicsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<TopicInner>, TopicInner> beginUpdate(
         String resourceGroupName, String topicName, TopicUpdateParameters topicUpdateParameters, Context context) {
-        return beginUpdateAsync(resourceGroupName, topicName, topicUpdateParameters, context).getSyncPoller();
+        return this.beginUpdateAsync(resourceGroupName, topicName, topicUpdateParameters, context).getSyncPoller();
     }
 
     /**
@@ -1992,7 +1992,7 @@ public final class TopicsClientImpl implements TopicsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<TopicSharedAccessKeysInner>, TopicSharedAccessKeysInner> beginRegenerateKey(
         String resourceGroupName, String topicName, TopicRegenerateKeyRequest regenerateKeyRequest) {
-        return beginRegenerateKeyAsync(resourceGroupName, topicName, regenerateKeyRequest).getSyncPoller();
+        return this.beginRegenerateKeyAsync(resourceGroupName, topicName, regenerateKeyRequest).getSyncPoller();
     }
 
     /**
@@ -2012,7 +2012,9 @@ public final class TopicsClientImpl implements TopicsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<TopicSharedAccessKeysInner>, TopicSharedAccessKeysInner> beginRegenerateKey(
         String resourceGroupName, String topicName, TopicRegenerateKeyRequest regenerateKeyRequest, Context context) {
-        return beginRegenerateKeyAsync(resourceGroupName, topicName, regenerateKeyRequest, context).getSyncPoller();
+        return this
+            .beginRegenerateKeyAsync(resourceGroupName, topicName, regenerateKeyRequest, context)
+            .getSyncPoller();
     }
 
     /**

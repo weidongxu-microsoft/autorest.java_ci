@@ -341,7 +341,7 @@ public final class AzureFirewallsClientImpl implements AzureFirewallsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String azureFirewallName) {
-        return beginDeleteAsync(resourceGroupName, azureFirewallName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, azureFirewallName).getSyncPoller();
     }
 
     /**
@@ -358,7 +358,7 @@ public final class AzureFirewallsClientImpl implements AzureFirewallsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String azureFirewallName, Context context) {
-        return beginDeleteAsync(resourceGroupName, azureFirewallName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, azureFirewallName, context).getSyncPoller();
     }
 
     /**
@@ -747,7 +747,7 @@ public final class AzureFirewallsClientImpl implements AzureFirewallsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<AzureFirewallInner>, AzureFirewallInner> beginCreateOrUpdate(
         String resourceGroupName, String azureFirewallName, AzureFirewallInner parameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, azureFirewallName, parameters).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, azureFirewallName, parameters).getSyncPoller();
     }
 
     /**
@@ -765,7 +765,7 @@ public final class AzureFirewallsClientImpl implements AzureFirewallsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<AzureFirewallInner>, AzureFirewallInner> beginCreateOrUpdate(
         String resourceGroupName, String azureFirewallName, AzureFirewallInner parameters, Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, azureFirewallName, parameters, context).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, azureFirewallName, parameters, context).getSyncPoller();
     }
 
     /**
@@ -1018,7 +1018,7 @@ public final class AzureFirewallsClientImpl implements AzureFirewallsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<AzureFirewallInner>, AzureFirewallInner> beginUpdateTags(
         String resourceGroupName, String azureFirewallName, TagsObject parameters) {
-        return beginUpdateTagsAsync(resourceGroupName, azureFirewallName, parameters).getSyncPoller();
+        return this.beginUpdateTagsAsync(resourceGroupName, azureFirewallName, parameters).getSyncPoller();
     }
 
     /**
@@ -1036,7 +1036,7 @@ public final class AzureFirewallsClientImpl implements AzureFirewallsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<AzureFirewallInner>, AzureFirewallInner> beginUpdateTags(
         String resourceGroupName, String azureFirewallName, TagsObject parameters, Context context) {
-        return beginUpdateTagsAsync(resourceGroupName, azureFirewallName, parameters, context).getSyncPoller();
+        return this.beginUpdateTagsAsync(resourceGroupName, azureFirewallName, parameters, context).getSyncPoller();
     }
 
     /**
@@ -1573,7 +1573,7 @@ public final class AzureFirewallsClientImpl implements AzureFirewallsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<IpPrefixesListInner>, IpPrefixesListInner> beginListLearnedPrefixes(
         String resourceGroupName, String azureFirewallName) {
-        return beginListLearnedPrefixesAsync(resourceGroupName, azureFirewallName).getSyncPoller();
+        return this.beginListLearnedPrefixesAsync(resourceGroupName, azureFirewallName).getSyncPoller();
     }
 
     /**
@@ -1590,7 +1590,7 @@ public final class AzureFirewallsClientImpl implements AzureFirewallsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<IpPrefixesListInner>, IpPrefixesListInner> beginListLearnedPrefixes(
         String resourceGroupName, String azureFirewallName, Context context) {
-        return beginListLearnedPrefixesAsync(resourceGroupName, azureFirewallName, context).getSyncPoller();
+        return this.beginListLearnedPrefixesAsync(resourceGroupName, azureFirewallName, context).getSyncPoller();
     }
 
     /**

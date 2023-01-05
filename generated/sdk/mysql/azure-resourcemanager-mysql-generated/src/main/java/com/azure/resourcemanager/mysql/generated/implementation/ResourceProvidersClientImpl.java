@@ -412,7 +412,8 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginCreateRecommendedActionSession(
         String resourceGroupName, String serverName, String advisorName, String databaseName) {
-        return beginCreateRecommendedActionSessionAsync(resourceGroupName, serverName, advisorName, databaseName)
+        return this
+            .beginCreateRecommendedActionSessionAsync(resourceGroupName, serverName, advisorName, databaseName)
             .getSyncPoller();
     }
 
@@ -432,8 +433,8 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginCreateRecommendedActionSession(
         String resourceGroupName, String serverName, String advisorName, String databaseName, Context context) {
-        return beginCreateRecommendedActionSessionAsync(
-                resourceGroupName, serverName, advisorName, databaseName, context)
+        return this
+            .beginCreateRecommendedActionSessionAsync(resourceGroupName, serverName, advisorName, databaseName, context)
             .getSyncPoller();
     }
 

@@ -515,7 +515,8 @@ public final class VirtualHubRouteTableV2SClientImpl implements VirtualHubRouteT
         String virtualHubName,
         String routeTableName,
         VirtualHubRouteTableV2Inner virtualHubRouteTableV2Parameters) {
-        return beginCreateOrUpdateAsync(
+        return this
+            .beginCreateOrUpdateAsync(
                 resourceGroupName, virtualHubName, routeTableName, virtualHubRouteTableV2Parameters)
             .getSyncPoller();
     }
@@ -540,7 +541,8 @@ public final class VirtualHubRouteTableV2SClientImpl implements VirtualHubRouteT
         String routeTableName,
         VirtualHubRouteTableV2Inner virtualHubRouteTableV2Parameters,
         Context context) {
-        return beginCreateOrUpdateAsync(
+        return this
+            .beginCreateOrUpdateAsync(
                 resourceGroupName, virtualHubName, routeTableName, virtualHubRouteTableV2Parameters, context)
             .getSyncPoller();
     }
@@ -807,7 +809,7 @@ public final class VirtualHubRouteTableV2SClientImpl implements VirtualHubRouteT
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String virtualHubName, String routeTableName) {
-        return beginDeleteAsync(resourceGroupName, virtualHubName, routeTableName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, virtualHubName, routeTableName).getSyncPoller();
     }
 
     /**
@@ -825,7 +827,7 @@ public final class VirtualHubRouteTableV2SClientImpl implements VirtualHubRouteT
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String virtualHubName, String routeTableName, Context context) {
-        return beginDeleteAsync(resourceGroupName, virtualHubName, routeTableName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, virtualHubName, routeTableName, context).getSyncPoller();
     }
 
     /**

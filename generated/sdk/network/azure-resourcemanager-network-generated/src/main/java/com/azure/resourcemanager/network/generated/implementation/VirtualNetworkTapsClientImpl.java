@@ -321,7 +321,7 @@ public final class VirtualNetworkTapsClientImpl implements VirtualNetworkTapsCli
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String tapName) {
-        return beginDeleteAsync(resourceGroupName, tapName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, tapName).getSyncPoller();
     }
 
     /**
@@ -337,7 +337,7 @@ public final class VirtualNetworkTapsClientImpl implements VirtualNetworkTapsCli
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String tapName, Context context) {
-        return beginDeleteAsync(resourceGroupName, tapName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, tapName, context).getSyncPoller();
     }
 
     /**
@@ -725,7 +725,7 @@ public final class VirtualNetworkTapsClientImpl implements VirtualNetworkTapsCli
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<VirtualNetworkTapInner>, VirtualNetworkTapInner> beginCreateOrUpdate(
         String resourceGroupName, String tapName, VirtualNetworkTapInner parameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, tapName, parameters).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, tapName, parameters).getSyncPoller();
     }
 
     /**
@@ -743,7 +743,7 @@ public final class VirtualNetworkTapsClientImpl implements VirtualNetworkTapsCli
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<VirtualNetworkTapInner>, VirtualNetworkTapInner> beginCreateOrUpdate(
         String resourceGroupName, String tapName, VirtualNetworkTapInner parameters, Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, tapName, parameters, context).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, tapName, parameters, context).getSyncPoller();
     }
 
     /**

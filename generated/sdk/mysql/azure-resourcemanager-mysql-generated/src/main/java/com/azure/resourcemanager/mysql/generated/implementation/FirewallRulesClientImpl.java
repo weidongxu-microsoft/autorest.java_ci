@@ -326,7 +326,9 @@ public final class FirewallRulesClientImpl implements FirewallRulesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<FirewallRuleInner>, FirewallRuleInner> beginCreateOrUpdate(
         String resourceGroupName, String serverName, String firewallRuleName, FirewallRuleInner parameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, serverName, firewallRuleName, parameters).getSyncPoller();
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, serverName, firewallRuleName, parameters)
+            .getSyncPoller();
     }
 
     /**
@@ -349,7 +351,8 @@ public final class FirewallRulesClientImpl implements FirewallRulesClient {
         String firewallRuleName,
         FirewallRuleInner parameters,
         Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, serverName, firewallRuleName, parameters, context)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, serverName, firewallRuleName, parameters, context)
             .getSyncPoller();
     }
 
@@ -606,7 +609,7 @@ public final class FirewallRulesClientImpl implements FirewallRulesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String serverName, String firewallRuleName) {
-        return beginDeleteAsync(resourceGroupName, serverName, firewallRuleName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, serverName, firewallRuleName).getSyncPoller();
     }
 
     /**
@@ -624,7 +627,7 @@ public final class FirewallRulesClientImpl implements FirewallRulesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String serverName, String firewallRuleName, Context context) {
-        return beginDeleteAsync(resourceGroupName, serverName, firewallRuleName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, serverName, firewallRuleName, context).getSyncPoller();
     }
 
     /**

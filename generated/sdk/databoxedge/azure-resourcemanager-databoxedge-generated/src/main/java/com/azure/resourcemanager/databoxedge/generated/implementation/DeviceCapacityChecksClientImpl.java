@@ -296,7 +296,8 @@ public final class DeviceCapacityChecksClientImpl implements DeviceCapacityCheck
     public SyncPoller<PollResult<Void>, Void> beginCheckResourceCreationFeasibility(
         String resourceGroupName, String deviceName, DeviceCapacityRequestInfo deviceCapacityRequestInfo) {
         final String capacityName = null;
-        return beginCheckResourceCreationFeasibilityAsync(
+        return this
+            .beginCheckResourceCreationFeasibilityAsync(
                 resourceGroupName, deviceName, deviceCapacityRequestInfo, capacityName)
             .getSyncPoller();
     }
@@ -321,7 +322,8 @@ public final class DeviceCapacityChecksClientImpl implements DeviceCapacityCheck
         DeviceCapacityRequestInfo deviceCapacityRequestInfo,
         String capacityName,
         Context context) {
-        return beginCheckResourceCreationFeasibilityAsync(
+        return this
+            .beginCheckResourceCreationFeasibilityAsync(
                 resourceGroupName, deviceName, deviceCapacityRequestInfo, capacityName, context)
             .getSyncPoller();
     }

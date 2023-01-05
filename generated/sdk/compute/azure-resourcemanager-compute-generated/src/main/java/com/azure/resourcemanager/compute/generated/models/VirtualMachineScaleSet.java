@@ -230,6 +230,13 @@ public interface VirtualMachineScaleSet {
     OffsetDateTime timeCreated();
 
     /**
+     * Gets the constrainedMaximumCapacity property: Optional property which must either be set to True or omitted.
+     *
+     * @return the constrainedMaximumCapacity value.
+     */
+    Boolean constrainedMaximumCapacity();
+
+    /**
      * Gets the region of the resource.
      *
      * @return the region of the resource.
@@ -322,7 +329,8 @@ public interface VirtualMachineScaleSet {
                 DefinitionStages.WithScaleInPolicy,
                 DefinitionStages.WithOrchestrationMode,
                 DefinitionStages.WithSpotRestorePolicy,
-                DefinitionStages.WithPriorityMixPolicy {
+                DefinitionStages.WithPriorityMixPolicy,
+                DefinitionStages.WithConstrainedMaximumCapacity {
             /**
              * Executes the create request.
              *
@@ -590,6 +598,17 @@ public interface VirtualMachineScaleSet {
              * @return the next definition stage.
              */
             WithCreate withPriorityMixPolicy(PriorityMixPolicy priorityMixPolicy);
+        }
+        /** The stage of the VirtualMachineScaleSet definition allowing to specify constrainedMaximumCapacity. */
+        interface WithConstrainedMaximumCapacity {
+            /**
+             * Specifies the constrainedMaximumCapacity property: Optional property which must either be set to True or
+             * omitted..
+             *
+             * @param constrainedMaximumCapacity Optional property which must either be set to True or omitted.
+             * @return the next definition stage.
+             */
+            WithCreate withConstrainedMaximumCapacity(Boolean constrainedMaximumCapacity);
         }
     }
     /**

@@ -312,7 +312,7 @@ public final class PrivateDnsZoneGroupsClientImpl implements PrivateDnsZoneGroup
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String privateEndpointName, String privateDnsZoneGroupName) {
-        return beginDeleteAsync(resourceGroupName, privateEndpointName, privateDnsZoneGroupName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, privateEndpointName, privateDnsZoneGroupName).getSyncPoller();
     }
 
     /**
@@ -330,7 +330,8 @@ public final class PrivateDnsZoneGroupsClientImpl implements PrivateDnsZoneGroup
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String privateEndpointName, String privateDnsZoneGroupName, Context context) {
-        return beginDeleteAsync(resourceGroupName, privateEndpointName, privateDnsZoneGroupName, context)
+        return this
+            .beginDeleteAsync(resourceGroupName, privateEndpointName, privateDnsZoneGroupName, context)
             .getSyncPoller();
     }
 
@@ -790,7 +791,8 @@ public final class PrivateDnsZoneGroupsClientImpl implements PrivateDnsZoneGroup
         String privateEndpointName,
         String privateDnsZoneGroupName,
         PrivateDnsZoneGroupInner parameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, privateEndpointName, privateDnsZoneGroupName, parameters)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, privateEndpointName, privateDnsZoneGroupName, parameters)
             .getSyncPoller();
     }
 
@@ -814,7 +816,8 @@ public final class PrivateDnsZoneGroupsClientImpl implements PrivateDnsZoneGroup
         String privateDnsZoneGroupName,
         PrivateDnsZoneGroupInner parameters,
         Context context) {
-        return beginCreateOrUpdateAsync(
+        return this
+            .beginCreateOrUpdateAsync(
                 resourceGroupName, privateEndpointName, privateDnsZoneGroupName, parameters, context)
             .getSyncPoller();
     }

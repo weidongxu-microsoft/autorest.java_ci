@@ -500,7 +500,7 @@ public final class ExpressRouteCrossConnectionPeeringsClientImpl implements Expr
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String crossConnectionName, String peeringName) {
-        return beginDeleteAsync(resourceGroupName, crossConnectionName, peeringName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, crossConnectionName, peeringName).getSyncPoller();
     }
 
     /**
@@ -518,7 +518,7 @@ public final class ExpressRouteCrossConnectionPeeringsClientImpl implements Expr
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String crossConnectionName, String peeringName, Context context) {
-        return beginDeleteAsync(resourceGroupName, crossConnectionName, peeringName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, crossConnectionName, peeringName, context).getSyncPoller();
     }
 
     /**
@@ -976,7 +976,8 @@ public final class ExpressRouteCrossConnectionPeeringsClientImpl implements Expr
             String crossConnectionName,
             String peeringName,
             ExpressRouteCrossConnectionPeeringInner peeringParameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, crossConnectionName, peeringName, peeringParameters)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, crossConnectionName, peeringName, peeringParameters)
             .getSyncPoller();
     }
 
@@ -1002,7 +1003,8 @@ public final class ExpressRouteCrossConnectionPeeringsClientImpl implements Expr
             String peeringName,
             ExpressRouteCrossConnectionPeeringInner peeringParameters,
             Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, crossConnectionName, peeringName, peeringParameters, context)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, crossConnectionName, peeringName, peeringParameters, context)
             .getSyncPoller();
     }
 

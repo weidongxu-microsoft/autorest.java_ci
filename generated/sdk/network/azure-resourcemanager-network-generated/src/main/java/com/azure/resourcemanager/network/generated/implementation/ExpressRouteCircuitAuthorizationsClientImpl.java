@@ -312,7 +312,7 @@ public final class ExpressRouteCircuitAuthorizationsClientImpl implements Expres
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String circuitName, String authorizationName) {
-        return beginDeleteAsync(resourceGroupName, circuitName, authorizationName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, circuitName, authorizationName).getSyncPoller();
     }
 
     /**
@@ -330,7 +330,7 @@ public final class ExpressRouteCircuitAuthorizationsClientImpl implements Expres
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String circuitName, String authorizationName, Context context) {
-        return beginDeleteAsync(resourceGroupName, circuitName, authorizationName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, circuitName, authorizationName, context).getSyncPoller();
     }
 
     /**
@@ -791,7 +791,8 @@ public final class ExpressRouteCircuitAuthorizationsClientImpl implements Expres
             String circuitName,
             String authorizationName,
             ExpressRouteCircuitAuthorizationInner authorizationParameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, circuitName, authorizationName, authorizationParameters)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, circuitName, authorizationName, authorizationParameters)
             .getSyncPoller();
     }
 
@@ -817,7 +818,8 @@ public final class ExpressRouteCircuitAuthorizationsClientImpl implements Expres
             String authorizationName,
             ExpressRouteCircuitAuthorizationInner authorizationParameters,
             Context context) {
-        return beginCreateOrUpdateAsync(
+        return this
+            .beginCreateOrUpdateAsync(
                 resourceGroupName, circuitName, authorizationName, authorizationParameters, context)
             .getSyncPoller();
     }

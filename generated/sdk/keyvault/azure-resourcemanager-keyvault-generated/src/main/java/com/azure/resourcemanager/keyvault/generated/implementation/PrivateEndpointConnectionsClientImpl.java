@@ -687,7 +687,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<PrivateEndpointConnectionInner>, PrivateEndpointConnectionInner> beginDelete(
         String resourceGroupName, String vaultName, String privateEndpointConnectionName) {
-        return beginDeleteAsync(resourceGroupName, vaultName, privateEndpointConnectionName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, vaultName, privateEndpointConnectionName).getSyncPoller();
     }
 
     /**
@@ -705,7 +705,9 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<PrivateEndpointConnectionInner>, PrivateEndpointConnectionInner> beginDelete(
         String resourceGroupName, String vaultName, String privateEndpointConnectionName, Context context) {
-        return beginDeleteAsync(resourceGroupName, vaultName, privateEndpointConnectionName, context).getSyncPoller();
+        return this
+            .beginDeleteAsync(resourceGroupName, vaultName, privateEndpointConnectionName, context)
+            .getSyncPoller();
     }
 
     /**

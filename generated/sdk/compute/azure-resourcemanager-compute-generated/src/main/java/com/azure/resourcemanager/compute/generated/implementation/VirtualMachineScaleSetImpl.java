@@ -163,6 +163,10 @@ public final class VirtualMachineScaleSetImpl
         return this.innerModel().timeCreated();
     }
 
+    public Boolean constrainedMaximumCapacity() {
+        return this.innerModel().constrainedMaximumCapacity();
+    }
+
     public Region region() {
         return Region.fromName(this.regionName());
     }
@@ -561,6 +565,11 @@ public final class VirtualMachineScaleSetImpl
 
     public VirtualMachineScaleSetImpl withPriorityMixPolicy(PriorityMixPolicy priorityMixPolicy) {
         this.innerModel().withPriorityMixPolicy(priorityMixPolicy);
+        return this;
+    }
+
+    public VirtualMachineScaleSetImpl withConstrainedMaximumCapacity(Boolean constrainedMaximumCapacity) {
+        this.innerModel().withConstrainedMaximumCapacity(constrainedMaximumCapacity);
         return this;
     }
 

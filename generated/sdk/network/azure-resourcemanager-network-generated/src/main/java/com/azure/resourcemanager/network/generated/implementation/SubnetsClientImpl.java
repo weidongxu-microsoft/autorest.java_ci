@@ -343,7 +343,7 @@ public final class SubnetsClientImpl implements SubnetsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String virtualNetworkName, String subnetName) {
-        return beginDeleteAsync(resourceGroupName, virtualNetworkName, subnetName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, virtualNetworkName, subnetName).getSyncPoller();
     }
 
     /**
@@ -361,7 +361,7 @@ public final class SubnetsClientImpl implements SubnetsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String virtualNetworkName, String subnetName, Context context) {
-        return beginDeleteAsync(resourceGroupName, virtualNetworkName, subnetName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, virtualNetworkName, subnetName, context).getSyncPoller();
     }
 
     /**
@@ -799,7 +799,8 @@ public final class SubnetsClientImpl implements SubnetsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<SubnetInner>, SubnetInner> beginCreateOrUpdate(
         String resourceGroupName, String virtualNetworkName, String subnetName, SubnetInner subnetParameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, virtualNetworkName, subnetName, subnetParameters)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, virtualNetworkName, subnetName, subnetParameters)
             .getSyncPoller();
     }
 
@@ -823,7 +824,8 @@ public final class SubnetsClientImpl implements SubnetsClient {
         String subnetName,
         SubnetInner subnetParameters,
         Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, virtualNetworkName, subnetName, subnetParameters, context)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, virtualNetworkName, subnetName, subnetParameters, context)
             .getSyncPoller();
     }
 
@@ -1128,7 +1130,8 @@ public final class SubnetsClientImpl implements SubnetsClient {
         String virtualNetworkName,
         String subnetName,
         PrepareNetworkPoliciesRequest prepareNetworkPoliciesRequestParameters) {
-        return beginPrepareNetworkPoliciesAsync(
+        return this
+            .beginPrepareNetworkPoliciesAsync(
                 resourceGroupName, virtualNetworkName, subnetName, prepareNetworkPoliciesRequestParameters)
             .getSyncPoller();
     }
@@ -1154,7 +1157,8 @@ public final class SubnetsClientImpl implements SubnetsClient {
         String subnetName,
         PrepareNetworkPoliciesRequest prepareNetworkPoliciesRequestParameters,
         Context context) {
-        return beginPrepareNetworkPoliciesAsync(
+        return this
+            .beginPrepareNetworkPoliciesAsync(
                 resourceGroupName, virtualNetworkName, subnetName, prepareNetworkPoliciesRequestParameters, context)
             .getSyncPoller();
     }
@@ -1473,7 +1477,8 @@ public final class SubnetsClientImpl implements SubnetsClient {
         String virtualNetworkName,
         String subnetName,
         UnprepareNetworkPoliciesRequest unprepareNetworkPoliciesRequestParameters) {
-        return beginUnprepareNetworkPoliciesAsync(
+        return this
+            .beginUnprepareNetworkPoliciesAsync(
                 resourceGroupName, virtualNetworkName, subnetName, unprepareNetworkPoliciesRequestParameters)
             .getSyncPoller();
     }
@@ -1499,7 +1504,8 @@ public final class SubnetsClientImpl implements SubnetsClient {
         String subnetName,
         UnprepareNetworkPoliciesRequest unprepareNetworkPoliciesRequestParameters,
         Context context) {
-        return beginUnprepareNetworkPoliciesAsync(
+        return this
+            .beginUnprepareNetworkPoliciesAsync(
                 resourceGroupName, virtualNetworkName, subnetName, unprepareNetworkPoliciesRequestParameters, context)
             .getSyncPoller();
     }

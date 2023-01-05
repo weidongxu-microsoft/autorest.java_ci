@@ -341,7 +341,7 @@ public final class DscpConfigurationsClientImpl implements DscpConfigurationsCli
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<DscpConfigurationInner>, DscpConfigurationInner> beginCreateOrUpdate(
         String resourceGroupName, String dscpConfigurationName, DscpConfigurationInner parameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, dscpConfigurationName, parameters).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, dscpConfigurationName, parameters).getSyncPoller();
     }
 
     /**
@@ -360,7 +360,9 @@ public final class DscpConfigurationsClientImpl implements DscpConfigurationsCli
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<DscpConfigurationInner>, DscpConfigurationInner> beginCreateOrUpdate(
         String resourceGroupName, String dscpConfigurationName, DscpConfigurationInner parameters, Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, dscpConfigurationName, parameters, context).getSyncPoller();
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, dscpConfigurationName, parameters, context)
+            .getSyncPoller();
     }
 
     /**
@@ -591,7 +593,7 @@ public final class DscpConfigurationsClientImpl implements DscpConfigurationsCli
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String dscpConfigurationName) {
-        return beginDeleteAsync(resourceGroupName, dscpConfigurationName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, dscpConfigurationName).getSyncPoller();
     }
 
     /**
@@ -608,7 +610,7 @@ public final class DscpConfigurationsClientImpl implements DscpConfigurationsCli
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String dscpConfigurationName, Context context) {
-        return beginDeleteAsync(resourceGroupName, dscpConfigurationName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, dscpConfigurationName, context).getSyncPoller();
     }
 
     /**

@@ -417,7 +417,7 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ManagedHsmInner>, ManagedHsmInner> beginCreateOrUpdate(
         String resourceGroupName, String name, ManagedHsmInner parameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, name, parameters).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, name, parameters).getSyncPoller();
     }
 
     /**
@@ -435,7 +435,7 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ManagedHsmInner>, ManagedHsmInner> beginCreateOrUpdate(
         String resourceGroupName, String name, ManagedHsmInner parameters, Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, name, parameters, context).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, name, parameters, context).getSyncPoller();
     }
 
     /**
@@ -683,7 +683,7 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ManagedHsmInner>, ManagedHsmInner> beginUpdate(
         String resourceGroupName, String name, ManagedHsmInner parameters) {
-        return beginUpdateAsync(resourceGroupName, name, parameters).getSyncPoller();
+        return this.beginUpdateAsync(resourceGroupName, name, parameters).getSyncPoller();
     }
 
     /**
@@ -701,7 +701,7 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ManagedHsmInner>, ManagedHsmInner> beginUpdate(
         String resourceGroupName, String name, ManagedHsmInner parameters, Context context) {
-        return beginUpdateAsync(resourceGroupName, name, parameters, context).getSyncPoller();
+        return this.beginUpdateAsync(resourceGroupName, name, parameters, context).getSyncPoller();
     }
 
     /**
@@ -920,7 +920,7 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String name) {
-        return beginDeleteAsync(resourceGroupName, name).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, name).getSyncPoller();
     }
 
     /**
@@ -936,7 +936,7 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String name, Context context) {
-        return beginDeleteAsync(resourceGroupName, name, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, name, context).getSyncPoller();
     }
 
     /**
@@ -1925,7 +1925,7 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginPurgeDeleted(String name, String location) {
-        return beginPurgeDeletedAsync(name, location).getSyncPoller();
+        return this.beginPurgeDeletedAsync(name, location).getSyncPoller();
     }
 
     /**
@@ -1941,7 +1941,7 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginPurgeDeleted(String name, String location, Context context) {
-        return beginPurgeDeletedAsync(name, location, context).getSyncPoller();
+        return this.beginPurgeDeletedAsync(name, location, context).getSyncPoller();
     }
 
     /**

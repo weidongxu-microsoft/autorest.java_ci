@@ -679,7 +679,8 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<StorageAccountInner>, StorageAccountInner> beginCreateOrUpdate(
         String deviceName, String storageAccountName, String resourceGroupName, StorageAccountInner storageAccount) {
-        return beginCreateOrUpdateAsync(deviceName, storageAccountName, resourceGroupName, storageAccount)
+        return this
+            .beginCreateOrUpdateAsync(deviceName, storageAccountName, resourceGroupName, storageAccount)
             .getSyncPoller();
     }
 
@@ -703,7 +704,8 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
         String resourceGroupName,
         StorageAccountInner storageAccount,
         Context context) {
-        return beginCreateOrUpdateAsync(deviceName, storageAccountName, resourceGroupName, storageAccount, context)
+        return this
+            .beginCreateOrUpdateAsync(deviceName, storageAccountName, resourceGroupName, storageAccount, context)
             .getSyncPoller();
     }
 
@@ -960,7 +962,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String deviceName, String storageAccountName, String resourceGroupName) {
-        return beginDeleteAsync(deviceName, storageAccountName, resourceGroupName).getSyncPoller();
+        return this.beginDeleteAsync(deviceName, storageAccountName, resourceGroupName).getSyncPoller();
     }
 
     /**
@@ -978,7 +980,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String deviceName, String storageAccountName, String resourceGroupName, Context context) {
-        return beginDeleteAsync(deviceName, storageAccountName, resourceGroupName, context).getSyncPoller();
+        return this.beginDeleteAsync(deviceName, storageAccountName, resourceGroupName, context).getSyncPoller();
     }
 
     /**

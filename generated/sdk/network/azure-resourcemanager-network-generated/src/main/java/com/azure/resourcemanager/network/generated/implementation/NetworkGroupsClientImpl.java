@@ -718,7 +718,7 @@ public final class NetworkGroupsClientImpl implements NetworkGroupsClient {
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String networkManagerName, String networkGroupName) {
         final Boolean force = null;
-        return beginDeleteAsync(resourceGroupName, networkManagerName, networkGroupName, force).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, networkManagerName, networkGroupName, force).getSyncPoller();
     }
 
     /**
@@ -738,7 +738,8 @@ public final class NetworkGroupsClientImpl implements NetworkGroupsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String networkManagerName, String networkGroupName, Boolean force, Context context) {
-        return beginDeleteAsync(resourceGroupName, networkManagerName, networkGroupName, force, context)
+        return this
+            .beginDeleteAsync(resourceGroupName, networkManagerName, networkGroupName, force, context)
             .getSyncPoller();
     }
 

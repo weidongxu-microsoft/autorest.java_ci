@@ -517,7 +517,7 @@ public final class SystemTopicsClientImpl implements SystemTopicsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<SystemTopicInner>, SystemTopicInner> beginCreateOrUpdate(
         String resourceGroupName, String systemTopicName, SystemTopicInner systemTopicInfo) {
-        return beginCreateOrUpdateAsync(resourceGroupName, systemTopicName, systemTopicInfo).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, systemTopicName, systemTopicInfo).getSyncPoller();
     }
 
     /**
@@ -537,7 +537,9 @@ public final class SystemTopicsClientImpl implements SystemTopicsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<SystemTopicInner>, SystemTopicInner> beginCreateOrUpdate(
         String resourceGroupName, String systemTopicName, SystemTopicInner systemTopicInfo, Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, systemTopicName, systemTopicInfo, context).getSyncPoller();
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, systemTopicName, systemTopicInfo, context)
+            .getSyncPoller();
     }
 
     /**
@@ -775,7 +777,7 @@ public final class SystemTopicsClientImpl implements SystemTopicsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String systemTopicName) {
-        return beginDeleteAsync(resourceGroupName, systemTopicName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, systemTopicName).getSyncPoller();
     }
 
     /**
@@ -794,7 +796,7 @@ public final class SystemTopicsClientImpl implements SystemTopicsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String systemTopicName, Context context) {
-        return beginDeleteAsync(resourceGroupName, systemTopicName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, systemTopicName, context).getSyncPoller();
     }
 
     /**
@@ -1065,7 +1067,7 @@ public final class SystemTopicsClientImpl implements SystemTopicsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<SystemTopicInner>, SystemTopicInner> beginUpdate(
         String resourceGroupName, String systemTopicName, SystemTopicUpdateParameters systemTopicUpdateParameters) {
-        return beginUpdateAsync(resourceGroupName, systemTopicName, systemTopicUpdateParameters).getSyncPoller();
+        return this.beginUpdateAsync(resourceGroupName, systemTopicName, systemTopicUpdateParameters).getSyncPoller();
     }
 
     /**
@@ -1088,7 +1090,8 @@ public final class SystemTopicsClientImpl implements SystemTopicsClient {
         String systemTopicName,
         SystemTopicUpdateParameters systemTopicUpdateParameters,
         Context context) {
-        return beginUpdateAsync(resourceGroupName, systemTopicName, systemTopicUpdateParameters, context)
+        return this
+            .beginUpdateAsync(resourceGroupName, systemTopicName, systemTopicUpdateParameters, context)
             .getSyncPoller();
     }
 

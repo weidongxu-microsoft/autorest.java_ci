@@ -30,6 +30,7 @@ import com.azure.resourcemanager.resourcegraph.generated.models.ResourceChangeDe
 import com.azure.resourcemanager.resourcegraph.generated.models.ResourceChangesRequestParameters;
 import com.azure.resourcemanager.resourcegraph.generated.models.ResourcesHistoryRequest;
 import java.util.List;
+import java.util.Map;
 import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in ResourceProvidersClient. */
@@ -73,7 +74,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
         @Post("/providers/Microsoft.ResourceGraph/resourcesHistory")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<Object>> resourcesHistory(
+        Mono<Response<Map<String, Object>>> resourcesHistory(
             @HostParam("$host") String endpoint,
             @QueryParam("api-version") String apiVersion,
             @BodyParam("application/json") ResourcesHistoryRequest request,
@@ -211,10 +212,10 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return any object along with {@link Response} on successful completion of {@link Mono}.
+     * @return dictionary of &lt;any&gt; along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Object>> resourcesHistoryWithResponseAsync(ResourcesHistoryRequest request) {
+    private Mono<Response<Map<String, Object>>> resourcesHistoryWithResponseAsync(ResourcesHistoryRequest request) {
         if (this.client.getEndpoint() == null) {
             return Mono
                 .error(
@@ -242,10 +243,11 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return any object along with {@link Response} on successful completion of {@link Mono}.
+     * @return dictionary of &lt;any&gt; along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Object>> resourcesHistoryWithResponseAsync(ResourcesHistoryRequest request, Context context) {
+    private Mono<Response<Map<String, Object>>> resourcesHistoryWithResponseAsync(
+        ResourcesHistoryRequest request, Context context) {
         if (this.client.getEndpoint() == null) {
             return Mono
                 .error(
@@ -270,10 +272,10 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return any object on successful completion of {@link Mono}.
+     * @return dictionary of &lt;any&gt; on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Object> resourcesHistoryAsync(ResourcesHistoryRequest request) {
+    private Mono<Map<String, Object>> resourcesHistoryAsync(ResourcesHistoryRequest request) {
         return resourcesHistoryWithResponseAsync(request).flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
@@ -285,10 +287,11 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return any object along with {@link Response}.
+     * @return dictionary of &lt;any&gt; along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Object> resourcesHistoryWithResponse(ResourcesHistoryRequest request, Context context) {
+    public Response<Map<String, Object>> resourcesHistoryWithResponse(
+        ResourcesHistoryRequest request, Context context) {
         return resourcesHistoryWithResponseAsync(request, context).block();
     }
 
@@ -299,10 +302,10 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return any object.
+     * @return dictionary of &lt;any&gt;.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public Object resourcesHistory(ResourcesHistoryRequest request) {
+    public Map<String, Object> resourcesHistory(ResourcesHistoryRequest request) {
         return resourcesHistoryWithResponse(request, Context.NONE).getValue();
     }
 

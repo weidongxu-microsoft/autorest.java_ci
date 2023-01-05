@@ -315,7 +315,7 @@ public final class VirtualNetworkPeeringsClientImpl implements VirtualNetworkPee
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String virtualNetworkName, String virtualNetworkPeeringName) {
-        return beginDeleteAsync(resourceGroupName, virtualNetworkName, virtualNetworkPeeringName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, virtualNetworkName, virtualNetworkPeeringName).getSyncPoller();
     }
 
     /**
@@ -333,7 +333,8 @@ public final class VirtualNetworkPeeringsClientImpl implements VirtualNetworkPee
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String virtualNetworkName, String virtualNetworkPeeringName, Context context) {
-        return beginDeleteAsync(resourceGroupName, virtualNetworkName, virtualNetworkPeeringName, context)
+        return this
+            .beginDeleteAsync(resourceGroupName, virtualNetworkName, virtualNetworkPeeringName, context)
             .getSyncPoller();
     }
 
@@ -870,7 +871,8 @@ public final class VirtualNetworkPeeringsClientImpl implements VirtualNetworkPee
         String virtualNetworkPeeringName,
         VirtualNetworkPeeringInner virtualNetworkPeeringParameters) {
         final SyncRemoteAddressSpace syncRemoteAddressSpace = null;
-        return beginCreateOrUpdateAsync(
+        return this
+            .beginCreateOrUpdateAsync(
                 resourceGroupName,
                 virtualNetworkName,
                 virtualNetworkPeeringName,
@@ -903,7 +905,8 @@ public final class VirtualNetworkPeeringsClientImpl implements VirtualNetworkPee
         VirtualNetworkPeeringInner virtualNetworkPeeringParameters,
         SyncRemoteAddressSpace syncRemoteAddressSpace,
         Context context) {
-        return beginCreateOrUpdateAsync(
+        return this
+            .beginCreateOrUpdateAsync(
                 resourceGroupName,
                 virtualNetworkName,
                 virtualNetworkPeeringName,

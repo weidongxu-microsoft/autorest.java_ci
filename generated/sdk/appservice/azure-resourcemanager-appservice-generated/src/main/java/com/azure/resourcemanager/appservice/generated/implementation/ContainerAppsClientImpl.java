@@ -803,7 +803,7 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ContainerAppInner>, ContainerAppInner> beginCreateOrUpdate(
         String resourceGroupName, String name, ContainerAppInner containerAppEnvelope) {
-        return beginCreateOrUpdateAsync(resourceGroupName, name, containerAppEnvelope).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, name, containerAppEnvelope).getSyncPoller();
     }
 
     /**
@@ -823,7 +823,7 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ContainerAppInner>, ContainerAppInner> beginCreateOrUpdate(
         String resourceGroupName, String name, ContainerAppInner containerAppEnvelope, Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, name, containerAppEnvelope, context).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, name, containerAppEnvelope, context).getSyncPoller();
     }
 
     /**
@@ -1063,7 +1063,7 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String name) {
-        return beginDeleteAsync(resourceGroupName, name).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, name).getSyncPoller();
     }
 
     /**
@@ -1081,7 +1081,7 @@ public final class ContainerAppsClientImpl implements ContainerAppsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String name, Context context) {
-        return beginDeleteAsync(resourceGroupName, name, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, name, context).getSyncPoller();
     }
 
     /**

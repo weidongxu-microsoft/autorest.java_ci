@@ -693,7 +693,9 @@ public final class ExperimentsClientImpl implements ExperimentsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ExperimentInner>, ExperimentInner> beginCreateOrUpdate(
         String resourceGroupName, String profileName, String experimentName, ExperimentInner parameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, profileName, experimentName, parameters).getSyncPoller();
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, profileName, experimentName, parameters)
+            .getSyncPoller();
     }
 
     /**
@@ -716,7 +718,8 @@ public final class ExperimentsClientImpl implements ExperimentsClient {
         String experimentName,
         ExperimentInner parameters,
         Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, profileName, experimentName, parameters, context)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, profileName, experimentName, parameters, context)
             .getSyncPoller();
     }
 
@@ -1013,7 +1016,7 @@ public final class ExperimentsClientImpl implements ExperimentsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ExperimentInner>, ExperimentInner> beginUpdate(
         String resourceGroupName, String profileName, String experimentName, ExperimentUpdateModel parameters) {
-        return beginUpdateAsync(resourceGroupName, profileName, experimentName, parameters).getSyncPoller();
+        return this.beginUpdateAsync(resourceGroupName, profileName, experimentName, parameters).getSyncPoller();
     }
 
     /**
@@ -1038,7 +1041,9 @@ public final class ExperimentsClientImpl implements ExperimentsClient {
         String experimentName,
         ExperimentUpdateModel parameters,
         Context context) {
-        return beginUpdateAsync(resourceGroupName, profileName, experimentName, parameters, context).getSyncPoller();
+        return this
+            .beginUpdateAsync(resourceGroupName, profileName, experimentName, parameters, context)
+            .getSyncPoller();
     }
 
     /**
@@ -1299,7 +1304,7 @@ public final class ExperimentsClientImpl implements ExperimentsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String profileName, String experimentName) {
-        return beginDeleteAsync(resourceGroupName, profileName, experimentName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, profileName, experimentName).getSyncPoller();
     }
 
     /**
@@ -1317,7 +1322,7 @@ public final class ExperimentsClientImpl implements ExperimentsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String profileName, String experimentName, Context context) {
-        return beginDeleteAsync(resourceGroupName, profileName, experimentName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, profileName, experimentName, context).getSyncPoller();
     }
 
     /**

@@ -486,7 +486,7 @@ public final class PrivateLinkScopedResourcesClientImpl implements PrivateLinkSc
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ScopedResourceInner>, ScopedResourceInner> beginCreateOrUpdate(
         String resourceGroupName, String scopeName, String name, ScopedResourceInner parameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, scopeName, name, parameters).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, scopeName, name, parameters).getSyncPoller();
     }
 
     /**
@@ -505,7 +505,7 @@ public final class PrivateLinkScopedResourcesClientImpl implements PrivateLinkSc
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ScopedResourceInner>, ScopedResourceInner> beginCreateOrUpdate(
         String resourceGroupName, String scopeName, String name, ScopedResourceInner parameters, Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, scopeName, name, parameters, context).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, scopeName, name, parameters, context).getSyncPoller();
     }
 
     /**
@@ -744,7 +744,7 @@ public final class PrivateLinkScopedResourcesClientImpl implements PrivateLinkSc
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String scopeName, String name) {
-        return beginDeleteAsync(resourceGroupName, scopeName, name).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, scopeName, name).getSyncPoller();
     }
 
     /**
@@ -762,7 +762,7 @@ public final class PrivateLinkScopedResourcesClientImpl implements PrivateLinkSc
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String scopeName, String name, Context context) {
-        return beginDeleteAsync(resourceGroupName, scopeName, name, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, scopeName, name, context).getSyncPoller();
     }
 
     /**

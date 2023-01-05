@@ -310,7 +310,7 @@ public final class SecurityRulesClientImpl implements SecurityRulesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String networkSecurityGroupName, String securityRuleName) {
-        return beginDeleteAsync(resourceGroupName, networkSecurityGroupName, securityRuleName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, networkSecurityGroupName, securityRuleName).getSyncPoller();
     }
 
     /**
@@ -328,7 +328,9 @@ public final class SecurityRulesClientImpl implements SecurityRulesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String networkSecurityGroupName, String securityRuleName, Context context) {
-        return beginDeleteAsync(resourceGroupName, networkSecurityGroupName, securityRuleName, context).getSyncPoller();
+        return this
+            .beginDeleteAsync(resourceGroupName, networkSecurityGroupName, securityRuleName, context)
+            .getSyncPoller();
     }
 
     /**
@@ -781,7 +783,8 @@ public final class SecurityRulesClientImpl implements SecurityRulesClient {
         String networkSecurityGroupName,
         String securityRuleName,
         SecurityRuleInner securityRuleParameters) {
-        return beginCreateOrUpdateAsync(
+        return this
+            .beginCreateOrUpdateAsync(
                 resourceGroupName, networkSecurityGroupName, securityRuleName, securityRuleParameters)
             .getSyncPoller();
     }
@@ -806,7 +809,8 @@ public final class SecurityRulesClientImpl implements SecurityRulesClient {
         String securityRuleName,
         SecurityRuleInner securityRuleParameters,
         Context context) {
-        return beginCreateOrUpdateAsync(
+        return this
+            .beginCreateOrUpdateAsync(
                 resourceGroupName, networkSecurityGroupName, securityRuleName, securityRuleParameters, context)
             .getSyncPoller();
     }

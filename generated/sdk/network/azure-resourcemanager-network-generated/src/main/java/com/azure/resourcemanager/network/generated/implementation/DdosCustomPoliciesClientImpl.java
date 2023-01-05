@@ -275,7 +275,7 @@ public final class DdosCustomPoliciesClientImpl implements DdosCustomPoliciesCli
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String ddosCustomPolicyName) {
-        return beginDeleteAsync(resourceGroupName, ddosCustomPolicyName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, ddosCustomPolicyName).getSyncPoller();
     }
 
     /**
@@ -292,7 +292,7 @@ public final class DdosCustomPoliciesClientImpl implements DdosCustomPoliciesCli
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String ddosCustomPolicyName, Context context) {
-        return beginDeleteAsync(resourceGroupName, ddosCustomPolicyName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, ddosCustomPolicyName, context).getSyncPoller();
     }
 
     /**
@@ -685,7 +685,7 @@ public final class DdosCustomPoliciesClientImpl implements DdosCustomPoliciesCli
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<DdosCustomPolicyInner>, DdosCustomPolicyInner> beginCreateOrUpdate(
         String resourceGroupName, String ddosCustomPolicyName, DdosCustomPolicyInner parameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, ddosCustomPolicyName, parameters).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, ddosCustomPolicyName, parameters).getSyncPoller();
     }
 
     /**
@@ -703,7 +703,9 @@ public final class DdosCustomPoliciesClientImpl implements DdosCustomPoliciesCli
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<DdosCustomPolicyInner>, DdosCustomPolicyInner> beginCreateOrUpdate(
         String resourceGroupName, String ddosCustomPolicyName, DdosCustomPolicyInner parameters, Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, ddosCustomPolicyName, parameters, context).getSyncPoller();
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, ddosCustomPolicyName, parameters, context)
+            .getSyncPoller();
     }
 
     /**

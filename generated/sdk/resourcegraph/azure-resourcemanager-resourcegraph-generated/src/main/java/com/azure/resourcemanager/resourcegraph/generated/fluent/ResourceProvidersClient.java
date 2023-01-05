@@ -16,6 +16,7 @@ import com.azure.resourcemanager.resourcegraph.generated.models.ResourceChangeDe
 import com.azure.resourcemanager.resourcegraph.generated.models.ResourceChangesRequestParameters;
 import com.azure.resourcemanager.resourcegraph.generated.models.ResourcesHistoryRequest;
 import java.util.List;
+import java.util.Map;
 
 /** An instance of this class provides access to all the operations defined in ResourceProvidersClient. */
 public interface ResourceProvidersClient {
@@ -52,10 +53,10 @@ public interface ResourceProvidersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return any object along with {@link Response}.
+     * @return dictionary of &lt;any&gt; along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<Object> resourcesHistoryWithResponse(ResourcesHistoryRequest request, Context context);
+    Response<Map<String, Object>> resourcesHistoryWithResponse(ResourcesHistoryRequest request, Context context);
 
     /**
      * List all snapshots of a resource for a given time interval.
@@ -64,10 +65,10 @@ public interface ResourceProvidersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return any object.
+     * @return dictionary of &lt;any&gt;.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Object resourcesHistory(ResourcesHistoryRequest request);
+    Map<String, Object> resourcesHistory(ResourcesHistoryRequest request);
 
     /**
      * List changes to a resource for a given time interval.

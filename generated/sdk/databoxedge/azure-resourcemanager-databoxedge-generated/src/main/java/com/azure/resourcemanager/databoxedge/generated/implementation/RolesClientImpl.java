@@ -655,7 +655,7 @@ public final class RolesClientImpl implements RolesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<RoleInner>, RoleInner> beginCreateOrUpdate(
         String deviceName, String name, String resourceGroupName, RoleInner role) {
-        return beginCreateOrUpdateAsync(deviceName, name, resourceGroupName, role).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(deviceName, name, resourceGroupName, role).getSyncPoller();
     }
 
     /**
@@ -674,7 +674,7 @@ public final class RolesClientImpl implements RolesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<RoleInner>, RoleInner> beginCreateOrUpdate(
         String deviceName, String name, String resourceGroupName, RoleInner role, Context context) {
-        return beginCreateOrUpdateAsync(deviceName, name, resourceGroupName, role, context).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(deviceName, name, resourceGroupName, role, context).getSyncPoller();
     }
 
     /**
@@ -914,7 +914,7 @@ public final class RolesClientImpl implements RolesClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String deviceName, String name, String resourceGroupName) {
-        return beginDeleteAsync(deviceName, name, resourceGroupName).getSyncPoller();
+        return this.beginDeleteAsync(deviceName, name, resourceGroupName).getSyncPoller();
     }
 
     /**
@@ -932,7 +932,7 @@ public final class RolesClientImpl implements RolesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String deviceName, String name, String resourceGroupName, Context context) {
-        return beginDeleteAsync(deviceName, name, resourceGroupName, context).getSyncPoller();
+        return this.beginDeleteAsync(deviceName, name, resourceGroupName, context).getSyncPoller();
     }
 
     /**

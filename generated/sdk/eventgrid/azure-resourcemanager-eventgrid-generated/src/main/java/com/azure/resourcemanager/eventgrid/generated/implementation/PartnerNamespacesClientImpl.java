@@ -557,7 +557,9 @@ public final class PartnerNamespacesClientImpl implements PartnerNamespacesClien
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<PartnerNamespaceInner>, PartnerNamespaceInner> beginCreateOrUpdate(
         String resourceGroupName, String partnerNamespaceName, PartnerNamespaceInner partnerNamespaceInfo) {
-        return beginCreateOrUpdateAsync(resourceGroupName, partnerNamespaceName, partnerNamespaceInfo).getSyncPoller();
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, partnerNamespaceName, partnerNamespaceInfo)
+            .getSyncPoller();
     }
 
     /**
@@ -580,7 +582,8 @@ public final class PartnerNamespacesClientImpl implements PartnerNamespacesClien
         String partnerNamespaceName,
         PartnerNamespaceInner partnerNamespaceInfo,
         Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, partnerNamespaceName, partnerNamespaceInfo, context)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, partnerNamespaceName, partnerNamespaceInfo, context)
             .getSyncPoller();
     }
 
@@ -827,7 +830,7 @@ public final class PartnerNamespacesClientImpl implements PartnerNamespacesClien
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String partnerNamespaceName) {
-        return beginDeleteAsync(resourceGroupName, partnerNamespaceName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, partnerNamespaceName).getSyncPoller();
     }
 
     /**
@@ -846,7 +849,7 @@ public final class PartnerNamespacesClientImpl implements PartnerNamespacesClien
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String partnerNamespaceName, Context context) {
-        return beginDeleteAsync(resourceGroupName, partnerNamespaceName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, partnerNamespaceName, context).getSyncPoller();
     }
 
     /**
@@ -1123,7 +1126,8 @@ public final class PartnerNamespacesClientImpl implements PartnerNamespacesClien
         String resourceGroupName,
         String partnerNamespaceName,
         PartnerNamespaceUpdateParameters partnerNamespaceUpdateParameters) {
-        return beginUpdateAsync(resourceGroupName, partnerNamespaceName, partnerNamespaceUpdateParameters)
+        return this
+            .beginUpdateAsync(resourceGroupName, partnerNamespaceName, partnerNamespaceUpdateParameters)
             .getSyncPoller();
     }
 
@@ -1147,7 +1151,8 @@ public final class PartnerNamespacesClientImpl implements PartnerNamespacesClien
         String partnerNamespaceName,
         PartnerNamespaceUpdateParameters partnerNamespaceUpdateParameters,
         Context context) {
-        return beginUpdateAsync(resourceGroupName, partnerNamespaceName, partnerNamespaceUpdateParameters, context)
+        return this
+            .beginUpdateAsync(resourceGroupName, partnerNamespaceName, partnerNamespaceUpdateParameters, context)
             .getSyncPoller();
     }
 

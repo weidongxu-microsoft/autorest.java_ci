@@ -356,7 +356,7 @@ public final class GalleriesClientImpl implements GalleriesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<GalleryInner>, GalleryInner> beginCreateOrUpdate(
         String resourceGroupName, String galleryName, GalleryInner gallery) {
-        return beginCreateOrUpdateAsync(resourceGroupName, galleryName, gallery).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, galleryName, gallery).getSyncPoller();
     }
 
     /**
@@ -376,7 +376,7 @@ public final class GalleriesClientImpl implements GalleriesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<GalleryInner>, GalleryInner> beginCreateOrUpdate(
         String resourceGroupName, String galleryName, GalleryInner gallery, Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, galleryName, gallery, context).getSyncPoller();
+        return this.beginCreateOrUpdateAsync(resourceGroupName, galleryName, gallery, context).getSyncPoller();
     }
 
     /**
@@ -636,7 +636,7 @@ public final class GalleriesClientImpl implements GalleriesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<GalleryInner>, GalleryInner> beginUpdate(
         String resourceGroupName, String galleryName, GalleryUpdate gallery) {
-        return beginUpdateAsync(resourceGroupName, galleryName, gallery).getSyncPoller();
+        return this.beginUpdateAsync(resourceGroupName, galleryName, gallery).getSyncPoller();
     }
 
     /**
@@ -656,7 +656,7 @@ public final class GalleriesClientImpl implements GalleriesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<GalleryInner>, GalleryInner> beginUpdate(
         String resourceGroupName, String galleryName, GalleryUpdate gallery, Context context) {
-        return beginUpdateAsync(resourceGroupName, galleryName, gallery, context).getSyncPoller();
+        return this.beginUpdateAsync(resourceGroupName, galleryName, gallery, context).getSyncPoller();
     }
 
     /**
@@ -1053,7 +1053,7 @@ public final class GalleriesClientImpl implements GalleriesClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String galleryName) {
-        return beginDeleteAsync(resourceGroupName, galleryName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, galleryName).getSyncPoller();
     }
 
     /**
@@ -1070,7 +1070,7 @@ public final class GalleriesClientImpl implements GalleriesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String galleryName, Context context) {
-        return beginDeleteAsync(resourceGroupName, galleryName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, galleryName, context).getSyncPoller();
     }
 
     /**

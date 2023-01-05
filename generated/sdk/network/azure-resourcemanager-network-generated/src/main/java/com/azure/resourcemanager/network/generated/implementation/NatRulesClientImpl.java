@@ -496,7 +496,9 @@ public final class NatRulesClientImpl implements NatRulesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<VpnGatewayNatRuleInner>, VpnGatewayNatRuleInner> beginCreateOrUpdate(
         String resourceGroupName, String gatewayName, String natRuleName, VpnGatewayNatRuleInner natRuleParameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, gatewayName, natRuleName, natRuleParameters).getSyncPoller();
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, gatewayName, natRuleName, natRuleParameters)
+            .getSyncPoller();
     }
 
     /**
@@ -519,7 +521,8 @@ public final class NatRulesClientImpl implements NatRulesClient {
         String natRuleName,
         VpnGatewayNatRuleInner natRuleParameters,
         Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, gatewayName, natRuleName, natRuleParameters, context)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, gatewayName, natRuleName, natRuleParameters, context)
             .getSyncPoller();
     }
 
@@ -773,7 +776,7 @@ public final class NatRulesClientImpl implements NatRulesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String gatewayName, String natRuleName) {
-        return beginDeleteAsync(resourceGroupName, gatewayName, natRuleName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, gatewayName, natRuleName).getSyncPoller();
     }
 
     /**
@@ -791,7 +794,7 @@ public final class NatRulesClientImpl implements NatRulesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String gatewayName, String natRuleName, Context context) {
-        return beginDeleteAsync(resourceGroupName, gatewayName, natRuleName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, gatewayName, natRuleName, context).getSyncPoller();
     }
 
     /**

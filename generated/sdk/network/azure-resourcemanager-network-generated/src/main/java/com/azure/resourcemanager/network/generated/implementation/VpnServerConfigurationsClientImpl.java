@@ -530,7 +530,8 @@ public final class VpnServerConfigurationsClientImpl implements VpnServerConfigu
         String resourceGroupName,
         String vpnServerConfigurationName,
         VpnServerConfigurationInner vpnServerConfigurationParameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, vpnServerConfigurationName, vpnServerConfigurationParameters)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, vpnServerConfigurationName, vpnServerConfigurationParameters)
             .getSyncPoller();
     }
 
@@ -552,7 +553,8 @@ public final class VpnServerConfigurationsClientImpl implements VpnServerConfigu
         String vpnServerConfigurationName,
         VpnServerConfigurationInner vpnServerConfigurationParameters,
         Context context) {
-        return beginCreateOrUpdateAsync(
+        return this
+            .beginCreateOrUpdateAsync(
                 resourceGroupName, vpnServerConfigurationName, vpnServerConfigurationParameters, context)
             .getSyncPoller();
     }
@@ -987,7 +989,7 @@ public final class VpnServerConfigurationsClientImpl implements VpnServerConfigu
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String vpnServerConfigurationName) {
-        return beginDeleteAsync(resourceGroupName, vpnServerConfigurationName).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, vpnServerConfigurationName).getSyncPoller();
     }
 
     /**
@@ -1004,7 +1006,7 @@ public final class VpnServerConfigurationsClientImpl implements VpnServerConfigu
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
         String resourceGroupName, String vpnServerConfigurationName, Context context) {
-        return beginDeleteAsync(resourceGroupName, vpnServerConfigurationName, context).getSyncPoller();
+        return this.beginDeleteAsync(resourceGroupName, vpnServerConfigurationName, context).getSyncPoller();
     }
 
     /**

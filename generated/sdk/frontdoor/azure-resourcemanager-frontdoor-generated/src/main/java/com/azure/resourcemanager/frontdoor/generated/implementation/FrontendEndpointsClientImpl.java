@@ -693,7 +693,8 @@ public final class FrontendEndpointsClientImpl implements FrontendEndpointsClien
         String frontDoorName,
         String frontendEndpointName,
         CustomHttpsConfiguration customHttpsConfiguration) {
-        return beginEnableHttpsAsync(resourceGroupName, frontDoorName, frontendEndpointName, customHttpsConfiguration)
+        return this
+            .beginEnableHttpsAsync(resourceGroupName, frontDoorName, frontendEndpointName, customHttpsConfiguration)
             .getSyncPoller();
     }
 
@@ -717,7 +718,8 @@ public final class FrontendEndpointsClientImpl implements FrontendEndpointsClien
         String frontendEndpointName,
         CustomHttpsConfiguration customHttpsConfiguration,
         Context context) {
-        return beginEnableHttpsAsync(
+        return this
+            .beginEnableHttpsAsync(
                 resourceGroupName, frontDoorName, frontendEndpointName, customHttpsConfiguration, context)
             .getSyncPoller();
     }
@@ -981,7 +983,7 @@ public final class FrontendEndpointsClientImpl implements FrontendEndpointsClien
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDisableHttps(
         String resourceGroupName, String frontDoorName, String frontendEndpointName) {
-        return beginDisableHttpsAsync(resourceGroupName, frontDoorName, frontendEndpointName).getSyncPoller();
+        return this.beginDisableHttpsAsync(resourceGroupName, frontDoorName, frontendEndpointName).getSyncPoller();
     }
 
     /**
@@ -999,7 +1001,9 @@ public final class FrontendEndpointsClientImpl implements FrontendEndpointsClien
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<Void>, Void> beginDisableHttps(
         String resourceGroupName, String frontDoorName, String frontendEndpointName, Context context) {
-        return beginDisableHttpsAsync(resourceGroupName, frontDoorName, frontendEndpointName, context).getSyncPoller();
+        return this
+            .beginDisableHttpsAsync(resourceGroupName, frontDoorName, frontendEndpointName, context)
+            .getSyncPoller();
     }
 
     /**

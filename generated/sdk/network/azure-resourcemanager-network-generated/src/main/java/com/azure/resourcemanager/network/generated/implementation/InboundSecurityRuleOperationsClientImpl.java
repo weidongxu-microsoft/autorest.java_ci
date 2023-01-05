@@ -302,7 +302,8 @@ public final class InboundSecurityRuleOperationsClientImpl implements InboundSec
         String networkVirtualApplianceName,
         String ruleCollectionName,
         InboundSecurityRuleInner parameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, networkVirtualApplianceName, ruleCollectionName, parameters)
+        return this
+            .beginCreateOrUpdateAsync(resourceGroupName, networkVirtualApplianceName, ruleCollectionName, parameters)
             .getSyncPoller();
     }
 
@@ -327,7 +328,8 @@ public final class InboundSecurityRuleOperationsClientImpl implements InboundSec
         String ruleCollectionName,
         InboundSecurityRuleInner parameters,
         Context context) {
-        return beginCreateOrUpdateAsync(
+        return this
+            .beginCreateOrUpdateAsync(
                 resourceGroupName, networkVirtualApplianceName, ruleCollectionName, parameters, context)
             .getSyncPoller();
     }
