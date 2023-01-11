@@ -28,6 +28,15 @@ public final class ManagedRuleExclusionMatchVariable extends ExpandableStringEnu
         fromString("RequestBodyJsonArgNames");
 
     /**
+     * Creates a new instance of ManagedRuleExclusionMatchVariable value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public ManagedRuleExclusionMatchVariable() {
+    }
+
+    /**
      * Creates or finds a ManagedRuleExclusionMatchVariable from its string representation.
      *
      * @param name a name to look for.

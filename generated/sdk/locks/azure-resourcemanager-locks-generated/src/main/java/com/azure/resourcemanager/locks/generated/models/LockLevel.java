@@ -24,6 +24,15 @@ public final class LockLevel extends ExpandableStringEnum<LockLevel> {
     public static final LockLevel READ_ONLY = fromString("ReadOnly");
 
     /**
+     * Creates a new instance of LockLevel value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public LockLevel() {
+    }
+
+    /**
      * Creates or finds a LockLevel from its string representation.
      *
      * @param name a name to look for.

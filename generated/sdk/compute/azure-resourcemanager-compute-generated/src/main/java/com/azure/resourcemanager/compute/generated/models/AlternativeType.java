@@ -20,6 +20,15 @@ public final class AlternativeType extends ExpandableStringEnum<AlternativeType>
     public static final AlternativeType PLAN = fromString("Plan");
 
     /**
+     * Creates a new instance of AlternativeType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public AlternativeType() {
+    }
+
+    /**
      * Creates or finds a AlternativeType from its string representation.
      *
      * @param name a name to look for.

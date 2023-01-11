@@ -20,6 +20,15 @@ public final class LookBackPeriod extends ExpandableStringEnum<LookBackPeriod> {
     public static final LookBackPeriod LAST60DAYS = fromString("Last60Days");
 
     /**
+     * Creates a new instance of LookBackPeriod value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public LookBackPeriod() {
+    }
+
+    /**
      * Creates or finds a LookBackPeriod from its string representation.
      *
      * @param name a name to look for.

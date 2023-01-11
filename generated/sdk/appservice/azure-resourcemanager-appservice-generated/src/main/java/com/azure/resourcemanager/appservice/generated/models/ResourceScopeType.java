@@ -20,6 +20,15 @@ public final class ResourceScopeType extends ExpandableStringEnum<ResourceScopeT
     public static final ResourceScopeType WEB_SITE = fromString("WebSite");
 
     /**
+     * Creates a new instance of ResourceScopeType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public ResourceScopeType() {
+    }
+
+    /**
      * Creates or finds a ResourceScopeType from its string representation.
      *
      * @param name a name to look for.

@@ -14,6 +14,15 @@ public final class ApplicationGroupPolicyType extends ExpandableStringEnum<Appli
     public static final ApplicationGroupPolicyType THROTTLING_POLICY = fromString("ThrottlingPolicy");
 
     /**
+     * Creates a new instance of ApplicationGroupPolicyType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public ApplicationGroupPolicyType() {
+    }
+
+    /**
      * Creates or finds a ApplicationGroupPolicyType from its string representation.
      *
      * @param name a name to look for.

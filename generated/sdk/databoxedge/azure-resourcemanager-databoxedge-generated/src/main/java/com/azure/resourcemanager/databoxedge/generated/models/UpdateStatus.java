@@ -26,6 +26,15 @@ public final class UpdateStatus extends ExpandableStringEnum<UpdateStatus> {
     public static final UpdateStatus INSTALL_COMPLETED = fromString("InstallCompleted");
 
     /**
+     * Creates a new instance of UpdateStatus value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public UpdateStatus() {
+    }
+
+    /**
      * Creates or finds a UpdateStatus from its string representation.
      *
      * @param name a name to look for.

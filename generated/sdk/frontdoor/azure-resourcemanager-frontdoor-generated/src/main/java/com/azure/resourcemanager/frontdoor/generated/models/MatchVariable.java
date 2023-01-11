@@ -38,6 +38,15 @@ public final class MatchVariable extends ExpandableStringEnum<MatchVariable> {
     public static final MatchVariable SOCKET_ADDR = fromString("SocketAddr");
 
     /**
+     * Creates a new instance of MatchVariable value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public MatchVariable() {
+    }
+
+    /**
      * Creates or finds a MatchVariable from its string representation.
      *
      * @param name a name to look for.

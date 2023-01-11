@@ -17,6 +17,15 @@ public final class SharedTypeKind extends ExpandableStringEnum<SharedTypeKind> {
     public static final SharedTypeKind SHARED = fromString("shared");
 
     /**
+     * Creates a new instance of SharedTypeKind value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public SharedTypeKind() {
+    }
+
+    /**
      * Creates or finds a SharedTypeKind from its string representation.
      *
      * @param name a name to look for.

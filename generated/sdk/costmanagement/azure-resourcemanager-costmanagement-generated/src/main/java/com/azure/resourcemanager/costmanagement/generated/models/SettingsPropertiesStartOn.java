@@ -20,6 +20,15 @@ public final class SettingsPropertiesStartOn extends ExpandableStringEnum<Settin
     public static final SettingsPropertiesStartOn SPECIFIC_SCOPE = fromString("SpecificScope");
 
     /**
+     * Creates a new instance of SettingsPropertiesStartOn value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public SettingsPropertiesStartOn() {
+    }
+
+    /**
      * Creates or finds a SettingsPropertiesStartOn from its string representation.
      *
      * @param name a name to look for.

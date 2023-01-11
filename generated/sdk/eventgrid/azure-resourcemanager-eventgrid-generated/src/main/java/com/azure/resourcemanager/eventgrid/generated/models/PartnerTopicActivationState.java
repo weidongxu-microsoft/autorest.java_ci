@@ -20,6 +20,15 @@ public final class PartnerTopicActivationState extends ExpandableStringEnum<Part
     public static final PartnerTopicActivationState DEACTIVATED = fromString("Deactivated");
 
     /**
+     * Creates a new instance of PartnerTopicActivationState value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public PartnerTopicActivationState() {
+    }
+
+    /**
      * Creates or finds a PartnerTopicActivationState from its string representation.
      *
      * @param name a name to look for.

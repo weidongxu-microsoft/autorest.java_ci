@@ -20,6 +20,15 @@ public final class EventSubscriptionIdentityType extends ExpandableStringEnum<Ev
     public static final EventSubscriptionIdentityType USER_ASSIGNED = fromString("UserAssigned");
 
     /**
+     * Creates a new instance of EventSubscriptionIdentityType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public EventSubscriptionIdentityType() {
+    }
+
+    /**
      * Creates or finds a EventSubscriptionIdentityType from its string representation.
      *
      * @param name a name to look for.

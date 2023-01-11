@@ -115,6 +115,15 @@ public final class DataSourceKind extends ExpandableStringEnum<DataSourceKind> {
     public static final DataSourceKind SQL_DATA_CLASSIFICATION = fromString("SqlDataClassification");
 
     /**
+     * Creates a new instance of DataSourceKind value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public DataSourceKind() {
+    }
+
+    /**
      * Creates or finds a DataSourceKind from its string representation.
      *
      * @param name a name to look for.

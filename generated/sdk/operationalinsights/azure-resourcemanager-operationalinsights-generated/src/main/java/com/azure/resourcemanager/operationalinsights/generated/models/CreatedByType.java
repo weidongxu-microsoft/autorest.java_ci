@@ -23,6 +23,15 @@ public final class CreatedByType extends ExpandableStringEnum<CreatedByType> {
     public static final CreatedByType KEY = fromString("Key");
 
     /**
+     * Creates a new instance of CreatedByType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public CreatedByType() {
+    }
+
+    /**
      * Creates or finds a CreatedByType from its string representation.
      *
      * @param name a name to look for.

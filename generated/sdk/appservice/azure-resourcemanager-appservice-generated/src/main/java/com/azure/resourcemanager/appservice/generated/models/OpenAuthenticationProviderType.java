@@ -14,6 +14,15 @@ public final class OpenAuthenticationProviderType extends ExpandableStringEnum<O
     public static final OpenAuthenticationProviderType AAD = fromString("AAD");
 
     /**
+     * Creates a new instance of OpenAuthenticationProviderType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public OpenAuthenticationProviderType() {
+    }
+
+    /**
      * Creates or finds a OpenAuthenticationProviderType from its string representation.
      *
      * @param name a name to look for.

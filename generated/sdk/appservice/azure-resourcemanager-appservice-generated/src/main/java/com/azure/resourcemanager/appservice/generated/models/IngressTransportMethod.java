@@ -20,6 +20,15 @@ public final class IngressTransportMethod extends ExpandableStringEnum<IngressTr
     public static final IngressTransportMethod HTTP2 = fromString("http2");
 
     /**
+     * Creates a new instance of IngressTransportMethod value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public IngressTransportMethod() {
+    }
+
+    /**
      * Creates or finds a IngressTransportMethod from its string representation.
      *
      * @param name a name to look for.

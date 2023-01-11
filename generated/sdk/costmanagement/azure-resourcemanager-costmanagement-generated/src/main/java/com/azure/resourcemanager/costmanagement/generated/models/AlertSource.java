@@ -17,6 +17,15 @@ public final class AlertSource extends ExpandableStringEnum<AlertSource> {
     public static final AlertSource USER = fromString("User");
 
     /**
+     * Creates a new instance of AlertSource value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public AlertSource() {
+    }
+
+    /**
      * Creates or finds a AlertSource from its string representation.
      *
      * @param name a name to look for.

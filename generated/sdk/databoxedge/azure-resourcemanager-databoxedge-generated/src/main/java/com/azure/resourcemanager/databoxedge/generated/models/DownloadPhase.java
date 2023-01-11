@@ -23,6 +23,15 @@ public final class DownloadPhase extends ExpandableStringEnum<DownloadPhase> {
     public static final DownloadPhase VERIFYING = fromString("Verifying");
 
     /**
+     * Creates a new instance of DownloadPhase value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public DownloadPhase() {
+    }
+
+    /**
      * Creates or finds a DownloadPhase from its string representation.
      *
      * @param name a name to look for.

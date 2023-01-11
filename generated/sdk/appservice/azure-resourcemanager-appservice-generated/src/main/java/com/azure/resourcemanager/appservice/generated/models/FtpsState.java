@@ -20,6 +20,15 @@ public final class FtpsState extends ExpandableStringEnum<FtpsState> {
     public static final FtpsState DISABLED = fromString("Disabled");
 
     /**
+     * Creates a new instance of FtpsState value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public FtpsState() {
+    }
+
+    /**
      * Creates or finds a FtpsState from its string representation.
      *
      * @param name a name to look for.

@@ -17,6 +17,15 @@ public final class UpgradeAvailability extends ExpandableStringEnum<UpgradeAvail
     public static final UpgradeAvailability READY = fromString("Ready");
 
     /**
+     * Creates a new instance of UpgradeAvailability value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public UpgradeAvailability() {
+    }
+
+    /**
      * Creates or finds a UpgradeAvailability from its string representation.
      *
      * @param name a name to look for.

@@ -17,6 +17,15 @@ public final class FrontDoorHealthProbeMethod extends ExpandableStringEnum<Front
     public static final FrontDoorHealthProbeMethod HEAD = fromString("HEAD");
 
     /**
+     * Creates a new instance of FrontDoorHealthProbeMethod value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public FrontDoorHealthProbeMethod() {
+    }
+
+    /**
      * Creates or finds a FrontDoorHealthProbeMethod from its string representation.
      *
      * @param name a name to look for.

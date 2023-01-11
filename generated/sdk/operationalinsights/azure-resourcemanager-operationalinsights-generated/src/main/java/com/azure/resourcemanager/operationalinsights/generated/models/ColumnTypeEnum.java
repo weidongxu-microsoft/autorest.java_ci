@@ -35,6 +35,15 @@ public final class ColumnTypeEnum extends ExpandableStringEnum<ColumnTypeEnum> {
     public static final ColumnTypeEnum DYNAMIC = fromString("dynamic");
 
     /**
+     * Creates a new instance of ColumnTypeEnum value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public ColumnTypeEnum() {
+    }
+
+    /**
      * Creates or finds a ColumnTypeEnum from its string representation.
      *
      * @param name a name to look for.

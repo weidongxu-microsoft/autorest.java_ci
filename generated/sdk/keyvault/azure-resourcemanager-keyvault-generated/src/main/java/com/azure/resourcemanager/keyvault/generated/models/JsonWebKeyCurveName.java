@@ -23,6 +23,15 @@ public final class JsonWebKeyCurveName extends ExpandableStringEnum<JsonWebKeyCu
     public static final JsonWebKeyCurveName P_256K = fromString("P-256K");
 
     /**
+     * Creates a new instance of JsonWebKeyCurveName value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public JsonWebKeyCurveName() {
+    }
+
+    /**
      * Creates or finds a JsonWebKeyCurveName from its string representation.
      *
      * @param name a name to look for.

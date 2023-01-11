@@ -32,6 +32,15 @@ public final class AlertTimeGrainType extends ExpandableStringEnum<AlertTimeGrai
     public static final AlertTimeGrainType BILLING_ANNUAL = fromString("BillingAnnual");
 
     /**
+     * Creates a new instance of AlertTimeGrainType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public AlertTimeGrainType() {
+    }
+
+    /**
      * Creates or finds a AlertTimeGrainType from its string representation.
      *
      * @param name a name to look for.

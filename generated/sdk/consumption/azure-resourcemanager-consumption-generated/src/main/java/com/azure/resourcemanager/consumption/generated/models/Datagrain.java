@@ -17,6 +17,15 @@ public final class Datagrain extends ExpandableStringEnum<Datagrain> {
     public static final Datagrain MONTHLY = fromString("monthly");
 
     /**
+     * Creates a new instance of Datagrain value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public Datagrain() {
+    }
+
+    /**
      * Creates or finds a Datagrain from its string representation.
      *
      * @param name a name to look for.

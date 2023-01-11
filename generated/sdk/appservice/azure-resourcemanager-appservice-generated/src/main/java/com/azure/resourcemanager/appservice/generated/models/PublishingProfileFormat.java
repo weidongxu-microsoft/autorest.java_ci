@@ -20,6 +20,15 @@ public final class PublishingProfileFormat extends ExpandableStringEnum<Publishi
     public static final PublishingProfileFormat FTP = fromString("Ftp");
 
     /**
+     * Creates a new instance of PublishingProfileFormat value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public PublishingProfileFormat() {
+    }
+
+    /**
      * Creates or finds a PublishingProfileFormat from its string representation.
      *
      * @param name a name to look for.

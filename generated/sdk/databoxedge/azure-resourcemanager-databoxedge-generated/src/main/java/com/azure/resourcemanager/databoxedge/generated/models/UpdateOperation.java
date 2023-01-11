@@ -23,6 +23,15 @@ public final class UpdateOperation extends ExpandableStringEnum<UpdateOperation>
     public static final UpdateOperation INSTALL = fromString("Install");
 
     /**
+     * Creates a new instance of UpdateOperation value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public UpdateOperation() {
+    }
+
+    /**
      * Creates or finds a UpdateOperation from its string representation.
      *
      * @param name a name to look for.

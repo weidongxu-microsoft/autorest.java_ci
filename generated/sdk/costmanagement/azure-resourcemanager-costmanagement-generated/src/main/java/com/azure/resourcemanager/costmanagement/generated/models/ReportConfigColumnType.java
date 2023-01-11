@@ -17,6 +17,15 @@ public final class ReportConfigColumnType extends ExpandableStringEnum<ReportCon
     public static final ReportConfigColumnType DIMENSION = fromString("Dimension");
 
     /**
+     * Creates a new instance of ReportConfigColumnType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public ReportConfigColumnType() {
+    }
+
+    /**
      * Creates or finds a ReportConfigColumnType from its string representation.
      *
      * @param name a name to look for.

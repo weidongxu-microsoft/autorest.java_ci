@@ -17,6 +17,15 @@ public final class FrontDoorEnabledState extends ExpandableStringEnum<FrontDoorE
     public static final FrontDoorEnabledState DISABLED = fromString("Disabled");
 
     /**
+     * Creates a new instance of FrontDoorEnabledState value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public FrontDoorEnabledState() {
+    }
+
+    /**
      * Creates or finds a FrontDoorEnabledState from its string representation.
      *
      * @param name a name to look for.

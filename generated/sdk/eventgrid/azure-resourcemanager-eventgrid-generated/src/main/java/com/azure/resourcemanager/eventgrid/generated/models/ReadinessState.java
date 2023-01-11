@@ -17,6 +17,15 @@ public final class ReadinessState extends ExpandableStringEnum<ReadinessState> {
     public static final ReadinessState ACTIVATED = fromString("Activated");
 
     /**
+     * Creates a new instance of ReadinessState value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public ReadinessState() {
+    }
+
+    /**
      * Creates or finds a ReadinessState from its string representation.
      *
      * @param name a name to look for.

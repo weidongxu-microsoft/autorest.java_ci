@@ -50,6 +50,15 @@ public final class WorkflowStatus extends ExpandableStringEnum<WorkflowStatus> {
     public static final WorkflowStatus IGNORED = fromString("Ignored");
 
     /**
+     * Creates a new instance of WorkflowStatus value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public WorkflowStatus() {
+    }
+
+    /**
      * Creates or finds a WorkflowStatus from its string representation.
      *
      * @param name a name to look for.

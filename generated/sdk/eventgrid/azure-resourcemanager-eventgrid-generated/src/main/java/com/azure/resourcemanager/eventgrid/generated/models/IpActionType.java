@@ -14,6 +14,15 @@ public final class IpActionType extends ExpandableStringEnum<IpActionType> {
     public static final IpActionType ALLOW = fromString("Allow");
 
     /**
+     * Creates a new instance of IpActionType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public IpActionType() {
+    }
+
+    /**
      * Creates or finds a IpActionType from its string representation.
      *
      * @param name a name to look for.

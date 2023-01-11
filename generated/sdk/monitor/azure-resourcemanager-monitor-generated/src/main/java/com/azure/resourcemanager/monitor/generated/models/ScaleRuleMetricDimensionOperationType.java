@@ -21,6 +21,15 @@ public final class ScaleRuleMetricDimensionOperationType
     public static final ScaleRuleMetricDimensionOperationType NOT_EQUALS = fromString("NotEquals");
 
     /**
+     * Creates a new instance of ScaleRuleMetricDimensionOperationType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public ScaleRuleMetricDimensionOperationType() {
+    }
+
+    /**
      * Creates or finds a ScaleRuleMetricDimensionOperationType from its string representation.
      *
      * @param name a name to look for.

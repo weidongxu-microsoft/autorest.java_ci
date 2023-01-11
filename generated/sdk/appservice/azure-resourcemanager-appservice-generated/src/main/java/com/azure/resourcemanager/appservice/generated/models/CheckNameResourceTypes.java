@@ -37,6 +37,15 @@ public final class CheckNameResourceTypes extends ExpandableStringEnum<CheckName
         fromString("Microsoft.Web/publishingUsers");
 
     /**
+     * Creates a new instance of CheckNameResourceTypes value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public CheckNameResourceTypes() {
+    }
+
+    /**
      * Creates or finds a CheckNameResourceTypes from its string representation.
      *
      * @param name a name to look for.

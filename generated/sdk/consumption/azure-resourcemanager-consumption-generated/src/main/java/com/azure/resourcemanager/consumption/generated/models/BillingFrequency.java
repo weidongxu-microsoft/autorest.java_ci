@@ -20,6 +20,15 @@ public final class BillingFrequency extends ExpandableStringEnum<BillingFrequenc
     public static final BillingFrequency YEAR = fromString("Year");
 
     /**
+     * Creates a new instance of BillingFrequency value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public BillingFrequency() {
+    }
+
+    /**
      * Creates or finds a BillingFrequency from its string representation.
      *
      * @param name a name to look for.

@@ -17,6 +17,15 @@ public final class TriggerEventType extends ExpandableStringEnum<TriggerEventTyp
     public static final TriggerEventType PERIODIC_TIMER_EVENT = fromString("PeriodicTimerEvent");
 
     /**
+     * Creates a new instance of TriggerEventType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public TriggerEventType() {
+    }
+
+    /**
      * Creates or finds a TriggerEventType from its string representation.
      *
      * @param name a name to look for.

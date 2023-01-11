@@ -17,6 +17,15 @@ public final class AddonType extends ExpandableStringEnum<AddonType> {
     public static final AddonType ARC_FOR_KUBERNETES = fromString("ArcForKubernetes");
 
     /**
+     * Creates a new instance of AddonType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public AddonType() {
+    }
+
+    /**
      * Creates or finds a AddonType from its string representation.
      *
      * @param name a name to look for.

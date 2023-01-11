@@ -23,6 +23,15 @@ public final class PublicNetworkAccessFlag extends ExpandableStringEnum<PublicNe
     public static final PublicNetworkAccessFlag SECURED_BY_PERIMETER = fromString("SecuredByPerimeter");
 
     /**
+     * Creates a new instance of PublicNetworkAccessFlag value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public PublicNetworkAccessFlag() {
+    }
+
+    /**
      * Creates or finds a PublicNetworkAccessFlag from its string representation.
      *
      * @param name a name to look for.

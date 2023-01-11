@@ -20,6 +20,15 @@ public final class OperationStatusType extends ExpandableStringEnum<OperationSta
     public static final OperationStatusType FAILED = fromString("Failed");
 
     /**
+     * Creates a new instance of OperationStatusType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public OperationStatusType() {
+    }
+
+    /**
      * Creates or finds a OperationStatusType from its string representation.
      *
      * @param name a name to look for.

@@ -23,6 +23,15 @@ public final class TimeseriesType extends ExpandableStringEnum<TimeseriesType> {
     public static final TimeseriesType LATENCY_P95 = fromString("LatencyP95");
 
     /**
+     * Creates a new instance of TimeseriesType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public TimeseriesType() {
+    }
+
+    /**
      * Creates or finds a TimeseriesType from its string representation.
      *
      * @param name a name to look for.

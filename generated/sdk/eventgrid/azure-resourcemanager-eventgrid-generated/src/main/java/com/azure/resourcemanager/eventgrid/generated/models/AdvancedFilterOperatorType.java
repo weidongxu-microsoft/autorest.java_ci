@@ -69,6 +69,15 @@ public final class AdvancedFilterOperatorType extends ExpandableStringEnum<Advan
     public static final AdvancedFilterOperatorType IS_NOT_NULL = fromString("IsNotNull");
 
     /**
+     * Creates a new instance of AdvancedFilterOperatorType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public AdvancedFilterOperatorType() {
+    }
+
+    /**
      * Creates or finds a AdvancedFilterOperatorType from its string representation.
      *
      * @param name a name to look for.

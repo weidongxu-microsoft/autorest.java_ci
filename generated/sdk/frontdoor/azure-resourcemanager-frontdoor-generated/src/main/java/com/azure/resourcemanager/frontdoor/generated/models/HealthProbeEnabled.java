@@ -20,6 +20,15 @@ public final class HealthProbeEnabled extends ExpandableStringEnum<HealthProbeEn
     public static final HealthProbeEnabled DISABLED = fromString("Disabled");
 
     /**
+     * Creates a new instance of HealthProbeEnabled value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public HealthProbeEnabled() {
+    }
+
+    /**
      * Creates or finds a HealthProbeEnabled from its string representation.
      *
      * @param name a name to look for.

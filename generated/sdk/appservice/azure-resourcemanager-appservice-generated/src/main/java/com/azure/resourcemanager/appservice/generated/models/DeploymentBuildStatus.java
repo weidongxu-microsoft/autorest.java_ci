@@ -50,6 +50,15 @@ public final class DeploymentBuildStatus extends ExpandableStringEnum<Deployment
     public static final DeploymentBuildStatus RUNTIME_SUCCESSFUL = fromString("RuntimeSuccessful");
 
     /**
+     * Creates a new instance of DeploymentBuildStatus value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public DeploymentBuildStatus() {
+    }
+
+    /**
      * Creates or finds a DeploymentBuildStatus from its string representation.
      *
      * @param name a name to look for.

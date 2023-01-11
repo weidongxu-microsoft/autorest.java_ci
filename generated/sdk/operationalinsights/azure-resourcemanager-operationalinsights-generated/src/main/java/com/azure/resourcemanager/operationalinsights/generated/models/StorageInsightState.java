@@ -17,6 +17,15 @@ public final class StorageInsightState extends ExpandableStringEnum<StorageInsig
     public static final StorageInsightState ERROR = fromString("ERROR");
 
     /**
+     * Creates a new instance of StorageInsightState value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public StorageInsightState() {
+    }
+
+    /**
      * Creates or finds a StorageInsightState from its string representation.
      *
      * @param name a name to look for.

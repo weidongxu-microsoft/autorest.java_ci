@@ -14,6 +14,15 @@ public final class BudgetOperatorType extends ExpandableStringEnum<BudgetOperato
     public static final BudgetOperatorType IN = fromString("In");
 
     /**
+     * Creates a new instance of BudgetOperatorType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public BudgetOperatorType() {
+    }
+
+    /**
      * Creates or finds a BudgetOperatorType from its string representation.
      *
      * @param name a name to look for.

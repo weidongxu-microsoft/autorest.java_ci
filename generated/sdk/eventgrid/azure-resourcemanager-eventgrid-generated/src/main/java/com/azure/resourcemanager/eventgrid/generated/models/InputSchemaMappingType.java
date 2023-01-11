@@ -14,6 +14,15 @@ public final class InputSchemaMappingType extends ExpandableStringEnum<InputSche
     public static final InputSchemaMappingType JSON = fromString("Json");
 
     /**
+     * Creates a new instance of InputSchemaMappingType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public InputSchemaMappingType() {
+    }
+
+    /**
      * Creates or finds a InputSchemaMappingType from its string representation.
      *
      * @param name a name to look for.

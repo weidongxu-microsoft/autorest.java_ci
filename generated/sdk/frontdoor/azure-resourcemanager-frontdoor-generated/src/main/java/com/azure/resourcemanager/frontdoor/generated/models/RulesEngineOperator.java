@@ -44,6 +44,15 @@ public final class RulesEngineOperator extends ExpandableStringEnum<RulesEngineO
     public static final RulesEngineOperator ENDS_WITH = fromString("EndsWith");
 
     /**
+     * Creates a new instance of RulesEngineOperator value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public RulesEngineOperator() {
+    }
+
+    /**
      * Creates or finds a RulesEngineOperator from its string representation.
      *
      * @param name a name to look for.

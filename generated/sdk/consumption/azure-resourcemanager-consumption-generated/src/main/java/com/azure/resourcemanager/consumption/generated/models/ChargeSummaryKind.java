@@ -17,6 +17,15 @@ public final class ChargeSummaryKind extends ExpandableStringEnum<ChargeSummaryK
     public static final ChargeSummaryKind MODERN = fromString("modern");
 
     /**
+     * Creates a new instance of ChargeSummaryKind value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public ChargeSummaryKind() {
+    }
+
+    /**
      * Creates or finds a ChargeSummaryKind from its string representation.
      *
      * @param name a name to look for.

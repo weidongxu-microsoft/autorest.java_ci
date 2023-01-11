@@ -23,6 +23,15 @@ public final class FunctionType extends ExpandableStringEnum<FunctionType> {
     public static final FunctionType SUM = fromString("Sum");
 
     /**
+     * Creates a new instance of FunctionType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public FunctionType() {
+    }
+
+    /**
      * Creates or finds a FunctionType from its string representation.
      *
      * @param name a name to look for.

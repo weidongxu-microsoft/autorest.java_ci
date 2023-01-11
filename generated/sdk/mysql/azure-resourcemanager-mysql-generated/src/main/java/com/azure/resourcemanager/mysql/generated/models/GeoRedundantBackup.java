@@ -17,6 +17,15 @@ public final class GeoRedundantBackup extends ExpandableStringEnum<GeoRedundantB
     public static final GeoRedundantBackup DISABLED = fromString("Disabled");
 
     /**
+     * Creates a new instance of GeoRedundantBackup value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public GeoRedundantBackup() {
+    }
+
+    /**
      * Creates or finds a GeoRedundantBackup from its string representation.
      *
      * @param name a name to look for.

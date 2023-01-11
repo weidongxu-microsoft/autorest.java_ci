@@ -47,6 +47,15 @@ public final class NetworkSecurityPerimeterConfigurationProvisioningState
     public static final NetworkSecurityPerimeterConfigurationProvisioningState CANCELED = fromString("Canceled");
 
     /**
+     * Creates a new instance of NetworkSecurityPerimeterConfigurationProvisioningState value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public NetworkSecurityPerimeterConfigurationProvisioningState() {
+    }
+
+    /**
      * Creates or finds a NetworkSecurityPerimeterConfigurationProvisioningState from its string representation.
      *
      * @param name a name to look for.

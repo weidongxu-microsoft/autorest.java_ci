@@ -22,6 +22,15 @@ public final class TableSubTypeEnum extends ExpandableStringEnum<TableSubTypeEnu
     public static final TableSubTypeEnum DATA_COLLECTION_RULE_BASED = fromString("DataCollectionRuleBased");
 
     /**
+     * Creates a new instance of TableSubTypeEnum value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public TableSubTypeEnum() {
+    }
+
+    /**
      * Creates or finds a TableSubTypeEnum from its string representation.
      *
      * @param name a name to look for.

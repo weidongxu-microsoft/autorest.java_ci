@@ -26,6 +26,15 @@ public final class ApplicationGatewayTier extends ExpandableStringEnum<Applicati
     public static final ApplicationGatewayTier STANDARD_BASIC = fromString("Standard_Basic");
 
     /**
+     * Creates a new instance of ApplicationGatewayTier value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public ApplicationGatewayTier() {
+    }
+
+    /**
      * Creates or finds a ApplicationGatewayTier from its string representation.
      *
      * @param name a name to look for.

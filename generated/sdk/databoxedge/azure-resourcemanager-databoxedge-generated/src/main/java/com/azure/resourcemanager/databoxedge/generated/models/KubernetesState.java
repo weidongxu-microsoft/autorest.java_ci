@@ -32,6 +32,15 @@ public final class KubernetesState extends ExpandableStringEnum<KubernetesState>
     public static final KubernetesState DELETING = fromString("Deleting");
 
     /**
+     * Creates a new instance of KubernetesState value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public KubernetesState() {
+    }
+
+    /**
      * Creates or finds a KubernetesState from its string representation.
      *
      * @param name a name to look for.

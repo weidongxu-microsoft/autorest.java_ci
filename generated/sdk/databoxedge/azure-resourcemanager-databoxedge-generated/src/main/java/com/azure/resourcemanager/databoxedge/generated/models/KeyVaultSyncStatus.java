@@ -32,6 +32,15 @@ public final class KeyVaultSyncStatus extends ExpandableStringEnum<KeyVaultSyncS
     public static final KeyVaultSyncStatus KEY_VAULT_NOT_SYNCED = fromString("KeyVaultNotSynced");
 
     /**
+     * Creates a new instance of KeyVaultSyncStatus value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public KeyVaultSyncStatus() {
+    }
+
+    /**
      * Creates or finds a KeyVaultSyncStatus from its string representation.
      *
      * @param name a name to look for.

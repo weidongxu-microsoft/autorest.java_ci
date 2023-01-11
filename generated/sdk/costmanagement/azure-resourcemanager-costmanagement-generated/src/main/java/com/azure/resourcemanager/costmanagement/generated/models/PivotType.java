@@ -17,6 +17,15 @@ public final class PivotType extends ExpandableStringEnum<PivotType> {
     public static final PivotType TAG_KEY = fromString("TagKey");
 
     /**
+     * Creates a new instance of PivotType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public PivotType() {
+    }
+
+    /**
      * Creates or finds a PivotType from its string representation.
      *
      * @param name a name to look for.

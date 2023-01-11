@@ -98,6 +98,15 @@ public final class SkuName extends ExpandableStringEnum<SkuName> {
     public static final SkuName EDGE_MR_TCP = fromString("EdgeMR_TCP");
 
     /**
+     * Creates a new instance of SkuName value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public SkuName() {
+    }
+
+    /**
      * Creates or finds a SkuName from its string representation.
      *
      * @param name a name to look for.

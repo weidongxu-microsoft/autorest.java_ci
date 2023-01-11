@@ -29,6 +29,15 @@ public final class DomainTopicProvisioningState extends ExpandableStringEnum<Dom
     public static final DomainTopicProvisioningState FAILED = fromString("Failed");
 
     /**
+     * Creates a new instance of DomainTopicProvisioningState value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public DomainTopicProvisioningState() {
+    }
+
+    /**
      * Creates or finds a DomainTopicProvisioningState from its string representation.
      *
      * @param name a name to look for.

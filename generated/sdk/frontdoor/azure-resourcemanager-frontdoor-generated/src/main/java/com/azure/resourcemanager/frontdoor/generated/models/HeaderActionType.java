@@ -20,6 +20,15 @@ public final class HeaderActionType extends ExpandableStringEnum<HeaderActionTyp
     public static final HeaderActionType OVERWRITE = fromString("Overwrite");
 
     /**
+     * Creates a new instance of HeaderActionType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public HeaderActionType() {
+    }
+
+    /**
      * Creates or finds a HeaderActionType from its string representation.
      *
      * @param name a name to look for.

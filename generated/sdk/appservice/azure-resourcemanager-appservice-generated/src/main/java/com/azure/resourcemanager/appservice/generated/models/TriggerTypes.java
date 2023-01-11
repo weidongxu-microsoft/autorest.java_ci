@@ -17,6 +17,15 @@ public final class TriggerTypes extends ExpandableStringEnum<TriggerTypes> {
     public static final TriggerTypes UNKNOWN = fromString("Unknown");
 
     /**
+     * Creates a new instance of TriggerTypes value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public TriggerTypes() {
+    }
+
+    /**
      * Creates or finds a TriggerTypes from its string representation.
      *
      * @param name a name to look for.

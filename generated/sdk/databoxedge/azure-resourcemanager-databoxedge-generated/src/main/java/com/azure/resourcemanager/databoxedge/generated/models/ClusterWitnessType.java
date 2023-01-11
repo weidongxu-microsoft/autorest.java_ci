@@ -20,6 +20,15 @@ public final class ClusterWitnessType extends ExpandableStringEnum<ClusterWitnes
     public static final ClusterWitnessType FILE_SHARE = fromString("FileShare");
 
     /**
+     * Creates a new instance of ClusterWitnessType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public ClusterWitnessType() {
+    }
+
+    /**
      * Creates or finds a ClusterWitnessType from its string representation.
      *
      * @param name a name to look for.

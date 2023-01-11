@@ -14,6 +14,15 @@ public final class CategoryType extends ExpandableStringEnum<CategoryType> {
     public static final CategoryType COST = fromString("Cost");
 
     /**
+     * Creates a new instance of CategoryType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public CategoryType() {
+    }
+
+    /**
      * Creates or finds a CategoryType from its string representation.
      *
      * @param name a name to look for.

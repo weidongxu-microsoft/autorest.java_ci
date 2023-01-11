@@ -17,6 +17,15 @@ public final class HostPlatformType extends ExpandableStringEnum<HostPlatformTyp
     public static final HostPlatformType LINUX_VM = fromString("LinuxVM");
 
     /**
+     * Creates a new instance of HostPlatformType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public HostPlatformType() {
+    }
+
+    /**
      * Creates or finds a HostPlatformType from its string representation.
      *
      * @param name a name to look for.

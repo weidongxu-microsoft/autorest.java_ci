@@ -20,6 +20,15 @@ public final class FrontDoorForwardingProtocol extends ExpandableStringEnum<Fron
     public static final FrontDoorForwardingProtocol MATCH_REQUEST = fromString("MatchRequest");
 
     /**
+     * Creates a new instance of FrontDoorForwardingProtocol value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public FrontDoorForwardingProtocol() {
+    }
+
+    /**
      * Creates or finds a FrontDoorForwardingProtocol from its string representation.
      *
      * @param name a name to look for.

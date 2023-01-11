@@ -29,6 +29,15 @@ public final class ServerVersion extends ExpandableStringEnum<ServerVersion> {
     public static final ServerVersion ONE_ONE = fromString("11");
 
     /**
+     * Creates a new instance of ServerVersion value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public ServerVersion() {
+    }
+
+    /**
      * Creates or finds a ServerVersion from its string representation.
      *
      * @param name a name to look for.

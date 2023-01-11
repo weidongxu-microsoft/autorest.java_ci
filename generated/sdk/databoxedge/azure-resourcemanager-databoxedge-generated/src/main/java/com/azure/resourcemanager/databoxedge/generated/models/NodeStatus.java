@@ -26,6 +26,15 @@ public final class NodeStatus extends ExpandableStringEnum<NodeStatus> {
     public static final NodeStatus SHUTTING_DOWN = fromString("ShuttingDown");
 
     /**
+     * Creates a new instance of NodeStatus value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public NodeStatus() {
+    }
+
+    /**
      * Creates or finds a NodeStatus from its string representation.
      *
      * @param name a name to look for.

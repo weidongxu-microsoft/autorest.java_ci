@@ -26,6 +26,15 @@ public final class ResourceAssociationAccessMode extends ExpandableStringEnum<Re
     public static final ResourceAssociationAccessMode UNSPECIFIED_MODE = fromString("UnspecifiedMode");
 
     /**
+     * Creates a new instance of ResourceAssociationAccessMode value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public ResourceAssociationAccessMode() {
+    }
+
+    /**
      * Creates or finds a ResourceAssociationAccessMode from its string representation.
      *
      * @param name a name to look for.

@@ -18,6 +18,15 @@ public final class QueryPerformanceInsightResetDataResultState
     public static final QueryPerformanceInsightResetDataResultState FAILED = fromString("Failed");
 
     /**
+     * Creates a new instance of QueryPerformanceInsightResetDataResultState value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public QueryPerformanceInsightResetDataResultState() {
+    }
+
+    /**
      * Creates or finds a QueryPerformanceInsightResetDataResultState from its string representation.
      *
      * @param name a name to look for.

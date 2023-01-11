@@ -28,6 +28,15 @@ public final class DeletionRecoveryLevel extends ExpandableStringEnum<DeletionRe
         fromString("Recoverable+ProtectedSubscription");
 
     /**
+     * Creates a new instance of DeletionRecoveryLevel value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public DeletionRecoveryLevel() {
+    }
+
+    /**
      * Creates or finds a DeletionRecoveryLevel from its string representation.
      *
      * @param name a name to look for.

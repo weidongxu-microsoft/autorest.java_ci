@@ -20,6 +20,15 @@ public final class LotSource extends ExpandableStringEnum<LotSource> {
     public static final LotSource CONSUMPTION_COMMITMENT = fromString("ConsumptionCommitment");
 
     /**
+     * Creates a new instance of LotSource value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public LotSource() {
+    }
+
+    /**
      * Creates or finds a LotSource from its string representation.
      *
      * @param name a name to look for.

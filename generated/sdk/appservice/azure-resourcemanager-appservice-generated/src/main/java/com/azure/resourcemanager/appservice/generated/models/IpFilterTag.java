@@ -20,6 +20,15 @@ public final class IpFilterTag extends ExpandableStringEnum<IpFilterTag> {
     public static final IpFilterTag SERVICE_TAG = fromString("ServiceTag");
 
     /**
+     * Creates a new instance of IpFilterTag value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public IpFilterTag() {
+    }
+
+    /**
      * Creates or finds a IpFilterTag from its string representation.
      *
      * @param name a name to look for.

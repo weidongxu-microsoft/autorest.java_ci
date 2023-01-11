@@ -30,6 +30,15 @@ public final class UnavailableReason extends ExpandableStringEnum<UnavailableRea
         fromString("TooManyNamespaceInCurrentSubscription");
 
     /**
+     * Creates a new instance of UnavailableReason value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public UnavailableReason() {
+    }
+
+    /**
      * Creates or finds a UnavailableReason from its string representation.
      *
      * @param name a name to look for.

@@ -17,6 +17,15 @@ public final class FrontDoorCertificateSource extends ExpandableStringEnum<Front
     public static final FrontDoorCertificateSource FRONT_DOOR = fromString("FrontDoor");
 
     /**
+     * Creates a new instance of FrontDoorCertificateSource value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public FrontDoorCertificateSource() {
+    }
+
+    /**
      * Creates or finds a FrontDoorCertificateSource from its string representation.
      *
      * @param name a name to look for.

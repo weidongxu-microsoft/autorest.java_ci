@@ -30,6 +30,15 @@ public final class ManagedRuleExclusionSelectorMatchOperator
     public static final ManagedRuleExclusionSelectorMatchOperator EQUALS_ANY = fromString("EqualsAny");
 
     /**
+     * Creates a new instance of ManagedRuleExclusionSelectorMatchOperator value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public ManagedRuleExclusionSelectorMatchOperator() {
+    }
+
+    /**
      * Creates or finds a ManagedRuleExclusionSelectorMatchOperator from its string representation.
      *
      * @param name a name to look for.

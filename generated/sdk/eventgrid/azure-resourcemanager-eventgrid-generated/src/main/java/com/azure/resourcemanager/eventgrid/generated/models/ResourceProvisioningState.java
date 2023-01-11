@@ -29,6 +29,15 @@ public final class ResourceProvisioningState extends ExpandableStringEnum<Resour
     public static final ResourceProvisioningState FAILED = fromString("Failed");
 
     /**
+     * Creates a new instance of ResourceProvisioningState value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public ResourceProvisioningState() {
+    }
+
+    /**
      * Creates or finds a ResourceProvisioningState from its string representation.
      *
      * @param name a name to look for.

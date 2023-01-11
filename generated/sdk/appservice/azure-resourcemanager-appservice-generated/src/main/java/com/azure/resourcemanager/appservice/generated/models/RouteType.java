@@ -25,6 +25,15 @@ public final class RouteType extends ExpandableStringEnum<RouteType> {
     public static final RouteType STATIC = fromString("STATIC");
 
     /**
+     * Creates a new instance of RouteType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public RouteType() {
+    }
+
+    /**
      * Creates or finds a RouteType from its string representation.
      *
      * @param name a name to look for.

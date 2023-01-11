@@ -20,6 +20,15 @@ public final class UserType extends ExpandableStringEnum<UserType> {
     public static final UserType ARM = fromString("ARM");
 
     /**
+     * Creates a new instance of UserType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public UserType() {
+    }
+
+    /**
      * Creates or finds a UserType from its string representation.
      *
      * @param name a name to look for.

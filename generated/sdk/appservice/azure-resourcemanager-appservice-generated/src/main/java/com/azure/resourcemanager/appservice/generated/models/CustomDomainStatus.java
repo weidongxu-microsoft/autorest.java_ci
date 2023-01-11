@@ -32,6 +32,15 @@ public final class CustomDomainStatus extends ExpandableStringEnum<CustomDomainS
     public static final CustomDomainStatus UNHEALTHY = fromString("Unhealthy");
 
     /**
+     * Creates a new instance of CustomDomainStatus value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public CustomDomainStatus() {
+    }
+
+    /**
      * Creates or finds a CustomDomainStatus from its string representation.
      *
      * @param name a name to look for.

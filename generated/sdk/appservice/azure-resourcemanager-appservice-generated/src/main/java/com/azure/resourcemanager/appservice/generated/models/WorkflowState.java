@@ -29,6 +29,15 @@ public final class WorkflowState extends ExpandableStringEnum<WorkflowState> {
     public static final WorkflowState SUSPENDED = fromString("Suspended");
 
     /**
+     * Creates a new instance of WorkflowState value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public WorkflowState() {
+    }
+
+    /**
      * Creates or finds a WorkflowState from its string representation.
      *
      * @param name a name to look for.

@@ -20,6 +20,15 @@ public final class SupportedTlsVersions extends ExpandableStringEnum<SupportedTl
     public static final SupportedTlsVersions ONE_TWO = fromString("1.2");
 
     /**
+     * Creates a new instance of SupportedTlsVersions value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public SupportedTlsVersions() {
+    }
+
+    /**
      * Creates or finds a SupportedTlsVersions from its string representation.
      *
      * @param name a name to look for.

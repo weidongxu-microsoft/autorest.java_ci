@@ -17,6 +17,15 @@ public final class EnforcementMode extends ExpandableStringEnum<EnforcementMode>
     public static final EnforcementMode DO_NOT_ENFORCE = fromString("DoNotEnforce");
 
     /**
+     * Creates a new instance of EnforcementMode value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public EnforcementMode() {
+    }
+
+    /**
      * Creates or finds a EnforcementMode from its string representation.
      *
      * @param name a name to look for.

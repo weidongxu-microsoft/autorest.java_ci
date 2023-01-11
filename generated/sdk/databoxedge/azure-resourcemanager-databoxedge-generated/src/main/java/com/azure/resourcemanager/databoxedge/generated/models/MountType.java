@@ -17,6 +17,15 @@ public final class MountType extends ExpandableStringEnum<MountType> {
     public static final MountType HOST_PATH = fromString("HostPath");
 
     /**
+     * Creates a new instance of MountType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public MountType() {
+    }
+
+    /**
      * Creates or finds a MountType from its string representation.
      *
      * @param name a name to look for.

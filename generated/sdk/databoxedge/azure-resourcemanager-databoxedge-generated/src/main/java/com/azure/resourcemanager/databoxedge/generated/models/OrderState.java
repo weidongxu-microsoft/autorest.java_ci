@@ -62,6 +62,15 @@ public final class OrderState extends ExpandableStringEnum<OrderState> {
     public static final OrderState AWAITING_DROP = fromString("AwaitingDrop");
 
     /**
+     * Creates a new instance of OrderState value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public OrderState() {
+    }
+
+    /**
      * Creates or finds a OrderState from its string representation.
      *
      * @param name a name to look for.

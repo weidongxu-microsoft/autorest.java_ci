@@ -23,6 +23,15 @@ public final class LoadBalancingMode extends ExpandableStringEnum<LoadBalancingM
     public static final LoadBalancingMode WEB_PUBLISHING = fromString("Web, Publishing");
 
     /**
+     * Creates a new instance of LoadBalancingMode value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public LoadBalancingMode() {
+    }
+
+    /**
      * Creates or finds a LoadBalancingMode from its string representation.
      *
      * @param name a name to look for.

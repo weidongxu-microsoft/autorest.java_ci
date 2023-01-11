@@ -20,6 +20,15 @@ public final class EventDeliverySchema extends ExpandableStringEnum<EventDeliver
     public static final EventDeliverySchema CLOUD_EVENT_SCHEMA_V1_0 = fromString("CloudEventSchemaV1_0");
 
     /**
+     * Creates a new instance of EventDeliverySchema value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public EventDeliverySchema() {
+    }
+
+    /**
      * Creates or finds a EventDeliverySchema from its string representation.
      *
      * @param name a name to look for.

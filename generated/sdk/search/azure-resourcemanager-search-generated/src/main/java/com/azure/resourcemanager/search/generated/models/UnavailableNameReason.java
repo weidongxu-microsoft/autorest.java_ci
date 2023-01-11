@@ -21,6 +21,15 @@ public final class UnavailableNameReason extends ExpandableStringEnum<Unavailabl
     public static final UnavailableNameReason ALREADY_EXISTS = fromString("AlreadyExists");
 
     /**
+     * Creates a new instance of UnavailableNameReason value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public UnavailableNameReason() {
+    }
+
+    /**
      * Creates or finds a UnavailableNameReason from its string representation.
      *
      * @param name a name to look for.

@@ -20,6 +20,15 @@ public final class ShareAccessType extends ExpandableStringEnum<ShareAccessType>
     public static final ShareAccessType CUSTOM = fromString("Custom");
 
     /**
+     * Creates a new instance of ShareAccessType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public ShareAccessType() {
+    }
+
+    /**
      * Creates or finds a ShareAccessType from its string representation.
      *
      * @param name a name to look for.

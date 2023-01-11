@@ -17,6 +17,15 @@ public final class SchemaType extends ExpandableStringEnum<SchemaType> {
     public static final SchemaType AVRO = fromString("Avro");
 
     /**
+     * Creates a new instance of SchemaType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public SchemaType() {
+    }
+
+    /**
      * Creates or finds a SchemaType from its string representation.
      *
      * @param name a name to look for.

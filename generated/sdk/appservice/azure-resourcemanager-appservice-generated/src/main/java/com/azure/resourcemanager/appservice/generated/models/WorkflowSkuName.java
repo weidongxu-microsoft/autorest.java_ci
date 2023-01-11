@@ -29,6 +29,15 @@ public final class WorkflowSkuName extends ExpandableStringEnum<WorkflowSkuName>
     public static final WorkflowSkuName PREMIUM = fromString("Premium");
 
     /**
+     * Creates a new instance of WorkflowSkuName value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public WorkflowSkuName() {
+    }
+
+    /**
      * Creates or finds a WorkflowSkuName from its string representation.
      *
      * @param name a name to look for.

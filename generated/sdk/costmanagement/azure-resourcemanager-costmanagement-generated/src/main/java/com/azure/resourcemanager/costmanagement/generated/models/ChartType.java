@@ -26,6 +26,15 @@ public final class ChartType extends ExpandableStringEnum<ChartType> {
     public static final ChartType TABLE = fromString("Table");
 
     /**
+     * Creates a new instance of ChartType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public ChartType() {
+    }
+
+    /**
      * Creates or finds a ChartType from its string representation.
      *
      * @param name a name to look for.

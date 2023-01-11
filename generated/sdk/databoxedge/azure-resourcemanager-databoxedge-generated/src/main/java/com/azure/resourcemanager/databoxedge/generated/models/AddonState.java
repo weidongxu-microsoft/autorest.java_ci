@@ -32,6 +32,15 @@ public final class AddonState extends ExpandableStringEnum<AddonState> {
     public static final AddonState DELETING = fromString("Deleting");
 
     /**
+     * Creates a new instance of AddonState value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public AddonState() {
+    }
+
+    /**
      * Creates or finds a AddonState from its string representation.
      *
      * @param name a name to look for.

@@ -21,6 +21,15 @@ public final class LatencyScorecardAggregationInterval
     public static final LatencyScorecardAggregationInterval MONTHLY = fromString("Monthly");
 
     /**
+     * Creates a new instance of LatencyScorecardAggregationInterval value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public LatencyScorecardAggregationInterval() {
+    }
+
+    /**
      * Creates or finds a LatencyScorecardAggregationInterval from its string representation.
      *
      * @param name a name to look for.

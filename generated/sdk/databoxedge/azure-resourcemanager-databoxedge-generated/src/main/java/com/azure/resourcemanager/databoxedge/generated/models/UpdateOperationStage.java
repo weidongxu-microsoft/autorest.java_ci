@@ -62,6 +62,15 @@ public final class UpdateOperationStage extends ExpandableStringEnum<UpdateOpera
     public static final UpdateOperationStage RESCAN_FAILED = fromString("RescanFailed");
 
     /**
+     * Creates a new instance of UpdateOperationStage value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public UpdateOperationStage() {
+    }
+
+    /**
      * Creates or finds a UpdateOperationStage from its string representation.
      *
      * @param name a name to look for.

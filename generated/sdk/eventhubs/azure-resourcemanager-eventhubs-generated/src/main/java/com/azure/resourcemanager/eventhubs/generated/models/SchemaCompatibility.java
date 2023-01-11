@@ -20,6 +20,15 @@ public final class SchemaCompatibility extends ExpandableStringEnum<SchemaCompat
     public static final SchemaCompatibility FORWARD = fromString("Forward");
 
     /**
+     * Creates a new instance of SchemaCompatibility value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public SchemaCompatibility() {
+    }
+
+    /**
      * Creates or finds a SchemaCompatibility from its string representation.
      *
      * @param name a name to look for.

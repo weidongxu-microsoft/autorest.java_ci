@@ -29,6 +29,15 @@ public final class TopicTypeProvisioningState extends ExpandableStringEnum<Topic
     public static final TopicTypeProvisioningState FAILED = fromString("Failed");
 
     /**
+     * Creates a new instance of TopicTypeProvisioningState value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public TopicTypeProvisioningState() {
+    }
+
+    /**
      * Creates or finds a TopicTypeProvisioningState from its string representation.
      *
      * @param name a name to look for.

@@ -23,6 +23,15 @@ public final class ItemType extends ExpandableStringEnum<ItemType> {
     public static final ItemType FUNCTION = fromString("function");
 
     /**
+     * Creates a new instance of ItemType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public ItemType() {
+    }
+
+    /**
      * Creates or finds a ItemType from its string representation.
      *
      * @param name a name to look for.

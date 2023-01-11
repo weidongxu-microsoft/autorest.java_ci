@@ -17,6 +17,15 @@ public final class FlowType extends ExpandableStringEnum<FlowType> {
     public static final FlowType BLUEFIELD = fromString("Bluefield");
 
     /**
+     * Creates a new instance of FlowType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public FlowType() {
+    }
+
+    /**
      * Creates or finds a FlowType from its string representation.
      *
      * @param name a name to look for.

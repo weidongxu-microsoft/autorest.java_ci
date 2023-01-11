@@ -26,6 +26,15 @@ public final class MetricId extends ExpandableStringEnum<MetricId> {
     public static final MetricId OUTGOING_MESSAGES = fromString("OutgoingMessages");
 
     /**
+     * Creates a new instance of MetricId value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public MetricId() {
+    }
+
+    /**
      * Creates or finds a MetricId from its string representation.
      *
      * @param name a name to look for.

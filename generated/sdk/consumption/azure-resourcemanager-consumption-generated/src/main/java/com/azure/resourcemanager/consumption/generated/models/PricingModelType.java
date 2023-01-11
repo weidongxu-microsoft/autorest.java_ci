@@ -20,6 +20,15 @@ public final class PricingModelType extends ExpandableStringEnum<PricingModelTyp
     public static final PricingModelType SPOT = fromString("Spot");
 
     /**
+     * Creates a new instance of PricingModelType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public PricingModelType() {
+    }
+
+    /**
      * Creates or finds a PricingModelType from its string representation.
      *
      * @param name a name to look for.

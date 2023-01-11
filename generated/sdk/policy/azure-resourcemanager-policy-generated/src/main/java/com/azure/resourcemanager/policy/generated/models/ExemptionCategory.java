@@ -17,6 +17,15 @@ public final class ExemptionCategory extends ExpandableStringEnum<ExemptionCateg
     public static final ExemptionCategory MITIGATED = fromString("Mitigated");
 
     /**
+     * Creates a new instance of ExemptionCategory value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public ExemptionCategory() {
+    }
+
+    /**
      * Creates or finds a ExemptionCategory from its string representation.
      *
      * @param name a name to look for.

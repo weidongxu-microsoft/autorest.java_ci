@@ -14,6 +14,15 @@ public final class TroubleshootingScenario extends ExpandableStringEnum<Troubles
     public static final TroubleshootingScenario UNHEALTHY_REPLICA = fromString("UnhealthyReplica");
 
     /**
+     * Creates a new instance of TroubleshootingScenario value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public TroubleshootingScenario() {
+    }
+
+    /**
      * Creates or finds a TroubleshootingScenario from its string representation.
      *
      * @param name a name to look for.

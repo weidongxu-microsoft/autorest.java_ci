@@ -17,6 +17,15 @@ public final class NetworkAdapterDhcpStatus extends ExpandableStringEnum<Network
     public static final NetworkAdapterDhcpStatus ENABLED = fromString("Enabled");
 
     /**
+     * Creates a new instance of NetworkAdapterDhcpStatus value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public NetworkAdapterDhcpStatus() {
+    }
+
+    /**
      * Creates or finds a NetworkAdapterDhcpStatus from its string representation.
      *
      * @param name a name to look for.

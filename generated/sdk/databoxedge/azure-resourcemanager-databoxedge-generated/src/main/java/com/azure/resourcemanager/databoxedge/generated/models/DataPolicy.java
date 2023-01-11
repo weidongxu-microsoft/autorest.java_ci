@@ -17,6 +17,15 @@ public final class DataPolicy extends ExpandableStringEnum<DataPolicy> {
     public static final DataPolicy LOCAL = fromString("Local");
 
     /**
+     * Creates a new instance of DataPolicy value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public DataPolicy() {
+    }
+
+    /**
      * Creates or finds a DataPolicy from its string representation.
      *
      * @param name a name to look for.

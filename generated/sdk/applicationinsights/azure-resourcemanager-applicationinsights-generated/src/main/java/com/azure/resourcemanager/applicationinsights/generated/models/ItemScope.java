@@ -20,6 +20,15 @@ public final class ItemScope extends ExpandableStringEnum<ItemScope> {
     public static final ItemScope USER = fromString("user");
 
     /**
+     * Creates a new instance of ItemScope value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public ItemScope() {
+    }
+
+    /**
      * Creates or finds a ItemScope from its string representation.
      *
      * @param name a name to look for.

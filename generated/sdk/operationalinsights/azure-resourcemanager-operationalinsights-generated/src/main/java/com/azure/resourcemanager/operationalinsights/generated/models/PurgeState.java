@@ -17,6 +17,15 @@ public final class PurgeState extends ExpandableStringEnum<PurgeState> {
     public static final PurgeState COMPLETED = fromString("completed");
 
     /**
+     * Creates a new instance of PurgeState value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public PurgeState() {
+    }
+
+    /**
      * Creates or finds a PurgeState from its string representation.
      *
      * @param name a name to look for.

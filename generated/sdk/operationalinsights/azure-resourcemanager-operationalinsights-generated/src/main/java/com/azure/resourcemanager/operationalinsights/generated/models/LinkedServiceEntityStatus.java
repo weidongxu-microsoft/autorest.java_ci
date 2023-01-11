@@ -23,6 +23,15 @@ public final class LinkedServiceEntityStatus extends ExpandableStringEnum<Linked
     public static final LinkedServiceEntityStatus UPDATING = fromString("Updating");
 
     /**
+     * Creates a new instance of LinkedServiceEntityStatus value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public LinkedServiceEntityStatus() {
+    }
+
+    /**
      * Creates or finds a LinkedServiceEntityStatus from its string representation.
      *
      * @param name a name to look for.

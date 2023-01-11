@@ -17,6 +17,15 @@ public final class RequestSource extends ExpandableStringEnum<RequestSource> {
     public static final RequestSource REST = fromString("rest");
 
     /**
+     * Creates a new instance of RequestSource value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public RequestSource() {
+    }
+
+    /**
      * Creates or finds a RequestSource from its string representation.
      *
      * @param name a name to look for.

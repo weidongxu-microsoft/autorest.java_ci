@@ -23,6 +23,15 @@ public final class ProvisioningStateEnum extends ExpandableStringEnum<Provisioni
     public static final ProvisioningStateEnum SUCCEEDED = fromString("Succeeded");
 
     /**
+     * Creates a new instance of ProvisioningStateEnum value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public ProvisioningStateEnum() {
+    }
+
+    /**
      * Creates or finds a ProvisioningStateEnum from its string representation.
      *
      * @param name a name to look for.

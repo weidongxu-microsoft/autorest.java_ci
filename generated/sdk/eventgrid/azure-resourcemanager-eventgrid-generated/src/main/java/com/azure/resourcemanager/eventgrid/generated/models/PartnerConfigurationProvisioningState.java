@@ -30,6 +30,15 @@ public final class PartnerConfigurationProvisioningState
     public static final PartnerConfigurationProvisioningState FAILED = fromString("Failed");
 
     /**
+     * Creates a new instance of PartnerConfigurationProvisioningState value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public PartnerConfigurationProvisioningState() {
+    }
+
+    /**
      * Creates or finds a PartnerConfigurationProvisioningState from its string representation.
      *
      * @param name a name to look for.

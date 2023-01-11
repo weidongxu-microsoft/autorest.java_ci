@@ -47,6 +47,15 @@ public final class RulesEngineMatchVariable extends ExpandableStringEnum<RulesEn
     public static final RulesEngineMatchVariable REQUEST_SCHEME = fromString("RequestScheme");
 
     /**
+     * Creates a new instance of RulesEngineMatchVariable value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public RulesEngineMatchVariable() {
+    }
+
+    /**
      * Creates or finds a RulesEngineMatchVariable from its string representation.
      *
      * @param name a name to look for.

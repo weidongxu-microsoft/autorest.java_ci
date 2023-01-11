@@ -23,6 +23,15 @@ public final class ActivationStatus extends ExpandableStringEnum<ActivationStatu
     public static final ActivationStatus FAILED = fromString("Failed");
 
     /**
+     * Creates a new instance of ActivationStatus value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public ActivationStatus() {
+    }
+
+    /**
      * Creates or finds a ActivationStatus from its string representation.
      *
      * @param name a name to look for.

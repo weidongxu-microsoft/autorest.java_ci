@@ -17,6 +17,15 @@ public final class NetworkAdapterStatus extends ExpandableStringEnum<NetworkAdap
     public static final NetworkAdapterStatus ACTIVE = fromString("Active");
 
     /**
+     * Creates a new instance of NetworkAdapterStatus value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public NetworkAdapterStatus() {
+    }
+
+    /**
      * Creates or finds a NetworkAdapterStatus from its string representation.
      *
      * @param name a name to look for.

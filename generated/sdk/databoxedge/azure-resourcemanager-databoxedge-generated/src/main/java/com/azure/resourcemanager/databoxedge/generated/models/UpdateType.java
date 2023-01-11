@@ -20,6 +20,15 @@ public final class UpdateType extends ExpandableStringEnum<UpdateType> {
     public static final UpdateType FIRMWARE = fromString("Firmware");
 
     /**
+     * Creates a new instance of UpdateType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public UpdateType() {
+    }
+
+    /**
      * Creates or finds a UpdateType from its string representation.
      *
      * @param name a name to look for.

@@ -23,6 +23,15 @@ public final class PrincipalType extends ExpandableStringEnum<PrincipalType> {
     public static final PrincipalType FOREIGN_GROUP = fromString("ForeignGroup");
 
     /**
+     * Creates a new instance of PrincipalType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public PrincipalType() {
+    }
+
+    /**
      * Creates or finds a PrincipalType from its string representation.
      *
      * @param name a name to look for.

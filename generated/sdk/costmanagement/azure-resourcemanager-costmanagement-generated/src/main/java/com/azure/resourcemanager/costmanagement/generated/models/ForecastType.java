@@ -20,6 +20,15 @@ public final class ForecastType extends ExpandableStringEnum<ForecastType> {
     public static final ForecastType AMORTIZED_COST = fromString("AmortizedCost");
 
     /**
+     * Creates a new instance of ForecastType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public ForecastType() {
+    }
+
+    /**
      * Creates or finds a ForecastType from its string representation.
      *
      * @param name a name to look for.

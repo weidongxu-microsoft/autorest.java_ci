@@ -23,6 +23,15 @@ public final class DatabaseType extends ExpandableStringEnum<DatabaseType> {
     public static final DatabaseType POSTGRE_SQL = fromString("PostgreSql");
 
     /**
+     * Creates a new instance of DatabaseType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public DatabaseType() {
+    }
+
+    /**
      * Creates or finds a DatabaseType from its string representation.
      *
      * @param name a name to look for.

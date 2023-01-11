@@ -17,6 +17,15 @@ public final class CriterionType extends ExpandableStringEnum<CriterionType> {
     public static final CriterionType DYNAMIC_THRESHOLD_CRITERION = fromString("DynamicThresholdCriterion");
 
     /**
+     * Creates a new instance of CriterionType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public CriterionType() {
+    }
+
+    /**
      * Creates or finds a CriterionType from its string representation.
      *
      * @param name a name to look for.

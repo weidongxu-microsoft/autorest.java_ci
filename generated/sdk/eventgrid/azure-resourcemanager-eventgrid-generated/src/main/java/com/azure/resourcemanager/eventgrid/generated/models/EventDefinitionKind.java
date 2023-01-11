@@ -14,6 +14,15 @@ public final class EventDefinitionKind extends ExpandableStringEnum<EventDefinit
     public static final EventDefinitionKind INLINE = fromString("Inline");
 
     /**
+     * Creates a new instance of EventDefinitionKind value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public EventDefinitionKind() {
+    }
+
+    /**
      * Creates or finds a EventDefinitionKind from its string representation.
      *
      * @param name a name to look for.

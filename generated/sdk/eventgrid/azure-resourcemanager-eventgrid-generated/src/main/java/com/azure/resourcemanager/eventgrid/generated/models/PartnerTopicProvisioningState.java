@@ -33,6 +33,15 @@ public final class PartnerTopicProvisioningState extends ExpandableStringEnum<Pa
         fromString("IdleDueToMirroredChannelResourceDeletion");
 
     /**
+     * Creates a new instance of PartnerTopicProvisioningState value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public PartnerTopicProvisioningState() {
+    }
+
+    /**
      * Creates or finds a PartnerTopicProvisioningState from its string representation.
      *
      * @param name a name to look for.

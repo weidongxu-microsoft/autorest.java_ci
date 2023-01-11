@@ -32,6 +32,15 @@ public final class TimeGrainType extends ExpandableStringEnum<TimeGrainType> {
     public static final TimeGrainType BILLING_ANNUAL = fromString("BillingAnnual");
 
     /**
+     * Creates a new instance of TimeGrainType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public TimeGrainType() {
+    }
+
+    /**
      * Creates or finds a TimeGrainType from its string representation.
      *
      * @param name a name to look for.

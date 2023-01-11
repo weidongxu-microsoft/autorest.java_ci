@@ -17,6 +17,15 @@ public final class StatusType extends ExpandableStringEnum<StatusType> {
     public static final StatusType INACTIVE = fromString("Inactive");
 
     /**
+     * Creates a new instance of StatusType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public StatusType() {
+    }
+
+    /**
      * Creates or finds a StatusType from its string representation.
      *
      * @param name a name to look for.

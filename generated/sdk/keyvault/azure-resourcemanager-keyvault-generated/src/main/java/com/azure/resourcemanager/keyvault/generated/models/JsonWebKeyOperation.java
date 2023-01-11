@@ -35,6 +35,15 @@ public final class JsonWebKeyOperation extends ExpandableStringEnum<JsonWebKeyOp
     public static final JsonWebKeyOperation RELEASE = fromString("release");
 
     /**
+     * Creates a new instance of JsonWebKeyOperation value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public JsonWebKeyOperation() {
+    }
+
+    /**
      * Creates or finds a JsonWebKeyOperation from its string representation.
      *
      * @param name a name to look for.

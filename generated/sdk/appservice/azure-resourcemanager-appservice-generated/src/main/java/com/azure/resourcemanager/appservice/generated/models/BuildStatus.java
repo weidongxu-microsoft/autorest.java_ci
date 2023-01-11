@@ -32,6 +32,15 @@ public final class BuildStatus extends ExpandableStringEnum<BuildStatus> {
     public static final BuildStatus DETACHED = fromString("Detached");
 
     /**
+     * Creates a new instance of BuildStatus value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public BuildStatus() {
+    }
+
+    /**
      * Creates or finds a BuildStatus from its string representation.
      *
      * @param name a name to look for.

@@ -18,6 +18,15 @@ public final class ApplicationGatewayCustomErrorStatusCode
     public static final ApplicationGatewayCustomErrorStatusCode HTTP_STATUS502 = fromString("HttpStatus502");
 
     /**
+     * Creates a new instance of ApplicationGatewayCustomErrorStatusCode value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public ApplicationGatewayCustomErrorStatusCode() {
+    }
+
+    /**
      * Creates or finds a ApplicationGatewayCustomErrorStatusCode from its string representation.
      *
      * @param name a name to look for.

@@ -26,6 +26,15 @@ public final class SubscriptionState extends ExpandableStringEnum<SubscriptionSt
     public static final SubscriptionState UNREGISTERED = fromString("Unregistered");
 
     /**
+     * Creates a new instance of SubscriptionState value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public SubscriptionState() {
+    }
+
+    /**
      * Creates or finds a SubscriptionState from its string representation.
      *
      * @param name a name to look for.

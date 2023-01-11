@@ -20,6 +20,15 @@ public final class InfrastructureEncryption extends ExpandableStringEnum<Infrast
     public static final InfrastructureEncryption DISABLED = fromString("Disabled");
 
     /**
+     * Creates a new instance of InfrastructureEncryption value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public InfrastructureEncryption() {
+    }
+
+    /**
      * Creates or finds a InfrastructureEncryption from its string representation.
      *
      * @param name a name to look for.

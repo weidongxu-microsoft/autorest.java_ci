@@ -17,6 +17,15 @@ public final class Kind extends ExpandableStringEnum<Kind> {
     public static final Kind STATELESS = fromString("Stateless");
 
     /**
+     * Creates a new instance of Kind value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public Kind() {
+    }
+
+    /**
      * Creates or finds a Kind from its string representation.
      *
      * @param name a name to look for.

@@ -17,6 +17,15 @@ public final class ThresholdType extends ExpandableStringEnum<ThresholdType> {
     public static final ThresholdType FORECASTED = fromString("Forecasted");
 
     /**
+     * Creates a new instance of ThresholdType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public ThresholdType() {
+    }
+
+    /**
      * Creates or finds a ThresholdType from its string representation.
      *
      * @param name a name to look for.

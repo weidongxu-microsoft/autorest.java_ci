@@ -20,6 +20,15 @@ public final class AlertSeverity extends ExpandableStringEnum<AlertSeverity> {
     public static final AlertSeverity CRITICAL = fromString("Critical");
 
     /**
+     * Creates a new instance of AlertSeverity value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public AlertSeverity() {
+    }
+
+    /**
      * Creates or finds a AlertSeverity from its string representation.
      *
      * @param name a name to look for.

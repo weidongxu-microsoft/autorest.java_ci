@@ -35,6 +35,15 @@ public final class WorkspaceSkuNameEnum extends ExpandableStringEnum<WorkspaceSk
     public static final WorkspaceSkuNameEnum LACLUSTER = fromString("LACluster");
 
     /**
+     * Creates a new instance of WorkspaceSkuNameEnum value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public WorkspaceSkuNameEnum() {
+    }
+
+    /**
      * Creates or finds a WorkspaceSkuNameEnum from its string representation.
      *
      * @param name a name to look for.

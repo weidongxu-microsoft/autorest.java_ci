@@ -29,6 +29,15 @@ public final class NetworkExperimentResourceState extends ExpandableStringEnum<N
     public static final NetworkExperimentResourceState DELETING = fromString("Deleting");
 
     /**
+     * Creates a new instance of NetworkExperimentResourceState value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public NetworkExperimentResourceState() {
+    }
+
+    /**
      * Creates or finds a NetworkExperimentResourceState from its string representation.
      *
      * @param name a name to look for.

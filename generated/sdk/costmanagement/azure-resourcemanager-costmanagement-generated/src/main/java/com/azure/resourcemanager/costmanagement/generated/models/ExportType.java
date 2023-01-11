@@ -20,6 +20,15 @@ public final class ExportType extends ExpandableStringEnum<ExportType> {
     public static final ExportType AMORTIZED_COST = fromString("AmortizedCost");
 
     /**
+     * Creates a new instance of ExportType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public ExportType() {
+    }
+
+    /**
      * Creates or finds a ExportType from its string representation.
      *
      * @param name a name to look for.

@@ -17,6 +17,15 @@ public final class MetricCategory extends ExpandableStringEnum<MetricCategory> {
     public static final MetricCategory TRANSACTION = fromString("Transaction");
 
     /**
+     * Creates a new instance of MetricCategory value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public MetricCategory() {
+    }
+
+    /**
      * Creates or finds a MetricCategory from its string representation.
      *
      * @param name a name to look for.

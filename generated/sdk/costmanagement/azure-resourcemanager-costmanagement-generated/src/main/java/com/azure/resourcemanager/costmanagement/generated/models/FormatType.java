@@ -14,6 +14,15 @@ public final class FormatType extends ExpandableStringEnum<FormatType> {
     public static final FormatType CSV = fromString("Csv");
 
     /**
+     * Creates a new instance of FormatType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public FormatType() {
+    }
+
+    /**
      * Creates or finds a FormatType from its string representation.
      *
      * @param name a name to look for.

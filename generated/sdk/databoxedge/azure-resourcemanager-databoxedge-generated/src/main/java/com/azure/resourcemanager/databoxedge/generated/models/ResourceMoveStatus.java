@@ -20,6 +20,15 @@ public final class ResourceMoveStatus extends ExpandableStringEnum<ResourceMoveS
     public static final ResourceMoveStatus RESOURCE_MOVE_FAILED = fromString("ResourceMoveFailed");
 
     /**
+     * Creates a new instance of ResourceMoveStatus value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public ResourceMoveStatus() {
+    }
+
+    /**
      * Creates or finds a ResourceMoveStatus from its string representation.
      *
      * @param name a name to look for.

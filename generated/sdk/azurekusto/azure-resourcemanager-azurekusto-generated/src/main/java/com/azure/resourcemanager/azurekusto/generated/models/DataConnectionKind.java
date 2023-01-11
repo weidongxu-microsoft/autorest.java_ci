@@ -23,6 +23,15 @@ public final class DataConnectionKind extends ExpandableStringEnum<DataConnectio
     public static final DataConnectionKind COSMOS_DB = fromString("CosmosDb");
 
     /**
+     * Creates a new instance of DataConnectionKind value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public DataConnectionKind() {
+    }
+
+    /**
      * Creates or finds a DataConnectionKind from its string representation.
      *
      * @param name a name to look for.

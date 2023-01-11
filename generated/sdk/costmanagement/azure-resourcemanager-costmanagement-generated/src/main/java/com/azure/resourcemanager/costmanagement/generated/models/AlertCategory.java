@@ -23,6 +23,15 @@ public final class AlertCategory extends ExpandableStringEnum<AlertCategory> {
     public static final AlertCategory SYSTEM = fromString("System");
 
     /**
+     * Creates a new instance of AlertCategory value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public AlertCategory() {
+    }
+
+    /**
      * Creates or finds a AlertCategory from its string representation.
      *
      * @param name a name to look for.

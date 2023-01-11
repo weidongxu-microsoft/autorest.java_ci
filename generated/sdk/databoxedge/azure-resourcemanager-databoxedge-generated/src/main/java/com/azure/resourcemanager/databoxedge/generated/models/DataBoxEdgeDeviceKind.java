@@ -23,6 +23,15 @@ public final class DataBoxEdgeDeviceKind extends ExpandableStringEnum<DataBoxEdg
     public static final DataBoxEdgeDeviceKind AZURE_MODULAR_DATA_CENTRE = fromString("AzureModularDataCentre");
 
     /**
+     * Creates a new instance of DataBoxEdgeDeviceKind value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public DataBoxEdgeDeviceKind() {
+    }
+
+    /**
      * Creates or finds a DataBoxEdgeDeviceKind from its string representation.
      *
      * @param name a name to look for.

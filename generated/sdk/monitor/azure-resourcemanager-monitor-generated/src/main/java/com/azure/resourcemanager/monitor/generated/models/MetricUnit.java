@@ -50,6 +50,15 @@ public final class MetricUnit extends ExpandableStringEnum<MetricUnit> {
     public static final MetricUnit BITS_PER_SECOND = fromString("BitsPerSecond");
 
     /**
+     * Creates a new instance of MetricUnit value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public MetricUnit() {
+    }
+
+    /**
      * Creates or finds a MetricUnit from its string representation.
      *
      * @param name a name to look for.

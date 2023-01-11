@@ -29,6 +29,15 @@ public final class VerifiedPartnerProvisioningState extends ExpandableStringEnum
     public static final VerifiedPartnerProvisioningState FAILED = fromString("Failed");
 
     /**
+     * Creates a new instance of VerifiedPartnerProvisioningState value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public VerifiedPartnerProvisioningState() {
+    }
+
+    /**
      * Creates or finds a VerifiedPartnerProvisioningState from its string representation.
      *
      * @param name a name to look for.

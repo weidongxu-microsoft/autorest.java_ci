@@ -23,6 +23,15 @@ public final class OnboardingStatus extends ExpandableStringEnum<OnboardingStatu
     public static final OnboardingStatus UNKNOWN = fromString("unknown");
 
     /**
+     * Creates a new instance of OnboardingStatus value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public OnboardingStatus() {
+    }
+
+    /**
      * Creates or finds a OnboardingStatus from its string representation.
      *
      * @param name a name to look for.

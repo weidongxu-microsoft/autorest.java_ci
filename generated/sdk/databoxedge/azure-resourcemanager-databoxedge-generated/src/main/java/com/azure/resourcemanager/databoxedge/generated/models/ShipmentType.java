@@ -20,6 +20,15 @@ public final class ShipmentType extends ExpandableStringEnum<ShipmentType> {
     public static final ShipmentType SELF_PICKUP = fromString("SelfPickup");
 
     /**
+     * Creates a new instance of ShipmentType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public ShipmentType() {
+    }
+
+    /**
      * Creates or finds a ShipmentType from its string representation.
      *
      * @param name a name to look for.

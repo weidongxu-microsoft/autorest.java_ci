@@ -17,6 +17,15 @@ public final class SearchSortEnum extends ExpandableStringEnum<SearchSortEnum> {
     public static final SearchSortEnum DESC = fromString("desc");
 
     /**
+     * Creates a new instance of SearchSortEnum value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public SearchSortEnum() {
+    }
+
+    /**
      * Creates or finds a SearchSortEnum from its string representation.
      *
      * @param name a name to look for.

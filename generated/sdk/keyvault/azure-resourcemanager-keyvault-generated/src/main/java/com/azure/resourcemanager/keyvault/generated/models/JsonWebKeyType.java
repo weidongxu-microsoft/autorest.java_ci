@@ -23,6 +23,15 @@ public final class JsonWebKeyType extends ExpandableStringEnum<JsonWebKeyType> {
     public static final JsonWebKeyType RSA_HSM = fromString("RSA-HSM");
 
     /**
+     * Creates a new instance of JsonWebKeyType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public JsonWebKeyType() {
+    }
+
+    /**
      * Creates or finds a JsonWebKeyType from its string representation.
      *
      * @param name a name to look for.

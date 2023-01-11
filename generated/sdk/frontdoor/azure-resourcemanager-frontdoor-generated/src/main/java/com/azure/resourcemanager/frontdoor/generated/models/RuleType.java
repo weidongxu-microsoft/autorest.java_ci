@@ -17,6 +17,15 @@ public final class RuleType extends ExpandableStringEnum<RuleType> {
     public static final RuleType RATE_LIMIT_RULE = fromString("RateLimitRule");
 
     /**
+     * Creates a new instance of RuleType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public RuleType() {
+    }
+
+    /**
      * Creates or finds a RuleType from its string representation.
      *
      * @param name a name to look for.

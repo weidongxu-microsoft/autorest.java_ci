@@ -26,6 +26,15 @@ public final class ShareStatus extends ExpandableStringEnum<ShareStatus> {
     public static final ShareStatus NEEDS_ATTENTION = fromString("NeedsAttention");
 
     /**
+     * Creates a new instance of ShareStatus value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public ShareStatus() {
+    }
+
+    /**
      * Creates or finds a ShareStatus from its string representation.
      *
      * @param name a name to look for.

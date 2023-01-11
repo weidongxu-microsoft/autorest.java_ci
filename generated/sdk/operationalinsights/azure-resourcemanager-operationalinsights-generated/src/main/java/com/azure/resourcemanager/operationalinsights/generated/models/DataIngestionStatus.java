@@ -29,6 +29,15 @@ public final class DataIngestionStatus extends ExpandableStringEnum<DataIngestio
     public static final DataIngestionStatus APPROACHING_QUOTA = fromString("ApproachingQuota");
 
     /**
+     * Creates a new instance of DataIngestionStatus value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public DataIngestionStatus() {
+    }
+
+    /**
      * Creates or finds a DataIngestionStatus from its string representation.
      *
      * @param name a name to look for.

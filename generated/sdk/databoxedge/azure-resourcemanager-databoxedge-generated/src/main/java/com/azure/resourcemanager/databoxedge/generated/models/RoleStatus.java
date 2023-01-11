@@ -17,6 +17,15 @@ public final class RoleStatus extends ExpandableStringEnum<RoleStatus> {
     public static final RoleStatus DISABLED = fromString("Disabled");
 
     /**
+     * Creates a new instance of RoleStatus value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public RoleStatus() {
+    }
+
+    /**
      * Creates or finds a RoleStatus from its string representation.
      *
      * @param name a name to look for.

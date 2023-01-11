@@ -23,6 +23,15 @@ public final class EndpointType extends ExpandableStringEnum<EndpointType> {
     public static final EndpointType ATM = fromString("ATM");
 
     /**
+     * Creates a new instance of EndpointType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public EndpointType() {
+    }
+
+    /**
      * Creates or finds a EndpointType from its string representation.
      *
      * @param name a name to look for.

@@ -20,6 +20,15 @@ public final class InstallRebootBehavior extends ExpandableStringEnum<InstallReb
     public static final InstallRebootBehavior REQUEST_REBOOT = fromString("RequestReboot");
 
     /**
+     * Creates a new instance of InstallRebootBehavior value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public InstallRebootBehavior() {
+    }
+
+    /**
      * Creates or finds a InstallRebootBehavior from its string representation.
      *
      * @param name a name to look for.

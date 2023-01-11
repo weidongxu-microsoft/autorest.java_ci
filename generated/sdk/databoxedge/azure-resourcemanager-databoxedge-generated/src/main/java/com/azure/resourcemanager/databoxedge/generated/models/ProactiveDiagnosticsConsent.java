@@ -17,6 +17,15 @@ public final class ProactiveDiagnosticsConsent extends ExpandableStringEnum<Proa
     public static final ProactiveDiagnosticsConsent DISABLED = fromString("Disabled");
 
     /**
+     * Creates a new instance of ProactiveDiagnosticsConsent value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public ProactiveDiagnosticsConsent() {
+    }
+
+    /**
      * Creates or finds a ProactiveDiagnosticsConsent from its string representation.
      *
      * @param name a name to look for.

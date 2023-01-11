@@ -17,6 +17,15 @@ public final class AggregationInterval extends ExpandableStringEnum<AggregationI
     public static final AggregationInterval DAILY = fromString("Daily");
 
     /**
+     * Creates a new instance of AggregationInterval value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public AggregationInterval() {
+    }
+
+    /**
      * Creates or finds a AggregationInterval from its string representation.
      *
      * @param name a name to look for.

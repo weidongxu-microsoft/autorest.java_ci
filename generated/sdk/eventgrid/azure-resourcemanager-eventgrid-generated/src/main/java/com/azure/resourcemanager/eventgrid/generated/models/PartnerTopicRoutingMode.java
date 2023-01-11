@@ -21,6 +21,15 @@ public final class PartnerTopicRoutingMode extends ExpandableStringEnum<PartnerT
     public static final PartnerTopicRoutingMode CHANNEL_NAME_HEADER = fromString("ChannelNameHeader");
 
     /**
+     * Creates a new instance of PartnerTopicRoutingMode value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public PartnerTopicRoutingMode() {
+    }
+
+    /**
      * Creates or finds a PartnerTopicRoutingMode from its string representation.
      *
      * @param name a name to look for.

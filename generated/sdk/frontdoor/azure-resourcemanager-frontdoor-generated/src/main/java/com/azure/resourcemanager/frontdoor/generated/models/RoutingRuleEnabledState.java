@@ -17,6 +17,15 @@ public final class RoutingRuleEnabledState extends ExpandableStringEnum<RoutingR
     public static final RoutingRuleEnabledState DISABLED = fromString("Disabled");
 
     /**
+     * Creates a new instance of RoutingRuleEnabledState value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public RoutingRuleEnabledState() {
+    }
+
+    /**
      * Creates or finds a RoutingRuleEnabledState from its string representation.
      *
      * @param name a name to look for.

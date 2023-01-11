@@ -29,6 +29,15 @@ public final class AlertOperator extends ExpandableStringEnum<AlertOperator> {
     public static final AlertOperator LESS_THAN_OR_EQUAL_TO = fromString("LessThanOrEqualTo");
 
     /**
+     * Creates a new instance of AlertOperator value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public AlertOperator() {
+    }
+
+    /**
      * Creates or finds a AlertOperator from its string representation.
      *
      * @param name a name to look for.

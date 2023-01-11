@@ -17,6 +17,15 @@ public final class NetworkAdapterRdmaStatus extends ExpandableStringEnum<Network
     public static final NetworkAdapterRdmaStatus CAPABLE = fromString("Capable");
 
     /**
+     * Creates a new instance of NetworkAdapterRdmaStatus value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public NetworkAdapterRdmaStatus() {
+    }
+
+    /**
      * Creates or finds a NetworkAdapterRdmaStatus from its string representation.
      *
      * @param name a name to look for.

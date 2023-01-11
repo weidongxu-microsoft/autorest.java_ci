@@ -14,6 +14,15 @@ public final class ClusterSkuNameEnum extends ExpandableStringEnum<ClusterSkuNam
     public static final ClusterSkuNameEnum CAPACITY_RESERVATION = fromString("CapacityReservation");
 
     /**
+     * Creates a new instance of ClusterSkuNameEnum value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public ClusterSkuNameEnum() {
+    }
+
+    /**
      * Creates or finds a ClusterSkuNameEnum from its string representation.
      *
      * @param name a name to look for.

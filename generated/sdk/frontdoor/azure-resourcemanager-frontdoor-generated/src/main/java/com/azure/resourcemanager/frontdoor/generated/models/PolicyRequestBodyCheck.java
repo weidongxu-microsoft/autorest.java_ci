@@ -17,6 +17,15 @@ public final class PolicyRequestBodyCheck extends ExpandableStringEnum<PolicyReq
     public static final PolicyRequestBodyCheck ENABLED = fromString("Enabled");
 
     /**
+     * Creates a new instance of PolicyRequestBodyCheck value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public PolicyRequestBodyCheck() {
+    }
+
+    /**
      * Creates or finds a PolicyRequestBodyCheck from its string representation.
      *
      * @param name a name to look for.

@@ -23,6 +23,15 @@ public final class FrontDoorRedirectType extends ExpandableStringEnum<FrontDoorR
     public static final FrontDoorRedirectType PERMANENT_REDIRECT = fromString("PermanentRedirect");
 
     /**
+     * Creates a new instance of FrontDoorRedirectType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public FrontDoorRedirectType() {
+    }
+
+    /**
      * Creates or finds a FrontDoorRedirectType from its string representation.
      *
      * @param name a name to look for.

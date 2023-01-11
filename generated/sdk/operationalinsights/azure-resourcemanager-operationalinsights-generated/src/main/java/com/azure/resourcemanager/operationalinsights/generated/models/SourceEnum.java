@@ -17,6 +17,15 @@ public final class SourceEnum extends ExpandableStringEnum<SourceEnum> {
     public static final SourceEnum CUSTOMER = fromString("customer");
 
     /**
+     * Creates a new instance of SourceEnum value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public SourceEnum() {
+    }
+
+    /**
      * Creates or finds a SourceEnum from its string representation.
      *
      * @param name a name to look for.

@@ -17,6 +17,15 @@ public final class SkuSignupOption extends ExpandableStringEnum<SkuSignupOption>
     public static final SkuSignupOption AVAILABLE = fromString("Available");
 
     /**
+     * Creates a new instance of SkuSignupOption value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public SkuSignupOption() {
+    }
+
+    /**
      * Creates or finds a SkuSignupOption from its string representation.
      *
      * @param name a name to look for.

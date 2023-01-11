@@ -32,6 +32,15 @@ public final class ClusterEntityStatus extends ExpandableStringEnum<ClusterEntit
     public static final ClusterEntityStatus UPDATING = fromString("Updating");
 
     /**
+     * Creates a new instance of ClusterEntityStatus value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public ClusterEntityStatus() {
+    }
+
+    /**
      * Creates or finds a ClusterEntityStatus from its string representation.
      *
      * @param name a name to look for.

@@ -20,6 +20,15 @@ public final class ClientPermissionType extends ExpandableStringEnum<ClientPermi
     public static final ClientPermissionType READ_WRITE = fromString("ReadWrite");
 
     /**
+     * Creates a new instance of ClientPermissionType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public ClientPermissionType() {
+    }
+
+    /**
      * Creates or finds a ClientPermissionType from its string representation.
      *
      * @param name a name to look for.

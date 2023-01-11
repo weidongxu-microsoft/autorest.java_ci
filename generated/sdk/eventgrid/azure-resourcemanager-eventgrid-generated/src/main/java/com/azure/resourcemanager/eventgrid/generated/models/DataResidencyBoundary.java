@@ -17,6 +17,15 @@ public final class DataResidencyBoundary extends ExpandableStringEnum<DataReside
     public static final DataResidencyBoundary WITHIN_REGION = fromString("WithinRegion");
 
     /**
+     * Creates a new instance of DataResidencyBoundary value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public DataResidencyBoundary() {
+    }
+
+    /**
      * Creates or finds a DataResidencyBoundary from its string representation.
      *
      * @param name a name to look for.

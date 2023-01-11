@@ -17,6 +17,15 @@ public final class DataResidencyType extends ExpandableStringEnum<DataResidencyT
     public static final DataResidencyType ZONE_REPLICATION = fromString("ZoneReplication");
 
     /**
+     * Creates a new instance of DataResidencyType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public DataResidencyType() {
+    }
+
+    /**
      * Creates or finds a DataResidencyType from its string representation.
      *
      * @param name a name to look for.

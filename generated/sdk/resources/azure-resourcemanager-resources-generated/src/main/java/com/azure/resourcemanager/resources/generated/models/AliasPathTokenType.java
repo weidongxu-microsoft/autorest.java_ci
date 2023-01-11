@@ -35,6 +35,15 @@ public final class AliasPathTokenType extends ExpandableStringEnum<AliasPathToke
     public static final AliasPathTokenType BOOLEAN = fromString("Boolean");
 
     /**
+     * Creates a new instance of AliasPathTokenType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public AliasPathTokenType() {
+    }
+
+    /**
      * Creates or finds a AliasPathTokenType from its string representation.
      *
      * @param name a name to look for.

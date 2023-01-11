@@ -74,6 +74,15 @@ public final class KeyPermissions extends ExpandableStringEnum<KeyPermissions> {
     public static final KeyPermissions SETROTATIONPOLICY = fromString("setrotationpolicy");
 
     /**
+     * Creates a new instance of KeyPermissions value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public KeyPermissions() {
+    }
+
+    /**
      * Creates or finds a KeyPermissions from its string representation.
      *
      * @param name a name to look for.

@@ -77,6 +77,15 @@ public final class WorkflowProvisioningState extends ExpandableStringEnum<Workfl
     public static final WorkflowProvisioningState IN_PROGRESS = fromString("InProgress");
 
     /**
+     * Creates a new instance of WorkflowProvisioningState value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public WorkflowProvisioningState() {
+    }
+
+    /**
      * Creates or finds a WorkflowProvisioningState from its string representation.
      *
      * @param name a name to look for.

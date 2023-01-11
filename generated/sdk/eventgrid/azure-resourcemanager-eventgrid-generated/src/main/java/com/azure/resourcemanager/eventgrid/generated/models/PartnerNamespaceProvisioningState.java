@@ -29,6 +29,15 @@ public final class PartnerNamespaceProvisioningState extends ExpandableStringEnu
     public static final PartnerNamespaceProvisioningState FAILED = fromString("Failed");
 
     /**
+     * Creates a new instance of PartnerNamespaceProvisioningState value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public PartnerNamespaceProvisioningState() {
+    }
+
+    /**
      * Creates or finds a PartnerNamespaceProvisioningState from its string representation.
      *
      * @param name a name to look for.

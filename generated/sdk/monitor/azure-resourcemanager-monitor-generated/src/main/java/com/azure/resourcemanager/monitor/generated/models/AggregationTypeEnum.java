@@ -26,6 +26,15 @@ public final class AggregationTypeEnum extends ExpandableStringEnum<AggregationT
     public static final AggregationTypeEnum TOTAL = fromString("Total");
 
     /**
+     * Creates a new instance of AggregationTypeEnum value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public AggregationTypeEnum() {
+    }
+
+    /**
      * Creates or finds a AggregationTypeEnum from its string representation.
      *
      * @param name a name to look for.

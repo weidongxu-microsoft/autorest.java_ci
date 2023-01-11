@@ -29,6 +29,15 @@ public final class EndPointProvisioningState extends ExpandableStringEnum<EndPoi
     public static final EndPointProvisioningState FAILED = fromString("Failed");
 
     /**
+     * Creates a new instance of EndPointProvisioningState value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public EndPointProvisioningState() {
+    }
+
+    /**
      * Creates or finds a EndPointProvisioningState from its string representation.
      *
      * @param name a name to look for.

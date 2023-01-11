@@ -20,6 +20,15 @@ public final class BaselineSensitivity extends ExpandableStringEnum<BaselineSens
     public static final BaselineSensitivity HIGH = fromString("High");
 
     /**
+     * Creates a new instance of BaselineSensitivity value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public BaselineSensitivity() {
+    }
+
+    /**
      * Creates or finds a BaselineSensitivity from its string representation.
      *
      * @param name a name to look for.

@@ -20,6 +20,15 @@ public final class AzureContainerDataFormat extends ExpandableStringEnum<AzureCo
     public static final AzureContainerDataFormat AZURE_FILE = fromString("AzureFile");
 
     /**
+     * Creates a new instance of AzureContainerDataFormat value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public AzureContainerDataFormat() {
+    }
+
+    /**
      * Creates or finds a AzureContainerDataFormat from its string representation.
      *
      * @param name a name to look for.

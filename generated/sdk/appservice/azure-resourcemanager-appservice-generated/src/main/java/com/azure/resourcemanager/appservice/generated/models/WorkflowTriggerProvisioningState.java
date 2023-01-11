@@ -65,6 +65,15 @@ public final class WorkflowTriggerProvisioningState extends ExpandableStringEnum
     public static final WorkflowTriggerProvisioningState COMPLETED = fromString("Completed");
 
     /**
+     * Creates a new instance of WorkflowTriggerProvisioningState value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public WorkflowTriggerProvisioningState() {
+    }
+
+    /**
      * Creates or finds a WorkflowTriggerProvisioningState from its string representation.
      *
      * @param name a name to look for.

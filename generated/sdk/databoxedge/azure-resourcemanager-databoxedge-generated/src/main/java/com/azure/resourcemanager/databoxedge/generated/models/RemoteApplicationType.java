@@ -23,6 +23,15 @@ public final class RemoteApplicationType extends ExpandableStringEnum<RemoteAppl
     public static final RemoteApplicationType ALL_APPLICATIONS = fromString("AllApplications");
 
     /**
+     * Creates a new instance of RemoteApplicationType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public RemoteApplicationType() {
+    }
+
+    /**
      * Creates or finds a RemoteApplicationType from its string representation.
      *
      * @param name a name to look for.

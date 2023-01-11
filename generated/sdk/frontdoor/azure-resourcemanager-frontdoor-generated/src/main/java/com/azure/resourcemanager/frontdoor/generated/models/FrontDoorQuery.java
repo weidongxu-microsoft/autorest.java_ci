@@ -23,6 +23,15 @@ public final class FrontDoorQuery extends ExpandableStringEnum<FrontDoorQuery> {
     public static final FrontDoorQuery STRIP_ALL_EXCEPT = fromString("StripAllExcept");
 
     /**
+     * Creates a new instance of FrontDoorQuery value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public FrontDoorQuery() {
+    }
+
+    /**
      * Creates or finds a FrontDoorQuery from its string representation.
      *
      * @param name a name to look for.

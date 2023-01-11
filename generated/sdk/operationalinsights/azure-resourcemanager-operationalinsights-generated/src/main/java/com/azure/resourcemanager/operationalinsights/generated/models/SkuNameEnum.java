@@ -32,6 +32,15 @@ public final class SkuNameEnum extends ExpandableStringEnum<SkuNameEnum> {
     public static final SkuNameEnum CAPACITY_RESERVATION = fromString("CapacityReservation");
 
     /**
+     * Creates a new instance of SkuNameEnum value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public SkuNameEnum() {
+    }
+
+    /**
      * Creates or finds a SkuNameEnum from its string representation.
      *
      * @param name a name to look for.

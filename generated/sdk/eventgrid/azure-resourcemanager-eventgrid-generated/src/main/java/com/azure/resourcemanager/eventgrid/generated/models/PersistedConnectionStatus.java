@@ -23,6 +23,15 @@ public final class PersistedConnectionStatus extends ExpandableStringEnum<Persis
     public static final PersistedConnectionStatus DISCONNECTED = fromString("Disconnected");
 
     /**
+     * Creates a new instance of PersistedConnectionStatus value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public PersistedConnectionStatus() {
+    }
+
+    /**
      * Creates or finds a PersistedConnectionStatus from its string representation.
      *
      * @param name a name to look for.

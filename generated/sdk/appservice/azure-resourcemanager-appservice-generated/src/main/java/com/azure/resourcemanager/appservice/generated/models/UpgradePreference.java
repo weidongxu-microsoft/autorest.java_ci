@@ -23,6 +23,15 @@ public final class UpgradePreference extends ExpandableStringEnum<UpgradePrefere
     public static final UpgradePreference MANUAL = fromString("Manual");
 
     /**
+     * Creates a new instance of UpgradePreference value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public UpgradePreference() {
+    }
+
+    /**
      * Creates or finds a UpgradePreference from its string representation.
      *
      * @param name a name to look for.

@@ -35,6 +35,15 @@ public final class FrontDoorResourceState extends ExpandableStringEnum<FrontDoor
     public static final FrontDoorResourceState MIGRATED = fromString("Migrated");
 
     /**
+     * Creates a new instance of FrontDoorResourceState value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public FrontDoorResourceState() {
+    }
+
+    /**
      * Creates or finds a FrontDoorResourceState from its string representation.
      *
      * @param name a name to look for.

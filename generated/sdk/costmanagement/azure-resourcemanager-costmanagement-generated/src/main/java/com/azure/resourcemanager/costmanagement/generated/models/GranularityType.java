@@ -14,6 +14,15 @@ public final class GranularityType extends ExpandableStringEnum<GranularityType>
     public static final GranularityType DAILY = fromString("Daily");
 
     /**
+     * Creates a new instance of GranularityType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public GranularityType() {
+    }
+
+    /**
      * Creates or finds a GranularityType from its string representation.
      *
      * @param name a name to look for.

@@ -20,6 +20,15 @@ public final class BillingType extends ExpandableStringEnum<BillingType> {
     public static final BillingType WORKSPACES = fromString("Workspaces");
 
     /**
+     * Creates a new instance of BillingType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public BillingType() {
+    }
+
+    /**
      * Creates or finds a BillingType from its string representation.
      *
      * @param name a name to look for.

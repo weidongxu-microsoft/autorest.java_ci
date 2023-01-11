@@ -23,6 +23,15 @@ public final class ServerState extends ExpandableStringEnum<ServerState> {
     public static final ServerState INACCESSIBLE = fromString("Inaccessible");
 
     /**
+     * Creates a new instance of ServerState value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public ServerState() {
+    }
+
+    /**
      * Creates or finds a ServerState from its string representation.
      *
      * @param name a name to look for.

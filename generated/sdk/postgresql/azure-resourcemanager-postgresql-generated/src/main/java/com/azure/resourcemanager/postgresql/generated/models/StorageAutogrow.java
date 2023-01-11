@@ -17,6 +17,15 @@ public final class StorageAutogrow extends ExpandableStringEnum<StorageAutogrow>
     public static final StorageAutogrow DISABLED = fromString("Disabled");
 
     /**
+     * Creates a new instance of StorageAutogrow value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public StorageAutogrow() {
+    }
+
+    /**
      * Creates or finds a StorageAutogrow from its string representation.
      *
      * @param name a name to look for.

@@ -20,6 +20,15 @@ public final class OperatorType extends ExpandableStringEnum<OperatorType> {
     public static final OperatorType GREATER_THAN_OR_EQUAL_TO = fromString("GreaterThanOrEqualTo");
 
     /**
+     * Creates a new instance of OperatorType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public OperatorType() {
+    }
+
+    /**
      * Creates or finds a OperatorType from its string representation.
      *
      * @param name a name to look for.

@@ -17,6 +17,15 @@ public final class MetricTriggerType extends ExpandableStringEnum<MetricTriggerT
     public static final MetricTriggerType TOTAL = fromString("Total");
 
     /**
+     * Creates a new instance of MetricTriggerType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public MetricTriggerType() {
+    }
+
+    /**
      * Creates or finds a MetricTriggerType from its string representation.
      *
      * @param name a name to look for.

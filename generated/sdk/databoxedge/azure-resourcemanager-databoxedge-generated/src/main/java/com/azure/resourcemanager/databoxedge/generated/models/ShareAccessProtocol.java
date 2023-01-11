@@ -17,6 +17,15 @@ public final class ShareAccessProtocol extends ExpandableStringEnum<ShareAccessP
     public static final ShareAccessProtocol NFS = fromString("NFS");
 
     /**
+     * Creates a new instance of ShareAccessProtocol value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public ShareAccessProtocol() {
+    }
+
+    /**
      * Creates or finds a ShareAccessProtocol from its string representation.
      *
      * @param name a name to look for.

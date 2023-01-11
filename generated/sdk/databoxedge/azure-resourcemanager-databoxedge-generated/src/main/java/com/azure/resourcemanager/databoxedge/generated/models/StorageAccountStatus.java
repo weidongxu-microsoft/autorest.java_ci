@@ -26,6 +26,15 @@ public final class StorageAccountStatus extends ExpandableStringEnum<StorageAcco
     public static final StorageAccountStatus NEEDS_ATTENTION = fromString("NeedsAttention");
 
     /**
+     * Creates a new instance of StorageAccountStatus value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public StorageAccountStatus() {
+    }
+
+    /**
      * Creates or finds a StorageAccountStatus from its string representation.
      *
      * @param name a name to look for.

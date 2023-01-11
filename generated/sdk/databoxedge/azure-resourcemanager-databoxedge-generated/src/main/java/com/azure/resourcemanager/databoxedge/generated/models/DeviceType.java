@@ -14,6 +14,15 @@ public final class DeviceType extends ExpandableStringEnum<DeviceType> {
     public static final DeviceType DATA_BOX_EDGE_DEVICE = fromString("DataBoxEdgeDevice");
 
     /**
+     * Creates a new instance of DeviceType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public DeviceType() {
+    }
+
+    /**
      * Creates or finds a DeviceType from its string representation.
      *
      * @param name a name to look for.

@@ -14,6 +14,15 @@ public final class QueryType extends ExpandableStringEnum<QueryType> {
     public static final QueryType RESULT_COUNT = fromString("ResultCount");
 
     /**
+     * Creates a new instance of QueryType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public QueryType() {
+    }
+
+    /**
      * Creates or finds a QueryType from its string representation.
      *
      * @param name a name to look for.

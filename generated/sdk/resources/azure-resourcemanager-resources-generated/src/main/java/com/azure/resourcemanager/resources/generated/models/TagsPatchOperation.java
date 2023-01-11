@@ -20,6 +20,15 @@ public final class TagsPatchOperation extends ExpandableStringEnum<TagsPatchOper
     public static final TagsPatchOperation DELETE = fromString("Delete");
 
     /**
+     * Creates a new instance of TagsPatchOperation value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public TagsPatchOperation() {
+    }
+
+    /**
      * Creates or finds a TagsPatchOperation from its string representation.
      *
      * @param name a name to look for.

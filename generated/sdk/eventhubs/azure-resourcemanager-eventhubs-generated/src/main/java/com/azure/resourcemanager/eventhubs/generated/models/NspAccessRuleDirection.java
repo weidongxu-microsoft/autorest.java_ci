@@ -17,6 +17,15 @@ public final class NspAccessRuleDirection extends ExpandableStringEnum<NspAccess
     public static final NspAccessRuleDirection OUTBOUND = fromString("Outbound");
 
     /**
+     * Creates a new instance of NspAccessRuleDirection value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public NspAccessRuleDirection() {
+    }
+
+    /**
      * Creates or finds a NspAccessRuleDirection from its string representation.
      *
      * @param name a name to look for.

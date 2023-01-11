@@ -20,6 +20,15 @@ public final class EncryptionAlgorithm extends ExpandableStringEnum<EncryptionAl
     public static final EncryptionAlgorithm RSAES_PKCS1_V_1_5 = fromString("RSAES_PKCS1_v_1_5");
 
     /**
+     * Creates a new instance of EncryptionAlgorithm value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public EncryptionAlgorithm() {
+    }
+
+    /**
      * Creates or finds a EncryptionAlgorithm from its string representation.
      *
      * @param name a name to look for.

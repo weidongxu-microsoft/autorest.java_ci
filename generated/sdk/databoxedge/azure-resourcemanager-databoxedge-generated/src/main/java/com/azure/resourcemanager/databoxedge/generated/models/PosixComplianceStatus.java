@@ -20,6 +20,15 @@ public final class PosixComplianceStatus extends ExpandableStringEnum<PosixCompl
     public static final PosixComplianceStatus DISABLED = fromString("Disabled");
 
     /**
+     * Creates a new instance of PosixComplianceStatus value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public PosixComplianceStatus() {
+    }
+
+    /**
      * Creates or finds a PosixComplianceStatus from its string representation.
      *
      * @param name a name to look for.

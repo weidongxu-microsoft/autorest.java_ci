@@ -23,6 +23,15 @@ public final class TableTypeEnum extends ExpandableStringEnum<TableTypeEnum> {
     public static final TableTypeEnum SEARCH_RESULTS = fromString("SearchResults");
 
     /**
+     * Creates a new instance of TableTypeEnum value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public TableTypeEnum() {
+    }
+
+    /**
      * Creates or finds a TableTypeEnum from its string representation.
      *
      * @param name a name to look for.

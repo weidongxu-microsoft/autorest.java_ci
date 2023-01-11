@@ -21,6 +21,15 @@ public final class ExpressionEvaluationOptionsScopeType
     public static final ExpressionEvaluationOptionsScopeType INNER = fromString("Inner");
 
     /**
+     * Creates a new instance of ExpressionEvaluationOptionsScopeType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public ExpressionEvaluationOptionsScopeType() {
+    }
+
+    /**
      * Creates or finds a ExpressionEvaluationOptionsScopeType from its string representation.
      *
      * @param name a name to look for.

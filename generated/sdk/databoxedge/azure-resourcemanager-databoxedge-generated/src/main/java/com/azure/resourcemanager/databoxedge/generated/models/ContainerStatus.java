@@ -26,6 +26,15 @@ public final class ContainerStatus extends ExpandableStringEnum<ContainerStatus>
     public static final ContainerStatus NEEDS_ATTENTION = fromString("NeedsAttention");
 
     /**
+     * Creates a new instance of ContainerStatus value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public ContainerStatus() {
+    }
+
+    /**
      * Creates or finds a ContainerStatus from its string representation.
      *
      * @param name a name to look for.

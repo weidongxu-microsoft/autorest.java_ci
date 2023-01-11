@@ -17,6 +17,15 @@ public final class SslStatus extends ExpandableStringEnum<SslStatus> {
     public static final SslStatus DISABLED = fromString("Disabled");
 
     /**
+     * Creates a new instance of SslStatus value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public SslStatus() {
+    }
+
+    /**
      * Creates or finds a SslStatus from its string representation.
      *
      * @param name a name to look for.

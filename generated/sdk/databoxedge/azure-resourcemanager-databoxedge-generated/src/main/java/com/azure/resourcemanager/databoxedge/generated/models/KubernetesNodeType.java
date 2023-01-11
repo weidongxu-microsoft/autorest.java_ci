@@ -20,6 +20,15 @@ public final class KubernetesNodeType extends ExpandableStringEnum<KubernetesNod
     public static final KubernetesNodeType WORKER = fromString("Worker");
 
     /**
+     * Creates a new instance of KubernetesNodeType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public KubernetesNodeType() {
+    }
+
+    /**
      * Creates or finds a KubernetesNodeType from its string representation.
      *
      * @param name a name to look for.

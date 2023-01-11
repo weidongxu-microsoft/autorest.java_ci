@@ -32,6 +32,15 @@ public final class EventSubscriptionProvisioningState extends ExpandableStringEn
     public static final EventSubscriptionProvisioningState AWAITING_MANUAL_ACTION = fromString("AwaitingManualAction");
 
     /**
+     * Creates a new instance of EventSubscriptionProvisioningState value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public EventSubscriptionProvisioningState() {
+    }
+
+    /**
      * Creates or finds a EventSubscriptionProvisioningState from its string representation.
      *
      * @param name a name to look for.

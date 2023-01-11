@@ -17,6 +17,15 @@ public final class SessionAffinityEnabledState extends ExpandableStringEnum<Sess
     public static final SessionAffinityEnabledState DISABLED = fromString("Disabled");
 
     /**
+     * Creates a new instance of SessionAffinityEnabledState value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public SessionAffinityEnabledState() {
+    }
+
+    /**
      * Creates or finds a SessionAffinityEnabledState from its string representation.
      *
      * @param name a name to look for.

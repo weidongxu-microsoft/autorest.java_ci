@@ -32,6 +32,15 @@ public final class AlertType extends ExpandableStringEnum<AlertType> {
     public static final AlertType BUDGET_FORECAST = fromString("BudgetForecast");
 
     /**
+     * Creates a new instance of AlertType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public AlertType() {
+    }
+
+    /**
      * Creates or finds a AlertType from its string representation.
      *
      * @param name a name to look for.

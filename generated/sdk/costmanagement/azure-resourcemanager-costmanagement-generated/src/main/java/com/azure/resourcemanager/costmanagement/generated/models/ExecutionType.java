@@ -17,6 +17,15 @@ public final class ExecutionType extends ExpandableStringEnum<ExecutionType> {
     public static final ExecutionType SCHEDULED = fromString("Scheduled");
 
     /**
+     * Creates a new instance of ExecutionType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public ExecutionType() {
+    }
+
+    /**
      * Creates or finds a ExecutionType from its string representation.
      *
      * @param name a name to look for.

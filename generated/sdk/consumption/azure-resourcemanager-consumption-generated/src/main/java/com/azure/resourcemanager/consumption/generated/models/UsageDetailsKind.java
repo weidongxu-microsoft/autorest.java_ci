@@ -17,6 +17,15 @@ public final class UsageDetailsKind extends ExpandableStringEnum<UsageDetailsKin
     public static final UsageDetailsKind MODERN = fromString("modern");
 
     /**
+     * Creates a new instance of UsageDetailsKind value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public UsageDetailsKind() {
+    }
+
+    /**
      * Creates or finds a UsageDetailsKind from its string representation.
      *
      * @param name a name to look for.

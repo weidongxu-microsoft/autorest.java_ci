@@ -23,6 +23,15 @@ public final class EnterpriseGradeCdnStatus extends ExpandableStringEnum<Enterpr
     public static final EnterpriseGradeCdnStatus DISABLING = fromString("Disabling");
 
     /**
+     * Creates a new instance of EnterpriseGradeCdnStatus value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public EnterpriseGradeCdnStatus() {
+    }
+
+    /**
      * Creates or finds a EnterpriseGradeCdnStatus from its string representation.
      *
      * @param name a name to look for.

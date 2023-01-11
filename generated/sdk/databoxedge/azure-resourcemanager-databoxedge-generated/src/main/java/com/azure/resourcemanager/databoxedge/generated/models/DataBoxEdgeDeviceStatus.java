@@ -32,6 +32,15 @@ public final class DataBoxEdgeDeviceStatus extends ExpandableStringEnum<DataBoxE
     public static final DataBoxEdgeDeviceStatus MAINTENANCE = fromString("Maintenance");
 
     /**
+     * Creates a new instance of DataBoxEdgeDeviceStatus value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public DataBoxEdgeDeviceStatus() {
+    }
+
+    /**
      * Creates or finds a DataBoxEdgeDeviceStatus from its string representation.
      *
      * @param name a name to look for.

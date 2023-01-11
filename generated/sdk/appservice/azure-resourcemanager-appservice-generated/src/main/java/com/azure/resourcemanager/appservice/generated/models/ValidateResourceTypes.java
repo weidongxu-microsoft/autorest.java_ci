@@ -21,6 +21,15 @@ public final class ValidateResourceTypes extends ExpandableStringEnum<ValidateRe
         fromString("Microsoft.Web/hostingEnvironments");
 
     /**
+     * Creates a new instance of ValidateResourceTypes value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public ValidateResourceTypes() {
+    }
+
+    /**
      * Creates or finds a ValidateResourceTypes from its string representation.
      *
      * @param name a name to look for.

@@ -17,6 +17,15 @@ public final class ResourceRegionType extends ExpandableStringEnum<ResourceRegio
     public static final ResourceRegionType GLOBAL_RESOURCE = fromString("GlobalResource");
 
     /**
+     * Creates a new instance of ResourceRegionType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public ResourceRegionType() {
+    }
+
+    /**
      * Creates or finds a ResourceRegionType from its string representation.
      *
      * @param name a name to look for.

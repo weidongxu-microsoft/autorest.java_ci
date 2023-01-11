@@ -29,6 +29,15 @@ public final class ForecastTimeframeType extends ExpandableStringEnum<ForecastTi
     public static final ForecastTimeframeType CUSTOM = fromString("Custom");
 
     /**
+     * Creates a new instance of ForecastTimeframeType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public ForecastTimeframeType() {
+    }
+
+    /**
      * Creates or finds a ForecastTimeframeType from its string representation.
      *
      * @param name a name to look for.

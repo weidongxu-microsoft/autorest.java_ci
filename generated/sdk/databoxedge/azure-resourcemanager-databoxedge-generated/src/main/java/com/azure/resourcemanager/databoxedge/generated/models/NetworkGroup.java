@@ -20,6 +20,15 @@ public final class NetworkGroup extends ExpandableStringEnum<NetworkGroup> {
     public static final NetworkGroup RDMA = fromString("RDMA");
 
     /**
+     * Creates a new instance of NetworkGroup value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public NetworkGroup() {
+    }
+
+    /**
      * Creates or finds a NetworkGroup from its string representation.
      *
      * @param name a name to look for.

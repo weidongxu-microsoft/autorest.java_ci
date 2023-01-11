@@ -53,6 +53,15 @@ public final class ScmType extends ExpandableStringEnum<ScmType> {
     public static final ScmType VSTSRM = fromString("VSTSRM");
 
     /**
+     * Creates a new instance of ScmType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public ScmType() {
+    }
+
+    /**
      * Creates or finds a ScmType from its string representation.
      *
      * @param name a name to look for.

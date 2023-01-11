@@ -23,6 +23,15 @@ public final class RecurrenceType extends ExpandableStringEnum<RecurrenceType> {
     public static final RecurrenceType ANNUALLY = fromString("Annually");
 
     /**
+     * Creates a new instance of RecurrenceType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public RecurrenceType() {
+    }
+
+    /**
      * Creates or finds a RecurrenceType from its string representation.
      *
      * @param name a name to look for.

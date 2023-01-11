@@ -17,6 +17,15 @@ public final class FrontDoorProtocol extends ExpandableStringEnum<FrontDoorProto
     public static final FrontDoorProtocol HTTPS = fromString("Https");
 
     /**
+     * Creates a new instance of FrontDoorProtocol value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public FrontDoorProtocol() {
+    }
+
+    /**
      * Creates or finds a FrontDoorProtocol from its string representation.
      *
      * @param name a name to look for.

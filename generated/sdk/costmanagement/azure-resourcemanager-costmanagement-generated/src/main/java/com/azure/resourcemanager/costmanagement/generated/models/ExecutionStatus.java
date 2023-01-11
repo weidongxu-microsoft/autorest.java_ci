@@ -32,6 +32,15 @@ public final class ExecutionStatus extends ExpandableStringEnum<ExecutionStatus>
     public static final ExecutionStatus DATA_NOT_AVAILABLE = fromString("DataNotAvailable");
 
     /**
+     * Creates a new instance of ExecutionStatus value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public ExecutionStatus() {
+    }
+
+    /**
      * Creates or finds a ExecutionStatus from its string representation.
      *
      * @param name a name to look for.

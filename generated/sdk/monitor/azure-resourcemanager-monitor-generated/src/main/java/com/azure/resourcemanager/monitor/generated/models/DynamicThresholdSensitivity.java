@@ -23,6 +23,15 @@ public final class DynamicThresholdSensitivity extends ExpandableStringEnum<Dyna
     public static final DynamicThresholdSensitivity HIGH = fromString("High");
 
     /**
+     * Creates a new instance of DynamicThresholdSensitivity value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public DynamicThresholdSensitivity() {
+    }
+
+    /**
      * Creates or finds a DynamicThresholdSensitivity from its string representation.
      *
      * @param name a name to look for.

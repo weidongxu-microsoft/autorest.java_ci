@@ -74,6 +74,15 @@ public final class CultureCode extends ExpandableStringEnum<CultureCode> {
     public static final CultureCode SV_SE = fromString("sv-se");
 
     /**
+     * Creates a new instance of CultureCode value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public CultureCode() {
+    }
+
+    /**
      * Creates or finds a CultureCode from its string representation.
      *
      * @param name a name to look for.

@@ -17,6 +17,15 @@ public final class AliasPathAttributes extends ExpandableStringEnum<AliasPathAtt
     public static final AliasPathAttributes MODIFIABLE = fromString("Modifiable");
 
     /**
+     * Creates a new instance of AliasPathAttributes value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public AliasPathAttributes() {
+    }
+
+    /**
      * Creates or finds a AliasPathAttributes from its string representation.
      *
      * @param name a name to look for.

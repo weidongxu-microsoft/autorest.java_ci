@@ -20,6 +20,15 @@ public final class ImageState extends ExpandableStringEnum<ImageState> {
     public static final ImageState DEPRECATED = fromString("Deprecated");
 
     /**
+     * Creates a new instance of ImageState value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public ImageState() {
+    }
+
+    /**
      * Creates or finds a ImageState from its string representation.
      *
      * @param name a name to look for.

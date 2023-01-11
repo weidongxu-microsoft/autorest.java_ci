@@ -23,6 +23,15 @@ public final class ReportTimeframeType extends ExpandableStringEnum<ReportTimefr
     public static final ReportTimeframeType CUSTOM = fromString("Custom");
 
     /**
+     * Creates a new instance of ReportTimeframeType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public ReportTimeframeType() {
+    }
+
+    /**
      * Creates or finds a ReportTimeframeType from its string representation.
      *
      * @param name a name to look for.

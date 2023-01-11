@@ -17,6 +17,15 @@ public final class ReservationRecommendationKind extends ExpandableStringEnum<Re
     public static final ReservationRecommendationKind MODERN = fromString("modern");
 
     /**
+     * Creates a new instance of ReservationRecommendationKind value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public ReservationRecommendationKind() {
+    }
+
+    /**
      * Creates or finds a ReservationRecommendationKind from its string representation.
      *
      * @param name a name to look for.

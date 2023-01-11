@@ -14,6 +14,15 @@ public final class FrontDoorTlsProtocolType extends ExpandableStringEnum<FrontDo
     public static final FrontDoorTlsProtocolType SERVER_NAME_INDICATION = fromString("ServerNameIndication");
 
     /**
+     * Creates a new instance of FrontDoorTlsProtocolType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public FrontDoorTlsProtocolType() {
+    }
+
+    /**
      * Creates or finds a FrontDoorTlsProtocolType from its string representation.
      *
      * @param name a name to look for.

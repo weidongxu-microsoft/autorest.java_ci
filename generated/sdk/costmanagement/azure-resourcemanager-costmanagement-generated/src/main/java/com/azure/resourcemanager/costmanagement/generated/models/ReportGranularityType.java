@@ -17,6 +17,15 @@ public final class ReportGranularityType extends ExpandableStringEnum<ReportGran
     public static final ReportGranularityType MONTHLY = fromString("Monthly");
 
     /**
+     * Creates a new instance of ReportGranularityType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public ReportGranularityType() {
+    }
+
+    /**
      * Creates or finds a ReportGranularityType from its string representation.
      *
      * @param name a name to look for.

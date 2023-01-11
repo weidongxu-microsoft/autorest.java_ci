@@ -29,6 +29,15 @@ public final class TimeframeType extends ExpandableStringEnum<TimeframeType> {
     public static final TimeframeType CUSTOM = fromString("Custom");
 
     /**
+     * Creates a new instance of TimeframeType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public TimeframeType() {
+    }
+
+    /**
      * Creates or finds a TimeframeType from its string representation.
      *
      * @param name a name to look for.

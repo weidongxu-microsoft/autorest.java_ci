@@ -14,6 +14,15 @@ public final class FrontDoorCertificateType extends ExpandableStringEnum<FrontDo
     public static final FrontDoorCertificateType DEDICATED = fromString("Dedicated");
 
     /**
+     * Creates a new instance of FrontDoorCertificateType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public FrontDoorCertificateType() {
+    }
+
+    /**
      * Creates or finds a FrontDoorCertificateType from its string representation.
      *
      * @param name a name to look for.

@@ -17,6 +17,15 @@ public final class CleanupPolicyRetentionDescription extends ExpandableStringEnu
     public static final CleanupPolicyRetentionDescription COMPACTION = fromString("Compaction");
 
     /**
+     * Creates a new instance of CleanupPolicyRetentionDescription value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public CleanupPolicyRetentionDescription() {
+    }
+
+    /**
      * Creates or finds a CleanupPolicyRetentionDescription from its string representation.
      *
      * @param name a name to look for.

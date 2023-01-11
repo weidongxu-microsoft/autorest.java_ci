@@ -23,6 +23,15 @@ public final class ColumnDataTypeHintEnum extends ExpandableStringEnum<ColumnDat
     public static final ColumnDataTypeHintEnum IP = fromString("ip");
 
     /**
+     * Creates a new instance of ColumnDataTypeHintEnum value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public ColumnDataTypeHintEnum() {
+    }
+
+    /**
      * Creates or finds a ColumnDataTypeHintEnum from its string representation.
      *
      * @param name a name to look for.

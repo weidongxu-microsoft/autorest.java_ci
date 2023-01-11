@@ -35,6 +35,15 @@ public final class AllowedMethods extends ExpandableStringEnum<AllowedMethods> {
     public static final AllowedMethods PATCH = fromString("PATCH");
 
     /**
+     * Creates a new instance of AllowedMethods value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public AllowedMethods() {
+    }
+
+    /**
      * Creates or finds a AllowedMethods from its string representation.
      *
      * @param name a name to look for.

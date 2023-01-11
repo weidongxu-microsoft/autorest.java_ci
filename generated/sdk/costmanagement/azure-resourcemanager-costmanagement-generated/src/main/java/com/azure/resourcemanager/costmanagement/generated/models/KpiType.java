@@ -17,6 +17,15 @@ public final class KpiType extends ExpandableStringEnum<KpiType> {
     public static final KpiType BUDGET = fromString("Budget");
 
     /**
+     * Creates a new instance of KpiType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public KpiType() {
+    }
+
+    /**
      * Creates or finds a KpiType from its string representation.
      *
      * @param name a name to look for.

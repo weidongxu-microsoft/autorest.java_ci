@@ -17,6 +17,15 @@ public final class SkuAvailability extends ExpandableStringEnum<SkuAvailability>
     public static final SkuAvailability UNAVAILABLE = fromString("Unavailable");
 
     /**
+     * Creates a new instance of SkuAvailability value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public SkuAvailability() {
+    }
+
+    /**
      * Creates or finds a SkuAvailability from its string representation.
      *
      * @param name a name to look for.

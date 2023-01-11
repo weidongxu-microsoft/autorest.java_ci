@@ -20,6 +20,15 @@ public final class InstallationImpact extends ExpandableStringEnum<InstallationI
     public static final InstallationImpact KUBERNETES_WORKLOADS_DOWN = fromString("KubernetesWorkloadsDown");
 
     /**
+     * Creates a new instance of InstallationImpact value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public InstallationImpact() {
+    }
+
+    /**
      * Creates or finds a InstallationImpact from its string representation.
      *
      * @param name a name to look for.

@@ -23,6 +23,15 @@ public final class PrivateLinkConnectionStatus extends ExpandableStringEnum<Priv
     public static final PrivateLinkConnectionStatus DISCONNECTED = fromString("Disconnected");
 
     /**
+     * Creates a new instance of PrivateLinkConnectionStatus value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public PrivateLinkConnectionStatus() {
+    }
+
+    /**
      * Creates or finds a PrivateLinkConnectionStatus from its string representation.
      *
      * @param name a name to look for.

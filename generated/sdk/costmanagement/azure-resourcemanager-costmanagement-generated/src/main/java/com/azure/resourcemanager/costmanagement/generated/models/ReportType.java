@@ -17,6 +17,15 @@ public final class ReportType extends ExpandableStringEnum<ReportType> {
     public static final ReportType USAGE = fromString("Usage");
 
     /**
+     * Creates a new instance of ReportType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public ReportType() {
+    }
+
+    /**
      * Creates or finds a ReportType from its string representation.
      *
      * @param name a name to look for.

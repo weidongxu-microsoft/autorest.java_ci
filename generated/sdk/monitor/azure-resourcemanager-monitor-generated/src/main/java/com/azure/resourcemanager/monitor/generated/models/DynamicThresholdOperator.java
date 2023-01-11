@@ -20,6 +20,15 @@ public final class DynamicThresholdOperator extends ExpandableStringEnum<Dynamic
     public static final DynamicThresholdOperator GREATER_OR_LESS_THAN = fromString("GreaterOrLessThan");
 
     /**
+     * Creates a new instance of DynamicThresholdOperator value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public DynamicThresholdOperator() {
+    }
+
+    /**
      * Creates or finds a DynamicThresholdOperator from its string representation.
      *
      * @param name a name to look for.

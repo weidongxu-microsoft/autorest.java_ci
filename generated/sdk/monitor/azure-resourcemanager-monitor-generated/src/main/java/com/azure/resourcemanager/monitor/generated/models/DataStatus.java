@@ -20,6 +20,15 @@ public final class DataStatus extends ExpandableStringEnum<DataStatus> {
     public static final DataStatus NOT_PRESENT = fromString("notPresent");
 
     /**
+     * Creates a new instance of DataStatus value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public DataStatus() {
+    }
+
+    /**
      * Creates or finds a DataStatus from its string representation.
      *
      * @param name a name to look for.

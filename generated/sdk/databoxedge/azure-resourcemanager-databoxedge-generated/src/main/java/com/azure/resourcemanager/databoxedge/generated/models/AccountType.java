@@ -17,6 +17,15 @@ public final class AccountType extends ExpandableStringEnum<AccountType> {
     public static final AccountType BLOB_STORAGE = fromString("BlobStorage");
 
     /**
+     * Creates a new instance of AccountType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public AccountType() {
+    }
+
+    /**
      * Creates or finds a AccountType from its string representation.
      *
      * @param name a name to look for.

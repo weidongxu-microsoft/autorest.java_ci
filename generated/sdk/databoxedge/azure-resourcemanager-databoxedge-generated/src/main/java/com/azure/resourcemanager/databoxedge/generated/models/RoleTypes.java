@@ -32,6 +32,15 @@ public final class RoleTypes extends ExpandableStringEnum<RoleTypes> {
     public static final RoleTypes KUBERNETES = fromString("Kubernetes");
 
     /**
+     * Creates a new instance of RoleTypes value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public RoleTypes() {
+    }
+
+    /**
      * Creates or finds a RoleTypes from its string representation.
      *
      * @param name a name to look for.

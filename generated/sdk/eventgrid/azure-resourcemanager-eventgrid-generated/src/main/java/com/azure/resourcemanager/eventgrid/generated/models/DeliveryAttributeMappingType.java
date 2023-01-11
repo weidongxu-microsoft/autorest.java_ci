@@ -17,6 +17,15 @@ public final class DeliveryAttributeMappingType extends ExpandableStringEnum<Del
     public static final DeliveryAttributeMappingType DYNAMIC = fromString("Dynamic");
 
     /**
+     * Creates a new instance of DeliveryAttributeMappingType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public DeliveryAttributeMappingType() {
+    }
+
+    /**
      * Creates or finds a DeliveryAttributeMappingType from its string representation.
      *
      * @param name a name to look for.

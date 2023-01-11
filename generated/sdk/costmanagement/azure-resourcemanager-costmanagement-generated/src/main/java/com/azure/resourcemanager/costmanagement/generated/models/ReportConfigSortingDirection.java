@@ -17,6 +17,15 @@ public final class ReportConfigSortingDirection extends ExpandableStringEnum<Rep
     public static final ReportConfigSortingDirection DESCENDING = fromString("Descending");
 
     /**
+     * Creates a new instance of ReportConfigSortingDirection value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public ReportConfigSortingDirection() {
+    }
+
+    /**
      * Creates or finds a ReportConfigSortingDirection from its string representation.
      *
      * @param name a name to look for.

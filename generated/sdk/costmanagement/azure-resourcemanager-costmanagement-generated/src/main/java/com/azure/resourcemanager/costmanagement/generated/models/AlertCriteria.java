@@ -53,6 +53,15 @@ public final class AlertCriteria extends ExpandableStringEnum<AlertCriteria> {
     public static final AlertCriteria GENERAL_THRESHOLD_ERROR = fromString("GeneralThresholdError");
 
     /**
+     * Creates a new instance of AlertCriteria value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public AlertCriteria() {
+    }
+
+    /**
      * Creates or finds a AlertCriteria from its string representation.
      *
      * @param name a name to look for.

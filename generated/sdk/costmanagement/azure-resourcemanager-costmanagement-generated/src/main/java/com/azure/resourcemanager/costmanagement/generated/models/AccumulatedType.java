@@ -17,6 +17,15 @@ public final class AccumulatedType extends ExpandableStringEnum<AccumulatedType>
     public static final AccumulatedType FALSE = fromString("false");
 
     /**
+     * Creates a new instance of AccumulatedType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public AccumulatedType() {
+    }
+
+    /**
      * Creates or finds a AccumulatedType from its string representation.
      *
      * @param name a name to look for.

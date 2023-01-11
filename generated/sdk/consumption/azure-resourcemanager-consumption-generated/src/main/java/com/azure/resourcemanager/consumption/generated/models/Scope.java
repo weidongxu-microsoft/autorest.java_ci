@@ -17,6 +17,15 @@ public final class Scope extends ExpandableStringEnum<Scope> {
     public static final Scope SHARED = fromString("Shared");
 
     /**
+     * Creates a new instance of Scope value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public Scope() {
+    }
+
+    /**
      * Creates or finds a Scope from its string representation.
      *
      * @param name a name to look for.

@@ -17,6 +17,15 @@ public final class QueryColumnType extends ExpandableStringEnum<QueryColumnType>
     public static final QueryColumnType DIMENSION = fromString("Dimension");
 
     /**
+     * Creates a new instance of QueryColumnType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public QueryColumnType() {
+    }
+
+    /**
      * Creates or finds a QueryColumnType from its string representation.
      *
      * @param name a name to look for.

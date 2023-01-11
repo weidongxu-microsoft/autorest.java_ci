@@ -17,6 +17,15 @@ public final class DynamicCompressionEnabled extends ExpandableStringEnum<Dynami
     public static final DynamicCompressionEnabled DISABLED = fromString("Disabled");
 
     /**
+     * Creates a new instance of DynamicCompressionEnabled value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public DynamicCompressionEnabled() {
+    }
+
+    /**
      * Creates or finds a DynamicCompressionEnabled from its string representation.
      *
      * @param name a name to look for.

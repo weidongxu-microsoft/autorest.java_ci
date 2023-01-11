@@ -20,6 +20,15 @@ public final class EnforceCertificateNameCheckEnabledState
     public static final EnforceCertificateNameCheckEnabledState DISABLED = fromString("Disabled");
 
     /**
+     * Creates a new instance of EnforceCertificateNameCheckEnabledState value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public EnforceCertificateNameCheckEnabledState() {
+    }
+
+    /**
      * Creates or finds a EnforceCertificateNameCheckEnabledState from its string representation.
      *
      * @param name a name to look for.

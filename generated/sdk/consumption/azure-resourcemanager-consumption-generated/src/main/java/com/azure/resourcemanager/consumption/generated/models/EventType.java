@@ -35,6 +35,15 @@ public final class EventType extends ExpandableStringEnum<EventType> {
     public static final EventType CREDIT_EXPIRED = fromString("CreditExpired");
 
     /**
+     * Creates a new instance of EventType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public EventType() {
+    }
+
+    /**
      * Creates or finds a EventType from its string representation.
      *
      * @param name a name to look for.

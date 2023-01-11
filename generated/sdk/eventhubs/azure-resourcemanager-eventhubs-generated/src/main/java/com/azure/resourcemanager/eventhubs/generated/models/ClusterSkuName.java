@@ -14,6 +14,15 @@ public final class ClusterSkuName extends ExpandableStringEnum<ClusterSkuName> {
     public static final ClusterSkuName DEDICATED = fromString("Dedicated");
 
     /**
+     * Creates a new instance of ClusterSkuName value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public ClusterSkuName() {
+    }
+
+    /**
      * Creates or finds a ClusterSkuName from its string representation.
      *
      * @param name a name to look for.

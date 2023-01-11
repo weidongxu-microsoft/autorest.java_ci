@@ -20,6 +20,15 @@ public final class MsiIdentityType extends ExpandableStringEnum<MsiIdentityType>
     public static final MsiIdentityType USER_ASSIGNED = fromString("UserAssigned");
 
     /**
+     * Creates a new instance of MsiIdentityType value.
+     *
+     * @deprecated Use the {@link #fromString(String)} factory method.
+     */
+    @Deprecated
+    public MsiIdentityType() {
+    }
+
+    /**
      * Creates or finds a MsiIdentityType from its string representation.
      *
      * @param name a name to look for.
