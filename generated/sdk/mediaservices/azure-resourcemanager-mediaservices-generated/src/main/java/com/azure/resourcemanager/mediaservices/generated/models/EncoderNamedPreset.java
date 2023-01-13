@@ -25,6 +25,9 @@ public final class EncoderNamedPreset extends ExpandableStringEnum<EncoderNamedP
     /** Static value AACGoodQualityAudio for EncoderNamedPreset. */
     public static final EncoderNamedPreset AACGOOD_QUALITY_AUDIO = fromString("AACGoodQualityAudio");
 
+    /** Static value DDGoodQualityAudio for EncoderNamedPreset. */
+    public static final EncoderNamedPreset DDGOOD_QUALITY_AUDIO = fromString("DDGoodQualityAudio");
+
     /** Static value ContentAwareEncodingExperimental for EncoderNamedPreset. */
     public static final EncoderNamedPreset CONTENT_AWARE_ENCODING_EXPERIMENTAL =
         fromString("ContentAwareEncodingExperimental");
