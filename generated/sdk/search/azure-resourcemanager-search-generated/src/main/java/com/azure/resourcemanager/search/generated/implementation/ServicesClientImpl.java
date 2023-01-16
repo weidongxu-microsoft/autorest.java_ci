@@ -1161,7 +1161,7 @@ public final class ServicesClientImpl implements ServicesClient {
     }
 
     /**
-     * Gets a list of all search services in the given resource group.
+     * Gets a list of all Search services in the given resource group.
      *
      * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
      *     value from the Azure Resource Manager API or the portal.
@@ -1170,7 +1170,7 @@ public final class ServicesClientImpl implements ServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all search services in the given resource group along with {@link PagedResponse} on successful
+     * @return a list of all Search services in the given resource group along with {@link PagedResponse} on successful
      *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
@@ -1218,7 +1218,7 @@ public final class ServicesClientImpl implements ServicesClient {
     }
 
     /**
-     * Gets a list of all search services in the given resource group.
+     * Gets a list of all Search services in the given resource group.
      *
      * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
      *     value from the Azure Resource Manager API or the portal.
@@ -1228,7 +1228,7 @@ public final class ServicesClientImpl implements ServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all search services in the given resource group along with {@link PagedResponse} on successful
+     * @return a list of all Search services in the given resource group along with {@link PagedResponse} on successful
      *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
@@ -1273,7 +1273,7 @@ public final class ServicesClientImpl implements ServicesClient {
     }
 
     /**
-     * Gets a list of all search services in the given resource group.
+     * Gets a list of all Search services in the given resource group.
      *
      * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
      *     value from the Azure Resource Manager API or the portal.
@@ -1282,7 +1282,7 @@ public final class ServicesClientImpl implements ServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all search services in the given resource group as paginated response with {@link PagedFlux}.
+     * @return a list of all Search services in the given resource group as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<SearchServiceInner> listByResourceGroupAsync(String resourceGroupName, UUID clientRequestId) {
@@ -1292,14 +1292,14 @@ public final class ServicesClientImpl implements ServicesClient {
     }
 
     /**
-     * Gets a list of all search services in the given resource group.
+     * Gets a list of all Search services in the given resource group.
      *
      * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
      *     value from the Azure Resource Manager API or the portal.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all search services in the given resource group as paginated response with {@link PagedFlux}.
+     * @return a list of all Search services in the given resource group as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<SearchServiceInner> listByResourceGroupAsync(String resourceGroupName) {
@@ -1310,7 +1310,7 @@ public final class ServicesClientImpl implements ServicesClient {
     }
 
     /**
-     * Gets a list of all search services in the given resource group.
+     * Gets a list of all Search services in the given resource group.
      *
      * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
      *     value from the Azure Resource Manager API or the portal.
@@ -1320,7 +1320,7 @@ public final class ServicesClientImpl implements ServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all search services in the given resource group as paginated response with {@link PagedFlux}.
+     * @return a list of all Search services in the given resource group as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<SearchServiceInner> listByResourceGroupAsync(
@@ -1331,14 +1331,14 @@ public final class ServicesClientImpl implements ServicesClient {
     }
 
     /**
-     * Gets a list of all search services in the given resource group.
+     * Gets a list of all Search services in the given resource group.
      *
      * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
      *     value from the Azure Resource Manager API or the portal.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all search services in the given resource group as paginated response with {@link
+     * @return a list of all Search services in the given resource group as paginated response with {@link
      *     PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
@@ -1348,7 +1348,7 @@ public final class ServicesClientImpl implements ServicesClient {
     }
 
     /**
-     * Gets a list of all search services in the given resource group.
+     * Gets a list of all Search services in the given resource group.
      *
      * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
      *     value from the Azure Resource Manager API or the portal.
@@ -1358,7 +1358,7 @@ public final class ServicesClientImpl implements ServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all search services in the given resource group as paginated response with {@link
+     * @return a list of all Search services in the given resource group as paginated response with {@link
      *     PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
@@ -1368,14 +1368,14 @@ public final class ServicesClientImpl implements ServicesClient {
     }
 
     /**
-     * Gets a list of all search services in the given subscription.
+     * Gets a list of all Search services in the given subscription.
      *
      * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
      *     included in response information as a way to track the request.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all search services in the given subscription along with {@link PagedResponse} on successful
+     * @return a list of all Search services in the given subscription along with {@link PagedResponse} on successful
      *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
@@ -1417,7 +1417,7 @@ public final class ServicesClientImpl implements ServicesClient {
     }
 
     /**
-     * Gets a list of all search services in the given subscription.
+     * Gets a list of all Search services in the given subscription.
      *
      * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
      *     included in response information as a way to track the request.
@@ -1425,7 +1425,7 @@ public final class ServicesClientImpl implements ServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all search services in the given subscription along with {@link PagedResponse} on successful
+     * @return a list of all Search services in the given subscription along with {@link PagedResponse} on successful
      *     completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
@@ -1464,14 +1464,14 @@ public final class ServicesClientImpl implements ServicesClient {
     }
 
     /**
-     * Gets a list of all search services in the given subscription.
+     * Gets a list of all Search services in the given subscription.
      *
      * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
      *     included in response information as a way to track the request.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all search services in the given subscription as paginated response with {@link PagedFlux}.
+     * @return a list of all Search services in the given subscription as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<SearchServiceInner> listAsync(UUID clientRequestId) {
@@ -1481,11 +1481,11 @@ public final class ServicesClientImpl implements ServicesClient {
     }
 
     /**
-     * Gets a list of all search services in the given subscription.
+     * Gets a list of all Search services in the given subscription.
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all search services in the given subscription as paginated response with {@link PagedFlux}.
+     * @return a list of all Search services in the given subscription as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<SearchServiceInner> listAsync() {
@@ -1496,7 +1496,7 @@ public final class ServicesClientImpl implements ServicesClient {
     }
 
     /**
-     * Gets a list of all search services in the given subscription.
+     * Gets a list of all Search services in the given subscription.
      *
      * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
      *     included in response information as a way to track the request.
@@ -1504,7 +1504,7 @@ public final class ServicesClientImpl implements ServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all search services in the given subscription as paginated response with {@link PagedFlux}.
+     * @return a list of all Search services in the given subscription as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<SearchServiceInner> listAsync(UUID clientRequestId, Context context) {
@@ -1514,11 +1514,11 @@ public final class ServicesClientImpl implements ServicesClient {
     }
 
     /**
-     * Gets a list of all search services in the given subscription.
+     * Gets a list of all Search services in the given subscription.
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all search services in the given subscription as paginated response with {@link PagedIterable}.
+     * @return a list of all Search services in the given subscription as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<SearchServiceInner> list() {
@@ -1527,7 +1527,7 @@ public final class ServicesClientImpl implements ServicesClient {
     }
 
     /**
-     * Gets a list of all search services in the given subscription.
+     * Gets a list of all Search services in the given subscription.
      *
      * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
      *     included in response information as a way to track the request.
@@ -1535,7 +1535,7 @@ public final class ServicesClientImpl implements ServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all search services in the given subscription as paginated response with {@link PagedIterable}.
+     * @return a list of all Search services in the given subscription as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<SearchServiceInner> list(UUID clientRequestId, Context context) {

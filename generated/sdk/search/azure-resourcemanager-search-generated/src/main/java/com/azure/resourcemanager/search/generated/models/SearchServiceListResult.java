@@ -13,7 +13,7 @@ import java.util.List;
 @Immutable
 public final class SearchServiceListResult {
     /*
-     * The list of search services.
+     * The list of Search services.
      */
     @JsonProperty(value = "value", access = JsonProperty.Access.WRITE_ONLY)
     private List<SearchServiceInner> value;
@@ -30,7 +30,7 @@ public final class SearchServiceListResult {
     }
 
     /**
-     * Get the value property: The list of search services.
+     * Get the value property: The list of Search services.
      *
      * @return the value value.
      */

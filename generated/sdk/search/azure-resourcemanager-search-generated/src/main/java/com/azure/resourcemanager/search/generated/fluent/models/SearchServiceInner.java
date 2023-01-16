@@ -6,6 +6,8 @@ package com.azure.resourcemanager.search.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.Resource;
+import com.azure.resourcemanager.search.generated.models.DataPlaneAuthOptions;
+import com.azure.resourcemanager.search.generated.models.EncryptionWithCmk;
 import com.azure.resourcemanager.search.generated.models.HostingMode;
 import com.azure.resourcemanager.search.generated.models.Identity;
 import com.azure.resourcemanager.search.generated.models.NetworkRuleSet;
@@ -279,6 +281,81 @@ public final class SearchServiceInner extends Resource {
             this.innerProperties = new SearchServiceProperties();
         }
         this.innerProperties().withNetworkRuleSet(networkRuleSet);
+        return this;
+    }
+
+    /**
+     * Get the encryptionWithCmk property: Specifies any policy regarding encryption of resources (such as indexes)
+     * using customer manager keys within a search service.
+     *
+     * @return the encryptionWithCmk value.
+     */
+    public EncryptionWithCmk encryptionWithCmk() {
+        return this.innerProperties() == null ? null : this.innerProperties().encryptionWithCmk();
+    }
+
+    /**
+     * Set the encryptionWithCmk property: Specifies any policy regarding encryption of resources (such as indexes)
+     * using customer manager keys within a search service.
+     *
+     * @param encryptionWithCmk the encryptionWithCmk value to set.
+     * @return the SearchServiceInner object itself.
+     */
+    public SearchServiceInner withEncryptionWithCmk(EncryptionWithCmk encryptionWithCmk) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new SearchServiceProperties();
+        }
+        this.innerProperties().withEncryptionWithCmk(encryptionWithCmk);
+        return this;
+    }
+
+    /**
+     * Get the disableLocalAuth property: When set to true, calls to the search service will not be permitted to utilize
+     * API keys for authentication. This cannot be set to true if 'dataPlaneAuthOptions' are defined.
+     *
+     * @return the disableLocalAuth value.
+     */
+    public Boolean disableLocalAuth() {
+        return this.innerProperties() == null ? null : this.innerProperties().disableLocalAuth();
+    }
+
+    /**
+     * Set the disableLocalAuth property: When set to true, calls to the search service will not be permitted to utilize
+     * API keys for authentication. This cannot be set to true if 'dataPlaneAuthOptions' are defined.
+     *
+     * @param disableLocalAuth the disableLocalAuth value to set.
+     * @return the SearchServiceInner object itself.
+     */
+    public SearchServiceInner withDisableLocalAuth(Boolean disableLocalAuth) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new SearchServiceProperties();
+        }
+        this.innerProperties().withDisableLocalAuth(disableLocalAuth);
+        return this;
+    }
+
+    /**
+     * Get the authOptions property: Defines the options for how the data plane API of a search service authenticates
+     * requests. This cannot be set if 'disableLocalAuth' is set to true.
+     *
+     * @return the authOptions value.
+     */
+    public DataPlaneAuthOptions authOptions() {
+        return this.innerProperties() == null ? null : this.innerProperties().authOptions();
+    }
+
+    /**
+     * Set the authOptions property: Defines the options for how the data plane API of a search service authenticates
+     * requests. This cannot be set if 'disableLocalAuth' is set to true.
+     *
+     * @param authOptions the authOptions value to set.
+     * @return the SearchServiceInner object itself.
+     */
+    public SearchServiceInner withAuthOptions(DataPlaneAuthOptions authOptions) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new SearchServiceProperties();
+        }
+        this.innerProperties().withAuthOptions(authOptions);
         return this;
     }
 

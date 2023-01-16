@@ -5,6 +5,8 @@
 package com.azure.resourcemanager.search.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.resourcemanager.search.generated.models.DataPlaneAuthOptions;
+import com.azure.resourcemanager.search.generated.models.EncryptionWithCmk;
 import com.azure.resourcemanager.search.generated.models.HostingMode;
 import com.azure.resourcemanager.search.generated.models.NetworkRuleSet;
 import com.azure.resourcemanager.search.generated.models.ProvisioningState;
@@ -83,6 +85,27 @@ public final class SearchServiceProperties {
      */
     @JsonProperty(value = "networkRuleSet")
     private NetworkRuleSet networkRuleSet;
+
+    /*
+     * Specifies any policy regarding encryption of resources (such as indexes) using customer manager keys within a
+     * search service.
+     */
+    @JsonProperty(value = "encryptionWithCmk")
+    private EncryptionWithCmk encryptionWithCmk;
+
+    /*
+     * When set to true, calls to the search service will not be permitted to utilize API keys for authentication. This
+     * cannot be set to true if 'dataPlaneAuthOptions' are defined.
+     */
+    @JsonProperty(value = "disableLocalAuth")
+    private Boolean disableLocalAuth;
+
+    /*
+     * Defines the options for how the data plane API of a search service authenticates requests. This cannot be set if
+     * 'disableLocalAuth' is set to true.
+     */
+    @JsonProperty(value = "authOptions")
+    private DataPlaneAuthOptions authOptions;
 
     /*
      * The list of private endpoint connections to the Azure Cognitive Search service.
@@ -260,6 +283,72 @@ public final class SearchServiceProperties {
     }
 
     /**
+     * Get the encryptionWithCmk property: Specifies any policy regarding encryption of resources (such as indexes)
+     * using customer manager keys within a search service.
+     *
+     * @return the encryptionWithCmk value.
+     */
+    public EncryptionWithCmk encryptionWithCmk() {
+        return this.encryptionWithCmk;
+    }
+
+    /**
+     * Set the encryptionWithCmk property: Specifies any policy regarding encryption of resources (such as indexes)
+     * using customer manager keys within a search service.
+     *
+     * @param encryptionWithCmk the encryptionWithCmk value to set.
+     * @return the SearchServiceProperties object itself.
+     */
+    public SearchServiceProperties withEncryptionWithCmk(EncryptionWithCmk encryptionWithCmk) {
+        this.encryptionWithCmk = encryptionWithCmk;
+        return this;
+    }
+
+    /**
+     * Get the disableLocalAuth property: When set to true, calls to the search service will not be permitted to utilize
+     * API keys for authentication. This cannot be set to true if 'dataPlaneAuthOptions' are defined.
+     *
+     * @return the disableLocalAuth value.
+     */
+    public Boolean disableLocalAuth() {
+        return this.disableLocalAuth;
+    }
+
+    /**
+     * Set the disableLocalAuth property: When set to true, calls to the search service will not be permitted to utilize
+     * API keys for authentication. This cannot be set to true if 'dataPlaneAuthOptions' are defined.
+     *
+     * @param disableLocalAuth the disableLocalAuth value to set.
+     * @return the SearchServiceProperties object itself.
+     */
+    public SearchServiceProperties withDisableLocalAuth(Boolean disableLocalAuth) {
+        this.disableLocalAuth = disableLocalAuth;
+        return this;
+    }
+
+    /**
+     * Get the authOptions property: Defines the options for how the data plane API of a search service authenticates
+     * requests. This cannot be set if 'disableLocalAuth' is set to true.
+     *
+     * @return the authOptions value.
+     */
+    public DataPlaneAuthOptions authOptions() {
+        return this.authOptions;
+    }
+
+    /**
+     * Set the authOptions property: Defines the options for how the data plane API of a search service authenticates
+     * requests. This cannot be set if 'disableLocalAuth' is set to true.
+     *
+     * @param authOptions the authOptions value to set.
+     * @return the SearchServiceProperties object itself.
+     */
+    public SearchServiceProperties withAuthOptions(DataPlaneAuthOptions authOptions) {
+        this.authOptions = authOptions;
+        return this;
+    }
+
+    /**
      * Get the privateEndpointConnections property: The list of private endpoint connections to the Azure Cognitive
      * Search service.
      *
@@ -287,6 +376,12 @@ public final class SearchServiceProperties {
     public void validate() {
         if (networkRuleSet() != null) {
             networkRuleSet().validate();
+        }
+        if (encryptionWithCmk() != null) {
+            encryptionWithCmk().validate();
+        }
+        if (authOptions() != null) {
+            authOptions().validate();
         }
         if (privateEndpointConnections() != null) {
             privateEndpointConnections().forEach(e -> e.validate());

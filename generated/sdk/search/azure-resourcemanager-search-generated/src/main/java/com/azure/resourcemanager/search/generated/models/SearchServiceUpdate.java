@@ -325,6 +325,81 @@ public final class SearchServiceUpdate extends ProxyResource {
     }
 
     /**
+     * Get the encryptionWithCmk property: Specifies any policy regarding encryption of resources (such as indexes)
+     * using customer manager keys within a search service.
+     *
+     * @return the encryptionWithCmk value.
+     */
+    public EncryptionWithCmk encryptionWithCmk() {
+        return this.innerProperties() == null ? null : this.innerProperties().encryptionWithCmk();
+    }
+
+    /**
+     * Set the encryptionWithCmk property: Specifies any policy regarding encryption of resources (such as indexes)
+     * using customer manager keys within a search service.
+     *
+     * @param encryptionWithCmk the encryptionWithCmk value to set.
+     * @return the SearchServiceUpdate object itself.
+     */
+    public SearchServiceUpdate withEncryptionWithCmk(EncryptionWithCmk encryptionWithCmk) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new SearchServiceProperties();
+        }
+        this.innerProperties().withEncryptionWithCmk(encryptionWithCmk);
+        return this;
+    }
+
+    /**
+     * Get the disableLocalAuth property: When set to true, calls to the search service will not be permitted to utilize
+     * API keys for authentication. This cannot be set to true if 'dataPlaneAuthOptions' are defined.
+     *
+     * @return the disableLocalAuth value.
+     */
+    public Boolean disableLocalAuth() {
+        return this.innerProperties() == null ? null : this.innerProperties().disableLocalAuth();
+    }
+
+    /**
+     * Set the disableLocalAuth property: When set to true, calls to the search service will not be permitted to utilize
+     * API keys for authentication. This cannot be set to true if 'dataPlaneAuthOptions' are defined.
+     *
+     * @param disableLocalAuth the disableLocalAuth value to set.
+     * @return the SearchServiceUpdate object itself.
+     */
+    public SearchServiceUpdate withDisableLocalAuth(Boolean disableLocalAuth) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new SearchServiceProperties();
+        }
+        this.innerProperties().withDisableLocalAuth(disableLocalAuth);
+        return this;
+    }
+
+    /**
+     * Get the authOptions property: Defines the options for how the data plane API of a search service authenticates
+     * requests. This cannot be set if 'disableLocalAuth' is set to true.
+     *
+     * @return the authOptions value.
+     */
+    public DataPlaneAuthOptions authOptions() {
+        return this.innerProperties() == null ? null : this.innerProperties().authOptions();
+    }
+
+    /**
+     * Set the authOptions property: Defines the options for how the data plane API of a search service authenticates
+     * requests. This cannot be set if 'disableLocalAuth' is set to true.
+     *
+     * @param authOptions the authOptions value to set.
+     * @return the SearchServiceUpdate object itself.
+     */
+    public SearchServiceUpdate withAuthOptions(DataPlaneAuthOptions authOptions) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new SearchServiceProperties();
+        }
+        this.innerProperties().withAuthOptions(authOptions);
+        return this;
+    }
+
+    /**
      * Get the privateEndpointConnections property: The list of private endpoint connections to the Azure Cognitive
      * Search service.
      *

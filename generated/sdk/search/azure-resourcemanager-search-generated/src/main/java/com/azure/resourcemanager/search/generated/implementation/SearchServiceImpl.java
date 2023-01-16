@@ -9,6 +9,8 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.search.generated.fluent.models.PrivateEndpointConnectionInner;
 import com.azure.resourcemanager.search.generated.fluent.models.SearchServiceInner;
 import com.azure.resourcemanager.search.generated.fluent.models.SharedPrivateLinkResourceInner;
+import com.azure.resourcemanager.search.generated.models.DataPlaneAuthOptions;
+import com.azure.resourcemanager.search.generated.models.EncryptionWithCmk;
 import com.azure.resourcemanager.search.generated.models.HostingMode;
 import com.azure.resourcemanager.search.generated.models.Identity;
 import com.azure.resourcemanager.search.generated.models.NetworkRuleSet;
@@ -94,6 +96,18 @@ public final class SearchServiceImpl implements SearchService, SearchService.Def
 
     public NetworkRuleSet networkRuleSet() {
         return this.innerModel().networkRuleSet();
+    }
+
+    public EncryptionWithCmk encryptionWithCmk() {
+        return this.innerModel().encryptionWithCmk();
+    }
+
+    public Boolean disableLocalAuth() {
+        return this.innerModel().disableLocalAuth();
+    }
+
+    public DataPlaneAuthOptions authOptions() {
+        return this.innerModel().authOptions();
     }
 
     public List<PrivateEndpointConnection> privateEndpointConnections() {
@@ -331,6 +345,36 @@ public final class SearchServiceImpl implements SearchService, SearchService.Def
             return this;
         } else {
             this.updateServiceParam.withNetworkRuleSet(networkRuleSet);
+            return this;
+        }
+    }
+
+    public SearchServiceImpl withEncryptionWithCmk(EncryptionWithCmk encryptionWithCmk) {
+        if (isInCreateMode()) {
+            this.innerModel().withEncryptionWithCmk(encryptionWithCmk);
+            return this;
+        } else {
+            this.updateServiceParam.withEncryptionWithCmk(encryptionWithCmk);
+            return this;
+        }
+    }
+
+    public SearchServiceImpl withDisableLocalAuth(Boolean disableLocalAuth) {
+        if (isInCreateMode()) {
+            this.innerModel().withDisableLocalAuth(disableLocalAuth);
+            return this;
+        } else {
+            this.updateServiceParam.withDisableLocalAuth(disableLocalAuth);
+            return this;
+        }
+    }
+
+    public SearchServiceImpl withAuthOptions(DataPlaneAuthOptions authOptions) {
+        if (isInCreateMode()) {
+            this.innerModel().withAuthOptions(authOptions);
+            return this;
+        } else {
+            this.updateServiceParam.withAuthOptions(authOptions);
             return this;
         }
     }

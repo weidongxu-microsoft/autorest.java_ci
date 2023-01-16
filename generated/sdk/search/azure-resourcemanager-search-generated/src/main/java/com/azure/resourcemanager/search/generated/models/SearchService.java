@@ -143,6 +143,30 @@ public interface SearchService {
     NetworkRuleSet networkRuleSet();
 
     /**
+     * Gets the encryptionWithCmk property: Specifies any policy regarding encryption of resources (such as indexes)
+     * using customer manager keys within a search service.
+     *
+     * @return the encryptionWithCmk value.
+     */
+    EncryptionWithCmk encryptionWithCmk();
+
+    /**
+     * Gets the disableLocalAuth property: When set to true, calls to the search service will not be permitted to
+     * utilize API keys for authentication. This cannot be set to true if 'dataPlaneAuthOptions' are defined.
+     *
+     * @return the disableLocalAuth value.
+     */
+    Boolean disableLocalAuth();
+
+    /**
+     * Gets the authOptions property: Defines the options for how the data plane API of a search service authenticates
+     * requests. This cannot be set if 'disableLocalAuth' is set to true.
+     *
+     * @return the authOptions value.
+     */
+    DataPlaneAuthOptions authOptions();
+
+    /**
      * Gets the privateEndpointConnections property: The list of private endpoint connections to the Azure Cognitive
      * Search service.
      *
@@ -240,6 +264,9 @@ public interface SearchService {
                 DefinitionStages.WithHostingMode,
                 DefinitionStages.WithPublicNetworkAccess,
                 DefinitionStages.WithNetworkRuleSet,
+                DefinitionStages.WithEncryptionWithCmk,
+                DefinitionStages.WithDisableLocalAuth,
+                DefinitionStages.WithAuthOptions,
                 DefinitionStages.WithClientRequestId {
             /**
              * Executes the create request.
@@ -356,6 +383,43 @@ public interface SearchService {
              */
             WithCreate withNetworkRuleSet(NetworkRuleSet networkRuleSet);
         }
+        /** The stage of the SearchService definition allowing to specify encryptionWithCmk. */
+        interface WithEncryptionWithCmk {
+            /**
+             * Specifies the encryptionWithCmk property: Specifies any policy regarding encryption of resources (such as
+             * indexes) using customer manager keys within a search service..
+             *
+             * @param encryptionWithCmk Specifies any policy regarding encryption of resources (such as indexes) using
+             *     customer manager keys within a search service.
+             * @return the next definition stage.
+             */
+            WithCreate withEncryptionWithCmk(EncryptionWithCmk encryptionWithCmk);
+        }
+        /** The stage of the SearchService definition allowing to specify disableLocalAuth. */
+        interface WithDisableLocalAuth {
+            /**
+             * Specifies the disableLocalAuth property: When set to true, calls to the search service will not be
+             * permitted to utilize API keys for authentication. This cannot be set to true if 'dataPlaneAuthOptions'
+             * are defined..
+             *
+             * @param disableLocalAuth When set to true, calls to the search service will not be permitted to utilize
+             *     API keys for authentication. This cannot be set to true if 'dataPlaneAuthOptions' are defined.
+             * @return the next definition stage.
+             */
+            WithCreate withDisableLocalAuth(Boolean disableLocalAuth);
+        }
+        /** The stage of the SearchService definition allowing to specify authOptions. */
+        interface WithAuthOptions {
+            /**
+             * Specifies the authOptions property: Defines the options for how the data plane API of a search service
+             * authenticates requests. This cannot be set if 'disableLocalAuth' is set to true..
+             *
+             * @param authOptions Defines the options for how the data plane API of a search service authenticates
+             *     requests. This cannot be set if 'disableLocalAuth' is set to true.
+             * @return the next definition stage.
+             */
+            WithCreate withAuthOptions(DataPlaneAuthOptions authOptions);
+        }
         /** The stage of the SearchService definition allowing to specify clientRequestId. */
         interface WithClientRequestId {
             /**
@@ -386,6 +450,9 @@ public interface SearchService {
             UpdateStages.WithHostingMode,
             UpdateStages.WithPublicNetworkAccess,
             UpdateStages.WithNetworkRuleSet,
+            UpdateStages.WithEncryptionWithCmk,
+            UpdateStages.WithDisableLocalAuth,
+            UpdateStages.WithAuthOptions,
             UpdateStages.WithClientRequestId {
         /**
          * Executes the update request.
@@ -503,6 +570,43 @@ public interface SearchService {
              * @return the next definition stage.
              */
             Update withNetworkRuleSet(NetworkRuleSet networkRuleSet);
+        }
+        /** The stage of the SearchService update allowing to specify encryptionWithCmk. */
+        interface WithEncryptionWithCmk {
+            /**
+             * Specifies the encryptionWithCmk property: Specifies any policy regarding encryption of resources (such as
+             * indexes) using customer manager keys within a search service..
+             *
+             * @param encryptionWithCmk Specifies any policy regarding encryption of resources (such as indexes) using
+             *     customer manager keys within a search service.
+             * @return the next definition stage.
+             */
+            Update withEncryptionWithCmk(EncryptionWithCmk encryptionWithCmk);
+        }
+        /** The stage of the SearchService update allowing to specify disableLocalAuth. */
+        interface WithDisableLocalAuth {
+            /**
+             * Specifies the disableLocalAuth property: When set to true, calls to the search service will not be
+             * permitted to utilize API keys for authentication. This cannot be set to true if 'dataPlaneAuthOptions'
+             * are defined..
+             *
+             * @param disableLocalAuth When set to true, calls to the search service will not be permitted to utilize
+             *     API keys for authentication. This cannot be set to true if 'dataPlaneAuthOptions' are defined.
+             * @return the next definition stage.
+             */
+            Update withDisableLocalAuth(Boolean disableLocalAuth);
+        }
+        /** The stage of the SearchService update allowing to specify authOptions. */
+        interface WithAuthOptions {
+            /**
+             * Specifies the authOptions property: Defines the options for how the data plane API of a search service
+             * authenticates requests. This cannot be set if 'disableLocalAuth' is set to true..
+             *
+             * @param authOptions Defines the options for how the data plane API of a search service authenticates
+             *     requests. This cannot be set if 'disableLocalAuth' is set to true.
+             * @return the next definition stage.
+             */
+            Update withAuthOptions(DataPlaneAuthOptions authOptions);
         }
         /** The stage of the SearchService update allowing to specify clientRequestId. */
         interface WithClientRequestId {

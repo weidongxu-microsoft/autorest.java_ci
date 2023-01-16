@@ -75,20 +75,20 @@ public interface Services {
     void delete(String resourceGroupName, String searchServiceName);
 
     /**
-     * Gets a list of all search services in the given resource group.
+     * Gets a list of all Search services in the given resource group.
      *
      * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
      *     value from the Azure Resource Manager API or the portal.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all search services in the given resource group as paginated response with {@link
+     * @return a list of all Search services in the given resource group as paginated response with {@link
      *     PagedIterable}.
      */
     PagedIterable<SearchService> listByResourceGroup(String resourceGroupName);
 
     /**
-     * Gets a list of all search services in the given resource group.
+     * Gets a list of all Search services in the given resource group.
      *
      * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
      *     value from the Azure Resource Manager API or the portal.
@@ -98,22 +98,22 @@ public interface Services {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all search services in the given resource group as paginated response with {@link
+     * @return a list of all Search services in the given resource group as paginated response with {@link
      *     PagedIterable}.
      */
     PagedIterable<SearchService> listByResourceGroup(String resourceGroupName, UUID clientRequestId, Context context);
 
     /**
-     * Gets a list of all search services in the given subscription.
+     * Gets a list of all Search services in the given subscription.
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all search services in the given subscription as paginated response with {@link PagedIterable}.
+     * @return a list of all Search services in the given subscription as paginated response with {@link PagedIterable}.
      */
     PagedIterable<SearchService> list();
 
     /**
-     * Gets a list of all search services in the given subscription.
+     * Gets a list of all Search services in the given subscription.
      *
      * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
      *     included in response information as a way to track the request.
@@ -121,7 +121,7 @@ public interface Services {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all search services in the given subscription as paginated response with {@link PagedIterable}.
+     * @return a list of all Search services in the given subscription as paginated response with {@link PagedIterable}.
      */
     PagedIterable<SearchService> list(UUID clientRequestId, Context context);
 
