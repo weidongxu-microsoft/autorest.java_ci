@@ -4,14 +4,12 @@
 
 package com.azure.resourcemanager.consumption.generated.models;
 
-import com.azure.core.annotation.Immutable;
+import com.azure.core.annotation.Fluent;
 import com.azure.core.management.ProxyResource;
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import java.util.Map;
 
 /** A charge summary resource. */
 @JsonTypeInfo(
@@ -24,27 +22,22 @@ import java.util.Map;
     @JsonSubTypes.Type(name = "legacy", value = LegacyChargeSummary.class),
     @JsonSubTypes.Type(name = "modern", value = ModernChargeSummary.class)
 })
-@Immutable
+@Fluent
 public class ChargeSummary extends ProxyResource {
     /*
-     * The etag for the resource.
+     * eTag of the resource. To handle concurrent update scenario, this field will be used to determine whether the
+     * user is updating the latest version or not.
      */
-    @JsonProperty(value = "etag", access = JsonProperty.Access.WRITE_ONLY)
+    @JsonProperty(value = "eTag")
     private String etag;
-
-    /*
-     * Resource tags.
-     */
-    @JsonProperty(value = "tags", access = JsonProperty.Access.WRITE_ONLY)
-    @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
-    private Map<String, String> tags;
 
     /** Creates an instance of ChargeSummary class. */
     public ChargeSummary() {
     }
 
     /**
-     * Get the etag property: The etag for the resource.
+     * Get the etag property: eTag of the resource. To handle concurrent update scenario, this field will be used to
+     * determine whether the user is updating the latest version or not.
      *
      * @return the etag value.
      */
@@ -53,12 +46,15 @@ public class ChargeSummary extends ProxyResource {
     }
 
     /**
-     * Get the tags property: Resource tags.
+     * Set the etag property: eTag of the resource. To handle concurrent update scenario, this field will be used to
+     * determine whether the user is updating the latest version or not.
      *
-     * @return the tags value.
+     * @param etag the etag value to set.
+     * @return the ChargeSummary object itself.
      */
-    public Map<String, String> tags() {
-        return this.tags;
+    public ChargeSummary withEtag(String etag) {
+        this.etag = etag;
+        return this;
     }
 
     /**

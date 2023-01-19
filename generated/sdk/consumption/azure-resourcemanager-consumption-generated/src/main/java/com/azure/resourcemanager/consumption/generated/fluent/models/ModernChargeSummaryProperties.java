@@ -77,6 +77,12 @@ public final class ModernChargeSummaryProperties {
     @JsonProperty(value = "isInvoiced", access = JsonProperty.Access.WRITE_ONLY)
     private Boolean isInvoiced;
 
+    /*
+     * Subscription guid.
+     */
+    @JsonProperty(value = "subscriptionId", access = JsonProperty.Access.WRITE_ONLY)
+    private String subscriptionId;
+
     /** Creates an instance of ModernChargeSummaryProperties class. */
     public ModernChargeSummaryProperties() {
     }
@@ -178,6 +184,15 @@ public final class ModernChargeSummaryProperties {
      */
     public Boolean isInvoiced() {
         return this.isInvoiced;
+    }
+
+    /**
+     * Get the subscriptionId property: Subscription guid.
+     *
+     * @return the subscriptionId value.
+     */
+    public String subscriptionId() {
+        return this.subscriptionId;
     }
 
     /**
