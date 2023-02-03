@@ -14,7 +14,7 @@ import com.azure.resourcemanager.consumption.generated.fluent.models.Reservation
 public interface ReservationsDetailsClient {
     /**
      * Lists the reservations details for provided date range. Note: ARM has a payload size limit of 12MB, so currently
-     * callers get 502 when the response size exceeds the ARM limit. In such cases, API call should be made with smaller
+     * callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made with smaller
      * date ranges.
      *
      * @param reservationOrderId Order Id of the reservation.
@@ -30,7 +30,7 @@ public interface ReservationsDetailsClient {
 
     /**
      * Lists the reservations details for provided date range. Note: ARM has a payload size limit of 12MB, so currently
-     * callers get 502 when the response size exceeds the ARM limit. In such cases, API call should be made with smaller
+     * callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made with smaller
      * date ranges.
      *
      * @param reservationOrderId Order Id of the reservation.
@@ -48,7 +48,7 @@ public interface ReservationsDetailsClient {
 
     /**
      * Lists the reservations details for provided date range. Note: ARM has a payload size limit of 12MB, so currently
-     * callers get 502 when the response size exceeds the ARM limit. In such cases, API call should be made with smaller
+     * callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made with smaller
      * date ranges.
      *
      * @param reservationOrderId Order Id of the reservation.
@@ -66,7 +66,7 @@ public interface ReservationsDetailsClient {
 
     /**
      * Lists the reservations details for provided date range. Note: ARM has a payload size limit of 12MB, so currently
-     * callers get 502 when the response size exceeds the ARM limit. In such cases, API call should be made with smaller
+     * callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made with smaller
      * date ranges.
      *
      * @param reservationOrderId Order Id of the reservation.
@@ -85,7 +85,7 @@ public interface ReservationsDetailsClient {
 
     /**
      * Lists the reservations details for the defined scope and provided date range. Note: ARM has a payload size limit
-     * of 12MB, so currently callers get 502 when the response size exceeds the ARM limit. In such cases, API call
+     * of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call
      * should be made with smaller date ranges.
      *
      * @param resourceScope The scope associated with reservations details operations. This includes
@@ -102,7 +102,7 @@ public interface ReservationsDetailsClient {
 
     /**
      * Lists the reservations details for the defined scope and provided date range. Note: ARM has a payload size limit
-     * of 12MB, so currently callers get 502 when the response size exceeds the ARM limit. In such cases, API call
+     * of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call
      * should be made with smaller date ranges.
      *
      * @param resourceScope The scope associated with reservations details operations. This includes

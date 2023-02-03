@@ -24,6 +24,7 @@ import com.azure.core.util.serializer.SerializerAdapter;
 import com.azure.core.util.serializer.SerializerEncoding;
 import com.azure.resourcemanager.keyvault.generated.fluent.KeyVaultManagementClient;
 import com.azure.resourcemanager.keyvault.generated.fluent.KeysClient;
+import com.azure.resourcemanager.keyvault.generated.fluent.ManagedHsmKeysClient;
 import com.azure.resourcemanager.keyvault.generated.fluent.ManagedHsmsClient;
 import com.azure.resourcemanager.keyvault.generated.fluent.MhsmPrivateEndpointConnectionsClient;
 import com.azure.resourcemanager.keyvault.generated.fluent.MhsmPrivateLinkResourcesClient;
@@ -204,6 +205,18 @@ public final class KeyVaultManagementClientImpl implements KeyVaultManagementCli
         return this.mhsmPrivateLinkResources;
     }
 
+    /** The ManagedHsmKeysClient object to access its operations. */
+    private final ManagedHsmKeysClient managedHsmKeys;
+
+    /**
+     * Gets the ManagedHsmKeysClient object to access its operations.
+     *
+     * @return the ManagedHsmKeysClient object.
+     */
+    public ManagedHsmKeysClient getManagedHsmKeys() {
+        return this.managedHsmKeys;
+    }
+
     /** The OperationsClient object to access its operations. */
     private final OperationsClient operations;
 
@@ -251,7 +264,7 @@ public final class KeyVaultManagementClientImpl implements KeyVaultManagementCli
         this.defaultPollInterval = defaultPollInterval;
         this.subscriptionId = subscriptionId;
         this.endpoint = endpoint;
-        this.apiVersion = "2022-02-01-preview";
+        this.apiVersion = "2022-11-01";
         this.keys = new KeysClientImpl(this);
         this.vaults = new VaultsClientImpl(this);
         this.privateEndpointConnections = new PrivateEndpointConnectionsClientImpl(this);
@@ -259,6 +272,7 @@ public final class KeyVaultManagementClientImpl implements KeyVaultManagementCli
         this.managedHsms = new ManagedHsmsClientImpl(this);
         this.mhsmPrivateEndpointConnections = new MhsmPrivateEndpointConnectionsClientImpl(this);
         this.mhsmPrivateLinkResources = new MhsmPrivateLinkResourcesClientImpl(this);
+        this.managedHsmKeys = new ManagedHsmKeysClientImpl(this);
         this.operations = new OperationsClientImpl(this);
         this.secrets = new SecretsClientImpl(this);
     }

@@ -26,6 +26,7 @@ import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.keyvault.generated.fluent.KeyVaultManagementClient;
 import com.azure.resourcemanager.keyvault.generated.implementation.KeyVaultManagementClientBuilder;
 import com.azure.resourcemanager.keyvault.generated.implementation.KeysImpl;
+import com.azure.resourcemanager.keyvault.generated.implementation.ManagedHsmKeysImpl;
 import com.azure.resourcemanager.keyvault.generated.implementation.ManagedHsmsImpl;
 import com.azure.resourcemanager.keyvault.generated.implementation.MhsmPrivateEndpointConnectionsImpl;
 import com.azure.resourcemanager.keyvault.generated.implementation.MhsmPrivateLinkResourcesImpl;
@@ -35,6 +36,7 @@ import com.azure.resourcemanager.keyvault.generated.implementation.PrivateLinkRe
 import com.azure.resourcemanager.keyvault.generated.implementation.SecretsImpl;
 import com.azure.resourcemanager.keyvault.generated.implementation.VaultsImpl;
 import com.azure.resourcemanager.keyvault.generated.models.Keys;
+import com.azure.resourcemanager.keyvault.generated.models.ManagedHsmKeys;
 import com.azure.resourcemanager.keyvault.generated.models.ManagedHsms;
 import com.azure.resourcemanager.keyvault.generated.models.MhsmPrivateEndpointConnections;
 import com.azure.resourcemanager.keyvault.generated.models.MhsmPrivateLinkResources;
@@ -68,6 +70,8 @@ public final class KeyVaultManager {
     private MhsmPrivateEndpointConnections mhsmPrivateEndpointConnections;
 
     private MhsmPrivateLinkResources mhsmPrivateLinkResources;
+
+    private ManagedHsmKeys managedHsmKeys;
 
     private Operations operations;
 
@@ -380,6 +384,18 @@ public final class KeyVaultManager {
                 new MhsmPrivateLinkResourcesImpl(clientObject.getMhsmPrivateLinkResources(), this);
         }
         return mhsmPrivateLinkResources;
+    }
+
+    /**
+     * Gets the resource collection API of ManagedHsmKeys. It manages ManagedHsmKey.
+     *
+     * @return Resource collection API of ManagedHsmKeys.
+     */
+    public ManagedHsmKeys managedHsmKeys() {
+        if (this.managedHsmKeys == null) {
+            this.managedHsmKeys = new ManagedHsmKeysImpl(clientObject.getManagedHsmKeys(), this);
+        }
+        return managedHsmKeys;
     }
 
     /**
