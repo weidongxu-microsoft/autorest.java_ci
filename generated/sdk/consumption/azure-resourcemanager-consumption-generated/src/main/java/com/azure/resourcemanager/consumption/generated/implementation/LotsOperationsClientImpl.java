@@ -156,18 +156,14 @@ public final class LotsOperationsClientImpl implements LotsOperationsClient {
             return Mono
                 .error(new IllegalArgumentException("Parameter billingProfileId is required and cannot be null."));
         }
+        final String apiVersion = "2021-10-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
                 context ->
                     service
                         .listByBillingProfile(
-                            this.client.getEndpoint(),
-                            billingAccountId,
-                            billingProfileId,
-                            this.client.getApiVersion(),
-                            accept,
-                            context))
+                            this.client.getEndpoint(), billingAccountId, billingProfileId, apiVersion, accept, context))
             .<PagedResponse<LotSummaryInner>>map(
                 res ->
                     new PagedResponseBase<>(
@@ -209,16 +205,12 @@ public final class LotsOperationsClientImpl implements LotsOperationsClient {
             return Mono
                 .error(new IllegalArgumentException("Parameter billingProfileId is required and cannot be null."));
         }
+        final String apiVersion = "2021-10-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
             .listByBillingProfile(
-                this.client.getEndpoint(),
-                billingAccountId,
-                billingProfileId,
-                this.client.getApiVersion(),
-                accept,
-                context)
+                this.client.getEndpoint(), billingAccountId, billingProfileId, apiVersion, accept, context)
             .map(
                 res ->
                     new PagedResponseBase<>(
@@ -328,18 +320,14 @@ public final class LotsOperationsClientImpl implements LotsOperationsClient {
             return Mono
                 .error(new IllegalArgumentException("Parameter billingAccountId is required and cannot be null."));
         }
+        final String apiVersion = "2021-10-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
                 context ->
                     service
                         .listByBillingAccount(
-                            this.client.getEndpoint(),
-                            billingAccountId,
-                            this.client.getApiVersion(),
-                            filter,
-                            accept,
-                            context))
+                            this.client.getEndpoint(), billingAccountId, apiVersion, filter, accept, context))
             .<PagedResponse<LotSummaryInner>>map(
                 res ->
                     new PagedResponseBase<>(
@@ -379,11 +367,11 @@ public final class LotsOperationsClientImpl implements LotsOperationsClient {
             return Mono
                 .error(new IllegalArgumentException("Parameter billingAccountId is required and cannot be null."));
         }
+        final String apiVersion = "2021-10-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .listByBillingAccount(
-                this.client.getEndpoint(), billingAccountId, this.client.getApiVersion(), filter, accept, context)
+            .listByBillingAccount(this.client.getEndpoint(), billingAccountId, apiVersion, filter, accept, context)
             .map(
                 res ->
                     new PagedResponseBase<>(
@@ -520,6 +508,7 @@ public final class LotsOperationsClientImpl implements LotsOperationsClient {
         if (customerId == null) {
             return Mono.error(new IllegalArgumentException("Parameter customerId is required and cannot be null."));
         }
+        final String apiVersion = "2021-10-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -529,7 +518,7 @@ public final class LotsOperationsClientImpl implements LotsOperationsClient {
                             this.client.getEndpoint(),
                             billingAccountId,
                             customerId,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             filter,
                             accept,
                             context))
@@ -575,17 +564,12 @@ public final class LotsOperationsClientImpl implements LotsOperationsClient {
         if (customerId == null) {
             return Mono.error(new IllegalArgumentException("Parameter customerId is required and cannot be null."));
         }
+        final String apiVersion = "2021-10-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
             .listByCustomer(
-                this.client.getEndpoint(),
-                billingAccountId,
-                customerId,
-                this.client.getApiVersion(),
-                filter,
-                accept,
-                context)
+                this.client.getEndpoint(), billingAccountId, customerId, apiVersion, filter, accept, context)
             .map(
                 res ->
                     new PagedResponseBase<>(

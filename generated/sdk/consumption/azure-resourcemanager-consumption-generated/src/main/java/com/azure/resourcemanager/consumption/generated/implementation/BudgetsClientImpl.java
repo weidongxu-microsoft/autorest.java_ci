@@ -130,7 +130,7 @@ public final class BudgetsClientImpl implements BudgetsClient {
      *     Management Group scope,
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
      *     billingProfile scope,
-     *     'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
      *     invoiceSection scope.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -148,10 +148,10 @@ public final class BudgetsClientImpl implements BudgetsClient {
         if (scope == null) {
             return Mono.error(new IllegalArgumentException("Parameter scope is required and cannot be null."));
         }
+        final String apiVersion = "2021-10-01";
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context -> service.list(this.client.getEndpoint(), scope, this.client.getApiVersion(), accept, context))
+            .withContext(context -> service.list(this.client.getEndpoint(), scope, apiVersion, accept, context))
             .<PagedResponse<BudgetInner>>map(
                 res ->
                     new PagedResponseBase<>(
@@ -177,7 +177,7 @@ public final class BudgetsClientImpl implements BudgetsClient {
      *     Management Group scope,
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
      *     billingProfile scope,
-     *     'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
      *     invoiceSection scope.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -196,10 +196,11 @@ public final class BudgetsClientImpl implements BudgetsClient {
         if (scope == null) {
             return Mono.error(new IllegalArgumentException("Parameter scope is required and cannot be null."));
         }
+        final String apiVersion = "2021-10-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .list(this.client.getEndpoint(), scope, this.client.getApiVersion(), accept, context)
+            .list(this.client.getEndpoint(), scope, apiVersion, accept, context)
             .map(
                 res ->
                     new PagedResponseBase<>(
@@ -224,7 +225,7 @@ public final class BudgetsClientImpl implements BudgetsClient {
      *     Management Group scope,
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
      *     billingProfile scope,
-     *     'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
      *     invoiceSection scope.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -249,7 +250,7 @@ public final class BudgetsClientImpl implements BudgetsClient {
      *     Management Group scope,
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
      *     billingProfile scope,
-     *     'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
      *     invoiceSection scope.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -276,7 +277,7 @@ public final class BudgetsClientImpl implements BudgetsClient {
      *     Management Group scope,
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
      *     billingProfile scope,
-     *     'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
      *     invoiceSection scope.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -301,7 +302,7 @@ public final class BudgetsClientImpl implements BudgetsClient {
      *     Management Group scope,
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
      *     billingProfile scope,
-     *     'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
      *     invoiceSection scope.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -327,7 +328,7 @@ public final class BudgetsClientImpl implements BudgetsClient {
      *     Management Group scope,
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
      *     billingProfile scope,
-     *     'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
      *     invoiceSection scope.
      * @param budgetName Budget Name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -350,13 +351,11 @@ public final class BudgetsClientImpl implements BudgetsClient {
         if (budgetName == null) {
             return Mono.error(new IllegalArgumentException("Parameter budgetName is required and cannot be null."));
         }
+        final String apiVersion = "2021-10-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
-                context ->
-                    service
-                        .get(
-                            this.client.getEndpoint(), scope, this.client.getApiVersion(), budgetName, accept, context))
+                context -> service.get(this.client.getEndpoint(), scope, apiVersion, budgetName, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
@@ -373,7 +372,7 @@ public final class BudgetsClientImpl implements BudgetsClient {
      *     Management Group scope,
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
      *     billingProfile scope,
-     *     'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
      *     invoiceSection scope.
      * @param budgetName Budget Name.
      * @param context The context to associate with this operation.
@@ -397,9 +396,10 @@ public final class BudgetsClientImpl implements BudgetsClient {
         if (budgetName == null) {
             return Mono.error(new IllegalArgumentException("Parameter budgetName is required and cannot be null."));
         }
+        final String apiVersion = "2021-10-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service.get(this.client.getEndpoint(), scope, this.client.getApiVersion(), budgetName, accept, context);
+        return service.get(this.client.getEndpoint(), scope, apiVersion, budgetName, accept, context);
     }
 
     /**
@@ -415,7 +415,7 @@ public final class BudgetsClientImpl implements BudgetsClient {
      *     Management Group scope,
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
      *     billingProfile scope,
-     *     'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
      *     invoiceSection scope.
      * @param budgetName Budget Name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -441,7 +441,7 @@ public final class BudgetsClientImpl implements BudgetsClient {
      *     Management Group scope,
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
      *     billingProfile scope,
-     *     'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
      *     invoiceSection scope.
      * @param budgetName Budget Name.
      * @param context The context to associate with this operation.
@@ -468,7 +468,7 @@ public final class BudgetsClientImpl implements BudgetsClient {
      *     Management Group scope,
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
      *     billingProfile scope,
-     *     'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
      *     invoiceSection scope.
      * @param budgetName Budget Name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -496,7 +496,7 @@ public final class BudgetsClientImpl implements BudgetsClient {
      *     Management Group scope,
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
      *     billingProfile scope,
-     *     'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
      *     invoiceSection scope.
      * @param budgetName Budget Name.
      * @param parameters Parameters supplied to the Create Budget operation.
@@ -525,19 +525,14 @@ public final class BudgetsClientImpl implements BudgetsClient {
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2021-10-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
                 context ->
                     service
                         .createOrUpdate(
-                            this.client.getEndpoint(),
-                            scope,
-                            this.client.getApiVersion(),
-                            budgetName,
-                            parameters,
-                            accept,
-                            context))
+                            this.client.getEndpoint(), scope, apiVersion, budgetName, parameters, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
@@ -556,7 +551,7 @@ public final class BudgetsClientImpl implements BudgetsClient {
      *     Management Group scope,
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
      *     billingProfile scope,
-     *     'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
      *     invoiceSection scope.
      * @param budgetName Budget Name.
      * @param parameters Parameters supplied to the Create Budget operation.
@@ -586,11 +581,11 @@ public final class BudgetsClientImpl implements BudgetsClient {
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2021-10-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .createOrUpdate(
-                this.client.getEndpoint(), scope, this.client.getApiVersion(), budgetName, parameters, accept, context);
+            .createOrUpdate(this.client.getEndpoint(), scope, apiVersion, budgetName, parameters, accept, context);
     }
 
     /**
@@ -608,7 +603,7 @@ public final class BudgetsClientImpl implements BudgetsClient {
      *     Management Group scope,
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
      *     billingProfile scope,
-     *     'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
      *     invoiceSection scope.
      * @param budgetName Budget Name.
      * @param parameters Parameters supplied to the Create Budget operation.
@@ -638,7 +633,7 @@ public final class BudgetsClientImpl implements BudgetsClient {
      *     Management Group scope,
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
      *     billingProfile scope,
-     *     'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
      *     invoiceSection scope.
      * @param budgetName Budget Name.
      * @param parameters Parameters supplied to the Create Budget operation.
@@ -669,7 +664,7 @@ public final class BudgetsClientImpl implements BudgetsClient {
      *     Management Group scope,
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
      *     billingProfile scope,
-     *     'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
      *     invoiceSection scope.
      * @param budgetName Budget Name.
      * @param parameters Parameters supplied to the Create Budget operation.
@@ -696,7 +691,7 @@ public final class BudgetsClientImpl implements BudgetsClient {
      *     Management Group scope,
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
      *     billingProfile scope,
-     *     'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
      *     invoiceSection scope.
      * @param budgetName Budget Name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -718,13 +713,11 @@ public final class BudgetsClientImpl implements BudgetsClient {
         if (budgetName == null) {
             return Mono.error(new IllegalArgumentException("Parameter budgetName is required and cannot be null."));
         }
+        final String apiVersion = "2021-10-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
-                context ->
-                    service
-                        .delete(
-                            this.client.getEndpoint(), scope, this.client.getApiVersion(), budgetName, accept, context))
+                context -> service.delete(this.client.getEndpoint(), scope, apiVersion, budgetName, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
@@ -741,7 +734,7 @@ public final class BudgetsClientImpl implements BudgetsClient {
      *     Management Group scope,
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
      *     billingProfile scope,
-     *     'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
      *     invoiceSection scope.
      * @param budgetName Budget Name.
      * @param context The context to associate with this operation.
@@ -764,10 +757,10 @@ public final class BudgetsClientImpl implements BudgetsClient {
         if (budgetName == null) {
             return Mono.error(new IllegalArgumentException("Parameter budgetName is required and cannot be null."));
         }
+        final String apiVersion = "2021-10-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .delete(this.client.getEndpoint(), scope, this.client.getApiVersion(), budgetName, accept, context);
+        return service.delete(this.client.getEndpoint(), scope, apiVersion, budgetName, accept, context);
     }
 
     /**
@@ -783,7 +776,7 @@ public final class BudgetsClientImpl implements BudgetsClient {
      *     Management Group scope,
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
      *     billingProfile scope,
-     *     'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
      *     invoiceSection scope.
      * @param budgetName Budget Name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -809,7 +802,7 @@ public final class BudgetsClientImpl implements BudgetsClient {
      *     Management Group scope,
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
      *     billingProfile scope,
-     *     'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
      *     invoiceSection scope.
      * @param budgetName Budget Name.
      * @param context The context to associate with this operation.
@@ -836,7 +829,7 @@ public final class BudgetsClientImpl implements BudgetsClient {
      *     Management Group scope,
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
      *     billingProfile scope,
-     *     'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
+     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
      *     invoiceSection scope.
      * @param budgetName Budget Name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

@@ -99,6 +99,38 @@ public interface VirtualMachineScaleSetVMInstanceView {
     String placementGroupId();
 
     /**
+     * Gets the computerName property: Specifies the host OS name of the virtual machine. &lt;br&gt;&lt;br&gt; This name
+     * cannot be updated after the VM is created. &lt;br&gt;&lt;br&gt; **Max-length (Windows):** 15 characters
+     * &lt;br&gt;&lt;br&gt; **Max-length (Linux):** 64 characters. &lt;br&gt;&lt;br&gt; For naming conventions and
+     * restrictions see [Azure infrastructure services implementation
+     * guidelines](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-linux-infrastructure-subscription-accounts-guidelines?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json#1-naming-conventions).
+     *
+     * @return the computerName value.
+     */
+    String computerName();
+
+    /**
+     * Gets the osName property: The Operating System running on the hybrid machine.
+     *
+     * @return the osName value.
+     */
+    String osName();
+
+    /**
+     * Gets the osVersion property: The version of Operating System running on the hybrid machine.
+     *
+     * @return the osVersion value.
+     */
+    String osVersion();
+
+    /**
+     * Gets the hyperVGeneration property: The hypervisor generation of the Virtual Machine [V1, V2].
+     *
+     * @return the hyperVGeneration value.
+     */
+    HyperVGeneration hyperVGeneration();
+
+    /**
      * Gets the inner
      * com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineScaleSetVMInstanceViewInner object.
      *

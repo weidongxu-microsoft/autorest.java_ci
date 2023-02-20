@@ -99,13 +99,13 @@ public final class BalancesClientImpl implements BalancesClient {
             return Mono
                 .error(new IllegalArgumentException("Parameter billingAccountId is required and cannot be null."));
         }
+        final String apiVersion = "2021-10-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
                 context ->
                     service
-                        .getByBillingAccount(
-                            this.client.getEndpoint(), this.client.getApiVersion(), billingAccountId, accept, context))
+                        .getByBillingAccount(this.client.getEndpoint(), apiVersion, billingAccountId, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
@@ -134,11 +134,10 @@ public final class BalancesClientImpl implements BalancesClient {
             return Mono
                 .error(new IllegalArgumentException("Parameter billingAccountId is required and cannot be null."));
         }
+        final String apiVersion = "2021-10-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .getByBillingAccount(
-                this.client.getEndpoint(), this.client.getApiVersion(), billingAccountId, accept, context);
+        return service.getByBillingAccount(this.client.getEndpoint(), apiVersion, billingAccountId, accept, context);
     }
 
     /**
@@ -216,6 +215,7 @@ public final class BalancesClientImpl implements BalancesClient {
             return Mono
                 .error(new IllegalArgumentException("Parameter billingPeriodName is required and cannot be null."));
         }
+        final String apiVersion = "2021-10-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -223,7 +223,7 @@ public final class BalancesClientImpl implements BalancesClient {
                     service
                         .getForBillingPeriodByBillingAccount(
                             this.client.getEndpoint(),
-                            this.client.getApiVersion(),
+                            apiVersion,
                             billingAccountId,
                             billingPeriodName,
                             accept,
@@ -261,16 +261,12 @@ public final class BalancesClientImpl implements BalancesClient {
             return Mono
                 .error(new IllegalArgumentException("Parameter billingPeriodName is required and cannot be null."));
         }
+        final String apiVersion = "2021-10-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
             .getForBillingPeriodByBillingAccount(
-                this.client.getEndpoint(),
-                this.client.getApiVersion(),
-                billingAccountId,
-                billingPeriodName,
-                accept,
-                context);
+                this.client.getEndpoint(), apiVersion, billingAccountId, billingPeriodName, accept, context);
     }
 
     /**

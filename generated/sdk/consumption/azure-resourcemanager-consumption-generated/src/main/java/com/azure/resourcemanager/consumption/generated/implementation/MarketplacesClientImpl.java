@@ -118,20 +118,12 @@ public final class MarketplacesClientImpl implements MarketplacesClient {
         if (scope == null) {
             return Mono.error(new IllegalArgumentException("Parameter scope is required and cannot be null."));
         }
+        final String apiVersion = "2021-10-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
                 context ->
-                    service
-                        .list(
-                            this.client.getEndpoint(),
-                            filter,
-                            top,
-                            skiptoken,
-                            scope,
-                            this.client.getApiVersion(),
-                            accept,
-                            context))
+                    service.list(this.client.getEndpoint(), filter, top, skiptoken, scope, apiVersion, accept, context))
             .<PagedResponse<MarketplaceInner>>map(
                 res ->
                     new PagedResponseBase<>(
@@ -182,11 +174,11 @@ public final class MarketplacesClientImpl implements MarketplacesClient {
         if (scope == null) {
             return Mono.error(new IllegalArgumentException("Parameter scope is required and cannot be null."));
         }
+        final String apiVersion = "2021-10-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .list(
-                this.client.getEndpoint(), filter, top, skiptoken, scope, this.client.getApiVersion(), accept, context)
+            .list(this.client.getEndpoint(), filter, top, skiptoken, scope, apiVersion, accept, context)
             .map(
                 res ->
                     new PagedResponseBase<>(

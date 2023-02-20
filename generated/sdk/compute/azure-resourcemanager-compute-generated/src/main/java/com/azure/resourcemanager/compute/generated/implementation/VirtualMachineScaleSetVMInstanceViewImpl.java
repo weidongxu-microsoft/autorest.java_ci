@@ -7,6 +7,7 @@ package com.azure.resourcemanager.compute.generated.implementation;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineScaleSetVMInstanceViewInner;
 import com.azure.resourcemanager.compute.generated.models.BootDiagnosticsInstanceView;
 import com.azure.resourcemanager.compute.generated.models.DiskInstanceView;
+import com.azure.resourcemanager.compute.generated.models.HyperVGeneration;
 import com.azure.resourcemanager.compute.generated.models.InstanceViewStatus;
 import com.azure.resourcemanager.compute.generated.models.MaintenanceRedeployStatus;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineAgentInstanceView;
@@ -89,6 +90,22 @@ public final class VirtualMachineScaleSetVMInstanceViewImpl implements VirtualMa
 
     public String placementGroupId() {
         return this.innerModel().placementGroupId();
+    }
+
+    public String computerName() {
+        return this.innerModel().computerName();
+    }
+
+    public String osName() {
+        return this.innerModel().osName();
+    }
+
+    public String osVersion() {
+        return this.innerModel().osVersion();
+    }
+
+    public HyperVGeneration hyperVGeneration() {
+        return this.innerModel().hyperVGeneration();
     }
 
     public VirtualMachineScaleSetVMInstanceViewInner innerModel() {

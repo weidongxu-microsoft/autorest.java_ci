@@ -7,6 +7,7 @@ package com.azure.resourcemanager.compute.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.resourcemanager.compute.generated.models.BootDiagnosticsInstanceView;
 import com.azure.resourcemanager.compute.generated.models.DiskInstanceView;
+import com.azure.resourcemanager.compute.generated.models.HyperVGeneration;
 import com.azure.resourcemanager.compute.generated.models.InstanceViewStatus;
 import com.azure.resourcemanager.compute.generated.models.MaintenanceRedeployStatus;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineAgentInstanceView;
@@ -93,6 +94,33 @@ public final class VirtualMachineScaleSetVMInstanceViewInner {
      */
     @JsonProperty(value = "placementGroupId")
     private String placementGroupId;
+
+    /*
+     * Specifies the host OS name of the virtual machine. <br><br> This name cannot be updated after the VM is created.
+     * <br><br> **Max-length (Windows):** 15 characters <br><br> **Max-length (Linux):** 64 characters. <br><br> For
+     * naming conventions and restrictions see [Azure infrastructure services implementation
+     * guidelines](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-linux-infrastructure-subscription-accounts-guidelines?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json#1-naming-conventions).
+     */
+    @JsonProperty(value = "computerName")
+    private String computerName;
+
+    /*
+     * The Operating System running on the hybrid machine.
+     */
+    @JsonProperty(value = "osName")
+    private String osName;
+
+    /*
+     * The version of Operating System running on the hybrid machine.
+     */
+    @JsonProperty(value = "osVersion")
+    private String osVersion;
+
+    /*
+     * The hypervisor generation of the Virtual Machine [V1, V2]
+     */
+    @JsonProperty(value = "hyperVGeneration")
+    private HyperVGeneration hyperVGeneration;
 
     /** Creates an instance of VirtualMachineScaleSetVMInstanceViewInner class. */
     public VirtualMachineScaleSetVMInstanceViewInner() {
@@ -323,6 +351,94 @@ public final class VirtualMachineScaleSetVMInstanceViewInner {
      */
     public VirtualMachineScaleSetVMInstanceViewInner withPlacementGroupId(String placementGroupId) {
         this.placementGroupId = placementGroupId;
+        return this;
+    }
+
+    /**
+     * Get the computerName property: Specifies the host OS name of the virtual machine. &lt;br&gt;&lt;br&gt; This name
+     * cannot be updated after the VM is created. &lt;br&gt;&lt;br&gt; **Max-length (Windows):** 15 characters
+     * &lt;br&gt;&lt;br&gt; **Max-length (Linux):** 64 characters. &lt;br&gt;&lt;br&gt; For naming conventions and
+     * restrictions see [Azure infrastructure services implementation
+     * guidelines](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-linux-infrastructure-subscription-accounts-guidelines?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json#1-naming-conventions).
+     *
+     * @return the computerName value.
+     */
+    public String computerName() {
+        return this.computerName;
+    }
+
+    /**
+     * Set the computerName property: Specifies the host OS name of the virtual machine. &lt;br&gt;&lt;br&gt; This name
+     * cannot be updated after the VM is created. &lt;br&gt;&lt;br&gt; **Max-length (Windows):** 15 characters
+     * &lt;br&gt;&lt;br&gt; **Max-length (Linux):** 64 characters. &lt;br&gt;&lt;br&gt; For naming conventions and
+     * restrictions see [Azure infrastructure services implementation
+     * guidelines](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-linux-infrastructure-subscription-accounts-guidelines?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json#1-naming-conventions).
+     *
+     * @param computerName the computerName value to set.
+     * @return the VirtualMachineScaleSetVMInstanceViewInner object itself.
+     */
+    public VirtualMachineScaleSetVMInstanceViewInner withComputerName(String computerName) {
+        this.computerName = computerName;
+        return this;
+    }
+
+    /**
+     * Get the osName property: The Operating System running on the hybrid machine.
+     *
+     * @return the osName value.
+     */
+    public String osName() {
+        return this.osName;
+    }
+
+    /**
+     * Set the osName property: The Operating System running on the hybrid machine.
+     *
+     * @param osName the osName value to set.
+     * @return the VirtualMachineScaleSetVMInstanceViewInner object itself.
+     */
+    public VirtualMachineScaleSetVMInstanceViewInner withOsName(String osName) {
+        this.osName = osName;
+        return this;
+    }
+
+    /**
+     * Get the osVersion property: The version of Operating System running on the hybrid machine.
+     *
+     * @return the osVersion value.
+     */
+    public String osVersion() {
+        return this.osVersion;
+    }
+
+    /**
+     * Set the osVersion property: The version of Operating System running on the hybrid machine.
+     *
+     * @param osVersion the osVersion value to set.
+     * @return the VirtualMachineScaleSetVMInstanceViewInner object itself.
+     */
+    public VirtualMachineScaleSetVMInstanceViewInner withOsVersion(String osVersion) {
+        this.osVersion = osVersion;
+        return this;
+    }
+
+    /**
+     * Get the hyperVGeneration property: The hypervisor generation of the Virtual Machine [V1, V2].
+     *
+     * @return the hyperVGeneration value.
+     */
+    public HyperVGeneration hyperVGeneration() {
+        return this.hyperVGeneration;
+    }
+
+    /**
+     * Set the hyperVGeneration property: The hypervisor generation of the Virtual Machine [V1, V2].
+     *
+     * @param hyperVGeneration the hyperVGeneration value to set.
+     * @return the VirtualMachineScaleSetVMInstanceViewInner object itself.
+     */
+    public VirtualMachineScaleSetVMInstanceViewInner withHyperVGeneration(HyperVGeneration hyperVGeneration) {
+        this.hyperVGeneration = hyperVGeneration;
         return this;
     }
 

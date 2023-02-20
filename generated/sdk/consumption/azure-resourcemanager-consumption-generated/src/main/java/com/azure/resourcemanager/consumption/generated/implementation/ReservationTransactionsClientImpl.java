@@ -140,18 +140,12 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
             return Mono
                 .error(new IllegalArgumentException("Parameter billingAccountId is required and cannot be null."));
         }
+        final String apiVersion = "2021-10-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
                 context ->
-                    service
-                        .list(
-                            this.client.getEndpoint(),
-                            filter,
-                            this.client.getApiVersion(),
-                            billingAccountId,
-                            accept,
-                            context))
+                    service.list(this.client.getEndpoint(), filter, apiVersion, billingAccountId, accept, context))
             .<PagedResponse<ReservationTransactionInner>>map(
                 res ->
                     new PagedResponseBase<>(
@@ -196,10 +190,11 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
             return Mono
                 .error(new IllegalArgumentException("Parameter billingAccountId is required and cannot be null."));
         }
+        final String apiVersion = "2021-10-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .list(this.client.getEndpoint(), filter, this.client.getApiVersion(), billingAccountId, accept, context)
+            .list(this.client.getEndpoint(), filter, apiVersion, billingAccountId, accept, context)
             .map(
                 res ->
                     new PagedResponseBase<>(
@@ -354,6 +349,7 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
             return Mono
                 .error(new IllegalArgumentException("Parameter billingProfileId is required and cannot be null."));
         }
+        final String apiVersion = "2021-10-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -362,7 +358,7 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
                         .listByBillingProfile(
                             this.client.getEndpoint(),
                             filter,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             billingAccountId,
                             billingProfileId,
                             accept,
@@ -415,17 +411,12 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
             return Mono
                 .error(new IllegalArgumentException("Parameter billingProfileId is required and cannot be null."));
         }
+        final String apiVersion = "2021-10-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
             .listByBillingProfile(
-                this.client.getEndpoint(),
-                filter,
-                this.client.getApiVersion(),
-                billingAccountId,
-                billingProfileId,
-                accept,
-                context)
+                this.client.getEndpoint(), filter, apiVersion, billingAccountId, billingProfileId, accept, context)
             .map(
                 res ->
                     new PagedResponseBase<>(

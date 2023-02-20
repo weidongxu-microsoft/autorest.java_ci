@@ -114,18 +114,11 @@ public final class ReservationRecommendationsClientImpl implements ReservationRe
         if (resourceScope == null) {
             return Mono.error(new IllegalArgumentException("Parameter resourceScope is required and cannot be null."));
         }
+        final String apiVersion = "2021-10-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
-                context ->
-                    service
-                        .list(
-                            this.client.getEndpoint(),
-                            filter,
-                            this.client.getApiVersion(),
-                            resourceScope,
-                            accept,
-                            context))
+                context -> service.list(this.client.getEndpoint(), filter, apiVersion, resourceScope, accept, context))
             .<PagedResponse<ReservationRecommendationInner>>map(
                 res ->
                     new PagedResponseBase<>(
@@ -172,10 +165,11 @@ public final class ReservationRecommendationsClientImpl implements ReservationRe
         if (resourceScope == null) {
             return Mono.error(new IllegalArgumentException("Parameter resourceScope is required and cannot be null."));
         }
+        final String apiVersion = "2021-10-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .list(this.client.getEndpoint(), filter, this.client.getApiVersion(), resourceScope, accept, context)
+            .list(this.client.getEndpoint(), filter, apiVersion, resourceScope, accept, context)
             .map(
                 res ->
                     new PagedResponseBase<>(
