@@ -75,13 +75,14 @@ public interface VpnGateways {
      *
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
+     * @param ipConfigurationId VpnGateway ipConfigurationId to specify the gateway instance.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return vpnGateway Resource.
      */
-    VpnGateway reset(String resourceGroupName, String gatewayName, Context context);
+    VpnGateway reset(String resourceGroupName, String gatewayName, String ipConfigurationId, Context context);
 
     /**
      * Starts packet capture on vpn gateway in the specified resource group.

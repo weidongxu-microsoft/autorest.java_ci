@@ -142,6 +142,10 @@ public final class ExpressRouteCircuitImpl
         return this.innerModel().authorizationKey();
     }
 
+    public String authorizationStatus() {
+        return this.innerModel().authorizationStatus();
+    }
+
     public Region region() {
         return Region.fromName(this.regionName());
     }

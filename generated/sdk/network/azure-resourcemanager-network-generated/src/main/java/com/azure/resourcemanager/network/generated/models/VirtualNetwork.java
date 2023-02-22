@@ -163,6 +163,13 @@ public interface VirtualNetwork {
     List<SubResource> ipAllocations();
 
     /**
+     * Gets the flowLogs property: A collection of references to flow log resources.
+     *
+     * @return the flowLogs value.
+     */
+    List<FlowLog> flowLogs();
+
+    /**
      * Gets the region of the resource.
      *
      * @return the region of the resource.

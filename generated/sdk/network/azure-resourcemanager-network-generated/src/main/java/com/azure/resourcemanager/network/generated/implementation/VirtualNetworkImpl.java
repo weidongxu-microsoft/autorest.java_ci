@@ -8,12 +8,14 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.management.Region;
 import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
+import com.azure.resourcemanager.network.generated.fluent.models.FlowLogInner;
 import com.azure.resourcemanager.network.generated.fluent.models.SubnetInner;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualNetworkInner;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualNetworkPeeringInner;
 import com.azure.resourcemanager.network.generated.models.AddressSpace;
 import com.azure.resourcemanager.network.generated.models.DhcpOptions;
 import com.azure.resourcemanager.network.generated.models.ExtendedLocation;
+import com.azure.resourcemanager.network.generated.models.FlowLog;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.azure.resourcemanager.network.generated.models.PublicIpDdosProtectionStatusResult;
 import com.azure.resourcemanager.network.generated.models.Subnet;
@@ -134,6 +136,17 @@ public final class VirtualNetworkImpl implements VirtualNetwork, VirtualNetwork.
         List<SubResource> inner = this.innerModel().ipAllocations();
         if (inner != null) {
             return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
+    }
+
+    public List<FlowLog> flowLogs() {
+        List<FlowLogInner> inner = this.innerModel().flowLogs();
+        if (inner != null) {
+            return Collections
+                .unmodifiableList(
+                    inner.stream().map(inner1 -> new FlowLogImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }

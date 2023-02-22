@@ -229,8 +229,8 @@ public final class VpnGatewayImpl implements VpnGateway, VpnGateway.Definition, 
         return serviceManager.vpnGateways().reset(resourceGroupName, gatewayName);
     }
 
-    public VpnGateway reset(Context context) {
-        return serviceManager.vpnGateways().reset(resourceGroupName, gatewayName, context);
+    public VpnGateway reset(String ipConfigurationId, Context context) {
+        return serviceManager.vpnGateways().reset(resourceGroupName, gatewayName, ipConfigurationId, context);
     }
 
     public String startPacketCapture() {

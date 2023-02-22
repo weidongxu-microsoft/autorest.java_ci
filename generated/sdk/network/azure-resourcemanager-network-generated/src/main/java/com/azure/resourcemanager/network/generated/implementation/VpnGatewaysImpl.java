@@ -70,8 +70,8 @@ public final class VpnGatewaysImpl implements VpnGateways {
         }
     }
 
-    public VpnGateway reset(String resourceGroupName, String gatewayName, Context context) {
-        VpnGatewayInner inner = this.serviceClient().reset(resourceGroupName, gatewayName, context);
+    public VpnGateway reset(String resourceGroupName, String gatewayName, String ipConfigurationId, Context context) {
+        VpnGatewayInner inner = this.serviceClient().reset(resourceGroupName, gatewayName, ipConfigurationId, context);
         if (inner != null) {
             return new VpnGatewayImpl(inner, this.manager());
         } else {

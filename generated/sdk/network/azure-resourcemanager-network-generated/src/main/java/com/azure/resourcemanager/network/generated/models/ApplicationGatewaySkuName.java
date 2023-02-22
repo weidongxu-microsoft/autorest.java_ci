@@ -28,9 +28,6 @@ public final class ApplicationGatewaySkuName extends ExpandableStringEnum<Applic
     /** Static value Standard_v2 for ApplicationGatewaySkuName. */
     public static final ApplicationGatewaySkuName STANDARD_V2 = fromString("Standard_v2");
 
-    /** Static value Standard_Basic for ApplicationGatewaySkuName. */
-    public static final ApplicationGatewaySkuName STANDARD_BASIC = fromString("Standard_Basic");
-
     /** Static value WAF_v2 for ApplicationGatewaySkuName. */
     public static final ApplicationGatewaySkuName WAF_V2 = fromString("WAF_v2");
 

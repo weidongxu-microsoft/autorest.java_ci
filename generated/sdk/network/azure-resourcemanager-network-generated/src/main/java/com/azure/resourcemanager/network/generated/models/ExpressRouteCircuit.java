@@ -172,6 +172,13 @@ public interface ExpressRouteCircuit {
     String authorizationKey();
 
     /**
+     * Gets the authorizationStatus property: The authorization status of the Circuit.
+     *
+     * @return the authorizationStatus value.
+     */
+    String authorizationStatus();
+
+    /**
      * Gets the region of the resource.
      *
      * @return the region of the resource.

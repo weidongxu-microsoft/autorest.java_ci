@@ -365,13 +365,14 @@ public interface VpnGateway {
     /**
      * Resets the primary of the vpn gateway in the specified resource group.
      *
+     * @param ipConfigurationId VpnGateway ipConfigurationId to specify the gateway instance.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return vpnGateway Resource.
      */
-    VpnGateway reset(Context context);
+    VpnGateway reset(String ipConfigurationId, Context context);
 
     /**
      * Starts packet capture on vpn gateway in the specified resource group.
