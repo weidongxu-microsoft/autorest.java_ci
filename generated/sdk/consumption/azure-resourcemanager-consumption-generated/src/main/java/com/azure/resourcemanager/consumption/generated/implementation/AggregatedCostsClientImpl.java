@@ -106,14 +106,18 @@ public final class AggregatedCostsClientImpl implements AggregatedCostsClient {
             return Mono
                 .error(new IllegalArgumentException("Parameter managementGroupId is required and cannot be null."));
         }
-        final String apiVersion = "2021-10-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
                 context ->
                     service
                         .getByManagementGroup(
-                            this.client.getEndpoint(), managementGroupId, apiVersion, filter, accept, context))
+                            this.client.getEndpoint(),
+                            managementGroupId,
+                            this.client.getApiVersion(),
+                            filter,
+                            accept,
+                            context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
@@ -144,11 +148,11 @@ public final class AggregatedCostsClientImpl implements AggregatedCostsClient {
             return Mono
                 .error(new IllegalArgumentException("Parameter managementGroupId is required and cannot be null."));
         }
-        final String apiVersion = "2021-10-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .getByManagementGroup(this.client.getEndpoint(), managementGroupId, apiVersion, filter, accept, context);
+            .getByManagementGroup(
+                this.client.getEndpoint(), managementGroupId, this.client.getApiVersion(), filter, accept, context);
     }
 
     /**
@@ -229,7 +233,6 @@ public final class AggregatedCostsClientImpl implements AggregatedCostsClient {
             return Mono
                 .error(new IllegalArgumentException("Parameter billingPeriodName is required and cannot be null."));
         }
-        final String apiVersion = "2021-10-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -239,7 +242,7 @@ public final class AggregatedCostsClientImpl implements AggregatedCostsClient {
                             this.client.getEndpoint(),
                             managementGroupId,
                             billingPeriodName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             accept,
                             context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
@@ -275,12 +278,16 @@ public final class AggregatedCostsClientImpl implements AggregatedCostsClient {
             return Mono
                 .error(new IllegalArgumentException("Parameter billingPeriodName is required and cannot be null."));
         }
-        final String apiVersion = "2021-10-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
             .getForBillingPeriodByManagementGroup(
-                this.client.getEndpoint(), managementGroupId, billingPeriodName, apiVersion, accept, context);
+                this.client.getEndpoint(),
+                managementGroupId,
+                billingPeriodName,
+                this.client.getApiVersion(),
+                accept,
+                context);
     }
 
     /**

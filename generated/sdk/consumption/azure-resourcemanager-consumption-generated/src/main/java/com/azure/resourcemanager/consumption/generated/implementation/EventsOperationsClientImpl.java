@@ -142,7 +142,6 @@ public final class EventsOperationsClientImpl implements EventsOperationsClient 
         if (endDate == null) {
             return Mono.error(new IllegalArgumentException("Parameter endDate is required and cannot be null."));
         }
-        final String apiVersion = "2021-10-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -152,7 +151,7 @@ public final class EventsOperationsClientImpl implements EventsOperationsClient 
                             this.client.getEndpoint(),
                             billingAccountId,
                             billingProfileId,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             startDate,
                             endDate,
                             accept,
@@ -207,7 +206,6 @@ public final class EventsOperationsClientImpl implements EventsOperationsClient 
         if (endDate == null) {
             return Mono.error(new IllegalArgumentException("Parameter endDate is required and cannot be null."));
         }
-        final String apiVersion = "2021-10-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -215,7 +213,7 @@ public final class EventsOperationsClientImpl implements EventsOperationsClient 
                 this.client.getEndpoint(),
                 billingAccountId,
                 billingProfileId,
-                apiVersion,
+                this.client.getApiVersion(),
                 startDate,
                 endDate,
                 accept,
@@ -341,14 +339,18 @@ public final class EventsOperationsClientImpl implements EventsOperationsClient 
             return Mono
                 .error(new IllegalArgumentException("Parameter billingAccountId is required and cannot be null."));
         }
-        final String apiVersion = "2021-10-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
                 context ->
                     service
                         .listByBillingAccount(
-                            this.client.getEndpoint(), billingAccountId, apiVersion, filter, accept, context))
+                            this.client.getEndpoint(),
+                            billingAccountId,
+                            this.client.getApiVersion(),
+                            filter,
+                            accept,
+                            context))
             .<PagedResponse<EventSummaryInner>>map(
                 res ->
                     new PagedResponseBase<>(
@@ -389,11 +391,11 @@ public final class EventsOperationsClientImpl implements EventsOperationsClient 
             return Mono
                 .error(new IllegalArgumentException("Parameter billingAccountId is required and cannot be null."));
         }
-        final String apiVersion = "2021-10-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .listByBillingAccount(this.client.getEndpoint(), billingAccountId, apiVersion, filter, accept, context)
+            .listByBillingAccount(
+                this.client.getEndpoint(), billingAccountId, this.client.getApiVersion(), filter, accept, context)
             .map(
                 res ->
                     new PagedResponseBase<>(

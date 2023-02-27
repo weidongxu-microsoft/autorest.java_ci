@@ -124,7 +124,6 @@ public final class ReservationRecommendationDetailsClientImpl implements Reserva
         if (product == null) {
             return Mono.error(new IllegalArgumentException("Parameter product is required and cannot be null."));
         }
-        final String apiVersion = "2021-10-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -132,7 +131,7 @@ public final class ReservationRecommendationDetailsClientImpl implements Reserva
                     service
                         .get(
                             this.client.getEndpoint(),
-                            apiVersion,
+                            this.client.getApiVersion(),
                             resourceScope,
                             scope,
                             region,
@@ -198,13 +197,12 @@ public final class ReservationRecommendationDetailsClientImpl implements Reserva
         if (product == null) {
             return Mono.error(new IllegalArgumentException("Parameter product is required and cannot be null."));
         }
-        final String apiVersion = "2021-10-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
             .get(
                 this.client.getEndpoint(),
-                apiVersion,
+                this.client.getApiVersion(),
                 resourceScope,
                 scope,
                 region,

@@ -166,14 +166,19 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
         if (grain == null) {
             return Mono.error(new IllegalArgumentException("Parameter grain is required and cannot be null."));
         }
-        final String apiVersion = "2021-10-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
                 context ->
                     service
                         .listByReservationOrder(
-                            this.client.getEndpoint(), reservationOrderId, grain, filter, apiVersion, accept, context))
+                            this.client.getEndpoint(),
+                            reservationOrderId,
+                            grain,
+                            filter,
+                            this.client.getApiVersion(),
+                            accept,
+                            context))
             .<PagedResponse<ReservationSummaryInner>>map(
                 res ->
                     new PagedResponseBase<>(
@@ -216,12 +221,17 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
         if (grain == null) {
             return Mono.error(new IllegalArgumentException("Parameter grain is required and cannot be null."));
         }
-        final String apiVersion = "2021-10-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
             .listByReservationOrder(
-                this.client.getEndpoint(), reservationOrderId, grain, filter, apiVersion, accept, context)
+                this.client.getEndpoint(),
+                reservationOrderId,
+                grain,
+                filter,
+                this.client.getApiVersion(),
+                accept,
+                context)
             .map(
                 res ->
                     new PagedResponseBase<>(
@@ -360,7 +370,6 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
         if (grain == null) {
             return Mono.error(new IllegalArgumentException("Parameter grain is required and cannot be null."));
         }
-        final String apiVersion = "2021-10-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -372,7 +381,7 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
                             reservationId,
                             grain,
                             filter,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             accept,
                             context))
             .<PagedResponse<ReservationSummaryInner>>map(
@@ -421,7 +430,6 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
         if (grain == null) {
             return Mono.error(new IllegalArgumentException("Parameter grain is required and cannot be null."));
         }
-        final String apiVersion = "2021-10-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -431,7 +439,7 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
                 reservationId,
                 grain,
                 filter,
-                apiVersion,
+                this.client.getApiVersion(),
                 accept,
                 context)
             .map(
@@ -593,7 +601,6 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
         if (grain == null) {
             return Mono.error(new IllegalArgumentException("Parameter grain is required and cannot be null."));
         }
-        final String apiVersion = "2021-10-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -608,7 +615,7 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
                             filter,
                             reservationId,
                             reservationOrderId,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             accept,
                             context))
             .<PagedResponse<ReservationSummaryInner>>map(
@@ -668,7 +675,6 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
         if (grain == null) {
             return Mono.error(new IllegalArgumentException("Parameter grain is required and cannot be null."));
         }
-        final String apiVersion = "2021-10-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -681,7 +687,7 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
                 filter,
                 reservationId,
                 reservationOrderId,
-                apiVersion,
+                this.client.getApiVersion(),
                 accept,
                 context)
             .map(

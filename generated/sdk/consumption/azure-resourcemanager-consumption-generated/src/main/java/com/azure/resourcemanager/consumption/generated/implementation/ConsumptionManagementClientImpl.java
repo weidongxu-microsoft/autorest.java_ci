@@ -32,9 +32,7 @@ import com.azure.resourcemanager.consumption.generated.fluent.EventsOperationsCl
 import com.azure.resourcemanager.consumption.generated.fluent.LotsOperationsClient;
 import com.azure.resourcemanager.consumption.generated.fluent.MarketplacesClient;
 import com.azure.resourcemanager.consumption.generated.fluent.OperationsClient;
-import com.azure.resourcemanager.consumption.generated.fluent.OperationsResultsClient;
 import com.azure.resourcemanager.consumption.generated.fluent.PriceSheetsClient;
-import com.azure.resourcemanager.consumption.generated.fluent.PriceSheetsOperationsClient;
 import com.azure.resourcemanager.consumption.generated.fluent.ReservationRecommendationDetailsClient;
 import com.azure.resourcemanager.consumption.generated.fluent.ReservationRecommendationsClient;
 import com.azure.resourcemanager.consumption.generated.fluent.ReservationTransactionsClient;
@@ -76,6 +74,18 @@ public final class ConsumptionManagementClientImpl implements ConsumptionManagem
      */
     public String getEndpoint() {
         return this.endpoint;
+    }
+
+    /** Api Version. */
+    private final String apiVersion;
+
+    /**
+     * Gets Api Version.
+     *
+     * @return the apiVersion value.
+     */
+    public String getApiVersion() {
+        return this.apiVersion;
     }
 
     /** The HTTP pipeline to send requests through. */
@@ -318,30 +328,6 @@ public final class ConsumptionManagementClientImpl implements ConsumptionManagem
         return this.credits;
     }
 
-    /** The PriceSheetsOperationsClient object to access its operations. */
-    private final PriceSheetsOperationsClient priceSheetsOperations;
-
-    /**
-     * Gets the PriceSheetsOperationsClient object to access its operations.
-     *
-     * @return the PriceSheetsOperationsClient object.
-     */
-    public PriceSheetsOperationsClient getPriceSheetsOperations() {
-        return this.priceSheetsOperations;
-    }
-
-    /** The OperationsResultsClient object to access its operations. */
-    private final OperationsResultsClient operationsResults;
-
-    /**
-     * Gets the OperationsResultsClient object to access its operations.
-     *
-     * @return the OperationsResultsClient object.
-     */
-    public OperationsResultsClient getOperationsResults() {
-        return this.operationsResults;
-    }
-
     /**
      * Initializes an instance of ConsumptionManagementClient client.
      *
@@ -364,6 +350,7 @@ public final class ConsumptionManagementClientImpl implements ConsumptionManagem
         this.defaultPollInterval = defaultPollInterval;
         this.subscriptionId = subscriptionId;
         this.endpoint = endpoint;
+        this.apiVersion = "2021-10-01";
         this.usageDetails = new UsageDetailsClientImpl(this);
         this.marketplaces = new MarketplacesClientImpl(this);
         this.budgets = new BudgetsClientImpl(this);
@@ -381,8 +368,6 @@ public final class ConsumptionManagementClientImpl implements ConsumptionManagem
         this.eventsOperations = new EventsOperationsClientImpl(this);
         this.lotsOperations = new LotsOperationsClientImpl(this);
         this.credits = new CreditsClientImpl(this);
-        this.priceSheetsOperations = new PriceSheetsOperationsClientImpl(this);
-        this.operationsResults = new OperationsResultsClientImpl(this);
     }
 
     /**

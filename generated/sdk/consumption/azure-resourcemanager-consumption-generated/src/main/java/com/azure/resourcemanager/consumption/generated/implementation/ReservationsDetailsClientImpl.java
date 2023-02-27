@@ -162,14 +162,18 @@ public final class ReservationsDetailsClientImpl implements ReservationsDetailsC
         if (filter == null) {
             return Mono.error(new IllegalArgumentException("Parameter filter is required and cannot be null."));
         }
-        final String apiVersion = "2021-10-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
                 context ->
                     service
                         .listByReservationOrder(
-                            this.client.getEndpoint(), reservationOrderId, filter, apiVersion, accept, context))
+                            this.client.getEndpoint(),
+                            reservationOrderId,
+                            filter,
+                            this.client.getApiVersion(),
+                            accept,
+                            context))
             .<PagedResponse<ReservationDetailInner>>map(
                 res ->
                     new PagedResponseBase<>(
@@ -213,11 +217,11 @@ public final class ReservationsDetailsClientImpl implements ReservationsDetailsC
         if (filter == null) {
             return Mono.error(new IllegalArgumentException("Parameter filter is required and cannot be null."));
         }
-        final String apiVersion = "2021-10-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .listByReservationOrder(this.client.getEndpoint(), reservationOrderId, filter, apiVersion, accept, context)
+            .listByReservationOrder(
+                this.client.getEndpoint(), reservationOrderId, filter, this.client.getApiVersion(), accept, context)
             .map(
                 res ->
                     new PagedResponseBase<>(
@@ -343,7 +347,6 @@ public final class ReservationsDetailsClientImpl implements ReservationsDetailsC
         if (filter == null) {
             return Mono.error(new IllegalArgumentException("Parameter filter is required and cannot be null."));
         }
-        final String apiVersion = "2021-10-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -354,7 +357,7 @@ public final class ReservationsDetailsClientImpl implements ReservationsDetailsC
                             reservationOrderId,
                             reservationId,
                             filter,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             accept,
                             context))
             .<PagedResponse<ReservationDetailInner>>map(
@@ -404,12 +407,17 @@ public final class ReservationsDetailsClientImpl implements ReservationsDetailsC
         if (filter == null) {
             return Mono.error(new IllegalArgumentException("Parameter filter is required and cannot be null."));
         }
-        final String apiVersion = "2021-10-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
             .listByReservationOrderAndReservation(
-                this.client.getEndpoint(), reservationOrderId, reservationId, filter, apiVersion, accept, context)
+                this.client.getEndpoint(),
+                reservationOrderId,
+                reservationId,
+                filter,
+                this.client.getApiVersion(),
+                accept,
+                context)
             .map(
                 res ->
                     new PagedResponseBase<>(
@@ -550,7 +558,6 @@ public final class ReservationsDetailsClientImpl implements ReservationsDetailsC
         if (resourceScope == null) {
             return Mono.error(new IllegalArgumentException("Parameter resourceScope is required and cannot be null."));
         }
-        final String apiVersion = "2021-10-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -564,7 +571,7 @@ public final class ReservationsDetailsClientImpl implements ReservationsDetailsC
                             filter,
                             reservationId,
                             reservationOrderId,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             accept,
                             context))
             .<PagedResponse<ReservationDetailInner>>map(
@@ -621,7 +628,6 @@ public final class ReservationsDetailsClientImpl implements ReservationsDetailsC
         if (resourceScope == null) {
             return Mono.error(new IllegalArgumentException("Parameter resourceScope is required and cannot be null."));
         }
-        final String apiVersion = "2021-10-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -633,7 +639,7 @@ public final class ReservationsDetailsClientImpl implements ReservationsDetailsC
                 filter,
                 reservationId,
                 reservationOrderId,
-                apiVersion,
+                this.client.getApiVersion(),
                 accept,
                 context)
             .map(

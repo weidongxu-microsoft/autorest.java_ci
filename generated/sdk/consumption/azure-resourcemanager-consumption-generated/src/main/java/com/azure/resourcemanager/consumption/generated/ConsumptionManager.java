@@ -34,9 +34,7 @@ import com.azure.resourcemanager.consumption.generated.implementation.EventsOper
 import com.azure.resourcemanager.consumption.generated.implementation.LotsOperationsImpl;
 import com.azure.resourcemanager.consumption.generated.implementation.MarketplacesImpl;
 import com.azure.resourcemanager.consumption.generated.implementation.OperationsImpl;
-import com.azure.resourcemanager.consumption.generated.implementation.OperationsResultsImpl;
 import com.azure.resourcemanager.consumption.generated.implementation.PriceSheetsImpl;
-import com.azure.resourcemanager.consumption.generated.implementation.PriceSheetsOperationsImpl;
 import com.azure.resourcemanager.consumption.generated.implementation.ReservationRecommendationDetailsImpl;
 import com.azure.resourcemanager.consumption.generated.implementation.ReservationRecommendationsImpl;
 import com.azure.resourcemanager.consumption.generated.implementation.ReservationTransactionsImpl;
@@ -53,9 +51,7 @@ import com.azure.resourcemanager.consumption.generated.models.EventsOperations;
 import com.azure.resourcemanager.consumption.generated.models.LotsOperations;
 import com.azure.resourcemanager.consumption.generated.models.Marketplaces;
 import com.azure.resourcemanager.consumption.generated.models.Operations;
-import com.azure.resourcemanager.consumption.generated.models.OperationsResults;
 import com.azure.resourcemanager.consumption.generated.models.PriceSheets;
-import com.azure.resourcemanager.consumption.generated.models.PriceSheetsOperations;
 import com.azure.resourcemanager.consumption.generated.models.ReservationRecommendationDetails;
 import com.azure.resourcemanager.consumption.generated.models.ReservationRecommendations;
 import com.azure.resourcemanager.consumption.generated.models.ReservationTransactions;
@@ -108,10 +104,6 @@ public final class ConsumptionManager {
     private LotsOperations lotsOperations;
 
     private Credits credits;
-
-    private PriceSheetsOperations priceSheetsOperations;
-
-    private OperationsResults operationsResults;
 
     private final ConsumptionManagementClient clientObject;
 
@@ -540,30 +532,6 @@ public final class ConsumptionManager {
             this.credits = new CreditsImpl(clientObject.getCredits(), this);
         }
         return credits;
-    }
-
-    /**
-     * Gets the resource collection API of PriceSheetsOperations.
-     *
-     * @return Resource collection API of PriceSheetsOperations.
-     */
-    public PriceSheetsOperations priceSheetsOperations() {
-        if (this.priceSheetsOperations == null) {
-            this.priceSheetsOperations = new PriceSheetsOperationsImpl(clientObject.getPriceSheetsOperations(), this);
-        }
-        return priceSheetsOperations;
-    }
-
-    /**
-     * Gets the resource collection API of OperationsResults.
-     *
-     * @return Resource collection API of OperationsResults.
-     */
-    public OperationsResults operationsResults() {
-        if (this.operationsResults == null) {
-            this.operationsResults = new OperationsResultsImpl(clientObject.getOperationsResults(), this);
-        }
-        return operationsResults;
     }
 
     /**

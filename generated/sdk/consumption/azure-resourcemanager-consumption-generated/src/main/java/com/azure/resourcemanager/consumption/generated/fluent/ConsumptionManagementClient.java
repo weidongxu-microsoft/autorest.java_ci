@@ -24,6 +24,13 @@ public interface ConsumptionManagementClient {
     String getEndpoint();
 
     /**
+     * Gets Api Version.
+     *
+     * @return the apiVersion value.
+     */
+    String getApiVersion();
+
+    /**
      * Gets The HTTP pipeline to send requests through.
      *
      * @return the httpPipeline value.
@@ -155,18 +162,4 @@ public interface ConsumptionManagementClient {
      * @return the CreditsClient object.
      */
     CreditsClient getCredits();
-
-    /**
-     * Gets the PriceSheetsOperationsClient object to access its operations.
-     *
-     * @return the PriceSheetsOperationsClient object.
-     */
-    PriceSheetsOperationsClient getPriceSheetsOperations();
-
-    /**
-     * Gets the OperationsResultsClient object to access its operations.
-     *
-     * @return the OperationsResultsClient object.
-     */
-    OperationsResultsClient getOperationsResults();
 }

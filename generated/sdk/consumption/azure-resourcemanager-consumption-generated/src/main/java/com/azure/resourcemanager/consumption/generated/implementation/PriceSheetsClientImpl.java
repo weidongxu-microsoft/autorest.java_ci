@@ -111,7 +111,6 @@ public final class PriceSheetsClientImpl implements PriceSheetsClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-10-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -123,7 +122,7 @@ public final class PriceSheetsClientImpl implements PriceSheetsClient {
                             skiptoken,
                             top,
                             this.client.getSubscriptionId(),
-                            apiVersion,
+                            this.client.getApiVersion(),
                             accept,
                             context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
@@ -159,7 +158,6 @@ public final class PriceSheetsClientImpl implements PriceSheetsClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-10-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -169,7 +167,7 @@ public final class PriceSheetsClientImpl implements PriceSheetsClient {
                 skiptoken,
                 top,
                 this.client.getSubscriptionId(),
-                apiVersion,
+                this.client.getApiVersion(),
                 accept,
                 context);
     }
@@ -261,7 +259,6 @@ public final class PriceSheetsClientImpl implements PriceSheetsClient {
             return Mono
                 .error(new IllegalArgumentException("Parameter billingPeriodName is required and cannot be null."));
         }
-        final String apiVersion = "2021-10-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -273,7 +270,7 @@ public final class PriceSheetsClientImpl implements PriceSheetsClient {
                             skiptoken,
                             top,
                             this.client.getSubscriptionId(),
-                            apiVersion,
+                            this.client.getApiVersion(),
                             billingPeriodName,
                             accept,
                             context))
@@ -317,7 +314,6 @@ public final class PriceSheetsClientImpl implements PriceSheetsClient {
             return Mono
                 .error(new IllegalArgumentException("Parameter billingPeriodName is required and cannot be null."));
         }
-        final String apiVersion = "2021-10-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -327,7 +323,7 @@ public final class PriceSheetsClientImpl implements PriceSheetsClient {
                 skiptoken,
                 top,
                 this.client.getSubscriptionId(),
-                apiVersion,
+                this.client.getApiVersion(),
                 billingPeriodName,
                 accept,
                 context);

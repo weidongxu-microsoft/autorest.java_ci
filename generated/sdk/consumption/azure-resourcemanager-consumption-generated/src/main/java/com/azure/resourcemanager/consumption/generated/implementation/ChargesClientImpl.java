@@ -110,7 +110,6 @@ public final class ChargesClientImpl implements ChargesClient {
         if (scope == null) {
             return Mono.error(new IllegalArgumentException("Parameter scope is required and cannot be null."));
         }
-        final String apiVersion = "2021-10-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -119,7 +118,7 @@ public final class ChargesClientImpl implements ChargesClient {
                         .list(
                             this.client.getEndpoint(),
                             scope,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             startDate,
                             endDate,
                             filter,
@@ -174,11 +173,19 @@ public final class ChargesClientImpl implements ChargesClient {
         if (scope == null) {
             return Mono.error(new IllegalArgumentException("Parameter scope is required and cannot be null."));
         }
-        final String apiVersion = "2021-10-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .list(this.client.getEndpoint(), scope, apiVersion, startDate, endDate, filter, apply, accept, context);
+            .list(
+                this.client.getEndpoint(),
+                scope,
+                this.client.getApiVersion(),
+                startDate,
+                endDate,
+                filter,
+                apply,
+                accept,
+                context);
     }
 
     /**
