@@ -16,11 +16,6 @@
         "output": "sdk/authorization/azure-resourcemanager-authorization-generated",
         "tag": "package-2018-09-01-preview"
     },
-    "commerce": {
-        "source": "specification/commerce/resource-manager/readme.md",
-        "namespace": "com.azure.resourcemanager.commerce.generated",
-        "output": "sdk/commerce/azure-resourcemanager-commerce-generated"
-    },
     "compute": {
         "source": "specification/compute/resource-manager/readme.md",
         "namespace": "com.azure.resourcemanager.compute.generated",
