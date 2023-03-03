@@ -614,9 +614,9 @@ public final class AppServiceManager {
     }
 
     /**
-     * Gets the resource collection API of StaticSites. It manages StaticSiteArmResource,
-     * StaticSiteUserProvidedFunctionAppArmResource, StaticSiteCustomDomainOverviewArmResource,
-     * StaticSiteLinkedBackendArmResource.
+     * Gets the resource collection API of StaticSites. It manages StaticSiteArmResource, DatabaseConnection,
+     * StaticSiteUserProvidedFunctionAppArmResource, StaticSiteBasicAuthPropertiesArmResource,
+     * StaticSiteCustomDomainOverviewArmResource, StaticSiteLinkedBackendArmResource.
      *
      * @return Resource collection API of StaticSites.
      */

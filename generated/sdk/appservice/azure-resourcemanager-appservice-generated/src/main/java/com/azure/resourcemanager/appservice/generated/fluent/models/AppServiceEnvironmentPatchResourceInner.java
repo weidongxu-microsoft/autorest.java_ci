@@ -257,7 +257,7 @@ public final class AppServiceEnvironmentPatchResourceInner extends ProxyOnlyReso
     }
 
     /**
-     * Get the userWhitelistedIpRanges property: User added list of IP Ranges allowed on ASE db.
+     * Get the userWhitelistedIpRanges property: User added ip ranges to whitelist on ASE db.
      *
      * @return the userWhitelistedIpRanges value.
      */
@@ -266,7 +266,7 @@ public final class AppServiceEnvironmentPatchResourceInner extends ProxyOnlyReso
     }
 
     /**
-     * Set the userWhitelistedIpRanges property: User added list of IP Ranges allowed on ASE db.
+     * Set the userWhitelistedIpRanges property: User added ip ranges to whitelist on ASE db.
      *
      * @param userWhitelistedIpRanges the userWhitelistedIpRanges value to set.
      * @return the AppServiceEnvironmentPatchResourceInner object itself.

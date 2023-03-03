@@ -5,6 +5,7 @@
 package com.azure.resourcemanager.appservice.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.resourcemanager.appservice.generated.models.DatabaseConnectionOverview;
 import com.azure.resourcemanager.appservice.generated.models.EnterpriseGradeCdnStatus;
 import com.azure.resourcemanager.appservice.generated.models.ResponseMessageEnvelopeRemotePrivateEndpointConnection;
 import com.azure.resourcemanager.appservice.generated.models.StagingEnvironmentPolicy;
@@ -120,6 +121,12 @@ public final class StaticSite {
      */
     @JsonProperty(value = "publicNetworkAccess")
     private String publicNetworkAccess;
+
+    /*
+     * Database connections for the static site
+     */
+    @JsonProperty(value = "databaseConnections", access = JsonProperty.Access.WRITE_ONLY)
+    private List<DatabaseConnectionOverview> databaseConnections;
 
     /** Creates an instance of StaticSite class. */
     public StaticSite() {
@@ -401,6 +408,15 @@ public final class StaticSite {
     }
 
     /**
+     * Get the databaseConnections property: Database connections for the static site.
+     *
+     * @return the databaseConnections value.
+     */
+    public List<DatabaseConnectionOverview> databaseConnections() {
+        return this.databaseConnections;
+    }
+
+    /**
      * Validates the instance.
      *
      * @throws IllegalArgumentException thrown if the instance is not valid.
@@ -420,6 +436,9 @@ public final class StaticSite {
         }
         if (linkedBackends() != null) {
             linkedBackends().forEach(e -> e.validate());
+        }
+        if (databaseConnections() != null) {
+            databaseConnections().forEach(e -> e.validate());
         }
     }
 }

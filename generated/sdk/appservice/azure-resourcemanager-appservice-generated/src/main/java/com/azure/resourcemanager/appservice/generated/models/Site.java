@@ -415,6 +415,15 @@ public interface Site {
     String virtualNetworkSubnetId();
 
     /**
+     * Gets the managedEnvironmentId property: Azure Resource Manager ID of the customer's selected Managed Environment
+     * on which to host this app. This must be of the form
+     * /subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.App/managedEnvironments/{managedEnvironmentName}.
+     *
+     * @return the managedEnvironmentId value.
+     */
+    String managedEnvironmentId();
+
+    /**
      * Gets the region of the resource.
      *
      * @return the region of the resource.
@@ -517,7 +526,8 @@ public interface Site {
                 DefinitionStages.WithPublicNetworkAccess,
                 DefinitionStages.WithStorageAccountRequired,
                 DefinitionStages.WithKeyVaultReferenceIdentity,
-                DefinitionStages.WithVirtualNetworkSubnetId {
+                DefinitionStages.WithVirtualNetworkSubnetId,
+                DefinitionStages.WithManagedEnvironmentId {
             /**
              * Executes the create request.
              *
@@ -887,6 +897,20 @@ public interface Site {
              * @return the next definition stage.
              */
             WithCreate withVirtualNetworkSubnetId(String virtualNetworkSubnetId);
+        }
+        /** The stage of the Site definition allowing to specify managedEnvironmentId. */
+        interface WithManagedEnvironmentId {
+            /**
+             * Specifies the managedEnvironmentId property: Azure Resource Manager ID of the customer's selected Managed
+             * Environment on which to host this app. This must be of the form
+             * /subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.App/managedEnvironments/{managedEnvironmentName}.
+             *
+             * @param managedEnvironmentId Azure Resource Manager ID of the customer's selected Managed Environment on
+             *     which to host this app. This must be of the form
+             *     /subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.App/managedEnvironments/{managedEnvironmentName}.
+             * @return the next definition stage.
+             */
+            WithCreate withManagedEnvironmentId(String managedEnvironmentId);
         }
     }
     /**
@@ -1818,4 +1842,52 @@ public interface Site {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void syncFunctionTriggers();
+
+    /**
+     * Creates the artifacts for web site, or a deployment slot.
+     *
+     * <p>Description for Creates the artifacts for web site, or a deployment slot.
+     *
+     * @param workflowArtifacts Application settings and files of the workflow.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
+     */
+    Response<Void> deployWorkflowArtifactsWithResponse(WorkflowArtifacts workflowArtifacts, Context context);
+
+    /**
+     * Creates the artifacts for web site, or a deployment slot.
+     *
+     * <p>Description for Creates the artifacts for web site, or a deployment slot.
+     *
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deployWorkflowArtifacts();
+
+    /**
+     * Lists logic app's connections for web site, or a deployment slot.
+     *
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return workflow properties definition along with {@link Response}.
+     */
+    Response<WorkflowEnvelope> listWorkflowsConnectionsWithResponse(Context context);
+
+    /**
+     * Lists logic app's connections for web site, or a deployment slot.
+     *
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return workflow properties definition.
+     */
+    WorkflowEnvelope listWorkflowsConnections();
 }

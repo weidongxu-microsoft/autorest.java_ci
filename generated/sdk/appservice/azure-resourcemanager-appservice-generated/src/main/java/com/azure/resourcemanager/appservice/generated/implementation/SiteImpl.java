@@ -37,6 +37,8 @@ import com.azure.resourcemanager.appservice.generated.models.SlotDifference;
 import com.azure.resourcemanager.appservice.generated.models.SlotSwapStatus;
 import com.azure.resourcemanager.appservice.generated.models.SnapshotRestoreRequest;
 import com.azure.resourcemanager.appservice.generated.models.UsageState;
+import com.azure.resourcemanager.appservice.generated.models.WorkflowArtifacts;
+import com.azure.resourcemanager.appservice.generated.models.WorkflowEnvelope;
 import java.time.OffsetDateTime;
 import java.util.Collections;
 import java.util.List;
@@ -288,6 +290,10 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
 
     public String virtualNetworkSubnetId() {
         return this.innerModel().virtualNetworkSubnetId();
+    }
+
+    public String managedEnvironmentId() {
+        return this.innerModel().managedEnvironmentId();
     }
 
     public Region region() {
@@ -594,6 +600,24 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
         serviceManager.webApps().syncFunctionTriggers(resourceGroupName, name);
     }
 
+    public Response<Void> deployWorkflowArtifactsWithResponse(WorkflowArtifacts workflowArtifacts, Context context) {
+        return serviceManager
+            .webApps()
+            .deployWorkflowArtifactsWithResponse(resourceGroupName, name, workflowArtifacts, context);
+    }
+
+    public void deployWorkflowArtifacts() {
+        serviceManager.webApps().deployWorkflowArtifacts(resourceGroupName, name);
+    }
+
+    public Response<WorkflowEnvelope> listWorkflowsConnectionsWithResponse(Context context) {
+        return serviceManager.webApps().listWorkflowsConnectionsWithResponse(resourceGroupName, name, context);
+    }
+
+    public WorkflowEnvelope listWorkflowsConnections() {
+        return serviceManager.webApps().listWorkflowsConnections(resourceGroupName, name);
+    }
+
     public SiteImpl withRegion(Region location) {
         this.innerModel().withLocation(location.toString());
         return this;
@@ -857,6 +881,11 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
             this.updateSiteEnvelope.withVirtualNetworkSubnetId(virtualNetworkSubnetId);
             return this;
         }
+    }
+
+    public SiteImpl withManagedEnvironmentId(String managedEnvironmentId) {
+        this.innerModel().withManagedEnvironmentId(managedEnvironmentId);
+        return this;
     }
 
     private boolean isInCreateMode() {

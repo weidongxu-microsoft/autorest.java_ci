@@ -4,10 +4,13 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
+import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteArmResourceInner;
+import com.azure.resourcemanager.appservice.generated.models.DatabaseConnection;
+import com.azure.resourcemanager.appservice.generated.models.DatabaseConnectionOverview;
 import com.azure.resourcemanager.appservice.generated.models.EnterpriseGradeCdnStatus;
 import com.azure.resourcemanager.appservice.generated.models.ManagedServiceIdentity;
 import com.azure.resourcemanager.appservice.generated.models.ResponseMessageEnvelopeRemotePrivateEndpointConnection;
@@ -159,6 +162,15 @@ public final class StaticSiteArmResourceImpl
 
     public String publicNetworkAccess() {
         return this.innerModel().publicNetworkAccess();
+    }
+
+    public List<DatabaseConnectionOverview> databaseConnections() {
+        List<DatabaseConnectionOverview> inner = this.innerModel().databaseConnections();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
     }
 
     public Region region() {
@@ -337,6 +349,14 @@ public final class StaticSiteArmResourceImpl
 
     public void resetStaticSiteApiKey(StaticSiteResetPropertiesArmResource resetPropertiesEnvelope) {
         serviceManager.staticSites().resetStaticSiteApiKey(resourceGroupName, name, resetPropertiesEnvelope);
+    }
+
+    public PagedIterable<DatabaseConnection> getDatabaseConnectionsWithDetails() {
+        return serviceManager.staticSites().getDatabaseConnectionsWithDetails(resourceGroupName, name);
+    }
+
+    public PagedIterable<DatabaseConnection> getDatabaseConnectionsWithDetails(Context context) {
+        return serviceManager.staticSites().getDatabaseConnectionsWithDetails(resourceGroupName, name, context);
     }
 
     public void createZipDeploymentForStaticSite(StaticSiteZipDeploymentArmResource staticSiteZipDeploymentEnvelope) {

@@ -156,6 +156,14 @@ public interface SiteConfig {
     List<NameValuePair> appSettings();
 
     /**
+     * Gets the metadata property: Application metadata. This property cannot be retrieved, since it may contain
+     * secrets.
+     *
+     * @return the metadata value.
+     */
+    List<NameValuePair> metadata();
+
+    /**
      * Gets the connectionStrings property: Connection strings.
      *
      * @return the connectionStrings value.
@@ -394,11 +402,27 @@ public interface SiteConfig {
     List<IpSecurityRestriction> ipSecurityRestrictions();
 
     /**
+     * Gets the ipSecurityRestrictionsDefaultAction property: Default action for main access restriction if no rules are
+     * matched.
+     *
+     * @return the ipSecurityRestrictionsDefaultAction value.
+     */
+    DefaultAction ipSecurityRestrictionsDefaultAction();
+
+    /**
      * Gets the scmIpSecurityRestrictions property: IP security restrictions for scm.
      *
      * @return the scmIpSecurityRestrictions value.
      */
     List<IpSecurityRestriction> scmIpSecurityRestrictions();
+
+    /**
+     * Gets the scmIpSecurityRestrictionsDefaultAction property: Default action for scm access restriction if no rules
+     * are matched.
+     *
+     * @return the scmIpSecurityRestrictionsDefaultAction value.
+     */
+    DefaultAction scmIpSecurityRestrictionsDefaultAction();
 
     /**
      * Gets the scmIpSecurityRestrictionsUseMain property: IP security restrictions for scm to use main.
@@ -451,6 +475,14 @@ public interface SiteConfig {
      * @return the functionAppScaleLimit value.
      */
     Integer functionAppScaleLimit();
+
+    /**
+     * Gets the elasticWebAppScaleLimit property: Maximum number of workers that a site can scale out to. This setting
+     * only applies to apps in plans where ElasticScaleEnabled is &lt;code&gt;true&lt;/code&gt;.
+     *
+     * @return the elasticWebAppScaleLimit value.
+     */
+    Integer elasticWebAppScaleLimit();
 
     /**
      * Gets the healthCheckPath property: Health check path.

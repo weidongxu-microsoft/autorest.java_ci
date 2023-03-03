@@ -238,6 +238,10 @@ public final class SitePropertiesImpl implements SiteProperties {
         return this.innerModel().virtualNetworkSubnetId();
     }
 
+    public String managedEnvironmentId() {
+        return this.innerModel().managedEnvironmentId();
+    }
+
     public SitePropertiesInner innerModel() {
         return this.innerObject;
     }

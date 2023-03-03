@@ -10,9 +10,11 @@ import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.fluent.StaticSitesClient;
+import com.azure.resourcemanager.appservice.generated.fluent.models.DatabaseConnectionInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.PrivateLinkResourcesWrapperInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.RemotePrivateEndpointConnectionArmResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteArmResourceInner;
+import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteBasicAuthPropertiesArmResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteBuildArmResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteCustomDomainOverviewArmResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteFunctionOverviewArmResourceInner;
@@ -23,10 +25,14 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteUs
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSitesWorkflowPreviewInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StringDictionaryInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StringListInner;
+import com.azure.resourcemanager.appservice.generated.models.BasicAuthName;
+import com.azure.resourcemanager.appservice.generated.models.DatabaseConnection;
+import com.azure.resourcemanager.appservice.generated.models.DatabaseConnectionPatchRequest;
 import com.azure.resourcemanager.appservice.generated.models.PrivateLinkConnectionApprovalRequestResource;
 import com.azure.resourcemanager.appservice.generated.models.PrivateLinkResourcesWrapper;
 import com.azure.resourcemanager.appservice.generated.models.RemotePrivateEndpointConnectionArmResource;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteArmResource;
+import com.azure.resourcemanager.appservice.generated.models.StaticSiteBasicAuthPropertiesArmResource;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteBuildArmResource;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteCustomDomainOverviewArmResource;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteCustomDomainRequestPropertiesArmResource;
@@ -320,6 +326,98 @@ public final class StaticSitesImpl implements StaticSites {
         }
     }
 
+    public PagedIterable<DatabaseConnection> getBuildDatabaseConnections(
+        String resourceGroupName, String name, String environmentName) {
+        PagedIterable<DatabaseConnectionInner> inner =
+            this.serviceClient().getBuildDatabaseConnections(resourceGroupName, name, environmentName);
+        return Utils.mapPage(inner, inner1 -> new DatabaseConnectionImpl(inner1, this.manager()));
+    }
+
+    public PagedIterable<DatabaseConnection> getBuildDatabaseConnections(
+        String resourceGroupName, String name, String environmentName, Context context) {
+        PagedIterable<DatabaseConnectionInner> inner =
+            this.serviceClient().getBuildDatabaseConnections(resourceGroupName, name, environmentName, context);
+        return Utils.mapPage(inner, inner1 -> new DatabaseConnectionImpl(inner1, this.manager()));
+    }
+
+    public Response<DatabaseConnection> getBuildDatabaseConnectionWithResponse(
+        String resourceGroupName, String name, String environmentName, String databaseConnectionName, Context context) {
+        Response<DatabaseConnectionInner> inner =
+            this
+                .serviceClient()
+                .getBuildDatabaseConnectionWithResponse(
+                    resourceGroupName, name, environmentName, databaseConnectionName, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new DatabaseConnectionImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public DatabaseConnection getBuildDatabaseConnection(
+        String resourceGroupName, String name, String environmentName, String databaseConnectionName) {
+        DatabaseConnectionInner inner =
+            this
+                .serviceClient()
+                .getBuildDatabaseConnection(resourceGroupName, name, environmentName, databaseConnectionName);
+        if (inner != null) {
+            return new DatabaseConnectionImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<Void> deleteBuildDatabaseConnectionWithResponse(
+        String resourceGroupName, String name, String environmentName, String databaseConnectionName, Context context) {
+        return this
+            .serviceClient()
+            .deleteBuildDatabaseConnectionWithResponse(
+                resourceGroupName, name, environmentName, databaseConnectionName, context);
+    }
+
+    public void deleteBuildDatabaseConnection(
+        String resourceGroupName, String name, String environmentName, String databaseConnectionName) {
+        this
+            .serviceClient()
+            .deleteBuildDatabaseConnection(resourceGroupName, name, environmentName, databaseConnectionName);
+    }
+
+    public Response<DatabaseConnection> getBuildDatabaseConnectionWithDetailsWithResponse(
+        String resourceGroupName, String name, String environmentName, String databaseConnectionName, Context context) {
+        Response<DatabaseConnectionInner> inner =
+            this
+                .serviceClient()
+                .getBuildDatabaseConnectionWithDetailsWithResponse(
+                    resourceGroupName, name, environmentName, databaseConnectionName, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new DatabaseConnectionImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public DatabaseConnection getBuildDatabaseConnectionWithDetails(
+        String resourceGroupName, String name, String environmentName, String databaseConnectionName) {
+        DatabaseConnectionInner inner =
+            this
+                .serviceClient()
+                .getBuildDatabaseConnectionWithDetails(
+                    resourceGroupName, name, environmentName, databaseConnectionName);
+        if (inner != null) {
+            return new DatabaseConnectionImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
     public PagedIterable<StaticSiteFunctionOverviewArmResource> listStaticSiteBuildFunctions(
         String resourceGroupName, String name, String environmentName) {
         PagedIterable<StaticSiteFunctionOverviewArmResourceInner> inner =
@@ -388,6 +486,22 @@ public final class StaticSitesImpl implements StaticSites {
         } else {
             return null;
         }
+    }
+
+    public PagedIterable<DatabaseConnection> getBuildDatabaseConnectionsWithDetails(
+        String resourceGroupName, String name, String environmentName) {
+        PagedIterable<DatabaseConnectionInner> inner =
+            this.serviceClient().getBuildDatabaseConnectionsWithDetails(resourceGroupName, name, environmentName);
+        return Utils.mapPage(inner, inner1 -> new DatabaseConnectionImpl(inner1, this.manager()));
+    }
+
+    public PagedIterable<DatabaseConnection> getBuildDatabaseConnectionsWithDetails(
+        String resourceGroupName, String name, String environmentName, Context context) {
+        PagedIterable<DatabaseConnectionInner> inner =
+            this
+                .serviceClient()
+                .getBuildDatabaseConnectionsWithDetails(resourceGroupName, name, environmentName, context);
+        return Utils.mapPage(inner, inner1 -> new DatabaseConnectionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<StaticSiteUserProvidedFunctionAppArmResource> getUserProvidedFunctionAppsForStaticSiteBuild(
@@ -505,6 +619,46 @@ public final class StaticSitesImpl implements StaticSites {
             this.serviceClient().createOrUpdateStaticSiteAppSettings(resourceGroupName, name, appSettings);
         if (inner != null) {
             return new StringDictionaryImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public PagedIterable<StaticSiteBasicAuthPropertiesArmResource> listBasicAuth(
+        String resourceGroupName, String name) {
+        PagedIterable<StaticSiteBasicAuthPropertiesArmResourceInner> inner =
+            this.serviceClient().listBasicAuth(resourceGroupName, name);
+        return Utils.mapPage(inner, inner1 -> new StaticSiteBasicAuthPropertiesArmResourceImpl(inner1, this.manager()));
+    }
+
+    public PagedIterable<StaticSiteBasicAuthPropertiesArmResource> listBasicAuth(
+        String resourceGroupName, String name, Context context) {
+        PagedIterable<StaticSiteBasicAuthPropertiesArmResourceInner> inner =
+            this.serviceClient().listBasicAuth(resourceGroupName, name, context);
+        return Utils.mapPage(inner, inner1 -> new StaticSiteBasicAuthPropertiesArmResourceImpl(inner1, this.manager()));
+    }
+
+    public Response<StaticSiteBasicAuthPropertiesArmResource> getBasicAuthWithResponse(
+        String resourceGroupName, String name, BasicAuthName basicAuthName, Context context) {
+        Response<StaticSiteBasicAuthPropertiesArmResourceInner> inner =
+            this.serviceClient().getBasicAuthWithResponse(resourceGroupName, name, basicAuthName, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new StaticSiteBasicAuthPropertiesArmResourceImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public StaticSiteBasicAuthPropertiesArmResource getBasicAuth(
+        String resourceGroupName, String name, BasicAuthName basicAuthName) {
+        StaticSiteBasicAuthPropertiesArmResourceInner inner =
+            this.serviceClient().getBasicAuth(resourceGroupName, name, basicAuthName);
+        if (inner != null) {
+            return new StaticSiteBasicAuthPropertiesArmResourceImpl(inner, this.manager());
         } else {
             return null;
         }
@@ -646,6 +800,164 @@ public final class StaticSitesImpl implements StaticSites {
             .serviceClient()
             .validateCustomDomainCanBeAddedToStaticSite(
                 resourceGroupName, name, domainName, staticSiteCustomDomainRequestPropertiesEnvelope, context);
+    }
+
+    public PagedIterable<DatabaseConnection> getDatabaseConnections(String resourceGroupName, String name) {
+        PagedIterable<DatabaseConnectionInner> inner =
+            this.serviceClient().getDatabaseConnections(resourceGroupName, name);
+        return Utils.mapPage(inner, inner1 -> new DatabaseConnectionImpl(inner1, this.manager()));
+    }
+
+    public PagedIterable<DatabaseConnection> getDatabaseConnections(
+        String resourceGroupName, String name, Context context) {
+        PagedIterable<DatabaseConnectionInner> inner =
+            this.serviceClient().getDatabaseConnections(resourceGroupName, name, context);
+        return Utils.mapPage(inner, inner1 -> new DatabaseConnectionImpl(inner1, this.manager()));
+    }
+
+    public Response<DatabaseConnection> getDatabaseConnectionWithResponse(
+        String resourceGroupName, String name, String databaseConnectionName, Context context) {
+        Response<DatabaseConnectionInner> inner =
+            this
+                .serviceClient()
+                .getDatabaseConnectionWithResponse(resourceGroupName, name, databaseConnectionName, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new DatabaseConnectionImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public DatabaseConnection getDatabaseConnection(
+        String resourceGroupName, String name, String databaseConnectionName) {
+        DatabaseConnectionInner inner =
+            this.serviceClient().getDatabaseConnection(resourceGroupName, name, databaseConnectionName);
+        if (inner != null) {
+            return new DatabaseConnectionImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<DatabaseConnection> createOrUpdateDatabaseConnectionWithResponse(
+        String resourceGroupName,
+        String name,
+        String databaseConnectionName,
+        DatabaseConnectionInner databaseConnectionRequestEnvelope,
+        Context context) {
+        Response<DatabaseConnectionInner> inner =
+            this
+                .serviceClient()
+                .createOrUpdateDatabaseConnectionWithResponse(
+                    resourceGroupName, name, databaseConnectionName, databaseConnectionRequestEnvelope, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new DatabaseConnectionImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public DatabaseConnection createOrUpdateDatabaseConnection(
+        String resourceGroupName,
+        String name,
+        String databaseConnectionName,
+        DatabaseConnectionInner databaseConnectionRequestEnvelope) {
+        DatabaseConnectionInner inner =
+            this
+                .serviceClient()
+                .createOrUpdateDatabaseConnection(
+                    resourceGroupName, name, databaseConnectionName, databaseConnectionRequestEnvelope);
+        if (inner != null) {
+            return new DatabaseConnectionImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<Void> deleteDatabaseConnectionWithResponse(
+        String resourceGroupName, String name, String databaseConnectionName, Context context) {
+        return this
+            .serviceClient()
+            .deleteDatabaseConnectionWithResponse(resourceGroupName, name, databaseConnectionName, context);
+    }
+
+    public void deleteDatabaseConnection(String resourceGroupName, String name, String databaseConnectionName) {
+        this.serviceClient().deleteDatabaseConnection(resourceGroupName, name, databaseConnectionName);
+    }
+
+    public Response<DatabaseConnection> updateDatabaseConnectionWithResponse(
+        String resourceGroupName,
+        String name,
+        String databaseConnectionName,
+        DatabaseConnectionPatchRequest databaseConnectionRequestEnvelope,
+        Context context) {
+        Response<DatabaseConnectionInner> inner =
+            this
+                .serviceClient()
+                .updateDatabaseConnectionWithResponse(
+                    resourceGroupName, name, databaseConnectionName, databaseConnectionRequestEnvelope, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new DatabaseConnectionImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public DatabaseConnection updateDatabaseConnection(
+        String resourceGroupName,
+        String name,
+        String databaseConnectionName,
+        DatabaseConnectionPatchRequest databaseConnectionRequestEnvelope) {
+        DatabaseConnectionInner inner =
+            this
+                .serviceClient()
+                .updateDatabaseConnection(
+                    resourceGroupName, name, databaseConnectionName, databaseConnectionRequestEnvelope);
+        if (inner != null) {
+            return new DatabaseConnectionImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<DatabaseConnection> getDatabaseConnectionWithDetailsWithResponse(
+        String resourceGroupName, String name, String databaseConnectionName, Context context) {
+        Response<DatabaseConnectionInner> inner =
+            this
+                .serviceClient()
+                .getDatabaseConnectionWithDetailsWithResponse(resourceGroupName, name, databaseConnectionName, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new DatabaseConnectionImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public DatabaseConnection getDatabaseConnectionWithDetails(
+        String resourceGroupName, String name, String databaseConnectionName) {
+        DatabaseConnectionInner inner =
+            this.serviceClient().getDatabaseConnectionWithDetails(resourceGroupName, name, databaseConnectionName);
+        if (inner != null) {
+            return new DatabaseConnectionImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public void detachStaticSite(String resourceGroupName, String name) {
@@ -897,6 +1209,19 @@ public final class StaticSitesImpl implements StaticSites {
     public void resetStaticSiteApiKey(
         String resourceGroupName, String name, StaticSiteResetPropertiesArmResource resetPropertiesEnvelope) {
         this.serviceClient().resetStaticSiteApiKey(resourceGroupName, name, resetPropertiesEnvelope);
+    }
+
+    public PagedIterable<DatabaseConnection> getDatabaseConnectionsWithDetails(String resourceGroupName, String name) {
+        PagedIterable<DatabaseConnectionInner> inner =
+            this.serviceClient().getDatabaseConnectionsWithDetails(resourceGroupName, name);
+        return Utils.mapPage(inner, inner1 -> new DatabaseConnectionImpl(inner1, this.manager()));
+    }
+
+    public PagedIterable<DatabaseConnection> getDatabaseConnectionsWithDetails(
+        String resourceGroupName, String name, Context context) {
+        PagedIterable<DatabaseConnectionInner> inner =
+            this.serviceClient().getDatabaseConnectionsWithDetails(resourceGroupName, name, context);
+        return Utils.mapPage(inner, inner1 -> new DatabaseConnectionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<StaticSiteUserProvidedFunctionAppArmResource> getUserProvidedFunctionAppsForStaticSite(
@@ -1252,6 +1577,81 @@ public final class StaticSitesImpl implements StaticSites {
         return this.getByResourceGroupWithResponse(resourceGroupName, name, context);
     }
 
+    public DatabaseConnection getBuildDatabaseConnectionById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw LOGGER
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String name = Utils.getValueFromIdByName(id, "staticSites");
+        if (name == null) {
+            throw LOGGER
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
+        }
+        String environmentName = Utils.getValueFromIdByName(id, "builds");
+        if (environmentName == null) {
+            throw LOGGER
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'builds'.", id)));
+        }
+        String databaseConnectionName = Utils.getValueFromIdByName(id, "databaseConnections");
+        if (databaseConnectionName == null) {
+            throw LOGGER
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'databaseConnections'.", id)));
+        }
+        return this
+            .getBuildDatabaseConnectionWithResponse(
+                resourceGroupName, name, environmentName, databaseConnectionName, Context.NONE)
+            .getValue();
+    }
+
+    public Response<DatabaseConnection> getBuildDatabaseConnectionByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw LOGGER
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String name = Utils.getValueFromIdByName(id, "staticSites");
+        if (name == null) {
+            throw LOGGER
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
+        }
+        String environmentName = Utils.getValueFromIdByName(id, "builds");
+        if (environmentName == null) {
+            throw LOGGER
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'builds'.", id)));
+        }
+        String databaseConnectionName = Utils.getValueFromIdByName(id, "databaseConnections");
+        if (databaseConnectionName == null) {
+            throw LOGGER
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'databaseConnections'.", id)));
+        }
+        return this
+            .getBuildDatabaseConnectionWithResponse(
+                resourceGroupName, name, environmentName, databaseConnectionName, context);
+    }
+
     public StaticSiteUserProvidedFunctionAppArmResource getUserProvidedFunctionAppForStaticSiteBuildById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
@@ -1328,6 +1728,60 @@ public final class StaticSitesImpl implements StaticSites {
         return this
             .getUserProvidedFunctionAppForStaticSiteBuildWithResponse(
                 resourceGroupName, name, environmentName, functionAppName, context);
+    }
+
+    public StaticSiteBasicAuthPropertiesArmResource getBasicAuthById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw LOGGER
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String name = Utils.getValueFromIdByName(id, "staticSites");
+        if (name == null) {
+            throw LOGGER
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
+        }
+        String basicAuthNameLocal = Utils.getValueFromIdByName(id, "basicAuth");
+        if (basicAuthNameLocal == null) {
+            throw LOGGER
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'basicAuth'.", id)));
+        }
+        BasicAuthName basicAuthName = BasicAuthName.fromString(basicAuthNameLocal);
+        return this.getBasicAuthWithResponse(resourceGroupName, name, basicAuthName, Context.NONE).getValue();
+    }
+
+    public Response<StaticSiteBasicAuthPropertiesArmResource> getBasicAuthByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw LOGGER
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String name = Utils.getValueFromIdByName(id, "staticSites");
+        if (name == null) {
+            throw LOGGER
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
+        }
+        String basicAuthNameLocal = Utils.getValueFromIdByName(id, "basicAuth");
+        if (basicAuthNameLocal == null) {
+            throw LOGGER
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'basicAuth'.", id)));
+        }
+        BasicAuthName basicAuthName = BasicAuthName.fromString(basicAuthNameLocal);
+        return this.getBasicAuthWithResponse(resourceGroupName, name, basicAuthName, context);
     }
 
     public StaticSiteCustomDomainOverviewArmResource getStaticSiteCustomDomainById(String id) {
@@ -1475,6 +1929,80 @@ public final class StaticSitesImpl implements StaticSites {
         this.delete(resourceGroupName, name, context);
     }
 
+    public void deleteBuildDatabaseConnectionById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw LOGGER
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String name = Utils.getValueFromIdByName(id, "staticSites");
+        if (name == null) {
+            throw LOGGER
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
+        }
+        String environmentName = Utils.getValueFromIdByName(id, "builds");
+        if (environmentName == null) {
+            throw LOGGER
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'builds'.", id)));
+        }
+        String databaseConnectionName = Utils.getValueFromIdByName(id, "databaseConnections");
+        if (databaseConnectionName == null) {
+            throw LOGGER
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'databaseConnections'.", id)));
+        }
+        this
+            .deleteBuildDatabaseConnectionWithResponse(
+                resourceGroupName, name, environmentName, databaseConnectionName, Context.NONE);
+    }
+
+    public Response<Void> deleteBuildDatabaseConnectionByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw LOGGER
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String name = Utils.getValueFromIdByName(id, "staticSites");
+        if (name == null) {
+            throw LOGGER
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
+        }
+        String environmentName = Utils.getValueFromIdByName(id, "builds");
+        if (environmentName == null) {
+            throw LOGGER
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'builds'.", id)));
+        }
+        String databaseConnectionName = Utils.getValueFromIdByName(id, "databaseConnections");
+        if (databaseConnectionName == null) {
+            throw LOGGER
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'databaseConnections'.", id)));
+        }
+        return this
+            .deleteBuildDatabaseConnectionWithResponse(
+                resourceGroupName, name, environmentName, databaseConnectionName, context);
+    }
+
     public void deleteStaticSiteCustomDomainById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
@@ -1539,9 +2067,17 @@ public final class StaticSitesImpl implements StaticSites {
         return new StaticSiteArmResourceImpl(name, this.manager());
     }
 
+    public DatabaseConnectionImpl defineBuildDatabaseConnection(String name) {
+        return new DatabaseConnectionImpl(name, this.manager());
+    }
+
     public StaticSiteUserProvidedFunctionAppArmResourceImpl defineStaticSiteUserProvidedFunctionAppArmResource(
         String name) {
         return new StaticSiteUserProvidedFunctionAppArmResourceImpl(name, this.manager());
+    }
+
+    public StaticSiteBasicAuthPropertiesArmResourceImpl defineBasicAuth(BasicAuthName name) {
+        return new StaticSiteBasicAuthPropertiesArmResourceImpl(name, this.manager());
     }
 
     public StaticSiteCustomDomainOverviewArmResourceImpl defineStaticSiteCustomDomain(String name) {

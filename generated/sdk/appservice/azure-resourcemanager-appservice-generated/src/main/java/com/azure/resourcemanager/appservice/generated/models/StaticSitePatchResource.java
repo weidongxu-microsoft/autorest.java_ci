@@ -344,6 +344,15 @@ public final class StaticSitePatchResource extends ProxyOnlyResource {
     }
 
     /**
+     * Get the databaseConnections property: Database connections for the static site.
+     *
+     * @return the databaseConnections value.
+     */
+    public List<DatabaseConnectionOverview> databaseConnections() {
+        return this.innerProperties() == null ? null : this.innerProperties().databaseConnections();
+    }
+
+    /**
      * Validates the instance.
      *
      * @throws IllegalArgumentException thrown if the instance is not valid.

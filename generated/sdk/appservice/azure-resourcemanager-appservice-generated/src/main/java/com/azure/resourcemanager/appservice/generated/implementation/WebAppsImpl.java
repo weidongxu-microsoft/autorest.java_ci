@@ -71,6 +71,7 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.VnetGatewayI
 import com.azure.resourcemanager.appservice.generated.fluent.models.VnetInfoResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.WebJobInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.WebSiteInstanceStatusInner;
+import com.azure.resourcemanager.appservice.generated.fluent.models.WorkflowEnvelopeInner;
 import com.azure.resourcemanager.appservice.generated.models.ApiKVReference;
 import com.azure.resourcemanager.appservice.generated.models.AzureStoragePropertyDictionaryResource;
 import com.azure.resourcemanager.appservice.generated.models.BackupItem;
@@ -140,6 +141,8 @@ import com.azure.resourcemanager.appservice.generated.models.VnetInfoResource;
 import com.azure.resourcemanager.appservice.generated.models.WebApps;
 import com.azure.resourcemanager.appservice.generated.models.WebJob;
 import com.azure.resourcemanager.appservice.generated.models.WebSiteInstanceStatus;
+import com.azure.resourcemanager.appservice.generated.models.WorkflowArtifacts;
+import com.azure.resourcemanager.appservice.generated.models.WorkflowEnvelope;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -7758,6 +7761,153 @@ public final class WebAppsImpl implements WebApps {
         WebJobInner inner = this.serviceClient().getWebJob(resourceGroupName, name, webJobName);
         if (inner != null) {
             return new WebJobImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<Void> deployWorkflowArtifactsWithResponse(
+        String resourceGroupName, String name, WorkflowArtifacts workflowArtifacts, Context context) {
+        return this
+            .serviceClient()
+            .deployWorkflowArtifactsWithResponse(resourceGroupName, name, workflowArtifacts, context);
+    }
+
+    public void deployWorkflowArtifacts(String resourceGroupName, String name) {
+        this.serviceClient().deployWorkflowArtifacts(resourceGroupName, name);
+    }
+
+    public Response<Void> deployWorkflowArtifactsSlotWithResponse(
+        String resourceGroupName, String name, String slot, WorkflowArtifacts workflowArtifacts, Context context) {
+        return this
+            .serviceClient()
+            .deployWorkflowArtifactsSlotWithResponse(resourceGroupName, name, slot, workflowArtifacts, context);
+    }
+
+    public void deployWorkflowArtifactsSlot(String resourceGroupName, String name, String slot) {
+        this.serviceClient().deployWorkflowArtifactsSlot(resourceGroupName, name, slot);
+    }
+
+    public PagedIterable<WorkflowEnvelope> listInstanceWorkflowsSlot(
+        String resourceGroupName, String name, String slot) {
+        PagedIterable<WorkflowEnvelopeInner> inner =
+            this.serviceClient().listInstanceWorkflowsSlot(resourceGroupName, name, slot);
+        return Utils.mapPage(inner, inner1 -> new WorkflowEnvelopeImpl(inner1, this.manager()));
+    }
+
+    public PagedIterable<WorkflowEnvelope> listInstanceWorkflowsSlot(
+        String resourceGroupName, String name, String slot, Context context) {
+        PagedIterable<WorkflowEnvelopeInner> inner =
+            this.serviceClient().listInstanceWorkflowsSlot(resourceGroupName, name, slot, context);
+        return Utils.mapPage(inner, inner1 -> new WorkflowEnvelopeImpl(inner1, this.manager()));
+    }
+
+    public Response<WorkflowEnvelope> getInstanceWorkflowSlotWithResponse(
+        String resourceGroupName, String name, String slot, String workflowName, Context context) {
+        Response<WorkflowEnvelopeInner> inner =
+            this
+                .serviceClient()
+                .getInstanceWorkflowSlotWithResponse(resourceGroupName, name, slot, workflowName, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new WorkflowEnvelopeImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public WorkflowEnvelope getInstanceWorkflowSlot(
+        String resourceGroupName, String name, String slot, String workflowName) {
+        WorkflowEnvelopeInner inner =
+            this.serviceClient().getInstanceWorkflowSlot(resourceGroupName, name, slot, workflowName);
+        if (inner != null) {
+            return new WorkflowEnvelopeImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<WorkflowEnvelope> listWorkflowsConnectionsSlotWithResponse(
+        String resourceGroupName, String name, String slot, Context context) {
+        Response<WorkflowEnvelopeInner> inner =
+            this.serviceClient().listWorkflowsConnectionsSlotWithResponse(resourceGroupName, name, slot, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new WorkflowEnvelopeImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public WorkflowEnvelope listWorkflowsConnectionsSlot(String resourceGroupName, String name, String slot) {
+        WorkflowEnvelopeInner inner = this.serviceClient().listWorkflowsConnectionsSlot(resourceGroupName, name, slot);
+        if (inner != null) {
+            return new WorkflowEnvelopeImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public PagedIterable<WorkflowEnvelope> listWorkflows(String resourceGroupName, String name) {
+        PagedIterable<WorkflowEnvelopeInner> inner = this.serviceClient().listWorkflows(resourceGroupName, name);
+        return Utils.mapPage(inner, inner1 -> new WorkflowEnvelopeImpl(inner1, this.manager()));
+    }
+
+    public PagedIterable<WorkflowEnvelope> listWorkflows(String resourceGroupName, String name, Context context) {
+        PagedIterable<WorkflowEnvelopeInner> inner =
+            this.serviceClient().listWorkflows(resourceGroupName, name, context);
+        return Utils.mapPage(inner, inner1 -> new WorkflowEnvelopeImpl(inner1, this.manager()));
+    }
+
+    public Response<WorkflowEnvelope> getWorkflowWithResponse(
+        String resourceGroupName, String name, String workflowName, Context context) {
+        Response<WorkflowEnvelopeInner> inner =
+            this.serviceClient().getWorkflowWithResponse(resourceGroupName, name, workflowName, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new WorkflowEnvelopeImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public WorkflowEnvelope getWorkflow(String resourceGroupName, String name, String workflowName) {
+        WorkflowEnvelopeInner inner = this.serviceClient().getWorkflow(resourceGroupName, name, workflowName);
+        if (inner != null) {
+            return new WorkflowEnvelopeImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<WorkflowEnvelope> listWorkflowsConnectionsWithResponse(
+        String resourceGroupName, String name, Context context) {
+        Response<WorkflowEnvelopeInner> inner =
+            this.serviceClient().listWorkflowsConnectionsWithResponse(resourceGroupName, name, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new WorkflowEnvelopeImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public WorkflowEnvelope listWorkflowsConnections(String resourceGroupName, String name) {
+        WorkflowEnvelopeInner inner = this.serviceClient().listWorkflowsConnections(resourceGroupName, name);
+        if (inner != null) {
+            return new WorkflowEnvelopeImpl(inner, this.manager());
         } else {
             return null;
         }

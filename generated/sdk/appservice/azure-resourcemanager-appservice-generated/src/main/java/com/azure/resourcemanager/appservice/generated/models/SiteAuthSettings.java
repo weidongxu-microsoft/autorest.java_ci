@@ -154,9 +154,9 @@ public interface SiteAuthSettings {
     Boolean validateIssuer();
 
     /**
-     * Gets the allowedAudiences property: Allowed audience values to consider when validating JWTs issued by Azure
-     * Active Directory. Note that the &lt;code&gt;ClientID&lt;/code&gt; value is always considered an allowed audience,
-     * regardless of this setting.
+     * Gets the allowedAudiences property: Allowed audience values to consider when validating JSON Web Tokens issued by
+     * Azure Active Directory. Note that the &lt;code&gt;ClientID&lt;/code&gt; value is always considered an allowed
+     * audience, regardless of this setting.
      *
      * @return the allowedAudiences value.
      */

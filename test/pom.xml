@@ -10,7 +10,6 @@
         <module>../generated/sdk/appservice/azure-resourcemanager-appservice-generated</module>
         <module>../generated/sdk/authorization/azure-resourcemanager-authorization-generated</module>
         <module>../generated/sdk/azurekusto/azure-resourcemanager-azurekusto-generated</module>
-        <module>../generated/sdk/commerce/azure-resourcemanager-commerce-generated</module>
         <module>../generated/sdk/compute/azure-resourcemanager-compute-generated</module>
         <module>../generated/sdk/consumption/azure-resourcemanager-consumption-generated</module>
         <module>../generated/sdk/costmanagement/azure-resourcemanager-costmanagement-generated</module>

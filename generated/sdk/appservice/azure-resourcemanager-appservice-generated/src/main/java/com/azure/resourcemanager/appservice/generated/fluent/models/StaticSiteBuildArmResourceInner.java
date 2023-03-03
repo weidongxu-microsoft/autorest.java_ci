@@ -6,6 +6,7 @@ package com.azure.resourcemanager.appservice.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.resourcemanager.appservice.generated.models.BuildStatus;
+import com.azure.resourcemanager.appservice.generated.models.DatabaseConnectionOverview;
 import com.azure.resourcemanager.appservice.generated.models.ProxyOnlyResource;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteLinkedBackend;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteUserProvidedFunctionApp;
@@ -121,6 +122,15 @@ public final class StaticSiteBuildArmResourceInner extends ProxyOnlyResource {
      */
     public List<StaticSiteLinkedBackend> linkedBackends() {
         return this.innerProperties() == null ? null : this.innerProperties().linkedBackends();
+    }
+
+    /**
+     * Get the databaseConnections property: Database connections for the static site build.
+     *
+     * @return the databaseConnections value.
+     */
+    public List<DatabaseConnectionOverview> databaseConnections() {
+        return this.innerProperties() == null ? null : this.innerProperties().databaseConnections();
     }
 
     /**

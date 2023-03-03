@@ -6,6 +6,7 @@ package com.azure.resourcemanager.appservice.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.Resource;
+import com.azure.resourcemanager.appservice.generated.models.DatabaseConnectionOverview;
 import com.azure.resourcemanager.appservice.generated.models.EnterpriseGradeCdnStatus;
 import com.azure.resourcemanager.appservice.generated.models.ManagedServiceIdentity;
 import com.azure.resourcemanager.appservice.generated.models.ResponseMessageEnvelopeRemotePrivateEndpointConnection;
@@ -436,6 +437,15 @@ public final class StaticSiteArmResourceInner extends Resource {
         }
         this.innerProperties().withPublicNetworkAccess(publicNetworkAccess);
         return this;
+    }
+
+    /**
+     * Get the databaseConnections property: Database connections for the static site.
+     *
+     * @return the databaseConnections value.
+     */
+    public List<DatabaseConnectionOverview> databaseConnections() {
+        return this.innerProperties() == null ? null : this.innerProperties().databaseConnections();
     }
 
     /**

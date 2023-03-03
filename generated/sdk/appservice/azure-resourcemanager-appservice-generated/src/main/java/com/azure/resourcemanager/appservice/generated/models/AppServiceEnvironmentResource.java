@@ -146,7 +146,7 @@ public interface AppServiceEnvironmentResource {
     List<NameValuePair> clusterSettings();
 
     /**
-     * Gets the userWhitelistedIpRanges property: User added list of IP Ranges allowed on ASE db.
+     * Gets the userWhitelistedIpRanges property: User added ip ranges to whitelist on ASE db.
      *
      * @return the userWhitelistedIpRanges value.
      */
@@ -402,9 +402,9 @@ public interface AppServiceEnvironmentResource {
         /** The stage of the AppServiceEnvironmentResource definition allowing to specify userWhitelistedIpRanges. */
         interface WithUserWhitelistedIpRanges {
             /**
-             * Specifies the userWhitelistedIpRanges property: User added list of IP Ranges allowed on ASE db.
+             * Specifies the userWhitelistedIpRanges property: User added ip ranges to whitelist on ASE db.
              *
-             * @param userWhitelistedIpRanges User added list of IP Ranges allowed on ASE db.
+             * @param userWhitelistedIpRanges User added ip ranges to whitelist on ASE db.
              * @return the next definition stage.
              */
             WithCreate withUserWhitelistedIpRanges(List<String> userWhitelistedIpRanges);
@@ -590,9 +590,9 @@ public interface AppServiceEnvironmentResource {
         /** The stage of the AppServiceEnvironmentResource update allowing to specify userWhitelistedIpRanges. */
         interface WithUserWhitelistedIpRanges {
             /**
-             * Specifies the userWhitelistedIpRanges property: User added list of IP Ranges allowed on ASE db.
+             * Specifies the userWhitelistedIpRanges property: User added ip ranges to whitelist on ASE db.
              *
-             * @param userWhitelistedIpRanges User added list of IP Ranges allowed on ASE db.
+             * @param userWhitelistedIpRanges User added ip ranges to whitelist on ASE db.
              * @return the next definition stage.
              */
             Update withUserWhitelistedIpRanges(List<String> userWhitelistedIpRanges);

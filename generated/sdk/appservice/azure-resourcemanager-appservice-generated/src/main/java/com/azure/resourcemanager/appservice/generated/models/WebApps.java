@@ -14209,6 +14209,257 @@ public interface WebApps {
     WebJob getWebJob(String resourceGroupName, String name, String webJobName);
 
     /**
+     * Creates the artifacts for web site, or a deployment slot.
+     *
+     * <p>Description for Creates the artifacts for web site, or a deployment slot.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Site name.
+     * @param workflowArtifacts Application settings and files of the workflow.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
+     */
+    Response<Void> deployWorkflowArtifactsWithResponse(
+        String resourceGroupName, String name, WorkflowArtifacts workflowArtifacts, Context context);
+
+    /**
+     * Creates the artifacts for web site, or a deployment slot.
+     *
+     * <p>Description for Creates the artifacts for web site, or a deployment slot.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Site name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deployWorkflowArtifacts(String resourceGroupName, String name);
+
+    /**
+     * Creates the artifacts for web site, or a deployment slot.
+     *
+     * <p>Description for Creates the artifacts for web site, or a deployment slot.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Site name.
+     * @param slot Name of the deployment slot.
+     * @param workflowArtifacts Application settings and files of the workflow.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
+     */
+    Response<Void> deployWorkflowArtifactsSlotWithResponse(
+        String resourceGroupName, String name, String slot, WorkflowArtifacts workflowArtifacts, Context context);
+
+    /**
+     * Creates the artifacts for web site, or a deployment slot.
+     *
+     * <p>Description for Creates the artifacts for web site, or a deployment slot.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Site name.
+     * @param slot Name of the deployment slot.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deployWorkflowArtifactsSlot(String resourceGroupName, String name, String slot);
+
+    /**
+     * List the workflows for a web site, or a deployment slot.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Site name.
+     * @param slot Name of the deployment slot.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of Kudu workflow information elements as paginated response with {@link PagedIterable}.
+     */
+    PagedIterable<WorkflowEnvelope> listInstanceWorkflowsSlot(String resourceGroupName, String name, String slot);
+
+    /**
+     * List the workflows for a web site, or a deployment slot.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Site name.
+     * @param slot Name of the deployment slot.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of Kudu workflow information elements as paginated response with {@link PagedIterable}.
+     */
+    PagedIterable<WorkflowEnvelope> listInstanceWorkflowsSlot(
+        String resourceGroupName, String name, String slot, Context context);
+
+    /**
+     * Get workflow information by its ID for web site, or a deployment slot.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Site name.
+     * @param slot Name of the deployment slot.
+     * @param workflowName Workflow name.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
+     *     404.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return workflow information by its ID for web site, or a deployment slot along with {@link Response}.
+     */
+    Response<WorkflowEnvelope> getInstanceWorkflowSlotWithResponse(
+        String resourceGroupName, String name, String slot, String workflowName, Context context);
+
+    /**
+     * Get workflow information by its ID for web site, or a deployment slot.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Site name.
+     * @param slot Name of the deployment slot.
+     * @param workflowName Workflow name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
+     *     404.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return workflow information by its ID for web site, or a deployment slot.
+     */
+    WorkflowEnvelope getInstanceWorkflowSlot(String resourceGroupName, String name, String slot, String workflowName);
+
+    /**
+     * Lists logic app's connections for web site, or a deployment slot.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Site name.
+     * @param slot Name of the deployment slot.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return workflow properties definition along with {@link Response}.
+     */
+    Response<WorkflowEnvelope> listWorkflowsConnectionsSlotWithResponse(
+        String resourceGroupName, String name, String slot, Context context);
+
+    /**
+     * Lists logic app's connections for web site, or a deployment slot.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Site name.
+     * @param slot Name of the deployment slot.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return workflow properties definition.
+     */
+    WorkflowEnvelope listWorkflowsConnectionsSlot(String resourceGroupName, String name, String slot);
+
+    /**
+     * List the workflows for a web site, or a deployment slot.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Site name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of Kudu workflow information elements as paginated response with {@link PagedIterable}.
+     */
+    PagedIterable<WorkflowEnvelope> listWorkflows(String resourceGroupName, String name);
+
+    /**
+     * List the workflows for a web site, or a deployment slot.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Site name.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of Kudu workflow information elements as paginated response with {@link PagedIterable}.
+     */
+    PagedIterable<WorkflowEnvelope> listWorkflows(String resourceGroupName, String name, Context context);
+
+    /**
+     * Get workflow information by its ID for web site, or a deployment slot.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Site name.
+     * @param workflowName Workflow name.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
+     *     404.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return workflow information by its ID for web site, or a deployment slot along with {@link Response}.
+     */
+    Response<WorkflowEnvelope> getWorkflowWithResponse(
+        String resourceGroupName, String name, String workflowName, Context context);
+
+    /**
+     * Get workflow information by its ID for web site, or a deployment slot.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Site name.
+     * @param workflowName Workflow name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
+     *     404.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return workflow information by its ID for web site, or a deployment slot.
+     */
+    WorkflowEnvelope getWorkflow(String resourceGroupName, String name, String workflowName);
+
+    /**
+     * Lists logic app's connections for web site, or a deployment slot.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Site name.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return workflow properties definition along with {@link Response}.
+     */
+    Response<WorkflowEnvelope> listWorkflowsConnectionsWithResponse(
+        String resourceGroupName, String name, Context context);
+
+    /**
+     * Lists logic app's connections for web site, or a deployment slot.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Site name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return workflow properties definition.
+     */
+    WorkflowEnvelope listWorkflowsConnections(String resourceGroupName, String name);
+
+    /**
      * Gets the details of a web, mobile, or API app.
      *
      * <p>Description for Gets the details of a web, mobile, or API app.

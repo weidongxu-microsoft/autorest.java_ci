@@ -7,6 +7,7 @@ package com.azure.resourcemanager.appservice.generated.models;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
+import com.azure.resourcemanager.appservice.generated.fluent.models.DatabaseConnectionInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteLinkedBackendArmResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteUserArmResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteUserProvidedFunctionAppArmResourceInner;
@@ -463,6 +464,135 @@ public interface StaticSites {
         String resourceGroupName, String name, String environmentName, StringDictionaryInner appSettings);
 
     /**
+     * Returns overviews of database connections for a static site build.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param environmentName The stage site identifier.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of static site database connections as paginated response with {@link PagedIterable}.
+     */
+    PagedIterable<DatabaseConnection> getBuildDatabaseConnections(
+        String resourceGroupName, String name, String environmentName);
+
+    /**
+     * Returns overviews of database connections for a static site build.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param environmentName The stage site identifier.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of static site database connections as paginated response with {@link PagedIterable}.
+     */
+    PagedIterable<DatabaseConnection> getBuildDatabaseConnections(
+        String resourceGroupName, String name, String environmentName, Context context);
+
+    /**
+     * Returns overview of a database connection for a static site build by name.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param environmentName The stage site identifier.
+     * @param databaseConnectionName Name of the database connection.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static Site Database Connection resource along with {@link Response}.
+     */
+    Response<DatabaseConnection> getBuildDatabaseConnectionWithResponse(
+        String resourceGroupName, String name, String environmentName, String databaseConnectionName, Context context);
+
+    /**
+     * Returns overview of a database connection for a static site build by name.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param environmentName The stage site identifier.
+     * @param databaseConnectionName Name of the database connection.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static Site Database Connection resource.
+     */
+    DatabaseConnection getBuildDatabaseConnection(
+        String resourceGroupName, String name, String environmentName, String databaseConnectionName);
+
+    /**
+     * Delete a database connection for a static site build.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param environmentName The stage site identifier.
+     * @param databaseConnectionName Name of the database connection.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
+     */
+    Response<Void> deleteBuildDatabaseConnectionWithResponse(
+        String resourceGroupName, String name, String environmentName, String databaseConnectionName, Context context);
+
+    /**
+     * Delete a database connection for a static site build.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param environmentName The stage site identifier.
+     * @param databaseConnectionName Name of the database connection.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deleteBuildDatabaseConnection(
+        String resourceGroupName, String name, String environmentName, String databaseConnectionName);
+
+    /**
+     * Returns details of a database connection for a static site build by name.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param environmentName The stage site identifier.
+     * @param databaseConnectionName Name of the database connection.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static Site Database Connection resource along with {@link Response}.
+     */
+    Response<DatabaseConnection> getBuildDatabaseConnectionWithDetailsWithResponse(
+        String resourceGroupName, String name, String environmentName, String databaseConnectionName, Context context);
+
+    /**
+     * Returns details of a database connection for a static site build by name.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param environmentName The stage site identifier.
+     * @param databaseConnectionName Name of the database connection.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static Site Database Connection resource.
+     */
+    DatabaseConnection getBuildDatabaseConnectionWithDetails(
+        String resourceGroupName, String name, String environmentName, String databaseConnectionName);
+
+    /**
      * Gets the functions of a particular static site build.
      *
      * <p>Description for Gets the functions of a particular static site build.
@@ -565,6 +695,37 @@ public interface StaticSites {
      */
     StringDictionary listStaticSiteBuildFunctionAppSettings(
         String resourceGroupName, String name, String environmentName);
+
+    /**
+     * Returns details of database connections for a static site build.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param environmentName The stage site identifier.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of static site database connections as paginated response with {@link PagedIterable}.
+     */
+    PagedIterable<DatabaseConnection> getBuildDatabaseConnectionsWithDetails(
+        String resourceGroupName, String name, String environmentName);
+
+    /**
+     * Returns details of database connections for a static site build.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param environmentName The stage site identifier.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of static site database connections as paginated response with {@link PagedIterable}.
+     */
+    PagedIterable<DatabaseConnection> getBuildDatabaseConnectionsWithDetails(
+        String resourceGroupName, String name, String environmentName, Context context);
 
     /**
      * Gets the details of the user provided function apps registered with a static site build
@@ -752,6 +913,73 @@ public interface StaticSites {
      */
     StringDictionary createOrUpdateStaticSiteAppSettings(
         String resourceGroupName, String name, StringDictionaryInner appSettings);
+
+    /**
+     * Gets the basic auth properties for a static site as a collection.
+     *
+     * <p>Description for Gets the basic auth properties for a static site as a collection.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of static site basic auth as paginated response with {@link PagedIterable}.
+     */
+    PagedIterable<StaticSiteBasicAuthPropertiesArmResource> listBasicAuth(String resourceGroupName, String name);
+
+    /**
+     * Gets the basic auth properties for a static site as a collection.
+     *
+     * <p>Description for Gets the basic auth properties for a static site as a collection.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of static site basic auth as paginated response with {@link PagedIterable}.
+     */
+    PagedIterable<StaticSiteBasicAuthPropertiesArmResource> listBasicAuth(
+        String resourceGroupName, String name, Context context);
+
+    /**
+     * Gets the basic auth properties for a static site.
+     *
+     * <p>Description for Gets the basic auth properties for a static site.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param basicAuthName name of the basic auth entry.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static site basic auth properties ARM resource along with {@link Response}.
+     */
+    Response<StaticSiteBasicAuthPropertiesArmResource> getBasicAuthWithResponse(
+        String resourceGroupName, String name, BasicAuthName basicAuthName, Context context);
+
+    /**
+     * Gets the basic auth properties for a static site.
+     *
+     * <p>Description for Gets the basic auth properties for a static site.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param basicAuthName name of the basic auth entry.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static site basic auth properties ARM resource.
+     */
+    StaticSiteBasicAuthPropertiesArmResource getBasicAuth(
+        String resourceGroupName, String name, BasicAuthName basicAuthName);
 
     /**
      * Creates or updates the function app settings of a static site.
@@ -970,6 +1198,211 @@ public interface StaticSites {
         String domainName,
         StaticSiteCustomDomainRequestPropertiesArmResource staticSiteCustomDomainRequestPropertiesEnvelope,
         Context context);
+
+    /**
+     * Returns overviews of database connections for a static site.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of static site database connections as paginated response with {@link PagedIterable}.
+     */
+    PagedIterable<DatabaseConnection> getDatabaseConnections(String resourceGroupName, String name);
+
+    /**
+     * Returns overviews of database connections for a static site.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of static site database connections as paginated response with {@link PagedIterable}.
+     */
+    PagedIterable<DatabaseConnection> getDatabaseConnections(String resourceGroupName, String name, Context context);
+
+    /**
+     * Returns overview of a database connection for a static site by name.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param databaseConnectionName Name of the database connection.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static Site Database Connection resource along with {@link Response}.
+     */
+    Response<DatabaseConnection> getDatabaseConnectionWithResponse(
+        String resourceGroupName, String name, String databaseConnectionName, Context context);
+
+    /**
+     * Returns overview of a database connection for a static site by name.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param databaseConnectionName Name of the database connection.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static Site Database Connection resource.
+     */
+    DatabaseConnection getDatabaseConnection(String resourceGroupName, String name, String databaseConnectionName);
+
+    /**
+     * Create or update a database connection for a static site
+     *
+     * <p>Description for Create or update a database connection for a static site.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param databaseConnectionName Name of the database connection.
+     * @param databaseConnectionRequestEnvelope A JSON representation of the database connection request properties.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static Site Database Connection resource along with {@link Response}.
+     */
+    Response<DatabaseConnection> createOrUpdateDatabaseConnectionWithResponse(
+        String resourceGroupName,
+        String name,
+        String databaseConnectionName,
+        DatabaseConnectionInner databaseConnectionRequestEnvelope,
+        Context context);
+
+    /**
+     * Create or update a database connection for a static site
+     *
+     * <p>Description for Create or update a database connection for a static site.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param databaseConnectionName Name of the database connection.
+     * @param databaseConnectionRequestEnvelope A JSON representation of the database connection request properties.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static Site Database Connection resource.
+     */
+    DatabaseConnection createOrUpdateDatabaseConnection(
+        String resourceGroupName,
+        String name,
+        String databaseConnectionName,
+        DatabaseConnectionInner databaseConnectionRequestEnvelope);
+
+    /**
+     * Delete a database connection for a static site.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param databaseConnectionName Name of the database connection.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
+     */
+    Response<Void> deleteDatabaseConnectionWithResponse(
+        String resourceGroupName, String name, String databaseConnectionName, Context context);
+
+    /**
+     * Delete a database connection for a static site.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param databaseConnectionName Name of the database connection.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deleteDatabaseConnection(String resourceGroupName, String name, String databaseConnectionName);
+
+    /**
+     * Create or update a database connection for a static site
+     *
+     * <p>Description for Create or update a database connection for a static site.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param databaseConnectionName Name of the database connection.
+     * @param databaseConnectionRequestEnvelope A JSON representation of the database connection request properties.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static Site Database Connection resource along with {@link Response}.
+     */
+    Response<DatabaseConnection> updateDatabaseConnectionWithResponse(
+        String resourceGroupName,
+        String name,
+        String databaseConnectionName,
+        DatabaseConnectionPatchRequest databaseConnectionRequestEnvelope,
+        Context context);
+
+    /**
+     * Create or update a database connection for a static site
+     *
+     * <p>Description for Create or update a database connection for a static site.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param databaseConnectionName Name of the database connection.
+     * @param databaseConnectionRequestEnvelope A JSON representation of the database connection request properties.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static Site Database Connection resource.
+     */
+    DatabaseConnection updateDatabaseConnection(
+        String resourceGroupName,
+        String name,
+        String databaseConnectionName,
+        DatabaseConnectionPatchRequest databaseConnectionRequestEnvelope);
+
+    /**
+     * Returns details of a database connection for a static site by name.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param databaseConnectionName Name of the database connection.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static Site Database Connection resource along with {@link Response}.
+     */
+    Response<DatabaseConnection> getDatabaseConnectionWithDetailsWithResponse(
+        String resourceGroupName, String name, String databaseConnectionName, Context context);
+
+    /**
+     * Returns details of a database connection for a static site by name.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param databaseConnectionName Name of the database connection.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static Site Database Connection resource.
+     */
+    DatabaseConnection getDatabaseConnectionWithDetails(
+        String resourceGroupName, String name, String databaseConnectionName);
 
     /**
      * Detaches a static site.
@@ -1374,6 +1807,34 @@ public interface StaticSites {
      */
     void resetStaticSiteApiKey(
         String resourceGroupName, String name, StaticSiteResetPropertiesArmResource resetPropertiesEnvelope);
+
+    /**
+     * Returns details of database connections for a static site.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of static site database connections as paginated response with {@link PagedIterable}.
+     */
+    PagedIterable<DatabaseConnection> getDatabaseConnectionsWithDetails(String resourceGroupName, String name);
+
+    /**
+     * Returns details of database connections for a static site.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of static site database connections as paginated response with {@link PagedIterable}.
+     */
+    PagedIterable<DatabaseConnection> getDatabaseConnectionsWithDetails(
+        String resourceGroupName, String name, Context context);
 
     /**
      * Gets the details of the user provided function apps registered with a static site
@@ -1909,6 +2370,31 @@ public interface StaticSites {
     Response<StaticSiteArmResource> getByIdWithResponse(String id, Context context);
 
     /**
+     * Returns overview of a database connection for a static site build by name.
+     *
+     * @param id the resource ID.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static Site Database Connection resource along with {@link Response}.
+     */
+    DatabaseConnection getBuildDatabaseConnectionById(String id);
+
+    /**
+     * Returns overview of a database connection for a static site build by name.
+     *
+     * @param id the resource ID.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static Site Database Connection resource along with {@link Response}.
+     */
+    Response<DatabaseConnection> getBuildDatabaseConnectionByIdWithResponse(String id, Context context);
+
+    /**
      * Gets the details of the user provided function app registered with a static site build
      *
      * <p>Description for Gets the details of the user provided function app registered with a static site build.
@@ -1937,6 +2423,35 @@ public interface StaticSites {
      */
     Response<StaticSiteUserProvidedFunctionAppArmResource> getUserProvidedFunctionAppForStaticSiteBuildByIdWithResponse(
         String id, Context context);
+
+    /**
+     * Gets the basic auth properties for a static site.
+     *
+     * <p>Description for Gets the basic auth properties for a static site.
+     *
+     * @param id the resource ID.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static site basic auth properties ARM resource along with {@link Response}.
+     */
+    StaticSiteBasicAuthPropertiesArmResource getBasicAuthById(String id);
+
+    /**
+     * Gets the basic auth properties for a static site.
+     *
+     * <p>Description for Gets the basic auth properties for a static site.
+     *
+     * @param id the resource ID.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static site basic auth properties ARM resource along with {@link Response}.
+     */
+    Response<StaticSiteBasicAuthPropertiesArmResource> getBasicAuthByIdWithResponse(String id, Context context);
 
     /**
      * Gets an existing custom domain for a particular static site.
@@ -2021,6 +2536,30 @@ public interface StaticSites {
     void deleteByIdWithResponse(String id, Context context);
 
     /**
+     * Delete a database connection for a static site build.
+     *
+     * @param id the resource ID.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deleteBuildDatabaseConnectionById(String id);
+
+    /**
+     * Delete a database connection for a static site build.
+     *
+     * @param id the resource ID.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
+     */
+    Response<Void> deleteBuildDatabaseConnectionByIdWithResponse(String id, Context context);
+
+    /**
      * Deletes a custom domain.
      *
      * <p>Description for Deletes a custom domain.
@@ -2056,6 +2595,14 @@ public interface StaticSites {
     StaticSiteArmResource.DefinitionStages.Blank defineStaticSite(String name);
 
     /**
+     * Begins definition for a new DatabaseConnection resource.
+     *
+     * @param name resource name.
+     * @return the first stage of the new DatabaseConnection definition.
+     */
+    DatabaseConnection.DefinitionStages.Blank defineBuildDatabaseConnection(String name);
+
+    /**
      * Begins definition for a new StaticSiteUserProvidedFunctionAppArmResource resource.
      *
      * @param name resource name.
@@ -2063,6 +2610,14 @@ public interface StaticSites {
      */
     StaticSiteUserProvidedFunctionAppArmResource.DefinitionStages.Blank
         defineStaticSiteUserProvidedFunctionAppArmResource(String name);
+
+    /**
+     * Begins definition for a new StaticSiteBasicAuthPropertiesArmResource resource.
+     *
+     * @param name resource name.
+     * @return the first stage of the new StaticSiteBasicAuthPropertiesArmResource definition.
+     */
+    StaticSiteBasicAuthPropertiesArmResource.DefinitionStages.Blank defineBasicAuth(BasicAuthName name);
 
     /**
      * Begins definition for a new StaticSiteCustomDomainOverviewArmResource resource.

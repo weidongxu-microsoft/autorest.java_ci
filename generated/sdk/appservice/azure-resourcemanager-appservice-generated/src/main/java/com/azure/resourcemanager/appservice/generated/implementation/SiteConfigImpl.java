@@ -12,6 +12,7 @@ import com.azure.resourcemanager.appservice.generated.models.AutoHealRules;
 import com.azure.resourcemanager.appservice.generated.models.AzureStorageInfoValue;
 import com.azure.resourcemanager.appservice.generated.models.ConnStringInfo;
 import com.azure.resourcemanager.appservice.generated.models.CorsSettings;
+import com.azure.resourcemanager.appservice.generated.models.DefaultAction;
 import com.azure.resourcemanager.appservice.generated.models.Experiments;
 import com.azure.resourcemanager.appservice.generated.models.FtpsState;
 import com.azure.resourcemanager.appservice.generated.models.HandlerMapping;
@@ -125,6 +126,15 @@ public final class SiteConfigImpl implements SiteConfig {
 
     public List<NameValuePair> appSettings() {
         List<NameValuePair> inner = this.innerModel().appSettings();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
+    }
+
+    public List<NameValuePair> metadata() {
+        List<NameValuePair> inner = this.innerModel().metadata();
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
@@ -289,6 +299,10 @@ public final class SiteConfigImpl implements SiteConfig {
         }
     }
 
+    public DefaultAction ipSecurityRestrictionsDefaultAction() {
+        return this.innerModel().ipSecurityRestrictionsDefaultAction();
+    }
+
     public List<IpSecurityRestriction> scmIpSecurityRestrictions() {
         List<IpSecurityRestriction> inner = this.innerModel().scmIpSecurityRestrictions();
         if (inner != null) {
@@ -296,6 +310,10 @@ public final class SiteConfigImpl implements SiteConfig {
         } else {
             return Collections.emptyList();
         }
+    }
+
+    public DefaultAction scmIpSecurityRestrictionsDefaultAction() {
+        return this.innerModel().scmIpSecurityRestrictionsDefaultAction();
     }
 
     public Boolean scmIpSecurityRestrictionsUseMain() {
@@ -324,6 +342,10 @@ public final class SiteConfigImpl implements SiteConfig {
 
     public Integer functionAppScaleLimit() {
         return this.innerModel().functionAppScaleLimit();
+    }
+
+    public Integer elasticWebAppScaleLimit() {
+        return this.innerModel().elasticWebAppScaleLimit();
     }
 
     public String healthCheckPath() {

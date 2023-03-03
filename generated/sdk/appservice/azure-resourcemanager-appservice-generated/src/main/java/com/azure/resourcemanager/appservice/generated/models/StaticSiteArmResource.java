@@ -4,6 +4,7 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
+import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
@@ -193,6 +194,13 @@ public interface StaticSiteArmResource {
      * @return the publicNetworkAccess value.
      */
     String publicNetworkAccess();
+
+    /**
+     * Gets the databaseConnections property: Database connections for the static site.
+     *
+     * @return the databaseConnections value.
+     */
+    List<DatabaseConnectionOverview> databaseConnections();
 
     /**
      * Gets the region of the resource.
@@ -811,6 +819,28 @@ public interface StaticSiteArmResource {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void resetStaticSiteApiKey(StaticSiteResetPropertiesArmResource resetPropertiesEnvelope);
+
+    /**
+     * Returns details of database connections for a static site.
+     *
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of static site database connections as paginated response with {@link PagedIterable}.
+     */
+    PagedIterable<DatabaseConnection> getDatabaseConnectionsWithDetails();
+
+    /**
+     * Returns details of database connections for a static site.
+     *
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of static site database connections as paginated response with {@link PagedIterable}.
+     */
+    PagedIterable<DatabaseConnection> getDatabaseConnectionsWithDetails(Context context);
 
     /**
      * Deploys zipped content to a static site.

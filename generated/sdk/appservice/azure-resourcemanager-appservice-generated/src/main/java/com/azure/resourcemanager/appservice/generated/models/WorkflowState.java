@@ -4,56 +4,60 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
-import java.util.Collection;
+import com.fasterxml.jackson.annotation.JsonValue;
 
-/** The workflow state. */
-public final class WorkflowState extends ExpandableStringEnum<WorkflowState> {
-    /** Static value NotSpecified for WorkflowState. */
-    public static final WorkflowState NOT_SPECIFIED = fromString("NotSpecified");
+/** Gets or sets the state of the workflow. */
+public enum WorkflowState {
+    /** Enum value NotSpecified. */
+    NOT_SPECIFIED("NotSpecified"),
 
-    /** Static value Completed for WorkflowState. */
-    public static final WorkflowState COMPLETED = fromString("Completed");
+    /** Enum value Completed. */
+    COMPLETED("Completed"),
 
-    /** Static value Enabled for WorkflowState. */
-    public static final WorkflowState ENABLED = fromString("Enabled");
+    /** Enum value Enabled. */
+    ENABLED("Enabled"),
 
-    /** Static value Disabled for WorkflowState. */
-    public static final WorkflowState DISABLED = fromString("Disabled");
+    /** Enum value Disabled. */
+    DISABLED("Disabled"),
 
-    /** Static value Deleted for WorkflowState. */
-    public static final WorkflowState DELETED = fromString("Deleted");
+    /** Enum value Deleted. */
+    DELETED("Deleted"),
 
-    /** Static value Suspended for WorkflowState. */
-    public static final WorkflowState SUSPENDED = fromString("Suspended");
+    /** Enum value Suspended. */
+    SUSPENDED("Suspended");
 
-    /**
-     * Creates a new instance of WorkflowState value.
-     *
-     * @deprecated Use the {@link #fromString(String)} factory method.
-     */
-    @Deprecated
-    public WorkflowState() {
+    /** The actual serialized value for a WorkflowState instance. */
+    private final String value;
+
+    WorkflowState(String value) {
+        this.value = value;
     }
 
     /**
-     * Creates or finds a WorkflowState from its string representation.
+     * Parses a serialized value to a WorkflowState instance.
      *
-     * @param name a name to look for.
-     * @return the corresponding WorkflowState.
+     * @param value the serialized value to parse.
+     * @return the parsed WorkflowState object, or null if unable to parse.
      */
     @JsonCreator
-    public static WorkflowState fromString(String name) {
-        return fromString(name, WorkflowState.class);
+    public static WorkflowState fromString(String value) {
+        if (value == null) {
+            return null;
+        }
+        WorkflowState[] items = WorkflowState.values();
+        for (WorkflowState item : items) {
+            if (item.toString().equalsIgnoreCase(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
-    /**
-     * Gets known WorkflowState values.
-     *
-     * @return known WorkflowState values.
-     */
-    public static Collection<WorkflowState> values() {
-        return values(WorkflowState.class);
+    /** {@inheritDoc} */
+    @JsonValue
+    @Override
+    public String toString() {
+        return this.value;
     }
 }

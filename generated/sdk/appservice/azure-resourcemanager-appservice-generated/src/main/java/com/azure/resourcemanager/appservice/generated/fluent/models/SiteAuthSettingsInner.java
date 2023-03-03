@@ -391,9 +391,9 @@ public final class SiteAuthSettingsInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the allowedAudiences property: Allowed audience values to consider when validating JWTs issued by Azure
-     * Active Directory. Note that the &lt;code&gt;ClientID&lt;/code&gt; value is always considered an allowed audience,
-     * regardless of this setting.
+     * Get the allowedAudiences property: Allowed audience values to consider when validating JSON Web Tokens issued by
+     * Azure Active Directory. Note that the &lt;code&gt;ClientID&lt;/code&gt; value is always considered an allowed
+     * audience, regardless of this setting.
      *
      * @return the allowedAudiences value.
      */
@@ -402,9 +402,9 @@ public final class SiteAuthSettingsInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the allowedAudiences property: Allowed audience values to consider when validating JWTs issued by Azure
-     * Active Directory. Note that the &lt;code&gt;ClientID&lt;/code&gt; value is always considered an allowed audience,
-     * regardless of this setting.
+     * Set the allowedAudiences property: Allowed audience values to consider when validating JSON Web Tokens issued by
+     * Azure Active Directory. Note that the &lt;code&gt;ClientID&lt;/code&gt; value is always considered an allowed
+     * audience, regardless of this setting.
      *
      * @param allowedAudiences the allowedAudiences value to set.
      * @return the SiteAuthSettingsInner object itself.

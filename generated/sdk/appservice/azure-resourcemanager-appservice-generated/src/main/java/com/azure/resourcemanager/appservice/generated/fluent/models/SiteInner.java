@@ -960,6 +960,33 @@ public final class SiteInner extends Resource {
     }
 
     /**
+     * Get the managedEnvironmentId property: Azure Resource Manager ID of the customer's selected Managed Environment
+     * on which to host this app. This must be of the form
+     * /subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.App/managedEnvironments/{managedEnvironmentName}.
+     *
+     * @return the managedEnvironmentId value.
+     */
+    public String managedEnvironmentId() {
+        return this.innerProperties() == null ? null : this.innerProperties().managedEnvironmentId();
+    }
+
+    /**
+     * Set the managedEnvironmentId property: Azure Resource Manager ID of the customer's selected Managed Environment
+     * on which to host this app. This must be of the form
+     * /subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.App/managedEnvironments/{managedEnvironmentName}.
+     *
+     * @param managedEnvironmentId the managedEnvironmentId value to set.
+     * @return the SiteInner object itself.
+     */
+    public SiteInner withManagedEnvironmentId(String managedEnvironmentId) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new SitePropertiesInner();
+        }
+        this.innerProperties().withManagedEnvironmentId(managedEnvironmentId);
+        return this;
+    }
+
+    /**
      * Validates the instance.
      *
      * @throws IllegalArgumentException thrown if the instance is not valid.

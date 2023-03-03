@@ -125,7 +125,7 @@ public interface AppServiceEnvironmentPatchResource {
     List<NameValuePair> clusterSettings();
 
     /**
-     * Gets the userWhitelistedIpRanges property: User added list of IP Ranges allowed on ASE db.
+     * Gets the userWhitelistedIpRanges property: User added ip ranges to whitelist on ASE db.
      *
      * @return the userWhitelistedIpRanges value.
      */

@@ -102,6 +102,13 @@ public interface StaticSiteBuildArmResource {
     List<StaticSiteLinkedBackend> linkedBackends();
 
     /**
+     * Gets the databaseConnections property: Database connections for the static site build.
+     *
+     * @return the databaseConnections value.
+     */
+    List<DatabaseConnectionOverview> databaseConnections();
+
+    /**
      * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteBuildArmResourceInner
      * object.
      *

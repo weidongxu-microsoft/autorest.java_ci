@@ -117,7 +117,7 @@ public final class SiteAuthSettingsProperties {
     private Boolean validateIssuer;
 
     /*
-     * Allowed audience values to consider when validating JWTs issued by
+     * Allowed audience values to consider when validating JSON Web Tokens issued by
      * Azure Active Directory. Note that the <code>ClientID</code> value is always considered an
      * allowed audience, regardless of this setting.
      */
@@ -617,9 +617,9 @@ public final class SiteAuthSettingsProperties {
     }
 
     /**
-     * Get the allowedAudiences property: Allowed audience values to consider when validating JWTs issued by Azure
-     * Active Directory. Note that the &lt;code&gt;ClientID&lt;/code&gt; value is always considered an allowed audience,
-     * regardless of this setting.
+     * Get the allowedAudiences property: Allowed audience values to consider when validating JSON Web Tokens issued by
+     * Azure Active Directory. Note that the &lt;code&gt;ClientID&lt;/code&gt; value is always considered an allowed
+     * audience, regardless of this setting.
      *
      * @return the allowedAudiences value.
      */
@@ -628,9 +628,9 @@ public final class SiteAuthSettingsProperties {
     }
 
     /**
-     * Set the allowedAudiences property: Allowed audience values to consider when validating JWTs issued by Azure
-     * Active Directory. Note that the &lt;code&gt;ClientID&lt;/code&gt; value is always considered an allowed audience,
-     * regardless of this setting.
+     * Set the allowedAudiences property: Allowed audience values to consider when validating JSON Web Tokens issued by
+     * Azure Active Directory. Note that the &lt;code&gt;ClientID&lt;/code&gt; value is always considered an allowed
+     * audience, regardless of this setting.
      *
      * @param allowedAudiences the allowedAudiences value to set.
      * @return the SiteAuthSettingsProperties object itself.

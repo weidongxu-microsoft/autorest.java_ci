@@ -6,6 +6,7 @@ package com.azure.resourcemanager.appservice.generated.implementation;
 
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteBuildArmResourceInner;
 import com.azure.resourcemanager.appservice.generated.models.BuildStatus;
+import com.azure.resourcemanager.appservice.generated.models.DatabaseConnectionOverview;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteBuildArmResource;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteLinkedBackend;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteUserProvidedFunctionApp;
@@ -80,6 +81,15 @@ public final class StaticSiteBuildArmResourceImpl implements StaticSiteBuildArmR
 
     public List<StaticSiteLinkedBackend> linkedBackends() {
         List<StaticSiteLinkedBackend> inner = this.innerModel().linkedBackends();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
+    }
+
+    public List<DatabaseConnectionOverview> databaseConnections() {
+        List<DatabaseConnectionOverview> inner = this.innerModel().databaseConnections();
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {

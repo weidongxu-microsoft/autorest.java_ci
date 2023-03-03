@@ -33,9 +33,11 @@ import com.azure.core.util.FluxUtil;
 import com.azure.core.util.polling.PollerFlux;
 import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.appservice.generated.fluent.StaticSitesClient;
+import com.azure.resourcemanager.appservice.generated.fluent.models.DatabaseConnectionInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.PrivateLinkResourcesWrapperInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.RemotePrivateEndpointConnectionArmResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteArmResourceInner;
+import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteBasicAuthPropertiesArmResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteBuildArmResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteCustomDomainOverviewArmResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteFunctionOverviewArmResourceInner;
@@ -46,9 +48,13 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteUs
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSitesWorkflowPreviewInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StringDictionaryInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StringListInner;
+import com.azure.resourcemanager.appservice.generated.models.BasicAuthName;
+import com.azure.resourcemanager.appservice.generated.models.DatabaseConnectionCollection;
+import com.azure.resourcemanager.appservice.generated.models.DatabaseConnectionPatchRequest;
 import com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException;
 import com.azure.resourcemanager.appservice.generated.models.PrivateEndpointConnectionCollection;
 import com.azure.resourcemanager.appservice.generated.models.PrivateLinkConnectionApprovalRequestResource;
+import com.azure.resourcemanager.appservice.generated.models.StaticSiteBasicAuthPropertiesCollection;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteBuildCollection;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteCollection;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteCustomDomainOverviewCollection;
@@ -327,6 +333,109 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
         @Headers({"Content-Type: application/json"})
         @Get(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/staticSites"
+                + "/{name}/builds/{environmentName}/databaseConnections")
+        @ExpectedResponses({200})
+        @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
+        Mono<Response<DatabaseConnectionCollection>> getBuildDatabaseConnections(
+            @HostParam("$host") String endpoint,
+            @PathParam("resourceGroupName") String resourceGroupName,
+            @PathParam("name") String name,
+            @PathParam("environmentName") String environmentName,
+            @PathParam("subscriptionId") String subscriptionId,
+            @QueryParam("api-version") String apiVersion,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
+        @Headers({"Content-Type: application/json"})
+        @Get(
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/staticSites"
+                + "/{name}/builds/{environmentName}/databaseConnections/{databaseConnectionName}")
+        @ExpectedResponses({200})
+        @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
+        Mono<Response<DatabaseConnectionInner>> getBuildDatabaseConnection(
+            @HostParam("$host") String endpoint,
+            @PathParam("resourceGroupName") String resourceGroupName,
+            @PathParam("name") String name,
+            @PathParam("environmentName") String environmentName,
+            @PathParam("databaseConnectionName") String databaseConnectionName,
+            @PathParam("subscriptionId") String subscriptionId,
+            @QueryParam("api-version") String apiVersion,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
+        @Headers({"Content-Type: application/json"})
+        @Put(
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/staticSites"
+                + "/{name}/builds/{environmentName}/databaseConnections/{databaseConnectionName}")
+        @ExpectedResponses({200})
+        @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
+        Mono<Response<DatabaseConnectionInner>> createOrUpdateBuildDatabaseConnection(
+            @HostParam("$host") String endpoint,
+            @PathParam("resourceGroupName") String resourceGroupName,
+            @PathParam("name") String name,
+            @PathParam("environmentName") String environmentName,
+            @PathParam("databaseConnectionName") String databaseConnectionName,
+            @PathParam("subscriptionId") String subscriptionId,
+            @QueryParam("api-version") String apiVersion,
+            @BodyParam("application/json") DatabaseConnectionInner databaseConnectionRequestEnvelope,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
+        @Headers({"Content-Type: application/json"})
+        @Delete(
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/staticSites"
+                + "/{name}/builds/{environmentName}/databaseConnections/{databaseConnectionName}")
+        @ExpectedResponses({200, 204})
+        @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
+        Mono<Response<Void>> deleteBuildDatabaseConnection(
+            @HostParam("$host") String endpoint,
+            @PathParam("resourceGroupName") String resourceGroupName,
+            @PathParam("name") String name,
+            @PathParam("environmentName") String environmentName,
+            @PathParam("databaseConnectionName") String databaseConnectionName,
+            @PathParam("subscriptionId") String subscriptionId,
+            @QueryParam("api-version") String apiVersion,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
+        @Headers({"Content-Type: application/json"})
+        @Patch(
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/staticSites"
+                + "/{name}/builds/{environmentName}/databaseConnections/{databaseConnectionName}")
+        @ExpectedResponses({200})
+        @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
+        Mono<Response<DatabaseConnectionInner>> updateBuildDatabaseConnection(
+            @HostParam("$host") String endpoint,
+            @PathParam("resourceGroupName") String resourceGroupName,
+            @PathParam("name") String name,
+            @PathParam("environmentName") String environmentName,
+            @PathParam("databaseConnectionName") String databaseConnectionName,
+            @PathParam("subscriptionId") String subscriptionId,
+            @QueryParam("api-version") String apiVersion,
+            @BodyParam("application/json") DatabaseConnectionPatchRequest databaseConnectionRequestEnvelope,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
+        @Headers({"Content-Type: application/json"})
+        @Post(
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/staticSites"
+                + "/{name}/builds/{environmentName}/databaseConnections/{databaseConnectionName}/show")
+        @ExpectedResponses({200})
+        @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
+        Mono<Response<DatabaseConnectionInner>> getBuildDatabaseConnectionWithDetails(
+            @HostParam("$host") String endpoint,
+            @PathParam("resourceGroupName") String resourceGroupName,
+            @PathParam("name") String name,
+            @PathParam("environmentName") String environmentName,
+            @PathParam("databaseConnectionName") String databaseConnectionName,
+            @PathParam("subscriptionId") String subscriptionId,
+            @QueryParam("api-version") String apiVersion,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
+        @Headers({"Content-Type: application/json"})
+        @Get(
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/staticSites"
                 + "/{name}/builds/{environmentName}/functions")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
@@ -363,6 +472,22 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
         Mono<Response<StringDictionaryInner>> listStaticSiteBuildFunctionAppSettings(
+            @HostParam("$host") String endpoint,
+            @PathParam("resourceGroupName") String resourceGroupName,
+            @PathParam("name") String name,
+            @PathParam("environmentName") String environmentName,
+            @PathParam("subscriptionId") String subscriptionId,
+            @QueryParam("api-version") String apiVersion,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
+        @Headers({"Content-Type: application/json"})
+        @Post(
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/staticSites"
+                + "/{name}/builds/{environmentName}/showDatabaseConnections")
+        @ExpectedResponses({200})
+        @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
+        Mono<Response<DatabaseConnectionCollection>> getBuildDatabaseConnectionsWithDetails(
             @HostParam("$host") String endpoint,
             @PathParam("resourceGroupName") String resourceGroupName,
             @PathParam("name") String name,
@@ -472,6 +597,54 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
             @PathParam("subscriptionId") String subscriptionId,
             @QueryParam("api-version") String apiVersion,
             @BodyParam("application/json") StringDictionaryInner appSettings,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
+        @Headers({"Content-Type: application/json"})
+        @Get(
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/staticSites"
+                + "/{name}/basicAuth")
+        @ExpectedResponses({200})
+        @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
+        Mono<Response<StaticSiteBasicAuthPropertiesCollection>> listBasicAuth(
+            @HostParam("$host") String endpoint,
+            @PathParam("resourceGroupName") String resourceGroupName,
+            @PathParam("name") String name,
+            @PathParam("subscriptionId") String subscriptionId,
+            @QueryParam("api-version") String apiVersion,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
+        @Headers({"Content-Type: application/json"})
+        @Get(
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/staticSites"
+                + "/{name}/basicAuth/{basicAuthName}")
+        @ExpectedResponses({200})
+        @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
+        Mono<Response<StaticSiteBasicAuthPropertiesArmResourceInner>> getBasicAuth(
+            @HostParam("$host") String endpoint,
+            @PathParam("resourceGroupName") String resourceGroupName,
+            @PathParam("name") String name,
+            @PathParam("basicAuthName") BasicAuthName basicAuthName,
+            @PathParam("subscriptionId") String subscriptionId,
+            @QueryParam("api-version") String apiVersion,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
+        @Headers({"Content-Type: application/json"})
+        @Put(
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/staticSites"
+                + "/{name}/basicAuth/{basicAuthName}")
+        @ExpectedResponses({200})
+        @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
+        Mono<Response<StaticSiteBasicAuthPropertiesArmResourceInner>> createOrUpdateBasicAuth(
+            @HostParam("$host") String endpoint,
+            @PathParam("resourceGroupName") String resourceGroupName,
+            @PathParam("name") String name,
+            @PathParam("basicAuthName") BasicAuthName basicAuthName,
+            @PathParam("subscriptionId") String subscriptionId,
+            @QueryParam("api-version") String apiVersion,
+            @BodyParam("application/json") StaticSiteBasicAuthPropertiesArmResourceInner basicAuthEnvelope,
             @HeaderParam("Accept") String accept,
             Context context);
 
@@ -588,6 +761,103 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
             @QueryParam("api-version") String apiVersion,
             @BodyParam("application/json")
                 StaticSiteCustomDomainRequestPropertiesArmResource staticSiteCustomDomainRequestPropertiesEnvelope,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
+        @Headers({"Content-Type: application/json"})
+        @Get(
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/staticSites"
+                + "/{name}/databaseConnections")
+        @ExpectedResponses({200})
+        @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
+        Mono<Response<DatabaseConnectionCollection>> getDatabaseConnections(
+            @HostParam("$host") String endpoint,
+            @PathParam("resourceGroupName") String resourceGroupName,
+            @PathParam("name") String name,
+            @PathParam("subscriptionId") String subscriptionId,
+            @QueryParam("api-version") String apiVersion,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
+        @Headers({"Content-Type: application/json"})
+        @Get(
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/staticSites"
+                + "/{name}/databaseConnections/{databaseConnectionName}")
+        @ExpectedResponses({200})
+        @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
+        Mono<Response<DatabaseConnectionInner>> getDatabaseConnection(
+            @HostParam("$host") String endpoint,
+            @PathParam("resourceGroupName") String resourceGroupName,
+            @PathParam("name") String name,
+            @PathParam("databaseConnectionName") String databaseConnectionName,
+            @PathParam("subscriptionId") String subscriptionId,
+            @QueryParam("api-version") String apiVersion,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
+        @Headers({"Content-Type: application/json"})
+        @Put(
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/staticSites"
+                + "/{name}/databaseConnections/{databaseConnectionName}")
+        @ExpectedResponses({200})
+        @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
+        Mono<Response<DatabaseConnectionInner>> createOrUpdateDatabaseConnection(
+            @HostParam("$host") String endpoint,
+            @PathParam("resourceGroupName") String resourceGroupName,
+            @PathParam("name") String name,
+            @PathParam("databaseConnectionName") String databaseConnectionName,
+            @PathParam("subscriptionId") String subscriptionId,
+            @QueryParam("api-version") String apiVersion,
+            @BodyParam("application/json") DatabaseConnectionInner databaseConnectionRequestEnvelope,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
+        @Headers({"Content-Type: application/json"})
+        @Delete(
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/staticSites"
+                + "/{name}/databaseConnections/{databaseConnectionName}")
+        @ExpectedResponses({200, 204})
+        @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
+        Mono<Response<Void>> deleteDatabaseConnection(
+            @HostParam("$host") String endpoint,
+            @PathParam("resourceGroupName") String resourceGroupName,
+            @PathParam("name") String name,
+            @PathParam("databaseConnectionName") String databaseConnectionName,
+            @PathParam("subscriptionId") String subscriptionId,
+            @QueryParam("api-version") String apiVersion,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
+        @Headers({"Content-Type: application/json"})
+        @Patch(
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/staticSites"
+                + "/{name}/databaseConnections/{databaseConnectionName}")
+        @ExpectedResponses({200})
+        @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
+        Mono<Response<DatabaseConnectionInner>> updateDatabaseConnection(
+            @HostParam("$host") String endpoint,
+            @PathParam("resourceGroupName") String resourceGroupName,
+            @PathParam("name") String name,
+            @PathParam("databaseConnectionName") String databaseConnectionName,
+            @PathParam("subscriptionId") String subscriptionId,
+            @QueryParam("api-version") String apiVersion,
+            @BodyParam("application/json") DatabaseConnectionPatchRequest databaseConnectionRequestEnvelope,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
+        @Headers({"Content-Type: application/json"})
+        @Post(
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/staticSites"
+                + "/{name}/databaseConnections/{databaseConnectionName}/show")
+        @ExpectedResponses({200})
+        @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
+        Mono<Response<DatabaseConnectionInner>> getDatabaseConnectionWithDetails(
+            @HostParam("$host") String endpoint,
+            @PathParam("resourceGroupName") String resourceGroupName,
+            @PathParam("name") String name,
+            @PathParam("databaseConnectionName") String databaseConnectionName,
+            @PathParam("subscriptionId") String subscriptionId,
+            @QueryParam("api-version") String apiVersion,
             @HeaderParam("Accept") String accept,
             Context context);
 
@@ -773,6 +1043,21 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
             @PathParam("subscriptionId") String subscriptionId,
             @QueryParam("api-version") String apiVersion,
             @BodyParam("application/json") StaticSiteResetPropertiesArmResource resetPropertiesEnvelope,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
+        @Headers({"Content-Type: application/json"})
+        @Post(
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/staticSites"
+                + "/{name}/showDatabaseConnections")
+        @ExpectedResponses({200})
+        @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
+        Mono<Response<DatabaseConnectionCollection>> getDatabaseConnectionsWithDetails(
+            @HostParam("$host") String endpoint,
+            @PathParam("resourceGroupName") String resourceGroupName,
+            @PathParam("name") String name,
+            @PathParam("subscriptionId") String subscriptionId,
+            @QueryParam("api-version") String apiVersion,
             @HeaderParam("Accept") String accept,
             Context context);
 
@@ -1071,7 +1356,27 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
         @Get("{nextLink}")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
+        Mono<Response<DatabaseConnectionCollection>> getBuildDatabaseConnectionsNext(
+            @PathParam(value = "nextLink", encoded = true) String nextLink,
+            @HostParam("$host") String endpoint,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
+        @Headers({"Content-Type: application/json"})
+        @Get("{nextLink}")
+        @ExpectedResponses({200})
+        @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
         Mono<Response<StaticSiteFunctionOverviewCollection>> listStaticSiteBuildFunctionsNext(
+            @PathParam(value = "nextLink", encoded = true) String nextLink,
+            @HostParam("$host") String endpoint,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
+        @Headers({"Content-Type: application/json"})
+        @Get("{nextLink}")
+        @ExpectedResponses({200})
+        @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
+        Mono<Response<DatabaseConnectionCollection>> getBuildDatabaseConnectionsWithDetailsNext(
             @PathParam(value = "nextLink", encoded = true) String nextLink,
             @HostParam("$host") String endpoint,
             @HeaderParam("Accept") String accept,
@@ -1091,7 +1396,27 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
         @Get("{nextLink}")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
+        Mono<Response<StaticSiteBasicAuthPropertiesCollection>> listBasicAuthNext(
+            @PathParam(value = "nextLink", encoded = true) String nextLink,
+            @HostParam("$host") String endpoint,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
+        @Headers({"Content-Type: application/json"})
+        @Get("{nextLink}")
+        @ExpectedResponses({200})
+        @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
         Mono<Response<StaticSiteCustomDomainOverviewCollection>> listStaticSiteCustomDomainsNext(
+            @PathParam(value = "nextLink", encoded = true) String nextLink,
+            @HostParam("$host") String endpoint,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
+        @Headers({"Content-Type: application/json"})
+        @Get("{nextLink}")
+        @ExpectedResponses({200})
+        @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
+        Mono<Response<DatabaseConnectionCollection>> getDatabaseConnectionsNext(
             @PathParam(value = "nextLink", encoded = true) String nextLink,
             @HostParam("$host") String endpoint,
             @HeaderParam("Accept") String accept,
@@ -1112,6 +1437,16 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
         Mono<Response<PrivateEndpointConnectionCollection>> getPrivateEndpointConnectionListNext(
+            @PathParam(value = "nextLink", encoded = true) String nextLink,
+            @HostParam("$host") String endpoint,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
+        @Headers({"Content-Type: application/json"})
+        @Get("{nextLink}")
+        @ExpectedResponses({200})
+        @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
+        Mono<Response<DatabaseConnectionCollection>> getDatabaseConnectionsWithDetailsNext(
             @PathParam(value = "nextLink", encoded = true) String nextLink,
             @HostParam("$host") String endpoint,
             @HeaderParam("Accept") String accept,
@@ -4164,6 +4499,1247 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     }
 
     /**
+     * Returns overviews of database connections for a static site build.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param environmentName The stage site identifier.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of static site database connections along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<PagedResponse<DatabaseConnectionInner>> getBuildDatabaseConnectionsSinglePageAsync(
+        String resourceGroupName, String name, String environmentName) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (environmentName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter environmentName is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(
+                context ->
+                    service
+                        .getBuildDatabaseConnections(
+                            this.client.getEndpoint(),
+                            resourceGroupName,
+                            name,
+                            environmentName,
+                            this.client.getSubscriptionId(),
+                            this.client.getApiVersion(),
+                            accept,
+                            context))
+            .<PagedResponse<DatabaseConnectionInner>>map(
+                res ->
+                    new PagedResponseBase<>(
+                        res.getRequest(),
+                        res.getStatusCode(),
+                        res.getHeaders(),
+                        res.getValue().value(),
+                        res.getValue().nextLink(),
+                        null))
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
+    }
+
+    /**
+     * Returns overviews of database connections for a static site build.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param environmentName The stage site identifier.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of static site database connections along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<PagedResponse<DatabaseConnectionInner>> getBuildDatabaseConnectionsSinglePageAsync(
+        String resourceGroupName, String name, String environmentName, Context context) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (environmentName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter environmentName is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service
+            .getBuildDatabaseConnections(
+                this.client.getEndpoint(),
+                resourceGroupName,
+                name,
+                environmentName,
+                this.client.getSubscriptionId(),
+                this.client.getApiVersion(),
+                accept,
+                context)
+            .map(
+                res ->
+                    new PagedResponseBase<>(
+                        res.getRequest(),
+                        res.getStatusCode(),
+                        res.getHeaders(),
+                        res.getValue().value(),
+                        res.getValue().nextLink(),
+                        null));
+    }
+
+    /**
+     * Returns overviews of database connections for a static site build.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param environmentName The stage site identifier.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of static site database connections as paginated response with {@link PagedFlux}.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    private PagedFlux<DatabaseConnectionInner> getBuildDatabaseConnectionsAsync(
+        String resourceGroupName, String name, String environmentName) {
+        return new PagedFlux<>(
+            () -> getBuildDatabaseConnectionsSinglePageAsync(resourceGroupName, name, environmentName),
+            nextLink -> getBuildDatabaseConnectionsNextSinglePageAsync(nextLink));
+    }
+
+    /**
+     * Returns overviews of database connections for a static site build.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param environmentName The stage site identifier.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of static site database connections as paginated response with {@link PagedFlux}.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    private PagedFlux<DatabaseConnectionInner> getBuildDatabaseConnectionsAsync(
+        String resourceGroupName, String name, String environmentName, Context context) {
+        return new PagedFlux<>(
+            () -> getBuildDatabaseConnectionsSinglePageAsync(resourceGroupName, name, environmentName, context),
+            nextLink -> getBuildDatabaseConnectionsNextSinglePageAsync(nextLink, context));
+    }
+
+    /**
+     * Returns overviews of database connections for a static site build.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param environmentName The stage site identifier.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of static site database connections as paginated response with {@link PagedIterable}.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    public PagedIterable<DatabaseConnectionInner> getBuildDatabaseConnections(
+        String resourceGroupName, String name, String environmentName) {
+        return new PagedIterable<>(getBuildDatabaseConnectionsAsync(resourceGroupName, name, environmentName));
+    }
+
+    /**
+     * Returns overviews of database connections for a static site build.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param environmentName The stage site identifier.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of static site database connections as paginated response with {@link PagedIterable}.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    public PagedIterable<DatabaseConnectionInner> getBuildDatabaseConnections(
+        String resourceGroupName, String name, String environmentName, Context context) {
+        return new PagedIterable<>(getBuildDatabaseConnectionsAsync(resourceGroupName, name, environmentName, context));
+    }
+
+    /**
+     * Returns overview of a database connection for a static site build by name.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param environmentName The stage site identifier.
+     * @param databaseConnectionName Name of the database connection.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static Site Database Connection resource along with {@link Response} on successful completion of {@link
+     *     Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<DatabaseConnectionInner>> getBuildDatabaseConnectionWithResponseAsync(
+        String resourceGroupName, String name, String environmentName, String databaseConnectionName) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (environmentName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter environmentName is required and cannot be null."));
+        }
+        if (databaseConnectionName == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException("Parameter databaseConnectionName is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(
+                context ->
+                    service
+                        .getBuildDatabaseConnection(
+                            this.client.getEndpoint(),
+                            resourceGroupName,
+                            name,
+                            environmentName,
+                            databaseConnectionName,
+                            this.client.getSubscriptionId(),
+                            this.client.getApiVersion(),
+                            accept,
+                            context))
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
+    }
+
+    /**
+     * Returns overview of a database connection for a static site build by name.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param environmentName The stage site identifier.
+     * @param databaseConnectionName Name of the database connection.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static Site Database Connection resource along with {@link Response} on successful completion of {@link
+     *     Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<DatabaseConnectionInner>> getBuildDatabaseConnectionWithResponseAsync(
+        String resourceGroupName, String name, String environmentName, String databaseConnectionName, Context context) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (environmentName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter environmentName is required and cannot be null."));
+        }
+        if (databaseConnectionName == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException("Parameter databaseConnectionName is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service
+            .getBuildDatabaseConnection(
+                this.client.getEndpoint(),
+                resourceGroupName,
+                name,
+                environmentName,
+                databaseConnectionName,
+                this.client.getSubscriptionId(),
+                this.client.getApiVersion(),
+                accept,
+                context);
+    }
+
+    /**
+     * Returns overview of a database connection for a static site build by name.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param environmentName The stage site identifier.
+     * @param databaseConnectionName Name of the database connection.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static Site Database Connection resource on successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<DatabaseConnectionInner> getBuildDatabaseConnectionAsync(
+        String resourceGroupName, String name, String environmentName, String databaseConnectionName) {
+        return getBuildDatabaseConnectionWithResponseAsync(
+                resourceGroupName, name, environmentName, databaseConnectionName)
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
+    }
+
+    /**
+     * Returns overview of a database connection for a static site build by name.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param environmentName The stage site identifier.
+     * @param databaseConnectionName Name of the database connection.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static Site Database Connection resource along with {@link Response}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public Response<DatabaseConnectionInner> getBuildDatabaseConnectionWithResponse(
+        String resourceGroupName, String name, String environmentName, String databaseConnectionName, Context context) {
+        return getBuildDatabaseConnectionWithResponseAsync(
+                resourceGroupName, name, environmentName, databaseConnectionName, context)
+            .block();
+    }
+
+    /**
+     * Returns overview of a database connection for a static site build by name.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param environmentName The stage site identifier.
+     * @param databaseConnectionName Name of the database connection.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static Site Database Connection resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public DatabaseConnectionInner getBuildDatabaseConnection(
+        String resourceGroupName, String name, String environmentName, String databaseConnectionName) {
+        return getBuildDatabaseConnectionWithResponse(
+                resourceGroupName, name, environmentName, databaseConnectionName, Context.NONE)
+            .getValue();
+    }
+
+    /**
+     * Create or update a database connection for a static site build
+     *
+     * <p>Description for Create or update a database connection for a static site build.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param environmentName The stage site identifier.
+     * @param databaseConnectionName Name of the database connection.
+     * @param databaseConnectionRequestEnvelope A JSON representation of the database connection request properties.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static Site Database Connection resource along with {@link Response} on successful completion of {@link
+     *     Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<DatabaseConnectionInner>> createOrUpdateBuildDatabaseConnectionWithResponseAsync(
+        String resourceGroupName,
+        String name,
+        String environmentName,
+        String databaseConnectionName,
+        DatabaseConnectionInner databaseConnectionRequestEnvelope) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (environmentName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter environmentName is required and cannot be null."));
+        }
+        if (databaseConnectionName == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException("Parameter databaseConnectionName is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        if (databaseConnectionRequestEnvelope == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter databaseConnectionRequestEnvelope is required and cannot be null."));
+        } else {
+            databaseConnectionRequestEnvelope.validate();
+        }
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(
+                context ->
+                    service
+                        .createOrUpdateBuildDatabaseConnection(
+                            this.client.getEndpoint(),
+                            resourceGroupName,
+                            name,
+                            environmentName,
+                            databaseConnectionName,
+                            this.client.getSubscriptionId(),
+                            this.client.getApiVersion(),
+                            databaseConnectionRequestEnvelope,
+                            accept,
+                            context))
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
+    }
+
+    /**
+     * Create or update a database connection for a static site build
+     *
+     * <p>Description for Create or update a database connection for a static site build.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param environmentName The stage site identifier.
+     * @param databaseConnectionName Name of the database connection.
+     * @param databaseConnectionRequestEnvelope A JSON representation of the database connection request properties.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static Site Database Connection resource along with {@link Response} on successful completion of {@link
+     *     Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<DatabaseConnectionInner>> createOrUpdateBuildDatabaseConnectionWithResponseAsync(
+        String resourceGroupName,
+        String name,
+        String environmentName,
+        String databaseConnectionName,
+        DatabaseConnectionInner databaseConnectionRequestEnvelope,
+        Context context) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (environmentName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter environmentName is required and cannot be null."));
+        }
+        if (databaseConnectionName == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException("Parameter databaseConnectionName is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        if (databaseConnectionRequestEnvelope == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter databaseConnectionRequestEnvelope is required and cannot be null."));
+        } else {
+            databaseConnectionRequestEnvelope.validate();
+        }
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service
+            .createOrUpdateBuildDatabaseConnection(
+                this.client.getEndpoint(),
+                resourceGroupName,
+                name,
+                environmentName,
+                databaseConnectionName,
+                this.client.getSubscriptionId(),
+                this.client.getApiVersion(),
+                databaseConnectionRequestEnvelope,
+                accept,
+                context);
+    }
+
+    /**
+     * Create or update a database connection for a static site build
+     *
+     * <p>Description for Create or update a database connection for a static site build.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param environmentName The stage site identifier.
+     * @param databaseConnectionName Name of the database connection.
+     * @param databaseConnectionRequestEnvelope A JSON representation of the database connection request properties.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static Site Database Connection resource on successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<DatabaseConnectionInner> createOrUpdateBuildDatabaseConnectionAsync(
+        String resourceGroupName,
+        String name,
+        String environmentName,
+        String databaseConnectionName,
+        DatabaseConnectionInner databaseConnectionRequestEnvelope) {
+        return createOrUpdateBuildDatabaseConnectionWithResponseAsync(
+                resourceGroupName, name, environmentName, databaseConnectionName, databaseConnectionRequestEnvelope)
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
+    }
+
+    /**
+     * Create or update a database connection for a static site build
+     *
+     * <p>Description for Create or update a database connection for a static site build.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param environmentName The stage site identifier.
+     * @param databaseConnectionName Name of the database connection.
+     * @param databaseConnectionRequestEnvelope A JSON representation of the database connection request properties.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static Site Database Connection resource along with {@link Response}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public Response<DatabaseConnectionInner> createOrUpdateBuildDatabaseConnectionWithResponse(
+        String resourceGroupName,
+        String name,
+        String environmentName,
+        String databaseConnectionName,
+        DatabaseConnectionInner databaseConnectionRequestEnvelope,
+        Context context) {
+        return createOrUpdateBuildDatabaseConnectionWithResponseAsync(
+                resourceGroupName,
+                name,
+                environmentName,
+                databaseConnectionName,
+                databaseConnectionRequestEnvelope,
+                context)
+            .block();
+    }
+
+    /**
+     * Create or update a database connection for a static site build
+     *
+     * <p>Description for Create or update a database connection for a static site build.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param environmentName The stage site identifier.
+     * @param databaseConnectionName Name of the database connection.
+     * @param databaseConnectionRequestEnvelope A JSON representation of the database connection request properties.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static Site Database Connection resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public DatabaseConnectionInner createOrUpdateBuildDatabaseConnection(
+        String resourceGroupName,
+        String name,
+        String environmentName,
+        String databaseConnectionName,
+        DatabaseConnectionInner databaseConnectionRequestEnvelope) {
+        return createOrUpdateBuildDatabaseConnectionWithResponse(
+                resourceGroupName,
+                name,
+                environmentName,
+                databaseConnectionName,
+                databaseConnectionRequestEnvelope,
+                Context.NONE)
+            .getValue();
+    }
+
+    /**
+     * Delete a database connection for a static site build.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param environmentName The stage site identifier.
+     * @param databaseConnectionName Name of the database connection.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response} on successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<Void>> deleteBuildDatabaseConnectionWithResponseAsync(
+        String resourceGroupName, String name, String environmentName, String databaseConnectionName) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (environmentName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter environmentName is required and cannot be null."));
+        }
+        if (databaseConnectionName == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException("Parameter databaseConnectionName is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(
+                context ->
+                    service
+                        .deleteBuildDatabaseConnection(
+                            this.client.getEndpoint(),
+                            resourceGroupName,
+                            name,
+                            environmentName,
+                            databaseConnectionName,
+                            this.client.getSubscriptionId(),
+                            this.client.getApiVersion(),
+                            accept,
+                            context))
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
+    }
+
+    /**
+     * Delete a database connection for a static site build.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param environmentName The stage site identifier.
+     * @param databaseConnectionName Name of the database connection.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response} on successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<Void>> deleteBuildDatabaseConnectionWithResponseAsync(
+        String resourceGroupName, String name, String environmentName, String databaseConnectionName, Context context) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (environmentName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter environmentName is required and cannot be null."));
+        }
+        if (databaseConnectionName == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException("Parameter databaseConnectionName is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service
+            .deleteBuildDatabaseConnection(
+                this.client.getEndpoint(),
+                resourceGroupName,
+                name,
+                environmentName,
+                databaseConnectionName,
+                this.client.getSubscriptionId(),
+                this.client.getApiVersion(),
+                accept,
+                context);
+    }
+
+    /**
+     * Delete a database connection for a static site build.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param environmentName The stage site identifier.
+     * @param databaseConnectionName Name of the database connection.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return A {@link Mono} that completes when a successful response is received.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Void> deleteBuildDatabaseConnectionAsync(
+        String resourceGroupName, String name, String environmentName, String databaseConnectionName) {
+        return deleteBuildDatabaseConnectionWithResponseAsync(
+                resourceGroupName, name, environmentName, databaseConnectionName)
+            .flatMap(ignored -> Mono.empty());
+    }
+
+    /**
+     * Delete a database connection for a static site build.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param environmentName The stage site identifier.
+     * @param databaseConnectionName Name of the database connection.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public Response<Void> deleteBuildDatabaseConnectionWithResponse(
+        String resourceGroupName, String name, String environmentName, String databaseConnectionName, Context context) {
+        return deleteBuildDatabaseConnectionWithResponseAsync(
+                resourceGroupName, name, environmentName, databaseConnectionName, context)
+            .block();
+    }
+
+    /**
+     * Delete a database connection for a static site build.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param environmentName The stage site identifier.
+     * @param databaseConnectionName Name of the database connection.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public void deleteBuildDatabaseConnection(
+        String resourceGroupName, String name, String environmentName, String databaseConnectionName) {
+        deleteBuildDatabaseConnectionWithResponse(
+            resourceGroupName, name, environmentName, databaseConnectionName, Context.NONE);
+    }
+
+    /**
+     * Create or update a database connection for a static site build
+     *
+     * <p>Description for Create or update a database connection for a static site build.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param environmentName The stage site identifier.
+     * @param databaseConnectionName Name of the database connection.
+     * @param databaseConnectionRequestEnvelope A JSON representation of the database connection request properties.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static Site Database Connection resource along with {@link Response} on successful completion of {@link
+     *     Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<DatabaseConnectionInner>> updateBuildDatabaseConnectionWithResponseAsync(
+        String resourceGroupName,
+        String name,
+        String environmentName,
+        String databaseConnectionName,
+        DatabaseConnectionPatchRequest databaseConnectionRequestEnvelope) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (environmentName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter environmentName is required and cannot be null."));
+        }
+        if (databaseConnectionName == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException("Parameter databaseConnectionName is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        if (databaseConnectionRequestEnvelope == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter databaseConnectionRequestEnvelope is required and cannot be null."));
+        } else {
+            databaseConnectionRequestEnvelope.validate();
+        }
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(
+                context ->
+                    service
+                        .updateBuildDatabaseConnection(
+                            this.client.getEndpoint(),
+                            resourceGroupName,
+                            name,
+                            environmentName,
+                            databaseConnectionName,
+                            this.client.getSubscriptionId(),
+                            this.client.getApiVersion(),
+                            databaseConnectionRequestEnvelope,
+                            accept,
+                            context))
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
+    }
+
+    /**
+     * Create or update a database connection for a static site build
+     *
+     * <p>Description for Create or update a database connection for a static site build.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param environmentName The stage site identifier.
+     * @param databaseConnectionName Name of the database connection.
+     * @param databaseConnectionRequestEnvelope A JSON representation of the database connection request properties.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static Site Database Connection resource along with {@link Response} on successful completion of {@link
+     *     Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<DatabaseConnectionInner>> updateBuildDatabaseConnectionWithResponseAsync(
+        String resourceGroupName,
+        String name,
+        String environmentName,
+        String databaseConnectionName,
+        DatabaseConnectionPatchRequest databaseConnectionRequestEnvelope,
+        Context context) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (environmentName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter environmentName is required and cannot be null."));
+        }
+        if (databaseConnectionName == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException("Parameter databaseConnectionName is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        if (databaseConnectionRequestEnvelope == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter databaseConnectionRequestEnvelope is required and cannot be null."));
+        } else {
+            databaseConnectionRequestEnvelope.validate();
+        }
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service
+            .updateBuildDatabaseConnection(
+                this.client.getEndpoint(),
+                resourceGroupName,
+                name,
+                environmentName,
+                databaseConnectionName,
+                this.client.getSubscriptionId(),
+                this.client.getApiVersion(),
+                databaseConnectionRequestEnvelope,
+                accept,
+                context);
+    }
+
+    /**
+     * Create or update a database connection for a static site build
+     *
+     * <p>Description for Create or update a database connection for a static site build.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param environmentName The stage site identifier.
+     * @param databaseConnectionName Name of the database connection.
+     * @param databaseConnectionRequestEnvelope A JSON representation of the database connection request properties.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static Site Database Connection resource on successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<DatabaseConnectionInner> updateBuildDatabaseConnectionAsync(
+        String resourceGroupName,
+        String name,
+        String environmentName,
+        String databaseConnectionName,
+        DatabaseConnectionPatchRequest databaseConnectionRequestEnvelope) {
+        return updateBuildDatabaseConnectionWithResponseAsync(
+                resourceGroupName, name, environmentName, databaseConnectionName, databaseConnectionRequestEnvelope)
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
+    }
+
+    /**
+     * Create or update a database connection for a static site build
+     *
+     * <p>Description for Create or update a database connection for a static site build.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param environmentName The stage site identifier.
+     * @param databaseConnectionName Name of the database connection.
+     * @param databaseConnectionRequestEnvelope A JSON representation of the database connection request properties.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static Site Database Connection resource along with {@link Response}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public Response<DatabaseConnectionInner> updateBuildDatabaseConnectionWithResponse(
+        String resourceGroupName,
+        String name,
+        String environmentName,
+        String databaseConnectionName,
+        DatabaseConnectionPatchRequest databaseConnectionRequestEnvelope,
+        Context context) {
+        return updateBuildDatabaseConnectionWithResponseAsync(
+                resourceGroupName,
+                name,
+                environmentName,
+                databaseConnectionName,
+                databaseConnectionRequestEnvelope,
+                context)
+            .block();
+    }
+
+    /**
+     * Create or update a database connection for a static site build
+     *
+     * <p>Description for Create or update a database connection for a static site build.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param environmentName The stage site identifier.
+     * @param databaseConnectionName Name of the database connection.
+     * @param databaseConnectionRequestEnvelope A JSON representation of the database connection request properties.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static Site Database Connection resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public DatabaseConnectionInner updateBuildDatabaseConnection(
+        String resourceGroupName,
+        String name,
+        String environmentName,
+        String databaseConnectionName,
+        DatabaseConnectionPatchRequest databaseConnectionRequestEnvelope) {
+        return updateBuildDatabaseConnectionWithResponse(
+                resourceGroupName,
+                name,
+                environmentName,
+                databaseConnectionName,
+                databaseConnectionRequestEnvelope,
+                Context.NONE)
+            .getValue();
+    }
+
+    /**
+     * Returns details of a database connection for a static site build by name.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param environmentName The stage site identifier.
+     * @param databaseConnectionName Name of the database connection.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static Site Database Connection resource along with {@link Response} on successful completion of {@link
+     *     Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<DatabaseConnectionInner>> getBuildDatabaseConnectionWithDetailsWithResponseAsync(
+        String resourceGroupName, String name, String environmentName, String databaseConnectionName) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (environmentName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter environmentName is required and cannot be null."));
+        }
+        if (databaseConnectionName == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException("Parameter databaseConnectionName is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(
+                context ->
+                    service
+                        .getBuildDatabaseConnectionWithDetails(
+                            this.client.getEndpoint(),
+                            resourceGroupName,
+                            name,
+                            environmentName,
+                            databaseConnectionName,
+                            this.client.getSubscriptionId(),
+                            this.client.getApiVersion(),
+                            accept,
+                            context))
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
+    }
+
+    /**
+     * Returns details of a database connection for a static site build by name.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param environmentName The stage site identifier.
+     * @param databaseConnectionName Name of the database connection.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static Site Database Connection resource along with {@link Response} on successful completion of {@link
+     *     Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<DatabaseConnectionInner>> getBuildDatabaseConnectionWithDetailsWithResponseAsync(
+        String resourceGroupName, String name, String environmentName, String databaseConnectionName, Context context) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (environmentName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter environmentName is required and cannot be null."));
+        }
+        if (databaseConnectionName == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException("Parameter databaseConnectionName is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service
+            .getBuildDatabaseConnectionWithDetails(
+                this.client.getEndpoint(),
+                resourceGroupName,
+                name,
+                environmentName,
+                databaseConnectionName,
+                this.client.getSubscriptionId(),
+                this.client.getApiVersion(),
+                accept,
+                context);
+    }
+
+    /**
+     * Returns details of a database connection for a static site build by name.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param environmentName The stage site identifier.
+     * @param databaseConnectionName Name of the database connection.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static Site Database Connection resource on successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<DatabaseConnectionInner> getBuildDatabaseConnectionWithDetailsAsync(
+        String resourceGroupName, String name, String environmentName, String databaseConnectionName) {
+        return getBuildDatabaseConnectionWithDetailsWithResponseAsync(
+                resourceGroupName, name, environmentName, databaseConnectionName)
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
+    }
+
+    /**
+     * Returns details of a database connection for a static site build by name.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param environmentName The stage site identifier.
+     * @param databaseConnectionName Name of the database connection.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static Site Database Connection resource along with {@link Response}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public Response<DatabaseConnectionInner> getBuildDatabaseConnectionWithDetailsWithResponse(
+        String resourceGroupName, String name, String environmentName, String databaseConnectionName, Context context) {
+        return getBuildDatabaseConnectionWithDetailsWithResponseAsync(
+                resourceGroupName, name, environmentName, databaseConnectionName, context)
+            .block();
+    }
+
+    /**
+     * Returns details of a database connection for a static site build by name.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param environmentName The stage site identifier.
+     * @param databaseConnectionName Name of the database connection.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static Site Database Connection resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public DatabaseConnectionInner getBuildDatabaseConnectionWithDetails(
+        String resourceGroupName, String name, String environmentName, String databaseConnectionName) {
+        return getBuildDatabaseConnectionWithDetailsWithResponse(
+                resourceGroupName, name, environmentName, databaseConnectionName, Context.NONE)
+            .getValue();
+    }
+
+    /**
      * Gets the functions of a particular static site build.
      *
      * <p>Description for Gets the functions of a particular static site build.
@@ -4718,6 +6294,210 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
         return listStaticSiteBuildFunctionAppSettingsWithResponse(
                 resourceGroupName, name, environmentName, Context.NONE)
             .getValue();
+    }
+
+    /**
+     * Returns details of database connections for a static site build.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param environmentName The stage site identifier.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of static site database connections along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<PagedResponse<DatabaseConnectionInner>> getBuildDatabaseConnectionsWithDetailsSinglePageAsync(
+        String resourceGroupName, String name, String environmentName) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (environmentName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter environmentName is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(
+                context ->
+                    service
+                        .getBuildDatabaseConnectionsWithDetails(
+                            this.client.getEndpoint(),
+                            resourceGroupName,
+                            name,
+                            environmentName,
+                            this.client.getSubscriptionId(),
+                            this.client.getApiVersion(),
+                            accept,
+                            context))
+            .<PagedResponse<DatabaseConnectionInner>>map(
+                res ->
+                    new PagedResponseBase<>(
+                        res.getRequest(),
+                        res.getStatusCode(),
+                        res.getHeaders(),
+                        res.getValue().value(),
+                        res.getValue().nextLink(),
+                        null))
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
+    }
+
+    /**
+     * Returns details of database connections for a static site build.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param environmentName The stage site identifier.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of static site database connections along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<PagedResponse<DatabaseConnectionInner>> getBuildDatabaseConnectionsWithDetailsSinglePageAsync(
+        String resourceGroupName, String name, String environmentName, Context context) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (environmentName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter environmentName is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service
+            .getBuildDatabaseConnectionsWithDetails(
+                this.client.getEndpoint(),
+                resourceGroupName,
+                name,
+                environmentName,
+                this.client.getSubscriptionId(),
+                this.client.getApiVersion(),
+                accept,
+                context)
+            .map(
+                res ->
+                    new PagedResponseBase<>(
+                        res.getRequest(),
+                        res.getStatusCode(),
+                        res.getHeaders(),
+                        res.getValue().value(),
+                        res.getValue().nextLink(),
+                        null));
+    }
+
+    /**
+     * Returns details of database connections for a static site build.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param environmentName The stage site identifier.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of static site database connections as paginated response with {@link PagedFlux}.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    private PagedFlux<DatabaseConnectionInner> getBuildDatabaseConnectionsWithDetailsAsync(
+        String resourceGroupName, String name, String environmentName) {
+        return new PagedFlux<>(
+            () -> getBuildDatabaseConnectionsWithDetailsSinglePageAsync(resourceGroupName, name, environmentName),
+            nextLink -> getBuildDatabaseConnectionsWithDetailsNextSinglePageAsync(nextLink));
+    }
+
+    /**
+     * Returns details of database connections for a static site build.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param environmentName The stage site identifier.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of static site database connections as paginated response with {@link PagedFlux}.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    private PagedFlux<DatabaseConnectionInner> getBuildDatabaseConnectionsWithDetailsAsync(
+        String resourceGroupName, String name, String environmentName, Context context) {
+        return new PagedFlux<>(
+            () ->
+                getBuildDatabaseConnectionsWithDetailsSinglePageAsync(
+                    resourceGroupName, name, environmentName, context),
+            nextLink -> getBuildDatabaseConnectionsWithDetailsNextSinglePageAsync(nextLink, context));
+    }
+
+    /**
+     * Returns details of database connections for a static site build.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param environmentName The stage site identifier.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of static site database connections as paginated response with {@link PagedIterable}.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    public PagedIterable<DatabaseConnectionInner> getBuildDatabaseConnectionsWithDetails(
+        String resourceGroupName, String name, String environmentName) {
+        return new PagedIterable<>(
+            getBuildDatabaseConnectionsWithDetailsAsync(resourceGroupName, name, environmentName));
+    }
+
+    /**
+     * Returns details of database connections for a static site build.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param environmentName The stage site identifier.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of static site database connections as paginated response with {@link PagedIterable}.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    public PagedIterable<DatabaseConnectionInner> getBuildDatabaseConnectionsWithDetails(
+        String resourceGroupName, String name, String environmentName, Context context) {
+        return new PagedIterable<>(
+            getBuildDatabaseConnectionsWithDetailsAsync(resourceGroupName, name, environmentName, context));
     }
 
     /**
@@ -6444,6 +8224,580 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     public StringDictionaryInner createOrUpdateStaticSiteAppSettings(
         String resourceGroupName, String name, StringDictionaryInner appSettings) {
         return createOrUpdateStaticSiteAppSettingsWithResponse(resourceGroupName, name, appSettings, Context.NONE)
+            .getValue();
+    }
+
+    /**
+     * Gets the basic auth properties for a static site as a collection.
+     *
+     * <p>Description for Gets the basic auth properties for a static site as a collection.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of static site basic auth along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<PagedResponse<StaticSiteBasicAuthPropertiesArmResourceInner>> listBasicAuthSinglePageAsync(
+        String resourceGroupName, String name) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(
+                context ->
+                    service
+                        .listBasicAuth(
+                            this.client.getEndpoint(),
+                            resourceGroupName,
+                            name,
+                            this.client.getSubscriptionId(),
+                            this.client.getApiVersion(),
+                            accept,
+                            context))
+            .<PagedResponse<StaticSiteBasicAuthPropertiesArmResourceInner>>map(
+                res ->
+                    new PagedResponseBase<>(
+                        res.getRequest(),
+                        res.getStatusCode(),
+                        res.getHeaders(),
+                        res.getValue().value(),
+                        res.getValue().nextLink(),
+                        null))
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
+    }
+
+    /**
+     * Gets the basic auth properties for a static site as a collection.
+     *
+     * <p>Description for Gets the basic auth properties for a static site as a collection.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of static site basic auth along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<PagedResponse<StaticSiteBasicAuthPropertiesArmResourceInner>> listBasicAuthSinglePageAsync(
+        String resourceGroupName, String name, Context context) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service
+            .listBasicAuth(
+                this.client.getEndpoint(),
+                resourceGroupName,
+                name,
+                this.client.getSubscriptionId(),
+                this.client.getApiVersion(),
+                accept,
+                context)
+            .map(
+                res ->
+                    new PagedResponseBase<>(
+                        res.getRequest(),
+                        res.getStatusCode(),
+                        res.getHeaders(),
+                        res.getValue().value(),
+                        res.getValue().nextLink(),
+                        null));
+    }
+
+    /**
+     * Gets the basic auth properties for a static site as a collection.
+     *
+     * <p>Description for Gets the basic auth properties for a static site as a collection.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of static site basic auth as paginated response with {@link PagedFlux}.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    private PagedFlux<StaticSiteBasicAuthPropertiesArmResourceInner> listBasicAuthAsync(
+        String resourceGroupName, String name) {
+        return new PagedFlux<>(
+            () -> listBasicAuthSinglePageAsync(resourceGroupName, name),
+            nextLink -> listBasicAuthNextSinglePageAsync(nextLink));
+    }
+
+    /**
+     * Gets the basic auth properties for a static site as a collection.
+     *
+     * <p>Description for Gets the basic auth properties for a static site as a collection.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of static site basic auth as paginated response with {@link PagedFlux}.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    private PagedFlux<StaticSiteBasicAuthPropertiesArmResourceInner> listBasicAuthAsync(
+        String resourceGroupName, String name, Context context) {
+        return new PagedFlux<>(
+            () -> listBasicAuthSinglePageAsync(resourceGroupName, name, context),
+            nextLink -> listBasicAuthNextSinglePageAsync(nextLink, context));
+    }
+
+    /**
+     * Gets the basic auth properties for a static site as a collection.
+     *
+     * <p>Description for Gets the basic auth properties for a static site as a collection.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of static site basic auth as paginated response with {@link PagedIterable}.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    public PagedIterable<StaticSiteBasicAuthPropertiesArmResourceInner> listBasicAuth(
+        String resourceGroupName, String name) {
+        return new PagedIterable<>(listBasicAuthAsync(resourceGroupName, name));
+    }
+
+    /**
+     * Gets the basic auth properties for a static site as a collection.
+     *
+     * <p>Description for Gets the basic auth properties for a static site as a collection.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of static site basic auth as paginated response with {@link PagedIterable}.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    public PagedIterable<StaticSiteBasicAuthPropertiesArmResourceInner> listBasicAuth(
+        String resourceGroupName, String name, Context context) {
+        return new PagedIterable<>(listBasicAuthAsync(resourceGroupName, name, context));
+    }
+
+    /**
+     * Gets the basic auth properties for a static site.
+     *
+     * <p>Description for Gets the basic auth properties for a static site.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param basicAuthName name of the basic auth entry.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static site basic auth properties ARM resource along with {@link Response} on successful completion of
+     *     {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<StaticSiteBasicAuthPropertiesArmResourceInner>> getBasicAuthWithResponseAsync(
+        String resourceGroupName, String name, BasicAuthName basicAuthName) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (basicAuthName == null) {
+            return Mono.error(new IllegalArgumentException("Parameter basicAuthName is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(
+                context ->
+                    service
+                        .getBasicAuth(
+                            this.client.getEndpoint(),
+                            resourceGroupName,
+                            name,
+                            basicAuthName,
+                            this.client.getSubscriptionId(),
+                            this.client.getApiVersion(),
+                            accept,
+                            context))
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
+    }
+
+    /**
+     * Gets the basic auth properties for a static site.
+     *
+     * <p>Description for Gets the basic auth properties for a static site.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param basicAuthName name of the basic auth entry.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static site basic auth properties ARM resource along with {@link Response} on successful completion of
+     *     {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<StaticSiteBasicAuthPropertiesArmResourceInner>> getBasicAuthWithResponseAsync(
+        String resourceGroupName, String name, BasicAuthName basicAuthName, Context context) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (basicAuthName == null) {
+            return Mono.error(new IllegalArgumentException("Parameter basicAuthName is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service
+            .getBasicAuth(
+                this.client.getEndpoint(),
+                resourceGroupName,
+                name,
+                basicAuthName,
+                this.client.getSubscriptionId(),
+                this.client.getApiVersion(),
+                accept,
+                context);
+    }
+
+    /**
+     * Gets the basic auth properties for a static site.
+     *
+     * <p>Description for Gets the basic auth properties for a static site.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param basicAuthName name of the basic auth entry.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static site basic auth properties ARM resource on successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<StaticSiteBasicAuthPropertiesArmResourceInner> getBasicAuthAsync(
+        String resourceGroupName, String name, BasicAuthName basicAuthName) {
+        return getBasicAuthWithResponseAsync(resourceGroupName, name, basicAuthName)
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
+    }
+
+    /**
+     * Gets the basic auth properties for a static site.
+     *
+     * <p>Description for Gets the basic auth properties for a static site.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param basicAuthName name of the basic auth entry.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static site basic auth properties ARM resource along with {@link Response}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public Response<StaticSiteBasicAuthPropertiesArmResourceInner> getBasicAuthWithResponse(
+        String resourceGroupName, String name, BasicAuthName basicAuthName, Context context) {
+        return getBasicAuthWithResponseAsync(resourceGroupName, name, basicAuthName, context).block();
+    }
+
+    /**
+     * Gets the basic auth properties for a static site.
+     *
+     * <p>Description for Gets the basic auth properties for a static site.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param basicAuthName name of the basic auth entry.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static site basic auth properties ARM resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public StaticSiteBasicAuthPropertiesArmResourceInner getBasicAuth(
+        String resourceGroupName, String name, BasicAuthName basicAuthName) {
+        return getBasicAuthWithResponse(resourceGroupName, name, basicAuthName, Context.NONE).getValue();
+    }
+
+    /**
+     * Adds or updates basic auth for a static site.
+     *
+     * <p>Description for Adds or updates basic auth for a static site.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param basicAuthName name of the basic auth entry.
+     * @param basicAuthEnvelope A JSON representation of the basic auth properties.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static site basic auth properties ARM resource along with {@link Response} on successful completion of
+     *     {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<StaticSiteBasicAuthPropertiesArmResourceInner>> createOrUpdateBasicAuthWithResponseAsync(
+        String resourceGroupName,
+        String name,
+        BasicAuthName basicAuthName,
+        StaticSiteBasicAuthPropertiesArmResourceInner basicAuthEnvelope) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (basicAuthName == null) {
+            return Mono.error(new IllegalArgumentException("Parameter basicAuthName is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        if (basicAuthEnvelope == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter basicAuthEnvelope is required and cannot be null."));
+        } else {
+            basicAuthEnvelope.validate();
+        }
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(
+                context ->
+                    service
+                        .createOrUpdateBasicAuth(
+                            this.client.getEndpoint(),
+                            resourceGroupName,
+                            name,
+                            basicAuthName,
+                            this.client.getSubscriptionId(),
+                            this.client.getApiVersion(),
+                            basicAuthEnvelope,
+                            accept,
+                            context))
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
+    }
+
+    /**
+     * Adds or updates basic auth for a static site.
+     *
+     * <p>Description for Adds or updates basic auth for a static site.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param basicAuthName name of the basic auth entry.
+     * @param basicAuthEnvelope A JSON representation of the basic auth properties.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static site basic auth properties ARM resource along with {@link Response} on successful completion of
+     *     {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<StaticSiteBasicAuthPropertiesArmResourceInner>> createOrUpdateBasicAuthWithResponseAsync(
+        String resourceGroupName,
+        String name,
+        BasicAuthName basicAuthName,
+        StaticSiteBasicAuthPropertiesArmResourceInner basicAuthEnvelope,
+        Context context) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (basicAuthName == null) {
+            return Mono.error(new IllegalArgumentException("Parameter basicAuthName is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        if (basicAuthEnvelope == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter basicAuthEnvelope is required and cannot be null."));
+        } else {
+            basicAuthEnvelope.validate();
+        }
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service
+            .createOrUpdateBasicAuth(
+                this.client.getEndpoint(),
+                resourceGroupName,
+                name,
+                basicAuthName,
+                this.client.getSubscriptionId(),
+                this.client.getApiVersion(),
+                basicAuthEnvelope,
+                accept,
+                context);
+    }
+
+    /**
+     * Adds or updates basic auth for a static site.
+     *
+     * <p>Description for Adds or updates basic auth for a static site.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param basicAuthName name of the basic auth entry.
+     * @param basicAuthEnvelope A JSON representation of the basic auth properties.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static site basic auth properties ARM resource on successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<StaticSiteBasicAuthPropertiesArmResourceInner> createOrUpdateBasicAuthAsync(
+        String resourceGroupName,
+        String name,
+        BasicAuthName basicAuthName,
+        StaticSiteBasicAuthPropertiesArmResourceInner basicAuthEnvelope) {
+        return createOrUpdateBasicAuthWithResponseAsync(resourceGroupName, name, basicAuthName, basicAuthEnvelope)
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
+    }
+
+    /**
+     * Adds or updates basic auth for a static site.
+     *
+     * <p>Description for Adds or updates basic auth for a static site.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param basicAuthName name of the basic auth entry.
+     * @param basicAuthEnvelope A JSON representation of the basic auth properties.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static site basic auth properties ARM resource along with {@link Response}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public Response<StaticSiteBasicAuthPropertiesArmResourceInner> createOrUpdateBasicAuthWithResponse(
+        String resourceGroupName,
+        String name,
+        BasicAuthName basicAuthName,
+        StaticSiteBasicAuthPropertiesArmResourceInner basicAuthEnvelope,
+        Context context) {
+        return createOrUpdateBasicAuthWithResponseAsync(
+                resourceGroupName, name, basicAuthName, basicAuthEnvelope, context)
+            .block();
+    }
+
+    /**
+     * Adds or updates basic auth for a static site.
+     *
+     * <p>Description for Adds or updates basic auth for a static site.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param basicAuthName name of the basic auth entry.
+     * @param basicAuthEnvelope A JSON representation of the basic auth properties.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static site basic auth properties ARM resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public StaticSiteBasicAuthPropertiesArmResourceInner createOrUpdateBasicAuth(
+        String resourceGroupName,
+        String name,
+        BasicAuthName basicAuthName,
+        StaticSiteBasicAuthPropertiesArmResourceInner basicAuthEnvelope) {
+        return createOrUpdateBasicAuthWithResponse(
+                resourceGroupName, name, basicAuthName, basicAuthEnvelope, Context.NONE)
             .getValue();
     }
 
@@ -8208,6 +10562,1115 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
         validateCustomDomainCanBeAddedToStaticSiteAsync(
                 resourceGroupName, name, domainName, staticSiteCustomDomainRequestPropertiesEnvelope, context)
             .block();
+    }
+
+    /**
+     * Returns overviews of database connections for a static site.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of static site database connections along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<PagedResponse<DatabaseConnectionInner>> getDatabaseConnectionsSinglePageAsync(
+        String resourceGroupName, String name) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(
+                context ->
+                    service
+                        .getDatabaseConnections(
+                            this.client.getEndpoint(),
+                            resourceGroupName,
+                            name,
+                            this.client.getSubscriptionId(),
+                            this.client.getApiVersion(),
+                            accept,
+                            context))
+            .<PagedResponse<DatabaseConnectionInner>>map(
+                res ->
+                    new PagedResponseBase<>(
+                        res.getRequest(),
+                        res.getStatusCode(),
+                        res.getHeaders(),
+                        res.getValue().value(),
+                        res.getValue().nextLink(),
+                        null))
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
+    }
+
+    /**
+     * Returns overviews of database connections for a static site.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of static site database connections along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<PagedResponse<DatabaseConnectionInner>> getDatabaseConnectionsSinglePageAsync(
+        String resourceGroupName, String name, Context context) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service
+            .getDatabaseConnections(
+                this.client.getEndpoint(),
+                resourceGroupName,
+                name,
+                this.client.getSubscriptionId(),
+                this.client.getApiVersion(),
+                accept,
+                context)
+            .map(
+                res ->
+                    new PagedResponseBase<>(
+                        res.getRequest(),
+                        res.getStatusCode(),
+                        res.getHeaders(),
+                        res.getValue().value(),
+                        res.getValue().nextLink(),
+                        null));
+    }
+
+    /**
+     * Returns overviews of database connections for a static site.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of static site database connections as paginated response with {@link PagedFlux}.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    private PagedFlux<DatabaseConnectionInner> getDatabaseConnectionsAsync(String resourceGroupName, String name) {
+        return new PagedFlux<>(
+            () -> getDatabaseConnectionsSinglePageAsync(resourceGroupName, name),
+            nextLink -> getDatabaseConnectionsNextSinglePageAsync(nextLink));
+    }
+
+    /**
+     * Returns overviews of database connections for a static site.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of static site database connections as paginated response with {@link PagedFlux}.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    private PagedFlux<DatabaseConnectionInner> getDatabaseConnectionsAsync(
+        String resourceGroupName, String name, Context context) {
+        return new PagedFlux<>(
+            () -> getDatabaseConnectionsSinglePageAsync(resourceGroupName, name, context),
+            nextLink -> getDatabaseConnectionsNextSinglePageAsync(nextLink, context));
+    }
+
+    /**
+     * Returns overviews of database connections for a static site.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of static site database connections as paginated response with {@link PagedIterable}.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    public PagedIterable<DatabaseConnectionInner> getDatabaseConnections(String resourceGroupName, String name) {
+        return new PagedIterable<>(getDatabaseConnectionsAsync(resourceGroupName, name));
+    }
+
+    /**
+     * Returns overviews of database connections for a static site.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of static site database connections as paginated response with {@link PagedIterable}.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    public PagedIterable<DatabaseConnectionInner> getDatabaseConnections(
+        String resourceGroupName, String name, Context context) {
+        return new PagedIterable<>(getDatabaseConnectionsAsync(resourceGroupName, name, context));
+    }
+
+    /**
+     * Returns overview of a database connection for a static site by name.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param databaseConnectionName Name of the database connection.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static Site Database Connection resource along with {@link Response} on successful completion of {@link
+     *     Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<DatabaseConnectionInner>> getDatabaseConnectionWithResponseAsync(
+        String resourceGroupName, String name, String databaseConnectionName) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (databaseConnectionName == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException("Parameter databaseConnectionName is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(
+                context ->
+                    service
+                        .getDatabaseConnection(
+                            this.client.getEndpoint(),
+                            resourceGroupName,
+                            name,
+                            databaseConnectionName,
+                            this.client.getSubscriptionId(),
+                            this.client.getApiVersion(),
+                            accept,
+                            context))
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
+    }
+
+    /**
+     * Returns overview of a database connection for a static site by name.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param databaseConnectionName Name of the database connection.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static Site Database Connection resource along with {@link Response} on successful completion of {@link
+     *     Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<DatabaseConnectionInner>> getDatabaseConnectionWithResponseAsync(
+        String resourceGroupName, String name, String databaseConnectionName, Context context) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (databaseConnectionName == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException("Parameter databaseConnectionName is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service
+            .getDatabaseConnection(
+                this.client.getEndpoint(),
+                resourceGroupName,
+                name,
+                databaseConnectionName,
+                this.client.getSubscriptionId(),
+                this.client.getApiVersion(),
+                accept,
+                context);
+    }
+
+    /**
+     * Returns overview of a database connection for a static site by name.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param databaseConnectionName Name of the database connection.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static Site Database Connection resource on successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<DatabaseConnectionInner> getDatabaseConnectionAsync(
+        String resourceGroupName, String name, String databaseConnectionName) {
+        return getDatabaseConnectionWithResponseAsync(resourceGroupName, name, databaseConnectionName)
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
+    }
+
+    /**
+     * Returns overview of a database connection for a static site by name.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param databaseConnectionName Name of the database connection.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static Site Database Connection resource along with {@link Response}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public Response<DatabaseConnectionInner> getDatabaseConnectionWithResponse(
+        String resourceGroupName, String name, String databaseConnectionName, Context context) {
+        return getDatabaseConnectionWithResponseAsync(resourceGroupName, name, databaseConnectionName, context).block();
+    }
+
+    /**
+     * Returns overview of a database connection for a static site by name.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param databaseConnectionName Name of the database connection.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static Site Database Connection resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public DatabaseConnectionInner getDatabaseConnection(
+        String resourceGroupName, String name, String databaseConnectionName) {
+        return getDatabaseConnectionWithResponse(resourceGroupName, name, databaseConnectionName, Context.NONE)
+            .getValue();
+    }
+
+    /**
+     * Create or update a database connection for a static site
+     *
+     * <p>Description for Create or update a database connection for a static site.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param databaseConnectionName Name of the database connection.
+     * @param databaseConnectionRequestEnvelope A JSON representation of the database connection request properties.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static Site Database Connection resource along with {@link Response} on successful completion of {@link
+     *     Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<DatabaseConnectionInner>> createOrUpdateDatabaseConnectionWithResponseAsync(
+        String resourceGroupName,
+        String name,
+        String databaseConnectionName,
+        DatabaseConnectionInner databaseConnectionRequestEnvelope) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (databaseConnectionName == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException("Parameter databaseConnectionName is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        if (databaseConnectionRequestEnvelope == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter databaseConnectionRequestEnvelope is required and cannot be null."));
+        } else {
+            databaseConnectionRequestEnvelope.validate();
+        }
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(
+                context ->
+                    service
+                        .createOrUpdateDatabaseConnection(
+                            this.client.getEndpoint(),
+                            resourceGroupName,
+                            name,
+                            databaseConnectionName,
+                            this.client.getSubscriptionId(),
+                            this.client.getApiVersion(),
+                            databaseConnectionRequestEnvelope,
+                            accept,
+                            context))
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
+    }
+
+    /**
+     * Create or update a database connection for a static site
+     *
+     * <p>Description for Create or update a database connection for a static site.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param databaseConnectionName Name of the database connection.
+     * @param databaseConnectionRequestEnvelope A JSON representation of the database connection request properties.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static Site Database Connection resource along with {@link Response} on successful completion of {@link
+     *     Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<DatabaseConnectionInner>> createOrUpdateDatabaseConnectionWithResponseAsync(
+        String resourceGroupName,
+        String name,
+        String databaseConnectionName,
+        DatabaseConnectionInner databaseConnectionRequestEnvelope,
+        Context context) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (databaseConnectionName == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException("Parameter databaseConnectionName is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        if (databaseConnectionRequestEnvelope == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter databaseConnectionRequestEnvelope is required and cannot be null."));
+        } else {
+            databaseConnectionRequestEnvelope.validate();
+        }
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service
+            .createOrUpdateDatabaseConnection(
+                this.client.getEndpoint(),
+                resourceGroupName,
+                name,
+                databaseConnectionName,
+                this.client.getSubscriptionId(),
+                this.client.getApiVersion(),
+                databaseConnectionRequestEnvelope,
+                accept,
+                context);
+    }
+
+    /**
+     * Create or update a database connection for a static site
+     *
+     * <p>Description for Create or update a database connection for a static site.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param databaseConnectionName Name of the database connection.
+     * @param databaseConnectionRequestEnvelope A JSON representation of the database connection request properties.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static Site Database Connection resource on successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<DatabaseConnectionInner> createOrUpdateDatabaseConnectionAsync(
+        String resourceGroupName,
+        String name,
+        String databaseConnectionName,
+        DatabaseConnectionInner databaseConnectionRequestEnvelope) {
+        return createOrUpdateDatabaseConnectionWithResponseAsync(
+                resourceGroupName, name, databaseConnectionName, databaseConnectionRequestEnvelope)
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
+    }
+
+    /**
+     * Create or update a database connection for a static site
+     *
+     * <p>Description for Create or update a database connection for a static site.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param databaseConnectionName Name of the database connection.
+     * @param databaseConnectionRequestEnvelope A JSON representation of the database connection request properties.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static Site Database Connection resource along with {@link Response}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public Response<DatabaseConnectionInner> createOrUpdateDatabaseConnectionWithResponse(
+        String resourceGroupName,
+        String name,
+        String databaseConnectionName,
+        DatabaseConnectionInner databaseConnectionRequestEnvelope,
+        Context context) {
+        return createOrUpdateDatabaseConnectionWithResponseAsync(
+                resourceGroupName, name, databaseConnectionName, databaseConnectionRequestEnvelope, context)
+            .block();
+    }
+
+    /**
+     * Create or update a database connection for a static site
+     *
+     * <p>Description for Create or update a database connection for a static site.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param databaseConnectionName Name of the database connection.
+     * @param databaseConnectionRequestEnvelope A JSON representation of the database connection request properties.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static Site Database Connection resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public DatabaseConnectionInner createOrUpdateDatabaseConnection(
+        String resourceGroupName,
+        String name,
+        String databaseConnectionName,
+        DatabaseConnectionInner databaseConnectionRequestEnvelope) {
+        return createOrUpdateDatabaseConnectionWithResponse(
+                resourceGroupName, name, databaseConnectionName, databaseConnectionRequestEnvelope, Context.NONE)
+            .getValue();
+    }
+
+    /**
+     * Delete a database connection for a static site.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param databaseConnectionName Name of the database connection.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response} on successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<Void>> deleteDatabaseConnectionWithResponseAsync(
+        String resourceGroupName, String name, String databaseConnectionName) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (databaseConnectionName == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException("Parameter databaseConnectionName is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(
+                context ->
+                    service
+                        .deleteDatabaseConnection(
+                            this.client.getEndpoint(),
+                            resourceGroupName,
+                            name,
+                            databaseConnectionName,
+                            this.client.getSubscriptionId(),
+                            this.client.getApiVersion(),
+                            accept,
+                            context))
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
+    }
+
+    /**
+     * Delete a database connection for a static site.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param databaseConnectionName Name of the database connection.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response} on successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<Void>> deleteDatabaseConnectionWithResponseAsync(
+        String resourceGroupName, String name, String databaseConnectionName, Context context) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (databaseConnectionName == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException("Parameter databaseConnectionName is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service
+            .deleteDatabaseConnection(
+                this.client.getEndpoint(),
+                resourceGroupName,
+                name,
+                databaseConnectionName,
+                this.client.getSubscriptionId(),
+                this.client.getApiVersion(),
+                accept,
+                context);
+    }
+
+    /**
+     * Delete a database connection for a static site.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param databaseConnectionName Name of the database connection.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return A {@link Mono} that completes when a successful response is received.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Void> deleteDatabaseConnectionAsync(
+        String resourceGroupName, String name, String databaseConnectionName) {
+        return deleteDatabaseConnectionWithResponseAsync(resourceGroupName, name, databaseConnectionName)
+            .flatMap(ignored -> Mono.empty());
+    }
+
+    /**
+     * Delete a database connection for a static site.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param databaseConnectionName Name of the database connection.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public Response<Void> deleteDatabaseConnectionWithResponse(
+        String resourceGroupName, String name, String databaseConnectionName, Context context) {
+        return deleteDatabaseConnectionWithResponseAsync(resourceGroupName, name, databaseConnectionName, context)
+            .block();
+    }
+
+    /**
+     * Delete a database connection for a static site.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param databaseConnectionName Name of the database connection.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public void deleteDatabaseConnection(String resourceGroupName, String name, String databaseConnectionName) {
+        deleteDatabaseConnectionWithResponse(resourceGroupName, name, databaseConnectionName, Context.NONE);
+    }
+
+    /**
+     * Create or update a database connection for a static site
+     *
+     * <p>Description for Create or update a database connection for a static site.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param databaseConnectionName Name of the database connection.
+     * @param databaseConnectionRequestEnvelope A JSON representation of the database connection request properties.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static Site Database Connection resource along with {@link Response} on successful completion of {@link
+     *     Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<DatabaseConnectionInner>> updateDatabaseConnectionWithResponseAsync(
+        String resourceGroupName,
+        String name,
+        String databaseConnectionName,
+        DatabaseConnectionPatchRequest databaseConnectionRequestEnvelope) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (databaseConnectionName == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException("Parameter databaseConnectionName is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        if (databaseConnectionRequestEnvelope == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter databaseConnectionRequestEnvelope is required and cannot be null."));
+        } else {
+            databaseConnectionRequestEnvelope.validate();
+        }
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(
+                context ->
+                    service
+                        .updateDatabaseConnection(
+                            this.client.getEndpoint(),
+                            resourceGroupName,
+                            name,
+                            databaseConnectionName,
+                            this.client.getSubscriptionId(),
+                            this.client.getApiVersion(),
+                            databaseConnectionRequestEnvelope,
+                            accept,
+                            context))
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
+    }
+
+    /**
+     * Create or update a database connection for a static site
+     *
+     * <p>Description for Create or update a database connection for a static site.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param databaseConnectionName Name of the database connection.
+     * @param databaseConnectionRequestEnvelope A JSON representation of the database connection request properties.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static Site Database Connection resource along with {@link Response} on successful completion of {@link
+     *     Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<DatabaseConnectionInner>> updateDatabaseConnectionWithResponseAsync(
+        String resourceGroupName,
+        String name,
+        String databaseConnectionName,
+        DatabaseConnectionPatchRequest databaseConnectionRequestEnvelope,
+        Context context) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (databaseConnectionName == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException("Parameter databaseConnectionName is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        if (databaseConnectionRequestEnvelope == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter databaseConnectionRequestEnvelope is required and cannot be null."));
+        } else {
+            databaseConnectionRequestEnvelope.validate();
+        }
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service
+            .updateDatabaseConnection(
+                this.client.getEndpoint(),
+                resourceGroupName,
+                name,
+                databaseConnectionName,
+                this.client.getSubscriptionId(),
+                this.client.getApiVersion(),
+                databaseConnectionRequestEnvelope,
+                accept,
+                context);
+    }
+
+    /**
+     * Create or update a database connection for a static site
+     *
+     * <p>Description for Create or update a database connection for a static site.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param databaseConnectionName Name of the database connection.
+     * @param databaseConnectionRequestEnvelope A JSON representation of the database connection request properties.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static Site Database Connection resource on successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<DatabaseConnectionInner> updateDatabaseConnectionAsync(
+        String resourceGroupName,
+        String name,
+        String databaseConnectionName,
+        DatabaseConnectionPatchRequest databaseConnectionRequestEnvelope) {
+        return updateDatabaseConnectionWithResponseAsync(
+                resourceGroupName, name, databaseConnectionName, databaseConnectionRequestEnvelope)
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
+    }
+
+    /**
+     * Create or update a database connection for a static site
+     *
+     * <p>Description for Create or update a database connection for a static site.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param databaseConnectionName Name of the database connection.
+     * @param databaseConnectionRequestEnvelope A JSON representation of the database connection request properties.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static Site Database Connection resource along with {@link Response}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public Response<DatabaseConnectionInner> updateDatabaseConnectionWithResponse(
+        String resourceGroupName,
+        String name,
+        String databaseConnectionName,
+        DatabaseConnectionPatchRequest databaseConnectionRequestEnvelope,
+        Context context) {
+        return updateDatabaseConnectionWithResponseAsync(
+                resourceGroupName, name, databaseConnectionName, databaseConnectionRequestEnvelope, context)
+            .block();
+    }
+
+    /**
+     * Create or update a database connection for a static site
+     *
+     * <p>Description for Create or update a database connection for a static site.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param databaseConnectionName Name of the database connection.
+     * @param databaseConnectionRequestEnvelope A JSON representation of the database connection request properties.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static Site Database Connection resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public DatabaseConnectionInner updateDatabaseConnection(
+        String resourceGroupName,
+        String name,
+        String databaseConnectionName,
+        DatabaseConnectionPatchRequest databaseConnectionRequestEnvelope) {
+        return updateDatabaseConnectionWithResponse(
+                resourceGroupName, name, databaseConnectionName, databaseConnectionRequestEnvelope, Context.NONE)
+            .getValue();
+    }
+
+    /**
+     * Returns details of a database connection for a static site by name.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param databaseConnectionName Name of the database connection.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static Site Database Connection resource along with {@link Response} on successful completion of {@link
+     *     Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<DatabaseConnectionInner>> getDatabaseConnectionWithDetailsWithResponseAsync(
+        String resourceGroupName, String name, String databaseConnectionName) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (databaseConnectionName == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException("Parameter databaseConnectionName is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(
+                context ->
+                    service
+                        .getDatabaseConnectionWithDetails(
+                            this.client.getEndpoint(),
+                            resourceGroupName,
+                            name,
+                            databaseConnectionName,
+                            this.client.getSubscriptionId(),
+                            this.client.getApiVersion(),
+                            accept,
+                            context))
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
+    }
+
+    /**
+     * Returns details of a database connection for a static site by name.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param databaseConnectionName Name of the database connection.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static Site Database Connection resource along with {@link Response} on successful completion of {@link
+     *     Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<DatabaseConnectionInner>> getDatabaseConnectionWithDetailsWithResponseAsync(
+        String resourceGroupName, String name, String databaseConnectionName, Context context) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (databaseConnectionName == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException("Parameter databaseConnectionName is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service
+            .getDatabaseConnectionWithDetails(
+                this.client.getEndpoint(),
+                resourceGroupName,
+                name,
+                databaseConnectionName,
+                this.client.getSubscriptionId(),
+                this.client.getApiVersion(),
+                accept,
+                context);
+    }
+
+    /**
+     * Returns details of a database connection for a static site by name.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param databaseConnectionName Name of the database connection.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static Site Database Connection resource on successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<DatabaseConnectionInner> getDatabaseConnectionWithDetailsAsync(
+        String resourceGroupName, String name, String databaseConnectionName) {
+        return getDatabaseConnectionWithDetailsWithResponseAsync(resourceGroupName, name, databaseConnectionName)
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
+    }
+
+    /**
+     * Returns details of a database connection for a static site by name.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param databaseConnectionName Name of the database connection.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static Site Database Connection resource along with {@link Response}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public Response<DatabaseConnectionInner> getDatabaseConnectionWithDetailsWithResponse(
+        String resourceGroupName, String name, String databaseConnectionName, Context context) {
+        return getDatabaseConnectionWithDetailsWithResponseAsync(
+                resourceGroupName, name, databaseConnectionName, context)
+            .block();
+    }
+
+    /**
+     * Returns details of a database connection for a static site by name.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param databaseConnectionName Name of the database connection.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static Site Database Connection resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public DatabaseConnectionInner getDatabaseConnectionWithDetails(
+        String resourceGroupName, String name, String databaseConnectionName) {
+        return getDatabaseConnectionWithDetailsWithResponse(
+                resourceGroupName, name, databaseConnectionName, Context.NONE)
+            .getValue();
     }
 
     /**
@@ -10646,6 +14109,190 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     public void resetStaticSiteApiKey(
         String resourceGroupName, String name, StaticSiteResetPropertiesArmResource resetPropertiesEnvelope) {
         resetStaticSiteApiKeyWithResponse(resourceGroupName, name, resetPropertiesEnvelope, Context.NONE);
+    }
+
+    /**
+     * Returns details of database connections for a static site.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of static site database connections along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<PagedResponse<DatabaseConnectionInner>> getDatabaseConnectionsWithDetailsSinglePageAsync(
+        String resourceGroupName, String name) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(
+                context ->
+                    service
+                        .getDatabaseConnectionsWithDetails(
+                            this.client.getEndpoint(),
+                            resourceGroupName,
+                            name,
+                            this.client.getSubscriptionId(),
+                            this.client.getApiVersion(),
+                            accept,
+                            context))
+            .<PagedResponse<DatabaseConnectionInner>>map(
+                res ->
+                    new PagedResponseBase<>(
+                        res.getRequest(),
+                        res.getStatusCode(),
+                        res.getHeaders(),
+                        res.getValue().value(),
+                        res.getValue().nextLink(),
+                        null))
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
+    }
+
+    /**
+     * Returns details of database connections for a static site.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of static site database connections along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<PagedResponse<DatabaseConnectionInner>> getDatabaseConnectionsWithDetailsSinglePageAsync(
+        String resourceGroupName, String name, Context context) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service
+            .getDatabaseConnectionsWithDetails(
+                this.client.getEndpoint(),
+                resourceGroupName,
+                name,
+                this.client.getSubscriptionId(),
+                this.client.getApiVersion(),
+                accept,
+                context)
+            .map(
+                res ->
+                    new PagedResponseBase<>(
+                        res.getRequest(),
+                        res.getStatusCode(),
+                        res.getHeaders(),
+                        res.getValue().value(),
+                        res.getValue().nextLink(),
+                        null));
+    }
+
+    /**
+     * Returns details of database connections for a static site.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of static site database connections as paginated response with {@link PagedFlux}.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    private PagedFlux<DatabaseConnectionInner> getDatabaseConnectionsWithDetailsAsync(
+        String resourceGroupName, String name) {
+        return new PagedFlux<>(
+            () -> getDatabaseConnectionsWithDetailsSinglePageAsync(resourceGroupName, name),
+            nextLink -> getDatabaseConnectionsWithDetailsNextSinglePageAsync(nextLink));
+    }
+
+    /**
+     * Returns details of database connections for a static site.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of static site database connections as paginated response with {@link PagedFlux}.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    private PagedFlux<DatabaseConnectionInner> getDatabaseConnectionsWithDetailsAsync(
+        String resourceGroupName, String name, Context context) {
+        return new PagedFlux<>(
+            () -> getDatabaseConnectionsWithDetailsSinglePageAsync(resourceGroupName, name, context),
+            nextLink -> getDatabaseConnectionsWithDetailsNextSinglePageAsync(nextLink, context));
+    }
+
+    /**
+     * Returns details of database connections for a static site.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of static site database connections as paginated response with {@link PagedIterable}.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    public PagedIterable<DatabaseConnectionInner> getDatabaseConnectionsWithDetails(
+        String resourceGroupName, String name) {
+        return new PagedIterable<>(getDatabaseConnectionsWithDetailsAsync(resourceGroupName, name));
+    }
+
+    /**
+     * Returns details of database connections for a static site.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the static site.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of static site database connections as paginated response with {@link PagedIterable}.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    public PagedIterable<DatabaseConnectionInner> getDatabaseConnectionsWithDetails(
+        String resourceGroupName, String name, Context context) {
+        return new PagedIterable<>(getDatabaseConnectionsWithDetailsAsync(resourceGroupName, name, context));
     }
 
     /**
@@ -14838,6 +18485,85 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of static site database connections along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<PagedResponse<DatabaseConnectionInner>> getBuildDatabaseConnectionsNextSinglePageAsync(
+        String nextLink) {
+        if (nextLink == null) {
+            return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
+        }
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(
+                context ->
+                    service.getBuildDatabaseConnectionsNext(nextLink, this.client.getEndpoint(), accept, context))
+            .<PagedResponse<DatabaseConnectionInner>>map(
+                res ->
+                    new PagedResponseBase<>(
+                        res.getRequest(),
+                        res.getStatusCode(),
+                        res.getHeaders(),
+                        res.getValue().value(),
+                        res.getValue().nextLink(),
+                        null))
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
+    }
+
+    /**
+     * Get the next page of items.
+     *
+     * @param nextLink The URL to get the next list of items
+     *     <p>The nextLink parameter.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of static site database connections along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<PagedResponse<DatabaseConnectionInner>> getBuildDatabaseConnectionsNextSinglePageAsync(
+        String nextLink, Context context) {
+        if (nextLink == null) {
+            return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
+        }
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service
+            .getBuildDatabaseConnectionsNext(nextLink, this.client.getEndpoint(), accept, context)
+            .map(
+                res ->
+                    new PagedResponseBase<>(
+                        res.getRequest(),
+                        res.getStatusCode(),
+                        res.getHeaders(),
+                        res.getValue().value(),
+                        res.getValue().nextLink(),
+                        null));
+    }
+
+    /**
+     * Get the next page of items.
+     *
+     * @param nextLink The URL to get the next list of items
+     *     <p>The nextLink parameter.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of static site functions along with {@link PagedResponse} on successful completion of {@link
      *     Mono}.
      */
@@ -14898,6 +18624,87 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
         context = this.client.mergeContext(context);
         return service
             .listStaticSiteBuildFunctionsNext(nextLink, this.client.getEndpoint(), accept, context)
+            .map(
+                res ->
+                    new PagedResponseBase<>(
+                        res.getRequest(),
+                        res.getStatusCode(),
+                        res.getHeaders(),
+                        res.getValue().value(),
+                        res.getValue().nextLink(),
+                        null));
+    }
+
+    /**
+     * Get the next page of items.
+     *
+     * @param nextLink The URL to get the next list of items
+     *     <p>The nextLink parameter.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of static site database connections along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<PagedResponse<DatabaseConnectionInner>> getBuildDatabaseConnectionsWithDetailsNextSinglePageAsync(
+        String nextLink) {
+        if (nextLink == null) {
+            return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
+        }
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(
+                context ->
+                    service
+                        .getBuildDatabaseConnectionsWithDetailsNext(
+                            nextLink, this.client.getEndpoint(), accept, context))
+            .<PagedResponse<DatabaseConnectionInner>>map(
+                res ->
+                    new PagedResponseBase<>(
+                        res.getRequest(),
+                        res.getStatusCode(),
+                        res.getHeaders(),
+                        res.getValue().value(),
+                        res.getValue().nextLink(),
+                        null))
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
+    }
+
+    /**
+     * Get the next page of items.
+     *
+     * @param nextLink The URL to get the next list of items
+     *     <p>The nextLink parameter.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of static site database connections along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<PagedResponse<DatabaseConnectionInner>> getBuildDatabaseConnectionsWithDetailsNextSinglePageAsync(
+        String nextLink, Context context) {
+        if (nextLink == null) {
+            return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
+        }
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service
+            .getBuildDatabaseConnectionsWithDetailsNext(nextLink, this.client.getEndpoint(), accept, context)
             .map(
                 res ->
                     new PagedResponseBase<>(
@@ -14998,6 +18805,83 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of static site basic auth along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<PagedResponse<StaticSiteBasicAuthPropertiesArmResourceInner>> listBasicAuthNextSinglePageAsync(
+        String nextLink) {
+        if (nextLink == null) {
+            return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
+        }
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(context -> service.listBasicAuthNext(nextLink, this.client.getEndpoint(), accept, context))
+            .<PagedResponse<StaticSiteBasicAuthPropertiesArmResourceInner>>map(
+                res ->
+                    new PagedResponseBase<>(
+                        res.getRequest(),
+                        res.getStatusCode(),
+                        res.getHeaders(),
+                        res.getValue().value(),
+                        res.getValue().nextLink(),
+                        null))
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
+    }
+
+    /**
+     * Get the next page of items.
+     *
+     * @param nextLink The URL to get the next list of items
+     *     <p>The nextLink parameter.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of static site basic auth along with {@link PagedResponse} on successful completion of {@link
+     *     Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<PagedResponse<StaticSiteBasicAuthPropertiesArmResourceInner>> listBasicAuthNextSinglePageAsync(
+        String nextLink, Context context) {
+        if (nextLink == null) {
+            return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
+        }
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service
+            .listBasicAuthNext(nextLink, this.client.getEndpoint(), accept, context)
+            .map(
+                res ->
+                    new PagedResponseBase<>(
+                        res.getRequest(),
+                        res.getStatusCode(),
+                        res.getHeaders(),
+                        res.getValue().value(),
+                        res.getValue().nextLink(),
+                        null));
+    }
+
+    /**
+     * Get the next page of items.
+     *
+     * @param nextLink The URL to get the next list of items
+     *     <p>The nextLink parameter.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of static site custom domains along with {@link PagedResponse} on successful completion of
      *     {@link Mono}.
      */
@@ -15058,6 +18942,83 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
         context = this.client.mergeContext(context);
         return service
             .listStaticSiteCustomDomainsNext(nextLink, this.client.getEndpoint(), accept, context)
+            .map(
+                res ->
+                    new PagedResponseBase<>(
+                        res.getRequest(),
+                        res.getStatusCode(),
+                        res.getHeaders(),
+                        res.getValue().value(),
+                        res.getValue().nextLink(),
+                        null));
+    }
+
+    /**
+     * Get the next page of items.
+     *
+     * @param nextLink The URL to get the next list of items
+     *     <p>The nextLink parameter.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of static site database connections along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<PagedResponse<DatabaseConnectionInner>> getDatabaseConnectionsNextSinglePageAsync(String nextLink) {
+        if (nextLink == null) {
+            return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
+        }
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(
+                context -> service.getDatabaseConnectionsNext(nextLink, this.client.getEndpoint(), accept, context))
+            .<PagedResponse<DatabaseConnectionInner>>map(
+                res ->
+                    new PagedResponseBase<>(
+                        res.getRequest(),
+                        res.getStatusCode(),
+                        res.getHeaders(),
+                        res.getValue().value(),
+                        res.getValue().nextLink(),
+                        null))
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
+    }
+
+    /**
+     * Get the next page of items.
+     *
+     * @param nextLink The URL to get the next list of items
+     *     <p>The nextLink parameter.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of static site database connections along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<PagedResponse<DatabaseConnectionInner>> getDatabaseConnectionsNextSinglePageAsync(
+        String nextLink, Context context) {
+        if (nextLink == null) {
+            return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
+        }
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service
+            .getDatabaseConnectionsNext(nextLink, this.client.getEndpoint(), accept, context)
             .map(
                 res ->
                     new PagedResponseBase<>(
@@ -15213,6 +19174,85 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
         context = this.client.mergeContext(context);
         return service
             .getPrivateEndpointConnectionListNext(nextLink, this.client.getEndpoint(), accept, context)
+            .map(
+                res ->
+                    new PagedResponseBase<>(
+                        res.getRequest(),
+                        res.getStatusCode(),
+                        res.getHeaders(),
+                        res.getValue().value(),
+                        res.getValue().nextLink(),
+                        null));
+    }
+
+    /**
+     * Get the next page of items.
+     *
+     * @param nextLink The URL to get the next list of items
+     *     <p>The nextLink parameter.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of static site database connections along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<PagedResponse<DatabaseConnectionInner>> getDatabaseConnectionsWithDetailsNextSinglePageAsync(
+        String nextLink) {
+        if (nextLink == null) {
+            return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
+        }
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(
+                context ->
+                    service.getDatabaseConnectionsWithDetailsNext(nextLink, this.client.getEndpoint(), accept, context))
+            .<PagedResponse<DatabaseConnectionInner>>map(
+                res ->
+                    new PagedResponseBase<>(
+                        res.getRequest(),
+                        res.getStatusCode(),
+                        res.getHeaders(),
+                        res.getValue().value(),
+                        res.getValue().nextLink(),
+                        null))
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
+    }
+
+    /**
+     * Get the next page of items.
+     *
+     * @param nextLink The URL to get the next list of items
+     *     <p>The nextLink parameter.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of static site database connections along with {@link PagedResponse} on successful completion
+     *     of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<PagedResponse<DatabaseConnectionInner>> getDatabaseConnectionsWithDetailsNextSinglePageAsync(
+        String nextLink, Context context) {
+        if (nextLink == null) {
+            return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
+        }
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service
+            .getDatabaseConnectionsWithDetailsNext(nextLink, this.client.getEndpoint(), accept, context)
             .map(
                 res ->
                     new PagedResponseBase<>(

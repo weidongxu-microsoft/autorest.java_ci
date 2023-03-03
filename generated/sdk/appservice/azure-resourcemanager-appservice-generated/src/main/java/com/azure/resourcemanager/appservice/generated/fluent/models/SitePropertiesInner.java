@@ -310,6 +310,14 @@ public final class SitePropertiesInner {
     @JsonProperty(value = "virtualNetworkSubnetId")
     private String virtualNetworkSubnetId;
 
+    /*
+     * Azure Resource Manager ID of the customer's selected Managed Environment on which to host this app. This must be
+     * of the form
+     * /subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.App/managedEnvironments/{managedEnvironmentName}
+     */
+    @JsonProperty(value = "managedEnvironmentId")
+    private String managedEnvironmentId;
+
     /** Creates an instance of SitePropertiesInner class. */
     public SitePropertiesInner() {
     }
@@ -1053,6 +1061,30 @@ public final class SitePropertiesInner {
      */
     public SitePropertiesInner withVirtualNetworkSubnetId(String virtualNetworkSubnetId) {
         this.virtualNetworkSubnetId = virtualNetworkSubnetId;
+        return this;
+    }
+
+    /**
+     * Get the managedEnvironmentId property: Azure Resource Manager ID of the customer's selected Managed Environment
+     * on which to host this app. This must be of the form
+     * /subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.App/managedEnvironments/{managedEnvironmentName}.
+     *
+     * @return the managedEnvironmentId value.
+     */
+    public String managedEnvironmentId() {
+        return this.managedEnvironmentId;
+    }
+
+    /**
+     * Set the managedEnvironmentId property: Azure Resource Manager ID of the customer's selected Managed Environment
+     * on which to host this app. This must be of the form
+     * /subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.App/managedEnvironments/{managedEnvironmentName}.
+     *
+     * @param managedEnvironmentId the managedEnvironmentId value to set.
+     * @return the SitePropertiesInner object itself.
+     */
+    public SitePropertiesInner withManagedEnvironmentId(String managedEnvironmentId) {
+        this.managedEnvironmentId = managedEnvironmentId;
         return this;
     }
 

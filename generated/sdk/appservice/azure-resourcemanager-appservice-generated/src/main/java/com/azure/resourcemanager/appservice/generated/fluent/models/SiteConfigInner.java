@@ -11,6 +11,7 @@ import com.azure.resourcemanager.appservice.generated.models.AutoHealRules;
 import com.azure.resourcemanager.appservice.generated.models.AzureStorageInfoValue;
 import com.azure.resourcemanager.appservice.generated.models.ConnStringInfo;
 import com.azure.resourcemanager.appservice.generated.models.CorsSettings;
+import com.azure.resourcemanager.appservice.generated.models.DefaultAction;
 import com.azure.resourcemanager.appservice.generated.models.Experiments;
 import com.azure.resourcemanager.appservice.generated.models.FtpsState;
 import com.azure.resourcemanager.appservice.generated.models.HandlerMapping;
@@ -151,6 +152,12 @@ public final class SiteConfigInner {
      */
     @JsonProperty(value = "appSettings")
     private List<NameValuePair> appSettings;
+
+    /*
+     * Application metadata. This property cannot be retrieved, since it may contain secrets.
+     */
+    @JsonProperty(value = "metadata")
+    private List<NameValuePair> metadata;
 
     /*
      * Connection strings.
@@ -352,10 +359,22 @@ public final class SiteConfigInner {
     private List<IpSecurityRestriction> ipSecurityRestrictions;
 
     /*
+     * Default action for main access restriction if no rules are matched.
+     */
+    @JsonProperty(value = "ipSecurityRestrictionsDefaultAction")
+    private DefaultAction ipSecurityRestrictionsDefaultAction;
+
+    /*
      * IP security restrictions for scm.
      */
     @JsonProperty(value = "scmIpSecurityRestrictions")
     private List<IpSecurityRestriction> scmIpSecurityRestrictions;
+
+    /*
+     * Default action for scm access restriction if no rules are matched.
+     */
+    @JsonProperty(value = "scmIpSecurityRestrictionsDefaultAction")
+    private DefaultAction scmIpSecurityRestrictionsDefaultAction;
 
     /*
      * IP security restrictions for scm to use main.
@@ -400,6 +419,13 @@ public final class SiteConfigInner {
      */
     @JsonProperty(value = "functionAppScaleLimit")
     private Integer functionAppScaleLimit;
+
+    /*
+     * Maximum number of workers that a site can scale out to.
+     * This setting only applies to apps in plans where ElasticScaleEnabled is <code>true</code>
+     */
+    @JsonProperty(value = "elasticWebAppScaleLimit")
+    private Integer elasticWebAppScaleLimit;
 
     /*
      * Health check path
@@ -854,6 +880,26 @@ public final class SiteConfigInner {
      */
     public SiteConfigInner withAppSettings(List<NameValuePair> appSettings) {
         this.appSettings = appSettings;
+        return this;
+    }
+
+    /**
+     * Get the metadata property: Application metadata. This property cannot be retrieved, since it may contain secrets.
+     *
+     * @return the metadata value.
+     */
+    public List<NameValuePair> metadata() {
+        return this.metadata;
+    }
+
+    /**
+     * Set the metadata property: Application metadata. This property cannot be retrieved, since it may contain secrets.
+     *
+     * @param metadata the metadata value to set.
+     * @return the SiteConfigInner object itself.
+     */
+    public SiteConfigInner withMetadata(List<NameValuePair> metadata) {
+        this.metadata = metadata;
         return this;
     }
 
@@ -1521,6 +1567,28 @@ public final class SiteConfigInner {
     }
 
     /**
+     * Get the ipSecurityRestrictionsDefaultAction property: Default action for main access restriction if no rules are
+     * matched.
+     *
+     * @return the ipSecurityRestrictionsDefaultAction value.
+     */
+    public DefaultAction ipSecurityRestrictionsDefaultAction() {
+        return this.ipSecurityRestrictionsDefaultAction;
+    }
+
+    /**
+     * Set the ipSecurityRestrictionsDefaultAction property: Default action for main access restriction if no rules are
+     * matched.
+     *
+     * @param ipSecurityRestrictionsDefaultAction the ipSecurityRestrictionsDefaultAction value to set.
+     * @return the SiteConfigInner object itself.
+     */
+    public SiteConfigInner withIpSecurityRestrictionsDefaultAction(DefaultAction ipSecurityRestrictionsDefaultAction) {
+        this.ipSecurityRestrictionsDefaultAction = ipSecurityRestrictionsDefaultAction;
+        return this;
+    }
+
+    /**
      * Get the scmIpSecurityRestrictions property: IP security restrictions for scm.
      *
      * @return the scmIpSecurityRestrictions value.
@@ -1537,6 +1605,29 @@ public final class SiteConfigInner {
      */
     public SiteConfigInner withScmIpSecurityRestrictions(List<IpSecurityRestriction> scmIpSecurityRestrictions) {
         this.scmIpSecurityRestrictions = scmIpSecurityRestrictions;
+        return this;
+    }
+
+    /**
+     * Get the scmIpSecurityRestrictionsDefaultAction property: Default action for scm access restriction if no rules
+     * are matched.
+     *
+     * @return the scmIpSecurityRestrictionsDefaultAction value.
+     */
+    public DefaultAction scmIpSecurityRestrictionsDefaultAction() {
+        return this.scmIpSecurityRestrictionsDefaultAction;
+    }
+
+    /**
+     * Set the scmIpSecurityRestrictionsDefaultAction property: Default action for scm access restriction if no rules
+     * are matched.
+     *
+     * @param scmIpSecurityRestrictionsDefaultAction the scmIpSecurityRestrictionsDefaultAction value to set.
+     * @return the SiteConfigInner object itself.
+     */
+    public SiteConfigInner withScmIpSecurityRestrictionsDefaultAction(
+        DefaultAction scmIpSecurityRestrictionsDefaultAction) {
+        this.scmIpSecurityRestrictionsDefaultAction = scmIpSecurityRestrictionsDefaultAction;
         return this;
     }
 
@@ -1687,6 +1778,28 @@ public final class SiteConfigInner {
     }
 
     /**
+     * Get the elasticWebAppScaleLimit property: Maximum number of workers that a site can scale out to. This setting
+     * only applies to apps in plans where ElasticScaleEnabled is &lt;code&gt;true&lt;/code&gt;.
+     *
+     * @return the elasticWebAppScaleLimit value.
+     */
+    public Integer elasticWebAppScaleLimit() {
+        return this.elasticWebAppScaleLimit;
+    }
+
+    /**
+     * Set the elasticWebAppScaleLimit property: Maximum number of workers that a site can scale out to. This setting
+     * only applies to apps in plans where ElasticScaleEnabled is &lt;code&gt;true&lt;/code&gt;.
+     *
+     * @param elasticWebAppScaleLimit the elasticWebAppScaleLimit value to set.
+     * @return the SiteConfigInner object itself.
+     */
+    public SiteConfigInner withElasticWebAppScaleLimit(Integer elasticWebAppScaleLimit) {
+        this.elasticWebAppScaleLimit = elasticWebAppScaleLimit;
+        return this;
+    }
+
+    /**
      * Get the healthCheckPath property: Health check path.
      *
      * @return the healthCheckPath value.
@@ -1828,6 +1941,9 @@ public final class SiteConfigInner {
     public void validate() {
         if (appSettings() != null) {
             appSettings().forEach(e -> e.validate());
+        }
+        if (metadata() != null) {
+            metadata().forEach(e -> e.validate());
         }
         if (connectionStrings() != null) {
             connectionStrings().forEach(e -> e.validate());

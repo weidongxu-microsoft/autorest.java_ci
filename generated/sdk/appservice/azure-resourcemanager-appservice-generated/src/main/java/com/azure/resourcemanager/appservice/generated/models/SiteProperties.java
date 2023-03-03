@@ -350,6 +350,15 @@ public interface SiteProperties {
     String virtualNetworkSubnetId();
 
     /**
+     * Gets the managedEnvironmentId property: Azure Resource Manager ID of the customer's selected Managed Environment
+     * on which to host this app. This must be of the form
+     * /subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.App/managedEnvironments/{managedEnvironmentName}.
+     *
+     * @return the managedEnvironmentId value.
+     */
+    String managedEnvironmentId();
+
+    /**
      * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.SitePropertiesInner object.
      *
      * @return the inner object.
