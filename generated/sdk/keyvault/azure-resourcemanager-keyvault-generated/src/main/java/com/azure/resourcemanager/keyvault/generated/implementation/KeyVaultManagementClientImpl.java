@@ -28,6 +28,7 @@ import com.azure.resourcemanager.keyvault.generated.fluent.ManagedHsmKeysClient;
 import com.azure.resourcemanager.keyvault.generated.fluent.ManagedHsmsClient;
 import com.azure.resourcemanager.keyvault.generated.fluent.MhsmPrivateEndpointConnectionsClient;
 import com.azure.resourcemanager.keyvault.generated.fluent.MhsmPrivateLinkResourcesClient;
+import com.azure.resourcemanager.keyvault.generated.fluent.MhsmRegionsClient;
 import com.azure.resourcemanager.keyvault.generated.fluent.OperationsClient;
 import com.azure.resourcemanager.keyvault.generated.fluent.PrivateEndpointConnectionsClient;
 import com.azure.resourcemanager.keyvault.generated.fluent.PrivateLinkResourcesClient;
@@ -133,6 +134,18 @@ public final class KeyVaultManagementClientImpl implements KeyVaultManagementCli
         return this.keys;
     }
 
+    /** The ManagedHsmKeysClient object to access its operations. */
+    private final ManagedHsmKeysClient managedHsmKeys;
+
+    /**
+     * Gets the ManagedHsmKeysClient object to access its operations.
+     *
+     * @return the ManagedHsmKeysClient object.
+     */
+    public ManagedHsmKeysClient getManagedHsmKeys() {
+        return this.managedHsmKeys;
+    }
+
     /** The VaultsClient object to access its operations. */
     private final VaultsClient vaults;
 
@@ -205,16 +218,16 @@ public final class KeyVaultManagementClientImpl implements KeyVaultManagementCli
         return this.mhsmPrivateLinkResources;
     }
 
-    /** The ManagedHsmKeysClient object to access its operations. */
-    private final ManagedHsmKeysClient managedHsmKeys;
+    /** The MhsmRegionsClient object to access its operations. */
+    private final MhsmRegionsClient mhsmRegions;
 
     /**
-     * Gets the ManagedHsmKeysClient object to access its operations.
+     * Gets the MhsmRegionsClient object to access its operations.
      *
-     * @return the ManagedHsmKeysClient object.
+     * @return the MhsmRegionsClient object.
      */
-    public ManagedHsmKeysClient getManagedHsmKeys() {
-        return this.managedHsmKeys;
+    public MhsmRegionsClient getMhsmRegions() {
+        return this.mhsmRegions;
     }
 
     /** The OperationsClient object to access its operations. */
@@ -264,15 +277,16 @@ public final class KeyVaultManagementClientImpl implements KeyVaultManagementCli
         this.defaultPollInterval = defaultPollInterval;
         this.subscriptionId = subscriptionId;
         this.endpoint = endpoint;
-        this.apiVersion = "2022-11-01";
+        this.apiVersion = "2023-02-01";
         this.keys = new KeysClientImpl(this);
+        this.managedHsmKeys = new ManagedHsmKeysClientImpl(this);
         this.vaults = new VaultsClientImpl(this);
         this.privateEndpointConnections = new PrivateEndpointConnectionsClientImpl(this);
         this.privateLinkResources = new PrivateLinkResourcesClientImpl(this);
         this.managedHsms = new ManagedHsmsClientImpl(this);
         this.mhsmPrivateEndpointConnections = new MhsmPrivateEndpointConnectionsClientImpl(this);
         this.mhsmPrivateLinkResources = new MhsmPrivateLinkResourcesClientImpl(this);
-        this.managedHsmKeys = new ManagedHsmKeysClientImpl(this);
+        this.mhsmRegions = new MhsmRegionsClientImpl(this);
         this.operations = new OperationsClientImpl(this);
         this.secrets = new SecretsClientImpl(this);
     }

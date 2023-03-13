@@ -30,6 +30,7 @@ import com.azure.resourcemanager.keyvault.generated.implementation.ManagedHsmKey
 import com.azure.resourcemanager.keyvault.generated.implementation.ManagedHsmsImpl;
 import com.azure.resourcemanager.keyvault.generated.implementation.MhsmPrivateEndpointConnectionsImpl;
 import com.azure.resourcemanager.keyvault.generated.implementation.MhsmPrivateLinkResourcesImpl;
+import com.azure.resourcemanager.keyvault.generated.implementation.MhsmRegionsImpl;
 import com.azure.resourcemanager.keyvault.generated.implementation.OperationsImpl;
 import com.azure.resourcemanager.keyvault.generated.implementation.PrivateEndpointConnectionsImpl;
 import com.azure.resourcemanager.keyvault.generated.implementation.PrivateLinkResourcesImpl;
@@ -40,6 +41,7 @@ import com.azure.resourcemanager.keyvault.generated.models.ManagedHsmKeys;
 import com.azure.resourcemanager.keyvault.generated.models.ManagedHsms;
 import com.azure.resourcemanager.keyvault.generated.models.MhsmPrivateEndpointConnections;
 import com.azure.resourcemanager.keyvault.generated.models.MhsmPrivateLinkResources;
+import com.azure.resourcemanager.keyvault.generated.models.MhsmRegions;
 import com.azure.resourcemanager.keyvault.generated.models.Operations;
 import com.azure.resourcemanager.keyvault.generated.models.PrivateEndpointConnections;
 import com.azure.resourcemanager.keyvault.generated.models.PrivateLinkResources;
@@ -59,6 +61,8 @@ import java.util.stream.Collectors;
 public final class KeyVaultManager {
     private Keys keys;
 
+    private ManagedHsmKeys managedHsmKeys;
+
     private Vaults vaults;
 
     private PrivateEndpointConnections privateEndpointConnections;
@@ -71,7 +75,7 @@ public final class KeyVaultManager {
 
     private MhsmPrivateLinkResources mhsmPrivateLinkResources;
 
-    private ManagedHsmKeys managedHsmKeys;
+    private MhsmRegions mhsmRegions;
 
     private Operations operations;
 
@@ -312,6 +316,18 @@ public final class KeyVaultManager {
     }
 
     /**
+     * Gets the resource collection API of ManagedHsmKeys. It manages ManagedHsmKey.
+     *
+     * @return Resource collection API of ManagedHsmKeys.
+     */
+    public ManagedHsmKeys managedHsmKeys() {
+        if (this.managedHsmKeys == null) {
+            this.managedHsmKeys = new ManagedHsmKeysImpl(clientObject.getManagedHsmKeys(), this);
+        }
+        return managedHsmKeys;
+    }
+
+    /**
      * Gets the resource collection API of Vaults. It manages Vault.
      *
      * @return Resource collection API of Vaults.
@@ -387,15 +403,15 @@ public final class KeyVaultManager {
     }
 
     /**
-     * Gets the resource collection API of ManagedHsmKeys. It manages ManagedHsmKey.
+     * Gets the resource collection API of MhsmRegions.
      *
-     * @return Resource collection API of ManagedHsmKeys.
+     * @return Resource collection API of MhsmRegions.
      */
-    public ManagedHsmKeys managedHsmKeys() {
-        if (this.managedHsmKeys == null) {
-            this.managedHsmKeys = new ManagedHsmKeysImpl(clientObject.getManagedHsmKeys(), this);
+    public MhsmRegions mhsmRegions() {
+        if (this.mhsmRegions == null) {
+            this.mhsmRegions = new MhsmRegionsImpl(clientObject.getMhsmRegions(), this);
         }
-        return managedHsmKeys;
+        return mhsmRegions;
     }
 
     /**

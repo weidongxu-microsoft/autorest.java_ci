@@ -130,7 +130,7 @@ public final class SecurityRuleImpl implements SecurityRule, SecurityRule.Defini
         return this.innerModel().access();
     }
 
-    public Integer priority() {
+    public int priority() {
         return this.innerModel().priority();
     }
 
@@ -323,7 +323,7 @@ public final class SecurityRuleImpl implements SecurityRule, SecurityRule.Defini
         return this;
     }
 
-    public SecurityRuleImpl withPriority(Integer priority) {
+    public SecurityRuleImpl withPriority(int priority) {
         this.innerModel().withPriority(priority);
         return this;
     }

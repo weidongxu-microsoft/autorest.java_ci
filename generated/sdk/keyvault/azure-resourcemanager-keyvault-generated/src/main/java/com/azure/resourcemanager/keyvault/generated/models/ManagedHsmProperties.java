@@ -5,6 +5,7 @@
 package com.azure.resourcemanager.keyvault.generated.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.resourcemanager.keyvault.generated.fluent.models.MhsmGeoReplicatedRegionInner;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -77,6 +78,12 @@ public final class ManagedHsmProperties {
      */
     @JsonProperty(value = "networkAcls")
     private MhsmNetworkRuleSet networkAcls;
+
+    /*
+     * List of all regions associated with the managed hsm pool.
+     */
+    @JsonProperty(value = "regions")
+    private List<MhsmGeoReplicatedRegionInner> regions;
 
     /*
      * List of private endpoint connections associated with the managed hsm pool.
@@ -288,6 +295,26 @@ public final class ManagedHsmProperties {
     }
 
     /**
+     * Get the regions property: List of all regions associated with the managed hsm pool.
+     *
+     * @return the regions value.
+     */
+    public List<MhsmGeoReplicatedRegionInner> regions() {
+        return this.regions;
+    }
+
+    /**
+     * Set the regions property: List of all regions associated with the managed hsm pool.
+     *
+     * @param regions the regions value to set.
+     * @return the ManagedHsmProperties object itself.
+     */
+    public ManagedHsmProperties withRegions(List<MhsmGeoReplicatedRegionInner> regions) {
+        this.regions = regions;
+        return this;
+    }
+
+    /**
      * Get the privateEndpointConnections property: List of private endpoint connections associated with the managed hsm
      * pool.
      *
@@ -345,6 +372,9 @@ public final class ManagedHsmProperties {
     public void validate() {
         if (networkAcls() != null) {
             networkAcls().validate();
+        }
+        if (regions() != null) {
+            regions().forEach(e -> e.validate());
         }
         if (privateEndpointConnections() != null) {
             privateEndpointConnections().forEach(e -> e.validate());

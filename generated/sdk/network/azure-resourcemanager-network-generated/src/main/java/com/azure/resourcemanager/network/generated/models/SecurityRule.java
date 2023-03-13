@@ -144,7 +144,7 @@ public interface SecurityRule {
      *
      * @return the priority value.
      */
-    Integer priority();
+    int priority();
 
     /**
      * Gets the direction property: The direction of the rule. The direction specifies if rule will be evaluated on
@@ -413,7 +413,7 @@ public interface SecurityRule {
              *     the rule.
              * @return the next definition stage.
              */
-            WithCreate withPriority(Integer priority);
+            WithCreate withPriority(int priority);
         }
         /** The stage of the SecurityRule definition allowing to specify direction. */
         interface WithDirection {
@@ -652,7 +652,7 @@ public interface SecurityRule {
              *     the rule.
              * @return the next definition stage.
              */
-            Update withPriority(Integer priority);
+            Update withPriority(int priority);
         }
         /** The stage of the SecurityRule update allowing to specify direction. */
         interface WithDirection {
