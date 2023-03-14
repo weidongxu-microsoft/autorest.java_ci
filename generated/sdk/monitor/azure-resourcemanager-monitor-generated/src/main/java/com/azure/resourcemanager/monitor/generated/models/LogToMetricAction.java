@@ -14,8 +14,7 @@ import java.util.List;
 /** Specify action need to be taken when rule type is converting log to metric. */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "odata.type")
 @JsonTypeName(
-    "Microsoft.WindowsAzure.Management.Monitoring.Alerts.Models.Microsoft.AppInsights.Nexus.DataContracts.Resources"
-        + ".ScheduledQueryRules.LogToMetricAction")
+    "Microsoft.WindowsAzure.Management.Monitoring.Alerts.Models.Microsoft.AppInsights.Nexus.DataContracts.Resources.ScheduledQueryRules.LogToMetricAction")
 @Fluent
 public final class LogToMetricAction extends Action {
     /*

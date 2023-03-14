@@ -58,8 +58,7 @@ public final class MhsmRegionsClientImpl implements MhsmRegionsClient {
     public interface MhsmRegionsService {
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.KeyVault"
-                + "/managedHSMs/{name}/regions")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.KeyVault/managedHSMs/{name}/regions")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ErrorException.class)
         Mono<Response<MhsmRegionsListResult>> listByResource(

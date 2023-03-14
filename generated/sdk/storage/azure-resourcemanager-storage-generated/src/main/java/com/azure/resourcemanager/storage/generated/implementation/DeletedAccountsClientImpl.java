@@ -69,8 +69,7 @@ public final class DeletedAccountsClientImpl implements DeletedAccountsClient {
 
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/subscriptions/{subscriptionId}/providers/Microsoft.Storage/locations/{location}/deletedAccounts"
-                + "/{deletedAccountName}")
+            "/subscriptions/{subscriptionId}/providers/Microsoft.Storage/locations/{location}/deletedAccounts/{deletedAccountName}")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<DeletedAccountInner>> get(

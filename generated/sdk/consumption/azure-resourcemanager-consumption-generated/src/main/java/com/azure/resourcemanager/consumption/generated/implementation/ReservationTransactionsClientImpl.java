@@ -61,8 +61,7 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
     public interface ReservationTransactionsService {
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/providers/Microsoft.Consumption"
-                + "/reservationTransactions")
+            "/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/providers/Microsoft.Consumption/reservationTransactions")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<ReservationTransactionsListResult>> list(
@@ -75,8 +74,7 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
 
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}"
-                + "/providers/Microsoft.Consumption/reservationTransactions")
+            "/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}/providers/Microsoft.Consumption/reservationTransactions")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<ModernReservationTransactionsListResult>> listByBillingProfile(

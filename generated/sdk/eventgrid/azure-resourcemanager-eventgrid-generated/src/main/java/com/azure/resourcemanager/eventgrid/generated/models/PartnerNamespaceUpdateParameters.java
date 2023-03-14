@@ -63,8 +63,7 @@ public final class PartnerNamespaceUpdateParameters {
     /**
      * Get the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is
      * enabled. You can further restrict to specific IPs by configuring &lt;seealso
-     * cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.PartnerNamespaceUpdateParameterProperties"
-         + ".InboundIpRules"
+     * cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.PartnerNamespaceUpdateParameterProperties.InboundIpRules"
      * /&gt;.
      *
      * @return the publicNetworkAccess value.
@@ -76,8 +75,7 @@ public final class PartnerNamespaceUpdateParameters {
     /**
      * Set the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is
      * enabled. You can further restrict to specific IPs by configuring &lt;seealso
-     * cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.PartnerNamespaceUpdateParameterProperties"
-         + ".InboundIpRules"
+     * cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.PartnerNamespaceUpdateParameterProperties.InboundIpRules"
      * /&gt;.
      *
      * @param publicNetworkAccess the publicNetworkAccess value to set.

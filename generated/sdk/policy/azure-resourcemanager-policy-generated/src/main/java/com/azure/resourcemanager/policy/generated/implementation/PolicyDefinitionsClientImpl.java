@@ -61,8 +61,7 @@ public final class PolicyDefinitionsClientImpl implements PolicyDefinitionsClien
     public interface PolicyDefinitionsService {
         @Headers({"Content-Type: application/json"})
         @Put(
-            "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/policyDefinitions"
-                + "/{policyDefinitionName}")
+            "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/policyDefinitions/{policyDefinitionName}")
         @ExpectedResponses({201})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<PolicyDefinitionInner>> createOrUpdate(
@@ -76,8 +75,7 @@ public final class PolicyDefinitionsClientImpl implements PolicyDefinitionsClien
 
         @Headers({"Content-Type: application/json"})
         @Delete(
-            "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/policyDefinitions"
-                + "/{policyDefinitionName}")
+            "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/policyDefinitions/{policyDefinitionName}")
         @ExpectedResponses({200, 204})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<Void>> delete(
@@ -90,8 +88,7 @@ public final class PolicyDefinitionsClientImpl implements PolicyDefinitionsClien
 
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/policyDefinitions"
-                + "/{policyDefinitionName}")
+            "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/policyDefinitions/{policyDefinitionName}")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<PolicyDefinitionInner>> get(
@@ -115,8 +112,7 @@ public final class PolicyDefinitionsClientImpl implements PolicyDefinitionsClien
 
         @Headers({"Content-Type: application/json"})
         @Put(
-            "/providers/Microsoft.Management/managementGroups/{managementGroupId}/providers/Microsoft.Authorization"
-                + "/policyDefinitions/{policyDefinitionName}")
+            "/providers/Microsoft.Management/managementGroups/{managementGroupId}/providers/Microsoft.Authorization/policyDefinitions/{policyDefinitionName}")
         @ExpectedResponses({201})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<PolicyDefinitionInner>> createOrUpdateAtManagementGroup(
@@ -130,8 +126,7 @@ public final class PolicyDefinitionsClientImpl implements PolicyDefinitionsClien
 
         @Headers({"Content-Type: application/json"})
         @Delete(
-            "/providers/Microsoft.Management/managementGroups/{managementGroupId}/providers/Microsoft.Authorization"
-                + "/policyDefinitions/{policyDefinitionName}")
+            "/providers/Microsoft.Management/managementGroups/{managementGroupId}/providers/Microsoft.Authorization/policyDefinitions/{policyDefinitionName}")
         @ExpectedResponses({200, 204})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<Void>> deleteAtManagementGroup(
@@ -144,8 +139,7 @@ public final class PolicyDefinitionsClientImpl implements PolicyDefinitionsClien
 
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/providers/Microsoft.Management/managementGroups/{managementGroupId}/providers/Microsoft.Authorization"
-                + "/policyDefinitions/{policyDefinitionName}")
+            "/providers/Microsoft.Management/managementGroups/{managementGroupId}/providers/Microsoft.Authorization/policyDefinitions/{policyDefinitionName}")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<PolicyDefinitionInner>> getAtManagementGroup(
@@ -183,8 +177,7 @@ public final class PolicyDefinitionsClientImpl implements PolicyDefinitionsClien
 
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/providers/Microsoft.Management/managementGroups/{managementGroupId}/providers/Microsoft.Authorization"
-                + "/policyDefinitions")
+            "/providers/Microsoft.Management/managementGroups/{managementGroupId}/providers/Microsoft.Authorization/policyDefinitions")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<PolicyDefinitionListResult>> listByManagementGroup(

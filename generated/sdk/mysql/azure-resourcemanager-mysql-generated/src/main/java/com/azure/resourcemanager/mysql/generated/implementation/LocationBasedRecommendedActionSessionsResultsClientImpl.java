@@ -66,8 +66,7 @@ public final class LocationBasedRecommendedActionSessionsResultsClientImpl
     public interface LocationBasedRecommendedActionSessionsResultsService {
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/subscriptions/{subscriptionId}/providers/Microsoft.DBforMySQL/locations/{locationName}"
-                + "/recommendedActionSessionsOperationResults/{operationId}")
+            "/subscriptions/{subscriptionId}/providers/Microsoft.DBforMySQL/locations/{locationName}/recommendedActionSessionsOperationResults/{operationId}")
         @ExpectedResponses({200, 201})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<RecommendationActionsResultList>> list(

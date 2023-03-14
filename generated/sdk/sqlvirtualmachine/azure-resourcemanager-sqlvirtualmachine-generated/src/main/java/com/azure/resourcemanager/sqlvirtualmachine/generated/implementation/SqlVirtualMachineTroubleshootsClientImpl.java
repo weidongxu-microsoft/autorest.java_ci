@@ -63,8 +63,7 @@ public final class SqlVirtualMachineTroubleshootsClientImpl implements SqlVirtua
     public interface SqlVirtualMachineTroubleshootsService {
         @Headers({"Content-Type: application/json"})
         @Post(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.SqlVirtualMachine"
-                + "/sqlVirtualMachines/{sqlVirtualMachineName}/troubleshoot")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.SqlVirtualMachine/sqlVirtualMachines/{sqlVirtualMachineName}/troubleshoot")
         @ExpectedResponses({200, 202})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<Flux<ByteBuffer>>> troubleshoot(

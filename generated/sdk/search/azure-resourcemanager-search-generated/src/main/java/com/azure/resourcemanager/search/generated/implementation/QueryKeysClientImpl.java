@@ -61,8 +61,7 @@ public final class QueryKeysClientImpl implements QueryKeysClient {
     public interface QueryKeysService {
         @Headers({"Content-Type: application/json"})
         @Post(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Search"
-                + "/searchServices/{searchServiceName}/createQueryKey/{name}")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Search/searchServices/{searchServiceName}/createQueryKey/{name}")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<QueryKeyInner>> create(
@@ -78,8 +77,7 @@ public final class QueryKeysClientImpl implements QueryKeysClient {
 
         @Headers({"Content-Type: application/json"})
         @Post(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Search"
-                + "/searchServices/{searchServiceName}/listQueryKeys")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Search/searchServices/{searchServiceName}/listQueryKeys")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<ListQueryKeysResult>> listBySearchService(
@@ -94,8 +92,7 @@ public final class QueryKeysClientImpl implements QueryKeysClient {
 
         @Headers({"Content-Type: application/json"})
         @Delete(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Search"
-                + "/searchServices/{searchServiceName}/deleteQueryKey/{key}")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Search/searchServices/{searchServiceName}/deleteQueryKey/{key}")
         @ExpectedResponses({200, 204, 404})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<Void>> delete(

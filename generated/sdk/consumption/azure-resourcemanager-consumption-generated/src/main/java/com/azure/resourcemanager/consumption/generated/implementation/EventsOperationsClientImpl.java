@@ -58,8 +58,7 @@ public final class EventsOperationsClientImpl implements EventsOperationsClient 
     public interface EventsOperationsService {
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}"
-                + "/providers/Microsoft.Consumption/events")
+            "/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}/providers/Microsoft.Consumption/events")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<Events>> listByBillingProfile(

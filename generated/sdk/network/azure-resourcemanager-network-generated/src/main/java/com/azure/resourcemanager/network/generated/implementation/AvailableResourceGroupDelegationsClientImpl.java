@@ -64,8 +64,7 @@ public final class AvailableResourceGroupDelegationsClientImpl implements Availa
     public interface AvailableResourceGroupDelegationsService {
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/locations"
-                + "/{location}/availableDelegations")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/locations/{location}/availableDelegations")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<AvailableDelegationsResult>> list(

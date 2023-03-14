@@ -67,8 +67,7 @@ public final class PriceSheetsClientImpl implements PriceSheetsClient {
 
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/subscriptions/{subscriptionId}/providers/Microsoft.Billing/billingPeriods/{billingPeriodName}/providers"
-                + "/Microsoft.Consumption/pricesheets/default")
+            "/subscriptions/{subscriptionId}/providers/Microsoft.Billing/billingPeriods/{billingPeriodName}/providers/Microsoft.Consumption/pricesheets/default")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<PriceSheetResultInner>> getByBillingPeriod(

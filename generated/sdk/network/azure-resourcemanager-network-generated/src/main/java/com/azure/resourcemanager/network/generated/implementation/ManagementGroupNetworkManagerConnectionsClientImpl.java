@@ -69,8 +69,7 @@ public final class ManagementGroupNetworkManagerConnectionsClientImpl
     public interface ManagementGroupNetworkManagerConnectionsService {
         @Headers({"Content-Type: application/json"})
         @Put(
-            "/providers/Microsoft.Management/managementGroups/{managementGroupId}/providers/Microsoft.Network"
-                + "/networkManagerConnections/{networkManagerConnectionName}")
+            "/providers/Microsoft.Management/managementGroups/{managementGroupId}/providers/Microsoft.Network/networkManagerConnections/{networkManagerConnectionName}")
         @ExpectedResponses({200, 201})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<NetworkManagerConnectionInner>> createOrUpdate(
@@ -84,8 +83,7 @@ public final class ManagementGroupNetworkManagerConnectionsClientImpl
 
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/providers/Microsoft.Management/managementGroups/{managementGroupId}/providers/Microsoft.Network"
-                + "/networkManagerConnections/{networkManagerConnectionName}")
+            "/providers/Microsoft.Management/managementGroups/{managementGroupId}/providers/Microsoft.Network/networkManagerConnections/{networkManagerConnectionName}")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<NetworkManagerConnectionInner>> get(
@@ -98,8 +96,7 @@ public final class ManagementGroupNetworkManagerConnectionsClientImpl
 
         @Headers({"Content-Type: application/json"})
         @Delete(
-            "/providers/Microsoft.Management/managementGroups/{managementGroupId}/providers/Microsoft.Network"
-                + "/networkManagerConnections/{networkManagerConnectionName}")
+            "/providers/Microsoft.Management/managementGroups/{managementGroupId}/providers/Microsoft.Network/networkManagerConnections/{networkManagerConnectionName}")
         @ExpectedResponses({200, 204})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<Void>> delete(
@@ -112,8 +109,7 @@ public final class ManagementGroupNetworkManagerConnectionsClientImpl
 
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/providers/Microsoft.Management/managementGroups/{managementGroupId}/providers/Microsoft.Network"
-                + "/networkManagerConnections")
+            "/providers/Microsoft.Management/managementGroups/{managementGroupId}/providers/Microsoft.Network/networkManagerConnections")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<NetworkManagerConnectionListResult>> list(

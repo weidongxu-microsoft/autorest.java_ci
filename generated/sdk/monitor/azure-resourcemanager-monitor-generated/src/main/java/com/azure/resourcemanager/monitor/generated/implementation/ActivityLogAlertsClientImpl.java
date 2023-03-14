@@ -63,8 +63,7 @@ public final class ActivityLogAlertsClientImpl implements ActivityLogAlertsClien
     public interface ActivityLogAlertsService {
         @Headers({"Content-Type: application/json"})
         @Put(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.insights"
-                + "/activityLogAlerts/{activityLogAlertName}")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.insights/activityLogAlerts/{activityLogAlertName}")
         @ExpectedResponses({200, 201})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<ActivityLogAlertResourceInner>> createOrUpdate(
@@ -79,8 +78,7 @@ public final class ActivityLogAlertsClientImpl implements ActivityLogAlertsClien
 
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.insights"
-                + "/activityLogAlerts/{activityLogAlertName}")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.insights/activityLogAlerts/{activityLogAlertName}")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<ActivityLogAlertResourceInner>> getByResourceGroup(
@@ -94,8 +92,7 @@ public final class ActivityLogAlertsClientImpl implements ActivityLogAlertsClien
 
         @Headers({"Content-Type: application/json"})
         @Delete(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.insights"
-                + "/activityLogAlerts/{activityLogAlertName}")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.insights/activityLogAlerts/{activityLogAlertName}")
         @ExpectedResponses({200, 204})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<Void>> delete(
@@ -109,8 +106,7 @@ public final class ActivityLogAlertsClientImpl implements ActivityLogAlertsClien
 
         @Headers({"Content-Type: application/json"})
         @Patch(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.insights"
-                + "/activityLogAlerts/{activityLogAlertName}")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.insights/activityLogAlerts/{activityLogAlertName}")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<ActivityLogAlertResourceInner>> update(
@@ -136,8 +132,7 @@ public final class ActivityLogAlertsClientImpl implements ActivityLogAlertsClien
 
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.insights"
-                + "/activityLogAlerts")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.insights/activityLogAlerts")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<ActivityLogAlertList>> listByResourceGroup(

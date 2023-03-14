@@ -57,8 +57,7 @@ public final class PrivateLinkScopeOperationStatusClientImpl implements PrivateL
     public interface PrivateLinkScopeOperationStatusService {
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.insights"
-                + "/privateLinkScopeOperationStatuses/{asyncOperationId}")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.insights/privateLinkScopeOperationStatuses/{asyncOperationId}")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<OperationStatusInner>> getByResourceGroup(

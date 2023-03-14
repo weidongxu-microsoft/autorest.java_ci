@@ -61,8 +61,7 @@ public final class CertificateOrdersDiagnosticsClientImpl implements Certificate
     public interface CertificateOrdersDiagnosticsService {
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers"
-                + "/Microsoft.CertificateRegistration/certificateOrders/{certificateOrderName}/detectors")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CertificateRegistration/certificateOrders/{certificateOrderName}/detectors")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
         Mono<Response<DetectorResponseCollection>> listAppServiceCertificateOrderDetectorResponse(
@@ -76,9 +75,7 @@ public final class CertificateOrdersDiagnosticsClientImpl implements Certificate
 
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers"
-                + "/Microsoft.CertificateRegistration/certificateOrders/{certificateOrderName}/detectors"
-                + "/{detectorName}")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CertificateRegistration/certificateOrders/{certificateOrderName}/detectors/{detectorName}")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
         Mono<Response<DetectorResponseInner>> getAppServiceCertificateOrderDetectorResponse(

@@ -21,13 +21,13 @@ import com.azure.core.annotation.ReturnType;
 import com.azure.core.annotation.ServiceInterface;
 import com.azure.core.annotation.ServiceMethod;
 import com.azure.core.annotation.UnexpectedResponseExceptionType;
-import com.azure.core.exception.HttpResponseException;
 import com.azure.core.http.rest.PagedFlux;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.PagedResponse;
 import com.azure.core.http.rest.PagedResponseBase;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.RestProxy;
+import com.azure.core.management.exception.ManagementException;
 import com.azure.core.management.polling.PollResult;
 import com.azure.core.util.Context;
 import com.azure.core.util.FluxUtil;
@@ -108,11 +108,10 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
 
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms"
-                + "/{name}")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms/{name}")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(
-            value = HttpResponseException.class,
+            value = ManagementException.class,
             code = {404})
         @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
         Mono<Response<AppServicePlanInner>> getByResourceGroup(
@@ -126,8 +125,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
 
         @Headers({"Content-Type: application/json"})
         @Put(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms"
-                + "/{name}")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms/{name}")
         @ExpectedResponses({200, 202})
         @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
         Mono<Response<Flux<ByteBuffer>>> createOrUpdate(
@@ -142,8 +140,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
 
         @Headers({"Content-Type: application/json"})
         @Delete(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms"
-                + "/{name}")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms/{name}")
         @ExpectedResponses({200, 204})
         @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
         Mono<Response<Void>> delete(
@@ -157,8 +154,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
 
         @Headers({"Content-Type: application/json"})
         @Patch(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms"
-                + "/{name}")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms/{name}")
         @ExpectedResponses({200, 202})
         @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
         Mono<Response<AppServicePlanInner>> update(
@@ -173,8 +169,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
 
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms"
-                + "/{name}/capabilities")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms/{name}/capabilities")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
         Mono<Response<List<CapabilityInner>>> listCapabilities(
@@ -188,8 +183,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
 
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms"
-                + "/{name}/hybridConnectionNamespaces/{namespaceName}/relays/{relayName}")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms/{name}/hybridConnectionNamespaces/{namespaceName}/relays/{relayName}")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
         Mono<Response<HybridConnectionInner>> getHybridConnection(
@@ -205,8 +199,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
 
         @Headers({"Content-Type: application/json"})
         @Delete(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms"
-                + "/{name}/hybridConnectionNamespaces/{namespaceName}/relays/{relayName}")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms/{name}/hybridConnectionNamespaces/{namespaceName}/relays/{relayName}")
         @ExpectedResponses({200, 204})
         @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
         Mono<Response<Void>> deleteHybridConnection(
@@ -222,8 +215,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
 
         @Headers({"Content-Type: application/json"})
         @Post(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms"
-                + "/{name}/hybridConnectionNamespaces/{namespaceName}/relays/{relayName}/listKeys")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms/{name}/hybridConnectionNamespaces/{namespaceName}/relays/{relayName}/listKeys")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
         Mono<Response<HybridConnectionKeyInner>> listHybridConnectionKeys(
@@ -239,8 +231,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
 
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms"
-                + "/{name}/hybridConnectionNamespaces/{namespaceName}/relays/{relayName}/sites")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms/{name}/hybridConnectionNamespaces/{namespaceName}/relays/{relayName}/sites")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
         Mono<Response<ResourceCollection>> listWebAppsByHybridConnection(
@@ -256,8 +247,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
 
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms"
-                + "/{name}/hybridConnectionPlanLimits/limit")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms/{name}/hybridConnectionPlanLimits/limit")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
         Mono<Response<HybridConnectionLimitsInner>> getHybridConnectionPlanLimit(
@@ -271,8 +261,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
 
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms"
-                + "/{name}/hybridConnectionRelays")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms/{name}/hybridConnectionRelays")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
         Mono<Response<HybridConnectionCollection>> listHybridConnections(
@@ -286,8 +275,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
 
         @Headers({"Content-Type: application/json"})
         @Post(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms"
-                + "/{name}/restartSites")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms/{name}/restartSites")
         @ExpectedResponses({204})
         @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
         Mono<Response<Void>> restartWebApps(
@@ -302,8 +290,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
 
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms"
-                + "/{name}/sites")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms/{name}/sites")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
         Mono<Response<WebAppCollection>> listWebApps(
@@ -320,8 +307,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
 
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms"
-                + "/{name}/skus")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms/{name}/skus")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
         Mono<Response<Object>> getServerFarmSkus(
@@ -335,8 +321,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
 
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms"
-                + "/{name}/usages")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms/{name}/usages")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
         Mono<Response<CsmUsageQuotaCollection>> listUsages(
@@ -351,8 +336,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
 
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms"
-                + "/{name}/virtualNetworkConnections")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms/{name}/virtualNetworkConnections")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
         Mono<Response<List<VnetInfoResourceInner>>> listVnets(
@@ -366,11 +350,10 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
 
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms"
-                + "/{name}/virtualNetworkConnections/{vnetName}")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms/{name}/virtualNetworkConnections/{vnetName}")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(
-            value = HttpResponseException.class,
+            value = ManagementException.class,
             code = {404})
         @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
         Mono<Response<VnetInfoResourceInner>> getVnetFromServerFarm(
@@ -385,8 +368,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
 
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms"
-                + "/{name}/virtualNetworkConnections/{vnetName}/gateways/{gatewayName}")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms/{name}/virtualNetworkConnections/{vnetName}/gateways/{gatewayName}")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
         Mono<Response<VnetGatewayInner>> getVnetGateway(
@@ -402,8 +384,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
 
         @Headers({"Content-Type: application/json"})
         @Put(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms"
-                + "/{name}/virtualNetworkConnections/{vnetName}/gateways/{gatewayName}")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms/{name}/virtualNetworkConnections/{vnetName}/gateways/{gatewayName}")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
         Mono<Response<VnetGatewayInner>> updateVnetGateway(
@@ -420,8 +401,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
 
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms"
-                + "/{name}/virtualNetworkConnections/{vnetName}/routes")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms/{name}/virtualNetworkConnections/{vnetName}/routes")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
         Mono<Response<List<VnetRouteInner>>> listRoutesForVnet(
@@ -436,11 +416,10 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
 
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms"
-                + "/{name}/virtualNetworkConnections/{vnetName}/routes/{routeName}")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms/{name}/virtualNetworkConnections/{vnetName}/routes/{routeName}")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(
-            value = HttpResponseException.class,
+            value = ManagementException.class,
             code = {404})
         @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
         Mono<Response<List<VnetRouteInner>>> getRouteForVnet(
@@ -456,11 +435,10 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
 
         @Headers({"Content-Type: application/json"})
         @Put(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms"
-                + "/{name}/virtualNetworkConnections/{vnetName}/routes/{routeName}")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms/{name}/virtualNetworkConnections/{vnetName}/routes/{routeName}")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(
-            value = HttpResponseException.class,
+            value = ManagementException.class,
             code = {400, 404})
         @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
         Mono<Response<VnetRouteInner>> createOrUpdateVnetRoute(
@@ -477,11 +455,10 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
 
         @Headers({"Content-Type: application/json"})
         @Delete(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms"
-                + "/{name}/virtualNetworkConnections/{vnetName}/routes/{routeName}")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms/{name}/virtualNetworkConnections/{vnetName}/routes/{routeName}")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(
-            value = HttpResponseException.class,
+            value = ManagementException.class,
             code = {404})
         @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
         Mono<Response<Void>> deleteVnetRoute(
@@ -497,11 +474,10 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
 
         @Headers({"Content-Type: application/json"})
         @Patch(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms"
-                + "/{name}/virtualNetworkConnections/{vnetName}/routes/{routeName}")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms/{name}/virtualNetworkConnections/{vnetName}/routes/{routeName}")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(
-            value = HttpResponseException.class,
+            value = ManagementException.class,
             code = {400, 404})
         @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
         Mono<Response<VnetRouteInner>> updateVnetRoute(
@@ -518,8 +494,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
 
         @Headers({"Content-Type: application/json"})
         @Post(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms"
-                + "/{name}/workers/{workerName}/reboot")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms/{name}/workers/{workerName}/reboot")
         @ExpectedResponses({204})
         @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
         Mono<Response<Void>> rebootWorker(
@@ -968,7 +943,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @param name Name of the App Service plan.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws HttpResponseException thrown if the request is rejected by server on status code 404.
+     * @throws ManagementException thrown if the request is rejected by server on status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return app Service plan along with {@link Response} on successful completion of {@link Mono}.
      */
@@ -1020,7 +995,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws HttpResponseException thrown if the request is rejected by server on status code 404.
+     * @throws ManagementException thrown if the request is rejected by server on status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return app Service plan along with {@link Response} on successful completion of {@link Mono}.
      */
@@ -1068,7 +1043,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @param name Name of the App Service plan.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws HttpResponseException thrown if the request is rejected by server on status code 404.
+     * @throws ManagementException thrown if the request is rejected by server on status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return app Service plan on successful completion of {@link Mono}.
      */
@@ -1088,7 +1063,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws HttpResponseException thrown if the request is rejected by server on status code 404.
+     * @throws ManagementException thrown if the request is rejected by server on status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return app Service plan along with {@link Response}.
      */
@@ -1107,7 +1082,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @param name Name of the App Service plan.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws HttpResponseException thrown if the request is rejected by server on status code 404.
+     * @throws ManagementException thrown if the request is rejected by server on status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return app Service plan.
      */
@@ -3935,7 +3910,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @param vnetName Name of the Virtual Network.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws HttpResponseException thrown if the request is rejected by server on status code 404.
+     * @throws ManagementException thrown if the request is rejected by server on status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return virtual Network information ARM resource along with {@link Response} on successful completion of {@link
      *     Mono}.
@@ -3993,7 +3968,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws HttpResponseException thrown if the request is rejected by server on status code 404.
+     * @throws ManagementException thrown if the request is rejected by server on status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return virtual Network information ARM resource along with {@link Response} on successful completion of {@link
      *     Mono}.
@@ -4047,7 +4022,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @param vnetName Name of the Virtual Network.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws HttpResponseException thrown if the request is rejected by server on status code 404.
+     * @throws ManagementException thrown if the request is rejected by server on status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return virtual Network information ARM resource on successful completion of {@link Mono}.
      */
@@ -4069,7 +4044,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws HttpResponseException thrown if the request is rejected by server on status code 404.
+     * @throws ManagementException thrown if the request is rejected by server on status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return virtual Network information ARM resource along with {@link Response}.
      */
@@ -4089,7 +4064,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @param vnetName Name of the Virtual Network.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws HttpResponseException thrown if the request is rejected by server on status code 404.
+     * @throws ManagementException thrown if the request is rejected by server on status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return virtual Network information ARM resource.
      */
@@ -4682,7 +4657,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @param routeName Name of the Virtual Network route.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws HttpResponseException thrown if the request is rejected by server on status code 404.
+     * @throws ManagementException thrown if the request is rejected by server on status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return array of VnetRoute along with {@link Response} on successful completion of {@link Mono}.
      */
@@ -4744,7 +4719,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws HttpResponseException thrown if the request is rejected by server on status code 404.
+     * @throws ManagementException thrown if the request is rejected by server on status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return array of VnetRoute along with {@link Response} on successful completion of {@link Mono}.
      */
@@ -4802,7 +4777,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @param routeName Name of the Virtual Network route.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws HttpResponseException thrown if the request is rejected by server on status code 404.
+     * @throws ManagementException thrown if the request is rejected by server on status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return array of VnetRoute on successful completion of {@link Mono}.
      */
@@ -4825,7 +4800,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws HttpResponseException thrown if the request is rejected by server on status code 404.
+     * @throws ManagementException thrown if the request is rejected by server on status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return array of VnetRoute along with {@link Response}.
      */
@@ -4846,7 +4821,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @param routeName Name of the Virtual Network route.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws HttpResponseException thrown if the request is rejected by server on status code 404.
+     * @throws ManagementException thrown if the request is rejected by server on status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return array of VnetRoute.
      */
@@ -4868,7 +4843,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @param route Definition of the Virtual Network route.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws HttpResponseException thrown if the request is rejected by server on status code 400, 404.
+     * @throws ManagementException thrown if the request is rejected by server on status code 400, 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return virtual Network route contract used to pass routing information for a Virtual Network along with {@link
      *     Response} on successful completion of {@link Mono}.
@@ -4938,7 +4913,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws HttpResponseException thrown if the request is rejected by server on status code 400, 404.
+     * @throws ManagementException thrown if the request is rejected by server on status code 400, 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return virtual Network route contract used to pass routing information for a Virtual Network along with {@link
      *     Response} on successful completion of {@link Mono}.
@@ -5009,7 +4984,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @param route Definition of the Virtual Network route.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws HttpResponseException thrown if the request is rejected by server on status code 400, 404.
+     * @throws ManagementException thrown if the request is rejected by server on status code 400, 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return virtual Network route contract used to pass routing information for a Virtual Network on successful
      *     completion of {@link Mono}.
@@ -5034,7 +5009,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws HttpResponseException thrown if the request is rejected by server on status code 400, 404.
+     * @throws ManagementException thrown if the request is rejected by server on status code 400, 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return virtual Network route contract used to pass routing information for a Virtual Network along with {@link
      *     Response}.
@@ -5063,7 +5038,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @param route Definition of the Virtual Network route.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws HttpResponseException thrown if the request is rejected by server on status code 400, 404.
+     * @throws ManagementException thrown if the request is rejected by server on status code 400, 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return virtual Network route contract used to pass routing information for a Virtual Network.
      */
@@ -5085,7 +5060,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @param routeName Name of the Virtual Network route.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws HttpResponseException thrown if the request is rejected by server on status code 404.
+     * @throws ManagementException thrown if the request is rejected by server on status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response} on successful completion of {@link Mono}.
      */
@@ -5147,7 +5122,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws HttpResponseException thrown if the request is rejected by server on status code 404.
+     * @throws ManagementException thrown if the request is rejected by server on status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response} on successful completion of {@link Mono}.
      */
@@ -5205,7 +5180,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @param routeName Name of the Virtual Network route.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws HttpResponseException thrown if the request is rejected by server on status code 404.
+     * @throws ManagementException thrown if the request is rejected by server on status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return A {@link Mono} that completes when a successful response is received.
      */
@@ -5227,7 +5202,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws HttpResponseException thrown if the request is rejected by server on status code 404.
+     * @throws ManagementException thrown if the request is rejected by server on status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -5248,7 +5223,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @param routeName Name of the Virtual Network route.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws HttpResponseException thrown if the request is rejected by server on status code 404.
+     * @throws ManagementException thrown if the request is rejected by server on status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
@@ -5268,7 +5243,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @param route Definition of the Virtual Network route.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws HttpResponseException thrown if the request is rejected by server on status code 400, 404.
+     * @throws ManagementException thrown if the request is rejected by server on status code 400, 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return virtual Network route contract used to pass routing information for a Virtual Network along with {@link
      *     Response} on successful completion of {@link Mono}.
@@ -5338,7 +5313,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws HttpResponseException thrown if the request is rejected by server on status code 400, 404.
+     * @throws ManagementException thrown if the request is rejected by server on status code 400, 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return virtual Network route contract used to pass routing information for a Virtual Network along with {@link
      *     Response} on successful completion of {@link Mono}.
@@ -5409,7 +5384,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @param route Definition of the Virtual Network route.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws HttpResponseException thrown if the request is rejected by server on status code 400, 404.
+     * @throws ManagementException thrown if the request is rejected by server on status code 400, 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return virtual Network route contract used to pass routing information for a Virtual Network on successful
      *     completion of {@link Mono}.
@@ -5434,7 +5409,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws HttpResponseException thrown if the request is rejected by server on status code 400, 404.
+     * @throws ManagementException thrown if the request is rejected by server on status code 400, 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return virtual Network route contract used to pass routing information for a Virtual Network along with {@link
      *     Response}.
@@ -5462,7 +5437,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @param route Definition of the Virtual Network route.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws HttpResponseException thrown if the request is rejected by server on status code 400, 404.
+     * @throws ManagementException thrown if the request is rejected by server on status code 400, 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return virtual Network route contract used to pass routing information for a Virtual Network.
      */

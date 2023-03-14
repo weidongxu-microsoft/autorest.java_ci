@@ -54,8 +54,7 @@ public final class MhsmPrivateLinkResourcesClientImpl implements MhsmPrivateLink
     public interface MhsmPrivateLinkResourcesService {
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.KeyVault"
-                + "/managedHSMs/{name}/privateLinkResources")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.KeyVault/managedHSMs/{name}/privateLinkResources")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<MhsmPrivateLinkResourceListResultInner>> listByMhsmResource(

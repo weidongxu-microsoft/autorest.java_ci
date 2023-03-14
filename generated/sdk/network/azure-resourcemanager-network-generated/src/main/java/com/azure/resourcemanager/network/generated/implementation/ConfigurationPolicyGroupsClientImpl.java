@@ -68,9 +68,7 @@ public final class ConfigurationPolicyGroupsClientImpl implements ConfigurationP
     public interface ConfigurationPolicyGroupsService {
         @Headers({"Content-Type: application/json"})
         @Put(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network"
-                + "/vpnServerConfigurations/{vpnServerConfigurationName}/configurationPolicyGroups"
-                + "/{configurationPolicyGroupName}")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/vpnServerConfigurations/{vpnServerConfigurationName}/configurationPolicyGroups/{configurationPolicyGroupName}")
         @ExpectedResponses({200, 201})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<Flux<ByteBuffer>>> createOrUpdate(
@@ -87,9 +85,7 @@ public final class ConfigurationPolicyGroupsClientImpl implements ConfigurationP
 
         @Headers({"Content-Type: application/json"})
         @Delete(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network"
-                + "/vpnServerConfigurations/{vpnServerConfigurationName}/configurationPolicyGroups"
-                + "/{configurationPolicyGroupName}")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/vpnServerConfigurations/{vpnServerConfigurationName}/configurationPolicyGroups/{configurationPolicyGroupName}")
         @ExpectedResponses({200, 202, 204})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<Flux<ByteBuffer>>> delete(
@@ -104,9 +100,7 @@ public final class ConfigurationPolicyGroupsClientImpl implements ConfigurationP
 
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network"
-                + "/vpnServerConfigurations/{vpnServerConfigurationName}/configurationPolicyGroups"
-                + "/{configurationPolicyGroupName}")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/vpnServerConfigurations/{vpnServerConfigurationName}/configurationPolicyGroups/{configurationPolicyGroupName}")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<VpnServerConfigurationPolicyGroupInner>> get(
@@ -121,8 +115,7 @@ public final class ConfigurationPolicyGroupsClientImpl implements ConfigurationP
 
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network"
-                + "/vpnServerConfigurations/{vpnServerConfigurationName}/configurationPolicyGroups")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/vpnServerConfigurations/{vpnServerConfigurationName}/configurationPolicyGroups")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<ListVpnServerConfigurationPolicyGroupsResult>> listByVpnServerConfiguration(

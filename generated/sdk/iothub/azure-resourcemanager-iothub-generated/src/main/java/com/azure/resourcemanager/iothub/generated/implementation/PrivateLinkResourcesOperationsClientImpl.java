@@ -58,8 +58,7 @@ public final class PrivateLinkResourcesOperationsClientImpl implements PrivateLi
     public interface PrivateLinkResourcesOperationsService {
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/iotHubs"
-                + "/{resourceName}/privateLinkResources")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/iotHubs/{resourceName}/privateLinkResources")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ErrorDetailsException.class)
         Mono<Response<PrivateLinkResourcesInner>> list(
@@ -73,8 +72,7 @@ public final class PrivateLinkResourcesOperationsClientImpl implements PrivateLi
 
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/iotHubs"
-                + "/{resourceName}/privateLinkResources/{groupId}")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/iotHubs/{resourceName}/privateLinkResources/{groupId}")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ErrorDetailsException.class)
         Mono<Response<GroupIdInformationInner>> get(

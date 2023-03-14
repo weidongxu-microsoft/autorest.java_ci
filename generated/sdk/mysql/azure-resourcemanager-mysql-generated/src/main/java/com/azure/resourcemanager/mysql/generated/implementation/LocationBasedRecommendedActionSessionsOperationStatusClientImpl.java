@@ -62,8 +62,7 @@ public final class LocationBasedRecommendedActionSessionsOperationStatusClientIm
     public interface LocationBasedRecommendedActionSessionsOperationStatusService {
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/subscriptions/{subscriptionId}/providers/Microsoft.DBforMySQL/locations/{locationName}"
-                + "/recommendedActionSessionsAzureAsyncOperation/{operationId}")
+            "/subscriptions/{subscriptionId}/providers/Microsoft.DBforMySQL/locations/{locationName}/recommendedActionSessionsAzureAsyncOperation/{operationId}")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<RecommendedActionSessionsOperationStatusInner>> get(

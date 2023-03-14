@@ -78,8 +78,7 @@ public final class MetricTrigger {
 
     /*
      * List of dimension conditions. For example:
-     * [{"DimensionName":"AppName","Operator":"Equals","Values":["App1"]},{"DimensionName":"Deployment""
-         + ","Operator":"Equals","Values":["default"]}].
+     * [{"DimensionName":"AppName","Operator":"Equals","Values":["App1"]},{"DimensionName":"Deployment","Operator":"Equals","Values":["default"]}].
      */
     @JsonProperty(value = "dimensions")
     private List<ScaleRuleMetricDimension> dimensions;
@@ -304,8 +303,7 @@ public final class MetricTrigger {
 
     /**
      * Get the dimensions property: List of dimension conditions. For example:
-     * [{"DimensionName":"AppName","Operator":"Equals","Values":["App1"]},{"DimensionName":"Deployment""
-         + ","Operator":"Equals","Values":["default"]}].
+     * [{"DimensionName":"AppName","Operator":"Equals","Values":["App1"]},{"DimensionName":"Deployment","Operator":"Equals","Values":["default"]}].
      *
      * @return the dimensions value.
      */
@@ -315,8 +313,7 @@ public final class MetricTrigger {
 
     /**
      * Set the dimensions property: List of dimension conditions. For example:
-     * [{"DimensionName":"AppName","Operator":"Equals","Values":["App1"]},{"DimensionName":"Deployment""
-         + ","Operator":"Equals","Values":["default"]}].
+     * [{"DimensionName":"AppName","Operator":"Equals","Values":["App1"]},{"DimensionName":"Deployment","Operator":"Equals","Values":["default"]}].
      *
      * @param dimensions the dimensions value to set.
      * @return the MetricTrigger object itself.

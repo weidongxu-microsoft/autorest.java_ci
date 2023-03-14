@@ -58,8 +58,7 @@ public final class IotHubsClientImpl implements IotHubsClient {
     public interface IotHubsService {
         @Headers({"Content-Type: application/json"})
         @Post(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs"
-                + "/{iotHubName}/failover")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs/{iotHubName}/failover")
         @ExpectedResponses({200, 202})
         @UnexpectedResponseExceptionType(ErrorDetailsException.class)
         Mono<Response<Flux<ByteBuffer>>> manualFailover(

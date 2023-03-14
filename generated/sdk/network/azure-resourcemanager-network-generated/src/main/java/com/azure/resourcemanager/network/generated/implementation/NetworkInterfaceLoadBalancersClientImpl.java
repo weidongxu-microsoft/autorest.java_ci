@@ -62,8 +62,7 @@ public final class NetworkInterfaceLoadBalancersClientImpl implements NetworkInt
     public interface NetworkInterfaceLoadBalancersService {
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network"
-                + "/networkInterfaces/{networkInterfaceName}/loadBalancers")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkInterfaces/{networkInterfaceName}/loadBalancers")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<NetworkInterfaceLoadBalancerListResult>> list(

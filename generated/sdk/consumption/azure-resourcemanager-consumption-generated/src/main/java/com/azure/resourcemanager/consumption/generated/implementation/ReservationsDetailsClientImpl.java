@@ -58,8 +58,7 @@ public final class ReservationsDetailsClientImpl implements ReservationsDetailsC
     public interface ReservationsDetailsService {
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/providers/Microsoft.Capacity/reservationorders/{reservationOrderId}/providers/Microsoft.Consumption"
-                + "/reservationDetails")
+            "/providers/Microsoft.Capacity/reservationorders/{reservationOrderId}/providers/Microsoft.Consumption/reservationDetails")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<ReservationDetailsListResult>> listByReservationOrder(
@@ -72,8 +71,7 @@ public final class ReservationsDetailsClientImpl implements ReservationsDetailsC
 
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/providers/Microsoft.Capacity/reservationorders/{reservationOrderId}/reservations/{reservationId}"
-                + "/providers/Microsoft.Consumption/reservationDetails")
+            "/providers/Microsoft.Capacity/reservationorders/{reservationOrderId}/reservations/{reservationId}/providers/Microsoft.Consumption/reservationDetails")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<ReservationDetailsListResult>> listByReservationOrderAndReservation(

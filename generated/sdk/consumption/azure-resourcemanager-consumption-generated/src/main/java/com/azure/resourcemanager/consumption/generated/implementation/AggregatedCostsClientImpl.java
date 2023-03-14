@@ -53,8 +53,7 @@ public final class AggregatedCostsClientImpl implements AggregatedCostsClient {
     public interface AggregatedCostsService {
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/providers/Microsoft.Management/managementGroups/{managementGroupId}/providers/Microsoft.Consumption"
-                + "/aggregatedcost")
+            "/providers/Microsoft.Management/managementGroups/{managementGroupId}/providers/Microsoft.Consumption/aggregatedcost")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<ManagementGroupAggregatedCostResultInner>> getByManagementGroup(
@@ -67,8 +66,7 @@ public final class AggregatedCostsClientImpl implements AggregatedCostsClient {
 
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/providers/Microsoft.Management/managementGroups/{managementGroupId}/providers/Microsoft.Billing"
-                + "/billingPeriods/{billingPeriodName}/providers/Microsoft.Consumption/aggregatedCost")
+            "/providers/Microsoft.Management/managementGroups/{managementGroupId}/providers/Microsoft.Billing/billingPeriods/{billingPeriodName}/providers/Microsoft.Consumption/aggregatedCost")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<ManagementGroupAggregatedCostResultInner>> getForBillingPeriodByManagementGroup(

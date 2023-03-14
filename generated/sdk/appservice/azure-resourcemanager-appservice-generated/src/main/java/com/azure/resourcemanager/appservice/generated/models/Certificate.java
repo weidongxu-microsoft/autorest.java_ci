@@ -184,8 +184,7 @@ public interface Certificate {
 
     /**
      * Gets the serverFarmId property: Resource ID of the associated App Service plan, formatted as:
-     * "/subscriptions/{subscriptionID}/resourceGroups/{groupName}/providers/Microsoft.Web/serverfarms"
-         + "/{appServicePlanName}".
+     * "/subscriptions/{subscriptionID}/resourceGroups/{groupName}/providers/Microsoft.Web/serverfarms/{appServicePlanName}".
      *
      * @return the serverFarmId value.
      */
@@ -377,12 +376,10 @@ public interface Certificate {
         interface WithServerFarmId {
             /**
              * Specifies the serverFarmId property: Resource ID of the associated App Service plan, formatted as:
-             * "/subscriptions/{subscriptionID}/resourceGroups/{groupName}/providers/Microsoft.Web/serverfarms"
-                 + "/{appServicePlanName}"..
+             * "/subscriptions/{subscriptionID}/resourceGroups/{groupName}/providers/Microsoft.Web/serverfarms/{appServicePlanName}"..
              *
              * @param serverFarmId Resource ID of the associated App Service plan, formatted as:
-             *     "/subscriptions/{subscriptionID}/resourceGroups/{groupName}/providers/Microsoft.Web/serverfarms"
-                 + "/{appServicePlanName}".
+             *     "/subscriptions/{subscriptionID}/resourceGroups/{groupName}/providers/Microsoft.Web/serverfarms/{appServicePlanName}".
              * @return the next definition stage.
              */
             WithCreate withServerFarmId(String serverFarmId);
@@ -496,12 +493,10 @@ public interface Certificate {
         interface WithServerFarmId {
             /**
              * Specifies the serverFarmId property: Resource ID of the associated App Service plan, formatted as:
-             * "/subscriptions/{subscriptionID}/resourceGroups/{groupName}/providers/Microsoft.Web/serverfarms"
-                 + "/{appServicePlanName}"..
+             * "/subscriptions/{subscriptionID}/resourceGroups/{groupName}/providers/Microsoft.Web/serverfarms/{appServicePlanName}"..
              *
              * @param serverFarmId Resource ID of the associated App Service plan, formatted as:
-             *     "/subscriptions/{subscriptionID}/resourceGroups/{groupName}/providers/Microsoft.Web/serverfarms"
-                 + "/{appServicePlanName}".
+             *     "/subscriptions/{subscriptionID}/resourceGroups/{groupName}/providers/Microsoft.Web/serverfarms/{appServicePlanName}".
              * @return the next definition stage.
              */
             Update withServerFarmId(String serverFarmId);

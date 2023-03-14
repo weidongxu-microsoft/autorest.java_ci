@@ -63,8 +63,7 @@ public final class AnnotationsClientImpl implements AnnotationsClient {
     public interface AnnotationsService {
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/components"
-                + "/{resourceName}/Annotations")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/components/{resourceName}/Annotations")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(AnnotationErrorException.class)
         Mono<Response<AnnotationsListResult>> list(
@@ -80,8 +79,7 @@ public final class AnnotationsClientImpl implements AnnotationsClient {
 
         @Headers({"Content-Type: application/json"})
         @Put(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/components"
-                + "/{resourceName}/Annotations")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/components/{resourceName}/Annotations")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(AnnotationErrorException.class)
         Mono<Response<List<AnnotationInner>>> create(
@@ -96,8 +94,7 @@ public final class AnnotationsClientImpl implements AnnotationsClient {
 
         @Headers({"Accept: application/json;q=0.9", "Content-Type: application/json"})
         @Delete(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/components"
-                + "/{resourceName}/Annotations/{annotationId}")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/components/{resourceName}/Annotations/{annotationId}")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<Void>> delete(
@@ -111,8 +108,7 @@ public final class AnnotationsClientImpl implements AnnotationsClient {
 
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/components"
-                + "/{resourceName}/Annotations/{annotationId}")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/components/{resourceName}/Annotations/{annotationId}")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(AnnotationErrorException.class)
         Mono<Response<List<AnnotationInner>>> get(

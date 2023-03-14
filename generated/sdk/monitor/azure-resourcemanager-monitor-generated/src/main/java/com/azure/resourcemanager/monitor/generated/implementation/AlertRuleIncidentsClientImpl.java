@@ -58,8 +58,7 @@ public final class AlertRuleIncidentsClientImpl implements AlertRuleIncidentsCli
     public interface AlertRuleIncidentsService {
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/microsoft.insights/alertrules"
-                + "/{ruleName}/incidents/{incidentName}")
+            "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/microsoft.insights/alertrules/{ruleName}/incidents/{incidentName}")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<IncidentInner>> get(
@@ -74,8 +73,7 @@ public final class AlertRuleIncidentsClientImpl implements AlertRuleIncidentsCli
 
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/microsoft.insights/alertrules"
-                + "/{ruleName}/incidents")
+            "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/microsoft.insights/alertrules/{ruleName}/incidents")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<IncidentListResult>> listByAlertRule(

@@ -63,8 +63,7 @@ public final class FirewallPolicyIdpsSignaturesFilterValuesClientImpl
     public interface FirewallPolicyIdpsSignaturesFilterValuesService {
         @Headers({"Content-Type: application/json"})
         @Post(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network"
-                + "/firewallPolicies/{firewallPolicyName}/listIdpsFilterOptions")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/firewallPolicies/{firewallPolicyName}/listIdpsFilterOptions")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<SignatureOverridesFilterValuesResponseInner>> list(

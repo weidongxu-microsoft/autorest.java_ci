@@ -58,8 +58,7 @@ public final class LotsOperationsClientImpl implements LotsOperationsClient {
     public interface LotsOperationsService {
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}"
-                + "/providers/Microsoft.Consumption/lots")
+            "/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}/providers/Microsoft.Consumption/lots")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<Lots>> listByBillingProfile(
@@ -84,8 +83,7 @@ public final class LotsOperationsClientImpl implements LotsOperationsClient {
 
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/customers/{customerId}/providers"
-                + "/Microsoft.Consumption/lots")
+            "/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/customers/{customerId}/providers/Microsoft.Consumption/lots")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<Lots>> listByCustomer(

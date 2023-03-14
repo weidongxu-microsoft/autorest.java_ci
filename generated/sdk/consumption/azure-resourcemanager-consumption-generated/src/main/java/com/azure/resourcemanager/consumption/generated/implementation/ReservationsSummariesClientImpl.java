@@ -60,8 +60,7 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
     public interface ReservationsSummariesService {
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/providers/Microsoft.Capacity/reservationorders/{reservationOrderId}/providers/Microsoft.Consumption"
-                + "/reservationSummaries")
+            "/providers/Microsoft.Capacity/reservationorders/{reservationOrderId}/providers/Microsoft.Consumption/reservationSummaries")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<ReservationSummariesListResult>> listByReservationOrder(
@@ -75,8 +74,7 @@ public final class ReservationsSummariesClientImpl implements ReservationsSummar
 
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/providers/Microsoft.Capacity/reservationorders/{reservationOrderId}/reservations/{reservationId}"
-                + "/providers/Microsoft.Consumption/reservationSummaries")
+            "/providers/Microsoft.Capacity/reservationorders/{reservationOrderId}/reservations/{reservationId}/providers/Microsoft.Consumption/reservationSummaries")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<ReservationSummariesListResult>> listByReservationOrderAndReservation(

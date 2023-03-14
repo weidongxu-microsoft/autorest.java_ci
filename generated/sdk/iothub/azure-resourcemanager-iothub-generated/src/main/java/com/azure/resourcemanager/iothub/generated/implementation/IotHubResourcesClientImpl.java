@@ -92,8 +92,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     public interface IotHubResourcesService {
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs"
-                + "/{resourceName}")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs/{resourceName}")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ErrorDetailsException.class)
         Mono<Response<IotHubDescriptionInner>> getByResourceGroup(
@@ -107,8 +106,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
 
         @Headers({"Content-Type: application/json"})
         @Put(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs"
-                + "/{resourceName}")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs/{resourceName}")
         @ExpectedResponses({200, 201})
         @UnexpectedResponseExceptionType(ErrorDetailsException.class)
         Mono<Response<Flux<ByteBuffer>>> createOrUpdate(
@@ -124,8 +122,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
 
         @Headers({"Content-Type: application/json"})
         @Patch(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs"
-                + "/{resourceName}")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs/{resourceName}")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<Flux<ByteBuffer>>> update(
@@ -140,8 +137,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
 
         @Headers({"Content-Type: application/json"})
         @Delete(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs"
-                + "/{resourceName}")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs/{resourceName}")
         @ExpectedResponses({200, 202, 204, 404})
         @UnexpectedResponseExceptionType(ErrorDetailsException.class)
         Mono<Response<Flux<ByteBuffer>>> delete(
@@ -178,8 +174,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
 
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs"
-                + "/{resourceName}/IotHubStats")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs/{resourceName}/IotHubStats")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ErrorDetailsException.class)
         Mono<Response<RegistryStatisticsInner>> getStats(
@@ -193,8 +188,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
 
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs"
-                + "/{resourceName}/skus")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs/{resourceName}/skus")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ErrorDetailsException.class)
         Mono<Response<IotHubSkuDescriptionListResult>> getValidSkus(
@@ -208,8 +202,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
 
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs"
-                + "/{resourceName}/eventHubEndpoints/{eventHubEndpointName}/ConsumerGroups")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs/{resourceName}/eventHubEndpoints/{eventHubEndpointName}/ConsumerGroups")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ErrorDetailsException.class)
         Mono<Response<EventHubConsumerGroupsListResult>> listEventHubConsumerGroups(
@@ -224,8 +217,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
 
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs"
-                + "/{resourceName}/eventHubEndpoints/{eventHubEndpointName}/ConsumerGroups/{name}")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs/{resourceName}/eventHubEndpoints/{eventHubEndpointName}/ConsumerGroups/{name}")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ErrorDetailsException.class)
         Mono<Response<EventHubConsumerGroupInfoInner>> getEventHubConsumerGroup(
@@ -241,8 +233,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
 
         @Headers({"Content-Type: application/json"})
         @Put(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs"
-                + "/{resourceName}/eventHubEndpoints/{eventHubEndpointName}/ConsumerGroups/{name}")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs/{resourceName}/eventHubEndpoints/{eventHubEndpointName}/ConsumerGroups/{name}")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ErrorDetailsException.class)
         Mono<Response<EventHubConsumerGroupInfoInner>> createEventHubConsumerGroup(
@@ -259,8 +250,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
 
         @Headers({"Content-Type: application/json"})
         @Delete(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs"
-                + "/{resourceName}/eventHubEndpoints/{eventHubEndpointName}/ConsumerGroups/{name}")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs/{resourceName}/eventHubEndpoints/{eventHubEndpointName}/ConsumerGroups/{name}")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ErrorDetailsException.class)
         Mono<Response<Void>> deleteEventHubConsumerGroup(
@@ -276,8 +266,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
 
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs"
-                + "/{resourceName}/jobs")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs/{resourceName}/jobs")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ErrorDetailsException.class)
         Mono<Response<JobResponseListResult>> listJobs(
@@ -291,8 +280,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
 
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs"
-                + "/{resourceName}/jobs/{jobId}")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs/{resourceName}/jobs/{jobId}")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ErrorDetailsException.class)
         Mono<Response<JobResponseInner>> getJob(
@@ -307,8 +295,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
 
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs"
-                + "/{resourceName}/quotaMetrics")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs/{resourceName}/quotaMetrics")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ErrorDetailsException.class)
         Mono<Response<IotHubQuotaMetricInfoListResult>> getQuotaMetrics(
@@ -322,8 +309,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
 
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs"
-                + "/{iotHubName}/routingEndpointsHealth")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs/{iotHubName}/routingEndpointsHealth")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ErrorDetailsException.class)
         Mono<Response<EndpointHealthDataListResult>> getEndpointHealth(
@@ -349,8 +335,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
 
         @Headers({"Content-Type: application/json"})
         @Post(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs"
-                + "/{iotHubName}/routing/routes/$testall")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs/{iotHubName}/routing/routes/$testall")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ErrorDetailsException.class)
         Mono<Response<TestAllRoutesResultInner>> testAllRoutes(
@@ -365,8 +350,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
 
         @Headers({"Content-Type: application/json"})
         @Post(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs"
-                + "/{iotHubName}/routing/routes/$testnew")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs/{iotHubName}/routing/routes/$testnew")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ErrorDetailsException.class)
         Mono<Response<TestRouteResultInner>> testRoute(
@@ -381,8 +365,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
 
         @Headers({"Content-Type: application/json"})
         @Post(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs"
-                + "/{resourceName}/listkeys")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs/{resourceName}/listkeys")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ErrorDetailsException.class)
         Mono<Response<SharedAccessSignatureAuthorizationRuleListResult>> listKeys(
@@ -396,8 +379,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
 
         @Headers({"Content-Type: application/json"})
         @Post(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs"
-                + "/{resourceName}/IotHubKeys/{keyName}/listkeys")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs/{resourceName}/IotHubKeys/{keyName}/listkeys")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ErrorDetailsException.class)
         Mono<Response<SharedAccessSignatureAuthorizationRuleInner>> getKeysForKeyName(
@@ -412,8 +394,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
 
         @Headers({"Content-Type: application/json"})
         @Post(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs"
-                + "/{resourceName}/exportDevices")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs/{resourceName}/exportDevices")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ErrorDetailsException.class)
         Mono<Response<JobResponseInner>> exportDevices(
@@ -428,8 +409,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
 
         @Headers({"Content-Type: application/json"})
         @Post(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs"
-                + "/{resourceName}/importDevices")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs/{resourceName}/importDevices")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ErrorDetailsException.class)
         Mono<Response<JobResponseInner>> importDevices(

@@ -60,8 +60,7 @@ public final class AvailableEndpointServicesClientImpl implements AvailableEndpo
     public interface AvailableEndpointServicesService {
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/subscriptions/{subscriptionId}/providers/Microsoft.Network/locations/{location}"
-                + "/virtualNetworkAvailableEndpointServices")
+            "/subscriptions/{subscriptionId}/providers/Microsoft.Network/locations/{location}/virtualNetworkAvailableEndpointServices")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<EndpointServicesListResult>> list(

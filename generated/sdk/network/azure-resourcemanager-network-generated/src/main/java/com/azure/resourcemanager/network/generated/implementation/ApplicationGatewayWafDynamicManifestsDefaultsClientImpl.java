@@ -61,8 +61,7 @@ public final class ApplicationGatewayWafDynamicManifestsDefaultsClientImpl
     public interface ApplicationGatewayWafDynamicManifestsDefaultsService {
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/subscriptions/{subscriptionId}/providers/Microsoft.Network/locations/{location}"
-                + "/applicationGatewayWafDynamicManifests/dafault")
+            "/subscriptions/{subscriptionId}/providers/Microsoft.Network/locations/{location}/applicationGatewayWafDynamicManifests/dafault")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<ApplicationGatewayWafDynamicManifestResultInner>> get(

@@ -108,8 +108,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a web app, a mobile app backend, or an API app along with {@link Response}.
      */
@@ -125,8 +125,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a web app, a mobile app backend, or an API app.
      */
@@ -146,8 +146,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -164,8 +164,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void delete(String resourceGroupName, String name);
@@ -347,8 +347,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -365,8 +365,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteBackup(String resourceGroupName, String name, String backupId);
@@ -1870,8 +1870,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return continuous Web Job Information along with {@link Response}.
      */
@@ -1889,8 +1889,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return continuous Web Job Information.
      */
@@ -1941,8 +1941,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -1960,8 +1960,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void startContinuousWebJob(String resourceGroupName, String name, String webJobName);
@@ -1978,8 +1978,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -1997,8 +1997,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void stopContinuousWebJob(String resourceGroupName, String name, String webJobName);
@@ -2373,8 +2373,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     409.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 409.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return mSDeploy ARM response.
      */
@@ -2392,8 +2392,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     409.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 409.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return mSDeploy ARM response.
      */
@@ -2410,8 +2410,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return mSDeploy log along with {@link Response}.
      */
@@ -2427,8 +2427,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return mSDeploy log.
      */
@@ -2506,8 +2506,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of Kudu function information elements as paginated response with {@link PagedIterable}.
      */
@@ -2524,8 +2524,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of Kudu function information elements as paginated response with {@link PagedIterable}.
      */
@@ -2574,8 +2574,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return function information along with {@link Response}.
      */
@@ -2593,8 +2593,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return function information.
      */
@@ -2612,8 +2612,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -2631,8 +2631,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteFunction(String resourceGroupName, String name, String functionName);
@@ -2689,8 +2689,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -2709,8 +2709,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteFunctionSecret(String resourceGroupName, String name, String functionName, String keyName);
@@ -2926,8 +2926,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -2946,8 +2946,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteHostSecret(String resourceGroupName, String name, String keyType, String keyName);
@@ -3099,8 +3099,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -3119,8 +3119,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteHybridConnection(String resourceGroupName, String name, String namespaceName, String relayName);
@@ -3235,8 +3235,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -3254,8 +3254,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteRelayServiceConnection(String resourceGroupName, String name, String entityName);
@@ -3372,8 +3372,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     409.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 409.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return mSDeploy ARM response.
      */
@@ -3393,8 +3393,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     409.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 409.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return mSDeploy ARM response.
      */
@@ -3413,8 +3413,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return mSDeploy log along with {@link Response}.
      */
@@ -3432,8 +3432,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return mSDeploy log.
      */
@@ -3452,8 +3452,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of Kudu process information elements as paginated response with {@link PagedIterable}.
      */
@@ -3473,8 +3473,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of Kudu process information elements as paginated response with {@link PagedIterable}.
      */
@@ -3495,8 +3495,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return process Information along with {@link Response}.
      */
@@ -3516,8 +3516,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return process Information.
      */
@@ -3539,8 +3539,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -3562,8 +3562,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteInstanceProcess(String resourceGroupName, String name, String processId, String instanceId);
@@ -3582,8 +3582,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the response body along with {@link Response}.
      */
@@ -3603,8 +3603,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the response.
      */
@@ -3624,8 +3624,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of Kudu thread information elements as paginated response with {@link PagedIterable}.
      */
@@ -3647,8 +3647,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of Kudu thread information elements as paginated response with {@link PagedIterable}.
      */
@@ -3670,8 +3670,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return process Module Information along with {@link Response}.
      */
@@ -3697,8 +3697,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return process Module Information.
      */
@@ -3718,8 +3718,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of Kudu thread information elements as paginated response with {@link PagedIterable}.
      */
@@ -3740,8 +3740,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of Kudu thread information elements as paginated response with {@link PagedIterable}.
      */
@@ -4037,8 +4037,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -4054,8 +4054,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteSwiftVirtualNetwork(String resourceGroupName, String name);
@@ -4115,8 +4115,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return full view of network features for an app (presently VNET integration and Hybrid Connections) along with
      *     {@link Response}.
@@ -4135,8 +4135,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return full view of network features for an app (presently VNET integration and Hybrid Connections).
      */
@@ -4842,8 +4842,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of Kudu process information elements as paginated response with {@link PagedIterable}.
      */
@@ -4861,8 +4861,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of Kudu process information elements as paginated response with {@link PagedIterable}.
      */
@@ -4880,8 +4880,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return process Information along with {@link Response}.
      */
@@ -4899,8 +4899,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return process Information.
      */
@@ -4920,8 +4920,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -4940,8 +4940,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteProcess(String resourceGroupName, String name, String processId);
@@ -4958,8 +4958,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the response body along with {@link Response}.
      */
@@ -4977,8 +4977,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the response.
      */
@@ -4996,8 +4996,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of Kudu thread information elements as paginated response with {@link PagedIterable}.
      */
@@ -5016,8 +5016,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of Kudu thread information elements as paginated response with {@link PagedIterable}.
      */
@@ -5037,8 +5037,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return process Module Information along with {@link Response}.
      */
@@ -5057,8 +5057,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return process Module Information.
      */
@@ -5075,8 +5075,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of Kudu thread information elements as paginated response with {@link PagedIterable}.
      */
@@ -5094,8 +5094,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of Kudu thread information elements as paginated response with {@link PagedIterable}.
      */
@@ -5412,8 +5412,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of Kudu site extension information elements as paginated response with {@link PagedIterable}.
      */
@@ -5430,8 +5430,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of Kudu site extension information elements as paginated response with {@link PagedIterable}.
      */
@@ -5449,8 +5449,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return site Extension Information along with {@link Response}.
      */
@@ -5468,8 +5468,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return site Extension Information.
      */
@@ -5486,8 +5486,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     429.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 429.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return site Extension Information.
      */
@@ -5505,8 +5505,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     429.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 429.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return site Extension Information.
      */
@@ -5525,8 +5525,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -5544,8 +5544,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteSiteExtension(String resourceGroupName, String name, String siteExtensionId);
@@ -5593,8 +5593,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a web app, a mobile app backend, or an API app along with {@link Response}.
      */
@@ -5611,8 +5611,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a web app, a mobile app backend, or an API app.
      */
@@ -5675,8 +5675,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -5699,8 +5699,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteSlot(String resourceGroupName, String name, String slot);
@@ -5942,8 +5942,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -5963,8 +5963,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteBackupSlot(String resourceGroupName, String name, String backupId, String slot);
@@ -7581,8 +7581,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return continuous Web Job Information along with {@link Response}.
      */
@@ -7602,8 +7602,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return continuous Web Job Information.
      */
@@ -7660,8 +7660,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -7681,8 +7681,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void startContinuousWebJobSlot(String resourceGroupName, String name, String webJobName, String slot);
@@ -7701,8 +7701,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -7722,8 +7722,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void stopContinuousWebJobSlot(String resourceGroupName, String name, String webJobName, String slot);
@@ -8292,8 +8292,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     409.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 409.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return mSDeploy ARM response.
      */
@@ -8312,8 +8312,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     409.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 409.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return mSDeploy ARM response.
      */
@@ -8332,8 +8332,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return mSDeploy log along with {@link Response}.
      */
@@ -8351,8 +8351,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return mSDeploy log.
      */
@@ -8369,8 +8369,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of Kudu function information elements as paginated response with {@link PagedIterable}.
      */
@@ -8388,8 +8388,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of Kudu function information elements as paginated response with {@link PagedIterable}.
      */
@@ -8443,8 +8443,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return function information along with {@link Response}.
      */
@@ -8463,8 +8463,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return function information.
      */
@@ -8531,8 +8531,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -8551,8 +8551,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteInstanceFunctionSlot(String resourceGroupName, String name, String functionName, String slot);
@@ -8618,8 +8618,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -8639,8 +8639,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteFunctionSecretSlot(
@@ -8877,8 +8877,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -8898,8 +8898,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteHostSecretSlot(String resourceGroupName, String name, String keyType, String keyName, String slot);
@@ -9166,8 +9166,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -9187,8 +9187,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteHybridConnectionSlot(
@@ -9419,8 +9419,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -9440,8 +9440,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteRelayServiceConnectionSlot(String resourceGroupName, String name, String entityName, String slot);
@@ -9616,8 +9616,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     409.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 409.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return mSDeploy ARM response.
      */
@@ -9638,8 +9638,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     409.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 409.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return mSDeploy ARM response.
      */
@@ -9659,8 +9659,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return mSDeploy log along with {@link Response}.
      */
@@ -9679,8 +9679,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return mSDeploy log.
      */
@@ -9701,8 +9701,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of Kudu process information elements as paginated response with {@link PagedIterable}.
      */
@@ -9725,8 +9725,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of Kudu process information elements as paginated response with {@link PagedIterable}.
      */
@@ -9749,8 +9749,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return process Information along with {@link Response}.
      */
@@ -9772,8 +9772,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return process Information.
      */
@@ -9798,8 +9798,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -9823,8 +9823,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteInstanceProcessSlot(
@@ -9846,8 +9846,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the response body along with {@link Response}.
      */
@@ -9869,8 +9869,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the response.
      */
@@ -9893,8 +9893,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of Kudu thread information elements as paginated response with {@link PagedIterable}.
      */
@@ -9918,8 +9918,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of Kudu thread information elements as paginated response with {@link PagedIterable}.
      */
@@ -9943,8 +9943,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return process Module Information along with {@link Response}.
      */
@@ -9973,8 +9973,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return process Module Information.
      */
@@ -9996,8 +9996,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of Kudu thread information elements as paginated response with {@link PagedIterable}.
      */
@@ -10020,8 +10020,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of Kudu thread information elements as paginated response with {@link PagedIterable}.
      */
@@ -10267,8 +10267,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -10287,8 +10287,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteSwiftVirtualNetworkSlot(String resourceGroupName, String name, String slot);
@@ -10358,8 +10358,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return full view of network features for an app (presently VNET integration and Hybrid Connections) along with
      *     {@link Response}.
@@ -10380,8 +10380,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return full view of network features for an app (presently VNET integration and Hybrid Connections).
      */
@@ -11250,8 +11250,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of Kudu process information elements as paginated response with {@link PagedIterable}.
      */
@@ -11271,8 +11271,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of Kudu process information elements as paginated response with {@link PagedIterable}.
      */
@@ -11292,8 +11292,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return process Information along with {@link Response}.
      */
@@ -11313,8 +11313,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return process Information.
      */
@@ -11336,8 +11336,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -11359,8 +11359,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteProcessSlot(String resourceGroupName, String name, String processId, String slot);
@@ -11379,8 +11379,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the response body along with {@link Response}.
      */
@@ -11400,8 +11400,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the response.
      */
@@ -11421,8 +11421,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of Kudu thread information elements as paginated response with {@link PagedIterable}.
      */
@@ -11444,8 +11444,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of Kudu thread information elements as paginated response with {@link PagedIterable}.
      */
@@ -11467,8 +11467,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return process Module Information along with {@link Response}.
      */
@@ -11489,8 +11489,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return process Module Information.
      */
@@ -11510,8 +11510,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of Kudu thread information elements as paginated response with {@link PagedIterable}.
      */
@@ -11532,8 +11532,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of Kudu thread information elements as paginated response with {@link PagedIterable}.
      */
@@ -11943,8 +11943,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of Kudu site extension information elements as paginated response with {@link PagedIterable}.
      */
@@ -11962,8 +11962,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of Kudu site extension information elements as paginated response with {@link PagedIterable}.
      */
@@ -11983,8 +11983,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return site Extension Information along with {@link Response}.
      */
@@ -12003,8 +12003,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return site Extension Information.
      */
@@ -12022,8 +12022,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     429.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 429.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return site Extension Information.
      */
@@ -12043,8 +12043,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     429.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 429.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return site Extension Information.
      */
@@ -12065,8 +12065,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -12086,8 +12086,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteSiteExtensionSlot(String resourceGroupName, String name, String siteExtensionId, String slot);
@@ -12322,8 +12322,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -12342,8 +12342,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteSourceControlSlot(String resourceGroupName, String name, String slot);
@@ -12643,8 +12643,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return triggered Web Job Information along with {@link Response}.
      */
@@ -12663,8 +12663,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return triggered Web Job Information.
      */
@@ -12719,8 +12719,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of Kudu continuous web job information elements as paginated response with {@link
      *     PagedIterable}.
@@ -12741,8 +12741,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of Kudu continuous web job information elements as paginated response with {@link
      *     PagedIterable}.
@@ -12764,8 +12764,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return triggered Web Job History along with {@link Response}.
      */
@@ -12785,8 +12785,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return triggered Web Job History.
      */
@@ -12806,8 +12806,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -12826,8 +12826,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void runTriggeredWebJobSlot(String resourceGroupName, String name, String webJobName, String slot);
@@ -12959,8 +12959,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -12980,8 +12980,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteVnetConnectionSlot(String resourceGroupName, String name, String vnetName, String slot);
@@ -13001,8 +13001,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the Virtual Network gateway contract along with {@link Response}.
      */
@@ -13023,8 +13023,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the Virtual Network gateway contract.
      */
@@ -13314,8 +13314,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -13332,8 +13332,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteSourceControl(String resourceGroupName, String name);
@@ -13608,8 +13608,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return triggered Web Job Information along with {@link Response}.
      */
@@ -13627,8 +13627,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return triggered Web Job Information.
      */
@@ -13678,8 +13678,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of Kudu continuous web job information elements as paginated response with {@link
      *     PagedIterable}.
@@ -13699,8 +13699,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of Kudu continuous web job information elements as paginated response with {@link
      *     PagedIterable}.
@@ -13721,8 +13721,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return triggered Web Job History along with {@link Response}.
      */
@@ -13741,8 +13741,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return triggered Web Job History.
      */
@@ -13760,8 +13760,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -13779,8 +13779,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void runTriggeredWebJob(String resourceGroupName, String name, String webJobName);
@@ -13940,8 +13940,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -13959,8 +13959,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteVnetConnection(String resourceGroupName, String name, String vnetName);
@@ -14021,8 +14021,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the Virtual Network gateway contract along with {@link Response}.
      */
@@ -14041,8 +14041,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the Virtual Network gateway contract.
      */
@@ -14315,8 +14315,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return workflow information by its ID for web site, or a deployment slot along with {@link Response}.
      */
@@ -14333,8 +14333,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return workflow information by its ID for web site, or a deployment slot.
      */
@@ -14407,8 +14407,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return workflow information by its ID for web site, or a deployment slot along with {@link Response}.
      */
@@ -14424,8 +14424,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return workflow information by its ID for web site, or a deployment slot.
      */
@@ -14468,8 +14468,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a web app, a mobile app backend, or an API app along with {@link Response}.
      */
@@ -14485,8 +14485,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a web app, a mobile app backend, or an API app along with {@link Response}.
      */
@@ -14559,8 +14559,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return function information along with {@link Response}.
      */
@@ -14576,8 +14576,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return function information along with {@link Response}.
      */
@@ -14766,8 +14766,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the Virtual Network gateway contract along with {@link Response}.
      */
@@ -14783,8 +14783,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the Virtual Network gateway contract along with {@link Response}.
      */
@@ -14799,8 +14799,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteById(String id);
@@ -14818,8 +14818,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -14891,8 +14891,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteFunctionById(String id);
@@ -14907,8 +14907,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -14951,8 +14951,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteHybridConnectionById(String id);
@@ -14967,8 +14967,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -14983,8 +14983,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteRelayServiceConnectionById(String id);
@@ -14999,8 +14999,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -15071,8 +15071,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteVnetConnectionSlotById(String id);
@@ -15087,8 +15087,8 @@ public interface WebApps {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
-     * @throws com.azure.core.exception.HttpResponseException thrown if the request is rejected by server on status code
-     *     404.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
+     *     status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */

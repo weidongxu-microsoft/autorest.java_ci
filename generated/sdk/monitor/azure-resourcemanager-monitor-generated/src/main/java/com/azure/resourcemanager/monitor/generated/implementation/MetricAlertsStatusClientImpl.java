@@ -53,8 +53,7 @@ public final class MetricAlertsStatusClientImpl implements MetricAlertsStatusCli
     public interface MetricAlertsStatusService {
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights"
-                + "/metricAlerts/{ruleName}/status")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/metricAlerts/{ruleName}/status")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<MetricAlertStatusCollectionInner>> list(
@@ -68,8 +67,7 @@ public final class MetricAlertsStatusClientImpl implements MetricAlertsStatusCli
 
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights"
-                + "/metricAlerts/{ruleName}/status/{statusName}")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/metricAlerts/{ruleName}/status/{statusName}")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<MetricAlertStatusCollectionInner>> listByName(

@@ -69,8 +69,7 @@ public final class SubscriptionNetworkManagerConnectionsClientImpl
     public interface SubscriptionNetworkManagerConnectionsService {
         @Headers({"Content-Type: application/json"})
         @Put(
-            "/subscriptions/{subscriptionId}/providers/Microsoft.Network/networkManagerConnections"
-                + "/{networkManagerConnectionName}")
+            "/subscriptions/{subscriptionId}/providers/Microsoft.Network/networkManagerConnections/{networkManagerConnectionName}")
         @ExpectedResponses({200, 201})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<NetworkManagerConnectionInner>> createOrUpdate(
@@ -84,8 +83,7 @@ public final class SubscriptionNetworkManagerConnectionsClientImpl
 
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/subscriptions/{subscriptionId}/providers/Microsoft.Network/networkManagerConnections"
-                + "/{networkManagerConnectionName}")
+            "/subscriptions/{subscriptionId}/providers/Microsoft.Network/networkManagerConnections/{networkManagerConnectionName}")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<NetworkManagerConnectionInner>> get(
@@ -98,8 +96,7 @@ public final class SubscriptionNetworkManagerConnectionsClientImpl
 
         @Headers({"Content-Type: application/json"})
         @Delete(
-            "/subscriptions/{subscriptionId}/providers/Microsoft.Network/networkManagerConnections"
-                + "/{networkManagerConnectionName}")
+            "/subscriptions/{subscriptionId}/providers/Microsoft.Network/networkManagerConnections/{networkManagerConnectionName}")
         @ExpectedResponses({200, 204})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<Void>> delete(

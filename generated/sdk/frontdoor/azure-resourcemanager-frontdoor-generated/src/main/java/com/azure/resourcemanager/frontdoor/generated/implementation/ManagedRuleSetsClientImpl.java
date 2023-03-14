@@ -58,8 +58,7 @@ public final class ManagedRuleSetsClientImpl implements ManagedRuleSetsClient {
     public interface ManagedRuleSetsService {
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/subscriptions/{subscriptionId}/providers/Microsoft.Network"
-                + "/FrontDoorWebApplicationFirewallManagedRuleSets")
+            "/subscriptions/{subscriptionId}/providers/Microsoft.Network/FrontDoorWebApplicationFirewallManagedRuleSets")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<ManagedRuleSetDefinitionList>> list(

@@ -62,8 +62,7 @@ public final class AvailablePrivateEndpointTypesClientImpl implements AvailableP
     public interface AvailablePrivateEndpointTypesService {
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/subscriptions/{subscriptionId}/providers/Microsoft.Network/locations/{location}"
-                + "/availablePrivateEndpointTypes")
+            "/subscriptions/{subscriptionId}/providers/Microsoft.Network/locations/{location}/availablePrivateEndpointTypes")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<AvailablePrivateEndpointTypesResult>> list(
@@ -76,8 +75,7 @@ public final class AvailablePrivateEndpointTypesClientImpl implements AvailableP
 
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/locations"
-                + "/{location}/availablePrivateEndpointTypes")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/locations/{location}/availablePrivateEndpointTypes")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<AvailablePrivateEndpointTypesResult>> listByResourceGroup(

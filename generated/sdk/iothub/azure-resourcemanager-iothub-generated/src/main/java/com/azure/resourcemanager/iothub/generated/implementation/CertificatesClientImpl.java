@@ -60,8 +60,7 @@ public final class CertificatesClientImpl implements CertificatesClient {
     public interface CertificatesService {
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs"
-                + "/{resourceName}/certificates")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs/{resourceName}/certificates")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ErrorDetailsException.class)
         Mono<Response<CertificateListDescriptionInner>> listByIotHub(
@@ -75,8 +74,7 @@ public final class CertificatesClientImpl implements CertificatesClient {
 
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs"
-                + "/{resourceName}/certificates/{certificateName}")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs/{resourceName}/certificates/{certificateName}")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ErrorDetailsException.class)
         Mono<Response<CertificateDescriptionInner>> get(
@@ -91,8 +89,7 @@ public final class CertificatesClientImpl implements CertificatesClient {
 
         @Headers({"Content-Type: application/json"})
         @Put(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs"
-                + "/{resourceName}/certificates/{certificateName}")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs/{resourceName}/certificates/{certificateName}")
         @ExpectedResponses({200, 201})
         @UnexpectedResponseExceptionType(ErrorDetailsException.class)
         Mono<Response<CertificateDescriptionInner>> createOrUpdate(
@@ -109,8 +106,7 @@ public final class CertificatesClientImpl implements CertificatesClient {
 
         @Headers({"Content-Type: application/json"})
         @Delete(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs"
-                + "/{resourceName}/certificates/{certificateName}")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs/{resourceName}/certificates/{certificateName}")
         @ExpectedResponses({200, 204})
         @UnexpectedResponseExceptionType(ErrorDetailsException.class)
         Mono<Response<Void>> delete(
@@ -126,8 +122,7 @@ public final class CertificatesClientImpl implements CertificatesClient {
 
         @Headers({"Content-Type: application/json"})
         @Post(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs"
-                + "/{resourceName}/certificates/{certificateName}/generateVerificationCode")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs/{resourceName}/certificates/{certificateName}/generateVerificationCode")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ErrorDetailsException.class)
         Mono<Response<CertificateWithNonceDescriptionInner>> generateVerificationCode(
@@ -143,8 +138,7 @@ public final class CertificatesClientImpl implements CertificatesClient {
 
         @Headers({"Content-Type: application/json"})
         @Post(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs"
-                + "/{resourceName}/certificates/{certificateName}/verify")
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs/{resourceName}/certificates/{certificateName}/verify")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ErrorDetailsException.class)
         Mono<Response<CertificateDescriptionInner>> verify(
