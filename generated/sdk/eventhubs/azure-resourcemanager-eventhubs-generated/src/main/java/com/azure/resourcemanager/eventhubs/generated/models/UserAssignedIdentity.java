@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Recognized Dictionary value. */
 @Immutable
-public class UserAssignedIdentity {
+public final class UserAssignedIdentity {
     /*
      * Principal Id of user assigned identity
      */

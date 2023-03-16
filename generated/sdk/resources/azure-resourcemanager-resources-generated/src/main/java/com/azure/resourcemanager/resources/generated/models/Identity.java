@@ -11,7 +11,7 @@ import java.util.Map;
 
 /** Identity for the resource. */
 @Fluent
-public class Identity {
+public final class Identity {
     /*
      * The principal ID of resource identity.
      */

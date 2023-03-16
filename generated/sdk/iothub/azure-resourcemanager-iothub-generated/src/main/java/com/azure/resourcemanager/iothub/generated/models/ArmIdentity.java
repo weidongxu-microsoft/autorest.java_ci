@@ -11,7 +11,7 @@ import java.util.Map;
 
 /** The ArmIdentity model. */
 @Fluent
-public class ArmIdentity {
+public final class ArmIdentity {
     /*
      * Principal Id
      */

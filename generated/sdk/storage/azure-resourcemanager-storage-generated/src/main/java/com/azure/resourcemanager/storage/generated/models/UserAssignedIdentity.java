@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** UserAssignedIdentity for the resource. */
 @Immutable
-public class UserAssignedIdentity {
+public final class UserAssignedIdentity {
     /*
      * The principal ID of the identity.
      */

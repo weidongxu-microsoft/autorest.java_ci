@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Encryption identity for the storage account. */
 @Fluent
-public class EncryptionIdentity {
+public final class EncryptionIdentity {
     /*
      * Resource identifier of the UserAssigned identity to be associated with server-side encryption on the storage
      * account.

@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Information about the delivery for an event subscription with resource identity. */
 @Fluent
-public class DeliveryWithResourceIdentity {
+public final class DeliveryWithResourceIdentity {
     /*
      * The identity to use when delivering events.
      */

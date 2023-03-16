@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** The ArmUserIdentity model. */
 @Immutable
-public class ArmUserIdentity {
+public final class ArmUserIdentity {
     /*
      * The principalId property.
      */

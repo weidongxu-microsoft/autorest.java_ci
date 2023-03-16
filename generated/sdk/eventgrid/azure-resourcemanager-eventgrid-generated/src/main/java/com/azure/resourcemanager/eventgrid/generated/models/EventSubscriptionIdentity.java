@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** The identity information with the event subscription. */
 @Fluent
-public class EventSubscriptionIdentity {
+public final class EventSubscriptionIdentity {
     /*
      * The type of managed identity used. The type 'SystemAssigned, UserAssigned' includes both an implicitly created
      * identity and a set of user-assigned identities. The type 'None' will remove any identity.

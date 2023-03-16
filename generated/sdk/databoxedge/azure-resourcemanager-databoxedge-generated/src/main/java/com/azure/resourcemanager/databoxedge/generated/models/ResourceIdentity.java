@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Msi identity details of the resource. */
 @Fluent
-public class ResourceIdentity {
+public final class ResourceIdentity {
     /*
      * Identity type
      */

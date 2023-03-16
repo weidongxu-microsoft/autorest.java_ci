@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** The properties of the Managed identity. */
 @Fluent
-public class ManagedIdentity {
+public final class ManagedIdentity {
     /*
      * The user assigned identity.
      */

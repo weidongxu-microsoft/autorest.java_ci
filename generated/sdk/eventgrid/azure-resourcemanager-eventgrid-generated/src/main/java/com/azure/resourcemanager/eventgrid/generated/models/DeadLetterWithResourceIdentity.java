@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Information about the deadletter destination with resource identity. */
 @Fluent
-public class DeadLetterWithResourceIdentity {
+public final class DeadLetterWithResourceIdentity {
     /*
      * The identity to use when dead-lettering events.
      */
