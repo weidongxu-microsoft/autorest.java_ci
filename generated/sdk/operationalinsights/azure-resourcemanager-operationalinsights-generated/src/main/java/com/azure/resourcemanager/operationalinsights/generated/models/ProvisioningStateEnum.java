@@ -22,6 +22,9 @@ public final class ProvisioningStateEnum extends ExpandableStringEnum<Provisioni
     /** Static value Succeeded for ProvisioningStateEnum. */
     public static final ProvisioningStateEnum SUCCEEDED = fromString("Succeeded");
 
+    /** Static value Deleting for ProvisioningStateEnum. */
+    public static final ProvisioningStateEnum DELETING = fromString("Deleting");
+
     /**
      * Creates a new instance of ProvisioningStateEnum value.
      *
