@@ -94,6 +94,12 @@ public final class BalanceProperties {
     private Boolean priceHidden;
 
     /*
+     * Overage Refunds
+     */
+    @JsonProperty(value = "overageRefund", access = JsonProperty.Access.WRITE_ONLY)
+    private BigDecimal overageRefund;
+
+    /*
      * List of new purchases.
      */
     @JsonProperty(value = "newPurchasesDetails", access = JsonProperty.Access.WRITE_ONLY)
@@ -236,6 +242,15 @@ public final class BalanceProperties {
      */
     public Boolean priceHidden() {
         return this.priceHidden;
+    }
+
+    /**
+     * Get the overageRefund property: Overage Refunds.
+     *
+     * @return the overageRefund value.
+     */
+    public BigDecimal overageRefund() {
+        return this.overageRefund;
     }
 
     /**
