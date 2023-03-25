@@ -14,7 +14,9 @@ import com.azure.resourcemanager.consumption.generated.models.Datagrain;
 /** An instance of this class provides access to all the operations defined in ReservationsSummariesClient. */
 public interface ReservationsSummariesClient {
     /**
-     * Lists the reservations summaries for daily or monthly grain.
+     * Lists the reservations summaries for daily or monthly grain. Note: ARM has a payload size limit of 12MB, so
+     * currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made
+     * with smaller date ranges.
      *
      * @param reservationOrderId Order Id of the reservation.
      * @param grain Can be daily or monthly.
@@ -27,7 +29,9 @@ public interface ReservationsSummariesClient {
     PagedIterable<ReservationSummaryInner> listByReservationOrder(String reservationOrderId, Datagrain grain);
 
     /**
-     * Lists the reservations summaries for daily or monthly grain.
+     * Lists the reservations summaries for daily or monthly grain. Note: ARM has a payload size limit of 12MB, so
+     * currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made
+     * with smaller date ranges.
      *
      * @param reservationOrderId Order Id of the reservation.
      * @param grain Can be daily or monthly.
@@ -44,7 +48,9 @@ public interface ReservationsSummariesClient {
         String reservationOrderId, Datagrain grain, String filter, Context context);
 
     /**
-     * Lists the reservations summaries for daily or monthly grain.
+     * Lists the reservations summaries for daily or monthly grain. Note: ARM has a payload size limit of 12MB, so
+     * currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made
+     * with smaller date ranges.
      *
      * @param reservationOrderId Order Id of the reservation.
      * @param reservationId Id of the reservation.
@@ -59,7 +65,9 @@ public interface ReservationsSummariesClient {
         String reservationOrderId, String reservationId, Datagrain grain);
 
     /**
-     * Lists the reservations summaries for daily or monthly grain.
+     * Lists the reservations summaries for daily or monthly grain. Note: ARM has a payload size limit of 12MB, so
+     * currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made
+     * with smaller date ranges.
      *
      * @param reservationOrderId Order Id of the reservation.
      * @param reservationId Id of the reservation.
@@ -77,7 +85,9 @@ public interface ReservationsSummariesClient {
         String reservationOrderId, String reservationId, Datagrain grain, String filter, Context context);
 
     /**
-     * Lists the reservations summaries for the defined scope daily or monthly grain.
+     * Lists the reservations summaries for the defined scope daily or monthly grain. Note: ARM has a payload size limit
+     * of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call
+     * should be made with smaller date ranges.
      *
      * @param resourceScope The scope associated with reservations summaries operations. This includes
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope (legacy), and
@@ -93,7 +103,9 @@ public interface ReservationsSummariesClient {
     PagedIterable<ReservationSummaryInner> list(String resourceScope, Datagrain grain);
 
     /**
-     * Lists the reservations summaries for the defined scope daily or monthly grain.
+     * Lists the reservations summaries for the defined scope daily or monthly grain. Note: ARM has a payload size limit
+     * of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call
+     * should be made with smaller date ranges.
      *
      * @param resourceScope The scope associated with reservations summaries operations. This includes
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope (legacy), and

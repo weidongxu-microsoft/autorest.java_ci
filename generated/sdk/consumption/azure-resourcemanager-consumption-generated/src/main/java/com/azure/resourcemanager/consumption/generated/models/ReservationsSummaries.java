@@ -10,7 +10,9 @@ import com.azure.core.util.Context;
 /** Resource collection API of ReservationsSummaries. */
 public interface ReservationsSummaries {
     /**
-     * Lists the reservations summaries for daily or monthly grain.
+     * Lists the reservations summaries for daily or monthly grain. Note: ARM has a payload size limit of 12MB, so
+     * currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made
+     * with smaller date ranges.
      *
      * @param reservationOrderId Order Id of the reservation.
      * @param grain Can be daily or monthly.
@@ -22,7 +24,9 @@ public interface ReservationsSummaries {
     PagedIterable<ReservationSummary> listByReservationOrder(String reservationOrderId, Datagrain grain);
 
     /**
-     * Lists the reservations summaries for daily or monthly grain.
+     * Lists the reservations summaries for daily or monthly grain. Note: ARM has a payload size limit of 12MB, so
+     * currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made
+     * with smaller date ranges.
      *
      * @param reservationOrderId Order Id of the reservation.
      * @param grain Can be daily or monthly.
@@ -38,7 +42,9 @@ public interface ReservationsSummaries {
         String reservationOrderId, Datagrain grain, String filter, Context context);
 
     /**
-     * Lists the reservations summaries for daily or monthly grain.
+     * Lists the reservations summaries for daily or monthly grain. Note: ARM has a payload size limit of 12MB, so
+     * currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made
+     * with smaller date ranges.
      *
      * @param reservationOrderId Order Id of the reservation.
      * @param reservationId Id of the reservation.
@@ -52,7 +58,9 @@ public interface ReservationsSummaries {
         String reservationOrderId, String reservationId, Datagrain grain);
 
     /**
-     * Lists the reservations summaries for daily or monthly grain.
+     * Lists the reservations summaries for daily or monthly grain. Note: ARM has a payload size limit of 12MB, so
+     * currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made
+     * with smaller date ranges.
      *
      * @param reservationOrderId Order Id of the reservation.
      * @param reservationId Id of the reservation.
@@ -69,7 +77,9 @@ public interface ReservationsSummaries {
         String reservationOrderId, String reservationId, Datagrain grain, String filter, Context context);
 
     /**
-     * Lists the reservations summaries for the defined scope daily or monthly grain.
+     * Lists the reservations summaries for the defined scope daily or monthly grain. Note: ARM has a payload size limit
+     * of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call
+     * should be made with smaller date ranges.
      *
      * @param resourceScope The scope associated with reservations summaries operations. This includes
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope (legacy), and
@@ -84,7 +94,9 @@ public interface ReservationsSummaries {
     PagedIterable<ReservationSummary> list(String resourceScope, Datagrain grain);
 
     /**
-     * Lists the reservations summaries for the defined scope daily or monthly grain.
+     * Lists the reservations summaries for the defined scope daily or monthly grain. Note: ARM has a payload size limit
+     * of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call
+     * should be made with smaller date ranges.
      *
      * @param resourceScope The scope associated with reservations summaries operations. This includes
      *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope (legacy), and

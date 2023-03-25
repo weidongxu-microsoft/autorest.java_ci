@@ -13,6 +13,7 @@ import com.azure.resourcemanager.consumption.generated.fluent.models.Reservation
 import com.azure.resourcemanager.consumption.generated.models.ModernReservationTransaction;
 import com.azure.resourcemanager.consumption.generated.models.ReservationTransaction;
 import com.azure.resourcemanager.consumption.generated.models.ReservationTransactions;
+import java.math.BigDecimal;
 
 public final class ReservationTransactionsImpl implements ReservationTransactions {
     private static final ClientLogger LOGGER = new ClientLogger(ReservationTransactionsImpl.class);
@@ -33,8 +34,14 @@ public final class ReservationTransactionsImpl implements ReservationTransaction
         return Utils.mapPage(inner, inner1 -> new ReservationTransactionImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<ReservationTransaction> list(String billingAccountId, String filter, Context context) {
-        PagedIterable<ReservationTransactionInner> inner = this.serviceClient().list(billingAccountId, filter, context);
+    public PagedIterable<ReservationTransaction> list(
+        String billingAccountId,
+        String filter,
+        Boolean useMarkupIfPartner,
+        BigDecimal previewMarkupPercentage,
+        Context context) {
+        PagedIterable<ReservationTransactionInner> inner =
+            this.serviceClient().list(billingAccountId, filter, useMarkupIfPartner, previewMarkupPercentage, context);
         return Utils.mapPage(inner, inner1 -> new ReservationTransactionImpl(inner1, this.manager()));
     }
 

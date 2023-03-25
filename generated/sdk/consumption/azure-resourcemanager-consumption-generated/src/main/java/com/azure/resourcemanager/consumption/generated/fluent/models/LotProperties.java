@@ -96,6 +96,12 @@ public final class LotProperties {
     private Reseller reseller;
 
     /*
+     * If true, the listed details are based on an estimation and it will be subjected to change.
+     */
+    @JsonProperty(value = "isEstimatedBalance", access = JsonProperty.Access.WRITE_ONLY)
+    private Boolean isEstimatedBalance;
+
+    /*
      * The eTag for the resource.
      */
     @JsonProperty(value = "eTag", access = JsonProperty.Access.WRITE_ONLY)
@@ -221,6 +227,16 @@ public final class LotProperties {
      */
     public Reseller reseller() {
         return this.reseller;
+    }
+
+    /**
+     * Get the isEstimatedBalance property: If true, the listed details are based on an estimation and it will be
+     * subjected to change.
+     *
+     * @return the isEstimatedBalance value.
+     */
+    public Boolean isEstimatedBalance() {
+        return this.isEstimatedBalance;
     }
 
     /**

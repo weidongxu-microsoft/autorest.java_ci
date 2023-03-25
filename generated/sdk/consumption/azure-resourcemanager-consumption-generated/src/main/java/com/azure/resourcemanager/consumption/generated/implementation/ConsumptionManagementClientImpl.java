@@ -350,7 +350,7 @@ public final class ConsumptionManagementClientImpl implements ConsumptionManagem
         this.defaultPollInterval = defaultPollInterval;
         this.subscriptionId = subscriptionId;
         this.endpoint = endpoint;
-        this.apiVersion = "2022-09-01";
+        this.apiVersion = "2023-03-01";
         this.usageDetails = new UsageDetailsClientImpl(this);
         this.marketplaces = new MarketplacesClientImpl(this);
         this.budgets = new BudgetsClientImpl(this);

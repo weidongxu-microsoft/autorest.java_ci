@@ -30,6 +30,7 @@ import com.azure.resourcemanager.consumption.generated.fluent.models.ModernReser
 import com.azure.resourcemanager.consumption.generated.fluent.models.ReservationTransactionInner;
 import com.azure.resourcemanager.consumption.generated.models.ModernReservationTransactionsListResult;
 import com.azure.resourcemanager.consumption.generated.models.ReservationTransactionsListResult;
+import java.math.BigDecimal;
 import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in ReservationTransactionsClient. */
@@ -68,6 +69,8 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
             @HostParam("$host") String endpoint,
             @QueryParam("$filter") String filter,
             @QueryParam("api-version") String apiVersion,
+            @QueryParam("useMarkupIfPartner") Boolean useMarkupIfPartner,
+            @QueryParam("previewMarkupPercentage") BigDecimal previewMarkupPercentage,
             @PathParam("billingAccountId") String billingAccountId,
             @HeaderParam("Accept") String accept,
             Context context);
@@ -111,7 +114,8 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
      * List of transactions for reserved instances on billing account scope. Note: The refund transactions are posted
      * along with its purchase transaction (i.e. in the purchase billing month). For example, The refund is requested in
      * May 2021. This refund transaction will have event date as May 2021 but the billing month as April 2020 when the
-     * reservation purchase was made.
+     * reservation purchase was made. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the
+     * response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
      *
      * @param billingAccountId BillingAccount ID.
      * @param filter Filter reservation transactions by date range. The properties/EventDate for start date and end
@@ -119,6 +123,8 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
      *     billing month. For example, filter properties/eventDate+ge+2020-01-01+AND+properties/eventDate+le+2020-12-29
      *     will include data for the entire December 2020 month (i.e. will contain records for dates December 30 and
      *     31).
+     * @param useMarkupIfPartner Applies mark up to the transactions if the caller is a partner.
+     * @param previewMarkupPercentage Preview markup percentage to be applied.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -127,7 +133,7 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ReservationTransactionInner>> listSinglePageAsync(
-        String billingAccountId, String filter) {
+        String billingAccountId, String filter, Boolean useMarkupIfPartner, BigDecimal previewMarkupPercentage) {
         if (this.client.getEndpoint() == null) {
             return Mono
                 .error(
@@ -147,6 +153,8 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
                             this.client.getEndpoint(),
                             filter,
                             this.client.getApiVersion(),
+                            useMarkupIfPartner,
+                            previewMarkupPercentage,
                             billingAccountId,
                             accept,
                             context))
@@ -166,7 +174,8 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
      * List of transactions for reserved instances on billing account scope. Note: The refund transactions are posted
      * along with its purchase transaction (i.e. in the purchase billing month). For example, The refund is requested in
      * May 2021. This refund transaction will have event date as May 2021 but the billing month as April 2020 when the
-     * reservation purchase was made.
+     * reservation purchase was made. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the
+     * response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
      *
      * @param billingAccountId BillingAccount ID.
      * @param filter Filter reservation transactions by date range. The properties/EventDate for start date and end
@@ -174,6 +183,8 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
      *     billing month. For example, filter properties/eventDate+ge+2020-01-01+AND+properties/eventDate+le+2020-12-29
      *     will include data for the entire December 2020 month (i.e. will contain records for dates December 30 and
      *     31).
+     * @param useMarkupIfPartner Applies mark up to the transactions if the caller is a partner.
+     * @param previewMarkupPercentage Preview markup percentage to be applied.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -183,7 +194,11 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ReservationTransactionInner>> listSinglePageAsync(
-        String billingAccountId, String filter, Context context) {
+        String billingAccountId,
+        String filter,
+        Boolean useMarkupIfPartner,
+        BigDecimal previewMarkupPercentage,
+        Context context) {
         if (this.client.getEndpoint() == null) {
             return Mono
                 .error(
@@ -197,7 +212,15 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .list(this.client.getEndpoint(), filter, this.client.getApiVersion(), billingAccountId, accept, context)
+            .list(
+                this.client.getEndpoint(),
+                filter,
+                this.client.getApiVersion(),
+                useMarkupIfPartner,
+                previewMarkupPercentage,
+                billingAccountId,
+                accept,
+                context)
             .map(
                 res ->
                     new PagedResponseBase<>(
@@ -213,7 +236,8 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
      * List of transactions for reserved instances on billing account scope. Note: The refund transactions are posted
      * along with its purchase transaction (i.e. in the purchase billing month). For example, The refund is requested in
      * May 2021. This refund transaction will have event date as May 2021 but the billing month as April 2020 when the
-     * reservation purchase was made.
+     * reservation purchase was made. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the
+     * response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
      *
      * @param billingAccountId BillingAccount ID.
      * @param filter Filter reservation transactions by date range. The properties/EventDate for start date and end
@@ -221,22 +245,27 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
      *     billing month. For example, filter properties/eventDate+ge+2020-01-01+AND+properties/eventDate+le+2020-12-29
      *     will include data for the entire December 2020 month (i.e. will contain records for dates December 30 and
      *     31).
+     * @param useMarkupIfPartner Applies mark up to the transactions if the caller is a partner.
+     * @param previewMarkupPercentage Preview markup percentage to be applied.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return result of listing reservation recommendations as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    private PagedFlux<ReservationTransactionInner> listAsync(String billingAccountId, String filter) {
+    private PagedFlux<ReservationTransactionInner> listAsync(
+        String billingAccountId, String filter, Boolean useMarkupIfPartner, BigDecimal previewMarkupPercentage) {
         return new PagedFlux<>(
-            () -> listSinglePageAsync(billingAccountId, filter), nextLink -> listNextSinglePageAsync(nextLink));
+            () -> listSinglePageAsync(billingAccountId, filter, useMarkupIfPartner, previewMarkupPercentage),
+            nextLink -> listNextSinglePageAsync(nextLink));
     }
 
     /**
      * List of transactions for reserved instances on billing account scope. Note: The refund transactions are posted
      * along with its purchase transaction (i.e. in the purchase billing month). For example, The refund is requested in
      * May 2021. This refund transaction will have event date as May 2021 but the billing month as April 2020 when the
-     * reservation purchase was made.
+     * reservation purchase was made. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the
+     * response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
      *
      * @param billingAccountId BillingAccount ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -247,15 +276,19 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ReservationTransactionInner> listAsync(String billingAccountId) {
         final String filter = null;
+        final Boolean useMarkupIfPartner = null;
+        final BigDecimal previewMarkupPercentage = null;
         return new PagedFlux<>(
-            () -> listSinglePageAsync(billingAccountId, filter), nextLink -> listNextSinglePageAsync(nextLink));
+            () -> listSinglePageAsync(billingAccountId, filter, useMarkupIfPartner, previewMarkupPercentage),
+            nextLink -> listNextSinglePageAsync(nextLink));
     }
 
     /**
      * List of transactions for reserved instances on billing account scope. Note: The refund transactions are posted
      * along with its purchase transaction (i.e. in the purchase billing month). For example, The refund is requested in
      * May 2021. This refund transaction will have event date as May 2021 but the billing month as April 2020 when the
-     * reservation purchase was made.
+     * reservation purchase was made. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the
+     * response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
      *
      * @param billingAccountId BillingAccount ID.
      * @param filter Filter reservation transactions by date range. The properties/EventDate for start date and end
@@ -263,6 +296,8 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
      *     billing month. For example, filter properties/eventDate+ge+2020-01-01+AND+properties/eventDate+le+2020-12-29
      *     will include data for the entire December 2020 month (i.e. will contain records for dates December 30 and
      *     31).
+     * @param useMarkupIfPartner Applies mark up to the transactions if the caller is a partner.
+     * @param previewMarkupPercentage Preview markup percentage to be applied.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -270,9 +305,14 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
      * @return result of listing reservation recommendations as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    private PagedFlux<ReservationTransactionInner> listAsync(String billingAccountId, String filter, Context context) {
+    private PagedFlux<ReservationTransactionInner> listAsync(
+        String billingAccountId,
+        String filter,
+        Boolean useMarkupIfPartner,
+        BigDecimal previewMarkupPercentage,
+        Context context) {
         return new PagedFlux<>(
-            () -> listSinglePageAsync(billingAccountId, filter, context),
+            () -> listSinglePageAsync(billingAccountId, filter, useMarkupIfPartner, previewMarkupPercentage, context),
             nextLink -> listNextSinglePageAsync(nextLink, context));
     }
 
@@ -280,7 +320,8 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
      * List of transactions for reserved instances on billing account scope. Note: The refund transactions are posted
      * along with its purchase transaction (i.e. in the purchase billing month). For example, The refund is requested in
      * May 2021. This refund transaction will have event date as May 2021 but the billing month as April 2020 when the
-     * reservation purchase was made.
+     * reservation purchase was made. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the
+     * response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
      *
      * @param billingAccountId BillingAccount ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -291,14 +332,17 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ReservationTransactionInner> list(String billingAccountId) {
         final String filter = null;
-        return new PagedIterable<>(listAsync(billingAccountId, filter));
+        final Boolean useMarkupIfPartner = null;
+        final BigDecimal previewMarkupPercentage = null;
+        return new PagedIterable<>(listAsync(billingAccountId, filter, useMarkupIfPartner, previewMarkupPercentage));
     }
 
     /**
      * List of transactions for reserved instances on billing account scope. Note: The refund transactions are posted
      * along with its purchase transaction (i.e. in the purchase billing month). For example, The refund is requested in
      * May 2021. This refund transaction will have event date as May 2021 but the billing month as April 2020 when the
-     * reservation purchase was made.
+     * reservation purchase was made. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the
+     * response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
      *
      * @param billingAccountId BillingAccount ID.
      * @param filter Filter reservation transactions by date range. The properties/EventDate for start date and end
@@ -306,6 +350,8 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
      *     billing month. For example, filter properties/eventDate+ge+2020-01-01+AND+properties/eventDate+le+2020-12-29
      *     will include data for the entire December 2020 month (i.e. will contain records for dates December 30 and
      *     31).
+     * @param useMarkupIfPartner Applies mark up to the transactions if the caller is a partner.
+     * @param previewMarkupPercentage Preview markup percentage to be applied.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -313,15 +359,22 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
      * @return result of listing reservation recommendations as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    public PagedIterable<ReservationTransactionInner> list(String billingAccountId, String filter, Context context) {
-        return new PagedIterable<>(listAsync(billingAccountId, filter, context));
+    public PagedIterable<ReservationTransactionInner> list(
+        String billingAccountId,
+        String filter,
+        Boolean useMarkupIfPartner,
+        BigDecimal previewMarkupPercentage,
+        Context context) {
+        return new PagedIterable<>(
+            listAsync(billingAccountId, filter, useMarkupIfPartner, previewMarkupPercentage, context));
     }
 
     /**
      * List of transactions for reserved instances on billing profile scope. The refund transactions are posted along
      * with its purchase transaction (i.e. in the purchase billing month). For example, The refund is requested in May
      * 2021. This refund transaction will have event date as May 2021 but the billing month as April 2020 when the
-     * reservation purchase was made.
+     * reservation purchase was made. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the
+     * response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
      *
      * @param billingAccountId BillingAccount ID.
      * @param billingProfileId Azure Billing Profile ID.
@@ -381,7 +434,8 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
      * List of transactions for reserved instances on billing profile scope. The refund transactions are posted along
      * with its purchase transaction (i.e. in the purchase billing month). For example, The refund is requested in May
      * 2021. This refund transaction will have event date as May 2021 but the billing month as April 2020 when the
-     * reservation purchase was made.
+     * reservation purchase was made. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the
+     * response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
      *
      * @param billingAccountId BillingAccount ID.
      * @param billingProfileId Azure Billing Profile ID.
@@ -439,7 +493,8 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
      * List of transactions for reserved instances on billing profile scope. The refund transactions are posted along
      * with its purchase transaction (i.e. in the purchase billing month). For example, The refund is requested in May
      * 2021. This refund transaction will have event date as May 2021 but the billing month as April 2020 when the
-     * reservation purchase was made.
+     * reservation purchase was made. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the
+     * response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
      *
      * @param billingAccountId BillingAccount ID.
      * @param billingProfileId Azure Billing Profile ID.
@@ -464,7 +519,8 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
      * List of transactions for reserved instances on billing profile scope. The refund transactions are posted along
      * with its purchase transaction (i.e. in the purchase billing month). For example, The refund is requested in May
      * 2021. This refund transaction will have event date as May 2021 but the billing month as April 2020 when the
-     * reservation purchase was made.
+     * reservation purchase was made. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the
+     * response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
      *
      * @param billingAccountId BillingAccount ID.
      * @param billingProfileId Azure Billing Profile ID.
@@ -486,7 +542,8 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
      * List of transactions for reserved instances on billing profile scope. The refund transactions are posted along
      * with its purchase transaction (i.e. in the purchase billing month). For example, The refund is requested in May
      * 2021. This refund transaction will have event date as May 2021 but the billing month as April 2020 when the
-     * reservation purchase was made.
+     * reservation purchase was made. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the
+     * response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
      *
      * @param billingAccountId BillingAccount ID.
      * @param billingProfileId Azure Billing Profile ID.
@@ -512,7 +569,8 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
      * List of transactions for reserved instances on billing profile scope. The refund transactions are posted along
      * with its purchase transaction (i.e. in the purchase billing month). For example, The refund is requested in May
      * 2021. This refund transaction will have event date as May 2021 but the billing month as April 2020 when the
-     * reservation purchase was made.
+     * reservation purchase was made. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the
+     * response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
      *
      * @param billingAccountId BillingAccount ID.
      * @param billingProfileId Azure Billing Profile ID.
@@ -532,7 +590,8 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
      * List of transactions for reserved instances on billing profile scope. The refund transactions are posted along
      * with its purchase transaction (i.e. in the purchase billing month). For example, The refund is requested in May
      * 2021. This refund transaction will have event date as May 2021 but the billing month as April 2020 when the
-     * reservation purchase was made.
+     * reservation purchase was made. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the
+     * response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
      *
      * @param billingAccountId BillingAccount ID.
      * @param billingProfileId Azure Billing Profile ID.
