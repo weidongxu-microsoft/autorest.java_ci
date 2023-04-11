@@ -88,6 +88,13 @@ public final class UsageDetailsClientImpl implements UsageDetailsClient {
      * Lists the usage details for the defined scope. Usage details are available via this API only for May 1, 2014 or
      * later.
      *
+     * <p>!Note :
+     *
+     * <p>Microsoft will be retiring the Consumption Usage Details API at some point in the future. We do not recommend
+     * that you take a new dependency on this API. Please use the Cost Details API instead. We will notify customers
+     * once a date for retirement has been determined.For Cost Details API see,
+     * https://learn.microsoft.com/en-us/rest/api/cost-management/generate-cost-details-report/create-operation?tabs=HTTP.
+     *
      * @param scope The scope associated with usage details operations. This includes '/subscriptions/{subscriptionId}/'
      *     for subscription scope, '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account
      *     scope, '/providers/Microsoft.Billing/departments/{departmentId}' for Department scope,
@@ -167,6 +174,13 @@ public final class UsageDetailsClientImpl implements UsageDetailsClient {
      * Lists the usage details for the defined scope. Usage details are available via this API only for May 1, 2014 or
      * later.
      *
+     * <p>!Note :
+     *
+     * <p>Microsoft will be retiring the Consumption Usage Details API at some point in the future. We do not recommend
+     * that you take a new dependency on this API. Please use the Cost Details API instead. We will notify customers
+     * once a date for retirement has been determined.For Cost Details API see,
+     * https://learn.microsoft.com/en-us/rest/api/cost-management/generate-cost-details-report/create-operation?tabs=HTTP.
+     *
      * @param scope The scope associated with usage details operations. This includes '/subscriptions/{subscriptionId}/'
      *     for subscription scope, '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account
      *     scope, '/providers/Microsoft.Billing/departments/{departmentId}' for Department scope,
@@ -244,6 +258,13 @@ public final class UsageDetailsClientImpl implements UsageDetailsClient {
      * Lists the usage details for the defined scope. Usage details are available via this API only for May 1, 2014 or
      * later.
      *
+     * <p>!Note :
+     *
+     * <p>Microsoft will be retiring the Consumption Usage Details API at some point in the future. We do not recommend
+     * that you take a new dependency on this API. Please use the Cost Details API instead. We will notify customers
+     * once a date for retirement has been determined.For Cost Details API see,
+     * https://learn.microsoft.com/en-us/rest/api/cost-management/generate-cost-details-report/create-operation?tabs=HTTP.
+     *
      * @param scope The scope associated with usage details operations. This includes '/subscriptions/{subscriptionId}/'
      *     for subscription scope, '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account
      *     scope, '/providers/Microsoft.Billing/departments/{departmentId}' for Department scope,
@@ -290,6 +311,13 @@ public final class UsageDetailsClientImpl implements UsageDetailsClient {
      * Lists the usage details for the defined scope. Usage details are available via this API only for May 1, 2014 or
      * later.
      *
+     * <p>!Note :
+     *
+     * <p>Microsoft will be retiring the Consumption Usage Details API at some point in the future. We do not recommend
+     * that you take a new dependency on this API. Please use the Cost Details API instead. We will notify customers
+     * once a date for retirement has been determined.For Cost Details API see,
+     * https://learn.microsoft.com/en-us/rest/api/cost-management/generate-cost-details-report/create-operation?tabs=HTTP.
+     *
      * @param scope The scope associated with usage details operations. This includes '/subscriptions/{subscriptionId}/'
      *     for subscription scope, '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account
      *     scope, '/providers/Microsoft.Billing/departments/{departmentId}' for Department scope,
@@ -327,6 +355,13 @@ public final class UsageDetailsClientImpl implements UsageDetailsClient {
     /**
      * Lists the usage details for the defined scope. Usage details are available via this API only for May 1, 2014 or
      * later.
+     *
+     * <p>!Note :
+     *
+     * <p>Microsoft will be retiring the Consumption Usage Details API at some point in the future. We do not recommend
+     * that you take a new dependency on this API. Please use the Cost Details API instead. We will notify customers
+     * once a date for retirement has been determined.For Cost Details API see,
+     * https://learn.microsoft.com/en-us/rest/api/cost-management/generate-cost-details-report/create-operation?tabs=HTTP.
      *
      * @param scope The scope associated with usage details operations. This includes '/subscriptions/{subscriptionId}/'
      *     for subscription scope, '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account
@@ -375,6 +410,13 @@ public final class UsageDetailsClientImpl implements UsageDetailsClient {
      * Lists the usage details for the defined scope. Usage details are available via this API only for May 1, 2014 or
      * later.
      *
+     * <p>!Note :
+     *
+     * <p>Microsoft will be retiring the Consumption Usage Details API at some point in the future. We do not recommend
+     * that you take a new dependency on this API. Please use the Cost Details API instead. We will notify customers
+     * once a date for retirement has been determined.For Cost Details API see,
+     * https://learn.microsoft.com/en-us/rest/api/cost-management/generate-cost-details-report/create-operation?tabs=HTTP.
+     *
      * @param scope The scope associated with usage details operations. This includes '/subscriptions/{subscriptionId}/'
      *     for subscription scope, '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account
      *     scope, '/providers/Microsoft.Billing/departments/{departmentId}' for Department scope,
@@ -410,6 +452,13 @@ public final class UsageDetailsClientImpl implements UsageDetailsClient {
     /**
      * Lists the usage details for the defined scope. Usage details are available via this API only for May 1, 2014 or
      * later.
+     *
+     * <p>!Note :
+     *
+     * <p>Microsoft will be retiring the Consumption Usage Details API at some point in the future. We do not recommend
+     * that you take a new dependency on this API. Please use the Cost Details API instead. We will notify customers
+     * once a date for retirement has been determined.For Cost Details API see,
+     * https://learn.microsoft.com/en-us/rest/api/cost-management/generate-cost-details-report/create-operation?tabs=HTTP.
      *
      * @param scope The scope associated with usage details operations. This includes '/subscriptions/{subscriptionId}/'
      *     for subscription scope, '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account

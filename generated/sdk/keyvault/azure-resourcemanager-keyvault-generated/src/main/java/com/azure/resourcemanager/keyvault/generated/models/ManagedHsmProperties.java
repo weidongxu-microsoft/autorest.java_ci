@@ -33,15 +33,15 @@ public final class ManagedHsmProperties {
     private String hsmUri;
 
     /*
-     * Property to specify whether the 'soft delete' functionality is enabled for this managed HSM pool. If it's not
-     * set to any value(true or false) when creating new managed HSM pool, it will be set to true by default. Once set
-     * to true, it cannot be reverted to false.
+     * Property to specify whether the 'soft delete' functionality is enabled for this managed HSM pool. Soft delete is
+     * enabled by default for all managed HSMs and is immutable.
      */
     @JsonProperty(value = "enableSoftDelete")
     private Boolean enableSoftDelete;
 
     /*
-     * softDelete data retention days. It accepts >=7 and <=90.
+     * Soft deleted data retention days. When you delete an HSM or a key, it will remain recoverable for the configured
+     * retention period or for a default period of 90 days. It accepts values between 7 and 90.
      */
     @JsonProperty(value = "softDeleteRetentionInDays")
     private Integer softDeleteRetentionInDays;
@@ -49,8 +49,7 @@ public final class ManagedHsmProperties {
     /*
      * Property specifying whether protection against purge is enabled for this managed HSM pool. Setting this property
      * to true activates protection against purge for this managed HSM pool and its content - only the Managed HSM
-     * service may initiate a hard, irrecoverable deletion. The setting is effective only if soft delete is also
-     * enabled. Enabling this functionality is irreversible.
+     * service may initiate a hard, irrecoverable deletion. Enabling this functionality is irreversible.
      */
     @JsonProperty(value = "enablePurgeProtection")
     private Boolean enablePurgeProtection;
@@ -92,7 +91,7 @@ public final class ManagedHsmProperties {
     private List<MhsmPrivateEndpointConnectionItem> privateEndpointConnections;
 
     /*
-     * Control permission for data plane traffic coming from public networks while private endpoint is enabled.
+     * Control permission to the managed HSM from public networks.
      */
     @JsonProperty(value = "publicNetworkAccess")
     private PublicNetworkAccess publicNetworkAccess;
@@ -166,8 +165,7 @@ public final class ManagedHsmProperties {
 
     /**
      * Get the enableSoftDelete property: Property to specify whether the 'soft delete' functionality is enabled for
-     * this managed HSM pool. If it's not set to any value(true or false) when creating new managed HSM pool, it will be
-     * set to true by default. Once set to true, it cannot be reverted to false.
+     * this managed HSM pool. Soft delete is enabled by default for all managed HSMs and is immutable.
      *
      * @return the enableSoftDelete value.
      */
@@ -177,8 +175,7 @@ public final class ManagedHsmProperties {
 
     /**
      * Set the enableSoftDelete property: Property to specify whether the 'soft delete' functionality is enabled for
-     * this managed HSM pool. If it's not set to any value(true or false) when creating new managed HSM pool, it will be
-     * set to true by default. Once set to true, it cannot be reverted to false.
+     * this managed HSM pool. Soft delete is enabled by default for all managed HSMs and is immutable.
      *
      * @param enableSoftDelete the enableSoftDelete value to set.
      * @return the ManagedHsmProperties object itself.
@@ -189,7 +186,9 @@ public final class ManagedHsmProperties {
     }
 
     /**
-     * Get the softDeleteRetentionInDays property: softDelete data retention days. It accepts &gt;=7 and &lt;=90.
+     * Get the softDeleteRetentionInDays property: Soft deleted data retention days. When you delete an HSM or a key, it
+     * will remain recoverable for the configured retention period or for a default period of 90 days. It accepts values
+     * between 7 and 90.
      *
      * @return the softDeleteRetentionInDays value.
      */
@@ -198,7 +197,9 @@ public final class ManagedHsmProperties {
     }
 
     /**
-     * Set the softDeleteRetentionInDays property: softDelete data retention days. It accepts &gt;=7 and &lt;=90.
+     * Set the softDeleteRetentionInDays property: Soft deleted data retention days. When you delete an HSM or a key, it
+     * will remain recoverable for the configured retention period or for a default period of 90 days. It accepts values
+     * between 7 and 90.
      *
      * @param softDeleteRetentionInDays the softDeleteRetentionInDays value to set.
      * @return the ManagedHsmProperties object itself.
@@ -211,8 +212,8 @@ public final class ManagedHsmProperties {
     /**
      * Get the enablePurgeProtection property: Property specifying whether protection against purge is enabled for this
      * managed HSM pool. Setting this property to true activates protection against purge for this managed HSM pool and
-     * its content - only the Managed HSM service may initiate a hard, irrecoverable deletion. The setting is effective
-     * only if soft delete is also enabled. Enabling this functionality is irreversible.
+     * its content - only the Managed HSM service may initiate a hard, irrecoverable deletion. Enabling this
+     * functionality is irreversible.
      *
      * @return the enablePurgeProtection value.
      */
@@ -223,8 +224,8 @@ public final class ManagedHsmProperties {
     /**
      * Set the enablePurgeProtection property: Property specifying whether protection against purge is enabled for this
      * managed HSM pool. Setting this property to true activates protection against purge for this managed HSM pool and
-     * its content - only the Managed HSM service may initiate a hard, irrecoverable deletion. The setting is effective
-     * only if soft delete is also enabled. Enabling this functionality is irreversible.
+     * its content - only the Managed HSM service may initiate a hard, irrecoverable deletion. Enabling this
+     * functionality is irreversible.
      *
      * @param enablePurgeProtection the enablePurgeProtection value to set.
      * @return the ManagedHsmProperties object itself.
@@ -325,8 +326,7 @@ public final class ManagedHsmProperties {
     }
 
     /**
-     * Get the publicNetworkAccess property: Control permission for data plane traffic coming from public networks while
-     * private endpoint is enabled.
+     * Get the publicNetworkAccess property: Control permission to the managed HSM from public networks.
      *
      * @return the publicNetworkAccess value.
      */
@@ -335,8 +335,7 @@ public final class ManagedHsmProperties {
     }
 
     /**
-     * Set the publicNetworkAccess property: Control permission for data plane traffic coming from public networks while
-     * private endpoint is enabled.
+     * Set the publicNetworkAccess property: Control permission to the managed HSM from public networks.
      *
      * @param publicNetworkAccess the publicNetworkAccess value to set.
      * @return the ManagedHsmProperties object itself.
