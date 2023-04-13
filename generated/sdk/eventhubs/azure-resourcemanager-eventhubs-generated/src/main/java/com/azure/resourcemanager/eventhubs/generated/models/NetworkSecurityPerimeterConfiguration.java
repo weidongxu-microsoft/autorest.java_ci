@@ -19,6 +19,12 @@ public final class NetworkSecurityPerimeterConfiguration extends ProxyResource {
     @JsonProperty(value = "properties", access = JsonProperty.Access.WRITE_ONLY)
     private NetworkSecurityPerimeterConfigurationProperties innerProperties;
 
+    /*
+     * The geo-location where the resource lives
+     */
+    @JsonProperty(value = "location", access = JsonProperty.Access.WRITE_ONLY)
+    private String location;
+
     /** Creates an instance of NetworkSecurityPerimeterConfiguration class. */
     public NetworkSecurityPerimeterConfiguration() {
     }
@@ -30,6 +36,15 @@ public final class NetworkSecurityPerimeterConfiguration extends ProxyResource {
      */
     private NetworkSecurityPerimeterConfigurationProperties innerProperties() {
         return this.innerProperties;
+    }
+
+    /**
+     * Get the location property: The geo-location where the resource lives.
+     *
+     * @return the location value.
+     */
+    public String location() {
+        return this.location;
     }
 
     /**
